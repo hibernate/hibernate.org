@@ -1,8 +1,8 @@
 # Default page title
-title: JBoss Community
+title: Hibernate
 
 # Project id name
-project: example
+project: hibernate
 
 # Default minify settings
 css_minifier: disabled
@@ -56,6 +56,7 @@ wget:
     - http://static.jboss.org/theme/fonts/font-awesome/
     - http://static.jboss.org/theme/images/common/
     - http://static.jboss.org/images/example/
+    - http://static.jboss.org/images/hibernate/
 
 # Update resource URLs based on the profile
 profiles:
@@ -63,7 +64,7 @@ profiles:
     jborg_fonts_url: /cache/static.jboss.org/theme/fonts
     jborg_images_url: /cache/static.jboss.org/theme/images
     jborg_js_url: /cache/static.jboss.org/theme/js
-    project_images_url: /cache/static.jboss.org/images/example
+    project_images_url: /cache/static.jboss.org/images/hibernate
     bootstrap_css_url: /stylesheets/bootstrap-community
     bootstrap_js_url: /javascripts/bootstrap-community
   staging:
