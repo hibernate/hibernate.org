@@ -13,5 +13,6 @@ Awestruct::Extensions::Pipeline.new do
   transformer Awestruct::Extensions::HtmlMinifier.new
   extension Awestruct::Extensions::FileMerger.new
   extension Awestruct::Extensions::LessConfig.new
+  extension Awestruct::Extensions::Indexifier.new
 end
 
