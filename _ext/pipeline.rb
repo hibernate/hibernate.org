@@ -6,7 +6,14 @@ require 'file_merger'
 require 'less_config'
 
 Awestruct::Extensions::Pipeline.new do
+  development = Engine.instance.site.profile == 'development'
+  # Example of extension only available for certain profiles
+  unless development
+  #  execute extension only in prod
+  end
   helper Awestruct::Extensions::Partial
+  helper Awestruct::Extensions::GoogleAnalytics
+  helper Awestruct::Extensions::Relative
   extension Awestruct::Extensions::WgetWrapper.new
   transformer Awestruct::Extensions::JsMinifier.new
   transformer Awestruct::Extensions::CssMinifier.new
