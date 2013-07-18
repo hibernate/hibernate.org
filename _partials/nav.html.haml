@@ -1,3 +1,4 @@
+- real_page = page["real_page"]
 .navbar.navbar-inverse#navbar-fix
   .navbar-inner
     .container
@@ -7,17 +8,17 @@
         %span.icon-bar
       .nav-collapse.collapse
         %ul.nav
-          %li{:class=>"#{'active' if page.output_path.start_with?('/index') }" }<
+          %li{:class=>"#{'active' if real_page.output_path.start_with?('/index') }" }<
             %a(href="#{site.base_url}/") Home
-          %li{:class=>"#{'active' if page.output_path.start_with?('/orm') }" }<
+          %li{:class=>"#{'active' if real_page.output_path.start_with?('/orm') }" }<
             %a(href="#{site.base_url}/orm/") ORM
-          %li{:class=>"#{'active' if page.output_path.start_with?('/search') }" }<
+          %li{:class=>"#{'active' if real_page.output_path.start_with?('/search') }" }<
             %a(href="#{site.base_url}/search/") Search
-          %li{:class=>"#{'active' if page.output_path.start_with?('/validator') }" }<
+          %li{:class=>"#{'active' if real_page.output_path.start_with?('/validator') }" }<
             %a(href="#{site.base_url}/validator/") Validator
-          %li{:class=>"#{'active' if page.output_path.start_with?('/ogm') }" }<
+          %li{:class=>"#{'active' if real_page.output_path.start_with?('/ogm') }" }<
             %a(href="#{site.base_url}/ogm/") OGM
-          %li{:class=>"#{'active' if page.output_path.start_with?('/tools') }" }<
+          %li{:class=>"#{'active' if real_page.output_path.start_with?('/tools') }" }<
             %a(href="#{site.base_url}/tools/") Tools
-          %li{:class=>"#{'active' if page.output_path.start_with?('/shards') }" }<
+          %li{:class=>"#{'active' if real_page.output_path.start_with?('/shards') }" }<
             %a(href="#{site.base_url}/shards/") Shards
