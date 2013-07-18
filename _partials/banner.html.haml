@@ -1,3 +1,25 @@
 .banner
+  .row
+    .span3.offset9
+      %ul.breadcrumb#cross-nav
+        %li<
+          %a(href="#") Blog
+          %span.divider<
+            |
+        %li<
+          %a(href="#") Community
+          %span.divider<
+            |
+        %li.dropdown
+          %a.dropdown-toggle(href="#" data-toggle="dropdown")<
+            = precede 'Follow Us ' do
+              %b.caret>
+          %ul.dropdown-menu.projectsocialmedia
+            %li<
+              %a(href="https://twitter.com/hibernate")<
+                %img(src="#{site.jborg_images_url}/common/socialmedia_icon40_twitter.png")
+            %li<
+              %a(href="https://plus.google.com/112681342290762837955/posts")<
+                %img(src="#{site.jborg_images_url}/common/socialmedia_icon40_googleplus.png")
   %a(href="#")<
   .taglinelight.visible-desktop Idiomatic persistence

@@ -3,4 +3,10 @@
 //   which depends on V8 which is hard to install on Windows and would slow contribution
 //
 // If that fails we will have to start from a vanilla bootstrap
-
+#cross-nav {
+  background-color: transparent;
+  a {
+    color: #ffffff;
+    text-shadow: none;
+  }
+}
