@@ -9,65 +9,15 @@
         %ul.nav
           %li{:class=>"#{'active' if page.output_path.start_with?('/index') }" }<
             %a(href="#{site.base_url}/") Home
-          %li{:class=>"#{'active' if page.output_path.start_with?('/downloads') }" }<
-            %a(href="#{site.base_url}/downloads/") Downloads
-          %li{:class=>"#{'active' if page.output_path.start_with?('/docs') }" }<
-            %a(href="#{site.base_url}/docs/") Docs
-          %li.dropdown
-            %a.dropdown-toggle(href="#" data-toggle="dropdown")<
-              = precede 'Community ' do
-                %b.caret>
-            %ul.dropdown-menu
-              %li<
-                %a(href="#") Wiki
-              %li<
-                %a(href="#") User Forum
-              %li<
-                %a(href="#") Mailing Lists
-              %li<
-                %a(href="#") Chat
-              %li<
-                %a(href="#") Blog
-          %li{:class=>"#{'active' if page.output_path.start_with?('/issues') }" }<
-            %a(href="#{site.base_url}/issues/") Issues
-          %li{:class=>"#{'active' if page.output_path.start_with?('/source') }" }<
-            %a(href="#{site.base_url}/source/") Source Code
-          %li{:class=>"#{'active' if page.output_path.start_with?('/build') }" }<
-            %a(href="#{site.base_url}/build/") Build
-          %li.dropdown
-            %a.dropdown-toggle(href="#" data-toggle="dropdown")<
-              = precede 'Follow Us ' do
-                %b.caret>
-            %ul.dropdown-menu.projectsocialmedia
-              %li<
-                %a(href="#")<
-                  %img(src="#{site.jborg_images_url}/common/socialmedia_icon40_twitter.png")
-              %li<
-                %a(href="#")<
-                  %img(src="#{site.jborg_images_url}/common/socialmedia_icon40_googleplus.png")
-              %li<
-                %a(href="#")<
-                  %img(src="#{site.jborg_images_url}/common/socialmedia_icon40_facebook.png")
-              %li<
-                %a(href="#")<
-                  %img(src="#{site.jborg_images_url}/common/socialmedia_icon40_youtube.png")
-              %li<
-                %a(href="#")<
-                  %img(src="#{site.jborg_images_url}/common/socialmedia_icon40_linkedin.png")
-          %li.dropdown
-            %a.dropdown-toggle(href="#" data-toggle="dropdown")<
-              = precede 'Layouts ' do
-                %b.caret>
-            %ul.dropdown-menu
-              %li<
-                %a(href="#{site.base_url}/rightcol/") Right Column
-              %li<
-                %a(href="#{site.base_url}/leftcol/") Left Column
-              %li<
-                %a(href="#{site.base_url}/bothcol/") 3 Columns
-          %li.divider
-
-        %ul.nav.pull-right
-          %li
-            %form.navbar-search
-              %input.search-query#projectsearch(type="text" placeholder="Search")
+          %li{:class=>"#{'active' if page.output_path.start_with?('/orm') }" }<
+            %a(href="#{site.base_url}/orm/") ORM
+          %li{:class=>"#{'active' if page.output_path.start_with?('/search') }" }<
+            %a(href="#{site.base_url}/search/") Search
+          %li{:class=>"#{'active' if page.output_path.start_with?('/validator') }" }<
+            %a(href="#{site.base_url}/validator/") Validator
+          %li{:class=>"#{'active' if page.output_path.start_with?('/ogm') }" }<
+            %a(href="#{site.base_url}/ogm/") OGM
+          %li{:class=>"#{'active' if page.output_path.start_with?('/tools') }" }<
+            %a(href="#{site.base_url}/tools/") Tools
+          %li{:class=>"#{'active' if page.output_path.start_with?('/shards') }" }<
+            %a(href="#{site.base_url}/shards/") Shards
