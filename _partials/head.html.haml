@@ -1,30 +1,32 @@
+- real_page = page["real_page"]
 %meta(charset="utf-8")
 %meta(name="viewport" content="width=device-width, initial-scale=1.0")
 %meta(name="description" content="#{page.description}")
 %meta(name="author" content="#{page.author}")
 
 - pageStyle = page.style ;
-%link(href="#{pageStyle ? site[pageStyle].bootstrap_css_url : site.bootstrap_css_url}#{site.minified}.css" rel="stylesheet" media="screen")
-%link(href="#{relative("/stylesheets/styles.css")}" rel="stylesheet" media="screen")
+- bootstrap_community_css = relative("#{pageStyle ? site[pageStyle].bootstrap_css_url : site.bootstrap_css_url}#{site.minified}.css", real_page)
+%link(href="#{bootstrap_community_css}" rel="stylesheet" media="screen")
+%link(href="#{relative("/stylesheets/styles.css", real_page)}" rel="stylesheet" media="screen")
 / IE 6-8 support of HTML 5 elements
 /[if lt IE 9]
   %script(src="#{site.jborg_js_url}/libs/html5/pre3.6/html5.min.js")
 
 / Defines the project favicon. Change these URLs to your specific project folder on static.jboss.org.
 
-%link(rel="shortcut icon" href="#{site.project_images_url}/favicon.ico")
-%link(rel="apple-touch-icon-precomposed" sizes="144x144" href="#{site.project_images_url}/apple-touch-icon-144x144-precomposed.png")
-%link(rel="apple-touch-icon-precomposed" sizes="114x114" href="#{site.project_images_url}/apple-touch-icon-114x114-precomposed.png")
-%link(rel="apple-touch-icon-precomposed" sizes="72x72" href="#{site.project_images_url}/apple-touch-icon-72x72-precomposed.png")
-%link(rel="apple-touch-icon-precomposed" href="#{site.project_images_url}/apple-touch-icon-precomposed.png")
+%link(rel="shortcut icon" href="#{relative("#{site.project_images_url}/favicon.ico")}")
+%link(rel="apple-touch-icon-precomposed" sizes="144x144" href="#{relative("#{site.project_images_url}/apple-touch-icon-144x144-precomposed.png", real_page)}")
+%link(rel="apple-touch-icon-precomposed" sizes="114x114" href="#{relative("#{site.project_images_url}/apple-touch-icon-114x114-precomposed.png", real_page)}")
+%link(rel="apple-touch-icon-precomposed" sizes="72x72" href="#{relative("#{site.project_images_url}/apple-touch-icon-72x72-precomposed.png", real_page)}")
+%link(rel="apple-touch-icon-precomposed" href="#{relative("#{site.project_images_url}/apple-touch-icon-precomposed.png", real_page)}")
 
 / Defines the project banner. Change these URLs to your specific project folder on static.jboss.org
 :css
   @media (min-width: 980px) {
-    .banner { background-image: url(#{site.project_images_url}/#{site.project}-banner-1180px.png); height: 110px;  }
+    .banner { background-image: url(#{relative("#{site.project_images_url}/#{site.project}-banner-1180px.png", real_page)}); height: 110px;  }
   }
   @media (max-width: 979px) {
-    .banner { background-image: url(#{site.project_images_url}/#{site.project}-logo.png); background-repeat:no-repeat; height: 60px; }
+    .banner { background-image: url(#{relative("#{site.project_images_url}/#{site.project}-logo.png", real_page)}); background-repeat:no-repeat; height: 60px; }
   }
   @media (max-width: 650px) {
     .banner { width: 200px; margin: 0px auto; }

@@ -1,3 +1,4 @@
+- real_page = page["real_page"]
 .banner
   .row
     .span3.offset9
@@ -17,9 +18,9 @@
           %ul.dropdown-menu.projectsocialmedia
             %li<
               %a(href="https://twitter.com/hibernate")<
-                %img(src="#{site.jborg_images_url}/common/socialmedia_icon40_twitter.png")
+                %img(src="#{relative("#{site.jborg_images_url}/common/socialmedia_icon40_twitter.png", real_page)}")
             %li<
               %a(href="https://plus.google.com/112681342290762837955/posts")<
-                %img(src="#{site.jborg_images_url}/common/socialmedia_icon40_googleplus.png")
+                %img(src="#{relative("#{site.jborg_images_url}/common/socialmedia_icon40_googleplus.png", real_page)}")
   %a(href="#")<
   .taglinelight.visible-desktop Idiomatic persistence

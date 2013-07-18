@@ -1,3 +1,4 @@
+- real_page = page["real_page"]
 %footer.container
   .row-fluid
     .span2.offset1
@@ -37,4 +38,4 @@
       %p
       .jbossbadge
         %a{:href => "http://www.jboss.org/"}
-          %img{:src => "/cache/static.jboss.org/theme/images/common/jbossbadge.png"}/
+          %img{:src => "#{relative("/cache/static.jboss.org/theme/images/common/jbossbadge.png", real_page)}"}/
