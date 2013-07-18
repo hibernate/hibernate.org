@@ -3,4 +3,79 @@ layout: project
 title: Example Homepage
 ---
 
+%p.lead
+  Hibernate is a family of projects for domain model centric applications offering services like persistence, search and validation
 
+-# News ribbon
+.well.well-small
+  .row
+    .span9
+      Latest news:
+      %a(href="http://in.relation.to/Bloggers/BeanValidation11FeatureSpotlightExpressionLanguage")<
+        Bean Validation 1.1 Feature Spotlight - Expression Language
+    .span2
+      .pull-right
+        %a(href="http://in.relation.to/")
+          More news
+
+-# First row of projects
+#equalHeightsB.row-fluid.equalHero
+  .span4.well
+    %h2 Hibernate ORM
+    %p
+      %i.icon-table.icon-3x.pull-left
+      Storage and retrieval of Java domain objects from your <strong>relational database</strong> like Oracle DB, Microsoft SQLServer, PostgreSQL, MySQL. This is known as an <strong>Object/Relational Mapping</strong>.
+    %p.center-icon
+      %a.btn.btn-primary{:href => relative("/orm/")}
+        More
+        %i.icon-circle-arrow-right
+  .span4.well
+    %h2 Hibernate Search
+    %p
+      %i.icon-search.icon-3x.pull-left
+      <strong>Full-text and geolocation</strong> search and faceting for your domain model. With ease of use and <strong>built-in clustering</strong>.
+    %p.center-icon
+      %a.btn.btn-primary{:href => relative("/search/")}
+        More
+        %i.icon-circle-arrow-right
+  .span4.well
+    %h2 Hibernate Validator
+    %p
+      %i.icon-check.icon-3x.pull-left
+      Declare annotation-based <strong>constraints</strong> on your domain model. Integrates with JSR and frameworks to <strong>transparently check constraints</strong> at specified times of you data life.
+    %p.center-icon
+      %a.btn.btn-primary{:href => relative("/validator/")}
+        More
+        %i.icon-circle-arrow-right
+
+-# Second row of projects
+#equalHeightsB.row-fluid.equalHero
+  .span4.well
+    %h2 Hibernate OGM
+    %p
+      %i.icon-sitemap.icon-3x.pull-left
+      <strong>JPA support for NoSQL stores</strong>. Key/value, datagrid, document, graph and wide columns. Both persistence and JP-QL queries.
+    %p.center-icon
+      %a.btn.btn-primary{:href => relative("/ogm/")}
+        More
+        %i.icon-circle-arrow-right
+  .span4.well
+    %h2 Hibernate Tools
+    %p
+      -# icon-tasks icon-code icon-cogs icon-wrench
+      %i.icon-wrench.icon-3x.pull-left
+      Command line and Eclipse based tools for your Hibernate usages: mapping editor, console for relationships and HQL query execution, reverse engineering, wizards and more.
+    %p.center-icon
+      %a.btn.btn-primary{:href => relative("/tools/")}
+        More
+        %i.icon-circle-arrow-right
+  .span4.well
+    %h2 Others
+    %p
+      -# icon-umbrella
+      %i.icon-plus.icon-3x.pull-left
+      The Hibernate family contains various other projects.
+      %a{:href => relative("/shards/")} Hibernate Shards
+      offers relational database sharding.
+      %a{:href => relative("/metamode-generator/")} Hibernate Metamodel Generator
+      is an annotation processor that plugs into the compiler to generate the type-safe JPA model.
