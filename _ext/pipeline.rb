@@ -3,6 +3,7 @@ require 'js_minifier'
 require 'css_minifier'
 require 'html_minifier'
 require 'file_merger'
+require 'relative'
 
 Awestruct::Extensions::Pipeline.new do
   development = Engine.instance.site.profile == 'development'
