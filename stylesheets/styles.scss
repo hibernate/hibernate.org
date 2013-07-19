@@ -18,3 +18,13 @@
     text-shadow: none;
   }
 }
+
+// let us write the project name after the logo
+.logo-suffix {
+  font-size: 45px;
+  position: absolute;
+  left: 350px;
+  bottom: 55px;
+  z-index: 100;
+  color: #ffffff;
+}
