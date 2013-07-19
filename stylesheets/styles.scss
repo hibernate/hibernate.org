@@ -3,13 +3,18 @@
 //   which depends on V8 which is hard to install on Windows and would slow contribution
 //
 // If that fails we will have to start from a vanilla bootstrap
+
+// Common utilities
+
+.center-icon {
+  text-align: center;
+}
+
+// Headers and top nav
 #cross-nav {
   background-color: transparent;
   a {
     color: #ffffff;
     text-shadow: none;
   }
-}
-.center-icon {
-  text-align: center;
 }
