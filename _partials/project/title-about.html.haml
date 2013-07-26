@@ -1,0 +1,21 @@
+-# Title and download / get started button
+- real_page = page["real_page"]
+.row-fluid
+  .hidden-phone.project-title-desktop
+    .pull-left
+      %h1= real_page.title
+    .pull-right
+      .visible-desktop
+        .pull-right
+          %a.btn.btn-large{:href => '#'} Get started
+          &nbsp;
+          %a.btn.btn-success.btn-large{:href => '#'} Download (4.3.0.Final)
+      .hidden-desktop
+        .pull-right
+          %a.btn.btn-large{:href => '#'} Get started
+  .visible-phone
+    .project-title-phone.text-center
+      %div
+        %h1= real_page.title
+      %div
+        %a.btn{:href => '#'} Get started

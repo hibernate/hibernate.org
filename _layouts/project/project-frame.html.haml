@@ -1,0 +1,44 @@
+---
+layout: project
+---
+-# layout for pages related to a specific project
+
+-# Title
+= partial( page.title_partial.nil? ? 'project/title.html.haml' : page.title_partial, {"real_page" => page} )
+
+-# Project specific navigation menu
+.row-fluid
+  .span2
+    %ul.nav.nav-list
+      %li.active
+        %a{:href => "#"}
+          %i.icon-fixed-width.icon-home
+          About
+      %li
+        %a{:href => "#"}
+          %i.icon-fixed-width.icon-cloud-download
+          Downloads
+      %li
+        %a{:href => "#"}
+          %i.icon-fixed-width.icon-book
+          Documentation
+      %li.divider
+      %li
+        %a{:href => "#"}
+          %i.icon-fixed-width.icon-edit
+          Wiki
+      %li
+        %a{:href => "#"}
+          %i.icon-fixed-width.icon-exclamation-sign
+          -# icon-bug only in font-awesome 3.2
+          Issues
+      %li
+        %a{:href => "#"}
+          %i.icon-fixed-width.icon-code
+          Source code
+      %li
+        %a{:href => "#"}
+          %i.icon-fixed-width.icon-stethoscope
+          CI
+  .span10
+    ~ content

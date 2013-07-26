@@ -1,60 +1,12 @@
 ---
-layout: project
+layout: project-frame
 title: About Hibernate Search
+title_partial: project/title-about.html.haml
 ---
 .row-fluid
-  .hidden-phone.project-title-desktop
-    .span8
-      %h1= page.title
-    .span4
-      .visible-desktop
-        .pull-right
-          %a.btn.btn-large{:href => '#'} Get started
-          &nbsp;
-          %a.btn.btn-success.btn-large{:href => '#'} Download (4.3.0.Final)
-      .hidden-desktop
-        .pull-right
-          %a.btn.btn-large{:href => '#'} Get started
-  .visible-phone
-    .project-title-phone.text-center
-      %div
-        %h1= page.title
-      %div
-        %a.btn{:href => '#'} Get started
-.row-fluid
-  .span2
-    %ul.nav.nav-list
-      %li.active
-        %a{:href => "#"}
-          %i.icon-fixed-width.icon-home
-          About
-      %li
-        %a{:href => "#"}
-          %i.icon-fixed-width.icon-cloud-download
-          Downloads
-      %li
-        %a{:href => "#"}
-          %i.icon-fixed-width.icon-book
-          Documentation
-      %li.divider
-      %li
-        %a{:href => "#"}
-          %i.icon-fixed-width.icon-edit
-          Wiki
-      %li
-        %a{:href => "#"}
-          %i.icon-fixed-width.icon-exclamation-sign
-          -# icon-bug only in font-awesome 3.2
-          Issues
-      %li
-        %a{:href => "#"}
-          %i.icon-fixed-width.icon-code
-          Source code
-      %li
-        %a{:href => "#"}
-          %i.icon-fixed-width.icon-stethoscope
-          CI
-  .span7
+
+  -# Center body
+  .span8
     .row-fluid
       .span12
         %h3 Full-text search for entities
@@ -81,13 +33,14 @@ title: About Hibernate Search
           Geolocalized entities are as easy as `@Spatial`. Filter results around a certain location liek the user position. Hibernate Search offers to algorithms: a light one or a more scalable one.
           
           Faceting categorizes results by properties like price range or brand.
-
     .row-fluid
       .span12
         %h3 Easy to use
         :markdown
           Design to be easy to use from the ground up. Handles indexing, datastore synchronization, clustering and infrastructure transparently while you focus on the business sense of your queries.
-  .span3.well
+
+  -# News right column
+  .span4.well
     %h2 Latest news
     .news
       %h4 JBoss Community Recognition Awards: Voting ends tomorrow!
