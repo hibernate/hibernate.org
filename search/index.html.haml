@@ -1,0 +1,120 @@
+---
+layout: project
+title: About Hibernate Search
+---
+.row-fluid
+  .hidden-phone.project-title-desktop
+    .span8
+      %h1= page.title
+    .span4
+      .visible-desktop
+        .pull-right
+          %a.btn.btn-large{:href => '#'} Get started
+          &nbsp;
+          %a.btn.btn-success.btn-large{:href => '#'} Download (4.3.0.Final)
+      .hidden-desktop
+        .pull-right
+          %a.btn.btn-large{:href => '#'} Get started
+  .visible-phone
+    .project-title-phone.text-center
+      %div
+        %h1= page.title
+      %div
+        %a.btn{:href => '#'} Get started
+.row-fluid
+  .span2
+    %ul.nav.nav-list
+      %li.active
+        %a{:href => "#"}
+          %i.icon-fixed-width.icon-home
+          About
+      %li
+        %a{:href => "#"}
+          %i.icon-fixed-width.icon-cloud-download
+          Downloads
+      %li
+        %a{:href => "#"}
+          %i.icon-fixed-width.icon-book
+          Documentation
+      %li.divider
+      %li
+        %a{:href => "#"}
+          %i.icon-fixed-width.icon-edit
+          Wiki
+      %li
+        %a{:href => "#"}
+          %i.icon-fixed-width.icon-exclamation-sign
+          -# icon-bug only in font-awesome 3.2
+          Issues
+      %li
+        %a{:href => "#"}
+          %i.icon-fixed-width.icon-code
+          Source code
+      %li
+        %a{:href => "#"}
+          %i.icon-fixed-width.icon-stethoscope
+          CI
+  .span7
+    .row-fluid
+      .span12
+        %h3 Full-text search for entities
+        :markdown
+          Offers full-text search support for objects stored by Hibernate ORM, Infinispan and other sources.
+          Think of it as Google(tm) for your entities:
+
+          * search words with text
+          * order results by relevance
+          * find by approximation (fuzzy search)
+    .row-fluid
+      .span12
+        %h3 Cluster friendly
+        :markdown
+          Clustering indexes is not trivial. Hibernate Search offers several easy to setup clustering strategies:
+
+          * master / slaves
+          * JMS / JGroups replication
+          * Infinispan distributed index
+    .row-fluid
+      .span12
+        %h3 Faceting and geolocation
+        :markdown
+          Geolocalized entities are as easy as `@Spatial`. Filter results around a certain location liek the user position. Hibernate Search offers to algorithms: a light one or a more scalable one.
+          
+          Faceting categorizes results by properties like price range or brand.
+
+    .row-fluid
+      .span12
+        %h3 Easy to use
+        :markdown
+          Design to be easy to use from the ground up. Handles indexing, datastore synchronization, clustering and infrastructure transparently while you focus on the business sense of your queries.
+  .span3.well
+    %h2 Latest news
+    .news
+      %h4 JBoss Community Recognition Awards: Voting ends tomorrow!
+      %small
+        25-Jul-2013
+      %p
+        The voting for the JBoss Community Recognition Awards 2013 ends tomorrow; if you haven't done it yet please vote for our contributors.
+        
+        Among other amazing contributors, some have done amazing work on Hibernate projects and we think they deserve a special recognition
+        %a{:href => "http://in.relation.to/Bloggers/JBossCommunityRecognitionAwardsVotingEndsTomorrow"} more
+    .news
+      %h4 London: Meet an Open Source Project
+      %small
+        23-Jul-2013
+      %p
+        Tomorrow the London Java Community (LJC) meets for the monthly Meet a Project night. I'll be there again, this time to explain how to get started contributing to Hibernate Search and answer all the questions you might have about the mysterious world of open source professionals.
+
+        Contributing to Hibernate
+        %a{:href => "http://in.relation.to/Bloggers/LondonMeetAnOpenSourceProject"} more
+    .news
+      %h4 Hibernate Search 4.3.0.Final was spotted in Boston
+      %small
+        11-Jun-2013
+      %p
+        We're in Boston for JUDCon and Red Hat Summit; Emmanuel is on stage coding live a nice new demo using Hibernate Search to combine full-text with geographic filtering. It will be contributed to JDF quickstarts but you can already get the sources.
+
+        He's using Hibernate Sear
+        %a{:href => "http://in.relation.to/Bloggers/HibernateSearch430FinalWasSpottedInBoston"} more
+    .news
+      %a{:href => "http://in.relation.to/tag/Hibernate+Search"} Other news
