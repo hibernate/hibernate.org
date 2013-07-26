@@ -23,17 +23,18 @@
               %a(href="https://plus.google.com/112681342290762837955/posts")<
                 %img(src="#{relative("#{site.jborg_images_url}/common/socialmedia_icon40_googleplus.png", real_page)}")
   %a(href="#")<
-  .taglinelight.visible-desktop Data services for idiomatic Java
-  .logo-suffix
-    -# Extract the project title from the path
-    - path = real_page.output_path
-    - if path.start_with?('/search')
-      Search
-    - elsif path.start_with?('/orm')
-      ORM
-    - elsif path.start_with?('/validator')
-      Validator
-    - elsif path.start_with?('/ogm')
-      OGM
-    - elsif path.start_with?('/tools')
-      Tools
+  .visible-desktop
+    .taglinelight Data services for idiomatic Java
+    .logo-suffix
+      -# Extract the project title from the path
+      - path = real_page.output_path
+      - if path.start_with?('/search')
+        Search
+      - elsif path.start_with?('/orm')
+        ORM
+      - elsif path.start_with?('/validator')
+        Validator
+      - elsif path.start_with?('/ogm')
+        OGM
+      - elsif path.start_with?('/tools')
+        Tools
