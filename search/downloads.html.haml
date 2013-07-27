@@ -1,0 +1,65 @@
+---
+layout: project-frame
+title: Hibernate Search downloads
+project: search
+---
+.release-bottons
+  - stable_release = latest_stable_release(page)
+  - dev_release = latest_dev_release(page)
+  - if not (stable_release.nil? && dev_release.nil?)
+    .row-fluid.visible-desktop.text-center
+      - if not stable_release.nil?
+        %a.btn.btn-large.btn-success{:href => 'https://sourceforge.net/projects/hibernate/files/hibernate-search/#{stable_release.version}/'} Download stable #{stable_release.version}
+      - if not (stable_release.nil? || dev_release.nil?)
+        &nbsp;
+      - if not dev_release.nil?
+        %a.btn.btn-large.btn-danger{:href => 'https://sourceforge.net/projects/hibernate/files/hibernate-search/#{dev_release.version}/'} Download development #{dev_release.version}
+.row-fluid
+  .span12
+    %h2 Releases
+    %table.table.table-bordered.table-striped
+      %thead
+        %tr
+          %th Version
+          %th Date
+          %th Description
+          %th Download
+          %th Maven
+      %tbody
+        - site.projects[page.project].releases.each do |release|
+          %tr
+            %td= release.version
+            %td= release.date
+            %td
+              - if release.stable
+                ready for prime time
+              - else
+                development time
+            %td
+              %a{:href => "https://sourceforge.net/projects/hibernate/files/hibernate-search/#{release.version}/"}
+                download
+            %td
+              %a{:href => "https://repository.jboss.org/nexus/index.html#nexus-search;gav~org.hibernate~hibernate-search~#{release.version}~~"}
+                org.hibernate:hibernate-search:#{release.version}
+    Older releases can be found
+    %a{:href => 'https://sourceforge.net/projects/hibernate/files/hibernate-search/'}
+      on SourceForge
+    or in JBoss's
+    %a{:href => "https://repository.jboss.org/nexus/index.html#nexus-search;gav~org.hibernate~hibernate-search~~~"}<
+      Maven repository
+.row-fluid
+  .span12
+    %h2 Maven repository
+    :markdown
+      Hibernate Search is built using Maven and publishes as part of the release process the project artifacts to
+      the [JBoss Maven Repository](https://repository.jboss.org/nexus/) under [org.hibernate:hibernate-search](https://repository.jboss.org/nexus/index.html#nexus-search;gav~org.hibernate~hibernate-search~~~).
+      For more information on how to configure Maven to use JBoss's repository, [look here](http://community.jboss.org/wiki/MavenGettingStarted-Users)
+      or use `mvn install -s setting-example.xml`.
+      
+      Here is how to declare the dependency in your Maven POM file
+
+          <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-search</artifactId>
+            <version>4.3.0.Final</version>
+          </dependency>
