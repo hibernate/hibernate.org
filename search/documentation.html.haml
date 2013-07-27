@@ -1,0 +1,74 @@
+---
+layout: project-frame
+title: Hibernate Search documentation
+project: search
+---
+-# Metadata from site.yml for the project
+- project_description = site.projects[page.project]
+
+-# Documentation buttons using the latest dev and latest stable releases
+.release-bottons
+  - stable_release = latest_stable_release(page)
+  - if not stable_release.nil?
+    .row-fluid.visible-desktop.text-center
+      %a.btn.btn-large.btn-success{:href => '#{project_description.sourceforge_url}#{stable_release.version}/'} Get documentation for #{stable_release.version}
+.row-fluid
+  .span12
+    -# Documentation table built form the metadata
+    %h2 Reference documentation
+    %table.table.table-bordered.table-striped
+      %thead
+        %tr
+          %th Document
+          %th Version
+          %th Language
+          %th Format
+      %tbody
+        - site.projects[page.project].releases.each do |release|
+          %tr
+            %td Reference documentation
+            %td= release.version
+            %td English
+            %td
+              %a{:href => "#{project_description.reference_doc}#{release.version_family}/reference/en-US/html/"}
+                html
+              |
+              %a{:href => "#{project_description.reference_doc}#{release.version_family}/reference/en-US/html_single/"}
+                html single
+              |
+              %a{:href => "#{project_description.reference_doc}#{release.version_family}/reference/en-US/pdf/#{project_description.reference_pdf}"}
+                pdf
+            %tr
+              %td JavaDoc
+              %td
+              %td English
+              %td
+                %a{:href => "#{project_description.reference_doc}#{release.version_family}/api/"}
+                  html
+
+    You can also find th
+    %a{:href => "#{project_description.reference_doc}"}<
+      documentation for older versions
+.row-fluid
+  .span12
+    %h2 Guides
+    %dl.dl-horizontal
+      %dt
+        %a{:href => 'http://'}
+          Getting started guide
+      %dd For a gentle introduction to the concepts of Hibernate Search without being sidetracked by other technologies.
+      %dt
+        %a{:href => 'http://'}
+          TicketMonster tutorial
+      %dd Describes how to add a full-text search engine step by step from an existing Java EE application.
+
+    :markdown
+      ## Books and Articles
+      
+      **[Hibernate Search in Action](http://emmanuelbernard.com/books/hsia/)**  
+      A bit outdated book on Hibernate Search but a very good reference on the product and search engines in general. It has been written by a member of the Hibernate Search team.
+      
+      ## Other documentation
+
+      Make sure to check the [FAQ](/search/documentation/faq/). Last but not least, you can find some additional documentation on our
+      [wiki](https://community.jboss.org/en/hibernate/search).
