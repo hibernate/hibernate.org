@@ -12,6 +12,9 @@ html_minifier: disabled
 # project specific information
 projects:
   search:
+    sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-search/
+    group_id: org.hibernate
+    artifact_id: hibernate-search
     releases:
       - version: 4.4.0.Alpha0
         date: 2013-07-21
