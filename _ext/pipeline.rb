@@ -4,6 +4,7 @@ require 'css_minifier'
 require 'html_minifier'
 require 'file_merger'
 require 'relative'
+require 'releases'
 
 Awestruct::Extensions::Pipeline.new do
   development = Engine.instance.site.profile == 'development'
@@ -14,6 +15,7 @@ Awestruct::Extensions::Pipeline.new do
   helper Awestruct::Extensions::Partial
   helper Awestruct::Extensions::GoogleAnalytics
   helper Awestruct::Extensions::Relative
+  helper Awestruct::Extensions::Releases
   extension Awestruct::Extensions::WgetWrapper.new
   transformer Awestruct::Extensions::JsMinifier.new
   transformer Awestruct::Extensions::CssMinifier.new

@@ -8,8 +8,10 @@
       .visible-desktop
         .pull-right
           %a.btn.btn-large{:href => '#'} Get started
-          &nbsp;
-          %a.btn.btn-success.btn-large{:href => '#'}= "Download (#{site.projects.search.version})"
+          - release = latest_stable_release(real_page)
+          - if not release.nil?
+            &nbsp;
+            %a.btn.btn-success.btn-large{:href => '#'}= "Download (#{release.version})"
       .hidden-desktop
         .pull-right
           %a.btn.btn-large{:href => '#'} Get started

@@ -12,7 +12,14 @@ html_minifier: disabled
 # project specific information
 projects:
   search:
-    version: 4.3.0.Final
+    releases:
+      - version: 4.4.0.Alpha0
+        date: 2013-07-21
+        stable: false
+      - version: 4.3.0.Final
+        date: 2013-06-08
+        stable: true
+
     menu:
       intern:
         - name: About
