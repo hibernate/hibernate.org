@@ -7,11 +7,11 @@ project: search
 - project_description = site.projects[page.project]
 
 -# Release buttons using the latest dev and latest stable releases
-.release-bottons
+.release-bottons.visible-desktop
   - stable_release = latest_stable_release(page)
   - dev_release = latest_dev_release(page)
   - if not (stable_release.nil? && dev_release.nil?)
-    .row-fluid.visible-desktop.text-center
+    .row-fluid.text-center
       - if not stable_release.nil?
         %a.btn.btn-large.btn-success{:href => '#{project_description.sourceforge_url}#{stable_release.version}/'} Download stable #{stable_release.version}
       - if not (stable_release.nil? || dev_release.nil?)

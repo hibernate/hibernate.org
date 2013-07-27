@@ -29,6 +29,13 @@
   color: #ffffff;
 }
 
+// Project menu
+@media (min-width: 768px) and (max-width: 1199px) {
+  .menu-icon {
+    display: none !important;
+  }
+}
+
 // Project about page
 .project-title-desktop {
   margin-top: 20px;
@@ -40,6 +47,16 @@
 }
 
 // Project download page
-.release-bottons {
-  margin-bottom:3em;
+@media (min-width: 768px) {
+  .release-bottons {
+    margin-bottom:2em;
+  }
 }
+
+@media (max-width: 767px) {
+  .release-buttons {
+    margin-bottom:1em;
+    margin-top:1em;
+  }
+}
+

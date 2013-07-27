@@ -7,11 +7,16 @@ project: search
 - project_description = site.projects[page.project]
 
 -# Documentation buttons using the latest dev and latest stable releases
-.release-bottons
+.release-bottons.hidden-phone
   - stable_release = latest_stable_release(page)
   - if not stable_release.nil?
-    .row-fluid.visible-desktop.text-center
+    .row-fluid.text-center
       %a.btn.btn-large.btn-success{:href => '#{project_description.sourceforge_url}#{stable_release.version}/'} Get documentation for #{stable_release.version}
+.release-bottons.visible-phone
+  - stable_release = latest_stable_release(page)
+  - if not stable_release.nil?
+    .row-fluid.text-center
+      %a.btn.btn-success{:href => '#{project_description.sourceforge_url}#{stable_release.version}/'} Get documentation for #{stable_release.version}
 .row-fluid
   .span12
     -# Documentation table built form the metadata

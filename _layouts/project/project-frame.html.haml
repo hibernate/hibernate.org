@@ -19,13 +19,13 @@ layout: project
         - active = (menu.href == "/#{page.project}/" && menu.href == current_path) || (menu.href != "/#{page.project}/" && current_path.start_with?(menu.href))
         %li{:class => "#{(active ? "active" : "")}"}
           %a{:href => "#{relative("#{menu.href}")}"}
-            %i{:class => "#{menu.css_class}"}
+            %i{:class => "#{menu.css_class} menu-icon"}
             #{menu.name}
       %li.divider
       - site.projects[page.project].menu.extern.each do |menu|
         %li
           %a{:href => "#{menu.href}"}
-            %i{:class => "#{menu.css_class}"}
+            %i{:class => "#{menu.css_class} menu-icon"}
             #{menu.name}
   .span10
     ~ content
