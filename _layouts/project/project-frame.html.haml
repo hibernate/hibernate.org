@@ -2,6 +2,7 @@
 layout: project
 ---
 -# layout for pages related to a specific project
+-# handles left menu and title display
 
 -# Title
 = partial( page.title_partial.nil? ? 'project/title.html.haml' : page.title_partial, {"real_page" => page} )
@@ -9,36 +10,22 @@ layout: project
 -# Project specific navigation menu
 .row-fluid
   .span2
+    -# Menu based on site.projects data
     %ul.nav.nav-list
-      %li.active
-        %a{:href => "#"}
-          %i.icon-fixed-width.icon-home
-          About
-      %li
-        %a{:href => "#"}
-          %i.icon-fixed-width.icon-cloud-download
-          Downloads
-      %li
-        %a{:href => "#"}
-          %i.icon-fixed-width.icon-book
-          Documentation
+      -# removes index.html and then replace download.html to download/
+      - current_path = page.output_path.sub(/index\.html$/, "").sub(/\.html$/,"/")
+      - site.projects[page.project].menu.intern.each do |menu|
+        -# active if path is a subpath of the menu item. The project home has to be treated differently as every path is a subpath of home
+        - active = (menu.href == "/#{page.project}/" && menu.href == current_path) || (menu.href != "/#{page.project}/" && current_path.start_with?(menu.href))
+        %li{:class => "#{(active ? "active" : "")}"}
+          %a{:href => "#{relative("#{menu.href}")}"}
+            %i{:class => "#{menu.css_class}"}
+            #{menu.name}
       %li.divider
-      %li
-        %a{:href => "#"}
-          %i.icon-fixed-width.icon-edit
-          Wiki
-      %li
-        %a{:href => "#"}
-          %i.icon-fixed-width.icon-exclamation-sign
-          -# icon-bug only in font-awesome 3.2
-          Issues
-      %li
-        %a{:href => "#"}
-          %i.icon-fixed-width.icon-code
-          Source code
-      %li
-        %a{:href => "#"}
-          %i.icon-fixed-width.icon-stethoscope
-          CI
+      - site.projects[page.project].menu.extern.each do |menu|
+        %li
+          %a{:href => "#{menu.href}"}
+            %i{:class => "#{menu.css_class}"}
+            #{menu.name}
   .span10
     ~ content

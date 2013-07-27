@@ -9,6 +9,37 @@ css_minifier: disabled
 js_minifier: disabled
 html_minifier: disabled
 
+# project specific information
+projects:
+  search:
+    version: 4.3.0.Final
+    menu:
+      intern:
+        - name: About
+          href: '/search/'
+          css_class: 'icon-fixed-width icon-home'
+        - name: Downloads
+          href: '/search/downloads/'
+          css_class: 'icon-fixed-width icon-cloud-download'
+        - name: Documentation
+          href: '/search/documentation/'
+          css_class: 'icon-fixed-width icon-book'
+      extern:
+        - name: Wiki
+          href: 'https://community.jboss.org/en/hibernate/search'
+          css_class: 'icon-fixed-width icon-edit'
+        - name: Issues
+          href: 'https://hibernate.atlassian.net/browse/HSEARCH'
+          css_class: 'icon-fixed-width icon-exclamation-sign'
+          #  icon-bug only in font-awesome 3.2
+        - name: Source code
+          href: 'https://github.com/hibernate/hibernate-search'
+          css_class: 'icon-fixed-width icon-code'
+        - name: CI
+          href: 'http://ci.hibernate.org/job/hibernate-search-master/'
+          css_class: 'icon-fixed-width icon-stethoscope'
+
+
 # Merge multiple JavaScript files to improve performance
 fileMerger:
   enabled: true
