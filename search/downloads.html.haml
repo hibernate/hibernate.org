@@ -20,6 +20,16 @@ project: search
         %a.btn.btn-large.btn-warning{:href => "#{project_description.sourceforge_url}#{dev_release.version}/"} Download development #{dev_release.version}
 .row-fluid
   .span12
+    .alert.text-center
+      -# %button.close{:type => 'button', "data-dismiss" =>'alert'}
+      -#  &times;
+      %i.icon-user-md.icon-large
+      :asciidoc
+        :doctype: inline
+
+        Looking for commercial support? Check out link:#supported-versions[Red Hat's offering].
+.row-fluid
+  .span12
     -# Release table built form the metadata
     %h2 Releases
     %table.table.table-bordered.table-striped
