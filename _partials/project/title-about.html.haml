@@ -1,5 +1,9 @@
 -# Title and download / get started button
 - real_page = page["real_page"]
+- get_started_url = relative("#{site.projects[real_page.project].getting_started}", real_page)
+- project_description = site.projects[real_page.project]
+- release = latest_stable_release(real_page)
+- download_url = "#{project_description.sourceforge_url}#{release.version}/"
 .row-fluid
   .hidden-phone.project-title-desktop
     .pull-left
@@ -7,17 +11,16 @@
     .pull-right
       .visible-desktop
         .pull-right
-          %a.btn.btn-large{:href => '#'} Get started
-          - release = latest_stable_release(real_page)
+          %a.btn.btn-large{:href => "#{get_started_url}"} Get started
           - if not release.nil?
             &nbsp;
-            %a.btn.btn-success.btn-large{:href => '#'}= "Download (#{release.version})"
+            %a.btn.btn-success.btn-large{:href => "#{download_url}"}= "Download (#{release.version})"
       .hidden-desktop
         .pull-right
-          %a.btn.btn-large{:href => '#'} Get started
+          %a.btn.btn-large{:href => "#{get_started_url}"} Get started
   .visible-phone
     .project-title-phone.text-center
       %div
         %h1= real_page.title
       %div
-        %a.btn{:href => '#'} Get started
+        %a.btn{:href => "#{get_started_url}"} Get started
