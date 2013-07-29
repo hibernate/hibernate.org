@@ -65,9 +65,15 @@
 // Table of content
 
 #toc {
+  width: 30%;
+  position: static;
+  top: 0px; 
+  float: right;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  margin-top: 1em;
   background-color: #efefef;
   padding: 1em;
-  margin-bottom: 1em;
   & > ol {
     margin: .5em 0 .5em .5em;
   }
@@ -80,12 +86,12 @@
 }
 
 #toctitle {
-  display: none;
   padding-left: 0.5em;
+  font-size:120%;
 }
 
 .sectlevel1 {
-  $sectlevel1-percent: 120%;
+  $sectlevel1-percent: 110%;
   font-size: $sectlevel1-percent;
   li {
     margin-left: 0;

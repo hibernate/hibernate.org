@@ -114,6 +114,7 @@ asciidoctor:
     idprefix: ''
     idseparator: '-'
     sectanchors: ''
+    toclevels: 3
     icons: font
     source-highlighter: coderay
     coderay-css: style
