@@ -10,8 +10,9 @@ title_partial: project/title-about.html.haml
   .span8
     .row-fluid
       .span12
-        %h3 Full-text search for entities
-        :markdown
+        :asciidoc
+          === Full-text search for entities
+
           Offers full-text search support for objects stored by Hibernate ORM, Infinispan and other sources.
           Think of it as Google(tm) for your entities:
 
@@ -20,8 +21,9 @@ title_partial: project/title-about.html.haml
           * find by approximation (fuzzy search)
     .row-fluid
       .span12
-        %h3 Cluster friendly
-        :markdown
+        :asciidoc
+          === Cluster friendly
+          
           Clustering indexes is not trivial. Hibernate Search offers several easy to setup clustering strategies:
 
           * master / slaves
@@ -29,15 +31,17 @@ title_partial: project/title-about.html.haml
           * Infinispan distributed index
     .row-fluid
       .span12
-        %h3 Faceting and geolocation
-        :markdown
+        :asciidoc
+          === Faceting and geolocation
+
           Geolocalized entities are as easy as `@Spatial`. Filter results around a certain location liek the user position. Hibernate Search offers to algorithms: a light one or a more scalable one.
           
           Faceting categorizes results by properties like price range or brand.
     .row-fluid
       .span12
-        %h3 Easy to use
-        :markdown
+        :asciidoc
+          === Easy to use
+
           Design to be easy to use from the ground up. Handles indexing, datastore synchronization, clustering and infrastructure transparently while you focus on the business sense of your queries.
 
   -# News right column

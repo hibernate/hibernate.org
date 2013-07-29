@@ -54,44 +54,42 @@ project: search
       Maven repository
 .row-fluid
   .span12
-    %h2 Maven repository
-    %p
-      Hibernate Search is built using Maven and publishes as part of the release process the project artifacts to the
-      %a{:href => "https://repository.jboss.org/nexus/"}
-        JBoss Maven repository
-      under
-      %a{:href => "https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{project_description.group_id}~#{project_description.artifact_id}~~~"}<
-        #{project_description.group_id}:#{project_description.artifact_id}
-      &#46; For more information on how to configure Maven to use JBoss's repository,
-      %a{:href => "http://community.jboss.org/wiki/MavenGettingStarted-Users"}
-        look here
-      or use&nbsp;
-      %code>
-        mvn install -s setting-example.xml
-      &#46;
-      
-      %p Here is how to declare the dependency in your Maven POM file
+    :asciidoc
+      :nexus: https://repository.jboss.org/nexus/
+      :nexus-search: https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{project_description.group_id}~#{project_description.artifact_id}~~~
+      :groupId: #{project_description.group_id}
+      :artifactId: #{project_description.artifact_id}
 
-      %pre
-        %code
-          &= "<dependency>"
-          = "&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;"
-          &= "    <groupId>#{project_description.group_id}</groupId>"
-          = "&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;"
-          &= "    <artifactId>#{project_description.artifact_id}</artifactId>"
-          = "&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;"
-          &= "    <version>#{project_description.releases.first.version}</version>"
-          = "&#x000A"
-          &= "</dependency>"
+      == Maven repository
+
+      Hibernate Search is built using Maven and publishes as part of the release process the project artifacts to the
+      {nexus}[JBoss Maven Repository] under {nexus-search}[{groupId}:{artifactId}]. 
+      For more information on how to configure Maven to use JBoss's repository,
+      http://community.jboss.org/wiki/MavenGettingStarted-Users[look here] or use `mvn install -s setting-example.xml`.
+      
+      Here is how to declare the dependency in your Maven POM file
+
+    -# we can't use asciidoc here as listing blocks do not apply variable substitution
+    %pre
+      %code
+        &= "<dependency>"
+        = "&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;"
+        &= "    <groupId>#{project_description.group_id}</groupId>"
+        = "&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;"
+        &= "    <artifactId>#{project_description.artifact_id}</artifactId>"
+        = "&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;"
+        &= "    <version>#{project_description.releases.first.version}</version>"
+        = "&#x000A"
+        &= "</dependency>"
 
 .row-fluid
   .span12
-    :markdown
-      ## Supported versions
+    :asciidoc
+      == Supported versions
 
       Hibernate Search is a fully supported component of both
       
-      * [JBoss Enterprise Application Platform](http://www.jboss.com/products/platforms/application)
-      * [JBoss Web Framework Kit](https://www.redhat.com/products/jbossenterprisemiddleware/web-framework-kit/)
+      * http://www.jboss.com/products/platforms/application[JBoss Enterprise Application Platform]
+      * https://www.redhat.com/products/jbossenterprisemiddleware/web-framework-kit/[JBoss Web Framework Kit]
 
       If you are looking for Hibernate Search support, contact Red Hat.
