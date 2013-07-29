@@ -103,6 +103,17 @@ wget:
     - http://static.jboss.org/images/example/
     - http://static.jboss.org/images/hibernate/
 
+asciidoctor:
+  :safe: safe
+  :attributes:
+    #sitename: WriteAdapt
+    idprefix: ''
+    idseparator: '-'
+    sectanchors: ''
+    icons: font
+    source-highlighter: coderay
+    coderay-css: style
+
 # Update resource URLs based on the profile
 profiles:
   development:
