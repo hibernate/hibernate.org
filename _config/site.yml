@@ -50,6 +50,9 @@ projects:
           href: 'https://hibernate.atlassian.net/browse/HSEARCH'
           css_class: 'icon-fixed-width icon-exclamation-sign'
           #  icon-bug only in font-awesome 3.2
+        - name: Forum
+          href: 'https://forum.hibernate.org'
+          css_class: 'icon-fixed-width icon-comments'
         - name: Source code
           href: 'https://github.com/hibernate/hibernate-search'
           css_class: 'icon-fixed-width icon-code'
