@@ -60,3 +60,57 @@
   }
 }
 
+// // Asciidoc
+
+// Table of content
+
+#toc {
+  background-color: #efefef;
+  padding: 1em;
+  margin-bottom: 1em;
+  & > ol {
+    margin: .5em 0 .5em .5em;
+  }
+  ol {
+    list-style-type: none;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+#toctitle {
+  display: none;
+  padding-left: 0.5em;
+}
+
+.sectlevel1 {
+  $sectlevel1-percent: 120%;
+  font-size: $sectlevel1-percent;
+  li {
+    margin-left: 0;
+    margin-right: 10%;
+    margin-top: .5em;
+    margin-bottom: .5em;
+  }
+  code {
+    font-size: 100%;
+  }
+}
+
+.sectlevel2 {
+  $sectlevel2-percent: 85%;
+  font-size: $sectlevel2-percent;
+}
+
+.sectlevel3 {
+  $sectlevel2-percent: 85%;
+  font-size: $sectlevel2-percent;
+}
+
+
+// Preamble
+
+#preamble {
+  font-size: 130%;
+}
