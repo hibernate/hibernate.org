@@ -51,30 +51,27 @@ project: search
                 %a{:href => "#{project_description.reference_doc}#{release.version_family}/api/"}
                   html
 
-    You can also find th
-    %a{:href => "#{project_description.reference_doc}"}<
-      documentation for older versions
+    :asciidoc
+      :ref_doc: #{project_description.reference_doc}
+
+      Documentation for older versions can be found {ref_doc}[on the reference documentation site].
 .row-fluid
   .span12
-    %h2 Guides
-    %dl.dl-horizontal
-      %dt
-        %a{:href => 'http://'}
-          Getting started guide
-      %dd For a gentle introduction to the concepts of Hibernate Search without being sidetracked by other technologies.
-      %dt
-        %a{:href => 'http://'}
-          TicketMonster tutorial
-      %dd Describes how to add a full-text search engine step by step from an existing Java EE application.
-
     :asciidoc
+      == Guides
+
+      link:/search/documentation/getting-started[Getting started guide]::
+      For a gentle introduction to the concepts of Hibernate Search without being sidetracked by other technologies.
+      link:http://example.com/ticket-monster[TicketMonster tutorial]::
+      Describes how to add a full-text search engine step by step from an existing Java EE application.
+
       == Books and Articles
       
-      *http://emmanuelbernard.com/books/hsia/[Hibernate Search in Action]* +
+      http://emmanuelbernard.com/books/hsia/[Hibernate Search in Action]::
       A bit outdated book on Hibernate Search but a very good reference on the product and search engines in general.
       It has been written by a member of the Hibernate Search team.
       
       ## Other documentation
 
-      Make sure to check the link:/search/documentation/faq/[FAQ].
+      Make sure to check the link:/search/faq/[FAQ].
       Last but not least, you can find some additional documentation in our https://community.jboss.org/en/hibernate/search[wiki].
