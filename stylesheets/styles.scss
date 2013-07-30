@@ -82,6 +82,24 @@ h1 {
   }
 }
 
+//footer
+
+footer.container {
+  $ratio: 90%;
+  padding-top: .3em;
+  padding-bottom: .3em;
+  font-size: $ratio;
+  line-height: 80%;
+  h4 {
+    font-size: 110%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  li {
+    line-height: 120%;
+  }
+}
+
 // // Asciidoc
 
 // Table of content

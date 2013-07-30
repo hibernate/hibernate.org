@@ -1,41 +1,34 @@
 - real_page = page["real_page"]
 %footer.container
   .row-fluid
-    .span2.offset1
-      %h4 Navigate
+    .span4.text-center
+      %h4 Projects
       %ul
         %li
-          %a{:href => "#", :title => "Learn"} Learn
+          %a{:href => "#{relative("/orm/", real_page)}", :title => "Hibernate ORM"} Hibernate ORM
         %li
-          %a{:href => "#", :title => "Get Started"} Get Started
+          %a{:href => "#{relative("/search/", real_page)}", :title => "Search"} Hibernate Search
         %li
-          %a{:href => "#", :title => "Forums"} Forums
+          %a{:href => "#{relative("/validator/", real_page)}", :title => "Hibernate Validator"} Hibernate Validator
         %li
-          %a{:href => "#", :title => "Get Involved"} Get Involved
+          %a{:href => "#{relative("/ogm/", real_page)}", :title => "Hibernate OGM"} Hibernate OGM
         %li
-          %a{:href => "#", :title => "Download"} Download
-    .span2
+          %a{:href => "#{relative("/tools/", real_page)}", :title => "Hibernate Tools"} Hibernate Tools
+        %li
+          %a{:href => "#{relative("/others/", real_page)}", :title => "Other projects"} Other projects
+    .span4.text-center
       %h4 Follow Us
       %ul
         %li
-          %a{:href => "#", :title => "Blog"} Blog
+          %a{:href => "http://in.relation.to", :title => "Blog"} Blog
         %li
-          %a{:href => "#", :title => "Twitter"} Twitter
+          %a{:href => "https://twitter.com/hibernate/", :title => "Twitter"} Twitter
         %li
-          %a{:href => "#", :title => "Google+"} Google+
-    .span2
-      %h4 Contribute
+          %a{:href => "https://plus.google.com/112681342290762837955/posts", :title => "Google+"} Google+
+    .span4.text-center
+      %h4 Contribute and community
       %ul
         %li
-          %a{:href => "#", :title => "Submit a bug"} Submit a bug
+          %a{:href => "#{relative("/community/", real_page)}", :title => "Community resources"} Community resources
         %li
-          %a{:href => "#", :title => "Write code"} Write Code
-        %li
-          %a{:href => "#", :title => "Join the team"} Join the team
-    .span3.offset1
-      %h4 LGPL 2.1 License
-      %p All dependencies of this project are available under the LGPL or a compatible license.
-      %p
-      .jbossbadge
-        %a{:href => "http://www.jboss.org/"}
-          %img{:src => "#{relative("/cache/static.jboss.org/theme/images/common/jbossbadge.png", real_page)}"}/
+          %a{:href => "https://hibernate.atlassian.net", :title => "Submit a bug"} Submit a bug
