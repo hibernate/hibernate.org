@@ -97,13 +97,6 @@ h1 {
 // Table of content
 
 #toc {
-  width: 30%;
-  position: static;
-  top: 0px; 
-  float: right;
-  margin-left: 1em;
-  margin-bottom: 1em;
-  margin-top: 1em;
   background-color: #efefef;
   padding: 1em;
   & > ol {
@@ -116,6 +109,25 @@ h1 {
     text-decoration: none;
   }
 }
+
+@media (min-width: 980px) {
+  #toc {
+    width: 30%;
+    position: static;
+    top: 0px; 
+    float: right;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+}
+
+@media (max-width: 979px) {
+  #toc {
+    margin: 1em;
+  }
+}
+
 
 #toctitle {
   padding-left: 0.5em;
