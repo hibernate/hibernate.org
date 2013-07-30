@@ -3,31 +3,38 @@ layout: project
 ---
 -# layout for pages related to a specific project
 -# handles left menu and title display
+-# display license
+- project_description = site.projects[page.project]
 
 -# Project specific navigation menu
 .row-fluid
-  .project-menu.span2
-    .text-center.project-menu-title
-      %span.icon-stack
-        %i.icon-circle.icon-stack-base.icon-fixed-width
-        %i{:class => "icon icon-light icon-fixed-width #{site.projects[page.project].icon}"}
-    -# Menu based on site.projects data
-    %ul.nav.nav-list
-      -# removes index.html and then replace download.html to download/
-      - current_path = page.output_path.sub(/index\.html$/, "").sub(/\.html$/,"/")
-      - site.projects[page.project].menu.intern.each do |menu|
-        -# active if path is a subpath of the menu item. The project home has to be treated differently as every path is a subpath of home
-        - active = (menu.href == "/#{page.project}/" && menu.href == current_path) || (menu.href != "/#{page.project}/" && current_path.start_with?(menu.href))
-        %li{:class => "#{(active ? "active" : "")}"}
-          %a{:href => "#{relative("#{menu.href}")}"}
-            %i{:class => "#{menu.css_class} menu-icon"}
-            #{menu.name}
-      %li.divider
-      - site.projects[page.project].menu.extern.each do |menu|
-        %li
-          %a{:href => "#{menu.href}"}
-            %i{:class => "#{menu.css_class} menu-icon"}
-            #{menu.name}
+  .span2
+    .project-menu
+      .text-center.project-menu-title
+        %span.icon-stack
+          %i.icon-circle.icon-stack-base.icon-fixed-width
+          %i{:class => "icon icon-light icon-fixed-width #{project_description.icon}"}
+      -# Menu based on site.projects data
+      %ul.nav.nav-list
+        -# removes index.html and then replace download.html to download/
+        - current_path = page.output_path.sub(/index\.html$/, "").sub(/\.html$/,"/")
+        - project_description.menu.intern.each do |menu|
+          -# active if path is a subpath of the menu item. The project home has to be treated differently as every path is a subpath of home
+          - active = (menu.href == "/#{page.project}/" && menu.href == current_path) || (menu.href != "/#{page.project}/" && current_path.start_with?(menu.href))
+          %li{:class => "#{(active ? "active" : "")}"}
+            %a{:href => "#{relative("#{menu.href}")}"}
+              %i{:class => "#{menu.css_class} menu-icon"}
+              #{menu.name}
+        %li.divider
+        - project_description.menu.extern.each do |menu|
+          %li
+            %a{:href => "#{menu.href}"}
+              %i{:class => "#{menu.css_class} menu-icon"}
+              #{menu.name}
+    %hr.divider
+    .license.text-center
+      Release under the
+      %a{:href => "#{project_description.license.url}"}= project_description.license.name
   .span10
     -# Title
     = partial( page.title_partial.nil? ? 'project/title.html.haml' : page.title_partial, {"real_page" => page} )

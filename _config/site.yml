@@ -29,6 +29,9 @@ projects:
     reference_doc: http://docs.jboss.org/hibernate/search/
     reference_pdf: hibernate_search_reference.pdf
     getting_started: /search/documentation/getting-started
+    license:
+      name: LGPL v2.1
+      url: https://raw.github.com/hibernate/hibernate-search/master/lgpl.txt
     menu:
       intern:
         - name: About
