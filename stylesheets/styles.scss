@@ -47,6 +47,15 @@ h1 {
   }
 }
 
+// align project menu color with regular text color
+.nav-list > li > a, .nav-list .nav-header {
+  color: $text-color;
+}
+
+.nav-list > .active > a, .nav-list > .active > a:hover, .nav-list > .active > a:focus {
+  background-color: $text-color;
+}
+
 // Project about page
 .project-title-desktop {
   margin-top: 20px;
