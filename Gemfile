@@ -8,6 +8,7 @@ gem 'kramdown', '~> 1.0.1' # Kramdown works on all platforms, rdiscount only on 
 gem 'htmlcompressor', '~> 0.0.3' # Adds in HTML minification, helps remove the warning on awestruct startup
 gem 'asciidoctor', '~> 0.1.3' # Asciidoc renderer
 gem 'coderay', '~> 1.0.9' #coderay for code highlighting in asciidoc
+gem 'rake', '~> 10.1.0'
 
 ## To enable guard and livereload
 # gem 'guard'
