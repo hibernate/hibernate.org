@@ -43,6 +43,12 @@ projects:
         - name: FAQ
           href: '/search/faq/'
           css_class: 'icon-fixed-width icon-question'
+        - name: Roadmap
+          href: '/search/roadmap/'
+          css_class: 'icon-fixed-width icon-road'
+        - name: Contribute
+          href: '/search/contribute/'
+          css_class: 'icon-fixed-width icon-beer'
       extern:
         - name: Wiki
           href: 'https://community.jboss.org/en/hibernate/search'
