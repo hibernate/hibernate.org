@@ -131,6 +131,14 @@ profiles:
     project_images_url: /cache/static.jboss.org/images/hibernate
     bootstrap_css_url: /cache/static.hibernate.org/stylesheets/bootstrap-community
     bootstrap_js_url: /cache/static.hibernate.org/javascripts/bootstrap-community
+  test:
+    jborg_fonts_url: http://static.jboss.org/theme/fonts
+    jborg_images_url: http://static.jboss.org/theme/images
+    jborg_js_url: http://static.jboss.org/theme/js
+    project_images_url: /cache/static.jboss.org/images/hibernate
+    bootstrap_css_url: /cache/static.hibernate.org/stylesheets/bootstrap-community
+    bootstrap_js_url: /cache/static.hibernate.org/javascripts/bootstrap-community
+    base_url: http://hibernate.org.beanvalidation.org
   staging:
     jborg_fonts_url: http://static.jboss.org/theme/fonts
     jborg_images_url: http://static.jboss.org/theme/images
