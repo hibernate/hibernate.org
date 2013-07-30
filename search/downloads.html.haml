@@ -69,6 +69,7 @@ project: search
       :nexus-search: https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{project_description.group_id}~#{project_description.artifact_id}~~~
       :groupId: #{project_description.group_id}
       :artifactId: #{project_description.artifact_id}
+      :prj-version: #{project_description.releases.first.version}
 
       == Maven repository
 
@@ -79,18 +80,16 @@ project: search
       
       Here is how to declare the dependency in your Maven POM file
 
-    -# we can't use asciidoc here as listing blocks do not apply variable substitution
-    %pre
-      %code
-        &= "<dependency>"
-        = "&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;"
-        &= "    <groupId>#{project_description.group_id}</groupId>"
-        = "&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;"
-        &= "    <artifactId>#{project_description.artifact_id}</artifactId>"
-        = "&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;"
-        &= "    <version>#{project_description.releases.first.version}</version>"
-        = "&#x000A"
-        &= "</dependency>"
+      [source,xml]
+      [subs="verbatim,attributes"]
+      .Maven dependency
+      ----
+      <dependency>
+          <groupId>{groupId}</groupId>
+          <artifactId>{artifactId}</artifactId>
+          <version>{prj-version}</version>
+      </dependency>
+      ----
 
 .row-fluid
   .span12
