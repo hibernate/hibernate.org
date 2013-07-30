@@ -68,16 +68,6 @@ h1 {
   background-color: $text-color;
 }
 
-// Project about page
-.project-title-desktop {
-  margin-top: 20px;
-  margin-bottom: 100px;
-}
-
-.project-title-phone {
-  margin-bottom: 30px;
-}
-
 // Project download page
 @media (min-width: 768px) {
   .release-bottons {
