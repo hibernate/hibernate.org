@@ -12,12 +12,8 @@ html_minifier: disabled
 # project specific information
 projects:
   search:
-    sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-search/
-    group_id: org.hibernate
-    artifact_id: hibernate-search
-    reference_doc: http://docs.jboss.org/hibernate/search/
-    reference_pdf: hibernate_search_reference.pdf
-    getting_started: /search/documentation/getting-started
+    name: Hibernate Search
+    icon: 'icon-search'
     releases:
       - version: 4.4.0.Alpha0
         version_family: 4.4
@@ -27,7 +23,12 @@ projects:
         version_family: 4.3
         date: 2013-06-08
         stable: true
-
+    sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-search/
+    group_id: org.hibernate
+    artifact_id: hibernate-search
+    reference_doc: http://docs.jboss.org/hibernate/search/
+    reference_pdf: hibernate_search_reference.pdf
+    getting_started: /search/documentation/getting-started
     menu:
       intern:
         - name: About

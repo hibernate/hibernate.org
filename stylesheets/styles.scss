@@ -41,6 +41,18 @@ h1 {
 }
 
 // Project menu
+.project-menu {
+  overflow: hidden;
+}
+.project-menu-title {
+  font-size: 200%;
+  margin-bottom:.5em;
+}
+
+#get-started-button, #download-button {
+  margin-bottom: 1em;
+}
+
 @media (min-width: 768px) and (max-width: 1199px) {
   .menu-icon {
     display: none !important;
