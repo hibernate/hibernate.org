@@ -5,6 +5,7 @@
 // If that fails we will have to start from a vanilla bootstrap
 
 // Common utilities
+@import "settings";
 
 // the default bootstrap community font is a bit too small
 body {
@@ -130,3 +131,37 @@ h1 {
 #preamble {
   font-size: 130%;
 }
+
+// admonitions (TIP, NOTES etc)
+// copied from asciidoctor.github.com
+
+.admonitionblock > table {
+  border: 0;
+  margin-bottom: 1.25em;
+  //width: 100%;
+  background: none;
+  td.icon {
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    width: 80px;
+    img {
+      max-width: none;
+    }
+  }
+
+  td.content {
+    padding-left: 2em;
+    //padding-right: emCalc(20px);
+    border-left: 1px solid $hr-border-color; 
+    color: $blockquote-font-color;
+
+    & > div:last-child {
+      p, ol, ul, dl, dl dd:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@import "awesome-icons";
