@@ -58,7 +58,7 @@ Make sure to get this zip file regularly if you see UI discrepencies.
 
 ## Serve the site locally
 
-* Run  `awestruct -d`
+* Run  `rake preview`
 * Open your browser to <http://localhost:4242>
 
 Any change will be automatically picked up except for `_partials` files.
@@ -69,7 +69,7 @@ If for whatever reason you make some changes which don't show up, you can
 completely regenerate the site:
 
 <!-- lang: bash -->
-    awestruct -d --force
+    rake clean preview
 
 ### If serving the site is slow...
 
