@@ -1,7 +1,10 @@
 !!! 5
 %html(lang="en")
   %head
-    %title #{page.title ? page.title : page.simple_name.capitalize } · #{site.title}
+    -# display page title - project name if under a project section or page title - site name otherwise
+    - project_name = page.project ? site.projects[page.project].name : nil
+    - page_title = "#{page.title ? page.title : page.simple_name.capitalize} - #{project_name ? project_name : site.title}"
+    %title= page_title
     = partial( page.head_partial.nil? ? 'head.html.haml' : page.head_partial, { "real_page" => page } )
 
   %body
