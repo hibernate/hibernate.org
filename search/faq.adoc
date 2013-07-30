@@ -6,10 +6,11 @@ Emmanuel Bernard
 :toc-placement: preamble
 :toc-title: Questions
 
-
 You've got a question burning you? We might have the answer for you.
 
-== No files are created in index directory, even on manual indexing
+== Indexes
+
+=== No file created in index directory
 
 Hibernate Search won't create a new index in existing directories.
 
@@ -17,12 +18,14 @@ The fundamental Lucene index files are created at framework startup, but existin
 Delete the directory: the framework will create it and build the basic index structure at startup.
 Since 3.1 it detects indexes in existing directories automatically.
 
-== Can I mix HQL and Lucene queries?
+== Queries
+
+=== Can I mix HQL and Lucene queries?
 
 This is not possible as there is no way to intersect the results from both queries without iterating on at least one of the results.
 You may consider adding additional fields to the Lucene index and then look at the Filters in the reference documentation.
 
-== When I retrieve the number of results and the result list, I see two queries
+=== Avoid two queries when retrieving results and size
 
 If you plan to return the number of matching results and the list of results, you should call the methods in the following order
 
@@ -34,21 +37,9 @@ fullTextQuery.getResultSize();
 
 This will execute a single Lucene query instead of two and will be faster.
 
-== When I run Hibernate Search in JBoss AS 4.2, I get a +NoSuchMethodError+
+== Configuration
 
-The error is: `Caused by: java.lang.NoSuchMethodError: org.hibernate.search.FullTextSession.createFullTextQuery(Lorg/apache/lucene/search/Query;[Ljava/lang/Class;)Lorg/hibernate/search/FullTextQuery;`
-
-Hibernate Search 3.0 requires Hibernate Annotations 3.3.x and JBoss AS 4.2 ships with 3.2.x. Replace the following jars:
-
-* hibernate-annotations.jar (3.3.x for Search 3.0)
-* hibernate-validator.jar (3.0.x for Search 3.0)
-* hibernate-entitymanager.jar (3.3.x for Search 3.0)
-* hibernate-commons-annotations.jar (3.0.x for Search 3.0)
-
-in `[JBOSS_HOME]/server/[myconfig]/lib`.
-Then place Hibernate Search and Lucene JARs in your EAR or WAR.
-
-== I get an error message saying Event listeners are not configured
+=== I get an error message saying Event listeners are not configured
 
 The full error message looks something like this:
 
@@ -91,28 +82,7 @@ Each Hibernate product reports its version when starting up.
 * If you sure you are using the right version of Annotations and Search and you still get this exception it might be that you have a custom class loading configuration which prevents Annotations to locate the Search specific event listeners.
 If this is the case try the manual configuration.
 
-== I am using Spring and the index is not being updated at transaction commit
-
-See also http://www.hibernate.org/441.html[spring integration] and especially check you're using the correct transaction manager:
-
-[source,xml]
-----
-<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-----
-
-== How do I properly shutdown Search?
-
-Search is using background threads to manage the indexes; they are gracefully closed when you close Hibernate's +SessionFactory+.
-Closing the +SessionFactory+ is always recommended; when using Search it's mandatory, otherwise your application might never terminate.
-
-[source,java]
-----
-sessionFactory.close();
-----
-
-When using `exclusive_index_use=true` it's also needed to properly clear the index locks; note that this options is enabled by default since Hibernate Search 4.0.
-
-== How do I get started with the search archetype?
+=== How do I get started with the search archetype?
 
 Use the following command, specifying the latest Hibernate Search version for archetypeVersion (or the version of your choice):
 
@@ -130,3 +100,41 @@ To get a full list of available archetypes in the repo run:
 ----
 mvn archetype:generate -DarchetypeRepository=http://repository.jboss.org/nexus/content/groups/public-jboss
 ----
+
+== Integration
+
+=== +NoSuchMethodError+ in JBoss AS 4.2
+
+The error is: `Caused by: java.lang.NoSuchMethodError: org.hibernate.search.FullTextSession.createFullTextQuery(Lorg/apache/lucene/search/Query;[Ljava/lang/Class;)Lorg/hibernate/search/FullTextQuery;`
+
+Hibernate Search 3.0 requires Hibernate Annotations 3.3.x and JBoss AS 4.2 ships with 3.2.x. Replace the following jars:
+
+* hibernate-annotations.jar (3.3.x for Search 3.0)
+* hibernate-validator.jar (3.0.x for Search 3.0)
+* hibernate-entitymanager.jar (3.3.x for Search 3.0)
+* hibernate-commons-annotations.jar (3.0.x for Search 3.0)
+
+in `[JBOSS_HOME]/server/[myconfig]/lib`.
+Then place Hibernate Search and Lucene JARs in your EAR or WAR.
+
+=== I am using Spring and the index is not being updated at transaction commit
+
+See also http://www.hibernate.org/441.html[spring integration] and especially check you're using the correct transaction manager:
+
+[source,xml]
+----
+<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+----
+
+=== How do I properly shutdown Search?
+
+Search is using background threads to manage the indexes; they are gracefully closed when you close Hibernate's +SessionFactory+.
+Closing the +SessionFactory+ is always recommended; when using Search it's mandatory, otherwise your application might never terminate.
+
+[source,java]
+----
+sessionFactory.close();
+----
+
+When using `exclusive_index_use=true` it's also needed to properly clear the index locks; note that this options is enabled by default since Hibernate Search 4.0.
+
