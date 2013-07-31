@@ -9,7 +9,7 @@ title_partial: project/title-about.html.haml
 .row-fluid
   .span8
     .row-fluid
-      .span12
+      .span12.feature-block
         :asciidoc
           === Full-text search for entities
 
@@ -20,7 +20,7 @@ title_partial: project/title-about.html.haml
           * order results by relevance
           * find by approximation (fuzzy search)
     .row-fluid
-      .span12
+      .span12.feature-block
         :asciidoc
           === Cluster friendly
           
@@ -30,7 +30,7 @@ title_partial: project/title-about.html.haml
           * JMS / JGroups replication
           * Infinispan distributed index
     .row-fluid
-      .span12
+      .span12.feature-block
         :asciidoc
           === Faceting and geolocation
 
@@ -38,14 +38,14 @@ title_partial: project/title-about.html.haml
           
           Faceting categorizes results by properties like price range or brand.
     .row-fluid
-      .span12
+      .span12.feature-block
         :asciidoc
           === Easy to use
 
           Design to be easy to use from the ground up. Handles indexing, datastore synchronization, clustering and infrastructure transparently while you focus on the business sense of your queries.
 
   -# News right column
-  .span4.well
+  .span4.well.news-sidebar
     %h2 Latest news
     .news
       %h4 JBoss Community Recognition Awards: Voting ends tomorrow!
