@@ -1,0 +1,50 @@
+= Contribute to Hibernate Search
+mmanuel Bernard
+:awestruct-layout: project-frame
+:awestruct-project: search
+
+Thanks for your interest! Hibernate Search is an open source project and community.
+We love contributions that scratch somebody's own itch, it brings the project forward.
+
+== Getting and building the code
+
+You will need Maven 3 and git to get and build the sources.
+
+[source,bash]
+----
+git clone git@github.com:hibernate/hibernate-search.git
+cd hibernate-search
+mvn clean install -s settings-example.xml
+----
+
+TIP: You can find more information on how to build Hibernate Search and its documentation on the https://github.com/hibernate/hibernate-search/blob/master/README.md[README file] at the root of the git repository.
+
+== What to contribute
+
+You can contribute anything from code to test to documentation.
+If you do not have a specific itch to scratch, you can find the https://hibernate.atlassian.net/issues/?jql=project%20%3D%20HSEARCH%20AND%20status%20in%20(Open%2C%20Reopened%2C%20%22Awaiting%20Test%20Case%22)%20AND%20%22Suitable%20for%20new%20contributors%22%20%3D%20%22Yes%2C%20likely%22%20ORDER%20BY%20updated%20DESC[list of tasks] suitable for new contributors.
+
+== How to contribute
+
+*Do share early and often. Don't be afraid, make the jump.*
+
+In good open source way, it is better to share a prototype and get input from everyone.
+We love GitHub pull requests. This is our way to discuss features, review and share code.
+So fork our repository and send a pull request. We are waiting.
+
+[TIP]
+====
+Want to know more about Git and pull requests?
+You can start with http://in.relation.to/Bloggers/HibernateMovesToGitGitTipsAndTricks[this blog post].
+====
+
+A good contribution has some or all of the following characteristics:
+
+* it respects the project code style - find templates for https://community.jboss.org/docs/DOC-16649[Eclipse] and https://community.jboss.org/docs/DOC-15468[IntelliJ IDEA]
+* a feature or bug fix has an associated suite of tests
+* documentation is updated
+* the code compiles and the tests pass `mvn clean install`
+
+And last but not least, come discuss with us.
+We are hanging on the hibernate-dev mailing list and on #hibernate-dev on freenode.
+Find how to join then http://localhost:4242/community/#contribute[here].
