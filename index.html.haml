@@ -10,9 +10,9 @@ title: Hibernate - Idiomatic persistence
 .well.well-small
   .row
     .span9
-      Latest news:
-      %a(href="http://in.relation.to/Bloggers/BeanValidation11FeatureSpotlightExpressionLanguage")<
-        Bean Validation 1.1 Feature Spotlight - Expression Language
+      #myCarousel
+        %i.icon-refresh.icon-spin.icon-large
+
     .span2
       .pull-right
         %a(href="http://in.relation.to/")
@@ -79,3 +79,39 @@ title: Hibernate - Idiomatic persistence
       offers relational database sharding.
       %a{:href => relative("/metamode-generator/")} Hibernate Metamodel Generator
       is an annotation processor that plugs into the compiler to generate the type-safe JPA model.
+
+%script{ :type => 'text/javascript', :src => 'https://www.google.com/jsapi'}
+-# Uses Google Feed API to load in.relation.to feed and replace the DOM elements
+:javascript
+  google.load("feeds", "1");
+
+  function initialize() {
+    var feed = new google.feeds.Feed("http://in.relation.to/service/Feed/atom/Area/Bloggers/Comments/exclude");
+    feed.setNumEntries(5);
+    feed.load(function(result) {
+      if (!result.error) {
+        var feedDiv = $('#myCarousel');
+        feedDiv.empty();
+        feedDiv.addClass('carousel slide');
+        var ol = $('<ol/>');
+        var inner = $('<div class="carousel-inner"/>');
+        for (var i = 0; i < result.feed.entries.length; i++) {
+          var entry = result.feed.entries[i];
+          var li = $('<li data-slide-to="' + i + '", data-target="#myCarousel"/>');
+          var entry_item = $('<div/>');
+          entry_item.addClass('item');
+          entry_item.append(
+            $('<a href="' + entry.link + '"/>').text(entry.title)
+          );
+          if (i == 0) {
+            li.addClass('active');
+            entry_item.addClass('active');
+          }
+          ol.append(li);
+          inner.append(entry_item);
+        }
+        feedDiv.append(ol).append(inner);
+      }
+    });
+  }
+  google.setOnLoadCallback(initialize);

@@ -1,35 +1,46 @@
 -# Latest news
--# Todo read from the RSS feed
 -# Todo customize the tag to read from by project and return all feed if outside a project
 - real_page = page["real_page"]
 .news-sidebar.well
   %h2 Latest news
-  .news
-    %h4 JBoss Community Recognition Awards: Voting ends tomorrow!
-    %small
-      25-Jul-2013
-    %p
-      The voting for the JBoss Community Recognition Awards 2013 ends tomorrow; if you haven't done it yet please vote for our contributors.
-      
-      Among other amazing contributors, some have done amazing work on Hibernate projects and we think they deserve a special recognition
-      %a{:href => "http://in.relation.to/Bloggers/JBossCommunityRecognitionAwardsVotingEndsTomorrow"} more
-  .news
-    %h4 London: Meet an Open Source Project
-    %small
-      23-Jul-2013
-    %p
-      Tomorrow the London Java Community (LJC) meets for the monthly Meet a Project night. I'll be there again, this time to explain how to get started contributing to Hibernate Search and answer all the questions you might have about the mysterious world of open source professionals.
+  #feed
+    .text-center
+      %i.icon-refresh.icon-spin.icon-4x
+  %a{:href => "http://in.relation.to/tag/Hibernate+Search"} Other news
+%script{ :type => 'text/javascript', :src => 'https://www.google.com/jsapi'}
+-# Uses Google Feed API to load in.relation.to feed and replace the DOM elements
+:javascript
+  google.load("feeds", "1");
 
-      Contributing to Hibernate
-      %a{:href => "http://in.relation.to/Bloggers/LondonMeetAnOpenSourceProject"} more
-  .news
-    %h4 Hibernate Search 4.3.0.Final was spotted in Boston
-    %small
-      11-Jun-2013
-    %p
-      We're in Boston for JUDCon and Red Hat Summit; Emmanuel is on stage coding live a nice new demo using Hibernate Search to combine full-text with geographic filtering. It will be contributed to JDF quickstarts but you can already get the sources.
-
-      He's using Hibernate Sear
-      %a{:href => "http://in.relation.to/Bloggers/HibernateSearch430FinalWasSpottedInBoston"} more
-  .news
-    %a{:href => "http://in.relation.to/tag/Hibernate+Search"} Other news
+  function initialize() {
+    var feed = new google.feeds.Feed("http://in.relation.to/service/Feed/atom/Area/Bloggers/Comments/exclude");
+    feed.setNumEntries(5);
+    feed.load(function(result) {
+      if (!result.error) {
+        var feedDiv = $('#feed');
+        feedDiv.empty();
+        for (var i = 0; i < result.feed.entries.length; i++) {
+          var entry = result.feed.entries[i];
+          var entryDate = new Date(entry.publishedDate);
+          var date_string =
+            entryDate.getFullYear() + '-'
+            + ('0' + entryDate.getDate()).slice(-2) + '-'
+            + ('0' + (entryDate.getMonth()+1)).slice(-2);
+          feedDiv.append(
+            $('<div class="news"/>').append(
+              $('<h4/>').text(entry.title)
+            ).append(
+              $('<small/>').text(date_string)
+            ).append(
+              $('<p/>').text(entry.contentSnippet).append(
+                ' <a href="' + entry.link + '">more</a>'
+              )
+            ).append(
+              '<hr/>'
+            )
+          );
+        }
+      }
+    });
+  }
+  google.setOnLoadCallback(initialize);

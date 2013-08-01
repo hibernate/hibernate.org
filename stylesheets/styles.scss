@@ -44,6 +44,20 @@ h2, h3 {
   color: #ffffff;
 }
 
+//home page
+
+//headlines
+
+#myCarousel {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 0;
+  overflow: hidden;
+  ol {
+    display: none;
+  }
+}
+
 // Project menu
 .project-menu {
   overflow: hidden;
