@@ -25,6 +25,10 @@ h2, h3 {
   text-align: center;
 }
 
+code, pre {
+  font-size: 85%
+}
+
 // Headers and top nav
 #cross-nav {
   background-color: transparent;
@@ -236,6 +240,21 @@ footer.container {
       }
     }
   }
+}
+
+// listing blocks
+
+.listingblock > .title {
+  //margin-left: 5em;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 1em;
+  padding-top: .5em;
+  margin-bottom: -.5em;
+  border-width: 1px 0 0 0;
+  border-color: $hr-border-color;
+  text-align: center;
+  border-style: solid;
 }
 
 @import "awesome-icons";
