@@ -11,7 +11,7 @@ html_minifier: disabled
 
 # project specific information
 projects:
-  # search project
+  # Search
   search:
     name: Hibernate Search
     icon: 'icon-search'
@@ -74,8 +74,66 @@ projects:
         - name: CI
           href: 'http://ci.hibernate.org/job/hibernate-search-master/'
           css_class: 'icon-fixed-width icon-stethoscope'
+  # Validator
+  validator:
+    name: Hibernate Validator
+    icon: 'icon-validator'
+    releases:
+      - version: 5.1.0.Alpha1
+        version_family: 5.1
+        date: 2013-04-30
+        stable: false
+      - version: 5.0.1.Final
+        version_family: 5.0
+        date: 2013-04-30
+        stable: true
+      - version: 4.3.1.Final
+        version_family: 4.3
+        date: 2012-11-12
+        stable: true
+    sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-validator/
+    group_id: org.hibernate
+    artifact_id: hibernate-validator
+    reference_doc: http://docs.jboss.org/hibernate/validator/
+    reference_pdf: hibernate_validator_reference.pdf
+    getting_started: /validator/documentation/getting-started
+    license:
+      name: ASL v2
+      url: https://raw.github.com/hibernate/hibernate-validator/master/license.txt
+    menu:
+      intern:
+        - name: About
+          href: '/validator/'
+          css_class: 'icon-fixed-width icon-home'
+        - name: Downloads
+          href: '/validator/downloads'
+          css_class: 'icon-fixed-width icon-cloud-download'
+        - name: Documentation
+          href: '/validator/documentation'
+          css_class: 'icon-fixed-width icon-book'
+      extern:
+        - name: Wiki
+          href: 'https://community.jboss.org/en/hibernate/validator'
+          css_class: 'icon-fixed-width icon-edit'
+        - name: Contribute
+          href: 'https://community.jboss.org/wiki/ContributingToHibernateValidator'
+          css_class: 'icon-fixed-width icon-beer'
+        - name: FAQ
+          href: 'https://community.jboss.org/wiki/HibernateValidatorFAQ'
+          css_class: 'icon-fixed-width icon-question'
+        - name: Issues
+          href: 'https://hibernate.atlassian.net/browse/HV'
+          css_class: 'icon-fixed-width icon-exclamation-sign'
+        - name: Forum
+          href: 'https://forum.hibernate.org'
+          css_class: 'icon-fixed-width icon-comments'
+        - name: Source code
+          href: 'https://github.com/hibernate/hibernate-validator'
+          css_class: 'icon-fixed-width icon-code'
+        - name: CI
+          href: 'https://hibernate-validator.ci.cloudbees.com/'
+          css_class: 'icon-fixed-width icon-stethoscope'
  #other projects would come here
-
 
 # Merge multiple JavaScript files to improve performance
 fileMerger:

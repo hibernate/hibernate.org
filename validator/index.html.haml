@@ -1,0 +1,47 @@
+---
+layout: project-frame
+title: About Hibernate Validator
+project: validator
+title_partial: project/title-about.html.haml
+---
+
+-# Center body
+.row-fluid
+  .span8
+    .row-fluid
+      .span12.feature-block
+        :asciidoc
+          === Bean Validation reference implementation
+
+          Hibernate Validator 5.x is the reference implementation for JSR 349 - Bean Validation 1.1 of which Red Hat is the specification lead.
+
+          JSR 349 - Bean Validation defines a metadata model and API for JavaBean validation as well as method validation. The default metadata source are annotations, with the ability to override and extend the meta-data through the use of XML validation descriptors. The API is not tied to a specific application tier or programming model. It is specifically not tied to either the web tier or the persistence tier, and is available for both server-side application programming, as well as rich client Swing application developer.
+    .row-fluid
+      .span12.feature-block
+        :asciidoc
+          === Bean Validation TCK
+          
+          Together with the reference implementation, Hibernate provides also the Bean Validation TCK. You can find more information about the TCK here.
+
+          For more information regarding the specification itself refer to beanvalidation.org.
+    .row-fluid
+      .span12.feature-block
+        :asciidoc
+          === Hibernate Validator Annotation Processor
+          Have you ever unintentionally done one of the following:
+
+          * Annotated a bean property with a constraint which does not have a constraint validator for this type  (e.g. by annotated a String with @Past)
+          * Annotated the setter of a JavaBean property instead of the getter
+          * Annotated static fields or methods with constraint annotations
+
+          Then the Hibernate Validator Annotation Processor is the right thing for you. It is an annotation processor based on JSR-269 which plugs into the build process and raises compilation errors whenever constraint annotations are incorrectly used. Read more about this processor here. It is available in the JBoss Maven Repository.
+    .row-fluid
+      .span12.feature-block
+        :asciidoc
+          === ASL 2.0 licensed
+
+          All artifacts described here, namely Hibernate Validator 5 as well as Bean Validation API and TCK are provided and distributed by JBoss (Red Hat) under the Apache Software License 2.0.
+
+  -# News right column
+  .span4
+    = partial( 'common/latest-news.html.haml', {"real_page" => page} )

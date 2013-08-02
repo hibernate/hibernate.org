@@ -1,0 +1,67 @@
+---
+layout: project-frame
+title: Hibernate Validator documentation
+project: validator
+---
+-# Metadata from site.yml for the project
+- project_description = site.projects[page.project]
+- get_started_url = relative("#{site.projects[page.project].getting_started}", page)
+
+-# Documentation buttons using the latest dev and latest stable releases
+.release-bottons.hidden-phone
+  - stable_release = latest_stable_release(page)
+  .row-fluid.text-center
+    - if not stable_release.nil?
+      &nbsp;
+      %a.btn.btn-large.btn-success{:href => "#{project_description.sourceforge_url}#{stable_release.version}/"} Get documentation for #{stable_release.version}
+.release-bottons.visible-phone
+  - stable_release = latest_stable_release(page)
+  .row-fluid.text-center
+    - if not stable_release.nil?
+      #download-button
+        %a.btn.btn-success{:href => "#{project_description.sourceforge_url}#{stable_release.version}/"} Get documentation for #{stable_release.version}
+.row-fluid
+  .span12
+    -# Documentation table built form the metadata
+    %h2 Reference documentation
+    %table.table.table-bordered.table-striped
+      %thead
+        %tr
+          %th Document
+          %th Version
+          %th Language
+          %th Format
+      %tbody
+        - site.projects[page.project].releases.each do |release|
+          %tr
+            %td Reference documentation
+            %td= release.version
+            %td English
+            %td
+              %a{:href => "#{project_description.reference_doc}#{release.version_family}/reference/en-US/html/"}
+                html
+              |
+              %a{:href => "#{project_description.reference_doc}#{release.version_family}/reference/en-US/html_single/"}
+                html single
+              |
+              %a{:href => "#{project_description.reference_doc}#{release.version_family}/reference/en-US/pdf/#{project_description.reference_pdf}"}
+                pdf
+            %tr
+              %td JavaDoc
+              %td
+              %td English
+              %td
+                %a{:href => "#{project_description.reference_doc}#{release.version_family}/api/"}
+                  html
+
+    :asciidoc
+      :ref_doc: #{project_description.reference_doc}
+
+      Documentation for older versions can be found {ref_doc}[on the reference documentation site].
+.row-fluid
+  .span12
+    :asciidoc      
+      == Other documentation
+
+      Make sure to check the https://community.jboss.org/wiki/HibernateValidatorFAQ[FAQ].
+      Last but not least, you can find some additional documentation in our https://community.jboss.org/en/hibernate/validator[wiki].
