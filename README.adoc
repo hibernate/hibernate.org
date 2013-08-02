@@ -2,26 +2,29 @@
 :awestruct-layout: title-nocol
 :toc:
 
-A bit of Git, a bit a Ruby and you will get your local version of hibernate.org served.
+A bit of Git, a bit of Ruby and you will get your local hibernate.org served.
+
+== Prerequisites
+
+* Get http://git-scm.com/[Git]
+* Get http://www.ruby-lang.org/en/[Ruby 1.9.3] (part of the RVM install if you follow that path - see below)
+* Get http://rubygems.org/[RubyGems 1.3.6] or above
+* Get http://www.gnu.org/software/wget/[GNU Wget 1.14]
+* If on Mac OS, get XCode (needed for native gems)
 
 == Installation
 
-* get Git
-* get Ruby 1.9.3 (part of the RVM install if you follow that path - see below)
-* get RubyGems 1.3.6 or above
-* get GNU Wget 1.14
-* if on Mac OS, get XCode (needed for native gems)
-
+=== Git
 Install Git to your system. http://help.github.com/[GitHub's help page] is a good starting
-point. http://in.relation.to/Bloggers/HibernateMovesToGitGitTipsAndTricks[Emmanuel's blog]
-on Git tips and tricks is useful too.
+point. If you are looking for some tips and tricks, checkout http://in.relation.to/Bloggers/HibernateMovesToGitGitTipsAndTricks[Emmanuel's blog].
 
+=== Ruby (via RVM)
 Ruby like many other platforms has its dependency hell. We do recommend you use RVM to
-isolate your dependencies. The RVM steps are optional though.
+isolate your ruby runtimes as well as dependencies (gems). The RVM steps are optional though.
+If you are not going to use RVM have a look at the different installations http://www.ruby-lang.org/en/downloads/[options] you have. 
 
-Install https://rvm.io[RVM].
-
-Then set up the isolated environment
+* Install https://rvm.io[RVM].
+* Set up the isolated environment for the site
 
 [source,bash]
 ----
@@ -30,6 +33,7 @@ rvm use 1.9.3
 rvm gemset create awestruct
 ----
 
+=== Get the source
 Next, let's retrieve the website.
 
 [source,bash]
@@ -37,6 +41,25 @@ Next, let's retrieve the website.
 git clone git@github.com:hibernate/hibernate.org.git
 cd hibernate.org
 ----
+
+==== Preparing Hibernate specific resources
+
+As a temporary measure, resources from the JBoss Community Bootstrap are compiled
+externally. Retrieve this https://dl.dropboxusercontent.com/u/692318/redhat/hibernate-site/static.hibernate.org.zip[zip file],
+and unzip it under `hibernate.org/cache`.
+You should get a `hibernate.org/cache/static.hibernate.org/...` and a `hibernate.org/cache/static.jboss.org/...` directory.
+
+[source]
+----
+mkdir cache
+cd cache
+wget --no-check-certificate https://dl.dropboxusercontent.com/u/692318/redhat/hibernate-site/static.hibernate.org.zip
+unzip static.hibernate.org.zip
+----
+
+Make sure to get this zip file regularly if you see UI discrepancies.
+
+==== RVM config (optional)
 
 If you use RVM, add a `.rvmrc` file in the directory containing
 
@@ -48,41 +71,23 @@ rvm ruby-1.9.3@awestruct
 This will set up the right environment when you enter the directory.
 The first time, leave and reenter the directory `cd ..;cd hibernate.org`.
 
-Finally, let's install Awestruct
+=== Install Ruby dependencies
 
 [source,bash]
 ----
 gem install bundler
-# or sudo gem install bundler on Mac OS X if you don't use RVM
 bundle install
 ----
 
 Note that if someone updates Awestruct or any dependent gem via the `Gemfile` dependency
 management, you need to rerun `bundle install`.
 
-=== Getting the Hibernate specific resources
-
-As a temporary measure, resources from the JBoss Community Bootstrap are compiled
-externally. Retrieve this https://dl.dropboxusercontent.com/u/692318/redhat/hibernate-site/static.hibernate.org.zip[zip file],
-and unzip it under `hibernate.org/cache`.
-You should get a `hibernate.org/cache/static.hibernate.org/...` and a `hibernate.org/cache/static.jboss.org/...` directory.
-
-[source]
-----
-mkdir cache
-cd cache
-wget https://dl.dropboxusercontent.com/u/692318/redhat/hibernate-site/static.hibernate.org.zip
-unzip static.hibernate.org.zip
-----
-
-Make sure to get this zip file regularly if you see UI discrepancies.
-
 == Serve the site locally
 
 * Run  `rake preview`
 * Open your browser to http://localhost:4242
 
-Any change will be automatically picked up except for `_partials` files.
+Any change will be automatically picked up except for changes to `_partials` files.
 
 [NOTE]
 ====
@@ -109,10 +114,15 @@ Please use Listen::Adapter#start for a non-blocking listener and Listen::Listene
 That's ok, it's not your fault ;) It's related to some Awestruct limitations.
 ====
 
+== Next steps
+
+Using you local site, you can have a look at our http://localhost:4242/README/[survival guide to editing this website] to get you started.
+
+== Tips & Tricks
+
 === If your changes are not visible...
 
-If for whatever reason you make some changes which don't show up, you can
-completely regenerate the site:
+completely regenerate the site via:
 
 [source,bash]
 ----
@@ -140,10 +150,7 @@ Sample code available on this website is released under TBD.
 By submitting a "pull request" or otherwise contributing to this repository, you
 agree to license your contribution under the respective licenses mentioned above.
 
-=== Acknowledgements
+== Acknowledgements
 
 This website uses https://github.com/jbossorg/bootstrap-community[JBoss Community Bootstrap].
 
-== Next steps
-
-You can have a look at our link:/survival-guide/[survival guide to editing this website] to get you started.
