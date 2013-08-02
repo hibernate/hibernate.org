@@ -41,13 +41,13 @@ You can make the edition / review faster by using the livereload plugin in your 
 . Install the appropriate http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-[live reload plugin].
 . Install the right guard gems
 +
-[source,bash]
+[source]
 ----
 gem install guard guard-livereload yajl-ruby
 ----
 . Start `guard` (in separate terminal from the root of the repository checkout)
 +
-[source,bash]
+[source]
 ----
 guard
 ----

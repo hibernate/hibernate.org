@@ -26,7 +26,7 @@ If you are not going to use RVM have a look at the different installations http:
 * Install https://rvm.io[RVM].
 * Set up the isolated environment for the site
 
-[source,bash]
+[source]
 ----
 rvm install 1.9.3
 rvm use 1.9.3
@@ -36,7 +36,7 @@ rvm gemset create awestruct
 === Get the source
 Next, let's retrieve the website.
 
-[source,bash]
+[source]
 ----
 git clone git@github.com:hibernate/hibernate.org.git
 cd hibernate.org
@@ -63,7 +63,7 @@ Make sure to get this zip file regularly if you see UI discrepancies.
 
 If you use RVM, add a `.rvmrc` file in the directory containing
 
-[source,bash]
+[source]
 ----
 rvm ruby-1.9.3@awestruct
 ----
@@ -73,7 +73,7 @@ The first time, leave and reenter the directory `cd ..;cd hibernate.org`.
 
 === Install Ruby dependencies
 
-[source,bash]
+[source]
 ----
 gem install bundler
 bundle install
@@ -93,7 +93,7 @@ Any change will be automatically picked up except for changes to `_partials` fil
 ====
 You might see warnings at startup like
 
-[source,bash]
+[source]
 ----
 WARNING: Missing required dependency to activate optional built-in extension coffeescripttransform.rb
   cannot load such file -- coffee-script
@@ -124,7 +124,7 @@ Using you local site, you can have a look at our link:/survival-guide/[survival 
 
 completely regenerate the site via:
 
-[source,bash]
+[source]
 ----
 rake clean preview
 ----

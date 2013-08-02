@@ -86,7 +86,7 @@ If this is the case try the manual configuration.
 
 Use the following command, specifying the latest Hibernate Search version for archetypeVersion (or the version of your choice):
 
-[source,bash]
+[source]
 ----
 mvn archetype:generate -DarchetypeGroupId=org.hibernate -DarchetypeArtifactId=hibernate-search-quickstart -DarchetypeVersion=4.0.0.Final -DarchetypeRepository=http://repository.jboss.org/nexus/content/groups/public-jboss/
 ----
@@ -96,7 +96,7 @@ Once the sample project is created you can inspect the sources and run for exmap
 
 To get a full list of available archetypes in the repo run:
 
-[source,bash]
+[source]
 ----
 mvn archetype:generate -DarchetypeRepository=http://repository.jboss.org/nexus/content/groups/public-jboss
 ----
