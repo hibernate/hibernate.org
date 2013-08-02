@@ -1,8 +1,10 @@
 ---
 layout: project-frame
-title: Hibernate Search documentation
-project: search
 ---
+-# project documentation page
+-# show title, action buttons for reference doc and getting started guide
+-# show reference documentation for each of the highlighted releases
+
 -# Metadata from site.yml for the project
 - project_description = site.projects[page.project]
 - get_started_url = relative("#{site.projects[page.project].getting_started}", page)
@@ -63,21 +65,4 @@ project: search
       Documentation for older versions can be found {ref_doc}[on the reference documentation site].
 .row-fluid
   .span12
-    :asciidoc
-      == Guides
-
-      link:/search/documentation/getting-started[Getting started guide]::
-      For a gentle introduction to the concepts of Hibernate Search without being sidetracked by other technologies.
-      link:http://example.com/ticket-monster[TicketMonster tutorial]::
-      Describes how to add a full-text search engine step by step from an existing Java EE application.
-
-      == Books and Articles
-      
-      http://emmanuelbernard.com/books/hsia/[Hibernate Search in Action]::
-      A bit outdated book on Hibernate Search but a very good reference on the product and search engines in general.
-      It has been written by a member of the Hibernate Search team.
-      
-      ## Other documentation
-
-      Make sure to check the link:/search/faq/[FAQ].
-      Last but not least, you can find some additional documentation in our https://community.jboss.org/en/hibernate/search[wiki].
+    ~ content
