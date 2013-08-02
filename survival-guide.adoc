@@ -187,7 +187,7 @@ All are in the `_layouts` directory.
 There are a few important layouts:
 
 * `project` (`project.html.haml`): it represents a generic page structure (we will change the name in a little while)
-* `project-frame` (`project/project-frame.html.haml`): represents a project specific page. All files under`search`, `orm`, `validator` etc use this layout
+* `project-frame` (`project/project-frame.html.haml`): represents a project specific page. All files under `search`, `orm`, `validator` etc. use this layout
 * `title-nocol` (`common/title-nocol.html.haml`): represents a generic page with a title and no column. Useful for generic Asciidoc pages like this one.
 
 == Other concepts
