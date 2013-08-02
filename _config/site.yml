@@ -11,6 +11,7 @@ html_minifier: disabled
 
 # project specific information
 projects:
+  # search project
   search:
     name: Hibernate Search
     icon: 'icon-search'
@@ -69,6 +70,7 @@ projects:
         - name: CI
           href: 'http://ci.hibernate.org/job/hibernate-search-master/'
           css_class: 'icon-fixed-width icon-stethoscope'
+ #other projects would come here
 
 
 # Merge multiple JavaScript files to improve performance

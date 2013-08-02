@@ -1,3 +1,7 @@
+---
+layout: project
+title: readme
+---
 # Readme - How to build <http://hibernate.org>
 
 A bit of Git, a bit a Ruby and you will get your local version of hibernate.org served.

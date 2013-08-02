@@ -1,0 +1,197 @@
+= Survival guide to the website edition
+Emmanuel Bernard
+:awestruct-layout: title-nocol
+:toc:
+:toc-placement: preamble
+:numbered:
+
+This document will guide you through the ways of website edition.
+
+== TL;DR
+
+Wanna start hacking right away? This section is for you.
+
+Look at the `search` directory for inspiration in content, structure and markup examples.
+
+To start a new project, do the following:
+
+. create the project directory `mkdir orm`
+. copy the pages from search `cp -R search orm`
+. create a project section in `_config/site.yml` under `projects`.
+.. best is to simply copy the search subsection and update the data
+.. the project section name is lowercase and corresponds to the URL path (`search` and not `hibernate-search`)
+. edit the pages under `orm/` and replace the `project` or `awestruct-project` attribute to the lowercase project name
+
+== Prerequisites
+
+Follow the link:/README/[README] instructions to get Awestruct and its dependencies up and running.
+
+== How to edit
+
+Use your favorite editor. I personally use +vim+.
+All pages are using text based markups with various degrees of flexibility and readability.
+Indentation is two spaces.
+
+CAUTION: In Ruby indentation matters, be careful.
+
+=== Live reload (optional)
+
+You can make the edition / review faster by using the livereload plugin in your browser.
+
+. Install the appropriate http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-[live reload plugin].
+. Install the right guard gems
++
+[source,bash]
+----
+gem install guard guard-livereload yajl-ruby
+----
+. Add on the website root a `Guardfile`
++
+[source,bash]
+----
+guard 'livereload' do
+    watch(%r{_site/.+\.(css|js|html|json)})
+end
+----
+. Start `guard`
++
+[source,bash]
+----
+guard
+----
+
+Every time you save a file, the web page will be automatically reloaded assuming you have activated the browser plugin.
+
+== Add a page
+
+There are two types of pages, http://haml.info[HAML] based (`.html.haml`) and http://asciidoctor.org/docs/asciidoc-writers-guide/[Asciidoc] (`.adoc`).
+
+HAML::
+HAML is close to HTML and let's you use Ruby. Use this when you need special layouts in your page or use the site metadata.
+In general, only super users should use them.
+Asciidoc::
+Asciidoc is a markup language close to Markdown but more powerful. When you start a page, prefer this format.
+The best resource to learn the Asciidoc syntax are http://asciidoctor.org/docs/asciidoc-writers-guide/[the writer guide] and http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[the syntax quick reference].
+
+[TIP]
+.Best of both worlds?
+====
+You can embed Asciidoc fragments inside a haml page.
+
+[source]
+----
+.row-fluid
+  .span6
+    :asciidoc
+      == Some header
+
+      And now I'm back in plain Asciidoc with http://example.com[links] and all.
+  -# Back in HAML, notice the indetation
+  .span6
+----
+====
+
+A file named `downloads.html.haml` or `downloads.adoc` in the `search` directory will generate `/search/downloads/index.html` that we reference as `/search/downloads/` at it makes for nicer URLs. If you plan to create several pages under the `download/` path, create the `download` directory and add `search/downloads/index.html.haml` or `search/downloads/index.adoc`.
+
+=== Page attributes
+
+Each page has some metadata attributes associated and put at the top of the file.
+
+[source,haml]
+.An haml example
+....
+----
+# note that the first block in haml should be surrounded by `---` and not `----`
+# but a rending bug prevents the listing to properly show it
+layout: project-frame
+title: About Hibernate Search
+project: search
+title_partial: project/title-about.html.haml
+----
+
+-# Center body
+.row-fluid
+  .span8
+    .row-fluid
+      .span12.feature-block
+        :asciidoc
+          === Full-text search for entities
+
+          Offers full-text search support for objects stored by Hibernate ORM, Infinispan and other sources.
+          Think of it as Google(tm) for your entities:
+
+          * search words with text
+          * order results by relevance
+          * find by approximation (fuzzy search)
+....
+
+[source]
+.An Asciidoc file
+....
+= Hibernate Search FAQ
+Emmanuel Bernard
+:awestruct-layout: project-frame
+:awestruct-project: search
+:toc:
+:toc-placement: preamble
+:toc-title: Questions
+
+You've got a question burning you? We might have the answer for you.
+
+== Indexes
+
+=== No file created in index directory
+
+Hibernate Search won't create a new index in existing directories.
+....
+
+Here is a list of the most useful attributes.
+
+layout (or awestruct-layout in Asciidoc)::
+Represents the layout the page will use. Layouts are present in the `_layout` directory
+title::
+The page title.
++
+[NOTE]
+====
+The page title of an Asciidoc file is the text in the first line following `=`.
+
+----
+= Some title
+:some-attribute: value
+
+Preamble (usually bigger)
+
+== First section
+
+Some text.
+----
+====
+project (or awestruct-project)::
+Optional. Represents the project the page descrcibes. Used to properly compute navigation.
+Mandatory if the page is under the project subdirectory.
+toc (Asciidoc only)::
+Optional. Enable the rendering of the table of content in Asciidoc documents
+toc-placement (Asciidoc only)::
+Mandatory if `toc` is used. On this website, the table of content position is imposed and defined in css.
+Just set the value to _preamble_.
+toc-title (Asciidoc only)::
+Optional. Defines the table of content title. Defaults to _Table of content_.
+numbered (Asciidoc only)::
+Number the sections and the ToC.
+
+== List of layouts
+
+Layouts are used ot share the same site structure. They can be nested.
+All are in the `_layouts` directory.
+There are a few important layouts:
+
+* `project` (`project.html.haml`): it represents a generic page structure (we will change the name in a little while)
+* `project-frame` (`project/project-frame.html.haml`): represents a project specific page. All files under`search`, `orm`, `validator` etc use this layout
+* `title-nocol` (`common/title-nocol.html.haml`): represents a generic page with a title and no column. Useful for generic Asciidoc pages like this one.
+
+== Other concepts
+
+Partials (in the `_partials` directory) are page fragments that can be reused from within a haml page or layout.
+
+CAUTION: Partials do not get automatically refreshed when change. You need to stop, clean and restart Awestruct `rake clean preview`.
