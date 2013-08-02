@@ -20,10 +20,14 @@ projects:
         version_family: 4.4
         date: 2013-07-21
         stable: false
+        announcement_url: http://in.relation.to/Bloggers/HibernateSearch430FinalWasSpottedInBoston
+        summary: Metadata API, dynamic sharding, simpler Infinispan clustering
       - version: 4.3.0.Final
         version_family: 4.3
         date: 2013-06-08
         stable: true
+        announcement_url: http://in.relation.to/Bloggers/HibernateSearch430FinalWasSpottedInBoston
+        summary: Synchronous JGroups backend, JBoss AS and EAP modules, Near-Real-Time backend speed improvements, spatial improvements
     sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-search/
     group_id: org.hibernate
     artifact_id: hibernate-search

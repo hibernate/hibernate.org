@@ -29,36 +29,32 @@ layout: project-frame
   .span12
     -# Documentation table built form the metadata
     %h2 Reference documentation
-    %table.table.table-bordered.table-striped
-      %thead
-        %tr
-          %th Document
-          %th Version
-          %th Language
-          %th Format
-      %tbody
-        - site.projects[page.project].releases.each do |release|
-          %tr
-            %td Reference documentation
-            %td= release.version
-            %td English
-            %td
+    - site.projects[page.project].releases.each do |release|
+      %dl.dl-horizontal
+        %dt
+          = release.version
+          &nbsp;
+          %a.btn.btn-info{:href => "#{project_description.reference_doc}#{release.version_family}/reference/en-US/html/"}
+            %i.icon-book
+        %dd
+          %small= release.date
+          %span.label{:class => "#{release.stable ? 'label-success' : 'label-warning'}"} #{release.stable ? 'stable' : 'development'}
+        %dd
+          %small= release.summary
+        %dd
+          %ul
+            %li
+              English reference documentation
               %a{:href => "#{project_description.reference_doc}#{release.version_family}/reference/en-US/html/"}
-                html
+                site
               |
               %a{:href => "#{project_description.reference_doc}#{release.version_family}/reference/en-US/html_single/"}
-                html single
+                single page
               |
               %a{:href => "#{project_description.reference_doc}#{release.version_family}/reference/en-US/pdf/#{project_description.reference_pdf}"}
                 pdf
-            %tr
-              %td JavaDoc
-              %td
-              %td English
-              %td
-                %a{:href => "#{project_description.reference_doc}#{release.version_family}/api/"}
-                  html
-
+            %li
+              API
     :asciidoc
       :ref_doc: #{project_description.reference_doc}
 

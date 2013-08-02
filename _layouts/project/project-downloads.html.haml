@@ -36,30 +36,27 @@ layout: project-frame
   .span12
     -# Release table built form the metadata
     %h2 Releases
-    %table.table.table-bordered.table-striped
-      %thead
-        %tr
-          %th Version
-          %th Date
-          %th Status
-          %th Download
-          %th Maven
-      %tbody
-        - site.projects[page.project].releases.each do |release|
-          %tr
-            %td= release.version
-            %td= release.date
-            %td
-              - if release.stable
-                stable
-              - else
-                development
-            %td
-              %a{:href => "#{project_description.sourceforge_url}#{release.version}/"}
-                download
-            %td
-              %a{:href => "https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{project_description.group_id}~#{project_description.artifact_id}~#{release.version}~~"}
-                #{project_description.group_id}:#{project_description.artifact_id}:#{release.version}
+    - site.projects[page.project].releases.each do |release|
+      %dl.dl-horizontal
+        %dt
+          = release.version
+          &nbsp;
+          %a.btn.btn-info{:href => "#{project_description.sourceforge_url}#{release.version}/"}
+            %i.icon-cloud-download
+        %dd
+          %small= release.date
+          %span.label{:class => "#{release.stable ? 'label-success' : 'label-warning'}"} #{release.stable ? 'stable' : 'development'}
+        %dd
+          %small
+            Maven gav: 
+            %a{:href => "https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{project_description.group_id}~#{project_description.artifact_id}~#{release.version}~~"}
+              #{project_description.group_id}:#{project_description.artifact_id}:#{release.version}
+        %dd
+          = release.summary
+        %dd
+          %a{:href => "#{release.announcement_url}"}
+            More on this release
+            %i.icon-circle-arrow-right
     Older releases can be found
     %a{:href => "#{project_description.sourceforge_url}"}
       on SourceForge
