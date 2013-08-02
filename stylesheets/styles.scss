@@ -29,6 +29,10 @@ code, pre {
   font-size: 85%
 }
 
+pre > code {
+  font-size:100%
+}
+
 // Headers and top nav
 #cross-nav {
   background-color: transparent;
