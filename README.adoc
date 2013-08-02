@@ -64,9 +64,18 @@ management, you need to rerun `bundle install`.
 
 As a temporary measure, resources from the JBoss Community Bootstrap are compiled
 externally. Retrieve this https://dl.dropboxusercontent.com/u/692318/redhat/hibernate-site/static.hibernate.org.zip[zip file],
-and unzip it under `hibernate.org/cache`. You should get a `hibernate.org/cache/static.hibernate.org/...`.
+and unzip it under `hibernate.org/cache`.
+You should get a `hibernate.org/cache/static.hibernate.org/...` and a `hibernate.org/cache/static.jboss.org/...` directory.
 
-Make sure to get this zip file regularly if you see UI discrepencies.
+[source]
+----
+mkdir cache
+cd cache
+wget https://dl.dropboxusercontent.com/u/692318/redhat/hibernate-site/static.hibernate.org.zip
+unzip static.hibernate.org.zip
+----
+
+Make sure to get this zip file regularly if you see UI discrepancies.
 
 == Serve the site locally
 
