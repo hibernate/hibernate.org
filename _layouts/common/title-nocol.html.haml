@@ -1,0 +1,13 @@
+---
+layout: project
+---
+-# layout for pages using the full width of the page
+-# handles title display
+
+-# Title
+= partial( page.title_partial.nil? ? 'project/title.html.haml' : page.title_partial, {"real_page" => page} )
+
+-# Project specific navigation menu
+.row-fluid
+  .span12
+    ~ content
