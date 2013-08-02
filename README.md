@@ -67,6 +67,25 @@ Make sure to get this zip file regularly if you see UI discrepencies.
 
 Any change will be automatically picked up except for `_partials` files.
 
+Note that you might see warnings at startup like
+
+    WARNING: Missing required dependency to activate optional built-in extension coffeescripttransform.rb
+      cannot load such file -- coffee-script
+    Using profile: development
+    Generating site: http://localhost:4242
+    Skipping files cache update.
+    CodeRay::Scanners could not load plugin :bash; falling back to :text
+    CodeRay::Scanners could not load plugin :bash; falling back to :text
+    CodeRay::Scanners could not load plugin :bash; falling back to :text
+    CodeRay::Scanners could not load plugin :bash; falling back to :text
+    CodeRay::Scanners could not load plugin :bash; falling back to :text
+    CodeRay::Scanners could not load plugin :bash; falling back to :text
+    [Listen warning]:
+    The blocking parameter of Listen::Listener#start is deprecated.
+    Please use Listen::Adapter#start for a non-blocking listener and Listen::Listener#start! for a blocking one.
+
+That's ok, it's not your fault ;) It's related to some Awestruct limitations.
+
 ### If your changes are not visible...
 
 If for whatever reason you make some changes which don't show up, you can
@@ -82,14 +101,14 @@ On Linux, serving the file may be atrociously slow
 
 Use the following alternative:
 
-* Go in your `~/ceylon-lang.org` directory.  
+* Go in your `~/hibernate.org` directory.  
 * Run  `awestruct --auto -P development`
-* In parallel, go to the `~/ceylon-lang.org/_site` directory
+* In parallel, go to the `~/hibernate.org/_site` directory
 * Run `python -m SimpleHTTPServer 4242`
 
-You should be back to millisecond serving :) 
+You should be back to millisecond serving :)
 
-# License
+## License
 
 The content of this repository is released under 
 TBD.
@@ -98,6 +117,10 @@ Sample code available on this website is released under TBD.
 By submitting a "pull request" or otherwise contributing to this repository, you
 agree to license your contribution under the respective licenses mentioned above.
 
-## Acknowledgements
+### Acknowledgements
 
 This website uses [JBoss Community Bootstrap](https://github.com/jbossorg/bootstrap-community).
+
+## Next steps
+
+You can have a look at our [survival guide to editing this website](/survival-guide/) to get you started.
