@@ -12,16 +12,16 @@
       .visible-desktop
         .pull-right
           #get-started-button.text-right
-            %a.btn.btn-large{:href => "#{get_started_url}"} Get started
+            %a.btn.btn-large{:href => "#{get_started_url}"} Getting started
           - if not release.nil?
             #download-button.text-right
               %a.btn.btn-success.btn-large{:href => "#{download_url}"}= "Download (#{release.version})"
       .hidden-desktop
         #get-started-button.pull-right
-          %a.btn.btn-large{:href => "#{get_started_url}"} Get started
+          %a.btn.btn-large{:href => "#{get_started_url}"} Getting started
   .visible-phone
     .project-title-phone.text-center
       %div
         %h1= real_page.title
       %div
-        %a.btn{:href => "#{get_started_url}"} Get started
+        %a.btn{:href => "#{get_started_url}"} Getting started

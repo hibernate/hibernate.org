@@ -17,11 +17,15 @@ layout: project-frame
   - if not (stable_release.nil? && dev_release.nil?)
     .row-fluid.text-center
       - if not stable_release.nil?
-        %a.btn.btn-large.btn-success{:href => "#{project_description.sourceforge_url}#{stable_release.version}/"} Download stable #{stable_release.version}
+        %a.btn.btn-large.btn-success{:href => "#{project_description.sourceforge_url}#{stable_release.version}/"}
+          %i.icon-cloud-download
+          stable #{stable_release.version}
       - if not (stable_release.nil? || dev_release.nil?)
         &nbsp;
       - if not dev_release.nil?
-        %a.btn.btn-large.btn-warning{:href => "#{project_description.sourceforge_url}#{dev_release.version}/"} Download development #{dev_release.version}
+        %a.btn.btn-large.btn-warning{:href => "#{project_description.sourceforge_url}#{dev_release.version}/"}
+          %i.icon-cloud-download
+          development #{dev_release.version}
 .row-fluid
   .span12
     .alert.text-center
