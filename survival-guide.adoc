@@ -13,14 +13,14 @@ Wanna start hacking right away? This section is for you.
 
 Look at the `search` directory for inspiration in content, structure and markup examples.
 
-To start a new project, do the following:
+To start a new project, for example ORM, do the following:
 
 . create the project directory `mkdir orm`
-. copy the pages from search `cp -R search orm`
+. copy the pages from search `cp -R search/ orm`
 . create a project section in `_config/site.yml` under `projects`.
 .. best is to simply copy the search subsection and update the data
 .. the project section name is lowercase and corresponds to the URL path (`search` and not `hibernate-search`)
-. edit the pages under `orm/` and replace the `project` or `awestruct-project` attribute to the lowercase project name
+. edit the pages (*.haml, *.adoc) under `orm/` and replace the `project` or `awestruct-project` attribute to the lowercase project name
 
 == Prerequisites
 
@@ -45,15 +45,7 @@ You can make the edition / review faster by using the livereload plugin in your 
 ----
 gem install guard guard-livereload yajl-ruby
 ----
-. Add on the website root a `Guardfile`
-+
-[source,bash]
-----
-guard 'livereload' do
-    watch(%r{_site/.+\.(css|js|html|json)})
-end
-----
-. Start `guard`
+. Start `guard` (in separate terminal from the root of the repository checkout)
 +
 [source,bash]
 ----
@@ -64,7 +56,7 @@ Every time you save a file, the web page will be automatically reloaded assuming
 
 == Add a page
 
-There are two types of pages, http://haml.info[HAML] based (`.html.haml`) and http://asciidoctor.org/docs/asciidoc-writers-guide/[Asciidoc] (`.adoc`).
+There are two types of pages, http://haml.info[HAML] based (`*.html.haml`) and http://asciidoctor.org/docs/asciidoc-writers-guide/[Asciidoc] (`*.adoc`).
 
 HAML::
 HAML is close to HTML and let's you use Ruby. Use this when you need special layouts in your page or use the site metadata.
@@ -182,7 +174,7 @@ Number the sections and the ToC.
 
 == List of layouts
 
-Layouts are used ot share the same site structure. They can be nested.
+Layouts are used to share the same site structure. They can be nested.
 All are in the `_layouts` directory.
 There are a few important layouts:
 
