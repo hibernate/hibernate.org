@@ -11,6 +11,6 @@ gem 'coderay', '~> 1.0.9' #coderay for code highlighting in asciidoc
 gem 'rake', '~> 10.1.0'
 
 ## To enable guard and livereload
-# gem 'guard'
-# gem 'guard-livereload'
-# gem 'yajl-ruby'
+gem 'guard'
+gem 'guard-livereload'
+gem 'yajl-ruby'
