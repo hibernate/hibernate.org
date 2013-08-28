@@ -34,6 +34,10 @@ pre > code {
 }
 
 // Headers and top nav
+.banner {
+  z-index: 1500;
+}
+
 #cross-nav {
   background-color: transparent;
   a {
