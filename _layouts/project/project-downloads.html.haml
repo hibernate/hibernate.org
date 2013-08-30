@@ -58,10 +58,11 @@ layout: project-frame
                 #{project_description.group_id}:#{project_description.artifact_id}:#{release.version}
           %dd
             = release.summary
-          %dd
-            %a{:href => "#{release.announcement_url}"}
-              More on this release
-              %i.icon-circle-arrow-right
+          - if not release.announcement_url.nil?
+            %dd
+              %a{:href => "#{release.announcement_url}"}
+                More on this release
+                %i.icon-circle-arrow-right
     - else
       %p There are no releases configured for this project.
 
