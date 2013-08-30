@@ -7,21 +7,23 @@ layout: project-frame
 
 -# Metadata from site.yml for the project
 - project_description = site.projects[page.project]
-- get_started_url = relative("#{site.projects[page.project].getting_started}", page)
+- get_started_url = site.projects[page.project].getting_started.nil? ? nil : relative("#{site.projects[page.project].getting_started}", page)
 
 -# Documentation buttons using the latest dev and latest stable releases
 .release-bottons.hidden-phone
   - stable_release = latest_stable_release(page)
   .row-fluid.text-center
-    %a.btn.btn-large{:href => "#{get_started_url}"} Getting started guide
+    - if not get_started_url.nil?
+      %a.btn.btn-large{:href => "#{get_started_url}"} Getting started guide
     - if not stable_release.nil?
       &nbsp;
       %a.btn.btn-large.btn-success{:href => "#{project_description.sourceforge_url}#{stable_release.version}/"} Get documentation for #{stable_release.version}
 .release-bottons.visible-phone
   - stable_release = latest_stable_release(page)
-  .row-fluid.text-center
-    #get-started-button
-      %a.btn{:href => "#{get_started_url}"} Getting started guide
+  - if not get_started_url.nil?
+    .row-fluid.text-center
+      #get-started-button
+        %a.btn{:href => "#{get_started_url}"} Getting started guide
     - if not stable_release.nil?
       #download-button
         %a.btn.btn-success{:href => "#{project_description.sourceforge_url}#{stable_release.version}/"} Get documentation for #{stable_release.version}
@@ -29,32 +31,36 @@ layout: project-frame
   .span12
     -# Documentation table built form the metadata
     %h2 Reference documentation
-    - site.projects[page.project].releases.each do |release|
-      %dl.dl-horizontal
-        %dt
-          = release.version
-          &nbsp;
-          %a.btn.btn-info{:href => "#{project_description.reference_doc}#{release.version_family}/reference/en-US/html/"}
-            %i.icon-book
-        %dd
-          %small= release.date
-          %span.label{:class => "#{release.stable ? 'label-success' : 'label-warning'}"} #{release.stable ? 'stable' : 'development'}
-        %dd
-          %small= release.summary
-        %dd
-          %ul
-            %li
-              English reference documentation
-              %a{:href => "#{project_description.reference_doc}#{release.version_family}/reference/en-US/html/"}
-                site
-              |
-              %a{:href => "#{project_description.reference_doc}#{release.version_family}/reference/en-US/html_single/"}
-                single page
-              |
-              %a{:href => "#{project_description.reference_doc}#{release.version_family}/reference/en-US/pdf/#{project_description.reference_pdf}"}
-                pdf
-            %li
-              API
+    - if not site.projects[page.project].releases.nil?
+      - site.projects[page.project].releases.each do |release|
+        %dl.dl-horizontal
+          %dt
+            = release.version
+            &nbsp;
+            %a.btn.btn-info{:href => "#{project_description.reference_doc}#{release.version_family}/reference/en-US/html/"}
+              %i.icon-book
+          %dd
+            %small= release.date
+            %span.label{:class => "#{release.stable ? 'label-success' : 'label-warning'}"} #{release.stable ? 'stable' : 'development'}
+          %dd
+            %small= release.summary
+          %dd
+            %ul
+              %li
+                English reference documentation
+                %a{:href => "#{project_description.reference_doc}#{release.version_family}/reference/en-US/html/"}
+                  site
+                |
+                %a{:href => "#{project_description.reference_doc}#{release.version_family}/reference/en-US/html_single/"}
+                  single page
+                |
+                %a{:href => "#{project_description.reference_doc}#{release.version_family}/reference/en-US/pdf/#{project_description.reference_pdf}"}
+                  pdf
+              %li
+                API
+    - else
+      %p There is no reference documentation configured for this project.
+
     :asciidoc
       :ref_doc: #{project_description.reference_doc}
 
