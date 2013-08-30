@@ -40,33 +40,37 @@ layout: project-frame
   .span12
     -# Release table built form the metadata
     %h2 Releases
-    - site.projects[page.project].releases.each do |release|
-      %dl.dl-horizontal
-        %dt
-          = release.version
-          &nbsp;
-          %a.btn.btn-info{:href => "#{project_description.sourceforge_url}#{release.version}/"}
-            %i.icon-cloud-download
-        %dd
-          %small= release.date
-          %span.label{:class => "#{release.stable ? 'label-success' : 'label-warning'}"} #{release.stable ? 'stable' : 'development'}
-        %dd
-          %small
-            Maven gav: 
-            %a{:href => "https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{project_description.group_id}~#{project_description.artifact_id}~#{release.version}~~"}
-              #{project_description.group_id}:#{project_description.artifact_id}:#{release.version}
-        %dd
-          = release.summary
-        %dd
-          %a{:href => "#{release.announcement_url}"}
-            More on this release
-            %i.icon-circle-arrow-right
+    - if not site.projects[page.project].releases.nil?
+      - site.projects[page.project].releases.each do |release|
+        %dl.dl-horizontal
+          %dt
+            = release.version
+            &nbsp;
+            %a.btn.btn-info{:href => "#{project_description.sourceforge_url}#{release.version}/"}
+              %i.icon-cloud-download
+          %dd
+            %small= release.date
+            %span.label{:class => "#{release.stable ? 'label-success' : 'label-warning'}"} #{release.stable ? 'stable' : 'development'}
+          %dd
+            %small
+              Maven gav:
+              %a{:href => "https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{project_description.group_id}~#{project_description.artifact_id}~#{release.version}~~"}
+                #{project_description.group_id}:#{project_description.artifact_id}:#{release.version}
+          %dd
+            = release.summary
+          %dd
+            %a{:href => "#{release.announcement_url}"}
+              More on this release
+              %i.icon-circle-arrow-right
+    - else
+      %p There are no releases configured for this project.
+
     Older releases can be found
     %a{:href => "#{project_description.sourceforge_url}"}
       on SourceForge
     or in JBoss's
     %a{:href => "https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{project_description.group_id}~#{project_description.artifact_id}~~~"}<
-      Maven repository
+      Maven repository.
 .row-fluid
   .span12
     ~ content
