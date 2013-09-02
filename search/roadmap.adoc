@@ -17,7 +17,7 @@ Backward compatible with the 4.x series but prepare for the 5.0 enhancements.
 Better clustering::
 Solid Infinispan and JGroups integration, ease of setup.
 Metadata API::
-Exposes the index structure and help in writing queries (development time and tooling). USeful to log or dump how things are indexed.
+Exposes the index structure and help in writing queries (development time and tooling). Useful to log or dump how things are indexed.
 Also required for link:/ogm/[Hibernate OGM] and its query integration.
 Jandex::
 Use Jandex for annotation scanning for faster boot in Se and in http://wildfly.org[WildFly].
