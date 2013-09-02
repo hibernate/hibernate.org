@@ -47,17 +47,20 @@ layout: project-frame
           %dd
             %ul
               %li
-                English reference documentation
+                English reference documentation:
                 %a{:href => "#{project_description.reference_doc}#{release.version_family}/reference/en-US/html/"}
-                  site
+                  HTML
                 |
                 %a{:href => "#{project_description.reference_doc}#{release.version_family}/reference/en-US/html_single/"}
-                  single page
+                  HTML (single page)
                 |
                 %a{:href => "#{project_description.reference_doc}#{release.version_family}/reference/en-US/pdf/#{project_description.reference_pdf}"}
-                  pdf
+                  PDF
               %li
-                API
+                API documentation:
+                %a{:href => "#{project_description.reference_doc}#{release.version_family}/api/"}
+                  JavaDoc
+
     - else
       %p There is no reference documentation configured for this project.
 
