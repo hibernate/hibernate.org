@@ -119,13 +119,13 @@ projects:
         - name: FAQ
           href: '/validator/faq'
           css_class: 'icon-fixed-width icon-question'
+        - name: Contribute
+          href: '/validator/contribute'
+          css_class: 'icon-fixed-width icon-beer'
       extern:
         - name: Wiki
           href: 'https://community.jboss.org/en/hibernate/validator'
           css_class: 'icon-fixed-width icon-edit'
-        - name: Contribute
-          href: 'https://community.jboss.org/wiki/ContributingToHibernateValidator'
-          css_class: 'icon-fixed-width icon-beer'
         - name: Issues
           href: 'https://hibernate.atlassian.net/browse/HV'
           css_class: 'icon-fixed-width icon-exclamation-sign'

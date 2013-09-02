@@ -1,0 +1,261 @@
+= Contribute to Hibernate Validator
+Hardy Ferentschik, Gunnar Morling
+:awestruct-layout: project-frame
+:awestruct-project: validator
+
+You want to implement a new validation feature? You found a bug in Hibernate Validator and want to provide a fix for it? That's great! The following will help you to get started with the development of Hibernate Validator.
+
+== Requirements
+
+* JDK 7 (The HV binaries target Java 6 but JDK 7 is required for development as some test dependencies are based on Java 7)
+* http://maven.apache.org/[Maven] ( >= 3.0.3 )
+
+== Getting the source
+
+The Hibernate Validator code is available on http://github.com/hibernate/hibernate-validator[GitHub]. To get a read only version of the source you can use:
+
+[source]
+----
+git clone git://github.com/hibernate/hibernate-validator.git validator
+----
+
+For people with write access:
+
+[source]
+----
+git clone git@github.com:hibernate/hibernate-validator.git validator
+----
+
+To contribute back to Hibernate Validator you can also use the GitHub fork capability via http://help.github.com/forking[forking] and pull http://help.github.com/pull-requests/[requests]. For more information on Git, check out http://in.relation.to/Bloggers/HibernateMovesToGitGitTipsAndTricks[this blog entry].
+
+The Hibernate Validator code base comes in form of a http://docs.codehaus.org/display/MAVENUSER/Multi-modules+projects[multi-module] Maven project, comprising the following modules:
+
+* annotation-processor: the HV annotation processor
+* cdi: the CDI portable extension
+* distribution: builds the released HV distribution package
+* documentation: builds the HV reference guide
+* engine: the core validation engine
+* integration: in-container integration tests
+* performance: a performance test suite based on JMeter
+* tck-runner: executes the Bean Validation TCK against HV
+
+The source code of the Bean Validation API (of which Hibernate Validator >= 4.x is the reference implementation) can be retrieved via
+
+[source]
+----
+git clone https://github.com/beanvalidation/beanvalidation-api
+----
+
+Finally there is the Bean Validation TCK (test compatibility kit) which can be checked out via
+
+[source]
+----
+git clone https://github.com/beanvalidation/beanvalidation-api
+----
+
+For those interested, the HV legacy code base (3.x) can be accessed under the https://github.com/hibernate/hibernate-validator/tree/pre-validator3-removal[pre-validator3-removal] tag.
+
+== Building from Source
+
+=== Compiling and testing
+
+Prior to setting the project up in any IDE it is recommended to trigger a command line build to verify that everything builds. Just run:
+
+[source]
+----
+mvn clean install -s settings-example.xml
+----
+
+This will download all dependencies and compile and test each module. _settings-example.xml_ is just an example maven http://maven.apache.org/settings.html[settings] file containing the required JBoss repository settings. You can also add the required settings to your own settings file under _~/.m2/settings.xml_ file. Refer to https://community.jboss.org/docs/DOC-15169[this article] to see how to tell Maven to use the https://repository.jboss.org/nexus/content/groups/public/[JBoss  maven repository].
+
+=== Building the documentation
+
+The documentation in written using Docbook and can be found in the module _documentation _of your checkout. You can build the documentation by executing:
+
+[source]
+----
+mvn package
+----
+
+To build the documentation including translations, po2xml must be installed (more information can be found https://community.jboss.org/docs/DOC-15492[here]). You can skip the translation build by running:
+[source]
+----
+mvn package -Djdocbook.ignoreTranslations=true
+----
+
+When writing the documentation you should follow the http://www.jboss.org/pressgang/jdg.html[JBoss Documentation Guide]. This guide gives valuable recommendations about styling as well as general writing tips.
+If you want to contribute to the documentation translation only you can get a Zanata account and just contribute your translation via Zanata. Have a look at https://community.jboss.org/docs/DOC-17208[Hibernate Search Documentation Translations]. Everything mentioned there applies to Validator as well.
+
+=== Build options
+
+There are several options/properties available to control the build. The following options might be useul to speed up the build time. Per default everything gets built!
+
+==== Skipping parts of the build
+
+The build of the distribution bundle (_distribution_) can be skipped via the _disableDistributionBuild_ property:
+
+[source]
+----
+mvn install -DdisableDistributionBuild=true
+----
+
+The build of the _documentation_ module can be skipped via the _disableDocumentationBuild_ property:
+
+[source]
+----
+mvn install -DdisableDocumentationBuild=true
+----
+
+During developement it is often enough to build a single documentation output format, for _html_single_. You can just build this format by using the property _jdocbook.format_, skipping formats not specified:
+
+[source]
+----
+mvn -Djdocbook.format=html_single install
+----
+
+In case you want to build the documentation, but not it's translations use the property _jdocbook.ignoreTranslations:_
+
+[source]
+----
+mvn -Djdocbook.ignoreTranslations=true install
+----
+
+==== Deploying sources and javadocs jars as part of local install or snapshot deploy
+
+In case you want the sources and javadocs jar installed as part of the build (either on a local install or a SNAPSHOT deploy) specify `-DperformRelease=true`.
+
+[source]
+----
+mvn -DperformRelease=true clean [install|deploy]
+----
+
+See also http://stackoverflow.com/questions/4725668/how-to-deploy-snapshot-with-sources-and-javadoc[this SO post].
+
+==== Staging Maven Release locally
+
+Sometimes it is convinient to go through the maven release steps without actually deploying anything. This makes sure the replease and deploy plugins work as expected and it gives you the chance to inspect the artifacts. One way of doing this is:
+
+[source]
+----
+mvn release:prepare -DpushChanges=false
+mvn release:stage -DpushChanges=false -DlocalCheckout=true -DstagingRepository=/path/to/a/local/directory
+----
+
+After you inspected all the artifacts you need to revert your local repository changes back to their original state:
+
+[source]
+----
+git reset --hard HEAD~2
+git tag -d <your-release-tag>
+----
+
+==== Avoiding OutOfMemoryException
+
+In some cases you might see OutOfMemoryExceptions when execution the whole build. In this case you can increase the heap and max perm size for Maven via:
+
+[source]
+----
+export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=128M"
+----
+
+== IDE Setup
+
+=== Eclipse
+
+For Eclipse several plugins exist to integrate Maven projects. Probably the two most popular ones are http://m2eclipse.codehaus.org/[m2eclipse] and http://www.eclipse.org/iam/[Eclipse IAM].
+
+=== Idea
+
+The latest versions of Idea come with builtin support for multi module Maven project. Just import your project as Maven project and let Idea scan recursively for modules. An Idea code style template is attached to this page.
+
+TODO: template
+
+==== Running TCK tests
+
+Running the Bean Validation TCK tests in the IDE can be a little tedious. One way is to:
+
+* Create new TestNG test configuration
+* Select the _Suite_ option
+* Select _tck-runner/target/dependency/jsr303-tck-suite.xml as _suite file. The Maven build extracts the suite file from the JSR TCK jar and places it into this directory
+* Specifiy the following VM options (you need to set the same properties as set by the maven build, see _pom.xml_) :
+
+[source]
+----
+-Dorg.jboss.testharness.spi.StandaloneContainers=org.hibernate.jsr303.tck.util.StandaloneContainersImpl
+-Dvalidation.provider=org.hibernate.validator.HibernateValidator
+-enableassertions
+----
+
+* Select the _hibernate-validator-tck-runner_ module as the classpath
+
+All the steps are summarized in the screenshot below:
+<img alt="tck-jsr-303-setup.png" class="jive-image-thumbnail jive-image" src="/servlet/JiveServlet/downloadImage/102-14999-73-18445/tck-jsr-303-setup.png" width="620" __jive_id="18445" />
+
+TODO: image
+
+If you run this test configuration all TCK tests are getting exexcuted. You can just edit the suite file to change which tests you want to run, eg:
+
+[source]
+----
+<!DOCTYPE suite SYSTEM "<a class="jive-link-external-small" href="http://testng.org/testng-1.0.dtd" target="_blank[http://testng.org/testng-1.0.dtd]" >
+
+<suite name="JSR-303-TCK" verbose="1">
+        ...
+        <classes>
+           <class name="org.hibernate.jsr303.tck.tests.validation.ValidateTest"/>
+        </classes>
+    </test>
+</suite>
+----
+
+More information about how to confgure the TestNG suite file can be found http://testng.org/doc/documentation-main.html#testng-xml[here].
+
+== Coding Guidelines
+
+=== General
+
+Refer to the Hibernate https://community.jboss.org/docs/DOC-17951[design philosophy] when working on new HV features. Hibernate Validator uses Java 6, so no Java 7 language features may be used.
+
+Make sure to add the following license header to all newly created source files:
+
+[source]
+----
+/*
+ * JBoss, Home of Professional Open Source
+ * Copyright 2013, Red Hat, Inc. and/or its affiliates, and individual contributors
+ * by the @authors tag. See the copyright.txt in the distribution for a
+ * full listing of individual contributors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+----
+
+=== JavaDoc
+
+The following conventions should be followed when working on the Hibernate Validator code base:
+
+* Use {@code} instead of <code>, because it is more readable and {@code} also escapes meta characters
+* @param, @return and @throw don't end with a '.'; the first word starts with a lower-case letter
+* If referring to other classes and methods of the library, use the {@link}
+* {@link} might be use for external classes, {@code } is accepted too
+* Use <ul/> for enumerations (not '-')
+* Use the code style template mentioned above to format the code
+
+=== Providing a patch
+
+Patches including a test and fix for an issue are always welcome, preferably as GitHub pull request. We are following the _Fork + Pull Model_ as described http://help.github.com/send-pull-requests[here].
+In oder to be able to integrate your patch you have to accept the https://cla.jboss.org/[JBoss Contributor License Agreement]!
+
+TODO:
+
+* http://opensource.atlassian.com/projects/hibernate/browse/BVAL[BVAL] (Bean Validation Specification issue tracker)
+* http://opensource.atlassian.com/projects/hibernate/browse/BVTCK[BVTCK] (Bean Validation TCK issue tracker)
+* http://forum.hibernate.org/viewforum.php?f=26[Forum - JSR 303] (Forum for JSR 303 feeback)
