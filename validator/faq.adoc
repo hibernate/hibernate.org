@@ -1,0 +1,48 @@
+= Hibernate Validator FAQ
+:awestruct-layout: project-frame
+:awestruct-project: validator
+:toc:
+:toc-placement: preamble
+:toc-title: Questions
+
+You've got a question burning you? We might have the answer for you.
+
+== What's the difference between Hibernate Validator 3.x and 4.x/5.x?
+
+Hibernate Validator 3.x and 4.x/5.x are completely different codebases.
+
+Hibernate Validator is the original validation framework from the Hibernate team and is now referred to as "Hibernate Validator legacy". Hibernate Validator 4.x is the reference implementation of Bean Validation 1.0 (http://jcp.org/en/jsr/detail?id=303[JSR 303]), while Hibernate Validator 5.x is the reference implementation of Bean Validation 1.1 (http://jcp.org/en/jsr/detail?id=349[JSR 349]). Active development happens in the 5.x codebase.
+
+== How do I write a custom ConstraintValidatorFactory?
+
+See the https://community.jboss.org/docs/DOC-15041[custom ConstraintValidatorFactory] example.
+
+== How do I check that two fields of my bean have the same value?
+
+By implementing a http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#section-class-level-constraints[class-level constraint].
+
+== How can I access the Hibernate Session or EntityManager within a ConstraintValidator?
+
+See https://community.jboss.org/docs/DOC-15315[this example].
+
+== Is it possible to determine whether a given constraint is specified at field or property level using the metadata API?
+
+Yes, see http://in.relation.to/16570.lace[this blog] on in.relation.to.
+
+== When using the HV annotation processor, I'm getting a compilation error like this: "Incompatible types, found: XY, required XY". What's wrong?
+
+This is caused by a http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6512707[bug] in the javac compiler and occurs when the compiled project contains an annotation type with an enum-typed member which has a default value. As workaround either specify the default value using its fully qualified name or add https://github.com/emmanuelbernard/APCleaner[this annotation processor] to your project. See also http://opensource.atlassian.com/projects/hibernate/browse/HV-498[HV-498] for more details.
+
+== Does Hibernate Validator 5.x work with Tomcat 6?
+
+It does, if you update Tomcat's EL libraries.
+
+Hibernate Validator 5 requires the http://jcp.org/en/jsr/detail?id=341[Unified Expression Language] (EL) in version 2.2 or later. While Tomcat 7 provides EL 2.2 out of the box, Tomcat 6 only comes with an EL 2.1 implementation which does not work with Hibernate Validator (You will get a NoSuchMethodError: javax.el.ExpressionFactory.newInstance()Ljavax/el/ExpressionFactory).
+
+You can therefore either upgrade to Tomcat 7 or update the EL libs in your Tomcat 6 installation. To do the latter, replace the JAR files _el-api.jar_ and and _jasper-el.jar_ in _$CATALINE_HOME/lib_ with an EL 2.2 implementation, e.g. from Tomcat 7.
+
+Note that it is not sufficient to add an EL 2.2 implementation to your WAR and keep Tomcat's own EL 2.1 implementation. In this case both versions will be in conflict, typically indicated by a LinkageError saying that the ExpressionFactory class has been loaded twice by different class loaders.
+
+== My question is not answered. Where can I find help?
+
+Check out the http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/[reference guide] which covers in detail all the ins and outs of Hibernate Validator. If the guide doesn't answer your question, come to the https://forum.hibernate.org/viewforum.php?f=9[forum] and you will be helped there.
