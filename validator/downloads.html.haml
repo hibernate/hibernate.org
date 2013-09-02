@@ -1,92 +1,34 @@
 ---
-layout: project-frame
+layout: project-downloads
 title: Hibernate Validator downloads
 project: validator
 ---
 -# Metadata from site.yml for the project
 - project_description = site.projects[page.project]
 
--# Release buttons using the latest dev and latest stable releases
-.release-bottons.visible-desktop
-  - stable_release = latest_stable_release(page)
-  - dev_release = latest_dev_release(page)
-  - if not (stable_release.nil? && dev_release.nil?)
-    .row-fluid.text-center
-      - if not stable_release.nil?
-        %a.btn.btn-large.btn-success{:href => "#{project_description.sourceforge_url}#{stable_release.version}/"} Download stable #{stable_release.version}
-      - if not (stable_release.nil? || dev_release.nil?)
-        &nbsp;
-      - if not dev_release.nil?
-        %a.btn.btn-large.btn-warning{:href => "#{project_description.sourceforge_url}#{dev_release.version}/"} Download development #{dev_release.version}
-.row-fluid
-  .span12
-    .alert.text-center
-      -# %button.close{:type => 'button', "data-dismiss" =>'alert'}
-      -#  &times;
-      %i.icon-user-md.icon-large
-      :asciidoc
-        :doctype: inline
+:asciidoc
+  :nexus: https://repository.jboss.org/nexus/
+  :nexus-search: https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{project_description.group_id}~#{project_description.artifact_id}~~~
+  :groupId: #{project_description.group_id}
+  :artifactId: #{project_description.artifact_id}
+  :prj-version: #{project_description.releases.first.version}
 
-        Looking for commercial support? Check out link:#supported-versions[Red Hat's offering].
-.row-fluid
-  .span12
-    -# Release table built form the metadata
-    %h2 Releases
-    %table.table.table-bordered.table-striped
-      %thead
-        %tr
-          %th Version
-          %th Date
-          %th Status
-          %th Download
-          %th Maven
-      %tbody
-        - site.projects[page.project].releases.each do |release|
-          %tr
-            %td= release.version
-            %td= release.date
-            %td
-              - if release.stable
-                stable
-              - else
-                development
-            %td
-              %a{:href => "#{project_description.sourceforge_url}#{release.version}/"}
-                download
-            %td
-              %a{:href => "https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{project_description.group_id}~#{project_description.artifact_id}~#{release.version}~~"}
-                #{project_description.group_id}:#{project_description.artifact_id}:#{release.version}
-    Older releases can be found
-    %a{:href => "#{project_description.sourceforge_url}"}
-      on SourceForge
-    or in JBoss's
-    %a{:href => "https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{project_description.group_id}~#{project_description.artifact_id}~~~"}<
-      Maven repository
-.row-fluid
-  .span12
-    :asciidoc
-      :nexus: https://repository.jboss.org/nexus/
-      :nexus-search: https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{project_description.group_id}~#{project_description.artifact_id}~~~
-      :groupId: #{project_description.group_id}
-      :artifactId: #{project_description.artifact_id}
-      :prj-version: #{project_description.releases.first.version}
+  == Maven repository
 
-      == Maven repository
+  Hibernate Validator is built using Maven and publishes as part of the release process the project artifacts to the
+  {nexus}[JBoss Maven Repository] under {nexus-search}[{groupId}:{artifactId}].
+  For more information on how to configure Maven to use JBoss's repository,
+  http://community.jboss.org/wiki/MavenGettingStarted-Users[look here] or use `mvn install -s setting-example.xml`.
 
-      Hibernate Validator publishes as part of the release process the project artifacts to the
-      {nexus}[JBoss Maven Repository] under {nexus-search}[{groupId}:{artifactId}]. 
-      For more information on how to configure Maven to use JBoss's repository,
-      http://community.jboss.org/wiki/MavenGettingStarted-Users[look here] or use `mvn install -s setting-example.xml`.
-      
-      Here is how to declare the dependency in your Maven POM file
+  Here is how to declare the dependency in your Maven POM file
 
-      [source,xml]
-      [subs="verbatim,attributes"]
-      .Maven dependency
-      ----
-      <dependency>
-          <groupId>{groupId}</groupId>
-          <artifactId>{artifactId}</artifactId>
-          <version>{prj-version}</version>
-      </dependency>
-      ----
+  [source,xml]
+  [subs="verbatim,attributes"]
+  .Maven dependency
+  ----
+  <dependency>
+      <groupId>{groupId}</groupId>
+      <artifactId>{artifactId}</artifactId>
+      <version>{prj-version}</version>
+  </dependency>
+  ----

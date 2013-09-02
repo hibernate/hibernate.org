@@ -83,14 +83,17 @@ projects:
         version_family: 5.1
         date: 2013-04-30
         stable: false
+        announcement_url: http://in.relation.to/Bloggers/HibernateValidator510Alpha1Released
       - version: 5.0.1.Final
         version_family: 5.0
         date: 2013-04-30
         stable: true
+        announcement_url: http://in.relation.to/Bloggers/HibernateValidator501AndTheStoryBehindTheMissing500Final
       - version: 4.3.1.Final
         version_family: 4.3
         date: 2012-11-12
         stable: true
+        announcement_url: http://in.relation.to/Bloggers/HibernateValidator500Alpha2And431Final
     sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-validator/
     group_id: org.hibernate
     artifact_id: hibernate-validator
