@@ -138,6 +138,67 @@ projects:
         - name: CI
           href: 'https://hibernate-validator.ci.cloudbees.com/'
           css_class: 'icon-fixed-width icon-stethoscope'
+  # OGM
+  ogm:
+    name: Hibernate OGM
+    icon: 'icon-sitemap'
+    releases:
+      - version: 4.0.0.Beta2
+        version_family: 4.0
+        date: 2013-01-14
+        stable: false
+        announcement_url: http://in.relation.to/Bloggers/HibernateOGM400Beta2Released
+      - version: 4.0.0.Beta1
+        version_family: 4.0
+        date: 2012-10-02
+        stable: false
+        announcement_url: http://in.relation.to/Bloggers/HibernateOGM400Beta1Released
+      - version: 3.0.0.Alpha2
+        version_family: 3.0
+        date: 2011-06-17
+        stable: false
+        announcement_url: http://in.relation.to/Bloggers/HibernateOGM300Alpha2Released
+    group_id: org.hibernate
+    artifact_id: hibernate-ogm
+    reference_doc: http://docs.jboss.org/hibernate/ogm/
+    reference_pdf: hibernate_ogm_reference.pdf
+    getting_started:
+    license:
+      name: LGPL
+      url: http://www.gnu.org/licenses/lgpl.html
+    menu:
+      intern:
+        - name: About
+          href: '/ogm/'
+          css_class: 'icon-fixed-width icon-home'
+        - name: Downloads
+          href: '/ogm/downloads'
+          css_class: 'icon-fixed-width icon-cloud-download'
+        - name: Documentation
+          href: '/ogm/documentation'
+          css_class: 'icon-fixed-width icon-book'
+      extern:
+        - name: Wiki
+          href: 'https://community.jboss.org/en/hibernate/ogm'
+          css_class: 'icon-fixed-width icon-edit'
+        - name: Contribute
+          href: 'https://community.jboss.org/wiki/ContributingToHibernateOGM'
+          css_class: 'icon-fixed-width icon-beer'
+        - name: FAQ
+          href: 'https://community.jboss.org/wiki/HibernateOgmFAQ'
+          css_class: 'icon-fixed-width icon-question'
+        - name: Issues
+          href: 'https://hibernate.atlassian.net/browse/OGM'
+          css_class: 'icon-fixed-width icon-exclamation-sign'
+        - name: Forum
+          href: 'https://forum.hibernate.org'
+          css_class: 'icon-fixed-width icon-comments'
+        - name: Source code
+          href: 'https://github.com/hibernate/hibernate-ogm'
+          css_class: 'icon-fixed-width icon-code'
+        - name: CI
+          href: 'https://hibernate-ogm.ci.cloudbees.com/'
+          css_class: 'icon-fixed-width icon-stethoscope'
  #other projects would come here
 
 # Merge multiple JavaScript files to improve performance
