@@ -1,0 +1,46 @@
+---
+layout: project-frame
+title: About Hibernate OGM (Object/grid Mapper)
+project: ogm
+title_partial: project/title-about.html.haml
+---
+
+-# Center body
+.row-fluid
+  .span8
+    .row-fluid
+      .span12.feature-block
+        :asciidoc
+          === JPA for NoSQL solutions
+
+          Hibernate Object/Grid Mapper (OGM) aims at providing Java Persistence (JPA) support for NoSQL solutions.
+
+          It reuses Hibernate Core's engine but persists entities into a NoSQL data store instead of a relational database. It reuses the Java Persistence Query Language (JP-QL) to search their data.
+
+          That's the grand scheme of things and we will roll out functionalities over time.
+
+          ==== Short term targets
+
+          * support for Infinispan (done)
+          * support Hibernate Search full-text queries (done)
+          * support simple JP-QL queries (restrictions and many-to-one joins)
+
+          ==== Medium term targets
+
+          * support other key/value stores
+          * support other NoSQL families
+          * support complex joins and aggregations
+
+          === Open source
+          The project is Open Source, please come and contribute ideas, code, documentation. Make your feature a priority. Check out the http://docs.jboss.org/hibernate/ogm/3.0/reference/en-US/html_single/#ogm-howtocontribute-contribute["How to contribute"] paragraph of the documentation for more information.
+
+    .row-fluid
+      .span12.feature-block
+        :asciidoc
+          === LGPL licensed
+
+          Hibernate OGM is released under the http://www.gnu.org/licenses/lgpl.html[LGPL open source license].
+
+  -# News right column
+  .span4
+    = partial( 'common/latest-news.html.haml', {"real_page" => page} )
