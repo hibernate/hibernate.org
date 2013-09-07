@@ -35,7 +35,12 @@ pre > code {
 
 // Headers and top nav
 .banner {
-  z-index: 1500;
+  margin-bottom: 1.5em;
+}
+
+.navbar {
+  height: 47px;
+  margin-bottom: 0;
 }
 
 #cross-nav {

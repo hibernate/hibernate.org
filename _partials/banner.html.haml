@@ -1,27 +1,5 @@
 - real_page = page["real_page"]
 .banner
-  .row
-    .pull-right
-      %ul.breadcrumb#cross-nav
-        %li<
-          %a(href="http://in.relation.to") Blog
-          %span.divider<
-            |
-        %li<
-          %a(href="#{relative("/community/", real_page)}") Community
-          %span.divider<
-            |
-        %li.dropdown
-          %a.dropdown-toggle(href="#" data-toggle="dropdown")<
-            = precede 'Follow Us ' do
-              %b.caret>
-          %ul.dropdown-menu.projectsocialmedia
-            %li<
-              %a(href="https://twitter.com/hibernate")<
-                %img(src="#{relative("#{site.jborg_images_url}/common/socialmedia_icon40_twitter.png", real_page)}")
-            %li<
-              %a(href="https://plus.google.com/112681342290762837955/posts")<
-                %img(src="#{relative("#{site.jborg_images_url}/common/socialmedia_icon40_googleplus.png", real_page)}")
   %a(href="#")<
   .visible-desktop
     -#.taglinelight Data services for idiomatic Java
