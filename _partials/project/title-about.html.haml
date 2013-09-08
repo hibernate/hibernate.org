@@ -1,28 +1,8 @@
--# Title and download / get started button
+-# Hero unit 
 - real_page = page["real_page"]
-- get_started_url = site.projects[real_page.project].getting_started.nil? ? nil : relative("#{site.projects[real_page.project].getting_started}", real_page)
-- project_description = site.projects[real_page.project]
-- release = latest_stable_release(real_page)
-- download_url = release.nil? ? nil : "#{project_description.sourceforge_url}#{release.version}/"
 .row-fluid
-  .hidden-phone.project-title-desktop
-    .pull-left
+  .span12
+    .hero-unit
       %h1= real_page.title
-    .pull-right
-      .visible-desktop
-        .pull-right
-          - if not get_started_url.nil?
-            #get-started-button.text-right
-              %a.btn.btn-large{:href => "#{get_started_url}"} Getting started
-          - if not release.nil?
-            #download-button.text-right
-              %a.btn.btn-success.btn-large{:href => "#{download_url}"}= "Download (#{release.version})"
-      .hidden-desktop
-        #get-started-button.pull-right
-          %a.btn.btn-large{:href => "#{get_started_url}"} Getting started
-  .visible-phone
-    .project-title-phone.text-center
-      %div
-        %h1= real_page.title
-      %div
-        %a.btn{:href => "#{get_started_url}"} Getting started
+      = partial( "project/#{real_page.project}/hero-text.html.haml", {"real_page" => real_page} )
+      = partial( "project/about-buttons.html.haml", {"real_page" => real_page} )

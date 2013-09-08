@@ -62,8 +62,17 @@ pre > code {
   margin-bottom:.5em;
 }
 
-#get-started-button, #download-button {
-  margin-bottom: 1em;
+.hero-button {
+  margin-top: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.hero-unit {
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 @media (min-width: 768px) and (max-width: 1199px) {
