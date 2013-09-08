@@ -33,6 +33,11 @@ module Awestruct
         end
         return nil
       end
+
+      # Accepts a project description (YML) and a release (YML) and return the Sourceforge URL to the zip download
+      def sourceforge_zip_url(project, release)
+        return "#{project.sourceforge_url}#{release.version}/#{project.zip_file}/download".gsub('VERSION', release.version)
+      end
     end
   end
 end

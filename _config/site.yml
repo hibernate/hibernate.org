@@ -29,6 +29,7 @@ projects:
         announcement_url: http://in.relation.to/Bloggers/HibernateSearch430FinalWasSpottedInBoston
         summary: Synchronous JGroups backend, JBoss AS and EAP modules, Near-Real-Time backend speed improvements, spatial improvements
     sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-search/
+    zip_file: hibernate-search-VERSION-dist.zip
     group_id: org.hibernate
     artifact_id: hibernate-search
     reference_doc: http://docs.jboss.org/hibernate/search/
@@ -92,6 +93,7 @@ projects:
         date: 2012-11-12
         stable: true
     sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-validator/
+    zip_file: hibernate-validator-VERSION-dist.zip
     group_id: org.hibernate
     artifact_id: hibernate-validator
     reference_doc: http://docs.jboss.org/hibernate/validator/

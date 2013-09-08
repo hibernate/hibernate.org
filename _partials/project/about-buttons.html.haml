@@ -3,7 +3,7 @@
 - get_started_url = site.projects[real_page.project].getting_started.nil? ? nil : relative("#{site.projects[real_page.project].getting_started}", real_page)
 - project_description = site.projects[real_page.project]
 - release = latest_stable_release(real_page)
-- download_url = release.nil? ? nil : "#{project_description.sourceforge_url}#{release.version}/"
+- download_url = release.nil? ? nil : "#{sourceforge_zip_url(project_description, release)}"
 .row-fluid
   .hidden-phone.project-title-desktop.text-center
     .visible-desktop
