@@ -169,6 +169,12 @@ projects:
         - name: Documentation
           href: '/ogm/documentation'
           css_class: 'icon-fixed-width icon-book'
+        - name: FAQ
+          href: '/ogm/faq'
+          css_class: 'icon-fixed-width icon-comments'
+        - name: Roadmap
+          href: '/ogm/roadmap'
+          css_class: 'icon-fixed-width icon-road'
       extern:
         - name: Wiki
           href: 'https://community.jboss.org/en/hibernate/ogm'
@@ -176,9 +182,6 @@ projects:
         - name: Contribute
           href: 'https://community.jboss.org/wiki/ContributingToHibernateOGM'
           css_class: 'icon-fixed-width icon-beer'
-        - name: FAQ
-          href: 'https://community.jboss.org/wiki/HibernateOgmFAQ'
-          css_class: 'icon-fixed-width icon-question'
         - name: Issues
           href: 'https://hibernate.atlassian.net/browse/OGM'
           css_class: 'icon-fixed-width icon-exclamation-sign'
