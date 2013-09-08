@@ -34,31 +34,9 @@ pre > code {
 }
 
 // Headers and top nav
-.banner {
-  margin-bottom: 1.5em;
-}
-
 .navbar {
-  margin-bottom: 2em;
   height: 47px;
-}
-
-#cross-nav {
-  background-color: transparent;
-  a {
-    color: #ffffff;
-    text-shadow: none;
-  }
-}
-
-// let us write the project name after the logo
-.logo-suffix {
-  font-size: 45px;
-  position: absolute;
-  left: 350px;
-  bottom: 55px;
-  z-index: 100;
-  color: #ffffff;
+  margin-bottom: 2em;
 }
 
 //home page
