@@ -147,17 +147,7 @@ projects:
         version_family: 4.0
         date: 2013-01-14
         stable: false
-        announcement_url: http://in.relation.to/Bloggers/HibernateOGM400Beta2Released
-      - version: 4.0.0.Beta1
-        version_family: 4.0
-        date: 2012-10-02
-        stable: false
-        announcement_url: http://in.relation.to/Bloggers/HibernateOGM400Beta1Released
-      - version: 3.0.0.Alpha2
-        version_family: 3.0
-        date: 2011-06-17
-        stable: false
-        announcement_url: http://in.relation.to/Bloggers/HibernateOGM300Alpha2Released
+        announcement_url:
     sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-ogm/
     zip_file: hibernate-ogm-VERSION-dist.zip
     group_id: org.hibernate
