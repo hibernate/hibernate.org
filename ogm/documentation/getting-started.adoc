@@ -4,12 +4,15 @@ Davide D'Alto
 :awestruct-project: ogm
 :toc:
 :toc-placement: preamble
+:toc-title: Table of contents
 
 [[ogm-gettingstarted]]
 
 If you are familiar with JPA, you are almost good to go :-)
 We will nevertheless walk you through the first few steps of persisting
 and retrieving an entity using Hibernate OGM.
+
+== Tools configuration
 
 Before we can start, make sure you have the following tools configured:
 
@@ -26,7 +29,7 @@ Add +org.hibernate.ogm:hibernate-ogm-infinispan:{hibernate-ogm-version}+
 to your project dependencies.
 
 
-[source, XML]
+[source, xml]
 [subs="verbatim,attributes"]
 ----
 <dependency>
@@ -49,11 +52,13 @@ If you run outside a Java EE container,
 make sure to explicitly add the dependency.
 ====
 
+== Tutorial
+
 We will use the JPA APIs in this tutorial.
 
 Let's now map our first Hibernate OGM entity.
 
-[source, JAVA]
+[source, java]
 ----
 @Entity
 public class Dog {
@@ -101,7 +106,7 @@ you can see that there is nothing specific to Hibernate OGM in our mapping.
 In this tutorial, we will use JBoss Transactions for our JTA transaction manager.
 The final list of dependencies should look like this:
 
-[source, XML]
+[source, xml]
 [subs="verbatim,attributes"]
 ----
 <dependencies>
@@ -137,7 +142,7 @@ The final list of dependencies should look like this:
 Next we need to define the persistence unit.
 Create a [filename]+META-INF/persistence.xml+ file.
 
-[source, XML]
+[source, xml]
 ----
 <?xml version="1.0"?>
 <persistence xmlns="http://java.sun.com/xml/ns/persistence"
@@ -164,7 +169,7 @@ Create a [filename]+META-INF/persistence.xml+ file.
 
 Let's now persist a set of entities and retrieve them.
 
-[source, JAVA]
+[source, java]
 ----
 //accessing JBoss's Transaction can be done differently but this one works nicely
 TransactionManager tm = getTransactionManager();
