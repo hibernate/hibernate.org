@@ -15,16 +15,14 @@ project: validator
 
   == Maven repository
 
-  Hibernate Validator is built using Maven and publishes as part of the release process the project artifacts to the
+  Hibernate Validator publishes the project artifacts as well to the
   {nexus}[JBoss Maven Repository] under {nexus-search}[{groupId}:{artifactId}].
-  For more information on how to configure Maven to use JBoss's repository,
-  http://community.jboss.org/wiki/MavenGettingStarted-Users[look here] or use `mvn install -s setting-example.xml`.
+  Refer to the http://community.jboss.org/wiki/MavenGettingStarted-Users[Maven Getting Started] guide on the Jboss Wiki for more information on how to configure Maven.
 
-  Here is how to declare the dependency in your Maven POM file
+  Here is how to declare the dependency in your Maven POM:
 
   [source,xml]
   [subs="verbatim,attributes"]
-  .Maven dependency
   ----
   <dependency>
       <groupId>{groupId}</groupId>
