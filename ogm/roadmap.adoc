@@ -12,18 +12,29 @@ You can find a finer grained roadmap in our https://hibernate.atlassian.net/brow
 but this page is a good and concise view of where we are going.
 Dates are generally omitted, we release when we are ready.
 
-== Hibernate OGM 4.0 Beta2
+== Future releases
 
-TODO: What has been added?
+Describe plans for future releases.
 
-Basic JP-QL query support for Hibernate Search::
-TODO: gunnar what is the list of supported features
-Basic JP-QL query support for MongoDB::
-TODO: gunnar what is the list of supported features
+=== Hibernate OGM 4.0 Beta3
+
+Improved query support around projection and operators::
+Supported operators $$=, <, <=, >, =>, IN, LIKE, BETWEEN$$. +
+Supported boolean combinations: AND, OR, NOT. +
+Support for simple property projections and embedded objects.
+JP-QL query support for MongoDB::
+Execute JP-QL queries as MongoDB queries.
 Discriminator based hierarchy::
-Support for hierarchy of class using a discriminator column as defined by JPA.
+Support for hierarchy of classes using a discriminator column as defined by JPA.
+JBoss AS 7 integration module::
+Add Hibernate OGM support by copying the module in the JBoss AS module repository.
+Support for Hibernate Search mass indexing::
+Mass indexing now works out of the box when using Hibernate OGM.
 
-== Hibernate OGM 4.0 Beta3
+=== Hibernate OGM 4.0 Beta4
+
+CRUD support for Neo4J::
+Support the Neo4J Graph DB to read and store entities and associations.
 
 Native query::
 Offer the ability to pass a native backend query and bind the result to an entity.
@@ -40,7 +51,7 @@ Data passed to the [classname]+GridDialect+ are made of:
 The object type information could be shared to lower memory consumption
 and avoid the object creation cost.
 
-== Hibernate OGM 4.0 Beta4
+=== Hibernate OGM 4.0 Beta5
 
 Annotation based option system::
 Each datastore can use specific annotations to customize its behavior.
@@ -51,9 +62,15 @@ The user can use either annotations or a programmatic API
 * for different scopes: generic, type and properties
 * retrofit this for MongoDB's options
 
-== Hibernate OGM 4.0
+CRUD support for CouchDB::
+Support the CouchDB document DB to read and store entities and associations.
 
-Neo4J backend::
+=== Hibernate OGM 4.0
+
+Performance and stabilization::
+Review performance and overall choices before going final.
+
+Improved Neo4J navigation::
 Support Neo4J with ability to keep node reference for cheap navigation when resolving proxies
 thus avoiding unnecessary lookups.
 
@@ -65,39 +82,86 @@ Offer the [classname]+GridDialect+ the option to receive a batch of operations
 to execute. Some drivers are better that way
 and can increase the isolation lever.
 
+==== Additional query support
 
+Query support for Neo4J::
+Support JP-QL and native query.
 
-=== Additional query support
+Query support for CouchDB::
+Support JP-QL and native query.
 
-TODO: Gunnar, add the list of shortcut we took as todo to fix here +
-TODO: what is missing feature wise?
+Clean query parser design::
+* Fix how the field bridge is selected for a given property.
+** Automatic approach
+** Manual overriding option (convention based, annotation or SPI?)
+* Use Hibernate OGM metadata (EntityPersister)
+  to find the type of a property for HQL literal conversion)
+** extract this logic and reuse it for all backends
 
-== Hibernate OGM 4.1
+Move to proper OgmLoader implementations::
+Discuss how to properly load objects via the OgmLoader approach.
 
-Polyglot persistence::
-Offer ability to store entities into different backends.
-Exploration of Cassandra::
-Implement the Cassandra datastore and its CQL query backend.
-Exploration of HBase::
-Implement the HBase datastore and its query support
-Migrate to Hibernate ORM 5::
-When Hibernate ORM 5 is out, look at migrating to the new codebase.
-Offer per session and per statement option customization::
-eg for a given call, influence the quorum factor
-Set benchmark solution and coverage TCK with automated test::
-Start exploring benchmark solution with regular tests in a CI.
-Add reusable TCK for both CRUD and query support.
+=== Hibernate OGM 4.1
+
 Custom types::
 Offer custom types like Hibernate ORM's user type.
 
-== Hibernate OGM 4.2
+Write-behind cross-backends::
+Offer ability to store into two backends.
+In particular, store data in a NoSQL backend and a relational database.
+
+Exploration of Cassandra::
+Implement the Cassandra datastore and its CQL query backend.
+
+Exploration of HBase::
+Implement the HBase datastore and its query support
+
+Migrate to Hibernate ORM 5::
+When Hibernate ORM 5 is out, look at migrating to the new codebase.
+
+Offer per session and per statement option customization::
+eg for a given call, influence the quorum factor
+
+Set benchmark solution and reusable test suite with automated test::
+Start exploring benchmark solution with regular tests in a CI.
+Add reusable TCK for both CRUD and query support.
+
+=== Hibernate OGM 4.2
+
+Polyglot persistence::
+Offer ability to store entities into different backends.
+Entities could be in either backends.
 
 Use Teiid query engine for joins and aggregation::
 Explore reuse of Teiid query engine for smarter queries
+
 General NoSQL and query depth and breath improvements::
 Continue mapping of query engine on other NoSQL
 Continue converage of breath of supported queries
+
 Map/Reduce on queries::
 Map/Reduce based resolution of subgraphs of a query
+
 Infinispan over HotRod::
 Support non library mode for Infinispan
+
+=== Hibernate OGM Next
+
+Migration engine::
+Offer options to support transparent migrations when (non)schema has migrated.
+Annotation based or API based. +
+For example, one would rename a property from a to b,
+the migration engine will know that, read the old value if present,
+and migrate to the new schema.
+
+Denormalization engine::
+Offer ability to store data in different structures denormalized.
+Let loading and queries use these denormalized versions for faster retrieval.
+The goal is to offer a declarative approach
+instead of the imperative approach sued usually in the NoSQL land.
+
+== Past releases
+
+An aggregated changelog of what has happened.
+We are too lazy to go back down to the history of time
+so we will start at 4.0 Beta 3.
