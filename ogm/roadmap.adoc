@@ -101,6 +101,11 @@ Clean query parser design::
 Move to proper OgmLoader implementations::
 Discuss how to properly load objects via the OgmLoader approach.
 
+Cache query plans::
+Look at Hibernate ORM, sHQLQueryPlan which essentially cache results 
+of a query translator which in term calls the entity loader.
+A similar design or even interface result is probably possible
+
 === Hibernate OGM 4.1
 
 Custom types::
