@@ -7,3 +7,73 @@ Emmanuel Bernard
 :toc-title: Questions
 
 You've got a question burning you? We might have the answer for you.
+
+== Using Hibernate OGM
+
+=== Why is there so few entries in this FAQ?
+
+Because Hibernate OGM is so well designed that you get it right away.
+
+More seriously, this is a work in progress.
+If you have questions that you feel should be there,
+link:/community/[contact us].
+
+=== How does Hibernate OGM handles transactions?
+
+Like Hibernate ORM, Hibernate OGM is orthogonal and agnostic to transactions,
+but integrates the flush event to them when possible.
+
+Make sure to demarcate your transaction either via your application container
+or via the Hibernate OGM transaction demarcation methods.
+The reference documentation details how to set up Hibernate OGM
+in various transaction environments.
+
+Note that even if your datastore does not support transactions,
+we recommend you use transaction demarcations with Hibernate OGM
+to trigger the flush operation transparently (on commit).
+But do not consider rollback as a possibility, this won’t work.
+
+=== How can I query?
+
+There are three main methods:
+
+* using Hibernate Search as indexing engine and use full-text queries
+* using JP-QL (we convert it into a native backend query)
+* pass a native backend query and bind it to the entity
+
+The reference documentation details the various options.
+
+== Developers of Hibernate OGM
+
+=== How to skip some tests while in the development of a new +Dialect+?
+
+To skip all tests (from the core suite) for example related to associations,
+add this configuration to the maven surefire plugin:
+
+[source,xml]
+----
+<excludes>
+    <exclude>**/associations/**/*Test.java</exclude>
+</excludes>
+----
+
+So the plugin configuration can look like:
+
+[source,xml]
+.pom.xml
+----
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+                <excludes>
+                    <exclude>**/associations/**/*Test.java</exclude>
+                </excludes>
+                <forkMode>once</forkMode>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+----
