@@ -1,7 +1,7 @@
 ---
 layout: project-frame
-title: About Hibernate Search
-project: search
+title: Hibernate ORM
+project: orm
 title_partial: project/title-about.html.haml
 ---
 
@@ -11,38 +11,53 @@ title_partial: project/title-about.html.haml
     .row-fluid
       .span12.feature-block
         :asciidoc
-          === Full-text search for entities
+          === Object/Relational Mapping
 
-          Offers full-text search support for objects stored by Hibernate ORM, Infinispan and other sources.
-          Think of it as Google(tm) for your entities:
+          Hibernate enables developers to more esily write applications whose data outlives the application process.  As an Object/Relational Mapping (ORM) framework, Hibernate is concerned with data persistence as it applies to relational databases (via JDBC).
 
-          * search words with text
-          * order results by relevance
-          * find by approximation (fuzzy search)
     .row-fluid
       .span12.feature-block
         :asciidoc
-          === Cluster friendly
+          === JPA Provider
           
-          Clustering indexes is not trivial. Hibernate Search offers several easy to setup clustering strategies:
+          In addition to its own "native" API, Hibernate is also an implementation of the Java Persistence API (JPA) specification.  As such, it can be esily used in any environment supporting JPA includng Java SE aplications, Java EE aplication servers, Enterprise OSGi containers, etc.
 
-          * master / slaves
-          * JMS / JGroups replication
-          * Infinispan distributed index
     .row-fluid
       .span12.feature-block
         :asciidoc
-          === Faceting and geolocation
+          === Idiomatic persistence
 
-          Geolocalized entities are as easy as `@Spatial`. Filter results around a certain location liek the user position. Hibernate Search offers to algorithms: a light one or a more scalable one.
-          
-          Faceting categorizes results by properties like price range or brand.
+          Hibernate enables you to develop persistent classes following natural Object-oriented idioms including inheritance, polymorphism, association, composition, and the Java collections framework.  Hibernate requires no interfaces or base classes for persistent classes and enables any class or data structure to be persistent.
+
     .row-fluid
       .span12.feature-block
         :asciidoc
-          === Easy to use
+          === High Performance
 
-          Design to be easy to use from the ground up. Handles indexing, datastore synchronization, clustering and infrastructure transparently while you focus on the business sense of your queries.
+          Hibernate supports lazy initialization, numerous fetching strategies and optimistic locking with automatic versioning and time stamping. Hibernate requires no special database tables or fields and generates much of the SQL at system initialization time instead of runtime. 
+
+          Hibernate consistently offers superior performance over straight JDBC coding both in terms of developer productivity and runtime performance.
+
+    .row-fluid
+      .span12.feature-block
+        :asciidoc
+          === Scalability
+
+          Hibernate was designed to work in an application server cluster and deliver a highly scalable architecture. Hibernate scales well in any environment: Use it to drive your in-house Intranet that serves hundreds of users or for mission-critical applications that serve hundreds of thousands.
+
+    .row-fluid
+      .span12.feature-block
+        :asciidoc
+          === Reliable
+
+          Hibernate is well known for its excellent stability and quality, proven by the acceptance and use by tens of thousands of Java developers.
+
+    .row-fluid
+      .span12.feature-block
+        :asciidoc
+          === Extensibility
+
+          Hibernate is highly configurable and extensible.
 
   -# News right column
   .span4
