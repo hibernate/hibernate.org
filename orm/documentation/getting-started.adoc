@@ -1,84 +1,50 @@
-= Getting started with Hibernate Search
-Emmanuel Bernard
+= Getting started with Hibernate ORM
 :awestruct-layout: project-frame
-:awestruct-project: search
+:awestruct-project: orm
 :toc:
 :toc-placement: preamble
-:latest_stable: 4.3.0.Final
+:latest_stable: 4.2.7.SP1
 
-Welcome to Hibernate Search.
-The following chapter will guide you through the initial steps required to integrate Hibernate Search into an existing Hibernate enabled application.
-In case you are a Hibernate new timer we recommend you start http://hibernate.org/quick-start.html[here].
+== Building
 
-== System requirements
+For developers wanting to build from source, see the README.md file in the root of the project source.
 
-Java Runtime::
-A JDK or JRE version 6 or greater.
-You can download a Java Runtime for Windows/Linux/Solaris http://www.oracle.com/technetwork/java/javase/downloads/index.html[here].
-If using Java version 7 make sure you avoid builds 0 and 1: those versions contained an optimisation bug which would be triggered by Lucene.
-Hibernate Search 3.x was compatible with Java version 5.
-Hibernate Search::
-`hibernate-search-4.3.0.Final.jar` {latest_stable} and all runtime dependencies. You can get the jar artifacts either from the dist/lib directory of the Hibernate Search distribution or you can download them from the JBoss maven repository. More information
-Hibernate ORM::
-test
-JPA 2::
-test
+== Contributing (pull requests)
 
-== Using Maven
+For developers wanting to contribute back fixes/improvements, see the CONTRIBUTING.md file in the root of the project source.
 
-The Hibernate Search artifacts can be found in Maven's central repository but are released first in the JBoss maven repository. So it's not a requirement but we recommend to add this repository to your settings.xml file (see also Maven Getting Started for more details).
+== Using 
 
-This is all you need to add to your pom.xml to get started:
+For developers wanting to use Hibernate ORM in their projects...
+
+=== System Requirements
+
+Hibernate ORM requires Java 6 or higher.
+
+=== Via Maven Repository
+
+The Hibernate ORM artifacts can be found in Maven's central repository but are released first in the JBoss maven repository. So it's not a requirement but we recommend to add this repository to your settings.xml file (see also Maven Getting Started for more details).
+
+To use Hibernate ORM in your own project you just need to name a dependency on it in your project:
 
 [source,xml]
-.Maven artifact identifier for Hibernate Search
+[subs="verbatim,attributes"]
+.From Maven
 ----
 <dependency>
    <groupId>org.hibernate</groupId>
-   <artifactId>hibernate-search</artifactId>
-   <version>4.3.0.Final</version>
+   <artifactId>hibernate-core</artifactId>
+   <version>{latest_stable}</version>
 </dependency>
 ----
 
-[source,xml]
-.Optional Maven dependencies for Hibernate Search
+From Gradle:
+
+[source]
+[subs="verbatim,attributes"]
+.From Gradle
 ----
-<!-- If using JPA (2), add: -->
-<dependency>
-   <groupId>org.hibernate</groupId>
-   <artifactId>hibernate-entitymanager</artifactId>
-   <version>4.2.2.Final</version>
-</dependency>
-<!-- Additional Analyzers: -->
-<dependency>
-   <groupId>org.hibernate</groupId>
-   <artifactId>hibernate-search-analyzers</artifactId>
-   <version>4.3.0.Final</version>
-</dependency>
-<!-- Infinispan integration: -->
-<dependency>
-   <groupId>org.hibernate</groupId>
-   <artifactId>hibernate-search-infinispan</artifactId>
-   <version>4.3.0.Final</version>
-</dependency>
+org.hibernate:hibernate-core:{latest_stable}
 ----
 
-=== Some subsection test
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas, velit vitae lobortis faucibus, nibh risus mattis nibh, sed aliquam lacus enim sit amet nisl. Sed vestibulum odio id condimentum lobortis. Donec tempor at elit non pretium. Sed condimentum neque et odio congue, a convallis urna tincidunt. Aliquam non consectetur lorem. Aliquam gravida, lectus nec vulputate ornare, urna elit pulvinar libero, nec luctus metus eros ac neque. Fusce ut tellus ipsum. Sed in ante at neque lobortis faucibus sed nec erat. Ut imperdiet viverra lorem quis vehicula. Donec egestas hendrerit odio, sed vestibulum purus consectetur ut. Suspendisse hendrerit neque pellentesque quam blandit dictum. Duis sed ligula mattis, cursus lectus non, egestas nisl. Duis eleifend ante et ultricies eleifend.
-
-==== Some deep subsection
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas, velit vitae lobortis faucibus, nibh risus mattis nibh, sed aliquam lacus enim sit amet nisl. Sed vestibulum odio id condimentum lobortis. Donec tempor at elit non pretium. Sed condimentum neque et odio congue, a convallis urna tincidunt. Aliquam non consectetur lorem. Aliquam gravida, lectus nec vulputate ornare, urna elit pulvinar libero, nec luctus metus eros ac neque. Fusce ut tellus ipsum. Sed in ante at neque lobortis faucibus sed nec erat. Ut imperdiet viverra lorem quis vehicula. Donec egestas hendrerit odio, sed vestibulum purus consectetur ut. Suspendisse hendrerit neque pellentesque quam blandit dictum. Duis sed ligula mattis, cursus lectus non, egestas nisl. Duis eleifend ante et ultricies eleifend.
-
-==== Some other deep subsection
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas, velit vitae lobortis faucibus, nibh risus mattis nibh, sed aliquam lacus enim sit amet nisl. Sed vestibulum odio id condimentum lobortis. Donec tempor at elit non pretium. Sed condimentum neque et odio congue, a convallis urna tincidunt. Aliquam non consectetur lorem. Aliquam gravida, lectus nec vulputate ornare, urna elit pulvinar libero, nec luctus metus eros ac neque. Fusce ut tellus ipsum. Sed in ante at neque lobortis faucibus sed nec erat. Ut imperdiet viverra lorem quis vehicula. Donec egestas hendrerit odio, sed vestibulum purus consectetur ut. Suspendisse hendrerit neque pellentesque quam blandit dictum. Duis sed ligula mattis, cursus lectus non, egestas nisl. Duis eleifend ante et ultricies eleifend.
-
-=== Some other subsection test
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas, velit vitae lobortis faucibus, nibh risus mattis nibh, sed aliquam lacus enim sit amet nisl. Sed vestibulum odio id condimentum lobortis. Donec tempor at elit non pretium. Sed condimentum neque et odio congue, a convallis urna tincidunt. Aliquam non consectetur lorem. Aliquam gravida, lectus nec vulputate ornare, urna elit pulvinar libero, nec luctus metus eros ac neque. Fusce ut tellus ipsum. Sed in ante at neque lobortis faucibus sed nec erat. Ut imperdiet viverra lorem quis vehicula. Donec egestas hendrerit odio, sed vestibulum purus consectetur ut. Suspendisse hendrerit neque pellentesque quam blandit dictum. Duis sed ligula mattis, cursus lectus non, egestas nisl. Duis eleifend ante et ultricies eleifend.
-
-== Some main section test
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas, velit vitae lobortis faucibus, nibh risus mattis nibh, sed aliquam lacus enim sit amet nisl. Sed vestibulum odio id condimentum lobortis. Donec tempor at elit non pretium. Sed condimentum neque et odio congue, a convallis urna tincidunt. Aliquam non consectetur lorem. Aliquam gravida, lectus nec vulputate ornare, urna elit pulvinar libero, nec luctus metus eros ac neque. Fusce ut tellus ipsum. Sed in ante at neque lobortis faucibus sed nec erat. Ut imperdiet viverra lorem quis vehicula. Donec egestas hendrerit odio, sed vestibulum purus consectetur ut. Suspendisse hendrerit neque pellentesque quam blandit dictum. Duis sed ligula mattis, cursus lectus non, egestas nisl. Duis eleifend ante et ultricies eleifend.
+For projects using JPA, the artifact to reference is `hibernate-entitymanager` instead of `hibernate-core`.
