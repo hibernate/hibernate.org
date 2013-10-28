@@ -11,6 +11,64 @@ html_minifier: disabled
 
 # project specific information
 projects:
+  # ORM
+  orm:
+    name: Hibernate ORM
+    icon: 'icon-check'
+    releases:
+      - version: 4.3.0.Beta5
+        version_family: 4.3
+        date: 2013-10-09
+        stable: false
+        announcement_url: http://in.relation.to/Bloggers/HibernateORM430Beta5Release
+      - version: 4.2.7.SP1
+        version_family: 4.2
+        date: 2013-10-27
+        stable: true
+        announcement_url: http://in.relation.to/Bloggers/HibernateORM427SP1Released
+    sourceforge_url: http://sourceforge.net/projects/hibernate/files/hibernate4/
+    zip_file: hibernate-validator-VERSION-dist.zip
+    group_id: org.hibernate
+    artifact_id: hibernate-core
+    reference_doc: http://docs.jboss.org/hibernate/orm/
+    reference_pdf:
+    getting_started:
+    license:
+      name: LGPL V2.1
+      url: http://hibernate.org/license
+    menu:
+      intern:
+        - name: About
+          href: '/orm/'
+          css_class: 'icon-fixed-width icon-home'
+        - name: Downloads
+          href: '/orm/downloads'
+          css_class: 'icon-fixed-width icon-cloud-download'
+        - name: Documentation
+          href: '/orm/documentation'
+          css_class: 'icon-fixed-width icon-book'
+        - name: FAQ
+          href: '/orm/faq'
+          css_class: 'icon-fixed-width icon-question'
+        - name: Contribute
+          href: '/orm/contribute'
+          css_class: 'icon-fixed-width icon-beer'
+      extern:
+        - name: Wiki
+          href: 'https://community.jboss.org/en/hibernate/validator'
+          css_class: 'icon-fixed-width icon-edit'
+        - name: Issues
+          href: 'https://hibernate.atlassian.net/browse/HHH'
+          css_class: 'icon-fixed-width icon-exclamation-sign'
+        - name: Forum
+          href: 'https://forum.hibernate.org'
+          css_class: 'icon-fixed-width icon-comments'
+        - name: Source code
+          href: 'https://github.com/hibernate/hibernate-orm'
+          css_class: 'icon-fixed-width icon-code'
+        - name: CI
+          href: 'https://ci.hibernate.org/'
+          css_class: 'icon-fixed-width icon-stethoscope'
   # Search
   search:
     name: Hibernate Search
