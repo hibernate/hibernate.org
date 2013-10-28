@@ -1,0 +1,140 @@
+= Hibernate Search FAQ
+Emmanuel Bernard
+:awestruct-layout: project-frame
+:awestruct-project: search
+:toc:
+:toc-placement: preamble
+:toc-title: Questions
+
+You've got a question burning you? We might have the answer for you.
+
+== Indexes
+
+=== No file created in index directory
+
+Hibernate Search won't create a new index in existing directories.
+
+The fundamental Lucene index files are created at framework startup, but existing directories are not modified.
+Delete the directory: the framework will create it and build the basic index structure at startup.
+Since 3.1 it detects indexes in existing directories automatically.
+
+== Queries
+
+=== Can I mix HQL and Lucene queries?
+
+This is not possible as there is no way to intersect the results from both queries without iterating on at least one of the results.
+You may consider adding additional fields to the Lucene index and then look at the Filters in the reference documentation.
+
+=== Avoid two queries when retrieving results and size
+
+If you plan to return the number of matching results and the list of results, you should call the methods in the following order
+
+[source,java]
+----
+fullTextQuery.list(); //or iterate or scroll
+fullTextQuery.getResultSize();
+----
+
+This will execute a single Lucene query instead of two and will be faster.
+
+== Configuration
+
+=== I get an error message saying Event listeners are not configured
+
+The full error message looks something like this:
+
+----
+Caused by: org.hibernate.HibernateException: Hibernate Search Event listeners not configured, please check the reference documentation and the application's hibernate.cfg.xml
+   at org.hibernate.search.util.ContextHelper.getSearchFactoryBySFI(ContextHelper.java:32) 
+----
+ 
+There are several possibilities for this error.
+
+* You are not using Hibernate Annotations in which case the event listeners have to be manually configured (see also the event listener configuration in the online documentation):
++
+[source,xml]
+----
+<hibernate-configuration>
+     <session-factory>
+        <event type="post-update"/>
+            <listener class="org.hibernate.search.event.FullTextIndexEventListener"/>
+        </event>
+        <event type="post-insert"/>
+            <listener class="org.hibernate.search.event.FullTextIndexEventListener"/>
+        </event>
+        <event type="post-delete"/>
+            <listener class="org.hibernate.search.event.FullTextIndexEventListener"/>
+        </event>
+    </session-factory>
+</hibernate-configuration>
+----
++
+TIP: Other versions require more event listeners, and latest versions don't require any at all: please refer to the documentation relevant to the version you are using.
+
+* Your are using the wrong version of Hibernate Annotation/Search.
++
+Hibernate Annotation tries to detect Search at startup and configures the event listeners in case they are found.
+This however requires that you have the right versions of the dependencies.
+Check the Compatibility Matrix for the right combination of jar files.
+In case you are using the jar files which ship with the Hibernate Search distribution make sure that you really installed the right jar files and they they are really used.
+Some containers might have a shared lib directory with a older versions of the required libraries. Check the log file.
+Each Hibernate product reports its version when starting up.
+* If you sure you are using the right version of Annotations and Search and you still get this exception it might be that you have a custom class loading configuration which prevents Annotations to locate the Search specific event listeners.
+If this is the case try the manual configuration.
+
+=== How do I get started with the search archetype?
+
+Use the following command, specifying the latest Hibernate Search version for archetypeVersion (or the version of your choice):
+
+[source]
+----
+mvn archetype:generate -DarchetypeGroupId=org.hibernate -DarchetypeArtifactId=hibernate-search-quickstart -DarchetypeVersion=4.0.0.Final -DarchetypeRepository=http://repository.jboss.org/nexus/content/groups/public-jboss/
+----
+
+You need to specify the group id, artifact id and a version.
+Once the sample project is created you can inspect the sources and run for exmaple mvn test.
+
+To get a full list of available archetypes in the repo run:
+
+[source]
+----
+mvn archetype:generate -DarchetypeRepository=http://repository.jboss.org/nexus/content/groups/public-jboss
+----
+
+== Integration
+
+=== +NoSuchMethodError+ in JBoss AS 4.2
+
+The error is: `Caused by: java.lang.NoSuchMethodError: org.hibernate.search.FullTextSession.createFullTextQuery(Lorg/apache/lucene/search/Query;[Ljava/lang/Class;)Lorg/hibernate/search/FullTextQuery;`
+
+Hibernate Search 3.0 requires Hibernate Annotations 3.3.x and JBoss AS 4.2 ships with 3.2.x. Replace the following jars:
+
+* hibernate-annotations.jar (3.3.x for Search 3.0)
+* hibernate-validator.jar (3.0.x for Search 3.0)
+* hibernate-entitymanager.jar (3.3.x for Search 3.0)
+* hibernate-commons-annotations.jar (3.0.x for Search 3.0)
+
+in `[JBOSS_HOME]/server/[myconfig]/lib`.
+Then place Hibernate Search and Lucene JARs in your EAR or WAR.
+
+=== I am using Spring and the index is not being updated at transaction commit
+
+See also http://www.hibernate.org/441.html[spring integration] and especially check you're using the correct transaction manager:
+
+[source,xml]
+----
+<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+----
+
+=== How do I properly shutdown Search?
+
+Search is using background threads to manage the indexes; they are gracefully closed when you close Hibernate's +SessionFactory+.
+Closing the +SessionFactory+ is always recommended; when using Search it's mandatory, otherwise your application might never terminate.
+
+[source,java]
+----
+sessionFactory.close();
+----
+
+When using `exclusive_index_use=true` it's also needed to properly clear the index locks; note that this options is enabled by default since Hibernate Search 4.0.
+

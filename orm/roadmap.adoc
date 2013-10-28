@@ -1,0 +1,73 @@
+= Hibernate Search roadmap
+Emmanuel Bernard
+:awestruct-layout: project-frame
+:awestruct-project: search
+:toc:
+:toc-placement: preamble
+:toc-title: Releases
+
+Hibernate Search is community driven and as such the roadmap constantly evolves to reflect the users needs.
+You can find a finer grained roadmap in our https://hibernate.atlassian.net/browse/HSEARCH[issue tracker] but this page is a good and consise view of where we are going.
+Dates are generally omitted, we release when we are ready.
+
+== Hibernate Search 4.4
+
+Backward compatible with the 4.x series but prepare for the 5.0 enhancements.
+
+Better clustering::
+Solid Infinispan and JGroups integration, ease of setup.
+Metadata API::
+Exposes the index structure and help in writing queries (development time and tooling). Useful to log or dump how things are indexed.
+Also required for link:/ogm/[Hibernate OGM] and its query integration.
+Jandex::
+Use Jandex for annotation scanning for faster boot in Se and in http://wildfly.org[WildFly].
+Dynamic sharding::
+Ability to dynamically add shards. Useful when shards are business based. Like customer based.
+New quickstart and demo::
+Quickstarts and demos for JBoss Developper Framework.
+Provided partly by Google Summer of Code contributions.
+Performance regression tests::
+More of them.
+
+== Hibernate Search 5.0
+
+Improved codebase with some compatibility breaks over the 4.x series.
+Will provide a sound foundation for the medium future.
+
+Apache Lucene 4.x::
+Move to Apache Lucene 4.x. This is a significant departure and is the cause of most compatibility breaks.
+Speed and feature improvements will flow form this migration.
+Uncommitted changes in a transaction::
+Exposes uncommitted changes and make them visible in a given transaction.
+Classloader SPI::
+Explicit classloader SPI for better EAP integration as modules.
+API / SPI for alternative backends::
+Define API / SPI abstraction to allow for future external backends integrations (such as Apache Solr and Elastic Search).
+Asynchronous FieldBridge::
+ex. improved Tika integration.
+Multitenancy::
+Integration with ORM's multitenancy API (Google Summer of Code contributions).
+
+
+== Hibernate Search  5.1
+
+CDI integration::
+Offer a portable extension to help integrate in CDI.
+High performance backend queues::
+Low contention non blocking queues.
+Automated performance regression tests::
+'nuf said.
+Infinispan 6.0::
+Migration to Infinispan 6.x.
+New Faceting engine::
+Apache Lucene 4 based faceting engine for better performance.
+Auto suggestion and spell checking::
+Offer APIs to auto suggestions and spell checking.
+
+== Hibernate Search 5.2
+
+Pre-analysis of text in the transaction context::
+Better remoting/clustering & scalability.
+Hibernate ORM 5.x / JPA 2.1 / Java EE 7::
+Provides compatibility with link:/orm/[Hibernate ORM 5.0].
+Might need to be pushed earlier to match Hibernate ORM 5 plans.
