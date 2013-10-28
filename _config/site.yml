@@ -16,6 +16,7 @@ projects:
     name: Hibernate ORM
     icon: 'icon-table'
     releases:
+      # IMPORANT: Use latest stable first!
       - version: 4.2.7.SP1
         version_family: 4.2
         date: 2013-10-27
@@ -55,7 +56,7 @@ projects:
           css_class: 'icon-fixed-width icon-beer'
       extern:
         - name: Wiki
-          href: 'https://community.jboss.org/en/hibernate/validator'
+          href: 'https://community.jboss.org/en/hibernate'
           css_class: 'icon-fixed-width icon-edit'
         - name: Issues
           href: 'https://hibernate.atlassian.net/browse/HHH'
