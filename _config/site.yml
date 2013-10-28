@@ -15,18 +15,6 @@ projects:
   orm:
     name: Hibernate ORM
     icon: 'icon-table'
-    releases:
-      # IMPORANT: Use latest stable first!
-      - version: 4.2.7.SP1
-        version_family: 4.2
-        date: 2013-10-27
-        stable: true
-        announcement_url: http://in.relation.to/Bloggers/HibernateORM427SP1Released
-      - version: 4.3.0.Beta5
-        version_family: 4.3
-        date: 2013-10-09
-        stable: false
-        announcement_url: http://in.relation.to/Bloggers/HibernateORM430Beta5Release
     sourceforge_url: http://sourceforge.net/projects/hibernate/files/hibernate4/
     zip_file: hibernate-release-VERSION.zip
     group_id: org.hibernate
@@ -74,19 +62,6 @@ projects:
   search:
     name: Hibernate Search
     icon: 'icon-search'
-    releases:
-      - version: 4.4.0.Alpha0
-        version_family: 4.4
-        date: 2013-07-21
-        stable: false
-        announcement_url: http://in.relation.to/Bloggers/HibernateSearch430FinalWasSpottedInBoston
-        summary: Metadata API, dynamic sharding, simpler Infinispan clustering
-      - version: 4.3.0.Final
-        version_family: 4.3
-        date: 2013-06-08
-        stable: true
-        announcement_url: http://in.relation.to/Bloggers/HibernateSearch430FinalWasSpottedInBoston
-        summary: Synchronous JGroups backend, JBoss AS and EAP modules, Near-Real-Time backend speed improvements, spatial improvements
     sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-search/
     zip_file: hibernate-search-VERSION-dist.zip
     group_id: org.hibernate
@@ -138,22 +113,6 @@ projects:
   validator:
     name: Hibernate Validator
     icon: 'icon-check'
-    releases:
-      - version: 5.1.0.Alpha1
-        version_family: 5.1
-        date: 2013-04-30
-        stable: false
-        announcement_url: http://in.relation.to/Bloggers/HibernateValidator510Alpha1Released
-      - version: 5.0.1.Final
-        version_family: 5.0
-        date: 2013-04-30
-        stable: true
-        announcement_url: http://in.relation.to/Bloggers/HibernateValidator501AndTheStoryBehindTheMissing500Final
-      - version: 4.3.1.Final
-        version_family: 4.3
-        date: 2012-11-12
-        stable: true
-        announcement_url: http://in.relation.to/Bloggers/HibernateValidator500Alpha2And431Final
     sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-validator/
     zip_file: hibernate-validator-VERSION-dist.zip
     group_id: org.hibernate
@@ -201,12 +160,6 @@ projects:
   ogm:
     name: Hibernate OGM
     icon: 'icon-sitemap'
-    releases:
-      - version: 4.0.0.Beta4
-        version_family: 4.0
-        date: 2013-10-25
-        stable: false
-        announcement_url:
     sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-ogm/
     zip_file: hibernate-ogm-VERSION-dist.zip
     group_id: org.hibernate

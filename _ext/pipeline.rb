@@ -5,6 +5,7 @@ require 'html_minifier'
 require 'file_merger'
 require 'relative'
 require 'releases'
+require 'data_dir'
 
 # dependencies for asciidoc support
 require 'tilt'
@@ -41,6 +42,9 @@ Awestruct::Extensions::Pipeline.new do
   helper Awestruct::Extensions::GoogleAnalytics
   helper Awestruct::Extensions::Relative
   helper Awestruct::Extensions::Releases
+  extension Awestruct::Extensions::DataDir.new
+  #in the data_dir.rb file
+  extension Awestruct::Extensions::ReleaseSorter.new
   extension Awestruct::Extensions::WgetWrapper.new
   transformer Awestruct::Extensions::JsMinifier.new
   transformer Awestruct::Extensions::CssMinifier.new
