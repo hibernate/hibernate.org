@@ -1,7 +1,7 @@
 ---
 layout: project-downloads
-title: Hibernate Search downloads
-project: search
+title: Hibernate ORM Downloads
+project: orm
 ---
 -# Metadata from site.yml for the project
 - project_description = site.projects[page.project]
@@ -15,7 +15,7 @@ project: search
 
   == Maven repository
 
-  Hibernate Search is built using Maven and publishes as part of the release process the project artifacts to the
+  Hibernate ORM publishes Maven project artifacts to the
   {nexus}[JBoss Maven Repository] under {nexus-search}[{groupId}:{artifactId}]. 
   For more information on how to configure Maven to use JBoss's repository,
   http://community.jboss.org/wiki/MavenGettingStarted-Users[look here] or use `mvn install -s setting-example.xml`.
@@ -26,9 +26,49 @@ project: search
   [subs="verbatim,attributes"]
   .Maven dependency
   ----
+  <!-- required -->
+  
   <dependency>
       <groupId>{groupId}</groupId>
-      <artifactId>{artifactId}</artifactId>
+      <artifactId>hibernate-core</artifactId>
+      <version>{prj-version}</version>
+  </dependency>
+  
+  <!-- optional -->
+  
+  <dependency>
+      <groupId>{groupId}</groupId>
+      <artifactId>hibernate-entitymanager</artifactId>
+      <version>{prj-version}</version>
+  </dependency>
+  <dependency>
+      <groupId>{groupId}</groupId>
+      <artifactId>hibernate-osgi</artifactId>
+      <version>{prj-version}</version>
+  </dependency>
+  <dependency>
+      <groupId>{groupId}</groupId>
+      <artifactId>hibernate-envers</artifactId>
+      <version>{prj-version}</version>
+  </dependency>
+  <dependency>
+      <groupId>{groupId}</groupId>
+      <artifactId>hibernate-c3p0</artifactId>
+      <version>{prj-version}</version>
+  </dependency>
+  <dependency>
+      <groupId>{groupId}</groupId>
+      <artifactId>hibernate-proxool</artifactId>
+      <version>{prj-version}</version>
+  </dependency>
+  <dependency>
+      <groupId>{groupId}</groupId>
+      <artifactId>hibernate-infinispan</artifactId>
+      <version>{prj-version}</version>
+  </dependency>
+  <dependency>
+      <groupId>{groupId}</groupId>
+      <artifactId>hibernate-ehcache</artifactId>
       <version>{prj-version}</version>
   </dependency>
   ----
@@ -36,9 +76,9 @@ project: search
   [[supported-versions]]
   == Supported versions pass:[<i class="icon-user-md icon-fixed-width icon-2x"></i>]
 
-  Hibernate Search is a fully supported component of both
+  Hibernate ORM is a fully supported component of both
   
   * http://www.jboss.com/products/platforms/application[JBoss Enterprise Application Platform]
   * https://www.redhat.com/products/jbossenterprisemiddleware/web-framework-kit/[JBoss Web Framework Kit]
 
-  If you are looking for Hibernate Search support, contact Red Hat.
+  If you are looking for Hibernate ORM support, contact Red Hat.

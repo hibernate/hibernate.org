@@ -14,20 +14,20 @@ projects:
   # ORM
   orm:
     name: Hibernate ORM
-    icon: 'icon-check'
+    icon: 'icon-table'
     releases:
-      - version: 4.3.0.Beta5
-        version_family: 4.3
-        date: 2013-10-09
-        stable: false
-        announcement_url: http://in.relation.to/Bloggers/HibernateORM430Beta5Release
       - version: 4.2.7.SP1
         version_family: 4.2
         date: 2013-10-27
         stable: true
         announcement_url: http://in.relation.to/Bloggers/HibernateORM427SP1Released
+      - version: 4.3.0.Beta5
+        version_family: 4.3
+        date: 2013-10-09
+        stable: false
+        announcement_url: http://in.relation.to/Bloggers/HibernateORM430Beta5Release
     sourceforge_url: http://sourceforge.net/projects/hibernate/files/hibernate4/
-    zip_file: hibernate-validator-VERSION-dist.zip
+    zip_file: hibernate-release-VERSION.zip
     group_id: org.hibernate
     artifact_id: hibernate-core
     reference_doc: http://docs.jboss.org/hibernate/orm/
