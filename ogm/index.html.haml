@@ -1,6 +1,6 @@
 ---
 layout: project-frame
-title: About Hibernate OGM
+title: Hibernate OGM
 project: ogm
 title_partial: project/title-about.html.haml
 ---
@@ -11,35 +11,37 @@ title_partial: project/title-about.html.haml
     .row-fluid
       .span12.feature-block
         :asciidoc
-          === JPA for NoSQL solutions
+          === Many NoSQL stores, one standard way to access them
 
-          Hibernate Object/Grid Mapper (OGM) aims at providing Java Persistence (JPA) support for NoSQL solutions.
+          Hibernate Object/Grid Mapper (OGM) provides Java Persistence (JPA) support for NoSQL solutions.
+          It reuses Hibernate ORM's engine but persists entities into a NoSQL datastore instead of a relational database.
 
-          It reuses Hibernate Core's engine but persists entities into a NoSQL data store instead of a relational database. It reuses the Java Persistence Query Language (JP-QL) to search their data.
+          === Wide range of backends
 
-          That's the grand scheme of things and we will roll out functionalities over time.
+          OGM talks to NoSQL backends via store-specific dialects. Currently there is support for
 
-          ==== Short term targets
+          * _Key/Value_: Infinispan, Ehcache
+          * _Document_: MongoDB
+          * _Graph_: Neo4j
 
-          * support for Infinispan (done)
-          * support Hibernate Search full-text queries (done)
-          * support simple JP-QL queries (restrictions and many-to-one joins)
+          Your favorite NoSQL store isn't listed here? We'd love to get link:/ogm/contribute[your help] for adding it.
 
-          ==== Medium term targets
+          === Rich query capabilities
 
-          * support other key/value stores
-          * support other NoSQL families
-          * support complex joins and aggregations
+          Hibernate OGM supports several ways for searching entities and returning them as Hibernate _managed objects_:
 
-          === Open source
-          The project is Open Source, please come and contribute ideas, code, documentation. Make your feature a priority. Check out link:/ogm/contribute[the contribute page] for more information.
+          * _JP-QL queries_ (we convert them into a native backend query)
+          * datastore specific _native queries_
+          * _full-text queries_, using Hibernate Search as indexing engine
 
-    .row-fluid
-      .span12.feature-block
-        :asciidoc
-          === LGPL licensed
+          === And more...
+          * When JPA isn't enough, Hibernate OGM extends it with family-specific and product-specific options.
+          That way, the power of the backend is at your fingertips.
+          All that in a type-safe way.
+          * Mixing several NoSql datastores in one application, e.g. use Neo4j for your friendship graph and MongoDB for your blog posts. Or mix NoSql and relational databases (coming soon)
+          * Support for implicit data migrations upon data load (coming soon)
+          * Denormalize data declaratively for faster retrieval (coming soon)
 
-          Hibernate OGM is released under the http://www.gnu.org/licenses/lgpl.html[LGPL open source license].
 
   -# News right column
   .span4
