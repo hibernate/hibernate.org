@@ -17,7 +17,7 @@ layout: project-frame
       %a.btn.btn-large{:href => "#{get_started_url}"} Getting started guide
     - if not stable_release.nil?
       &nbsp;
-      %a.btn.btn-large.btn-success{:href => "#{project_description.sourceforge_url}#{stable_release.version}/"} Get documentation for #{stable_release.version}
+      %a.btn.btn-large.btn-success{:href => "#{project_description.reference_doc}#{stable_release.version_family}/reference/en-US/html/"} Get documentation for #{stable_release.version}
 .release-bottons.visible-phone
   - stable_release = latest_stable_release(page)
   - if not get_started_url.nil?
