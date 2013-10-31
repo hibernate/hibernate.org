@@ -8,22 +8,26 @@ A bit of Git, a bit of Ruby and you will get your local hibernate.org served.
 
 * Get http://git-scm.com/[Git]
 * Get https://rvm.io[RVM]
-* Get http://www.gnu.org/software/wget/[GNU Wget 1.14] (only needed for the <<temp,temporary resource copying>>)
+* Get http://www.gnu.org/software/wget/[GNU Wget 1.14]
 * If on Mac OS:
 ** Get https://developer.apple.com/xcode/[XCode] (needed for native gems)
 * If on Linux:
 ** Get libxslt-dev - eg via `sudo apt-get install libxslt-dev`
 
-*** For Linux Mint users - installing rvm may not work.  Be sure to instead install latest ruby-dev package via apt-get...
+*** For Linux Mint users - installing rvm may not work.
+    Be sure to instead install latest ruby-dev package via apt-get...
 
 
 == Installation
 
 === Git
-Install Git to your system. http://help.github.com/[GitHub's help page] is a good starting
-point. If you are looking for some tips and tricks, checkout http://in.relation.to/Bloggers/HibernateMovesToGitGitTipsAndTricks[Emmanuel's blog].
+Install Git to your system. http://help.github.com/[GitHub's help page] is a good starting point.
+
+If you are looking for some tips and tricks, checkout 
+http://in.relation.to/Bloggers/HibernateMovesToGitGitTipsAndTricks[Emmanuel's blog].
 
 === RVM & Ruby
+
 Ruby like many other platforms has its dependency hell. We do recommend you use RVM to
 isolate your ruby runtimes as well as dependencies (gems). The RVM steps are optional though.
 If you are not going to use RVM have a look at the different Ruby installations http://www.ruby-lang.org/en/downloads/[options] you have. 
@@ -68,24 +72,6 @@ git clone git@github.com:hibernate/hibernate.org.git
 cd hibernate.org
 ----
 
-[[temp]]
-==== Preparing Hibernate specific resources 
-
-As a temporary measure, resources from the JBoss Community Bootstrap are compiled
-externally. Retrieve this https://dl.dropboxusercontent.com/u/692318/redhat/hibernate-site/static.hibernate.org.zip[zip file],
-and unzip it under `hibernate.org/cache`.
-You should get a `hibernate.org/cache/static.hibernate.org/...` and a `hibernate.org/cache/static.jboss.org/...` directory.
-
-[source]
-----
-mkdir cache
-cd cache
-wget --no-check-certificate https://dl.dropboxusercontent.com/u/692318/redhat/hibernate-site/static.hibernate.org.zip
-unzip static.hibernate.org.zip
-----
-
-Make sure to get this zip file regularly if you see UI discrepancies.
-
 === Install Ruby dependencies
 
 [source]
@@ -94,8 +80,9 @@ gem install bundler
 bundle install
 ----
 
-Note that if someone updates Awestruct or any dependent gem via the `Gemfile` dependency
-management, you need to rerun `bundle install`.
+Note that if someone updates Awestruct
+or any dependent gem via the `Gemfile` dependency management,
+you need to rerun `bundle install`.
 
 == Serve the site locally
 
