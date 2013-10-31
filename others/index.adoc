@@ -1,0 +1,57 @@
+= Other Hibernate projects
+Emmanuel Bernard
+:awestruct-layout: community-news
+
+We always have new ideas to solve data related problems.
+You will find some of these experiments here.
+
+## Hibernate Shards
+
+[role="alert alert-block"]
+Hibernate Shards has not been kept up to date with the latest Hibernate ORM versions.
+Some community members have interest in making it catch up.
+If you are interested, link:/community/[contact us].
+
+You can't always put all your relational data in a single relational database:
+
+* Sometimes you simply have too much data.
+* Sometimes you have a distributed deployment architecture.
+* Sometimes the lawyers say "no" (or more likely, "NOOO!").
+
+Whatever your reasons,
+talking to multiple relational databases inevitably complicates the development of your application.
+
+Hibernate Shards is a framework that is designed to encapsulates
+and minimize this complexity by adding support for horizontal partitioning to Hibernate Core.
+
+=== Key features
+
+Standard Hibernate programming model::
+Hibernate Shards allows you to continue using the Hibernate APIs you know and love:
++SessionFactory+, +Session+, +Criteria+, +Query+.
+If you already know how to use Hibernate, you already know how to use Hibernate Shards.
+Flexible sharding strategies::
+Distribute data across your shards any way you want.
+Use one of the default strategies we provide or plug in your own application-specific logic.
+Support for virtual shards::
+Think your sharding strategy is never going to change? Think again.
+Adding new shards and redistributing your data is one of the toughest operational challenges you will face
+once you've deployed your shard-aware application.
+Hibernate Sharding supports virtual shards, a feature designed to simplify the process of resharding your data.
+Free/open source::
+Hibernate Shards is licensed under the LGPL (Lesser GNU Public License)
+
+=== Get started
+
+
+Download::
+http://www.hibernate.org/subprojects/shards/download.html[Distribution]
+Documentation::
+Reference documentation as http://docs.jboss.org/hibernate/stable/shards/reference/en/html/[html],
+http://docs.jboss.org/hibernate/stable/shards/reference/en/html_single/[single page html] or
+http://docs.jboss.org/hibernate/stable/shards/reference/en/pdf/hibernate_shard.pdf[pdf].
+http://docs.jboss.org/hibernate/stable/shards/api/[JavaDoc].
+Source code::
+https://github.com/hibernate/hibernate-shards[GitHub]
+Issue tracker::
+https://hibernate.onjira.com/browse/HSHARDS[JIRA]
