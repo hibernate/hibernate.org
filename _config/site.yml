@@ -109,6 +109,58 @@ projects:
         - name: CI
           href: 'http://ci.hibernate.org/job/hibernate-search-master/'
           css_class: 'icon-fixed-width icon-stethoscope'
+  # Tools
+  tools:
+    name: Hibernate Tools
+    icon: 'icon-wrench'
+    #sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-search/
+    #zip_file: hibernate-search-VERSION-dist.zip
+    #group_id: org.hibernate
+    #artifact_id: hibernate-search
+    #reference_doc: http://docs.jboss.org/hibernate/search/
+    #reference_pdf: hibernate_search_reference.pdf
+    #getting_started: /search/documentation/getting-started
+    license:
+      name: LGPL v2.1
+      url: https://github.com/hibernate/hibernate-tools/blob/master/lgpl.txt
+    menu:
+      intern:
+        - name: About
+          href: '/tools/'
+          css_class: 'icon-fixed-width icon-home'
+      extern:
+        - name: Downloads
+          href: 'http://www.jboss.org/tools/download/'
+          css_class: 'icon-fixed-width icon-cloud-download'
+        - name: Documentation
+          href: 'http://www.jboss.org/tools/docs/'
+          css_class: 'icon-fixed-width icon-book'
+          #TODO add FAQ, Roadmap and Contribute page
+          #- name: FAQ
+          #  href: '/search/faq/'
+          #  css_class: 'icon-fixed-width icon-question'
+          #- name: Roadmap
+          #  href: '/search/roadmap/'
+          #  css_class: 'icon-fixed-width icon-road'
+          #- name: Contribute
+          #  href: '/search/contribute/'
+          #  css_class: 'icon-fixed-width icon-beer'
+        - name: Wiki
+          href: 'https://community.jboss.org/en/tools'
+          css_class: 'icon-fixed-width icon-edit'
+        - name: Issues
+          href: 'https://hibernate.atlassian.net/browse/HBX'
+          css_class: 'icon-fixed-width icon-exclamation-sign'
+          #  icon-bug only in font-awesome 3.2
+        - name: Forum
+          href: 'https://forum.hibernate.org'
+          css_class: 'icon-fixed-width icon-comments'
+        - name: Source code
+          href: 'https://github.com/hibernate/hibernate-tools'
+          css_class: 'icon-fixed-width icon-code'
+        - name: CI
+          href: 'http://hudson.jboss.org/hudson/job/hibernate-tools-trunk/'
+          css_class: 'icon-fixed-width icon-stethoscope'
   # Validator
   validator:
     name: Hibernate Validator
