@@ -20,7 +20,7 @@ Data passed to the [classname]+GridDialect+ are made of:
 The object type information could be shared to lower memory consumption
 and avoid the object creation cost.
 
-=== Hibernate OGM 4.0 Beta3 (25/10/2013)
+=== Hibernate OGM 4.0 Beta3 (26/09/2013)
 
 Improved query support around projection and operators::
 Supported operators $$=, <, <=, >, =>, IN, LIKE, BETWEEN$$. +
