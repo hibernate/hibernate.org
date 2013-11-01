@@ -16,41 +16,6 @@ Dates are generally omitted, we release when we are ready.
 
 Describe plans for future releases.
 
-=== Hibernate OGM 4.0 Beta3
-
-Improved query support around projection and operators::
-Supported operators $$=, <, <=, >, =>, IN, LIKE, BETWEEN$$. +
-Supported boolean combinations: AND, OR, NOT. +
-Support for simple property projections and embedded objects.
-JP-QL query support for MongoDB::
-Execute JP-QL queries as MongoDB queries.
-Discriminator based hierarchy::
-Support for hierarchy of classes using a discriminator column as defined by JPA.
-JBoss AS 7 integration module::
-Add Hibernate OGM support by copying the module in the JBoss AS module repository.
-Support for Hibernate Search mass indexing::
-Mass indexing now works out of the box when using Hibernate OGM.
-
-=== Hibernate OGM 4.0 Beta4
-
-CRUD support for Neo4J::
-Support the Neo4J Graph DB to read and store entities and associations.
-
-Native query::
-Offer the ability to pass a native backend query and bind the result to an entity.
-All flexibility of the native underlying query system is available
-at the cost of portability.
-
-Use immutable metadata info to lower memory pressure::
-Data passed to the [classname]+GridDialect+ are made of:
-
-* an object specific data (id etc)
-* an object type generic data (table name, column name etc)
-
-+
-The object type information could be shared to lower memory consumption
-and avoid the object creation cost.
-
 === Hibernate OGM 4.0 Beta5
 
 Annotation based option system::
@@ -170,3 +135,40 @@ instead of the imperative approach sued usually in the NoSQL land.
 An aggregated changelog of what has happened.
 We are too lazy to go back down to the history of time
 so we will start at 4.0 Beta 3.
+
+=== Hibernate OGM 4.0 Beta3
+
+Improved query support around projection and operators::
+Supported operators $$=, <, <=, >, =>, IN, LIKE, BETWEEN$$. +
+Supported boolean combinations: AND, OR, NOT. +
+Support for simple property projections and embedded objects.
+JP-QL query support for MongoDB::
+Execute JP-QL queries as MongoDB queries.
+Discriminator based hierarchy::
+Support for hierarchy of classes using a discriminator column as defined by JPA.
+JBoss AS 7 integration module::
+Add Hibernate OGM support by copying the module in the JBoss AS module repository.
+Support for Hibernate Search mass indexing::
+Mass indexing now works out of the box when using Hibernate OGM.
+
+=== Hibernate OGM 4.0 Beta4
+
+CRUD support for Neo4J::
+Support the Neo4J Graph DB to read and store entities and associations.
+
+Native query::
+Offer the ability to pass a native backend query and bind the result to an entity.
+All flexibility of the native underlying query system is available
+at the cost of portability.
+
+Use immutable metadata info to lower memory pressure::
+Data passed to the [classname]+GridDialect+ are made of:
+
+* an object specific data (id etc)
+* an object type generic data (table name, column name etc)
+
++
+The object type information could be shared to lower memory consumption
+and avoid the object creation cost.
+
+
