@@ -16,11 +16,11 @@ project: orm
   == Maven repository
 
   Hibernate ORM publishes Maven project artifacts to the
-  {nexus}[JBoss Maven Repository] under {nexus-search}[{groupId}:{artifactId}]. 
+  {nexus}[JBoss Maven Repository] under {nexus-search}[{groupId}]. 
   For more information on how to configure Maven to use JBoss's repository,
   http://community.jboss.org/wiki/MavenGettingStarted-Users[look here] or use `mvn install -s setting-example.xml`.
   
-  Here is how to declare the dependency in your Maven POM file
+  Here is how to declare the various dependencies in your Maven POM file
 
   [source,xml]
   [subs="verbatim,attributes"]
@@ -72,13 +72,3 @@ project: orm
       <version>{prj-version}</version>
   </dependency>
   ----
-
-  [[supported-versions]]
-  == Supported versions pass:[<i class="icon-user-md icon-fixed-width icon-2x"></i>]
-
-  Hibernate ORM is a fully supported component of both
-  
-  * http://www.jboss.com/products/platforms/application[JBoss Enterprise Application Platform]
-  * https://www.redhat.com/products/jbossenterprisemiddleware/web-framework-kit/[JBoss Web Framework Kit]
-
-  If you are looking for Hibernate ORM support, contact Red Hat.
