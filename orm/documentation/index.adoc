@@ -2,20 +2,16 @@
 :awestruct-layout: project-documentation
 :awestruct-project: orm
 
-== Guides
+== Guides and Docs
 
-link:/search/documentation/getting-started[Getting started guide]::
-For a gentle introduction to the concepts of Hibernate Search without being sidetracked by other technologies.
-link:http://example.com/ticket-monster[TicketMonster tutorial]::
-Describes how to add a full-text search engine step by step from an existing Java EE application.
-
-== Books and Articles
-
-http://emmanuelbernard.com/books/hsia/[Hibernate Search in Action]::
-A bit outdated book on Hibernate Search but a very good reference on the product and search engines in general.
-It has been written by a member of the Hibernate Search team.
+link:/orm/documentation/getting-started[Getting started guide (brief)]::
+A gentle introduction to the concepts of Hibernate ORM.
+link:http://docs.jboss.org/hibernate/orm/4.2/quickstart/en-US/html/[Getting started guide (full)]::
+Our full getting started guide.
+link:http://docs.jboss.org/hibernate/orm/4.2/devguide/en-US/html/[Developer's Guide]::
+A detailed guide specifically for developers, including the use of extension points and optional modules.
 
 == Other documentation
 
-Make sure to check the link:/search/faq/[FAQ].
-Last but not least, you can find some additional documentation in our https://community.jboss.org/en/hibernate/search[wiki].
+Make sure to check the link:/orm/faq/[FAQ].
+Last but not least, you can find some additional documentation in our https://community.jboss.org/en/hibernate[JBoss wiki] and https://github.com/hibernate/hibernate-orm/wiki/_pages[GitHub wiki].
