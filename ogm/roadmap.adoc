@@ -50,16 +50,16 @@ and can increase the isolation lever.
 ==== Additional query support
 
 Query support for Neo4J::
-Support JP-QL and native query.
+Support JP-QL and native queries.
 
 Query support for CouchDB::
-Support JP-QL and native query.
+Support JP-QL and native queries.
 
 Clean query parser design::
 * Fix how the field bridge is selected for a given property.
 ** Automatic approach
 ** Manual overriding option (convention based, annotation or SPI?)
-* Use Hibernate OGM metadata (EntityPersister)
+* Use Hibernate ORM metadata (EntityPersister)
   to find the type of a property for HQL literal conversion)
 ** extract this logic and reuse it for all backends
 
@@ -67,7 +67,7 @@ Move to proper OgmLoader implementations::
 Discuss how to properly load objects via the OgmLoader approach.
 
 Cache query plans::
-Look at Hibernate ORM, sHQLQueryPlan which essentially cache results 
+Look at Hibernate ORM's HQLQueryPlan which essentially caches results
 of a query translator which in term calls the entity loader.
 A similar design or even interface result is probably possible
 

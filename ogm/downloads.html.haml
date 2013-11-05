@@ -20,15 +20,19 @@ project: ogm
   For more information on how to configure Maven to use JBoss's repository,
   http://community.jboss.org/wiki/MavenGettingStarted-Users[look here] or use `mvn install -s setting-example.xml`.
 
-  Here is how to declare the dependency in your Maven POM file
+  Hibernate OGM provides a module for each supported datastore, containing the store-specific grid dialect implementation.
+  The artifact ids of these modules generally have the form `hibernate-ogm-<STORE>`.
+
+  So if your are for instance working with MongoDB, add the following dependency to your Maven POM file:
 
   [source,xml]
   [subs="verbatim,attributes"]
-  .Maven dependency
   ----
   <dependency>
       <groupId>{groupId}</groupId>
-      <artifactId>{artifactId}</artifactId>
+      <artifactId>hibernate-ogm-mongodb</artifactId>
       <version>{prj-version}</version>
   </dependency>
   ----
+
+  This will transitively pull in the Hibernate OGM core module and all other required dependencies.
