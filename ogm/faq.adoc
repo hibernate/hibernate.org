@@ -20,8 +20,8 @@ link:/community/[contact us].
 
 === Is JPA a good fit for NoSQL?
 
-That's the million dollars question but in essence, yes we thing it is a good fit.
-Here is quickly a few key reasons why we thing JPA makes sense.
+That's the million dollars question but in essence, yes we think it is a good fit.
+Here is quickly a few key reasons why JPA makes sense.
 
 Benefits of the abstraction level::
 JPA abstracts persistence at the object level, leaving room for a lot of tricks and optimizations.
@@ -40,8 +40,9 @@ We work hard in Hibernate OGM to use the most natural mapping for a given data p
 and we offer you the ability to override that if needed.
 
 Known semantic and APIs::
-For better or worse, JPA is known to Java developers that are familiar with its API and semantic.
-That's a huge win compared to learning an new lower level API or worse some proto-ORM level API.
+For better or worse, JPA is known to Java developers.
+They are familiar with its API and semantic.
+That's a huge win compared to learning a specific lower level API or worse some pseudo-ORM level API.
 And we support both HQL and native backend queries!
 
 Late backend choice::
