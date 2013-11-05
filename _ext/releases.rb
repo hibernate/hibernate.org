@@ -3,7 +3,7 @@ module Awestruct
     module Releases
 
       def latest_stable_release(p = page)
-        releases = site.projects[p.project].releases
+        releases = site.projects[p.project].sorted_releases
 
         if releases.nil?
           return nil
@@ -19,7 +19,7 @@ module Awestruct
       end
 
       def latest_dev_release(p = page)
-        releases = site.projects[p.project].releases
+        releases = site.projects[p.project].sorted_releases
 
         if releases.nil?
           return nil

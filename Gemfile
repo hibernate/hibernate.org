@@ -18,6 +18,9 @@ gem 'therubyracer', :platforms => :ruby
 ## Windows
 gem 'win32-open3-19', :platforms => [:mswin, :mingw]
 
+# Test dependencies
+gem 'rspec'
+
 # To enable guard and livereload
 gem 'guard'
 gem 'guard-livereload'

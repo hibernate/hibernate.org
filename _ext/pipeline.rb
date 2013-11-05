@@ -5,7 +5,7 @@ require 'html_minifier'
 require 'file_merger'
 require 'relative'
 require 'releases'
-require 'data_dir'
+require 'release_file_parser'
 
 # dependencies for asciidoc support
 require 'tilt'
@@ -33,18 +33,14 @@ if !Haml::Filters.constants.include?('AsciiDoc')
 end
 
 Awestruct::Extensions::Pipeline.new do
-  development = Engine.instance.site.profile == 'development'
-  # Example of extension only available for certain profiles
-  unless development
-  #  execute extension only in production
-  end
+  # register helpers to be used in templates
   helper Awestruct::Extensions::Partial
   helper Awestruct::Extensions::GoogleAnalytics
   helper Awestruct::Extensions::Relative
   helper Awestruct::Extensions::Releases
-  extension Awestruct::Extensions::DataDir.new
-  #in the data_dir.rb file
-  extension Awestruct::Extensions::ReleaseSorter.new
+
+  # register extensions and transformers
+  extension Awestruct::Extensions::ReleaseFileParser.new
   extension Awestruct::Extensions::WgetWrapper.new
   transformer Awestruct::Extensions::JsMinifier.new
   transformer Awestruct::Extensions::CssMinifier.new

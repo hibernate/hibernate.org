@@ -11,7 +11,7 @@ project: search
   :nexus-search: https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{project_description.group_id}~#{project_description.artifact_id}~~~
   :groupId: #{project_description.group_id}
   :artifactId: #{project_description.artifact_id}
-  :prj-version: #{project_description.releases.first.version}
+  :prj-version: #{project_description.sorted_releases.first.version}
 
   == Maven repository
 

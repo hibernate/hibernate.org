@@ -31,8 +31,8 @@ layout: project-frame
   .span12
     -# Documentation table built form the metadata
     %h2 Reference documentation
-    - if not site.projects[page.project].releases.nil?
-      - site.projects[page.project].releases.each do |release|
+    - if not site.projects[page.project].sorted_releases.nil?
+      - site.projects[page.project].sorted_releases.each do |release|
         %dl.dl-horizontal
           %dt
             = release.version
