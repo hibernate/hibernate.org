@@ -1,4 +1,4 @@
-= Hibernate OGM How to contribute
+= Contribute to Hibernate OGM
 Emmanuel Bernard
 :awestruct-layout: project-frame
 :awestruct-project: ogm
@@ -7,8 +7,6 @@ Emmanuel Bernard
 
 [[ogm-howtocontribute]]
 
-== How to get help and contribute on Hibernate OGM
-
 Hibernate OGM is a young project.
 The code, the direction and the documentation are all in flux
 and being built by the community.
@@ -16,7 +14,7 @@ Join and help us shape it!
 
 [[ogm-howtocontribute-help]]
 
-=== How to get help
+== How to get help
 
 First of all, make sure to read this reference documentation.
 This is the most comprehensive formal source of information.
@@ -37,7 +35,7 @@ You can also:
 
 [[ogm-howtocontribute-contribute]]
 
-=== How to contribute
+== How to contribute
 
 Welcome!
 
@@ -53,7 +51,7 @@ There are many ways to contribute:
 Hibernate OGM's code is available on GitHub at
 https://github.com/hibernate/hibernate-ogm.
 
-==== How to build Hibernate OGM
+=== How to build Hibernate OGM
 
 Hibernate OGM uses Git and Maven 3,
 make sure to have both installed on your system.
@@ -97,7 +95,7 @@ If you just want to build the documentation only,
 run it from the [filename]+hibernate-ogm-documentation/manual+ subdirectory.
 ====
 
-==== How to contribute code effectively
+=== How to contribute code effectively
 
 The best way to share code is to fork the Hibernate OGM repository on GitHub,
 create a branch and open a pull request when you are ready.

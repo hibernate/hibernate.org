@@ -1,7 +1,7 @@
 = Hibernate OGM FAQ
 Emmanuel Bernard
 :awestruct-layout: project-frame
-:awestruct-project: search
+:awestruct-project: ogm
 :toc:
 :toc-placement: preamble
 :toc-title: Questions
@@ -18,7 +18,7 @@ More seriously, this is a work in progress.
 If you have questions that you feel should be there,
 link:/community/[contact us].
 
-=== How does Hibernate OGM handles transactions?
+=== How does Hibernate OGM handle transactions?
 
 Like Hibernate ORM, Hibernate OGM is orthogonal and agnostic to transactions,
 but integrates the flush event to them when possible.
@@ -48,7 +48,7 @@ The reference documentation details the various options.
 === How to skip some tests while in the development of a new +Dialect+?
 
 To skip all tests (from the core suite) for example related to associations,
-add this configuration to the maven surefire plugin:
+add this configuration to the Maven Surefire plugin:
 
 [source,xml]
 ----
