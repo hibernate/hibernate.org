@@ -20,8 +20,11 @@ project: ogm
   For more information on how to configure Maven to use JBoss's repository,
   http://community.jboss.org/wiki/MavenGettingStarted-Users[look here] or use `mvn install -s setting-example.xml`.
 
-  Hibernate OGM provides a module for each supported datastore, containing the store-specific grid dialect implementation.
-  The artifact ids of these modules generally have the form `hibernate-ogm-<STORE>`.
+  Hibernate OGM comprises a core module (`#{project_description.group_id}:hibernate-ogm-core`)
+  and several datastore-specific modules,
+  each containing a store-specific grid dialect implementation.
+  These modules have artifact ids in the form of `hibernate-ogm-*`, where `*` is a store-specific identifier
+  such as `infinispan` or `mongodb`.
 
   So if your are for instance working with MongoDB, add the following dependency to your Maven POM file:
 
