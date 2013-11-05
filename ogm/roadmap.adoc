@@ -162,11 +162,17 @@ Improved query support around projection and operators::
 Supported operators $$=, <, <=, >, =>, IN, LIKE, BETWEEN$$. +
 Supported boolean combinations: AND, OR, NOT. +
 Support for simple property projections and embedded objects.
+
 JP-QL query support for MongoDB::
 Execute JP-QL queries as MongoDB queries.
+
 Discriminator based hierarchy::
 Support for hierarchy of classes using a discriminator column as defined by JPA.
+
 JBoss AS 7 integration module::
 Add Hibernate OGM support by copying the module in the JBoss AS module repository.
+
 Support for Hibernate Search mass indexing::
 Mass indexing now works out of the box when using Hibernate OGM.
+
+Upgrade to Hibernate ORM 4.2 and JPA 2.1::
