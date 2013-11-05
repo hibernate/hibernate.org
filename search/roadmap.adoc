@@ -1,5 +1,5 @@
 = Hibernate Search roadmap
-Emmanuel Bernard
+Emmanuel Bernard, Sanne Grinovero
 :awestruct-layout: project-frame
 :awestruct-project: search
 :toc:
@@ -7,62 +7,61 @@ Emmanuel Bernard
 :toc-title: Releases
 
 Hibernate Search is community driven and as such the roadmap constantly evolves to reflect the users needs.
-You can find a finer grained roadmap in our https://hibernate.atlassian.net/browse/HSEARCH[issue tracker] but this page is a good and consise view of where we are going.
-Dates are generally omitted, we release when we are ready.
+You can find a finer grained roadmap in our https://hibernate.atlassian.net/browse/HSEARCH[issue tracker] but this page is a good and concise view of where we are going.
+Dates are generally omitted: while milestones are released regularly, the Final release is tagged when it's stable.
 
-== Hibernate Search 4.4
+== Hibernate Search 4.5
 
 Backward compatible with the 4.x series but prepare for the 5.0 enhancements.
+Developed in parallel with 5.0.
 
-Better clustering::
-Solid Infinispan and JGroups integration, ease of setup.
-Metadata API::
-Exposes the index structure and help in writing queries (development time and tooling). Useful to log or dump how things are indexed.
-Also required for link:/ogm/[Hibernate OGM] and its query integration.
-Jandex::
-Use Jandex for annotation scanning for faster boot in Se and in http://wildfly.org[WildFly].
-Dynamic sharding::
-Ability to dynamically add shards. Useful when shards are business based. Like customer based.
+Hibernate ORM 4.3 / JPA 2.1 / Java EE 7::
+Provides compatibility with link:/orm/[Hibernate ORM 4.3].
+Infinispan 6.0::
+Migration to link:$$http://www.infinispan.org$$[Infinispan] 6.x for index storage.
+WildFly 8::
+Continuous integration tests to target link:$$http://www.wildfly.org$$[WildFly] 8 and provide appropriate modules.
 New quickstart and demo::
-Quickstarts and demos for JBoss Developper Framework.
-Provided partly by Google Summer of Code contributions.
+Quickstarts and demos for link:$$http://www.jboss.org/jdf/$$[JBoss Developer Framework].
 Performance regression tests::
-More of them.
+Add more and better performance regression tests.
 
 == Hibernate Search 5.0
 
-Improved codebase with some compatibility breaks over the 4.x series.
-Will provide a sound foundation for the medium future.
+Based on link:$$http://lucene.apache.org/core/$$[Apache Lucene] version 4, which will lead to some compatibility breaks over the Hibernate Search 4.x series.
 
 Apache Lucene 4.x::
-Move to Apache Lucene 4.x. This is a significant departure and is the cause of most compatibility breaks.
-Speed and feature improvements will flow form this migration.
+Move to link:$$http://lucene.apache.org/core/$$[Apache Lucene] 4.x. This is a significant departure and is the cause of most compatibility breaks.
+Speed and feature improvements will flow from this migration.
+Dynamic type indexing::
+Rather than focusing on statically annotated entities we'll also provide more flexible "schema" definitions.
 Uncommitted changes in a transaction::
-Exposes uncommitted changes and make them visible in a given transaction.
+Expose uncommitted changes to queries run in the current transaction.
 Classloader SPI::
 Explicit classloader SPI for better EAP integration as modules.
 API / SPI for alternative backends::
-Define API / SPI abstraction to allow for future external backends integrations (such as Apache Solr and Elastic Search).
+Define API / SPI abstraction to allow for future external backends integrations
+such as link:$$http://lucene.apache.org/solr/$$[Apache Solr] and link:$$http://www.elasticsearch.org/$$[Elastic Search].
 Asynchronous FieldBridge::
-ex. improved Tika integration.
-Multitenancy::
-Integration with ORM's multitenancy API (Google Summer of Code contributions).
+ex. improved integration with link:$$http://tika.apache.org/$$[Apache Tika].
 
 
 == Hibernate Search  5.1
 
 CDI integration::
 Offer a portable extension to help integrate in CDI.
+Better clustering::
+Solid Infinispan and JGroups integration, ease of setup.
+Jandex::
+Use Jandex for annotation scanning for faster boot in both JavaSE and in http://wildfly.org[WildFly].
 High performance backend queues::
 Low contention non blocking queues.
 Automated performance regression tests::
 'nuf said.
-Infinispan 6.0::
-Migration to Infinispan 6.x.
 New Faceting engine::
-Apache Lucene 4 based faceting engine for better performance.
+link:$$http://lucene.apache.org/core/$$[Apache Lucene] 4 based faceting engine for better performance.
 Auto suggestion and spell checking::
-Offer APIs to auto suggestions and spell checking.
+Simplify work for users building auto suggestions and spell checking features.
 
 == Hibernate Search 5.2
 
