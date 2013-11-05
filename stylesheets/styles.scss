@@ -7,6 +7,15 @@
 // Common utilities
 @import "settings";
 
+// Bug fix for community bootstrap
+
+.equalHero .btn {
+  // not all corners were properly rounded
+  border-radius: 4px 4px 4px 4px!important;
+}
+
+// End of bug fix
+
 // the default bootstrap community font is a bit too small
 body {
   font-size: 100%;
