@@ -11,7 +11,9 @@ html_minifier: disabled
 
 # project specific information
 projects:
+  ##################################################################################################
   # ORM
+  ##################################################################################################
   orm:
     name: Hibernate ORM
     icon: 'icon-table'
@@ -61,7 +63,10 @@ projects:
         - name: CI
           href: 'https://ci.hibernate.org/'
           css_class: 'icon-fixed-width icon-stethoscope'
+
+  ##################################################################################################
   # Search
+  ##################################################################################################
   search:
     name: Hibernate Search
     icon: 'icon-search'
@@ -112,7 +117,10 @@ projects:
         - name: CI
           href: 'http://ci.hibernate.org/job/hibernate-search-master/'
           css_class: 'icon-fixed-width icon-stethoscope'
+
+  ##################################################################################################
   # Tools
+  ##################################################################################################
   tools:
     name: Hibernate Tools
     icon: 'icon-wrench'
@@ -164,7 +172,10 @@ projects:
         - name: CI
           href: 'http://hudson.jboss.org/hudson/job/hibernate-tools-trunk/'
           css_class: 'icon-fixed-width icon-stethoscope'
+
+  ##################################################################################################
   # Validator
+  ##################################################################################################
   validator:
     name: Hibernate Validator
     icon: 'icon-check'
@@ -192,6 +203,9 @@ projects:
         - name: FAQ
           href: '/validator/faq'
           css_class: 'icon-fixed-width icon-question'
+        - name: Roadmap
+          href: '/validator/roadmap/'
+          css_class: 'icon-fixed-width icon-road'
         - name: Contribute
           href: '/validator/contribute'
           css_class: 'icon-fixed-width icon-beer'
@@ -211,7 +225,10 @@ projects:
         - name: CI
           href: 'https://hibernate-validator.ci.cloudbees.com/'
           css_class: 'icon-fixed-width icon-stethoscope'
+
+  ##################################################################################################
   # OGM
+  ##################################################################################################
   ogm:
     name: Hibernate OGM
     icon: 'icon-sitemap'
@@ -263,6 +280,9 @@ projects:
           css_class: 'icon-fixed-width icon-stethoscope'
  #other projects would come here
 
+####################################################################################################
+# File merger
+####################################################################################################
 # Merge multiple JavaScript files to improve performance
 fileMerger:
   enabled: true
@@ -286,6 +306,9 @@ fileMerger:
     - /javascripts/_jquery-easytabs.js
     - /javascripts/_crisp-scripts.js
 
+####################################################################################################
+# WGET
+####################################################################################################
 # Cache hosted fonts, images and javascript
 wget:
   enabled: true
@@ -312,6 +335,9 @@ wget:
     - http://static.jboss.org/images/example/
     - http://static.jboss.org/images/hibernate/
 
+####################################################################################################
+# Asciidoctor config
+####################################################################################################
 asciidoctor:
   :safe: safe
   :attributes:
@@ -324,6 +350,9 @@ asciidoctor:
     source-highlighter: coderay
     coderay-css: style
 
+####################################################################################################
+# Site Profiles
+####################################################################################################
 # Update resource URLs based on the profile
 profiles:
   development:
