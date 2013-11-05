@@ -217,8 +217,8 @@ projects:
     icon: 'icon-sitemap'
     sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-ogm/
     zip_file: hibernate-ogm-VERSION-dist.zip
-    group_id: org.hibernate
-    artifact_id: hibernate-ogm
+    group_id: org.hibernate.ogm
+    artifact_id: hibernate-ogm-*
     reference_doc: http://docs.jboss.org/hibernate/ogm/
     reference_pdf: hibernate_ogm_reference.pdf
     getting_started: /ogm/documentation/getting-started
