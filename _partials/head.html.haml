@@ -1,10 +1,10 @@
 - real_page = page["real_page"]
 %meta(charset="utf-8")
 %meta(name="viewport" content="width=device-width, initial-scale=1.0")
-%meta(name="description" content="#{page.description}")
-%meta(name="author" content="#{page.author}")
+%meta(name="description" content="#{real_page.description}")
+%meta(name="author" content="#{real_page.author}")
 
-- pageStyle = page.style ;
+- pageStyle = real_page.style ;
 - bootstrap_community_css = relative("#{pageStyle ? site[pageStyle].bootstrap_css_url : site.bootstrap_css_url}#{site.minified}.css", real_page)
 %link(href="#{bootstrap_community_css}" rel="stylesheet" media="screen")
 %link(href="#{relative("/stylesheets/styles.css", real_page)}" rel="stylesheet" media="screen")
@@ -33,6 +33,6 @@
   }
 
 %script(src="#{site.jborg_js_url}/libs/jquery/jquery-1.9.1#{site.minified}.js")
-- if page.javascripts
-  - page.javascripts.each do |javascript|
+- if real_page.javascripts
+  - real_page.javascripts.each do |javascript|
     %script{:src=>javascript, :type=>'text/javascript'}
