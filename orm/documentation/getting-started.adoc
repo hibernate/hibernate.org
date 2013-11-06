@@ -5,6 +5,10 @@
 :toc-placement: preamble
 :latest_stable: 4.2.7.SP1
 
+[role="alert text-center"]
+This page is a work in progress. +
+If you have ideas and time, link:/community/[contact us], we would love your help :-) 
+
 == Building
 
 For developers wanting to build from source, see the README.md file in the root of the project source.
@@ -13,9 +17,9 @@ For developers wanting to build from source, see the README.md file in the root 
 
 For developers wanting to contribute back fixes/improvements, see the CONTRIBUTING.md file in the root of the project source.
 
-== Using 
+== Using
 
-For developers wanting to use Hibernate ORM in their projects...
+For developers wanting to use Hibernate ORM in their projects, the best approach is to use it as Maven dependency.
 
 === System Requirements
 
@@ -23,7 +27,9 @@ Hibernate ORM requires Java 6 or higher.
 
 === Via Maven Repository
 
-The Hibernate ORM artifacts can be found in Maven's central repository but are released first in the JBoss maven repository. So it's not a requirement but we recommend to add this repository to your settings.xml file (see also Maven Getting Started for more details).
+The Hibernate ORM artifacts can be found in Maven's central repository but are released first in the JBoss maven repository.
+So it's not a requirement but we recommend to add this repository to your +settings.xml+ file
+(see also Maven Getting Started for more details).
 
 To use Hibernate ORM in your own project you just need to name a dependency on it in your project:
 
