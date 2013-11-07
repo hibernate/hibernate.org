@@ -17,7 +17,7 @@ layout: project-frame
       %a.btn.btn-large{:href => "#{get_started_url}"} Getting started guide
     - if not stable_release.nil?
       &nbsp;
-      %a.btn.btn-large.btn-success{:href => "#{project_description.reference_doc}#{stable_release.version_family}/reference/en-US/html/"} Get documentation for #{stable_release.version}
+      %a.btn.btn-large.btn-success{:href => "#{project_description.reference_doc_prefix_url}#{stable_release.version_family}/#{project_description.reference_doc_type}/en-US/html/"} Get documentation for #{stable_release.version}
 .release-bottons.visible-phone
   - stable_release = latest_stable_release(page)
   - if not get_started_url.nil?
@@ -25,8 +25,9 @@ layout: project-frame
       #get-started-button
         %a.btn{:href => "#{get_started_url}"} Getting started guide
     - if not stable_release.nil?
-      #download-button
-        %a.btn.btn-success{:href => "#{project_description.sourceforge_url}#{stable_release.version}/"} Get documentation for #{stable_release.version}
+      .row-fluid.text-center
+        #documentation-button
+          %a.btn.btn-success{:href => "#{project_description.reference_doc_prefix_url}#{stable_release.version_family}/#{project_description.reference_doc_type}/en-US/html/"} Get documentation for #{stable_release.version}
 .row-fluid
   .span12
     -# Documentation table built form the metadata
@@ -37,7 +38,7 @@ layout: project-frame
           %dt
             = release.version
             &nbsp;
-            %a.btn.btn-info{:href => "#{project_description.reference_doc}#{release.version_family}/reference/en-US/html/"}
+            %a.btn.btn-info{:href => "#{project_description.reference_doc_prefix_url}#{release.version_family}/#{project_description.reference_doc_type}/en-US/html/"}
               %i.icon-book
           %dd
             %small= release.date
@@ -48,24 +49,25 @@ layout: project-frame
             %ul
               %li
                 English reference documentation:
-                %a{:href => "#{project_description.reference_doc}#{release.version_family}/reference/en-US/html/"}
+                %a{:href => "#{project_description.reference_doc_prefix_url}#{release.version_family}/#{project_description.reference_doc_type}/en-US/html/"}
                   HTML
                 |
-                %a{:href => "#{project_description.reference_doc}#{release.version_family}/reference/en-US/html_single/"}
+                %a{:href => "#{project_description.reference_doc_prefix_url}#{release.version_family}/#{project_description.reference_doc_type}/en-US/html_single/"}
                   HTML (single page)
-                |
-                %a{:href => "#{project_description.reference_doc}#{release.version_family}/reference/en-US/pdf/#{project_description.reference_pdf}"}
-                  PDF
+                - if not project_description.reference_pdf.nil?
+                  |
+                  %a{:href => "#{project_description.reference_doc_prefix_url}#{release.version_family}/#{project_description.reference_doc_type}/en-US/pdf/#{project_description.reference_pdf}"}
+                    PDF
               %li
                 API documentation:
-                %a{:href => "#{project_description.reference_doc}#{release.version_family}/api/"}
+                %a{:href => "#{project_description.reference_doc_prefix_url}#{release.version_family}/#{project_description.javadoc_path}/"}
                   JavaDoc
 
     - else
       %p There is no reference documentation configured for this project.
 
     :asciidoc
-      :ref_doc: #{project_description.reference_doc}
+      :ref_doc: #{project_description.reference_doc_prefix_url}
 
       Documentation for older versions can be found {ref_doc}[on the reference documentation site].
 .row-fluid
