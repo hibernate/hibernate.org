@@ -40,61 +40,41 @@
 #
 # Now you're Awestruct with rake!
 
-$use_bundle_exec = true
-$install_gems = ['awestruct -v "~> 0.5.0"', 'rb-inotify -v "~> 0.9.0"']
 $awestruct_cmd = nil
 task :default => :preview
 
-desc 'Setup the environment to run Awestruct'
+desc 'Setup the environment to run Awestruct unsing Bundler'
 task :setup, [:env] => :init do |task, args|
-  next if !which('awestruct').nil?
-
-  if File.exist? 'Gemfile'
-    if args[:env] == 'local'
-      require 'fileutils'
-      FileUtils.remove_file 'Gemfile.lock', true
-      FileUtils.remove_dir '.bundle', true
-      system 'bundle install --binstubs=_bin --path=.bundle'
-    else
-      system 'bundle install'
-    end
+  if args[:env] == 'local'
+    system 'bundle install --binstubs=_bin --path=.bundle'
   else
-    if args[:env] == 'local'
-      $install_gems.each do |gem|
-        msg "Installing #{gem}..."
-        system "gem install --bindir=_bin --install-dir=.bundle #{gem}"
-      end
-    else
-      $install_gems.each do |gem|
-        msg "Installing #{gem}..."
-        system "gem install #{gem}"
-      end
-    end
+    system 'bundle install'
   end
-  msg 'Run awestruct using `awestruct` or `rake`'
+  msg 'Run awestruct `rake`'
   # Don't execute any more tasks, need to reset env
   exit 0
 end
 
 desc 'Update the environment to run Awestruct'
 task :update => :init do
-  if File.exist? 'Gemfile'
-    system 'bundle update'
-  else
-    system 'gem update awestruct'
-  end
+  system 'bundle update'
   # Don't execute any more tasks, need to reset env
   exit 0
 end
 
 desc 'Build and preview the site locally in development mode'
-task :preview => :check do
+task :preview do
   run_awestruct '-d'
 end
 
-desc 'Generate the site using the development profile'
-task :gen => :check do
-  run_awestruct '-P development -g --force'
+desc 'Generate the site using the specified profile, default is \'development\''
+task :gen, :profile do |task, args| 
+  if args[:profile].nil?
+    profile = "development"
+  else
+    profile = args[:profile]
+  end
+  run_awestruct "-P #{profile} -g --force"
 end
 
 desc 'Push local commits to origin/master'
@@ -102,12 +82,13 @@ task :push do
   system 'git push origin master'
 end
 
-desc 'Clean out generated site and temporary files'
-task :clean, :spec do |task, args|
+desc 'Clean out generated site and temporary files, using [all] will also delete local gem files' 
+task :clean, :all do |task, args|
   require 'fileutils'
   dirs = ['.awestruct', '.sass-cache', '_site']
-  if args[:spec] == 'all'
+  if args[:all] == 'all'
     dirs << '_tmp'
+    dirs << '.bundle'
   end
   dirs.each do |dir|
     FileUtils.remove_dir dir unless !File.directory? dir
@@ -130,24 +111,12 @@ end
 
 desc 'Check to ensure the environment is properly configured'
 task :check => :init do
-  if !File.exist? 'Gemfile'
-    if which('awestruct').nil?
-      msg 'Could not find awestruct.', :warn
-      msg 'Run `rake setup` or `rake setup[local]` to install from RubyGems.'
-      # Enable once the rubygem-awestruct RPM is available
-      #msg 'Run `sudo yum install rubygem-awestruct` to install via RPM. (Fedora >= 18)'
-      exit 1
-    else
-      $use_bundle_exec = false
-      next
-    end
-  end
-
   begin
     require 'bundler'
     Bundler.setup
+    msg 'Ready to go.'
   rescue LoadError
-    $use_bundle_exec = false
+    msg 'Bundler gem not installed. Run \'gem install bundler first\''
   rescue StandardError => e
     msg e.message, :warn
     if which('awestruct').nil?
@@ -161,7 +130,9 @@ end
 
 # Execute Awestruct
 def run_awestruct(args)
-  system "#{$use_bundle_exec ? 'bundle exec ' : ''}awestruct #{args}" 
+  cmd = "bundle exec awestruct #{args}" 
+  msg cmd
+  system cmd
 end
 
 # A cross-platform means of finding an executable in the $PATH.

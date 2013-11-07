@@ -14,8 +14,11 @@ A bit of Git, a bit of Ruby and you will get your local hibernate.org served.
 * If on Linux:
 ** Get libxslt-dev - eg via `sudo apt-get install libxslt-dev`
 
-*** For Linux Mint users - installing rvm may not work.
-    Be sure to instead install latest ruby-dev package via apt-get...
+[NOTE]
+====
+For Linux Mint users - installing rvm may not work.
+Be sure to instead install latest ruby-dev package via apt-get...
+====
 
 
 == Installation
@@ -30,7 +33,8 @@ http://in.relation.to/Bloggers/HibernateMovesToGitGitTipsAndTricks[Emmanuel's bl
 
 Ruby like many other platforms has its dependency hell. We do recommend you use RVM to
 isolate your ruby runtimes as well as dependencies (gems). The RVM steps are optional though.
-If you are not going to use RVM have a look at the different Ruby installations http://www.ruby-lang.org/en/downloads/[options] you have. 
+If you are not going to use RVM have a look at the different Ruby 
+installations http://www.ruby-lang.org/en/downloads/[options] you have. 
 
 * Install https://rvm.io[RVM]
 
@@ -76,8 +80,8 @@ cd hibernate.org
 
 [source]
 ----
-gem install bundler
-bundle install
+gem install bundler rake
+rake setup[local]
 ----
 
 Note that if someone updates Awestruct
@@ -128,7 +132,7 @@ completely regenerate the site via:
 
 [source]
 ----
-rake clean[all] preview
+rake clean preview
 ----
 === If serving the site is slow...
 
