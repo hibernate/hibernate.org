@@ -50,10 +50,16 @@ pre > code {
   margin-bottom: 25px;
 }
 
+// Hibernate Logo
+a.nav > img {
+  position: relative;
+  top: 4px;
+}
+
 // Avoid the second line in the header when
 // the monitor size is smaller
 .navbar .nav > li > a {
-      padding: 8px 10px 13px;
+      padding: 13px 10px;
 }
 
 //home page
