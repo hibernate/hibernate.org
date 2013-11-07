@@ -56,6 +56,9 @@ a.nav > img {
   top: 4px;
 }
 
+.navbar .nav > li {
+  font-weight: bold;
+}
 // Avoid the second line in the header when
 // the monitor size is smaller
 .navbar .nav > li > a {
