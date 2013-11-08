@@ -89,6 +89,7 @@ task :clean, :all do |task, args|
   if args[:all] == 'all'
     dirs << '_tmp'
     dirs << '.bundle'
+    dirs << '_bin'
   end
   dirs.each do |dir|
     FileUtils.remove_dir dir unless !File.directory? dir

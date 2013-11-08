@@ -6,6 +6,7 @@ require 'file_merger'
 require 'relative'
 require 'releases'
 require 'release_file_parser'
+require 'redirect_creator'
 
 # dependencies for asciidoc support
 require 'tilt'
@@ -28,7 +29,7 @@ if !Haml::Filters.constants.include?('AsciiDoc')
   Haml::Filters::AsciiDoc.options[:attributes]['notitle!'] = ''
   # copy attributes from site.yml
   attributes = site.asciidoctor[:attributes].each do |key, value|
-    Haml::Filters::AsciiDoc.options[:attributes][key] = value
+  Haml::Filters::AsciiDoc.options[:attributes][key] = value
   end
 end
 
@@ -47,5 +48,6 @@ Awestruct::Extensions::Pipeline.new do
   transformer Awestruct::Extensions::HtmlMinifier.new
   extension Awestruct::Extensions::FileMerger.new
   extension Awestruct::Extensions::Indexifier.new
+  extension Awestruct::Extensions::RedirectCreator.new
 end
 
