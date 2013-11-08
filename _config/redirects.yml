@@ -1,0 +1,21 @@
+# A list of redirects picked up by the RedirectCreator extension
+# For each key in this file a html page is created with a appropriate meta redirect directive to
+# the new URL
+
+# General
+community/mailinglists: 	/community
+community/irc: 				/community
+downloads:					/orm/downloads
+downloads.html: 			/orm/downloads
+docs: 						/orm/documentation
+docs.html: 					/orm/documentation
+quick-start:    			/orm/documentation/getting-started
+quick-start.html: 			/orm/documentation/getting-started
+
+# Magnolia re-directs
+subprojects/validator.html: /validator
+subprojects/search.html:    /search
+
+# Old cwiki redirects
+38.html:					http://community.jboss.org/docs/DOC-13916
+95.html:    				http://community.jboss.org/docs/DOC-13917
