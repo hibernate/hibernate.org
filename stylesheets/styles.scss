@@ -150,6 +150,32 @@ a.nav > img {
   }
 }
 
+@media (max-width: 470px) {
+  .hero-unit {
+    h1 {
+      font-size: 2em;
+    }
+  }
+}
+
+@media (max-width: 365px) {
+  .hero-unit {
+    padding: 25px 30px;
+    h1 {
+      font-size: 1.5em;
+    }
+  }
+}
+
+@media (max-width: 270px) {
+  .hero-unit {
+    padding: 25px 30px;
+    h1 {
+      font-size: 1em;
+    }
+  }
+}
+
 //footer
 
 footer.container {
