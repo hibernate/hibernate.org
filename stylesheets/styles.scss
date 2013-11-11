@@ -7,6 +7,16 @@
 // Common utilities
 @import "settings";
 
+h2, h3, h4 {
+  color: rgb(188, 174, 121);
+}
+
+.hero-unit, .news-sidebar, .equalHero {
+  h2, h3, h4 {
+    color: $text-color;
+  }
+}
+
 // Bug fix for community bootstrap
 
 .equalHero .btn {
