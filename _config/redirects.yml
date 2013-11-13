@@ -3,19 +3,165 @@
 # the new URL
 
 # General
-community/mailinglists: 	/community
-community/irc: 				/community
-downloads:					/orm/downloads
-downloads.html: 			/orm/downloads
-docs: 						/orm/documentation
-docs.html: 					/orm/documentation
-quick-start:    			/orm/documentation/getting-started
-quick-start.html: 			/orm/documentation/getting-started
+community/mailinglists:                    /community
+community/irc:                             /community
+issuetracker:                              http://hibernate.atlassian.net
+license:                                   /community/license
 
-# Magnolia re-directs
-subprojects/validator.html: /validator
-subprojects/search.html:    /search
+## ORM
+downloads:                                 /orm/downloads
+downloads.html:                            /orm/downloads
+docs:                                      /orm/documentation
+docs.html:                                 /orm/documentation
+quick-start:                               /orm/documentation/getting-started
+quick-start.html:                          /orm/documentation/getting-started
+faq:                                       /orm/faq
+roadmap:                                   /orm/roadmap
+doc/books:                                 /orm/documentation
+doc/books.html:                            /orm/documentation
+
+## Search
+subprojects/search:                        /search
+subprojects/search.html:                   /search
+subprojects/search/download:               /search/downloads
+subprojects/search/download.html:          /search/downloads
+subprojects/search/docs:                   /search/documentation
+subprojects/search/docs.html:              /search/documentation
+
+## Validator
+subprojects/validator/:                    /validator
+subprojects/validator.html:                /validator
+subprojects/validator/download:            /validator/downloads
+subprojects/validator/download.html:       /validator/downloads
+subprojects/validator/docs:                /validator/documentation
+subprojects/validator/docs.html:           /validator/documentation
+
+## Tools
+subprojects/tools:                         /tools
+subprojects/tools.html:                    /tools
+
+## OGM
+subprojects/ogm:                           /ogm
+subprojects/ogm.html:                      /ogm
+subprojects/ogm/download:                  /ogm/downloads
+subprojects/ogm/download.html:             /ogm/downloads
+subprojects/ogm/docs:                      /ogm/documentation
+subprojects/search/ogm.html:               /ogm/documentation
+
+## Metamodel Gen
+# TODO
+
 
 # Old cwiki redirects
-38.html:					http://community.jboss.org/docs/DOC-13916
-95.html:    				http://community.jboss.org/docs/DOC-13917
+
+## ORM
+152.html:                                  /orm/documentation/getting-started  
+397.html:                                  /orm
+422.html:                                  /orm/contribute
+
+# ORM FAQ wiki pages. Should this be replaced by a FAQ on the new website?
+9.html  :                                  http://community.jboss.org/en/hibernate/faq
+15.html :                                  http://community.jboss.org/en/hibernate/faq
+116.html:                                  http://community.jboss.org/en/hibernate/faq
+117.html:                                  http://community.jboss.org/en/hibernate/faq
+118.html:                                  http://community.jboss.org/en/hibernate/faq
+119.html:                                  http://community.jboss.org/en/hibernate/faq
+120.html:                                  http://community.jboss.org/en/hibernate/faq
+263.html:                                  http://community.jboss.org/en/hibernate/faq
+329.html:                                  http://community.jboss.org/en/hibernate/faq
+359.html:                                  http://community.jboss.org/en/hibernate/faq
+446.html:                                  http://community.jboss.org/en/hibernate/faq
+
+## Search
+410.html:                                  /search
+
+##Validator
+412.html:                                  /validator
+
+## Redirects to wiki pages
+38.html :                                  http://community.jboss.org/docs/DOC-13916
+41.html :                                  http://community.jboss.org/docs/DOC-13924 
+42.html :                                  http://community.jboss.org/docs/DOC-13951 
+43.html :                                  http://community.jboss.org/docs/DOC-13954 
+45.html :                                  http://community.jboss.org/docs/DOC-13927 
+46.html :                                  http://community.jboss.org/docs/DOC-13944 
+50.html :                                  http://community.jboss.org/docs/DOC-13993 
+51.html :                                  http://community.jboss.org/docs/DOC-13957 
+79.html :                                  http://community.jboss.org/docs/DOC-14025 
+80.html :                                  http://community.jboss.org/docs/DOC-13921 
+86.html :                                  http://community.jboss.org/docs/DOC-13928 
+95.html :                                  http://community.jboss.org/docs/DOC-13917
+100.html:                                  http://community.jboss.org/docs/DOC-13992 
+109.html:                                  http://community.jboss.org/docs/DOC-13933 
+113.html:                                  http://community.jboss.org/docs/DOC-13918 
+114.html:                                  http://community.jboss.org/docs/DOC-14022 
+124.html:                                  http://community.jboss.org/docs/DOC-13958 
+137.html:                                  http://community.jboss.org/docs/DOC-13973 
+139.html:                                  http://community.jboss.org/docs/DOC-13998 
+140.html:                                  http://community.jboss.org/docs/DOC-13999 
+157.html:                                  http://community.jboss.org/docs/DOC-13920 
+161.html:                                  http://community.jboss.org/docs/DOC-13959 
+162.html:                                  http://community.jboss.org/docs/DOC-13960 
+164.html:                                  http://community.jboss.org/docs/DOC-14000 
+172.html:                                  http://community.jboss.org/docs/DOC-13978 
+193.html:                                  http://community.jboss.org/docs/DOC-13945 
+204.html:                                  http://community.jboss.org/docs/DOC-14015 
+209.html:                                  http://community.jboss.org/docs/DOC-14069 
+213.html:                                  http://community.jboss.org/docs/DOC-14002 
+214.html:                                  http://community.jboss.org/docs/DOC-14014 
+216.html:                                  http://community.jboss.org/docs/DOC-14013 
+250.html:                                  http://community.jboss.org/docs/DOC-15061 
+265.html:                                  http://community.jboss.org/docs/DOC-13979 
+272.html:                                  http://community.jboss.org/docs/DOC-13995 
+273.html:                                  http://community.jboss.org/docs/DOC-13997 
+275.html:                                  http://community.jboss.org/docs/DOC-14005 
+280.html:                                  http://community.jboss.org/docs/DOC-13931 
+282.html:                                  http://community.jboss.org/docs/DOC-14021 
+290.html:                                  http://community.jboss.org/docs/DOC-13919 
+293.html:                                  http://community.jboss.org/docs/DOC-13961 
+295.html:                                  http://community.jboss.org/docs/DOC-14071 
+296.html:                                  http://community.jboss.org/docs/DOC-13966 
+300.html:                                  http://community.jboss.org/docs/DOC-14003 
+311.html:                                  http://community.jboss.org/docs/DOC-14072 
+314.html:                                  http://community.jboss.org/docs/DOC-14004 
+315.html:                                  http://community.jboss.org/docs/DOC-13932 
+318.html:                                  http://community.jboss.org/docs/DOC-13976 
+328.html:                                  http://community.jboss.org/docs/DOC-13955 
+333.html:                                  http://community.jboss.org/docs/DOC-13962 
+339.html:                                  http://community.jboss.org/docs/DOC-13949 
+343.html:                                  http://community.jboss.org/docs/DOC-14068 
+359.html:                                  http://community.jboss.org/docs/DOC-14062 
+361.html:                                  http://community.jboss.org/docs/DOC-14063 
+363.html:                                  http://community.jboss.org/docs/DOC-14065 
+364.html:                                  http://community.jboss.org/docs/DOC-14067 
+366.html:                                  http://community.jboss.org/docs/DOC-14064 
+368.html:                                  http://community.jboss.org/docs/DOC-14066 
+377.html:                                  http://community.jboss.org/docs/DOC-13964 
+381.html:                                  http://community.jboss.org/docs/DOC-14011 
+386.html:                                  http://community.jboss.org/docs/DOC-14073 
+387.html:                                  http://community.jboss.org/docs/DOC-14057 
+388.html:                                  http://community.jboss.org/docs/DOC-13994 
+391.html:                                  http://community.jboss.org/docs/DOC-13956 
+402.html:                                  http://community.jboss.org/docs/DOC-13948 
+403.html:                                  http://community.jboss.org/docs/DOC-13953 
+405.html:                                  http://community.jboss.org/docs/DOC-13946 
+415.html:                                  http://community.jboss.org/docs/DOC-14001 
+416.html:                                  http://community.jboss.org/docs/DOC-14023 
+421.html:                                  http://community.jboss.org/docs/DOC-14050 
+426.html:                                  http://community.jboss.org/docs/DOC-14010 
+432.html:                                  http://community.jboss.org/docs/DOC-14049 
+440.html:                                  http://community.jboss.org/docs/DOC-14045 
+441.html:                                  http://community.jboss.org/docs/DOC-14048 
+442.html:                                  http://community.jboss.org/docs/DOC-14007 
+443.html:                                  http://community.jboss.org/docs/DOC-14046 
+444.html:                                  http://community.jboss.org/docs/DOC-13947 
+446.html:                                  http://community.jboss.org/docs/DOC-14044 
+450.html:                                  http://community.jboss.org/docs/DOC-13965 
+451.html:                                  http://community.jboss.org/docs/DOC-13937 
+453.html:                                  http://community.jboss.org/docs/DOC-14047 
+460.html:                                  http://community.jboss.org/docs/DOC-14008 
+461.html:                                  http://community.jboss.org/docs/DOC-13991 
+462.html:                                  http://community.jboss.org/docs/DOC-14042 
+466.html:                                  http://community.jboss.org/docs/DOC-13950 
+
+
