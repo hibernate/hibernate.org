@@ -26,21 +26,21 @@ project: orm
   [subs="verbatim,attributes"]
   .Maven dependency
   ----
-  <!-- required -->
-  
   <dependency>
       <groupId>{groupId}</groupId>
       <artifactId>hibernate-core</artifactId>
       <version>{prj-version}</version>
   </dependency>
   
-  <!-- optional -->
-  
+  <!-- for JPA, use hibernate-entitymanager instead of hibernate-core -->
   <dependency>
       <groupId>{groupId}</groupId>
       <artifactId>hibernate-entitymanager</artifactId>
       <version>{prj-version}</version>
   </dependency>
+  
+  <!-- optional -->
+  
   <dependency>
       <groupId>{groupId}</groupId>
       <artifactId>hibernate-osgi</artifactId>
