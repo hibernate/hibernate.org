@@ -1,73 +1,45 @@
-= Hibernate Search roadmap
-Emmanuel Bernard
+= Hibernate ORM Roadmap
 :awestruct-layout: project-frame
-:awestruct-project: search
+:awestruct-project: orm
 :toc:
 :toc-placement: preamble
 :toc-title: Releases
 
-Hibernate Search is community driven and as such the roadmap constantly evolves to reflect the users needs.
-You can find a finer grained roadmap in our https://hibernate.atlassian.net/browse/HSEARCH[issue tracker] but this page is a good and consise view of where we are going.
-Dates are generally omitted, we release when we are ready.
+Hibernate ORM is community driven!  Therefore, the roadmap is extremely fluid and evolves frequently.  The most detailed and up-to-date roadmap is consists of the issues and planned release versions in JIRA: https://hibernate.atlassian.net/browse/HHH[issue tracker].  However, the following is a decent view of where we're headed.
 
-== Hibernate Search 4.4
+== Hibernate ORM 4.2
 
-Backward compatible with the 4.x series but prepare for the 5.0 enhancements.
+Hibernate ORM 4.2 is in production and is therefore in maintenance mode.  Only bug fixes and important improvements will be included in future 4.2.x versions.  Releases are generally within a 30 day time-box.
 
-Better clustering::
-Solid Infinispan and JGroups integration, ease of setup.
-Metadata API::
-Exposes the index structure and help in writing queries (development time and tooling). Useful to log or dump how things are indexed.
-Also required for link:/ogm/[Hibernate OGM] and its query integration.
-Jandex::
-Use Jandex for annotation scanning for faster boot in Se and in http://wildfly.org[WildFly].
-Dynamic sharding::
-Ability to dynamically add shards. Useful when shards are business based. Like customer based.
-New quickstart and demo::
-Quickstarts and demos for JBoss Developper Framework.
-Provided partly by Google Summer of Code contributions.
-Performance regression tests::
-More of them.
+== Hibernate ORM 4.3
 
-== Hibernate Search 5.0
+JPA 2.1::
+Full support of the JPA 2.1 spec
 
-Improved codebase with some compatibility breaks over the 4.x series.
-Will provide a sound foundation for the medium future.
+== Hibernate ORM 5.0
 
-Apache Lucene 4.x::
-Move to Apache Lucene 4.x. This is a significant departure and is the cause of most compatibility breaks.
-Speed and feature improvements will flow form this migration.
-Uncommitted changes in a transaction::
-Exposes uncommitted changes and make them visible in a given transaction.
-Classloader SPI::
-Explicit classloader SPI for better EAP integration as modules.
-API / SPI for alternative backends::
-Define API / SPI abstraction to allow for future external backends integrations (such as Apache Solr and Elastic Search).
-Asynchronous FieldBridge::
-ex. improved Tika integration.
-Multitenancy::
-Integration with ORM's multitenancy API (Google Summer of Code contributions).
+Redesigned metamodel::
+	Complete replacement for the current org.hibernate.mapping code
+Query parser::
+	Improved query parser based on Antlr 3/4
+Multi-tenancy improvements::
+	Discriminator-based multi-tenancy
+Follow-on fetches::
+	Two-phase loading via LoadPlans/EntityGraphs
+OSGi improvements::
+	Support dynamic runtimes, multiple tenancy, multiple persistence units, and more.
 
+== Hibernate ORM 5.x
 
-== Hibernate Search  5.1
-
-CDI integration::
-Offer a portable extension to help integrate in CDI.
-High performance backend queues::
-Low contention non blocking queues.
-Automated performance regression tests::
-'nuf said.
-Infinispan 6.0::
-Migration to Infinispan 6.x.
-New Faceting engine::
-Apache Lucene 4 based faceting engine for better performance.
-Auto suggestion and spell checking::
-Offer APIs to auto suggestions and spell checking.
-
-== Hibernate Search 5.2
-
-Pre-analysis of text in the transaction context::
-Better remoting/clustering & scalability.
-Hibernate ORM 5.x / JPA 2.1 / Java EE 7::
-Provides compatibility with link:/orm/[Hibernate ORM 5.0].
-Might need to be pushed earlier to match Hibernate ORM 5 plans.
+hibernate-core & hibernate-entitymanager merge::
+	Merging the 2 artifacts, heavily relying on JPA-based implementations from native Hibernate APIs, etc.
+Popular issues in JIRA::
+	Focus on JIRA issues with high numbers of votes (many will require the new Query parser)
+Accessing JDBC results by position::
+	JDBC results-by-position, rather than names, provides a big performance impact
+LoadPlan as an AST::
+	Antlr query parser generates a LoadPlan
+ORM as a generic persistence engine::
+	Research supporting OGM/Search use cases
+Docs/guides::
+	Major improvements to documentation and guides, including numerous topic-based docs
