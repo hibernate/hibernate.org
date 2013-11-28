@@ -62,9 +62,9 @@ module Awestruct
         %{<!DOCTYPE HTML>
 
           <meta charset="UTF-8">
-          <meta http-equiv="refresh" content="1; url=#{@target_url}">
+          <meta http-equiv="refresh" content="5; url=#{@target_url}">
 
-          #{google_analytics_async}
+          #{google_analytics}
 
           <script>
           window.location.href = "#{@target_url}"
