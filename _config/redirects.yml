@@ -3,6 +3,7 @@
 # the new URL
 
 # General
+community.html:                            /community/
 community/mailinglists:                    /community/
 community/irc:                             /community/
 issuetracker:                              http://hibernate.atlassian.net
@@ -55,13 +56,14 @@ subprojects/search/ogm.html:               /ogm/documentation/
 # Old cwiki redirects
 
 ## ORM
+5.html:                                    /orm/documentation/
 152.html:                                  /orm/documentation/getting-started/
 397.html:                                  /orm/
 422.html:                                  /orm/contribute/
 
 # ORM FAQ wiki pages.
-9.html  :                                  /orm/faq/
-15.html :                                  /orm/faq/
+9.html:                                    /orm/faq/
+15.html:                                   /orm/faq/
 116.html:                                  /orm/faq/
 117.html:                                  /orm/faq/
 118.html:                                  /orm/faq/
@@ -79,18 +81,18 @@ subprojects/search/ogm.html:               /ogm/documentation/
 412.html:                                  /validator/
 
 ## Redirects to wiki pages
-38.html :                                  http://community.jboss.org/docs/DOC-13916
-41.html :                                  http://community.jboss.org/docs/DOC-13924
-42.html :                                  http://community.jboss.org/docs/DOC-13951
-43.html :                                  http://community.jboss.org/docs/DOC-13954
-45.html :                                  http://community.jboss.org/docs/DOC-13927
-46.html :                                  http://community.jboss.org/docs/DOC-13944
-50.html :                                  http://community.jboss.org/docs/DOC-13993
-51.html :                                  http://community.jboss.org/docs/DOC-13957
-79.html :                                  http://community.jboss.org/docs/DOC-14025
-80.html :                                  http://community.jboss.org/docs/DOC-13921
-86.html :                                  http://community.jboss.org/docs/DOC-13928
-95.html :                                  http://community.jboss.org/docs/DOC-13917
+38.html:                                   http://community.jboss.org/docs/DOC-13916
+41.html:                                   http://community.jboss.org/docs/DOC-13924
+42.html:                                   http://community.jboss.org/docs/DOC-13951
+43.html:                                   http://community.jboss.org/docs/DOC-13954
+45.html:                                   http://community.jboss.org/docs/DOC-13927
+46.html:                                   http://community.jboss.org/docs/DOC-13944
+50.html:                                   http://community.jboss.org/docs/DOC-13993
+51.html:                                   http://community.jboss.org/docs/DOC-13957
+79.html:                                   http://community.jboss.org/docs/DOC-14025
+80.html:                                   http://community.jboss.org/docs/DOC-13921
+86.html:                                   http://community.jboss.org/docs/DOC-13928
+95.html:                                   http://community.jboss.org/docs/DOC-13917
 100.html:                                  http://community.jboss.org/docs/DOC-13992
 109.html:                                  http://community.jboss.org/docs/DOC-13933
 113.html:                                  http://community.jboss.org/docs/DOC-13918
