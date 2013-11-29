@@ -254,7 +254,7 @@ Tabzilla.init = function()
     Tabzilla.$link.removeClass('tabnav-opened');
 
     Tabzilla.opened = false;
-    
+
     // initialize search bar now because it is injected into body during document.ready()
     initializeSearchBar();
 };
@@ -343,78 +343,306 @@ Tabzilla.preventDefault = function(ev)
 
 Tabzilla.content =
 '<div class="tabnavclearfix" id="tabnav">'
-+'  <ul class="listclear">'
-+'    <li class="current"> <span class="notch">&nbsp;</span> <a class="menu-title" href="http://www.jboss.org">JBoss Community</a>'
++'<div class="tabcontent">'
++'  <p class="overview"> Like the project? It’s part of the community of Red Hat projects. Learn more about Red Hat and our open source communities:</p>'
++'  <div class="row-fluid">'
++'    <span class="span4 middlewarelogo">'
++'      <img src="http://static.jboss.org/common/images/tabzilla/RHJB_Middleware_Logotype.png" alt="Red Hat JBoss MIDDLEWARE" />'
++'    </span>'
++'    <span class="span4">'
 +'      <ul class="level1">'
-+'        <li class="leaf"><a href="http://planet.jboss.org/view/all">Blogs</a></li>'
-+'        <li class="leaf"><a href="http://twitter.com/#!/jbossdeveloper">Tweets</a></li>'
-+'        <li class="leaf"><a href="http://www.facebook.com/jboss">Facebook</a></li>'
-+'        <li class="leaf"><a href="http://jboss.org/twitter">Twitter</a></li>'
-+'        <li class="leaf"><a href="http://www.linkedin.com/company/jboss">LinkedIn</a></li>'
-+'        <li class="leaf"><a href="http://vimeo.com/jbossdeveloper">Vimeo</a></li>'
-+'        <li class="leaf"><a href="http://asylum.libsyn.com/">Asylum</a></li>'
-+'        <li class="leaf"><a href="http://www.jboss.org/events">Events</a></li>'
++'        <li class="leaf"><a href="#">Red Hat JBoss Middleware Overview</a></li>'
++'        <li class="leaf"><a href="#">Red Hat JBoss Middleware Products</a></li>'
++'        <li class="leaf"><a href="#">Red Hat JBoss Projects & Standards</a></li>'
 +'      </ul>'
-+'    </li>'
-+'    <li class="current"> <span class="notch">&nbsp;</span> <a class="menu-title" href="http://www.jboss.org/developer">Get Started</a>'
++'    </span>'
++'    <span class="span4">'
 +'      <ul class="level1">'
-+'        <li class="leaf"><a href="http://devstudio.jboss.com/download/">Get Tool Kit (JBDS)</a></li>'
-+'        <li class="leaf"><a href="http://www.jboss.org/projects">Downloads</a></li>'
-+'        <li class="leaf"><a href="http://www.jboss.org/projects">Documentation</a></li>'
-+'        <li class="leaf"><a href="http://community.jboss.org">Forums</a></li>'
-+'        <li class="leaf"><a href="http://www.jboss.org/webinars">Webinars</a></li>'
-+'        <li class="leaf"><a href="http://java.dzone.com/category/tags/jboss">Articles</a></li>'
-+'        <li class="leaf"><a href="http://www.jboss.org/books">Books</a></li>'
++'        <li class="leaf"><a href="#">redhat.com</a></li>'
++'        <li class="leaf"><a href="#">Red Hat Customer Portal</a></li>'
++'        <li class="leaf"><a href="#">OpenShift</a></li>'
 +'      </ul>'
-+'    </li>'
-+'    <li class="current"> <span class="notch">&nbsp;</span> <a class="menu-title" href="http://www.jboss.org/contribute">Get Involved</a>'
-+'      <ul class="level1">'
-+'        <li class="leaf"><a href="http://community.jboss.org/">Wiki</a></li>'
-+'        <li class="leaf"><a href="http://community.jboss.org/">Discussions</a></li>'
-+'        <li class="leaf"><a href="http://issues.jboss.org">Issue Tracker</a></li>'
-+'        <li class="leaf"><a href="http://source.jboss.org">Source Repositories</a></li>'
-+'        <li class="leaf"><a href="http://www.jboss.org/usergroups">User Groups</a></li>'
-+'        <li class="leaf"><a class="menu-title" href="http://jboss.org/interests">Special Interest Groups</a></li>'
-+'        <li class="leaf"><a href="http://www.jboss.org/security">Report a Security Issue</a></li>'
-+'      </ul>'
-+'    </li>'
-+'    <li class="open"> <span class="notch">&nbsp;</span> <a class="menu-title" href="http://www.jboss.org/projects">Projects</a>'
-+'      <ul class="level1">'
-+'        <!--<li class="leaf alpha">A-O</li>-->'
-+'        <li class="leaf"><a href="http://www.jboss.org/jbossas">Application Server</a></li>'
-+'        <li class="leaf"><a href="http://www.jboss.org/jbossweb">Web Server</a></li>'
-+'        <li class="leaf"><a href="http://www.jboss.org/gatein">GateIn</a></li>'
-+'        <li class="leaf"><a href="http://www.jboss.org/jbossesb">ESB</a></li>'
-+'        <li class="leaf"><a href="http://www.jboss.org/drools">Drools</a></li>'
-+'        <li class="leaf"><a href="http://www.hibernate.org">Hibernate</a></li>'
-+'        <li class="leaf"><a href="http://www.jboss.org/richfaces">RichFaces</a></li>'
-+'        <li class="leaf"><a href="http://www.jboss.org/tools">Tools</a></li>'
-+'        <li class="leaf"><a href="http://www.jboss.org/rhq">RHQ</a></li>'
-+'        <li class="leaf viewmore"><a href="http://www.jboss.org/projects">More...</a></li>'
-+'      </ul>'
-+'    <li class="open"> <span class="notch">&nbsp;</span> <a class="menu-title" href="http://www.jboss.org/products">Products</a>'
-+'      <ul class="level1">'
-+'        <li class="leaf"><a href="http://www.jboss.org/products/eap">Application Platform</a></li>'
-+'        <li class="leaf"><a href="http://www.redhat.com/products/jbossenterprisemiddleware/web-server/">Web Server</a></li>'
-+'        <li class="leaf"><a href="http://www.redhat.com/products/jbossenterprisemiddleware/data-grid/">Data Grid</a></li>'
-+'        <li class="leaf"><a href="http://www.redhat.com/products/jbossenterprisemiddleware/portal/">Portal Platform</a></li>'
-+'        <li class="leaf"><a href="http://www.redhat.com/products/jbossenterprisemiddleware/soa">SOA Platform</a></li>'
-+'        <li class="leaf"><a href="http://www.redhat.com/products/jbossenterprisemiddleware/data-services">Data Services Platform</a></li>'
-+'        <li class="leaf"><a href="http://www.jboss.org/products/fuse">Fuse</a></li>'
-+'        <li class="leaf"><a href="http://www.jboss.org/products/amq">A-MQ</a></li>'
-+'        <li class="leaf"><a href="http://www.redhat.com/products/jbossenterprisemiddleware/business-rules/">Business Rules Mgmt System</a></li>'
-+'        <li class="leaf"><a href="https://www.jboss.org/products/jbds">Developer Studio</a></li>'
-+'        <li class="leaf"><a href="http://www.redhat.com/products/jbossenterprisemiddleware/web-framework-kit">Web Framework Kit</a></li>'
-+'        <li class="leaf"><a href="http://www.redhat.com/products/jbossenterprisemiddleware/operations-network">Operations Network</a></li>'
-+'        <li class="leaf viewmore"><a href="http://www.jboss.org/products">More...</a></li>'
-+'      </ul>'
-+'    </li>    '
-+'    <li id="tabnav-search">'
-+'      <form action="#">'
-+'      <input id="searchbar" type="text" value="" style="height:14px;">'
-+'      </form>'
-+'    </li>'
-+'  </ul>'
++'    </span>'
++'  </div>'
++'</div>'
 +'</div>';
 
+/* search.js - Code for search bar. */
+var _srch = window.search = {};
+
+_srch.context = [
+    { // community
+        description: "Search the Community",
+        url: "http://community.jboss.org/search.jspa?"
+    },
+    { // project
+        description: "Search Project Pages",
+        url: "http://www.google.com/search?as_sitesearch=jboss.org"
+    }
+];
+
+// default configuration
+_srch.disappearDelay = 250;
+_srch.hideMenuOnClick = true;
+_srch.selectedContext = 0;
+_srch.initialized = false;
+
+_srch.init = function () {
+
+    var searchBar = jQuery("#searchbar");
+    if (searchBar.length == 0) {
+        // can not initialize now, #searchbar is not available yet
+        return;
+    }
+    if (_srch.initialized) {
+    // can be called only once
+    return;
+    }
+
+    var innerMenuContent =
+        // Adding class="selected" to one <a> tag makes this options
+        // visually selected by default. Even if there is not selected any option by default
+        // there is a default option where the search request will be sent to though.
+        // We want by deault not to show the search scope description in the search box.
+        "<div><a href='#' context='0'>"+_srch.context[0].description+"</a></div>" +
+        "<div><a href='#' context='1'>"+_srch.context[1].description+"</a></div>";
+
+    var searchButton = jQuery("#searchGo");
+    var dropDownMenu = jQuery("#dropmenudiv");
+    if (dropDownMenu.length == 0) {
+        var htmlContent = "<div id='dropmenudiv' style='display: none; position: absolute; left: 0px; top: 0px;' />";
+        jQuery('body').prepend(htmlContent);
+        dropDownMenu = jQuery("#dropmenudiv");
+    }
+
+    // we must define some handlers upfront
+    var leaveSearchBarHandler = function (searchBar, dropDownMenu) {
+        var text = searchBar.val();
+        if (text == undefined || text == "" || equalsAnyDescription(text)) {
+            text = dropDownMenu.find('a.selected').text();
+            searchBar.val(text);
+        }
+    };
+
+    var enterSearchBarHandler = function(searchBar, dropDownMenu) {
+        var text = searchBar.val();
+        if (equalsAnyDescription(text)) {
+            searchBar.val("");
+        }
+    };
+
+    // Returns true is given text equals to description of any search context.
+    var equalsAnyDescription = function (text) {
+        if (text != undefined) {
+            for (var i = 0; i < _srch.context.length; i++) {
+                if (text == _srch.context[i].description) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    };
+
+    // @param menu          html element to hide (must be wrapped by jQuery)
+    // @param attributes    [optional] json with top, height, left and width properties
+    var showDropDownMenu = function (menu, attributes) {
+        if (menu) {
+            if (attributes) {
+                menu.css('top', attributes.top + attributes.height);
+                menu.css('left', attributes.left);
+                menu.css('width', attributes.width - menu.css('padding-left').replace(/\D+/,"") - menu.css('padding-right').replace(/\D+/,""));
+            }
+            menu.stop(true, true).show();
+        }
+    };
+
+    // @param menu      html element to hide (must be wrapped by jQuery)
+    // @param delay     [optional] hide delay (default to 250)
+    var hideDropDownMenu = function (menu, delay) {
+        if (menu) {
+            menu.delay(delay != undefined ? delay : _srch.disappearDelay).fadeOut(100);
+        }
+    };
+
+    // Retrieves the following properties from given element (must be wrapped by jQuery): top, left, height
+    // Returns simple JSON [defaults to] {top: 0, left: 0, height: 10, width: 150}
+    // @param element
+    var getPositionAttributes = function (element) {
+        var attr = { top: 0, left: 0, height: 10, width: 150 };
+        if (element) {
+            attr.height = element.outerHeight();
+            var offset = element.offset();
+            attr.top = offset.top;
+            attr.left = offset.left;
+            attr.width = element.outerWidth();
+        }
+        return attr;
+    };
+
+    var executeSearch = function (query) {
+        window.location.href = _srch.context[_srch.selectedContext].url + "&q=" + query;
+    };
+
+    var catchEnter = function (event){
+        if (event.keyCode == '13') {
+            event.preventDefault();
+            executeSearch(searchBar.val());
+        }
+    };
+
+    dropDownMenu.html(innerMenuContent);
+
+    // bind click events on menu items
+    dropDownMenu.find('a').click(
+        function(e) {
+            dropDownMenu.find('a').removeClass('selected');
+            var target = jQuery(e.target || e.srcElement);
+            _srch.selectedContext = parseInt(target.attr('context'),10);
+            target.addClass('selected');
+            hideDropDownMenu(dropDownMenu, 0);
+            leaveSearchBarHandler(searchBar, dropDownMenu);
+            return false;
+        }
+    );
+
+    // call this function to setup default text into search bar
+    leaveSearchBarHandler(searchBar, dropDownMenu);
+
+    // setup width of dropdown menu according to searchbar
+    dropDownMenu.css('width', searchBar.outerWidth());
+
+    searchBar.unbind(); // remove onmouseover initializetion if any...
+
+    searchBar.keydown(function(e) { catchEnter(e) });
+    searchBar.blur(function() { leaveSearchBarHandler(searchBar, dropDownMenu) });
+    searchBar.focus(function() { enterSearchBarHandler(searchBar, dropDownMenu) });
+
+    searchBar.hover(
+        function() { showDropDownMenu(dropDownMenu, getPositionAttributes(searchBar)) },
+        function() { hideDropDownMenu(dropDownMenu) });
+
+    dropDownMenu.hover(
+        function() { showDropDownMenu(dropDownMenu, getPositionAttributes(searchBar)) },
+        function() { hideDropDownMenu(dropDownMenu) }
+    );
+
+    searchButton.click(function() { executeSearch(searchBar.val()) });
+
+    // this functionality was in original code, may be it can be useful for tablet users
+    if (_srch.hideMenuOnClick == true) { document.onclick = function() { hideDropDownMenu(dropDownMenu); } }
+
+    _srch.initialized = true;
+};
+
+jQuery(document).ready( _srch.init );
+
+// Since the #searchbar may not ba available in DOM when the _srch.init is called in document.ready()
+// we also need an option to initialize it later.
+var initializeSearchBar = function() {
+    _srch.init();
+};
+/* end of search.js */
+
+// Tabzilla initialization
 Tabzilla();
+
+// =======================================
+// Content dynamic rendering for tabzilla.
+// =======================================
+
+// Function checks LocalStorage if there is cached content, validates its age
+// and optionally downloads again from the REST service and then caches it.
+function renderTabzilla( projectName , projectId ) {
+
+  if ( ( typeof projectName=='undefined' ) || ( typeof projectId=='undefined' ) ) {
+    console.error("Variables 'project' and 'project_name' have to be provided in your site.yml configuration file.");
+    return;
+  }
+
+  var valueFromCache = null;
+  if (window.localStorage && window.localStorage.getItem(projectId+"TabzillaCache") ) {
+
+    var temp = JSON.parse(window.localStorage.getItem(projectId+"TabzillaCache"));
+
+    // Checking if the item in cache is not older than a week
+    if ( new Date() - new Date(Date.parse(temp.cachedDate)) < (1000*60*60*24*7) ) {
+      valueFromCache = temp;
+    }
+
+  }
+
+  // If nothing was found in cache then we gather all the data from scratch.
+  if (valueFromCache==null) {
+
+    /* THIS PART OF CODE IS TEMPORARILY DISABLED TILL THE SERVICE WILL BE IN PRODUCTION.  
+    // Getting information in what products the project is supported in.
+    var data = $.ajax({url:"http://rysiek.apiary.io/v1/rest/products/supported/#{site.project_name}",
+      dataType:'json'
+    });
+    */
+
+    // Getting HTML tab content from remote source.
+    var wrapper = $.ajax({url:"http://static.jboss.org/partials/tabcontent.html",
+      dataType:'html'
+    });
+
+    /* THIS PART OF CODE IS TEMPORARILY DISABLED TILL THE SERVICE WILL BE IN PRODUCTION.
+    // When both results are available we continue with actual rendering of the data.
+    $.when( data , wrapper ).then( function( dataResult , wrapperResult ) {
+
+      var data = dataResult[0];
+      var content = wrapperResult[0];
+      */
+
+      // REPLACEMENT CODE
+    $.when( wrapper ).then( function(wrapperResult ) {
+      var data = undefined;
+      var content = wrapperResult;
+      // END OF REPLACEMENT CODE
+      
+      var htmlContent;
+
+      // Depending on whether the project is supported in any product or not,
+      // we render different html entry.
+      if (typeof data!='undefined' && data.total>0) {
+
+        htmlContent = $(content).find('#supported');
+        htmlContent.find("#project_name").html(projectName);
+        var firstUl = htmlContent.find("#products-first-column");
+        var secondUl = htmlContent.find("#products-second-column");
+
+        var firstColumnSize = Math.ceil(data.total/2);
+        $.each(data.hits , function(index, value) {
+          if (index<firstColumnSize) {
+            firstUl.html(firstUl.html()+'<li class="leaf"><a href="'+value.url+'">'+value.name+'</a></li>');
+          } else {
+            secondUl.html(secondUl.html()+'<li class="leaf"><a href="'+value.url+'">'+value.name+'</a></li>');
+          }
+        });
+
+        $(".tabcontent").html(htmlContent);
+
+      } else {
+
+        htmlContent = $(content).find("#nonsupported");
+        htmlContent.find("#project_name").html(projectName);
+        $(".tabcontent").html(htmlContent);
+
+      }
+
+      // Putting the whole generated HTML into LocalStorage.
+      if (window.localStorage && htmlContent) {
+        var entry = new Object();
+        entry.cachedDate = new Date();
+        entry.htmlContent = htmlContent.html();
+        window.localStorage.setItem(projectId+"TabzillaCache",JSON.stringify(entry));
+      }
+
+    });
+
+  } else {
+
+    $(".tabcontent").html(valueFromCache.htmlContent);
+
+  }
+}
