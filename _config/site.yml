@@ -322,6 +322,7 @@ fileMerger:
     - /javascripts/_bootstrap-affix.js
     - /javascripts/_jbossorg-navbarfix.js
     - /javascripts/_jbossorg-misc.js
+    - /javascripts/_jbossorg-tabzilla.js
     - /javascripts/_jquery-easytabs.js
     - /javascripts/_crisp-scripts.js
 
@@ -380,14 +381,16 @@ profiles:
     jborg_js_url: http://static.jboss.org/theme/js
     project_images_url: /cache/static.jboss.org/images/hibernate
     bootstrap_css_url: http://static.jboss.org/theme/css/bootstrap-community/2.3.1.2/bootstrap-community
-    bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.2/bootstrap-community
+    bootstrap_js_url: /javascripts/bootstrap-community
+    #bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.2/bootstrap-community
   test:
     jborg_fonts_url: http://static.jboss.org/theme/fonts
     jborg_images_url: http://static.jboss.org/theme/images
     jborg_js_url: http://static.jboss.org/theme/js
     project_images_url: /cache/static.jboss.org/images/hibernate
     bootstrap_css_url: http://static.jboss.org/theme/css/bootstrap-community/2.3.1.2/bootstrap-community
-    bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.2/bootstrap-community
+    bootstrap_js_url: /javascripts/bootstrap-community
+    #bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.2/bootstrap-community
     # base_url: http://hibernate.org.beanvalidation.org
   staging:
     minified: .min
@@ -399,7 +402,8 @@ profiles:
     jborg_js_url: http://static.jboss.org/theme/js
     project_images_url: http://static.jboss.org/images/hibernate
     bootstrap_css_url: http://static.jboss.org/theme/css/bootstrap-community/2.3.1.2/bootstrap-community
-    bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.2/bootstrap-community
+    bootstrap_js_url: /javascripts/bootstrap-community
+    #bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.2/bootstrap-community
     base_url: http://staging.hibernate.org
   production:
     minified: .min
@@ -411,7 +415,8 @@ profiles:
     jborg_js_url: http://static.jboss.org/theme/js
     project_images_url: http://static.jboss.org/images/hibernate
     bootstrap_css_url: http://static.jboss.org/theme/css/bootstrap-community/2.3.1.2/bootstrap-community
-    bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.2/bootstrap-community
+    bootstrap_js_url: /javascripts/bootstrap-community
+    #bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.2/bootstrap-community
     base_url: http://hibernate.org
 
 google_analytics: UA-45270411-1
