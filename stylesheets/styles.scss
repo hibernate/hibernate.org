@@ -50,6 +50,16 @@ pre > code {
   margin-bottom: 25px;
 }
 
+
+.dropup {
+  //background-image: url("http://static.jboss.org/common/images/tabzilla/tabzilla-redhat-logo-sprite.png");
+  background-image: url("http://static.jboss.org/theme/images/common/redhat_logo.png");
+  background-repeat: no-repeat;
+  background-position: 37px 0;
+  right: 42px;
+  width: 145px;
+}
+
 // Hibernate Logo
 a.nav > img {
   position: relative;
