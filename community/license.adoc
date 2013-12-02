@@ -1,0 +1,31 @@
+= Licenses
+Emmanuel Bernard
+:awestruct-layout: community-frame
+
+== Free as in Speech
+
+Hibernate projects are licensed under either the LGPL 2.1 or the ASL 2.0.
+Hibernate is Free Software.
+
+You can find under which a specific project is released below its menu or in the code source.
+
+== LGPL 2.1
+
+Most Hibernate projects are released under the link:http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html[LGPL v2.1].
+
+The LGPL is sufficiently flexible to allow the use of Hibernate in both open source and commercial projects.
+The LGPL guarantees that Hibernate and any modifications made to Hibernate will stay open source, protecting our and your work.
+Anyone who wanted to release Hibernate under a different license would have to obtain permission from hundreds of people who have contributed code to Hibernate, which would be impractical.
+Hibernate is and will be open source.
+
+The use of the unmodified Hibernate binary of course never affects the license of your application or distribution.
+You will never have to pay money to any commercial entity for using or integrating Hibernate.
+
+If you modify Hibernate and redistribute your modifications, the LGPL applies.
+Please submit any modifications to our issue tracking system for review and possible inclusion in the upstream Hibernate project(s).
+
+== ASL 2.0
+
+Some Hibernate projects are released under the more permissive link:https://www.apache.org/licenses/LICENSE-2.0.html[ASL 2.0].
+
+This is mostly due to our work with the Java Community Process which requires such liberal license.
