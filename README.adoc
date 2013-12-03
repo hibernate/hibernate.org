@@ -7,16 +7,16 @@ A bit of Git, a bit of Ruby and you will get your local hibernate.org served.
 == Prerequisites
 
 * Get http://git-scm.com/[Git]
-* Get https://rvm.io[RVM]
 * Get http://www.gnu.org/software/wget/[GNU Wget 1.14]
 * If on Mac OS:
 ** Get https://developer.apple.com/xcode/[XCode] (needed for native gems)
 * If on Linux:
 ** Get libxslt-dev - eg via `sudo apt-get install libxslt-dev`
+** may be called libxslt1-dev for some distros
 
 [NOTE]
 ====
-For Linux Mint users - installing rvm may not work.
+For Linux Mint users - installing rvm (below) may not work.
 Be sure to instead install latest ruby-dev package via apt-get...
 ====
 
@@ -40,7 +40,7 @@ installations http://www.ruby-lang.org/en/downloads/[options] you have.
 
 [source]
 ----
-\curl -L https://get.rvm.io | bash
+curl -L https://get.rvm.io | bash
 ----
 
 * Set up the isolated environment for the site
@@ -51,6 +51,12 @@ rvm install 1.9.3
 rvm use 1.9.3
 rvm gemset create awestruct
 ----
+
+[NOTE]
+====
+For some distros using the bash shell, you'll need to enable "login shell". "rvm use" will
+complain, otherwise.  See https://rvm.io/integration/gnome-terminal for more info.
+====
 
 * RVM config (optional)
 +
