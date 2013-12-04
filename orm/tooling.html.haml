@@ -5,11 +5,11 @@ project: orm
 ---
 -# Metadata from site.yml for the project
 - project = site.projects[page.project]
-
+- latest_dev_version = latest_dev_release(page).version
 
 :asciidoc
   :version_family: #{project.sorted_releases.first.version_family}
-  :latest_stable: #{project.sorted_releases.first.version}
+  :latest_stable: #{latest_dev_version}
 
   Hibernate offers a series of tools for developers to use in their tool chain. The most prominent
   being link:/tools/[Hibernate Tools] which is a set of link:http://www.eclipse.org/[Eclipse] plugins
