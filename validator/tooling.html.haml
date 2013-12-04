@@ -4,10 +4,10 @@ title: Hibernate Validator Tooling
 project: validator
 ---
 -# Metadata from site.yml for the project
-- project = site.projects[page.project]
+- latest_stable_version = latest_stable_release(page).version
 
 :asciidoc
-  :latest_stable: #{project.sorted_releases.first.version}
+  :latest_stable: #{latest_stable_version}
 
   Have you ever put a constraint annotation to an unsupported location and wished to find out about that
   at build time rather than at runtime?
