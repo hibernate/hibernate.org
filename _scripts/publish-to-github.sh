@@ -6,7 +6,7 @@ rake clean gen[production]
 cd _tmp
 if [ ! -d "hibernate.github.io" ];
 then
-  git clone --single-branch --branch master git@github.com:hibernate/hibernate.github.io.git
+  git clone --depth 1 git@github.com:hibernate/hibernate.github.io.git
 fi
 cd hibernate.github.io
 git fetch origin
