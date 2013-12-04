@@ -13,7 +13,9 @@ git fetch origin
 git reset --hard origin/master
 git rm -r .
 
+# we filter cache as in production we shouldn't need that data
 rsync -av \
+      --filter "- /cache" \
       ../../_site/ .
 
 git add .
