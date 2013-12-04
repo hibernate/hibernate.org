@@ -1,0 +1,267 @@
+---
+layout: project-frame
+title: Getting started with Hibernate Validator
+project: validator
+---
+-# Metadata from site.yml for the project
+- latest_stable_version = latest_stable_release(page).version
+
+:asciidoc
+  :toc:
+  :toc-placement: preamble
+  :latest_stable: #{latest_stable_version}
+  :bv_api: 1.1.0.Final
+  
+  Welcome to Hibernate Validator.
+  The following paragraphs will guide you through the initial steps required to integrate
+  Hibernate Validator into your application.
+  
+  == Prerequisites
+  
+  * http://www.oracle.com/technetwork/java/index.html[Java Runtime] &gt;= 6
+  * http://maven.apache.org[Apache Maven]
+  
+  == Project set up
+  
+  In order to use Hibernate Validator within a Maven project, simply add the following dependency to
+  your +pom.xml+:
+  
+  ====
+  [source,xml]
+  [subs="verbatim,attributes"]
+  ----
+  <dependency>
+     <groupId>org.hibernate</groupId>
+     <artifactId>hibernate-validator</artifactId>
+     <version>{latest_stable}</version>
+  </dependency>
+  ----
+  
+  ====
+  This transitively pulls in the dependency to the Bean Validation API
+  (+javax.validation:validation-api:{bv_api}+).
+  
+  === Unified Expression Language (EL)
+  
+  Hibernate Validator also requires an implementation of the Unified Expression Language
+  (http://jcp.org/en/jsr/detail?id=341[JSR 341]) for evaluating dynamic expressions in constraint
+  violation messages.
+  When your application runs in a Java EE container such as http://wildfly.org/[WildFly], an EL implementation is already
+  provided by the container.
+  In a Java SE environment, however, you have to add an implementation as dependency to your POM file.
+  For instance you can add the following two dependencies to use the JSR 341
+  http://uel.java.net/[reference implementation]:
+  
+  ====
+  [source,xml]
+  ----
+  <dependency>
+     <groupId>javax.el</groupId>
+     <artifactId>javax.el-api</artifactId>
+     <version>2.2.4</version>
+  </dependency>
+  <dependency>
+     <groupId>org.glassfish.web</groupId>
+     <artifactId>javax.el</artifactId>
+     <version>2.2.4</version>
+  </dependency>
+  ----
+  
+  ====
+  
+  === CDI
+  
+  Bean Validation defines integration points with CDI (Contexts and Dependency Injection,
+  http://jcp.org/en/jsr/detail?id=346[JSR 346]). If your application runs in
+  an environment which does not provide this integration out of the box, you may use the Hibernate
+  Validator CDI portable extension by adding the following Maven dependency to your POM:
+  
+  ====
+  [source,xml]
+  ----
+  <dependency>
+     <groupId>org.hibernate</groupId>
+     <artifactId>hibernate-validator-cdi</artifactId>
+     <version>{latest_stable}</version>
+  </dependency>
+  ----
+  ====
+  
+  [TIP]
+  ====
+  Adding this dependency is not required for applications running on a Java EE application server.
+  ====
+  
+  == Applying constraints
+  
+  Lets dive into an example to see how to apply constraints:
+  
+  ====
+  [source,java]
+  ----
+  package org.hibernate.validator.referenceguide.chapter01;
+  
+  import javax.validation.constraints.Min;
+  import javax.validation.constraints.NotNull;
+  import javax.validation.constraints.Size;
+  
+  public class Car {
+  
+  @NotNull
+  private String manufacturer;
+  
+  @NotNull
+  @Size(min = 2, max = 14)
+  private String licensePlate;
+  
+  @Min(2)
+  private int seatCount;
+  
+     public Car(String manufacturer, String licencePlate, int seatCount) {
+        this.manufacturer = manufacturer;
+        this.licensePlate = licencePlate;
+        this.seatCount = seatCount;
+     }
+  
+     // getters and setters ...
+  }
+  
+  ----
+  
+  ====
+  The +@NotNull+, +@Size+ and +@Min+ annotations are used to declare the constraints which should be
+  applied to the fields of a +Car+ instance:
+  
+  *  manufacturer must never be +null+
+  *  licensePlate must never be +null+ and must be between 2 and 14 characters long
+  *  seatCount must be at least 2
+  
+  
+  [TIP]
+  ====
+  You can find the complete source code of all examples used in this getting started guide in the
+  Hibernate Validator https://github.com/hibernate/hibernate-validator/tree/master/documentation/src/test[ source repository   ]
+  on GitHub.
+  ====
+  
+  == Validating constraints
+  
+  To perform a validation of these constraints, you use a Validator instance. To demonstrate this,
+  let's have a look at a simple unit test:
+  
+  ====
+  [source,java]
+  ----
+  package org.hibernate.validator.referenceguide.chapter01;
+  
+  import java.util.Set;
+  import javax.validation.ConstraintViolation;
+  import javax.validation.Validation;
+  import javax.validation.Validator;
+  import javax.validation.ValidatorFactory;
+  
+  import org.junit.BeforeClass;
+  import org.junit.Test;
+  
+  import static org.junit.Assert.assertEquals;
+  
+  public class CarTest {
+  
+  private static Validator validator;
+  
+     @BeforeClass
+     public static void setUp() {
+        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+        validator = factory.getValidator();
+     }
+  
+     @Test
+     public void manufacturerIsNull() {
+        Car car = new Car( null, "DD-AB-123", 4 );
+  
+        Set<ConstraintViolation<Car>> constraintViolations =
+        validator.validate( car );
+  
+        assertEquals( 1, constraintViolations.size() );
+        assertEquals(
+           "may not be null",
+           constraintViolations.iterator().next().getMessage()
+        );
+     }
+  
+     @Test
+     public void licensePlateTooShort() {
+        Car car = new Car( "Morris", "D", 4 );
+  
+        Set<ConstraintViolation<Car>> constraintViolations =
+        validator.validate( car );
+  
+        assertEquals( 1, constraintViolations.size() );
+        assertEquals(
+           "size must be between 2 and 14",
+           constraintViolations.iterator().next().getMessage()
+        );
+     }
+  
+     @Test
+     public void seatCountTooLow() {
+        Car car = new Car( "Morris", "DD-AB-123", 1 );
+  
+        Set<ConstraintViolation<Car>> constraintViolations =
+        validator.validate( car );
+  
+        assertEquals( 1, constraintViolations.size() );
+        assertEquals(
+           "must be greater than or equal to 2",
+           constraintViolations.iterator().next().getMessage()
+        );
+     }
+  
+     @Test
+     public void carIsValid() {
+        Car car = new Car( "Morris", "DD-AB-123", 2 );
+  
+        Set<ConstraintViolation<Car>> constraintViolations =
+        validator.validate( car );
+  
+        assertEquals( 0, constraintViolations.size() );
+     }
+  }
+  
+  ----
+  
+  ====
+  In the +setUp()+ method a +Validator+ instance is retrieved from the +ValidatorFactory+. +Validator+
+  instances are thread-safe and may be reused multiple times.
+  
+  The +validate()+ method returns a set of +ConstraintViolation+ instances, which you can iterate
+  in order to see which validation errors occurred.
+  The first three test methods show some expected constraint violations:
+  
+  
+  * The +@NotNull+ constraint on +manufacturer+ is violated in +manufacturerIsNull()+
+  * The +@Size+ constraint on +licensePlate+ is violated in +licensePlateTooShort()+
+  * The +@Min+ constraint on +seatCount+ is violated in +seatCountTooLow()+
+  
+  If the object validates successfully, +validate()+ returns an empty set as you can see in +carIsValid()+.
+  
+  Note that only classes from the package +javax.validation+ are used.
+  These are provided from the Bean Validation API.
+  No classes from Hibernate Validator are directly referenced, resulting in portable code.
+  
+  [TIP]
+  ====
+  The above unit test makes use of the +Validator+ instance directly. Many frameworks, however, offer
+  integration with Bean Validation out of the box, e.g. JPA and JSF. In this case it is enough to annotate
+  you POJOs with constraint annotations. Validation will occur automatically at the appropriate
+  life cycle phase of the used technology. Refer to the
+  http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#validator-integration[reference guide]
+  for more information.
+  ====
+  
+  == Where to go next?
+  
+  That concludes the 5 minute tour through the world of Hibernate Validator and Bean Validation.
+  If you want a more complete introduction, it is recommended to read the Hibernate Validator
+  http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single[reference guide].
+  
