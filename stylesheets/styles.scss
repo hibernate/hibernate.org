@@ -85,10 +85,15 @@ a.nav > img {
 
 //headlines
 
+#myCarouselRow {
+  padding-top: 9px;
+}
+
 #myCarousel {
   display: inline-block;
   width: 100%;
   margin-bottom: 0;
+  min-height: 23px;
   overflow: hidden;
   ol {
     display: none;
