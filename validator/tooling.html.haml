@@ -1,0 +1,27 @@
+---
+layout: project-frame
+title: Hibernate Validator Tooling
+project: validator
+---
+-# Metadata from site.yml for the project
+- project = site.projects[page.project]
+
+
+
+:asciidoc
+  = Hibernate Validator Tooling
+  :latest_stable: #{project.sorted_releases.first.version}
+
+  TODO - WEBSITE-87
+
+  [source,xml]
+  [subs="verbatim,attributes"]
+  ----
+  <dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-validator-annotation-processor</artifactId>
+    <version>{latest_stable}</version>
+  </dependency>
+  ----
+
+
