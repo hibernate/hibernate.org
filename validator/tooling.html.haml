@@ -9,7 +9,23 @@ project: validator
 :asciidoc
   :latest_stable: #{project.sorted_releases.first.version}
 
-  TODO - WEBSITE-87
+  Have you ever put a constraint annotation to an unsupported location and wished to find out about that
+  at build time rather than at runtime?
+  Then the Hibernate Validator Annotation Processor is the right thing for you.
+
+  It helps to detect glitches such as:
+
+  * Putting a constraint to bean properties which are not supported by that constraint (e.g. putting +@Date+
+  to a +String+)
+  * Annotating the setter of a bean property instead of the getter
+  * Adding constraints to static fields or methods
+
+  When detecting these and other unsupported constraint usages, the Hibernate Validator Annotation Processor
+  will raise an error at build time, saving you valuable time.
+
+  The annotation processor is based on JSR 269 and thus can be plugged into command line builds
+  (e.g. using Maven or Gradle) as well as into most IDEs.
+  In order to e.g. use it in Maven-based projects, simply add the following dependency to your POM file:
 
   [source,xml]
   [subs="verbatim,attributes"]
@@ -20,3 +36,6 @@ project: validator
     <version>{latest_stable}</version>
   </dependency>
   ----
+
+  Read more about how to set up the processor, which options there are and which errors it detects in the
+  link:http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#validator-annotation-processor[reference guide].
