@@ -4,6 +4,25 @@ title: Hibernate. Everything data.
 inhibit_indexifier: true
 ---
 
+:javascript
+  jQuery.ajax({
+    url: "https://hibernate.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e/en_US-ny35gm-1988229788/6206/19/1.4.1/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector-embededjs/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector-embededjs.js?collectorId=7d71341e",
+    type: "get",
+    cache: true,
+    dataType: "script"
+  });
+  window.ATL_JQ_PAGE_PROPS = {
+    "triggerFunction": function(showCollectorDialog) {
+      jQuery("#feedback-button").click(function(e) {
+        e.preventDefault();
+        showCollectorDialog();
+      });
+    },
+    fieldValues: {
+        components : '10380'
+    }
+  };
+
 .row-fluid
   .span12
     :markdown
@@ -11,7 +30,10 @@ inhibit_indexifier: true
       
       > (Hand waving): This is not the page you are looking for!
       
-      It looks like you have found a broken link.  
-      Let us know where we screwed up by opening a [ticket](https://hibernate.atlassian.net/browse/WEBSITE) (project `WEBSITE`, component `hibernate.org`)
-      and mentioning which page you came from and which link you clicked on.
+      Looks like you have found a broken link! Please report it mentioning which page you came from and which link you clicked on:
+      
+      <a href="#" id="feedback-button" class='btn btn-primary btn-large'>Report website error</a>
+      
       Otherwise, best is to hit the good old back button or start back at the [top of the site](/).
+      
+      You can also fix the problem yourself by sending a pull request to this GitHub project: [github.com/hibernate/hibernate.org](https://github.com/hibernate/hibernate.org).
