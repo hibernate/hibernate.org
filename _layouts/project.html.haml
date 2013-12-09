@@ -18,7 +18,10 @@
           %a{:accesskey => "c", :href => "#page", :title => "Skip to content"} Skip to content
       .container#content
 
-        .dropup
+        %a.pull-left{:href=>"/"}
+          %img{:src=>'http://design.jboss.org/hibernate/logo/final/hibernate_logo_whitebkg_200px.png', :width=>'160px', :height=>'40px'}
+
+        .dropup.pull-right
           %a#tab.tabnav-closed{:href => "https://www.jboss.org"} Red Hat
           %script
             window.addEventListener('load', function() { renderTabzilla("#{project_name}","#{project_id}") }, false);

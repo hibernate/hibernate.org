@@ -47,12 +47,16 @@ pre > code {
 .navbar {
   z-index: 998;
   margin-bottom: 25px;
+  margin-top: 40px;
+}
+
+#subproject .dropup {
+  width: 112px;
 }
 
 // Hibernate Logo
-a.nav > img {
-  position: relative;
-  top: 4px;
+#content > a {
+  padding-left: 24px;
 }
 
 .navbar .nav > li {
