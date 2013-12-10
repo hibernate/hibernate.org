@@ -52,11 +52,18 @@ pre > code {
 
 #subproject .dropup {
   width: 112px;
+  float: right;
 }
 
 // Hibernate Logo
-#content > a {
+#logobar > a {
   padding-left: 24px;
+  display: block;
+  float: left;
+}
+
+#logobar > a > img {
+  width: 160px;
 }
 
 .navbar .nav > li {
@@ -163,6 +170,19 @@ pre > code {
     h1 {
       font-size: 2em;
     }
+  }
+}
+
+@media (max-width: 447px) {
+  #logobar > a {
+    padding-left: 0px;
+    float: none;
+  }
+  .dropup {
+    float: none; 
+  }
+  .navbar {
+    margin-top: 0px
   }
 }
 
