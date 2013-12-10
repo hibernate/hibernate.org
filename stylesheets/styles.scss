@@ -47,12 +47,23 @@ pre > code {
 .navbar {
   z-index: 998;
   margin-bottom: 25px;
+  margin-top: 40px;
+}
+
+#subproject .dropup {
+  width: 112px;
+  float: right;
 }
 
 // Hibernate Logo
-a.nav > img {
-  position: relative;
-  top: 4px;
+#logobar > a {
+  padding-left: 24px;
+  display: block;
+  float: left;
+}
+
+#logobar > a > img {
+  width: 160px;
 }
 
 .navbar .nav > li {
@@ -159,6 +170,19 @@ a.nav > img {
     h1 {
       font-size: 2em;
     }
+  }
+}
+
+@media (max-width: 447px) {
+  #logobar > a {
+    padding-left: 0px;
+    float: none;
+  }
+  .dropup {
+    float: none; 
+  }
+  .navbar {
+    margin-top: 0px
   }
 }
 

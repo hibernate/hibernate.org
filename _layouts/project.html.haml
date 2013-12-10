@@ -18,10 +18,14 @@
           %a{:accesskey => "c", :href => "#page", :title => "Skip to content"} Skip to content
       .container#content
 
-        .dropup
-          %a#tab.tabnav-closed{:href => "https://www.jboss.org"} Red Hat
-          %script
-            window.addEventListener('load', function() { renderTabzilla("#{project_name}","#{project_id}") }, false);
+        #logobar
+          .dropup
+            %a#tab.tabnav-closed{:href => "https://www.jboss.org"} Red Hat
+            %script
+              window.addEventListener('load', function() { renderTabzilla("#{project_name}","#{project_id}") }, false);
+
+          %a{:href=>"/"}
+            %img{:src=>'http://design.jboss.org/hibernate/logo/final/hibernate_logo_whitebkg_200px.png'}
 
         = partial( page.nav_partial.nil? ? 'nav.html.haml' : page.nav_partial, {"real_page" => page} )
 
