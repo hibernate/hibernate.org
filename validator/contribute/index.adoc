@@ -170,6 +170,9 @@ For Eclipse several plugins exist to integrate Maven projects. Probably the two 
 
 IntelliJ IDEA come with built-in support for multi module Maven projects. Just import your project as Maven project and let IDEA scan recursively for modules. An IDEA code style template to be used for the Hibernate Validator code base can be downloaded link:hibernate-validator.xml[here].
 
+To import the style, copy it to +~/Library/Preferences/IntellijIdea13/codestyles+ (Mac OS X)
+and select it in IntelliJ IDEA Preferences->Code style.
+
 === Running TCK tests
 
 Running the Bean Validation TCK tests in the IDE can be a little tedious. One way is the following (should work in the same way in Eclipse as well as IDEA):
