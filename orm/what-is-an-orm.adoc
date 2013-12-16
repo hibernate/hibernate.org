@@ -1,0 +1,66 @@
+= What is Object/Relational Mapping?
+:awestruct-layout: project-frame
+:awestruct-project: orm
+:toc:
+:toc-placement: preamble
+:toc-title: Releases
+
+If you are already familiar with Java, with Object/Relational Mapping,
+and with the Object/Relational mismatch,
+you may want to skip right to the Hibernate ORM benefits link:/orm/[discussion].
+
+== Persistence
+
+Hibernate ORM is concerned with helping your application to achieve persistence.
+So what is persistence?
+Persistence simply means that we would like our application's data to outlive the applications process.
+In Java terms, we would like the state of (some of) our objects to live beyond the scope of the JVM
+so that the same state is available later.
+
+== Relational Databases
+
+Specifically, Hibernate ORM is concerned with data persistence as it applies to link:http://en.wikipedia.org/wiki/Relational_database[relational databases] (RDBMS).
+In the world of Object-Oriented applications, there is often a discussion about using an link:https://en.wikipedia.org/wiki/Object_databases[object database] (ODBMS) as opposed to a RDBMS.
+We are not going to explore that discussion here.
+Suffice it to say that RDBMS remain a very popular persistence mechanism and will so for the foreseeable future.
+
+== The Object-Relational Impedance Mismatch
+
+'Object-Relational Impedance Mismatch' (sometimes called the 'paradigm mismatch')
+is just a fancy way of saying that object models and relational models do not work very well together.
+RDBMSs represent data in a tabular format (a spreadsheet is a good visualization for those not familiar with RDBMSs),
+whereas object-oriented languages, such as Java, represent it as an interconnected graph of objects.
+Loading and storing graphs of objects using a tabular relational database exposes us to 5 mismatch problems...
+
+=== Granularity
+
+Sometimes you will have an object model which has more classes than the number of corresponding tables in the database
+(we says the object model is more granular than the relational model).
+Take for example the notion of an Address...
+
+=== Subtypes (inheritance)
+
+Inheritance is a natural paradigm in object-oriented programming languages.
+However, RDBMSs do not define anything similar on the whole
+(yes some databases do have subtype support but it is completely non-standardized)...
+
+=== Identity
+
+A RDBMS defines exactly one notion of 'sameness': the primary key.
+Java, however, defines both object identity `a==b` and object equality `a.equals(b)`.
+
+=== Associations
+
+Associations are represented as unidirectional references in Object Oriented languages whereas RDBMSs use the notion of foreign keys.
+If you need bidirectional relationships in Java, you must define the association twice.
+
+Likewise, you cannot determine the multiplicity of a relationship by looking at the object domain model.
+
+=== Data navigation
+
+The way you access data in Java is fundamentally different than the way you do it in a relational database.
+In Java, you navigate from one association to an other walking the object network.
+
+This is not an efficient way of retrieving data from a relational database.
+You typically want to minimize the number of SQL queries and thus load several entities via JOINs
+and select the targeted entities before you start walking the object network.
