@@ -7,11 +7,22 @@ community.html:                            /community/
 community/mailinglists:                    /community/
 community/irc:                             /community/
 issuetracker:                              http://hibernate.atlassian.net
+issuetracker.html:                         http://hibernate.atlassian.net
 license:                                   /community/license/
+ForumMailinglists/HowToAskForHelp:         /community/
+about:                                     /
+hibernate.html:                            /
+
+## Illegal URLs frequently requested
+#dtd/hibernate-configuration-4.0.dtd
+
+## URLs I don;t know how to map
+#56.html: Using Clobs/Blobs with Oracle and Hibernate
 
 ## ORM
 downloads:                                 /orm/downloads/
 downloads.html:                            /orm/downloads/
+hibernate/downloads:                       /orm/downloads/
 docs:                                      /orm/documentation/
 docs.html:                                 /orm/documentation/
 quick-start:                               /orm/documentation/getting-started/
@@ -20,6 +31,15 @@ faq:                                       /orm/faq/
 roadmap:                                   /orm/roadmap/
 doc/books:                                 /orm/documentation/
 doc/books.html:                            /orm/documentation/
+docs/books:                                /orm/documentation/
+docs/books.html:                           /orm/documentation/
+Documentation/DocumentationOverview:       /orm/documentation/
+about/orm:                                 /orm/what-is-an-orm/
+about/orm.html:                            /orm/what-is-an-orm/
+about/entitymanager:                       /orm/
+about/annotations:                         /orm/
+about/why-hibernate:                       /orm/
+sourcecode:                                /orm/contribute/
 
 ## Metamodel Gen
 subprojects/jpamodelgen:                   /orm/tooling
@@ -60,11 +80,56 @@ subprojects/search/ogm.html:               /ogm/documentation/
 ## Shards
 subprojects/shards:                        /others/
 subprojects/shards.html:                   /others/
+414.html:                                  /others/
+
+## nhibernate
+362.html:                                  http://nhibernate.org
+
+## Old documentation links on the initial website
+
+#Today I am redirecting them tot he main doc page. can do better?
+hib_docs/v3/reference/en/html_single/:                                 /orm/documentation/
+hib_docs/v3/reference/en/html/performance.html:                        /orm/documentation/
+hib_docs/annotations/reference/en/html_single/:                        /orm/documentation/
+hib_docs/nhibernate/1.2/reference/en/html/mapping.html:                http://nhibernate.org
+hib_docs/reference/en/html/queryhql.html:                              /orm/documentation/
+hib_docs/v3/api/org/hibernate/Session.html:                            /orm/documentation/
+hib_docs/v3/reference/en/html/queryhql.html:                           /orm/documentation/
+hib_docs/reference/en/html/mapping.html:                               /orm/documentation/
+hib_docs/v3/api/:                                                      /orm/documentation/
+hib_docs/v3/reference/en/html/mapping.html:                            /orm/documentation/
+hib_docs/v3/reference/en/html/session-configuration.html:              /orm/documentation/
+hib_docs/annotations/reference/en/html/entity.html:                    /orm/documentation/
+hib_docs/v3/api/org/hibernate/criterion/Restrictions.html:             /orm/documentation/
+hib_docs/reference/en/html_single/:                                    /orm/documentation/
+hib_docs/v3/api/org/hibernate/FlushMode.html:                          /orm/documentation/
+hib_docs/reference/en/html/performance.html:                           /orm/documentation/
+hib_docs/v3/api/org/hibernate/Criteria.html:                           /orm/documentation/
+hib_docs/v3/api/org/hibernate/SessionFactory.html:                     /orm/documentation/
+hib_docs/entitymanager/reference/en/html_single/:                      /orm/documentation/
+hib_docs/reference/en/html/session-configuration.html:                 /orm/documentation/
+hib_docs/v3/reference/en/html/querysql.html:                           /orm/documentation/
+hib_docs/v3/reference/en/html/tutorial.html:                           /orm/documentation/
+hib_docs/v3/api/org/hibernate/Query.html:                              /orm/documentation/
+hib_docs/v3/reference/en/html/batch.html:                              /orm/documentation/
+hib_docs/nhibernate/1.2/reference/en/html_single/:                     http://nhibernate.org
+hib_docs/reference/en/html/batch.html:                                 /orm/documentation/
+hib_docs/v3/api/org/hibernate/Session.html:                            /orm/documentation/
+hib_docs/reference/en/html/querysql.html:                              /orm/documentation/
+hib_docs/v3/reference/en/html/objectstate.html:                        /orm/documentation/
+hib_docs/v3/reference/fr/html_single/:                                 /orm/documentation/
+hib_docs/tools/reference/en/html_single/:                              http://www.jboss.org/tools/docs/
+hib_docs/v3/reference/en/html/:                                        /orm/documentation/
+hib_docs/v3/reference/fr/html/:                                        /orm/documentation/
+hib_docs/v3/reference/zh-cn/html/batch.html:                           /orm/documentation/
+hib_docs/v3/reference/zh-cn/html/search:                               /orm/documentation/
 
 # Old cwiki redirects
 
 ## ORM
 5.html:                                    /orm/documentation/
+6.html:                                    /orm/downloads/
+30.html:                                   /orm/downloads/
 152.html:                                  /orm/documentation/getting-started/
 397.html:                                  /orm/
 422.html:                                  /orm/contribute/
@@ -85,8 +150,11 @@ subprojects/shards.html:                   /others/
 ## Search
 410.html:                                  /search/
 
-##Validator
+## Validator
 412.html:                                  /validator/
+
+## Tools
+255.html:                                  http://www.jboss.org/tools/docs/
 
 ## Redirects to wiki pages
 38.html:                                   http://community.jboss.org/docs/DOC-13916
