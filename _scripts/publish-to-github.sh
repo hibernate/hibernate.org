@@ -3,6 +3,11 @@
 # clone hibernate.github.io in _tmp if not present
 # copy site to git repo, commit and push
 rake clean gen[production]
+rc=$?
+if [[ $rc != 0 ]] ; then
+    echo "ERROR: Execution of Rake script failed."
+    exit $rc
+fi
 cd _tmp
 if [ ! -d "hibernate.github.io" ];
 then

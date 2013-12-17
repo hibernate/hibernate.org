@@ -133,7 +133,7 @@ end
 def run_awestruct(args)
   cmd = "bundle exec awestruct #{args}" 
   msg cmd
-  system cmd
+  system cmd or raise "ERROR: Running Awestruct failed."
 end
 
 # A cross-platform means of finding an executable in the $PATH.
