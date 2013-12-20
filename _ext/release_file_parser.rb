@@ -1,3 +1,7 @@
+require 'nokogiri'
+require 'open-uri'
+require 'uri'
+
 module Awestruct
   module Extensions
     # Awestrcut extension which traverses the given directory to find release files, specifyig
@@ -21,6 +25,7 @@ module Awestruct
         createSortedReleaseHash( site )
       end
 
+      private
       def createReleaseData(dir, hash, site)
         Dir[ "#{dir}/*" ].each do |entry|
           if ( File.directory?( entry ) )
@@ -42,9 +47,10 @@ module Awestruct
 
       # Creates a hash with the date read from a release file
       def createHashForRelease(hash, file, site)
-          # load the page
+          # load the release data 
           releaseHash = site.engine.load_page( file )
-          # use a regexp to get the file name without extension into the pattern buffer
+          # use a regexp to get the file name without extension into the pattern buffer.
+          # file name == version
           File.basename( file ) =~ /^(.*)\.\w*$/
           # use the file (release) name as key
           key = $1.to_s
@@ -89,6 +95,82 @@ module Awestruct
 
       def to_s
         @major.to_s + "." + @feature_group.to_s + "." + @feature.to_s + "." + @bugfix.to_s
+      end
+    end
+
+    # Helper class to retrieve the dependencies of a release by parsing the release POM
+    class ReleaseDependencies
+      Nexus_base_url = 'https://repository.jboss.org/nexus/content/repositories/public/org/hibernate/'
+
+      def initialize(artifact, version)
+        # init instance variables
+        @properties = Hash.new
+        @dependencies = Hash.new
+
+        # try loading the pom
+        uri = get_uri(artifact, version)
+        doc = create_doc(uri)
+        if has_parent(doc) 
+          # parent pom needs to be loaded first
+          parent_uri = get_uri(doc.xpath('//parent/artifactId').text, doc.xpath('//parent/version').text)
+          parent_doc = create_doc(parent_uri)
+          process_doc(parent_doc)
+        end
+        process_doc(doc)
+      end 
+
+      def get_value(property)
+        @properties[property]
+      end
+
+      def get_version(group_id, artifact_id)
+        @dependencies[group_id + ':' + artifact_id]
+      end
+
+      private
+      def create_doc(uri)
+        begin
+          doc = Nokogiri::XML(open(uri))
+        rescue OpenURI::HTTPError => error
+          raise "Unable to access uri #{uri}. Reason: #{error}"
+        end
+        doc.remove_namespaces!
+      end
+
+      def process_doc(doc)
+        load_properties(doc)
+        extract_dependencies(doc)
+      end
+
+      def get_uri(artifact, version)
+        Nexus_base_url + artifact + '/' + version + '/' + artifact + '-' + version + '.pom'
+      end
+
+      def has_parent(doc)
+        !doc.xpath('//parent').empty?
+      end
+
+      def load_properties(doc)
+          doc.xpath('//properties/*') .each do |property|
+          key = property.name
+          value = property.text
+          @properties[key] = value
+        end
+      end
+
+      def extract_dependencies(doc)
+        doc.xpath('//dependency') .each do |dependency|
+          group_id = dependency.xpath('./groupId').text
+          artifact_id = dependency.xpath('./artifactId').text
+          version = dependency.xpath('./version').text
+          if ( version =~ /\$\{(.*)\}/ )
+            version = @properties[$1]
+          end
+          key = group_id + ':' + artifact_id
+          if @dependencies[key] == nil
+            @dependencies[key] = version
+          end
+        end
       end
     end
   end
