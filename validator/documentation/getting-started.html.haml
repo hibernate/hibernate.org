@@ -5,12 +5,17 @@ project: validator
 ---
 -# Metadata from site.yml for the project
 - latest_stable_version = latest_stable_release(page).version
+- bv_api_version = latest_stable_release(page)['dependencies'].get_version('javax.validation', 'validation-api')
+- el_api_version = latest_stable_release(page)['dependencies'].get_version('javax.el', 'javax.el-api')
+- el_impl_version = latest_stable_release(page)['dependencies'].get_version('org.glassfish.web', 'javax.el')
 
 :asciidoc
   :toc:
   :toc-placement: preamble
   :latest_stable: #{latest_stable_version}
-  :bv_api: 1.1.0.Final
+  :bv_api: #{bv_api_version}
+  :el-api: #{el_api_version}
+  :el-impl: #{el_impl_version}
   
   Welcome to Hibernate Validator.
   The following paragraphs will guide you through the initial steps required to integrate
@@ -54,16 +59,17 @@ project: validator
   
   ====
   [source,xml]
+  [subs="verbatim,attributes"]
   ----
   <dependency>
      <groupId>javax.el</groupId>
      <artifactId>javax.el-api</artifactId>
-     <version>2.2.4</version>
+     <version>{el-api}</version>
   </dependency>
   <dependency>
      <groupId>org.glassfish.web</groupId>
      <artifactId>javax.el</artifactId>
-     <version>2.2.4</version>
+     <version>{el-impl}</version>
   </dependency>
   ----
   
@@ -78,6 +84,7 @@ project: validator
   
   ====
   [source,xml]
+  [subs="verbatim,attributes"]
   ----
   <dependency>
      <groupId>org.hibernate</groupId>

@@ -4,15 +4,15 @@ describe Awestruct::Extensions::ReleaseDependencies do
 
   before :all do
     @deps = [
-      Awestruct::Extensions::ReleaseDependencies.new('hibernate-core', '4.0.0.Beta1'),
-      Awestruct::Extensions::ReleaseDependencies.new('hibernate-search-parent', '3.4.0.Final'),
-      Awestruct::Extensions::ReleaseDependencies.new('hibernate-search', '3.4.0.Final')
+      Awestruct::Extensions::ReleaseDependencies.new('org.hibernate', 'hibernate-core', '4.0.0.Beta1'),
+      Awestruct::Extensions::ReleaseDependencies.new('org.hibernate', 'hibernate-search-parent', '3.4.0.Final'),
+      Awestruct::Extensions::ReleaseDependencies.new('org.hibernate', 'hibernate-search', '3.4.0.Final')
     ]
   end
 
   describe "#initalize" do
     it 'raises error for invalid project/version' do
-      expect { Awestruct::Extensions::ReleaseDependencies.new('hibernate-core', '0.Final') }
+      expect { Awestruct::Extensions::ReleaseDependencies.new('org.hibernate', 'hibernate-core', '0.Final') }
       .to raise_error(/Unable to access uri/)
     end
   end

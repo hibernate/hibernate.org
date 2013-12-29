@@ -5,7 +5,7 @@ require 'uri'
 module Awestruct
   module Extensions
     # Awestrcut extension which traverses the given directory to find release files, specifyig
-    # the relevant release information for a given release and project. Directories are used to 
+    # the relevant release information for a given release and project. Directories are used to
     # create sub-hashes.
     class ReleaseFileParser
 
@@ -14,7 +14,7 @@ module Awestruct
       end
 
       def watch(watched_dirs)
-          watched_dirs << @data_dir
+        watched_dirs << @data_dir
       end
 
       def execute(site)
@@ -26,13 +26,28 @@ module Awestruct
       end
 
       private
-      def createReleaseData(dir, hash, site)
+      def createReleaseData(dir, hash, site, group_id=nil, artifact_id=nil)
         Dir[ "#{dir}/*" ].each do |entry|
           if ( File.directory?( entry ) )
-            subHash = createSubHashForKey(hash, File.basename( entry ))
-            createReleaseData( entry, subHash, site )
+            key = File.basename( entry )
+            case key
+            when 'ogm'
+              group_id = 'org.hibernate.ogm'
+              artifact_id = 'hibernate-ogm-core'
+            when 'orm'
+              group_id = 'org.hibernate'
+              artifact_id = 'hibernate-core'
+            when 'search'
+              group_id = 'org.hibernate'
+              artifact_id = 'hibernate-search'
+            when 'validator'
+              group_id = 'org.hibernate'
+              artifact_id = 'hibernate-validator'
+            end
+            subHash = createSubHashForKey(hash, key)
+            createReleaseData( entry, subHash, site, group_id, artifact_id )
           else
-            createHashForRelease( hash, entry, site )
+            createHashForRelease( hash, entry, site, group_id, artifact_id )
           end
         end
       end
@@ -46,15 +61,18 @@ module Awestruct
       end
 
       # Creates a hash with the date read from a release file
-      def createHashForRelease(hash, file, site)
-          # load the release data 
-          releaseHash = site.engine.load_page( file )
-          # use a regexp to get the file name without extension into the pattern buffer.
-          # file name == version
-          File.basename( file ) =~ /^(.*)\.\w*$/
-          # use the file (release) name as key
-          key = $1.to_s
-          hash[ key ] = releaseHash
+      def createHashForRelease(hash, file, site, group_id, artifact_id)
+        # load the release data
+        releaseHash = site.engine.load_page( file )
+        if( group_id != nil && artifact_id != nil)
+          releaseHash['dependencies'] = ReleaseDependencies.new(group_id, artifact_id, releaseHash['version'])
+        end
+        # use a regexp to get the file name without extension into the pattern buffer.
+        # file name == version
+        File.basename( file ) =~ /^(.*)\.\w*$/
+        # use the file (release) name as key
+        key = $1.to_s
+        hash[ key ] = releaseHash
       end
 
       def createSortedReleaseHash(site)
@@ -81,7 +99,7 @@ module Awestruct
         @feature = v[2].to_i
         @bugfix = v[3].to_s
       end
-      
+
       def <=>(other)
         return @major <=> other.major if ((@major <=> other.major) != 0)
         return @feature_group <=> other.feature_group if ((@feature_group <=> other.feature_group) != 0)
@@ -100,24 +118,24 @@ module Awestruct
 
     # Helper class to retrieve the dependencies of a release by parsing the release POM
     class ReleaseDependencies
-      Nexus_base_url = 'https://repository.jboss.org/nexus/content/repositories/public/org/hibernate/'
+      Nexus_base_url = 'https://repository.jboss.org/nexus/content/repositories/public/'
 
-      def initialize(artifact, version)
+      def initialize(group_id, artifact_id, version)
         # init instance variables
         @properties = Hash.new
         @dependencies = Hash.new
 
         # try loading the pom
-        uri = get_uri(artifact, version)
+        uri = get_uri(group_id, artifact_id, version)
         doc = create_doc(uri)
-        if has_parent(doc) 
+        if has_parent(doc)
           # parent pom needs to be loaded first
-          parent_uri = get_uri(doc.xpath('//parent/artifactId').text, doc.xpath('//parent/version').text)
+          parent_uri = get_uri(doc.xpath('//parent/groupId').text, doc.xpath('//parent/artifactId').text, doc.xpath('//parent/version').text)
           parent_doc = create_doc(parent_uri)
           process_doc(parent_doc)
         end
         process_doc(doc)
-      end 
+      end
 
       def get_value(property)
         @properties[property]
@@ -129,10 +147,21 @@ module Awestruct
 
       private
       def create_doc(uri)
-        begin
-          doc = Nokogiri::XML(open(uri))
-        rescue OpenURI::HTTPError => error
-          raise "Unable to access uri #{uri}. Reason: #{error}"
+        pom_name = uri.sub(/.*\/([\w\-\.]+\.pom)$/, '\1')
+        # to avoid net access cache the downloaded POMs into the _tmp directory
+        cached_pom = File.join(File.dirname(__FILE__), '..', '_tmp', pom_name)
+        if File.exists?(cached_pom)
+          f = File.open(cached_pom)
+          doc = Nokogiri::XML(f)
+          f.close
+        else
+          begin
+            doc = Nokogiri::XML(open(uri))
+            # cache the pom
+            File.open(cached_pom, 'w') { |f| f.print(doc.to_xml) }
+          rescue OpenURI::HTTPError => error
+            raise "Unable to access uri #{uri}. Reason: #{error}"
+          end
         end
         doc.remove_namespaces!
       end
@@ -142,8 +171,8 @@ module Awestruct
         extract_dependencies(doc)
       end
 
-      def get_uri(artifact, version)
-        Nexus_base_url + artifact + '/' + version + '/' + artifact + '-' + version + '.pom'
+      def get_uri(group_id, artifact, version)
+        Nexus_base_url + group_id.gsub(/\./, "/") + '/' + artifact + '/' + version + '/' + artifact + '-' + version + '.pom'
       end
 
       def has_parent(doc)
@@ -151,7 +180,7 @@ module Awestruct
       end
 
       def load_properties(doc)
-          doc.xpath('//properties/*') .each do |property|
+        doc.xpath('//properties/*') .each do |property|
           key = property.name
           value = property.text
           @properties[key] = value
