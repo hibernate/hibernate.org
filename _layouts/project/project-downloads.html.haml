@@ -56,8 +56,9 @@ layout: project-frame
           %dd
             %small
               Maven gav:
-              %a{:href => "https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{project_description.group_id}~#{project_description.artifact_id}~#{release.version}~~"}
-                #{project_description.group_id}:#{project_description.artifact_id}:#{release.version}
+              %a{:href => "https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{project_description.group_id}~#{project_description.artifact_id}~#{release.version}~~"}>=" #{project_description.group_id}:#{project_description.artifact_id}:#{release.version}"
+              - if page.project == 'search'
+                ; compatible with Hibernate ORM #{release['dependencies'].get_version('org.hibernate', 'hibernate-core')}
           %dd
             = release.summary
           - if not release.announcement_url.nil?
