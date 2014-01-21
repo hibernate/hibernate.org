@@ -24,8 +24,8 @@
           var entryDate = new Date(entry.publishedDate);
           var date_string =
             entryDate.getFullYear() + '-'
-            + ('0' + entryDate.getDate()).slice(-2) + '-'
-            + ('0' + (entryDate.getMonth()+1)).slice(-2);
+            + ('0' + (entryDate.getMonth()+1)).slice(-2) + '-'
+            + ('0' + entryDate.getDate()).slice(-2);
           feedDiv.append(
             $('<div class="news"/>').append(
               $('<h4/>').text(entry.title)
