@@ -5,16 +5,27 @@ module Awestruct
     # Awestruct extension creating html pages with redirect directives.
     # Configuration via _config/redirects.yml
     class RedirectCreator
+      Default_Redirect_Config = "redirects"
+
+      def initialize(*args)
+        @redirect_configs = Array.new
+        @redirect_configs.push(*args)
+        if @redirect_configs.index(Default_Redirect_Config) == nil
+          @redirect_configs.push(Default_Redirect_Config)
+        end
+      end
 
       def execute(site)
-        if !site.redirects.nil?
-          site.redirects.each do |requested_url, target_url|
-            redirect_page = Page.new(site, Handlers::RedirectCreationHandler.new( site, requested_url, target_url ))
-            # make sure indexifier is ignoring redirect pages
-            redirect_page.inhibit_indexifier = true
-            site.pages << redirect_page
+        @redirect_configs.each { |config|
+          if !site[config].nil?
+            site[config].each do |requested_url, target_url|
+              redirect_page = Page.new(site, Handlers::RedirectCreationHandler.new( site, requested_url, target_url ))
+              # make sure indexifier is ignoring redirect pages
+              redirect_page.inhibit_indexifier = true
+              site.pages << redirect_page
+            end
           end
-        end
+        }
       end
     end
   end
@@ -23,11 +34,14 @@ module Awestruct
     class RedirectCreationHandler < BaseHandler
       include Awestruct::Extensions::GoogleAnalytics
 
+      Default_Redirect_Template = "redirects.template"
       def initialize(site, requested_url, target_url)
         super( site )
         @requested_url = requested_url
         @target_url = target_url
         @creation_time = Time.new
+        @template = load_template
+
       end
 
       def simple_name
@@ -59,20 +73,19 @@ module Awestruct
       end
 
       def rendered_content(context, with_layouts=true)
-        %{<!DOCTYPE HTML>
+        @template
+      end
 
-          <meta charset="UTF-8">
-          <meta http-equiv="refresh" content="5; url=#{@target_url}">
-
-          #{google_analytics}
-
-          <script>
-          window.location.href = "#{@target_url}"
-          </script>
-
-          <title>Page Redirection</title>
-          Looks like you used an old link. We will teleport you to the <a href='#{@target_url}'>right place</a> in a second.
-          }
+      private
+      def load_template
+        template_file = File.join(File.dirname(__FILE__), "..", "_config", Default_Redirect_Template)
+        if !File.exist?(template_file)
+          abort("RedirectCreator is configured in pipeline, but redirect template (#{template_file}) does not exist")
+        end
+        file = File.open(template_file, "rb")
+        content = file.read
+        file.close
+        content % {url: @target_url, google_analytics: google_analytics}
       end
     end
   end

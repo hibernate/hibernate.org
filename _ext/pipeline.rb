@@ -51,7 +51,7 @@ Awestruct::Extensions::Pipeline.new do
   
   development = Engine.instance.site.profile == 'development'
   if not development
-    extension Awestruct::Extensions::RedirectCreator.new
+    extension Awestruct::Extensions::RedirectCreator.new "redirects", "hib-docs-reference-redirects", "hib-docs-v3-api-redirects"
   end
 end
 
