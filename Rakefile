@@ -98,7 +98,10 @@ end
 
 desc 'Run Rspec tests'
 task :test do
-  system "rspec _spec --format nested"
+  all_ok = system "bundle exec rspec _spec --format nested"
+  if all_ok == false
+    fail "RSpec tests failed - aborting build"
+  end
 end
 
 # Perform initialization steps, such as setting up the PATH
