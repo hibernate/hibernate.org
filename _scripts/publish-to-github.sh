@@ -24,6 +24,6 @@ rsync -av \
       ../../_site/ .
 
 git add .
-git commit -m "Publish generated site"
-git push origin master
+if git commit -m "Publish generated site"; then git push origin master; fi
+
 cd ../..
