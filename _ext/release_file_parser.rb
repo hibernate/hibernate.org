@@ -1,6 +1,7 @@
 require 'nokogiri'
 require 'open-uri'
 require 'uri'
+require 'fileutils'
 
 module Awestruct
   module Extensions
@@ -147,9 +148,16 @@ module Awestruct
 
       private
       def create_doc(uri)
+        # make sure _tmp dir exists
+        tmp_dir = File.join(File.dirname(__FILE__), '..', '_tmp')
+        unless File.directory?(tmp_dir)
+          p "creating #{tmp_dir}"
+          FileUtils.mkdir_p(tmp_dir)
+        end
+
         pom_name = uri.sub(/.*\/([\w\-\.]+\.pom)$/, '\1')
         # to avoid net access cache the downloaded POMs into the _tmp directory
-        cached_pom = File.join(File.dirname(__FILE__), '..', '_tmp', pom_name)
+        cached_pom = File.join(tmp_dir, pom_name)
         if File.exists?(cached_pom)
           f = File.open(cached_pom)
           doc = Nokogiri::XML(f)
