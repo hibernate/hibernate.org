@@ -2,52 +2,89 @@
 :awestruct-layout: project-frame
 :awestruct-project: orm
 
-Thanks for your interest! Hibernate ORM is an open source project and community.
-Contributions, of any type or scope, drive the project forward!
+Thanks for your interest! Hibernate ORM is an open source project and community.  Contributions, of any type or any 
+scope, drive the project forward!  
 
-== Getting and building the code
+Contributing does not have to mean writing/fixing code (although we certainly won't turn away good code
+contributions).  There are lots of ways to become part of the community and contribute...
 
-You will need git to obtain the sources.  ORM uses Gradle (entirely self-contained) to build, so no additional tools are necessary.
+
+== Help Other Users
+
+The link:/community/[community] page lists a few places for users to find help such as IRC and forums.  Not to mention
+that users often look for help in other places such as StackOverflow or JBoss forums.  A great way to get involved in the
+community is to share your knowledge with others who need it.
+
+
+== Improve Documentation
+
+An extension of helping other users is to contribute documentation.  Its the help that keeps on giving!  
+
+Whether you simply fix a typo, re-word an unclear section or add a whole new section/topic, improving the documentation
+helps everyone.
+
+[NOTE]
+====
+We are currently in the process of converting documentation from a monolithic DocBook-based to Asciidoctor-based 
+guides (each guide covering a single, complete topic).  A great way to help would be consolidating 
+information from the DocBook-based manuals into a topic guide.  Another way would be to review these topic guides
+as they are developed.
+====
+
+
+== Discuss Development
+
+As the development team discusses design of new features or tries to prioritize work it is great to have input from 
+users.  As the saying goes, it is better to measure twice and cut once; and the more eyes we have on theses designs 
+and the more voices in the discussions, the better measurements we get.  The best places to get involved in 
+discussing development are the #hibernate-dev IRC channel and the hibernate-dev mailing list.  
+
+
+== Report/Investigate Bugs
+
+Trying out releases and reporting/fixing problems is in many ways the cornerstone of open source development.  It is 
+especially critical in the case of early releases (Alphas and Betas) as we are trying to solidify APIs and contracts.
+
+Even if you cannot help code the fix for a bug, submitting test cases for reported 
+https://hibernate.atlassian.net/issues/?jql=project%20%3D%20HHH%20AND%20status%20%3D%20%22Awaiting%20Test%20Case%22[bugs that did not provide tests] 
+is a great help get these bugs resolved.
+
+Speaking of JIRA, helping us identify issues that are out of date or that duplicate other issues is a great help as well.  And voting
+for issues that are important to you is important in terms of how the development team sets priorities.
+
+
+== Contribute code
+
+[NOTE]
+====
+The CONTRIBUTING.md file in the root of the source tree has detailed information on contributing code to Hibernate ORM; what
+follows here are basics.  And the README.md file has details on building Hibernate ORM.
+====
+
+You will need http://git-scm.com/[git] to obtain the sources.  The upstream repository for Hibernate ORM sources is kept on GitHub at http://github.com/hibernate/hibernate-orm/.  To get the source:
 
 [source]
 ----
 git clone git@github.com:hibernate/hibernate-orm.git
 cd hibernate-orm
+---
+
+
+Hibernate ORM uses Gradle as its build tool.  See the mentioned README.md file for details if you are unfamiliar with Gradle.  If you'd rather not
+"install" Gradle, Gradle provides a great feature called the "Gradle wrapper" that offers a zero-conf option.  Simply use the gradlew (*nix) or gradlew.bat (Windows)
+scripts in the root source directory to run the tasks.
+
+[source]
+----
 ./gradlew clean build
-
-./gradlew publishToMavenLocal (publishes to local maven repository)
-
-./gradlew eclipse (generates Eclipse projects)
-./gradlew idea (generates IntelliJ/IDEA projects)
+./gradlew publishToMavenLocal
 ----
 
-TIP: You can find more information on how to build Hibernate ORM and its documentation on the https://github.com/hibernate/hibernate-orm/blob/master/README.md[README file] at the root of the git repository.
-
-== What to contribute
-
-You can contribute anything (code, test cases, documentation)!
-If you do not have a specific itch to scratch, you can find the https://hibernate.atlassian.net/issues/?jql=project%20%3D%20HHH%20AND%20status%20in%20(Open%2C%20Reopened%2C%20%22Awaiting%20Test%20Case%22)%20AND%20%22Suitable%20for%20new%20contributors%22%20%3D%20%22Yes%2C%20likely%22%20ORDER%20BY%20updated%20DESC[list of tasks] suitable for new contributors.  We also sincerely appreciate help generating test cases for https://hibernate.atlassian.net/issues/?jql=project%20%3D%20HHH%20AND%20status%20%3D%20%22Awaiting%20Test%20Case%22[existing tickets], identifying tickets that are no longer an issue, etc.
-
-== How to contribute
-
-*Share early and often!*
-
-In the open source way, it is better to share a prototype and get input from everyone early on.
-We love GitHub pull requests. This is our way to discuss features, review and share code.
-So fork our repository and send a pull request.
-
-[TIP]
-====
-Want to know more about Git and pull requests?
-You can start with http://in.relation.to/Bloggers/HibernateMovesToGitGitTipsAndTricks[this blog post].
-====
-
-A good contribution has some or all of the following characteristics:
+Good code contributions have some or all of the following characteristics:
 
 * it respects the project code style - find templates for https://community.jboss.org/docs/DOC-16649[Eclipse] and https://community.jboss.org/docs/DOC-15468[IntelliJ IDEA]
 * a feature or bug fix has an associated set of appropriate tests
 * documentation is updated
 * the code compiles and the tests pass `./gradlew clean build`
 
-And last but not least, come discuss with us.
-We are hanging on the https://lists.jboss.org/mailman/listinfo/hibernate-dev[hibernate-dev] mailing list and on #hibernate-dev on freenode.
+
