@@ -49,26 +49,26 @@ Even if you cannot help code the fix for a bug, submitting test cases for report
 https://hibernate.atlassian.net/issues/?jql=project%20%3D%20HHH%20AND%20status%20%3D%20%22Awaiting%20Test%20Case%22[bugs that did not provide tests] 
 is a great help get these bugs resolved.
 
-Speaking of JIRA, helping us identify issues that are out of date or that duplicate other issues is a great help as well.  And voting
+Speaking of JIRA, helping us identify issues that duplicate other issues or that are out of date is a great help as well.  And voting
 for issues that are important to you is important in terms of how the development team sets priorities.
+
 
 
 == Contribute code
 
 [NOTE]
 ====
-The CONTRIBUTING.md file in the root of the source tree has detailed information on contributing code to Hibernate ORM; what
-follows here are basics.  And the README.md file has details on building Hibernate ORM.
+What follows here the basics for contributing code to Hibernate ORM.  The CONTRIBUTING.md file in the root of the source tree has
+detailed information on contributing code to Hibernate ORM; and the README.md file has details on building Hibernate ORM.
 ====
 
-You will need http://git-scm.com/[git] to obtain the sources.  The upstream repository for Hibernate ORM sources is kept on GitHub at http://github.com/hibernate/hibernate-orm/.  To get the source:
+You will need http://git-scm.com/[git] to obtain the http://github.com/hibernate/hibernate-orm/[source].
 
 [source]
 ----
 git clone git@github.com:hibernate/hibernate-orm.git
 cd hibernate-orm
----
-
+----
 
 Hibernate ORM uses Gradle as its build tool.  See the mentioned README.md file for details if you are unfamiliar with Gradle.  If you'd rather not
 "install" Gradle, Gradle provides a great feature called the "Gradle wrapper" that offers a zero-conf option.  Simply use the gradlew (*nix) or gradlew.bat (Windows)
