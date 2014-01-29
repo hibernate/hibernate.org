@@ -10,22 +10,6 @@ Hibernate Search is community driven and as such the roadmap constantly evolves 
 You can find a finer grained roadmap in our https://hibernate.atlassian.net/browse/HSEARCH[issue tracker] but this page is a good and concise view of where we are going.
 Dates are generally omitted: while milestones are released regularly, the Final release is tagged when it's stable.
 
-== Hibernate Search 4.5
-
-Backward compatible with the 4.x series but prepare for the 5.0 enhancements.
-Developed in parallel with 5.0.
-
-Hibernate ORM 4.3 / JPA 2.1 / Java EE 7::
-Provides compatibility with link:/orm/[Hibernate ORM 4.3].
-Infinispan 6.0::
-Migration to link:$$http://www.infinispan.org$$[Infinispan] 6.x for index storage.
-WildFly 8::
-Continuous integration tests to target link:$$http://www.wildfly.org$$[WildFly] 8 and provide appropriate modules.
-New quickstart and demo::
-Quickstarts and demos for link:$$http://www.jboss.org/jdf/$$[JBoss Developer Framework].
-Performance regression tests::
-Add more and better performance regression tests.
-
 == Hibernate Search 5.0
 
 Based on link:$$http://lucene.apache.org/core/$$[Apache Lucene] version 4, which will lead to some compatibility breaks over the Hibernate Search 4.x series.
@@ -44,6 +28,8 @@ Define API / SPI abstraction to allow for future external backends integrations
 such as link:$$http://lucene.apache.org/solr/$$[Apache Solr] and link:$$http://www.elasticsearch.org/$$[Elastic Search].
 Asynchronous FieldBridge::
 ex. improved integration with link:$$http://tika.apache.org/$$[Apache Tika].
+Performance regression tests::
+Add more and better performance regression tests.
 
 
 == Hibernate Search  5.1
@@ -62,6 +48,9 @@ New Faceting engine::
 link:$$http://lucene.apache.org/core/$$[Apache Lucene] 4 based faceting engine for better performance.
 Auto suggestion and spell checking::
 Simplify work for users building auto suggestions and spell checking features.
+New quickstart and demo::
+Quickstarts and demos for link:$$http://www.jboss.org/jdf/$$[JBoss Developer Framework].
+
 
 == Hibernate Search 5.2
 
