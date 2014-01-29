@@ -10,35 +10,36 @@ project: orm
   :toc:
   :toc-placement: preamble
   :latest_stable: #{latest_stable_version}
-  
-  [role="alert text-center"]
-  This page is a work in progress. +
-  If you have ideas and time, link:/community/[contact us], we would love your help :-) 
-  
-  == Building
-  
-  For developers wanting to build from source, see the README.md file in the root of the project source.
-  
-  == Contributing (pull requests)
-  
-  For developers wanting to contribute back fixes/improvements, see the CONTRIBUTING.md file in the root of the project source  .
-  
-  == Using
-  
-  For developers wanting to use Hibernate ORM in their projects, the best approach is to use it as Maven dependency.
-  
+
+  This page lists just the basic information needed to get up and running with Hibernate ORM 4.3.
+  More thorough information is presented in the Getting Started Guide in the link:documentation/index[documentation].
+
   === System Requirements
   
-  Hibernate ORM requires Java 6 or higher.
+  Java 6 or higher (building Hibernate from source requires JDK 7 due to a bug in the JDK 6 compiler).
   
-  === Via Maven Repository
-  
-  The Hibernate ORM artifacts can be found in Maven's central repository but are released first in the JBoss maven repository.
-  So it's not a requirement but we recommend to add this repository to your +settings.xml+ file
-  (see also Maven Getting Started for more details).
-  
-  To use Hibernate ORM in your own project you just need to name a dependency on it in your project:
-  
+
+  === Dependency Management
+
+  It is highly recommended to consume Hibernate ORM artifacts through a dependency management tool.  The artifacts
+  can be found in Maven's central repository but are released first in the 
+  https://community.jboss.org/wiki/MavenRepository[JBoss maven repository].  Snapshots are only pushed to the
+  JBoss snapshot repository, so if you want to use SNAPSHOT versions be sure to add the JBoss snapshot repository 
+  properly according to your build tool of choice.
+
+  The main Hibernate ORM artifact is named hibernate-core.  If you wish to use JPA support, you would instead name
+  hibernate-entitymanager.
+
+  [TIP]
+  ====
+  There are also a number of optional artifacts based on what specific features you wich to use.  These
+  are discussed in the Getting Started Guide.
+  ====
+
+  To use Hibernate ORM in your own project you just need to name a dependency on it in your project.
+
+  from Maven:
+
   [source,xml]
   [subs="verbatim,attributes"]
   .From Maven
@@ -49,15 +50,13 @@ project: orm
      <version>{latest_stable}</version>
   </dependency>
   ----
-  
-  From Gradle:
-  
+
+  from Gradle:
+
   [source]
   [subs="verbatim,attributes"]
   .From Gradle
   ----
   org.hibernate:hibernate-core:{latest_stable}
   ----
-  
-  For projects using JPA, the artifact to reference is `hibernate-entitymanager` instead of `hibernate-core`.
-  
+
