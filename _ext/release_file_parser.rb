@@ -64,6 +64,9 @@ module Awestruct
       # Creates a hash with the date read from a release file
       def createHashForRelease(hash, file, site, group_id, artifact_id)
         # load the release data
+        if !(file =~ /.*\.md$/)
+          abort("The release file #{file} does not have the markdown extension!")
+        end
         releaseHash = site.engine.load_page( file )
         if( group_id != nil && artifact_id != nil)
           releaseHash['dependencies'] = ReleaseDependencies.new(group_id, artifact_id, releaseHash['version'])
