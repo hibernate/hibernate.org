@@ -1,0 +1,79 @@
+= Hibernate ORM Tooling
+:awestruct-layout: project-frame
+:awestruct-project: orm
+:page-interpolate: true
+:project: #{site.projects[page.project]}
+:latest_stable: #{latest_stable_release(page).version}
+
+Hibernate offers a series of tools for developers to use in their tool chain. The most prominent
+being link:/tools/[Hibernate Tools] which is a set of link:http://www.eclipse.org/[Eclipse] plugins
+and part of link:http://jboss.org/tools[JBoss Tools]. But there is more ...
+
+== Hibernate Metamodel Generator
+
+Hibernate Metamodel Generator is an annotation processor automating the generation of the static
+metamodel classes needed for typesafe Criteria queries as defined by JPA 2. For example, for the
+class +Order+:
+
+
+[source,java]
+----
+@Entity
+public class Order {
+    @Id
+    @GeneratedValue
+    Integer id;
+    @ManyToOne
+    Customer customer;
+    @OneToMany
+    Set<Item> items;
+    BigDecimal totalCost;
+    // standard setter/getter methods
+}
+----
+
+It would generate the metamodel class +Order_+:
+
+[source,java]
+----
+@StaticMetamodel(Order.class)
+public class Order_ {
+    public static volatile SingularAttribute<Order, Integer> id;
+    public static volatile SingularAttribute<Order, Customer> customer;
+    public static volatile SetAttribute<Order, Item> items;
+    public static volatile SingularAttribute<Order, BigDecimal> totalCost;
+}
+----
+
+Which in turn allows to write queries like this:
+
+[source,java]
+----
+CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+CriteriaQuery<Order> cq = cb.createQuery(Order.class);
+SetJoin<Order, Item> itemNode = cq.from(Order.class).join(Order_.items);
+cq.where( cb.equal(itemNode.get(Item_.id), 5 ) ).distinct(true);
+----
+
+To use Hibernate Metamodel Generator add the following dependency to your build classpath:
+
+[source,xml]
+[subs="verbatim,attributes"]
+----
+<dependency>
+  <groupId>org.hibernate</groupId>
+  <artifactId>hibernate-jpamodelgen</artifactId>
+  <version>{latest_stable}</version>
+</dependency>
+----
+
+For more information and setup options refer to the link:http://docs.jboss.org/hibernate/orm/{version_family}/topical/html/metamodelgen/MetamodelGenerator.html[online documentation].
+
+[TIP]
+====
+Prior to Hibernate ORM 4.3, Hibernate Metamodel Generator was hosted as a
+link:https://github.com/hibernate/hibernate-metamodelgen[stand-alone project]. As of ORM 4.3 it is
+part of the main ORM release. Issues should be reported in the
+link:https://hibernate.atlassian.net/browse/HHH[ORM issue tracker].
+====
+
