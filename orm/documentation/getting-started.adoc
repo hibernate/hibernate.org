@@ -1,0 +1,53 @@
+= Getting started with Hibernate ORM
+:awestruct-layout: project-frame
+:awestruct-project: orm
+:toc:
+:toc-placement: preamble
+:page-interpolate: true
+:latest_stable: #{latest_stable_release(page).version}
+
+This page lists just the basic information needed to get up and running with Hibernate ORM 4.3.
+More thorough information is presented in the Getting Started Guide in the link:/orm/documentation[documentation].
+
+== System Requirements
+
+Java 6 or higher (building Hibernate from source requires JDK 7 due to a bug in the JDK 6 compiler).
+
+
+== Dependency Management
+
+It is highly recommended to consume Hibernate ORM artifacts through a dependency management tool.  The artifacts
+can be found in Maven's central repository but are released first in the 
+https://community.jboss.org/wiki/MavenRepository[JBoss maven repository].  Snapshots are only pushed to the
+JBoss snapshot repository, so if you want to use SNAPSHOT versions be sure to add the JBoss snapshot repository 
+properly according to your build tool of choice.
+
+The main Hibernate ORM artifact is named hibernate-core.  If you wish to use JPA support, you would instead name
+hibernate-entitymanager.
+
+[TIP]
+====
+There are also a number of optional artifacts based on what specific features you wich to use.  These
+are discussed in the Getting Started Guide.
+====
+
+To use Hibernate ORM in your own project you just need to name a dependency on it in your project.
+
+[source,xml]
+[subs="verbatim,attributes"]
+.From Maven
+----
+<dependency>
+   <groupId>org.hibernate</groupId>
+   <artifactId>hibernate-core</artifactId>
+   <version>{latest_stable}</version>
+</dependency>
+----
+
+[source]
+[subs="verbatim,attributes"]
+.From Gradle
+----
+org.hibernate:hibernate-core:{latest_stable}
+----
+
