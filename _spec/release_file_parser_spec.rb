@@ -1,16 +1,25 @@
 require 'awestruct/logger'
-require 'awestruct/cli/options'
+# need to create the logger prior to loading the engine module to avoid errors when the code 
+# tries to access the logger
+$LOG = Logger.new(Awestruct::AwestructLoggerMultiIO.new)
+$LOG.level = Logger::DEBUG 
+$LOG.formatter = Awestruct::AwestructLogFormatter.new
+
 require 'awestruct/engine'
+require 'awestruct/config'
+require 'awestruct/cli/options'
 require_relative '../_ext/releases'
 require_relative '../_ext/release_file_parser'
- 
+
 describe Awestruct::Extensions::ReleaseFileParser do
 
     before :all do
         @expectedReleases = ["5.1.0.Alpha1", "5.0.1.Final", "4.3.1.Final"]
 
-        $LOG = Logger.new(Awestruct::AwestructLoggerMultiIO.new(true, STDOUT))
-        config = Awestruct::Config.new( File.dirname(__FILE__) + '/..' )
+        site_dir = File.join(File.dirname(__FILE__), '..')
+        opts = Awestruct::CLI::Options.new
+        opts.source_dir = site_dir
+        config = Awestruct::Config.new( opts )
       
         engine = Awestruct::Engine.new( config )
         engine.load_default_site_yaml
