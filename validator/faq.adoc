@@ -15,6 +15,18 @@ Hibernate Validator 3.x and 4.x/5.x are different codebases.
 
 Hibernate Validator is the original validation framework from the Hibernate team and is now referred to as "Legacy Hibernate Validator". Hibernate Validator 4.x is the reference implementation of Bean Validation 1.0 (http://jcp.org/en/jsr/detail?id=303[JSR 303]), while Hibernate Validator 5.x is the reference implementation of Bean Validation 1.1 (http://jcp.org/en/jsr/detail?id=349[JSR 349]). Active development happens on the 5.x codebase.
 
+=== Why is my JPA entity not validated when I call persist()?
+ 
+The short answer is call `EntityManager#flush()` if you want the validation to be triggered.
+ 
+Hibernate ORM and a few other ORMs try to batch as many operations as possible when 
+accessing the database. It is likely that the actual entity "persist" operation only happens 
+when you call `flush()` or when the transaction commits.
+
+Also, knowing which entity is about to be persisted depends on your cascading strategy and the state 
+of your object graph. Flush is when Hibernate ORM identifies all the entities that have been changed 
+and require database actions (see also https://hibernate.atlassian.net/browse/HHH-8028[HHH-8028]).
+
 === My question is not answered. Where can I find help?
 
 Check out the http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/[reference guide] which covers in detail all the ins and outs of Hibernate Validator. If the guide doesn't answer your question, come to the https://forum.hibernate.org/viewforum.php?f=9[forum] and you will be helped there.
