@@ -44,6 +44,7 @@ layout: project-frame
     %h2 Releases
     - if not site.projects[page.project].sorted_releases.nil?
       - site.projects[page.project].sorted_releases.each do |release|
+        - if not release.displayed then next end
         %dl.dl-horizontal
           %dt
             = release.version
