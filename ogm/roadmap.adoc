@@ -48,7 +48,7 @@ Clean query parser design::
 ** Automatic approach
 ** Manual overriding option (convention based, annotation or SPI?)
 * Use Hibernate ORM metadata (EntityPersister)
-  to find the type of a property for HQL literal conversion)
+  to find the type of a property for HQL literal conversion
 ** extract this logic and reuse it for all backends
 
 Move to proper OgmLoader implementations::
