@@ -16,36 +16,24 @@ Dates are generally omitted, we release when we are ready.
 
 Describe plans for future releases.
 
-=== Hibernate OGM 4.0 Beta5
-
-Annotation based option system::
-Each datastore can use specific annotations to customize its behavior.
-The user can use either annotations or a programmatic API
-
-* offer ability for each dialect to react to metadata specific information
-* programmatic and annotation based
-* for different scopes: generic, type and properties
-* retrofit this for MongoDB's options
-
-CRUD support for CouchDB::
-Support the CouchDB document DB to read and store entities and associations.
-
-=== Hibernate OGM 4.0
+=== Hibernate OGM 4.1
 
 Performance and stabilization::
 Review performance and overall choices before going final.
+In particular, database round trips and query execution speed (see below).
+Reuse of the data loaded between an entity and its association lookup.
 
 Improved Neo4J navigation::
+Explore label (Neo4J 2). +
 Support Neo4J with ability to keep node reference for cheap navigation when resolving proxies
 thus avoiding unnecessary lookups.
 
 * Store tuple as data snapshot via IdentityMap or enhanced entity
 * Use stored tuples as navigation tools instead of fetching (graph databases)
 
-Batch changes per transactions::
-Offer the [classname]+GridDialect+ the option to receive a batch of operations
-to execute. Some drivers are better that way
-and can increase the isolation lever.
+Error report and compensation API::
+Offer the ability to collect errors on partially executed "transactions".
+Offer ability to react to these errors.
 
 ==== Additional query support
 
@@ -71,7 +59,13 @@ Look at Hibernate ORM's HQLQueryPlan which essentially caches results
 of a query translator which in term calls the entity loader.
 A similar design or even interface result is probably possible
 
-=== Hibernate OGM 4.1
+Various query improvements::
+* Make sure flush is executed before a query.
+* Support for projection and projection of entities
+* Polymorphic query support (MongoDB)
+* restriction on embedded objects (MongoDB)
+
+=== Hibernate OGM 4.2
 
 Custom types::
 Offer custom types like Hibernate ORM's user type.
@@ -96,7 +90,7 @@ Set benchmark solution and reusable test suite with automated test::
 Start exploring benchmark solution with regular tests in a CI.
 Add reusable TCK for both CRUD and query support.
 
-=== Hibernate OGM 4.2
+=== Hibernate OGM 4.3
 
 Polyglot persistence::
 Offer ability to store entities into different backends.
@@ -135,6 +129,29 @@ instead of the imperative approach sued usually in the NoSQL land.
 An aggregated changelog of what has happened.
 We are too lazy to go back down to the history of time
 so we will start at 4.0 Beta 3.
+
+=== Hibernate OGM 4.1 Beta 1
+
+Annotation based option system::
+Each datastore can use specific annotations to customize its behavior.
+The user can use either annotations or a programmatic API
+
+* offer ability for each dialect to react to metadata specific information
+* programmatic and annotation based
+* for different scopes: generic, type and properties
+* retrofit this for MongoDB's options
+
+CRUD support for CouchDB::
+Support the CouchDB document DB to read and store entities and associations.
+
+JPA related improvements::
+Compatibility with JPA 2.1 and Hibernate ORM 4.3. +
+Support for the various +EntityManager.createQuery+ methods including named queries.
+
+Batch changes per transactions::
+Offer the [classname]+GridDialect+ the option to receive a batch of operations
+to execute. Some drivers are better that way and can increase the isolation level.
+MongoDB is the first dialect benefiting from that support.
 
 === Hibernate OGM 4.0 Beta4
 
