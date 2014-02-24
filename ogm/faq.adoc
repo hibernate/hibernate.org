@@ -66,6 +66,15 @@ we recommend you use transaction demarcations with Hibernate OGM
 to trigger the flush operation transparently (on commit).
 But do not consider rollback as a possibility, this won’t work.
 
+=== My changes are not applied to the backend, where is the bug?
+
+Most likely, you forgot to demarcate the transactions or manually call +flush()+.
+
+Even if your datastore does not support transactions,
+we recommend you use transaction demarcations with Hibernate OGM
+to trigger the flush operation transparently (on commit).
+But do not consider rollback as a possibility, this won’t work.
+
 === How can I query?
 
 There are three main methods:
