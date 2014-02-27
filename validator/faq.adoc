@@ -57,7 +57,44 @@ By implementing a http://docs.jboss.org/hibernate/stable/validator/reference/en-
 
 === How can I access the Hibernate Session or EntityManager within a ConstraintValidator?
 
-See https://community.jboss.org/docs/DOC-15315[this example].
+See https://community.jboss.org/wiki/AccessingTheHibernateSessionWithinAConstraintValidator[this example].
+
+=== Can I declare constraints dynamically at runtime?
+
+Yes, using the https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#section-programmatic-api[API for programmatic constraint declaration].
+
+This Hibernate Validator specific API is very useful if for instance you need to adapt constraint parameters based on some runtime configuration or
+when dealing with multi-tenancy, where different constraints should be applied to given types based on a specific tenant.
+
+To use the API, obtain a +ConstraintMapping+ from +HibernateValidatorConfiguration+, configure it as needed and pass it back to the configuration:
+[source,java]
+----
+HibernateValidatorConfiguration configuration = Validation
+        .byProvider( HibernateValidator.class )
+        .configure();
+
+ConstraintMapping constraintMapping = configuration.createConstraintMapping();
+
+constraintMapping
+    .type( Address.class )
+        .property( "street1", FIELD )
+            .constraint( new NotNullDef() )
+        .property( "zipCode", FIELD )
+            .ignoreAnnotations()
+            .constraint( new NotNullDef() )
+            .constraint( new SizeDef().min( 2 ).max( 6 ) );
+
+Validator validator = configuration.addMapping( constraintMapping )
+        .buildValidatorFactory()
+        .getValidator();
+----
+
+=== How can I find out which constraints are declared for a given class or property?
+
+You can do so using the https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#validator-metadata-api[constraint metadata API].
+
+With help of the metadata API you could e.g. implement a solution which exports constraint information via REST, allowing for client-side validation using JavaScript.
+The next question shows an example for using that API.
 
 === Is it possible to determine whether a given constraint is specified at field or property level using the metadata API?
 
