@@ -16,13 +16,13 @@ layout: project-frame
   - dev_release = latest_dev_release(page)
   - if not (stable_release.nil? && dev_release.nil?)
     .row-fluid.text-center
-      - if not stable_release.nil?
+      - unless stable_release.nil?
         %a.btn.btn-large.btn-success{:href => "#{sourceforge_zip_url(project_description, stable_release)}"}
           %i.icon-cloud-download
           stable #{stable_release.version}
-      - if not (stable_release.nil? || dev_release.nil?)
+      - unless (stable_release.nil? || dev_release.nil?)
         &nbsp;
-      - if not dev_release.nil?
+      - unless (dev_release.nil? || !dev_release.displayed)
         %a.btn.btn-large.btn-warning{:href => "#{sourceforge_zip_url(project_description, dev_release)}"}
           %i.icon-cloud-download
           development #{dev_release.version}
@@ -42,9 +42,9 @@ layout: project-frame
   .span12
     -# Release table built form the metadata
     %h2 Releases
-    - if not site.projects[page.project].sorted_releases.nil?
+    - unless site.projects[page.project].sorted_releases.nil?
       - site.projects[page.project].sorted_releases.each do |release|
-        - if not release.displayed then next end
+        - unless release.displayed then next end
         %dl.dl-horizontal
           %dt
             = release.version
