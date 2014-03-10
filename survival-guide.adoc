@@ -182,8 +182,27 @@ There are a few important layouts:
 * `project-frame` (`project/project-frame.html.haml`): represents a project specific page. All files under `search`, `orm`, `validator` etc. use this layout
 * `title-nocol` (`common/title-nocol.html.haml`): represents a generic page with a title and no column. Useful for generic Asciidoc pages like this one.
 
-== Other concepts
+=== Partials
 
 Partials (in the `_partials` directory) are page fragments that can be reused from within a haml page or layout.
 
 CAUTION: Partials do not get automatically refreshed when change. You need to stop, clean and restart Awestruct `rake clean preview`.
+
+== Publishing the site
+
+The site is automatically published when commits are pushed to
+https://github.com/hibernate/hibernate.org[hibernate/hibernate.org].
+
+If you push changes to the +staging+ branch,
+the updated website will be visible after roughly a minute to
+staging.hibernate.org.
+This is good to share experiments with others.
+
+// staging.hibernate.org is not rendered as URL to limit the crawling
+// TODO create a noindex in robots.txt for non production profiles
+
+If you push changes to the +production+ branch,
+the updated website will be visible after roughly 5 minutes to http://hibernate.org[hibernate.org].
+
+You can see the build progress over
+or force a rebuild on http://ci.hibernate.org/[our continuous integration server].
