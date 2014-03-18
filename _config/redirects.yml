@@ -92,10 +92,15 @@ subprojects/shards/download.html:          /others/
 #Today I am redirecting them tot he main doc page. can do better?
 hib_docs/annotations/reference/en/html/entity.html:                    /orm/documentation/
 hib_docs/annotations/reference/en/html_single/:                        /orm/documentation/
-hib_docs/entitymanager/reference/en/html_single/:                      /orm/documentation/
+hib_docs/entitymanager/reference/en/html_single/:                      http://docs.jboss.org/hibernate/entitymanager/3.6/reference/en/html_single/
+hib_docs/entitymanager/reference/en/html/queryhql.html:                http://docs.jboss.org/hibernate/entitymanager/3.6/reference/en/html/queryhql.html
+hib_docs/search/reference/en/html_single/:                             http://docs.jboss.org/hibernate/search/3.4/reference/en-US/html_single/
 hib_docs/nhibernate/1.2/reference/en/html/mapping.html:                http://nhibernate.org
 hib_docs/nhibernate/1.2/reference/en/html_single/:                     http://nhibernate.org
+hib_docs/nhibernate/1.2/reference/en/html/:                            http://nhibernate.org
+hib_docs/nhibernate/html/example-parentchild.html:                     http://nhibernate.org
 hib_docs/tools/reference/en/html_single/:                              http://www.jboss.org/tools/docs/
+hib_docs/tools/reference/en/html/ant.html:                             http://docs.jboss.org/hibernate/core/3.6/reference/en-US/html/toolsetguide.html#toolsetguide-s1-5
 
 # Old cwiki redirects
 
@@ -106,6 +111,7 @@ hib_docs/tools/reference/en/html_single/:                              http://ww
 152.html:                                  /orm/documentation/getting-started/
 397.html:                                  /orm/
 422.html:                                  /orm/contribute/
+398.html:                                  /orm/documentation/old-jpa-migration-guide/
 
 # ORM FAQ wiki pages.
 9.html:                                    /orm/faq/
@@ -125,6 +131,7 @@ hib_docs/tools/reference/en/html_single/:                              http://ww
 
 ## Validator
 412.html:                                  /validator/
+469.html:                                  https://community.jboss.org/en/hibernate/validator
 
 ## Tools
 255.html:                                  http://www.jboss.org/tools/docs/
