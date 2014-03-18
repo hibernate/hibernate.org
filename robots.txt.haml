@@ -1,0 +1,9 @@
+---
+inhibit_indexifier: true
+---
+User-agent: *
+- is_production = site.profile == 'production'
+- if is_production
+  Disallow:
+- else
+  Disallow: /
