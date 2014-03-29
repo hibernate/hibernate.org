@@ -1,20 +1,38 @@
+require 'awestruct/logger'
+# need to create the logger prior to loading the engine module to avoid errors when the code 
+# tries to access the logger
+$LOG = Logger.new(Awestruct::AwestructLoggerMultiIO.new)
+$LOG.level = Logger::DEBUG 
+$LOG.formatter = Awestruct::AwestructLogFormatter.new
+
 require_relative '../_ext/release_file_parser'
 
 describe Awestruct::Extensions::ReleaseDependencies do
 
   before :all do
+    site_dir = File.join(File.dirname(__FILE__), '..')
+    opts = Awestruct::CLI::Options.new
+    opts.source_dir = site_dir
+    @config = Awestruct::Config.new( opts )
+      
+    @engine = Awestruct::Engine.new( @config )
+    @engine.load_default_site_yaml
+    @site = Awestruct::Site.new( @engine, @config )
+
     @deps = [
-      Awestruct::Extensions::ReleaseDependencies.new('org.hibernate', 'hibernate-core', '4.0.0.Beta1'),
-      Awestruct::Extensions::ReleaseDependencies.new('org.hibernate', 'hibernate-search-parent', '3.4.0.Final'),
-      Awestruct::Extensions::ReleaseDependencies.new('org.hibernate', 'hibernate-search', '3.4.0.Final')
+      Awestruct::Extensions::ReleaseDependencies.new(@site, 'org.hibernate', 'hibernate-core', '4.0.0.Beta1'),
+      Awestruct::Extensions::ReleaseDependencies.new(@site, 'org.hibernate', 'hibernate-search-parent', '3.4.0.Final'),
+      Awestruct::Extensions::ReleaseDependencies.new(@site, 'org.hibernate', 'hibernate-search', '3.4.0.Final')
     ]
   end
 
   describe "#initalize" do
-    it 'raises error for invalid project/version' do
-      expect { Awestruct::Extensions::ReleaseDependencies.new('org.hibernate', 'hibernate-core', '0.Final') }
-      .to raise_error(/Unable to access uri/)
-    end
+    it 'raises error when pom cannot be accessed for production profile' do
+      site = Awestruct::Site.new( @engine, @config )
+      site.profile = 'production'
+      expect { Awestruct::Extensions::ReleaseDependencies.new(site, 'org.hibernate', 'hibernate-core', '0.Final') }
+      .to raise_error(/Aborting site generation, since the production build requires the release POM information/)
+    end   
   end
 
   describe "#get_value" do
