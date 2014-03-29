@@ -69,7 +69,7 @@ module Awestruct
         end
         releaseHash = site.engine.load_yaml( file )
         if( group_id != nil && artifact_id != nil)
-          releaseHash['dependencies'] = ReleaseDependencies.new(group_id, artifact_id, releaseHash['version'])
+          releaseHash['dependencies'] = ReleaseDependencies.new(site, group_id, artifact_id, releaseHash['version'])
         end
         # use a regexp to get the file name without extension into the pattern buffer.
         # file name == version
@@ -124,21 +124,24 @@ module Awestruct
     class ReleaseDependencies
       Nexus_base_url = 'https://repository.jboss.org/nexus/content/repositories/public/'
 
-      def initialize(group_id, artifact_id, version)
+      def initialize(site, group_id, artifact_id, version)
         # init instance variables
         @properties = Hash.new
         @dependencies = Hash.new
+        @site = site
 
         # try loading the pom
         uri = get_uri(group_id, artifact_id, version)
         doc = create_doc(uri)
-        if has_parent(doc)
-          # parent pom needs to be loaded first
-          parent_uri = get_uri(doc.xpath('//parent/groupId').text, doc.xpath('//parent/artifactId').text, doc.xpath('//parent/version').text)
-          parent_doc = create_doc(parent_uri)
-          process_doc(parent_doc)
+        unless doc.nil?
+          if has_parent(doc)
+            # parent pom needs to be loaded first
+            parent_uri = get_uri(doc.xpath('//parent/groupId').text, doc.xpath('//parent/artifactId').text, doc.xpath('//parent/version').text)
+            parent_doc = create_doc(parent_uri)
+            process_doc(parent_doc)
+          end
+          process_doc(doc)
         end
-        process_doc(doc)
       end
 
       def get_value(property)
@@ -170,8 +173,14 @@ module Awestruct
             doc = Nokogiri::XML(open(uri))
             # cache the pom
             File.open(cached_pom, 'w') { |f| f.print(doc.to_xml) }
-          rescue OpenURI::HTTPError => error
-            raise "Unable to access uri #{uri}. Reason: #{error}"
+          rescue => error
+            $LOG.warn "Release POM #{uri.split('/').last} not locally cached and unable to retrieve it from JBoss Nexus"
+            if @site.profile == 'production'
+              abort "Aborting site generation, since the production build requires the release POM information"
+            else
+              $LOG.warn "Continue build since we are building the '#{@site.profile}' profile. Note that variables interpolated from the release poms will not display\n"
+              return nil
+            end
           end
         end
         doc.remove_namespaces!
