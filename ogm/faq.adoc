@@ -85,6 +85,22 @@ There are three main methods:
 
 The reference documentation details the various options.
 
+=== When using Hibernate OGM on top of WildFly, I'm getting a +JndiException+. What's wrong?
+
+In case you're are seeing a +JndiException+ saying "Unable to lookup JNDI name [---PlaceHolderDSForOGM---]",
+your application likely cannot access the application server module(s) of Hibernate OGM.
+
+To change this, add the following line to the _META-INF/MANIFEST.MF_ file of your archive
+(adapt it to match your chosen datastore):
+
+[source]
+----
+Dependencies: org.hibernate:ogm services, org.hibernate.ogm.mongodb services
+----
+
+Alternatively, you can configure this via the descriptor _jboss-deployment-structure.xml_.
+See the https://docs.jboss.org/hibernate/ogm/4.1/reference/en-US/html_single/#ogm-configuration-jbossmodule[reference guide] to learn more.
+
 == Developers of Hibernate OGM
 
 === How to skip some tests while in the development of a new +Dialect+?
