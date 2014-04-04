@@ -7,6 +7,7 @@ require 'relative'
 require 'releases'
 require 'release_file_parser'
 require 'redirect_creator'
+require 'directory_listing'
 
 # dependencies for asciidoc support
 require 'tilt'
@@ -39,6 +40,7 @@ Awestruct::Extensions::Pipeline.new do
   helper Awestruct::Extensions::GoogleAnalytics
   helper Awestruct::Extensions::Relative
   helper Awestruct::Extensions::Releases
+  helper Awestruct::Extensions::DirectoryListing
 
   # register extensions and transformers
   extension Awestruct::Extensions::ReleaseFileParser.new
