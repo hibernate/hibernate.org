@@ -50,7 +50,8 @@ Awestruct::Extensions::Pipeline.new do
   transformer Awestruct::Extensions::HtmlMinifier.new
   extension Awestruct::Extensions::FileMerger.new
   extension Awestruct::Extensions::Indexifier.new
-  
+  extension Awestruct::Extensions::Sitemap.new
+
   development = Engine.instance.site.profile == 'development'
   if not development
     extension Awestruct::Extensions::RedirectCreator.new "redirects", "hib-docs-reference-redirects", "hib-docs-v3-api-redirects"
