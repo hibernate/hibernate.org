@@ -34,34 +34,35 @@ layout: project-frame
     %h2 Reference documentation
     - if not site.projects[page.project].sorted_releases.nil?
       - site.projects[page.project].sorted_releases.each do |release|
-        %dl.dl-horizontal
-          %dt
-            = release.version
-            &nbsp;
-            %a.btn.btn-info{:href => "#{project_description.reference_doc_prefix_url}#{release.version_family}/#{project_description.reference_doc_type}/en-US/html/"}
-              %i.icon-book
-          %dd
-            %small= release.date
-            %span.label{:class => "#{release.stable ? 'label-success' : 'label-warning'}"} #{release.stable ? 'stable' : 'development'}
-          %dd
-            %small= release.summary
-          %dd
-            %ul
-              %li
-                English reference documentation:
-                %a{:href => "#{project_description.reference_doc_prefix_url}#{release.version_family}/#{project_description.reference_doc_type}/en-US/html/"}
-                  HTML
-                |
-                %a{:href => "#{project_description.reference_doc_prefix_url}#{release.version_family}/#{project_description.reference_doc_type}/en-US/html_single/"}
-                  HTML (single page)
-                - if not project_description.reference_pdf.nil?
+        - if release.displayed
+          %dl.dl-horizontal
+            %dt
+              = release.version
+              &nbsp;
+              %a.btn.btn-info{:href => "#{project_description.reference_doc_prefix_url}#{release.version_family}/#{  project_description.reference_doc_type}/en-US/html/"}
+                %i.icon-book
+            %dd
+              %small= release.date
+              %span.label{:class => "#{release.stable ? 'label-success' : 'label-warning'}"} #{release.stable ? 'stable'   : 'development'}
+            %dd
+              %small= release.summary
+            %dd
+              %ul
+                %li
+                  English reference documentation:
+                  %a{:href => "#{project_description.reference_doc_prefix_url}#{release.version_family}/#{  project_description.reference_doc_type}/en-US/html/"}
+                    HTML
                   |
-                  %a{:href => "#{project_description.reference_doc_prefix_url}#{release.version_family}/#{project_description.reference_doc_type}/en-US/pdf/#{project_description.reference_pdf}"}
-                    PDF
-              %li
-                API documentation:
-                %a{:href => "#{project_description.reference_doc_prefix_url}#{release.version_family}/#{project_description.javadoc_path}/"}
-                  JavaDoc
+                  %a{:href => "#{project_description.reference_doc_prefix_url}#{release.version_family}/#{  project_description.reference_doc_type}/en-US/html_single/"}
+                    HTML (single page)
+                  - if not project_description.reference_pdf.nil?
+                    |
+                    %a{:href => "#{project_description.reference_doc_prefix_url}#{release.version_family}/#{  project_description.reference_doc_type}/en-US/pdf/#{project_description.reference_pdf}"}
+                      PDF
+                %li
+                  API documentation:
+                  %a{:href => "#{project_description.reference_doc_prefix_url}#{release.version_family}/#{  project_description.javadoc_path}/"}
+                    JavaDoc
 
     - else
       %p There is no reference documentation configured for this project.
