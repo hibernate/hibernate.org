@@ -65,6 +65,9 @@ projects:
         - name: Issues
           href: 'https://hibernate.atlassian.net/browse/HHH'
           css_class: 'icon-fixed-width icon-exclamation-sign'
+        - name: Security issue
+          href: 'https://access.redhat.com/security/team/contact/'
+          css_class: 'icon-fixed-width icon-lock'
         - name: Forum
           href: 'https://forum.hibernate.org'
           css_class: 'icon-fixed-width icon-comments'
@@ -124,6 +127,9 @@ projects:
           href: 'https://hibernate.atlassian.net/browse/HSEARCH'
           css_class: 'icon-fixed-width icon-exclamation-sign'
           #  icon-bug only in font-awesome 3.2
+        - name: Security issue
+          href: 'https://access.redhat.com/security/team/contact/'
+          css_class: 'icon-fixed-width icon-lock'
         - name: Forum
           href: 'https://forum.hibernate.org'
           css_class: 'icon-fixed-width icon-comments'
@@ -181,6 +187,9 @@ projects:
           href: 'https://hibernate.atlassian.net/browse/HBX'
           css_class: 'icon-fixed-width icon-exclamation-sign'
           #  icon-bug only in font-awesome 3.2
+        - name: Security issue
+          href: 'https://access.redhat.com/security/team/contact/'
+          css_class: 'icon-fixed-width icon-lock'
         - name: Forum
           href: 'https://forum.hibernate.org'
           css_class: 'icon-fixed-width icon-comments'
@@ -242,6 +251,9 @@ projects:
         - name: Issues
           href: 'https://hibernate.atlassian.net/browse/HV'
           css_class: 'icon-fixed-width icon-exclamation-sign'
+        - name: Security issue
+          href: 'https://access.redhat.com/security/team/contact/'
+          css_class: 'icon-fixed-width icon-lock'
         - name: Forum
           href: 'https://forum.hibernate.org'
           css_class: 'icon-fixed-width icon-comments'
@@ -300,6 +312,9 @@ projects:
         - name: Issues
           href: 'https://hibernate.atlassian.net/browse/OGM'
           css_class: 'icon-fixed-width icon-exclamation-sign'
+        - name: Security issue
+          href: 'https://access.redhat.com/security/team/contact/'
+          css_class: 'icon-fixed-width icon-lock'
         - name: Forum
           href: 'https://forum.hibernate.org/viewforum.php?f=31'
           css_class: 'icon-fixed-width icon-comments'
