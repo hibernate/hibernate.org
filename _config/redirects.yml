@@ -16,12 +16,19 @@ hibernate.html:                            /
 ## Illegal URLs frequently requested
 #dtd/hibernate-configuration-4.0.dtd
 
-## URLs I don;t know how to map
-#56.html: Using Clobs/Blobs with Oracle and Hibernate
+## URLs I don't know how to map
 37.html:                                   /community/we-lost-that-content/
+#56.html: Using Clobs/Blobs with Oracle and Hibernate
+56.html:                                   /community/we-lost-that-content/
+110.html:                                  /community/we-lost-that-content/
+132.html:                                  /community/we-lost-that-content/
+194.html:                                  /community/we-lost-that-content/
+356.html:                                  /community/we-lost-that-content/
 120.935.html:                              /community/we-lost-that-content/
 
 ## ORM
+download:                                  /orm/downloads/
+download.html:                             /orm/downloads/
 downloads:                                 /orm/downloads/
 downloads.html:                            /orm/downloads/
 hibernate/downloads:                       /orm/downloads/
@@ -102,6 +109,7 @@ hib_docs/search/reference/en/html_single/:                             http://do
 hib_docs/nhibernate/1.2/reference/en/html/mapping.html:                http://nhibernate.org
 hib_docs/nhibernate/1.2/reference/en/html_single/:                     http://nhibernate.org
 hib_docs/nhibernate/1.2/reference/en/html/:                            http://nhibernate.org
+hib_docs/nhibernate/1.2/reference/en/html/collections.html:            http://nhibernate.org
 hib_docs/nhibernate/html/example-parentchild.html:                     http://nhibernate.org
 hib_docs/nhibernate/html/performance.html:                             http://nhibernate.org
 hib_docs/tools/reference/en/html_single/:                              http://www.jboss.org/tools/docs/
@@ -139,6 +147,7 @@ hib_docs/tools/reference/en/html/ant.html:                             http://do
 469.html:                                  https://community.jboss.org/en/hibernate/validator
 
 ## Tools
+256.html:                                  /tools/
 255.html:                                  http://www.jboss.org/tools/docs/
 
 ## Redirects to wiki pages
