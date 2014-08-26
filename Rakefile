@@ -8,11 +8,8 @@
 #
 #  rake setup
 #
-# The setup task installs the necessary libraries according to which Ruby
-# environment you are using. If you want the libraries kept inside the project,
-# execute this command instead:
-#
-#  rake setup[local]
+# The setup task installs the necessary libraries inside the project in the .bin
+# directory.
 #
 # IMPORTANT: To install gems, you'll need development tools on your machine,
 # which include a C compiler, the Ruby development libraries and some other
@@ -44,12 +41,8 @@ $awestruct_cmd = nil
 task :default => :preview
 
 desc 'Setup the environment to run Awestruct unsing Bundler'
-task :setup, [:env] => :init do |task, args|
-  if args[:env] == 'local'
-    system 'bundle install --binstubs=_bin --path=.bundle'
-  else
-    system 'bundle install'
-  end
+task :setup => :init do |task, args|
+  system 'bundle install --binstubs=_bin --path=.bundle'
   msg 'Run awestruct `rake`'
   # Don't execute any more tasks, need to reset env
   exit 0
@@ -68,7 +61,7 @@ task :preview do
 end
 
 desc 'Generate the site using the specified profile, default is \'development\''
-task :gen, :profile do |task, args| 
+task :gen, :profile do |task, args|
   if args[:profile].nil?
     profile = "development"
   else
@@ -82,7 +75,7 @@ task :push do
   system 'git push origin master'
 end
 
-desc 'Clean out generated site and temporary files, using [all] will also delete local gem files' 
+desc 'Clean out generated site and temporary files, using [all] will also delete local gem files'
 task :clean, :all do |task, args|
   require 'fileutils'
   dirs = ['.awestruct', '.sass-cache', '_site']
@@ -98,7 +91,7 @@ end
 
 desc 'Run Rspec tests'
 task :test do
-  all_ok = system "bundle exec rspec _spec --format nested"
+  all_ok = system "bundle exec rspec _spec --format documentation"
   if all_ok == false
     fail "RSpec tests failed - aborting build"
   end
@@ -134,7 +127,7 @@ end
 
 # Execute Awestruct
 def run_awestruct(args)
-  cmd = "bundle exec awestruct #{args}" 
+  cmd = "bundle exec awestruct #{args}"
   msg cmd
   system cmd or raise "ERROR: Running Awestruct failed."
 end
