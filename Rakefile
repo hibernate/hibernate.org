@@ -45,11 +45,7 @@ task :default => :preview
 
 desc 'Setup the environment to run Awestruct unsing Bundler'
 task :setup, [:env] => :init do |task, args|
-  if args[:env] == 'local'
-    system 'bundle install --binstubs=_bin --path=.bundle'
-  else
-    system 'bundle install'
-  end
+  system 'bundle install --binstubs=_bin --path=.bundle'
   msg 'Run awestruct `rake`'
   # Don't execute any more tasks, need to reset env
   exit 0
