@@ -6,148 +6,110 @@ A bit of Git, a bit of Ruby and you will get your local hibernate.org served.
 
 == Prerequisites
 
-* Get http://git-scm.com/[Git]
-* Get http://www.gnu.org/software/wget/[GNU Wget 1.14]
+* Get http://git-scm.com[Git]
+* Get https://www.ruby-lang.org/en/[Ruby] > 1.9
 * If on Mac OS:
 ** Get https://developer.apple.com/xcode/[XCode] (needed for native gems)
 * If on Linux:
-** Get libxslt-dev - eg via `sudo apt-get install libxslt-dev`
-** may be called libxslt1-dev for some distros
-
-[NOTE]
-====
-For Linux Mint users - installing rvm (below) may not work.
-Be sure to instead install latest ruby-dev package via apt-get...
-====
-
+** Get libxslt-dev - eg via `sudo apt-get install libxslt-dev` (may be called libxslt1-dev for some distros)
 
 == Installation
 
-=== Git
-Install Git to your system. http://help.github.com/[GitHub's help page] is a good starting point.
-
-If you are looking for some tips and tricks, checkout 
-http://in.relation.to/Bloggers/HibernateMovesToGitGitTipsAndTricks[Emmanuel's blog].
-
-=== RVM & Ruby
-
-Ruby like many other platforms has its dependency hell. We do recommend you use RVM to
-isolate your ruby runtimes as well as dependencies (gems). The RVM steps are optional though.
-If you are not going to use RVM have a look at the different Ruby 
-installations http://www.ruby-lang.org/en/downloads/[options] you have. 
-
-* Install https://rvm.io[RVM]
-
-[source]
-----
-curl -L https://get.rvm.io | bash
-----
-
-* Set up the isolated environment for the site
-
-[source]
-----
-rvm install 1.9.3
-rvm use 1.9.3
-rvm gemset create awestruct
-----
-
-[NOTE]
-====
-For some distros using the bash shell, you'll need to enable "login shell". "rvm use" will
-complain, otherwise.  See https://rvm.io/integration/gnome-terminal for more info.
-====
-
-* RVM config (optional)
-+
-Add a `.rvmrc` file in the directory containing
-+
-[source]
-----
-rvm ruby-1.9.3@awestruct
-----
-+
-This will set up the right environment when you enter the directory.
-The first time, leave and re-enter the directory 
-+
-[source]
-cd ..;cd hibernate.org
-
 === Get the source
-Next, let's retrieve the website.
 
 [source]
 ----
-git clone git@github.com:hibernate/hibernate.org.git
-cd hibernate.org
+> git clone git@github.com:hibernate/hibernate.org.git
+> cd hibernate.org
 ----
 
-=== Install Ruby dependencies
+=== Rake
+
+Make sure https://github.com/jimweirich/rake[Rake] is available. It is often installed per default.
 
 [source]
 ----
-gem install bundler rake
-rake setup[local]
+> rake --version
+rake, version 0.9.6
 ----
 
-Note that if someone updates Awestruct
-or any dependent gem via the `Gemfile` dependency management,
-you need to rerun `bundle install`.
-
-== Serve the site locally
-
-* Run  `rake preview`
-* Open your browser to http://localhost:4242
-
-Any change will be automatically picked up except for changes to `_partials` files.
-
-[NOTE]
-====
-You might see warnings at startup like
+If you get *command not found*:
 
 [source]
 ----
-WARNING: Missing required dependency to activate optional built-in extension coffeescripttransform.rb
-  cannot load such file -- coffee-script
-Using profile: development
-Generating site: http://localhost:4242
-Skipping files cache update.
-CodeRay::Scanners could not load plugin :bash; falling back to :text
-CodeRay::Scanners could not load plugin :bash; falling back to :text
-CodeRay::Scanners could not load plugin :bash; falling back to :text
-CodeRay::Scanners could not load plugin :bash; falling back to :text
-CodeRay::Scanners could not load plugin :bash; falling back to :text
-CodeRay::Scanners could not load plugin :bash; falling back to :text
-[Listen warning]:
-The blocking parameter of Listen::Listener#start is deprecated.
-Please use Listen::Adapter#start for a non-blocking listener and Listen::Listener#start! for a blocking one.
+> gem install rake
 ----
 
-That's ok, it's not your fault ;) It's related to some Awestruct limitations.
-====
+=== Bundler
 
-== Next steps
+Make sure http://bundler.io/[Bundler] is available. It manages your Ruby gems locally to the project
+and prevents version conflicts between different Ruby projects. To quote from the website:
 
-Using you local site, you can have a look at our link:/survival-guide/[survival guide to editing this website] to get you started.
+"Bundler provides a consistent environment for Ruby projects by tracking and installing the exact
+gems and versions that are needed."
+
+[source]
+----
+> bundle -v
+Bundler version 1.6.2
+----
+
+If you get *command not found*:
+
+[source]
+----
+> gem install bundler
+----
+
+=== Install  dependencies
+
+[source]
+----
+> rake setup
+> rake check
+----
+
+=== Serve the site locally
+
+[source]
+----
+rake preview
+----
+
+Point your browser to http://localhost:4242
 
 == Tips & Tricks
 
-=== If your changes are not visible...
-
-completely regenerate the site via:
+=== Which other tasks exist in the Rake build file?
 
 [source]
 ----
-rake clean preview
+> rake --tasks
 ----
+
+This will list the available tasks with a short description
+
+=== I am getting errors when trying to execute *awestruct* directly
+
+You need to use `bundle exec <command>` to make sure you get all required Gems. Check the *Rakefile*
+to see how the different awestruct calls are wrapped.
+
+=== If your changes are not visible...
+
+Panic! Then completely regenerate the site via:
+
+[source]
+----
+> rake clean preview
+----
+
 === If serving the site is slow...
 
-On Linux, serving the file may be atrociously slow 
-(something to do with WEBRick).
+On Linux, serving the file may be atrociously slow (something to do with WEBRick).
 
 Use the following alternative:
 
-* Go in your `~/hibernate.org` directory.  
+* Go in your `~/hibernate.org` directory.
 * Run  `awestruct --auto -P development`
 * In parallel, go to the `~/hibernate.org/_site` directory
 * Run `python -m SimpleHTTPServer 4242`
