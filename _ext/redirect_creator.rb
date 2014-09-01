@@ -85,7 +85,7 @@ module Awestruct
         file = File.open(template_file, "rb")
         content = file.read
         file.close
-        content % {url: @target_url, google_analytics: google_analytics}
+        content % {url: @target_url, google_analytics_universal: google_analytics_universal}
       end
     end
   end
