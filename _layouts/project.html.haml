@@ -39,7 +39,7 @@
         %a{:href => "#top"} back to top
 
       %script(src="#{relative("#{pageStyle ? site[pageStyle].bootstrap_js_url : site.bootstrap_js_url}#{site.minified}.js")}")
-      = google_analytics_analytics
+      = google_analytics_universal
       - if page.bottom_javascripts
         - page.bottom_javascripts.each do |javascript|
           %script{:src=>javascript, :type=>'text/javascript'}
