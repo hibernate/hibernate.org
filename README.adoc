@@ -112,7 +112,7 @@ On Linux, serving the file may be atrociously slow (something to do with WEBRick
 Use the following alternative:
 
 * Go in your `hibernate.org` directory.
-* Run  `awestruct --auto -P development`
+* Run  `rake gen`
 * In parallel, go to the `hibernate.org/_site` directory
 * Run `python -m SimpleHTTPServer 4242`
 
