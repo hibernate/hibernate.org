@@ -10,6 +10,7 @@ gem 'redcarpet'        # Markdown processing
 gem 'asciidoctor'      # Asciidoc renderer
 
 ## Non Windows
+gem 'libv8', '3.16.14.7', :platforms => :ruby
 gem 'therubyracer', :platforms => :ruby
 
 ## Windows
