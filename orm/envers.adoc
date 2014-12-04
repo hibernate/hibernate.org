@@ -1,0 +1,48 @@
+= Hibernate ORM Envers
+:awestruct-layout: project-frame
+:awestruct-project: orm
+:page-interpolate: true
+:project: #{site.projects[page.project]}
+:latest_stable: #{latest_stable_release(page).version}
+
+The Envers module aims to enable easy auditing/versioning of persistent classes. All that you have to do is annotate your persistent class or some of its properties, that you want to audit, with +@Audited+. For each audited entity, a table will be created, which will hold the history of changes made to the entity. You can then retrieve and query historical data without much effort.
+
+== Envers: Easy Entity Auditing
+
+[TIP]
+=====
+You can find a step-by-step Envers tutorial in the link:http://docs.jboss.org/hibernate/orm/4.2/quickstart/en-US/html/ch05.html[Getting started guide].
+
+Comprehensive documentation is available in the link:http://docs.jboss.org/hibernate/orm/4.2/devguide/en-US/html/ch15.html[Developer's guide].
+=====
+
+Similarly to version control systems, Envers has a concept of **revisions**. Basically, one transaction is one revision (unless the transaction didn't modify any audited entities). As the revisions are global, having a revision number, you can query for various entities at that revision, retrieving a (partial) view of the database at that revision. You can find a revision number having a date, and the other way round, you can get the date at which a revision was committed.
+
+[source,java]
+----
+@Entity
+public class Person {
+    @Id
+    @GeneratedValue
+    private int id;
+
+    @Audited
+    private String name;
+
+    @Audited
+    private String surname;
+
+    @Audited
+    @ManyToOne
+    private Address address;
+}
+----
+
+Envers is a Hibernate core module and works with Hibernate and Hibernate Entity Manager. For the auditing to work properly, the entities must have immutable unique identifiers (primary keys). You can use Envers wherever Hibernate works: standalone, inside Wildfly or JBoss AS, with Spring, Grails etc.
+
+Some of the features:
+
+* auditing of all mappings defined by the JPA specification
+* auditing of some Hibernate mappings, which extend JPA, like custom types and collections/maps of "simple" types (Strings, Integers, etc.) (see here for one exception)
+* logging data for each revision using a "revision entity"
+* querying historical data
