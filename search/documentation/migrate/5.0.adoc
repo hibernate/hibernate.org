@@ -1,0 +1,162 @@
+= Migration Guide
+Hardy Ferentschik
+:awestruct-layout: project-frame
+:awestruct-project: search
+:toc:
+:toc-placement: preamble
+:toc-title: Content
+
+Here we are helping you migrate your existing Search application to the latest and greatest.
+
+== Upgrade to Search 5
+
+The aim of this guide is to assist you migrating an existing Hibernate Search 4 application to
+Hibernate Search 5.
+
+NOTE: This document provides pointers for a migration. It might not be complete though. It refers to
+Hibernate Search 5.0.0.Final. If you think something is missing or something does not work,
+link:/community[contact us].
+
+=== Requirements
+
+The most important upfront. Hibernate Search 5 requires now Java 7. Support for Java 6 has been dropped.
+
+Hibernate Search 5 also builds now upon Lucene 4 (more specifically
+link:http://lucene.apache.org/core/4_10_2/index.html[4.10.2]). If you are using any
+native Lucene APIs make sure to align with this version. Refer also to the
+link:https://lucene.apache.org/core/4_10_2/MIGRATE.html[Lucene Migration Guide].
+
+Hibernate Search is compatible with link:/orm[Hibernate ORM] 4.3.7.Final and
+link:http://infinispan.org/[Infinispan] 7.0.2.Final.
+
+=== API changes
+
+Even though the Lucene API changes between version 3 and 4 are rather big, we were able to hide most
+of the complexities behind the Hibernate Search API. Some changes, however, trickle all the way through.
+
+==== Sorting query results
+
+Lucene's `SortField` API has changed. Instead of
+
+[source,java]
+----
+fulltextQuery.setSort( new Sort( new SortField( "title", SortField.STRING ) ) );
+----
+
+you now need to use:
+
+[source,java]
+----
+fulltextQuery.setSort( new Sort( new SortField( "title", SortField.Type.STRING ) ) );
+----
+
+=== Class re-names and re-locations
+
+Between Hibernate Search 4 and 5 several classes have changes names or package. This happened within
+the Search API as well as within the Lucene API. The following is a list of the most important changes.
+
+==== Within Search
+
+* `SearchFactory` was moved from the module `hibernate-search-engine` to `hibernate-search-orm` as
+it should only be used by the ORM integration. Other integrators should depend exclusively on `SearchIntegrator` (former `SearchFactoryIntegrator`)
+* The following classes got re-located:
+** `org.hibernate.search.engine.impl.SearchMappingBuilder` => +
+`org.hibernate.search.engine.spi.SearchMappingBuilder`
+** `org.hibernate.search.Environment` => +
+`org.hibernate.search.cfg.Environment`
+** `org.hibernate.search.FullTextFilter` => +
+`org.hibernate.search.filter.FullTextFilter`
+** `org.hibernate.search.indexes.impl.DirectoryBasedIndexManager` => +
+`org.hibernate.search.indexes.spi.DirectoryBasedIndexManager`
+** `org.hibernate.search.infinispan.impl.InfinispanDirectoryProvider` => +
+`org.hibernate.search.infinispan.spi.InfinispanDirectoryProvider`
+** `org.hibernate.search.ProjectionConstants` => +
+`org.hibernate.search.engine.ProjectionConstants`
+** `org.hibernate.search.SearchException` => +
+`org.hibernate.search.exception.SearchException`
+** `org.hibernate.search.spi.MassIndexerFactory` => +
+`org.hibernate.search.batchindexing.spi.MassIndexerFactory`
+** `org.hibernate.search.spi.SearchFactoryBuilder` => +
+`org.hibernate.search.spi.SearchIntegratorBuilder`
+** `org.hibernate.search.spi.SearchFactoryIntegrator` => +
+`org.hibernate.search.spi.SearchIntegrator`
+** `org.hibernate.search.Version` => +
+`org.hibernate.search.engine.Version`
+* The enum value `SpatialMode.GRID` was renamed to `SpatialMode.HASH`
+
+==== Within Lucene
+
+* Lucene's `QueryParser` changed package from `org.apache.lucene.queryParser.QueryParser` to
+`org.apache.lucene.queryparser.classic.QueryParser`
+* Many popular `Analyzer`, `TokenFilter` and `CharFilter` classes moved. Refer to the
+link:http://lucene.apache.org/core/4_10_2/[Lucene API docs] to find the appropriate replacement.
+* Solr utilities classes, for example
+`link:http://lucene.apache.org/core/4_10_2/analyzers-common/org/apache/lucene/analysis/util/TokenizerFactory.html[TokenizerFactory]` or
+`link:http://lucene.apache.org/core/4_10_2/analyzers-common/org/apache/lucene/analysis/util/TokenFilterFactory.html[TokenFilterFactory]`,
+were moved into Apache Lucene. For this reason we could remove the dependency to Apache Solr.
+Good news is a simplified dependency graph! The bad news, if you depend on some of these utilities
+or custom analyzers, you'll need to find the new (package) name
+
+=== Misc
+
+==== Number and date index format
+
+Numbers and dates now indexed as numeric fields by default.
+
+Properties of type `Date`, `Calendar` as well as `int`, `long`, `float`, `double` and their corresponding
+wrappers, are no longer indexed as strings. Instead, they are now indexed using Lucene's appropriate
+numeric encoding.
+
+TIP: `Date` and `Calendar` instances are encoded as `long` value representing the number of
+milliseconds since _January 1, 1970, 00:00:00 GMT_.
+
+TIP: The use of `@NumericField` becomes now obsolete, unless you want to specify a custom precision
+for the numeric encoding.
+
+You can still keep the old (string based) index format by explicitly specifying a string encoding
+field bridge. In the case of integers for example
+`link:http://docs.jboss.org/hibernate/search/5.0/api/org/hibernate/search/bridge/builtin/IntegerBridge.html[org.hibernate.search.bridge.builtin.IntegerBridge]`.
+Check the package `link:http://docs.jboss.org/hibernate/search/5.0/api/org/hibernate/search/bridge/builtin/package-summary.html[org.hibernate.search.bridge.builtin]` for
+other publicly available field bridges.
+
+For dates and calendars you can switch the indexing format via the new
+`link:http://docs.jboss.org/hibernate/search/5.0/api/org/hibernate/search/annotations/EncodingType.html[EncodingType]`
+enum, for example `@DateBridge(encoding=EncodingType.STRING)` resp.
+`@CalendarBridge(encoding=EncodingType.STRING)`.
+
+IMPORTANT: The change of encoding for number and dates is probably the most important user facing
+change. If you have any query which targets a previously string encoded field, but
+is not encoded numerically, you will need to update the query. Numeric fields must be searched with
+a `link:https://lucene.apache.org/core/3_0_3/api/core/org/apache/lucene/search/NumericRangeQuery.html[NumericRangeQuery]` (if you are using the Search query DSL, the right query should be created for
+you). Also make sure that all fields targeted by faceting need for now be string encoded.
+
+==== FullTextIndexEventListener now final
+
+`FullTextIndexEventListener` is now a final class. If you are extending this class, you need to
+find an alternative approach for what you want to achieve. Maybe you can use an
+`EntityIndexingInterceptor`? If you cannot find a way to implement your use case
+- link:/community[contact us].
+
+==== hibernate-search-analyzers module removed
+
+The module _hibernate-search-analyzers_ was dropped from the repository and will no longer be
+included in upcoming release. It is obsolete and we recommend to depend on the appropriate
+Lucene artifact directly, for example _org.apache.lucene:lucene-analyzers-common_.
+
+==== JMS controller API changed
+
+The JMS backend was depending to link:/orm[Hibernate ORM]. This dependency was removed, so that the
+backend can be used in other (non ORM) environments as well. A consequence is that implementors of
+`org.hibernate.search.backend.impl.jms.AbstractJMSHibernateSearchController` will need to adjust to
+the new signature. This class is really considered internal. We suggest to take this class as an
+example instead of extending it.
+
+==== ServiceRegistry API updated
+
+The `org.hibernate.search.engine.service.spi.Service` SPI got refactored. If you where integrating
+with the old service contract, refer to the javadoc of
+`link:http://docs.jboss.org/hibernate/search/5.0/api/org/hibernate/search/engine/service/spi/ServiceManager.html[ServiceManager]`,
+`link:http://docs.jboss.org/hibernate/search/5.0/api/org/hibernate/search/engine/service/spi/Service.html[Service]`,
+`link:http://docs.jboss.org/hibernate/search/5.0/api/org/hibernate/search/engine/service/spi/Startable.html[Startable]`
+and `link:http://docs.jboss.org/hibernate/search/5.0/api/org/hibernate/search/engine/service/spi/Stoppable.html[Stoppable]`
+for details about the new contract.
