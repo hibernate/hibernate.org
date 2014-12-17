@@ -159,6 +159,85 @@ Various query improvements::
 * Make sure flush is executed before a query.
 * Support for projection
 
+=== Hibernate OGM 4.1 Beta CR1
+
+Additional key/value cache structure::
+Store each entity type and association in a dedicated cache.
+Use this strategy as default since it is more eficient and it has more natural mapping.
+
+Improve mapping of emebedded objects, embedded ids and properties::
+Represent embedded nodes as individual nodes in Neo4j.
+Store emebedded id foreign keys as nested document in MongoDB.
+
+=== Hibernate OGM 4.1 Beta 8
+
+Optimistic locking detection::
+Support optimistic locking detection for datastores which provide atomic find-and-update operations.
+
+Performance improvements::
+Reduce the amount fo round trips to the datastore.
+
+=== Hibernate OGM 4.1 Beta 7
+
+Support ObjectId in MongoDB::
+Map object ids either directly via MongoDB’s [classname]+org.bson.types.ObjectId+ type or using a +String+.
+
+API/SPI internal split::
+Clear separation among API, SPI and internal packages in preparation for the final release.
+
+=== Hibernate OGM 4.1 Beta 6
+
+Query improvements::
+* Support polymorphic queries on datastores that don't use Hibernate Search (Neo4j and MongoDB).
+* All pending changes to entities of the effected types will be flushed to the datastore in order
+  to ensure queries don't return any stale data.
+* Cache native queries derived from JP-QL queries.
+
+Improve associations mapping in Neo4j::
+Remove redundant properties from relationships when mapping associations in Neo4j.
+
+Simplified version management::
+Provide a BOM (Bill of Materials) for maven users.
+
+=== Hibernate OGM 4.1 Beta 5
+
+Conversion from JP-QL to Cypher::
+Convert JP-QL queries in Cypher queris when working with Neo4j.
+
+More natural mapping for associations in MongoDB and CouchDB::
+Use a more concise representation when storing associations.
+
+=== Hibernate OGM 4.1 Beta 4
+
+Support for MongoDB CLI syntax::
+Express native queries in MongoDB using the CLI syntax.
+
+Improve mapping of associations in Neo4j::
+In Neo4j, a bi-directional association is now mapped using a single relationship.
+
+=== Hibernate OGM 4.1 Beta 3
+
+Improve query support around projection and operators::
+* operators =, <, <=, >, =, IN, LIKE, BETWEEN
+* boolean combinations: AND, OR, NOT
+* Support for simple property projections
+
+JP-QL query support for MongoDB::
+Convert JP-QL queries into MongoQL queries and run them to retrieve entities. 
+
+Discriminator based hierarchy::
+When using the single table per class strategy for the mapping of hierachies,
+a column will be added to differentiate between entity types in a hierarchy.
+
+Support for Hibernate Search mass indexing::
+When using Hibernate Search in conjunction with Hibernate OGM,
+you can now index entities using the MassIndexer
+
+=== Hibernate OGM 4.1 Beta 2
+
+New integration modules::
+Add integration modules for Wildfly (ex-JBoss AS) and EAP.
+
 === Hibernate OGM 4.1 Beta 1
 
 Annotation based option system::
