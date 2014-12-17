@@ -4,7 +4,7 @@
 :page-interpolate: true
 :toc:
 :toc-placement: preamble
-:hibernate-ogm-version: #{latest_dev_release(page).version}
+:hibernate-ogm-version: #{latest_stable_release(page).version}
 :jboss-jta-version: 4.16.4.Final
   
 [[ogm-gettingstarted]]
