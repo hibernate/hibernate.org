@@ -16,32 +16,30 @@ Dates are generally omitted, we release when we are ready.
 
 Describe plans for future releases.
 
-=== Hibernate OGM 4.1
+=== Hibernate OGM 4.1.x
 
-Performance and stabilization::
-Review performance and overall choices before going final.
-In particular, database round trips and query execution speed (see below).
-Reuse of the data loaded between an entity and its association lookup.
+Listen to feedback::
+We want your feedback on what works, what does not and what feature should be added or improved.
+Talk to us in Hibernate OGM's https://forums.hibernate.org/viewforum.php?f=31[forum]
+or where ever you see us.
+We will try and implement what you need.
 
-Improved Neo4J navigation::
-Explore label (Neo4J 2). +
-Support Neo4J with ability to keep node reference for cheap navigation when resolving proxies
-thus avoiding unnecessary lookups.
+Queries::
+Work on a deeper query support both for JP-QL and native query binding:
 
-* Store tuple as data snapshot via IdentityMap or enhanced entity
-* Use stored tuples as navigation tools instead of fetching (graph databases)
+* Make sure flush is executed before a query.
+* Support for projection of entities
+* Polymorphic query support (MongoDB)
+* restriction on embedded objects (MongoDB)
+
+=== Hibernate OGM 4.2
+
+More mapping options upon demand::
+Depending on user feedback, add new mapping options.
 
 Error report and compensation API::
 Offer the ability to collect errors on partially executed "transactions".
 Offer ability to react to these errors.
-
-==== Additional query support
-
-Query support for Neo4J::
-Support JP-QL and native queries.
-
-Query support for CouchDB::
-Support JP-QL and native queries.
 
 Clean query parser design::
 * Fix how the field bridge is selected for a given property.
@@ -51,57 +49,38 @@ Clean query parser design::
   to find the type of a property for HQL literal conversion
 ** extract this logic and reuse it for all backends
 
-Move to proper OgmLoader implementations::
-Discuss how to properly load objects via the OgmLoader approach.
-
-Cache query plans::
-Look at Hibernate ORM's HQLQueryPlan which essentially caches results
-of a query translator which in term calls the entity loader.
-A similar design or even interface result is probably possible
-
 Various query improvements::
-* Make sure flush is executed before a query.
-* Support for projection and projection of entities
-* Polymorphic query support (MongoDB)
-* restriction on embedded objects (MongoDB)
-
-=== Hibernate OGM 4.2
+* Support for collection of embeddables
 
 Custom types::
 Offer custom types like Hibernate ORM's user type.
 
-Write-behind cross-backends::
-Offer ability to store into two backends.
-In particular, store data in a NoSQL backend and a relational database.
-
 Exploration of Cassandra::
 Implement the Cassandra datastore and its CQL query backend.
 
-Exploration of HBase::
-Implement the HBase datastore and its query support
-
-Migrate to Hibernate ORM 5::
-When Hibernate ORM 5 is out, look at migrating to the new codebase.
+Polish of CouchDB::
+This dialect needs some love before being promoted.
 
 Offer per session and per statement option customization::
 eg for a given call, influence the quorum factor
 
-Set benchmark solution and reusable test suite with automated test::
-Start exploring benchmark solution with regular tests in a CI.
-Add reusable TCK for both CRUD and query support.
+=== Hibernate OGM 5.0
 
-=== Hibernate OGM 4.3
+Migrate to Hibernate ORM 5::
+When Hibernate ORM 5 is out, look at migrating to the new codebase.
+
+Mapping strategies::
+Rethink the default values for the mapping approaches after more user feedback.
+A backward compatible mode will be kept however.
 
 Polyglot persistence::
 Offer ability to store entities into different backends.
 Entities could be in either backends.
 
-Use Teiid query engine for joins and aggregation::
-Explore reuse of Teiid query engine for smarter queries
 
 General NoSQL and query depth and breath improvements::
 Continue mapping of query engine on other NoSQL
-Continue converage of breath of supported queries
+Continue coverage of breath of supported queries
 
 Map/Reduce on queries::
 Map/Reduce based resolution of subgraphs of a query
@@ -124,11 +103,61 @@ Let loading and queries use these denormalized versions for faster retrieval.
 The goal is to offer a declarative approach
 instead of the imperative approach sued usually in the NoSQL land.
 
+Write-behind cross-backends::
+Offer ability to store into two backends.
+In particular, store data in a NoSQL backend and a relational database.
+
+Use Teiid query engine for joins and aggregation::
+Explore reuse of Teiid query engine for smarter queries
+
 == Past releases
 
 An aggregated changelog of what has happened.
 We are too lazy to go back down to the history of time
 so we will start at 4.0 Beta 3.
+
+=== Hibernate OGM 4.1
+
+Performance and stabilization::
+Review performance and overall choices before going final.
+In particular, database round trips and query execution speed (see below).
+Reuse of the data loaded between an entity and its association lookup.
+
+Improved Neo4J navigation::
+Explore label (Neo4J 2). +
+Support Neo4J with ability to keep node reference for cheap navigation when resolving proxies
+thus avoiding unnecessary lookups.
+
+* Store tuple as data snapshot via IdentityMap or enhanced entity
+* Use stored tuples as navigation tools instead of fetching (graph databases)
+
+Stable mapping model::
+The way data is stored is now stable.
+We have ironed out the last details.
+
+Set benchmark solution and reusable test suite with automated test::
+Start exploring benchmark solution with regular tests in a CI.
+Add reusable TCK for both CRUD and query support.
+
+==== Additional query support
+
+Query support for Neo4J::
+Support JP-QL and native queries.
+
+Query support for CouchDB::
+Support JP-QL and native queries.
+
+Move to proper OgmLoader implementations::
+Discuss how to properly load objects via the OgmLoader approach.
+
+Cache query plans::
+Look at Hibernate ORM's HQLQueryPlan which essentially caches results
+of a query translator which in term calls the entity loader.
+A similar design or even interface result is probably possible
+
+Various query improvements::
+* Make sure flush is executed before a query.
+* Support for projection
 
 === Hibernate OGM 4.1 Beta 1
 
