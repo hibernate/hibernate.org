@@ -49,6 +49,46 @@ Late backend choice::
 Choosing an NoSQL engine is not trivial.
 Having the freedom to switch backends without having to rewrite all of your data layer is certainly something to appreciate.
 
+=== Do you support both relational and NoSQL databases?
+
+Yes.
+You can start Hibernate ORM and Hibernate OGM in the same application.
+You can even start several Hibernate OGM instances in the same application.
+Just make sure that you do not share the same entities between persistence units
+and that there are no associations between two entities handled by different persistence unit.
+
+[source, XML]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+    <persistence-unit name="ogm-mongodb" transaction-type="JTA">
+        <provider>org.hibernate.ogm.jpa.HibernateOgmPersistence</provider>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <class>com.acme.domain.catalog.Catalog</class>
+        <properties>
+            <property name="hibernate.ogm.datastore.provider" value="mongodb" />
+            <property name="hibernate.ogm.datastore.database" value="catalog" />
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="orm-oracle" transaction-type="JTA">
+        <datasource>some/db/Oracle</datasource>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <class>com.acme.domain.order.Order</class>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.OracleDialect"/>
+        </properties>
+    </persistence-unit>
+</persistence>
+----
+
+However, you cannot put the same entities (or entities linked with associations)
+in both the relational and the NoSQL store.
+Or at least, Hibernate OGM does not do that for you yet.
+That is something we want to explore in the future.
+
 == Using Hibernate OGM
 
 === How does Hibernate OGM handle transactions?
