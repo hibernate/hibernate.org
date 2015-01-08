@@ -5,9 +5,19 @@ require 'fileutils'
 
 module Awestruct
   module Extensions
-    # Awestrcut extension which traverses the given directory to find release files, specifyig
-    # the relevant release information for a given release and project. Directories are used to
-    # create sub-hashes.
+    # Awestrcut extension which traverses the given directory to find release files,
+    # making the release information available in a hash.
+    #
+    # The assumption is that release files are in a directory called 'releases', the
+    # parent directory is the named after the project and the release files themselves
+    # are YAML files.
+    #
+    # The release information for a given release can then be accessed, starting from the
+    # top level site hash via:
+    # site['projects'].['<project-name>'].['releases'].['<release-version>'], eg site['projects'].['validator'].['releases'].['5.0.0.Final'].
+    #
+    # The release data itself is stored in the hash using at the moment the following keys:
+    # version, version_family, date, stable announcement_url,summary and displayed
     class ReleaseFileParser
 
       def initialize(data_dir="_data")
@@ -19,78 +29,108 @@ module Awestruct
       end
 
       def execute(site)
-        # first create the nested hashes for the release data
-        createReleaseData( "#{site.dir}/#{@data_dir}", site, site )
+        # keep reference to site
+        @site = site
+
+        # register the parent hash for all releases with the site
+        @projects_hash = site[:projects]
+        if @projects_hash.nil?
+           @projects_hash = Hash.new
+           site[:projects] = @projects_hash
+        end
+
+        # traverse the file system to find the release files and create the hashes
+        findReleaseData( "#{site.dir}/#{@data_dir}" )
 
         # also create a sorted array for the releases
-        createSortedReleaseHash( site )
+        createSortedReleaseHash
       end
 
-      private
-      def createReleaseData(dir, hash, site, group_id=nil, artifact_id=nil)
+      def findReleaseData(dir)
         Dir[ "#{dir}/*" ].each do |entry|
           if ( File.directory?( entry ) )
-            key = File.basename( entry )
-            case key
-            when 'ogm'
-              group_id = 'org.hibernate.ogm'
-              artifact_id = 'hibernate-ogm-core'
-            when 'orm'
-              group_id = 'org.hibernate'
-              artifact_id = 'hibernate-core'
-            when 'search'
-              group_id = 'org.hibernate'
-              artifact_id = 'hibernate-search'
-            when 'validator'
-              group_id = 'org.hibernate'
-              artifact_id = 'hibernate-validator'
+            if ( entry =~ /releases/ )
+              project_name = getProjectName( entry )
+              group_id, artifact_id = getGAInfo( project_name )
+
+              project_hash = @projects_hash[project_name]
+              if project_hash.nil?
+                project_hash = Hash.new
+                @projects_hash[project_name] = project_hash
+              end
+
+              releases_hash = Hash.new
+              project_hash[:releases] = releases_hash
+
+              createReleaseHashes( entry, releases_hash, group_id, artifact_id)
+            else
+              findReleaseData( entry )
             end
-            subHash = createSubHashForKey(hash, key)
-            createReleaseData( entry, subHash, site, group_id, artifact_id )
-          else
-            createHashForRelease( hash, entry, site, group_id, artifact_id )
           end
         end
       end
 
-      # Creates a sub hash with the specified key in case it does not exist yet
-      def createSubHashForKey(hash, key)
-        if ( hash[key].nil? )
-          hash[key] = Hash.new
-        end
-        hash[key]
+      def getProjectName(dir)
+        parent_dir = File.dirname( dir )
+        project_name = File.basename( parent_dir )
       end
 
-      # Creates a hash with the date read from a release file
-      def createHashForRelease(hash, file, site, group_id, artifact_id)
-        # load the release data
-        if !(file =~ /.*\.yml$/)
-          abort("The release file #{file} does not have the markdown extension!")
+      def getGAInfo(project)
+        case project
+          when 'ogm'
+            group_id = 'org.hibernate.ogm'
+            artifact_id = 'hibernate-ogm-core'
+          when 'orm'
+            group_id = 'org.hibernate'
+            artifact_id = 'hibernate-core'
+          when 'search'
+            group_id = 'org.hibernate'
+            artifact_id = 'hibernate-search'
+          when 'validator'
+            group_id = 'org.hibernate'
+            artifact_id = 'hibernate-validator'
         end
-        releaseHash = site.engine.load_yaml( file )
-        if( group_id != nil && artifact_id != nil)
-          releaseHash['dependencies'] = ReleaseDependencies.new(site, group_id, artifact_id, releaseHash['version'])
-        end
-        # use a regexp to get the file name without extension into the pattern buffer.
-        # file name == version
-        File.basename( file ) =~ /^(.*)\.\w*$/
-        # use the file (release) name as key
-        key = $1.to_s
-        hash[ key ] = releaseHash
+        return group_id, artifact_id
       end
 
-      def createSortedReleaseHash(site)
-        site.projects.each do |projectname, project|
+      def createReleaseHashes( release_dir, project_hash, group_id, artifact_id )
+        Dir.foreach(release_dir) do |file|
+          # skip '.' and '..'
+          if ( File.directory?( file ) )
+            next
+          end
+
+          if !(file =~ /.*\.yml$/)
+            abort("The release file #{file} does not have the YAML (.yml) extension!")
+          end
+
+          # load the release data
+          releaseHash = @site.engine.load_yaml( File.expand_path( file, release_dir ) )
+          if( group_id != nil && artifact_id != nil)
+            releaseHash['dependencies'] = ReleaseDependencies.new(@site, group_id, artifact_id, releaseHash['version'])
+          end
+
+          # use a regexp to get the file name without extension into the pattern buffer.
+          # file name == version
+          File.basename( file ) =~ /^(.*)\.\w*$/
+          # use the file (release) name as key
+          key = $1.to_s
+          project_hash[ key ] = releaseHash
+          end
+      end
+
+      def createSortedReleaseHash
+        @site.projects.each do |projectname, project|
           releases = project[:releases]
           unless releases.nil?
             sortedReleases = Hash[releases.sort_by { |key, value| Version.new(key) }.reverse]
-            site.projects[projectname][:sorted_releases] = sortedReleases.values
+            @site.projects[projectname][:sorted_releases] = sortedReleases.values
           end
         end
       end
     end
 
-    # Custom version class able to understand and compate the project versions of Hibernate projects
+    # Custom version class able to understand and compare the project versions of Hibernate projects
     class Version
       include Comparable
 
