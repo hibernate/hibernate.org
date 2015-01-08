@@ -55,12 +55,22 @@ describe Awestruct::Extensions::ReleaseFileParser do
         end
     end
 
-    it "Missinf .md extension is aborting the extension" do
+    it "Missing .yml extension is aborting the extension" do
         # reset the config dir to load the test data. DataDir is relative to site.dir
         @config.dir = File.dirname(__FILE__) + '/release_file_parser_test_data_2'
         site = Awestruct::Site.new( @engine, @config )
 
         data_dir = Awestruct::Extensions::ReleaseFileParser.new
-        expect(lambda { data_dir.execute( site ) }).to raise_error(SystemExit, /The release file .* does not have the markdown extension!/)
+        expect(lambda { data_dir.execute( site ) }).to raise_error(SystemExit, /The release file .* does not have the YAML \(.yml\) extension!/)
+    end
+
+    it "release unrelated files should be ignored" do
+        # reset the config dir to load the test data. DataDir is relative to site.dir
+        @config.dir = File.dirname(__FILE__) + '/release_file_parser_test_data_3'
+        site = Awestruct::Site.new( @engine, @config )
+
+        data_dir = Awestruct::Extensions::ReleaseFileParser.new
+        data_dir.execute( site )
+        expect(site.projects[:foo].releases.length).to eql 1
     end
 end
