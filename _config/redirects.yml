@@ -104,11 +104,12 @@ subprojects/shards/download.html:          /others/
 
 ## Old documentation links on the initial website
 
-#Today I am redirecting them to the main doc page. can do better?
-hib_docs/annotations/reference/en/html/entity.html:                    /orm/documentation/
-hib_docs/annotations/reference/en/html_single/:                        /orm/documentation/
-hib_docs/v3/reference/en/html/mapping-entityname.html:                 /orm/documentation/
-hib_docs/reference/en/html/manipulatingdata.html:                      /orm/documentation/
+hib_docs/annotations/reference/en/html/entity.html:                    /orm/documentation/obsolete
+hib_docs/annotations/reference/en/html_single/:                        /orm/documentation/obsolete
+hib_docs/v3/reference/en/html/mapping-entityname.html:                 /orm/documentation/obsolete
+hib_docs/reference/en/html/performance-cache.html :                    /orm/documentation/obsolete
+hib_docs/reference/en/html/manipulatingdata.html:                      /orm/documentation/obsolete
+hib_docs/api/net/sf/hibernate/Session.html:                            /orm/documentation/obsolete
 hib_docs/entitymanager/reference/en/html_single/:                      http://docs.jboss.org/hibernate/entitymanager/3.6/reference/en/html_single/
 hib_docs/entitymanager/reference/en/html/queryhql.html:                http://docs.jboss.org/hibernate/entitymanager/3.6/reference/en/html/queryhql.html
 hib_docs/search/reference/en/html_single/:                             http://docs.jboss.org/hibernate/search/3.4/reference/en-US/html_single/
