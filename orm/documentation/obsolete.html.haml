@@ -1,0 +1,28 @@
+---
+layout: project-frame
+title: Obsolete documentation link
+project: orm
+---
+
+-# Center body
+.row-fluid
+  .span8
+    .row-fluid
+      .span12.feature-block
+        :asciidoc
+          You tried to access:
+        :javascript
+          document.write(document.referrer + "<br><br>");
+        :asciidoc
+          Unfortunately, the documentation you are looking for is no longer available
+          under this URL. Maybe you used an old bookmark or followed a link from an
+          obsolete tutorial?
+
+          If you know the ORM version, you can try to find what you are looking for
+          on the http://docs.jboss.org/hibernate/orm/[reference documentation site].
+          Otherwise, we recommend you to refer to the latest
+          link:/orm/documentation/[documentation].
+
+  -# News right column
+  .span4
+    = partial( 'common/latest-news.html.haml', {"real_page" => page} )
