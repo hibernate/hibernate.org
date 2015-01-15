@@ -12,18 +12,11 @@ The code, the direction and the documentation are all in flux
 and being built by the community.
 Join and help us shape it!
 
-[[ogm-howtocontribute-help]]
+== How to contribute
 
-== How to get help
+Welcome!
 
-First of all, make sure to read this reference documentation.
-This is the most comprehensive formal source of information.
-Of course, it is not perfect:
-feel free to come and ask for help,
-comment or propose improvements in our
-https://forum.hibernate.org/viewforum.php?f=31[Hibernate OGM forum].
-
-You can also:
+There are many ways to contribute:
 
 * open bug reports in https://hibernate.atlassian.net/browse/OGM[JIRA]
 * propose improvements on the
@@ -32,21 +25,12 @@ You can also:
   (+#hibernate-dev+ on +freenode.net+;
   you need to be registered on freenode:
   the room does not accept "anonymous" users).
-
-[[ogm-howtocontribute-contribute]]
-
-== How to contribute
-
-Welcome!
-
-There are many ways to contribute:
-
-* report bugs in https://hibernate.atlassian.net/browse/OGM[JIRA]
-* give feedback in the forum, IRC or the development mailing list
+* give feedback in the https://forum.hibernate.org/viewforum.php?f=31[Hibernate OGM forum]
 * improve the documentation
 * fix bugs or contribute new features
 * propose and code a datastore dialect for your favorite NoSQL engine
 
+You can find more details on how to contact us in the link:/community[Hibernate community page]
 
 Hibernate OGM's code is available on GitHub at
 https://github.com/hibernate/hibernate-ogm.
