@@ -82,11 +82,16 @@ according to the descriptions available
 http://community.jboss.org/wiki/MavenGettingStarted-Users[on this jboss.org wiki page].
 ====
 
-To build the documentation, set the +buildDocs+ property to true:
+You can speed up the build adding the following parameters:
+
+* skipDocs: it won't build the documentation
+* skipDistro: it wont' build the distribution package
+* skipTests: it won't run unit/integration tests
+* skipITs: it won't build the integration tests module
 
 [source]
 ----
-mvn clean install -DbuildDocs=true -s settings-example.xml
+mvn clean install -s settings-example.xml -DskipDocs -DskipTests -DskipDistro -DskipITs
 ----
 
 [TIP]
@@ -97,10 +102,7 @@ run it from the [filename]+hibernate-ogm-documentation/manual+ subdirectory.
 
 === How to contribute code effectively
 
-The best way to share code is to fork the Hibernate OGM repository on GitHub,
-create a branch and open a pull request when you are ready.
-Make sure to rebase your pull request
-on the latest version of the master branch before offering it.
+Refer to the Hibernate https://community.jboss.org/docs/DOC-17951[design philosophy] when working on new OGM features.
 
 Here are a couple of approaches the team follows:
 
@@ -128,5 +130,44 @@ added here.
   and reviewed by another member of the team
   before being pushed to the reference repository.
   That's right, we never commit directly upstream without code review.
+* Make sure to add the following license header to all newly created source files:
+[source]
+----
+/*
+ * Hibernate OGM, Domain model persistence for NoSQL datastores
+ *
+ * License: GNU Lesser General Public License (LGPL), version 2.1 or later
+ * See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+ */
+----
 
+* Respect the project code style, the following links will show you
+https://community.jboss.org/docs/DOC-16649[how to setup Eclipse]
+and https://community.jboss.org/docs/DOC-15468[how to setup IntelliJ IDEA].
 
+=== JavaDoc
+
+The following conventions should be followed when working on the Hibernate OGM code base:
+
+* Use `{@code}` instead of `<code>`, because it is more readable and `{@code}` also escapes meta characters
+* `@param`, `@return` and `@throw` don't end with a '.'; the first word starts with a lower-case letter
+* If referring to other classes and methods of the library, use `{@link}`
+* `{@link}` might be use for external classes, `{@code}` is accepted, too
+* Use `<ul/>` for enumerations (not '-')
+* Use the code style template mentioned above to format the code
+
+=== Providing a patch
+
+Patches including a test and fix for an issue are always welcome,
+preferably https://help.github.com/articles/using-pull-requests[as GitHub pull requests].
+
+The best way to share code is to fork http://github.com/hibernate/hibernate-ogm[the Hibernate OGM repository] on GitHub,
+create a branch and send a pull request when you are ready.
+
+Make sure to rebase your pull request
+on the latest version of the master branch before offering it.
+
+=== JBoss Contributor License Agreement (JBoss CLA)
+
+All contributors must sign the https://cla.jboss.org/[JBoss Contributor License Agreement]
+or we cannot accept the patch.
