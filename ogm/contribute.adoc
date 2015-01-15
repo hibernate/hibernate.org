@@ -82,10 +82,10 @@ according to the descriptions available
 http://community.jboss.org/wiki/MavenGettingStarted-Users[on this jboss.org wiki page].
 ====
 
-You can speed up the build adding the following parameters:
+You can speed up the build by adding the following parameters:
 
 * skipDocs: it won't build the documentation
-* skipDistro: it wont' build the distribution package
+* skipDistro: it won't build the distribution package
 * skipTests: it won't run unit/integration tests
 * skipITs: it won't build the integration tests module
 
@@ -102,7 +102,8 @@ run it from the [filename]+hibernate-ogm-documentation/manual+ subdirectory.
 
 === How to contribute code effectively
 
-Refer to the Hibernate https://community.jboss.org/docs/DOC-17951[design philosophy] when working on new OGM features.
+When working on a new feature, we try to adhere to the following 
+https://community.jboss.org/docs/DOC-17951[design philosophy].
 
 Here are a couple of approaches the team follows:
 
@@ -145,17 +146,6 @@ added here.
 https://community.jboss.org/docs/DOC-16649[how to setup Eclipse]
 and https://community.jboss.org/docs/DOC-15468[how to setup IntelliJ IDEA].
 
-=== JavaDoc
-
-The following conventions should be followed when working on the Hibernate OGM code base:
-
-* Use `{@code}` instead of `<code>`, because it is more readable and `{@code}` also escapes meta characters
-* `@param`, `@return` and `@throw` don't end with a '.'; the first word starts with a lower-case letter
-* If referring to other classes and methods of the library, use `{@link}`
-* `{@link}` might be use for external classes, `{@code}` is accepted, too
-* Use `<ul/>` for enumerations (not '-')
-* Use the code style template mentioned above to format the code
-
 === Providing a patch
 
 Patches including a test and fix for an issue are always welcome,
@@ -169,5 +159,6 @@ on the latest version of the master branch before offering it.
 
 === JBoss Contributor License Agreement (JBoss CLA)
 
-All contributors must sign the https://cla.jboss.org/[JBoss Contributor License Agreement]
-or we cannot accept the patch.
+Contributors need to sign the https://cla.jboss.org/[JBoss Contributor License Agreement].
+It ensures that the code you contribute is yours and not something you borrowed from somewhere else
+and that you agree to share it in an open source license.
