@@ -14,7 +14,7 @@ The aim of this guide is to assist you migrating an existing Hibernate Search 4 
 Hibernate Search 5.
 
 NOTE: This document provides pointers for a migration. It might not be complete though. It refers to
-Hibernate Search 5.0.0.Final. If you think something is missing or something does not work,
+Hibernate Search 5.0.0.Final. If you think something is missing or something does not work, please
 link:/community[contact us].
 
 === Requirements
@@ -55,7 +55,7 @@ fulltextQuery.setSort( new Sort( new SortField( "title", SortField.Type.STRING )
 Between Hibernate Search 4 and 5 several classes have changes names or package. This happened within
 the Search API as well as within the Lucene API. The following is a list of the most important changes.
 
-==== Within Search
+==== Within Hibernate Search
 
 * `SearchFactory` was moved from the module `hibernate-search-engine` to `hibernate-search-orm` as
 it should only be used by the ORM integration. Other integrators should depend exclusively on `SearchIntegrator` (former `SearchFactoryIntegrator`)
@@ -84,7 +84,7 @@ it should only be used by the ORM integration. Other integrators should depend e
 `org.hibernate.search.engine.Version`
 * The enum value `SpatialMode.GRID` was renamed to `SpatialMode.HASH`
 
-==== Within Lucene
+==== Within Apache Lucene
 
 * Lucene's `QueryParser` changed package from `org.apache.lucene.queryParser.QueryParser` to
 `org.apache.lucene.queryparser.classic.QueryParser`
@@ -97,7 +97,17 @@ were moved into Apache Lucene. For this reason we could remove the dependency to
 Good news is a simplified dependency graph! The bad news, if you depend on some of these utilities
 or custom analyzers, you'll need to find the new (package) name
 
-=== Misc
+=== Mapping
+
+==== Id fields of embedded relations no longer indexed by default
+
+When using an `@IndexedEmbedded` annotation to include fields from a related entity, we would include the 'id' of the related entity.
+These 'id' fields are no longer included by default, but you can enable the inclusion by using the `includeEmbeddedObjectId` attribute of  the `@IndexedEmbedded` annotation.
+
+[source,java]
+----
+@IndexedEmbedded(includeEmbeddedObjectId=true)
+----
 
 ==== Number and date index format
 
@@ -106,6 +116,8 @@ Numbers and dates now indexed as numeric fields by default.
 Properties of type `Date`, `Calendar` as well as `int`, `long`, `float`, `double` and their corresponding
 wrappers, are no longer indexed as strings. Instead, they are now indexed using Lucene's appropriate
 numeric encoding.
+
+The 'id' fields are an exception to this rule: even when these are represented by a numeric type, they will still be indexed as a string keyword by default.
 
 TIP: `Date` and `Calendar` instances are encoded as `long` value representing the number of
 milliseconds since _January 1, 1970, 00:00:00 GMT_.
@@ -129,6 +141,8 @@ change. If you have any query which targets a previously string encoded field, b
 is not encoded numerically, you will need to update the query. Numeric fields must be searched with
 a `link:https://lucene.apache.org/core/3_0_3/api/core/org/apache/lucene/search/NumericRangeQuery.html[NumericRangeQuery]` (if you are using the Search query DSL, the right query should be created for
 you). Also make sure that all fields targeted by faceting need for now be string encoded.
+
+=== Misc
 
 ==== FullTextIndexEventListener now final
 
