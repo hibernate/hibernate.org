@@ -165,6 +165,13 @@ mvn -Djdocbook.format=html_single install
 === Eclipse
 
 For Eclipse several plugins exist to integrate Maven projects. Probably the two most popular ones are http://m2eclipse.codehaus.org/[m2eclipse] and http://www.eclipse.org/iam/[Eclipse IAM].
+The import of the project is easiest, if you follow these steps:
+
+1. After installing m2eclipse, go to: +File > Import > Existing Maven projects+
+1. Select all the projects and +Advance > Name template > [artifactId]-[version]+
+1. Run the maven build from the root folder
+1. When the build is completed, refresh the workspace
+1. Set the environment JavaSE-1.6 to use JDK 1.8
 
 === IDEA
 
