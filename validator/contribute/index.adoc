@@ -166,6 +166,14 @@ mvn -Djdocbook.format=html_single install
 
 For Eclipse several plugins exist to integrate Maven projects. Probably the two most popular ones are http://m2eclipse.codehaus.org/[m2eclipse] and http://www.eclipse.org/iam/[Eclipse IAM].
 
+The import of the project in eclipse is easier if you follow this guidelines:
+
+1. In Eclipse, after you have installed m2eclipse, go to: +File > Import > Existing Maven projects+
+2. Select all the projects and +Advance > Name template > [artifactId]-[version]+
+3. Run the maven build from the root folder
+4. When the buils is completed, refresh the workspace
+2. Set the environment JavaSE-1.6 to use JDK 1.8
+
 === IDEA
 
 IntelliJ IDEA come with built-in support for multi module Maven projects. Just import your project as Maven project and let IDEA scan recursively for modules. An IDEA code style template to be used for the Hibernate Validator code base can be downloaded link:hibernate-validator.xml[here].
