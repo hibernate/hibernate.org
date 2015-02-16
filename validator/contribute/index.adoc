@@ -6,12 +6,13 @@ Hardy Ferentschik, Gunnar Morling
 :toc-placement: preamble
 :toc-title: Contents
 
-You want to implement a new validation feature or you found a bug and want to provide a fix? Awesome! 
+You want to implement a new validation feature or you found a bug and want to provide a fix? Awesome!
 The following gets you started.
 
 == Requirements
 
-* JDK 7 (The HV binaries target Java 6 but JDK 7 is required for development as some test dependencies are based on Java 7)
+* JDK 8 (The main HV binaries target Java 6 but JDK 8 (>=1.8.0_20) is required for development as
+some Java 8 features are optionally implemented as well)
 * http://maven.apache.org/[Maven] (>= 3.0.3)
 
 == Getting the source
@@ -57,9 +58,11 @@ The Hibernate Validator code base comes in form of a http://docs.codehaus.org/di
 * *distribution*: builds the released HV distribution package
 * *documentation*: builds the HV reference guide
 * *engine*: the core validation engine
+* *engine-jdk8-tests*: Some test which require a language target level of 1.8
 * *integration*: in-container integration tests
 * *performance*: a performance test suite based on JMeter
 * *tck-runner*: executes the Bean Validation TCK against HV
+* *test-utils*: Test utility methods and annotations used across several modules
 
 == Building from Source
 
@@ -76,7 +79,7 @@ This will download all dependencies and compile and test each module. _settings-
 
 === Build options
 
-There are several options/properties available to control the build. The following options might be useul to speed up the build time. Per default everything gets built!
+There are several options/properties available to control the build. The following options might be useful to speed up the build time. Per default everything gets built!
 
 ==== Skipping parts of the build
 
@@ -107,78 +110,61 @@ See also http://stackoverflow.com/questions/4725668/how-to-deploy-snapshot-with-
 
 ==== Staging Maven Release locally
 
-Sometimes it is convinient to go through the Maven release steps without actually deploying anything. This makes sure the replease and deploy plugins work as expected and it gives you the chance to inspect the artifacts. One way of doing this is:
+Sometimes it is convenient to go through the Maven release steps without actually deploying anything.
+This makes sure the release and deploy plugins work as expected. You can also re-build a release
+from an existing tag this way.
 
 [source]
 ----
-mvn release:prepare -DpushChanges=false
-mvn release:stage -DpushChanges=false -DlocalCheckout=true -DstagingRepository=/path/to/a/local/directory
-----
-
-After you inspected all the artifacts you need to revert your local repository changes back to their original state:
-
-[source]
-----
-git reset --hard HEAD~2
-git tag -d <your-release-tag>
-----
-
-==== Avoiding OutOfMemoryException
-
-In some cases you might get an `OutOfMemoryException` when executing the whole build. In this case you can increase the heap and max perm size for Maven via:
-
-[source]
-----
-export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=128M"
+mvn release:stage -DconnectionUrl=scm:git:git://github.com/hibernate/hibernate-validator.git -Dtag=<tag> -DstagingRepository=staging::default::file:///<fully-qualified-path-to-deploy-dir>
 ----
 
 === Writing and building the documentation
 
-The documentation is written using Docbook and can be found in the module _documentation_ of your checkout.
-
-When writing documentation you should follow the http://www.jboss.org/pressgang/jdg.html[JBoss Documentation Guide]. This guide gives valuable recommendations about styling as well as general writing tips.
-
-If you want to contribute to the documentation translation only you can get a Zanata account and just contribute your translation via Zanata. Have a look at https://community.jboss.org/docs/DOC-17208[Hibernate Search Documentation Translations]. Everything mentioned there applies to Validator as well.
-
-You can build the documentation by executing:
+The documentation is written in http://www.methods.co.nz/asciidoc/[Asciidoc] and can be found in
+the _documentation_ module of your checkout. http://asciidoctor.org/[Asciidoctor] is used to
+transform the Asciidoc sources to their target formats. The http://asciidoctor.org/docs/asciidoc-syntax-quick-reference[Asciidoc syntax quick reference] helps you to get started with the syntax. You can
+build the documentation by executing:
 
 [source]
 ----
 mvn package -pl documentation
 ----
 
-To build the documentation including translations, po2xml must be installed (more information can be found https://community.jboss.org/docs/DOC-15492[here]). You can skip the translation build by running:
-[source]
-----
-mvn package -pl documentation -Djdocbook.ignoreTranslations=true
-----
-
-During developement it is often enough to build a single documentation output format, for instance _html_single_. You can just build this format by using the property _jdocbook.format_, skipping formats not specified:
-
-[source]
-----
-mvn -Djdocbook.format=html_single install
-----
-
 == IDE Setup
+
+[TIP]
+====
+We recommend to trigger a command line build prior to importing into the IDE. This way the generated
+sources (in our case JAXB binding classes generated via the jaxb2-maven-plugin) are available
+and can be picked up by the IDE.
+====
 
 === Eclipse
 
 For Eclipse several plugins exist to integrate Maven projects. Probably the two most popular ones are http://m2eclipse.codehaus.org/[m2eclipse] and http://www.eclipse.org/iam/[Eclipse IAM].
 The import of the project is easiest, if you follow these steps:
 
-1. After installing m2eclipse, go to: +File > Import > Existing Maven projects+
-1. Select all the projects and +Advance > Name template > [artifactId]-[version]+
-1. Run the maven build from the root folder
-1. When the build is completed, refresh the workspace
-1. Set the environment JavaSE-1.6 to use JDK 1.8
+1. After installing m2eclipse, go to: File->Import->Existing Maven projects
+2. Select all the projects and Advance->Name template->[artifactId]-[version]
+3. Run the maven build from the root folder
+4. When the build is completed, refresh the workspace
+5. Set the environment JavaSE-1.6 to use JDK 1.8
 
 === IDEA
 
-IntelliJ IDEA come with built-in support for multi module Maven projects. Just import your project as Maven project and let IDEA scan recursively for modules. An IDEA code style template to be used for the Hibernate Validator code base can be downloaded link:hibernate-validator.xml[here].
+IntelliJ IDEA come with built-in support for multi module Maven projects. Just import your project
+as Maven project. We recommend the following options:
 
-To import the style, copy it to +~/Library/Preferences/IntellijIdea13/codestyles+ (Mac OS X)
-and select it in IntelliJ IDEA Preferences->Code style.
+image::hv-maven-import-options-idea.png["Maven import options",align="center"]
+
+In particular +Exclude build directory+ should be unchecked, so that the generated JAXB resources
+are automatically added to the IDE module configuration.
+
+An IDEA code style template to be used for the Hibernate Validator code base can be downloaded
+link:hibernate-validator.xml[here]. To import the style, copy it to
++~/Library/Preferences/IntelliJIdea14/codestyles/+ (Mac OS X) and select it via
+IntelliJ IDEA->Preferences->Editor->Code Style->Java.
 
 === Running TCK tests
 
@@ -197,7 +183,7 @@ Running the Bean Validation TCK tests in the IDE can be a little tedious. One wa
 
 * Select the _hibernate-validator-tck-runner_ module as the project (Eclipse) or module to obtain the classpath from (IDEA).
 
-All the steps are summarized in the screenshot below (using IDEA):
+All the steps are summarized in the screen-shot below (using IDEA):
 
 image::tck-jsr-349-setup.png["TCK runner set-up",align="center"]
 
@@ -218,13 +204,14 @@ If you run this test configuration all TCK tests are getting executed. You can j
 </suite>
 ----
 
-More information about how to confgure the TestNG suite file can be found http://testng.org/doc/documentation-main.html#testng-xml[here].
+More information about how to configure the TestNG suite file can be found http://testng.org/doc/documentation-main.html#testng-xml[here].
 
 == Coding Guidelines
 
 === General
 
-Refer to the Hibernate https://community.jboss.org/docs/DOC-17951[design philosophy] when working on new HV features. Hibernate Validator uses Java 6, so no Java 7 language features may be used.
+Refer to the Hibernate https://community.jboss.org/docs/DOC-17951[design philosophy] when working
+on new HV features. Hibernate Validator uses Java 6, so no Java 7 language features may be used.
 
 Make sure to add the following license header to all newly created source files:
 
