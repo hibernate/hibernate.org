@@ -11,8 +11,8 @@ The following gets you started.
 
 == Requirements
 
-* JDK 7 (The HV binaries target Java 6 but JDK 7 is required for development as some test dependencies are based on Java 7)
-* http://maven.apache.org/[Maven] (>= 3.0.3)
+* JDK 8 (The HV binaries target Java 6 but JDK 8 is required for development)
+* http://maven.apache.org/[Maven] (at least version 3.0.3)
 
 == Getting the source
 
@@ -164,12 +164,12 @@ mvn -Djdocbook.format=html_single install
 
 === Eclipse
 
-For Eclipse several plugins exist to integrate Maven projects. Probably the two most popular ones are http://m2eclipse.codehaus.org/[m2eclipse] and http://www.eclipse.org/iam/[Eclipse IAM].
-The import of the project is easiest, if you follow these steps:
+Eclipse is able to import a Maven project (like Hibernate Validator) without needing plugins.
+To import the project in Eclipse just follow these steps:
 
-1. After installing m2eclipse, go to: +File > Import > Existing Maven projects+
+1. Go to the menu: +File > Import > Existing Maven projects+
 1. Select all the projects and +Advance > Name template > [artifactId]-[version]+
-1. Run the maven build from the root folder
+1. Run the maven build from the root folder: project 'hibernate-validator-parent' +Run as > Maven install+
 1. When the build is completed, refresh the workspace
 1. Set the environment JavaSE-1.6 to use JDK 1.8
 
@@ -256,6 +256,6 @@ In oder to be able to integrate your patch you have to accept the https://cla.jb
 
 === Further resources
 
-* http://opensource.atlassian.com/projects/hibernate/browse/BVAL[Bean Validation Specification issue tracker]
-* http://opensource.atlassian.com/projects/hibernate/browse/BVTCK[Bean Validation TCK issue tracker]
-* http://forum.hibernate.org/viewforum.php?f=26[Forum for JSR 303/349 feeback]
+* https://hibernate.atlassian.net/browse/BVAL[Bean Validation Specification issue tracker]
+* https://hibernate.atlassian.net/browse/BVTCK[Bean Validation TCK issue tracker]
+* https://forum.hibernate.org/viewforum.php?f=26[Forum for JSR 303/349 feeback]
