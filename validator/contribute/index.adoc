@@ -71,10 +71,10 @@ Prior to setting the project up in any IDE it is recommended to trigger a comman
 
 [source]
 ----
-mvn clean install -s settings-example.xml
+mvn clean install
 ----
 
-This will download all dependencies and compile and test each module. _settings-example.xml_ is just an example Maven http://maven.apache.org/settings.html[settings] file containing the required JBoss repository settings. You can also add the required settings to your own settings file under _~/.m2/settings.xml_ file. Refer to https://community.jboss.org/docs/DOC-15169[this article] to see how to tell Maven to use the https://repository.jboss.org/nexus/content/groups/public/[JBoss  Maven repository].
+This will download all dependencies and compile and test each module.
 
 === Build options
 
