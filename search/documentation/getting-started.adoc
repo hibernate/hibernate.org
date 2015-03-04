@@ -6,7 +6,7 @@
 :page-interpolate: true
 :latest_stable: #{latest_stable_release(page).version}
 :version_matching_orm: #{latest_stable_release(page)['dependencies'].get_version('org.hibernate', 'hibernate-core')}
-:docs_base_url: http://docs.jboss.org/hibernate/search/5.0/reference/en-US/html_single/
+:docs_base_url: http://docs.jboss.org/hibernate/search/5.1/reference/en-US/html_single/
   
 Welcome to Hibernate Search.
 The following chapter will guide you through the initial steps required to integrate Hibernate Search 
@@ -18,7 +18,7 @@ In case you are a new to Hibernate we recommend you start from http://hibernate.
 
 Java Runtime::
 
-To use the latest Hibernate Search version 5.0 you'll need Java version 7 or greater.
+To use the latest Hibernate Search version 5.1 you'll need Java version 7 or greater.
 You can download a Java Runtime for Windows/Linux/Solaris http://www.oracle.com/technetwork/java/javase/downloads/index.html[here].
 If using Java version 7 make sure you avoid builds 0 and 1: those versions contained a bug which is critical for Lucene users (like Hibernate Search).
 
