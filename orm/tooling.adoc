@@ -4,6 +4,7 @@
 :page-interpolate: true
 :project: #{site.projects[page.project]}
 :latest_stable: #{latest_stable_release(page).version}
+:version_family: #{latest_stable_release(page).version_family}
 
 Hibernate offers a series of tools for developers to use in their tool chain. The most prominent
 being link:/tools/[Hibernate Tools] which is a set of link:http://www.eclipse.org/[Eclipse] plugins
