@@ -60,7 +60,6 @@ Clone the git repository from GitHub:
 
 [source]
 ----
-#get the sources
 git clone https://github.com/hibernate/hibernate-ogm
 cd hibernate-ogm
 ----
@@ -69,7 +68,6 @@ Run maven
 
 [source]
 ----
-#build project
 mvn clean install -s settings-example.xml
 ----
 
@@ -82,34 +80,129 @@ according to the descriptions available
 http://community.jboss.org/wiki/MavenGettingStarted-Users[on this jboss.org wiki page].
 ====
 
-To build the documentation, set the +buildDocs+ property to true:
+[NOTE]
+====
+Note that for running the test suite against separately installed MongoDB and CouchDB servers
+their host name must be specified via an environment variable.
+See the sections below for the details.
+====
+
+To speed things up, there are several options for skipping parts of the build.
+To run the minimum project build without integration tests, documentation and distribution execute:
 
 [source]
 ----
-mvn clean install -DbuildDocs=true -s settings-example.xml
+mvn clean install -DskipITs -DskipDocs -DskipDistro -s settings-example.xml
+----
+
+The following sections describe these options in more detail.
+
+==== Integration tests
+
+Integration tests per default download the WildFly application server,
+unpack the modules in it and run the tests using Arquillian.
+You can skip integration tests by specifying the `skipITs` property:
+
+[source]
+----
+mvn clean install -DskipITs -s settings-example.xml
+----
+
+===== MongoDB
+
+For executing the tests in the _mongodb_ and _integrationtest/mongodb_ modules, the
+https://github.com/joelittlejohn/embedmongo-maven-plugin[embedmongo-maven-plugin] is used.
+It downloads the MongoDB distribution, extracts it, starts a _mongod_ process and shuts it down
+after test execution.
+
+If required, you can configure the port to which the MongoDB instance binds to (by default 27018)
+and the target directory for the extracted binary (defaults to
+_${project.build.directory}/embeddedMongoDb/extracted_) like this:
+
+[source]
+----
+mvn clean install -s settings-example.xml -DembeddedMongoDbTempDir=<my-temp-dir> -DembeddedMongoDbPort=<my-port>
+----
+
+To work with a separately installed MongoDB instance instead, specify the `useExternalMongoDb` property:
+
+[source]
+----
+mvn clean install -s settings-example.xml -DuseExternalMongoDb
+----
+
+This assumes MongoDB to be installed on `localhost`, using the default port and no authentication.
+If you work with different settings, configure the required properties in hibernate.properties
+(for the tests in _mongodb_)
+and/or the environment variables `MONGODB_HOSTNAME` `MONGODB_PORT` `MONGODB_USERNAME`
+`MONGODB_PASSWORD` (for the tests in _integrationtest/mongodb_)
+prior to running the tests:
+
+[source]
+----
+export MONGODB_HOSTNAME=mongodb-machine
+export MONGODB_PORT=1234
+export MONGODB_USERNAME=someUsername
+export MONGODB_PASSWORD=someP@ssw0rd
+mvn clean install -s settings-example.xml
+----
+
+===== CouchDB
+
+For running the tests in the _couchdb_ module an installed CouchDB server is required.
+Specify its host name by setting the environment variable `COUCHDB_HOSTNAME` prior to running
+the test suite:
+
+[source]
+----
+export COUCHDB_HOSTNAME=couchdb-machine
+----
+
+If this variable is not set, the _couchdb_ module still will be compiled and packaged but the
+tests will be skipped.
+
+==== Documentation
+
+The documentation is built by default as part of the project build. You can skip it by specifying
+the `skipDocs` property:
+
+[source]
+----
+mvn clean install -DskipDocs -s settings-example.xml
+----
+
+If you just want to build the documentation, run it from the _documentation/manual_ subdirectory.
+
+For rapid documentation testing, you can limit the generated format to html to speed up the process
+
+[source]
+----
+mvn clean install -f documentation/manual/pom.xml -s settings-example.xml -Djdocbook.format=html_single
+----
+
+==== Distribution
+
+The distribution bundle is built by default as part of the project build. You can skip it by
+specifying the `skipDistro` property:
+
+[source]
+----
+mvn clean install -DskipDistro -s settings-example.xml
 ----
 
 [TIP]
 ====
-If you just want to build the documentation only,
-run it from the [filename]+hibernate-ogm-documentation/manual+ subdirectory.
+Make sure to check the https://github.com/hibernate/hibernate-ogm/blob/master/readme.md[readme.md]
+in the source root directory for further build options.
 ====
 
-You need to install CouchDB separately and configure the `COUCHDB_HOSTNAME` environment variable if you want to test that backend.
-By default only the code of this module is compiled.
-
-When running the build via maven, MongoDB is started and stopped automatically.
-For running a test against MongoDB from within you IDE, MongoDB needs to be installed and started separately.
-
-More build instructions are available in the project `readme.md` file.
-
-=== Any detail on how the project is structured?
+=== How are the tests structured?
 
 There are two types of tests in core
 
 1. Unit tests for stuff in core itself
-2. And the "backendtck" which are high-level (i.e. Session/EM-level) tests and which are executed for all backends.
-   This is our backend TCK.
+2. And the "backendtck" which are high-level (i.e. Session/EM-level) tests and which are executed
+for all backends. This is our backend TCK.
 
 To run a specific test against a specific store in Eclipse, simplest is to copy it into that project and run it from there.
 In IntelliJ IDEA, run the test - it will run with the HashMap backend - and go to edit configuration (Test) to change "Use classpath of module" to the backend you want to test.
@@ -152,5 +245,3 @@ added here.
   and reviewed by another member of the team
   before being pushed to the reference repository.
   That's right, we never commit directly upstream without code review.
-
-
