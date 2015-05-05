@@ -18,6 +18,15 @@ The fundamental Lucene index files are created at framework startup, but existin
 Delete the directory: the framework will create it and build the basic index structure at startup.
 Since 3.1 it detects indexes in existing directories automatically.
 
+=== In a cluster, my nodes don't seem to see each other index changes
+
+The problems can be rather different but most likely a configuration issue.
+Make sure to review carefully the configuration chapter of the reference documentation,
+especially the chapter about http://docs.jboss.org/hibernate/search/5.2/reference/en-US/html_single/#search-architecture[Architecture].
+
+When running an application on multiple servers, you will need to setup both an appropriate backend
+(to delegate changes to the master node) and a DirectoryProvider (to store the index).
+
 == Queries
 
 === Can I mix HQL and Lucene queries?
