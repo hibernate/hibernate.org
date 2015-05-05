@@ -18,6 +18,20 @@ The fundamental Lucene index files are created at framework startup, but existin
 Delete the directory: the framework will create it and build the basic index structure at startup.
 Since 3.1 it detects indexes in existing directories automatically.
 
+=== In a cluster, my nodes don't seem to see each other index changes
+
+The problems can be rather different but mostly likely configuration based.
+Make sure to review carefully the configuration chapter of the reference documentation.
+
+A common problem is to forgot to disable the exclusive index option.
+
+[source]
+----
+hibernate.search.[default|<indexname>].exclusive_index_use false
+----
+
+This option defaults to true as it vastly improves performance for non clustered environments.
+
 == Queries
 
 === Can I mix HQL and Lucene queries?
