@@ -130,6 +130,20 @@ There are three main methods:
 
 The reference documentation details the various options.
 
+=== When using MongoDB native queries, I get a `com.mongodb.util.JSONParseException`
+
+It's probable that you are not using JSON's strict mode.
+In particular, use quotes around your attributes.
+
+[source]
+----
+// not good
+String query = "db.Book.find({ author: 'smith' })";
+
+// good
+String query = "db.Book.find({ 'author': 'smith' })";
+----
+
 === When using Hibernate OGM on top of WildFly, I'm getting a +JndiException+. What's wrong?
 
 In case you're are seeing a +JndiException+ saying "Unable to lookup JNDI name [---PlaceHolderDSForOGM---]",
