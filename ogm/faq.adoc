@@ -106,6 +106,21 @@ we recommend you use transaction demarcations with Hibernate OGM
 to trigger the flush operation transparently (on commit).
 But do not consider rollback as a possibility, this won't work.
 
+=== How does Hibernate OGM deal with failures upon transaction commit?
+
+If the backend is transactional (Infinispan, Neo4j), the transaction can be rolled back upon failures.
+The data store will be in the same state as before, just as you know it from relation databases.
+
+For non-transactional backends (e.g. MongoDB, CouchDB) some changes may already
+have been applied to the datastore if a failure occurs in the middle of a flush cycle.
+For such cases, Hibernate OGM provides an error handling and compensation API.
+This allows you to decide what to do upon failures during a flush (abort, continue) and gives you
+all the operations applied so far if a "rollback" is triggered.
+
+Check out the http://docs.jboss.org/hibernate/ogm/4.2/reference/en-US/html_single/#ogm-api-error-handler[reference guide]
+for the details. Note that this API is currently under development;
+If you have any ideas or requirements around it, please let us know and get in touch!
+
 === In Neo4J, I get a `org.neo4j.graphdb.NotInTransactionException`
 
 Neo4J does require to run all operations within a transaction, even reed-only operations.
