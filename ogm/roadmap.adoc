@@ -16,30 +16,10 @@ Dates are generally omitted, we release when we are ready.
 
 Describe plans for future releases.
 
-=== Hibernate OGM 4.1.x
-
-Listen to feedback::
-We want your feedback on what works, what does not and what feature should be added or improved.
-Talk to us in Hibernate OGM's https://forums.hibernate.org/viewforum.php?f=31[forum]
-or where ever you see us.
-We will try and implement what you need.
-
-Queries::
-Work on a deeper query support both for JP-QL and native query binding:
-
-* Make sure flush is executed before a query.
-* Support for projection of entities
-* Polymorphic query support (MongoDB)
-* restriction on embedded objects (MongoDB)
-
 === Hibernate OGM 4.2
 
 More mapping options upon demand::
 Depending on user feedback, add new mapping options.
-
-Error report and compensation API::
-Offer the ability to collect errors on partially executed "transactions".
-Offer ability to react to these errors.
 
 Clean query parser design::
 * Fix how the field bridge is selected for a given property.
@@ -49,14 +29,10 @@ Clean query parser design::
   to find the type of a property for HQL literal conversion
 ** extract this logic and reuse it for all backends
 
-Various query improvements::
-* Support for collection of embeddables
-
 Custom types::
 Offer custom types like Hibernate ORM's user type.
 
-Exploration of Cassandra::
-Implement the Cassandra datastore and its CQL query backend.
+Continuing work on Cassandra backend::
 
 Polish of CouchDB::
 This dialect needs some love before being promoted.
@@ -115,6 +91,26 @@ Explore reuse of Teiid query engine for smarter queries
 An aggregated changelog of what has happened.
 We are too lazy to go back down to the history of time
 so we will start at 4.0 Beta 3.
+
+=== Hibernate OGM 4.2 CR1
+
+Exploration of Cassandra::
+Implement the Cassandra datastore and its CQL query backend.
+
+Support for MongoDB 3 (SCRAM-SHA-1) and MongoDB replica sets::
+Extended syntax for "host" setting for specifying several hosts
+
+New built-in types for boolean mapping::
+Map booleans as "Y"/"N", "T"/"F", 1/0
+
+=== Hibernate OGM 4.2 Beta1
+
+Error report and compensation API::
+Offer the ability to collect errors on partially executed "transactions".
+Offer ability to react to these errors.
+
+Various query improvements::
+* Support for collection of embeddables
 
 === Hibernate OGM 4.1
 
