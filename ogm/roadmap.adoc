@@ -6,7 +6,7 @@ Davide D'Alto
 :toc-placement: preamble
 :toc-title: Releases
 
-Hibernate OGM is young and community driven.
+Hibernate OGM is community driven.
 As such the roadmap constantly evolves to reflect the users needs.
 You can find a finer grained roadmap in our https://hibernate.atlassian.net/browse/OGM[issue tracker]
 but this page is a good and concise view of where we are going.
@@ -15,30 +15,6 @@ Dates are generally omitted, we release when we are ready.
 == Future releases
 
 Describe plans for future releases.
-
-=== Hibernate OGM 4.2
-
-More mapping options upon demand::
-Depending on user feedback, add new mapping options.
-
-Clean query parser design::
-* Fix how the field bridge is selected for a given property.
-** Automatic approach
-** Manual overriding option (convention based, annotation or SPI?)
-* Use Hibernate ORM metadata (EntityPersister)
-  to find the type of a property for HQL literal conversion
-** extract this logic and reuse it for all backends
-
-Custom types::
-Offer custom types like Hibernate ORM's user type.
-
-Continuing work on Cassandra backend::
-
-Polish of CouchDB::
-This dialect needs some love before being promoted.
-
-Offer per session and per statement option customization::
-eg for a given call, influence the quorum factor
 
 === Hibernate OGM 5.0
 
@@ -49,22 +25,9 @@ Mapping strategies::
 Rethink the default values for the mapping approaches after more user feedback.
 A backward compatible mode will be kept however.
 
-Polyglot persistence::
-Offer ability to store entities into different backends.
-Entities could be in either backends.
+More mapping options upon demand::
+Depending on user feedback, add new mapping options.
 
-
-General NoSQL and query depth and breath improvements::
-Continue mapping of query engine on other NoSQL
-Continue coverage of breath of supported queries
-
-Map/Reduce on queries::
-Map/Reduce based resolution of subgraphs of a query
-
-Infinispan over HotRod::
-Support non library mode for Infinispan
-
-=== Hibernate OGM Next
 
 Migration engine::
 Offer options to support transparent migrations when (non)schema has migrated.
@@ -73,18 +36,38 @@ For example, one would rename a property from a to b,
 the migration engine will know that, read the old value if present,
 and migrate to the new schema.
 
+Custom types::
+Offer custom types like Hibernate ORM's user type.
+
+Continuing work on Cassandra backend::
+
+=== Hibernate OGM 5.1
+
 Denormalization engine::
 Offer ability to store data in different structures denormalized.
 Let loading and queries use these denormalized versions for faster retrieval.
 The goal is to offer a declarative approach
 instead of the imperative approach sued usually in the NoSQL land.
 
+Polish of CouchDB::
+This dialect needs some love before being promoted.
+
+Offer per session and per statement option customization::
+e.g. for a given call, influence the quorum factor
+
+General NoSQL and query depth and breath improvements::
+Continue mapping of query engine on other NoSQL
+Continue coverage of breath of supported queries
+
+=== Hibernate OGM Next
+
+Polyglot persistence::
+Offer ability to store entities into different backends.
+Entities could be in either backends.
+
 Write-behind cross-backends::
 Offer ability to store into two backends.
 In particular, store data in a NoSQL backend and a relational database.
-
-Use Teiid query engine for joins and aggregation::
-Explore reuse of Teiid query engine for smarter queries
 
 == Past releases
 
