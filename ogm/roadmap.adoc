@@ -47,7 +47,7 @@ Denormalization engine::
 Offer ability to store data in different structures denormalized.
 Let loading and queries use these denormalized versions for faster retrieval.
 The goal is to offer a declarative approach
-instead of the imperative approach sued usually in the NoSQL land.
+instead of the imperative approach used usually in the NoSQL land.
 
 Polish of CouchDB::
 This dialect needs some love before being promoted.
