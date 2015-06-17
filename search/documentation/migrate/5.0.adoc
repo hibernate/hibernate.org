@@ -1,4 +1,4 @@
-= Migration Guide
+= Migration Guide from Hibernate Search 4.x to 5.0
 Hardy Ferentschik
 :awestruct-layout: project-frame
 :awestruct-project: search
@@ -6,16 +6,17 @@ Hardy Ferentschik
 :toc-placement: preamble
 :toc-title: Content
 
-Here we are helping you migrate your existing Search application to the latest and greatest.
+Here we are helping you migrate your existing Hibernate Search application to the latest and greatest.
 
-== Upgrade to Search 5
+== Upgrade to Hibernate Search 5.0.0.Final
 
 The aim of this guide is to assist you migrating an existing Hibernate Search 4 application to
 Hibernate Search 5.
 
-NOTE: This document provides pointers for a migration. It might not be complete though. It refers to
-Hibernate Search 5.0.0.Final. If you think something is missing or something does not work, please
-link:/community[contact us].
+NOTE: This document provides pointers for a migration.
+It refers to Hibernate Search 5.0.0.Final.
+If you think something is missing or something does not work, please link:/community[contact us].
+If you're looking to migrate different versions see link:/search/documentation/migrate[Hibernate Search migration guides].
 
 === Requirements
 
