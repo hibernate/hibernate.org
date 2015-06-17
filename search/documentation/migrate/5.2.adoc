@@ -1,0 +1,28 @@
+= Migration Guide from Hibernate Search {from_version_short} to {to_version_short}
+Sanne Grinovero
+:awestruct-layout: project-frame
+:awestruct-project: search
+:toc:
+:toc-placement: preamble
+:toc-title: Content
+:to_version_short: 5.2
+:from_version_short: 5.1
+:reference_version_full: 5.2.0.Final
+
+Here we are helping you migrate your existing Search application to the latest and greatest.
+
+== Upgrade to Search {to_version_short}.x from {from_version_short}.x
+
+The aim of this guide is to assist you migrating an existing application using any version `{from_version_short}.x` of Hibernate Search to the latest of the `{to_version_short}.x` series.
+If you're looking to migrate different versions see link:/search/documentation/migrate[Hibernate Search migration guides].
+
+NOTE: This document provides pointers for a migration.
+It refers to Hibernate Search version `{reference_version_full}`. If you think something is missing or something does not work, please link:/community[contact us].
+
+=== Requirements
+
+If you use the Infinispan integration, you now require Infinispan version `7.2.x`.
+
+=== API changes
+
+No relevant API changes.
