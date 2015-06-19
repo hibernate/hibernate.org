@@ -126,6 +126,14 @@ If you have any ideas or requirements around it, please let us know and get in t
 Neo4J does require to run all operations within a transaction, even reed-only operations.
 Make sure you demarcate your transactions either explicitly or via a container like Java EE or Spring.
 
+=== Using MongoDB, I get a `java.lang.NoSuchFieldError: ERRORS_IGNORED` exception
+
+You are using MongoDB driver 3.x with Hibernate OGM 4.2.
+Hibernate OGM uses the MongoDB driver 2.13 at this stage.
+You shouldn't see any feature loss and you can use this combination to access MongoDB 3 databases - I know that's confusing.
+
+We plan to upgrade to MongoDB 3 in the near future, we have identified bugs that are being tackled by the Mongo team.
+
 === My changes are not applied to the backend, where is the bug?
 
 Most likely, you forgot to demarcate the transactions or manually call +flush()+.
