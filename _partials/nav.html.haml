@@ -22,7 +22,7 @@
       %ul.nav.pull-right
         %li<
           %a(href="http://in.relation.to") Blog
-        %li<
+        %li{:class=>"#{'active' if real_page.output_path.start_with?('/community') }" }<
           %a(href="#{relative("/community/", real_page)}") Community
         %li.dropdown
           %a.dropdown-toggle(href="#" data-toggle="dropdown")<
