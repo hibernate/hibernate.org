@@ -45,6 +45,11 @@ discussing development are the #hibernate-dev IRC channel and the hibernate-dev 
 Trying out releases and reporting/fixing problems is in many ways the cornerstone of open source development.  It is 
 especially critical in the case of early releases (Alphas and Betas) as we are trying to solidify APIs and contracts.
 
+When creating a bug report, please have a test case available that can be 1.) used to reproduce the issue and 2.)
+used as a long-term regression test.
+Please see https://github.com/hibernate/hibernate-test-case-templates[Hibernate Test Case Templates] for an easy
+way to start!
+
 Even if you cannot help code the fix for a bug, submitting test cases for reported 
 https://hibernate.atlassian.net/issues/?jql=project%20%3D%20HHH%20AND%20status%20%3D%20%22Awaiting%20Test%20Case%22[bugs that did not provide tests] 
 is a great help get these bugs resolved.
