@@ -353,3 +353,34 @@ footer.container {
   margin-top: 1em;
   margin-bottom: 1em;
 }
+
+
+// Asciidoctor blockquote
+$blockquote-text-color: rgb(101, 101, 101);
+.quoteblock {
+    .paragraph {
+        p {
+            margin-bottom: 20px;
+        }
+    }
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: $blockquote-text-color;
+    blockquote {
+        position: relative;
+        margin-left: 20px;
+        margin: 1.5em 10px;
+        padding: 0.5em 10px;
+    }
+    blockquote:before {
+        color: #ccc;
+        font-size: 6em;
+        margin-top: 30px;
+        display: block;
+        content: "\201C";
+    }
+    .attribution {
+        text-align: right;
+        color: $blockquote-text-color;
+    }
+}
