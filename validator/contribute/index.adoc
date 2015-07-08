@@ -145,10 +145,10 @@ Eclipse is able to import a Maven project (like Hibernate Validator) without nee
 To import the project in Eclipse just follow these steps:
 
 1. Go to the menu: +File > Import > Existing Maven projects+
-1. Select all the projects and +Advance > Name template > [artifactId]-[version]+
-1. Run the maven build from the root folder: project 'hibernate-validator-parent' +Run as > Maven install+
-1. When the build is completed, refresh the workspace
-1. Set the environment JavaSE-1.6 to use JDK 1.8
+2. Select all the projects and +Advance > Name template > [artifactId]-[version]+
+3. Run the maven build from the root folder: project 'hibernate-validator-parent' +Run as > Maven install+
+4. When the build is completed, refresh the workspace
+5. the environment JavaSE-1.6 to use JDK 1.8
 
 === IDEA
 
