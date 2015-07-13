@@ -47,24 +47,29 @@ Experimental new backends.
 
 Pre-analysis of text in the transaction context::
 We will explore the option to compute the text analysis on the slave nodes, to improve remoting/clustering & scalability.
+Removing this step from the master nodes will eventually allow to have "indexing only" nodes which don't need to have entities deployed.
 Experimental additional backends::
 Some additional backends are being explored, such as storing changes in a relational database rather than in a queue, or delegate
 to Lucene servers such as ElasticSearch or Apache Solr. These might need to be pushed to 6.0 if they require public API changes.
 Community help would be very welcome, as we have good experience with Lucene but not with the REST based products.
 Out of the box FieldBridge for more types::
-To provide out of the box indexing support for new common types, such as the Java8 date/time value types, Joda Time,
-the new Spatial types included in Hibernate ORM 5.
+To provide out of the box indexing support for new common types, such as the Java8 date/time value types and
+the new Spatial types included in Hibernate ORM 5. Maybe also Joda Time if there is enough interest.
 Improved reliability in clusters::
 We expect to provide some documentation and examples on how to achieve highly reliable failover configurations of the
 master/slave architecture used by Hibernate Search.
 
 == Hibernate Search 6.0
 
-API refresh.
+API refresh to better match all new features from Lucene 5, free-form indexing and the new backends.
 
 Apache Lucene 5 related improvements::
 To provide the full power of some of the new features in Apache Lucene 5, some API changes are needed.
 These API changes - when disruptive - will have to wait a major version such as 6.0.
 Better integration for new backends::
 The new integrations and backends will likely need significant API changes.
+Free-form indexing::
+We're planning to decouple the metadata definition from annotated java classes, to allow better
+indexing of other more flexible sources.
+
 
