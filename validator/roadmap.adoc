@@ -11,49 +11,25 @@ users needs.
 You can find a fine grained roadmap in our https://hibernate.atlassian.net/browse/HV[issue tracker],
 but this page is a good starting point to see where we are going.
 
-== Hibernate Validator 5.2
-
-Java 8 support (https://hibernate.atlassian.net/browse/HV-825[HV-825])::
-Make use of type annotations +
-Allow constraints to be specified several times +
-Make use of new reflection API to share code between annotation processor and engine
+== Hibernate Validator 5.3
 
 OSGi::
 Expose Validator as OSGi service (https://hibernate.atlassian.net/browse/HV-570[HV-570])
 
-Automatic constraint validator discovery::
-Offer the possibiltiy to automatically discover and add custom constraint validators
-(https://hibernate.atlassian.net/browse/HV-828[HV-828])
-
-Documentation::
-Switch to asciidoc (https://hibernate.atlassian.net/browse/HV-826[HV-826]) +
-Automatically update hibernate.org on release (https://hibernate.atlassian.net/browse/HV-827[HV-827])
-
-Build::
-Switch to Gradle as build tool (https://hibernate.atlassian.net/browse/HV-641[HV-641])
+Annotation processor improvements::
+Taking into account XML configuration (https://hibernate.atlassian.net/browse/HV-308[HV-308]) +
+Verify group sequences (https://hibernate.atlassian.net/browse/HV-455[HV-455]) +
+Verify the validity of constraint declarations (e.g. min < max for @Size) (https://hibernate.atlassian.net/browse/HV-270[HV-270])
 
 Misc::
 Integration with JavaFX (https://hibernate.atlassian.net/browse/HV-653[HV-653]) +
 Introduce mechanism to order constraints (https://hibernate.atlassian.net/browse/HV-462[HV-462]) +
 Better integration with ORM, especially DDL constraint generation (https://hibernate.atlassian.net/browse/HV-830[HV-830]) +
 New range of Hibernate Validator specific constraints and potential dedicated
-constraint module (https://hibernate.atlassian.net/browse/HV-553[HV-553])
+constraint module (https://hibernate.atlassian.net/browse/HV-553[HV-553]) +
+Create standalone method interceptor using Byteman (https://hibernate.atlassian.net/browse/HV-432[HV-432])
 
 Internal::
-Further unification of bean and method validation (https://hibernate.atlassian.net/browse/HV-467[HV-467])
-
-== Hibernate Validator 5.3
-
-Distributed resource bundles::
-Abiltiy to provide resource bundle with (custom) constraint (https://hibernate.atlassian.net/browse/HV-829[HV-829])
-
-Make us of Jandex::
-Provide abiltiy to retrieve metadata from Jandex index (https://hibernate.atlassian.net/browse/HV-644[HV-644])
-
-Annotation processor improvments::
-Taking into account XML configuration (https://hibernate.atlassian.net/browse/HV-308[HV-308]) +
-Verify group sequences (https://hibernate.atlassian.net/browse/HV-455[HV-455]) +
-Verify the validity of constraint declarations (e.g. min < max for @Size) (https://hibernate.atlassian.net/browse/HV-270[HV-270]) +
-
-Own method validation interceptor::
-Create standalone interceptor using Byteman (https://hibernate.atlassian.net/browse/HV-432[HV-432])
+Provide ability to retrieve metadata from Jandex index (https://hibernate.atlassian.net/browse/HV-644[HV-644]) +
+Further unification of bean and method validation (https://hibernate.atlassian.net/browse/HV-467[HV-467]) +
+Switch to Gradle as build tool (https://hibernate.atlassian.net/browse/HV-641[HV-641])
