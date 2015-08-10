@@ -1,4 +1,4 @@
-= Survival guide to the website edition
+= Survival guide to website editing
 Emmanuel Bernard
 :awestruct-layout: title-nocol
 :toc:
@@ -36,20 +36,15 @@ CAUTION: In Ruby indentation matters, be careful.
 
 === Live reload (optional)
 
-You can make the edition / review faster by using the livereload plugin in your browser.
+You can make the editing/reviewing work-flow faster by using the
+livereload plugin in your browser.
 
 . Install the appropriate http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-[live reload plugin].
-. Install the right guard gems
-+
-[source]
-----
-gem install guard guard-livereload yajl-ruby
-----
 . Start `guard` (in separate terminal from the root of the repository checkout)
 +
 [source]
 ----
-guard
+bundle exec guard
 ----
 
 Every time you save a file, the web page will be automatically reloaded assuming you have activated the browser plugin.
@@ -188,21 +183,46 @@ Partials (in the `_partials` directory) are page fragments that can be reused fr
 
 CAUTION: Partials do not get automatically refreshed when change. You need to stop, clean and restart Awestruct `rake clean preview`.
 
-== Publishing the site
+[[staging]]
+== Preview changes on staging.hibernate.org
 
-The site is automatically published when commits are pushed to
-https://github.com/hibernate/hibernate.org[hibernate/hibernate.org].
+Use git to push your changes to the
+link:https://github.com/hibernate/hibernate.org/tree/staging[staging branch]
+on link:https://github.com/hibernate/hibernate.org[GitHub].
 
-If you push changes to the +staging+ branch,
-the updated website will be visible after roughly a minute to
-staging.hibernate.org.
-This is good to share experiments with others.
+The staging site can be used for various experiments with the site L&F and content.
+For this reason, ou might need to use `git push --force` to overwrite previous experiments.
 
 // staging.hibernate.org is not rendered as URL to limit the crawling
 // TODO create a noindex in robots.txt for non production profiles
 
-If you push changes to the +production+ branch,
-the updated website will be visible after roughly 5 minutes to http://hibernate.org[hibernate.org].
+Pushing changes to the
+link:https://github.com/hibernate/hibernate.org/tree/staging[staging branch]
+will trigger the link:http://ci.hibernate.org/view/Website/job/staging.hibernate.org/[staging.hibernate.org]
+job on the Hibernate link:http://ci.hibernate.org[CI Server]. The content of
+staging.hibernate.org will be automatically updated as part of a successful
+build.
 
-You can see the build progress over
-or force a rebuild on http://ci.hibernate.org/[our continuous integration server].
+[[publishing]]
+== Publish changes to hibernate.org
+
+Use git to push your changes to the
+link:https://github.com/hibernate/hibernate.org/tree/production[production branch] of the
+repository on link:https://github.com/hibernate/hibernate.org[GitHub].
+
+[NOTE]
+====
+When adding a new release to the site, one needs to make sure that the release artifacts
+are already published. Part of the site generation is to parse the release metadata from
+the release POM. If the artifact is not yet published an error will occur!
+====
+
+Your changes need to be a fast forward of the link:https://github.com/hibernate/hibernate.org/tree/production[production branch]. Never use the `--force` option in this case!
+If you have a push error, rebase first and possibly repeat the <<staging,staging>> phase.
+
+Pushing changes to the
+link:https://github.com/hibernate/hibernate.org/tree/production[production branch]
+will trigger the link:http://ci.hibernate.org/view/Website/job/www.hibernate.org/[www.hibernate.org]
+job on the Hibernate link:http://ci.hibernate.org[CI Server]. The content of
+link:http://hibernate.org[hibernate.org] will be automatically updated as a result
+of a successful build.
