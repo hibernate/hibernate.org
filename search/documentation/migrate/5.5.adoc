@@ -1,0 +1,47 @@
+= Migration Guide from Hibernate Search {from_version_short} to {to_version_short}
+Sanne Grinovero
+:awestruct-layout: project-frame
+:awestruct-project: search
+:toc:
+:toc-placement: preamble
+:toc-title: Content
+:to_version_short: 5.5
+:from_version_short: 5.5
+:reference_version_full: 5.5.0.Alpha1
+
+Here we are helping you migrate your existing Search application to the latest and greatest.
+
+== Upgrade to Search {to_version_short}.x from {from_version_short}.x
+
+The aim of this guide is to assist you migrating an existing application using any version `{from_version_short}.x` of Hibernate Search to the latest of the `{to_version_short}.x` series.
+If you're looking to migrate different versions see link:/search/documentation/migrate[Hibernate Search migration guides].
+
+NOTE: This document provides pointers for a migration.
+It refers to Hibernate Search version `{reference_version_full}`. If you think something is missing or something does not work, please link:/community[contact us].
+
+=== Requirements
+
+This version of Hibernate Search now requires using `Apache Lucene version 5.2.1`.
+
+=== API changes
+
+There were no relevant API changes within Hibernate Search itself; but Apache Lucene had a *major* upgrade, so if your code was importing Lucene code directly, be it to provide powerful custom exctensions, or simply to create instances of `org.apache.lucene.search.Query` you will likely need
+to follow the link:http://lucene.apache.org/core/5_2_1/MIGRATE.html[Apache Lucene 5.2.1 migration guide].
+
+=== Sorting options
+
+If your code was not precisely matching the Lucene field encoding for sorting options, chances are that with Lucene 4 it appeared to work correctly.
+Such a mistake will now be detected and result in runtime exceptions! To match the expected field encoding,
+remember that a field which is indexed as a `String` will need to have a single term (even after analysis),
+and a numeric field encoded as an Integer will have to match a `SortField.Type.INT` when creating an instance of `org.apache.lucene.search.SortField`,
+and similarly for other Numeric types: a Long needs to be sorted with `SortField.Type.Long`, etc...
+
+Failing to match the correct type will result in exceptions described in depth at link:https://hibernate.atlassian.net/browse/HSEARCH-1951[HSEARCH-1951]:
+we hope to be able to improve at least the clarity of such error messages soon.
+
+=== Faceting on Numeric Fields
+
+Similarly to Sort options, you need now be careful to run the appropriate kind of Faceting Query on each target field.
+For example a Numeric Facet Query will have to target a field which was indexed exclusively via the matching Numeric type.
+
+This guide was written referring to version `5.5.0.Alpha1`: we hope to improve on the puzzling error messages before the `Final` release.
