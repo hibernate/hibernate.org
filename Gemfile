@@ -23,3 +23,6 @@ gem 'rspec'
 gem 'guard'
 gem 'guard-livereload'
 gem 'yajl-ruby'
+
+# Debugger
+gem 'pry-byebug'

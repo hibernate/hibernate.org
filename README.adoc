@@ -100,6 +100,14 @@ This will list the available tasks with a short description
 You need to use `bundle exec <command>` to make sure you get all required Gems. Check the *Rakefile*
 to see how the different awestruct calls are wrapped.
 
+=== If you are getting error after an update
+
+----
+> rake clean[all]
+> rake setup
+> rake preview
+----
+
 === If your changes are not visible...
 
 Panic! Then completely regenerate the site via:
