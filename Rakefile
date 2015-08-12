@@ -8,18 +8,7 @@
 #
 #  rake setup
 #
-# The setup task installs the necessary libraries inside the project in the .bin
-# directory.
-#
-# IMPORTANT: To install gems, you'll need development tools on your machine,
-# which include a C compiler, the Ruby development libraries and some other
-# development libraries as well.
-#
-# There are also tasks for running Awestruct. The build will auto-detect
-# whether you are using Bundler and, if you are, wrap calls to awestruct in
-# `bundle exec`.
-#
-# To run in Awestruct in development mode, execute:
+# To run in Awestruct in editor mode, execute:
 #
 #  rake
 #
@@ -27,68 +16,76 @@
 #
 #  rake clean preview
 #
-# To deploy using the production profile, execute:
-#
-#  rake deploy
-#
 # To get a list of all tasks, execute:
 #
 #  rake -T
 #
 # Now you're Awestruct with rake!
-
-$awestruct_cmd = nil
+require 'bundler'
 task :default => :preview
 
-desc 'Setup the environment to run Awestruct unsing Bundler'
-task :setup => :init do |task, args|
-  system 'bundle install --binstubs=_bin --path=.bundle'
-  msg 'Run awestruct `rake`'
+#####################################################################################
+# Bundler and environment related tasks
+#####################################################################################
+# Perform initialization steps, such as setting up the PATH
+task :init do
+  cmd = "bundle check"
+  msg cmd
+  system cmd or raise "Bundle dependencies not satisfied. Run 'rake setup' first", :warn
+end
+
+desc 'Setup the environment to run Awestruct using Bundler'
+task :setup do |task, args|
+  bundle_command = 'bundle install'
+  msg "Executing '#{bundle_command}' in clean Bundler environment"
+  Bundler.with_clean_env do
+    system bundle_command
+  end
+
+  msg 'Bundle installed'
   # Don't execute any more tasks, need to reset env
   exit 0
 end
 
-desc 'Update the environment to run Awestruct'
+desc 'Update gems ignoring the previously installed gems specified in Gemfile.lock'
 task :update => :init do
   system 'bundle update'
   # Don't execute any more tasks, need to reset env
   exit 0
 end
 
-desc 'Build and preview the site locally in development mode'
-task :preview do
-  run_awestruct '-d'
+#####################################################################################
+# Awestruct related tasks
+#####################################################################################
+desc 'Build and preview the site locally in development mode. preview[<options>] can be used to pass awestruct options, eg \'preview[--no-generate]\''
+task :preview, [:profile, :options] => :init do |task, args|
+  profile = get_profile args
+  options = args[:options]
+  run_awestruct "-P #{profile} --server --auto #{options}"
 end
 
-desc 'Generate the site using the specified profile, default is \'development\''
-task :gen, :profile do |task, args|
-  if args[:profile].nil?
-    profile = "development"
-  else
-    profile = args[:profile]
-  end
-  run_awestruct "-P #{profile} -g --force"
+desc 'Generate the site using the specified profile, default is \'development\'. Additional options can also be specified, eg \'gen[development, \'-w\']'
+task :gen, [:profile, :options] => :init do |task, args|
+  profile = get_profile args
+  options = args[:options]
+  run_awestruct "-P #{profile} -g --force #{options}"
 end
 
-desc 'Push local commits to origin/master'
-task :push do
-  system 'git push origin master'
-end
-
-desc 'Clean out generated site and temporary files, using [all] will also delete local gem files'
-task :clean, :all do |task, args|
+desc 'Clean out generated site and temporary files, using [all-keep-deps] removes caches as well, using [all] will also delete local gem files'
+task :clean, :option do |task, args|
   require 'fileutils'
-  dirs = ['.awestruct', '.sass-cache', '_site']
-  if args[:all] == 'all'
-    dirs << '_tmp'
-    dirs << '.bundle'
-    dirs << '_bin'
+  dirs = ['.awestruct', '.sass-cache', '_site', '_tmp']
+  if args[:option] == 'all'
+    dirs << '.wget-cache'
   end
   dirs.each do |dir|
     FileUtils.remove_dir dir unless !File.directory? dir
   end
 end
 
+#####################################################################################
+# Test
+#####################################################################################
 desc 'Run Rspec tests'
 task :test do
   all_ok = system "bundle exec rspec _spec --format documentation"
@@ -97,34 +94,9 @@ task :test do
   end
 end
 
-# Perform initialization steps, such as setting up the PATH
-task :init do
-  # Detect using gems local to project
-  if File.exist? '_bin'
-    ENV['PATH'] = "_bin#{File::PATH_SEPARATOR}#{ENV['PATH']}"
-    ENV['GEM_HOME'] = '.bundle'
-  end
-end
-
-desc 'Check to ensure the environment is properly configured'
-task :check => :init do
-  begin
-    require 'bundler'
-    Bundler.setup
-    msg 'Ready to go.'
-  rescue LoadError
-    msg 'Bundler gem not installed. Run \'gem install bundler first\''
-  rescue StandardError => e
-    msg e.message, :warn
-    if which('awestruct').nil?
-      msg 'Run `rake setup` or `rake setup[local]` to install required gems from RubyGems.'
-    else
-      msg 'Run `rake update` to install additional required gems from RubyGems.'
-    end
-    exit e.status_code
-  end
-end
-
+#####################################################################################
+# Helper methods
+#####################################################################################
 # Execute Awestruct
 def run_awestruct(args)
   cmd = "bundle exec awestruct #{args}"
@@ -132,28 +104,12 @@ def run_awestruct(args)
   system cmd or raise "ERROR: Running Awestruct failed."
 end
 
-# A cross-platform means of finding an executable in the $PATH.
-# Respects $PATHEXT, which lists valid file extensions for executables on Windows
-#
-#  which 'awestruct'
-#  => /usr/bin/awestruct
-def which(cmd, opts = {})
-  unless $awestruct_cmd.nil? || opts[:clear_cache]
-    return $awestruct_cmd
+def get_profile(args)
+  if args[:profile].nil?
+    profile = "development"
+  else
+    profile = args[:profile]
   end
-
-  $awestruct_cmd = nil
-  exts = ENV['PATHEXT'] ? ENV['PATHEXT'].split(';') : ['']
-  ENV['PATH'].split(File::PATH_SEPARATOR).each do |path|
-    exts.each do |ext|
-      candidate = File.join path, "#{cmd}#{ext}"
-      if File.executable? candidate
-        $awestruct_cmd = candidate
-        return $awestruct_cmd
-      end
-    end
-  end
-  return $awestruct_cmd
 end
 
 # Print a message to STDOUT
