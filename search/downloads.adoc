@@ -10,12 +10,8 @@
 
 == Maven repository
 
-Hibernate Search is built using Maven and publishes as part of the release process the project artifacts to the
-{nexus}[JBoss Maven Repository] under {nexus-search}[{groupId}:{artifactId}]. 
-For more information on how to configure Maven to use JBoss's repository,
-http://community.jboss.org/wiki/MavenGettingStarted-Users[look here] or use `mvn install -s setting-example.xml`.
-
-Here is how to declare the dependency in your Maven POM file
+Maven artifacts of Hibernate Search are published to Maven Central and to the
+{nexus}[JBoss Maven Repository] under {nexus-search}[{groupId}:{artifactId}].
 
 [source,xml]
 [subs="verbatim,attributes"]
