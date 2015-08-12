@@ -9,11 +9,6 @@ A bit of Git, a bit of Ruby and you will get your local hibernate.org served.
 
 * Get http://git-scm.com[Git]
 * Get https://www.ruby-lang.org/en/[Ruby] > 1.9
-* If on Mac OS:
-** Get https://developer.apple.com/xcode/[XCode] (needed for compilation of native gems)
-* If on Linux:
-** Get _libxslt-dev_ - eg via `sudo apt-get install libxslt-dev` (may be called _libxslt1-dev_
-for some distros)
 
 == Installation
 
@@ -35,8 +30,9 @@ If you get "_command not found_":
 
 === Ensure Bundler is installed
 
-Make sure http://bundler.io/[Bundler] is available. It manages your Ruby gems locally to the project
-and prevents version conflicts between different Ruby projects. To quote from the website:
+Make sure http://bundler.io/[Bundler] (version >= 1.10) is available. It manages your Ruby gems
+locally to the project and prevents version conflicts between different Ruby projects.
+Quoting from the website:
 
 ____
 Bundler provides a consistent environment for Ruby projects by tracking and installing the exact
@@ -48,13 +44,14 @@ ____
 > bundle -v
 ----
 
-If you get "_command not found_":
+If you get "_command not found_" or a version < 1.10:
 
 [source]
 ----
 > gem install bundler
 ----
 
+[[get-the-source]]
 === Get the source
 
 [source]
@@ -68,7 +65,6 @@ If you get "_command not found_":
 [source]
 ----
 > rake setup
-> rake check
 ----
 
 === Serve the site
@@ -117,18 +113,68 @@ Panic! Then completely regenerate the site via:
 > rake clean preview
 ----
 
-=== If serving the site is slow...
+=== Fedora 22 setup
 
-On Linux, serving the file may be atrociously slow (something to do with WEBRick).
+Make sure the user is in the sudo group and install required dependencies for
+compilation of native extensions:
 
-Use the following alternative:
+[source]
+----
+> sudo dnf -y install gcc-c++ make ruby-devel libxml2-devel libxslt-devel
+----
 
-* Go in your `hibernate.org` directory.
-* Run  `rake gen`
-* In parallel, go to the `hibernate.org/_site` directory
-* Run `python -m SimpleHTTPServer 4242`
+[NOTE]
+====
+This is required regardless how you proceed from here (provided Ruby version ns RVM)
+====
 
-You should be back to millisecond serving :)
+==== Using Ruby version provided by the Fedora packages
+
+[source]
+----
+> sudo dnf -y install ruby
+> gem install rake bundler
+----
+
+Continue <<get-the-source,here>>
+
+==== Using RVM
+
+How to Integrating RVM with gnome-terminal: http://rvm.io/integration/gnome-terminal
+
+How to install RVM (http://rvm.io/rvm/install)
+
+Install the GPG key:
+
+[source]
+----
+gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+----
+
+Install a stable Ruby version:
+
+[source]
+----
+curl -sSL https://get.rvm.io | bash -s stable --ruby
+git clone in.relation.to
+cd in.relation.to
+echo "rvm ruby-2.2@global” > .rvmrc
+----
+
+Load the .rvmrc file:
+
+[source]
+----
+cd ../in.relation.to
+----
+
+Say yes to .rvmrc execution.
+
+Continue <<awestruct-setup, here>>
+
+=== Bugger that,...
+
+I cannot get the enviroment up and running. Use Docker! Read link:/docker/README[how]!
 
 == License
 
