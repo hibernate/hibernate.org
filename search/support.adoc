@@ -5,6 +5,15 @@
 [[supported-versions]]
 == Supported Products pass:[<i class="icon-user-md icon-fixed-width icon-2x"></i>]
 
-Hibernate Search is a fully supported component of the https://www.redhat.com/products/jbossenterprisemiddleware/web-framework-kit/[JBoss Web Framework Kit].
+Hibernate Search is a component included in several supported products by Red Hat.
 
-If you are interested in Hibernate Search support/consulting within this platform, please http://www.redhat.com/contact/sales.html[contact Red Hat]!
+Both the following products include http://www.redhat.com/en/services/support[Red Hat grade support] for Hibernate Search:
+
+* http://www.redhat.com/en/technologies/jboss-middleware/application-platform[Red Hat JBoss Enterprise Application Platform]
+* https://www.redhat.com/products/jbossenterprisemiddleware/web-framework-kit/[Red Hat JBoss Web Framework Kit]
+
+In addition the http://www.redhat.com/en/technologies/jboss-middleware/data-grid[Red Hat JBoss Data Grid] provides optional extensions such as high performance real time replication for Hibernate Search powered applications running on the Red Hat JBoss Enterprise Application Platform.
+
+The Red Hat JBoss Data Grid also embeds a custom edition of Hibernate Search and allows using most of the same API to run high performance full-text queries and data mining on the data grid.
+
+If you are interested in Hibernate Search support/consulting within these platforms, please http://www.redhat.com/contact/sales.html[contact Red Hat]!
