@@ -37,9 +37,19 @@ projects:
         - name: Downloads
           href: '/orm/downloads/'
           css_class: 'icon-fixed-width icon-cloud-download'
-        - name: Documentation
-          href: '/orm/documentation/'
+        ###########################################################################
+        # Temporary handling for the version-specific doc links
+        ###########################################################################
+        - name: Documentation (5.0)
+          href: '/orm/documentation/5.0'
           css_class: 'icon-fixed-width icon-book'
+        - name: Documentation (4.3)
+          href: '/orm/documentation/4.3'
+          css_class: 'icon-fixed-width icon-book'
+        - name: Documentation (4.2)
+          href: '/orm/documentation/4.2'
+          css_class: 'icon-fixed-width icon-book'
+        ###########################################################################
         - name: Tooling
           href: '/orm/tooling/'
           css_class: 'icon-fixed-width icon-wrench'

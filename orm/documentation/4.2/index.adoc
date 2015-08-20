@@ -1,0 +1,31 @@
+= Hibernate ORM documentation (4.2)
+:awestruct-layout: project-frame
+:awestruct-project: orm
+
+== Guides and such
+
+link:http://docs.jboss.org/hibernate/orm/4.2/quickstart/en-US/html_single/[Getting Started Guide]::
+A quickstart-style guide with tutorials.  See also the Obtaining Hibernate section discussing the Hibernate artifacts and how to obtain them.
+link:http://docs.jboss.org/hibernate/orm/4.2/manual/en-US/html_single/[Manual]::
+User Guide
+link:http://docs.jboss.org/hibernate/orm/4.2/devguide/en-US/html_single/[Developer Guide]::
+Developer Guide
+link:http://docs.jboss.org/hibernate/orm/4.2/javadocs/[Hibernate JavaDoc]::
+The Hibernate JavaDocs
+link:http://docs.jboss.org/hibernate/jpa/2.1/api/[JPA 2.1 JavaDoc]::
+The JPA (2.1) JavaDocs
+link:/orm/faq/[FAQ]::
+The FAQ
+link:https://community.jboss.org/en/hibernate[JBoss-hosted wiki]::
+Wiki (older content) hosted at JBoss.org
+link:https://github.com/hibernate/hibernate-orm/wiki/_pages[GitHub-hosted wiki]::
+Wiki hosted at GitHub
+
+== Presentations
+
+Brett did a few interesting presentations available on Slideshare:
+
+* http://www.slideshare.net/brmeyer/orm-jpa-hibernate-overview[Gentle introduction on ORMs and JPA]
+* http://www.slideshare.net/brmeyer/hibernate-orm-performance-31550150[Hibernate ORM: tips, tricks and performance techniques]
+* http://www.slideshare.net/brmeyer/hibernate-orm-features[Not Just ORM: Powerful Hibernate ORM Features and Capabilities]
+
