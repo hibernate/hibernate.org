@@ -23,7 +23,7 @@ RUN        mkdir $HOME/.gems
 RUN        gem install -N rake bundler
 
 # Clone hibernate.org in order to run the setup task
-RUN        git clone https://github.com/hibernate/in.relation.to.git
+RUN        git clone https://github.com/hibernate/in.relation.to.git $HOME/hibernate.org
 RUN        cd $HOME/hibernate.org && git checkout production && rake setup
 
 # We need to patch awestruct to make auto generation work. On mounted volumes file
