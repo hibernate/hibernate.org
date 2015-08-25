@@ -106,7 +106,7 @@ module Awestruct
 
           # load the release data
           releaseHash = @site.engine.load_yaml( File.expand_path( file, release_dir ) )
-          if( group_id != nil && artifact_id != nil)
+          if( group_id != nil && artifact_id != nil && releaseHash["displayed"] != false)
             releaseHash['dependencies'] = ReleaseDependencies.new(@site, group_id, artifact_id, releaseHash['version'])
           end
 
