@@ -18,16 +18,12 @@ Describe plans for future releases.
 
 === Hibernate OGM 5.0
 
-Migrate to Hibernate ORM 5::
-When Hibernate ORM 5 is out, look at migrating to the new codebase.
-
 Mapping strategies::
 Rethink the default values for the mapping approaches after more user feedback.
 A backward compatible mode will be kept however.
 
 More mapping options upon demand::
 Depending on user feedback, add new mapping options.
-
 
 Migration engine::
 Offer options to support transparent migrations when (non)schema has migrated.
@@ -75,6 +71,21 @@ In particular, store data in a NoSQL backend and a relational database.
 An aggregated changelog of what has happened.
 We are too lazy to go back down to the history of time
 so we will start at 4.0 Beta 3.
+
+=== Hibernate OGM 5.0.0.Alpha1
+
+Migrate to Hibernate ORM 5::
+Migrated to Hibernate ORM 5.0
+
+Redis support::
+New experimental backend for Redis K/V store
+
+MongoDB improvements::
+Update to MongoDB driver 3.0
+Map-typed properties are stored more naturally in MongoDB
+
+Multi-get::
+New dialect facet MultigetGridDialect for batch fetching lazy entities
 
 === Hibernate OGM 4.2 Final
 
