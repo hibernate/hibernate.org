@@ -205,11 +205,13 @@ module Awestruct
         # to avoid net access cache the downloaded POMs into the _tmp directory
         cached_pom = File.join(tmp_dir, pom_name)
         if File.exists?(cached_pom)
+          $LOG.info "Cache hit: #{uri.to_s}" if $LOG.info?
           f = File.open(cached_pom)
           doc = Nokogiri::XML(f)
           f.close
         else
           begin
+            $LOG.info "Downloading: #{uri.to_s}" if $LOG.info?
             doc = Nokogiri::XML(open(uri))
             # cache the pom
             File.open(cached_pom, 'w') { |f| f.print(doc.to_xml) }
