@@ -6,8 +6,8 @@ Sanne Grinovero
 :toc-placement: preamble
 :toc-title: Content
 :to_version_short: 5.5
-:from_version_short: 5.5
-:reference_version_full: 5.5.0.Alpha1
+:from_version_short: 5.4
+:reference_version_full: 5.5.0.Final
 
 Here we are helping you migrate your existing Search application to the latest and greatest.
 
@@ -21,12 +21,16 @@ It refers to Hibernate Search version `{reference_version_full}`. If you think s
 
 === Requirements
 
-This version of Hibernate Search now requires using `Apache Lucene version 5.2.1`.
+This version of Hibernate Search now requires using *Apache Lucene 5.3.1*.
 
 === API changes
 
-There were no relevant API changes within Hibernate Search itself; but Apache Lucene had a *major* upgrade, so if your code was importing Lucene code directly, be it to provide powerful custom exctensions, or simply to create instances of `org.apache.lucene.search.Query` you will likely need
-to follow the link:http://lucene.apache.org/core/5_2_1/MIGRATE.html[Apache Lucene 5.2.1 migration guide].
+Method `ContainedInMapping#numericField()` has been deprecated and is scheduled for removal. Invoke `field().numericField()` instead.
+
+There were no further relevant API changes within Hibernate Search itself; but Apache Lucene had a *major* upgrade from 4 to 5.
+So if your code was importing Lucene code directly, be it to provide powerful custom exctensions, or simply to create instances of `org.apache.lucene.search.Query` you will likely need
+to follow the Apache Lucene 5 link:http://lucene.apache.org/core/5_3_0/MIGRATE.html[migration guide].
+Also check out the Lucene 5 link:http://lucene.apache.org/core/5_3_0/changes/Changes.html[change log].
 
 === Sorting options
 
@@ -34,14 +38,24 @@ If your code was not precisely matching the Lucene field encoding for sorting op
 Such a mistake will now be detected and result in runtime exceptions! To match the expected field encoding,
 remember that a field which is indexed as a `String` will need to have a single term (even after analysis),
 and a numeric field encoded as an Integer will have to match a `SortField.Type.INT` when creating an instance of `org.apache.lucene.search.SortField`,
-and similarly for other Numeric types: a Long needs to be sorted with `SortField.Type.Long`, etc...
+and similarly for other Numeric types: a Long needs to be sorted with `SortField.Type.LONG`, etc...
 
 Failing to match the correct type will result in exceptions described in depth at link:https://hibernate.atlassian.net/browse/HSEARCH-1951[HSEARCH-1951]:
 we hope to be able to improve at least the clarity of such error messages soon.
+
+Lucene 5 allows for more performant sorting if the fields to sort on are known up-front. They then can be mapped via so-called doc value fields.
+For that purpose Hibernate Search 5.5 provides the new `@SortableField` annotation and its multi-valued companion `@SortableFields`.
+Although the query engine will fallback to the traditional approach of index un-inverting when detecting a sort field not mapped via `@SortableField`,
+it is highly recommended to do so for the sake of better runtime performance and less memory consumption.
+Check out http://in.relation.to/2015/09/14/sorting-in-hibernate-search-55/[this blog post] which covers that topic in detail.
 
 === Faceting on Numeric Fields
 
 Similarly to Sort options, you need now be careful to run the appropriate kind of Faceting Query on each target field.
 For example a Numeric Facet Query will have to target a field which was indexed exclusively via the matching Numeric type.
 
-This guide was written referring to version `5.5.0.Alpha1`: we hope to improve on the puzzling error messages before the `Final` release.
+=== Null value tokens for numeric fields
+
+When using `@Field(indexNullAs=)` to encode some null marker value in the index, the type of the marker is now required to be compatible with all other values which are indexed in that same field.
+This was problematic for numeric fields, the ones optimised for range queries on numbers, as we would previously allow you to encode a string keyword like 'null':
+this is no longer allowed, you will have to pick a number to be used to represent the null value, e.g. '-1'.
