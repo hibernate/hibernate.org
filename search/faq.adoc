@@ -27,6 +27,24 @@ especially the chapter about http://docs.jboss.org/hibernate/search/5.2/referenc
 When running an application on multiple servers, you will need to setup both an appropriate backend
 (to delegate changes to the master node) and a DirectoryProvider (to store the index).
 
+=== Do I need to reindex my data when I upgrade to a new Hibernate Search?
+=== I get a `IndexFormatTooOldException`, what do I do?
+
+We try to limit the amount of times you need to reindex the data.
+This usually happens when you upgrade to a new major version of Hibernate Search.
+There are two main reasons:
+
+* Lucene forces a new index format
+* we decide to index a given property in a more efficient way by default
+
+The best is to read our link:/search/documentation/migrate/[migration guide] which details API and index structure changes that might impact you.
+
+The easiest approach is to regenerate the index structures (with the Mass Indexer for example).
+If you really really cannot do that, try to:
+
+* use Lucene's http://lucene.apache.org/core/5_3_0/MIGRATE.html[IndexUpgrader]
+* carefully update the Hibernate Search mappings in case their default behavior has changed (check the migration guide).
+
 == Queries
 
 === Can I mix HQL and Lucene queries?
