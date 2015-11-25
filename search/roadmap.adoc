@@ -57,7 +57,7 @@ The new integrations and backends will likely need significant API changes.
 Free-form indexing::
 We're planning to decouple the metadata definition from annotated java classes, to allow better
 indexing of other more flexible sources.
-Join operations:
+Join operations::
 Expose Lucene's index-time and query-time join capabilities.
 
 
