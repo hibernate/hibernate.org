@@ -12,56 +12,42 @@ You can find a finer grained roadmap in our https://hibernate.atlassian.net/brow
 
 Dates are generally omitted: while milestones are released regularly, the Final release is tagged when it's considered stable.
 
-== Hibernate Search 5.4
-
-First version to targer Hibernate ORM 5 compatibility.
-
-Hibernate ORM 5::
-This version will be compatible with Hibernate ORM version `5`, but will also *require* it.
-To allow you to focus on upgrading the Hibernate ORM related components in your applications, we're keeping changes in Hibernate Search extremely limited.
-Transactional JMS backend::
-Since the JMS queue could optionally be transactional, we're working on adding an option to submit indexing changes to the backend within
-the database transaction rather than after it. See also link:$$http://in.relation.to/2015/07/09/hibernate-search-jms-transaction/$$[related in.relation.to post].
-WildFly 10::
-WildFly 10 is going to include Hibernate ORM 5, so the JBoss Modules we produce will be meant for WildFly 10 primarily.
-Other dependency upgrades::
-To align with Hibernate ORM 5 and WildFly 10, we'll upgrade relevant dependencies such as JBoss Logging and Hibernate Commons Annotations.
-Java 9 compatibibility::
-We're aiming at regularly testing compatibility with Java 7, 8 and now 9 too. Java 7 will still be the minimum requirement.
-
-== Hibernate Search  5.5
-
-Moving from Apache Lucene 4 to Apache Lucene 5.
-
-Apache Lucene 5::
-This version is expected to be compatible (and require) the latest Apache Lucene in the version 5.x series.
-As for any minor version, we aim at not breacking backwards compatibility but it's very likely that some features will have to be deprecated
-as this upgrade introduces some significant changes.
-Infinispan Directory::
-This component has been moved into the Infinispan project, and will be removed from Hibernate Search.
-
 
 == Hibernate Search 5.6
 
-Experimental new backends.
+Experimental integration with Elasticsearch
 
+Elasticsearch::
+This version will sport an experimental integration with Elasticsearch, and aim at providing a reasonably useful
+integration without breaking public APIs.
+Performance::
+Having now a robust integration with Apache Lucene 5.x, even though current performance is good we want
+to make sure we're making the most of it.
+
+
+== Hibernate Search 5.7
+
+Improved modularity
+
+WildFly Swarm::
+WildFly Swarm is the new fine-grained modular version of WildFly aiming at microservices.
+We should make sure Hibernate Search is integrated properly and the usage is documented.
+Java 9 compatibibility::
+We're aiming at regularly testing compatibility with Java 7, 8 and now 9 too.
+Hibernate Search should test its modularity within project Jigsaw, within reason as we can't depent on Java9 release schedules.
 Pre-analysis of text in the transaction context::
 We will explore the option to compute the text analysis on the slave nodes, to improve remoting/clustering & scalability.
 Removing this step from the master nodes will eventually allow to have "indexing only" nodes which don't need to have entities deployed.
-Experimental additional backends::
-Some additional backends are being explored, such as storing changes in a relational database rather than in a queue, or delegate
-to Lucene servers such as ElasticSearch or Apache Solr. These might need to be pushed to 6.0 if they require public API changes.
-Community help would be very welcome, as we have good experience with Lucene but not with the REST based products.
-Out of the box FieldBridge for more types::
-To provide out of the box indexing support for new common types, such as the Java8 date/time value types and
-the new Spatial types included in Hibernate ORM 5. Maybe also Joda Time if there is enough interest.
-Improved reliability in clusters::
-We expect to provide some documentation and examples on how to achieve highly reliable failover configurations of the
-master/slave architecture used by Hibernate Search.
+Clustering::
+The integration of a "master node" needs to be simplified, both in terms of user configuration and implementation.
+We plan to not need user classes (entities) on such a node, so that in future it could be a separate download
+which works out of the box with minimal configuration.
 
-== Hibernate Search 6.0
 
-API refresh to better match all new features from Lucene 5, free-form indexing and the new backends.
+== Hibernate Search 6.x
+
+API refresh to better match all new features from Lucene 5, free-form indexing and the new backends
+such as Elasticsearch and standalone cluster nodes.
 
 Apache Lucene 5 related improvements::
 To provide the full power of some of the new features in Apache Lucene 5, some API changes are needed.
@@ -71,5 +57,8 @@ The new integrations and backends will likely need significant API changes.
 Free-form indexing::
 We're planning to decouple the metadata definition from annotated java classes, to allow better
 indexing of other more flexible sources.
+Join operations:
+Expose Lucene's index-time and query-time join capabilities.
+
 
 
