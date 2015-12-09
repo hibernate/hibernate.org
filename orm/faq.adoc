@@ -6,7 +6,20 @@
 :toc-title: Questions
 
 [role="alert text-center"]
-Coming soon! +
 If you have ideas and time, link:/community/[contact us], we would love your help :-)
 
-In the mean time, you can check out our old link:https://community.jboss.org/en/hibernate/faq[FAQs].
+== Tooling
+
+=== Where is the tooling for Hibernate ORM 5?
+
+It's not ready yet.
+It bothers us too but we preferred to release early ORM 5 and catch up on tooling later.
+Small team, yadayadayada.
+Let us know if that's an itch you want to scratch and want to contribute.
+
+Things are not that bad though.
+You can still use Hibernate Tools with Hibernate ORM 4 libraries to generate the mappings/schemas that will work with Hibernate ORM 5.
+
+== Other
+
+You can check out our old link:https://community.jboss.org/en/hibernate/faq[FAQs].
