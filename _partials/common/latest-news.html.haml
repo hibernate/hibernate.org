@@ -1,12 +1,15 @@
 -# Latest news
 -# Todo customize the tag to read from by project and return all feed if outside a project
 - real_page = page["real_page"]
+- project_description = real_page.project.nil? ? nil : site.projects[real_page.project]
+- blog_suffix_url = (project_description.nil? or project_description.blog_tag.nil?) ? "" : project_description.blog_tag + "/"
+- blog_url = "http://in.relation.to/#{blog_suffix_url}"
 .news-sidebar.well
   %h2 Latest news
   #feed
     .text-center
       %i.icon-refresh.icon-spin.icon-4x
-  %a{:href => "http://in.relation.to/tag/Hibernate+Search"} Other news
+  %a{:href => "#{blog_url}"} Other news
 %script{ :type => 'text/javascript', :src => 'https://www.google.com/jsapi'}
 -# Uses Google Feed API to load in.relation.to feed and replace the DOM elements
 :javascript
