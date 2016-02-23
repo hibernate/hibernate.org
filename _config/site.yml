@@ -26,7 +26,8 @@ projects:
     reference_pdf:
     javadoc_path: javadocs
     getting_started: /orm/documentation/getting-started
-    blog_tag: hibernate-orm
+    blog_tag: Hibernate ORM
+    blog_tag_url: hibernate-orm
     license:
       name: LGPL V2.1
       url: http://hibernate.org/license/
@@ -110,7 +111,8 @@ projects:
     reference_pdf: hibernate_search_reference.pdf
     javadoc_path: api
     getting_started: /search/documentation/getting-started
-    blog_tag: hibernate-search
+    blog_tag: Hibernate Search
+    blog_tag_url: hibernate-search
     license:
       name: LGPL v2.1
       url: https://raw.github.com/hibernate/hibernate-search/master/lgpl.txt
@@ -173,7 +175,8 @@ projects:
     #reference_pdf: hibernate_search_reference.pdf
     #javadoc_path: api
     #getting_started: /search/documentation/getting-started
-    blog_tag: jboss-tools
+    blog_tag: JBoss Tools
+    blog_tag_url: jboss-tools
     license:
       name: LGPL v2.1
       url: https://github.com/hibernate/hibernate-tools/blob/master/lgpl.txt
@@ -234,7 +237,8 @@ projects:
     reference_pdf: hibernate_validator_reference.pdf
     javadoc_path: api
     getting_started: /validator/documentation/getting-started
-    blog_tag: hibernate-validator
+    blog_tag: Hibernate Validator
+    blog_tag_url: hibernate-validator
     license:
       name: ASL v2
       url: https://raw.github.com/hibernate/hibernate-validator/master/license.txt
@@ -299,7 +303,8 @@ projects:
     reference_pdf: hibernate_ogm_reference.pdf
     javadoc_path: api
     getting_started: /ogm/documentation/getting-started
-    blog_tag: hibernate-ogm
+    blog_tag: Hibernate OGM
+    blog_tag_url: hibernate-ogm
     license:
       name: LGPL
       url: http://www.gnu.org/licenses/lgpl.html
