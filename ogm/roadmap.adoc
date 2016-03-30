@@ -72,6 +72,19 @@ An aggregated changelog of what has happened.
 We are too lazy to go back down to the history of time
 so we will start at 4.0 Beta 3.
 
+=== Hibernate OGM 5.0.0.CR1
+
+Redis improvements::
+Redis Cluster support +
+New hash mapping dialect
+
+MongoDB improvements::
+Run findOne, findOne, findAndModify, insert, remove and update native queries using the
+experimental MongoDB CLI syntax
+
+Cassandra improvements::
+Store `java.util.UUID` using native `uuid` type
+
 === Hibernate OGM 5.0.0.Alpha1
 
 Migrate to Hibernate ORM 5::
@@ -81,7 +94,7 @@ Redis support::
 New experimental backend for Redis K/V store
 
 MongoDB improvements::
-Update to MongoDB driver 3.0
+Update to MongoDB driver 3.0 +
 Map-typed properties are stored more naturally in MongoDB
 
 Multi-get::
@@ -119,8 +132,8 @@ Review performance and overall choices before going final.
 In particular, database round trips and query execution speed (see below).
 Reuse of the data loaded between an entity and its association lookup.
 
-Improved Neo4J navigation::
-Explore label (Neo4J 2). +
+Improved Neo4j navigation::
+Explore label (Neo4j 2). +
 Support Neo4J with ability to keep node reference for cheap navigation when resolving proxies
 thus avoiding unnecessary lookups.
 
