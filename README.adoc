@@ -158,7 +158,7 @@ Install a stable Ruby version:
 curl -sSL https://get.rvm.io | bash -s stable --ruby
 git clone in.relation.to
 cd in.relation.to
-echo "rvm ruby-2.2@global” > .rvmrc
+echo "rvm ruby-2.2@global" > .rvmrc
 ----
 
 Load the .rvmrc file:
