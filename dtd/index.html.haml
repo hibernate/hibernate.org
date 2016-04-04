@@ -8,12 +8,12 @@ title: Directory listing /dtd
 
   - @items = list_entries(File.dirname(__FILE__), '*.dtd')
 
-  %table{:style=>"border: 10px; width: 80%"}
+  %table{:style=>"width: 80%", :class=>"table table-bordered"}
     %tbody
       %tr
-        %th{:align=>'left', :style=>"padding-bottom: 20px;"} Name
-        %th{:align=>'left', :style=>"padding-bottom: 20px;"} Last modified
-        %th{:align=>'right', :style=>"padding-bottom: 20px;"} Size
+        %th Name
+        %th Last modified
+        %th{:style=>'text-align:right'} Size
       - @items.each_with_index do |row, row_index|
         %tr
           - row.each_with_index do |column, column_index|
@@ -24,4 +24,4 @@ title: Directory listing /dtd
               -if column_index < 2
                 %td= "#{column}"
               -else
-                %td{:align=>'right'}= "#{column}"
+                %td{:style=>'text-align:right'}= "#{column}"
