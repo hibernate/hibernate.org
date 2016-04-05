@@ -51,7 +51,7 @@ Every time you save a file, the web page will be automatically reloaded assuming
 
 == Add a page
 
-There are two types of pages, http://haml.info[HAML] based (`*.html.haml`) and http://asciidoctor.org/docs/asciidoc-writers-guide/[Asciidoc] (`*.adoc`).
+There are two types of pages, http://haml.info[HAML] based (`\*.html.haml`) and http://asciidoctor.org/docs/asciidoc-writers-guide/[Asciidoc] (`*.adoc`).
 
 HAML::
 HAML is close to HTML and let's you use Ruby. Use this when you need special layouts in your page or use the site metadata.
