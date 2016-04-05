@@ -1,4 +1,6 @@
 = How to build hibernate.org
+ifdef::env-github[:outfilesuffix: .adoc]
+ifndef::env-github[:outfilesuffix: /]
 :awestruct-layout: title-nocol
 :toc:
 :toc-placement: preamble
@@ -80,7 +82,7 @@ Point your browser to http://localhost:4242
 
 === How to edit/publish content
 
-Refer to this link:/survival-guide[guide]
+Refer to this link:/survival-guide{outfilesuffix}[guide]
 
 === Which other tasks exist in the Rake build file?
 
@@ -174,7 +176,7 @@ Continue <<awestruct-setup, here>>
 
 === Bugger that,...
 
-I cannot get the enviroment up and running. Use Docker! Read link:/docker/README[how]!
+I cannot get the enviroment up and running. Use Docker! Read link:/docker/README{outfilesuffix}[how]!
 
 == License
 
