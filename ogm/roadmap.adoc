@@ -134,7 +134,7 @@ Reuse of the data loaded between an entity and its association lookup.
 
 Improved Neo4j navigation::
 Explore label (Neo4j 2). +
-Support Neo4J with ability to keep node reference for cheap navigation when resolving proxies
+Support Neo4j with ability to keep node reference for cheap navigation when resolving proxies
 thus avoiding unnecessary lookups.
 
 * Store tuple as data snapshot via IdentityMap or enhanced entity
@@ -150,7 +150,7 @@ Add reusable TCK for both CRUD and query support.
 
 ==== Additional query support
 
-Query support for Neo4J::
+Query support for Neo4j::
 Support JP-QL and native queries.
 
 Query support for CouchDB::
@@ -272,8 +272,8 @@ MongoDB is the first dialect benefiting from that support.
 
 === Hibernate OGM 4.0 Beta4
 
-CRUD support for Neo4J::
-Support the Neo4J Graph DB to read and store entities and associations.
+CRUD support for Neo4j::
+Support the Neo4j Graph DB to read and store entities and associations.
 
 Native query::
 Offer the ability to pass a native backend query and bind the result to an entity.

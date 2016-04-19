@@ -121,9 +121,9 @@ Check out the http://docs.jboss.org/hibernate/ogm/4.2/reference/en-US/html_singl
 for the details. Note that this API is currently under development;
 If you have any ideas or requirements around it, please let us know and get in touch!
 
-=== In Neo4J, I get a `org.neo4j.graphdb.NotInTransactionException`
+=== In Neo4j, I get a `org.neo4j.graphdb.NotInTransactionException`
 
-Neo4J does require to run all operations within a transaction, even read-only operations.
+Neo4j does require to run all operations within a transaction, even read-only operations.
 Make sure you demarcate your transactions either explicitly or via a container like Java EE or Spring.
 
 === Using MongoDB, I get a `java.lang.NoSuchFieldError: ERRORS_IGNORED` exception
