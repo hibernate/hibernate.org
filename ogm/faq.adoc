@@ -123,7 +123,7 @@ If you have any ideas or requirements around it, please let us know and get in t
 
 === In Neo4J, I get a `org.neo4j.graphdb.NotInTransactionException`
 
-Neo4J does require to run all operations within a transaction, even reed-only operations.
+Neo4J does require to run all operations within a transaction, even read-only operations.
 Make sure you demarcate your transactions either explicitly or via a container like Java EE or Spring.
 
 === Using MongoDB, I get a `java.lang.NoSuchFieldError: ERRORS_IGNORED` exception
