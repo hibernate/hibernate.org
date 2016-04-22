@@ -46,19 +46,16 @@ which works out of the box with minimal configuration.
 
 == Hibernate Search 6.x
 
-API refresh to better match all new features from Lucene 5, free-form indexing and the new backends
+API refresh to better match all new features from Lucene 5 and 6, free-form indexing and the new backends
 such as Elasticsearch and standalone cluster nodes.
 
-Apache Lucene 5 related improvements::
-To provide the full power of some of the new features in Apache Lucene 5, some API changes are needed.
-These API changes - when disruptive - will have to wait a major version such as 6.0.
+Upgrade to Apache Lucene 6::
+To provide the full power of some of the new features in Apache Lucene 6, some API changes are needed. This includes some API improvements which could have been useful since the upgrade to Lucene 5, but we only apply breaking API changes in major releases.
 Better integration for new backends::
-The new integrations and backends will likely need significant API changes.
+The new integrations such as the Elasticsearch support will also benefit from a better fitting API.
 Free-form indexing::
-We're planning to decouple the metadata definition from annotated java classes, to allow better
-indexing of other more flexible sources.
+We're planning to decouple the metadata definition from annotated java classes, to allow better indexing of other more flexible sources.
 Join operations::
 Expose Lucene's index-time and query-time join capabilities.
-
 
 
