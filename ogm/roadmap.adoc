@@ -16,35 +16,20 @@ Dates are generally omitted, we release when we are ready.
 
 Describe plans for future releases.
 
-=== Hibernate OGM 5.0
+=== Hibernate OGM 5.1
 
 Mapping strategies::
 Rethink the default values for the mapping approaches after more user feedback.
 A backward compatible mode will be kept however.
 
-More mapping options upon demand::
-Depending on user feedback, add new mapping options.
+Neo4j remote integration::
+Offer ability to store data in Neo4j using the Rest API.
 
-Migration engine::
-Offer options to support transparent migrations when (non)schema has migrated.
-Annotation based or API based. +
-For example, one would rename a property from a to b,
-the migration engine will know that, read the old value if present,
-and migrate to the new schema.
+Hot Rod integration::
+Offer ability to store data in Infinispan using the Hot Rod protocol.
 
 Custom types::
 Offer custom types like Hibernate ORM's user type.
-
-Continuing work on Cassandra backend::
-Getting the Cassandra mapping store data in natural Cassandra persistence patterns.
-
-=== Hibernate OGM 5.1
-
-Denormalization engine::
-Offer ability to store data in different structures denormalized.
-Let loading and queries use these denormalized versions for faster retrieval.
-The goal is to offer a declarative approach
-instead of the imperative approach used usually in the NoSQL land.
 
 Polish of CouchDB::
 This dialect needs some love before being promoted.
@@ -57,6 +42,19 @@ Continue mapping of query engine on other NoSQL
 Continue coverage of breath of supported queries
 
 === Hibernate OGM Next
+
+Denormalization engine::
+Offer ability to store data in different structures denormalized.
+Let loading and queries use these denormalized versions for faster retrieval.
+The goal is to offer a declarative approach
+instead of the imperative approach used usually in the NoSQL land.
+
+Migration engine::
+Offer options to support transparent migrations when (non)schema has migrated.
+Annotation based or API based. +
+For example, one would rename a property from a to b,
+the migration engine will know that, read the old value if present,
+and migrate to the new schema.
 
 Polyglot persistence::
 Offer ability to store entities into different backends.
@@ -71,6 +69,14 @@ In particular, store data in a NoSQL backend and a relational database.
 An aggregated changelog of what has happened.
 We are too lazy to go back down to the history of time
 so we will start at 4.0 Beta 3.
+
+=== Hibernate OGM 5.0
+
+Cassandra::
+Store `java.math.BigDecimal` using native `decimal` type. 
+
+MongoDB::
+Support functions with MongoDB CLI native queries.
 
 === Hibernate OGM 5.0.0.CR1
 
