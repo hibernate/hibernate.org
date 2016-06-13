@@ -115,19 +115,19 @@ Panic! Then completely regenerate the site via:
 > rake clean preview
 ----
 
-=== Fedora 22 setup
+=== Fedora 23 setup
 
 Make sure the user is in the sudo group and install required dependencies for
 compilation of native extensions:
 
 [source]
 ----
-> sudo dnf -y install gcc-c++ make ruby-devel libxml2-devel libxslt-devel
+> sudo dnf -y install gcc-c++ make ruby-devel libxml2-devel libxslt-devel redhat-rpm-config
 ----
 
 [NOTE]
 ====
-This is required regardless how you proceed from here (provided Ruby version ns RVM)
+This is required regardless how you proceed from here (provided Ruby version vs RVM)
 ====
 
 ==== Using Ruby version provided by the Fedora packages
