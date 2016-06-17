@@ -198,18 +198,36 @@ in the source root directory for further build options.
 
 === How are the tests structured?
 
-There are two types of tests in core
+==== Core tests
+
+There are two types of tests in core:
 
 1. Unit tests for stuff in core itself
 2. And the "backendtck" which are high-level (i.e. Session/EM-level) tests and which are executed
 for all backends. This is our backend TCK.
 
-To run a specific test against a specific store in Eclipse, simplest is to copy it into that project and run it from there.
-In IntelliJ IDEA, run the test - it will run with the HashMap backend - and go to edit configuration (Test) to change "Use classpath of module" to the backend you want to test.
+To run a specific test against a specific store in Eclipse, simplest is to use the
+`<StoreName>BackendTckHelper` class to run the test.
+
+For instance, if you want to run the `BuiltInTypeTest` test for Neo4j, open the `Neo4JBackendTckHelper`
+class in your IDE and make the `@ClasspathSuite.ClassnameFilters` annotation look like:
+
+[source]
+----
+@ClasspathSuite.ClassnameFilters({ ".*BuiltInTypeTest" })
+----
+
+Then simply run `Neo4JBackendTckHelper` as a JUnit test in your IDE.
+
+==== Tests specific to a dialect
+
+As for the unit tests specific to a dialect, you can just run the test as a JUnit test in your IDE.
+
+=== Code organization
 
 Packages are organized with the SPI/impl split at the lowest level.
 SPI is geared towards grid dialect implementors.
-The split is not complete yet, at some parts "our" dialects refer to "impl" classes from core.
+The split is not complete yet, as some parts of "our" dialects refer to "impl" classes from core.
 Anything not "spi" or "impl" is public API.
 
 === How to contribute code effectively
