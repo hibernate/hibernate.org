@@ -183,6 +183,27 @@ Dependencies: org.hibernate:ogm services, org.hibernate.ogm.mongodb services
 Alternatively, you can configure this via the descriptor _jboss-deployment-structure.xml_.
 See the https://docs.jboss.org/hibernate/ogm/4.1/reference/en-US/html_single/#ogm-configuration-jbossmodule[reference guide] to learn more.
 
+=== Why do I get a `java.lang.NoClassDefFoundError: org/hibernate/search/batchindexing/spi/MassIndexerFactory`?
+
+This means that you need Hibernate Search on the classpath.
+You can add it via maven using the following coordinates:
+
+[source,xml]
+----
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-search-orm</artifactId>
+</dependency>
+----
+
+You can include the right version using the BOM as describe in the
+https://docs.jboss.org/hibernate/stable/ogm/reference/en-US/html/ch02.html[getting started chapter of the documentation].
+
+Hibernate Search is an optional dependency in OGM, you need to include it if you want to:
+
+* index entities and run full-text queries;
+* run HQL queries on datastores without a specific language query parser like Redis or Cassandra.
+
 == Developers of Hibernate OGM
 
 === How to skip some tests while in the development of a new +Dialect+?
