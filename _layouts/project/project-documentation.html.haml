@@ -8,6 +8,7 @@ layout: project-frame
 -# Metadata from site.yml for the project
 - project_description = site.projects[page.project]
 - get_started_url = site.projects[page.project].getting_started.nil? ? nil : relative("#{site.projects[page.project].getting_started}", page)
+- stable_documentation_url = "#{project_description.stable_reference_doc_prefix_url}#{project_description.reference_doc_type}/en-US/html_single/"
 
 -# Documentation buttons using the latest dev and latest stable releases
 .release-bottons.hidden-phone
@@ -17,7 +18,7 @@ layout: project-frame
       %a.btn.btn-large{:href => "#{get_started_url}"} Getting started guide
     - if not stable_release.nil?
       &nbsp;
-      %a.btn.btn-large.btn-success{:href => "#{project_description.reference_doc_prefix_url}#{stable_release.version_family}/#{project_description.reference_doc_type}/en-US/html/"} Get documentation for #{stable_release.version}
+      %a.btn.btn-large.btn-success{:href => "#{stable_documentation_url}"} Get documentation for #{stable_release.version}
 .release-bottons.visible-phone
   - stable_release = latest_stable_release(page)
   - if not get_started_url.nil?
@@ -27,19 +28,25 @@ layout: project-frame
     - if not stable_release.nil?
       .row-fluid.text-center
         #documentation-button
-          %a.btn.btn-success{:href => "#{project_description.reference_doc_prefix_url}#{stable_release.version_family}/#{project_description.reference_doc_type}/en-US/html/"} Get documentation for #{stable_release.version}
+          %a.btn.btn-success{:href => "#{stable_documentation_url}"} Get documentation for #{stable_release.version}
 .row-fluid
   .span12
-    -# Documentation table built form the metadata
+    -# Documentation table built from the metadata
     %h2 Reference documentation
     - if not site.projects[page.project].sorted_releases.nil?
+      - first_stable_release = true
       - site.projects[page.project].sorted_releases.each do |release|
         - if release.displayed
+          - if release.stable && first_stable_release
+            - doc_root_url = "#{project_description.stable_reference_doc_prefix_url}"
+            - first_stable_release = false
+          - else
+            - doc_root_url = "#{project_description.reference_doc_prefix_url}#{release.version_family}/"
           %dl.dl-horizontal
             %dt
               = release.version
               &nbsp;
-              %a.btn.btn-info{:href => "#{project_description.reference_doc_prefix_url}#{release.version_family}/#{  project_description.reference_doc_type}/en-US/html/"}
+              %a.btn.btn-info{:href => "#{doc_root_url}#{project_description.reference_doc_type}/en-US/html_single/"}
                 %i.icon-book
             %dd
               %small= release.date
@@ -50,18 +57,18 @@ layout: project-frame
               %ul
                 %li
                   English reference documentation:
-                  %a{:href => "#{project_description.reference_doc_prefix_url}#{release.version_family}/#{  project_description.reference_doc_type}/en-US/html/"}
+                  %a{:href => "#{doc_root_url}#{project_description.reference_doc_type}/en-US/html/"}
                     HTML
                   |
-                  %a{:href => "#{project_description.reference_doc_prefix_url}#{release.version_family}/#{  project_description.reference_doc_type}/en-US/html_single/"}
+                  %a{:href => "#{doc_root_url}#{project_description.reference_doc_type}/en-US/html_single/"}
                     HTML (single page)
                   - if not project_description.reference_pdf.nil?
                     |
-                    %a{:href => "#{project_description.reference_doc_prefix_url}#{release.version_family}/#{  project_description.reference_doc_type}/en-US/pdf/#{project_description.reference_pdf}"}
+                    %a{:href => "#{doc_root_url}#{project_description.reference_doc_type}/en-US/pdf/#{project_description.reference_pdf}"}
                       PDF
                 %li
                   API documentation:
-                  %a{:href => "#{project_description.reference_doc_prefix_url}#{release.version_family}/#{  project_description.javadoc_path}/"}
+                  %a{:href => "#{doc_root_url}#{project_description.javadoc_path}/"}
                     JavaDoc
 
     - else
