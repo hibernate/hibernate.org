@@ -112,7 +112,7 @@ This can be achieved by setting the +hibernate.search.default.directory_provider
 Apache Lucene has the notion of a +Directory+ to store the index files.
 Hibernate Search handles the initialization and configuration of a +Lucene Directory+ instance via a +DirectoryProvider+.
 In this tutorial we will use a a directory provider storing the index on the file system.
-This will give us the ability to inspect the Lucene indexes created by Hibernate Search (eg via link:$$https://code.google.com/p/luke/$$[Luke]).
+This will give us the ability to inspect the Lucene indexes created by Hibernate Search (eg via link:$$https://github.com/DmitryKey/luke/releases/$$[Luke]).
 See {docs_base_url}#search-configuration-directory[Directory Configuration] to configure different Directory implementations.
 
 When using the _filesystem_ DirectoryProvider you also have to specify the default base directory for all indexes via the property +hibernate.search.default.indexBase+.
@@ -314,7 +314,7 @@ After executing the above code, you should be able to see a Lucene index under +
 
 The root of the storage path depends on the configuration property +hibernate.search.default.indexBase+ we specified in the configuration step.
 
-You could now inspect this index with link:$$http://code.google.com/p/luke/$$[Luke].
+You could now inspect this index with link:$$https://github.com/DmitryKey/luke/releases/$$[Luke].
 It will help you to understand how Hibernate Search works: Luke allows you to inspect the index contents and structure,
 similarly to how you would use a SQL console to inspect the working of Hibernate ORM on relational databases.
 
