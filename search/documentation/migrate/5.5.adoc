@@ -57,6 +57,12 @@ Although the query engine will fallback to the traditional approach of index un-
 it is highly recommended to do so for the sake of better runtime performance and less memory consumption.
 Check out http://in.relation.to/2015/09/14/sorting-in-hibernate-search-55/[this blog post] which covers that topic in detail.
 
+=== Sorting on the id field
+
+If you are using a numeric id, sorting directly on the id field of your document will not work anymore.
+
+You need to specify a different field used specifically for sorting and marked with the `@SortableField` annotation.
+
 === Faceting on Numeric Fields
 
 Similarly to Sort options, you need now be careful to run the appropriate kind of Faceting Query on each target field.
