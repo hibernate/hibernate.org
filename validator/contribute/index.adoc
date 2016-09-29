@@ -11,7 +11,7 @@ The following gets you started.
 
 == Requirements
 
-* JDK 8 (The main HV binaries target Java 6 but JDK 8 (>=1.8.0_20) is required for development)
+* JDK 8 (use >=1.8.0_20)
 * http://maven.apache.org/[Maven] (at least version 3.0.3)
 
 == Getting the source
@@ -45,7 +45,7 @@ Finally there is the Bean Validation TCK (test compatibility kit) which can be c
 
 [source]
 ----
-git clone https://github.com/beanvalidation/beanvalidation-api
+git clone https://github.com/beanvalidation/beanvalidation-tck
 ----
 
 == Hibernate Validator modules
@@ -57,7 +57,6 @@ The Hibernate Validator code base comes in form of a http://docs.codehaus.org/di
 * *distribution*: builds the released HV distribution package
 * *documentation*: builds the HV reference guide
 * *engine*: the core validation engine
-* *engine-jdk8-tests*: Some test which require a language target level of 1.8
 * *integration*: in-container integration tests
 * *performance*: a performance test suite based on JMeter
 * *tck-runner*: executes the Bean Validation TCK against HV
@@ -148,7 +147,7 @@ To import the project in Eclipse just follow these steps:
 2. Select all the projects and +Advance > Name template > [artifactId]-[version]+
 3. Run the maven build from the root folder: project 'hibernate-validator-parent' +Run as > Maven install+
 4. When the build is completed, refresh the workspace
-5. the environment JavaSE-1.6 to use JDK 1.8
+5. the environment JavaSE-1.8 to use JDK 1.8
 
 === IDEA
 
@@ -192,8 +191,8 @@ If you run this test configuration all TCK tests are getting executed. You can j
 ----
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="JSR-349-TCK" verbose="1">
-    <test name="JSR-349-TCK">
+<suite name="JSR-380-TCK" verbose="1">
+    <test name="JSR-380-TCK">
         ...
         <classes>
            <class name="org.hibernate.beanvalidation.tck.tests.validation.ValidateTest"/>
@@ -210,7 +209,7 @@ More information about how to configure the TestNG suite file can be found http:
 === General
 
 Refer to the Hibernate https://community.jboss.org/docs/DOC-17951[design philosophy] when working
-on new HV features. Hibernate Validator uses Java 6, so no Java 7 language features may be used.
+on new HV features.
 
 Make sure to add the following license header to all newly created source files:
 
@@ -244,4 +243,4 @@ In oder to be able to integrate your patch you have to accept the https://cla.jb
 
 * https://hibernate.atlassian.net/browse/BVAL[Bean Validation Specification issue tracker]
 * https://hibernate.atlassian.net/browse/BVTCK[Bean Validation TCK issue tracker]
-* https://forum.hibernate.org/viewforum.php?f=26[Forum for JSR 303/349 feeback]
+* https://forum.hibernate.org/viewforum.php?f=26[Forum for JSR 303/349/380 feeback]
