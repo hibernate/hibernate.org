@@ -5,41 +5,4 @@
 :toc-placement: preamble
 :toc-title: Releases
 
-Hibernate ORM is community driven!  Therefore, the roadmap is extremely fluid and evolves frequently.  The most detailed and up-to-date roadmap is consists of the issues and planned release versions in JIRA: https://hibernate.atlassian.net/browse/HHH[issue tracker].  However, the following is a decent view of where we're headed.
-
-== Hibernate ORM 4.2
-
-Hibernate ORM 4.2 is in production and is therefore in maintenance mode.  Only bug fixes and important improvements will be included in future 4.2.x versions.  Releases are generally within a 30 day time-box.
-
-== Hibernate ORM 4.3
-
-JPA 2.1::
-Full support of the JPA 2.1 spec
-
-== Hibernate ORM 5.0
-
-Redesigned metamodel::
-	Complete replacement for the current org.hibernate.mapping code
-Query parser::
-	Improved query parser based on Antlr 3/4
-Multi-tenancy improvements::
-	Discriminator-based multi-tenancy
-Follow-on fetches::
-	Two-phase loading via LoadPlans/EntityGraphs
-OSGi improvements::
-	Support dynamic runtimes, multiple tenancy, multiple persistence units, and more.
-
-== Hibernate ORM 5.x
-
-hibernate-core & hibernate-entitymanager merge::
-	Merging the 2 artifacts, heavily relying on JPA-based implementations from native Hibernate APIs, etc.
-Popular issues in JIRA::
-	Focus on JIRA issues with high numbers of votes (many will require the new Query parser)
-Accessing JDBC results by position::
-	JDBC results-by-position, rather than names, provides a big performance impact
-LoadPlan as an AST::
-	Antlr query parser generates a LoadPlan
-ORM as a generic persistence engine::
-	Research supporting OGM/Search use cases
-Docs/guides::
-	Major improvements to documentation and guides, including numerous topic-based docs
+See the https://github.com/hibernate/hibernate-orm/wiki/Roadmap[roadmap on GitHub wiki].
