@@ -6,29 +6,36 @@
 :page-interpolate: true
 :latest_stable: #{latest_stable_release(page).version}
 
-This page lists just the basic information needed to get up and running with Hibernate ORM 4.3.
-More thorough information is presented in the Getting Started Guide in the link:/orm/documentation[documentation].
+This page lists just the basic information needed to get up and running with the latest version of Hibernate ORM.
+
+If you are approaching Hibernate for the first time, the http://docs.jboss.org/hibernate/orm/current/quickstart/html_single/[Getting Started Guide] is the best place to start.
+
+More thorough information is presented in the https://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html[User Guide].
 
 == System Requirements
 
-Java 6 or higher (building Hibernate from source requires JDK 7 due to a bug in the JDK 6 compiler).
+Hibernate 5.2 and later versions require Java 8.
 
+Hibernate 5.1 and older versions require Java 6 or higher (building Hibernate from source requires JDK 7 due to a bug in the JDK 6 compiler).
 
 == Dependency Management
 
-It is highly recommended to consume Hibernate ORM artifacts through a dependency management tool.  The artifacts
-can be found in Maven's central repository but are released first in the
-https://community.jboss.org/wiki/MavenRepository[JBoss maven repository].  Snapshots are only pushed to the
-JBoss snapshot repository, so if you want to use SNAPSHOT versions be sure to add the JBoss snapshot repository
-properly according to your build tool of choice.
+It is highly recommended to consume Hibernate ORM artifacts through a dependency management tool.
+The artifacts can be found in Maven's central repository but are released first in the
+https://community.jboss.org/wiki/MavenRepository[JBoss maven repository].
 
-The main Hibernate ORM artifact is named hibernate-core.  If you wish to use JPA support, you would instead name
-hibernate-entitymanager.
+[NOTE]
+====
+Snapshots are only pushed to the JBoss snapshot repository,
+so if you want to use SNAPSHOT versions be sure to add the https://repository.jboss.org/nexus/content/repositories/snapshots/org/hibernate/[JBoss snapshot repository] properly according to your build tool of choice.
+====
+
+The main Hibernate ORM artifact is named *hibernate-core*.
 
 [TIP]
 ====
-There are also a number of optional artifacts based on what specific features you wich to use.  These
-are discussed in the Getting Started Guide.
+There are also a number of optional artifacts based on what specific features you wish to use.
+These are discussed in the http://docs.jboss.org/hibernate/orm/current/quickstart/html_single/[Getting Started Guide].
 ====
 
 To use Hibernate ORM in your own project you just need to name a dependency on it in your project.
