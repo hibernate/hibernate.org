@@ -74,6 +74,9 @@ projects:
         - name: FAQ
           href: '/orm/faq/'
           css_class: 'icon-fixed-width icon-question'
+        - name: Migrate
+          href: 'https://github.com/hibernate/hibernate-orm/wiki/Migration-Guides'
+          css_class: 'icon-fixed-width icon-circle-arrow-up'
         - name: Roadmap
           href: '/orm/roadmap/'
           css_class: 'icon-fixed-width icon-road'
