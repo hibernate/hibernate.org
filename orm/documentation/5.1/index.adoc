@@ -2,6 +2,20 @@
 :awestruct-layout: project-frame
 :awestruct-project: orm
 
+++++
+<div style="float:right">
+	<label for="docVersion" style="font-weight: bold;">Other versions</label>
+	<select id="docVersion" onchange="location = this.options[this.selectedIndex].value;">
+		<option>Please select</option>
+		<option value="/orm/documentation/5.2">5.2</option>
+		<option value="/orm/documentation/5.1">5.1</option>
+		<option value="/orm/documentation/5.0">5.0</option>
+		<option value="/orm/documentation/4.3">4.3</option>
+		<option value="/orm/documentation/4.2">4.2</option>
+	</select>​
+</div>
+++++
+
 == Guides and such
 
 link:http://docs.jboss.org/hibernate/orm/5.1/quickstart/html_single/[Getting Started Guide]::
@@ -23,6 +37,11 @@ Wiki (older content) hosted at JBoss.org
 link:https://github.com/hibernate/hibernate-orm/wiki/_pages[GitHub-hosted wiki]::
 Wiki hosted at GitHub
 
+== Switch version
+
+Are you interested in a version of Hibernate ORM?
+Check out link:/orm/documentation/glossary[all the available documentation versions].
+
 == Presentations
 
 Brett did a few interesting presentations available on Slideshare:
@@ -31,3 +50,7 @@ Brett did a few interesting presentations available on Slideshare:
 * http://www.slideshare.net/brmeyer/hibernate-orm-performance-31550150[Hibernate ORM: tips, tricks and performance techniques]
 * http://www.slideshare.net/brmeyer/hibernate-orm-features[Not Just ORM: Powerful Hibernate ORM Features and Capabilities]
 
+If you are interested in Hibernate Performance Tuning, check out Vlad's presentation:
+
+* https://www.youtube.com/watch?v=BTdTEe9QL5k&t=1s[Video]
+* http://www.slideshare.net/VladMihalcea/high-performance-hibernate-devoxx-france[Slides]

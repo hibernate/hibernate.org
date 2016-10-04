@@ -43,20 +43,8 @@ projects:
         ###########################################################################
         # Temporary handling for the version-specific doc links
         ###########################################################################
-        - name: Docs (5.2)
-          href: '/orm/documentation/5.2'
-          css_class: 'icon-fixed-width icon-book'
-        - name: Docs (5.1)
-          href: '/orm/documentation/5.1'
-          css_class: 'icon-fixed-width icon-book'
-        - name: Docs (5.0)
-          href: '/orm/documentation/5.0'
-          css_class: 'icon-fixed-width icon-book'
-        - name: Docs (4.3)
-          href: '/orm/documentation/4.3'
-          css_class: 'icon-fixed-width icon-book'
-        - name: Docs (4.2)
-          href: '/orm/documentation/4.2'
+        - name: Docs
+          href: '/orm/documentation/'
           css_class: 'icon-fixed-width icon-book'
         ###########################################################################
         - name: Tooling
