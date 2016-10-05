@@ -1,18 +1,10 @@
 = Hibernate ORM documentation (5.2)
 :awestruct-layout: project-frame
 :awestruct-project: orm
+:page-javascripts: [../orm-doc-version.js]
 
 ++++
-<div style="float:right">
-	<label for="docVersion" style="font-weight: bold;">Other versions</label>
-	<select id="docVersion" onchange="location = this.options[this.selectedIndex].value;">
-		<option>Please select</option>
-		<option value="/orm/documentation/5.2">5.2</option>
-		<option value="/orm/documentation/5.1">5.1</option>
-		<option value="/orm/documentation/5.0">5.0</option>
-		<option value="/orm/documentation/4.3">4.3</option>
-		<option value="/orm/documentation/4.2">4.2</option>
-	</select>​
+<div id="ormDocVersionSelector">
 </div>
 ++++
 
