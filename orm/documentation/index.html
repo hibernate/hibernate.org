@@ -1,13 +1,28 @@
 <!DOCTYPE HTML>
 
-<meta charset="UTF-8">
-<meta http-equiv="refresh" content="5; url=5.2/">
+<head>
+    <title>Page Redirection</title>
 
-%{google_analytics_universal}
+    <meta charset="UTF-8">
+
+    <script src="orm-doc-version.js" type="text/javascript"></script>
+
+    %{google_analytics_universal}
+</head>
+
+<body>
+    <p>Looks like you used an old link.</p>
+
+    <p>We will teleport you to the <a id="teleporter" href="">right place</a> in a second.</p>
+</body>
 
 <script>
-window.location.href = "5.2/"
+    var latestVersionPath = ormVersions[0] + "/";
+    document.getElementById("teleporter").href = latestVersionPath;
+    var meta = document.createElement('meta');
+    meta.httpEquiv = "refresh";
+    meta.content = "5; url=5.2/";
+    document.getElementsByTagName('head')[0].appendChild(meta);
+    window.location.href = latestVersionPath;
 </script>
 
-<title>Page Redirection</title>
-Looks like you used an old link. We will teleport you to the <a href='5.2/'>right place</a> in a second. }
