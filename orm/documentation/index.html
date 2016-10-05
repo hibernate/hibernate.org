@@ -21,7 +21,7 @@
     document.getElementById("teleporter").href = latestVersionPath;
     var meta = document.createElement('meta');
     meta.httpEquiv = "refresh";
-    meta.content = "5; url=5.2/";
+    meta.content = "5; url=" + latestVersionPath;
     document.getElementsByTagName('head')[0].appendChild(meta);
     window.location.href = latestVersionPath;
 </script>
