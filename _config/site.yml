@@ -40,13 +40,12 @@ projects:
         - name: Downloads
           href: '/orm/downloads/'
           css_class: 'icon-fixed-width icon-cloud-download'
-        ###########################################################################
-        # Temporary handling for the version-specific doc links
-        ###########################################################################
-        - name: Docs
+        - name: Decumentation
           href: '/orm/documentation/'
+          css_class: 'icon-fixed-width icon-folder-open'
+        - name: Books
+          href: '/orm/books/'
           css_class: 'icon-fixed-width icon-book'
-        ###########################################################################
         - name: Tooling
           href: '/orm/tooling/'
           css_class: 'icon-fixed-width icon-wrench'
