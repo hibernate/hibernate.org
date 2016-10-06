@@ -1,12 +1,12 @@
-var ormVersions = [
-  '5.2',
-  '5.1',
-  '5.0',
-  '4.3',
-  '4.2'
-];
+var ormVersions = [];
 
 $( document ).ready(function() {
+  displayed_releases.forEach(function(displayed_release) {
+    var versionTokens = displayed_release.split(".");
+    var majorMinorVersion = versionTokens[0] + "." + versionTokens[1];
+    ormVersions.push(majorMinorVersion);
+  });
+
   var comboId = 'docVersion';
   var combo = $("<select></select>").attr('id', comboId).attr("onchange", 'location = this.options[this.selectedIndex].value;');
 

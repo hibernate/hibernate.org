@@ -6,6 +6,13 @@ layout: project
 -# display license
 - project_description = site.projects[page.project]
 
+%script
+  var displayed_releases = [];
+  - unless site.projects[page.project].sorted_releases.nil?
+    - site.projects[page.project].sorted_releases.each do |release|
+      - unless release.displayed then next end
+      displayed_releases.push('#{release.version}');
+
 -# Project specific navigation menu
 .row-fluid
   .span2
