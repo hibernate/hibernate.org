@@ -17,6 +17,8 @@ Dates are generally omitted: while milestones are released regularly, the Final 
 
 Experimental integration with Elasticsearch
 
+Compatible with Hibernate ORM 5.0, 5.1
+
 Elasticsearch::
 This version will sport an experimental integration with Elasticsearch, and aim at providing a reasonably useful
 integration without breaking public APIs.
@@ -28,6 +30,8 @@ to make sure we're making the most of it.
 == Hibernate Search 5.7
 
 Improved modularity
+
+Compatible with Hibernate ORM 5.2
 
 WildFly Swarm::
 WildFly Swarm is the new fine-grained modular version of WildFly aiming at microservices.
@@ -45,6 +49,8 @@ which works out of the box with minimal configuration.
 
 
 == Hibernate Search 6.x
+
+Compatible with Hibernate ORM 6
 
 API refresh to better match all new features from Lucene 5 and 6, free-form indexing and the new backends
 such as Elasticsearch and standalone cluster nodes.
