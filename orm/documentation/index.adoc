@@ -1,0 +1,23 @@
+= Hibernate ORM Downloads
+:awestruct-layout: project-stable-releases
+:awestruct-project: orm
+:page-interpolate: true
+
+++++
+<p>Looks like you used an old link.</p>
+
+<p>We will teleport you to the <a id="teleporter" href="">right place</a> in a second.</p>
+
+<script>
+    var versionTokens = stable_releases[0].split(".");
+    var latestVersionPath = versionTokens[0] + "." + versionTokens[1] + "/";
+    document.getElementById("teleporter").href = latestVersionPath;
+    var meta = document.createElement('meta');
+    meta.httpEquiv = "refresh";
+    meta.content = "5; url=" + latestVersionPath;
+    document.getElementsByTagName('head')[0].appendChild(meta);
+    window.location.href = latestVersionPath;
+</script>
+++++
+
+

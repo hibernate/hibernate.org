@@ -1,0 +1,13 @@
+!!!5
+%html
+  %head
+    %meta{ :charset=>'utf-8' }
+
+    %script
+      var stable_releases = [];
+      - unless site.projects[page.project].sorted_releases.nil?
+        - site.projects[page.project].sorted_releases.each do |release|
+          - unless release.displayed then next end
+          stable_releases.push('#{release.version}');
+
+  ~ content
