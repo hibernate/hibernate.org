@@ -22,9 +22,6 @@ Mapping strategies::
 Rethink the default values for the mapping approaches after more user feedback.
 A backward compatible mode will be kept however.
 
-Neo4j remote integration::
-Offer ability to store data in Neo4j using the Rest API.
-
 Hot Rod integration::
 Offer ability to store data in Infinispan using the Hot Rod protocol.
 
@@ -69,6 +66,14 @@ In particular, store data in a NoSQL backend and a relational database.
 An aggregated changelog of what has happened.
 We are too lazy to go back down to the history of time
 so we will start at 4.0 Beta 3.
+
+=== Hibernate OGM 5.1.0.Alpha1
+
+Neo4j remote integration::
+Offer ability to store data in Neo4j using the HTTP interface or the Bolt protocol.
+
+Group operations::
+Starts the re-work about grouping operations before executing them on the datastore.
 
 === Hibernate OGM 5.0
 
