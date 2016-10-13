@@ -149,6 +149,14 @@ To import the project in Eclipse just follow these steps:
 4. When the build is completed, refresh the workspace
 5. the environment JavaSE-1.8 to use JDK 1.8
 
+The import of the project in eclipse is easier if you follow this guidelines:
+
+1. In Eclipse, after you have installed m2eclipse, go to: +File > Import > Existing Maven projects+
+2. Select all the projects and +Advance > Name template > [artifactId]-[version]+
+3. Run the maven build from the root folder
+4. When the buils is completed, refresh the workspace
+2. Set the environment JavaSE-1.6 to use JDK 1.8
+
 === IDEA
 
 IntelliJ IDEA come with built-in support for multi module Maven projects. Just import your project
