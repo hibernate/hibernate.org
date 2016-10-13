@@ -149,6 +149,22 @@ To import the project in Eclipse just follow these steps:
 4. When the build is completed, refresh the workspace
 5. the environment JavaSE-1.8 to use JDK 1.8
 
+Some manual steps are required to fix the error in the project:
+
+1. Use JDK 1.8
+   m2e will setup the project using the JDK defined in the JavaSE-1.6 execution environment.
+   This will cause some of the modules to have compilation errors since they require JDK 1.8
+   for some of the tests. It is not possible in Eclipse to set different JDKs for different sources
+   in the same project.
+   One quick way to solve this problem is to use JDK 1.8 for the JavaSE-1.6 runtime environment,
+   you can change this by going to _Windows > Preferences > Installed JREs > Execution Environment_.
+   This way your settings won't change when updating the project using the maven configuration
+
+2. Unrecognized maven plugins
+   m2e does not recognize the _asciidoctor-maven-plugin_ used in the documentation modules,
+   this can be safely ignored by eclipse. A way to do it is by using the contextual menu:
+   _Quick Fix > "Mark goal process-asciidoc as ignored in Eclipse build in Eclipse preferences (experimental)"
+
 === IDEA
 
 IntelliJ IDEA come with built-in support for multi module Maven projects. Just import your project
