@@ -22,9 +22,6 @@ Mapping strategies::
 Rethink the default values for the mapping approaches after more user feedback.
 A backward compatible mode will be kept however.
 
-Hot Rod integration::
-Offer ability to store data in Infinispan using the Hot Rod protocol.
-
 Custom types::
 Offer custom types like Hibernate ORM's user type.
 
@@ -66,6 +63,11 @@ In particular, store data in a NoSQL backend and a relational database.
 An aggregated changelog of what has happened.
 We are too lazy to go back down to the history of time
 so we will start at 4.0 Beta 3.
+
+=== Hibernate OGM 5.1.0.Beta1
+
+Hot Rod integration::
+Offer ability to store data in Infinispan using the Hot Rod protocol.
 
 === Hibernate OGM 5.1.0.Alpha1
 
