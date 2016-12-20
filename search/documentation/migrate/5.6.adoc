@@ -7,7 +7,7 @@ Sanne Grinovero, Gunnar Morling
 :toc-title: Content
 :to_version_short: 5.6
 :from_version_short: 5.5
-:reference_version_full: 5.6.0.Alpha3
+:reference_version_full: 5.6.0.CR1
 
 Here we are helping you migrate your existing Search application to the latest and greatest.
 
@@ -21,23 +21,101 @@ It refers to Hibernate Search version `{reference_version_full}`. If you think s
 
 === Requirements
 
-This version of Hibernate Search now requires using *Apache Lucene 5.5.0*.
+This version of Hibernate Search now requires using *Apache Lucene 5.5.x*.
 
 === API changes
 
-A new method `getShardIdentifiersForDeletion()` has been added to `org.hibernate.search.store.ShardIdentifierProvider` (https://hibernate.atlassian.net/browse/HSEARCH-2075[HSEARCH-2075]).
-Existing implementations which are not derived from `ShardIdentifierProviderTemplate` need to be adapted.
+This release of Hibernate Search upgrades the dependency to Lucene from 5.3.1 to 5.5.2.
+In case you are working with Lucene types directly, check out the Apache Lucene 5 http://lucene.apache.org/core/5_5_0/MIGRATE.html[migration guide] as well as the Apache Lucene http://lucene.apache.org/core/5_4_0/changes/Changes.html[5.4] and http://lucene.apache.org/core/5_5_0/changes/Changes.html[5.5] change logs.
 
-This release of Hibernate Search upgrades the dependency to Lucene from 5.3.1 to 5.5.0.
-In case you are working with Lucene types directly, thus also check out the Apache Lucene 5 http://lucene.apache.org/core/5_5_0/MIGRATE.html[migration guide] as well as the Apache Lucene http://lucene.apache.org/core/5_4_0/changes/Changes.html[5.4] and http://lucene.apache.org/core/5_5_0/changes/Changes.html[5.5] change logs.
+Below are the changes on application programming interfaces that require changes on the existing implementations or clients.
+Please refer to the javadoc for the expected behavior of changed/added methods.
+
+`org.hibernate.search.store.ShardIdentifierProvider`:
+
+ * a new method `getShardIdentifiersForDeletion()` has been added (https://hibernate.atlassian.net/browse/HSEARCH-2075[HSEARCH-2075]).
+
+`org.hibernate.search.jpa.FullTextQuery` and `org.hibernate.search.FullTextQuery`:
+
+ * `setFilter(Filter filter);` has been deprecated. See the javadoc for how to avoid using it.
+ 
+`org.hibernate.search.annotations.ProvidedId`:
+
+ * this annotation has been deprecated and will ultimately be removed with no replacement.
+
+Please also note those new features that may help when writing new code, but don't require any change to existing code:
+
+ * the https://docs.jboss.org/hibernate/search/5.6/reference/en-US/html_single/#query-sorting[sort DSL]
+ * the experimental `org.hibernate.search.bridge.MetadataProvidingFieldBridge` interface,
+   that allows custom bridges implementing it to define both the exact type of their custom (additional) fields
+   (for proper querying support on numeric fields, in particular)
+   and whether those fields should be sortable (for better performance when sorting). 
 
 === SPI changes
 
-A new method `flushAndReleaseResources()` has been added `org.hibernate.search.indexes.spi.IndexManager`.
-Existing implementations need to be adjusted.
+Below are the changes on service provider interfaces that require changes on the existing implementations or clients.
+Please refer to the javadoc for the expected behavior of changed/added methods.
 
-A new method `flushAndReleaseResources()` has been added to `org.hibernate.search.backend.spi.BackendQueueProcessor`.
-Existing implementations need to be adjusted, but we don't expect many such implementations in the wild.
+`org.hibernate.search.indexes.spi.IndexManager`:
 
-The method `org.hibernate.search.backend.spi.BackendQueueProcessor#initialize()` has been changed to accept any kind of `IndexManager` now instead of `DirectoryBasedIndexManager`.
-Existing implementations need to be adjusted, but we don't expect many such implementations in the wild.
+ * a new method `flushAndReleaseResources()` has been added.
+ * `getSerializer()` has been deprecated and is not used anymore:
+   implementations may make this a no-op and safely return null.
+ * a new method `awaitAsyncProcessingCompletion()` has been added.
+ 
+The changes below are unlikely to impact anyone, but are mentioned here for the sake of completeness.
+
+`org.hibernate.search.backend.spi.BackendQueueProcessor`:
+
+ * a new method `flushAndReleaseResources()` has been added.
+ * `initialize()` has been changed to accept any kind of `IndexManager` now instead of `DirectoryBasedIndexManager`.
+ * `getExclusiveWriteLock()` has been removed.
+ * `indexMappingChanged()` has been removed.
+
+`org.hibernate.search.engine.spi.AbstractDocumentBuilder`:
+
+ * `getAnalyzer()` has been renamed to `getAnalyzerReference` and now returns an
+   `org.hibernate.search.analyzer.spi.AnalyzerReference`.
+
+`org.hibernate.search.engine.spi.DocumentBuilderIndexedEntity`:
+
+ * `getIdentifierName()` has been renamed to `getIdPropertyName()`
+ * `getIdKeywordName()` has been renamed to `getIdFieldName()`
+
+`org.hibernate.search.engine.service.spi.ServiceManager`:
+
+ * a new method `ClassLoaderService getClassLoaderService()` has been added.
+ * a new method `<S extends Service> ServiceReference<S> requestReference(Class<S> serviceRole)`
+   has been added.
+ 
+`org.hibernate.search.backend.spi.DeletionQuery`:
+
+ * `toLuceneQuery(ScopedAnalyzer)` has been changed to accept a `DocumentBuilderIndexedEntity`
+   instead of a `ScopedAnalyzer`.
+
+`org.hibernate.search.backend.spi.BatchBackend`:
+
+ * a new method `awaitAsyncProcessingCompletion()` has been added.
+
+`org.hibernate.search.indexes.serialization.spi.LuceneWorkSerializer`:
+
+ * this interface now extends `org.hibernate.search.engine.service.spi.Service`.
+
+`org.hibernate.search.spi.SearchIntegrator`:
+
+ * a new method `LuceneWorkSerializer getWorkSerializer()` has been added.
+ * a new method `HSQuery createHSQuery(Query luceneQuery, Class<?>... entities)`
+   has been added.
+ * `createHSQuery()` has been deprecated. It should not be used anymore:
+   `createHSQuery(Query, Class<?>...)` should be used instead.
+
+`org.hibernate.search.cfg.spi.SearchConfiguration`:
+
+ * a new method `boolean isMultitenancyEnabled()` has been added.
+ * we kindly remind you that implementing classes should not implement `SearchConfiguration` directly
+   but rather extend `org.hibernate.search.cfg.spi.SearchConfigurationBase`, so as to shield
+   them from additions to `SearchConfiguration`.
+
+`org.hibernate.search.query.engine.spi.HSQuery`:
+
+ * a new method `String getQueryString()` has been added.
