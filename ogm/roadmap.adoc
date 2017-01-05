@@ -64,6 +64,14 @@ An aggregated changelog of what has happened.
 We are too lazy to go back down to the history of time
 so we will start at 4.0 Beta 3.
 
+=== Hibernate OGM 5.1.0.Beta3
+
+Sequence generation::
+Before this release the generation of sequences wasn't thred-safe on some dialects.
+
+Queries on entities using single table inheritance::
+Hibernate OGM will now append the right discriminator check on HQL queries.
+
 === Hibernate OGM 5.1.0.Beta1
 
 Hot Rod integration::
