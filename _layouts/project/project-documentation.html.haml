@@ -57,11 +57,8 @@ layout: project-frame
               %ul
                 %li
                   English reference documentation:
-                  %a{:href => "#{doc_root_url}#{project_description.reference_doc_type}/en-US/html/"}
-                    HTML
-                  |
                   %a{:href => "#{doc_root_url}#{project_description.reference_doc_type}/en-US/html_single/"}
-                    HTML (single page)
+                    HTML
                   - if not project_description.reference_pdf.nil?
                     |
                     %a{:href => "#{doc_root_url}#{project_description.reference_doc_type}/en-US/pdf/#{project_description.reference_pdf}"}
