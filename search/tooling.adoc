@@ -1,0 +1,22 @@
+= Hibernate Search Tooling
+:awestruct-layout: project-frame
+:awestruct-project: search
+:page-interpolate: true
+:latest_stable: #{latest_stable_release(page).version}
+
+== Hibernate Search Eclipse plugins
+
+There is an https://marketplace.eclipse.org/content/hibernate-search-plugin[Eclipse plugin for Hibernate Search] which helps
+to inspect the Lucene index and prototype queries.
+
+The plugin was made as a feature of https://github.com/jbosstools/jbosstools-hibernate[jbosstools-hibernate plugin], which can be http://tools.jboss.org/downloads/[downloaded] and installed on its own or together with the full JBoss Tools distribution.
+After that you can install the Hibernate Search plugin via the Eclipse Marketplace.
+
+== Luke
+
+https://github.com/DmitryKey/luke/[Luke] is an excellent standalone tool to inspect Apache Lucene indexes, and also prototype queries.
+
+Compared to the Eclipse tooling, this offers more features but it's not specific to Hibernate Search; it's closer to be a tool
+for Apache Lucene power users.
+
+
