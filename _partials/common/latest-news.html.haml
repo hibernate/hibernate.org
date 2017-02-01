@@ -4,56 +4,48 @@
 - project_description = real_page.project.nil? ? nil : site.projects[real_page.project]
 - blog_suffix_url = (project_description.nil? or project_description.blog_tag_url.nil?) ? "" : project_description.blog_tag_url + "/"
 - blog_url = "http://in.relation.to/#{blog_suffix_url}"
-- blog_tag = (project_description.nil? or project_description.blog_tag.nil?) ? nil : project_description.blog_tag
+- blog_json_feed = (project_description.nil? or project_description.blog_tag_url.nil?) ? "global" : project_description.blog_tag_url
 .news-sidebar.well
   %h2 Latest news
   #feed
     .text-center
       %i.icon-refresh.icon-spin.icon-4x
   %a{:href => "#{blog_url}"} Other news
-%script{ :type => 'text/javascript', :src => 'https://www.google.com/jsapi'}
 -# Uses Google Feed API to load in.relation.to feed and replace the DOM elements
 - if_tag_begin = blog_tag.nil? ? "" : "if (entry.categories.indexOf('#{blog_tag}') != -1) {"
 - if_tag_end = blog_tag.nil? ? "" : "}"
 :javascript
-  google.load("feeds", "1");
+  $(document).ready(function() {
+    $.ajax({
+      url: "#{site.news_feed_root_url}/#{blog_json_feed}.json",
+      jsonpCallback: "getBlogEntries",
+      dataType: "jsonp",
 
-  function initialize() {
-    var feed = new google.feeds.Feed("http://in.relation.to/blog.atom");
-    feed.setNumEntries(50);
-    feed.load(function(result) {
-      var entriesDisplayed = 0;
-      if (!result.error) {
+      // Work with the response
+      success: function( data ) {
         var feedDiv = $('#feed');
         feedDiv.empty();
-        for (var i = 0; i < result.feed.entries.length; i++) {
-          var entry = result.feed.entries[i];
-          #{if_tag_begin}
-            entriesDisplayed++
-            if (entriesDisplayed >= 6) {
-              break;
-            }
-            var entryDate = new Date(entry.publishedDate);
-            var date_string =
+        for (var i = 0; i < data.length; i++) {
+          var entry = data[i];
+          var entryDate = new Date(entry.date);
+          var dateString =
               entryDate.getFullYear() + '-'
               + ('0' + (entryDate.getMonth()+1)).slice(-2) + '-'
               + ('0' + entryDate.getDate()).slice(-2);
-            feedDiv.append(
-              $('<div class="news"/>').append(
-                $('<h4/>').text(entry.title)
-              ).append(
-                $('<small/>').text(date_string)
-              ).append(
-                $('<p/>').text(entry.contentSnippet).append(
-                  ' <a href="' + entry.link + '">more</a>'
-                )
-              ).append(
-                '<hr/>'
+          feedDiv.append(
+            $('<div class="news"/>').append(
+              $('<h4/>').text(entry.title)
+            ).append(
+              $('<small/>').text(dateString)
+            ).append(
+              $('<p/>').append(entry.snippet).append(
+                ' <a href="' + entry.url + '">more</a>'
               )
-            );
-          #{if_tag_end}
+            ).append(
+              '<hr/>'
+            )
+          );
         }
       }
     });
-  }
-  google.setOnLoadCallback(initialize);
+  });

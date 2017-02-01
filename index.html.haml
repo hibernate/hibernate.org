@@ -80,38 +80,36 @@ title: Hibernate. Everything data.
         Even more
         %i.icon-circle-arrow-right
 
-%script{ :type => 'text/javascript', :src => 'https://www.google.com/jsapi'}
--# Uses Google Feed API to load in.relation.to feed and replace the DOM elements
 :javascript
-  google.load("feeds", "1");
+  $(document).ready(function() {
+    $.ajax({
+      url: "#{site.news_feed_root_url}/global.json",
+      jsonpCallback: "getBlogEntries",
+      dataType: "jsonp",
 
-  function initialize() {
-    var feed = new google.feeds.Feed("http://in.relation.to/service/Feed/atom/Area/Bloggers/Comments/exclude");
-    feed.setNumEntries(5);
-    feed.load(function(result) {
-      if (!result.error) {
+      // Work with the response
+      success: function( data ) {
         var feedDiv = $('#myCarousel');
         feedDiv.empty();
         feedDiv.addClass('carousel slide');
         var ol = $('<ol/>');
         var inner = $('<div class="carousel-inner"/>');
-        for (var i = 0; i < result.feed.entries.length; i++) {
-          var entry = result.feed.entries[i];
+        for (var i = 0; i < data.length; i++) {
+          var entry = data[i];
           var li = $('<li data-slide-to="' + i + '", data-target="#myCarousel"/>');
-          var entry_item = $('<div/>');
-          entry_item.addClass('item');
-          entry_item.append(
-            $('<a href="' + entry.link + '"/>').text(entry.title)
+          var entryItem = $('<div/>');
+          entryItem.addClass('item');
+          entryItem.append(
+            $('<a href="' + entry.url + '"/>').text(entry.title)
           );
           if (i == 0) {
             li.addClass('active');
-            entry_item.addClass('active');
+            entryItem.addClass('active');
           }
           ol.append(li);
-          inner.append(entry_item);
+          inner.append(entryItem);
         }
         feedDiv.append(ol).append(inner);
       }
     });
-  }
-  google.setOnLoadCallback(initialize);
+  });
