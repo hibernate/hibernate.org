@@ -92,4 +92,43 @@ Good code contributions have some or all of the following characteristics:
 * documentation is updated
 * the code compiles and the tests pass `./gradlew clean build`
 
+=== Testing multiple databases
 
+To test a specific database, you can use the specific profiles described in `databases.gradle`
+
+[source]
+----
+./gradlew clean build -Pdb=pgsql
+----
+
+To run a test from your IDE, you need to ensure the property expansions happen.
+Use the following command:
+
+[source]
+----
+./gradlew clean compile -Pdb=pgsql
+----
+
+[NOTE]
+====
+To run the tests from your IDEs for Oracle, DB2 and other non-OSS JDBC drivers, it is a bit different.
+You also need to edit `build.gradle` and change the following (e.g for Oracle DB).
+
+[source]
+----
+// from
+if (db.equalsIgnoreCase("oracle")) {
+  dependencies {
+    testRuntime( libraries.oracle )
+  }
+}
+
+//to
+dependencies {
+  testRuntime( libraries.oracle )
+}
+----
+
+Also remember to add the Oracle driver to your local Maven repository.
+Oracle drivers are not on Maven central.
+====
