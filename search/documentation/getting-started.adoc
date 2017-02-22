@@ -18,9 +18,8 @@ In case you are a new to Hibernate we recommend you start from http://hibernate.
 
 Java Runtime::
 
-To use the latest Hibernate Search version ({latest_stable}) you'll need Java version 7 or greater.
+To use the latest Hibernate Search version ({latest_stable}) you'll need Java version 8 or greater.
 You can download a Java Runtime for Windows/Linux/Solaris http://www.oracle.com/technetwork/java/javase/downloads/index.html[here].
-If using Java version 7 make sure you avoid builds 0 and 1: those versions contained a bug which is critical for Lucene users (like Hibernate Search).
 
 Hibernate Search::
 hibernate-search-{latest_stable}.jar and all runtime dependencies. You can get the jar artifacts either from the _dist/lib_ directory of the Hibernate Search distribution or you can download them from the Maven central repository.
@@ -36,15 +35,15 @@ Hibernate Search has its own set of annotations (_@Indexed, @DocumentId, @Field,
 if annotations aren't suited for your project, a better option is the
 {docs_base_url}#hsearch-mapping-programmaticapi[Programmatic Mapping API].
 
-If you are required to use Java 6, then you should look at the older versions of Hibernate Search 4.x.
-
+If you can't upgrade beyond Java 7, you can use Hibernate Search versions 5.6.x.
+People on Java 6 should look at the older versions of Hibernate Search 4.x.
 For Java 5, you can use Hibernate Search 3.x.
 
 === Using Maven
 
-The Hibernate Search artifacts can be found in Maven's central repository but are released first in the JBoss maven   repository.
-So it's not a requirement but we suggest to add this repository to your global +settings.xml+ file (see also
-https://community.jboss.org/wiki/MavenGettingStarted-Users[Maven Getting Started] for more details).
+The Hibernate Search artifacts can be found in Maven's central repository but are released first in the JBoss Maven repository.
+To make sure you always get the latest updates in a timaly manner we suggest to add this repository to your global +settings.xml+ file
+(see also https://community.jboss.org/wiki/MavenGettingStarted-Users[Maven Getting Started] for more details).
 
 This is all you need to add to your pom.xml to get started:
 
@@ -61,17 +60,6 @@ This is all you need to add to your pom.xml to get started:
 
 [source,xml]
 [subs="verbatim,attributes"]
-.Optional: to use JPA 2.1
-----
-<dependency>
-   <groupId>org.hibernate</groupId>
-   <artifactId>hibernate-entitymanager</artifactId>
-   <version>{version_matching_orm}</version>
-</dependency>
-----
-
-[source,xml]
-[subs="verbatim,attributes"]
 .Optional: to store indexes in Infinispan
 ----
 <dependency>
@@ -80,6 +68,18 @@ This is all you need to add to your pom.xml to get started:
    <version>{latest_stable}</version>
 </dependency>
 ----
+
+[source,xml]
+[subs="verbatim,attributes"]
+.Optional: to store indexes in Elasticsearch
+----
+<dependency>
+   <groupId>org.hibernate</groupId>
+   <artifactId>hibernate-search-elasticsearch</artifactId>
+   <version>{latest_stable}</version>
+</dependency>
+----
+
 
 Some of the dependencies of _hibernate-search-infinispan_ might require to enable the the JBoss Maven repository.
 See the https://community.jboss.org/wiki/MavenGettingStarted-Users[Maven Getting Started] on how to configure your local Maven settings.
@@ -117,7 +117,7 @@ See {docs_base_url}#search-configuration-directory[Directory Configuration] to c
 
 When using the _filesystem_ DirectoryProvider you also have to specify the default base directory for all indexes via the property +hibernate.search.default.indexBase+.
 
-Let's assume that your application contains the Hibernate managed classes +example.Book+ and +example.Author+ and you want   to add free text search capabilities
+Let's assume that your application contains the Hibernate managed classes +example.Book+ and +example.Author+ and you want to add free text search capabilities
 to your application in order to search the books contained in your database.
 
 [source,java]
