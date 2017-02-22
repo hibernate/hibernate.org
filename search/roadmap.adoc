@@ -13,36 +13,28 @@ You can find a finer grained roadmap in our https://hibernate.atlassian.net/brow
 Dates are generally omitted: while milestones are released regularly, the Final release is tagged when it's considered stable.
 
 
-== Hibernate Search 5.6
-
-Experimental integration with Elasticsearch
-
-Compatible with Hibernate ORM 5.0, 5.1
+== Hibernate Search 5.8
 
 Elasticsearch::
-This version will sport an experimental integration with Elasticsearch, and aim at providing a reasonably useful
-integration without breaking public APIs.
+With support for Elasticsearch first introduced in version `5.6`, we aim to polish it further.
+Plans are to make Elasticsearch versions `5+` compatible.
+
 Performance::
-Having now a robust integration with Apache Lucene 5.x, even though current performance is good we want
-to make sure we're making the most of it.
+Always learning new tricks! Especially the Elasticsearch integrations haven't been extensively tested in high scale scenarios.
 
-
-== Hibernate Search 5.7
-
-Improved modularity
-
-Compatible with Hibernate ORM 5.2
+Analyzers::
+A new DSL will be introduced to allow people to define Analyzers programmatically at boostrap, as an alternative to the current `@Analyzer` and `@AnalyzerDef` annotations.
+We might want to automatically register a set of commonly used Analyzers - let us know what you think of this as the choice is hard!
 
 WildFly Swarm::
 WildFly Swarm is the new fine-grained modular version of WildFly aiming at microservices.
 We should make sure Hibernate Search is integrated properly and the usage is documented.
+
 Java 9 compatibibility::
 We're aiming at regularly testing compatibility with Java 7, 8 and now 9 too.
 Hibernate Search should test its modularity within project Jigsaw, within reason as we can't depent on Java9 release schedules.
-Pre-analysis of text in the transaction context::
-We will explore the option to compute the text analysis on the slave nodes, to improve remoting/clustering & scalability.
-Removing this step from the master nodes will eventually allow to have "indexing only" nodes which don't need to have entities deployed.
-Clustering::
+
+Removal of class definitions from master nodes::
 The integration of a "master node" needs to be simplified, both in terms of user configuration and implementation.
 We plan to not need user classes (entities) on such a node, so that in future it could be a separate download
 which works out of the box with minimal configuration.
@@ -50,17 +42,19 @@ which works out of the box with minimal configuration.
 
 == Hibernate Search 6.x
 
-Compatible with Hibernate ORM 6
+Compatible with Hibernate ORM 6, Apache Lucene 6 (maybe 7).
 
-API refresh to better match all new features from Lucene 5 and 6, free-form indexing and the new backends
-such as Elasticsearch and standalone cluster nodes.
+API Refresh::
+A significant API refresh is planned to better abstract from the Lucene API so that alternative backends such as Elasticsearch can be used without having Lucene on your classpath.
+This will also benefit Lucene users, as the abstraction should allow us to automatically apply more optimisations without the user needing to be a Lucene expert.
 
-Upgrade to Apache Lucene 6::
-To provide the full power of some of the new features in Apache Lucene 6, some API changes are needed. This includes some API improvements which could have been useful since the upgrade to Lucene 5, but we only apply breaking API changes in major releases.
-Better integration for new backends::
-The new integrations such as the Elasticsearch support will also benefit from a better fitting API.
+Upgrade to Apache Lucene 6 (7)::
+To provide the full power of some of the new features in Apache Lucene 6, some API changes are needed.
+This includes some API improvements which could have been useful since the upgrade to Lucene 5, but we only apply breaking API changes in major releases.
+
 Free-form indexing::
 We're planning to decouple the metadata definition from annotated java classes, to allow better indexing of other more flexible sources.
+
 Join operations::
 Expose Lucene's index-time and query-time join capabilities.
 
