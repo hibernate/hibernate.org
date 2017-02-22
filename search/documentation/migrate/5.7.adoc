@@ -23,6 +23,10 @@ It refers to Hibernate Search version `{reference_version_full}`. If you think s
 
 This version of Hibernate Search now requires using Hibernate ORM version `5.2.x`.
 
+This implies it now requires Java SE version *8*.
+
 === API changes
 
-There were no relevant API changes within Hibernate Search itself; consider though that the required Hibernate ORM version change may change some Hibernate ORM APIs.
+There have been no relevant API changes within Hibernate Search itself; consider though that the new version of Hibernate ORM introduced some very minor changes in API,
+especially as now `org.hibernate.Session` implements `javax.persistence.EntityManager` rather than requiring an adapter, as it did in previous versions.
+
