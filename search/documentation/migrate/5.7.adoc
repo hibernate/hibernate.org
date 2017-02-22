@@ -7,11 +7,11 @@ Sanne Grinovero, Gunnar Morling
 :toc-title: Content
 :to_version_short: 5.7
 :from_version_short: 5.6
-:reference_version_full: 5.7.0.CR1
+:reference_version_full: 5.7.0.Final
 
 Here we are helping you migrate your existing Search application to the latest and greatest.
 
-== Upgrade to Search {to_version_short}.x from {from_version_short}.x
+== Upgrade to Hibernate Search {to_version_short}.x from {from_version_short}.x
 
 The aim of this guide is to assist you migrating an existing application using any version `{from_version_short}.x` of Hibernate Search to the latest of the `{to_version_short}.x` series.
 If you're looking to migrate different versions see link:/search/documentation/migrate[Hibernate Search migration guides].
@@ -21,12 +21,20 @@ It refers to Hibernate Search version `{reference_version_full}`. If you think s
 
 === Requirements
 
-This version of Hibernate Search now requires using Hibernate ORM version `5.2.x`.
+This version of Hibernate Search now requires using Hibernate ORM versions from the `5.2.x` family, but starting from version `5.2.3`.
+Versions `5.2.0`, `5.2.1`, `5.2.2` should be avoided. The recommended version for Hibernate Search `5.7.0.Final` is Hibernate ORM `5.2.8.Final`.
 
-This implies it now requires Java SE version *8*.
+This implies it now requires *Java SE version 8*, as that's the base requirement for all Hibernate ORM 5.2 versions.
 
 === API changes
 
 There have been no relevant API changes within Hibernate Search itself; consider though that the new version of Hibernate ORM introduced some very minor changes in API,
 especially as now `org.hibernate.Session` implements `javax.persistence.EntityManager` rather than requiring an adapter, as it did in previous versions.
 
+=== Running on WildFly 10?
+
+The version of Hibernate ORM in WildFly is now too old to run this version of Hibernate Search.
+Make sure you read the related chapters of both projects to update the WildFly modules:
+
+ - https://docs.jboss.org/hibernate/search/5.7/reference/en-US/html_single/#_deploying_on_wildfly[Hibernate Search updated modules on WildFly 10]
+ - http://docs.jboss.org/hibernate/orm/5.2/topical/html_single/wildfly/Wildfly.html[Hibernate ORM modules on WildFly 10]
