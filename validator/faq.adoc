@@ -16,22 +16,22 @@ Hibernate Validator 3.x and 4.x/5.x are different codebases.
 Hibernate Validator is the original validation framework from the Hibernate team and is now referred to as "Legacy Hibernate Validator". Hibernate Validator 4.x is the reference implementation of Bean Validation 1.0 (http://jcp.org/en/jsr/detail?id=303[JSR 303]), while Hibernate Validator 5.x is the reference implementation of Bean Validation 1.1 (http://jcp.org/en/jsr/detail?id=349[JSR 349]). Active development happens on the 5.x codebase.
 
 === Why is my JPA entity not validated when I call persist()?
- 
+
 The short answer is call `EntityManager#flush()` if you want the validation to be triggered.
- 
-Hibernate ORM and a few other ORMs try to batch as many operations as possible when 
-accessing the database. It is likely that the actual entity "persist" operation only happens 
+
+Hibernate ORM and a few other ORMs try to batch as many operations as possible when
+accessing the database. It is likely that the actual entity "persist" operation only happens
 when you call `flush()` or when the transaction commits.
 
-Also, knowing which entity is about to be persisted depends on your cascading strategy and the state 
-of your object graph. Flush is when Hibernate ORM identifies all the entities that have been changed 
+Also, knowing which entity is about to be persisted depends on your cascading strategy and the state
+of your object graph. Flush is when Hibernate ORM identifies all the entities that have been changed
 and require database actions (see also https://hibernate.atlassian.net/browse/HHH-8028[HHH-8028]).
 
 === My question is not answered. Where can I find help?
 
 Check out the http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/[reference guide] which covers in detail all the ins and outs of Hibernate Validator. If the guide doesn't answer your question, come to the https://forum.hibernate.org/viewforum.php?f=9[forum] and you will be helped there.
 
-== Compatibility 
+== Compatibility
 
 === Does Hibernate Validator 5.x work with Tomcat 6?
 
@@ -102,7 +102,7 @@ Yes.
 
 [source,java]
 ----
-PropertyDescriptor property = 
+PropertyDescriptor property =
     validator.getConstraintsForClass(Address.class)
                .getConstraintsForProperty("street1");
 
@@ -133,4 +133,9 @@ Set<ConstraintDescriptor<?>> propertyConstraints =
 
 This is caused by a http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6512707[bug] in the javac compiler and occurs when the compiled project contains an annotation type with an enum-typed member which has a default value. As workaround either specify the default value using its fully qualified name or add https://github.com/emmanuelbernard/APCleaner[this annotation processor] to your project. See also http://opensource.atlassian.com/projects/hibernate/browse/HV-498[HV-498] for more details.
 
+=== How can I avoid the error "HV000150: The constraint 'javax.validation.constraints.DecimalMin' defines multiple validators for the type 'interface javax.money.MonetaryAmount'. Only one is allowed."
 
+You'll get this error with Hibernate Validator 5.4 and later if you have the dependency _org.zalando:money-validation_ on your classpath.
+The _money-validation_ project has been contributed to the Hibernate Validator code base,
+i.e. Hibernate Validator allows to validate `MonetaryAmount` out of the box.
+Remove the _money-validation_ dependency from your classpath to avoid the conflict with the constraint validators now built into Hibernate Validator.
