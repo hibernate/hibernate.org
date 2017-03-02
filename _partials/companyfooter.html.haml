@@ -1,11 +1,6 @@
 - real_page = page["real_page"]
 .container#companyfooter
-  .row-fluid
-    .span6.redhatlogo.text-center
-      #logospacer
-      %a(href="http://www.redhat.com/")<
-        %img(src="#{site.jborg_images_url}/common/redhat_logo.png")
-    .span6.redhatlogo.text-center
-      #logospacer
-      %a{:href => "http://www.jboss.org/"}
-        %img(src="#{site.jborg_images_url}/common/jbossbadge.png")
+  .redhatlogo{ :style => "text-align:center;" }
+    #logospacer
+    %a(href="http://www.redhat.com/")
+      %img(src="http://static.jboss.org/images/rhbar/redhatlogo.png")
