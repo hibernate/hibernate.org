@@ -16,7 +16,7 @@ Dates are generally omitted, we release when we are ready.
 
 Describe plans for future releases.
 
-=== Hibernate OGM 5.1
+=== Hibernate OGM 5.2
 
 Mapping strategies::
 Rethink the default values for the mapping approaches after more user feedback.
@@ -25,7 +25,7 @@ A backward compatible mode will be kept however.
 Custom types::
 Offer custom types like Hibernate ORM's user type.
 
-Polish of CouchDB::
+Polish of Infinispan Remote dialect::
 This dialect needs some love before being promoted.
 
 Offer per session and per statement option customization::
@@ -64,12 +64,17 @@ An aggregated changelog of what has happened.
 We are too lazy to go back down to the history of time
 so we will start at 4.0 Beta 3.
 
+=== Hibernate OGM 5.1.0.Final
+
+Minor improvements over 5.1.0.CR1::
+Expands documentation about WildFly configuration
+
 === Hibernate OGM 5.1.0.CR1
 
 Upgrade to Hibernate Search 5.5.6::
 Supports indexing and fulltext search with Elasticsearch.
 
-MongoDB aggreagation::
+MongoDB aggregation::
 Suuports aggregate operation for MongoDB native queries. 
 
 === Hibernate OGM 5.1.0.Beta3
