@@ -63,7 +63,7 @@ A revision identifies a collection of changes to entities and their associations
 revisions are global and numeric.  
 
 The `AuditReader` API provides numerous ways to query for entities at particular revisions and retrieve a _partial_ view of what that entity looked like at that 
-specific revision.  It also allows you to get access to lists of revisions associated with an entity type or restricted my a date range.  The API also provides
+specific revision.  It also allows you to get access to lists of revisions associated with an entity type or restricted by a date range.  The API also provides
 a way to get the revision metadata so you can know when a change occured plus any additional custom attributes you may have stored on the revision entity based
 on your implementation needs.
 
