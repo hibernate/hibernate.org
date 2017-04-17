@@ -21,8 +21,15 @@ After the documentation, probably the best place to look for answers.
 http://community.jboss.org/en/hibernate/[Wiki]::
 The wiki nicely complements the reference documentation and is improved by the community at large.
 
+https://hibernate.hipchat.com/chat[HipChat]::
+If you prefer live conversations (we do), join the http://hibernate.hipchat.com/chat/room/3369275[Hibernate User] help room, powered by http://hipchat.com/[HipChat].
++
+_NOTE: HipChat provides history, but only for registered users - and only back as far as their registration date.
+Also, bear in mind that people who can help answer your questions may not even see that message for hours - be patient for a reply (or register and be able to come back and see replies later)._
+
 irc://irc.freenode.net/#hibernate[IRC user channel]::
-If you prefer live conversations (we do), join the IRC channel +#hibernate+ on https://www.freenode.net[Freenode].
+The IRC channels have largely been replaced by HipChat rooms (see above).  Still, lots of 
+community members (and developers occasionally) hang out in the +#hibernate+ IRC channel on https://www.freenode.net[Freenode].
 
 == Stay connected & up to date
 
@@ -53,11 +60,17 @@ https://lists.jboss.org/mailman/listinfo/hibernate-dev[Development mailing list]
 Discussion list for developers to brainstorm ideas. Between JIRA and this mailing, you will not miss 
 any discussion.
 
+https://hibernate.hipchat.com/chat[HipChat]::
+The Hibernate team maintains multiple development-oriented http://hipchat.com/[HipChat] rooms, one per project.  Access to these channels is restricted to regsitered users via invitation.  It's free to register (need sign-up url).
+
 irc://irc.freenode.net/#hibernate-dev[IRC development channel]::
 Join the development channel on Freenode where Hibernate developers and contributors discuss 
 development of Hibernate.
 To join +#hibernate-dev+ you will have to register your nickname. Just follow the instructions 
 http://freenode.net/faq.shtml#nicksetup[on Freenode].
++
+_Note that HipChat (see above) has largely replaced IRC as the place where dev discussions occur._
+
 
 https://github.com/hibernate/[GitHub]::
 It's all code in the end. Even this website is on https://github.com/hibernate/hibernate.org[a GitHub hosted repo].
