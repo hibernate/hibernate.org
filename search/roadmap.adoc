@@ -31,7 +31,7 @@ WildFly Swarm is the new fine-grained modular version of WildFly aiming at micro
 We should make sure Hibernate Search is integrated properly and the usage is documented.
 
 Java 9 compatibibility::
-We're aiming at regularly testing compatibility with Java 7, 8 and now 9 too.
+We're aiming at regularly testing compatibility with Java 8 and now 9 too.
 Hibernate Search should test its modularity within project Jigsaw, within reason as we can't depent on Java9 release schedules.
 
 Removal of class definitions from master nodes::
