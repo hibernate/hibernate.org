@@ -13,30 +13,66 @@ title_partial: project/title-about.html.haml
         :asciidoc
           === Full-text search for entities
 
-          Offers full-text search support for objects stored by Hibernate ORM, Infinispan and other sources.
+          Offers full-text search support for objects stored by Hibernate ORM, link:http://infinispan.org/[Infinispan] and other sources.
           Think of it as Google(tm) for your entities:
 
           * search words with text
           * order results by relevance
           * find by approximation (fuzzy search)
+
+          Under the hood it will use link:https://lucene.apache.org/core/[Apache Lucene] directly or over link:https://www.elastic.co/products/elasticsearch/[Elasticsearch].
     .row-fluid
       .span12.feature-block
         :asciidoc
-          === Cluster-friendly
-          
-          Clustering indexes is not trivial. Hibernate Search offers several easy to setup clustering strategies:
+          === Full control
 
-          * master / slaves
-          * JMS / JGroups replication
-          * Infinispan distributed index
+          Unlike with web search, this is your data, your domain, your application, stored wherever you decide.
+
+          You also have far better control on how your data is processed, and how to extract what you need.
+
+          Hibernate Search exposes all capabilities of the powerful analysis framework from Apache Lucene, so you can:
+
+          * tune text processing for specific languages
+          * for domain specific terminology (e.g. medical terms, custom acronyms expansion,..)
+          * control the ranking process: which results are more important
+          * advanced index encoding for analytics and signals
+
+          Additionally it allows to:
+
+          * partition data, apply multi-tenancy for security and performance optimisations
+          * perform declarative filtering, to control data access security via aspect based programming
     .row-fluid
       .span12.feature-block
         :asciidoc
-          === Faceting and geolocation
+          === Scalable, Fault Tolerant, Cloud Native
 
-          Geolocalized entities are as easy as `@Spatial`. Filter results around a certain location like the user position. Hibernate Search offers two algorithms: a light one or a more scalable one.
+          You'll find that performance of a "single box" is exceptional, still it can be distributed.
+
+          Maintaining an high performance, scalable distributed index is not simple. Hibernate Search offers several architectural solutions:
+
+          * Integration with link:https://www.elastic.co/products/elasticsearch/[Elasticsearch]
+          * Store the Apache Lucene index in an link:http://infinispan.org/[Infinispan distributed data grid]
+          * Simple filesystem based replication
+          * Replicate changes across nodes using JMS, JGroups, or plug your own service
+          * Update indexes within a JTA transaction, or as a post-transaction listener
+
+          These building blocks can be combined in various ways.
+    .row-fluid
+      .span12.feature-block
+        :asciidoc
+          === Spatial queries
+
+          Indexing Geolocalized entities is as easy as adding the `@Spatial` annotation.
+
+          Filter results around a certain location like the user position, and just highlight the matching pizzerias which are actually close to the user.
+    .row-fluid
+      .span12.feature-block
+        :asciidoc
+          === Faceting
+
+          Get query results organized by groups and categories, having these automatically discovered from your data.
           
-          Faceting categorizes results by properties like price range or brand.
+          For example webshops will want to show all results, but grouped by properties like price ranges and brand.
     .row-fluid
       .span12.feature-block
         :asciidoc
