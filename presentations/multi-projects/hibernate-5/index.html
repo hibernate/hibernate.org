@@ -1,0 +1,367 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="author" content="Emmanuel Bernard"><title>Hibernate you know it&#8230;&#8203; but actually you don&#8217;t</title><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"><link href="reveal.js/css/reveal.css" rel="stylesheet"><link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme"><link href="reveal.js/lib/css/zenburn.css" rel="stylesheet"><script>document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );</script></head><body><div class="reveal"><div class="slides"><section><h1>Hibernate you know it&#8230;&#8203; but actually you don&#8217;t</h1><p><small>Emmanuel Bernard</small></p></section><section id="_hibernate_you_know_it_but_actually_you_don_t" data-background="images/desktop_hibernate_1920x1200b.jpg"><h2>Hibernate you know it&#8230;&#8203; but actually you don&#8217;t</h2><div class="paragraph"><p>Emmanuel Bernard<br>
+Red Hat</p></div></section>
+<section id="_take_away" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Take away</h2><div class="ulist"><ul><li><p>Overview of Hibernate projects</p></li><li><p>New features of version 5</p><div class="ulist"><ul><li><p>How to use these features</p></li></ul></div></li><li><p>Come out with ideas for your next applications</p></li></ul></div></section>
+<section id="_emmanuel_bernard" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Emmanuel Bernard</h2><div class="paragraph"><p><a href="https://emmanuelbernard.com">emmanuelbernard.com</a><br>
+<a href="https://twitter.com/emmanuelbernard">@emmanuelbernard</a></p></div>
+<div class="paragraph"><p><a href="http://asylum.jboss.org">JBoss Asylum podcast: asylum.jboss.org</a></p></div></section>
+<section id="_hibernate_orm_5" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Hibernate ORM 5</h2></section>
+<section id="_cleaner_bootstrap" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Cleaner bootstrap</h2><div class="ulist"><ul><li><p>Modularity</p><div class="ulist"><ul><li><p>WildFly, OSGi, Java 9</p></li></ul></div></li><li><p>Why modularize?</p></li><li><p>Lots of challenges</p><div class="ulist"><ul><li><p>extensions, integration points with ORM</p></li></ul></div></li></ul></div></section>
+<section id="_bootstrap" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Bootstrap</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="java language-java">StandardServiceRegistry standardRegistry = new StandardServiceRegistryBuilder()
+         .configure( "org/hibernate/example/MyCfg.xml" )
+         .build();
+
+Metadata metadata = new MetadataSources( standardRegistry )
+        .addAnnotatedClass( MyEntity.class )
+        .addAnnotatedClassName( "org.hibernate.example.Customer" )
+        .addResource( "org/hibernate/example/Order.hbm.xml" )
+        .addResource( "org/hibernate/example/Product.orm.xml" )
+        .getMetadataBuilder()
+        .applyImplicitNamingStrategy( ImplicitNamingStrategyJpaCompliantImpl.INSTANCE )
+        .build();
+
+SessionFactory sessionFactory = metadata.getSessionFactoryBuilder()
+        .applyBeanManager( getBeanManagerFromSomewhere() )
+        //CDI BeanManager to the SessionFactory being built
+        .build();</code></pre></div></div></section>
+<section id="_java_8" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Java 8</h2><div class="ulist"><ul><li><p>New types</p><div class="ulist"><ul><li><p>Date and Time</p></li></ul></div></li><li><p>Java 5, 6, 7</p><div class="ulist"><ul><li><p>Generics</p></li><li><p>Blocks autoclose</p></li></ul></div></li></ul></div></section>
+<section id="_date_and_time" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Date and Time</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="xml language-xml">&lt;!-- for Hibernate ORM &lt; 5.1 --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.hibernate&lt;/groupId&gt;
+    &lt;artifactId&gt;hibernate-java8&lt;/artifactId&gt;
+    &lt;version&gt;${hibernate.version}&lt;/version&gt;
+&lt;/dependency&gt;</code></pre></div></div>
+<div class="ulist"><ul><li><p>DATE: <code>java.time.LocalDate</code></p></li><li><p>TIME: <code>java.time.LocalTime</code>, <code>java.time.OffsetTime</code></p></li><li><p>TIMESTAMP: <code>java.time.Instant</code>, <code>java.time.LocalDateTime</code>, <code>java.time.OffsetDateTime</code> and <code>java.time.ZonedDateTime</code></p></li></ul></div></section>
+<section id="_generics_et_autoclosable" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Generics et AutoClosable</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="java language-java">try ( Session session = sessionFactory.openSession() ) {
+    Address address = session.get(Address.class, id);
+    return address.getCity();
+}</code></pre></div></div>
+<div class="ulist"><ul><li><p>Resources <code>AutoClosable</code></p><div class="ulist"><ul><li><p><code>Session</code> / <code>StatelessSession</code></p></li><li><p><code>SessionFactory</code></p></li><li><p><code>ScrollableResults</code></p></li></ul></div></li></ul></div></section>
+<section id="_bytecode_instrumentation" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Bytecode instrumentation</h2><div class="ulist"><ul><li><p>Smarter change detection</p></li><li><p>Better Maven and Gradle support</p></li><li><p>Lazy loading of properties</p><div class="ulist"><ul><li><p>sub-groups</p></li></ul></div></li><li><p>Automatic bi-directional management</p></li></ul></div></section>
+<section id="_java_ee" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Java EE</h2><div class="listingblock"><div class="content"><pre class="highlight"><code>hibernate.ejb.use_class_enhancer=true
+hibernate.enhancer.enableDirtyTracking=true
+hibernate.enhancer.enableLazyInitialization=true
+hibernate.enhancer.enableAssociationManagement=true</code></pre></div></div></section>
+<section id="_maven" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Maven</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="xml language-xml">&lt;plugin&gt;
+    &lt;groupId&gt;org.hibernate.orm.tooling&lt;/groupId&gt;
+    &lt;artifactId&gt;hibernate-enhance-maven-plugin&lt;/artifactId&gt;
+    &lt;version&gt;${currentHibernateVersion}&lt;/version&gt;
+    &lt;executions&gt;
+        &lt;execution&gt;
+            &lt;configuration&gt;
+                &lt;failOnError&gt;true&lt;/failOnError&gt;
+                &lt;enableLazyInitialization&gt;true&lt;/enableLazyInitialization&gt;
+                &lt;enableDirtyTracking&gt;true&lt;/enableDirtyTracking&gt;
+                &lt;enableAssociationManagement&gt;true&lt;/enableAssociationManagement&gt;
+            &lt;/configuration&gt;
+            &lt;goals&gt;
+                &lt;goal&gt;enhance&lt;/goal&gt;
+            &lt;/goals&gt;
+        &lt;/execution&gt;
+    &lt;/executions&gt;
+&lt;/plugin&gt;</code></pre></div></div></section>
+<section id="_gradle" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Gradle</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="groovy language-groovy">ext {
+    hibernateVersion = 'hibernate-version-you-want'
+}
+
+buildscript {
+    dependencies {
+        classpath "org.hibernate:hibernate-gradle-plugin:$hibernateVersion"
+    }
+}
+
+hibernate {
+    enhance {
+        // any configuration goes here
+    }
+}</code></pre></div></div></section>
+<section id="_lazy_properties" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Lazy properties</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="java language-java">@Entity
+ public class Customer {
+    @Id
+    private Integer id;
+
+    private String name;
+
+    @Basic( fetch = FetchType.LAZY )
+    private UUID accountsPayableXrefId;
+
+    @Lob @Basic( fetch = FetchType.LAZY )
+    @LazyGroup( "lobs" )
+    private Blob image;
+    ...
+}</code></pre></div></div></section>
+<section id="_association_management_before" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Association management - before</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="java language-java">Order order = new Order();
+LineItem lineItem = new LineItem();
+order.getLineItems().add( lineItem );
+lineItem.setOrder( order );
+
+lineItem.getOrder.getName();</code></pre></div></div></section>
+<section id="_association_management_after" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Association management - after</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="java language-java">Order order = new Order();
+LineItem lineItem = new LineItem();
+order.getLineItems().add( lineItem );
+
+lineItem.getOrder.getName();
+// Without byte code enhancement this would
+// throw a NPE in normal Java usage</code></pre></div></div></section>
+<section id="_second_level_cache" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Second level cache</h2><div class="ulist"><ul><li><p>Less objects created (key)</p></li><li><p>Cache by reference (immutable entities)</p></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="xml language-xml">&lt;property name="hibernate.cache.use_reference_entries" values=“true"/&gt;</code></pre></div></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="java language-java">@Entity @Proxy( lazy = false )
+@Immutable
+@Cacheable @Cache( usage = CacheConcurrencyStrategy.READ_ONLY )
+public class MyReferenceData {
+    @Id
+    private Integer id;
+    private String name;
+    private String theValue;
+    ....
+}</code></pre></div></div></section>
+<section id="_various" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Various</h2><div class="ulist"><ul><li><p><strong>Documentation</strong></p></li><li><p>blog</p></li><li><p>session batch size</p><div class="ulist"><ul><li><p><code>entityManager.unwrap(Session.class).setJdbcBatchSize(10);</code></p></li></ul></div></li></ul></div></section>
+<section id="_hibernate_search" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Hibernate Search</h2></section>
+<section id="_full_text_search" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Full-text search</h2><div class="ulist"><ul><li><p>Inverted index</p></li><li><p>Object level</p></li><li><p>Clustered</p><div class="ulist"><ul><li><p>Master / slaves</p></li></ul></div></li></ul></div></section>
+<section id="_what_is_new" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>What is new?</h2><div class="ulist"><ul><li><p>Upgrade Lucene without breaking APIs</p></li><li><p>Significant perf improvements</p><div class="ulist"><ul><li><p>micro batch strategy, close to NRT performance levels</p></li></ul></div></li><li><p>Elasticsearch backend (2.4, 5, 5.2 coming up)</p></li><li><p>WildFly Swarm and Spring Boot</p></li></ul></div></section>
+<section id="_a_macroservice_example" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>A "macroservice" example</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="java language-java">@Entity @Indexed @Spatial
+public class Address {
+    @Id Integer id;
+
+    @Field String street1;
+
+    @Field(analyze=NO) @SortableField @Facet
+    String city;
+
+    @Facet @NumericField int floor;
+
+    @Latitude Long latitude;
+    @Longitude Long longitude;
+
+    @IndexedEmbedded Country country;
+
+    ...
+}</code></pre></div></div></section>
+<section data-background="images/desktop_hibernate_1920x1200.jpg"><div class="listingblock"><div class="content"><pre class="highlight"><code class="java language-java">QueryBuilder b = fullTextSession.getSearchFactory()
+        .buildQueryBuilder().forEntity( Address.class ).get();
+
+org.apache.lucene.search.Query luceneQuery = b
+    .bool()
+        .must( b
+            .spatial().within( radius, Unit.KM )
+                .ofLatitude( centerLatitude )
+                .andLongitude( centerLongitude )
+                .createQuery() )
+        .must( b
+            .keyword().fuzzy()
+                .onField("street1")
+                .matching(street).createQuery()
+        )
+        .should( b
+            .range()
+                .onField("floor").boostedTo(3)
+                .above(2).excludeLimit().createQuery()
+        )
+        .createQuery();</code></pre></div></div></section>
+<section data-background="images/desktop_hibernate_1920x1200.jpg"><div class="listingblock"><div class="content"><pre class="highlight"><code class="java language-java">FacetingRequest cityFacetRequest = b
+    .facet()
+        .name("cities")
+        .onField("city")
+        .discrete()
+            .orderedBy(FacetSortOrder.FIELD_VALUE)
+        .includeZeroCounts(false)
+        .createFacetingRequest();
+
+FacetingRequest floorFacetRequest = builder
+    .facet()
+        .name("floors")
+        .onField("floor")
+        .range()
+            .orderedBy(FacetSortOrder.RANGE_DEFINITION_ORDER)
+            .below(0).excludeLimit()
+            .from(0).to(2).excludeLimit()
+            .above(2)
+        .createFacetingRequest();</code></pre></div></div></section>
+<section data-background="images/desktop_hibernate_1920x1200.jpg"><div class="listingblock"><div class="content"><pre class="highlight"><code class="java language-java">// create the query
+org.hibernate.Query hibQuery = fullTextSession
+        .createFullTextQuery( luceneQuery, Address.class );
+
+// create the facets
+FacetManager facetManager = fullTextQuery.getFacetManager();
+facetManager.enableFaceting(cityFacetRequest);
+facetManager.enableFaceting(floorFacetRequest);
+
+// get the results
+List results = hibQuery.list();
+
+// retrieve the faceting results
+List&lt;Facet&gt; facets = facetManager.getFacets("floors");</code></pre></div></div></section>
+<section id="_simple_query_string" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Simple Query String</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="java language-java">String simpleQueryString = "war peace"; // what the end user is looking for
+
+QueryBuilder qb = fullTextSession.getSearchFactory()
+            .buildQueryBuilder()
+            .forEntity( Book.class)
+            .get(); // instantiate the QueryBuilder providing the DSL
+
+Query query = qb.simpleQueryString()
+            .onField( "title" ).boostedTo( 5.0f )
+            .andField( "summary" ).boostedTo( 2.0f )
+            .matching( simpleQueryString )
+            .createQuery();
+List&lt;Book&gt; results = fullTextSession.createFullTextQuery( query, Book.class ).getResultList();</code></pre></div></div></section>
+<section id="_hibernate_ogm" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Hibernate OGM</h2></section>
+<section id="_jpa_for_nosql" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>JPA for NoSQL</h2><div class="ulist"><ul><li><p>MongoDB</p></li><li><p>Infinispan</p></li><li><p>Neo4J (remote et embedded)</p></li><li><p>Redis</p></li><li><p>EhCache</p></li><li><p>Cassandra</p></li><li><p>CouchDB</p></li></ul></div></section>
+<section id="_first_steps_to_get_started" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>First steps to get started</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="xml language-xml">&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.hibernate.ogm&lt;/groupId&gt;
+        &lt;artifactId&gt;hibernate-ogm-neo4j&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+
+&lt;persistence&gt;
+    &lt;persistence-unit name="ogm-neo4j" transaction-type="JTA"&gt;
+        &lt;!-- Use Hibernate OGM provider: configuration will be transparent --&gt;
+        &lt;provider&gt;org.hibernate.ogm.jpa.HibernateOgmPersistence&lt;/provider&gt;
+        &lt;properties&gt;
+            &lt;property name="hibernate.ogm.datastore.provider" value="neo4j"/&gt;
+        &lt;/properties&gt;
+    &lt;/persistence-unit&gt;
+&lt;/persistence&gt;</code></pre></div></div></section>
+<section id="_hibernate_validator" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Hibernate Validator</h2></section>
+<section data-background="images/desktop_hibernate_1920x1200.jpg"><div class="listingblock"><div class="content"><pre class="highlight"><code class="java language-java">class User {
+  @Email String email;
+  @Positive int age;
+  @NotNull @Size(max=50) String firstName;
+}
+
+@Stateless
+class UserService {
+  public void createUser(@Valid @NotNull User user) { ... }
+}</code></pre></div></div></section>
+<section id="_java_8_2" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Java 8</h2><div class="ulist"><ul><li><p>Repeatable annotations</p></li><li><p><code>Date</code> et <code>Time</code></p></li><li><p>Parameter real names (<code>-parameters</code>)</p></li></ul></div></section>
+<section id="_collections_and_other_containers" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Collections and other containers</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="java language-java">public class User {
+    @Size(max=10)
+    public List&lt;@NotNull @Email String&gt; emails;
+
+    Optional&lt;@Email String&gt; defaultEmail;
+}</code></pre></div></div></section>
+<section id="_programmatically_declared_constraints" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Programmatically declared constraints</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="java language-java">HibernateValidatorConfiguration configuration = Validation
+        .byProvider( HibernateValidator.class )
+        .configure();
+
+ConstraintMapping constraintMapping = configuration.createConstraintMapping();
+
+constraintMapping
+    .type( Car.class )
+        .property( "manufacturer", FIELD )
+            .constraint( new NotNullDef() )
+        .property( "licensePlate", FIELD )
+            .ignoreAnnotations()
+            .constraint( new NotNullDef() )
+            .constraint( new SizeDef().min( 2 ).max( 14 ) )
+    .type( RentalCar.class )
+        .property( "rentalStation", METHOD )
+            .constraint( new NotNullDef() );
+
+Validator validator = configuration.addMapping( constraintMapping )
+        .buildValidatorFactory()
+        .getValidator();</code></pre></div></div></section>
+<section id="_hibernate_spatial" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Hibernate Spatial</h2></section>
+<section id="_hibernate_search_spatial_vs_hibernate_spatial" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Hibernate Search Spatial vs Hibernate Spatial</h2><div class="ulist"><ul><li><p>First uses Lucene indices outside of the database</p></li><li><p>Second uses RDBMS spatial functions</p><div class="ulist"><ul><li><p>Oracle DB, Postgis (PostgreSQL), MySQL, GeoDB (H2), SQLServer</p></li></ul></div></li></ul></div></section>
+<section id="_code" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Code !</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">org.hibernate:hibernate-spatial
+
+hibernate.dialect=org.hibernate.spatial.dialect.postgis.Postgis</code></pre></div></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="java language-java">@Entity(name = "Event")
+public static class Event {
+
+    @Id
+    Long id;
+
+    @Type(type = "jts_geometry")
+    Point location;
+}</code></pre></div></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="java language-java">Event event = new Event();
+event.setId( 1L);
+event.setName( "Hibernate ORM presentation");
+event.setLocation( (Point) new WKTReader().read( "POINT(10 5)"));
+
+entityManager.persist( event );</code></pre></div></div></section>
+<section id="_query" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Query</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="java language-java">Event event = entityManager.createQuery(
+    "select e " +
+    "from Event e " +
+    "where within(e.location, :filter) = true", Event.class)
+.setParameter("filter", new WKTReader().read( "POLYGON((1 1,20 1,20 20,1 20,1 1))"))
+.getSingleResult();</code></pre></div></div></section>
+<section id="_hibernate_envers" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Hibernate Envers</h2></section>
+<section id="_q_a" data-background="images/desktop_hibernate_1920x1200.jpg"><h2>Q&amp;A</h2><div class="ulist"><ul><li><p>Try Hibernate *, you&#8217;ll love them</p></li><li><p>Contribute (feedback, advice, code, hate/love)</p></li><li><p><a href="http://hibernate.org/" class="bare">http://hibernate.org/</a></p></li></ul></div></section></div></div><script src="reveal.js/lib/js/head.min.js"></script><script src="reveal.js/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: false,
+  // Display a presentation progress bar
+  progress: false,
+  // Display the page number of the current slide
+  slideNumber: false,
+  // Push each slide change to the browser history
+  history: true,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: true,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, black, league, night, serif, simple, sky, solarized, white)
+  // NOTE setting the theme in the config no longer works in reveal.js 3.x
+  //theme: Reveal.getQueryHash().theme || 'night',
+  // Transition style (e.g., none, fade, slide, convex, concave, zoom)
+  transition: Reveal.getQueryHash().transition || 'default',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., none, fade, slide, convex, concave, zoom)
+  backgroundTransition: 'fade',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.5,
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+  ]
+});</script></body></html>
