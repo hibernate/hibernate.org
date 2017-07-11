@@ -40,18 +40,18 @@ module Awestruct
         end
 
         # traverse the file system to find the release files and create the hashes
-        findReleaseData( "#{site.dir}/#{@data_dir}" )
+        findReleaseData( site, "#{site.dir}/#{@data_dir}" )
 
         # also create a sorted array for the releases
         createSortedReleaseHash
       end
 
-      def findReleaseData(dir)
+      def findReleaseData(site, dir)
         Dir[ "#{dir}/*" ].each do |entry|
           if ( File.directory?( entry ) )
             if ( entry =~ /releases/ )
               project_name = getProjectName( entry )
-              group_id, artifact_id = getGAInfo( project_name )
+              default_group_id, artifact_id = getDefaultGAInfo( site, project_name )
 
               project_hash = @projects_hash[project_name]
               if project_hash.nil?
@@ -62,9 +62,9 @@ module Awestruct
               releases_hash = Hash.new
               project_hash[:releases] = releases_hash
 
-              createReleaseHashes( entry, releases_hash, group_id, artifact_id)
+              createReleaseHashes( entry, releases_hash, default_group_id, artifact_id)
             else
-              findReleaseData( entry )
+              findReleaseData( site, entry )
             end
           end
         end
@@ -75,25 +75,27 @@ module Awestruct
         project_name = File.basename( parent_dir )
       end
 
-      def getGAInfo(project)
-        case project
+      def getDefaultGAInfo(site, project_name)
+        # we can't rely on the artifact_id from site as the one for OGM is hibernate-ogm-*
+        case project_name
           when 'ogm'
-            group_id = 'org.hibernate.ogm'
+            default_group_id = site.projects[project_name].group_id
             artifact_id = 'hibernate-ogm-core'
           when 'orm'
-            group_id = 'org.hibernate'
+            default_group_id = site.projects[project_name].group_id
             artifact_id = 'hibernate-core'
           when 'search'
-            group_id = 'org.hibernate'
+            default_group_id = site.projects[project_name].group_id
             artifact_id = 'hibernate-search'
           when 'validator'
-            group_id = 'org.hibernate'
+            default_group_id = site.projects[project_name].group_id
             artifact_id = 'hibernate-validator'
         end
-        return group_id, artifact_id
+
+        return default_group_id, artifact_id
       end
 
-      def createReleaseHashes( release_dir, project_hash, group_id, artifact_id )
+      def createReleaseHashes( release_dir, project_hash, default_group_id, artifact_id )
         Dir.foreach(release_dir) do |file|
           # skip '.' and '..'
           if ( File.directory?( file ) )
@@ -106,7 +108,8 @@ module Awestruct
 
           # load the release data
           releaseHash = @site.engine.load_yaml( File.expand_path( file, release_dir ) )
-          if( group_id != nil && artifact_id != nil && releaseHash["displayed"] != false)
+          if( default_group_id != nil && artifact_id != nil && releaseHash["displayed"] != false)
+            group_id = (releaseHash.group_id? ? releaseHash.group_id : default_group_id)
             releaseHash['dependencies'] = ReleaseDependencies.new(@site, group_id, artifact_id, releaseHash['version'])
           end
 
