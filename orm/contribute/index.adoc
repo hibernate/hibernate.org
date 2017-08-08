@@ -5,8 +5,7 @@
 Thanks for your interest! Hibernate ORM is an open source project and community.  Contributions, of any type or any 
 scope, drive the project forward!  
 
-Contributing does not have to mean writing/fixing code (although we certainly won't turn away good code
-contributions).  There are lots of ways to become part of the community and contribute...
+There are lots of ways to become part of the community and contribute, not just writing/fixing code...
 
 
 == Help Other Users
@@ -23,12 +22,15 @@ An extension of helping other users is to contribute documentation.  Its the hel
 Whether you simply fix a typo, re-word an unclear section or add a whole new section/topic, improving the documentation
 helps everyone.
 
+
 == Discuss Development
 
 As the development team discusses design of new features or tries to prioritize work it is great to have input from 
 users.  As the saying goes, it is better to measure twice and cut once; and the more eyes we have on theses designs 
 and the more voices in the discussions, the better measurements we get.  The best places to get involved in 
 discussing development are the https://hibernate.hipchat.com/chat/room/1238636[ORM dev] HipChat channel, the #hibernate-dev IRC channel and the hibernate-dev mailing list.  
+
+_Note: the #hibernate-dev IRC channel is visited very infrequently.  Prefer HipChat for real-time chat_
 
 
 == Report/Investigate Bugs
@@ -49,77 +51,13 @@ Speaking of JIRA, helping us identify issues that duplicate other issues or that
 for issues that are important to you is important in terms of how the development team sets priorities.
 
 
-
 == Contribute code
 
-[NOTE]
-====
-What follows here the basics for contributing code to Hibernate ORM.  The CONTRIBUTING.md file in the root of the source tree has
-detailed information on contributing code to Hibernate ORM; and the README.md file has details on building Hibernate ORM.
-====
+Details on contribiuting code (and documentation) are covered in the CONTRIBUTING.md file available in the repository's root directory (https://github.com/hibernate/hibernate-orm/blob/master/CONTRIBUTING.md).
 
-You will need http://git-scm.com/[git] to obtain the http://github.com/hibernate/hibernate-orm/[source].
-
-[source]
-----
-git clone git@github.com:hibernate/hibernate-orm.git
-cd hibernate-orm
-----
-
-Hibernate ORM uses Gradle as its build tool.  See the mentioned README.md file for details if you are unfamiliar with Gradle.  If you'd rather not
-"install" Gradle, Gradle provides a great feature called the "Gradle wrapper" that offers a zero-conf option.  Simply use the gradlew (*nix) or gradlew.bat (Windows)
-scripts in the root source directory to run the tasks.
-
-[source]
-----
-./gradlew clean build
-./gradlew publishToMavenLocal
-----
-
-Good code contributions have some or all of the following characteristics:
-
-* it respects the project code style - find templates for https://community.jboss.org/docs/DOC-16649[Eclipse] and https://community.jboss.org/docs/DOC-15468[IntelliJ IDEA]
-* a feature or bug fix has an associated set of appropriate tests
-* documentation is updated
-* the code compiles and the tests pass `./gradlew clean build`
-
-=== Testing multiple databases
-
-To test a specific database, you can use the specific profiles described in `databases.gradle`
-
-[source]
-----
-./gradlew clean build -Pdb=pgsql
-----
-
-To run a test from your IDE, you need to ensure the property expansions happen.
-Use the following command:
-
-[source]
-----
-./gradlew clean compile -Pdb=pgsql
-----
+Details on building the project are covered in the README.md file also available in the repository's root directory (https://github.com/hibernate/hibernate-orm/blob/master/README.md).
 
 [NOTE]
 ====
-To run the tests from your IDEs for Oracle, DB2 and other non-OSS JDBC drivers, it is a bit different.
-You also need to edit `build.gradle` and change the following (e.g for Oracle DB).
-
-[source]
-----
-// from
-if (db.equalsIgnoreCase("oracle")) {
-  dependencies {
-    testRuntime( libraries.oracle )
-  }
-}
-
-//to
-dependencies {
-  testRuntime( libraries.oracle )
-}
-----
-
-Also remember to add the Oracle driver to your local Maven repository.
-Oracle drivers are not on Maven central.
+CONTRIBUTING.md covers all branches.  README.md is specific to each branch, as it contains building information that varies based on the branch's `javac` requirements, build tool (Gradle, Maven, Ant), etc.
 ====
