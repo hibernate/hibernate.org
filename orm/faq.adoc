@@ -8,9 +8,64 @@
 [role="alert text-center"]
 If you have ideas and time, link:/community/[contact us], we would love your help :-)
 
-== Tooling
+== What is Hibernate ORM?
 
-=== Where is the tooling for Hibernate ORM 5?
+Hibernate ORM is an Open Source library project providing Object/Relational Mapping (ORM) services.  ORM is a pattern for the persistence of object-oriented domain models to/from relational databases.  The details of the ORM pattern is a very expansive topic - for those unfamiliar with the pattern, be sure to see the link:/orm/what-is-an-orm/[brief introduction to the topic].
+
+Hibernate allows developers to "map" the domain model to the relational model through the use of metadata defined via annotations or XML.  From there, the developer can use Hibernate to store, load, query, cache, etc. the domain data in terms of the domain model and Hibernate will access the database under the covers as needed.
+
+Note: for persistence to no-SQL based stores, be sure to check out the link:/ogm/about/[Hibernate OGM] project.  
+
+
+== How is Hibernate useful?
+
+THe first part of this answer is that ORM, itself, is useful because an ORM helps developers solve the "impendence mismatch" between object-oriented and relational models.  Relational databases are the back-bone of the data storage for many applications and organizations; they are widely used and are still extremely popular (for many good reasons).  In short, relational databases are not going away anytime soon and at some point in their career, most developers will work on systems that interact with these databases - and if they work with OO systems, these impendence mismatches will come up.  
+
+All ORM providers take on the burden of handling these mismatches so that the developer does not have to "reinvent the wheel" each time the develop new systems.  And we believe (of course we are biased) that Hibernate is simply the best ORM available, for a few reasons:
+
+Performance:: As counter-intuitive as that may sound, transactions performed via the ORM can often be made more performant then the non-ORM solution.  And at the very least, it is easier to "turn the knobs" of the ORM to easily adjust the performance of a particular use-case far easier than it would be with a non-ORM solution.
++
+Consider the example of an application screen that loads `Person` data and a new requirement that it also load that `Person`'s collection of `PhoneNumber`s as well.  In the ORM solution that would be as simple as telling the ORM provider to "fetch" the `Person#phoneNumbers` association and it would handle the details including adjusting the SQL on the fly to perform a join to efficiently get all the data at once.  Compare that to the non-ORM solution that needs to manually (1) adjust the SQL for this use-case to include the join, (2) adjust the `ResultSet` reading code to load the `PhoneNumber` data in addition to the `Person` data, (3) adjust any caching, etc.
+
+Integrations:: Validation, caching, Envers, CDI, transaction managers, JNDI, etc
+Development time:: yada yada
+
+
+
+== How does Hibernate compare to JPA?
+
+The Java Persistence API (JPA) is a specification defined under the Java JCP program.  It is a fundamental part of the Java EE specification, although the JPA specification does also provide for use outside of EE.  The goal of JPA is to define a standard set of contracts for ORM that multiple providers can implement - the idea being that developers can "easily" swap one JPA provider for another.
+
+The JPA specification itself just defines the contracts - it is up to various providers to implement these contracts.  Hibernate is one such provider of JPA implementation (called a JPA provider).  So Hibernate implements the JPA specification.
+
+The history is that Hibernate pre-dated JPA by many, many years.  At that time, Hibernate was the "de-facto standard" for persistence in Java meaning that it was widely adopted and generally consider the best solution available.  The Hibernate team (and others of course) were involved in the definition of JPA from the start.  JPA borrowed many of the ideas and concepts from Hibernate, even adopting many of the contract signatures directly.  It is a great study in the organic evolution of de-facto standards and their eventual adoption into standards/specifications.
+
+Long story short... JPA is a standardized specification.  Hibernate ORM is an implementation of that specification.  
+
+Additionally, Hibernate does still expose its "native", non-JPA APIs for things it supports beyond the specification.
+
+
+== How does Hibernate compare to EclipseLink, OpenJPA, etc?
+
+EclipseLink and OpenJPA are alternative implementations of the JPA specification.  There are others as well - but Hibernate, EclipseLink and OpenJPA are by far the most widely used.
+
+
+== How does Hibernate compare to Spring Data?
+
+Spring Data (the overall project) seeks to define a "familiar and consistent ...programming model for data access" via a `Repository` (DAO pattern).  A Repository might be JDBC-based, JPA-based, etc.  As such its aim is broader than 
+Hibernate ORM or JPA.  
+
+It's other main focus is integration with Spring container services.  Spring is a container just like EE, OSGi, etc.  And just like other containers, the Spring container contains other services (transaction managers, datasources, naming contexts, etc) that the persistence provider needs access to.  Spring Data wires all that together based on the proprietary Spring container contracts.
+
+Part of Spring Data's aim, as already mentioned, is the implementation of Repository based on JPA providers.  It provides specific modules for Hibernate as well as other JPA providers.  The aim of this sub-project is to provide a consistent experience across all JPA providers.  JPA is no different from other specs in that implementations exhibit different behaviors in cases where the spec is unclear or silent.  Spring Data JPA aims to make these behaviors consistent.
+
+
+== How does Hibernate compare to Jooq and other "JDBC libraries"?
+
+Jooq (and other "JDBC libraries") and Hibernate (ORMs in general) solve complimentary concerns.  There are absolutely use-cases where using an ORM to access a database is not reasonable.  And conversely there are times when using an ORM makes more sense than using a "JDBC library".  These use-cases may even exist in the same applicartion, meaning sometimes an application will use both solutions.  The right tool for the job...
+
+
+== Where is the tooling for Hibernate ORM 5?
 
 It's not ready yet.
 It bothers us too but we preferred to release early ORM 5 and catch up on tooling later.
@@ -20,6 +75,7 @@ Let us know if that's an itch you want to scratch and want to contribute.
 Things are not that bad though.
 You can still use Hibernate Tools with Hibernate ORM 4 libraries to generate the mappings/schemas that will work with Hibernate ORM 5.
 
+
 == Other
 
-You can check out our old link:https://community.jboss.org/en/hibernate/faq[FAQs].
+You can check out our old link:https://community.jboss.org/en/hibernate/faq[FAQs].  These are more usage-focused and in many cases very out-of-date.
