@@ -12,11 +12,11 @@ The following gets you started.
 == Requirements
 
 * JDK 8 (use >=1.8.0_20)
-* http://maven.apache.org/[Maven] (at least version 3.0.3)
+* http://maven.apache.org/[Maven] (at least version 3.3.1)
 
 == Getting the source
 
-The Hibernate Validator code is available on http://github.com/hibernate/hibernate-validator[GitHub]. To get a read only version of the source you can use:
+The Hibernate Validator code is available on http://github.com/hibernate/hibernate-validator/[GitHub]. To get a read only version of the source you can use:
 
 [source]
 ----
@@ -30,7 +30,7 @@ For people with write access:
 git clone git@github.com:hibernate/hibernate-validator.git validator
 ----
 
-To contribute back to Hibernate Validator you should create a http://help.github.com/forking[fork] of the project into your GitHub account and submit http://help.github.com/pull-requests/[pull requests] with your changes. For more information on Git, check out http://in.relation.to/Bloggers/HibernateMovesToGitGitTipsAndTricks[this blog entry].
+To contribute back to Hibernate Validator you should create a https://help.github.com/articles/fork-a-repo/[fork] of the project into your GitHub account and submit https://help.github.com/articles/creating-a-pull-request/[pull requests] with your changes. For more information on Git, check out http://in.relation.to/2010/10/13/hibernate-moves-to-git-git-tips-and-tricks/[this blog entry].
 
 For those interested, the HV legacy code base (3.x) can be accessed under the https://github.com/hibernate/hibernate-validator/tree/pre-validator3-removal[pre-validator3-removal] tag.
 
@@ -50,7 +50,7 @@ git clone https://github.com/beanvalidation/beanvalidation-tck
 
 == Hibernate Validator modules
 
-The Hibernate Validator code base comes in form of a http://docs.codehaus.org/display/MAVENUSER/Multi-modules+projects[multi-module] Maven project, comprising the following modules:
+The Hibernate Validator code base comes in form of a http://books.sonatype.com/mvnex-book/reference/multimodule.html[multi-module] Maven project, comprising the following modules:
 
 * *annotation-processor*: the HV annotation processor for checking correctness of constraints at compile time
 * *cdi*: the CDI portable extension
@@ -58,9 +58,9 @@ The Hibernate Validator code base comes in form of a http://docs.codehaus.org/di
 * *documentation*: builds the HV reference guide
 * *engine*: the core validation engine
 * *integration*: in-container integration tests
-* *performance*: a performance test suite based on JMeter
+* *performance*: a performance test suite based on JMH
 * *tck-runner*: executes the Bean Validation TCK against HV
-* *test-utils*: Test utility methods and annotations used across several modules
+* *test-utils*: test utility methods and annotations used across several modules
 
 == Building from Source
 
@@ -137,6 +137,11 @@ We recommend to trigger a command line build prior to importing into the IDE. Th
 sources (in our case JAXB binding classes generated via the jaxb2-maven-plugin) are available
 and can be picked up by the IDE.
 ====
+
+=== Code styles guidelines
+
+We provide IDE configurations for our code styles guidelines for Eclipse and IDEA:
+https://github.com/hibernate/hibernate-ide-codestyles.
 
 === Eclipse
 
@@ -236,8 +241,9 @@ The following conventions should be followed when working on the Hibernate Valid
 
 === Providing a patch
 
-Patches including a test and fix for an issue are always welcome, preferably as GitHub pull request. We are following the _Fork + Pull Model_ as described http://help.github.com/send-pull-requests[here].
-In oder to be able to integrate your patch you have to accept the https://cla.jboss.org/[JBoss Contributor License Agreement]!
+Patches including a test and fix for an issue are always welcome, preferably as GitHub pull request. We are following the _Fork + Pull Model_ as described https://help.github.com/articles/proposing-changes-to-your-work-with-pull-requests/[here].
+
+All contributions have to be submitted under the https://www.apache.org/licenses/LICENSE-2.0[Apache License Version 2.0]. All contributions are subject to the https://developercertificate.org/[Developer Certificate of Origin (DCO)].
 
 === Further resources
 
