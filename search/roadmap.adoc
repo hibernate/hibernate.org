@@ -50,6 +50,13 @@ Modularity related enhancements::
 Some code needs to be moved to different jars to improve the experience with OSGi, JBoss Modules and eventually Java 9 (Jigsaw) users.
 For example the integration with Apache Tika should be moved to allow loading additional extensions which haven't been originally bundled with Hibernate Search.
 
+Modularity related enhancements::
+Some code needs to be moved to different jars to improve the experience with OSGi, JBoss Modules and eventually Java 9 (Jigsaw) users.
+For example the integration with Apache Tika should be moved to allow loading additional extensions which haven't been originally bundled with Hibernate Search.
+
+JSR-352 (Batch Applications for the Java Platform) integration::
+Since last year, Mincong Huang worked on a JSR-352 job for Hibernate Search mass indexing.
+We plan to do some performance testing (and optimization if necessary), then merge this work as a new module.
 
 == Hibernate Search 6.x
 
