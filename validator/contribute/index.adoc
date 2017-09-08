@@ -32,9 +32,7 @@ git clone git@github.com:hibernate/hibernate-validator.git validator
 
 To contribute back to Hibernate Validator you should create a https://help.github.com/articles/fork-a-repo/[fork] of the project into your GitHub account and submit https://help.github.com/articles/creating-a-pull-request/[pull requests] with your changes. For more information on Git, check out http://in.relation.to/2010/10/13/hibernate-moves-to-git-git-tips-and-tricks/[this blog entry].
 
-For those interested, the HV legacy code base (3.x) can be accessed under the https://github.com/hibernate/hibernate-validator/tree/pre-validator3-removal[pre-validator3-removal] tag.
-
-The source code of the Bean Validation API (of which Hibernate Validator >= 4.x is the reference implementation) can be retrieved via
+The source code of the Bean Validation API (of which Hibernate Validator is the reference implementation) can be retrieved via
 
 [source]
 ----
@@ -53,14 +51,14 @@ git clone https://github.com/beanvalidation/beanvalidation-tck
 The Hibernate Validator code base comes in form of a http://books.sonatype.com/mvnex-book/reference/multimodule.html[multi-module] Maven project, comprising the following modules:
 
 * *annotation-processor*: the HV annotation processor for checking correctness of constraints at compile time
-* *build-config*: the configuration for the build of HV
+* *build-config*: some configuration files for the build
 * *cdi*: the CDI portable extension
 * *distribution*: builds the released HV distribution package
 * *documentation*: builds the HV reference guide
 * *engine*: the core validation engine
 * *integration*: in-container integration tests
-* *modules*: creates HV modules patches to be applied for HV module upgrades in WildFly
-* *osgi*: the HV OSGi modules aggregator. Contains HV features for Apache Karaf and OSGi integration tests submodules
+* *modules*: creates WildFly patches to be able to upgrade Hibernate Validator in WildFly
+* *osgi*: contains HV features for Apache Karaf and the OSGi integration tests
 * *performance*: a performance test suite based on JMH
 * *tck-runner*: executes the Bean Validation TCK against HV
 * *test-utils*: test utility methods and annotations used across several modules
@@ -169,8 +167,8 @@ are automatically added to the IDE module configuration.
 
 === Code style
 
-Hibernate Validator is using code style common to all Hibernate projects. Configuration xml files
-for Eclipse and IDEA, with detailed instructions on how to import the styles in your IDE can be found
+Hibernate Validator uses code styles common to all the Hibernate projects. Configuration files
+for Eclipse and IDEA with detailed instructions on how to import the styles in your IDE can be found
 https://github.com/hibernate/hibernate-ide-codestyles[here].
 
 === Running TCK tests
