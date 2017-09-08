@@ -1,0 +1,9 @@
+summary: Being maintained as it's included in WildFly. Supports Lucene only, requires Hibernate ORM 5.0.z or 5.1.z
+displayed: true
+integration_constraints:
+  java:
+    version: 7
+  orm:
+    version: 5.0 - 5.1
+  lucene:
+    version: 5.2 - 5.4

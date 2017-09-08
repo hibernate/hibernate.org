@@ -1,0 +1,11 @@
+summary: Experimental integration with Elasticsearch 5.x, AWS integration, improvements and deprecations paving the road to Search 6
+displayed: true
+integration_constraints:
+  java:
+    version: 8
+  orm:
+    version: 5.2 (>= 5.2.3.Final)
+  elasticsearch:
+    version: 2.0 - 5.6
+  lucene:
+    version: 5.5
