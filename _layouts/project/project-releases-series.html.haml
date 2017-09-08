@@ -1,0 +1,88 @@
+---
+layout: project-frame
+---
+-# Defines the project series page template
+-# Provides info about a particular series
+-# List releases defined for the given series
+
+-# Metadata from site.yml for the project
+- project_description = site.projects[page.project]
+
+- series = project_description.release_series[page.series_version]
+- latest_release = series.releases[0]
+
+.row-fluid
+  .span12.hero-unit
+    %h1
+      #{project_description.name} #{series.version} series
+      %span.label{:class => "#{latest_release.stable ? 'label-success' : 'label-warning'}"} #{latest_release.stable ? 'stable' : 'development'}
+    = series.summary
+    .text-center
+      - unless series.integration_constraints.nil? || series.integration_constraints.empty?
+        %a.btn.btn-large.btn-link{:href => "#compatibility"}
+          %i.icon-globe
+          Compatibility
+      %a.btn.btn-large.btn-link{:href => "#whats_new"}
+        %i.icon-fire
+        What's new
+      - migration_page_root = '/' + page.project + '/documentation/migrate/' + series.version + '/'
+      - # development releases may not have a migration guide yet
+      - has_migration_page = site.pages.index {|page| page.output_path == (migration_page_root + 'index.html')} != nil
+      - if has_migration_page
+        %a.btn.btn-large.btn-link{:href => migration_page_root}
+          %i.icon-share-alt
+          Migrate
+      - doc_root_url = "#{project_description.reference_doc_prefix_url}#{series.version}/"
+      %a.btn.btn-large.btn-link{:href => "#{doc_root_url}#{project_description.reference_doc_suffix_url}"}
+        %i.icon-book
+        Main documentation
+      %a.btn.btn-large.btn-link{:href => "#releases"}
+        %i.icon-tags
+        Releases
+.row-fluid
+  .span12
+    - unless series.integration_constraints.nil? || series.integration_constraints.empty?
+      %h2{:id => "compatibility"} Compatibility
+      %dl.dl-horizontal
+        - series.integration_constraints.each_pair do |integration_id,constraint|
+          - integration = project_description.integrations[integration_id]
+          %dt
+            %a{:href => "#{integration.url}"}
+              = integration["name"]
+          %dd
+            #{constraint.version}
+    %h2{:id => "whats_new"} What's new
+    - version_cleaner = page.project == 'orm' ? lambda {|v| v != '4.2.0.Final' && v != '4.3.0.Final' && v != '5.0.0.Final' && v =~ /^(.*).Final$/ ? $1 : v } : lambda {|v| v}
+    - comma_separated_release_versions = series.releases.collect{|r| r.version}.collect!{|v| version_cleaner.call(v)}.join( "%2C%20" )
+    A detailed list of new features, improvements and fixes in this series can be found
+    %a{:href => "https://hibernate.atlassian.net/issues/?jql=project%20%3D%20#{project_description.jira['key']}%20AND%20fixVersion%20in%20(#{comma_separated_release_versions})%20ORDER%20BY%20updated"}
+      on our JIRA instance.
+    ~ content
+    %h2{:id => "releases"} Releases for this series
+    - unless site.projects[page.project].release_series.nil?
+      - series.releases.each do |release|
+        - if release[:displayed] != nil && !release.displayed then next end
+        %dl.dl-horizontal
+          %dt
+            = release.version
+            &nbsp;
+            %a.btn.btn-info{:href => "#{sourceforge_zip_url(project_description, release)}"}
+              %i.icon-cloud-download
+          %dd
+            %small= release.date
+            %span.label{:class => "#{release.stable ? 'label-success' : 'label-warning'}"} #{release.stable ? 'stable' : 'development'}
+          %dd
+            %small
+              - group_id = (release.group_id? ? release.group_id : project_description.group_id)
+              Maven gav:
+              %a{:href => "https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{project_description.group_id}~#{project_description.artifact_id}~#{release.version}~~"}>=" #{group_id}:#{project_description.artifact_id}:#{release.version}"
+          - if release[:summary]
+            %dd
+              = release.summary
+          - if release[:announcement_url]
+            %dd
+              %a{:href => "#{release.announcement_url}"}
+                More on the #{release.version} release
+                %i.icon-circle-arrow-right
+    - else
+      %p There are no releases configured for this series.

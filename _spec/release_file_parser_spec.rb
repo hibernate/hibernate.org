@@ -14,7 +14,8 @@ require_relative '../_ext/release_file_parser'
 describe Awestruct::Extensions::ReleaseFileParser do
 
     before :all do
-        @expectedReleases = ["5.1.0.Alpha1", "5.0.1.Final", "4.3.1.Final"]
+        @expectedSeries = ["5.3", "5.2", "5.1", "5.0", "4.3"]
+        @expectedReleases = ["5.3.1.Final", "5.3.0.CR1", "5.2.0.Final", "5.2.0.Alpha2", "5.1.0.Alpha1", "5.0.1.Final", "4.3.1.Final"]
 
         site_dir = File.join(File.dirname(__FILE__), '..')
         opts = Awestruct::CLI::Options.new
@@ -25,21 +26,19 @@ describe Awestruct::Extensions::ReleaseFileParser do
         @engine.load_default_site_yaml
     end
 
-    it "correct test releases found" do
+    it "correct metadata found" do
         # reset the config dir to load the test data. DataDir is relative to site.dir
         @config.dir = File.dirname(__FILE__) + '/release_file_parser_test_data_1'
         site = Awestruct::Site.new( @engine, @config )
 
         data_dir = Awestruct::Extensions::ReleaseFileParser.new
         data_dir.execute( site )
-        expect(site.projects[:foo].releases.length).to eql 3
-
-        @expectedReleases.each do |x|
-           expect(site.projects[:foo].releases.has_key?( x )).to be_truthy
-        end
+        
+        expect(site.projects[:foo].releases.keys).to eql @expectedReleases
+        expect(site.projects[:foo].release_series.keys).to eql @expectedSeries
     end
 
-    it "sorted releases are getting created" do
+    it "releases are getting sorted" do
         # reset the config dir to load the test data. DataDir is relative to site.dir
         @config.dir = File.dirname(__FILE__) + '/release_file_parser_test_data_1'
         site = Awestruct::Site.new( @engine, @config )
@@ -50,8 +49,16 @@ describe Awestruct::Extensions::ReleaseFileParser do
         expect(site.projects[:foo].releases).to be_an_instance_of Hash
         expect(site.projects[:foo].sorted_releases).to be_an_instance_of Array
 
-        site.projects[:foo].sorted_releases.each_with_index do |releaseHash, index|
-            expect(releaseHash[:version]).to eql @expectedReleases[index]
+        site.projects[:foo].sorted_releases.each_with_index do |release, index|
+            expect(release[:version]).to eql @expectedReleases[index]
+        end
+
+        site.projects[:foo].releases.values.each_with_index do |release, index|
+            expect(release[:version]).to eql @expectedReleases[index]
+        end
+
+        site.projects[:foo].release_series.values.each_with_index do |series, index|
+            expect(series[:version]).to eql @expectedSeries[index]
         end
     end
 

@@ -8,7 +8,7 @@ layout: project-frame
 -# Metadata from site.yml for the project
 - project_description = site.projects[page.project]
 - get_started_url = site.projects[page.project].getting_started.nil? ? nil : relative("#{site.projects[page.project].getting_started}", page)
-- stable_documentation_url = "#{project_description.stable_reference_doc_prefix_url}#{project_description.reference_doc_type}/en-US/html_single/"
+- stable_documentation_url = "#{project_description.stable_reference_doc_prefix_url}#{project_description.reference_doc_suffix_url}"
 
 -# Documentation buttons using the latest dev and latest stable releases
 .release-bottons.hidden-phone
@@ -35,33 +35,37 @@ layout: project-frame
     %h2 Reference documentation
     - if not site.projects[page.project].sorted_releases.nil?
       - first_stable_release = true
-      - site.projects[page.project].sorted_releases.each do |release|
-        - if release.displayed
+      - project_description.release_series.values.each do |series|
+        - release = series.releases[0]
+        - if series.displayed
           - if release.stable && first_stable_release
             - doc_root_url = "#{project_description.stable_reference_doc_prefix_url}"
             - first_stable_release = false
           - else
-            - doc_root_url = "#{project_description.reference_doc_prefix_url}#{release.version_family}/"
+            - doc_root_url = "#{project_description.reference_doc_prefix_url}#{series.version}/"
           %dl.dl-horizontal
             %dt
-              = release.version
+              = series.version
               &nbsp;
-              %a.btn.btn-info{:href => "#{doc_root_url}#{project_description.reference_doc_type}/en-US/html_single/"}
+              %a.btn.btn-info{:href => "#{doc_root_url}#{project_description.reference_doc_suffix_url}"}
                 %i.icon-book
             %dd
-              %small= release.date
+              %small
+                %strong= release.version
+                = "-"
+                = release.date
               %span.label{:class => "#{release.stable ? 'label-success' : 'label-warning'}"} #{release.stable ? 'stable'   : 'development'}
             %dd
-              %small= release.summary
+              %small= series.summary
             %dd
               %ul
                 %li
                   English reference documentation:
-                  %a{:href => "#{doc_root_url}#{project_description.reference_doc_type}/en-US/html_single/"}
+                  %a{:href => "#{doc_root_url}#{project_description.reference_doc_suffix_url}"}
                     HTML
                   - if not project_description.reference_pdf.nil?
                     |
-                    %a{:href => "#{doc_root_url}#{project_description.reference_doc_type}/en-US/pdf/#{project_description.reference_pdf}"}
+                    %a{:href => "#{doc_root_url}#{project_description.reference_pdf}"}
                       PDF
                 %li
                   API documentation:

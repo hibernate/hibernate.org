@@ -1,7 +1,7 @@
 ---
 layout: project-frame
 ---
--# Defines the project download page template
+-# Defines the project releases page template
 -# Provide get started and download action buttons
 -# List releases defined in the project metadata
 
@@ -40,19 +40,30 @@ layout: project-frame
 
 .row-fluid
   .span12
-    -# Release table built form the metadata
-    %h2 Releases
-    - unless site.projects[page.project].sorted_releases.nil?
-      - site.projects[page.project].sorted_releases.each do |release|
-        - unless release.displayed then next end
+    %h2 Series
+    - unless project_description.release_series.nil?
+      - first_stable_release = true
+      - project_description.release_series.values.each do |series|
+        - release = series.releases[0]
+        - unless series.displayed then next end
         %dl.dl-horizontal
           %dt
-            = release.version
+            = series.version
             &nbsp;
-            %a.btn.btn-info{:href => "#{sourceforge_zip_url(project_description, release)}"}
+            %a.btn.btn-info{:href => "#{sourceforge_zip_url(project_description, release)}", :title => "Download"}
               %i.icon-cloud-download
+            - if release.stable && first_stable_release
+              - doc_root_url = "#{project_description.stable_reference_doc_prefix_url}"
+              - first_stable_release = false
+            - else
+              - doc_root_url = "#{project_description.reference_doc_prefix_url}#{series.version}/"
+            %a.btn.btn-info{:href => "#{doc_root_url}#{project_description.reference_doc_suffix_url}", :title => "Reference documentation"}
+              %i.icon-book
           %dd
-            %small= release.date
+            %small
+              %strong= release.version
+              = "-"
+              = release.date
             %span.label{:class => "#{release.stable ? 'label-success' : 'label-warning'}"} #{release.stable ? 'stable' : 'development'}
           %dd
             %small
@@ -60,23 +71,51 @@ layout: project-frame
               Maven gav:
               %a{:href => "https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{group_id}~#{project_description.artifact_id}~#{release.version}~~"}>=" #{group_id}:#{project_description.artifact_id}:#{release.version}"
               - if page.project == 'search'
-                ; compatible with Hibernate ORM #{release['dependencies'].get_version('org.hibernate', 'hibernate-core')}
+                ; compatible with Hibernate ORM #{release.dependencies.get_version('org.hibernate', 'hibernate-core')}
           %dd
-            = release.summary
+            = series.summary
+          %dd
+            %a{:href => "./#{series.version}/"}
+              More on the #{series.version} series
+              %i.icon-circle-arrow-right
           - if not release.announcement_url.nil?
             %dd
               %a{:href => "#{release.announcement_url}"}
-                More on this release
+                More on the #{release.version} release
                 %i.icon-circle-arrow-right
     - else
       %p There are no releases configured for this project.
 
-    Older releases can be found
+    Older series can be found
     %a{:href => "#{project_description.sourceforge_url}"}
       on SourceForge
     or in JBoss's
     %a{:href => "https://repository.jboss.org/nexus/index.html#nexus-search;gav~~#{project_description.artifact_id}~~~"}<
       Maven repository.
-.row-fluid
-  .span12
+    - unless project_description.integrations.nil?
+      %h2 Compatibility matrix
+      .table-responsive
+        %table.table
+          %thead
+            %tr
+              %th
+                = project_description.name
+              - project_description.release_series.values.each do |series|
+                - unless series.displayed then next end
+                %th
+                  = series.version
+          %tbody
+            - project_description.integrations.each_pair do |integration_id, integration|
+              %tr
+                %th
+                  %a{:href => "#{integration['url']}"}
+                    = integration["name"]
+                - project_description.release_series.values.each do |series|
+                  - unless series.displayed then next end
+                  - constraint = series.integration_constraints[integration_id]
+                  %td
+                    - if constraint == nil
+                      N/A
+                    - else
+                      #{constraint.version}
     ~ content

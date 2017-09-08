@@ -7,11 +7,11 @@ layout: project
 - project_description = site.projects[page.project]
 
 %script
-  var displayed_releases = [];
-  - unless site.projects[page.project].sorted_releases.nil?
-    - site.projects[page.project].sorted_releases.each do |release|
-      - unless release.displayed then next end
-      displayed_releases.push('#{release.version}');
+  var displayed_series = [];
+  - unless site.projects[page.project].release_series.nil?
+    - site.projects[page.project].release_series.values.each do |series|
+      - unless series.displayed then next end
+      displayed_series.push('#{series.version}');
 
 -# Project specific navigation menu
 .row-fluid
