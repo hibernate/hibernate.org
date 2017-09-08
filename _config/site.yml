@@ -23,7 +23,7 @@ projects:
     artifact_id: hibernate-core
     reference_doc_prefix_url: https://docs.jboss.org/hibernate/orm/
     stable_reference_doc_prefix_url: https://docs.jboss.org/hibernate/stable/orm/
-    reference_doc_type: manual
+    reference_doc_suffix_url: userguide/html_single/Hibernate_User_Guide.html
     reference_pdf:
     javadoc_path: javadocs
     getting_started: /orm/documentation/getting-started
@@ -102,8 +102,8 @@ projects:
     artifact_id: hibernate-search-orm
     reference_doc_prefix_url: https://docs.jboss.org/hibernate/search/
     stable_reference_doc_prefix_url: https://docs.jboss.org/hibernate/stable/search/
-    reference_doc_type: reference
-    reference_pdf: hibernate_search_reference.pdf
+    reference_doc_suffix_url: reference/en-US/html_single/
+    reference_pdf: reference/en-US/pdf/hibernate_search_reference.pdf
     javadoc_path: api
     getting_started: /search/documentation/getting-started
     blog_tag: Hibernate Search
@@ -164,16 +164,6 @@ projects:
   tools:
     name: Hibernate Tools
     icon: 'icon-wrench'
-    #sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-search/
-    #zip_file: hibernate-search-VERSION-dist.zip
-    #group_id: org.hibernate
-    #artifact_id: hibernate-search
-    #reference_doc_prefix_url: https://docs.jboss.org/hibernate/search/
-    #stable_reference_doc_prefix_url: https://docs.jboss.org/hibernate/stable/search/
-    #reference_doc_type: reference
-    #reference_pdf: hibernate_search_reference.pdf
-    #javadoc_path: api
-    #getting_started: /search/documentation/getting-started
     blog_tag: JBoss Tools
     blog_tag_url: jboss-tools
     license:
@@ -233,8 +223,8 @@ projects:
     artifact_id: hibernate-validator
     reference_doc_prefix_url: https://docs.jboss.org/hibernate/validator/
     stable_reference_doc_prefix_url: https://docs.jboss.org/hibernate/stable/validator/
-    reference_doc_type: reference
-    reference_pdf: hibernate_validator_reference.pdf
+    reference_doc_suffix_url: reference/en-US/html_single/
+    reference_pdf: reference/en-US/pdf/hibernate_validator_reference.pdf
     javadoc_path: api
     getting_started: /validator/documentation/getting-started
     blog_tag: Hibernate Validator
@@ -300,8 +290,8 @@ projects:
     artifact_id: hibernate-ogm-*
     reference_doc_prefix_url: https://docs.jboss.org/hibernate/ogm/
     stable_reference_doc_prefix_url: https://docs.jboss.org/hibernate/stable/ogm/
-    reference_doc_type: reference
-    reference_pdf: hibernate_ogm_reference.pdf
+    reference_doc_suffix_url: reference/en-US/html_single/
+    reference_pdf: reference/en-US/pdf/hibernate_ogm_reference.pdf
     javadoc_path: api
     getting_started: /ogm/documentation/getting-started
     blog_tag: Hibernate OGM
