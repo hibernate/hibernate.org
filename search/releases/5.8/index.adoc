@@ -1,0 +1,181 @@
+:awestruct-layout: project-releases-series
+:awestruct-project: search
+:awestruct-series_version: "5.8"
+
+[[elasticsearch-5]]
+=== Elasticsearch 5.x support
+
+Hibernate Search now integrates with Elasticsearch 5.x.
+
+The new driver is backwards compatible, so we'll still be able to connect to
+clusters running Elasticsearch `2.x`.
+
+This doesn't need any configuration flag as Hibernate Search can automatically
+detect the version of Elasticsearch it's being pointed to.
+
+The features supported by Elasticsearch `5.x` and `2.x` are however slightly
+different and you'll find that some low level mapping features are documented
+as compatible with only one specific version.
+
+Also, due to major changes in Elasticsearch 5, migration from 2 to 5
+(as well as from 5.0/5.1 to 5.2 in certain conditions)
+will require full reindexing.
+The migration guide will be updated when this minor release will be feature
+complete.
+
+[[new-elasticsearch-client]]
+=== New improved Elasticsearch client
+
+This release now uses the new Elasticsearch REST client, which is expected to
+be a safe choice in terms of long term maintenance as it's sponsored and
+recommended by the Elasticsearch team.
+
+Compared to the driver we used previously, this one uses a state of the art
+reactive architecture, so we can take advantage of more efficient resource
+utilization.
+
+[[simple-query-string]]
+=== New `Simple Query String` supported by the Query builder DSL
+
+The useful capabilities from Lucene's `SimpleQueryParser` are now conveniently
+exposed by our higher level DSL.
+
+Details about this feature are available https://docs.jboss.org/hibernate/search/5.8/reference/en-US/html_single/#_simple_query_string_queries[in the documentation],
+and also http://in.relation.to/2017/04/27/simple-query-string-what-about-it/[in this blog post].
+
+[[simplified-jndi-configuration]]
+=== Simplified JNDI configuration
+
+If you integrated any external component into Hibernate Search using JNDI,
+for example a JMS queue or an Infinispan cache, this configuration was simplified.
+
+You will no longer need to set Hibernate Search specific configuration
+properties such as how to set the `InitialContext` for JNDI lookups:
+only configure Hibernate ORM, and Hibernate Search will inherit the same
+settings.
+
+See also the http://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#jndi[JNDI configuration in the Hibernate ORM documentation].
+
+[[analyzer-providers]]
+=== Programmatic analyzer definitions
+
+You can now define your analyzers programmatically (without annotations),
+globally (without putting the definition on a particular entity),
+and in a native way (without using Lucene classes to configure an Elasticsearch analyzer)
+using analyzer definition providers.
+
+For example, for Lucene your `LuceneAnalysisDefinitionProvider` might look like this:
+
+[source, JAVA]
+----
+public static class CustomAnalyzerProvider implements LuceneAnalysisDefinitionProvider {
+    @Override
+    public void register(LuceneAnalyzerDefinitionRegistryBuilder builder) {
+        builder
+                .analyzer( "myAnalyzer" )
+                        .tokenizer( StandardTokenizerFactory.class )
+                        .charFilter( MappingCharFilterFactory.class )
+                                .param( "mapping", "org/hibernate/search/test/analyzer/mapping-chars.properties" )
+                        .tokenFilter( ASCIIFoldingFilterFactory.class )
+                        .tokenFilter( LowerCaseFilterFactory.class )
+                        .tokenFilter( StopFilterFactory.class )
+                                .param( "mapping", "org/hibernate/search/test/analyzer/stoplist.properties" )
+                                .param( "ignoreCase", "true" );
+    }
+}
+----
+
+While for Elasticsearch you would have:
+
+[source, JAVA]
+----
+public static class CustomAnalyzerProvider implements ElasticsearchAnalysisDefinitionProvider {
+    @Override
+    public void register(ElasticsearchAnalysisDefinitionRegistryBuilder builder) {
+        builder.analyzer( "tweet_analyzer" )
+                .withTokenizer( "whitespace" )
+                .withCharFilters( "custom_html_strip" )
+                .withCharFilters( "p_br_as_space" );
+        
+        builder.charFilter( "custom_html_strip" )
+                .type( "html_strip" )
+                .param( "escaped_tags", "br", "p" );
+
+        builder.charFilter( "p_br_as_space" )
+                .type( "pattern_replace" )
+                .param( "pattern", "<p/?>|<br/?>" )
+                .param( "replacement", " " )
+                .param( "tags", "CASE_INSENSITIVE" );
+    }
+}
+----
+
+As you can see, this allows you to avoid needing to refer to Lucene classes to configure Elasticsearch analyzers. 
+ 
+More details can be found 
+https://docs.jboss.org/hibernate/search/5.8/reference/en-US/html_single/#section-programmatic-analyzer-definition[here for Lucene]
+and https://docs.jboss.org/hibernate/search/5.8/reference/en-US/html_single/#_custom_analyzers_using_a_definition_provider[here for Elasticsearch].
+
+[[normalizers]]
+=== Normalizers for safer sorts
+
+In https://hibernate.atlassian.net/browse/HSEARCH-2726[HSEARCH-2726]
+and https://hibernate.atlassian.net/browse/HSEARCH-2659[HSEARCH-2659] we introduced normalizers:
+analyzers that do not perform any kind of tokenization.
+
+We shamelessly borrowed this concept from Elasticsearch, but implemented it in both embedded Lucene mode and Elasticsearch mode.
+Normalizers are useful for sortable fields: when a field is sortable it should never be tokenized, as this would make the sort order unpredictable;
+the sort could apply to the first token if you're lucky, but it could be applied on any other token.
+
+From version 5.8.0.Beta3 onwards, Hibernate Search will log warnings whenever you're using an analyzer on a sortable field.
+To resolve this warning change your Analyzer definition to be a Normalizer.
+
+In Lucene, normalizers are just here to help, they work exactly as analyzers.
+The two differences are that you can't affect a tokenizer to a normalizer when defining it,
+and that normalizers have a runtime safety net: should you manage to create multiple tokens,
+Hibernate Search will concatenate them back to a single token and log a warning.
+
+In Elasticsearch version 5.2 and above, a normalizer will be translated to a native Elasticsearch normalizer,
+and a text field with a normalizer will take the `keyword` datatype.
+
+In Elasticsearch version 5.1 and below, native normalizers are not available,
+thus normalizers are simply translated to analyzers
+and a text field with a normalizer will take the `text` (5.x) or `string` (2.x) datatype.
+
+You can find out more about normalizers in the reference documentation:
+
+ * https://docs.jboss.org/hibernate/search/5.8/reference/en-US/html_single/#section-normalizers[main documentation]
+ * https://docs.jboss.org/hibernate/search/5.8/reference/en-US/html_single/#_normalizers[Elasticsearch specifics]
+
+[[aws-integration]]
+=== AWS integration
+
+We added a new module allowing you to very simply wire your Hibernate Search instance
+to an AWS-hosted Elasticsearch cluster using Amazon's proprietary IAM authentication mechanism. 
+
+You can find more information about how to use this integration in the
+https://docs.jboss.org/hibernate/search/5.8/reference/en-US/html_single/#elasticsearch-integration-configuration-aws[reference documentation].
+
+[[bean-resolver]]
+=== Dependency injection in FieldBridges
+
+As part of https://hibernate.atlassian.net/browse/HSEARCH-1316[HSEARCH-1316],
+we're experimenting with integration with various dependency injection frameworks.
+
+The integration is about allowing you to use annotations such as `@Inject`,
+`@PostConstruct` and so on in your FieldBridges,
+which may for example allow you to fetch additional data
+from your application when indexing a given bean.
+
+Integration is currently known to work with Spring DI and CDI.
+We don't provide packages for user consumption,
+but if you are an integrator, or simply if you feel like it,
+you can have a look at our integration tests:
+
+ * WildFly:
+   https://github.com/hibernate/hibernate-search/tree/bf4342c8991e0384243ff22317c87102738daf59/integrationtest/wildfly/src/test/java/org/hibernate/search/test/integration/wildfly/cdi/integration[the integration per se],
+   and https://github.com/hibernate/hibernate-search/blob/bf4342c8991e0384243ff22317c87102738daf59/integrationtest/wildfly/src/test/resources/cdi/META-INF/services/org.hibernate.service.spi.ServiceContributor[a Java service to plug the integration into Hibernate Search].
+ * Spring Boot:
+   https://github.com/hibernate/hibernate-search/tree/bf4342c8991e0384243ff22317c87102738daf59/integrationtest/spring/src/test/java/org/hibernate/search/test/integration/spring/injection/integration[the integration per se],
+   https://github.com/hibernate/hibernate-search/blob/bf4342c8991e0384243ff22317c87102738daf59/integrationtest/spring/src/test/resources/META-INF/services/org.hibernate.service.spi.ServiceContributor[a Java service to plug the integration into Hibernate Search],
+   and https://github.com/hibernate/hibernate-search/blob/bf4342c8991e0384243ff22317c87102738daf59/integrationtest/spring/src/test/java/org/hibernate/search/test/integration/spring/injection/SpringInjectionITApplicationConfiguration.java[the configuration of the bean factory].

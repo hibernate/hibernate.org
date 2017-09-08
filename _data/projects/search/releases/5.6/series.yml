@@ -1,0 +1,11 @@
+summary: Introduces experimental support for Elasticsearch, last release supporting Hibernate ORM 5.0.z or 5.1.z
+displayed: true
+integration_constraints:
+  java:
+    version: 7
+  orm:
+    version: 5.0 - 5.1
+  elasticsearch:
+    version: 2.0 - 2.4
+  lucene:
+    version: 5.5

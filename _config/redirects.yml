@@ -65,8 +65,10 @@ subprojects/jpamodelgen/docs.html:         /orm/tooling
 ## Search
 subprojects/search:                        /search/
 subprojects/search.html:                   /search/
-subprojects/search/download:               /search/downloads/
-subprojects/search/download.html:          /search/downloads/
+subprojects/search/download:               /search/releases/
+subprojects/search/download.html:          /search/releases/
+search/downloads:                          /search/releases/
+search/downloads.html:                     /search/releases/
 subprojects/search/docs:                   /search/documentation/
 subprojects/search/docs.html:              /search/documentation/
 

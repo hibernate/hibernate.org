@@ -111,11 +111,29 @@ projects:
     license:
       name: LGPL v2.1
       url: https://raw.github.com/hibernate/hibernate-search/master/lgpl.txt
+    jira:
+      key: HSEARCH
+    integrations:
+      java:
+        name: Java
+        url: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+      orm:
+        name: Hibernate ORM
+        url: /orm/
+      lucene:
+        name: Apache Lucene
+        url: https://lucene.apache.org/core/
+      elasticsearch:
+        name: Elasticsearch
+        url: https://www.elastic.co/products/elasticsearch
     menu:
       intern:
         - name: About
           href: '/search/'
           css_class: 'icon-fixed-width icon-home'
+        - name: Releases
+          href: '/search/releases/'
+          css_class: 'icon-fixed-width icon-tags'
         - name: Downloads
           href: '/search/downloads/'
           css_class: 'icon-fixed-width icon-cloud-download'
