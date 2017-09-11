@@ -64,6 +64,19 @@ An aggregated changelog of what has happened.
 We are too lazy to go back down to the history of time
 so we will start at 4.0 Beta 3.
 
+=== Hibernate OGM 5.2.0.Alpha1
+
+Move dialects::
+Couchdb, Redis, Cassandra and Ehcache are now in separated repositories
+
+Infinispan::
+Support for grouping operations
+
+MongoDB::
+Support distinct operation in native queries
+Support map-reduce operation in native queries
+Remove Fongo dialect
+
 === Hibernate OGM 5.1.0.Final
 
 Minor improvements over 5.1.0.CR1::
