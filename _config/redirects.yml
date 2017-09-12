@@ -75,8 +75,10 @@ subprojects/search/docs.html:              /search/documentation/
 ## Validator
 subprojects/validator/:                    /validator/
 subprojects/validator.html:                /validator/
-subprojects/validator/download:            /validator/downloads/
-subprojects/validator/download.html:       /validator/downloads/
+subprojects/validator/download:            /validator/releases/
+subprojects/validator/download.html:       /validator/releases/
+validator/downloads:                          /validator/releases/
+validator/downloads.html:                     /validator/releases/
 subprojects/validator/docs:                /validator/documentation/
 subprojects/validator/docs.html:           /validator/documentation/
 
