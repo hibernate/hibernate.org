@@ -250,11 +250,23 @@ projects:
     license:
       name: ASL v2
       url: https://raw.github.com/hibernate/hibernate-validator/master/license.txt
+    jira:
+      key: HV
+    integrations:
+      java:
+        name: Java
+        url: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+      bv:
+        name: Bean Validation
+        url: http://beanvalidation.org/
     menu:
       intern:
         - name: About
           href: '/validator/'
           css_class: 'icon-fixed-width icon-home'
+        - name: Releases
+          href: '/validator/releases/'
+          css_class: 'icon-fixed-width icon-tags'
         - name: Downloads
           href: '/validator/downloads/'
           css_class: 'icon-fixed-width icon-cloud-download'
