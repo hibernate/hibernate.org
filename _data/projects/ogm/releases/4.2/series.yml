@@ -1,0 +1,10 @@
+summary: Queries on embedded id properties for Neo4j and MongoDB, Bugfixes
+integration_constraints:
+  java:
+    version: 7
+  jpa:
+    version: 2.0
+  orm:
+    version: 4.3
+  search:
+    version: 5.2

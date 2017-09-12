@@ -87,8 +87,10 @@ subprojects/tools.html:                    /tools/
 ## OGM
 subprojects/ogm:                           /ogm/
 subprojects/ogm.html:                      /ogm/
-subprojects/ogm/download:                  /ogm/downloads/
-subprojects/ogm/download.html:             /ogm/downloads/
+subprojects/ogm/download:                  /ogm/releases/
+subprojects/ogm/download.html:             /ogm/releases/
+ogm/downloads:                             /ogm/releases/
+ogm/downloads.html:                        /ogm/releases/
 subprojects/ogm/docs:                      /ogm/documentation/
 subprojects/search/ogm.html:               /ogm/documentation/
 

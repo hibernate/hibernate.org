@@ -1,0 +1,11 @@
+summary: Grouping for Infinispan remote, move dialects in separate repositories, support map-reduce in MongoDB native queries
+displayed: true
+integration_constraints:
+  java:
+    version: 8
+  jpa:
+    version: 2.1
+  orm:
+    version: 5.1
+  search:
+    version: 5.6

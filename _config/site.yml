@@ -317,11 +317,29 @@ projects:
     license:
       name: LGPL
       url: http://www.gnu.org/licenses/lgpl.html
+    jira:
+      key: OGM
+    integrations:
+      java:
+        name: Java
+        url: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+      jpa:
+        name: JPA
+        url: http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html
+      orm:
+        name: Hibernate ORM
+        url: /orm/
+      search:
+        name: Hibernate Search
+        url: /search/
     menu:
       intern:
         - name: About
           href: '/ogm/'
           css_class: 'icon-fixed-width icon-home'
+        - name: Releases
+          href: '/ogm/releases/'
+          css_class: 'icon-fixed-width icon-tags'
         - name: Downloads
           href: '/ogm/downloads/'
           css_class: 'icon-fixed-width icon-cloud-download'

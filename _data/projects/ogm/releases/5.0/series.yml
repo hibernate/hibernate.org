@@ -1,0 +1,11 @@
+summary: Upgrade to Hibernate ORM 5 and Hibernate Search 5
+displayed: true
+integration_constraints:
+  java:
+    version: 7
+  jpa:
+    version: 2.1
+  orm:
+    version: 5.0
+  search:
+    version: 5.5
