@@ -1,0 +1,11 @@
+summary: Hibernate ORM 5.1, Neo4j and Infinispan remote, Aggregation in MongoDB native queries, Operations grouping
+displayed: true
+integration_constraints:
+  java:
+    version: 7
+  jpa:
+    version: 2.1
+  orm:
+    version: 5.1
+  search:
+    version: 5.6

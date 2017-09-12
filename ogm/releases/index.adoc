@@ -1,0 +1,35 @@
+= Hibernate OGM Releases
+:awestruct-layout: project-releases
+:awestruct-project: ogm
+:page-interpolate: true
+:nexus: https://repository.jboss.org/nexus/
+:nexus-search: https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{site.projects.ogm.group_id}~#{site.projects.ogm.artifact_id}~~~
+:groupId: #{site.projects.ogm.group_id}
+:artifactId: #{site.projects.ogm.artifact_id}
+:version: #{site.projects.ogm.sorted_releases.first.version}
+
+== Maven repository
+
+Hibernate OGM is built using Maven and publishes as part of the release process the project artifacts to the
+{nexus}[JBoss Maven Repository] under {nexus-search}[{groupId}:{artifactId}].
+For more information on how to configure Maven to use JBoss's repository,
+http://community.jboss.org/wiki/MavenGettingStarted-Users[look here] or use `mvn install -s setting-example.xml`.
+
+Hibernate OGM comprises a core module (`#{groupId}:hibernate-ogm-core`) and several datastore-specific modules,
+each containing a store-specific grid dialect implementation.
+These modules have artifact ids in the form of `hibernate-ogm-<%BACKEND%>`, where `<%BACKEND%>` is a store-specific identifier
+such as `infinispan` or `mongodb`.
+
+So if your are for instance working with MongoDB, add the following dependency to your Maven POM file:
+
+[source,xml]
+[subs="verbatim,attributes"]
+----
+<dependency>
+    <groupId>{groupId}</groupId>
+    <artifactId>hibernate-ogm-mongodb</artifactId>
+    <version>{version}</version>
+</dependency>
+----
+
+This will transitively pull in the Hibernate OGM core module and all other required dependencies.
