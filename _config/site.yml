@@ -32,11 +32,23 @@ projects:
     license:
       name: LGPL V2.1
       url: http://hibernate.org/license/
+    jira:
+      key: HHH
+    integrations:
+      java:
+        name: Java
+        url: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+      jpa:
+        name: JPA
+        url: http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html
     menu:
       intern:
         - name: About
           href: '/orm/'
           css_class: 'icon-fixed-width icon-home'
+        - name: Releases
+          href: '/orm/releases/'
+          css_class: 'icon-fixed-width icon-tags'
         - name: Downloads
           href: '/orm/downloads/'
           css_class: 'icon-fixed-width icon-cloud-download'

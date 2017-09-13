@@ -1,0 +1,7 @@
+summary: JPA 2.1 support
+displayed: true
+integration_constraints:
+  java:
+    version: 6
+  jpa:
+    version: 2.1
