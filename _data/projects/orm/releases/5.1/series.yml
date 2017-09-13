@@ -1,0 +1,7 @@
+summary: Entity joins, load-by-multiple-ids, association traversal in AuditQuery
+integration_constraints:
+  java:
+    version: 6
+  jpa:
+    version: 2.1
+
