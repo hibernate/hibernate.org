@@ -1,0 +1,218 @@
+= Migration Guide from Hibernate Search {from_version_short} to {to_version_short}
+Sanne Grinovero, Yoann Rodière
+:awestruct-layout: project-frame
+:awestruct-project: search
+:toc:
+:toc-placement: preamble
+:toc-title: Content
+:to_version_short: 5.8
+:from_version_short: 5.7
+:reference_version_full: 5.8.0.Final
+
+Here we are helping you migrate your existing Search application to the latest and greatest.
+
+== Upgrade to Hibernate Search {to_version_short}.x from {from_version_short}.x
+
+The aim of this guide is to assist you migrating an existing application using any version `{from_version_short}.x` of Hibernate Search to the latest of the `{to_version_short}.x` series.
+If you're looking to migrate different versions see link:/search/documentation/migrate[Hibernate Search migration guides].
+
+NOTE: This document provides pointers for a migration.
+It refers to Hibernate Search version `{reference_version_full}`. If you think something is missing or something does not work, please link:/community[contact us].
+
+=== Requirements
+
+The basic requirements didn't change.
+
+=== Configuration changes
+
+`hibernate.search.index_uninverting_allowed` now defaults to `false`,
+resulting in exceptions being thrown when you attempt to sort on a field that hasn't been marked with `@SortableField`,
+instead of simply logging a warning.
+
+A new request timeout, set to 60s by default, has been added:
+`hibernate.search.default.elasticsearch.request_timeout`.
+If you execute requests taking more than 60s, you will have to raise this timeout,
+as well as the others (socket timeout, ...).
+See https://docs.jboss.org/hibernate/search/5.8/reference/en-US/html_single/#elasticsearch-integration-configuration[the documentation]
+for more information.
+
+Index schema management strategy options in the Elasticsearch integration
+have been renamed to be more in line with the similar JPA options:
+
+ * `none` stays the same
+ * `validate` stays the same
+ * `merge` is now `update`
+ * `create` stays the same
+ * `recreate` is now `drop-and-create`
+ * `recreate-delete` is now `drop-and-create-and-drop`
+
+The `ram` directory provider has been renamed to `local-heap`.
+The `ram` name still works, but will be removed in a future version.
+
+Pretty-printing of JSON in logs is now disabled by default.
+It can be enabled using the configuration option
+`hibernate.search.elasticsearch.log.json_pretty_printing`.
+
+=== API changes
+
+Below are the changes on application programming interfaces that require changes on the existing implementations or clients.
+Please refer to the javadoc for the expected behavior of changed/added methods.
+
+`org.hibernate.search.jpa.FullTextQuery`, `org.hibernate.search.FullTextQuery`, `org.hibernate.search.jpa.FullTextEntityManager`, `org.hibernate.search.FullTextSession`:
+
+ * Internal changes related to merging the JPA implementations with the native ones
+   may result in some differences in the type of exceptions being thrown.
+   If you have specific exception handling code around full-text query execution,
+   you may want to test it again.
+   See https://github.com/hibernate/hibernate-search/commit/38fc9b864e6a279eccb84a15c14002dce61df4fa[this commit message]
+   for more information.
+ * `FullTextEntityManager#getDelegate()` now returns the actual delegate
+   (it used to return the delegate's delegate).
+
+Full-text filters:
+
+ * `.filterBy()` in the query DSL now accepts any `org.apache.lucene.search.Query` instance,
+   and not to just `org.apache.lucene.search.Filter` instances.
+ * Full-text filters can now be implemented with any `org.apache.lucene.search.Query` instance,
+   and do not limit you to using only `org.apache.lucene.search.Filter` instances.
+ * Since the `org.apache.lucene.search.Filter` type is deprecated in Lucene
+   and will ultimately be removed,
+   you are encouraged to move away from using it.
+
+Analyzer definition providers:
+
+ * Interfaces of analyzer definition providers moved since they were first introduced as experimental concepts.
+   Their new locations are:
+ ** `org.hibernate.search.analyzer.definition.LuceneAnalysisDefinitionProvider`
+ ** `org.hibernate.search.elasticsearch.analyzer.definition.ElasticsearchAnalysisDefinitionProvider`
+
+Sortable fields:
+
+ * Sort fields are now expected to either be assigned a normalizer,
+   or to not be analyzed at all.
+   You can find out more about normalizers in the reference documentation:
+ ** https://docs.jboss.org/hibernate/search/5.8/reference/en-US/html_single/#section-normalizers[main documentation]
+ ** https://docs.jboss.org/hibernate/search/5.8/reference/en-US/html_single/#_normalizers[Elasticsearch specifics]
+
+`@DynamicBoost`, `@Boost`:
+
+ * Index-time boosting capabilities have been deprecated.
+   Index-time boosting will not be possible anymore starting from Lucene 7.
+   You should use query-time boosting instead, for instance by calling
+   `org.hibernate.search.query.dsl.FieldCustomization#boostedTo(float)`
+   when building queries with the Hibernate Search query DSL.
+
+`org.hibernate.search.annotations.Parameter`:
+
+ * Using multiple `@Parameter` with the same name in the same array of parameters
+   will now trigger an exception.
+
+Please also note those new features that may help when writing new code, but don't require any change to existing code:
+
+ * `.must()` / `.should` in the `QueryBuilder` now accept (and ignore) `null` queries.
+ * `QueryBuilder` now offers a new `queryString` method,
+   allowing to execute queries written by end users in a controlled way.
+   See http://in.relation.to/2017/04/27/simple-query-string-what-about-it/[this blog post]
+   for more information.
+ * `FullTextSession.unwrap( FullTextSession.class )` now works correctly
+   (it used to throw an exception).
+
+=== SPI changes
+
+Below are the changes on service provider interfaces that require changes on the existing implementations or clients.
+Please refer to the javadoc for the expected behavior of changed/added methods.
+
+General changes:
+
+ * `org.hibernate.search.spi.IndexedTypeIdentifier` is now used throughout our SPIs
+   to refer to indexed type instead of `java.lang.Class`.
+   Many methods accepting or returning `Class` have been replaced
+   with new versions accepting or returning `IndexedTypeIdentifier`.
+
+`org.hibernate.search.backend.spi.BackendQueueProcessor`:
+
+ * Backends are now expected to plug into Hibernate Search by registering a `org.hibernate.search.backend.spi.Backend` service,
+   instead of a `org.hibernate.search.backend.spi.BackendQueueProcessor`.
+   The backend will then create the queue processors when requested.
+   The previous mechanism of registering a `org.hibernate.search.backend.spi.BackendQueueProcessor`
+   is still supported, but has been deprecated and will be removed in a future version.
+
+`org.hibernate.search.query.engine.spi.HSQuery`:
+
+ * the `filter(Filter)` method is now deprecated and will be removed in a future version.
+   Use a full-text filter instead, or handle filtering using boolean junctions when building the query.
+ * the `targetedTypes` methods have been removed.
+   Target type information should now be passed when creating the query.
+
+`org.hibernate.search.spi.SearchIntegrator`:
+
+ * the deprecated `createHSQuery()` method has been removed. Use `createHSQuery(Query, Class...)` instead.
+
+`org.hibernate.search.spi.BuildContext`:
+
+ * the deprecated `getIndexingStrategy()` method has been removed in favor of `getIndexingMode()`.
+
+`org.hibernate.search.spi.SearchIntegratorBuilder`:
+
+ * the deprecated `getIndexingStrategy()` method has been removed in favor of `getIndexingMode()`.
+
+`org.hibernate.search.spi.SearchFactoryBuilder`:
+
+ * this interface has been removed in favor of `org.hibernate.search.spi.SearchIntegratorBuilder`.
+
+`org.hibernate.search.spi.SearchFactoryIntegrator`:
+
+ * this interface has been removed in favor of `org.hibernate.search.spi.SearchIntegrator`.
+
+The changes below are unlikely to impact anyone, but are mentioned here for the sake of completeness.
+
+`org.hibernate.search.indexes.spi.IndexManagerType`:
+
+ * `getMissingValueStrategy()` has been replaced with
+   `createMissingValueStrategy(ServiceManager serviceManager, SearchConfiguration cfg)`.
+
+`org.hibernate.search.query.engine.spi.QueryDescriptor`:
+
+ * `createHSQuery(SearchIntegrator)` has been removed
+ * a new method `createHSQuery(SearchIntegrator, IndexedTypeSet)` has been added.
+ * a new method `createHSQuery(SearchIntegrator, List<CustomTypeMetadata>)` has been added.
+
+`org.hibernate.search.engine.spi.EntityIndexBinding`:
+
+ * `getSelectionStrategy()` has been replaced with `getIndexManagerSelector()`
+ * `getIndexManagers()` has been removed. Use `getIndexManagerSelector().all()` instead.
+
+`org.hibernate.search.engine.spi.AbstractDocumentBuilder`:
+
+ * `getMetadata()` has been removed in favor of `getTypeMetadata()`.
+ * `close()` has been removed.
+
+`org.hibernate.search.analyzer.spi.AnalyzerStrategy`:
+
+ * a new method `createProvidedAnalyzerReferences()` has been added.
+ * `initializeAnalyzerReferences(Collection, Map)` has been replaced with
+  `void initializeAnalyzerReferences(Collection, Map, Collection, Map)`.
+ * a new method `createProvidedNormalizerReferences()` has been added.
+ * a new method `createNamedNormalizerReference(String)` has been added.
+ * a new method `createLuceneClassNormalizerReference(String)` has been added.
+
+`org.hibernate.search.analyzer.spi.ScopedAnalyzerReference`:
+
+ * `getAnalyzer()` has been removed.
+
+`org.hibernate.search.analyzer.spi.ScopedAnalyzer`:
+
+ * this class has been removed.
+
+`org.hibernate.search.analyzer.spi.AnalyzerReference`:
+
+ * `getAnalyzer()` has been removed.
+ * a new method `isNormalizer(String)` has been added.
+
+`org.hibernate.search.store.spi.DirectoryHelper`:
+
+ * `getVerifiedIndexDir(String, Properties, boolean)` has been removed
+
+`org.hibernate.search.store.spi.LockFactoryCreator`:
+
+ * `createLockFactory` now expects a `Path` instead of a `File`.
