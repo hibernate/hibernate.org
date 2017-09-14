@@ -2,17 +2,20 @@ module Awestruct
   module Extensions
     module Links
       def doc_reference_url(project, series)
-        suffix = project.reference_doc_path
+        suffix = series[:reference_doc_path]
+        suffix ||= project.reference_doc_path
         return suffix.nil? ? nil : "#{doc_root_series_url(project, series)}#{suffix}"
       end
 
       def doc_reference_pdf_url(project, series)
-        suffix = project.reference_doc_pdf_path
+        suffix = series[:reference_doc_pdf_path]
+        suffix ||= project.reference_doc_pdf_path
         return suffix.nil? ? nil : "#{doc_root_series_url(project, series)}#{suffix}"
       end
 
       def javadoc_url(project, series)
-        suffix = project.javadoc_path
+        suffix = series[:javadoc_path]
+        suffix ||= project.javadoc_path
         return suffix.nil? ? nil : "#{doc_root_series_url(project, series)}#{suffix}"
       end
 
