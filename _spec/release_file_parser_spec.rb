@@ -47,11 +47,10 @@ describe Awestruct::Extensions::ReleaseFileParser do
         data_dir.execute( site )
 
         expect(site.projects[:foo].releases).to be_an_instance_of Hash
-        expect(site.projects[:foo].sorted_releases).to be_an_instance_of Array
-
-        site.projects[:foo].sorted_releases.each_with_index do |release, index|
-            expect(release[:version]).to eql @expectedReleases[index]
-        end
+        expect(site.projects[:foo].latest_series.version).to eql "5.3"
+        expect(site.projects[:foo].latest_stable_series.version).to eql "5.3"
+        expect(site.projects[:foo].latest_release.version).to eql "5.3.1.Final"
+        expect(site.projects[:foo].latest_stable_release.version).to eql "5.3.1.Final"
 
         site.projects[:foo].releases.values.each_with_index do |release, index|
             expect(release[:version]).to eql @expectedReleases[index]

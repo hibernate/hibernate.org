@@ -32,8 +32,7 @@ layout: project-frame
         %a.btn.btn-large.btn-link{:href => migration_page_root}
           %i.icon-share-alt
           Migrate
-      - doc_root_url = "#{project_description.reference_doc_prefix_url}#{series.version}/"
-      %a.btn.btn-large.btn-link{:href => "#{doc_root_url}#{project_description.reference_doc_suffix_url}"}
+      %a.btn.btn-large.btn-link{:href => "#{doc_reference_url(project_description, series)}"}
         %i.icon-book
         Main documentation
       %a.btn.btn-large.btn-link{:href => "#releases"}

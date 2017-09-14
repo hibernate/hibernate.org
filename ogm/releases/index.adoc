@@ -6,7 +6,7 @@
 :nexus-search: https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{site.projects.ogm.group_id}~#{site.projects.ogm.artifact_id}~~~
 :groupId: #{site.projects.ogm.group_id}
 :artifactId: #{site.projects.ogm.artifact_id}
-:version: #{site.projects.ogm.sorted_releases.first.version}
+:version: #{site.projects.ogm.latest_release.version}
 
 == Maven repository
 
