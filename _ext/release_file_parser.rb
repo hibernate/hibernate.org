@@ -186,15 +186,55 @@ module Awestruct
       def sortReleaseHashes(project)
         releases = project[:releases]
         unless releases == nil
-          project[:releases] = Hash[releases.sort_by { |key, value| Version.new(key) }.reverse]
-          project[:sorted_releases] = project[:releases].values
+          releases = Hash[releases.sort_by { |key, value| Version.new(key) }.reverse]
+          project[:releases] = releases
+
+          # Also add useful, but redundant information to the objects
+          found_release = false
+          found_stable_release = false
+          releases.values.each do |release|
+            release.latest = false
+            release.latest_stable = false
+
+            if !found_release
+              found_release = true
+              release.latest = true
+              project[:latest_release] = release
+            end
+            if !found_stable_release && release.stable
+              found_stable_release = true
+              release.latest_stable = true
+              project[:latest_stable_release] = release
+            end
+          end
         end
         series = project[:release_series]
         unless series == nil
-          project[:release_series] = Hash[series.sort_by { |key, value| Version.new(key) }.reverse]
+          series = Hash[series.sort_by { |key, value| Version.new(key) }.reverse]
+          project[:release_series] = series
+
+          # Also add useful, but redundant information to the objects
+          found_series = false
+          found_stable_series = false
           series.each do |series_version, series|
             releases = series.releases
-            series.releases = releases.sort_by { |release| Version.new(release.version) }.reverse
+            releases = releases.sort_by { |release| Version.new(release.version) }.reverse
+            series.releases = releases
+
+            series.stable = releases.first.stable
+            series.latest = false
+            series.latest_stable = false
+
+            if !found_series
+              found_series = true
+              series.latest = true
+              project[:latest_series] = series
+            end
+            if !found_stable_series && series.stable
+              found_stable_series = true
+              series.latest_stable = true
+              project[:latest_stable_series] = series
+            end
           end
         end
       end

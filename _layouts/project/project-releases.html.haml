@@ -13,14 +13,15 @@ layout: project-frame
 -# Release buttons using the latest dev and latest stable releases
 .release-bottons.visible-desktop
   - stable_release = latest_stable_release(page)
-  - dev_release = latest_dev_release(page)
+  - release = latest_release(page)
+  - dev_release = release != stable_release ? release : nil
   - if not (stable_release.nil? && dev_release.nil?)
     .row-fluid.text-center
       - unless stable_release.nil?
         %a.btn.btn-large.btn-success{:href => "#{sourceforge_zip_url(project_description, stable_release)}"}
           %i.icon-cloud-download
           stable #{stable_release.version}
-      - unless (stable_release.nil? || dev_release.nil?)
+      - unless (stable_release.nil? || dev_release.nil? || !dev_release.displayed)
         &nbsp;
       - unless (dev_release.nil? || !dev_release.displayed)
         %a.btn.btn-large.btn-warning{:href => "#{sourceforge_zip_url(project_description, dev_release)}"}
@@ -52,12 +53,7 @@ layout: project-frame
             &nbsp;
             %a.btn.btn-info{:href => "#{sourceforge_zip_url(project_description, release)}", :title => "Download"}
               %i.icon-cloud-download
-            - if release.stable && first_stable_release
-              - doc_root_url = "#{project_description.stable_reference_doc_prefix_url}"
-              - first_stable_release = false
-            - else
-              - doc_root_url = "#{project_description.reference_doc_prefix_url}#{series.version}/"
-            %a.btn.btn-info{:href => "#{doc_root_url}#{project_description.reference_doc_suffix_url}", :title => "Reference documentation"}
+            %a.btn.btn-info{:href => "#{doc_reference_url(project_description, series)}", :title => "Reference documentation"}
               %i.icon-book
           %dd
             %small

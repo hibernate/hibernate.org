@@ -6,7 +6,7 @@
 :nexus-search: https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{site.projects.orm.group_id}~#{site.projects.orm.artifact_id}~~~
 :groupId: #{site.projects.orm.group_id}
 :artifactId: #{site.projects.orm.artifact_id}
-:version: #{site.projects.orm.sorted_releases.first.version}
+:version: #{site.projects.orm.latest_release.version}
 
 == Supported JPA Versions
         
