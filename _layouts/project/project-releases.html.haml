@@ -77,7 +77,7 @@ layout: project-frame
           - if not release.announcement_url.nil?
             %dd
               %a{:href => "#{release.announcement_url}"}
-                More on the #{release.version} release
+                #{release.version} release announcement
                 %i.icon-circle-arrow-right
     - else
       %p There are no releases configured for this project.
