@@ -11,14 +11,14 @@ layout: project-frame
 - stable_series = project_description.latest_stable_series
 
 -# Documentation buttons for the latest stable series
-.release-bottons.hidden-phone
+.release-buttons.hidden-phone
   .row-fluid.text-center
     - if not get_started_url.nil?
       %a.btn.btn-large{:href => "#{get_started_url}"} Getting started guide
     - if not stable_series.nil?
       &nbsp;
       %a.btn.btn-large.btn-success{:href => "#{doc_reference_url(project_description, stable_series)}"} Get documentation for #{stable_series.version}
-.release-bottons.visible-phone
+.release-buttons.visible-phone
   - if not get_started_url.nil?
     .row-fluid.text-center
       #get-started-button
