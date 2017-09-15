@@ -11,7 +11,7 @@ layout: project-frame
 - project_description = site.projects[page.project]
 
 -# Release buttons using the latest dev and latest stable releases
-.release-bottons.visible-desktop
+.release-buttons.visible-desktop
   - stable_release = latest_stable_release(page)
   - release = latest_release(page)
   - dev_release = release != stable_release ? release : nil
