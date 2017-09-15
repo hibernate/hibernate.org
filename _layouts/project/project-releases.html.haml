@@ -1,5 +1,6 @@
 ---
 layout: project-frame
+title_partial: project/title-releases.html.haml
 ---
 -# Defines the project releases page template
 -# Provide get started and download action buttons
@@ -27,16 +28,6 @@ layout: project-frame
         %a.btn.btn-large.btn-warning{:href => "./#{dev_series.version}/"}
           %i.icon-circle-arrow-right
           Development (#{dev_series.version})
-
-.alert.alert-info.text-center
-  -# %button.close{:type => 'button', "data-dismiss" =>'alert'}
-  -#  &times;
-  %i.icon-user-md.icon-large
-  :asciidoc
-    :doctype: inline
-    :project: #{page.project}
-
-    Interested in commercial support? Check out link:/{project}/support/[Red Hat's offering].
 
 %h2 Series
 - unless project_description.release_series.nil?
