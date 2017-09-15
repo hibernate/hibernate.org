@@ -10,23 +10,23 @@ layout: project-frame
 -# Metadata from site.yml for the project
 - project_description = site.projects[page.project]
 
--# Release buttons using the latest dev and latest stable releases
+-# Release buttons using the latest dev and latest stable series
 .release-buttons.visible-desktop
-  - stable_release = latest_stable_release(page)
-  - release = latest_release(page)
-  - dev_release = release != stable_release ? release : nil
-  - if not (stable_release.nil? && dev_release.nil?)
+  - stable_series = latest_stable_series(page)
+  - series = latest_series(page)
+  - dev_series = series != stable_series ? series : nil
+  - if not (stable_series.nil? && dev_series.nil?)
     .row-fluid.text-center
-      - unless stable_release.nil?
-        %a.btn.btn-large.btn-success{:href => "#{sourceforge_zip_url(project_description, stable_release)}"}
-          %i.icon-cloud-download
-          stable #{stable_release.version}
-      - unless (stable_release.nil? || dev_release.nil? || !dev_release.displayed)
+      - unless stable_series.nil?
+        %a.btn.btn-large.btn-success{:href => "./#{series.version}/"}
+          %i.icon-circle-arrow-right
+          Latest stable (#{stable_series.version})
+      - unless (stable_series.nil? || dev_series.nil? || !dev_series.displayed)
         &nbsp;
-      - unless (dev_release.nil? || !dev_release.displayed)
-        %a.btn.btn-large.btn-warning{:href => "#{sourceforge_zip_url(project_description, dev_release)}"}
-          %i.icon-cloud-download
-          development #{dev_release.version}
+      - unless (dev_series.nil? || !dev_series.displayed)
+        %a.btn.btn-large.btn-warning{:href => "./#{dev_series.version}/"}
+          %i.icon-circle-arrow-right
+          Development (#{dev_series.version})
 .row-fluid
   .span12
     .alert.alert-info.text-center

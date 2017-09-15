@@ -2,18 +2,21 @@
 - real_page = page["real_page"]
 - get_started_url = site.projects[real_page.project].getting_started.nil? ? nil : relative("#{site.projects[real_page.project].getting_started}", real_page)
 - project_description = site.projects[real_page.project]
-- release = latest_stable_release(real_page)
-- release ||= latest_release(real_page)
+- stable_series = latest_stable_series(real_page)
+- series = latest_series(real_page)
+- dev_series = series != stable_series ? series : nil
 - download_url = release.nil? ? nil : "#{sourceforge_zip_url(project_description, release)}"
-.row-fluid
-  .hidden-phone.project-title-desktop.text-center
-    .visible-desktop
-      - if not get_started_url.nil?
-        %a.btn.btn-large.hero-button{:href => "#{get_started_url}"} Getting started
-      - if not release.nil?
-        %a.btn.btn-success.btn-large.hero-button{:href => "#{download_url}"}= "Download (#{release.version})"
-    .hidden-desktop
-      %a.btn.btn-large.hero-button{:href => "#{get_started_url}"} Getting started
-  .visible-phone
-    .project-title-phone.text-center
-      %a.btn{:href => "#{get_started_url}"} Getting started
+.project-title-desktop.text-center
+  - if not get_started_url.nil?
+    %a.btn.btn-large.hero-button{:href => "#{get_started_url}"}
+      %i.icon-circle-arrow-right
+      Getting started
+  - if not (stable_series.nil? && dev_series.nil?)
+    - unless stable_series.nil?
+      %a.btn.btn-large.btn-success.hero-button{:href => "./releases/#{series.version}/"}
+        %i.icon-circle-arrow-right
+        Latest stable (#{stable_series.version})
+    - unless (dev_series.nil? || !dev_series.displayed)
+      %a.btn.btn-large.btn-warning.hero-button{:href => "./releases/#{dev_series.version}/"}
+        %i.icon-circle-arrow-right
+        Development (#{dev_series.version})
