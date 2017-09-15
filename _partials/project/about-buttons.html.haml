@@ -6,7 +6,7 @@
 - series = latest_series(real_page)
 - dev_series = series != stable_series ? series : nil
 - download_url = release.nil? ? nil : "#{sourceforge_zip_url(project_description, release)}"
-.project-title-desktop.text-center
+.text-center
   - if not get_started_url.nil?
     %a.btn.btn-large.hero-button{:href => "#{get_started_url}"}
       %i.icon-circle-arrow-right
