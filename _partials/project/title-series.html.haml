@@ -1,0 +1,33 @@
+-# Hero unit for a given series
+- real_page = page["real_page"]
+- project_description = site.projects[real_page.project]
+- series = project_description.release_series[real_page.series_version]
+- latest_release = series.releases.first
+.row-fluid
+  .span12
+    .hero-unit
+      %h1
+        #{project_description.name} #{series.version} series
+        %span.label{:class => "#{latest_release.stable ? 'label-success' : 'label-warning'}"} #{latest_release.stable ? 'stable' : 'development'}
+      = series.summary
+      .text-center
+        - unless series.integration_constraints.nil? || series.integration_constraints.empty?
+          %a.btn.btn-large.btn-link{:href => "#compatibility"}
+            %i.icon-globe
+            Compatibility
+        %a.btn.btn-large.btn-link{:href => "#whats_new"}
+          %i.icon-fire
+          What's new
+        - migration_page_root = '/' + real_page.project + '/documentation/migrate/' + series.version + '/'
+        - # development releases may not have a migration guide yet
+        - has_migration_page = site.pages.index {|page| page.output_path == (migration_page_root + 'index.html')} != nil
+        - if has_migration_page
+          %a.btn.btn-large.btn-link{:href => migration_page_root}
+            %i.icon-share-alt
+            Migrate
+        %a.btn.btn-large.btn-link{:href => "#{doc_reference_url(project_description, series)}"}
+          %i.icon-book
+          Main documentation
+        %a.btn.btn-large.btn-link{:href => "#releases"}
+          %i.icon-tags
+          Releases

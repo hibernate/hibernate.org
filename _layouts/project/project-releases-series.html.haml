@@ -1,5 +1,6 @@
 ---
 layout: project-frame
+title_partial: project/title-series.html.haml
 ---
 -# Defines the project series page template
 -# Provides info about a particular series
@@ -9,35 +10,7 @@ layout: project-frame
 - project_description = site.projects[page.project]
 
 - series = project_description.release_series[page.series_version]
-- latest_release = series.releases[0]
 
-.row-fluid
-  .span12.hero-unit
-    %h1
-      #{project_description.name} #{series.version} series
-      %span.label{:class => "#{latest_release.stable ? 'label-success' : 'label-warning'}"} #{latest_release.stable ? 'stable' : 'development'}
-    = series.summary
-    .text-center
-      - unless series.integration_constraints.nil? || series.integration_constraints.empty?
-        %a.btn.btn-large.btn-link{:href => "#compatibility"}
-          %i.icon-globe
-          Compatibility
-      %a.btn.btn-large.btn-link{:href => "#whats_new"}
-        %i.icon-fire
-        What's new
-      - migration_page_root = '/' + page.project + '/documentation/migrate/' + series.version + '/'
-      - # development releases may not have a migration guide yet
-      - has_migration_page = site.pages.index {|page| page.output_path == (migration_page_root + 'index.html')} != nil
-      - if has_migration_page
-        %a.btn.btn-large.btn-link{:href => migration_page_root}
-          %i.icon-share-alt
-          Migrate
-      %a.btn.btn-large.btn-link{:href => "#{doc_reference_url(project_description, series)}"}
-        %i.icon-book
-        Main documentation
-      %a.btn.btn-large.btn-link{:href => "#releases"}
-        %i.icon-tags
-        Releases
 .row-fluid
   .span12
     - unless series.integration_constraints.nil? || series.integration_constraints.empty?
