@@ -101,17 +101,16 @@ title_partial: project/title-about.html.haml
 -# Center body
 .row-fluid
   .span8
-    .row-fluid
-      .span12.feature-block
-        :asciidoc
-          === Full-text search for entities
+    .feature-block
+      :asciidoc
+        === Full-text search for entities
 
-          Offers full-text search support for objects stored by Hibernate ORM, Infinispan and other sources.
-          Think of it as Google(tm) for your entities:
+        Offers full-text search support for objects stored by Hibernate ORM, Infinispan and other sources.
+        Think of it as Google(tm) for your entities:
 
-          * search words with text
-          * order results by relevance
-          * find by approximation (fuzzy search)
+        * search words with text
+        * order results by relevance
+        * find by approximation (fuzzy search)
 ....
 
 [source]

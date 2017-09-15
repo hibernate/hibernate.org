@@ -16,7 +16,7 @@ layout: project-frame
   - series = latest_series(page)
   - dev_series = series != stable_series ? series : nil
   - if not (stable_series.nil? && dev_series.nil?)
-    .row-fluid.text-center
+    .text-center
       - unless stable_series.nil?
         %a.btn.btn-large.btn-success{:href => "./#{series.version}/"}
           %i.icon-circle-arrow-right
@@ -27,89 +27,86 @@ layout: project-frame
         %a.btn.btn-large.btn-warning{:href => "./#{dev_series.version}/"}
           %i.icon-circle-arrow-right
           Development (#{dev_series.version})
-.row-fluid
-  .span12
-    .alert.alert-info.text-center
-      -# %button.close{:type => 'button', "data-dismiss" =>'alert'}
-      -#  &times;
-      %i.icon-user-md.icon-large
-      :asciidoc
-        :doctype: inline
-        :project: #{page.project}
 
-        Interested in commercial support? Check out link:/{project}/support/[Red Hat's offering].
+.alert.alert-info.text-center
+  -# %button.close{:type => 'button', "data-dismiss" =>'alert'}
+  -#  &times;
+  %i.icon-user-md.icon-large
+  :asciidoc
+    :doctype: inline
+    :project: #{page.project}
 
-.row-fluid
-  .span12
-    %h2 Series
-    - unless project_description.release_series.nil?
-      - first_stable_release = true
-      - project_description.release_series.values.each do |series|
-        - release = series.releases[0]
-        - unless series.displayed then next end
-        %dl.dl-horizontal
-          %dt
-            = series.version
-            &nbsp;
-            %a.btn.btn-info{:href => "#{sourceforge_zip_url(project_description, release)}", :title => "Download"}
-              %i.icon-cloud-download
-            %a.btn.btn-info{:href => "#{doc_reference_url(project_description, series)}", :title => "Reference documentation"}
-              %i.icon-book
-          %dd
-            %small
-              %strong= release.version
-              = "-"
-              = release.date
-            %span.label{:class => "#{release.stable ? 'label-success' : 'label-warning'}"} #{release.stable ? 'stable' : 'development'}
-          %dd
-            %small
-              - group_id = (release.group_id? ? release.group_id : project_description.group_id)
-              Maven gav:
-              %a{:href => "https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{group_id}~#{project_description.artifact_id}~#{release.version}~~"}>=" #{group_id}:#{project_description.artifact_id}:#{release.version}"
-          %dd
-            = series.summary
-          %dd
-            %a{:href => "./#{series.version}/"}
-              More on the #{series.version} series
-              %i.icon-circle-arrow-right
-          - if not release.announcement_url.nil?
-            %dd
-              %a{:href => "#{release.announcement_url}"}
-                #{release.version} release announcement
-                %i.icon-circle-arrow-right
-    - else
-      %p There are no releases configured for this project.
+    Interested in commercial support? Check out link:/{project}/support/[Red Hat's offering].
 
-    Older series can be found
-    %a{:href => "#{project_description.sourceforge_url}"}
-      on SourceForge
-    or in JBoss's
-    %a{:href => "https://repository.jboss.org/nexus/index.html#nexus-search;gav~~#{project_description.artifact_id}~~~"}<
-      Maven repository.
-    - unless project_description.integrations.nil?
-      %h2 Compatibility matrix
-      .table-responsive
-        %table.table
-          %thead
-            %tr
-              %th
-                = project_description.name
-              - project_description.release_series.values.each do |series|
-                - unless series.displayed then next end
-                %th
-                  = series.version
-          %tbody
-            - project_description.integrations.each_pair do |integration_id, integration|
-              %tr
-                %th
-                  %a{:href => "#{integration['url']}"}
-                    = integration["name"]
-                - project_description.release_series.values.each do |series|
-                  - unless series.displayed then next end
-                  - constraint = series.integration_constraints[integration_id]
-                  %td
-                    - if constraint == nil
-                      N/A
-                    - else
-                      #{constraint.version}
-    ~ content
+%h2 Series
+- unless project_description.release_series.nil?
+  - first_stable_release = true
+  - project_description.release_series.values.each do |series|
+    - release = series.releases[0]
+    - unless series.displayed then next end
+    %dl.dl-horizontal
+      %dt
+        = series.version
+        &nbsp;
+        %a.btn.btn-info{:href => "#{sourceforge_zip_url(project_description, release)}", :title => "Download"}
+          %i.icon-cloud-download
+        %a.btn.btn-info{:href => "#{doc_reference_url(project_description, series)}", :title => "Reference documentation"}
+          %i.icon-book
+      %dd
+        %small
+          %strong= release.version
+          = "-"
+          = release.date
+        %span.label{:class => "#{release.stable ? 'label-success' : 'label-warning'}"} #{release.stable ? 'stable' : 'development'}
+      %dd
+        %small
+          - group_id = (release.group_id? ? release.group_id : project_description.group_id)
+          Maven gav:
+          %a{:href => "https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{group_id}~#{project_description.artifact_id}~#{release.version}~~"}>=" #{group_id}:#{project_description.artifact_id}:#{release.version}"
+      %dd
+        = series.summary
+      %dd
+        %a{:href => "./#{series.version}/"}
+          More on the #{series.version} series
+          %i.icon-circle-arrow-right
+      - if not release.announcement_url.nil?
+        %dd
+          %a{:href => "#{release.announcement_url}"}
+            #{release.version} release announcement
+            %i.icon-circle-arrow-right
+- else
+  %p There are no releases configured for this project.
+
+Older series can be found
+%a{:href => "#{project_description.sourceforge_url}"}
+  on SourceForge
+or in JBoss's
+%a{:href => "https://repository.jboss.org/nexus/index.html#nexus-search;gav~~#{project_description.artifact_id}~~~"}<
+  Maven repository.
+- unless project_description.integrations.nil?
+  %h2 Compatibility matrix
+  .table-responsive
+    %table.table
+      %thead
+        %tr
+          %th
+            = project_description.name
+          - project_description.release_series.values.each do |series|
+            - unless series.displayed then next end
+            %th
+              = series.version
+      %tbody
+        - project_description.integrations.each_pair do |integration_id, integration|
+          %tr
+            %th
+              %a{:href => "#{integration['url']}"}
+                = integration["name"]
+            - project_description.release_series.values.each do |series|
+              - unless series.displayed then next end
+              - constraint = series.integration_constraints[integration_id]
+              %td
+                - if constraint == nil
+                  N/A
+                - else
+                  #{constraint.version}
+~ content

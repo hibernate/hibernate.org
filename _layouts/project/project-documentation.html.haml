@@ -12,7 +12,7 @@ layout: project-frame
 
 -# Documentation buttons for the latest stable series
 .release-buttons.hidden-phone
-  .row-fluid.text-center
+  .text-center
     - if not get_started_url.nil?
       %a.btn.btn-large{:href => "#{get_started_url}"} Getting started guide
     - if not stable_series.nil?
@@ -20,58 +20,55 @@ layout: project-frame
       %a.btn.btn-large.btn-success{:href => "#{doc_reference_url(project_description, stable_series)}"} Get documentation for #{stable_series.version}
 .release-buttons.visible-phone
   - if not get_started_url.nil?
-    .row-fluid.text-center
+    .text-center
       #get-started-button
         %a.btn{:href => "#{get_started_url}"} Getting started guide
     - if not stable_series.nil?
-      .row-fluid.text-center
+      .text-center
         #documentation-button
           %a.btn.btn-success{:href => "#{doc_reference_url(project_description, stable_series)}"} Get documentation for #{stable_series.version}
-.row-fluid
-  .span12
-    -# Documentation table built from the metadata
-    %h2 Reference documentation
-    - if not site.projects[page.project].release_series.nil?
-      - project_description.release_series.values.each do |series|
-        - release = series.releases[0]
-        - if series.displayed
-          %dl.dl-horizontal
-            %dt
-              = series.version
-              &nbsp;
-              %a.btn.btn-info{:href => "#{doc_reference_url(project_description, series)}"}
-                %i.icon-book
-            %dd
-              %small
-                %strong= release.version
-                = "-"
-                = release.date
-              %span.label{:class => "#{release.stable ? 'label-success' : 'label-warning'}"} #{release.stable ? 'stable'   : 'development'}
-            %dd
-              %small= series.summary
-            %dd
-              %ul
-                %li
-                  English reference documentation:
-                  %a{:href => "#{doc_reference_url(project_description, series)}"}
-                    HTML
-                  - pdf_url = doc_reference_pdf_url(project_description, series)
-                  - if not pdf_url.nil?
-                    |
-                    %a{:href => "#{pdf_url}"}
-                      PDF
-                %li
-                  API documentation:
-                  %a{:href => "#{javadoc_url(project_description, series)}/"}
-                    JavaDoc
 
-    - else
-      %p There is no reference documentation configured for this project.
+-# Documentation table built from the metadata
+%h2 Reference documentation
+- if not site.projects[page.project].release_series.nil?
+  - project_description.release_series.values.each do |series|
+    - release = series.releases[0]
+    - if series.displayed
+      %dl.dl-horizontal
+        %dt
+          = series.version
+          &nbsp;
+          %a.btn.btn-info{:href => "#{doc_reference_url(project_description, series)}"}
+            %i.icon-book
+        %dd
+          %small
+            %strong= release.version
+            = "-"
+            = release.date
+          %span.label{:class => "#{release.stable ? 'label-success' : 'label-warning'}"} #{release.stable ? 'stable'   : 'development'}
+        %dd
+          %small= series.summary
+        %dd
+          %ul
+            %li
+              English reference documentation:
+              %a{:href => "#{doc_reference_url(project_description, series)}"}
+                HTML
+              - pdf_url = doc_reference_pdf_url(project_description, series)
+              - if not pdf_url.nil?
+                |
+                %a{:href => "#{pdf_url}"}
+                  PDF
+            %li
+              API documentation:
+              %a{:href => "#{javadoc_url(project_description, series)}/"}
+                JavaDoc
+- else
+  %p There is no reference documentation configured for this project.
 
-    :asciidoc
-      :ref_doc: #{doc_root_url(project_description)}
+:asciidoc
+  :ref_doc: #{doc_root_url(project_description)}
 
-      Documentation for older versions can be found {ref_doc}[on the reference documentation site].
-.row-fluid
-  .span12
-    ~ content
+  Documentation for older versions can be found {ref_doc}[on the reference documentation site].
+
+~ content
