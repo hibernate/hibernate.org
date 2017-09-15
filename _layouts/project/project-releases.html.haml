@@ -66,8 +66,6 @@ layout: project-frame
               - group_id = (release.group_id? ? release.group_id : project_description.group_id)
               Maven gav:
               %a{:href => "https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{group_id}~#{project_description.artifact_id}~#{release.version}~~"}>=" #{group_id}:#{project_description.artifact_id}:#{release.version}"
-              - if page.project == 'search'
-                ; compatible with Hibernate ORM #{release.dependencies.get_version('org.hibernate', 'hibernate-core')}
           %dd
             = series.summary
           %dd
