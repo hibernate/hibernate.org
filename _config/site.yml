@@ -19,8 +19,12 @@ projects:
     icon: 'icon-table'
     sourceforge_url: http://sourceforge.net/projects/hibernate/files/hibernate-orm/
     zip_file: hibernate-release-VERSION.zip
-    group_id: org.hibernate
-    artifact_id: hibernate-core
+    maven:
+      group_id: org.hibernate
+      main_artifact_id: hibernate-core
+      nexus_search:
+        group_id_pattern: org.hibernate
+        artifact_id_pattern: hibernate-*
     reference_doc_prefix_url: https://docs.jboss.org/hibernate/orm/
     stable_reference_doc_prefix_url: https://docs.jboss.org/hibernate/stable/orm/
     reference_doc_path: userguide/html_single/Hibernate_User_Guide.html
@@ -108,8 +112,12 @@ projects:
     icon: 'icon-search'
     sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-search/
     zip_file: hibernate-search-VERSION-dist.zip
-    group_id: org.hibernate
-    artifact_id: hibernate-search-orm
+    maven:
+      group_id: org.hibernate
+      main_artifact_id: hibernate-search-orm
+      nexus_search:
+        group_id_pattern: org.hibernate
+        artifact_id_pattern: hibernate-search-*
     reference_doc_prefix_url: https://docs.jboss.org/hibernate/search/
     stable_reference_doc_prefix_url: https://docs.jboss.org/hibernate/stable/search/
     reference_doc_path: reference/en-US/html_single/
@@ -245,8 +253,12 @@ projects:
     icon: 'icon-check'
     sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-validator/
     zip_file: hibernate-validator-VERSION-dist.zip
-    group_id: org.hibernate.validator
-    artifact_id: hibernate-validator
+    maven:
+      group_id: org.hibernate.validator
+      main_artifact_id: hibernate-validator
+      nexus_search:
+        group_id_pattern: org.hibernate*
+        artifact_id_pattern: hibernate-validator*
     reference_doc_prefix_url: https://docs.jboss.org/hibernate/validator/
     stable_reference_doc_prefix_url: https://docs.jboss.org/hibernate/stable/validator/
     reference_doc_path: reference/en-US/html_single/
@@ -322,8 +334,12 @@ projects:
     icon: 'icon-sitemap'
     sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-ogm/
     zip_file: hibernate-ogm-VERSION-dist.zip
-    group_id: org.hibernate.ogm
-    artifact_id: hibernate-ogm-*
+    maven:
+      group_id: org.hibernate.ogm
+      main_artifact_id: hibernate-ogm-core
+      nexus_search:
+        group_id_pattern: org.hibernate.ogm
+        artifact_id_pattern: hibernate-ogm-*
     reference_doc_prefix_url: https://docs.jboss.org/hibernate/ogm/
     stable_reference_doc_prefix_url: https://docs.jboss.org/hibernate/stable/ogm/
     reference_doc_path: reference/en-US/html_single/

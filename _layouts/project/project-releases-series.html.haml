@@ -34,8 +34,10 @@ title_partial: project/title-series.html.haml
     from SourceForge.
 - if series[:artifacts]
   %p
+    - nexus_search = project_description.maven.nexus_search
     Maven artifacts of #{project_description.name} are published to Maven Central and to the
-    %a{:href => "https://repository.jboss.org/nexus/"} JBoss Maven Repository.
+    %a{:href => jboss_nexus_search_url(nexus_search.group_id_pattern, nexus_search.artifact_id_pattern, "#{series.version}.*")}
+      JBoss Maven Repository.
     Refer to the
     %a{:href => "http://community.jboss.org/wiki/MavenGettingStarted-Users"} Maven Getting Started guide
     on the Jboss Wiki for more information on how to configure Maven.
@@ -45,13 +47,13 @@ title_partial: project/title-series.html.haml
     - series.artifacts.each do |artifact|
       - group_id = latest_release[:group_id]
       - group_id ||= series[:group_id]
-      - group_id ||= project_description[:group_id]
+      - group_id ||= project_description.maven[:group_id]
       - artifact_id = artifact.artifact_id
       - version = latest_release.version
       - summary = artifact[:summary]
       - summary ||= artifact.artifact_id
       %dt
-        %a{:href => "https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{group_id}~#{artifact_id}~#{version}~~"}
+        %a{:href => jboss_nexus_search_url(group_id, artifact_id, version)}
           #{group_id}:#{artifact_id}:#{version}
       %dd= summary
       - if false # disabled for now, takes too much vertical space
@@ -94,6 +96,11 @@ title_partial: project/title-series.html.haml
 %h2{:id => "releases"} Older releases
 - unless site.projects[page.project].release_series.nil?
   - series.releases.each do |release|
+    - group_id = release[:group_id]
+    - group_id ||= series[:group_id]
+    - group_id ||= project_description.maven[:group_id]
+    - artifact_id ||= project_description.maven[:main_artifact_id]
+    - version = release.version
     - if release[:displayed] != nil && !release.displayed then next end
     %dl.dl-horizontal
       %dt
@@ -106,9 +113,8 @@ title_partial: project/title-series.html.haml
         %span.label{:class => "#{release.stable ? 'label-success' : 'label-warning'}"} #{release.stable ? 'stable' : 'development'}
       %dd
         %small
-          - group_id = (release.group_id? ? release.group_id : project_description.group_id)
           Maven gav:
-          %a{:href => "https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{project_description.group_id}~#{project_description.artifact_id}~#{release.version}~~"}>=" #{group_id}:#{project_description.artifact_id}:#{release.version}"
+          %a{:href => jboss_nexus_search_url(group_id, artifact_id, version)} #{group_id}:#{artifact_id}:#{version}
       - if release[:summary]
         %dd
           = release.summary

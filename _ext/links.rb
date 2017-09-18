@@ -31,6 +31,10 @@ module Awestruct
         return project.reference_doc_prefix_url
       end
 
+      def jboss_nexus_search_url(group_id_pattern, artifact_id_pattern, version_pattern)
+        return "https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{group_id_pattern}~#{artifact_id_pattern}~#{version_pattern}~~"
+      end
+
       # Accepts a project description (YML) and a release (YML) and return the Sourceforge URL to the zip download
       def sourceforge_zip_url(project, release)
         # this if clause is not idiomatic to Ruby : TODO improve
