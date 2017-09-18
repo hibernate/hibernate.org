@@ -5,11 +5,12 @@ layout: project
 -# handles left menu and title display
 -# display license
 - project_description = site.projects[page.project]
+- displayed_series = project_description.release_series.nil? ? nil : project_description.release_series.values.select{|s| s.displayed}
 
 %script
   var displayed_series = [];
-  - unless site.projects[page.project].release_series.nil?
-    - site.projects[page.project].release_series.values.each do |series|
+  - unless project_description.release_series.nil?
+    - project_description.release_series.values.each do |series|
       - unless series.displayed then next end
       displayed_series.push('#{series.version}');
 
@@ -29,9 +30,18 @@ layout: project
           -# active if path is a subpath of the menu item. The project home has to be treated differently as every path is a subpath of home
           - active = (menu.href == "/#{page.project}/" && menu.href == current_path) || (menu.href != "/#{page.project}/" && current_path.start_with?(menu.href))
           %li{:class => "#{(active ? "active" : "")}"}
-            %a{:href => "#{relative("#{menu.href}")}"}
+            %a{:href => "#{relative(menu.href)}"}
               %i{:class => "#{menu.css_class} menu-icon"}
               #{menu.name}
+            - if menu.releases_submenu && !displayed_series.nil? && !displayed_series.empty?
+              %ul.nav.nav-list
+                - displayed_series.each do |series|
+                  - submenu_href = "#{menu.href}#{series.version}/"
+                  - submenu_active = current_path.start_with?(submenu_href)
+                  %li{:class => "#{(submenu_active ? "active" : "")}"}
+                    %a{:href => "#{relative(submenu_href)}"}
+                      %i{:class => "icon-tag menu-icon"}
+                      = series.version
         %li.divider
         - project_description.menu.extern.each do |menu|
           %li
