@@ -10,6 +10,7 @@ title_partial: project/title-series.html.haml
 - project_description = site.projects[page.project]
 
 - series = project_description.release_series[page.series_version]
+- latest_release = series.releases.first
 
 - unless series.integration_constraints.nil? || series.integration_constraints.empty?
   %h2{:id => "compatibility"} Compatibility
@@ -22,15 +23,63 @@ title_partial: project/title-series.html.haml
       %dd
         #{constraint.version}
 
+%h2{:id => "get_it"} How to get it
+%p
+  Direct download is available
+  %a{:href => "#{sourceforge_zip_url(project_description, latest_release)}", :title => "Download"}
+    from SourceForge.
+- if series[:artifacts]
+  %p
+    Maven artifacts of #{project_description.name} are published to Maven Central and to the
+    %a{:href => "https://repository.jboss.org/nexus/"} JBoss Maven Repository.
+    Refer to the
+    %a{:href => "http://community.jboss.org/wiki/MavenGettingStarted-Users"} Maven Getting Started guide
+    on the Jboss Wiki for more information on how to configure Maven.
+  %p
+    Below are the Maven coordinates of the main artifacts.
+  %dl
+    - series.artifacts.each do |artifact|
+      - group_id = latest_release[:group_id]
+      - group_id ||= series[:group_id]
+      - group_id ||= project_description[:group_id]
+      - artifact_id = artifact.artifact_id
+      - version = latest_release.version
+      - summary = artifact[:summary]
+      - summary ||= artifact.artifact_id
+      %dt
+        %a{:href => "https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{group_id}~#{artifact_id}~#{version}~~"}
+          #{group_id}:#{artifact_id}:#{version}
+      %dd= summary
+      - if false # disabled for now, takes too much vertical space
+        :asciidoc
+          :groupId: #{group_id}
+          :artifactId: #{artifact_id}
+          :version: #{version}
+          [source,xml]
+          [subs="verbatim,attributes"]
+          ----
+          <dependency>
+              <groupId>{groupId}</groupId>
+              <artifactId>{artifactId}</artifactId>
+              <version>{version}</version>
+          </dependency>
+          ----
+%p
+  More information about specific releases (announcements, download links) can be found
+  %a{:href => "#releases"}
+    here.
+
 %h2{:id => "whats_new"} What's new
 - version_cleaner = page.project == 'orm' ? lambda {|v| v != '4.2.0.Final' && v != '4.3.0.Final' && v != '5.0.0.Final' && v =~ /^(.*).Final$/ ? $1 : v } : lambda {|v| v}
 - comma_separated_release_versions = series.releases.collect{|r| r.version}.collect!{|v| version_cleaner.call(v)}.join( "%2C%20" )
-A detailed list of new features, improvements and fixes in this series can be found
-%a{:href => "https://hibernate.atlassian.net/issues/?jql=project%20%3D%20#{project_description.jira['key']}%20AND%20fixVersion%20in%20(#{comma_separated_release_versions})%20ORDER%20BY%20updated"}
-  on our JIRA instance.
+%p
+  A detailed list of new features, improvements and fixes in this series can be found
+  %a{:href => "https://hibernate.atlassian.net/issues/?jql=project%20%3D%20#{project_description.jira['key']}%20AND%20fixVersion%20in%20(#{comma_separated_release_versions})%20ORDER%20BY%20updated"}
+    on our JIRA instance.
+
 ~ content
 
-%h2{:id => "releases"} Releases for this series
+%h2{:id => "releases"} Older releases
 - unless site.projects[page.project].release_series.nil?
   - series.releases.each do |release|
     - if release[:displayed] != nil && !release.displayed then next end

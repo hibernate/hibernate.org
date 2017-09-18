@@ -1,4 +1,23 @@
 summary: Java 8, JCache support, hibernate-entitymanager consolidation
+artifacts:
+  - artifact_id: hibernate-core
+    summary: Core implementation (includes JPA)
+  - artifact_id: hibernate-osgi
+    summary: OSGi integration
+  - artifact_id: hibernate-spatial
+    summary: Spatial support
+  - artifact_id: hibernate-envers
+    summary: Envers audit support
+  - artifact_id: hibernate-hikaricp
+    summary: HikariCP connection pooling
+  - artifact_id: hibernate-c3p0
+    summary: c3p0 connection pooling
+  - artifact_id: hibernate-proxool
+    summary: Proxool connection pooling
+  - artifact_id: hibernate-infinispan
+    summary: Infinispan second-level caching
+  - artifact_id: hibernate-ehcache
+    summary: Ehcache second-level caching
 integration_constraints:
   java:
     version: 8

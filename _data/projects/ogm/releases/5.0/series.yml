@@ -1,5 +1,20 @@
 summary: Upgrade to Hibernate ORM 5 and Hibernate Search 5
 displayed: true
+artifacts:
+  - artifact_id: hibernate-search-infinispan
+    summary: Infinispan integration (embedded)
+  - artifact_id: hibernate-ogm-mongodb
+    summary: MongoDB integration
+  - artifact_id: hibernate-ogm-neo4j
+    summary: Neo4j integration
+  - artifact_id: hibernate-ogm-couchdb
+    summary: CouchDB integration
+  - artifact_id: hibernate-ogm-cassandra
+    summary: Cassandra integration
+  - artifact_id: hibernate-ogm-ehcache
+    summary: Ehcache integration
+  - artifact_id: hibernate-ogm-redis
+    summary: Redis integration
 integration_constraints:
   java:
     version: 7
