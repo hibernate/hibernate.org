@@ -49,6 +49,7 @@ projects:
         - name: Releases
           href: '/orm/releases/'
           css_class: 'icon-fixed-width icon-tags'
+          releases_submenu: true
         - name: Documentation
           href: '/orm/documentation/'
           css_class: 'icon-fixed-width icon-folder-open'
@@ -143,6 +144,7 @@ projects:
         - name: Releases
           href: '/search/releases/'
           css_class: 'icon-fixed-width icon-tags'
+          releases_submenu: true
         - name: Documentation
           href: '/search/documentation/'
           css_class: 'icon-fixed-width icon-book'
@@ -273,6 +275,7 @@ projects:
         - name: Releases
           href: '/validator/releases/'
           css_class: 'icon-fixed-width icon-tags'
+          releases_submenu: true
         - name: Documentation
           href: '/validator/documentation/'
           css_class: 'icon-fixed-width icon-book'
@@ -355,6 +358,7 @@ projects:
         - name: Releases
           href: '/ogm/releases/'
           css_class: 'icon-fixed-width icon-tags'
+          releases_submenu: true
         - name: Documentation
           href: '/ogm/documentation/'
           css_class: 'icon-fixed-width icon-book'
