@@ -47,7 +47,6 @@ module Awestruct
           if ( File.directory?( entry ) )
             if ( entry =~ /releases/ )
               project = getProject( entry )
-              default_group_id, artifact_id = getDefaultGAInfo( site, project[:id] )
 
               releases_hash = project[:releases]
               if ( releases_hash == nil )
@@ -65,7 +64,7 @@ module Awestruct
               
               sortReleaseHashes( project )
               
-              downloadDependencies( release_series_hash.values, default_group_id, artifact_id )
+              downloadDependencies( project, release_series_hash.values )
             else
               findReleaseFiles( site, entry )
             end
@@ -88,26 +87,6 @@ module Awestruct
         end
         
         return project
-      end
-
-      def getDefaultGAInfo(site, project_name)
-        # we can't rely on the artifact_id from site as the one for OGM is hibernate-ogm-*
-        case project_name
-          when 'ogm'
-            default_group_id = site.projects[project_name].group_id
-            artifact_id = 'hibernate-ogm-core'
-          when 'orm'
-            default_group_id = site.projects[project_name].group_id
-            artifact_id = 'hibernate-core'
-          when 'search'
-            default_group_id = site.projects[project_name].group_id
-            artifact_id = 'hibernate-search'
-          when 'validator'
-            default_group_id = site.projects[project_name].group_id
-            artifact_id = 'hibernate-validator'
-        end
-
-        return default_group_id, artifact_id
       end
 
       def populateReleaseHashes(releases_dir, release_series_hash, release_hash)
@@ -239,13 +218,24 @@ module Awestruct
         end
       end
 
-      def downloadDependencies(series, default_group_id, artifact_id)
+      def downloadDependencies(project, series)
+        project_maven = project[:maven]
+        if ( project_maven.nil? )
+          return
+        end
         series.each do |series|
-          if ( default_group_id != nil && artifact_id != nil && series.displayed != false)
-            # Only download dependencies for the latest release in the series
-            release = series.releases[0]
-            group_id = (release.group_id? ? release.group_id : default_group_id)
-            release.dependencies = ReleaseDependencies.new(@site, group_id, artifact_id, release.version)
+          if ( series.displayed.nil? || series.displayed )
+            release = series.releases.first
+            group_id = release[:group_id]
+            group_id ||= series[:group_id]
+            group_id ||= project_maven[:group_id]
+            main_artifact_id = release[:main_artifact_id]
+            main_artifact_id ||= series[:main_artifact_id]
+            main_artifact_id ||= project_maven[:main_artifact_id]
+            if ( group_id != nil && main_artifact_id != nil )
+              # Only download dependencies for the latest release in the series
+              release.dependencies = ReleaseDependencies.new(@site, group_id, main_artifact_id, release.version)
+            end
           end
         end
       end

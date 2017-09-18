@@ -51,11 +51,12 @@ title_partial: project/title-releases.html.haml
 - else
   %p There are no releases configured for this project.
 
+- nexus_search = project_description.maven.nexus_search
 Older series can be found
 %a{:href => "#{project_description.sourceforge_url}"}
   on SourceForge
 or in JBoss's
-%a{:href => "https://repository.jboss.org/nexus/index.html#nexus-search;gav~~#{project_description.artifact_id}~~~"}<
+%a{:href => jboss_nexus_search_url(nexus_search.group_id_pattern, nexus_search.artifact_id_pattern, nil)}<
   Maven repository.
 - unless project_description.integrations.nil?
   %h2 Compatibility matrix
