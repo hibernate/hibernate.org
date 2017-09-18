@@ -30,7 +30,7 @@ Follow the link:/README{outfilesuffix}[README] instructions to get Awestruct and
 
 == How to edit
 
-Use your favorite editor. I personally use +vim+.
+Use your favorite editor, for example +vim+.
 All pages are using text based markups with various degrees of flexibility and readability.
 Indentation is two spaces.
 
@@ -75,7 +75,7 @@ You can embed Asciidoc fragments inside a haml page.
       == Some header
 
       And now I'm back in plain Asciidoc with http://example.com[links] and all.
-  -# Back in HAML, notice the indetation
+  -# Back in HAML, notice the indentation
   .span6
 ----
 ====
@@ -168,21 +168,96 @@ Optional. Defines the table of content title. Defaults to _Table of content_.
 numbered (Asciidoc only)::
 Number the sections and the ToC.
 
-== List of layouts
+=== List of layouts
 
 Layouts are used to share the same site structure. They can be nested.
 All are in the `_layouts` directory.
 There are a few important layouts:
 
-* `project` (`project.html.haml`): it represents a generic page structure (we will change the name in a little while)
-* `project-frame` (`project/project-frame.html.haml`): represents a project specific page. All files under `search`, `orm`, `validator` etc. use this layout
-* `title-nocol` (`common/title-nocol.html.haml`): represents a generic page with a title and no column. Useful for generic Asciidoc pages like this one.
+* `project` (`project.html.haml`): structure of a generic page (we will change the name in a little while)
+* `project-frame` (`project/project-frame.html.haml`): structure of a project specific page. All files under `search`, `orm`, `validator` etc. use this layout
+* `title-nocol` (`common/title-nocol.html.haml`): structure of a generic page with a title and no column. Useful for generic Asciidoc pages like this one.
+* `project-releases` (`project/project-releases.html.haml`): structure of the `/releases/` page of each project.
+* `project-releases-series` (`project/project-releases-series.html.haml`): structure of series-specific pages of each project (e.g. `/search/5.8/`).
+* `project-documentation` (`project/project-documentation.html.haml`): structure of the `/documentation/` page of each project (except ORM).
 
 === Partials
 
 Partials (in the `_partials` directory) are page fragments that can be reused from within a haml page or layout.
 
 CAUTION: Partials do not get automatically refreshed when change. You need to stop, clean and restart Awestruct `rake clean preview`.
+
+== Update releases
+
+=== Add a new release
+
+To add a release, you will need to add a release file in the `_data` directory.
+The file will have to be named `<full version number>.yml` (for example `5.8.0.Final.yml`)
+and be located in `_data/<project ID>/releases/<series version>/`.
+
+CAUTION: You should never remove the files related to previous releases:
+they are used to generate links to all JIRA tickets of a given series, for instance.
+
+If your release is the first one of a new series, you will also have to create a new `series.yml` file
+in the `_data/<project ID>/releases/<series version>` directory.
+
+For information about the content of each file, see <<data_directory,here>>.
+
+=== Hide an older series
+
+To hide an older series, edit the `_data/<project ID>/releases/<series version>/series.yml` file
+to set the `displayed` attribute to `false` (just add the attribute if it is missing).
+
+== Data
+
+=== `_config/site.yml`
+
+The `site.yml` file contains site-related, YAML-formatted data.
+
+This includes some project-related data.
+
+See the file for more information about available attributes.
+
+[[data_directory]]
+=== `_data`
+
+The `_data` directory contains YAML-formatted data for the releases of each project.
+
+The structure of this directory is as follows:
+
+* <project ID, e.g. `search`>
+** `releases`
+*** <series version, e.g. `5.8`>
+**** `series.yml` (data about the series)
+**** <one file for each release in this series, e.g. `5.8.0.Final.yml`>
+
+The `series.yml` file may contain the following attributes:
+
+* Mandatory:
+** `summary`: a short text (one or two sentences) summarizing the specifics of this series.
+* Optional:
+** `displayed`: `true` to display the series on hibernate.org, `false` to hide it.
+   Defaults to `false`.
+** `displayed`: whether this series should be displayed. Defaults to false.
+** `artifacts`: an array of objects, one object for each Maven artifact	. Each object has the following attributes:
+*** `artifact_id`: the Maven artifact ID
+*** `group_id`: the Maven group ID. Optional: defaults to the group ID defined on the series, or on the project.
+*** `summary`: a short text (6/7 words at most) summarizing the purpose of this artifact
+** `integration_constraints`: a map, with keys being the integration IDs defined in `site.yml`,
+   and values being objects with a `version` attribute describing the version constraints summarily (about a dozen characters).
+
+The `<release>.yml` files must be named after the release version (e.g. `5.6.0.Final.yml`)
+and may contain the following attributes:
+
+* Mandatory:
+** `date`: the date of the release. Format is yyyy-mm-dd
+** `stable`: `true` for stable releases (`*.Final`),
+   `false` for development releases (alpha, betas, CRs, ...)
+* Optional:
+** `announcement_url`: the URL of the blog post announcing the release
+** `summary`: a one-sentence summary of the content of the release
+** `displayed`: `true` to display the release on hibernate.org, `false` to hide it.
+   Defaults to `true`. Note that a release will only be displayed if its series is displayed.
 
 [[staging]]
 == Preview changes on staging.hibernate.org
