@@ -2,10 +2,12 @@
 - real_page = page["real_page"]
 - project_description = site.projects[real_page.project]
 - series = project_description.release_series[real_page.series_version]
+- # Update the title on the real_page object, so that <head> is updated accordingly
+- real_page.title = "#{project_description.name} #{series.version} series"
 - latest_release = series.releases.first
 .hero-unit
   %h1
-    #{project_description.name} #{series.version} series
+    #{real_page.title}
     %span.label{:class => "#{latest_release.stable ? 'label-success' : 'label-warning'}"} #{latest_release.stable ? 'stable' : 'development'}
   = series.summary
   .text-center
