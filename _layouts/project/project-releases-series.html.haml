@@ -70,6 +70,14 @@ title_partial: project/title-series.html.haml
     here.
 
 %h2{:id => "whats_new"} What's new
+
+- if latest_release[:announcement_url]
+  %p
+    %em
+      Latest release announcement (#{latest_release.date}):
+      %a{:href => "#{latest_release.announcement_url}"}
+        #{latest_release.version}.
+
 - version_cleaner = page.project == 'orm' ? lambda {|v| v != '4.2.0.Final' && v != '4.3.0.Final' && v != '5.0.0.Final' && v =~ /^(.*).Final$/ ? $1 : v } : lambda {|v| v}
 - comma_separated_release_versions = series.releases.collect{|r| r.version}.collect!{|v| version_cleaner.call(v)}.join( "%2C%20" )
 %p
