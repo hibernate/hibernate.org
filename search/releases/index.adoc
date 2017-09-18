@@ -1,28 +1,6 @@
 = Hibernate Search Releases
 :awestruct-layout: project-releases
 :awestruct-project: search
-:page-interpolate: true
-:nexus: https://repository.jboss.org/nexus/
-:nexus-search: https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{site.projects.search.group_id}~#{site.projects.search.artifact_id}~~~
-:groupId: #{site.projects.search.group_id}
-:artifactId: #{site.projects.search.artifact_id}
-:version: #{site.projects.search.latest_release.version}
-
-== Maven repository
-
-Maven artifacts of Hibernate Search are published to Maven Central and to the
-{nexus}[JBoss Maven Repository] under {nexus-search}[{groupId}:{artifactId}].
-
-[source,xml]
-[subs="verbatim,attributes"]
-.Maven dependency
-----
-<dependency>
-    <groupId>{groupId}</groupId>
-    <artifactId>{artifactId}</artifactId>
-    <version>{version}</version>
-</dependency>
-----
 
 [[supported-versions]]
 == Supported versions pass:[<i class="icon-user-md icon-fixed-width icon-2x"></i>]

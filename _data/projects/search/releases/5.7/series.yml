@@ -1,5 +1,14 @@
 summary: Improved integration with Elasticsearch 2.x, compatible with Hibernate ORM 5.2.x
 displayed: true
+artifacts:
+  - artifact_id: hibernate-search-orm
+    summary: Hibernate ORM integration
+  - artifact_id: hibernate-search-elasticsearch
+    summary: Elasticsearch integration
+  - artifact_id: hibernate-search-backend-jgroups
+    summary: JGroups backend
+  - artifact_id: hibernate-search-backend-jms
+    summary: JMS backend
 integration_constraints:
   java:
     version: 8

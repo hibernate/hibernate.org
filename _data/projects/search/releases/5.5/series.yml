@@ -1,5 +1,12 @@
 summary: Being maintained as it's included in WildFly. Supports Lucene only, requires Hibernate ORM 5.0.z or 5.1.z
 displayed: true
+artifacts:
+  - artifact_id: hibernate-search-orm
+    summary: Hibernate ORM integration
+  - artifact_id: hibernate-search-backend-jgroups
+    summary: JGroups backend
+  - artifact_id: hibernate-search-backend-jms
+    summary: JMS backend
 integration_constraints:
   java:
     version: 7

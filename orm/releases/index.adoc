@@ -1,12 +1,6 @@
 = Hibernate ORM Releases
 :awestruct-layout: project-releases
 :awestruct-project: orm
-:page-interpolate: true
-:nexus: https://repository.jboss.org/nexus/
-:nexus-search: https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{site.projects.orm.group_id}~#{site.projects.orm.artifact_id}~~~
-:groupId: #{site.projects.orm.group_id}
-:artifactId: #{site.projects.orm.artifact_id}
-:version: #{site.projects.orm.latest_release.version}
 
 == Supported JPA Versions
         
@@ -15,63 +9,3 @@
 * JPA 2.1: ORM 4.3+
 
 Note that newer ORM releases are backwards compatible with older JPA versions (ex: ORM 4.3 with JPA 1.0).  However, newer ORM releases may not be compatible with older JPA containers.
-
-== Maven repository
-
-Hibernate ORM publishes Maven project artifacts to the
-{nexus}[JBoss Maven Repository] under {nexus-search}[{groupId}]. 
-For more information on how to configure Maven to use JBoss's repository,
-http://community.jboss.org/wiki/MavenGettingStarted-Users[look here] or use `mvn install -s setting-example.xml`.
-
-Here is how to declare the various dependencies in your Maven POM file
-
-[source,xml]
-[subs="verbatim,attributes"]
-.Maven dependency
-----
-<dependency>
-    <groupId>{groupId}</groupId>
-    <artifactId>hibernate-core</artifactId>
-    <version>{version}</version>
-</dependency>
-
-<!-- for JPA, use hibernate-entitymanager instead of hibernate-core -->
-<dependency>
-    <groupId>{groupId}</groupId>
-    <artifactId>hibernate-entitymanager</artifactId>
-    <version>{version}</version>
-</dependency>
-
-<!-- optional -->
-
-<dependency>
-    <groupId>{groupId}</groupId>
-    <artifactId>hibernate-osgi</artifactId>
-    <version>{version}</version>
-</dependency>
-<dependency>
-    <groupId>{groupId}</groupId>
-    <artifactId>hibernate-envers</artifactId>
-    <version>{version}</version>
-</dependency>
-<dependency>
-    <groupId>{groupId}</groupId>
-    <artifactId>hibernate-c3p0</artifactId>
-    <version>{version}</version>
-</dependency>
-<dependency>
-    <groupId>{groupId}</groupId>
-    <artifactId>hibernate-proxool</artifactId>
-    <version>{version}</version>
-</dependency>
-<dependency>
-    <groupId>{groupId}</groupId>
-    <artifactId>hibernate-infinispan</artifactId>
-    <version>{version}</version>
-</dependency>
-<dependency>
-    <groupId>{groupId}</groupId>
-    <artifactId>hibernate-ehcache</artifactId>
-    <version>{version}</version>
-</dependency>
-----

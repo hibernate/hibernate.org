@@ -1,5 +1,10 @@
 summary: Last Bean Validation 1.0 compatible version
 displayed: true
+artifacts:
+  - artifact_id: hibernate-validator
+    summary: Core implementation
+  - artifact_id: hibernate-validator-annotation-processor
+    summary: Annotation processor
 integration_constraints:
   java:
     version: 6

@@ -1,5 +1,14 @@
 summary: Grouping for Infinispan remote, move dialects in separate repositories, support map-reduce in MongoDB native queries
 displayed: true
+artifacts:
+  - artifact_id: hibernate-search-infinispan
+    summary: Infinispan integration (embedded)
+  - artifact_id: hibernate-ogm-infinispan-remote
+    summary: Infinispan integration (remote)
+  - artifact_id: hibernate-ogm-mongodb
+    summary: MongoDB integration
+  - artifact_id: hibernate-ogm-neo4j
+    summary: Neo4j integration
 integration_constraints:
   java:
     version: 8
