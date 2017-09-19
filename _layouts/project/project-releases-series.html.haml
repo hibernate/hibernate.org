@@ -43,7 +43,7 @@ title_partial: project/title-series.html.haml
     on the Jboss Wiki for more information on how to configure Maven.
   %p
     Below are the Maven coordinates of the main artifacts.
-  %dl
+  %dl.dl-sparse
     - series.artifacts.each do |artifact|
       - group_id = latest_release[:group_id]
       - group_id ||= series[:group_id]
