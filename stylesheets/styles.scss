@@ -436,3 +436,10 @@ $blockquote-text-color: rgb(101, 101, 101);
     border-bottom: 0;
   }
 }
+
+dl.dl-sparse {
+  dt {
+    margin-top: 7px;
+    font-weight: normal;
+  }
+}
