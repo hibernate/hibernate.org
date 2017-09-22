@@ -27,8 +27,13 @@ layout: project
         -# removes index.html and then replace download.html to download/
         - current_path = page.output_path.sub(/index\.html$/, "").sub(/\.html$/,"/")
         - project_description.menu.intern.each do |menu|
-          -# active if path is a subpath of the menu item. The project home has to be treated differently as every path is a subpath of home
-          - active = (menu.href == "/#{page.project}/" && menu.href == current_path) || (menu.href != "/#{page.project}/" && current_path.start_with?(menu.href))
+          -# Active if path is a subpath of the menu item that is not expected to have a more precise entry in the menu.
+          -# The project home has to be treated differently as every path is a subpath of home,
+          -# and the release menu is also specific since it has sub-entries
+          - if menu.releases_submenu || menu.href == "/#{page.project}/"
+            - active = current_path == menu.href
+          - else
+            - active = current_path.start_with?(menu.href)
           %li{:class => "#{(active ? "active" : "")}"}
             %a{:href => "#{relative(menu.href)}"}
               %i{:class => "#{menu.css_class} menu-icon"}
