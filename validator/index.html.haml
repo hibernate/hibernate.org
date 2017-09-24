@@ -1,62 +1,56 @@
 ---
-layout: project-frame
-title: Hibernate Validator
+layout: project-about
+title: Bean Validation reference implementation.
 project: validator
-title_partial: project/title-about.html.haml
+project_hero_partial: project/validator/hero-text.html.haml
 ---
 
 -# Center body
-.row-fluid
-  .span8
-    .feature-block
-      :asciidoc
-        === Application layer agnostic validation
+.feature-block
+  :asciidoc
+    == Application layer agnostic validation
 
-        Hibernate Validator allows to express and validate application constraints. The default metadata source are annotations, with the ability to override and extend through the use of XML. It is not tied to a specific application tier or programming model and is available for both server and client application programming. But a simple example says more than 1000 words:
+    Hibernate Validator allows to express and validate application constraints. The default metadata source are annotations, with the ability to override and extend through the use of XML. It is not tied to a specific application tier or programming model and is available for both server and client application programming. But a simple example says more than 1000 words:
 
-        [source,java]
-        ----
-        public class Car {
+    [source,java]
+    ----
+    public class Car {
 
-           @NotNull
-           private String manufacturer;
+       @NotNull
+       private String manufacturer;
 
-           @NotNull
-           @Size(min = 2, max = 14)
-           private String licensePlate;
+       @NotNull
+       @Size(min = 2, max = 14)
+       private String licensePlate;
 
-           @Min(2)
-           private int seatCount;
+       @Min(2)
+       private int seatCount;
 
-           // ...
-        }
-        ----
+       // ...
+    }
+    ----
 
-    .feature-block
-      :asciidoc
-        === Extendable
+.feature-block
+  :asciidoc
+    == Extendable
 
-        Hibernate Validator offers a http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#chapter-bootstrapping[configurable bootstrap API] as well as a range of http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#section-builtin-constraints[built-in constraints]. The latter can easily be extended by creating http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#validator-customconstraints[custom constraints].
+    Hibernate Validator offers a http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#chapter-bootstrapping[configurable bootstrap API] as well as a range of http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#section-builtin-constraints[built-in constraints]. The latter can easily be extended by creating http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#validator-customconstraints[custom constraints].
 
-    .feature-block
-      :asciidoc
-        === Rich metadata API
+.feature-block
+  :asciidoc
+    == Rich metadata API
 
-        Hibernate Validator gives access to constraint configuration via a http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#validator-metadata-api[metadata API] facilitating, for example, tooling integration.
+    Hibernate Validator gives access to constraint configuration via a http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#validator-metadata-api[metadata API] facilitating, for example, tooling integration.
 
-    .feature-block
-      :asciidoc
-        === Reference implementation
+.feature-block
+  :asciidoc
+    == Reference implementation
 
-        Hibernate Validator 5.x is the reference implementation http://beanvalidation.org/[Bean Validation 1.1]!
+    Hibernate Validator 5.x is the reference implementation http://beanvalidation.org/[Bean Validation 1.1]!
 
-    .feature-block
-      :asciidoc
-        === Added value
+.feature-block
+  :asciidoc
+    == Added value
 
-        Hibernate Validator offers additional value on top of the features required by Bean Validation. For example, a http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#section-programmatic-api[programmatic constraint configuration API] as well as an http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#validator-annotation-processor[annotation processor] which plugs into the build process and raises compilation errors whenever constraint annotations are incorrectly used.
+    Hibernate Validator offers additional value on top of the features required by Bean Validation. For example, a http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#section-programmatic-api[programmatic constraint configuration API] as well as an http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#validator-annotation-processor[annotation processor] which plugs into the build process and raises compilation errors whenever constraint annotations are incorrectly used.
 
-
-  -# News right column
-  .span4
-    = partial( 'common/latest-news.html.haml', {"real_page" => page} )

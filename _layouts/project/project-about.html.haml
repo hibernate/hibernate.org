@@ -1,8 +1,7 @@
 ---
-layout: community-frame
+layout: project-frame
+project_buttons_partial: project/about-buttons.html.haml
 ---
--# layout for pages related to the community
--# display news on the right side
 
 .ui.stackable.grid
   .column.eleven.wide
@@ -10,3 +9,4 @@ layout: community-frame
       ~ content
   .column.five.wide
     = partial( 'common/latest-news.html.haml', {"real_page" => page} )
+

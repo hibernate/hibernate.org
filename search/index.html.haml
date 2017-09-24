@@ -1,79 +1,73 @@
 ---
-layout: project-frame
-title: Hibernate Search
+layout: project-about
+title: ORM. Lucene. Elasticsearch. Integrated.
 project: search
-title_partial: project/title-about.html.haml
+project_hero_partial: project/search/hero-text.html.haml
 ---
 
 -# Center body
-.row-fluid
-  .span8
-    .feature-block
-      :asciidoc
-        === Full-text search for entities
+.feature-block
+  :asciidoc
+    == Full-text search for entities
 
-        Offers full-text search support for objects stored by Hibernate ORM, link:http://infinispan.org/[Infinispan] and other sources.
-        Think of it as Google(tm) for your entities:
+    Offers full-text search support for objects stored by Hibernate ORM, link:http://infinispan.org/[Infinispan] and other sources.
+    Think of it as Google(tm) for your entities:
 
-        * search words with text
-        * order results by relevance
-        * find by approximation (fuzzy search)
+    * search words with text
+    * order results by relevance
+    * find by approximation (fuzzy search)
 
-        Under the hood it will use link:https://lucene.apache.org/core/[Apache Lucene] directly or over link:https://www.elastic.co/products/elasticsearch/[Elasticsearch].
-    .feature-block
-      :asciidoc
-        === Full control
+    Under the hood it will use link:https://lucene.apache.org/core/[Apache Lucene] directly or over link:https://www.elastic.co/products/elasticsearch/[Elasticsearch].
+.feature-block
+  :asciidoc
+    == Full control
 
-        Unlike with web search, this is your data, your domain, your application, stored wherever you decide.
+    Unlike with web search, this is your data, your domain, your application, stored wherever you decide.
 
-        You also have far better control on how your data is processed, and how to extract what you need.
+    You also have far better control on how your data is processed, and how to extract what you need.
 
-        Hibernate Search exposes all capabilities of the powerful analysis framework from Apache Lucene, so you can:
+    Hibernate Search exposes all capabilities of the powerful analysis framework from Apache Lucene, so you can:
 
-        * tune text processing for specific languages
-        * for domain specific terminology (e.g. medical terms, custom acronyms expansion,..)
-        * control the ranking process: which results are more important
-        * advanced index encoding for analytics and signals
+    * tune text processing for specific languages
+    * for domain specific terminology (e.g. medical terms, custom acronyms expansion,..)
+    * control the ranking process: which results are more important
+    * advanced index encoding for analytics and signals
 
-        Additionally it allows to:
+    Additionally it allows to:
 
-        * partition data, apply multi-tenancy for security and performance optimisations
-        * perform declarative filtering, to control data access security via aspect based programming
-    .feature-block
-      :asciidoc
-        === Scalable, Fault Tolerant, Cloud Native
+    * partition data, apply multi-tenancy for security and performance optimisations
+    * perform declarative filtering, to control data access security via aspect based programming
+.feature-block
+  :asciidoc
+    == Scalable, Fault Tolerant, Cloud Native
 
-        You'll find that performance of a "single box" is exceptional, still it can be distributed.
+    You'll find that performance of a "single box" is exceptional, still it can be distributed.
 
-        Maintaining an high performance, scalable distributed index is not simple. Hibernate Search offers several architectural solutions:
+    Maintaining an high performance, scalable distributed index is not simple. Hibernate Search offers several architectural solutions:
 
-        * Integration with link:https://www.elastic.co/products/elasticsearch/[Elasticsearch]
-        * Store the Apache Lucene index in an link:http://infinispan.org/[Infinispan distributed data grid]
-        * Simple filesystem based replication
-        * Replicate changes across nodes using JMS, JGroups, or plug your own service
-        * Update indexes within a JTA transaction, or as a post-transaction listener
+    * Integration with link:https://www.elastic.co/products/elasticsearch/[Elasticsearch]
+    * Store the Apache Lucene index in an link:http://infinispan.org/[Infinispan distributed data grid]
+    * Simple filesystem based replication
+    * Replicate changes across nodes using JMS, JGroups, or plug your own service
+    * Update indexes within a JTA transaction, or as a post-transaction listener
 
-        These building blocks can be combined in various ways.
-    .feature-block
-      :asciidoc
-        === Spatial queries
+    These building blocks can be combined in various ways.
+.feature-block
+  :asciidoc
+    == Spatial queries
 
-        Indexing Geolocalized entities is as easy as adding the `@Spatial` annotation.
+    Indexing Geolocalized entities is as easy as adding the `@Spatial` annotation.
 
-        Filter results around a certain location like the user position, and just highlight the matching pizzerias which are actually close to the user.
-    .feature-block
-      :asciidoc
-        === Faceting
+    Filter results around a certain location like the user position, and just highlight the matching pizzerias which are actually close to the user.
+.feature-block
+  :asciidoc
+    == Faceting
 
-        Get query results organized by groups and categories, having these automatically discovered from your data.
+    Get query results organized by groups and categories, having these automatically discovered from your data.
 
-        For example webshops will want to show all results, but grouped by properties like price ranges and brand.
-    .feature-block
-      :asciidoc
-        === Easy to use
+    For example webshops will want to show all results, but grouped by properties like price ranges and brand.
+.feature-block
+  :asciidoc
+    == Easy to use
 
-        Designed to be easy to use from the ground up. Handles indexing, datastore synchronization, clustering and infrastructure transparently while you focus on the business side of your queries.
-
-  -# News right column
-  .span4
-    = partial( 'common/latest-news.html.haml', {"real_page" => page} )
+    Designed to be easy to use from the ground up. Handles indexing, datastore synchronization, clustering and infrastructure transparently while you focus on the business side of your queries.

@@ -4,13 +4,10 @@
 %meta(name="description" content="#{real_page.description}")
 %meta(name="author" content="#{real_page.author}")
 
-- pageStyle = real_page.style ;
-- bootstrap_community_css = relative("#{pageStyle ? site[pageStyle].bootstrap_css_url : site.bootstrap_css_url}#{site.minified}.css", real_page)
-%link(href="#{bootstrap_community_css}" rel="stylesheet" media="screen")
+%link(href="#{site.semantic_ui_css_url}#{site.minified}.css" rel="stylesheet" media="screen")
+%link(href="#{site.slick_css_url}#{site.minified}.css" rel="stylesheet" media="screen")
+%link(href="#{site.slick_css_url}-theme#{site.minified}.css" rel="stylesheet" media="screen")
 %link(href="#{relative("/stylesheets/styles.css", real_page)}" rel="stylesheet" media="screen")
-/ IE 6-8 support of HTML 5 elements
-/[if lt IE 9]
-  %script(src="#{site.jborg_js_url}/libs/html5/pre3.6/html5.min.js")
 
 / Defines the project favicon. Change these URLs to your specific project folder on static.jboss.org.
 
@@ -20,19 +17,9 @@
 %link(rel="apple-touch-icon-precomposed" sizes="72x72" href="#{relative("#{site.project_images_url}/apple-touch-icon-72x72-precomposed.png", real_page)}")
 %link(rel="apple-touch-icon-precomposed" href="#{relative("#{site.project_images_url}/apple-touch-icon-precomposed.png", real_page)}")
 
-/ Defines the project banner. Change these URLs to your specific project folder on static.jboss.org
-:css
-  @media (min-width: 980px) {
-    .banner { background-image: url(#{relative("#{site.project_images_url}/#{site.project}-banner-1180px.png", real_page)}); height: 110px;  }
-  }
-  @media (max-width: 979px) {
-    .banner { background-image: url(#{relative("#{site.project_images_url}/#{site.project}-logo.png", real_page)}); background-repeat:no-repeat; height: 60px; }
-  }
-  @media (max-width: 650px) {
-    .banner { width: 200px; margin: 0px auto; }
-  }
-
-%script(src="#{site.jborg_js_url}/libs/jquery/jquery-1.9.1#{site.minified}.js")
+%script(src="#{site.jquery_js_url}#{site.minified}.js")
+%script(src="#{site.semantic_ui_js_url}#{site.minified}.js")
+%script(src="#{site.slick_js_url}#{site.minified}.js")
 - if real_page.javascripts
   - real_page.javascripts.each do |javascript|
     %script{:src=>javascript, :type=>'text/javascript'}

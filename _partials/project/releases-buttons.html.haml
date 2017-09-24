@@ -1,14 +1,8 @@
 - real_page = page["real_page"]
-- get_started_url = site.projects[real_page.project].getting_started.nil? ? nil : relative("#{site.projects[real_page.project].getting_started}", real_page)
 - stable_series = latest_stable_series(real_page)
 - series = latest_series(real_page)
 - dev_series = series != stable_series ? series : nil
 
-- if not get_started_url.nil?
-  .jumbotron-button
-    %a.ui.right.labeled.icon.button{:href => "#{get_started_url}"}
-      %i.right.arrow.icon
-      Getting started
 - if not (stable_series.nil? && dev_series.nil?)
   - unless stable_series.nil?
     .jumbotron-button
@@ -20,3 +14,4 @@
       %a.ui.right.labeled.icon.button.orange{:href => "./releases/#{dev_series.version}/"}
         %i.right.arrow.icon
         Development (#{dev_series.version})
+

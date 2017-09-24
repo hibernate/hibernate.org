@@ -1,0 +1,29 @@
+- real_page = page["real_page"]
+.ui.inverted.vertical.footer.segment
+  .ui.container
+    .ui.stackable.inverted.divided.equal.height.stackable.grid
+      .three.wide.column
+        %h4.ui.inverted.header Projects
+        .ui.inverted.link.list
+          %a.item{:href => "#{relative("/orm/", real_page)}", :title => "Hibernate ORM"} Hibernate ORM
+          %a.item{:href => "#{relative("/search/", real_page)}", :title => "Search"} Hibernate Search
+          %a.item{:href => "#{relative("/validator/", real_page)}", :title => "Hibernate Validator"} Hibernate Validator
+          %a.item{:href => "#{relative("/ogm/", real_page)}", :title => "Hibernate OGM"} Hibernate OGM
+          %a.item{:href => "#{relative("/tools/", real_page)}", :title => "Hibernate Tools"} Hibernate Tools
+          %a.item{:href => "#{relative("/others/", real_page)}", :title => "Other projects"} Other projects
+      .three.wide.column
+        %h4.ui.inverted.header Follow us
+        .ui.inverted.link.list
+          %a.item{:href => "http://in.relation.to", :title => "Blog"} Blog
+          %a.item{:href => "https://twitter.com/hibernate/", :title => "Twitter"} Twitter
+          %a.item{:href => "https://plus.google.com/112681342290762837955/posts", :title => "Google+"} Google+
+      .seven.wide.column
+        %h4.ui.inverted.header Contribute and community
+        .ui.inverted.link.list
+          %a.item{:href => "#{relative("/community/", real_page)}", :title => "Community resources"} Community resources
+          %a.item{:href => "https://hibernate.atlassian.net", :title => "Submit a bug"} Submit a bug
+          %a.item{:href => "https://access.redhat.com/security/team/contact/", :title => "Report a security issue"} Report a security issue
+      .three.wide.column.sponsor
+        %a(href="https://www.redhat.com/")
+          %img{:src => "#{relative("/images/redhat.png", real_page)}", :title => "Red Hat", :width => 150, :height => 48}
+ 

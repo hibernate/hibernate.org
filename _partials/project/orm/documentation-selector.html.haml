@@ -1,0 +1,12 @@
+- real_page = page["real_page"]
+- project_description = site.projects[real_page.project]
+- displayed_series = project_description.release_series.nil? ? nil : project_description.release_series.values.select{|s| s.displayed}
+.jumbotron-button
+  .ui.segment.raised#documentation-version-selector-container
+    %form.ui.form
+      .field
+        %label Other versions
+        %select.ui.fluid.dropdown.selection{:onchange => 'location = this.options[this.selectedIndex].value;'}
+          - displayed_series.each do |series|
+            %option{:value => "/orm/documentation/#{series.version}", :selected => series.version.to_s == real_page.ormversion.to_s}
+              = series.version

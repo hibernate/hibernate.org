@@ -1,445 +1,497 @@
-// We will import compiled JBoss Community's styles and apply ours on top
-// We can't compile them ourselves because they use Less which depends on TheRubyRacer
-//   which depends on V8 which is hard to install on Windows and would slow contribution
-//
-// If that fails we will have to start from a vanilla bootstrap
+/**
+ * Banner
+ */
 
-// Common utilities
-@import "settings";
-
-// Bug fix for community bootstrap
-
-.equalHero .btn {
-  // not all corners were properly rounded
-  border-radius: 4px 4px 4px 4px!important;
+.banner .logo {
+	margin-top: 15px;
 }
 
-// End of bug fix
-
-// the default bootstrap community font is a bit too small
-body {
-  font-size: 100%;
+.banner .ui.menu {
+	margin-top: 0px;
 }
 
-h1 {
-//  margin-top: 1em;
-  margin-bottom: 1em;
+/**
+ * Jumbotron
+ */
+
+.jumbotron {
+	background-color: #59666c;
+	padding: 50px;
+	margin-top: 30px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+
+	h1 {
+		color: white;
+		font-size: 4rem;
+		letter-spacing: 4px;
+
+		span {
+			background-color: #bcae79;
+			padding: 3px;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+
+	h2 {
+		font-size: 2rem;
+		color: white;
+
+		span {
+			background-color: #bcae79;
+			padding: 3px;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+
+	&.small {
+		padding: 30px;
+
+		h1 {
+			font-size: 3rem;
+		}
+
+		h2 {
+			font-size: 1.7rem;
+		}
+	}
+
+	.jumbotron-button:not(:first-child) {
+		margin-top: 15px;
+	}
 }
 
-h2, h3 {
-  margin-top: 1em;
+/**
+ * Hero
+ */
+
+.page-title {
+	background-color: #EEE;
+	border-bottom: 2px solid #DDD;
+	padding-bottom: 20px;
+	padding-top: 20px;
+
+	h1 {
+		color: #59666c;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		display: inline-block;
+		padding-bottom: 3px;
+	}
+
+	h4 {
+		color: #777;
+		line-height: 1.5em;
+		font-size: 1.2em;
+	}
 }
 
-.center-icon {
-  text-align: center;
+/**
+ * Homepage
+ */
+
+.page-title.home .ui.container {
+	text-align: center;
 }
 
-code, pre {
-  font-size: 85%;
-  color: rgb(101, 101, 101);
+#carousel {
+	margin-top: -8px;
+
+	.segment {
+		background-color: #EEE;
+
+		h4 {
+			margin-top: 6px;
+		}
+	}
+
+	.carousel-element {
+		padding: 7px;
+		margin: 7px;
+	}
 }
 
-pre > code {
-  font-size:100%
+.projects {
+	margin-top: 30px;
+
+	.ui.segment {
+		background-color: #fafafa;
+	}
 }
 
-// Headers and top nav
-.navbar {
-  z-index: 998;
-  margin-bottom: 25px;
-  margin-top: 40px;
+/**
+ * Project menu
+ */
+
+.ui.menu .license {
+	text-align: center;
 }
 
-#subproject .dropup {
-  width: 112px;
-  float: right;
+/**
+ * Content
+ */
+
+.page-content {
+	margin-top: 35px;
 }
 
-// Hibernate Logo
-#logobar > a {
-  padding-left: 24px;
-  display: block;
-  float: left;
+.content {
+	p, table td, table th {
+		font-size: 1.1em;
+	}
+
+	table td p {
+		font-size: 1em;
+	}
+
+	dl {
+		margin: 0 3% 2%;
+	}
+
+	dt {
+		font-size: 1.1em;
+		font-weight: bold;
+		margin-bottom: 0.3em;
+	}
+
+	h2 {
+		font-size: 1.7rem;
+	}
+
+	p {
+		margin: 0 0 10px;
+	}
+
+	h2 {
+		margin-top: 10px !important;
+		color: #59666c;
+		border-bottom: 2px solid #bcae79;
+		display: inline-block;
+		letter-spacing: 1px;
+		padding-bottom: 3px;
+	}
+
+	h3 {
+		margin-top: 10px !important;
+		color: #666;
+		font-size: 1.5em;
+		margin-bottom: 15px;
+	}
+
+	h4 {
+		margin-top: 15px !important;
+		color: #888;
+		font-size: 1.3em;
+	}
+
+	.sect1:not(:last-child) {
+		margin-bottom: 20px;
+	}
+
+	.sect2:not(:last-child) {
+		margin-bottom: 30px;
+	}
+
+	.sect3:not(:last-child) {
+		margin-bottom: 20px;
+	}
 }
 
-#logobar > a > img {
-  width: 160px;
+.news h3, #toc #toctitle {
+	margin-top: 10px !important;
+	color: #59666c;
+	border-bottom: 2px solid #bcae79;
+	display: inline-block;
+	letter-spacing: 1px;
+	padding-bottom: 3px;
 }
 
-.navbar .nav > li {
-  font-weight: bold;
-}
-// Avoid the second line in the header when
-// the monitor size is smaller
-.navbar .nav > li > a {
-      padding: 13px 10px;
+hr {
+	border: 0;
+	border-top: 1px dotted #bcae79;
+	background-color: #fff;
 }
 
-//home page
-
-//mantra
-.mantra {
-  font-weight: bold;
-  font-size: 150%;
+pre {
+	background: #f8f8f8 none repeat scroll 0 0;
+	border: 1px solid #d5d5d5;
+	margin: 1.5em 0;
+	overflow: auto;
+	padding: 1%;
+	white-space: pre;
+	border-radius: 0.3rem;
 }
-
-//headlines
-
-#myCarouselRow {
-  padding-top: 9px;
-}
-
-#myCarousel {
-  display: inline-block;
-  width: 100%;
-  margin-bottom: 0;
-  min-height: 23px;
-  overflow: hidden;
-  line-height: 1.3em;
-  ol {
-    display: none;
-  }
-}
-
-// Project menu
-.project-menu {
-  overflow: hidden;
-}
-.project-menu-title {
-  font-size: 200%;
-  margin-bottom:.5em;
-}
-
-.hero-button {
-  margin-top: 1em;
-  margin-left: 1em;
-  margin-right: 1em;
-}
-
-.hero-unit {
-  padding-left: 60px;
-  padding-right: 60px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-@media (min-width: 768px) and (max-width: 1199px) {
-  .menu-icon {
-    display: none !important;
-  }
-}
-
-// align project menu color with regular text color
-.nav-list > li > a, .nav-list .nav-header {
-  color: $text-color;
-}
-
-.nav-list > .active > a, .nav-list > .active > a:hover, .nav-list > .active > a:focus {
-  background-color: $text-color;
-}
-
-// Project home page
-.feature-block {
-  h2, h3 {
-    margin-top: .5em;
-  }
-}
-
-//News sidebar
-.news-sidebar {
-  h2 {
-    margin-top: 0em;
-  }
-}
-
-// Project download page
-@media (min-width: 768px) {
-  .release-buttons {
-    margin-bottom:2em;
-  }
-}
-
-@media (max-width: 767px) {
-  .release-buttons {
-    margin-bottom:1em;
-    margin-top:1em;
-  }
-}
-
-@media (max-width: 470px) {
-  .hero-unit {
-    h1 {
-      font-size: 2em;
-    }
-  }
-}
-
-@media (max-width: 447px) {
-  #logobar > a {
-    padding-left: 0px;
-    float: none;
-  }
-  .dropup {
-    float: none; 
-  }
-  .navbar {
-    margin-top: 0px
-  }
-}
-
-@media (max-width: 365px) {
-  .hero-unit {
-    padding: 25px 30px;
-    h1 {
-      font-size: 1.5em;
-    }
-  }
-}
-
-@media (max-width: 270px) {
-  .hero-unit {
-    padding: 25px 30px;
-    h1 {
-      font-size: 1em;
-    }
-  }
-}
-
-//footer
-
-footer.container {
-  $ratio: 90%;
-  padding-top: .3em;
-  padding-bottom: .3em;
-  font-size: $ratio;
-  line-height: 80%;
-  h4 {
-    font-size: 110%;
-    margin-top: 5px;
-    margin-bottom: 5px;
-  }
-  ul {
-    margin-left: 0;
-  }
-  li {
-    line-height: 120%;
-  }
-}
-
-// // Asciidoc
-
-// Table of content
-
-#toc {
-  background-color: #efefef;
-  padding: 1em;
-  & > ol {
-    margin: .5em 0 .5em .5em;
-  }
-  ol {
-    list-style-type: none;
-  }
-  a {
-    text-decoration: none;
-  }
-}
-
-@media (min-width: 980px) {
-  #toc {
-    width: 30%;
-    position: static;
-    top: 0px; 
-    float: right;
-    margin-left: 1em;
-    margin-bottom: 1em;
-    margin-top: 1em;
-  }
-}
-
-@media (max-width: 979px) {
-  #toc {
-    margin: 1em;
-  }
-}
-
-
-#toctitle {
-  padding-left: 3%;
-  margin-bottom: 1em;
-  font-size:120%;
-}
-
-.sectlevel1 {
-  $sectlevel1-percent: 85%;
-  font-size: $sectlevel1-percent;
-  li {
-    margin-left: 0;
-    margin-right: 10%;
-    margin-top: .5em;
-    margin-bottom: .5em;
-  }
-  code {
-    font-size: 100%;
-  }
-}
-
-.sectlevel2 {
-  $sectlevel2-percent: 90%;
-  font-size: $sectlevel2-percent;
-}
-
-.sectlevel3 {
-  $sectlevel3-percent: 90%;
-  font-size: $sectlevel3-percent;
-}
-
-
-// Preamble
 
 #preamble {
-  font-size: 130%;
+	.sectionbody {
+		font-size: 1.1em;
+		font-weight: bold;
+		color: #666;
+		margin-bottom: 25px;
+
+		.ui.message {
+			font-size: 0.9em;
+			font-weight: normal;
+		}
+	}
 }
 
-// admonitions (TIP, NOTES etc)
-// copied from asciidoctor.github.com
+#toc {
+	float: right;
+	margin-bottom: 1em;
+	margin-left: 1em;
+	position: static;
+	top: 0;
+	width: 30%;
+	background-color: #fafafa;
+	padding: 1em;
+	border: 1px solid rgba(34, 36, 38, 0.15);
+	border-radius: 0.3rem;
+	box-shadow: 0 2px 4px 0 rgba(34, 36, 38, 0.12), 0 2px 10px 0 rgba(34, 36, 38, 0.15);
 
-.admonitionblock > table {
-  border: 0;
-  margin-bottom: 1.25em;
-  //width: 100%;
-  background: none;
-  td.icon {
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
-    width: 80px;
-    img {
-      max-width: none;
-    }
-  }
+	ul {
+		padding-left: 1em;
+	}
 
-  td.content {
-    padding-left: 2em;
-    //padding-right: emCalc(20px);
-    border-left: 1px solid $hr-border-color; 
-    color: $blockquote-font-color;
+	li {
+		margin-bottom: 0.3em;
+	}
 
-    & > div:last-child {
-      p, ol, ul, dl, dl dd:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
+	> ul > li > ul > li {
+		margin-left: 0.5em;
+	}
 }
 
-// listing blocks
-
-.listingblock > .title {
-  //margin-left: 5em;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 1em;
-  padding-top: .5em;
-  margin-bottom: -.5em;
-  border-width: 1px 0 0 0;
-  border-color: $hr-border-color;
-  text-align: center;
-  border-style: solid;
+.ui.grid.series {
+	margin-bottom: 25px;
 }
 
-@import "awesome-icons";
+/**
+ * Asciidoctor styles
+ */
+.admonitionblock {
+	background: #f8f8f9 none repeat scroll 0 0;
+	border-radius: 0.285714rem;
+	box-shadow: 0 0 0 1px rgba(34, 36, 38, 0.22) inset, 0 0 0 0 rgba(0, 0, 0, 0);
+	color: rgba(0, 0, 0, 0.87);
+	line-height: 1.4285em;
+	margin: 1em 0;
+	min-height: 1em;
+	padding: 1em 1.5em;
+	position: relative;
 
-// The 404 page
-.feedback-button {
-  margin-top: 1em;
-  margin-bottom: 1em;
+	p {
+		margin-bottom: 0px;
+	}
+
+	&.note, &.tip {
+		box-shadow: 0 0 0 1px #a9d5de inset, 0 0 0 0 transparent;
+		background-color: #f8ffff;
+		color: #276f86;
+	}
+
+	&.warning {
+		box-shadow: 0 0 0 1px #c9ba9b inset, 0 0 0 0 transparent;
+		background-color: #fffaf3;
+		color: #573a08;
+	}
+
+	&.important, &.caution {
+		box-shadow: 0 0 0 1px #e0b4b4 inset, 0 0 0 0 transparent;
+		background-color: #fff6f6;
+		color: #9f3a38;
+	}
+
+	.fa {
+		display: block;
+		font-size: 2em;
+		line-height: 1;
+		opacity: 0.8;
+		vertical-align: middle;
+		width: auto;
+		font-family: "Icons";
+		font-style: normal;
+		font-weight: normal;
+		margin-right: 0.6em;
+		text-align: center;
+		text-decoration: inherit;
+		height: 1em;
+	}
+
+	.fa::before {
+		background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+	}
+
+	.fa.icon-note::before {
+		content: "";
+	}
+
+	.fa.icon-tip::before {
+		content: "";
+	}
+
+	.fa.icon-warning::before {
+		content: "";
+	}
+
+	.fa.icon-caution::before {
+		content: "";
+	}
+
+	.fa.icon-important::before {
+		content: "";
+	}
 }
 
+// alternatively could use &#10122; through &#10131 to get the numbered circles,
+// then style them as appropriate; would need to output them in the text, though
+.conum {
+	display: inline-block;
+	color: white !important;
+	background-color: #666;
+	text-align: center;
+	width: 20px;
+	height: 20px;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 20px;
+	font-family: Arial, sans-serif;
+	font-style: normal;
+	position: relative;
+	top: -2px;
+	letter-spacing: -1px;
 
-// Asciidoctor blockquote
-$blockquote-text-color: rgb(101, 101, 101);
-.quoteblock {
-    .paragraph {
-        p {
-            margin-bottom: 20px;
-        }
-    }
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: $blockquote-text-color;
-    blockquote {
-        position: relative;
-        margin-left: 20px;
-        margin: 1.5em 10px;
-        padding: 0.5em 10px;
-    }
-    blockquote:before {
-        color: #ccc;
-        font-size: 6em;
-        margin-top: 30px;
-        display: block;
-        content: "\201C";
-    }
-    .attribution {
-        text-align: right;
-        color: $blockquote-text-color;
-    }
+	& * {
+	color: white !important;
+	}
+
+	// hack for when highlight.js adds a bogus element into DOM
+	&:empty {
+		display: none;
+	}
 }
 
-// table-responsive from Bootstrap 3
-.table-responsive {
-  min-height: .01%;
-  overflow-x: auto;
-}
-@media screen and (max-width: 767px) {
-  .table-responsive {
-    width: 100%;
-    margin-bottom: 15px;
-    overflow-y: hidden;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    border: 1px solid #ddd;
-  }
-  .table-responsive > .table {
-    margin-bottom: 0;
-  }
-  .table-responsive > .table > thead > tr > th,
-  .table-responsive > .table > tbody > tr > th,
-  .table-responsive > .table > tfoot > tr > th,
-  .table-responsive > .table > thead > tr > td,
-  .table-responsive > .table > tbody > tr > td,
-  .table-responsive > .table > tfoot > tr > td {
-    white-space: nowrap;
-  }
-  .table-responsive > .table-bordered {
-    border: 0;
-  }
-  .table-responsive > .table-bordered > thead > tr > th:first-child,
-  .table-responsive > .table-bordered > tbody > tr > th:first-child,
-  .table-responsive > .table-bordered > tfoot > tr > th:first-child,
-  .table-responsive > .table-bordered > thead > tr > td:first-child,
-  .table-responsive > .table-bordered > tbody > tr > td:first-child,
-  .table-responsive > .table-bordered > tfoot > tr > td:first-child {
-    border-left: 0;
-  }
-  .table-responsive > .table-bordered > thead > tr > th:last-child,
-  .table-responsive > .table-bordered > tbody > tr > th:last-child,
-  .table-responsive > .table-bordered > tfoot > tr > th:last-child,
-  .table-responsive > .table-bordered > thead > tr > td:last-child,
-  .table-responsive > .table-bordered > tbody > tr > td:last-child,
-  .table-responsive > .table-bordered > tfoot > tr > td:last-child {
-    border-right: 0;
-  }
-  .table-responsive > .table-bordered > tbody > tr:last-child > th,
-  .table-responsive > .table-bordered > tfoot > tr:last-child > th,
-  .table-responsive > .table-bordered > tbody > tr:last-child > td,
-  .table-responsive > .table-bordered > tfoot > tr:last-child > td {
-    border-bottom: 0;
-  }
+pre .comment .conum {
+	// coverup the comment
+	left: -20px;
 }
 
-dl.dl-sparse {
-  dt {
-    margin-top: 7px;
-    font-weight: normal;
-  }
+/**
+ * News
+ */
+
+.ui.segment.news {
+	background-color: #FAFAFA;
+	
+	h4 {
+		margin-bottom: 5px;
+		
+		&:not(:first-child) {
+			margin-top: 10px;
+		}
+	}
+	
+	small {
+		color: #999;
+	}
 }
+
+/**
+ * Series overview
+ */
+
+.version {
+	h3.ui.header {
+		margin-top: 0;
+		font-size: 3em;
+		
+		small {
+			font-size: 0.3em;
+			color: #AAA;
+		}
+	}
+}
+
+/**
+ * Footer
+ */
+
+.footer {
+	margin-top: 70px !important;
+	
+	.segment {
+		padding: 3em 0em;
+	}
+
+	.ui.inverted.divided.grid:not([class*="vertically divided"]) > .sponsor.column:not(.row),
+	.ui.inverted.divided.grid:not([class*="vertically divided"]) > .row > .sponsor.column {
+		box-shadow: none;
+		text-align: right;
+	}
+}
+
+/**
+ * Semantic UI adjustments
+ */
+.ui.table thead th {
+	background-color: #f4f4f4;
+}
+
+/**
+ * Bootstrap utilities
+ */
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}
+
+/**
+ * Books
+ */
+
+.books {
+	.ui.items > .item > .image img {
+		border: 1px solid #CCC;
+		border-radius: 0.125rem;
+		display: block;
+		height: auto;
+		width: 100%;
+	}
+
+	.ui.divided.items > .item {
+		padding: 2em 0;
+	}
+
+	.ui.items > .item > .content > a.header {
+		color: #1e70bf;
+	}
+}
+
+/**
+ * Back to top
+ */
+
+.back-to-top {
+	bottom: 10px;
+	position: fixed;
+	right: 10px;
+	z-index: 1000;
+	display: none;
+
+	a {
+		background: #243446 url("https://static.jboss.org/common/images/top.png") no-repeat scroll center center;
+		display: block;
+		height: 50px;
+		margin: 0;
+		text-indent: -9999px;
+		width: 50px;
+	}
+}
+

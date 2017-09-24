@@ -1,55 +1,48 @@
 ---
-layout: project-frame
-title: Hibernate OGM
+layout: project-about
+title: Your NoSQL datastores. Handy.
 project: ogm
-title_partial: project/title-about.html.haml
+project_hero_partial: project/ogm/hero-text.html.haml
 ---
 
 -# Center body
-.row-fluid
-  .span8
-    .feature-block
-      :asciidoc
-        === Many NoSQL stores, one standard way to access them
+.feature-block
+  :asciidoc
+    == Many NoSQL stores, one standard way to access them
 
-        Hibernate OGM provides Java Persistence (JPA) support for NoSQL solutions.
-        It reuses Hibernate ORM's engine but persists entities into a NoSQL datastore instead of a relational database.
+    Hibernate OGM provides Java Persistence (JPA) support for NoSQL solutions.
+    It reuses Hibernate ORM's engine but persists entities into a NoSQL datastore instead of a relational database.
 
-        We know you have questions, we'll answer them in the link:faq/[FAQ].
+    We know you have questions, we'll answer them in the link:faq/[FAQ].
 
-        === Wide range of backends
+    == Wide range of backends
 
-        OGM talks to NoSQL backends via store-specific dialects. Currently there is support for
+    OGM talks to NoSQL backends via store-specific dialects. Currently there is support for
 
-        * _Key/Value_: Infinispan; Ehcache
-        * _Document_: MongoDB
-        * _Graph_: Neo4j
+    * _Key/Value_: Infinispan; Ehcache
+    * _Document_: MongoDB
+    * _Graph_: Neo4j
 
-        And more are in progress: Redis, CouchDB and Cassandra.
-        Your favorite NoSQL store isn't listed here? We'd love to get link:/ogm/contribute[your help] for adding it.
+    And more are in progress: Redis, CouchDB and Cassandra.
+    Your favorite NoSQL store isn't listed here? We'd love to get link:/ogm/contribute[your help] for adding it.
 
-        === Rich query capabilities
+    == Rich query capabilities
 
-        Hibernate OGM supports several ways for searching entities and returning them as Hibernate _managed objects_:
+    Hibernate OGM supports several ways for searching entities and returning them as Hibernate _managed objects_:
 
-        * _JP-QL queries_ (we convert them into a native backend query)
-        * datastore specific _native queries_
-        * _full-text queries_, using Hibernate Search as indexing engine
+    * _JP-QL queries_ (we convert them into a native backend query)
+    * datastore specific _native queries_
+    * _full-text queries_, using Hibernate Search as indexing engine
 
-        === And more...
+    == And more...
 
-        * When JPA isn't enough, Hibernate OGM extends it with family-specific and product-specific options.
-        That way, the power of the backend is at your fingertips.
-        All that in a type-safe way.
-        * Mixing several NoSQL datastores in one application, e.g. use Neo4j for your friendship graph and MongoDB for your blog posts. Or mix NoSQL and relational databases.
-        * Support for implicit data migrations upon data load (later)
-        * Denormalize data declaratively for faster retrieval (later)
+    * When JPA isn't enough, Hibernate OGM extends it with family-specific and product-specific options.
+    That way, the power of the backend is at your fingertips.
+    All that in a type-safe way.
+    * Mixing several NoSQL datastores in one application, e.g. use Neo4j for your friendship graph and MongoDB for your blog posts. Or mix NoSQL and relational databases.
+    * Support for implicit data migrations upon data load (later)
+    * Denormalize data declaratively for faster retrieval (later)
 
-        Still have questions? Check our link:faq/[FAQ]. +
-        Want to see it in action? Move on to the
-        link:documentation/getting-started[getting started guide].
-
-
-  -# News right column
-  .span4
-    = partial( 'common/latest-news.html.haml', {"real_page" => page} )
+    Still have questions? Check our link:faq/[FAQ]. +
+    Want to see it in action? Move on to the
+    link:documentation/getting-started[getting started guide].

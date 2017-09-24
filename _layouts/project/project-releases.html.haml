@@ -1,6 +1,6 @@
 ---
-layout: project-frame
-title_partial: project/title-releases.html.haml
+layout: project-standard
+project_buttons_partial: project/releases-buttons.html.haml
 ---
 -# Defines the project releases page template
 -# Provide get started and download action buttons
@@ -11,77 +11,70 @@ title_partial: project/title-releases.html.haml
 -# Metadata from site.yml for the project
 - project_description = site.projects[page.project]
 
--# Release buttons using the latest dev and latest stable series
-.release-buttons.visible-desktop
-  - stable_series = latest_stable_series(page)
-  - series = latest_series(page)
-  - dev_series = series != stable_series ? series : nil
-  - if not (stable_series.nil? && dev_series.nil?)
-    .text-center
-      - unless stable_series.nil?
-        %a.btn.btn-large.btn-success{:href => "./#{series.version}/"}
-          %i.icon-circle-arrow-right
-          Latest stable (#{stable_series.version})
-      - unless (stable_series.nil? || dev_series.nil? || !dev_series.displayed)
-        &nbsp;
-      - unless (dev_series.nil? || !dev_series.displayed)
-        %a.btn.btn-large.btn-warning{:href => "./#{dev_series.version}/"}
-          %i.icon-circle-arrow-right
-          Development (#{dev_series.version})
+.ui.icon.message
+  %i.icon.doctor
+  .content
+    .header
+      Interested in commercial support?
+    %p
+      Check out
+      %a{:href => "/#{page.project}/support/"} Red Hat's offering
+      \.
+
 %h2 Series
 - displayed_series = project_description.release_series.nil? ? nil : project_description.release_series.values.select{|s| s.displayed}
 - unless displayed_series.nil? || displayed_series.empty?
-  - displayed_series.each_slice( 3 ) do |row|
-    .row-fluid
-      %ul.thumbnails{:style => "margin-bottom: 0;"}
-        - row.each do |series|
-          - release = series.releases[0]
-          %li.span4
-            .thumbnail
-              .caption
-                %h3
-                  = series.version
-                  %span.label{:class => "#{release.stable ? 'label-success' : 'label-warning'}"} #{release.stable ? 'stable' : 'development'}
-                  %small= release.date
-                %p= series.summary
-                %p
-                  %a.btn.btn-large.btn-link{:href => "./#{series.version}/"}
-                    %i.icon-circle-arrow-right
-                    More info
+  .ui.three.column.doubling.grid.series
+    - displayed_series.each do |series|
+      - release = series.releases[0]
+      .column
+        .ui.raised.segment.version
+          %span{:class => "ui right ribbon label #{release.stable ? 'green' : 'orange'}"}
+            %i.icon{:class => "#{release.stable ? 'check' : 'settings'}"}
+            #{release.stable ? 'stable' : 'development'}
+          %h3.ui.header
+            = series.version
+            %small
+              = release.date
+          %p= series.summary
+          .ui.right.aligned.basic.segment
+            %a.ui.right.labeled.icon.button.primary
+              %i.right.arrow.icon
+              More info
 - else
   %p There are no releases configured for this project.
 
 - nexus_search = project_description.maven.nexus_search
-Older series can be found
-%a{:href => "#{project_description.sourceforge_url}"}
-  on SourceForge
-or in JBoss's
-%a{:href => jboss_nexus_search_url(nexus_search.group_id_pattern, nexus_search.artifact_id_pattern, nil)}<
-  Maven repository.
+%p
+  Older series can be found
+  %a{:href => "#{project_description.sourceforge_url}"}
+    on SourceForge
+  or in JBoss's
+  %a{:href => jboss_nexus_search_url(nexus_search.group_id_pattern, nexus_search.artifact_id_pattern, nil)}<
+    Maven repository.
 - unless project_description.integrations.nil?
   %h2 Compatibility matrix
-  .table-responsive
-    %table.table
-      %thead
-        %tr
+  %table.ui.table.stackable.celled.striped
+    %thead
+      %tr
+        %th
+          = project_description.name
+        - project_description.release_series.values.each do |series|
+          - unless series.displayed then next end
           %th
-            = project_description.name
+            = series.version
+    %tbody
+      - project_description.integrations.each_pair do |integration_id, integration|
+        %tr
+          %td
+            %a{:href => "#{integration['url']}"}
+              = integration["name"]
           - project_description.release_series.values.each do |series|
             - unless series.displayed then next end
-            %th
-              = series.version
-      %tbody
-        - project_description.integrations.each_pair do |integration_id, integration|
-          %tr
-            %th
-              %a{:href => "#{integration['url']}"}
-                = integration["name"]
-            - project_description.release_series.values.each do |series|
-              - unless series.displayed then next end
-              - constraint = series.integration_constraints[integration_id]
-              %td
-                - if constraint == nil
-                  N/A
-                - else
-                  #{constraint.version}
+            - constraint = series.integration_constraints[integration_id]
+            %td
+              - if constraint == nil
+                N/A
+              - else
+                #{constraint.version}
 ~ content

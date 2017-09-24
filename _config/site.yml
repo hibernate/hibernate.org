@@ -53,60 +53,60 @@ projects:
       intern:
         - name: About
           href: '/orm/'
-          css_class: 'icon-fixed-width icon-home'
+          css_class: 'home'
         - name: Releases
           href: '/orm/releases/'
-          css_class: 'icon-fixed-width icon-tags'
+          css_class: 'tags'
           releases_submenu: true
         - name: Documentation
           href: '/orm/documentation/'
-          css_class: 'icon-fixed-width icon-folder-open'
+          css_class: 'folder open'
         - name: Books
           href: '/orm/books/'
-          css_class: 'icon-fixed-width icon-book'
-        - name: Tooling
-          href: '/orm/tooling/'
-          css_class: 'icon-fixed-width icon-wrench'
-        - name: Envers
-          href: '/orm/envers/'
-          css_class: 'icon-fixed-width icon-time'
-        - name: Paid support
-          href: '/orm/support/'
-          css_class: 'icon-fixed-width icon-user-md'
-        - name: Get Certified
-          href: '/orm/certification/'
-          css_class: 'icon-fixed-width icon-certificate'
-        - name: FAQ
-          href: '/orm/faq/'
-          css_class: 'icon-fixed-width icon-question'
-        - name: Migrate
+          css_class: 'book'
+        - name: Migration guides
           href: 'https://github.com/hibernate/hibernate-orm/wiki/Migration-Guides'
-          css_class: 'icon-fixed-width icon-circle-arrow-up'
+          css_class: 'circle arrow up'
         - name: Roadmap
           href: 'https://github.com/hibernate/hibernate-orm/wiki/Roadmap'
-          css_class: 'icon-fixed-width icon-road'
+          css_class: 'road'
+        - name: Tooling
+          href: '/orm/tooling/'
+          css_class: 'wrench'
+        - name: Envers
+          href: '/orm/envers/'
+          css_class: 'time'
         - name: Contribute
           href: '/orm/contribute/'
-          css_class: 'icon-fixed-width icon-beer'
+          css_class: 'users'
+        - name: Paid support
+          href: '/orm/support/'
+          css_class: 'doctor'
+        - name: Get Certified
+          href: '/orm/certification/'
+          css_class: 'certificate'
+        - name: FAQ
+          href: '/orm/faq/'
+          css_class: 'help circle'
       extern:
-        - name: Wiki
-          href: 'https://community.jboss.org/en/hibernate'
-          css_class: 'icon-fixed-width icon-edit'
-        - name: Issues
-          href: 'https://hibernate.atlassian.net/browse/HHH'
-          css_class: 'icon-fixed-width icon-exclamation-sign'
-        - name: Security issue
-          href: 'https://access.redhat.com/security/team/contact/'
-          css_class: 'icon-fixed-width icon-lock'
-        - name: Forum
-          href: 'https://forum.hibernate.org'
-          css_class: 'icon-fixed-width icon-comments'
         - name: Source code
           href: 'https://github.com/hibernate/hibernate-orm'
-          css_class: 'icon-fixed-width icon-code'
+          css_class: 'code'
+        - name: Issue tracker
+          href: 'https://hibernate.atlassian.net/browse/HHH'
+          css_class: 'bug'
+        - name: Security issue
+          href: 'https://access.redhat.com/security/team/contact/'
+          css_class: 'lock'
+        - name: Forum
+          href: 'https://forum.hibernate.org'
+          css_class: 'comments'
+        - name: Wiki
+          href: 'https://community.jboss.org/en/hibernate'
+          css_class: 'edit'
         - name: CI
           href: 'http://ci.hibernate.org/'
-          css_class: 'icon-fixed-width icon-stethoscope'
+          css_class: 'treatment'
 
   ##################################################################################################
   # Search
@@ -152,49 +152,48 @@ projects:
       intern:
         - name: About
           href: '/search/'
-          css_class: 'icon-fixed-width icon-home'
+          css_class: 'home'
         - name: Releases
           href: '/search/releases/'
-          css_class: 'icon-fixed-width icon-tags'
+          css_class: 'tags'
           releases_submenu: true
         - name: Documentation
           href: '/search/documentation/'
-          css_class: 'icon-fixed-width icon-book'
-        - name: Tooling
-          href: '/search/tooling/'
-          css_class: 'icon-fixed-width icon-wrench'
-        - name: Paid support
-          href: '/search/support/'
-          css_class: 'icon-fixed-width icon-user-md'
-        - name: FAQ
-          href: '/search/faq/'
-          css_class: 'icon-fixed-width icon-question'
+          css_class: 'book'
         - name: Roadmap
           href: '/search/roadmap/'
-          css_class: 'icon-fixed-width icon-road'
+          css_class: 'road'
         - name: Contribute
           href: '/search/contribute/'
-          css_class: 'icon-fixed-width icon-beer'
+          css_class: 'users'
+        - name: Tooling
+          href: '/search/tooling/'
+          css_class: 'wrench'
+        - name: Paid support
+          href: '/search/support/'
+          css_class: 'doctor'
+        - name: FAQ
+          href: '/search/faq/'
+          css_class: 'circle help'
       extern:
-        - name: Wiki
-          href: 'https://community.jboss.org/en/hibernate/search'
-          css_class: 'icon-fixed-width icon-edit'
-        - name: Issues
-          href: 'https://hibernate.atlassian.net/browse/HSEARCH'
-          css_class: 'icon-fixed-width icon-exclamation-sign'
-          #  icon-bug only in font-awesome 3.2
-        - name: Security issue
-          href: 'https://access.redhat.com/security/team/contact/'
-          css_class: 'icon-fixed-width icon-lock'
-        - name: Forum
-          href: 'https://forum.hibernate.org/viewforum.php?f=9'
-          css_class: 'icon-fixed-width icon-comments'
         - name: Source code
           href: 'https://github.com/hibernate/hibernate-search'
-          css_class: 'icon-fixed-width icon-code'
+          css_class: 'code'
+        - name: Issue tracker
+          href: 'https://hibernate.atlassian.net/browse/HSEARCH'
+          css_class: 'bug'
+        - name: Security issue
+          href: 'https://access.redhat.com/security/team/contact/'
+          css_class: 'lock'
+        - name: Forum
+          href: 'https://forum.hibernate.org/viewforum.php?f=9'
+          css_class: 'comments'
+        - name: Wiki
+          href: 'https://community.jboss.org/en/hibernate/search'
+          css_class: 'edit'
         - name: CI
           href: 'http://ci.hibernate.org/job/hibernate-search-master/'
-          css_class: 'icon-fixed-width icon-stethoscope'
+          css_class: 'treatment'
 
   ##################################################################################################
   # Tools
@@ -211,43 +210,42 @@ projects:
       intern:
         - name: About
           href: '/tools/'
-          css_class: 'icon-fixed-width icon-home'
+          css_class: 'home'
       extern:
         - name: Downloads
           href: 'http://www.jboss.org/tools/download/'
-          css_class: 'icon-fixed-width icon-cloud-download'
+          css_class: 'cloud download'
         - name: Documentation
           href: 'http://www.jboss.org/tools/docs/'
-          css_class: 'icon-fixed-width icon-book'
+          css_class: 'book'
           #TODO add FAQ, Roadmap and Contribute page
           #- name: FAQ
           #  href: '/search/faq/'
-          #  css_class: 'icon-fixed-width icon-question'
+          #  css_class: 'circle help'
           #- name: Roadmap
           #  href: '/search/roadmap/'
-          #  css_class: 'icon-fixed-width icon-road'
+          #  css_class: 'road'
           #- name: Contribute
           #  href: '/search/contribute/'
-          #  css_class: 'icon-fixed-width icon-beer'
-        - name: Wiki
-          href: 'https://community.jboss.org/en/tools'
-          css_class: 'icon-fixed-width icon-edit'
-        - name: Issues
-          href: 'https://hibernate.atlassian.net/browse/HBX'
-          css_class: 'icon-fixed-width icon-exclamation-sign'
-          #  icon-bug only in font-awesome 3.2
-        - name: Security issue
-          href: 'https://access.redhat.com/security/team/contact/'
-          css_class: 'icon-fixed-width icon-lock'
-        - name: Forum
-          href: 'https://forum.hibernate.org'
-          css_class: 'icon-fixed-width icon-comments'
+          #  css_class: 'users'
         - name: Source code
           href: 'https://github.com/hibernate/hibernate-tools'
-          css_class: 'icon-fixed-width icon-code'
+          css_class: 'code'
+        - name: Issue tracker
+          href: 'https://hibernate.atlassian.net/browse/HBX'
+          css_class: 'bug'
+        - name: Security issue
+          href: 'https://access.redhat.com/security/team/contact/'
+          css_class: 'lock'
+        - name: Forum
+          href: 'https://forum.hibernate.org'
+          css_class: 'comments'
+        - name: Wiki
+          href: 'https://community.jboss.org/en/tools'
+          css_class: 'edit'
         - name: CI
           href: 'http://hudson.jboss.org/hudson/job/hibernate-tools-trunk/'
-          css_class: 'icon-fixed-width icon-stethoscope'
+          css_class: 'treatment'
 
   ##################################################################################################
   # Validator
@@ -287,48 +285,48 @@ projects:
       intern:
         - name: About
           href: '/validator/'
-          css_class: 'icon-fixed-width icon-home'
+          css_class: 'home'
         - name: Releases
           href: '/validator/releases/'
-          css_class: 'icon-fixed-width icon-tags'
+          css_class: 'tags'
           releases_submenu: true
         - name: Documentation
           href: '/validator/documentation/'
-          css_class: 'icon-fixed-width icon-book'
-        - name: Tooling
-          href: '/validator/tooling/'
-          css_class: 'icon-fixed-width icon-wrench'
-        - name: Paid support
-          href: '/validator/support/'
-          css_class: 'icon-fixed-width icon-user-md'
-        - name: FAQ
-          href: '/validator/faq/'
-          css_class: 'icon-fixed-width icon-question'
+          css_class: 'book'
         - name: Roadmap
           href: '/validator/roadmap/'
-          css_class: 'icon-fixed-width icon-road'
+          css_class: 'road'
         - name: Contribute
           href: '/validator/contribute/'
-          css_class: 'icon-fixed-width icon-beer'
+          css_class: 'users'
+        - name: Tooling
+          href: '/validator/tooling/'
+          css_class: 'wrench'
+        - name: Paid support
+          href: '/validator/support/'
+          css_class: 'doctor'
+        - name: FAQ
+          href: '/validator/faq/'
+          css_class: 'circle help'
       extern:
-        - name: Wiki
-          href: 'https://community.jboss.org/en/hibernate/validator'
-          css_class: 'icon-fixed-width icon-edit'
-        - name: Issues
-          href: 'https://hibernate.atlassian.net/browse/HV'
-          css_class: 'icon-fixed-width icon-exclamation-sign'
-        - name: Security issue
-          href: 'https://access.redhat.com/security/team/contact/'
-          css_class: 'icon-fixed-width icon-lock'
-        - name: Forum
-          href: 'https://forum.hibernate.org'
-          css_class: 'icon-fixed-width icon-comments'
         - name: Source code
           href: 'https://github.com/hibernate/hibernate-validator'
-          css_class: 'icon-fixed-width icon-code'
+          css_class: 'code'
+        - name: Issue tracker
+          href: 'https://hibernate.atlassian.net/browse/HV'
+          css_class: 'bug'
+        - name: Security issue
+          href: 'https://access.redhat.com/security/team/contact/'
+          css_class: 'lock'
+        - name: Forum
+          href: 'https://forum.hibernate.org'
+          css_class: 'comments'
+        - name: Wiki
+          href: 'https://community.jboss.org/en/hibernate/validator'
+          css_class: 'edit'
         - name: CI
           href: 'https://hibernate-validator.ci.cloudbees.com/'
-          css_class: 'icon-fixed-width icon-stethoscope'
+          css_class: 'treatment'
 
   ##################################################################################################
   # OGM
@@ -374,102 +372,46 @@ projects:
       intern:
         - name: About
           href: '/ogm/'
-          css_class: 'icon-fixed-width icon-home'
+          css_class: 'home'
         - name: Releases
           href: '/ogm/releases/'
-          css_class: 'icon-fixed-width icon-tags'
+          css_class: 'tags'
           releases_submenu: true
         - name: Documentation
           href: '/ogm/documentation/'
-          css_class: 'icon-fixed-width icon-book'
-        - name: Paid support
-          href: '/ogm/support/'
-          css_class: 'icon-fixed-width icon-user-md'
-        - name: FAQ
-          href: '/ogm/faq/'
-          css_class: 'icon-fixed-width icon-question'
+          css_class: 'book'
         - name: Roadmap
           href: '/ogm/roadmap/'
-          css_class: 'icon-fixed-width icon-road'
+          css_class: 'road'
         - name: Contribute
           href: '/ogm/contribute/'
-          css_class: 'icon-fixed-width icon-beer'
+          css_class: 'users'
+        - name: Paid support
+          href: '/ogm/support/'
+          css_class: 'doctor'
+        - name: FAQ
+          href: '/ogm/faq/'
+          css_class: 'circle help'
       extern:
-        - name: Wiki
-          href: 'https://community.jboss.org/en/hibernate/ogm'
-          css_class: 'icon-fixed-width icon-edit'
-        - name: Issues
-          href: 'https://hibernate.atlassian.net/browse/OGM'
-          css_class: 'icon-fixed-width icon-exclamation-sign'
-        - name: Security issue
-          href: 'https://access.redhat.com/security/team/contact/'
-          css_class: 'icon-fixed-width icon-lock'
-        - name: Forum
-          href: 'https://forum.hibernate.org/viewforum.php?f=31'
-          css_class: 'icon-fixed-width icon-comments'
         - name: Source code
           href: 'https://github.com/hibernate/hibernate-ogm'
-          css_class: 'icon-fixed-width icon-code'
+          css_class: 'code'
+        - name: Issue tracker
+          href: 'https://hibernate.atlassian.net/browse/OGM'
+          css_class: 'bug'
+        - name: Security issue
+          href: 'https://access.redhat.com/security/team/contact/'
+          css_class: 'lock'
+        - name: Forum
+          href: 'https://forum.hibernate.org/viewforum.php?f=31'
+          css_class: 'comments'
         - name: CI
           href: 'http://ci.hibernate.org/job/hibernate-ogm-master/'
-          css_class: 'icon-fixed-width icon-stethoscope'
+          css_class: 'treatment'
+        - name: Wiki
+          href: 'https://community.jboss.org/en/hibernate/ogm'
+          css_class: 'edit'
  #other projects would come here
-
-####################################################################################################
-# File merger
-####################################################################################################
-# Merge multiple JavaScript files to improve performance
-fileMerger:
-  enabled: true
-  outputFilePath: /javascripts/bootstrap-community.js
-  paths:
-    - /javascripts/_bootstrap-transition.js
-    - /javascripts/_bootstrap-alert.js
-    - /javascripts/_bootstrap-button.js
-    - /javascripts/_bootstrap-carousel.js
-    - /javascripts/_bootstrap-collapse.js
-    - /javascripts/_bootstrap-dropdown.js
-    - /javascripts/_bootstrap-modal.js
-    - /javascripts/_bootstrap-tooltip.js
-    - /javascripts/_bootstrap-popover.js
-    - /javascripts/_bootstrap-scrollspy.js
-    - /javascripts/_bootstrap-tab.js
-    - /javascripts/_bootstrap-typeahead.js
-    - /javascripts/_bootstrap-affix.js
-    - /javascripts/_jbossorg-navbarfix.js
-    - /javascripts/_jbossorg-misc.js
-    - /javascripts/_jbossorg-tabzilla.js
-    - /javascripts/_jquery-easytabs.js
-    - /javascripts/_crisp-scripts.js
-
-####################################################################################################
-# WGET
-####################################################################################################
-# Cache hosted fonts, images and javascript
-wget:
-  enabled: true
-  rerunEach: 86400 # seconds
-  timestampFilename: _wget-timestamp
-  options:
-    - --no-remove-listing
-    - -q
-    - -r
-    - --no-parent
-    - -N
-    - --reject 'index.html*'
-    - -e robots=off
-    - --directory-prefix=cache
-  urls:
-    - http://static.jboss.org/theme/js/libs/jquery/jquery-1.9.1.js
-    - http://static.jboss.org/theme/js/libs/jquery/jquery-1.9.1.min.js
-    - http://static.jboss.org/theme/js/libs/html5/pre3.6/html5.min.js
-    - http://static.jboss.org/theme/js/libs/prettify/188.0.0/prettify.min.js
-    - http://static.jboss.org/theme/js/libs/holder/1.9/holder.js
-    - http://static.jboss.org/theme/fonts/titilliumtext/
-    - http://static.jboss.org/theme/fonts/font-awesome/
-    - http://static.jboss.org/theme/images/common/
-    - http://static.jboss.org/images/example/
-    - http://static.jboss.org/images/hibernate/
 
 ####################################################################################################
 # Asciidoctor config
@@ -494,22 +436,23 @@ profiles:
   development:
     jborg_fonts_url: http://static.jboss.org/theme/fonts
     jborg_images_url: http://static.jboss.org/theme/images
-    jborg_js_url: http://static.jboss.org/theme/js
+    jquery_js_url: https://code.jquery.com/jquery-3.1.1
+    semantic_ui_js_url: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic
+    slick_js_url: https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick
+    semantic_ui_css_url: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic
+    slick_css_url: https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick
     project_images_url: /cache/static.jboss.org/images/hibernate
-    bootstrap_css_url: http://static.jboss.org/theme/css/bootstrap-community/2.3.1.3/bootstrap-community
-    bootstrap_js_url: /javascripts/bootstrap-community
-    #bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.3/bootstrap-community
     enable_google_analytics: false
     news_feed_root_url: http://staging.in.relation.to/feeds
   test:
     jborg_fonts_url: http://static.jboss.org/theme/fonts
     jborg_images_url: http://static.jboss.org/theme/images
-    jborg_js_url: http://static.jboss.org/theme/js
+    jquery_js_url: https://code.jquery.com/jquery-3.1.1
+    semantic_ui_js_url: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic
+    slick_js_url: https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick
+    semantic_ui_css_url: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic
+    slick_css_url: https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick
     project_images_url: /cache/static.jboss.org/images/hibernate
-    bootstrap_css_url: http://static.jboss.org/theme/css/bootstrap-community/2.3.1.3/bootstrap-community
-    bootstrap_js_url: /javascripts/bootstrap-community
-    #bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.3/bootstrap-community
-    # base_url: http://hibernate.org.beanvalidation.org
     enable_google_analytics: false
     news_feed_root_url: http://in.relation.to/feeds
   staging:
@@ -519,11 +462,12 @@ profiles:
     html_minifier: enabled
     jborg_fonts_url: http://static.jboss.org/theme/fonts
     jborg_images_url: http://static.jboss.org/theme/images
-    jborg_js_url: http://static.jboss.org/theme/js
+    jquery_js_url: https://code.jquery.com/jquery-3.1.1
+    semantic_ui_js_url: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic
+    slick_js_url: https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick
+    semantic_ui_css_url: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic
+    slick_css_url: https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick
     project_images_url: http://static.jboss.org/images/hibernate
-    bootstrap_css_url: http://static.jboss.org/theme/css/bootstrap-community/2.3.1.3/bootstrap-community
-    bootstrap_js_url: /javascripts/bootstrap-community
-    #bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.3/bootstrap-community
     wget:
       #we don't need to download cached resources when in production
       enabled: false
@@ -537,11 +481,12 @@ profiles:
     html_minifier: enabled
     jborg_fonts_url: http://static.jboss.org/theme/fonts
     jborg_images_url: http://static.jboss.org/theme/images
-    jborg_js_url: http://static.jboss.org/theme/js
+    jquery_js_url: https://code.jquery.com/jquery-3.1.1
+    semantic_ui_js_url: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic
+    slick_js_url: https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick
+    semantic_ui_css_url: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic
+    slick_css_url: https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick
     project_images_url: http://static.jboss.org/images/hibernate
-    bootstrap_css_url: http://static.jboss.org/theme/css/bootstrap-community/2.3.1.3/bootstrap-community
-    bootstrap_js_url: /javascripts/bootstrap-community
-    #bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.3/bootstrap-community
     wget:
       #we don't need to download cached resources when in production
       enabled: false
