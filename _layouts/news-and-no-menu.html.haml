@@ -1,17 +1,18 @@
 ---
-layout: project
+layout: base
 ---
--# layout for pages related to the community
--# display news on the right side
--# handles title display
+.ui.container-fluid
+  .jumbotron.small
+    .ui.container
+      %h1
+        %span
+          = page.title
 
--# Title
-= partial( page.title_partial.nil? ? 'project/title.html.haml' : page.title_partial, {"real_page" => page} )
+.ui.container.page-content
+  .ui.stackable.grid
+    .column.eleven.wide  
+      .content#content
+        ~ content
+    .column.five.wide
+      = partial( 'common/latest-news.html.haml', {"real_page" => page} )
 
--# Project specific navigation menu
-.row-fluid
-  .span9
-    ~ content
-  -# News right column
-  .span3
-    = partial( 'common/latest-news.html.haml', {"real_page" => page} )

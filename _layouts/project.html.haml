@@ -1,46 +1,5 @@
-!!! 5
-%html(lang="en")
-  %head
-    -# display page title - project name if under a project section or page title - site name otherwise
-    - project_id = page.project ? page.project : site.project
-    - project_name = page.project ? site.projects[page.project].name : site.title
-    - page_title = "#{page.title ? page.title : page.simple_name.capitalize} - #{project_name ? project_name : site.title}"
-    %title= page_title
-    = partial( page.head_partial.nil? ? 'head.html.haml' : page.head_partial, { "real_page" => page } )
+---
+layout: base
+---
 
-  %body
-    #subproject
-      / begin accesibility skip to top
-      %ul#top.visuallyhidden
-        %li
-          %a{:accesskey => "n", :href => "#nav", :title => "Skip to navigation"} Skip to navigation
-        %li
-          %a{:accesskey => "c", :href => "#page", :title => "Skip to content"} Skip to content
-      .container#content
-
-        #logobar
-          .dropup
-            %a#tab.tabnav-closed{:href => "https://www.jboss.org"} Red Hat
-            %script
-              window.addEventListener('load', function() { renderTabzilla("#{project_name}","#{project_id}") }, false);
-
-          %a{:href=>"/"}
-            %img{:src=>'http://static.jboss.org/hibernate/images/hibernate_logo_whitebkg_200px.png'}
-
-        = partial( page.nav_partial.nil? ? 'nav.html.haml' : page.nav_partial, {"real_page" => page} )
-
-        ~ content
-
-      = partial( page.projectfooter_partial.nil? ? 'projectfooter.html.haml' : page.projectfooter_partial, {"real_page" => page} )
-
-      = partial( page.companyfooter_partial.nil? ? 'companyfooter.html.haml' : page.companyfooter_partial, {"real_page" => page} )
-
-      %span.backToTop
-        %a{:href => "#top"} back to top
-
-      %script(src="#{relative("#{pageStyle ? site[pageStyle].bootstrap_js_url : site.bootstrap_js_url}#{site.minified}.js")}")
-      - if site.enable_google_analytics
-        = google_analytics_universal
-      - if page.bottom_javascripts
-        - page.bottom_javascripts.each do |javascript|
-          %script{:src=>javascript, :type=>'text/javascript'}
+~ content

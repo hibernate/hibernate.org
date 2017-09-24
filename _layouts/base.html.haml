@@ -1,0 +1,48 @@
+!!! 5
+%html(lang="en")
+  %head
+    -# display page title - project name if under a project section or page title - site name otherwise
+    - project_id = page.project ? page.project : site.project
+    - project_name = page.project ? site.projects[page.project].name : site.title
+    - page_title = "#{page.title ? page.title : page.simple_name.capitalize} - #{project_name ? project_name : site.title}"
+    %title= page_title
+    = partial( page.head_partial.nil? ? 'head.html.haml' : page.head_partial, { "real_page" => page } )
+
+  %body
+    / begin accesibility skip to top
+    %ul.sr-only
+      %li
+        %a{:accesskey => "n", :href => "#nav", :title => "Skip to navigation"} Skip to navigation
+      %li
+        %a{:accesskey => "c", :href => "#content", :title => "Skip to content"} Skip to content
+
+    = partial( page.header_partial.nil? ? 'header.html.haml' : page.header_partial, {"real_page" => page} )
+
+    ~content
+
+    = partial( page.footer_partial.nil? ? 'footer.html.haml' : page.footer_partial, {"real_page" => page} )
+
+    %span.back-to-top
+      %a{:href => "javascript: void(0)"} Back to top
+
+    - if site.enable_google_analytics
+      = google_analytics_universal
+    - if page.bottom_javascripts
+      - page.bottom_javascripts.each do |javascript|
+        %script{:src=>javascript, :type=>'text/javascript'}
+
+:javascript
+  $(function(){
+    $(window).scroll(function(e) {
+      if($(this).scrollTop()>150){
+        $('.back-to-top').fadeIn(1000); // Fading in the button on scroll after 150px
+      }
+      else {
+        $('.back-to-top').fadeOut(500); // Fading out the button on scroll if less than 150px
+      }
+    });
+
+    $('.back-to-top').click(function(e) {
+      $('body, html').animate({scrollTop:0}, 800);
+    });
+  });

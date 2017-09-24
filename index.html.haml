@@ -1,84 +1,90 @@
 ---
-layout: project
+layout: base
 title: Hibernate. Everything data.
 ---
 
-%p.lead.text-center.mantra
-  Hibernate. Everything data.
-
--# News ribbon
-.well.well-small
-  .row#myCarouselRow
-    .span9
-      #myCarousel
-        %i.icon-refresh.icon-spin.icon-large
-
-    .span2
-      .pull-right
-        %a(href="http://in.relation.to/")
-          More news
-
--# First row of projects
-#equalHeightsB.row-fluid.equalHero
-  .span4.well
-    %h2 Hibernate ORM
-    %p
-      %i.icon-table.icon-3x.pull-left
-      Domain model persistence for relational databases
-    %p.center-icon
-      %a.btn.btn-primary{:href => relative("/orm/")}
-        More
-        %i.icon-circle-arrow-right
-  .span4.well
-    %h2 Hibernate Search
-    %p
-      %i.icon-search.icon-3x.pull-left
-      Full-text search for your domain model
-    %p.center-icon
-      %a.btn.btn-primary{:href => relative("/search/")}
-        More
-        %i.icon-circle-arrow-right
-  .span4.well
-    %h2 Hibernate Validator
-    %p
-      %i.icon-check.icon-3x.pull-left
-      Annotation based constraints for your domain model
-    %p.center-icon
-      %a.btn.btn-primary{:href => relative("/validator/")}
-        More
-        %i.icon-circle-arrow-right
-
--# Second row of projects
-#equalHeightsB.row-fluid.equalHero
-  .span4.well
-    %h2 Hibernate OGM
-    %p
-      %i.icon-sitemap.icon-3x.pull-left
-      Domain model persistence for NoSQL datastores
-    %p.center-icon
-      %a.btn.btn-primary{:href => relative("/ogm/")}
-        More
-        %i.icon-circle-arrow-right
-  .span4.well
-    %h2 Hibernate Tools
-    %p
-      -# icon-tasks icon-code icon-cogs icon-wrench
-      %i.icon-wrench.icon-3x.pull-left
-      Command line tools and IDE plugins for your Hibernate usages
-    %p.center-icon
-      %a.btn.btn-primary{:href => relative("/tools/")}
-        More
-        %i.icon-circle-arrow-right
-  .span4.well
-    %h2 Others
-    %p
-      -# icon-umbrella
-      %i.icon-plus.icon-3x.pull-left
-      We like the symmetry, everything else is here
-    %p.center-icon
-      %a.btn.btn-primary{:href => relative("/others/")}
-        Even more
-        %i.icon-circle-arrow-right
+.ui.container-fluid
+  .jumbotron
+    .ui.container
+      .ui.grid
+        .column.row{:style => "z-index: 1;"}
+          .left.floated.column.eight.wide
+            %h1
+              %span Hibernate.
+            %h2
+              %span Everything data.
+          .right.floated.column.five.wide
+            #carousel
+  .ui.container-fluid
+    .page-title.home
+      .ui.container
+        %h1 More than an ORM, discover the Hibernate galaxy.
+  .ui.container
+    .projects
+      .ui.three.column.doubling.grid
+        .column
+          .ui.raised.segment
+            %span.ui.brown.right.ribbon.label
+              %i.icon.database
+              Data
+            %h3.ui.header Hibernate ORM
+            %p Domain model persistence for relational databases.
+            .ui.right.aligned.basic.segment
+              %a.ui.button.right.labeled.icon.a.primary{:href => relative("/orm/")}
+                %i.right.arrow.icon
+                More
+        .column
+          .ui.raised.segment
+            %span.ui.brown.right.ribbon.label
+              %i.icon.search
+              Search
+            %h3.ui.header Hibernate Search
+            %p Full-text search for your domain model.
+            .ui.right.aligned.basic.segment
+              %a.button.ui.right.labeled.icon.a.primary{:href => relative("/search/")}
+                %i.right.arrow.icon
+                More
+        .column
+          .ui.raised.segment
+            %span.ui.brown.right.ribbon.label
+              %i.icon.check
+              Bean Validation
+            %h3.ui.header Hibernate Validator
+            %p Annotation based constraints for your domain model.
+            .ui.right.aligned.basic.segment
+              %a.ui.button.right.labeled.icon.a.primary{:href => relative("/validator/")}
+                %i.right.arrow.icon
+                More
+        .column
+          .ui.raised.segment
+            %span.ui.brown.right.ribbon.label
+              %i.icon.database
+              Data
+            %h3.ui.header Hibernate OGM
+            %p Domain model persistence for NoSQL datastores.
+            .ui.right.aligned.basic.segment
+              %a.ui.button.right.labeled.icon.a.primary{:href => relative("/ogm/")}
+                %i.right.arrow.icon
+                More
+        .column
+          .ui.raised.segment
+            %span.ui.brown.right.ribbon.label
+              %i.icon.setting
+              Tools
+            %h3.ui.header Hibernate Tools
+            %p Command line tools and IDE plugins for your Hibernate usages.
+            .ui.right.aligned.basic.segment
+              %a.ui.button.right.labeled.icon.a.primary{:href => relative("/tools/")}
+                %i.right.arrow.icon
+                More
+        .column
+          .ui.raised.segment
+            %h3.ui.header Others
+            %p We like the symmetry, everything else is here.
+            .ui.right.aligned.basic.segment
+              %a.ui.button.right.labeled.icon.a.primary{:href => relative("/others/")}
+                %i.right.arrow.icon
+                Even more
 
 :javascript
   $(document).ready(function() {
@@ -89,27 +95,72 @@ title: Hibernate. Everything data.
 
       // Work with the response
       success: function( data ) {
-        var feedDiv = $('#myCarousel');
-        feedDiv.empty();
-        feedDiv.addClass('carousel slide');
-        var ol = $('<ol/>');
-        var inner = $('<div class="carousel-inner"/>');
+        var carousel = $('#carousel');
+        carousel.empty();
         for (var i = 0; i < data.length; i++) {
           var entry = data[i];
-          var li = $('<li data-slide-to="' + i + '", data-target="#myCarousel"/>');
-          var entryItem = $('<div/>');
-          entryItem.addClass('item');
+
+          var carouselElement = $('<div class="carousel-element" />');
+          var segment = $('<div class="ui raised segment" />');
+          carouselElement.append(segment);
+
+          var ribbonText = 'Community';
+          var ribbonIcon = 'users';
+          if ( entry.tags ) {
+            if ( entry.tags.includes('Newsletter') ) {
+              ribbonText = 'Newsletter';
+              ribbonIcon = 'newspaper';
+            }
+            else if ( entry.tags.includes('Interview') ) {
+              ribbonText = 'Community';
+              ribbonIcon = 'users';
+            }
+            else if ( entry.tags.includes('Hibernate ORM') ) {
+              ribbonText = 'ORM';
+              ribbonIcon = 'database';
+            }
+            else if ( entry.tags.includes('Hibernate Search') ) {
+              ribbonText = 'Search';
+              ribbonIcon = 'search';
+            }
+            else if ( entry.tags.includes('Hibernate OGM') ) {
+              ribbonText = 'OGM';
+              ribbonIcon = 'database';
+            }
+            else if ( entry.tags.includes('Hibernate Validator') ) {
+              ribbonText = 'Validator';
+              ribbonIcon = 'check';
+            }
+            else if ( entry.tags.includes('Hibernate Tools') ) {
+              ribbonText = 'Tooling';
+              ribbonIcon = 'wrench';
+            }
+          }
+
+          var ribbon = $('<span class="ui brown right ribbon label" />');
+          var icon = $('<i class="icon ' + ribbonIcon + '" />');
+
+          segment.append(ribbon);
+          ribbon.append(icon);
+          ribbon.append(ribbonText);
+ 
+          var entryItem = $('<h4/>');
           entryItem.append(
             $('<a href="' + entry.url + '"/>').text(entry.title)
           );
-          if (i == 0) {
-            li.addClass('active');
-            entryItem.addClass('active');
-          }
-          ol.append(li);
-          inner.append(entryItem);
+          segment.append(entryItem);
+
+          carousel.append(carouselElement);
         }
-        feedDiv.append(ol).append(inner);
+
+        $('#carousel').slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 4000,
+          focusOnSelect: true
+        });
       }
     });
   });
+

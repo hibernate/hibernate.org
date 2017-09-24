@@ -1,5 +1,5 @@
 ---
-layout: project-frame
+layout: project-standard
 ---
 -# project documentation page
 -# show title, action buttons for reference doc and getting started guide
@@ -10,26 +10,10 @@ layout: project-frame
 - get_started_url = site.projects[page.project].getting_started.nil? ? nil : relative("#{site.projects[page.project].getting_started}", page)
 - stable_series = project_description.latest_stable_series
 
--# Documentation buttons for the latest stable series
-.release-buttons.hidden-phone
-  .text-center
-    - if not get_started_url.nil?
-      %a.btn.btn-large{:href => "#{get_started_url}"} Getting started guide
-    - if not stable_series.nil?
-      &nbsp;
-      %a.btn.btn-large.btn-success{:href => "#{doc_reference_url(project_description, stable_series)}"} Get documentation for #{stable_series.version}
-.release-buttons.visible-phone
-  - if not get_started_url.nil?
-    .text-center
-      #get-started-button
-        %a.btn{:href => "#{get_started_url}"} Getting started guide
-    - if not stable_series.nil?
-      .text-center
-        #documentation-button
-          %a.btn.btn-success{:href => "#{doc_reference_url(project_description, stable_series)}"} Get documentation for #{stable_series.version}
-
 -# Documentation table built from the metadata
+
 %h2 Reference documentation
+
 - if not site.projects[page.project].release_series.nil?
   - project_description.release_series.values.each do |series|
     - release = series.releases[0]

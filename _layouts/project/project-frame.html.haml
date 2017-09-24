@@ -14,16 +14,14 @@ layout: project
       - unless series.displayed then next end
       displayed_series.push('#{series.version}');
 
+= partial( page.project_banner_partial.nil? ? 'project/banner.html.haml' : page.project_banner_partial, { "real_page" => page } )
+= partial( page.project_hero_partial.nil? ? 'project/empty-hero-text.html.haml' : page.project_hero_partial, { "real_page" => page } )
+
 -# Project specific navigation menu
-.row-fluid
-  .span2
-    .project-menu
-      .text-center.project-menu-title
-        %span.icon-stack
-          %i.icon-circle.icon-stack-base.icon-fixed-width
-          %i{:class => "icon icon-light icon-fixed-width #{project_description.icon}"}
-      -# Menu based on site.projects data
-      %ul.nav.nav-list
+.ui.container.page-content
+  .ui.stackable.grid
+    .column.three.wide
+      .ui.fluid.vertical.menu
         -# removes index.html and then replace download.html to download/
         - current_path = page.output_path.sub(/index\.html$/, "").sub(/\.html$/,"/")
         - project_description.menu.intern.each do |menu|
@@ -34,30 +32,35 @@ layout: project
             - active = current_path == menu.href
           - else
             - active = current_path.start_with?(menu.href)
-          %li{:class => "#{(active ? "active" : "")}"}
-            %a{:href => "#{relative(menu.href)}"}
-              %i{:class => "#{menu.css_class} menu-icon"}
+          - if menu.releases_submenu && !displayed_series.nil? && !displayed_series.empty?
+            .ui.dropdown.link.item
               #{menu.name}
-            - if menu.releases_submenu && !displayed_series.nil? && !displayed_series.empty?
-              %ul.nav.nav-list
+              %i.icon.dropdown
+              .menu
+                %a.item{:href => "#{relative(menu.href)}", :class => "#{(active ? "active" : "")}"}
+                  Overview
                 - displayed_series.each do |series|
                   - submenu_href = "#{menu.href}#{series.version}/"
                   - submenu_active = current_path.start_with?(submenu_href)
-                  %li{:class => "#{(submenu_active ? "active" : "")}"}
-                    %a{:href => "#{relative(submenu_href)}"}
-                      %i{:class => "icon-tag menu-icon"}
-                      = series.version
-        %li.divider
-        - project_description.menu.extern.each do |menu|
-          %li
-            %a{:href => "#{menu.href}"}
-              %i{:class => "#{menu.css_class} menu-icon"}
+                  %a.item{:href => "#{relative(submenu_href)}", :class => "#{(submenu_active ? "active" : "")}"}
+                    = series.version
+          - else
+            %a.item{:href => "#{relative(menu.href)}", :class => "#{(active ? "active" : "")}"}
+              %i.grid.icon{:class => "#{menu.css_class}"}
               #{menu.name}
-    %hr.divider
-    .license.text-center
-      Released under the
-      %a{:href => "#{project_description.license.url}"}= project_description.license.name
-  .span10
-    -# Title
-    = partial( page.title_partial.nil? ? 'project/title.html.haml' : page.title_partial, {"real_page" => page} )
-    ~ content
+      .ui.fluid.vertical.menu
+        - project_description.menu.extern.each do |menu|
+          %a.item{:href => "#{menu.href}", :class => "#{(active ? "active" : "")}"}
+            %i.grid.icon{:class => "#{menu.css_class}"}
+            #{menu.name}
+      %hr
+      .license
+        Released under the
+        %a{:href => "#{project_description.license.url}"}= project_description.license.name 
+    .column.thirteen.wide
+      ~ content
+
+:javascript
+  $(document).ready(function() {
+    $('.ui.menu .ui.dropdown').dropdown({ on: 'hover' });
+  });

@@ -1,56 +1,51 @@
 ---
-layout: project-frame
-title: Hibernate Tools
+layout: project-about
+title: Tooling for your Hibernate projects.
 project: tools
-title_partial: project/title-about.html.haml
+project_hero_partial: project/tools/hero-text.html.haml
 ---
 
 -# Center body
-.row-fluid
-  .span8
-    .feature-block
-      :asciidoc
-        Hibernate Tools is a toolset for Hibernate implemented as an integrated suite of
-        http://www.eclipse.org/[Eclipse] plugins,
-        together with a unified Ant task for integration into the build cycle.
-        Hibernate Tools is a core component of http://jboss.org/tools[JBoss Tools]
-        and hence also part of http://www.jboss.com/products/devstudio[JBoss Developer Studio].
+.feature-block
+  :asciidoc
+    Hibernate Tools is a toolset for Hibernate implemented as an integrated suite of
+    http://www.eclipse.org/[Eclipse] plugins,
+    together with a unified Ant task for integration into the build cycle.
+    Hibernate Tools is a core component of http://jboss.org/tools[JBoss Tools]
+    and hence also part of http://www.jboss.com/products/devstudio[JBoss Developer Studio].
 
-        The following features are available within Eclipse.
-    .feature-block
-      :asciidoc
-        === Mapping Editor
+    The following features are available within Eclipse.
+.feature-block
+  :asciidoc
+    == Mapping Editor
 
-        An editor for Hibernate XML mapping files, supporting auto-completion and syntax highlighting.
-        The editor even supports semantic auto-completion for class names, property/field names, table names and column names.
+    An editor for Hibernate XML mapping files, supporting auto-completion and syntax highlighting.
+    The editor even supports semantic auto-completion for class names, property/field names, table names and column names.
 
-        image::http://static.jboss.org/hibernate/images/tools/hibernatetools_screen1.gif[Mapping editor]
-    .feature-block
-      :asciidoc
-        === Console
+    image::http://static.jboss.org/hibernate/images/tools/hibernatetools_screen1.gif[Mapping editor]
+.feature-block
+  :asciidoc
+    == Console
 
-        The Hibernate Console perspective allows you to configure database connections,
-        provides visualization of classes and their relationships
-        and allows you to execute HQL queries interactively against your database and browse the query results.
+    The Hibernate Console perspective allows you to configure database connections,
+    provides visualization of classes and their relationships
+    and allows you to execute HQL queries interactively against your database and browse the query results.
 
-        image::http://static.jboss.org/hibernate/images/tools/hibernatetools_screen2.gif[Live HQL query editing]
-    .feature-block
-      :asciidoc
-        === Reverse Engineering
+    image::http://static.jboss.org/hibernate/images/tools/hibernatetools_screen2.gif[Live HQL query editing]
+.feature-block
+  :asciidoc
+    == Reverse Engineering
 
-        The most powerful feature of Hibernate Tools is a database reverse engineering tool
-        that can generate domain model classes and Hibernate mapping files, annotated EJB3 entity beans, HTML documentation
-        or even an entire JBoss Seam application in seconds!
-    .feature-block
-      :asciidoc
-        === Wizards
+    The most powerful feature of Hibernate Tools is a database reverse engineering tool
+    that can generate domain model classes and Hibernate mapping files, annotated EJB3 entity beans, HTML documentation
+    or even an entire JBoss Seam application in seconds!
+.feature-block
+  :asciidoc
+    == Wizards
 
-        Several wizards are provided, including wizards to quickly generate Hibernate configuration (cfg.xml) files, and Hibernate console configurations.
-    .feature-block
-      :asciidoc
-        === Ant task
+    Several wizards are provided, including wizards to quickly generate Hibernate configuration (cfg.xml) files, and Hibernate console configurations.
+.feature-block
+  :asciidoc
+    == Ant task
 
-        The Hibernate3 tools include a unified Ant task that allows you to run schema generation, mapping generation, or Java code generation as part of your build.
-  -# News right column
-  .span4
-    = partial( 'common/latest-news.html.haml', {"real_page" => page} )
+    The Hibernate tools include a unified Ant task that allows you to run schema generation, mapping generation, or Java code generation as part of your build.

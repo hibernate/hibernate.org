@@ -1,0 +1,17 @@
+- real_page = page["real_page"]
+- get_started_url = site.projects[real_page.project].getting_started.nil? ? nil : relative("#{site.projects[real_page.project].getting_started}", real_page)
+- stable_series = latest_stable_series(real_page)
+- series = latest_series(real_page)
+- dev_series = series != stable_series ? series : nil
+
+- if not get_started_url.nil?
+  .jumbotron-button
+    %a.ui.right.labeled.icon.button{:href => "#{get_started_url}"}
+      %i.right.arrow.icon
+      Getting started
+- unless stable_series.nil?
+  .jumbotron-button
+    %a.ui.right.labeled.icon.button.green{:href => "#{doc_reference_url(project_description, stable_series)}"}
+      %i.right.arrow.icon
+      Get documentation for #{stable_series.version}
+

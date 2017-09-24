@@ -1,16 +1,16 @@
 -# Latest news
--# Todo customize the tag to read from by project and return all feed if outside a project
 - real_page = page["real_page"]
 - project_description = real_page.project.nil? ? nil : site.projects[real_page.project]
 - blog_suffix_url = (project_description.nil? or project_description.blog_tag_url.nil?) ? "" : project_description.blog_tag_url + "/"
 - blog_url = "http://in.relation.to/#{blog_suffix_url}"
 - blog_json_feed = (project_description.nil? or project_description.blog_tag_url.nil?) ? "global" : project_description.blog_tag_url
-.news-sidebar.well
-  %h2 Latest news
+
+.ui.segment.raised.news
+  %h3 Latest news
   #feed
-    .text-center
-      %i.icon-refresh.icon-spin.icon-4x
-  %a{:href => "#{blog_url}"} Other news
+  %a.ui.right.labeled.icon.button{:href => "#{blog_url}"}
+    %i.right.arrow.icon
+    Other news
 -# Uses Google Feed API to load in.relation.to feed and replace the DOM elements
 - if_tag_begin = blog_tag.nil? ? "" : "if (entry.categories.indexOf('#{blog_tag}') != -1) {"
 - if_tag_end = blog_tag.nil? ? "" : "}"
@@ -33,14 +33,14 @@
               + ('0' + (entryDate.getMonth()+1)).slice(-2) + '-'
               + ('0' + entryDate.getDate()).slice(-2);
           feedDiv.append(
-            $('<div class="news"/>').append(
-              $('<h4/>').text(entry.title)
+            $('<div class="news-item"/>').append(
+              $('<h4/>').append(
+                $('<a href="' + entry.url + '" />').text(entry.title)
+              )
             ).append(
               $('<small/>').text(dateString)
             ).append(
-              $('<p/>').text(entry.snippet).append(
-                ' <a href="' + entry.url + '">more</a>'
-              )
+              $('<p/>').text(entry.snippet)
             ).append(
               '<hr/>'
             )

@@ -1,0 +1,18 @@
+- real_page = page["real_page"]
+- project_name = real_page.project ? site.projects[real_page.project].name : ''
+- page_title = "#{real_page.title ? real_page.title : real_page.simple_name.capitalize}"
+.ui.container-fluid
+  .jumbotron.small
+    .ui.container
+      .ui.grid.stackable
+        .column.row
+          .left.floated.column.eight.wide
+            %h1
+              %span
+                = project_name
+            %h2
+              %span
+                = page_title
+          .right.floated.column.five.wide
+            = partial( real_page.project_buttons_partial.nil? ? 'project/empty-buttons.html.haml' : real_page.project_buttons_partial, { "real_page" => real_page } )
+

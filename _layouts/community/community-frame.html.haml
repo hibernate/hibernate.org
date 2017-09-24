@@ -1,45 +1,42 @@
 ---
-layout: project
+layout: base
 ---
 -# layout for pages related to the community
 -# display menu on the left
 -# handles title display
 
--# Project specific navigation menu
-.row-fluid
-  -# Menu
-  .span2
-    .project-menu
-      .text-center.project-menu-title
-        %span.icon-stack
-          %i.icon-circle.icon-stack-base.icon-fixed-width
-          %i{:class => "icon icon-light icon-fixed-width icon-group"}
-      %ul.nav.nav-list
-        -# removes index.html and then replace download.html to download/
+.ui.container-fluid
+  .jumbotron.small
+    .ui.container
+      %h1
+        %span
+          Community
+      %h2
+        %span
+          = page.title
+
+.ui.container.page-content
+  .ui.stackable.grid
+    .column.three.wide
+      .ui.fluid.vertical.menu
         - current_path = page.output_path.sub(/index\.html$/, "").sub(/\.html$/,"/")
 
         - href = "/community/"
         - active = (href == "/community/" && href == current_path) || (href != "/community/" && current_path.start_with?(href))
-        %li{:class => "#{(active ? "active" : "")}"}
-          %a{:href => "#{relative("#{href}")}"}
-            %i{:class => "icon-home menu-icon"}
-            About
-        
+        %a.item{:href => "#{relative(href)}", :class => "#{(active ? "active" : "")}"}
+          %i.grid.icon.home
+          About
+
         - href = "/community/license/"
         - active = (href == "/community/" && href == current_path) || (href != "/community/" && current_path.start_with?(href))
-        %li{:class => "#{(active ? "active" : "")}"}
-          %a{:href => "#{relative("#{href}")}"}
-            %i{:class => "icon-legal menu-icon"}
-            Licenses
-        
+        %a.item{:href => "#{relative(href)}", :class => "#{(active ? "active" : "")}"}
+          %i.grid.icon.legal
+          Licenses
+
         - href = "/community/governance/"
         - active = (href == "/community/" && href == current_path) || (href != "/community/" && current_path.start_with?(href))
-        %li{:class => "#{(active ? "active" : "")}"}
-          %a{:href => "#{relative("#{href}")}"}
-            %i{:class => "icon-bullhorn menu-icon"}
-            Governance
-      %hr.divider
-  .span10
-    -# Title
-    = partial( page.title_partial.nil? ? 'project/title.html.haml' : page.title_partial, {"real_page" => page} )
-    ~ content
+        %a.item{:href => "#{relative(href)}", :class => "#{(active ? "active" : "")}"}
+          %i.grid.icon.bullhorn
+          Governance
+    .column.thirteen.wide
+      ~ content

@@ -1,24 +1,19 @@
-= Hibernate ORM documentation (5.2)
-:awestruct-layout: project-frame
+= Documentation - 5.2
+:awestruct-layout: project-documentation-orm
 :awestruct-project: orm
-:page-javascripts: [../orm-doc-version.js]
-
-++++
-<div id="ormDocVersionSelector">
-</div>
-++++
+:awestruct-ormversion: 5.2
 
 == Guides and such
 
-link:http://docs.jboss.org/hibernate/orm/5.2/quickstart/html_single/[Getting Started Guide]::
+link:http://docs.jboss.org/hibernate/orm/{awestruct-ormversion}/quickstart/html_single/[Getting Started Guide]::
 A quickstart-style guide with tutorials.  See also the Obtaining Hibernate section discussing the Hibernate artifacts and how to obtain them.
-link:https://github.com/hibernate/hibernate-orm/wiki/Migration-Guide---5.2[Migration Guide]::
-Migration guide covering migration from 5.1 to 5.2
-link:http://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html[User Guide]::
+link:https://github.com/hibernate/hibernate-orm/wiki/Migration-Guide---{awestruct-ormversion}[Migration Guide]::
+Migration guide covering migration from 5.1 to {awestruct-ormversion}
+link:http://docs.jboss.org/hibernate/orm/{awestruct-ormversion}/userguide/html_single/Hibernate_User_Guide.html[User Guide]::
 Guide covering most user facing concepts and APIs of Hibernate
-link:http://docs.jboss.org/hibernate/orm/5.2/integrationguide/html_single/Hibernate_Integration_Guide.html[Integrations Guide]::
+link:http://docs.jboss.org/hibernate/orm/{awestruct-ormversion}/integrationguide/html_single/Hibernate_Integration_Guide.html[Integrations Guide]::
 Guide covering topics of interest for developers looking to develop integrations with Hibernate.
-link:http://docs.jboss.org/hibernate/orm/5.2/javadocs/[Hibernate JavaDoc]::
+link:http://docs.jboss.org/hibernate/orm/{awestruct-ormversion}/javadocs/[Hibernate JavaDoc]::
 The Hibernate JavaDocs
 link:http://docs.jboss.org/hibernate/jpa/2.1/api/[JPA 2.1 JavaDoc]::
 The JPA (2.1) JavaDocs
