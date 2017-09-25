@@ -25,32 +25,27 @@ layout: project
         -# removes index.html and then replace download.html to download/
         - current_path = page.output_path.sub(/index\.html$/, "").sub(/\.html$/,"/")
         - project_description.menu.intern.each do |menu|
-          -# Active if path is a subpath of the menu item that is not expected to have a more precise entry in the menu.
-          -# The project home has to be treated differently as every path is a subpath of home,
-          -# and the release menu is also specific since it has sub-entries
-          - if menu.releases_submenu || menu.href == "/#{page.project}/"
-            - active = current_path == menu.href
-          - else
-            - active = current_path.start_with?(menu.href)
+          -# active if path is a subpath of the menu item. The project home has to be treated differently as every path is a subpath of home
+          - active = (menu.href == "/#{page.project}/" && menu.href == current_path) || (menu.href != "/#{page.project}/" && current_path.start_with?(menu.href))
           - if menu.releases_submenu && !displayed_series.nil? && !displayed_series.empty?
-            .ui.dropdown.link.item
+            .ui.dropdown.link.item{:class => "#{(active ? "selected" : "")}"}
               #{menu.name}
               %i.icon.dropdown
               .menu
-                %a.item{:href => "#{relative(menu.href)}", :class => "#{(active ? "active" : "")}"}
+                %a.item{:href => "#{relative(menu.href)}", :class => "#{(active ? "selected" : "")}"}
                   Overview
                 - displayed_series.each do |series|
                   - submenu_href = "#{menu.href}#{series.version}/"
                   - submenu_active = current_path.start_with?(submenu_href)
-                  %a.item{:href => "#{relative(submenu_href)}", :class => "#{(submenu_active ? "active" : "")}"}
+                  %a.item{:href => "#{relative(submenu_href)}", :class => "#{(submenu_active ? "selected" : "")}"}
                     = series.version
           - else
-            %a.item{:href => "#{relative(menu.href)}", :class => "#{(active ? "active" : "")}"}
+            %a.item{:href => "#{relative(menu.href)}", :class => "#{(active ? "selected" : "")}"}
               %i.grid.icon{:class => "#{menu.css_class}"}
               #{menu.name}
       .ui.fluid.vertical.menu
         - project_description.menu.extern.each do |menu|
-          %a.item{:href => "#{menu.href}", :class => "#{(active ? "active" : "")}"}
+          %a.item{:href => "#{menu.href}", :class => "#{(active ? "selected" : "")}"}
             %i.grid.icon{:class => "#{menu.css_class}"}
             #{menu.name}
       %hr

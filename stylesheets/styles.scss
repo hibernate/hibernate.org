@@ -128,6 +128,13 @@
 	text-align: center;
 }
 
+// when using "active" in the menu, the dropdown does not work anymore
+// using "selected" instead
+.ui.vertical.menu .selected.item {
+	background: rgba(0, 0, 0, 0.05) none repeat scroll 0 0;
+	box-shadow: none;
+}
+
 /**
  * Content
  */
