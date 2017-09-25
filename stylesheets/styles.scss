@@ -268,6 +268,29 @@ pre {
 }
 
 /**
+ * Home page
+ */
+.projects {
+	h3.ui.header {
+		font-size: 1.5em;
+	}
+
+	.project {
+		.big.icon {
+			padding-right: 7px;
+			padding-top: 7px;
+			float: left;
+			margin-right: 10px;
+		}
+
+		p {
+			font-size: 1.2em;
+			color: #59666c;
+		}
+	}
+}
+
+/**
  * Asciidoctor styles
  */
 .admonitionblock {
