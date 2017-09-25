@@ -93,7 +93,8 @@ title: Hibernate. Everything data.
                   %i.right.arrow.icon
                   Even more
 
-%script(src="#{site.match_height_js_url}#{site.minified}.js")
+// Unfortunately, matchHeight doesn't follow the same convention as the other minified files
+%script(src="#{site.match_height_js_url}#{site.minified ? '-min' : ''}.js")
 
 :javascript
   $(document).ready(function() {
