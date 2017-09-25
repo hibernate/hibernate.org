@@ -17,20 +17,18 @@ describe Awestruct::Extensions::ReleaseDependencies do
 
     @engine = Awestruct::Engine.new( @config )
     @engine.load_default_site_yaml
-    @site = Awestruct::Site.new( @engine, @config )
+    @engine.load_user_site_yaml( 'production' )
 
     @deps = [
-      Awestruct::Extensions::ReleaseDependencies.new(@site, 'org.hibernate', 'hibernate-core', '4.0.0.Beta1'),
-      Awestruct::Extensions::ReleaseDependencies.new(@site, 'org.hibernate', 'hibernate-search-parent', '3.4.0.Final'),
-      Awestruct::Extensions::ReleaseDependencies.new(@site, 'org.hibernate', 'hibernate-search', '3.4.0.Final')
+      Awestruct::Extensions::ReleaseDependencies.new(@engine.site, 'org.hibernate', 'hibernate-core', '4.0.0.Beta1'),
+      Awestruct::Extensions::ReleaseDependencies.new(@engine.site, 'org.hibernate', 'hibernate-search-parent', '3.4.0.Final'),
+      Awestruct::Extensions::ReleaseDependencies.new(@engine.site, 'org.hibernate', 'hibernate-search', '3.4.0.Final')
     ]
   end
 
   describe "#initalize" do
     it 'raises error when pom cannot be accessed for production profile' do
-      site = Awestruct::Site.new( @engine, @config )
-      site.profile = 'production'
-      expect { Awestruct::Extensions::ReleaseDependencies.new(site, 'org.hibernate', 'hibernate-core', '0.Final') }
+      expect { Awestruct::Extensions::ReleaseDependencies.new(@engine.site, 'org.hibernate', 'hibernate-core', '0.Final') }
       .to raise_error(/Aborting site generation, since the production build requires the release POM information/)
     end
   end
