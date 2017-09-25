@@ -1,5 +1,6 @@
 - real_page = page["real_page"]
-- get_started_url = site.projects[real_page.project].getting_started.nil? ? nil : relative("#{site.projects[real_page.project].getting_started}", real_page)
+- project_description = site.projects[real_page.project]
+- get_started_url = project_description.getting_started.nil? ? nil : relative("#{project_description.getting_started}", real_page)
 - stable_series = latest_stable_series(real_page)
 - series = latest_series(real_page)
 - dev_series = series != stable_series ? series : nil
