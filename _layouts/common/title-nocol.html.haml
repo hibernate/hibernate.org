@@ -1,13 +1,14 @@
 ---
-layout: project
+layout: base
 ---
 -# layout for pages using the full width of the page
 -# handles title display
 
--# Title
-= partial( page.title_partial.nil? ? 'project/title.html.haml' : page.title_partial, {"real_page" => page} )
+.ui.container-fluid
+  .jumbotron.small
+    .ui.container
+      %h1= page.title
 
--# Project specific navigation menu
-.row-fluid
-  .span12
+.ui.container.page-content
+  .content#content
     ~ content

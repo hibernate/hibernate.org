@@ -1,6 +1,0 @@
--# Hero unit 
-- real_page = page["real_page"]
-.hero-unit
-  %h1= real_page.title
-  = partial( "project/#{real_page.project}/hero-text.html.haml", {"real_page" => real_page} )
-  = partial( "project/about-buttons.html.haml", {"real_page" => real_page} )

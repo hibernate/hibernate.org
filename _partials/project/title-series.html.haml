@@ -26,7 +26,7 @@
     - has_migration_page = site.pages.index {|page| page.output_path == (migration_page_root + 'index.html')} != nil
     - if has_migration_page
       %a.btn.btn-large.btn-link{:href => migration_page_root}
-        %i.icon-share-alt
+        %i.icon.share
         Migrate
     %a.btn.btn-large.btn-link{:href => "#{doc_reference_url(project_description, series)}"}
       %i.icon-book
