@@ -1,6 +1,6 @@
 ---
-layout: project
-title: Hibernate. Everything data.
+layout: base
+title: 404
 inhibit_indexifier: true
 ---
 
@@ -23,18 +23,41 @@ inhibit_indexifier: true
     }
   };
 
-.row-fluid
-  .span12
-    :markdown
-      # Oh snap!
-      
-      > (Hand waving): This is not the page you are looking for!
-      
-      Looks like you have found a broken link! Please report it mentioning which page you came from and which link you clicked on:
+.ui.container.fluid
+  .jumbotron.small
+    .ui.container
+      %h1
+        %span Hibernate. Everything data.
+      %h2
+        %span 404
 
-      <a href="#" id="feedback-button" class='btn btn-primary feedback-button' style="float:center;">Report website error
-      <i class="icon-circle-arrow-right"></i></a>
+.ui.container.page-content
+  .content#content
+    .ui.two.column.centered.grid
+      .column
+        %h2 Oh snap!
+       
+        .ui.floating.info.icon.message
+          %i.icon.hand.paper
+          .content
+            .header
+              (Hand waving): This is not the page you are looking for!
+            %p
+              Looks like you have found a broken link!
 
-      Otherwise, best is to hit the good old back button or start back at the [top of the site](/).
+        %p
+          Please report it mentioning which page you came from and which link you clicked on:
+        %p.text-center
+          %button.ui.right.label.button.primary#feedback-button
+            %i.icon.arrow.circle.up
+            Report website error
+        %p
+          Otherwise, best is to hit the good old back button or start back at the
+          %a(href="#top") top of the site
+          \.
 
-      You can also fix the problem yourself by sending a pull request to this GitHub project: [github.com/hibernate/hibernate.org](https://github.com/hibernate/hibernate.org).
+        %p
+          You can also fix the problem yourself by sending a pull request to this GitHub project:
+          %a(href="https://github.com/hibernate/hibernate.org") github.com/hibernate/hibernate.org
+          \.
+
