@@ -420,7 +420,7 @@ pre .comment .conum {
 .footer {
 	margin-top: 70px !important;
 	
-	.segment {
+	&.segment {
 		padding: 3em 0em;
 	}
 
@@ -428,6 +428,10 @@ pre .comment .conum {
 	.ui.inverted.divided.grid:not([class*="vertically divided"]) > .row > .sponsor.column {
 		box-shadow: none;
 		text-align: right;
+	}
+	
+	.sponsor .logo:not(:last-child) {
+		margin-bottom: 20px;
 	}
 }
 
