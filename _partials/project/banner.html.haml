@@ -6,13 +6,13 @@
     .ui.container
       .ui.grid.stackable
         .column.row
-          .left.floated.column.eight.wide
+          .column.twelve.wide
             %h1
               %span
                 = project_name
             %h2
               %span
                 = page_title
-          .right.floated.column.five.wide
+          .column.four.wide
             = partial( real_page.project_buttons_partial.nil? ? 'project/empty-buttons.html.haml' : real_page.project_buttons_partial, { "real_page" => real_page } )
 
