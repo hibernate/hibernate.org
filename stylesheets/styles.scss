@@ -272,7 +272,11 @@ pre {
  */
 .projects {
 	h3.ui.header {
-		font-size: 1.5em;
+		font-size: 1.6em;
+
+		a {
+			color: #59666c;
+		}
 	}
 
 	.project {
