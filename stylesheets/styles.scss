@@ -23,7 +23,8 @@
 	h1 {
 		color: white;
 		font-size: 4rem;
-		letter-spacing: 4px;
+		letter-spacing: 2px;
+		margin-bottom: 0;
 
 		span {
 			background-color: #bcae79;
@@ -36,6 +37,8 @@
 	h2 {
 		font-size: 2rem;
 		color: white;
+		margin-top: 10px;
+		margin-bottom: 0;
 
 		span {
 			background-color: #bcae79;
@@ -53,12 +56,12 @@
 		}
 
 		h2 {
-			font-size: 1.7rem;
+			font-size: 1.5rem;
 		}
 	}
 
 	.jumbotron-button:not(:first-child) {
-		margin-top: 15px;
+		margin-top: 10px;
 	}
 }
 
