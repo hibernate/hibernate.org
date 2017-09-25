@@ -1,6 +1,7 @@
 ---
-layout: project-frame
-title_partial: project/title-series.html.haml
+layout: project-standard
+project_banner_partial: project/banner-series.html.haml
+project_hero_partial: project/hero-series.html.haml
 ---
 -# Defines the project series page template
 -# Provides info about a particular series
@@ -8,26 +9,49 @@ title_partial: project/title-series.html.haml
 
 -# Metadata from site.yml for the project
 - project_description = site.projects[page.project]
-
 - series = project_description.release_series[page.series_version]
 - latest_release = series.releases.first
 
+.ui.menu
+  - unless series.integration_constraints.nil? || series.integration_constraints.empty?
+    %a.item(href="#compatibility")
+      %i.icon.world
+      Compatibility
+  %a.item{:href => "#get-it"}
+    %i.icon.arrow.down.circle
+    Get it
+  %a.item{:href => "#whats-new"}
+    %i.icon.fire
+    What's new
+  - migration_page_root = '/' + page.project + '/documentation/migrate/' + series.version + '/'
+  - # development releases may not have a migration guide yet
+  - has_migration_page = site.pages.index {|page| page.output_path == (migration_page_root + 'index.html')} != nil
+  - if has_migration_page
+    %a.item{:href => migration_page_root}
+      %i.icon.share
+      Migrate
+  %a.item{:href => "#{doc_reference_url(project_description, series)}"}
+    %i.icon.book
+    Main documentation
+
+
 - unless series.integration_constraints.nil? || series.integration_constraints.empty?
   %h2{:id => "compatibility"} Compatibility
-  %dl.dl-horizontal
+  %table.ui.collapsing.table.striped.celled
     - series.integration_constraints.each_pair do |integration_id,constraint|
       - integration = project_description.integrations[integration_id]
-      %dt
-        %a{:href => "#{integration.url}"}
-          = integration["name"]
-      %dd
-        #{constraint.version}
+      %tr
+        %td
+          %a{:href => "#{integration.url}"}
+            = integration["name"]
+        %td
+          #{constraint.version}
   %p
     Not compatible with your requirements? Have a look at the
     %a{:href => "../"}
       other series.
 
-%h2{:id => "get_it"} How to get it
+%h2{:id => "get-it"} How to get it
 %p
   Direct download is available
   %a{:href => "#{sourceforge_zip_url(project_description, latest_release)}", :title => "Download"}
@@ -43,7 +67,7 @@ title_partial: project/title-series.html.haml
     on the Jboss Wiki for more information on how to configure Maven.
   %p
     Below are the Maven coordinates of the main artifacts.
-  %dl.dl-sparse
+  %dl.sparse
     - series.artifacts.each do |artifact|
       - group_id = latest_release[:group_id]
       - group_id ||= series[:group_id]
@@ -53,7 +77,7 @@ title_partial: project/title-series.html.haml
       - summary = artifact[:summary]
       - summary ||= artifact.artifact_id
       %dt
-        %a{:href => jboss_nexus_search_url(group_id, artifact_id, version)}
+        %a.ui.label.large.blue{:href => jboss_nexus_search_url(group_id, artifact_id, version)}
           #{group_id}:#{artifact_id}:#{version}
       %dd= summary
       - if false # disabled for now, takes too much vertical space
@@ -75,7 +99,7 @@ title_partial: project/title-series.html.haml
   %a{:href => "#releases"}
     here.
 
-%h2{:id => "whats_new"} What's new
+%h2{:id => "whats-new"} What's new
 
 - if latest_release[:announcement_url]
   %p
@@ -94,34 +118,34 @@ title_partial: project/title-series.html.haml
 ~ content
 
 %h2{:id => "releases"} Older releases
-- unless site.projects[page.project].release_series.nil?
-  - series.releases.each do |release|
-    - group_id = release[:group_id]
-    - group_id ||= series[:group_id]
-    - group_id ||= project_description.maven[:group_id]
-    - artifact_id ||= project_description.maven[:main_artifact_id]
-    - version = release.version
-    - if release[:displayed] != nil && !release.displayed then next end
-    %dl.dl-horizontal
-      %dt
-        = release.version
-        &nbsp;
-        %a.btn.btn-info{:href => "#{sourceforge_zip_url(project_description, release)}"}
-          %i.icon-cloud-download
-      %dd
-        %small= release.date
-        %span.label{:class => "#{release.stable ? 'label-success' : 'label-warning'}"} #{release.stable ? 'stable' : 'development'}
-      %dd
-        %small
-          Maven gav:
-          %a{:href => jboss_nexus_search_url(group_id, artifact_id, version)} #{group_id}:#{artifact_id}:#{version}
-      - if release[:summary]
-        %dd
-          = release.summary
-      - if release[:announcement_url]
-        %dd
-          %a{:href => "#{release.announcement_url}"}
-            Release announcement
-            %i.icon-circle-arrow-right
+- unless series.nil?
+  .ui.grid.series-versions
+    - series.releases.each do |release|
+      - group_id = release[:group_id]
+      - group_id ||= series[:group_id]
+      - group_id ||= project_description.maven[:group_id]
+      - artifact_id ||= project_description.maven[:main_artifact_id]
+      - version = release.version
+      .ui.row
+        .three.wide.column
+          %span.ui.label.version{:class => "#{release.stable ? 'green' : 'orange'}"}
+            = version
+        .thirteen.wide.column
+          %p
+            %small= release.date
+          %p
+            %a.ui.label.blue{:href => jboss_nexus_search_url(group_id, artifact_id, version)}
+              #{group_id}:#{artifact_id}:#{version}
+          - if release[:summary]
+            %p
+              = release.summary
+          - if release[:announcement_url]
+            %p
+              %a.ui.button.icon{:href => "#{sourceforge_zip_url(project_description, release)}"}
+                %i.icon.download
+                Download
+              %a.ui.button.icon{:href => "#{release.announcement_url}"}
+                %i.icon.announcement
+                Release announcement
 - else
   %p There are no releases configured for this series.

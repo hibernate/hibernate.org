@@ -15,7 +15,8 @@ project_buttons_partial: project/documentation-buttons.html.haml
 
 %h2 Reference documentation
 
-- if not site.projects[page.project].release_series.nil?
+- displayed_series = project_description.release_series.nil? ? nil : project_description.release_series.values.select{|s| s.displayed}
+- if not displayed_series.nil?
   .ui.grid.documentation-versions
     - project_description.release_series.values.each do |series|
       - release = series.releases[0]
