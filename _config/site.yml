@@ -9,6 +9,10 @@ css_minifier: disabled
 js_minifier: disabled
 html_minifier: disabled
 
+maven:
+  central_base_url: 'https://repo.maven.apache.org/maven2/'
+  jboss_nexus_base_url: 'https://repository.jboss.org/nexus/content/repositories/public/'
+
 # project specific information
 projects:
   ##################################################################################################

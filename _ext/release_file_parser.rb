@@ -273,8 +273,6 @@ module Awestruct
 
     # Helper class to retrieve the dependencies of a release by parsing the release POM
     class ReleaseDependencies
-      Nexus_base_url = 'https://repository.jboss.org/nexus/content/repositories/public/'
-
       def initialize(site, group_id, artifact_id, version)
         # init instance variables
         @properties = Hash.new
@@ -282,14 +280,14 @@ module Awestruct
         @site = site
 
         # try loading the pom
-        uri = get_uri(group_id, artifact_id, version)
-        doc = create_doc(uri)
+        doc = create_doc(group_id, artifact_id, version)
         unless doc == nil
           if has_parent(doc)
             # parent pom needs to be loaded first
-            parent_uri = get_uri(doc.xpath('//parent/groupId').text, doc.xpath('//parent/artifactId').text, doc.xpath('//parent/version').text)
-            parent_doc = create_doc(parent_uri)
-            process_doc(parent_doc)
+            parent_doc = create_doc(doc.xpath('//parent/groupId').text, doc.xpath('//parent/artifactId').text, doc.xpath('//parent/version').text)
+            unless parent_doc == nil
+              process_doc(parent_doc)
+            end
           end
           process_doc(doc)
         end
@@ -304,7 +302,7 @@ module Awestruct
       end
 
       private
-      def create_doc(uri)
+      def create_doc(group_id, artifact_id, version)
         # make sure _tmp dir exists
         tmp_dir = File.join(File.dirname(__FILE__), '..', '_tmp')
         unless File.directory?(tmp_dir)
@@ -312,31 +310,45 @@ module Awestruct
           FileUtils.mkdir_p(tmp_dir)
         end
 
-        pom_name = uri.sub(/.*\/([\w\-\.]+\.pom)$/, '\1')
+        gav = "#{group_id}:#{artifact_id}:#{version}"
+        pom_name = get_pom_name(group_id, artifact_id, version)
         # to avoid net access cache the downloaded POMs into the _tmp directory
         cached_pom = File.join(tmp_dir, pom_name)
         if File.exists?(cached_pom)
-          $LOG.info "Cache hit: #{uri.to_s}" if $LOG.info?
+          $LOG.info "Cache hit: #{gav}" if $LOG.info?
           f = File.open(cached_pom)
           doc = Nokogiri::XML(f)
           f.close
         else
           begin
-            $LOG.info "Downloading: #{uri.to_s}" if $LOG.info?
-            doc = Nokogiri::XML(open(uri))
-            # cache the pom
-            File.open(cached_pom, 'w') { |f| f.print(doc.to_xml) }
-          rescue => error
-            $LOG.warn "Release POM #{uri.split('/').last} not locally cached and unable to retrieve it from JBoss Nexus"
-            if @site.profile == 'production'
-              abort "Aborting site generation, since the production build requires the release POM information"
-            else
-              $LOG.warn "Continue build since we are building the '#{@site.profile}' profile. Note that variables interpolated from the release poms will not display\n"
-              return nil
+            # try to download the pom from Central
+            doc = download_pom(@site[:maven].central_base_url, group_id, artifact_id, version, cached_pom)
+          rescue
+            # if it fails, it might be because it wasn't synced yet so let's try to download it from JBoss Nexus
+            begin
+              doc = download_pom(@site[:maven].jboss_nexus_base_url, group_id, artifact_id, version, cached_pom)
+            rescue => error
+              $LOG.warn "Release POM #{gav} not locally cached and unable to retrieve it either from Central or from JBoss Nexus"
+              if @site.profile == 'production'
+                $LOG.error error.message + "\n " + error.backtrace.join("\n ")
+                abort "Aborting site generation, since the production build requires the release POM information"
+              else
+                $LOG.warn error.message + "\n " + error.backtrace.join("\n ")
+                $LOG.warn "Continue build since we are building the '#{@site.profile}' profile. Note that variables interpolated from the release poms will not display\n"
+                return nil
+              end
             end
           end
         end
         doc.remove_namespaces!
+      end
+
+      def download_pom(base_url, group_id, artifact_id, version, cached_pom)
+        uri = get_uri(base_url, group_id, artifact_id, version)
+        $LOG.info "Downloading: #{uri.to_s}" if $LOG.info?
+        doc = Nokogiri::XML(open(uri))
+        File.open(cached_pom, 'w') { |f| f.print(doc.to_xml) }
+        doc
       end
 
       def process_doc(doc)
@@ -344,8 +356,12 @@ module Awestruct
         extract_dependencies(doc)
       end
 
-      def get_uri(group_id, artifact, version)
-        Nexus_base_url + group_id.gsub(/\./, "/") + '/' + artifact + '/' + version + '/' + artifact + '-' + version + '.pom'
+      def get_uri(base_url, group_id, artifact, version)
+        base_url + group_id.gsub(/\./, "/") + '/' + artifact + '/' + version + '/' + get_pom_name(group_id, artifact, version)
+      end
+
+      def get_pom_name(group_id, artifact, version)
+        artifact + '-' + version + '.pom'
       end
 
       def has_parent(doc)
