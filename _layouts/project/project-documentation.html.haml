@@ -15,44 +15,41 @@ layout: project-standard
 %h2 Reference documentation
 
 - if not site.projects[page.project].release_series.nil?
-  - project_description.release_series.values.each do |series|
-    - release = series.releases[0]
-    - if series.displayed
-      %dl.dl-horizontal
-        %dt
-          = series.version
-          &nbsp;
-          %a.btn.btn-info{:href => "#{doc_reference_url(project_description, series)}"}
-            %i.icon-book
-        %dd
-          %small
-            %strong= release.version
-            = "-"
-            = release.date
-          %span.label{:class => "#{release.stable ? 'label-success' : 'label-warning'}"} #{release.stable ? 'stable'   : 'development'}
-        %dd
-          %small= series.summary
-        %dd
-          %ul
-            %li
-              English reference documentation:
-              %a{:href => "#{doc_reference_url(project_description, series)}"}
+  .ui.grid.documentation-versions
+    - project_description.release_series.values.each do |series|
+      - release = series.releases[0]
+      - if series.displayed
+        .ui.row
+          .three.wide.column
+            %span.ui.label.series= series.version
+          .thirteen.wide.column
+            %p
+              %span.ui.label.large
+                %strong= release.version
+                %span.detail= release.date
+              %span.ui.tag.label{:class => "#{release.stable ? 'green' : 'orange'}"} #{release.stable ? 'stable'   : 'development'}
+            %p
+              = series.summary
+            %p
+              .ui.button
+                Documentation
+              %a.ui.icon.button.primary(href="#{doc_reference_url(project_description, series)}")
+                %i.icon.file.text.outline
                 HTML
               - pdf_url = doc_reference_pdf_url(project_description, series)
               - if not pdf_url.nil?
-                |
-                %a{:href => "#{pdf_url}"}
+                %a.ui.icon.button.primary(href="#{pdf_url}")
+                  %i.icon.file.pdf.outline
                   PDF
-            %li
-              API documentation:
-              %a{:href => "#{javadoc_url(project_description, series)}/"}
-                JavaDoc
+              %a.ui.icon.button.primary(href="#{}")
+                %i.icon.code.outline
+                API (JavaDoc)
 - else
   %p There is no reference documentation configured for this project.
 
-:asciidoc
-  :ref_doc: #{doc_root_url(project_description)}
-
-  Documentation for older versions can be found {ref_doc}[on the reference documentation site].
+%p
+  Documentation for older versions can be found
+  %a{:href => "#{doc_root_url(project_description)}"} on the reference documentation site
+  \.
 
 ~ content

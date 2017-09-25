@@ -137,11 +137,11 @@
 }
 
 .content {
-	p, table td, table th {
+	p, table td, table th, ul {
 		font-size: 1.1em;
 	}
 
-	table td p {
+	table td p, ul ul, ul p {
 		font-size: 1em;
 	}
 
@@ -287,6 +287,23 @@ pre {
 			font-size: 1.2em;
 			color: #59666c;
 		}
+	}
+}
+
+/**
+ * Documentation
+ */
+.documentation-versions {
+	margin-top: 10px !important;
+	margin-bottom: 10px !important;
+
+	.series {
+		font-size: 2em;
+		font-weight: bold;
+		line-height: 1em;
+	}
+	.button {
+		margin-top: 4px;
 	}
 }
 
