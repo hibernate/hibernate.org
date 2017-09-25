@@ -13,6 +13,11 @@ maven:
   central_base_url: 'https://repo.maven.apache.org/maven2/'
   jboss_nexus_base_url: 'https://repository.jboss.org/nexus/content/repositories/public/'
 
+jira:
+  base_url: https://hibernate.atlassian.net/
+github:
+  organization_url: https://github.com/hibernate/
+
 # project specific information
 projects:
   ##################################################################################################
@@ -42,6 +47,8 @@ projects:
       url: http://hibernate.org/license/
     jira:
       key: HHH
+    github:
+      project: hibernate-orm
     integrations:
       java:
         name: Java
@@ -135,6 +142,8 @@ projects:
       url: https://raw.github.com/hibernate/hibernate-search/master/lgpl.txt
     jira:
       key: HSEARCH
+    github:
+      project: hibernate-search
     integrations:
       java:
         name: Java
@@ -274,6 +283,8 @@ projects:
       url: https://raw.github.com/hibernate/hibernate-validator/master/license.txt
     jira:
       key: HV
+    github:
+      project: hibernate-validator
     integrations:
       java:
         name: Java
@@ -355,6 +366,8 @@ projects:
       url: http://www.gnu.org/licenses/lgpl.html
     jira:
       key: OGM
+    github:
+      project: hibernate-ogm
     integrations:
       java:
         name: Java

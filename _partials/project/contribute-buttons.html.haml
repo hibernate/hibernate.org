@@ -1,0 +1,16 @@
+- real_page = page["real_page"]
+- project = site.projects[real_page.project]
+- jira_url = project.jira['key'] ? "#{site.jira.base_url}browse/#{project.jira['key']}" : nil
+- github_url = project.github.project ? "#{site.github.organization_url}/#{project.github.project}/" : nil
+
+- unless github_url.nil?
+  .jumbotron-button
+    %a.ui.labeled.icon.button{:href => "#{github_url}"}
+      %i.github.icon
+      Project on GitHub
+- unless jira_url.nil?
+  .jumbotron-button
+    %a.ui.labeled.icon.button{:href => "#{jira_url}"}
+      %i.bug.icon
+      Issue tracker
+
