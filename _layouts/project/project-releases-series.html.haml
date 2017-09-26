@@ -46,7 +46,7 @@ project_banner_partial: project/banner-series.html.haml
 
 - unless series.integration_constraints.nil? || series.integration_constraints.empty?
   %h2{:id => "compatibility"} Compatibility
-  %table.ui.collapsing.table.striped.celled
+  %table.ui.collapsing.table.striped.celled.unstackable
     - series.integration_constraints.each_pair do |integration_id,constraint|
       - integration = project_description.integrations[integration_id]
       %tr
@@ -61,7 +61,7 @@ project_banner_partial: project/banner-series.html.haml
       other series.
 
 %h2{:id => "get-it"} How to get it
-.ui.grid.equal.height.divided.stackable.download-options
+.ui.grid.equal.height.stackable.download-options
   - if series[:artifacts]
     .eleven.wide.column
       %h3 Maven, Gradle...
@@ -102,7 +102,7 @@ project_banner_partial: project/banner-series.html.haml
                   <version>{version}</version>
               </dependency>
               ----
-  .five.wide.column
+  .five.wide.column.divided
     %h3 Zip archive
     %p
       Direct download is available from SourceForge:
