@@ -18,7 +18,7 @@ project_banner_partial: project/banner-series.html.haml
       What's new?
     %p= series.summary
 
-.ui.menu
+.ui.menu.stackable
   - unless series.integration_constraints.nil? || series.integration_constraints.empty?
     %a.item(href="#compatibility")
       %i.icon.world

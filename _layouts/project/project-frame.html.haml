@@ -20,7 +20,7 @@ layout: base
 -# Project specific navigation menu
 .ui.container.page-content
   .ui.stackable.grid
-    .column.three.wide
+    .column.three.wide.computer.only
       .ui.fluid.vertical.menu
         -# removes index.html and then replace download.html to download/
         - current_path = page.output_path.sub(/index\.html$/, "").sub(/\.html$/,"/")
@@ -53,7 +53,7 @@ layout: base
       .license
         Released under the
         %a{:href => "#{project_description.license.url}"}= project_description.license.name 
-    .column.thirteen.wide
+    .column.thirteen.wide.computer.sixteen.wide.mobile
       ~ content
 
 :javascript

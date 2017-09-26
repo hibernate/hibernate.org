@@ -28,7 +28,7 @@ layout: base
 
 .ui.container.page-content
   .ui.stackable.grid
-    .column.three.wide
+    .column.three.wide.computer.only
       .ui.fluid.vertical.menu
         - current_path = page.output_path.sub(/index\.html$/, "").sub(/\.html$/,"/")
 
@@ -49,5 +49,5 @@ layout: base
         %a.item{:href => "#{relative(href)}", :class => "#{(active ? "active" : "")}"}
           %i.grid.icon.bullhorn
           Governance
-    .column.thirteen.wide
+    .column.thirteen.wide.computer.sixteen.wide.mobile
       ~ content

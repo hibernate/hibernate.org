@@ -1,0 +1,23 @@
+- project_name = page['project_name']
+- project_key = page['project_key']
+- project_icon = page['project_icon']
+- current_path = page['real_page'].output_path.sub(/index\.html$/, "").sub(/\.html$/,"/")
+- project_active = current_path.start_with?("/#{project_key}/")
+
+.item
+  %a.title{:class => "#{(project_active ? "active" : "")}"}
+    %i.grid.icon{:class => project_icon}
+    %i.dropdown.icon
+    %strong= project_name
+  .content{:class => "#{(project_active ? "active" : "")}"}
+    .menu.internal-links
+      - site.projects[project_key].menu.intern.each do |menu|
+        - item_active = (menu.href == "/#{project_key}/" && menu.href == current_path) || (menu.href != "/#{project_key}/" && current_path.start_with?(menu.href))
+        %a.item(href="#{menu.href}"){:class => "#{(item_active ? "active" : "")}"}
+          %i.grid.icon{:class => "#{menu.css_class}"}
+          = menu.name
+    .menu.external-links
+      - site.projects['orm'].menu.extern.each do |menu|
+        %a.item(href="#{menu.href}")
+          %i.grid.icon{:class => "#{menu.css_class}"}
+          = menu.name

@@ -24,7 +24,7 @@ project_buttons_partial: project/releases-buttons.html.haml
 %h2 Series
 - displayed_series = project_description.release_series.nil? ? nil : project_description.release_series.values.select{|s| s.displayed}
 - unless displayed_series.nil? || displayed_series.empty?
-  .ui.three.column.doubling.grid.series
+  .ui.three.column.doubling.grid.series.stackable
     - displayed_series.each do |series|
       - release = series.releases[0]
       .column

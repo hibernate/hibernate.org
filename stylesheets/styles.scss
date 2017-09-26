@@ -8,6 +8,7 @@
 
 .banner .ui.menu {
 	margin-top: 0px;
+	margin-bottom: 30px;
 }
 
 /**
@@ -17,7 +18,6 @@
 .jumbotron {
 	background-color: #59666c;
 	padding: 45px;
-	margin-top: 30px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 
 	h1 {
@@ -552,6 +552,44 @@ pre .comment .conum {
 	border-left: 1px solid #CCC;
 }
 
+// Semantic UI has these classes, however they're only applicable to
+// grids, containers, rows and columns.
+// plus, there isn't any `mobile hidden`, `X hidden` class.
+// this snippet is using the same class names and same approach
+// plus a bit more but to all elements.
+//
+// see https://github.com/Semantic-Org/Semantic-UI/issues/1114
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+		[class*="mobile hidden"],
+		[class*="tablet only"]:not(.mobile),
+		[class*="computer only"]:not(.mobile),
+		[class*="or lower hidden"] {
+		display: none !important;
+	}
+}
+
+/* Tablet / iPad Portrait */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	[class*="mobile only"]:not(.tablet),
+	[class*="tablet hidden"],
+	[class*="computer only"]:not(.tablet),
+	[class*="or lower hidden"]:not(.mobile) {
+		display: none !important;
+	}
+}
+
+/* Computer / Desktop / iPad Landscape */
+@media only screen and (min-width: 992px) {
+	[class*="mobile only"]:not(.computer),
+	[class*="tablet only"]:not(.computer),
+	[class*="computer hidden"],
+	[class*="or lower hidden"]:not(.tablet):not(.mobile) {
+		display: none !important;
+	}
+}
+
 /**
  * Bootstrap utilities
  */
@@ -622,6 +660,47 @@ pre .comment .conum {
 		margin: 0;
 		text-indent: -9999px;
 		width: 50px;
+	}
+}
+
+/**
+ * Mobile menu
+ */
+
+.mobile-menu-button-bar {
+	background-color: #444;
+	border-bottom: 1px solid black;
+	padding: 10px;
+
+	a.item {
+		cursor: pointer;
+		color: white;
+
+		&:hover {
+			color: #DDD;
+		}
+	}
+}
+
+#mobile-menu {
+	.ui.vertical.menu {
+		> .item {
+			border-radius: 0 !important;
+			border-bottom: 1px solid #444;
+			padding: 15px;
+			margin: 0 !important;
+		}
+
+		&.inverted .menu .item {
+			font-size: 1em;
+			color: #CCC;
+			margin-left: 10px;
+			padding: 2px 0px 2px 0px;
+		}
+
+		.internal-links {
+			border-bottom: 1px solid #444;
+		}
 	}
 }
 

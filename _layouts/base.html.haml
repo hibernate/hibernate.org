@@ -9,30 +9,44 @@
     = partial( page.head_partial.nil? ? 'head.html.haml' : page.head_partial, { "real_page" => page } )
 
   %body
-    / begin accesibility skip to top
-    %ul.sr-only
-      %li
-        %a{:accesskey => "n", :href => "#nav", :title => "Skip to navigation"} Skip to navigation
-      %li
-        %a{:accesskey => "c", :href => "#content", :title => "Skip to content"} Skip to content
+    = partial( 'mobile-menu.html.haml', {"real_page" => page} )
 
-    = partial( page.header_partial.nil? ? 'header.html.haml' : page.header_partial, {"real_page" => page} )
+    .pusher
 
-    ~content
+      .mobile-menu-button-bar.mobile.only
+        %a.item#mobile-menu-toggle
+          %i.sidebar.icon
+          Menu
 
-    = partial( page.footer_partial.nil? ? 'footer.html.haml' : page.footer_partial, {"real_page" => page} )
+      / begin accesibility skip to top
+      %ul.sr-only
+        %li
+          %a{:accesskey => "n", :href => "#nav", :title => "Skip to navigation"} Skip to navigation
+        %li
+          %a{:accesskey => "c", :href => "#content", :title => "Skip to content"} Skip to content
 
-    %span.back-to-top
-      %a{:href => "javascript: void(0)"} Back to top
+      = partial( page.header_partial.nil? ? 'header.html.haml' : page.header_partial, {"real_page" => page} )
 
-    - if site.enable_google_analytics
-      = google_analytics_universal
-    - if page.bottom_javascripts
-      - page.bottom_javascripts.each do |javascript|
-        %script{:src=>javascript, :type=>'text/javascript'}
+      ~content
+
+      = partial( page.footer_partial.nil? ? 'footer.html.haml' : page.footer_partial, {"real_page" => page} )
+
+      %span.back-to-top.computer.only
+        %a{:href => "javascript: void(0)"} Back to top
+
+      - if site.enable_google_analytics
+        = google_analytics_universal
+      - if page.bottom_javascripts
+        - page.bottom_javascripts.each do |javascript|
+          %script{:src=>javascript, :type=>'text/javascript'}
 
 :javascript
   $(function(){
+    $('.ui.accordion').accordion();
+    $('#mobile-menu').sidebar('setting', {
+      transition: 'overlay'
+    });
+    $('#mobile-menu').sidebar('attach events', '#mobile-menu-toggle');
     $(window).scroll(function(e) {
       if($(this).scrollTop()>150){
         $('.back-to-top').fadeIn(1000); // Fading in the button on scroll after 150px

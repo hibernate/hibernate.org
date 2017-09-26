@@ -1,0 +1,16 @@
+- real_page = page['real_page']
+
+.ui.vertical.inverted.sidebar.left.overlay#mobile-menu{:style => 'background-color: black'}
+  .ui.vertical.fluid.inverted.text.menu.accordion
+    = partial( 'mobile-menu-section.html.haml', { 'project_name' => 'ORM', 'project_key' => 'orm', 'project_icon' => 'database', 'real_page' => real_page } )
+    = partial( 'mobile-menu-section.html.haml', { 'project_name' => 'Search', 'project_key' => 'search', 'project_icon' => 'search', 'real_page' => real_page } )
+    = partial( 'mobile-menu-section.html.haml', { 'project_name' => 'Validator', 'project_key' => 'validator', 'project_icon' => 'checkmark box', 'real_page' => real_page } )
+    = partial( 'mobile-menu-section.html.haml', { 'project_name' => 'OGM', 'project_key' => 'ogm', 'project_icon' => 'sitemap', 'real_page' => real_page } )
+    = partial( 'mobile-menu-section.html.haml', { 'project_name' => 'Tools', 'project_key' => 'tools', 'project_icon' => 'wrench', 'real_page' => real_page } )
+    %a.item(href="/others/")
+      Others
+    %a.item(href="http://in.relation.to/")
+      Blog
+    %a.item(href="https://twitter.com/hibernate/")
+      %i.icon.twitter
+      Follow us
