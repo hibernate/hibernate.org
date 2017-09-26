@@ -29,7 +29,7 @@ project_hero_partial: project/hero-series.html.haml
   - if has_migration_page
     %a.item{:href => migration_page_root}
       %i.icon.share
-      Migrate
+      Migration guide
   %a.item{:href => "#{doc_reference_url(project_description, series)}"}
     %i.icon.book
     Main documentation
@@ -52,48 +52,56 @@ project_hero_partial: project/hero-series.html.haml
       other series.
 
 %h2{:id => "get-it"} How to get it
-%p
-  Direct download is available
-  %a{:href => "#{sourceforge_zip_url(project_description, latest_release)}", :title => "Download"}
-    from SourceForge.
-- if series[:artifacts]
-  %p
-    - nexus_search = project_description.maven.nexus_search
-    Maven artifacts of #{project_description.name} are published to Maven Central and to the
-    %a{:href => jboss_nexus_search_url(nexus_search.group_id_pattern, nexus_search.artifact_id_pattern, "#{series.version}.*")}
-      JBoss Maven Repository.
-    Refer to the
-    %a{:href => "http://community.jboss.org/wiki/MavenGettingStarted-Users"} Maven Getting Started guide
-    on the Jboss Wiki for more information on how to configure Maven.
-  %p
-    Below are the Maven coordinates of the main artifacts.
-  %dl.sparse
-    - series.artifacts.each do |artifact|
-      - group_id = latest_release[:group_id]
-      - group_id ||= series[:group_id]
-      - group_id ||= project_description.maven[:group_id]
-      - artifact_id = artifact.artifact_id
-      - version = latest_release.version
-      - summary = artifact[:summary]
-      - summary ||= artifact.artifact_id
-      %dt
-        %a.ui.label.large.blue{:href => jboss_nexus_search_url(group_id, artifact_id, version)}
-          #{group_id}:#{artifact_id}:#{version}
-      %dd= summary
-      - if false # disabled for now, takes too much vertical space
-        :asciidoc
-          :groupId: #{group_id}
-          :artifactId: #{artifact_id}
-          :version: #{version}
-          [source,xml]
-          [subs="verbatim,attributes"]
-          ----
-          <dependency>
-              <groupId>{groupId}</groupId>
-              <artifactId>{artifactId}</artifactId>
-              <version>{version}</version>
-          </dependency>
-          ----
+.ui.grid.equal.height.divided.stackable.download-options
+  - if series[:artifacts]
+    .eleven.wide.column
+      %h3 Maven, Gradle...
+      %p
+        - nexus_search = project_description.maven.nexus_search
+        Maven artifacts of #{project_description.name} are published to Maven Central and to the
+        %a{:href => jboss_nexus_search_url(nexus_search.group_id_pattern, nexus_search.artifact_id_pattern, "#{series.version}.*")}
+        JBoss Maven Repository.
+        Refer to the
+        %a{:href => "http://community.jboss.org/wiki/MavenGettingStarted-Users"} Maven Getting Started guide
+        on the Jboss Wiki for more information on how to configure Maven.
+      %p
+        Below are the Maven coordinates of the main artifacts.
+      %dl.sparse
+        - series.artifacts.each do |artifact|
+          - group_id = latest_release[:group_id]
+          - group_id ||= series[:group_id]
+          - group_id ||= project_description.maven[:group_id]
+          - artifact_id = artifact.artifact_id
+          - version = latest_release.version
+          - summary = artifact[:summary]
+          - summary ||= artifact.artifact_id
+          %dt
+            %a.ui.label.large.blue{:href => jboss_nexus_search_url(group_id, artifact_id, version)}
+              #{group_id}:#{artifact_id}:#{version}
+          %dd= summary
+          - if false # disabled for now, takes too much vertical space
+            :asciidoc
+              :groupId: #{group_id}
+              :artifactId: #{artifact_id}
+              :version: #{version}
+              [source,xml]
+              [subs="verbatim,attributes"]
+              ----
+              <dependency>
+                  <groupId>{groupId}</groupId>
+                  <artifactId>{artifactId}</artifactId>
+                  <version>{version}</version>
+              </dependency>
+              ----
+  .five.wide.column
+    %h3 Zip archive
+    %p
+      Direct download is available from SourceForge:
+    %p
+      %a.ui.button.primary.icon{:href => "#{sourceforge_zip_url(project_description, latest_release)}", :title => "Download"}
+        %i.icon.cloud.download
+        Download Zip archive
+
 %p
   More information about specific releases (announcements, download links) can be found
   %a{:href => "#releases"}
@@ -119,7 +127,7 @@ project_hero_partial: project/hero-series.html.haml
 
 %h2{:id => "releases"} Older releases
 - unless series.nil?
-  .ui.grid.series-versions
+  .ui.stackable.grid.series-versions
     - series.releases.each do |release|
       - group_id = release[:group_id]
       - group_id ||= series[:group_id]
@@ -133,16 +141,16 @@ project_hero_partial: project/hero-series.html.haml
         .thirteen.wide.column
           %p
             %small= release.date
+            - if release[:summary]
+              \-
+              = release.summary
           %p
             %a.ui.label.blue{:href => jboss_nexus_search_url(group_id, artifact_id, version)}
               #{group_id}:#{artifact_id}:#{version}
-          - if release[:summary]
-            %p
-              = release.summary
           - if release[:announcement_url]
             %p
               %a.ui.button.icon{:href => "#{sourceforge_zip_url(project_description, release)}"}
-                %i.icon.download
+                %i.icon.cloud.download
                 Download
               %a.ui.button.icon{:href => "#{release.announcement_url}"}
                 %i.icon.announcement

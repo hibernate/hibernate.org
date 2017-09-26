@@ -143,7 +143,7 @@
 	margin-top: 35px;
 }
 
-.content {
+#content {
 	min-height: 250px;
 
 	p, table td, table th, ul {
@@ -282,14 +282,10 @@ pre {
 	}
 }
 
-.ui.grid.series {
-	margin-bottom: 25px;
-}
-
 /**
  * Home page
  */
-.projects {
+#content .projects {
 	h3.ui.header {
 		font-size: 1.6em;
 
@@ -316,7 +312,7 @@ pre {
 /**
  * Documentation
  */
-.documentation-versions {
+#content .documentation-versions {
 	margin-top: 10px !important;
 	margin-bottom: 10px !important;
 
@@ -333,21 +329,32 @@ pre {
 /**
  * Series
  */
-.ui.grid.series-versions {
-	margin-top: 10px !important;
-	margin-bottom: 10px !important;
 
-	> .row {
-		padding: 0.5rem 0;
+#content {
+	.ui.grid.series {
+		margin-bottom: 25px;
 	}
 
-	.version {
-		font-size: 1.2em;
-		font-weight: bold;
-		line-height: 1em;
+	.ui.grid.series-versions {
+		margin-top: 10px !important;
+		margin-bottom: 10px !important;
+
+		> .row {
+			padding: 0.5rem 0;
+		}
+
+		.version {
+			font-size: 1.2em;
+			font-weight: bold;
+			line-height: 1em;
+		}
+		.button {
+			margin-top: 4px;
+		}
 	}
-	.button {
-		margin-top: 4px;
+
+	.ui.grid.download-options {
+		margin-bottom: 25px;
 	}
 }
 
@@ -486,7 +493,7 @@ pre .comment .conum {
  * Series overview
  */
 
-.version {
+#content .version {
 	h3.ui.header {
 		margin-top: 0;
 		font-size: 3em;
