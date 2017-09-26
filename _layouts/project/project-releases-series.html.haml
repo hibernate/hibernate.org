@@ -23,11 +23,15 @@ project_hero_partial: project/hero-series.html.haml
   %a.item{:href => "#whats-new"}
     %i.icon.fire
     What's new
-  - migration_page_root = '/' + page.project + '/documentation/migrate/' + series.version + '/'
-  - # development releases may not have a migration guide yet
-  - has_migration_page = site.pages.index {|page| page.output_path == (migration_page_root + 'index.html')} != nil
+  - if project_description.migration_guide_url.nil?
+    - migration_page_url = '/' + page.project + '/documentation/migrate/' + series.version + '/'
+    - # development releases may not have a migration guide yet
+    - has_migration_page = site.pages.index {|page| page.output_path == (migration_page_url + 'index.html')} != nil
+  - else
+    - migration_page_url = project_description.migration_guide_url
+    - has_migration_page = true
   - if has_migration_page
-    %a.item{:href => migration_page_root}
+    %a.item{:href => migration_page_url}
       %i.icon.share
       Migration guide
   %a.item{:href => "#{doc_reference_url(project_description, series)}"}
@@ -111,10 +115,9 @@ project_hero_partial: project/hero-series.html.haml
 
 - if latest_release[:announcement_url]
   %p
-    %em
-      Latest release announcement (#{latest_release.date}):
-      %a{:href => "#{latest_release.announcement_url}"}
-        #{latest_release.version}.
+    Latest release announcement (#{latest_release.date}):
+    %a{:href => "#{latest_release.announcement_url}"}
+      #{latest_release.version}.
 
 - version_cleaner = page.project == 'orm' ? lambda {|v| v != '4.2.0.Final' && v != '4.3.0.Final' && v != '5.0.0.Final' && v =~ /^(.*).Final$/ ? $1 : v } : lambda {|v| v}
 - comma_separated_release_versions = series.releases.collect{|r| r.version}.collect!{|v| version_cleaner.call(v)}.join( "%2C%20" )

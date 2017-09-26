@@ -40,6 +40,7 @@ projects:
     reference_pdf:
     javadoc_path: javadocs
     getting_started: /orm/documentation/getting-started
+    migration_guide_url: https://github.com/hibernate/hibernate-orm/wiki/Migration-Guides
     blog_tag: Hibernate ORM
     blog_tag_url: hibernate-orm
     license:
@@ -276,6 +277,7 @@ projects:
     reference_doc_pdf_path: reference/en-US/pdf/hibernate_validator_reference.pdf
     javadoc_path: api
     getting_started: /validator/documentation/getting-started
+    migration_guide_url: https://developer.jboss.org/wiki/HibernateValidatorMigrationGuide
     blog_tag: Hibernate Validator
     blog_tag_url: hibernate-validator
     license:
@@ -359,6 +361,7 @@ projects:
     reference_doc_pdf_path: reference/en-US/pdf/hibernate_ogm_reference.pdf
     javadoc_path: api
     getting_started: /ogm/documentation/getting-started
+    migration_guide_url: https://developer.jboss.org/wiki/HibernateOGMMigrationNotes
     blog_tag: Hibernate OGM
     blog_tag_url: hibernate-ogm
     license:
