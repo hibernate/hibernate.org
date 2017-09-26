@@ -32,7 +32,8 @@ layout: base
               #{menu.name}
               %i.icon.dropdown
               .menu
-                %a.item{:href => "#{relative(menu.href)}", :class => "#{(active ? "selected" : "")}"}
+                - overview_active = current_path == menu.href
+                %a.item{:href => "#{relative(menu.href)}", :class => "#{(overview_active ? "selected" : "")}"}
                   Overview
                 - displayed_series.each do |series|
                   - submenu_href = "#{menu.href}#{series.version}/"
