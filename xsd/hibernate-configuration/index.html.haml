@@ -1,27 +1,25 @@
 ---
-layout: project
-title: Directory listing /dtd
+layout: title-nocol
+title: Index of /xsd/hibernate-configuration
 ---
 
-.content
-  %h1 Index of /xsd/hibernate-configuration
+- @items = list_entries(File.dirname(__FILE__), '*.xsd')
 
-  - @items = list_entries(File.dirname(__FILE__), '*.xsd')
-
-  %table{:style=>"border: 10px; width: 80%"}
-    %tbody
+%table.ui.table.striped.celled{:style=>"width: 80%"}
+  %thead
+    %tr
+      %th Name
+      %th Last modified
+      %th{:align=>'right'} Size
+  %tbody
+    - @items.each_with_index do |row, row_index|
       %tr
-        %th{:align=>'left', :style=>"padding-bottom: 20px;"} Name
-        %th{:align=>'left', :style=>"padding-bottom: 20px;"} Last modified
-        %th{:align=>'right', :style=>"padding-bottom: 20px;"} Size
-      - @items.each_with_index do |row, row_index|
-        %tr
-          - row.each_with_index do |column, column_index|
-            -if column_index == 0
-              %td
-                %a(title=column href="./#{column}") #{column}
+        - row.each_with_index do |column, column_index|
+          -if column_index == 0
+            %td
+              %a(title=column href="./#{column}") #{column}
+          -else
+            -if column_index < 2
+              %td= "#{column}"
             -else
-              -if column_index < 2
-                %td= "#{column}"
-              -else
-                %td{:align=>'right'}= "#{column}"
+              %td{:align=>'right'}= "#{column}"
