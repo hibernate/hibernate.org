@@ -30,7 +30,6 @@ project_buttons_partial: project/releases-buttons.html.haml
       .column
         .ui.raised.segment.version
           %span{:class => "ui right ribbon label #{release.stable ? 'green' : 'orange'}"}
-            %i.icon{:class => "#{release.stable ? 'check' : 'settings'}"}
             #{release.stable ? 'stable' : 'development'}
           %h3.ui.header
             = series.version
@@ -38,7 +37,7 @@ project_buttons_partial: project/releases-buttons.html.haml
               = release.date
           %p= series.summary
           .ui.right.aligned.basic.segment
-            %a.ui.right.labeled.icon.button.primary
+            %a.ui.right.labeled.icon.button.primary{:href => "./#{series.version}/"}
               %i.right.arrow.icon
               More info
 - else
