@@ -107,7 +107,7 @@ project_banner_partial: project/banner-series.html.haml
     %p
       Direct download is available from SourceForge:
     %p
-      %a.ui.button.primary.icon{:href => "#{sourceforge_zip_url(project_description, latest_release)}", :title => "Download"}
+      %a.ui.right.labeled.button.primary.icon{:href => "#{sourceforge_zip_url(project_description, latest_release)}", :title => "Download"}
         %i.icon.cloud.download
         Download Zip archive
 
@@ -157,10 +157,10 @@ project_banner_partial: project/banner-series.html.haml
               #{group_id}:#{artifact_id}:#{version}
           - if release[:announcement_url]
             %p
-              %a.ui.button.icon{:href => "#{sourceforge_zip_url(project_description, release)}"}
+              %a.ui.right.labeled.button.icon{:href => "#{sourceforge_zip_url(project_description, release)}"}
                 %i.icon.cloud.download
                 Download
-              %a.ui.button.icon{:href => "#{release.announcement_url}"}
+              %a.ui.right.labeled.button.icon{:href => "#{release.announcement_url}"}
                 %i.icon.announcement
                 Release announcement
 - else
