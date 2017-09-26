@@ -1,7 +1,7 @@
 ---
 layout: project-standard
 project_banner_partial: project/banner-series.html.haml
-project_hero_partial: project/hero-series.html.haml
+/project_hero_partial: project/hero-series.html.haml
 ---
 -# Defines the project series page template
 -# Provides info about a particular series
@@ -11,6 +11,12 @@ project_hero_partial: project/hero-series.html.haml
 - project_description = site.projects[page.project]
 - series = project_description.release_series[page.series_version]
 - latest_release = series.releases.first
+
+.ui.icon.message
+  .content
+    .header
+      What's new?
+    %p= series.summary
 
 .ui.menu
   - unless series.integration_constraints.nil? || series.integration_constraints.empty?
@@ -38,7 +44,6 @@ project_hero_partial: project/hero-series.html.haml
     %i.icon.book
     Main documentation
 
-
 - unless series.integration_constraints.nil? || series.integration_constraints.empty?
   %h2{:id => "compatibility"} Compatibility
   %table.ui.collapsing.table.striped.celled
@@ -64,7 +69,7 @@ project_hero_partial: project/hero-series.html.haml
         - nexus_search = project_description.maven.nexus_search
         Maven artifacts of #{project_description.name} are published to Maven Central and to the
         %a{:href => jboss_nexus_search_url(nexus_search.group_id_pattern, nexus_search.artifact_id_pattern, "#{series.version}.*")}
-        JBoss Maven Repository.
+          JBoss Maven Repository.
         Refer to the
         %a{:href => "http://community.jboss.org/wiki/MavenGettingStarted-Users"} Maven Getting Started guide
         on the Jboss Wiki for more information on how to configure Maven.

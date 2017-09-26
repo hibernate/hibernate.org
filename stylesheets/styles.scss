@@ -215,6 +215,16 @@
 			margin-top: 7px;
 		}
 	}
+
+	.ui.message {
+		.header {
+			margin-bottom: 4px;
+		}
+
+		p:last-child {
+			margin: 0;
+		}
+	}
 }
 
 .news h3, #toc #toctitle {
