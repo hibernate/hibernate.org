@@ -7,12 +7,12 @@
 
 - if not get_started_url.nil?
   .jumbotron-button
-    %a.ui.right.labeled.icon.button{:href => "#{get_started_url}"}
+    %a.ui.small.right.labeled.icon.button{:href => "#{get_started_url}"}
       %i.right.arrow.icon
       Getting started
 - unless stable_series.nil?
   .jumbotron-button
-    %a.ui.right.labeled.icon.button.green{:href => "#{doc_reference_url(project_description, stable_series)}"}
+    %a.ui.small.right.labeled.icon.button.green{:href => "#{doc_reference_url(project_description, stable_series)}"}
       %i.right.arrow.icon
       Get documentation for #{stable_series.version}
 
