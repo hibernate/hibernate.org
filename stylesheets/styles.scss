@@ -693,6 +693,12 @@ pre .comment .conum {
 }
 
 #mobile-menu {
+	background-color: black;
+
+	&.hidden {
+		display: none;
+	}
+
 	.ui.vertical.menu {
 		> .item {
 			border-radius: 0 !important;
@@ -714,3 +720,8 @@ pre .comment .conum {
 	}
 }
 
+/**
+ * Red Hat top banner
+ */
+
+@import 'tabzilla'

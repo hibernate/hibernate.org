@@ -20,6 +20,7 @@
 %script(src="#{site.jquery_js_url}#{site.minified}.js")
 %script(src="#{site.semantic_ui_js_url}#{site.minified}.js")
 %script(src="#{site.slick_js_url}#{site.minified}.js")
+%script(src="#{site.jboss_tabzilla_js_url}")
 - if real_page.javascripts
   - real_page.javascripts.each do |javascript|
     %script{:src=>javascript, :type=>'text/javascript'}
