@@ -1,7 +1,7 @@
 ---
 layout: project-standard
 project_banner_partial: project/banner-series.html.haml
-/project_hero_partial: project/hero-series.html.haml
+project_hero_partial: project/hero-series.html.haml
 ---
 -# Defines the project series page template
 -# Provides info about a particular series
@@ -12,37 +12,34 @@ project_banner_partial: project/banner-series.html.haml
 - series = project_description.release_series[page.series_version]
 - latest_release = series.releases.first
 
-.ui.icon.message
-  .content
-    .header
-      In a nutshell
-    %p= series.summary
-
-.ui.menu.stackable
-  - unless series.integration_constraints.nil? || series.integration_constraints.empty?
-    %a.item(href="#compatibility")
-      %i.icon.world
-      Compatibility
-  %a.item{:href => "#get-it"}
-    %i.icon.arrow.down.circle
-    Get it
-  %a.item{:href => "#whats-new"}
-    %i.icon.fire
-    What's new
-  - if project_description.migration_guide_url.nil?
-    - migration_page_url = '/' + page.project + '/documentation/migrate/' + series.version + '/'
-    - # development releases may not have a migration guide yet
-    - has_migration_page = site.pages.index {|page| page.output_path == (migration_page_url + 'index.html')} != nil
-  - else
-    - migration_page_url = project_description.migration_guide_url
-    - has_migration_page = true
-  - if has_migration_page
-    %a.item{:href => migration_page_url}
-      %i.icon.share
-      Migration guide
-  %a.item{:href => "#{doc_reference_url(project_description, series)}"}
-    %i.icon.book
-    Main documentation
+#toc
+  #toctitle
+    Quick links
+  %ul
+    - unless series.integration_constraints.nil? || series.integration_constraints.empty?
+      %li
+        %a.item(href="#compatibility")
+          Compatibility
+    %li
+      %a.item{:href => "#get-it"}
+        Get it
+    %li
+      %a.item{:href => "#whats-new"}
+        What's new
+    - if project_description.migration_guide_url.nil?
+      - migration_page_url = '/' + page.project + '/documentation/migrate/' + series.version + '/'
+      - # development releases may not have a migration guide yet
+      - has_migration_page = site.pages.index {|page| page.output_path == (migration_page_url + 'index.html')} != nil
+    - else
+      - migration_page_url = project_description.migration_guide_url
+      - has_migration_page = true
+    - if has_migration_page
+      %li
+        %a.item{:href => migration_page_url}
+          Migration guide
+    %li
+      %a.item{:href => "#{doc_reference_url(project_description, series)}"}
+        Main documentation
 
 - unless series.integration_constraints.nil? || series.integration_constraints.empty?
   %h2{:id => "compatibility"} Compatibility
