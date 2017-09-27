@@ -12,6 +12,14 @@ project_hero_partial: project/hero-series.html.haml
 - series = project_description.release_series[page.series_version]
 - latest_release = series.releases.first
 
+- if project_description.migration_guide_url.nil?
+  - migration_page_url = '/' + page.project + '/documentation/migrate/' + series.version + '/'
+  - # development releases may not have a migration guide yet
+  - has_migration_page = site.pages.index {|page| page.output_path == (migration_page_url + 'index.html')} != nil
+- else
+  - migration_page_url = project_description.migration_guide_url
+  - has_migration_page = true
+
 #toc
   #toctitle
     Quick links
@@ -23,23 +31,16 @@ project_hero_partial: project/hero-series.html.haml
     %li
       %a.item{:href => "#get-it"}
         How to get it
+    - if has_migration_page
+      %li
+        %a.item{:href => "#migrate"}
+          Migrate
+    %li
+      %a.item{:href => "#documentation"}
+        Documentation
     %li
       %a.item{:href => "#whats-new"}
         What's new
-    - if project_description.migration_guide_url.nil?
-      - migration_page_url = '/' + page.project + '/documentation/migrate/' + series.version + '/'
-      - # development releases may not have a migration guide yet
-      - has_migration_page = site.pages.index {|page| page.output_path == (migration_page_url + 'index.html')} != nil
-    - else
-      - migration_page_url = project_description.migration_guide_url
-      - has_migration_page = true
-    - if has_migration_page
-      %li
-        %a.item{:href => migration_page_url}
-          Migration guide
-    %li
-      %a.item{:href => "#{doc_reference_url(project_description, series)}"}
-        Main documentation
 
 - unless series.integration_constraints.nil? || series.integration_constraints.empty?
   %h2{:id => "compatibility"} Compatibility
@@ -112,6 +113,34 @@ project_hero_partial: project/hero-series.html.haml
   More information about specific releases (announcements, download links) can be found
   %a{:href => "#releases"}
     here.
+
+- if has_migration_page
+  %h2{:id => "migrate"} Migrate
+  %p
+    If you need to upgrade from a previous series, please refer to the
+    %a{:href => migration_page_url}
+      migration guide.
+
+%h2{:id => "documentation"} Documentation
+%p
+  Documentation for this specific series can be accessed through the links below:
+%p
+  %a.ui.right.labeled.icon.button(href="#{doc_reference_url(project_description, series)}")
+    %i.icon.file.text.outline
+    HTML
+  - pdf_url = doc_reference_pdf_url(project_description, series)
+  - if not pdf_url.nil?
+    %a.ui.right.labeled.icon.button(href="#{pdf_url}")
+      %i.icon.file.pdf.outline
+      PDF
+  %a.ui.right.labeled.icon.button(href="#{javadoc_url(project_description, series)}/")
+    %i.icon.code.outline
+    API (JavaDoc)
+
+%p
+  You can find more documentation for all series on the
+  %a{:href => '../../documentation'}
+    documentation page.
 
 %h2{:id => "whats-new"} What's new
 
