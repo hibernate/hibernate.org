@@ -302,6 +302,13 @@ pre {
 	}
 }
 
+// don't display the TOC on mobile
+@media only screen and (max-width: 767px) {
+	#toc {
+		display: none;
+	}
+}
+
 /**
  * Home page
  */
