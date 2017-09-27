@@ -9,7 +9,7 @@
     .ui.container
       .ui.grid.stackable
         .column.row
-          .column.twelve.wide
+          .column.twelve.wide.middle.aligned
             %h1
               %span
                 = project_name
@@ -17,6 +17,6 @@
               %span
                 = real_page.title
               %span.ui.label.tag{:class => "#{latest_release.stable ? 'green' : 'orange'}"} #{latest_release.stable ? 'stable' : 'development'}
-          .column.four.wide
+          .column.four.wide.middle.aligned
             = partial( real_page.project_buttons_partial.nil? ? 'project/empty-buttons.html.haml' : real_page.project_buttons_partial, { "real_page" => real_page } )
 
