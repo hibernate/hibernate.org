@@ -25,10 +25,6 @@
         %li
           %a{:accesskey => "c", :href => "#content", :title => "Skip to content"} Skip to content
 
-      / Red Hat link at the top
-      .dropup#redhat-button.mobile.hidden(style='display:none')
-        .tabnav-closed#tab(href="#") Red Hat
-
       = partial( page.header_partial.nil? ? 'header.html.haml' : page.header_partial, {"real_page" => page} )
 
       ~content
@@ -50,12 +46,10 @@
       transition: 'overlay'
     });
     $('#mobile-menu').sidebar('attach events', '#mobile-menu-toggle');
-    $('#mobile-menu').removeClass('hidden');
 
     $('.ui.accordion').accordion();
 
     renderTabzilla("#{project_name}","#{project_id}", true);
-    $('#redhat-button').fadeIn();
 
     $(window).scroll(function(e) {
       if($(this).scrollTop()>150){

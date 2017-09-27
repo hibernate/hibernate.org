@@ -5,11 +5,17 @@
 .banner {
 	.logo {
 		margin-top: 15px;
+		float: left;
 	}
 
 	.ui.menu {
 		margin-top: 0px;
 		margin-bottom: 20px;
+	}
+
+	.dropup {
+		float: right;
+		position: relative;
 	}
 }
 
@@ -637,6 +643,14 @@ pre .comment .conum {
 	text-align: justify;
 }
 
+.clearfix {
+	&::after {
+		display: block;
+		clear: both;
+		content: "";
+	}
+}
+
 /**
  * Books
  */
@@ -701,10 +715,6 @@ pre .comment .conum {
 
 #mobile-menu {
 	background-color: black;
-
-	&.hidden {
-		display: none;
-	}
 
 	.ui.vertical.menu {
 		> .item {

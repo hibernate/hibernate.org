@@ -1,6 +1,6 @@
 - real_page = page['real_page']
 
-.ui.vertical.inverted.sidebar.left.overlay.hidden#mobile-menu
+.ui.vertical.inverted.sidebar.left.overlay#mobile-menu
   .ui.vertical.fluid.inverted.text.menu.accordion
     = partial( 'mobile-menu-section.html.haml', { 'project_name' => 'ORM', 'project_key' => 'orm', 'project_icon' => 'database', 'real_page' => real_page } )
     = partial( 'mobile-menu-section.html.haml', { 'project_name' => 'Search', 'project_key' => 'search', 'project_icon' => 'search', 'real_page' => real_page } )
