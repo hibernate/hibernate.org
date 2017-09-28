@@ -369,7 +369,8 @@ pre {
  * Documentation
  */
 #content .documentation-versions {
-	margin-top: 10px !important;
+	// we use a padding for the top margin to avoid issues with slideDown()
+	padding-top: 10px !important;
 	margin-bottom: 10px !important;
 
 	.series {
@@ -407,6 +408,10 @@ pre {
 		.button {
 			margin-top: 4px;
 		}
+	}
+
+	#older-series {
+		display: none;
 	}
 
 	.ui.grid.download-options {

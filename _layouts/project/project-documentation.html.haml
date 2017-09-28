@@ -15,12 +15,61 @@ project_buttons_partial: project/documentation-buttons.html.haml
 
 %h2 Reference documentation
 
-- displayed_series = project_description.release_series.nil? ? nil : project_description.release_series.values.select{|s| s.displayed}
-- if not displayed_series.nil?
+- active_series = project_description.release_series.nil? ? nil : project_description.release_series.values.select{|s| s.displayed}
+- if not active_series.nil?
   .ui.grid.documentation-versions
-    - project_description.release_series.values.each do |series|
+    - active_series.each do |series|
       - release = series.releases[0]
-      - if series.displayed
+      .ui.row
+        .three.wide.column
+          %span.ui.label.series= series.version
+        .thirteen.wide.column
+          %p
+            %span.ui.label.large
+              %strong= release.version
+              %span.detail= release.date
+            %span.ui.tag.label{:class => "#{release.stable ? 'green' : 'orange'}"} #{release.stable ? 'stable'   : 'development'}
+          %p
+            = series.summary
+          %p
+            %span.ui.button.disabled
+              Documentation
+            %a.ui.right.labeled.icon.button.primary(href="#{doc_reference_url(project_description, series)}")
+              %i.icon.file.text.outline
+              HTML
+            - pdf_url = doc_reference_pdf_url(project_description, series)
+            - if not pdf_url.nil?
+              %a.ui.right.labeled.icon.button.primary(href="#{pdf_url}")
+                %i.icon.file.pdf.outline
+                PDF
+            %a.ui.right.labeled.icon.button.primary(href="#{javadoc_url(project_description, series)}/")
+              %i.icon.code.outline
+              API (JavaDoc)
+- else
+  %p There is no reference documentation configured for this project.
+
+- older_series = project_description.release_series.nil? ? nil : project_description.release_series.values.select{|s| !s.displayed}
+- unless older_series.nil? || older_series.empty?
+  %p
+    %a.ui.button.right.labeled.icon#older-series-button(href="javascript: void(0)")
+      %i.icon.snowflake
+      %span See older series
+  :javascript
+    $(document).ready(function() {
+      $('#older-series-button').click(function() {
+        $('#older-series').slideToggle(400, function() {
+        });
+        var buttonText = $('#older-series-button span');
+        buttonText.text() == 'See older series' ?
+          buttonText.text("Hide older series") :
+          buttonText.text("See older series");
+      });
+    });
+
+  #older-series
+    .ui.grid.documentation-versions
+      - older_series.each do |series|
+        - release = series.releases[0]
         .ui.row
           .three.wide.column
             %span.ui.label.series= series.version
@@ -46,12 +95,5 @@ project_buttons_partial: project/documentation-buttons.html.haml
               %a.ui.right.labeled.icon.button.primary(href="#{javadoc_url(project_description, series)}/")
                 %i.icon.code.outline
                 API (JavaDoc)
-- else
-  %p There is no reference documentation configured for this project.
-
-%p
-  Documentation for older versions can be found
-  %a{:href => "#{doc_root_url(project_description)}"} on the reference documentation site
-  \.
 
 ~ content
