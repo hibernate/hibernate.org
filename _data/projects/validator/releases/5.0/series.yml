@@ -1,3 +1,15 @@
-summary: Reference implementation for Bean Validation 1.1 (maintenance release)
+summary: Reference implementation for Bean Validation 1.1
 displayed: false
 group_id: org.hibernate
+artifacts:
+  - artifact_id: hibernate-validator
+    summary: Core implementation
+  - artifact_id: hibernate-validator-cdi
+    summary: CDI integration
+  - artifact_id: hibernate-validator-annotation-processor
+    summary: Annotation processor
+integration_constraints:
+  java:
+    version: 6
+  bv:
+    version: 1.1
