@@ -199,6 +199,14 @@
 		padding-bottom: 3px;
 	}
 
+        > h2:first-of-type {
+          margin-top: 0 !important;
+        }
+
+        .feature-block:first-child > .sect1:first-child h2:first-of-type {
+          margin-top: 0 !important;
+        }
+
 	h3 {
 		margin-top: 10px !important;
 		color: #666;
