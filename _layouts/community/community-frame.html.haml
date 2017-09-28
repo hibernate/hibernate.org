@@ -35,7 +35,7 @@ layout: base
         - href = "/community/"
         - active = (href == "/community/" && href == current_path) || (href != "/community/" && current_path.start_with?(href))
         %a.item{:href => "#{relative(href)}", :class => "#{(active ? "active" : "")}"}
-          %i.grid.icon.home
+          %i.grid.icon.users
           Community
 
         - href = "/community/license/"
