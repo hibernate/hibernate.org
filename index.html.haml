@@ -14,7 +14,7 @@ title: Hibernate. Everything data.
             %h2
               %span Everything data.
           .right.floated.column.five.wide.middle.aligned
-            #carousel
+            #carousel{:style => 'display:none' }
   .ui.container-fluid
     .page-title.home
       .ui.container
@@ -174,6 +174,8 @@ title: Hibernate. Everything data.
           arrows: false,
           dots: true
         });
+
+        $('#carousel').fadeIn();
       }
     });
   });
