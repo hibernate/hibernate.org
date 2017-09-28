@@ -5,7 +5,7 @@
 - blog_url = "http://in.relation.to/#{blog_suffix_url}"
 - blog_json_feed = (project_description.nil? or project_description.blog_tag_url.nil?) ? "global" : project_description.blog_tag_url
 
-.ui.segment.raised.news
+.ui.segment.raised.news#latest-news{:style => 'display:none'}
   %h3 Latest news
   #feed
   %a.ui.right.labeled.icon.button{:href => "#{blog_url}"}
@@ -46,6 +46,7 @@
             )
           );
         }
+        $('#latest-news').fadeIn();
       }
     });
   });
