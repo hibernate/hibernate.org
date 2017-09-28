@@ -12,7 +12,7 @@
 - if not (stable_series.nil? && dev_series.nil?)
   - unless stable_series.nil?
     .jumbotron-button
-      %a.ui.small.right.labeled.icon.button.green{:href => "./releases/#{series.version}/"}
+      %a.ui.small.right.labeled.icon.button.green{:href => "./releases/#{stable_series.version}/"}
         %i.right.arrow.icon
         Latest stable (#{stable_series.version})
   - unless (dev_series.nil? || !dev_series.displayed)
