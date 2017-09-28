@@ -186,10 +186,13 @@ project_hero_partial: project/hero-series.html.haml
               #{group_id}:#{artifact_id}:#{version}
           - if release[:announcement_url]
             %p
-              %a.ui.right.labeled.button.icon{:href => "#{sourceforge_zip_url(project_description, release)}"}
+              %a.ui.small.right.labeled.button.icon{:href => "#{sourceforge_zip_url(project_description, release)}"}
                 %i.icon.cloud.download
                 Download
-              %a.ui.right.labeled.button.icon{:href => "#{release.announcement_url}"}
+              %a.ui.small.right.labeled.button.icon{:href => "https://hibernate.atlassian.net/issues/?jql=project%20%3D%20#{project_description.jira['key']}%20AND%20fixVersion%20in%20(#{version})%20ORDER%20BY%20updated"}
+                %i.icon.bug
+                Resolved issues
+              %a.ui.small.right.labeled.button.icon{:href => "#{release.announcement_url}"}
                 %i.icon.announcement
                 Release announcement
 - else
