@@ -1,2 +1,11 @@
 summary: Performance, WildFly 8 compatibility, JPA 2.1 / Hibernate ORM 4.3 compatibility
 displayed: false
+artifacts:
+  - artifact_id: hibernate-search-orm
+    summary: Hibernate ORM integration
+  - artifact_id: hibernate-search-backend-jgroups
+    summary: JGroups backend
+  - artifact_id: hibernate-search-backend-jms
+    summary: JMS backend
+  - artifact_id: hibernate-search-analyzers
+    summary: Analyzer dependencies from Lucene/Solr

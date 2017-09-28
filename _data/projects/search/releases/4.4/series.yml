@@ -1,2 +1,11 @@
 summary: Dynamic index sharding, new Metadata API, Hibernate ORM 4.2.x compatible
 displayed: false
+artifacts:
+  - artifact_id: hibernate-search-orm
+    summary: Hibernate ORM integration
+  - artifact_id: hibernate-search-backend-jgroups
+    summary: JGroups backend
+  - artifact_id: hibernate-search-backend-jms
+    summary: JMS backend
+  - artifact_id: hibernate-search-analyzers
+    summary: Analyzer dependencies from Lucene/Solr

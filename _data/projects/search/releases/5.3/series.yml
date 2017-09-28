@@ -1,2 +1,9 @@
 summary: Improved Faceting
 displayed: false
+artifacts:
+  - artifact_id: hibernate-search-orm
+    summary: Hibernate ORM integration
+  - artifact_id: hibernate-search-backend-jgroups
+    summary: JGroups backend
+  - artifact_id: hibernate-search-backend-jms
+    summary: JMS backend
