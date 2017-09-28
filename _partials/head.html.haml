@@ -7,7 +7,7 @@
 %link(href="#{site.semantic_ui_css_url}#{site.minified}.css" rel="stylesheet" media="screen")
 %link(href="#{site.slick_css_url}#{site.minified}.css" rel="stylesheet" media="screen")
 %link(href="#{site.slick_css_url}-theme#{site.minified}.css" rel="stylesheet" media="screen")
-%link(href="#{relative("/stylesheets/styles.css?new", real_page)}" rel="stylesheet" media="screen")
+%link(href="#{relative("/stylesheets/styles#{site.minified}.css?new", real_page)}" rel="stylesheet" media="screen")
 
 / Defines the project favicon. Change these URLs to your specific project folder on static.jboss.org.
 
@@ -20,7 +20,8 @@
 %script(src="#{site.jquery_js_url}#{site.minified}.js")
 %script(src="#{site.semantic_ui_js_url}#{site.minified}.js")
 %script(src="#{site.slick_js_url}#{site.minified}.js")
-%script(src="#{site.jboss_tabzilla_js_url}")
+/ Tabzilla does not support minification
+%script(src="#{site.jboss_tabzilla_js_url}.js")
 - if real_page.javascripts
   - real_page.javascripts.each do |javascript|
     %script{:src=>javascript, :type=>'text/javascript'}

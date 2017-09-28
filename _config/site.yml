@@ -456,7 +456,7 @@ profiles:
     semantic_ui_js_url: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic
     slick_js_url: https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick
     match_height_js_url: https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight
-    jboss_tabzilla_js_url: https://static.jboss.org/js/_jbossorg-tabzilla.js
+    jboss_tabzilla_js_url: https://static.jboss.org/js/_jbossorg-tabzilla
     semantic_ui_css_url: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic
     slick_css_url: https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick
     project_images_url: /cache/static.jboss.org/images/hibernate
@@ -469,24 +469,26 @@ profiles:
     semantic_ui_js_url: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic
     slick_js_url: https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick
     match_height_js_url: https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight
-    jboss_tabzilla_js_url: https://static.jboss.org/js/_jbossorg-tabzilla.js
+    jboss_tabzilla_js_url: https://static.jboss.org/js/_jbossorg-tabzilla
     semantic_ui_css_url: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic
     slick_css_url: https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick
     project_images_url: /cache/static.jboss.org/images/hibernate
     enable_google_analytics: false
     news_feed_root_url: http://in.relation.to/feeds
   staging:
+    minify: true
     minified: .min
     css_minifier: enabled
-    js_minifier: enabled
-    html_minifier: enabled
+    # most of the javascripts are loaded through a CDN and Tabzilla does not support minification
+    js_minifier: disabled
+    html_minifier: disabled
     jborg_fonts_url: http://static.jboss.org/theme/fonts
     jborg_images_url: http://static.jboss.org/theme/images
     jquery_js_url: https://code.jquery.com/jquery-3.1.1
     semantic_ui_js_url: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic
     slick_js_url: https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick
     match_height_js_url: https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight
-    jboss_tabzilla_js_url: https://static.jboss.org/js/_jbossorg-tabzilla.js
+    jboss_tabzilla_js_url: https://static.jboss.org/js/_jbossorg-tabzilla
     semantic_ui_css_url: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic
     slick_css_url: https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick
     project_images_url: http://static.jboss.org/images/hibernate
@@ -497,17 +499,19 @@ profiles:
     enable_google_analytics: false
     news_feed_root_url: http://staging.in.relation.to/feeds
   production:
+    minify: true
     minified: .min
     css_minifier: enabled
-    js_minifier: enabled
-    html_minifier: enabled
+    # most of the javascripts are loaded through a CDN and Tabzilla does not support minification
+    js_minifier: disabled
+    html_minifier: disabled
     jborg_fonts_url: http://static.jboss.org/theme/fonts
     jborg_images_url: http://static.jboss.org/theme/images
     jquery_js_url: https://code.jquery.com/jquery-3.1.1
     semantic_ui_js_url: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic
     slick_js_url: https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick
     match_height_js_url: https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight
-    jboss_tabzilla_js_url: https://static.jboss.org/js/_jbossorg-tabzilla.js
+    jboss_tabzilla_js_url: https://static.jboss.org/js/_jbossorg-tabzilla
     semantic_ui_css_url: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic
     slick_css_url: https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick
     project_images_url: http://static.jboss.org/images/hibernate
