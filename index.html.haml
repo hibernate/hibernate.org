@@ -8,12 +8,12 @@ title: Hibernate. Everything data.
     .ui.container
       .ui.grid.stackable
         .column.row{:style => "z-index: 1;"}
-          .left.floated.column.eight.wide
+          .left.floated.column.eight.wide.middle.aligned
             %h1
               %span Hibernate.
             %h2
               %span Everything data.
-          .right.floated.column.five.wide
+          .right.floated.column.five.wide.middle.aligned
             #carousel
   .ui.container-fluid
     .page-title.home
@@ -170,7 +170,9 @@ title: Hibernate. Everything data.
           slidesToScroll: 1,
           autoplay: true,
           autoplaySpeed: 4000,
-          focusOnSelect: true
+          focusOnSelect: true,
+          arrows: false,
+          dots: true
         });
       }
     });

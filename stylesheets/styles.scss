@@ -121,8 +121,12 @@
 	}
 
 	.carousel-element {
-		padding: 7px;
-		margin: 7px;
+		padding: 4px 7px;
+		margin: 2px 7px;
+	}
+
+	.slick-dots li button::before {
+		color: #FAFAFA;
 	}
 }
 
