@@ -41,6 +41,9 @@ project_hero_partial: project/hero-series.html.haml
     %li
       %a.item{:href => "#whats-new"}
         What's new
+    %li
+      %a.item{:href => "#releases"}
+        Releases in this series
 
 - unless series.integration_constraints.nil? || series.integration_constraints.empty?
   %h2{:id => "compatibility"} Compatibility
@@ -159,7 +162,7 @@ project_hero_partial: project/hero-series.html.haml
 
 ~ content
 
-%h2{:id => "releases"} Older releases
+%h2{:id => "releases"} Releases in this series
 - unless series.nil?
   .ui.stackable.grid.series-versions
     - series.releases.each do |release|
