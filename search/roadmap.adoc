@@ -13,24 +13,6 @@ You can find a finer grained roadmap in our https://hibernate.atlassian.net/brow
 Dates are generally omitted: while milestones are released regularly, the Final release is tagged when it's considered stable.
 
 
-== Hibernate Search 5.8
-
-Elasticsearch::
-With support for Elasticsearch first introduced in version `5.6`, we aim to polish it further.
-Plans are to make Elasticsearch versions `5+` compatible.
-
-Performance::
-Always learning new tricks! Especially the Elasticsearch integrations haven't been extensively tested in high scale scenarios.
-
-Analyzers::
-A new DSL will be introduced to allow people to define Analyzers programmatically at boostrap, as an alternative to the current `@Analyzer` and `@AnalyzerDef` annotations.
-We might want to automatically register a set of commonly used Analyzers - let us know what you think of this as the choice is hard!
-
-Java 9 compatibibility::
-We're aiming at regularly testing compatibility with Java 9 on top of the regular tests on Java 8.
-Testing will be limited to having Hibernate Search on the regular classpath: running as a module is an additional step we had to defer.
-
-
 == Hibernate Search 5.9
 
 Elasticsearch performance::
