@@ -8,7 +8,7 @@
     %title= page_title
     = partial( page.head_partial.nil? ? 'head.html.haml' : page.head_partial, { "real_page" => page } )
 
-  %body
+  %body.pushable
     = partial( 'mobile-menu.html.haml', {"real_page" => page} )
 
     .pusher
@@ -43,7 +43,7 @@
 :javascript
   $(function() {
     $('#mobile-menu').sidebar('setting', {
-      transition: 'overlay'
+      transition: 'push'
     });
     $('#mobile-menu').sidebar('attach events', '#mobile-menu-toggle');
 
