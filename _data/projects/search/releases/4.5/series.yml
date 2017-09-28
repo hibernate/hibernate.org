@@ -9,3 +9,10 @@ artifacts:
     summary: JMS backend
   - artifact_id: hibernate-search-analyzers
     summary: Analyzer dependencies from Lucene/Solr
+integration_constraints:
+  java:
+    version: 6
+  orm:
+    version: 4.3
+  lucene:
+    version: 3.6

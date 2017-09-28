@@ -7,3 +7,10 @@ artifacts:
     summary: JGroups backend
   - artifact_id: hibernate-search-backend-jms
     summary: JMS backend
+integration_constraints:
+  java:
+    version: 7
+  orm:
+    version: 5.0
+  lucene:
+    version: 4.10
