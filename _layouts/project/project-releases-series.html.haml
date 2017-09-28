@@ -171,6 +171,7 @@ project_hero_partial: project/hero-series.html.haml
       - group_id ||= project_description.maven[:group_id]
       - artifact_id ||= project_description.maven[:main_artifact_id]
       - version = release.version
+      - available = release[:available] == nil || release[:available]
       .ui.row
         .three.wide.column
           %span.ui.label.version{:class => "#{release.stable ? 'green' : 'orange'}"}
@@ -181,17 +182,19 @@ project_hero_partial: project/hero-series.html.haml
             - if release[:summary]
               \-
               = release.summary
-          %p
-            %a.ui.label.blue{:href => jboss_nexus_search_url(group_id, artifact_id, version)}
-              #{group_id}:#{artifact_id}:#{version}
-          - if release[:announcement_url]
+          - if available
             %p
+              %a.ui.label.blue{:href => jboss_nexus_search_url(group_id, artifact_id, version)}
+                #{group_id}:#{artifact_id}:#{version}
+          %p
+            - if available
               %a.ui.small.right.labeled.button.icon{:href => "#{sourceforge_zip_url(project_description, release)}"}
                 %i.icon.cloud.download
                 Download
-              %a.ui.small.right.labeled.button.icon{:href => "https://hibernate.atlassian.net/issues/?jql=project%20%3D%20#{project_description.jira['key']}%20AND%20fixVersion%20in%20(#{version})%20ORDER%20BY%20updated"}
-                %i.icon.bug
-                Resolved issues
+            %a.ui.small.right.labeled.button.icon{:href => "https://hibernate.atlassian.net/issues/?jql=project%20%3D%20#{project_description.jira['key']}%20AND%20fixVersion%20in%20(#{version})%20ORDER%20BY%20updated"}
+              %i.icon.bug
+              Resolved issues
+            - if release[:announcement_url]
               %a.ui.small.right.labeled.button.icon{:href => "#{release.announcement_url}"}
                 %i.icon.announcement
                 Release announcement

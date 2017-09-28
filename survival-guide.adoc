@@ -208,6 +208,14 @@ For information about the content of each file, see <<data_directory,here>>.
 To hide an older series, edit the `_data/<project ID>/releases/<series version>/series.yml` file
 to set the `displayed` attribute to `false` (just add the attribute if it is missing).
 
+=== Hide a specific release
+
+To hide an older series, edit the `_data/<project ID>/releases/<series version>/<release version>.yml` file
+to set the `displayed` attribute to `false` (just add the attribute if it is missing).
+
+To only hide download links and Maven coordinates,
+set the `available` attribute to `false` (just add the attribute if it is missing).
+
 == Data
 
 === `_config/site.yml`
