@@ -17,6 +17,12 @@ jira:
   base_url: https://hibernate.atlassian.net/
 github:
   organization_url: https://github.com/hibernate/
+twitter:
+  base_url: https://twitter.com/hibernate/
+google_plus:
+  base_url: https://plus.google.com/112681342290762837955/posts
+in_relation_to:
+  base_url: http://in.relation.to/
 
 # project specific information
 projects:
@@ -449,9 +455,10 @@ asciidoctor:
 ####################################################################################################
 # Update resource URLs based on the profile
 profiles:
-  development:
-    jborg_fonts_url: http://static.jboss.org/theme/fonts
-    jborg_images_url: http://static.jboss.org/theme/images
+  development: &base
+    jborg_fonts_url: https://static.jboss.org/theme/fonts
+    jborg_images_url: https://static.jboss.org/theme/images
+    project_images_url: https://static.jboss.org/hibernate/images
     jquery_js_url: https://code.jquery.com/jquery-3.1.1
     semantic_ui_js_url: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic
     slick_js_url: https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick
@@ -459,65 +466,23 @@ profiles:
     jboss_tabzilla_js_url: https://static.jboss.org/js/_jbossorg-tabzilla
     semantic_ui_css_url: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic
     slick_css_url: https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick
-    project_images_url: /cache/static.jboss.org/images/hibernate
     enable_google_analytics: false
     news_feed_root_url: http://staging.in.relation.to/feeds
   test:
-    jborg_fonts_url: http://static.jboss.org/theme/fonts
-    jborg_images_url: http://static.jboss.org/theme/images
-    jquery_js_url: https://code.jquery.com/jquery-3.1.1
-    semantic_ui_js_url: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic
-    slick_js_url: https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick
-    match_height_js_url: https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight
-    jboss_tabzilla_js_url: https://static.jboss.org/js/_jbossorg-tabzilla
-    semantic_ui_css_url: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic
-    slick_css_url: https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick
-    project_images_url: /cache/static.jboss.org/images/hibernate
-    enable_google_analytics: false
+    << : *base
     news_feed_root_url: http://in.relation.to/feeds
   staging:
+    << : *base
     minify: true
     minified: .min
     css_minifier: enabled
-    # most of the javascripts are loaded through a CDN and Tabzilla does not support minification
-    js_minifier: disabled
-    html_minifier: disabled
-    jborg_fonts_url: http://static.jboss.org/theme/fonts
-    jborg_images_url: http://static.jboss.org/theme/images
-    jquery_js_url: https://code.jquery.com/jquery-3.1.1
-    semantic_ui_js_url: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic
-    slick_js_url: https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick
-    match_height_js_url: https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight
-    jboss_tabzilla_js_url: https://static.jboss.org/js/_jbossorg-tabzilla
-    semantic_ui_css_url: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic
-    slick_css_url: https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick
-    project_images_url: http://static.jboss.org/images/hibernate
-    wget:
-      #we don't need to download cached resources when in production
-      enabled: false
     base_url: http://staging.hibernate.org
-    enable_google_analytics: false
     news_feed_root_url: http://staging.in.relation.to/feeds
   production:
+    << : *base
     minify: true
     minified: .min
     css_minifier: enabled
-    # most of the javascripts are loaded through a CDN and Tabzilla does not support minification
-    js_minifier: disabled
-    html_minifier: disabled
-    jborg_fonts_url: http://static.jboss.org/theme/fonts
-    jborg_images_url: http://static.jboss.org/theme/images
-    jquery_js_url: https://code.jquery.com/jquery-3.1.1
-    semantic_ui_js_url: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic
-    slick_js_url: https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick
-    match_height_js_url: https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight
-    jboss_tabzilla_js_url: https://static.jboss.org/js/_jbossorg-tabzilla
-    semantic_ui_css_url: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic
-    slick_css_url: https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick
-    project_images_url: http://static.jboss.org/images/hibernate
-    wget:
-      #we don't need to download cached resources when in production
-      enabled: false
     base_url: http://hibernate.org
     enable_google_analytics: true
     news_feed_root_url: http://in.relation.to/feeds

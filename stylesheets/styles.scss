@@ -199,13 +199,13 @@
 		padding-bottom: 3px;
 	}
 
-        > h2:first-of-type {
-          margin-top: 0 !important;
-        }
+	> h2:first-of-type {
+		margin-top: 0 !important;
+	}
 
-        .feature-block:first-child > .sect1:first-child h2:first-of-type {
-          margin-top: 0 !important;
-        }
+	.feature-block:first-child > .sect1:first-child h2:first-of-type {
+		margin-top: 0 !important;
+	}
 
 	h3 {
 		margin-top: 10px !important;
@@ -452,6 +452,11 @@ pre {
 		color: #9f3a38;
 	}
 
+	.title {
+		font-weight: bold;
+		margin-bottom: .5em;
+	}
+
 	p {
 		margin-bottom: 0px;
 	}
@@ -494,6 +499,40 @@ pre {
 
 	.fa.icon-important::before {
 		content: "";
+	}
+}
+
+.quoteblock {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	color: rgb(101, 101, 101);
+
+	blockquote {
+		border-left: 5px solid #e6e7e8;
+		position: relative;
+		margin-left: 20px;
+		margin: 1.5em 10px;
+		padding: 0.5em 10px;
+	}
+
+	blockquote:before {
+		color: #ccc;
+		font-size: 3em;
+		margin-top: 20px;
+		display: block;
+		font-family: "Icons";
+		content: "\f10e";
+		margin-bottom: 15px;
+	}
+
+	.paragraph {
+		p:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+
+	.attribution {
+		text-align: right;
 	}
 }
 
