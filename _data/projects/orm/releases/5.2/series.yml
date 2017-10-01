@@ -20,7 +20,7 @@ artifacts:
     summary: Ehcache second-level caching
 integration_constraints:
   java:
-    version: 8
+    version: 8+
   jpa:
     version: 2.1
 

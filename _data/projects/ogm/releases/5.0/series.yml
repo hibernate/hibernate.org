@@ -17,7 +17,7 @@ artifacts:
     summary: Redis integration
 integration_constraints:
   java:
-    version: 7
+    version: 7+
   jpa:
     version: 2.1
   orm:
