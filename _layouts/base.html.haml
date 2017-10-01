@@ -34,33 +34,33 @@
       %span.back-to-top.computer.only
         %a{:href => "javascript: void(0)"} Back to top
 
-      - if site.enable_google_analytics
-        = google_analytics_universal
-      - if page.bottom_javascripts
-        - page.bottom_javascripts.each do |javascript|
-          %script{:src=>javascript, :type=>'text/javascript'}
+    - if site.enable_google_analytics
+      = google_analytics_universal
+    - if page.bottom_javascripts
+      - page.bottom_javascripts.each do |javascript|
+        %script{:src=>javascript, :type=>'text/javascript'}
 
-:javascript
-  $(function() {
-    $('#mobile-menu').sidebar('setting', {
-      transition: 'push'
-    });
-    $('#mobile-menu').sidebar('attach events', '#mobile-menu-toggle');
+    :javascript
+      $(function() {
+        $('#mobile-menu').sidebar('setting', {
+          transition: 'push'
+        });
+        $('#mobile-menu').sidebar('attach events', '#mobile-menu-toggle');
 
-    $('.ui.accordion').accordion();
+        $('.ui.accordion').accordion();
 
-    renderTabzilla("#{project_name}","#{project_id}", true);
+        renderTabzilla("#{project_name}", "#{project_id}", true);
 
-    $(window).scroll(function(e) {
-      if($(this).scrollTop()>150){
-        $('.back-to-top').fadeIn(1000); // Fading in the button on scroll after 150px
-      }
-      else {
-        $('.back-to-top').fadeOut(500); // Fading out the button on scroll if less than 150px
-      }
-    });
+        $(window).scroll(function(e) {
+          if($(this).scrollTop()>150){
+            $('.back-to-top').fadeIn(1000); // Fading in the button on scroll after 150px
+          }
+          else {
+            $('.back-to-top').fadeOut(500); // Fading out the button on scroll if less than 150px
+          }
+        });
 
-    $('.back-to-top').click(function(e) {
-      $('body, html').animate({scrollTop:0}, 800);
-    });
-  });
+          $('.back-to-top').click(function(e) {
+            $('body, html').animate({scrollTop:0}, 800);
+          });
+        });
