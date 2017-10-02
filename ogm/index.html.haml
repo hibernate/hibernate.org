@@ -8,7 +8,7 @@ project_hero_partial: project/ogm/hero-text.html.haml
 -# Center body
 .feature-block
   :asciidoc
-    == Many NoSQL stores, one standard way to access them
+    == Many NoSQL stores, one API to access them
 
     Hibernate OGM provides Java Persistence (JPA) support for NoSQL solutions.
     It reuses Hibernate ORM's engine but persists entities into a NoSQL datastore instead of a relational database.
@@ -17,20 +17,27 @@ project_hero_partial: project/ogm/hero-text.html.haml
 
     == Wide range of backends
 
-    OGM talks to NoSQL backends via store-specific dialects. Currently there is support for
+    OGM talks to NoSQL backends via store-specific dialects. The main repository includes the following dialects:
 
-    * _Key/Value_: Infinispan; Ehcache
-    * _Document_: MongoDB
-    * _Graph_: Neo4j
+    * _Key/Value_: *Infinispan* (embedded and remote)
+    * _Document_: *MongoDB*
+    * _Graph_: *Neo4j* (embedded and remote)
 
-    And more are in progress: Redis, CouchDB and Cassandra.
+    Dialects for other NoSQL datastores are maintained by the community:
+
+    * https://github.com/hibernate/hibernate-ogm-cassandra[Cassandra]
+    * https://github.com/hibernate/hibernate-ogm-couchdb[CouchDB]
+    * https://github.com/hibernate/hibernate-ogm-ehcache[EhCache]
+    * https://github.com/hibernate/hibernate-ogm-ignite[Apache Ignite]
+    * https://github.com/hibernate/hibernate-ogm-redis[Redis]
+
     Your favorite NoSQL store isn't listed here? We'd love to get link:/ogm/contribute[your help] for adding it.
 
     == Rich query capabilities
 
     Hibernate OGM supports several ways for searching entities and returning them as Hibernate _managed objects_:
 
-    * _JP-QL queries_ (we convert them into a native backend query)
+    * _JPQL queries_ (we convert them into a native backend query)
     * datastore specific _native queries_
     * _full-text queries_, using Hibernate Search as indexing engine
 
