@@ -9,8 +9,8 @@
     = partial( 'mobile-menu-section.html.haml', { 'project_name' => 'Tools', 'project_key' => 'tools', 'project_icon' => 'wrench', 'real_page' => real_page } )
     %a.item(href="/others/")
       Others
-    %a.item(href="http://in.relation.to/")
+    %a.item(href="#{site.in_relation_to.base_url}")
       Blog
-    %a.item(href="https://twitter.com/hibernate/")
+    %a.item(href="#{site.twitter.base_url}")
       %i.icon.twitter
       Follow us
