@@ -4,19 +4,18 @@
 - series = project_description.release_series[real_page.series_version]
 - real_page.title = "#{series.version} series"
 - latest_release = series.releases.first
-.ui.container-fluid
-  .jumbotron.small
-    .ui.container
-      .ui.grid.stackable
-        .column.row
-          .column.twelve.wide.middle.aligned
-            %h1
-              %span
-                = project_name
-            %h2
-              %span
-                = real_page.title
-              %span.ui.label.tag{:class => "#{latest_release.stable ? 'green' : 'orange'}"} #{latest_release.stable ? 'stable' : 'development'}
-          .column.four.wide.middle.aligned
-            = partial( real_page.project_buttons_partial.nil? ? 'project/empty-buttons.html.haml' : real_page.project_buttons_partial, { "real_page" => real_page } )
+.jumbotron.small
+  .ui.container
+    .ui.grid.stackable
+      .column.row
+        .column.twelve.wide.middle.aligned
+          %h1
+            %span
+              = project_name
+          %h2
+            %span
+              = real_page.title
+            %span.ui.label.tag{:class => "#{latest_release.stable ? 'green' : 'orange'}"} #{latest_release.stable ? 'stable' : 'development'}
+        .column.four.wide.middle.aligned
+          = partial( real_page.project_buttons_partial.nil? ? 'project/empty-buttons.html.haml' : real_page.project_buttons_partial, { "real_page" => real_page } )
 
