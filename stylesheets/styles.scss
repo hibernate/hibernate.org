@@ -681,6 +681,22 @@ pre .comment .conum {
 }
 
 /**
+ * Some simple print utilities
+ */
+
+@media only print {
+	[class*="print hidden"] {
+		display: none !important;
+	}
+}
+
+@media only screen {
+	[class*="print only"] {
+		display: none !important;
+	}
+}
+
+/**
  * Bootstrap utilities
  */
 .sr-only {

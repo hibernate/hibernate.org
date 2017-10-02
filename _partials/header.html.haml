@@ -8,7 +8,7 @@
     .tabnav-closed#tab(href="#") Red Hat
   .clearfix
 
-  .ui.stackable.menu.mobile.hidden#nav
+  .ui.stackable.menu.mobile.hidden.print.hidden#nav
     %a.item{:href => "/orm/", :class=>"#{'active' if real_page.output_path.start_with?('/orm') }"} ORM
     %a.item{:href => "/search/", :class=>"#{'active' if real_page.output_path.start_with?('/search') }"} Search
     %a.item{:href => "/validator/", :class=>"#{'active' if real_page.output_path.start_with?('/validator') }"} Validator

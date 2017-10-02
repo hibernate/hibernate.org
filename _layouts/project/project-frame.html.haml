@@ -20,7 +20,7 @@ layout: base
 -# Project specific navigation menu
 .ui.container.page-content
   .ui.stackable.grid
-    .column.three.wide.computer.only
+    .column.three.wide.computer.only.print.hidden
       .ui.fluid.vertical.menu
         -# removes index.html and then replace download.html to download/
         - current_path = page.output_path.sub(/index\.html$/, "").sub(/\.html$/,"/")
