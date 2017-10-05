@@ -1,3 +1,32 @@
 :awestruct-layout: project-releases-series
 :awestruct-project: validator
 :awestruct-series_version: "5.3"
+
+=== Dynamic payloads for constraints
+
+Hibernate Validator 5.3 allows you to enrich custom constraint violations with additional context data.
+
+Code examining constraint violations can access and interpret this data in a safer way than by parsing string-based constraint violation messages.
+
+You can find more information about this feature in the http://in.relation.to/2016/01/18/hibernate-validator-530-alpha1-out/[5.3.0.Alpha1 release announcement].
+
+=== Relaxation of requirements for method validation in class hierarchies
+
+The Bean Validation specification defines a set of rules which apply when defining constraints on methods within class hierarchies.
+
+As per specification a Bean Validation provider is allowed to relax these preconditions.
+
+Starting with 5.3, it is now possible to do so as explained in https://docs.jboss.org/hibernate/validator/5.3/reference/en-US/html_single/#section-method-validation-prerequisite-relaxation[our documentation].
+
+=== Programmatic API improvements
+
+Until now, it was only possible to alter the list of `ConstraintValidator` of a given constraint via the XML configuration. 5.3 brings the ability to do it https://docs.jboss.org/hibernate/validator/5.3/reference/en-US/html_single/#section-programmatic-constraint-definition[via the programmatic API].
+
+=== JDK 9 support
+
+5.3 is the first version compatible with JDK 9.
+
+=== Other improvements
+
+ * Arabic, Russian and Slovak translations
+

@@ -1,3 +1,25 @@
 :awestruct-layout: project-releases-series
 :awestruct-project: validator
 :awestruct-series_version: "5.4"
+
+=== JavaMoney support
+
+Hibernate Validator 5.4 introduces http://javamoney.github.io/[JavaMoney (JSR 354)] support. You can use `@DecimalMin` and `@DecimalMax` constraints on your `MonetaryAmount` fields and we also introduced a new `@Currency` annotation allowing you to constrain the currency used in your ``MonetaryAmount``s.
+
+More information can be found in http://in.relation.to/2017/01/12/hibernate-validator-540-cr1-final-out/[this blog post].
+
+=== Annotation processor improvements
+
+A lot of improvements were made to the annotation processor to keep it up to speed with our latest features.
+
+=== WildFly patch
+
+Starting with Hibernate Validator 5.4, we provide a WildFly patch so that you can easily use our latest versions on top of WildFly. 
+
+You can find more information in the http://in.relation.to/2016/12/08/hibernate-validator-540-beta1-and-534-final-out/#applying-a-wildfly-patch[5.4.0.Beta1 release announcement].
+
+=== Other improvements
+
+ * Improvements to the `@Email` constraint
+ * New constraints specific to Polish identification numbers
+ * Ukrainian and Persian translations

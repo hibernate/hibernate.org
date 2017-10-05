@@ -1,3 +1,24 @@
 :awestruct-layout: project-releases-series
 :awestruct-project: validator
 :awestruct-series_version: "6.0"
+
+=== Bean Validation 2.0
+
+Hibernate Validator 6.0 is the Reference Implementation of the Bean Validation 2.0 specification so it comes with all its new features:
+
+ * First class support of container element constraints and cascaded validation (think `private Map<@Valid @NotNull OrderCategory, List<@Valid @NotNull Order>> orderByCategories;`);
+ * Support for the new JSR 310 date/time data types for `@Past` and `@Future`;
+ * New built-in constraints: `@Positive`, `@PositiveOrZero`, `@Negative`, `@NegativeOrZero`, `@PastOrPresent` and `@FutureOrPresent`
+
+We also have leveraged the new features of JDK 8 (built-in constraints are marked repeatable, parameter names are retrieved via reflection) as it is now the minimal version required.
+
+=== Performance improvements
+
+We have done quite a lot of benchmarking and have significantly improved the performances of Hibernate Validator.
+
+It can be up to two times faster than Hibernate Validator 5.4.1.Final in some cases.
+
+=== Memory footprint improvements
+
+Hibernate Validator collects a lot of metadata on the constrained beans. We reduced significantly the memory used by these metadata.
+
