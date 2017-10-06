@@ -13,7 +13,7 @@ title: Hibernate. Everything data.
           %h2
             %span Everything data.
         .right.floated.column.five.wide.middle.aligned.print.hidden
-          #carousel{:style => 'display:none' }
+          #carousel
 .page-title.home
   .ui.container
     %h1 More than an ORM, discover the Hibernate galaxy.
@@ -106,7 +106,6 @@ title: Hibernate. Everything data.
       // Work with the response
       success: function( data ) {
         var carousel = $('#carousel');
-        carousel.empty();
         for (var i = 0; i < data.length; i++) {
           var entry = data[i];
 
@@ -172,8 +171,6 @@ title: Hibernate. Everything data.
           arrows: false,
           dots: true
         });
-
-        $('#carousel').fadeIn();
       }
     });
   });
