@@ -232,7 +232,7 @@
 		margin-bottom: 20px;
 	}
 
-	code {
+	:not(pre) > code {
 		font-size: 0.9em;
 		background-color: #F4F4F4;
 		padding: .1em .5ex;
