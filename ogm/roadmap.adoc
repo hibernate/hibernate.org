@@ -12,11 +12,32 @@ You can find a finer grained roadmap in our https://hibernate.atlassian.net/brow
 but this page is a good and concise view of where we are going.
 Dates are generally omitted, we release when we are ready.
 
-== Future releases
-
-Describe plans for future releases.
-
 === Hibernate OGM 5.2
+
+Core::
+The minimal Java version will be Java 8.
+
+Infinispan::
+Upgrade to Infinispan 9.1 +
+Operation grouping support
+
+MongoDB::
+Upgrade to the MongoDB 3 API +
+Support distinct operations in native queries +
+Support Map/Reduce operations in native queries +
+Remove Fongo dialect
+
+Neo4j::
+Consolidation of some advanced mappings
+
+=== Hibernate OGM 5.3
+
+Core::
+Upgrade to Hibernate ORM 5.2 +
+Upgrade to Hibernate Search 5.8 +
+Support for WildFly 11
+
+=== Hibernate OGM Next
 
 Mapping strategies::
 Rethink the default values for the mapping approaches after more user feedback.
@@ -32,14 +53,12 @@ Offer per session and per statement option customization::
 e.g. for a given call, influence the quorum factor
 
 General NoSQL and query depth and breath improvements::
-Continue mapping of query engine on other NoSQL
+Continue mapping of query engine on other NoSQL +
 Continue coverage of breath of supported queries
 
-=== Hibernate OGM Next
-
 Denormalization engine::
-Offer ability to store data in different structures denormalized.
-Let loading and queries use these denormalized versions for faster retrieval.
+Offer ability to store data in different structures denormalized. +
+Let loading and queries use these denormalized versions for faster retrieval. +
 The goal is to offer a declarative approach
 instead of the imperative approach used usually in the NoSQL land.
 
@@ -57,303 +76,3 @@ Entities could be in either backends.
 Write-behind cross-backends::
 Offer ability to store into two backends.
 In particular, store data in a NoSQL backend and a relational database.
-
-== Past releases
-
-An aggregated changelog of what has happened.
-We are too lazy to go back down to the history of time
-so we will start at 4.0 Beta 3.
-
-=== Hibernate OGM 5.2.0.Alpha1
-
-Move dialects::
-Couchdb, Redis, Cassandra and Ehcache are now in separated repositories
-
-Infinispan::
-Support for grouping operations
-
-MongoDB::
-Support distinct operation in native queries
-Support map-reduce operation in native queries
-Remove Fongo dialect
-
-=== Hibernate OGM 5.1.0.Final
-
-Minor improvements over 5.1.0.CR1::
-Expands documentation about WildFly configuration
-
-=== Hibernate OGM 5.1.0.CR1
-
-Upgrade to Hibernate Search 5.5.6::
-Supports indexing and fulltext search with Elasticsearch.
-
-MongoDB aggregation::
-Suuports aggregate operation for MongoDB native queries. 
-
-=== Hibernate OGM 5.1.0.Beta3
-
-Sequence generation::
-Before this release the generation of sequences wasn't thred-safe on some dialects.
-
-Queries on entities using single table inheritance::
-Hibernate OGM will now append the right discriminator check on HQL queries.
-
-=== Hibernate OGM 5.1.0.Beta1
-
-Hot Rod integration::
-Offer ability to store data in Infinispan using the Hot Rod protocol.
-
-=== Hibernate OGM 5.1.0.Alpha1
-
-Neo4j remote integration::
-Offer ability to store data in Neo4j using the HTTP interface or the Bolt protocol.
-
-Group operations::
-Starts the re-work about grouping operations before executing them on the datastore.
-
-=== Hibernate OGM 5.0
-
-Cassandra::
-Store `java.math.BigDecimal` using native `decimal` type. 
-
-MongoDB::
-Support functions with MongoDB CLI native queries.
-
-=== Hibernate OGM 5.0.0.CR1
-
-Redis improvements::
-Redis Cluster support +
-New hash mapping dialect
-
-MongoDB improvements::
-Run findOne, findOne, findAndModify, insert, remove and update native queries using the
-experimental MongoDB CLI syntax
-
-Cassandra improvements::
-Store `java.util.UUID` using native `uuid` type
-
-=== Hibernate OGM 5.0.0.Alpha1
-
-Migrate to Hibernate ORM 5::
-Migrated to Hibernate ORM 5.0
-
-Redis support::
-New experimental backend for Redis K/V store
-
-MongoDB improvements::
-Update to MongoDB driver 3.0 +
-Map-typed properties are stored more naturally in MongoDB
-
-Multi-get::
-New dialect facet MultigetGridDialect for batch fetching lazy entities
-
-=== Hibernate OGM 4.2 Final
-
-JP-QL Improvements::
-Support filters on embedded id for Neo4j and MongoDB
-
-=== Hibernate OGM 4.2 CR1
-
-Exploration of Cassandra::
-Implement the Cassandra datastore and its CQL query backend.
-
-Support for MongoDB 3 (SCRAM-SHA-1) and MongoDB replica sets::
-Extended syntax for "host" setting for specifying several hosts
-
-New built-in types for boolean mapping::
-Map booleans as "Y"/"N", "T"/"F", 1/0
-
-=== Hibernate OGM 4.2 Beta1
-
-Error report and compensation API::
-Offer the ability to collect errors on partially executed "transactions".
-Offer ability to react to these errors.
-
-Various query improvements::
-* Support for collection of embeddables
-
-=== Hibernate OGM 4.1
-
-Performance and stabilization::
-Review performance and overall choices before going final.
-In particular, database round trips and query execution speed (see below).
-Reuse of the data loaded between an entity and its association lookup.
-
-Improved Neo4j navigation::
-Explore label (Neo4j 2). +
-Support Neo4j with ability to keep node reference for cheap navigation when resolving proxies
-thus avoiding unnecessary lookups.
-
-* Store tuple as data snapshot via IdentityMap or enhanced entity
-* Use stored tuples as navigation tools instead of fetching (graph databases)
-
-Stable mapping model::
-The way data is stored is now stable.
-We have ironed out the last details.
-
-Set benchmark solution and reusable test suite with automated test::
-Start exploring benchmark solution with regular tests in a CI.
-Add reusable TCK for both CRUD and query support.
-
-==== Additional query support
-
-Query support for Neo4j::
-Support JP-QL and native queries.
-
-Query support for CouchDB::
-Support JP-QL and native queries.
-
-Move to proper OgmLoader implementations::
-Discuss how to properly load objects via the OgmLoader approach.
-
-Cache query plans::
-Look at Hibernate ORM's HQLQueryPlan which essentially caches results
-of a query translator which in term calls the entity loader.
-A similar design or even interface result is probably possible
-
-Various query improvements::
-* Make sure flush is executed before a query.
-* Support for projection
-
-=== Hibernate OGM 4.1 Beta CR1
-
-Additional key/value cache structure::
-Store each entity type and association in a dedicated cache.
-Use this strategy as default since it is more eficient and it has more natural mapping.
-
-Improve mapping of emebedded objects, embedded ids and properties::
-Represent embedded nodes as individual nodes in Neo4j.
-Store emebedded id foreign keys as nested document in MongoDB.
-
-=== Hibernate OGM 4.1 Beta 8
-
-Optimistic locking detection::
-Support optimistic locking detection for datastores which provide atomic find-and-update operations.
-
-Performance improvements::
-Reduce the amount fo round trips to the datastore.
-
-=== Hibernate OGM 4.1 Beta 7
-
-Support ObjectId in MongoDB::
-Map object ids either directly via MongoDB’s [classname]+org.bson.types.ObjectId+ type or using a +String+.
-
-API/SPI internal split::
-Clear separation among API, SPI and internal packages in preparation for the final release.
-
-=== Hibernate OGM 4.1 Beta 6
-
-Query improvements::
-* Support polymorphic queries on datastores that don't use Hibernate Search (Neo4j and MongoDB).
-* All pending changes to entities of the effected types will be flushed to the datastore in order
-  to ensure queries don't return any stale data.
-* Cache native queries derived from JP-QL queries.
-
-Improve associations mapping in Neo4j::
-Remove redundant properties from relationships when mapping associations in Neo4j.
-
-Simplified version management::
-Provide a BOM (Bill of Materials) for maven users.
-
-=== Hibernate OGM 4.1 Beta 5
-
-Conversion from JP-QL to Cypher::
-Convert JP-QL queries in Cypher queris when working with Neo4j.
-
-More natural mapping for associations in MongoDB and CouchDB::
-Use a more concise representation when storing associations.
-
-=== Hibernate OGM 4.1 Beta 4
-
-Support for MongoDB CLI syntax::
-Express native queries in MongoDB using the CLI syntax.
-
-Improve mapping of associations in Neo4j::
-In Neo4j, a bi-directional association is now mapped using a single relationship.
-
-=== Hibernate OGM 4.1 Beta 3
-
-Improve query support around projection and operators::
-* operators =, <, <=, >, =, IN, LIKE, BETWEEN
-* boolean combinations: AND, OR, NOT
-* Support for simple property projections
-
-JP-QL query support for MongoDB::
-Convert JP-QL queries into MongoQL queries and run them to retrieve entities. 
-
-Discriminator based hierarchy::
-When using the single table per class strategy for the mapping of hierachies,
-a column will be added to differentiate between entity types in a hierarchy.
-
-Support for Hibernate Search mass indexing::
-When using Hibernate Search in conjunction with Hibernate OGM,
-you can now index entities using the MassIndexer
-
-=== Hibernate OGM 4.1 Beta 2
-
-New integration modules::
-Add integration modules for Wildfly (ex-JBoss AS) and EAP.
-
-=== Hibernate OGM 4.1 Beta 1
-
-Annotation based option system::
-Each datastore can use specific annotations to customize its behavior.
-The user can use either annotations or a programmatic API
-
-* offer ability for each dialect to react to metadata specific information
-* programmatic and annotation based
-* for different scopes: generic, type and properties
-* retrofit this for MongoDB's options
-
-CRUD support for CouchDB::
-Support the CouchDB document DB to read and store entities and associations.
-
-JPA related improvements::
-Compatibility with JPA 2.1 and Hibernate ORM 4.3. +
-Support for the various +EntityManager.createQuery+ methods including named queries.
-
-Batch changes per transactions::
-Offer the [classname]+GridDialect+ the option to receive a batch of operations
-to execute. Some drivers are better that way and can increase the isolation level.
-MongoDB is the first dialect benefiting from that support.
-
-=== Hibernate OGM 4.0 Beta4
-
-CRUD support for Neo4j::
-Support the Neo4j Graph DB to read and store entities and associations.
-
-Native query::
-Offer the ability to pass a native backend query and bind the result to an entity.
-All flexibility of the native underlying query system is available
-at the cost of portability.
-
-Use immutable metadata info to lower memory pressure::
-Data passed to the [classname]+GridDialect+ are made of:
-
-* an object specific data (id etc)
-* an object type generic data (table name, column name etc)
-
-+
-The object type information could be shared to lower memory consumption
-and avoid the object creation cost.
-
-=== Hibernate OGM 4.0 Beta3
-
-Improved query support around projection and operators::
-Supported operators $$=, <, <=, >, =>, IN, LIKE, BETWEEN$$. +
-Supported boolean combinations: AND, OR, NOT. +
-Support for simple property projections and embedded objects.
-
-JP-QL query support for MongoDB::
-Execute JP-QL queries as MongoDB queries.
-
-Discriminator based hierarchy::
-Support for hierarchy of classes using a discriminator column as defined by JPA.
-
-JBoss AS 7 integration module::
-Add Hibernate OGM support by copying the module in the JBoss AS module repository.
-
-Support for Hibernate Search mass indexing::
-Mass indexing now works out of the box when using Hibernate OGM.
-
-Upgrade to Hibernate ORM 4.2 and JPA 2.1::

@@ -1,3 +1,31 @@
 :awestruct-layout: project-releases-series
 :awestruct-project: ogm
 :awestruct-series_version: "5.1"
+
+=== Core
+
+==== Hibernate ORM 5.1 support
+
+As of Hibernate OGM 5.1, the version of ORM to use with OGM is 5.1 (use the latest micro version).
+
+==== Hibernate Search 5.6 support
+
+OGM now can integrate with Hibernate Search 5.6 which supports Elasticsearch. So you can index your NoSQL data into Elasticsearch just by adding a few annotations to your entities.
+
+==== Operation grouping
+
+Due to the nature of OGM, it is possible to optimize some operations by grouping them (for instance the creation of a document and the additional updates). OGM 5.1 introduces a grouping infrastructure that will be generalized to all the dialects in future versions.
+
+=== Datastores
+
+==== Infinispan
+
+OGM can now talk with a remote Infinispan cluster via http://infinispan.org/docs/stable/user_guide/user_guide.html#using_hot_rod_server[the Hot Rod protocol] (previously, it only supported Infinispan in embedded mode).
+
+==== Neo4j
+
+OGM can now talk with a remote Neo4j cluster via both the http://boltprotocol.org[Bolt] protocol and the http://neo4j.com/docs/rest-docs/current[HTTP interface] (previously, it only supported Neo4j in embedded mode).
+
+==== MongoDB
+
+OGM 5.1 supports https://docs.mongodb.com/manual/aggregation/#aggregation-pipeline[aggregation] in MongoDB native queries using the https://docs.jboss.org/hibernate/stable/ogm/reference/en-US/html_single/#ogm-mongodb-cli-syntax[CLI syntax].

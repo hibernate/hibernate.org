@@ -1,3 +1,32 @@
 :awestruct-layout: project-releases-series
 :awestruct-project: ogm
 :awestruct-series_version: "5.2"
+
+=== Project organization
+
+We have split the dialects in 2:
+
+ * the ones maintained in the main repository: Infinispan, MongoDB, Neo4j
+ * the ones maintained by the community which have been moved to separate repositories: https://github.com/hibernate/hibernate-ogm-cassandra[Cassandra], https://github.com/hibernate/hibernate-ogm-couchdb[CouchDB], https://github.com/hibernate/hibernate-ogm-ehcache[EhCache], https://github.com/hibernate/hibernate-ogm-ignite[Apache Ignite] and https://github.com/hibernate/hibernate-ogm-redis[Redis]
+
+=== Core
+
+OGM now requires Java 8 or later.
+
+=== Datastores
+
+==== Infinispan
+
+ * Upgrade to Infinispan 9.1
+ * Operation grouping: OGM automatically groups write operations when it is possible.
+
+==== MongoDB
+
+ * We upgraded to the MongoDB 3 API
+ * Support distinct operations in native queries
+ * Support Map/Reduce operations in native queries
+ * Remove Fongo dialect as it wasn't really useful and it generated some maintenance burden
+
+==== Neo4j
+
+ * Fixed a few bugs related to some specific mappings

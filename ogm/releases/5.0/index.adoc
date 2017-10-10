@@ -1,3 +1,30 @@
 :awestruct-layout: project-releases-series
 :awestruct-project: ogm
 :awestruct-series_version: "5.0"
+
+=== Core
+
+ * Upgrade to Hibernate ORM 5 and Hibernate Search 5: OGM can be used with WildFly 10
+ * Support for the JPA `@PostLoad` annotation
+ * Support for `@Lob` mapping
+ * Support for multiget
+
+=== Datastores
+
+==== Infinispan
+
+Upgrade to Infinispan 8.
+
+==== MongoDB
+
+The MongoDB CLI syntax now supports additional operations (`findOne`, `findAndModify`, `insert`, `remove` and `update`) and functions.
+
+The MongoDB driver has been upgraded to version 3.
+
+==== Cassandra
+
+Support for the new datatypes introduced in Cassandra 2.2.
+
+==== Redis
+
+Redis support is included as a tech preview including Redis cluster support and hash mapping.
