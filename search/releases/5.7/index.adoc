@@ -1,3 +1,18 @@
 :awestruct-layout: project-releases-series
 :awestruct-project: search
 :awestruct-series_version: "5.7"
+
+=== Hibernate ORM 5.2 upgrade
+
+Hibernate Search 5.7 adds compatibility with Hibernate ORM 5.2,
+and is no longer compatible with Hibernate ORM 5.1 and below.
+
+[WARNING]
+====
+Hibernate Search 5.7 is only compatible with Hibernate ORM 5.2.3 and later.
+There isn't any version of Hibernate Search compatible with Hibernate ORM 5.2.0 to 5.2.2.
+====
+
+=== Java 8 upgrade
+
+Hibernate Search now requires Java 8.
