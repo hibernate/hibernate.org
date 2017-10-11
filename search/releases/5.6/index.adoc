@@ -1,3 +1,68 @@
 :awestruct-layout: project-releases-series
 :awestruct-project: search
 :awestruct-series_version: "5.6"
+
+=== Experimental Elasticsearch integration
+
+A new, experimental Elasticsearch integration was introduced in this series.
+
+With the Elasticsearch integration, rather than indexing your entities directly by managing the Lucene resources,
+Hibernate Search will be sending RPCs to an Elasticsearch cluster to achieve a very similar purpose:
+after all it is also Lucene based, so the feature match is extremely close!
+
+Since Hibernate Search will transparently map all the current features to this new alternative backend,
+you will be able to switch to a new architecture with only minimal changes in your applications.
+For most users the differences will be mostly in configuration details.
+
+When using Elasticsearch, Hibernate Search will need to send RPCs over the network
+to run queries and index updates,
+but on the other hand you benefit from _Microservices_ - style decoupling and all the nice features
+that Elasticsearch can provide in terms of running and managing an horizontally scalable cluster.
+
+To know more about this integration, check out the
+http://docs.jboss.org/hibernate/search/5.6/reference/en-US/html_single/#elasticsearch-integration[Elasticsearch chapter]
+in the documentation.
+
+=== Sort DSL
+
+The QueryBuilder interface now has an additional `sort()` method,
+allowing to easily build sort definitions regardless of the underlying technology
+(raw Lucene or Elasticsearch),
+and without worrying about numeric field types:
+
+[source, JAVA]
+----
+QueryBuilder builder = fullTextSession.getSearchFactory()
+  .buildQueryBuilder().forEntity(Book.class).get();
+Query luceneQuery = builder.all().createQuery();
+FullTextQuery query = fullTextSession.createFullTextQuery( luceneQuery, Book.class );
+Sort sort = builder
+  .sort()
+    .byField("author").desc() // Descending order
+    .andByField("title") // Default order (ascending)
+  .createSort();
+query.setSort(sort);
+List results = query.list();
+----
+
+You can find more information in
+http://in.relation.to/2016/10/10/introducing-hibernate-search-sort-dsl/[this blog post]
+and in
+http://docs.jboss.org/hibernate/search/5.6/reference/en-US/html_single/#query-sorting[the documentation]
+
+=== Lucene upgrade
+
+The Lucene dependency was upgraded to 5.5.
+
+Also, do not think Lucene was forgotten in this series,
+since there were several bug fixes and performance improvements.
+See the release notes for details.
+
+=== Async reader strategy
+
+A new `async` reader strategy has been added for the Lucene integration,
+bringing performance boosts when you are okay with your queries being run
+on an out-of-date index (how much out-of-date is configurable).
+
+Refer to http://docs.jboss.org/hibernate/search/5.6/reference/en-US/html_single/#search-architecture-readerstrategy[the documentation]
+for more information.
