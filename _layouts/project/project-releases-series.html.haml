@@ -146,11 +146,9 @@ project_hero_partial: project/hero-series.html.haml
     %a{:href => "#{latest_release.announcement_url}"}
       #{latest_release.version}.
 
-- version_cleaner = page.project == 'orm' ? lambda {|v| v != '4.2.0.Final' && v != '4.3.0.Final' && v != '5.0.0.Final' && v =~ /^(.*).Final$/ ? $1 : v } : lambda {|v| v}
-- comma_separated_release_versions = series.releases.collect{|r| r.version}.collect!{|v| version_cleaner.call(v)}.join( "%2C%20" )
 %p
   A detailed list of new features, improvements and fixes in this series can be found
-  %a{:href => "https://hibernate.atlassian.net/issues/?jql=project%20%3D%20#{project_description.jira['key']}%20AND%20fixVersion%20in%20(#{comma_separated_release_versions})%20ORDER%20BY%20updated"}
+  %a{:href => jira_issues_for_series_url(project_description, series)}
     on our JIRA instance.
 
 ~ content
@@ -191,7 +189,7 @@ project_hero_partial: project/hero-series.html.haml
               %a.ui.small.right.labeled.button.icon{:href => "#{sourceforge_zip_url(project_description, release)}"}
                 %i.icon.cloud.download
                 Download
-            %a.ui.small.right.labeled.button.icon{:href => "https://hibernate.atlassian.net/issues/?jql=project%20%3D%20#{project_description.jira['key']}%20AND%20fixVersion%20in%20(#{version})%20ORDER%20BY%20updated"}
+            %a.ui.small.right.labeled.button.icon{:href => jira_issues_for_release_url(project_description, release)}
               %i.icon.bug
               Resolved issues
             - if release[:announcement_url]
