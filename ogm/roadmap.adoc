@@ -12,7 +12,7 @@ You can find a finer grained roadmap in our https://hibernate.atlassian.net/brow
 but this page is a good and concise view of where we are going.
 Dates are generally omitted, we release when we are ready.
 
-=== Hibernate OGM 5.2
+== Hibernate OGM 5.2
 
 Core::
 The minimal Java version will be Java 8.
@@ -30,14 +30,14 @@ Remove Fongo dialect
 Neo4j::
 Consolidation of some advanced mappings
 
-=== Hibernate OGM 5.3
+== Hibernate OGM 5.3
 
 Core::
 Upgrade to Hibernate ORM 5.2 +
 Upgrade to Hibernate Search 5.8 +
 Support for WildFly 11
 
-=== Hibernate OGM Next
+== Hibernate OGM Next
 
 Mapping strategies::
 Rethink the default values for the mapping approaches after more user feedback.
