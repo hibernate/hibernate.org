@@ -9,6 +9,7 @@
 :el-impl: #{latest_stable_release(page)['dependencies'].get_version('org.glassfish', 'javax.el')}
 
 Welcome to Hibernate Validator.
+
 The following paragraphs will guide you through the initial steps required to integrate
 Hibernate Validator into your application.
 
@@ -42,10 +43,12 @@ This transitively pulls in the dependency to the Bean Validation API
 Hibernate Validator also requires an implementation of the Unified Expression Language
 (http://jcp.org/en/jsr/detail?id=341[JSR 341]) for evaluating dynamic expressions in constraint
 violation messages.
+
 When your application runs in a Java EE container such as http://wildfly.org/[WildFly], an EL implementation is already
 provided by the container.
+
 In a Java SE environment, however, you have to add an implementation as dependency to your POM file.
-For instance, you can add the following two dependencies to use the JSR 341 reference implementation:
+For instance, you can add the following dependency to use the JSR 341 reference implementation:
 
 ====
 [source,xml]
