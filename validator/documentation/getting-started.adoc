@@ -14,7 +14,7 @@ Hibernate Validator into your application.
 
 == Prerequisites
 
-* http://www.oracle.com/technetwork/java/index.html[Java Runtime] &gt;= 6
+* http://www.oracle.com/technetwork/java/index.html[Java Runtime] &gt;= 8
 * http://maven.apache.org[Apache Maven]
 
 == Project set up
@@ -99,15 +99,15 @@ import javax.validation.constraints.Size;
 
 public class Car {
 
-@NotNull
-private String manufacturer;
+   @NotNull
+   private String manufacturer;
 
-@NotNull
-@Size(min = 2, max = 14)
-private String licensePlate;
+   @NotNull
+   @Size(min = 2, max = 14)
+   private String licensePlate;
 
-@Min(2)
-private int seatCount;
+   @Min(2)
+   private int seatCount;
 
    public Car(String manufacturer, String licencePlate, int seatCount) {
       this.manufacturer = manufacturer;
