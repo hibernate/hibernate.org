@@ -1,0 +1,12 @@
+:awestruct-layout: project-releases-series
+:awestruct-project: search
+:awestruct-series_version: "5.9"
+
+[[jsr352]]
+=== JSR 352 (Batch for Java) mass indexing job
+
+A JSR 352 mass indexing job was added, adding in particular the ability to restart
+from a checkpoint when indexing fails.
+
+See https://docs.jboss.org/hibernate/search/5.9/reference/en-US/html_single/#jsr352-integration[the documentation]
+for more information.

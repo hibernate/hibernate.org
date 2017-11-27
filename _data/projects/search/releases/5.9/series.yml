@@ -1,0 +1,26 @@
+summary: JSR 352 (Batch for Java) mass indexing job, improvements and deprecations paving the road to Search 6
+displayed: true
+artifacts:
+  - artifact_id: hibernate-search-orm
+    summary: Hibernate ORM integration
+  - artifact_id: hibernate-search-elasticsearch
+    summary: Elasticsearch integration
+  - artifact_id: hibernate-search-elasticsearch-aws
+    summary: Amazon IAM authentication for Elasticsearch
+  - artifact_id: hibernate-search-backend-jgroups
+    summary: JGroups backend
+  - artifact_id: hibernate-search-backend-jms
+    summary: JMS backend
+  - artifact_id: hibernate-search-jsr352-core
+    summary: JSR 352 (Batch for Java) integration - Core
+  - artifact_id: hibernate-search-jsr352-jberet
+    summary: JSR 352 (Batch for Java) integration - JBeret specifics
+integration_constraints:
+  java:
+    version: 8+
+  orm:
+    version: 5.2 (>= 5.2.3.Final)
+  elasticsearch:
+    version: 2.0 - 5.6
+  lucene:
+    version: 5.5
