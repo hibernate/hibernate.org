@@ -38,6 +38,23 @@ layout: base
           %i.grid.icon.users
           Community
 
+        .ui.dropdown.link.item{:class => "#{(current_path.start_with?( '/community/contributors/' ) ? "selected" : "")}"}
+          Contributors
+          %i.icon.dropdown
+          .menu
+            - href = "/community/contributors/orm/"
+            %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "selected" : "")}"}
+              Hibernate ORM
+            - href = "/community/contributors/search/"
+            %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "selected" : "")}"}
+              Hibernate Search
+            - href = "/community/contributors/validator/"
+            %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "selected" : "")}"}
+              Hibernate Validator
+            - href = "/community/contributors/ogm/"
+            %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "selected" : "")}"}
+              Hibernate OGM
+
         - href = "/community/license/"
         - active = (href == "/community/" && href == current_path) || (href != "/community/" && current_path.start_with?(href))
         %a.item{:href => "#{relative(href)}", :class => "#{(active ? "active" : "")}"}
@@ -46,3 +63,8 @@ layout: base
 
     .column.thirteen.wide.computer.sixteen.wide.mobile
       ~ content
+
+:javascript
+  $(document).ready(function() {
+    $('.ui.menu .ui.dropdown').dropdown({ on: 'hover' });
+  });

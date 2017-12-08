@@ -1,0 +1,52 @@
+---
+layout: community-standard
+---
+
+.ui.icon.message
+  %i.icon.users
+  .content
+    Here is a list of the most active contributors to the #{page.project_name} project. Want the full list? Go to our
+    %a(href='https://github.com/hibernate/#{page.project_id}/graphs/contributors') GitHub page
+    \.
+
+%p &nbsp;
+
+.text-center#contributor-loader
+  %i.notched.circle.loading.icon.massive
+
+.ui.four.column.grid.stackable#contributor-list(style="display:none")
+
+// Unfortunately, matchHeight doesn't follow the same convention as the other minified files
+%script(src="#{site.match_height_js_url}#{site.minified ? '-min' : ''}.js")
+
+:javascript
+  $(document).ready(function() {
+  });
+
+
+:javascript
+  $(document).ready(function() {
+    var contributorsNameMapping;
+    $.getJSON( "/community/contributors/contributors-name-mapping.json", function( data ) {
+      contributorsNameMapping = data;
+    });
+    $.getJSON( "https://api.github.com/repos/hibernate/#{page.project_id}/contributors", function( data ) {
+      var items = [];
+      data.forEach( function( contributor ) {
+        var contributorName = contributorsNameMapping ? (contributorsNameMapping[contributor.login] ? contributorsNameMapping[contributor.login] : contributor.login) : contributor.login;
+        items.push( $( '<div class="column"/>' )
+          .append(
+            $( '<div class="ui card"/>' )
+              .append( $( '<div class="image"/>' ).append( $('<img src="' + contributor.avatar_url + '" />' ) ) )
+              .append( $( '<div class="content" />' ).append( $( '<div class="header" />' ).append( $( '<a href="' + contributor.html_url + '" />' ).text( contributorName ) ) ) )
+              .append( $( '<div class="extra content" />' ).append( $( '<span class="right floated" />' ).text( contributor.contributions + ' commit' + ( contributor.contributions > 1 ? 's' : '' ) ) ) )
+            )
+        );
+      });
+
+      $( '#contributor-list' ).append( items );
+      $( '#contributor-list .card' ).matchHeight({ byRow: true });
+      $( '#contributor-loader' ).hide();
+      $( '#contributor-list' ).fadeIn();
+    });
+  });
