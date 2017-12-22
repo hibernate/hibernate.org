@@ -610,6 +610,24 @@ pre .comment .conum {
 }
 
 /**
+ * Community
+ */
+
+.main-sponsor {
+	background-color: #F8F8F8;
+	border: 1px solid #DDD;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-top: 20px;
+	margin-bottom: 40px;
+	border-radius: 5px;
+
+	.ui.items > .item > .image:not(.ui) {
+		width: 250px;
+	}
+}
+
+/**
  * Footer
  */
 
@@ -644,6 +662,10 @@ pre .comment .conum {
 
 .ui.grid .column.divided {
 	border-left: 1px solid #CCC;
+}
+
+.ui.items > .item > .content > a.header {
+    color: #4183C4;
 }
 
 // Semantic UI has these classes, however they're only applicable to

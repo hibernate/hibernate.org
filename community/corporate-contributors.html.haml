@@ -1,0 +1,108 @@
+---
+layout: community-standard
+title: Corporate contributors
+---
+
+%h2 Corporate contributors
+
+.main-sponsor
+  .ui.items.relaxed
+    .item
+      .image
+        %a(href='https://www.redhat.com/')
+          %img{:src => "#{relative("/images/contributors/redhat.png", page)}"}
+      .content
+        %a.header(href='https://www.redhat.com/') Red Hat, Inc.
+        .description
+          %p Red Hat, Inc. is the main sponsor of the Hibernate projects.
+          %p It funds the development of all the Hibernate portfolio.
+          %p The Hibernate projects are productized to be part of the Red Hat® JBoss® Middleware line of products.
+        .extra.content
+          %a.ui.blue.label(href='/orm/') Hibernate ORM
+          %a.ui.blue.label(href='/search/') Hibernate Search
+          %a.ui.blue.label(href='/validator/') Hibernate Validator
+          %a.ui.blue.label(href='/ogm/') Hibernate OGM
+          %a.ui.blue.label(href='/tools/') Hibernate Tools
+
+.ui.three.column.grid.stackable#contributors
+  .column
+    .ui.card.fluid
+      .image
+        %a(href='https://www.epam.com/')
+          %img{:src => "#{relative("/images/contributors/epam.png", page)}"}
+      .content
+        .header
+          %a(href='https://www.epam.com/') EPAM Systems, Inc.
+        .description
+          %p EPAM Systems, Inc. provides complex software engineering solutions and technology services with delivery capacity distributed across Central and Eastern Europe. It delivers services to clients located primarily in North America, Western Europe, and Central and Eastern Europe or CEE.
+          %p EPAM Systems, Inc. contributes developers time to the Hibernate OGM project.
+      .extra.content
+        %a.ui.blue.label(href='/ogm/') Hibernate OGM
+  -#.column
+    .ui.card.fluid
+      .image
+        %a(href='https://www.sap.com/')
+          %img{:src => "#{relative("/images/contributors/sap.png", page)}"}
+      .content
+        .header
+          %a(href='https://www.sap.com/') SAP
+        .description
+          %p SAP contributes the SAP HANA dialect to the Hibernate ORM project.
+      .extra.content
+        %a.ui.blue.label(href='/orm/') Hibernate ORM
+
+%p &nbsp;
+
+%h2 Infrastructure providers
+
+.ui.relaxed.divided.items
+  .item
+    .image
+      %a(href='https://www.redhat.com/')
+        %img{:src => "#{relative("/images/contributors/redhat.png", page)}"}
+    .content
+      %a.header(href='https://www.redhat.com/') Red Hat
+      .description
+        %p Red Hat provides funding for our official CI infrastructure based on Jenkins.
+  .item
+    .image
+      %a(href='https://www.atlassian.com/')
+        %img{:src => "#{relative("/images/contributors/atlassian.svg", page)}"}
+    .content
+      %a.header(href='https://www.atlassian.com/') Atlassian
+      .description
+        %p Atlassian provides us free instances of JIRA and HipChat.
+  .item
+    .image
+      %a(href='https://github.com/')
+        %img{:src => "#{relative("/images/contributors/github.png", page)}"}
+    .content
+      %a.header(href='https://github.com/') GitHub
+      .description
+        %p Our source code is hosted on GitHub.
+  .item
+    .image
+      %a(href='https://travis-ci.org/')
+        %img{:src => "#{relative("/images/contributors/travis-ci.png", page)}"}
+    .content
+      %a.header(href='https://travis-ci.org/') Travis CI
+      .description
+        %p We also use Travis CI to benefit from CI in our personal forks.
+  .item
+    .image
+      %a(href='https://www.discourse.org/')
+        %img{:src => "#{relative("/images/contributors/discourse.png", page)}"}
+    .content
+      %a.header(href='https://www.discourse.org/') Discourse
+      .description
+        %p Our community forums are hosted on a free instance provided by Discourse.
+
+// Unfortunately, matchHeight doesn't follow the same convention as the other minified files
+%script(src="#{site.match_height_js_url}#{site.minified ? '-min' : ''}.js")
+
+:javascript
+  $(document).ready(function() {
+    $('#contributors .image').matchHeight({ byRow: true });
+    $('#contributors .card').matchHeight({ byRow: true });
+  });
+

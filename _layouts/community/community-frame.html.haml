@@ -33,7 +33,7 @@ layout: base
         - current_path = page.output_path.sub(/index\.html$/, "").sub(/\.html$/,"/")
 
         - href = "/community/"
-        - active = (href == "/community/" && href == current_path) || (href != "/community/" && current_path.start_with?(href))
+        - active = (href == current_path)
         %a.item{:href => "#{relative(href)}", :class => "#{(active ? "active" : "")}"}
           %i.grid.icon.users
           Community
@@ -55,8 +55,14 @@ layout: base
             %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "selected" : "")}"}
               Hibernate OGM
 
+        - href = "/community/corporate-contributors/"
+        - active = (href == current_path)
+        %a.item{:href => "#{relative(href)}", :class => "#{(active ? "active" : "")}"}
+          %i.grid.icon.building.outline
+          Corporate contributors
+
         - href = "/community/license/"
-        - active = (href == "/community/" && href == current_path) || (href != "/community/" && current_path.start_with?(href))
+        - active = (href == current_path)
         %a.item{:href => "#{relative(href)}", :class => "#{(active ? "active" : "")}"}
           %i.grid.icon.legal
           Licenses
