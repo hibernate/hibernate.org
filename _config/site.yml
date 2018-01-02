@@ -23,6 +23,8 @@ google_plus:
   base_url: https://plus.google.com/112681342290762837955/posts
 in_relation_to:
   base_url: http://in.relation.to/
+forum:
+  base_url: https://discourse.hibernate.org/
 
 # project specific information
 projects:
@@ -110,7 +112,7 @@ projects:
           href: 'https://access.redhat.com/security/team/contact/'
           css_class: 'lock'
         - name: Forum
-          href: 'https://forum.hibernate.org'
+          href: 'https://discourse.hibernate.org/c/hibernate-orm'
           css_class: 'comments'
         - name: Wiki
           href: 'https://community.jboss.org/en/hibernate'
@@ -199,7 +201,7 @@ projects:
           href: 'https://access.redhat.com/security/team/contact/'
           css_class: 'lock'
         - name: Forum
-          href: 'https://forum.hibernate.org/viewforum.php?f=9'
+          href: 'https://discourse.hibernate.org/c/hibernate-search'
           css_class: 'comments'
         - name: Wiki
           href: 'https://community.jboss.org/en/hibernate/search'
@@ -251,7 +253,7 @@ projects:
           href: 'https://access.redhat.com/security/team/contact/'
           css_class: 'lock'
         - name: Forum
-          href: 'https://forum.hibernate.org'
+          href: 'https://discourse.hibernate.org/c/hibernate-tools'
           css_class: 'comments'
         - name: Wiki
           href: 'https://community.jboss.org/en/tools'
@@ -335,7 +337,7 @@ projects:
           href: 'https://access.redhat.com/security/team/contact/'
           css_class: 'lock'
         - name: Forum
-          href: 'https://forum.hibernate.org'
+          href: 'https://discourse.hibernate.org/c/hibernate-validator'
           css_class: 'comments'
         - name: Wiki
           href: 'https://community.jboss.org/en/hibernate/validator'
@@ -422,7 +424,7 @@ projects:
           href: 'https://access.redhat.com/security/team/contact/'
           css_class: 'lock'
         - name: Forum
-          href: 'https://forum.hibernate.org/viewforum.php?f=31'
+          href: 'https://discourse.hibernate.org/c/hibernate-ogm'
           css_class: 'comments'
         - name: CI
           href: 'http://ci.hibernate.org/job/hibernate-ogm-master/'
