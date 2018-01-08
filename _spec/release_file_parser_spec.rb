@@ -1,10 +1,3 @@
-require 'awestruct/logger'
-# need to create the logger prior to loading the engine module to avoid errors when the code
-# tries to access the logger
-$LOG = Logger.new(Awestruct::AwestructLoggerMultiIO.new)
-$LOG.level = Logger::DEBUG
-$LOG.formatter = Awestruct::AwestructLogFormatter.new
-
 require 'awestruct/engine'
 require 'awestruct/config'
 require 'awestruct/cli/options'

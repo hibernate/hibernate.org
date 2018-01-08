@@ -1,9 +1,15 @@
-require 'awestruct/logger'
+require 'logging'
+
 # need to create the logger prior to loading the engine module to avoid errors when the code
 # tries to access the logger
-$LOG = Logger.new(Awestruct::AwestructLoggerMultiIO.new)
-$LOG.level = Logger::DEBUG
-$LOG.formatter = Awestruct::AwestructLogFormatter.new
+Logging.init :trace, :debug, :verbose, :info, :warn, :error, :fatal
+$LOG = Logging.logger.new 'awestruct'
+$LOG.add_appenders(
+		Logging.appenders.stdout({level: :info,
+									layout: Logging.layouts.pattern(pattern: "%m\n", format_as: :string),
+									color_scheme: :default})
+)
+$LOG.level = :info
 
 require_relative '../_ext/release_file_parser'
 
