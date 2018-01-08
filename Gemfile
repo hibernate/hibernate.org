@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gem 'awestruct', '0.5.7'
 gem 'nokogiri'
 gem 'sass'
+gem 'json'
 gem 'logging'
 
 gem 'uglifier'         # Ruby wrapper for UglifyJS JavaScript compressor
