@@ -1,4 +1,5 @@
 - real_page = page['real_page']
+- current_path = real_page.output_path.sub(/index\.html$/, "").sub(/\.html$/,"/")
 
 .ui.vertical.inverted.sidebar.left#mobile-menu
   .ui.vertical.fluid.inverted.text.menu.accordion
@@ -9,8 +10,46 @@
     = partial( 'mobile-menu-section.html.haml', { 'project_name' => 'Tools', 'project_key' => 'tools', 'project_icon' => 'wrench', 'real_page' => real_page } )
     %a.item(href="/others/")
       Others
+    - community_active = current_path.start_with?("/community/")
+    .item
+      %a.title{:class => "#{(community_active ? "active" : "")}"}
+        %i.grid.icon.users
+        %i.dropdown.icon
+        %strong Community
+      .content{:class => "#{(community_active ? "active" : "")}"}
+        .menu.external-links
+          - item_active = (current_path == '/community/')
+          %a.item(href="/community/"){:class => "#{(item_active ? "active" : "")}"}
+            %i.grid.icon.users
+            Community
+          - item_active = (current_path == '/community/contributors/orm/')
+          %a.item(href="/community/contributors/orm/"){:class => "#{(item_active ? "active" : "")}"}
+            %i.grid.icon.database
+            Contributors to ORM
+          - item_active = (current_path == '/community/contributors/search/')
+          %a.item(href="/community/contributors/search/"){:class => "#{(item_active ? "active" : "")}"}
+            %i.grid.icon.search
+            Contributors to Search
+          - item_active = (current_path == '/community/contributors/validator/')
+          %a.item(href="/community/contributors/validator/"){:class => "#{(item_active ? "active" : "")}"}
+            %i.grid.icon.checkmark.box
+            Contributors to Validator
+          - item_active = (current_path == '/community/contributors/ogm/')
+          %a.item(href="/community/contributors/ogm/"){:class => "#{(item_active ? "active" : "")}"}
+            %i.grid.icon.sitemap
+            Contributors to OGM
+          - item_active = (current_path == '/community/corporate-contributors/')
+          %a.item(href="/community/corporate-contributors/"){:class => "#{(item_active ? "active" : "")}"}
+            %i.grid.icon.building.outline
+            Corporate contributors
+          - item_active = (current_path == '/community/license/')
+          %a.item(href="/community/license/"){:class => "#{(item_active ? "active" : "")}"}
+            %i.grid.icon.legal
+            Licenses
     %a.item(href="#{site.in_relation_to.base_url}")
       Blog
+    %a.item(href="#{site.forum.base_url}")
+      Forums
     %a.item(href="#{site.twitter.base_url}")
       %i.icon.twitter
       Follow us
