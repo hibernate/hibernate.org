@@ -17,6 +17,7 @@
     %a.item{:href => "/others/", :class=>"#{'active' if real_page.output_path.start_with?('/others') }"} Others
     .right.menu
       %a.item(href="#{site.in_relation_to.base_url}") Blog
+      %a.item(href="#{site.forum.base_url}") Forums
       %a.item{:href => "/community/", :class=>"#{'active' if real_page.output_path.start_with?('/community') }" } Community
       %a.item(href="#{site.twitter.base_url}")
         %i.twitter.icon
