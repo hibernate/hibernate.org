@@ -10,26 +10,33 @@ Hibernate Search is a community driven project and as such the roadmap constantl
 
 You can find a finer grained roadmap in our https://hibernate.atlassian.net/browse/HSEARCH[issue tracker] but this page is a good and concise view of where we are going.
 
-Dates are generally omitted: while milestones are released regularly, the Final release is tagged when it's considered stable.
-
+Dates are generally omitted: milestones are released regularly, the Final release is tagged when it's considered stable.
 
 == Hibernate Search 5.9
-
-Elasticsearch performance::
-We applied some performance improvements in version 5.8 but there are several more interesting ideas to explore which could provide a radical boost.
-
-WildFly Swarm::
-http://wildfly-swarm.io/[WildFly Swarm] is the new fine-grained modular version of http://wildfly.org/[WildFly] aiming at microservices.
-We should make sure Hibernate Search is integrated properly and the usage is documented.
-
-Modularity related enhancements::
-Some code needs to be moved to different jars to improve the experience with OSGi, JBoss Modules and eventually Java 9 (Jigsaw) users.
-For example the integration with Apache Tika should be moved to allow loading additional extensions which haven't been originally bundled with Hibernate Search.
 
 JSR-352 (Batch Applications for the Java Platform) integration::
 Since last year, Mincong Huang worked on a JSR-352 job for Hibernate Search mass indexing.
 We plan to do some performance testing (and optimization if necessary), then merge this work as a new module.
 
+Feature Packs::
+Both http://wildfly.org/[WildFly] and http://wildfly-swarm.io/[WildFly Swarm] prefer consuming "WildFly Feature Packs" rather than jar files or zip bundles.
+We plan on distributing proper feature packs to make consumption of the latest version of Hibernate Search easier on these platforms.
+
+Modularity related enhancements::
+Some code needs to be moved to different jars to improve the experience with OSGi, JBoss Modules and eventually Java 9 (Jigsaw) users.
+For example the integration with Apache Tika should be moved to allow loading additional extensions which haven't been originally bundled with Hibernate Search.
+
+== Hibernate Search 5.10
+
+Hibernate ORM 5.3, JPA 2.2::
+Hibernate ORM 5.3 is coming and will feature full support for `JPA 2.2`. This will require us to update several APIs.
+
+WildFly Swarm::
+http://wildfly-swarm.io/[WildFly Swarm] is the new fine-grained modular version of http://wildfly.org/[WildFly] aiming at microservices.
+We should make sure Hibernate Search is integrated properly and the usage is documented. Essentially continue the work started with feature packs in `5.9`.
+
+Elasticsearch performance::
+We applied several performance improvements in previous versions, but there are some more interesting ideas to explore.
 
 == Hibernate Search 6.x
 
