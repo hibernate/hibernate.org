@@ -15,6 +15,14 @@ artifacts:
     summary: JSR 352 (Batch for Java) integration - Core
   - artifact_id: hibernate-search-jsr352-jberet
     summary: JSR 352 (Batch for Java) integration - JBeret specifics
+  - artifact_id: hibernate-search-jbossmodules-engine
+    summary: JBoss feature pack - Engine
+  - artifact_id: hibernate-search-jbossmodules-orm
+    summary: JBoss feature pack - Hibernate ORM integration
+  - artifact_id: hibernate-search-jbossmodules-elasticsearch
+    summary: JBoss feature pack - Elasticsearch integration
+  - artifact_id: hibernate-search-jbossmodules-elasticsearch
+    summary: JBoss feature pack - Amazon IAM authentication for Elasticsearch
 integration_constraints:
   java:
     version: 8+
