@@ -10,3 +10,18 @@ from a checkpoint when indexing fails.
 
 See https://docs.jboss.org/hibernate/search/5.9/reference/en-US/html_single/#jsr352-integration[the documentation]
 for more information.
+
+[[wildfly-feature-packs]]
+=== JBoss modules now distributed as feature packs
+
+The Hibernate Search JBoss Modules, for use in WildFly or JBoss EAP,
+are now distributed as Wildfly feature packs, which makes provisioning
+a WildFly server with an upgraded Hibernate Search version easier than ever.
+The feature packs can also be consumed using http://wildfly-swarm.io/[WildFly Swarm].
+
+Also, the modules are now distributed as *multiple* feature packs,
+which means for example that you won't need to add the Elasticsearch clients
+to your server if you only use Lucene.
+
+See https://docs.jboss.org/hibernate/search/5.9/reference/en-US/html_single/#search-configuration-deploy-on-wildfly[the documentation]
+for more information on the available feature packs and how to consume them.
