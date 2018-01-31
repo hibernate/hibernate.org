@@ -77,6 +77,7 @@ projects:
         - name: Documentation
           href: '/orm/documentation/'
           css_class: 'folder open'
+          documentation_submenu: true
         - name: Books
           href: '/orm/books/'
           css_class: 'book'
