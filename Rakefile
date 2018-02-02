@@ -61,7 +61,7 @@ desc 'Build and preview the site locally in development mode. preview[<options>]
 task :preview, [:profile, :options] => :init do |task, args|
   profile = get_profile args
   options = args[:options]
-  run_awestruct "-P #{profile} --server --auto #{options}"
+  run_awestruct "-P #{profile} --server --auto --no-livereload #{options}"
 end
 
 desc 'Generate the site using the specified profile, default is \'development\'. Additional options can also be specified, eg \'gen[development, \'-w\']'
