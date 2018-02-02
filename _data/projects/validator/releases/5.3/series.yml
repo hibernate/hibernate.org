@@ -1,6 +1,12 @@
 summary: Dynamic constraint payload, parameter relaxation, new api for programmatic constraint definition, new translations.
 displayed: false
-group_id: org.hibernate
+maven:
+  group_id: org.hibernate
+  repo:
+    central:
+      artifact_id_pattern: hibernate-validator*
+    jboss:
+      artifact_id_pattern: hibernate-validator*
 artifacts:
   - artifact_id: hibernate-validator
     summary: Core implementation

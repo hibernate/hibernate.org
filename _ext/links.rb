@@ -1,6 +1,11 @@
 module Awestruct
   module Extensions
     module Links
+      def execute(site)
+        # keep reference to site
+        @site = site
+      end
+
       def doc_reference_url(project, series)
         suffix = series[:reference_doc_path]
         suffix ||= project.reference_doc_path
@@ -31,8 +36,26 @@ module Awestruct
         return project.reference_doc_prefix_url
       end
 
-      def jboss_nexus_search_url(group_id_pattern, artifact_id_pattern, version_pattern)
-        return "https://repository.jboss.org/nexus/index.html#nexus-search;gav~#{group_id_pattern}~#{artifact_id_pattern}~#{version_pattern}~~"
+      def maven_central_search_url(group_id_pattern, artifact_id_pattern, version_pattern)
+        search_string = ERB::Util.url_encode( "|ga|1|g:#{group_id_pattern} AND a:#{artifact_id_pattern} AND v:#{version_pattern}")
+        return "#{@site.maven.repo.central.web_ui_url}/#search#{search_string}"
+      end
+
+      def maven_jboss_search_url(group_id_pattern, artifact_id_pattern, version_pattern)
+        return "#{@site.maven.repo.jboss.web_ui_url}#nexus-search;gav~#{group_id_pattern}~#{artifact_id_pattern}~#{version_pattern}~~"
+      end
+
+      def maven_bintray_url(package)
+        return "#{@site.maven.repo.bintray.web_ui_url}/artifacts/#{package}"
+      end
+
+      def maven_bintray_version_url(package, version)
+        return "#{@site.maven.repo.bintray.web_ui_url}/artifacts/#{package}/#{version}"
+      end
+
+      def maven_central_artifact_url(group_id, artifact_id, version)
+        gav_string = ERB::Util.url_encode( "|#{group_id}|#{artifact_id}|#{version}|")
+        return "#{@site.maven.repo.central.web_ui_url}/#artifactdetails#{gav_string}"
       end
 
       def jira_issues_for_series_url(project, series)

@@ -224,13 +224,15 @@ module Awestruct
           return
         end
         series.each do |series|
+          series_maven = series[:maven] || {}
           if ( series.displayed.nil? || series.displayed )
             release = series.releases.first
-            group_id = release[:group_id]
-            group_id ||= series[:group_id]
+            release_maven = release[:maven] || {}
+            group_id = release_maven[:group_id]
+            group_id ||= series_maven[:group_id]
             group_id ||= project_maven[:group_id]
-            main_artifact_id = release[:main_artifact_id]
-            main_artifact_id ||= series[:main_artifact_id]
+            main_artifact_id = release_maven[:main_artifact_id]
+            main_artifact_id ||= series_maven[:main_artifact_id]
             main_artifact_id ||= project_maven[:main_artifact_id]
             if ( group_id != nil && main_artifact_id != nil )
               # Only download dependencies for the latest release in the series
@@ -322,20 +324,25 @@ module Awestruct
         else
           begin
             # try to download the pom from Central
-            doc = download_pom(@site[:maven].central_base_url, group_id, artifact_id, version, cached_pom)
+            doc = download_pom(@site.maven.repo.central.repo_url, group_id, artifact_id, version, cached_pom)
           rescue
             # if it fails, it might be because it wasn't synced yet so let's try to download it from JBoss Nexus
             begin
-              doc = download_pom(@site[:maven].jboss_nexus_base_url, group_id, artifact_id, version, cached_pom)
-            rescue => error
-              $LOG.warn "Release POM #{gav} not locally cached and unable to retrieve it either from Central or from JBoss Nexus"
-              if @site.profile == 'production'
-                $LOG.error error.message + "\n " + error.backtrace.join("\n ")
-                abort "Aborting site generation, since the production build requires the release POM information"
-              else
-                $LOG.warn error.message + "\n " + error.backtrace.join("\n ")
-                $LOG.warn "Continue build since we are building the '#{@site.profile}' profile. Note that variables interpolated from the release poms will not display\n"
-                return nil
+              doc = download_pom(@site.maven.repo.jboss.repo_url, group_id, artifact_id, version, cached_pom)
+            rescue
+              # last resort, try bintray
+              begin
+                doc = download_pom(@site.maven.repo.bintray.repo_url, group_id, artifact_id, version, cached_pom)
+              rescue => error
+                $LOG.warn "Release POM #{gav} not locally cached and unable to retrieve it from Central, from JBoss Nexus or from Bintray"
+                if @site.profile == 'production'
+                  $LOG.error error.message + "\n " + error.backtrace.join("\n ")
+                  abort "Aborting site generation, since the production build requires the release POM information"
+                else
+                  $LOG.warn error.message + "\n " + error.backtrace.join("\n ")
+                  $LOG.warn "Continue build since we are building the '#{@site.profile}' profile. Note that variables interpolated from the release poms will not display\n"
+                  return nil
+                end
               end
             end
           end

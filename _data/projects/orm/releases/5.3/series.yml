@@ -1,23 +1,4 @@
 summary: JPA 2.2, inheritance caching
-artifacts:
-  - artifact_id: hibernate-core
-    summary: Core implementation (includes JPA)
-  - artifact_id: hibernate-osgi
-    summary: OSGi integration
-  - artifact_id: hibernate-spatial
-    summary: Spatial support
-  - artifact_id: hibernate-envers
-    summary: Envers audit support
-  - artifact_id: hibernate-hikaricp
-    summary: HikariCP connection pooling
-  - artifact_id: hibernate-c3p0
-    summary: c3p0 connection pooling
-  - artifact_id: hibernate-proxool
-    summary: Proxool connection pooling
-  - artifact_id: hibernate-vibur
-    summary: Vibur connection pooling
-  - artifact_id: hibernate-ehcache
-    summary: Ehcache second-level caching
 integration_constraints:
   java:
     version: 8+

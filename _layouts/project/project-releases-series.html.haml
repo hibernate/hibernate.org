@@ -12,6 +12,17 @@ project_hero_partial: project/hero-series.html.haml
 - series = project_description.release_series[page.series_version]
 - latest_release = series.releases.first
 
+- project_maven = project_description[:maven] || {}
+- series_maven = series[:maven] || {}
+- latest_release_maven = latest_release[:maven] || {}
+
+- latest_release_group_id = latest_release_maven[:group_id]
+- latest_release_group_id ||= series_maven[:group_id]
+- latest_release_group_id ||= project_maven[:group_id]
+
+- maven_repo = series_maven[:repo]
+- maven_repo ||= project_maven[:repo]
+
 - if project_description.migration_guide_url.nil?
   - migration_page_url = '/' + page.project + '/documentation/migrate/' + series.version + '/'
   - # development releases may not have a migration guide yet
@@ -84,46 +95,75 @@ project_hero_partial: project/hero-series.html.haml
 
 %h2{:id => "get-it"} How to get it
 .ui.grid.equal.height.stackable.download-options
-  - if series[:artifacts]
+  - if maven_repo
     .eleven.wide.column
       %h3 Maven, Gradle...
-      %p
-        - nexus_search = project_description.maven.nexus_search
-        Maven artifacts of #{project_description.name} are published to Maven Central and to the
-        %a{:href => jboss_nexus_search_url(nexus_search.group_id_pattern, nexus_search.artifact_id_pattern, "#{series.version}.*")}
-          JBoss Maven Repository.
-        Refer to the
-        %a{:href => "http://community.jboss.org/wiki/MavenGettingStarted-Users"} Maven Getting Started guide
-        on the Jboss Wiki for more information on how to configure Maven.
-      %p
-        Below are the Maven coordinates of the main artifacts.
-      %dl.sparse
-        - series.artifacts.each do |artifact|
-          - group_id = latest_release[:group_id]
-          - group_id ||= series[:group_id]
-          - group_id ||= project_description.maven[:group_id]
-          - artifact_id = artifact.artifact_id
-          - version = latest_release.version
-          - summary = artifact[:summary]
-          - summary ||= artifact.artifact_id
-          %dt
-            %a.ui.label.large.blue{:href => jboss_nexus_search_url(group_id, artifact_id, version)}
-              #{group_id}:#{artifact_id}:#{version}
-          %dd= summary
-          - if false # disabled for now, takes too much vertical space
-            :asciidoc
-              :groupId: #{group_id}
-              :artifactId: #{artifact_id}
-              :version: #{version}
-              [source,xml]
-              [subs="verbatim,attributes"]
-              ----
-              <dependency>
-                  <groupId>{groupId}</groupId>
-                  <artifactId>{artifactId}</artifactId>
-                  <version>{version}</version>
-              </dependency>
-              ----
+      - if maven_repo[:bintray]
+        %p
+          Maven artifacts of #{project_description.name} are published to
+          %a{:href => site.maven.repo.central.web_ui_url}
+            Maven Central
+          and to
+          %a{:href => site.maven.repo.bintray.web_ui_url}
+            Bintray.
+      - elsif maven_repo[:jboss]
+        %p
+          Maven artifacts of #{project_description.name} are published to
+          %a{:href => site.maven.repo.central.web_ui_url}
+            Maven Central
+          and to the
+          %a{:href => site.maven.repo.jboss.web_ui_url}
+            JBoss Maven repository.
+          Refer to the
+          %a{:href => "http://community.maven.jboss.org/wiki/MavenGettingStarted-Users"} Maven Getting Started guide
+          on the JBoss Wiki for more information on how to configure the JBoss Maven repository.
+      - else
+        %p
+          Maven artifacts of #{project_description.name} are published to
+          %a{:href => site.maven.repo.central.web_ui_url}
+            Maven Central.
+      - if maven_repo[:bintray]
+        %p
+          You can find the Maven coordinates of all artifacts through the link below:
+          %p
+            %a.ui.right.labeled.button.primary.icon{:href => maven_bintray_url(maven_repo.bintray.package)}
+              %i.icon.cloud.cubes
+              Maven artifacts
+      - elsif maven_repo[:central]
+        %p
+          You can find the Maven coordinates of all artifacts through the link below:
+          %p
+            %a.ui.right.labeled.button.primary.icon{:href => maven_central_search_url(latest_release_group_id, maven_repo.central.artifact_id_pattern, latest_release.version)}
+              %i.icon.cloud.cubes
+              Maven artifacts
+      - if series[:artifacts]
+        %p
+          Below are the Maven coordinates of the main artifacts.
+        %dl.sparse
+          - series.artifacts.each do |artifact|
+            - group_id = latest_release_group_id
+            - artifact_id = artifact.artifact_id
+            - version = latest_release.version
+            - summary = artifact[:summary]
+            - summary ||= artifact.artifact_id
+            %dt
+              %a.ui.label.large.blue{:href => maven_central_artifact_url(group_id, artifact_id, version)}
+                #{group_id}:#{artifact_id}:#{version}
+            %dd= summary
+            - if false # disabled for now, takes too much vertical space
+              :asciidoc
+                :groupId: #{group_id}
+                :artifactId: #{artifact_id}
+                :version: #{version}
+                [source,xml]
+                [subs="verbatim,attributes"]
+                ----
+                <dependency>
+                    <groupId>{groupId}</groupId>
+                    <artifactId>{artifactId}</artifactId>
+                    <version>{version}</version>
+                </dependency>
+                ----
   .five.wide.column.divided
     %h3 Zip archive
     %p
@@ -164,29 +204,44 @@ project_hero_partial: project/hero-series.html.haml
 - unless series.nil?
   .ui.stackable.grid.series-versions
     - series.releases.each do |release|
-      - group_id = release[:group_id]
-      - group_id ||= series[:group_id]
-      - group_id ||= project_description.maven[:group_id]
-      - artifact_id ||= project_description.maven[:main_artifact_id]
+      - release_maven = release[:maven] || {}
+      - group_id = release_maven[:group_id]
+      - group_id ||= series_maven[:group_id]
+      - group_id ||= project_maven[:group_id]
+      - main_artifact_id = release_maven[:main_artifact_id]
+      - main_artifact_id ||= series_maven[:main_artifact_id]
+      - main_artifact_id ||= project_maven[:main_artifact_id]
+      - maven_repo = release_maven[:repo]
+      - maven_repo ||= series_maven[:repo]
+      - maven_repo ||= project_maven[:repo]
       - version = release.version
       - available = release[:available] == nil || release[:available]
       .ui.row
         .three.wide.column
-          %span.ui.label.version{:class => "#{release.stable ? 'green' : 'orange'}"}
-            = version
-        .thirteen.wide.column
           %p
-            %small= release.date
-            - if release[:summary]
-              \-
-              = release.summary
-          - if available
+            %span.ui.label.version{:class => "#{release.stable ? 'green' : 'orange'}"}
+              = version
+          %p
+            %small.ui.label= release.date
+        .thirteen.wide.column
+          - if release[:summary]
             %p
-              %a.ui.label.blue{:href => jboss_nexus_search_url(group_id, artifact_id, version)}
-                #{group_id}:#{artifact_id}:#{version}
+              = release.summary
+          - if available && main_artifact_id
+            %p
+              %a.ui.label.blue{:href => maven_central_artifact_url(group_id, main_artifact_id, version)}
+                #{group_id}:#{main_artifact_id}:#{version}
           %p
             - if available
-              %a.ui.small.right.labeled.button.icon{:href => "#{sourceforge_zip_url(project_description, release)}"}
+              - if maven_repo[:bintray]
+                %a.ui.small.right.labeled.button.icon{:href => maven_bintray_version_url(maven_repo.bintray.package, version)}
+                  %i.icon.cloud.cubes
+                  Maven artifacts
+              - elsif maven_repo[:central]
+                %a.ui.small.right.labeled.button.icon{:href => maven_central_search_url(group_id, maven_repo.central.artifact_id_pattern, version)}
+                  %i.icon.cloud.cubes
+                  Maven artifacts
+              %a.ui.small.right.labeled.button.icon{:href => sourceforge_zip_url(project_description, release)}
                 %i.icon.cloud.download
                 Download
             %a.ui.small.right.labeled.button.icon{:href => jira_issues_for_release_url(project_description, release)}

@@ -1,4 +1,11 @@
 summary: Improved bootstrapping, hibernate-java8, hibernate-spatial, Karaf support
+maven:
+  main_artifact_id: hibernate-core
+  repo:
+    central:
+      artifact_id_pattern: hibernate-*
+    jboss:
+      artifact_id_pattern: hibernate-*
 artifacts:
   - artifact_id: hibernate-core
     summary: Core implementation

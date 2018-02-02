@@ -10,8 +10,16 @@ js_minifier: disabled
 html_minifier: disabled
 
 maven:
-  central_base_url: 'https://repo.maven.apache.org/maven2/'
-  jboss_nexus_base_url: 'https://repository.jboss.org/nexus/content/repositories/public/'
+  repo:
+    central:
+      repo_url: 'https://repo.maven.apache.org/maven2/'
+      web_ui_url: 'https://search.maven.org'
+    jboss:
+      repo_url: 'https://repository.jboss.org/nexus/content/repositories/public/'
+      web_ui_url: 'https://repository.jboss.org/nexus/index.html'
+    bintray:
+      repo_url: 'https://dl.bintray.com/hibernate/artifacts/'
+      web_ui_url: 'https://bintray.com/hibernate'
 
 jira:
   base_url: https://hibernate.atlassian.net/
@@ -38,10 +46,12 @@ projects:
     zip_file: hibernate-release-VERSION.zip
     maven:
       group_id: org.hibernate
-      main_artifact_id: hibernate-core
-      nexus_search:
-        group_id_pattern: org.hibernate
-        artifact_id_pattern: hibernate-*
+      repo:
+        central:
+          group_id_pattern: org.hibernate
+          artifact_id_pattern: hibernate-*
+        bintray:
+          package: hibernate-orm
     reference_doc_prefix_url: https://docs.jboss.org/hibernate/orm/
     stable_reference_doc_prefix_url: https://docs.jboss.org/hibernate/stable/orm/
     reference_doc_path: userguide/html_single/Hibernate_User_Guide.html
@@ -133,9 +143,11 @@ projects:
     maven:
       group_id: org.hibernate
       main_artifact_id: hibernate-search-orm
-      nexus_search:
-        group_id_pattern: org.hibernate
-        artifact_id_pattern: hibernate-search-*
+      repo:
+        central:
+          artifact_id_pattern: hibernate-search-*
+        jboss:
+          artifact_id_pattern: hibernate-search-*
     reference_doc_prefix_url: https://docs.jboss.org/hibernate/search/
     stable_reference_doc_prefix_url: https://docs.jboss.org/hibernate/stable/search/
     reference_doc_path: reference/en-US/html_single/
@@ -274,9 +286,11 @@ projects:
     maven:
       group_id: org.hibernate.validator
       main_artifact_id: hibernate-validator
-      nexus_search:
-        group_id_pattern: org.hibernate*
-        artifact_id_pattern: hibernate-validator*
+      repo:
+        central:
+          artifact_id_pattern: hibernate-validator*
+        jboss:
+          artifact_id_pattern: hibernate-validator*
     reference_doc_prefix_url: https://docs.jboss.org/hibernate/validator/
     stable_reference_doc_prefix_url: https://docs.jboss.org/hibernate/stable/validator/
     reference_doc_path: reference/en-US/html_single/
@@ -358,9 +372,11 @@ projects:
     maven:
       group_id: org.hibernate.ogm
       main_artifact_id: hibernate-ogm-core
-      nexus_search:
-        group_id_pattern: org.hibernate.ogm
-        artifact_id_pattern: hibernate-ogm-*
+      repo:
+        central:
+          artifact_id_pattern: hibernate-ogm-*
+        jboss:
+          artifact_id_pattern: hibernate-ogm-*
     reference_doc_prefix_url: https://docs.jboss.org/hibernate/ogm/
     stable_reference_doc_prefix_url: https://docs.jboss.org/hibernate/stable/ogm/
     reference_doc_path: reference/en-US/html_single/
