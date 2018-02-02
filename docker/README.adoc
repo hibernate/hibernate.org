@@ -112,9 +112,13 @@ have on the host machine. In many cases 1000 is a good guess, but in case you ar
 getting file permission errors when running `rake preview` you want to check which
 user id the files have when mounted into the container. Use this user id as part of
 the `useradd` command and re-build the image.
-<3> We need the checkout to setup the awestruct environment. At runtime the checkout
+<3> If you use SELinux, Docker might refuse to give you access to some of the files
+in your mounted volume. You can try doing it the right way (good luck), or you can
+simply add `--security-opt label:disable` to the command below to disable SELinux in
+that specific container.
+<4> We need the checkout to setup the awestruct environment. At runtime the checkout
 will be overridden by the mounted volume
-<4> An awestruct hack. Awestruct uses live-reload to determine file changes in order
+<5> An awestruct hack. Awestruct uses live-reload to determine file changes in order
 to trigger re-generation of pages. live-reload allows to configure how changes are
 detected, but awestruct does not expose this option. When mounting your checkout as
 a volume, the default detection fails (at least on Mac using boot2docker) and polling
