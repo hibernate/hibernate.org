@@ -107,9 +107,6 @@ project_buttons_partial: project/releases-buttons.html.haml
                 #{constraint.version}
 ~ content
 
-// Unfortunately, matchHeight doesn't follow the same convention as the other minified files
-%script(src="#{site.match_height_js_url}#{site.minified ? '-min' : ''}.js")
-
 :javascript
   $(document).ready(function() {
     $('.active-series .segment.version').matchHeight({ byRow: false });

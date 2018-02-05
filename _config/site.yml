@@ -476,12 +476,12 @@ profiles:
     jborg_images_url: https://static.jboss.org/theme/images
     project_images_url: https://static.jboss.org/hibernate/images
     jquery_js_url: https://code.jquery.com/jquery-3.1.1
-    semantic_ui_js_url: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic
-    slick_js_url: https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick
-    match_height_js_url: https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight
+    semantic_ui_js_url: https://cdn.jsdelivr.net/npm/semantic-ui@2.2.14/dist/semantic
+    slick_js_url: https://cdn.jsdelivr.net/npm/slick-carousel@1.7.1/slick/slick
+    match_height_js_url: https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/jquery.matchHeight
     jboss_tabzilla_js_url: https://static.jboss.org/js/_jbossorg-tabzilla
-    semantic_ui_css_url: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic
-    slick_css_url: https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick
+    semantic_ui_css_url: https://cdn.jsdelivr.net/npm/semantic-ui@2.2.14/dist/semantic
+    slick_css_url: https://cdn.jsdelivr.net/npm/slick-carousel@1.7.1/slick/slick
     enable_google_analytics: false
     news_feed_root_url: http://staging.in.relation.to/feeds
   test:

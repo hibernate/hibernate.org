@@ -100,9 +100,6 @@ title: Corporate contributors
       .description
         %p Our community forums are hosted on a free instance provided by Discourse.
 
-// Unfortunately, matchHeight doesn't follow the same convention as the other minified files
-%script(src="#{site.match_height_js_url}#{site.minified ? '-min' : ''}.js")
-
 :javascript
   $(document).ready(function() {
     $('#contributors .image').matchHeight({ byRow: true });
