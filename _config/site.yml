@@ -48,7 +48,6 @@ projects:
       group_id: org.hibernate
       repo:
         central:
-          group_id_pattern: org.hibernate
           artifact_id_pattern: hibernate-*
         bintray:
           package: hibernate-orm
