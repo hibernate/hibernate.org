@@ -9,19 +9,22 @@ A JSR 352 mass indexing job was added, adding in particular the ability to resta
 from a checkpoint when indexing fails.
 
 See https://docs.jboss.org/hibernate/search/5.9/reference/en-US/html_single/#jsr352-integration[the documentation]
-for more information.
+for more information,
+and http://in.relation.to/2017/11/28/introducing-hibernate-search-jsr352-mass-indexing-job/[this blog post]
+for an introduction to JSR 352 in Hibernate Search.
 
 [[wildfly-feature-packs]]
 === JBoss modules now distributed as feature packs
 
 The Hibernate Search JBoss Modules, for use in WildFly or JBoss EAP,
-are now distributed as Wildfly feature packs, which makes provisioning
+are now distributed as WildFly feature packs, which makes provisioning
 a WildFly server with an upgraded Hibernate Search version easier than ever.
 The feature packs can also be consumed using http://wildfly-swarm.io/[WildFly Swarm].
 
 Also, the modules are now distributed as *multiple* feature packs,
-which means for example that you won't need to add the Elasticsearch clients
-to your server if you only use Lucene.
+which means that components are split in fine grained packages,
+allowing you to pick only the parts you will need.
+For example, you won't need to add the Elasticsearch clients to your server if you only use Lucene.
 
 See https://docs.jboss.org/hibernate/search/5.9/reference/en-US/html_single/#search-configuration-deploy-on-wildfly[the documentation]
 for more information on the available feature packs and how to consume them.
