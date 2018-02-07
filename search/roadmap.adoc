@@ -12,20 +12,6 @@ You can find a finer grained roadmap in our https://hibernate.atlassian.net/brow
 
 Dates are generally omitted: milestones are released regularly, the Final release is tagged when it's considered stable.
 
-== Hibernate Search 5.9
-
-JSR-352 (Batch Applications for the Java Platform) integration::
-Since last year, Mincong Huang worked on a JSR-352 job for Hibernate Search mass indexing.
-We plan to do some performance testing (and optimization if necessary), then merge this work as a new module.
-
-Feature Packs::
-Both http://wildfly.org/[WildFly] and http://wildfly-swarm.io/[WildFly Swarm] prefer consuming "WildFly Feature Packs" rather than jar files or zip bundles.
-We plan on distributing proper feature packs to make consumption of the latest version of Hibernate Search easier on these platforms.
-
-Modularity related enhancements::
-Some code needs to be moved to different jars to improve the experience with OSGi, JBoss Modules and eventually Java 9 (Jigsaw) users.
-For example the integration with Apache Tika should be moved to allow loading additional extensions which haven't been originally bundled with Hibernate Search.
-
 == Hibernate Search 5.10
 
 Hibernate ORM 5.3, JPA 2.2::
