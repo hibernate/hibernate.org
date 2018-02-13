@@ -1,0 +1,15 @@
+:awestruct-layout: project-releases-series
+:awestruct-project: ogm
+:awestruct-series_version: "5.3"
+
+=== Core
+
+==== Components upgrade
+
+ * Upgrade to ORM 5.2
+ * Upgrade to Hibernate Search 5.9
+
+==== Infinispan
+
+ * The Infinispan Clustered Counters, used for sequence generation, are now created at startup
+ * When these are used for id generation their names now also contain the table name and not only the column name
