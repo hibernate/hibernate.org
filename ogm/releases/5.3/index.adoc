@@ -4,10 +4,15 @@
 
 === Core
 
+Hibernate OGM is now compatible with Hibernate ORM 5.2!
+
 ==== Components upgrade
 
- * Upgrade to ORM 5.2
- * Upgrade to Hibernate Search 5.9
+ * ORM to 5.2.13.Final
+ * Hibernate Search to 5.9.0.Final
+ * Infinispan to 9.1.6.Final
+ * MongoDB to 3.6.3
+ * Neo4J to 3.3.3
 
 ==== Infinispan
 
