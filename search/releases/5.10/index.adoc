@@ -1,0 +1,23 @@
+:awestruct-layout: project-releases-series
+:awestruct-project: search
+:awestruct-series_version: "5.10"
+
+[[orm53]]
+=== ORM 5.3 and JPA 2.2 compatibility
+
+Hibernate Search 5.10 is designed to work with Hibernate ORM 5.3.
+
+[[dependency-injection]]
+=== Integration to DI frameworks through Hibernate ORM 5.3
+
+Hibernate Search now taps into Hibernate ORM's integration to dependency injection frameworks.
+If you use a dependency injection framework integrating with Hibernate ORM 5.3,
+and you add field bridges to your dependency injection context,
+then Hibernate Search will automatically retrieve and use field bridges from this context.
+
+This allows you in particular to inject components from your DI context into your field bridges,
+using your DI framework's features (`@java.injext.Inject`, Spring's `@Autowired`, ...).
+
+The integration is already known to work in a CDI 2.0 environment such as WildFly 12
+(not released yet as of February 23, 2018),
+and the Spring team will probably make it work as soon as it adds support for JPA 2.2.

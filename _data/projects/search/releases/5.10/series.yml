@@ -1,0 +1,34 @@
+summary: ORM 5.3 and JPA 2.2 compatibility
+displayed: true
+artifacts:
+  - artifact_id: hibernate-search-orm
+    summary: Hibernate ORM integration
+  - artifact_id: hibernate-search-elasticsearch
+    summary: Elasticsearch integration
+  - artifact_id: hibernate-search-elasticsearch-aws
+    summary: Amazon IAM authentication for Elasticsearch
+  - artifact_id: hibernate-search-backend-jgroups
+    summary: JGroups backend
+  - artifact_id: hibernate-search-backend-jms
+    summary: JMS backend
+  - artifact_id: hibernate-search-jsr352-core
+    summary: JSR 352 (Batch for Java) integration - Core
+  - artifact_id: hibernate-search-jsr352-jberet
+    summary: JSR 352 (Batch for Java) integration - JBeret specifics
+  - artifact_id: hibernate-search-jbossmodules-engine
+    summary: WildFly feature pack - Engine
+  - artifact_id: hibernate-search-jbossmodules-orm
+    summary: WildFly feature pack - Hibernate ORM integration
+  - artifact_id: hibernate-search-jbossmodules-elasticsearch
+    summary: WildFly feature pack - Elasticsearch integration
+  - artifact_id: hibernate-search-jbossmodules-elasticsearch
+    summary: WildFly feature pack - Amazon IAM authentication for Elasticsearch
+integration_constraints:
+  java:
+    version: 8+
+  orm:
+    version: 5.3
+  elasticsearch:
+    version: 2.0 - 5.6
+  lucene:
+    version: 5.5
