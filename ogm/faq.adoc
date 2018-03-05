@@ -169,7 +169,7 @@ To change this, add the following line to the _META-INF/MANIFEST.MF_ file of you
 
 [source]
 ----
-Dependencies: org.hibernate:ogm services, org.hibernate.ogm.mongodb services
+Dependencies: org.hibernate.ogm services, org.hibernate.ogm.mongodb services
 ----
 
 Alternatively, you can configure this via the descriptor _jboss-deployment-structure.xml_.
