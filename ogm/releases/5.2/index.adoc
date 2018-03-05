@@ -18,8 +18,8 @@ OGM now requires Java 8 or later.
 ==== Infinispan
 
  * Upgrade to Infinispan 9.1
- * Create caches when needed with Infinispan Remote via Hot Rod
- * Use Infinspan Clustered Counters for sequences and id generation with Infinispan Embedded
+ * Automatically create caches when needed with Infinispan Remote via Hot Rod
+ * Use Infinispan Clustered Counters for sequences and id generation with Infinispan Embedded
  * Operation grouping: OGM automatically groups write operations when it is possible.
 
 ==== MongoDB
