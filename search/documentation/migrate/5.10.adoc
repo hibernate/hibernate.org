@@ -1,0 +1,46 @@
+= Migration Guide from Hibernate Search {from_version_short} to {to_version_short}
+Sanne Grinovero, Yoann Rodière
+:awestruct-layout: project-standard
+:awestruct-project: search
+:toc:
+:toc-placement: preamble
+:toc-title: Content
+:to_version_short: 5.10
+:from_version_short: 5.9
+:reference_version_full: 5.10.0.Final
+
+Here we are helping you migrate your existing Search application to the latest and greatest.
+
+== Upgrade to Hibernate Search {to_version_short}.x from {from_version_short}.x
+
+The aim of this guide is to assist you migrating an existing application using any version `{from_version_short}.x` of Hibernate Search to the latest of the `{to_version_short}.x` series.
+If you're looking to migrate different versions see link:/search/documentation/migrate[Hibernate Search migration guides].
+
+NOTE: This document provides pointers for a migration.
+It refers to Hibernate Search version `{reference_version_full}`. If you think something is missing or something does not work, please link:/community[contact us].
+
+=== Requirements
+
+WARNING: Not determined yet. To be determined upon the CR or release.
+
+=== Configuration changes
+
+WARNING: Not determined yet. To be determined upon the CR or release.
+
+=== API changes
+
+WARNING: Not determined yet. To be determined upon the CR or release.
+
+=== SPI changes
+
+WARNING: Not determined yet. To be determined upon the CR or release.
+
+=== Behavior changes
+
+WARNING: Not fully determined yet. To be determined upon the CR or release.
+
+* As of https://hibernate.atlassian.net/browse/HSEARCH-3039[HSEARCH-3039],
+Embedded IDs are no longer analyzed.
+Embedded IDs are properties defined as `@DocumentId` (or, lacking that, JPA's `@Id`),
+then embedded in another document using `@IndexedEmbedded(includeEmbeddedObjectId = true)`
+or `@IndexedEmbedded(includePaths = { ..., "<the ID property name>", ... })`.
