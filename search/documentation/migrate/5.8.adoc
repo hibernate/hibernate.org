@@ -125,9 +125,11 @@ Please refer to the javadoc for the expected behavior of changed/added methods.
 General changes:
 
  * `org.hibernate.search.spi.IndexedTypeIdentifier` is now used throughout our SPIs
-   to refer to indexed type instead of `java.lang.Class`.
+   to refer to indexed types instead of `java.lang.Class`.
    Many methods accepting or returning `Class` have been replaced
    with new versions accepting or returning `IndexedTypeIdentifier`.
+   If you use `DeleteByQueryWork`, you might need to convert a `Class<?>` to an `IndexedTypeIdentifier`:
+   in that case, use `searchIntegrator.getIndexBindings().keyFromPojoType( myClass )`.
 
 `org.hibernate.search.backend.spi.BackendQueueProcessor`:
 
