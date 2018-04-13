@@ -23,6 +23,8 @@ artifacts:
     summary: WildFly feature pack - Elasticsearch integration
   - artifact_id: hibernate-search-jbossmodules-elasticsearch
     summary: WildFly feature pack - Amazon IAM authentication for Elasticsearch
+  - artifact_id: hibernate-search-jbossmodules-jgroups
+    summary: WildFly feature pack - JGroups backend
 integration_constraints:
   java:
     version: 8+

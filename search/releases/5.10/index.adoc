@@ -21,3 +21,9 @@ using your DI framework's features (`@java.injext.Inject`, Spring's `@Autowired`
 The integration is already known to work in a CDI 2.0 environment such as WildFly 12
 (not released yet as of February 23, 2018),
 and the Spring team will probably make it work as soon as it adds support for JPA 2.2.
+
+[[wildfly-12]]
+=== Upgrade to WildFly 12 and JGroups 4
+
+Hibernate Search's JBoss modules now target WildFly 12.
+This means in particular that the JGroups backend now uses JGroups 4 and is no longer compatible with JGroups 3.
