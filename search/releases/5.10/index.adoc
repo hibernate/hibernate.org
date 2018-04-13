@@ -27,3 +27,6 @@ and the Spring team will probably make it work as soon as it adds support for JP
 
 Hibernate Search's JBoss modules now target WildFly 12.
 This means in particular that the JGroups backend now uses JGroups 4 and is no longer compatible with JGroups 3.
+
+Also, we took this opportunity to move the JGroups backend's JBoss modules out of the engine feature pack to
+https://docs.jboss.org/hibernate/search/5.10/reference/en-US/html_single/#_jgroups_feature_pack[a dedicated feature pack].
