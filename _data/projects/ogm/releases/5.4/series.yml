@@ -1,0 +1,20 @@
+summary: WildFly 12 Feature Pack - JPA 2.2 - Hibernate ORM 5.3 - Infinispan 9.2
+displayed: true
+artifacts:
+  - artifact_id: hibernate-ogm-infinispan-embedded
+    summary: Infinispan integration (embedded)
+  - artifact_id: hibernate-ogm-infinispan-remote
+    summary: Infinispan integration (remote)
+  - artifact_id: hibernate-ogm-mongodb
+    summary: MongoDB integration
+  - artifact_id: hibernate-ogm-neo4j
+    summary: Neo4j integration
+integration_constraints:
+  java:
+    version: 8+
+  jpa:
+    version: 2.2
+  orm:
+    version: 5.3
+  search:
+    version: "5.10"

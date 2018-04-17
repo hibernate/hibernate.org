@@ -1,0 +1,31 @@
+:awestruct-layout: project-releases-series
+:awestruct-project: ogm
+:awestruct-series_version: "5.4"
+
+=== Core
+
+Hibernate OGM is now compatible with Hibernate ORM 5.3 and JPA 2.2!
+
+==== Component upgrades
+
+ * Hibernate ORM to 5.3.0.CR1
+ * Hibernate Search to 5.10.0.Beta2
+ * WildFly to 12.0.0
+ * Infinispan to 9.2.0.Final
+ * MongoDB to 3.6.3
+ * Neo4J to 3.3.5
+
+==== Module Distribution
+
+ * WildFly modules are now available as feature packs
+
+==== Infinispan
+
+ * Caches created by the dialect are now transactional by default
+ * Caches created by the dialect can be configured using a cache configuration
+
+==== MongoDB
+
+ * Stored procedures with positional parameters are now supported
+ * New MongoDB CLI operations supported as native queries
+
