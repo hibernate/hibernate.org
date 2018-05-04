@@ -21,23 +21,49 @@ It refers to Hibernate Search version `{reference_version_full}`. If you think s
 
 === Requirements
 
-WARNING: Not determined yet. To be determined upon the CR or release.
+This version of Hibernate Search now requires using Hibernate ORM versions from the `5.3.x` family.
+
+This implies it now requires *JPA 2.2*, as that's the base requirement for all Hibernate ORM 5.3 versions.
 
 === Configuration changes
 
-WARNING: Not determined yet. To be determined upon the CR or release.
+The configuration properties didn't change.
 
 === API changes
 
-WARNING: Not determined yet. To be determined upon the CR or release.
+* `ElasticsearchEnvironment.ANALYSIS_DEFINITION_PROVIDER` now contains the string
+`"elasticsearch.analysis_definition_provider"` instead of `"hibernate.search.elasticsearch.analysis_definition_provider"`:
+we removed the prefix to make this constant consistent with other constants in the same class.
+* `org.hibernate.search.filter.FilterCachingStrategy#getCachedFilter(FilterKey)`
+now has a default implementation for technical reasons,
+but **it should always be overridden**.
+* We added automatic https://en.wikipedia.org/wiki/Java_Platform_Module_System[JPMS module] names to our JARs.
+Note that Hibernate Search JARs still can only be used as automatic modules,
+because some of our dependencies cannot easily be used as modules yet.
+Here are the module names:
+** `org.hibernate.search.engine`
+** `org.hibernate.search.orm`
+** `org.hibernate.search.backend.elasticsearch`
+** `org.hibernate.search.backend.elasticsearch.aws`
+** `org.hibernate.search.clustering.jms`
+** `org.hibernate.search.clustering.jgroups`
+** `org.hibernate.search.jsr352.core`
+** `org.hibernate.search.jsr352.jberet`
+** `org.hibernate.search.serialization.avro`
 
 === SPI changes
 
-WARNING: Not determined yet. To be determined upon the CR or release.
+* `org.hibernate.search.indexes.spi.IndexManagerType` now only has one method, `createIndexFamily`.
+For an example of how to implement `IndexManagerType`, see commit
+https://github.com/hibernate/hibernate-search/commit/22412acdb2d2f409ad24effa3d69e71e7bb92554[22412acdb2d2f409ad24effa3d69e71e7bb92554],
+`ElasticsearchIndexManagerType` in particular.
+* `org.hibernate.search.engine.service.beanresolver.spi.BeanResolver` now implements `Stoppable`.
+* `org.hibernate.search.hcore.spi.BeanResolver` has been removed.
+Use the `org.hibernate.resource.beans.container.spi.BeanContainer` concept native to Hibernate ORM instead;
+Hibernate Search will automatically wire into whichever bean container is used in Hibernate ORM.
+* `org.hibernate.search.hcore.spi.EnvironmentSynchronizer` now has an additional `whenEnvironmentDestroying(Runnable)` method.
 
 === Behavior changes
-
-WARNING: Not fully determined yet. To be determined upon the CR or release.
 
 * As of https://hibernate.atlassian.net/browse/HSEARCH-3039[HSEARCH-3039],
 Embedded IDs are no longer analyzed.
