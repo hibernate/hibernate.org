@@ -30,3 +30,30 @@ This means in particular that the JGroups backend now uses JGroups 4 and is no l
 
 Also, we took this opportunity to move the JGroups backend's JBoss modules out of the engine feature pack to
 https://docs.jboss.org/hibernate/search/5.10/reference/en-US/html_single/#_jgroups_feature_pack[a dedicated feature pack].
+
+[[jpms-automatic-module-names]]
+=== JPMS automatic module names
+
+We added automatic https://en.wikipedia.org/wiki/Java_Platform_Module_System[JPMS module] names to our JARs.
+
+Note that Hibernate Search JARs still can only be used as automatic modules,
+because some of our dependencies cannot easily be used as modules yet.
+
+Here are the module names:
+
+* `org.hibernate.search.engine`
+* `org.hibernate.search.orm`
+* `org.hibernate.search.backend.elasticsearch`
+* `org.hibernate.search.backend.elasticsearch.aws`
+* `org.hibernate.search.clustering.jms`
+* `org.hibernate.search.clustering.jgroups`
+* `org.hibernate.search.jsr352.core`
+* `org.hibernate.search.jsr352.jberet`
+* `org.hibernate.search.serialization.avro`
+
+[[elasticsearch-client-access]]
+=== Direct access to the Elasticsearch client
+
+Hibernate Search now offers a way to access the Elasticsearch client directly.
+See the https://docs.jboss.org/hibernate/search/5.10/reference/en-US/html_single/#elasticsearch-client-access[documentation]
+for more information.
