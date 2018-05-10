@@ -12,30 +12,26 @@ You can find a finer grained roadmap in our https://hibernate.atlassian.net/brow
 but this page is a good and concise view of where we are going.
 Dates are generally omitted, we release when we are ready.
 
-== Hibernate OGM 5.2
+== Hibernate OGM 5.4
 
 Core::
-The minimal Java version will be Java 8.
+Upgrade to Hibernate ORM 5.3, JPA 2.2 +
+Uprgrade to Hibernate Search 5.10 +
+Supports for WildFly 12
 
 Infinispan::
-Upgrade to Infinispan 9.1 +
-Operation grouping support
-
-MongoDB::
-Upgrade to the MongoDB 3 API +
-Support distinct operations in native queries +
-Support Map/Reduce operations in native queries +
-Remove Fongo dialect
+Upgrade to Infinispan 9.2 +
+Initial support for remote JPQL queries +
+Simplify configuration of new caches +
+Support calls to server side tasks
 
 Neo4j::
-Consolidation of some advanced mappings
+Creation of indexes +
+Support positional parameters with native Cypher queries
 
-== Hibernate OGM 5.3
-
-Core::
-Upgrade to Hibernate ORM 5.2 +
-Upgrade to Hibernate Search 5.8 +
-Support for WildFly 11
+MongoDB::
+Support calls to server side JavaScript +
+Drop a collection using native queries
 
 == Hibernate OGM Next
 
