@@ -12,13 +12,20 @@ Hibernate Validator 6.0 is the Reference Implementation of the Bean Validation 2
 
 We also have leveraged the new features of JDK 8 (built-in constraints are marked repeatable, parameter names are retrieved via reflection) as it is now the minimal version required.
 
+=== Other new features
+
+ * http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#constraint-validator-payload[Constraint validator payload]: ability to pass a payload to your constraint validators
+ * Additional constraints: `@ISBN`, `@UniqueElements` and `@CodePointLength`
+ * http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#section-clock-provider[Temporal validation tolerance]
+ * `ScriptEvaluatorFactory` SPI: ability to support non JSR 223 scripting languages such as Spring EL
+
 === Performance improvements
 
 We have done quite a lot of benchmarking and have significantly improved the performances of Hibernate Validator.
 
-It can be up to two times faster than Hibernate Validator 5.4.1.Final in some cases.
+It can be http://in.relation.to/2018/03/20/bean-validation-benchmark-rerevisited/[up to four times faster] than Hibernate Validator 5.4.2.Final in some cases.
 
 === Memory footprint improvements
 
-Hibernate Validator collects a lot of metadata on the constrained beans. We reduced significantly the memory used by these metadata.
+Hibernate Validator collects a lot of metadata on the constrained beans. We reduced significantly the memory occupied by these metadata.
 
