@@ -30,7 +30,7 @@ Hibernate ORM::
 You will need hibernate-core-{version_matching_orm}.jar and its transitive dependencies (either from
 http://sourceforge.net/projects/hibernate/files/hibernate4/{version_matching_orm}/[Sourceforge] or the Maven central repository).
 
-JPA 2.1::
+JPA 2.2::
 Even though Hibernate Search can be used without needing JPA annotations the following instructions will use them for basic entity configuration (_@Entity, @Id, @OneToMany,..._).
 This part of the configuration could also be expressed in xml or code.
 Hibernate Search has its own set of annotations (_@Indexed, @DocumentId, @Field,..._) for which there exists so far no XML based alternative;

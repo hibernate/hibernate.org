@@ -18,8 +18,7 @@ then Hibernate Search will automatically retrieve and use field bridges from thi
 This allows you in particular to inject components from your DI context into your field bridges,
 using your DI framework's features (`@java.inject.Inject`, Spring's `@Autowired`, ...).
 
-The integration is already known to work in a CDI 2.0 environment such as WildFly 12
-(not released yet as of February 23, 2018),
+The integration is already known to work in a CDI 2.0 environment such as WildFly 12,
 and the Spring team will probably make it work as soon as it adds support for JPA 2.2.
 
 [[wildfly-12]]
