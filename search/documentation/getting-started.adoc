@@ -22,7 +22,9 @@ To use the latest Hibernate Search version ({latest_stable}) you'll need Java ve
 You can download a Java Runtime for Windows/Linux/Solaris http://www.oracle.com/technetwork/java/javase/downloads/index.html[here].
 
 Hibernate Search::
-hibernate-search-{latest_stable}.jar and all runtime dependencies. You can get the jar artifacts either from the _dist/lib_ directory of the Hibernate Search distribution or you can download them from the Maven central repository.
+hibernate-search-orm-{latest_stable}.jar and all runtime dependencies.
+You can get the jar artifacts either from the _dist/lib_ directory of the Hibernate Search distribution
+or you can download them from the Maven central repository.
 
 Hibernate ORM::
 You will need hibernate-core-{version_matching_orm}.jar and its transitive dependencies (either from
@@ -60,17 +62,6 @@ This is all you need to add to your pom.xml to get started:
 
 [source,xml]
 [subs="verbatim,attributes"]
-.Optional: to store indexes in Infinispan
-----
-<dependency>
-   <groupId>org.hibernate</groupId>
-   <artifactId>hibernate-search-infinispan</artifactId>
-   <version>{latest_stable}</version>
-</dependency>
-----
-
-[source,xml]
-[subs="verbatim,attributes"]
 .Optional: to store indexes in Elasticsearch
 ----
 <dependency>
@@ -80,9 +71,9 @@ This is all you need to add to your pom.xml to get started:
 </dependency>
 ----
 
-
-Some of the dependencies of _hibernate-search-infinispan_ might require to enable the the JBoss Maven repository.
-See the https://community.jboss.org/wiki/MavenGettingStarted-Users[Maven Getting Started] on how to configure your local Maven settings.
+Optionally, you may also store your indexes in an Infinispan cluster;
+see the http://infinispan.org/docs/stable/user_guide/user_guide.html#integrations:directory-provider[Infinispan Directory Provider documentation]
+for information about dependencies and how to configure it.
 
 
 
