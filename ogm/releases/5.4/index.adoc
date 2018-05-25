@@ -23,6 +23,8 @@ Hibernate OGM is now compatible with Hibernate ORM 5.3 and JPA 2.2!
 
  * Caches created by the dialect are now transactional by default
  * Caches created by the dialect can be configured using a cache configuration
+ * Supports remote native queries with Ickle
+ * Supports JPQL queries for Infinispan Remote dialect
 
 ==== MongoDB
 
