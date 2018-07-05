@@ -8,16 +8,17 @@ Hibernate OGM is now compatible with Hibernate ORM 5.3 and JPA 2.2!
 
 ==== Component upgrades
 
- * Hibernate ORM to 5.3.0.CR1
- * Hibernate Search to 5.10.0.Beta2
- * WildFly to 12.0.0
- * Infinispan to 9.2.0.Final
+ * Hibernate ORM to 5.3.2.Final
+ * Hibernate Search to 5.10.2.Final
+ * WildFly to 13.0.0.Final
+ * Infinispan to 9.3.0.Final
  * MongoDB to 3.6.3
  * Neo4J to 3.3.5
 
-==== Module Distribution
+==== WildFly integrations
 
  * WildFly modules are now available as feature packs
+ * WildFly NoSQL integration
 
 ==== Infinispan
 
@@ -25,9 +26,17 @@ Hibernate OGM is now compatible with Hibernate ORM 5.3 and JPA 2.2!
  * Caches created by the dialect can be configured using a cache configuration
  * Supports remote native queries with Ickle
  * Supports JPQL queries for Infinispan Remote dialect
+ * Supports scripting and java tasks for Infinispan server
+ * Allows to define custom Protocol Buffer schema
+ * Infinispan remote supports now all unidirectional collections
+ * Infinispan remote sequence generation was improved
 
 ==== MongoDB
 
  * Stored procedures with positional parameters are now supported
  * New MongoDB CLI operations supported as native queries
+ * Supports queries on `GeometryCollection`
 
+==== Neo4j
+
+ * Server side indexes definitions
