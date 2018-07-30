@@ -20,6 +20,14 @@ dtd/hibernate-mapping:                    /dtd/
 # which obviously cannot be inserted into a DTD file
 #dtd/hibernate-configuration-4.0.dtd
 #dtd/hibernate-configuration-5.0.dtd
+hibernate-configuration.dtd:               /dtd/hibernate-configuration.dtd
+hibernate-mapping.dtd:                     /dtd/hibernate-mapping.dtd
+hibernate-configuration-1.1.dtd:           /dtd/hibernate-configuration-1.1.dtd
+hibernate-mapping-1.1.dtd:                 /dtd/hibernate-mapping-1.1.dtd
+hibernate-configuration-2.0.dtd:           /dtd/hibernate-configuration-2.0.dtd
+hibernate-mapping-2.0.dtd:                 /dtd/hibernate-mapping-2.0.dtd
+hibernate-configuration-3.0.dtd:           /dtd/hibernate-configuration-3.0.dtd
+hibernate-mapping-3.0.dtd:                 /dtd/hibernate-mapping-3.0.dtd
 
 ## URLs I don't know how to map
 37.html:                                   /community/we-lost-that-content/
