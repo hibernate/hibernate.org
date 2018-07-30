@@ -1,0 +1,24 @@
+<!-- Hibernate file-based configuration document.
+
+<!DOCTYPE hibernate-configuration PUBLIC 
+	"-//Hibernate/Hibernate Configuration DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration.dtd">
+
+An instance of this document contains property settings and references 
+to mapping files for a number of SessionFactory instances to be listed 
+in JNDI.
+
+-->
+
+<!ELEMENT hibernate-configuration (property*,session-factory+)>
+
+<!ELEMENT property (#PCDATA)>
+<!ATTLIST property name CDATA #REQUIRED>
+
+<!ELEMENT mapping EMPTY> <!-- reference to a mapping file -->
+<!ATTLIST mapping resource CDATA #IMPLIED>
+<!ATTLIST mapping file CDATA #IMPLIED>
+<!ATTLIST mapping jar CDATA #IMPLIED>
+
+<!ELEMENT session-factory (property*, mapping+)>
+<!ATTLIST session-factory name CDATA #REQUIRED> <!-- the JNDI name -->
