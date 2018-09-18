@@ -19,7 +19,11 @@ inhibit_indexifier: true
       });
     },
     fieldValues: {
-        components : '10380'
+        components : '10380',
+        summary: 'Broken link: ' + window.location.href,
+        description: 'Broken link: ' + window.location.href + '\n\n' +
+        		'Please provide your page of origin:\n' + document.referrer + '\n\n' +
+        		'Please describe what you expected this link to point to:\n\n'
     }
   };
 
