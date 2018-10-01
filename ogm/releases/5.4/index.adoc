@@ -5,13 +5,14 @@
 === Core
 
 Hibernate OGM is now compatible with Hibernate ORM 5.3 and JPA 2.2!
+Support java.time field types
 
 ==== Component upgrades
 
- * Hibernate ORM to 5.3.2.Final
- * Hibernate Search to 5.10.2.Final
+ * Hibernate ORM to 5.3.6.Final
+ * Hibernate Search to 5.10.4.Final
  * WildFly to 13.0.0.Final
- * Infinispan to 9.3.0.Final
+ * Infinispan to 9.3.3.Final
  * MongoDB to 3.6.3
  * Neo4J to 3.3.5
 
@@ -27,6 +28,7 @@ Hibernate OGM is now compatible with Hibernate ORM 5.3 and JPA 2.2!
  * Supports remote native queries with Ickle
  * Supports JPQL queries for Infinispan Remote dialect
  * Supports scripting and java tasks for Infinispan server
+ * Supports remote transactions
  * Allows to define custom Protocol Buffer schema
  * Infinispan remote supports now all unidirectional collections
  * Infinispan remote sequence generation was improved
@@ -36,6 +38,7 @@ Hibernate OGM is now compatible with Hibernate ORM 5.3 and JPA 2.2!
  * Stored procedures with positional parameters are now supported
  * New MongoDB CLI operations supported as native queries
  * Supports queries on `GeometryCollection`
+ * Supports `ReadConcern`
 
 ==== Neo4j
 
