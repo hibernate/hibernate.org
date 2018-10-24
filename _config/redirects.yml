@@ -116,12 +116,18 @@ subprojects/shards/download.html:          /others/
 360.html:                                  /nhibernate.html
 362.html:                                  /nhibernate.html
 
-## Old documentation links on the initial website
+## Annotations
+hib_docs/annotations/reference/en/html_single/:                        https://docs.jboss.org/hibernate/stable/annotations/reference/en/html_single/
+hib_docs/annotations/reference/en/html/:                               https://docs.jboss.org/hibernate/stable/annotations/reference/en/html/
+hib_docs/annotations/reference/en/html/preface.html:                   https://docs.jboss.org/hibernate/stable/annotations/reference/en/html/preface.html
+hib_docs/annotations/reference/en/html/ch01.html:                      https://docs.jboss.org/hibernate/stable/annotations/reference/en/html/ch01.html
+hib_docs/annotations/reference/en/html/entity.html:                    https://docs.jboss.org/hibernate/stable/annotations/reference/en/html/entity.html
+hib_docs/annotations/reference/en/html/xml-overriding.html:            https://docs.jboss.org/hibernate/stable/annotations/reference/en/html/xml-overriding.html
+hib_docs/annotations/reference/en/html/additionalmodules.html:         https://docs.jboss.org/hibernate/stable/annotations/reference/en/html/additionalmodules.html
 
+## Old documentation links on the initial website
 hib_docs/reference/en/html/mapping-types.html:                         /orm/documentation/obsolete
 hib_docs/reference/html/or-mapping.html:                               /orm/documentation/obsolete
-hib_docs/annotations/reference/en/html/entity.html:                    /orm/documentation/obsolete
-hib_docs/annotations/reference/en/html_single/:                        /orm/documentation/obsolete
 hib_docs/v3/reference/en/html/mapping-entityname.html:                 /orm/documentation/obsolete
 hib_docs/v3/reference/en/html/quickstart.html:                         /orm/documentation/obsolete
 hib_docs/v3/reference/en/html/objectstate-querying.html:               /orm/documentation/obsolete
