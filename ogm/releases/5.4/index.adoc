@@ -12,9 +12,9 @@ Support java.time field types
  * Hibernate ORM to 5.3.6.Final
  * Hibernate Search to 5.10.4.Final
  * WildFly to 13.0.0.Final
- * Infinispan to 9.3.3.Final
+ * Infinispan to 9.4.0.Final
  * MongoDB to 3.6.3
- * Neo4J to 3.3.5
+ * Neo4J to 3.4.9
 
 ==== WildFly integrations
 
@@ -39,7 +39,9 @@ Support java.time field types
  * New MongoDB CLI operations supported as native queries
  * Supports queries on `GeometryCollection`
  * Supports `ReadConcern`
+ * Supports for GridFS
 
 ==== Neo4j
 
  * Server side indexes definitions
+ * Supports calls to remote procedures using JPA
