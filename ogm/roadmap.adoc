@@ -17,21 +17,23 @@ Dates are generally omitted, we release when we are ready.
 Core::
 Upgrade to Hibernate ORM 5.3, JPA 2.2 +
 Upgrade to Hibernate Search 5.10 +
-Support for WildFly 12
+Support for WildFly 13
 
 Infinispan::
-Upgrade to Infinispan 9.2 +
+Upgrade to Infinispan 9.4 +
 Initial support for remote JPQL queries +
 Simplify configuration of new caches +
 Support calls to server side tasks
 
 Neo4j::
 Creation of indexes +
-Support positional parameters with native Cypher queries
+Support positional parameters with native Cypher queries +
+Support calls to remote procedures 
 
 MongoDB::
 Support calls to server side JavaScript +
-Drop a collection using native queries
+Drop a collection using native queries +
+Support for GridFS
 
 == Hibernate OGM Next
 
@@ -41,9 +43,6 @@ A backward compatible mode will be kept however.
 
 Custom types::
 Offer custom types like Hibernate ORM's user type.
-
-Polish of Infinispan Remote dialect::
-This dialect needs some love before being promoted.
 
 Offer per session and per statement option customization::
 e.g. for a given call, influence the quorum factor
