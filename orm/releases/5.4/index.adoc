@@ -1,0 +1,16 @@
+:awestruct-layout: project-releases-series
+:awestruct-project: orm
+:awestruct-series_version: "5.4"
+
+=== EntityGraph improvements
+
+Hibernate ORM 5.4 adds 2 new features to help make working with EntityGraphs easier:
+
+ * EntityGraph parsing
+ * EntityGraph manipulation
+
+The entry point for these 2 features is the `org.hibernate.graph.EntityGraphs` class.
+
+=== JDK 11 support
+
+Hibernate ORM now supports JDK 11 out of the box.

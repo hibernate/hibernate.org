@@ -1,0 +1,7 @@
+summary: EntityGraph improvements, JDK 11 support
+integration_constraints:
+  java:
+    version: 8+
+  jpa:
+    version: 2.2
+
