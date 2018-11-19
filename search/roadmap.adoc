@@ -22,13 +22,24 @@ While Search 5.10 is very likely to be already compatible with JDK11,
 we have not been able to run all of our tests due to building and testing tools being incompatible with JDK11.
 In Search 5.11, we intend to upgrade all of the tools, so that Hibernate Search is fully tested against JDK11.
 
-== Hibernate Search 6.x
+== Hibernate Search 6.0
 
 Compatible with Hibernate ORM 6, Apache Lucene 7, Elasticsearch 6.
 
 API Refresh::
 A significant API refresh is planned to better abstract from the Lucene API so that alternative backends such as Elasticsearch can be used without having Lucene on your classpath.
 This will also benefit Lucene users, as the abstraction should allow us to automatically apply more optimisations without the user needing to be a Lucene expert.
+
+Bridge 2.0::
+The bridge APIs will have to change as part of the API refresh,
+so we will take this opportunity to overhaul bridge APIs to make bridges more powerful.
+There are multiple aspects we intend to address:
+* Custom (user-defined) bridge annotations, allowing to pass type-safe parameters, and not just strings
+* Better support for dirty checking optimization in bridges (class/type bridges in particular),
+by allowing bridges to declare what parts of the entity they use.
+* Better integration of bridges in the Search DSL:
+non-String fields should work without having to bypass bridges (`.ignoreFieldBridge()`) like in Search 5,
+bridges should be allowed to define precisely how to project their fields, ...
 
 Upgrade to Apache Lucene 7::
 To provide the full power of some of the new features in Apache Lucene 7, some API changes are needed.
@@ -46,4 +57,40 @@ for example to make it easier to index data structured in the JSON format, or ot
 Join operations::
 Expose Lucene's index-time and query-time join capabilities.
 
+Temporary removal of non-essential features::
+Hibernate Search 6.0 is a major rewrite, which will take time.
+In order to make it available to at least some users as early as possible,
+one solution is to reduce the feature coverage of Hibernate Search 6 and only address essential use cases.
+We will temporarily remove some features that are not commonly used,
+or could not be used immediately due to integration constraints,
+and reintroduce them in a later 6.x.
+Note **this is a temporary removal**, we are just delaying some of the work to a later release.
+In particular:
+
+* WildFly integration
+* OSGi integration
+* Clustering support (JMS/JGroups backends)
+
+== Hibernate Search 6.x
+
+Restore the WildFly integration::
+The WildFly integration was removed in 6.0 to reduce the work load.
+We will restore it in 6.1.
+
+Restore the OSGi integration::
+The OSGi integration was removed in 6.0 to reduce the work load.
+We will restore it in 6.1 if there is demand for it.
+https://hibernate.atlassian.net/browse/HSEARCH-3279[Vote here].
+
+First-class support for clustered applications::
+Hibernate Search 6.0 only allows single-node applications,
+or multi-node applications where each node works independently, simply sending events to an Elasticsearch cluster.
+This does not account for several challenges that we will address in later 6.x versions:
+* When each node sends updates to Elasticsearch independently,
+conflicts may arise when entities are updated simultaneously on different nodes.
+There is a need to prevent, or at least resolve, these conflicts.
+* For some use cases where maintenance downtime is not acceptable,
+Hibernate Search needs to provide hot updates at the cluster level:
+allow to boot application nodes with the new mapping,
+while some application nodes with the old mapping are still running.
 
