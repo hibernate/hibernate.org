@@ -12,6 +12,16 @@ You can find a finer grained roadmap in our https://hibernate.atlassian.net/brow
 
 Dates are generally omitted: milestones are released regularly, the Final release is tagged when it's considered stable.
 
+== Hibernate Search 5.11
+
+Upgrade to Hibernate ORM 5.4::
+The main purpose of this release will be to keep up with Hibernate ORM.
+
+Fully tested compatibility with JDK11::
+While Search 5.10 is very likely to be already compatible with JDK11,
+we have not been able to run all of our tests due to building and testing tools being incompatible with JDK11.
+In Search 5.11, we intend to upgrade all of the tools, so that Hibernate Search is fully tested against JDK11.
+
 == Hibernate Search 6.x
 
 Compatible with Hibernate ORM 6, Apache Lucene 7, Elasticsearch 6.
