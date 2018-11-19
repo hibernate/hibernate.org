@@ -1,0 +1,73 @@
+= Migration Guide from Hibernate Search {from_version_short} to {to_version_short}
+Yoann Rodière
+:awestruct-layout: project-standard
+:awestruct-project: search
+:toc:
+:toc-placement: preamble
+:toc-title: Content
+:to_version_short: 6.0
+:from_version_short: 5.10
+:reference_version_full: 6.0.0-SNAPSHOT
+
+Here we are helping you migrate your existing Search application to the latest and greatest.
+
+== Upgrade to Hibernate Search {to_version_short}.x from {from_version_short}.x
+
+The aim of this guide is to assist you migrating an existing application using any version `{from_version_short}.x` of Hibernate Search to the latest of the `{to_version_short}.x` series.
+If you're looking to migrate different versions see link:/search/documentation/migrate[Hibernate Search migration guides].
+
+NOTE: This document provides pointers for a migration.
+It refers to Hibernate Search version `{reference_version_full}`. If you think something is missing or something does not work, please link:/community[contact us].
+
+=== Requirements
+
+WARNING: This section is still incomplete. To be completed upon the CR or release.
+
+* The Elasticsearch backend now requires Elasticsearch 5.6 or 6.5.
+* The Lucene backend now requires Lucene 7.5.
+
+=== Maven coordinates changes
+
+WARNING: If you pull our artifacts from a Maven repository and you come from Hibernate Search 5,
+be aware that just bumping the version number will not be enough.
+
+* the group IDs changed from `org.hibernate` to `org.hibernate.search`
+* most of the artifact IDs changed to reflect the new mapper/backend design
+* the Lucene integration now requires an explicit dependency instead of being pulled by the engine by default.
+
+Read the https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#getting-started-dependencies[getting started guide, section "dependencies"]
+for more information.
+
+=== Configuration changes
+
+WARNING: This section is still incomplete. To be completed upon the CR or release.
+
+One of the main changes is the addition of the concept of "backend" to the configuration.
+The "backend" represents a common set of resources shared between multiple index managers:
+thread pools if necessary, a filesystem directory where index files are stored (Lucene),
+a HTTP client to reach a remote indexing service (Elasticsearch), ...
+
+You will have to define a named "backend" in your configuration,
+and set various backend-scoped properties such as the root index path (for local Lucene indexes)
+or the hosts (for Elasticsearch) instead of configuring these at the index level like in Search 5.
+
+Read the https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#getting-started-configuration[getting started guide, section "configuration"]
+for more information.
+
+=== API changes
+
+WARNING: This section is still incomplete. To be completed upon the CR or release.
+
+A lot of APIs changed. We recommend to have a look at
+https://docs.jboss.org/hibernate/search/5.10/reference/en-US/html_single/#getting-started[the getting started guide] before migrating.
+
+=== SPI changes
+
+WARNING: This section is still incomplete. To be completed upon the CR or release.
+
+=== Behavior changes
+
+WARNING: This section is still incomplete. To be completed upon the CR or release.
+
+* It is no longer possible to map multiple entity types to the same index.
+Each index must be mapped to exactly one entity type.
