@@ -21,23 +21,39 @@ It refers to Hibernate Search version `{reference_version_full}`. If you think s
 
 === Requirements
 
-WARNING: Not determined yet. To be determined upon the CR or release.
+This version of Hibernate Search now requires using Hibernate ORM versions from the `5.3.x` family.
+
+This implies it now requires *JPA 2.2*, as that's the version of JPA implemented by Hibernate ORM 5.3.
 
 === Configuration changes
 
-WARNING: Not determined yet. To be determined upon the CR or release.
+* We http://hibernate.org/search/releases/5.10/#jpms-automatic-module-names[added Java module names to our JARs].
+The JVM was previously deriving the names from the JAR file names,
+as it does with all JARs where no module name is defined.
+If you have dependencies to Hibernate Search in your `module-info`,
+you might need to update these dependencies.
 
 === API changes
+
+* `ElasticsearchEnvironment.ANALYSIS_DEFINITION_PROVIDER` now contains `elasticsearch.analysis_definition_provider`,
+without the `hibernate.search.` prefix, consistently with other constants in the same class.
+* Binary compatibility with Hibernate Search 5.5 has been restored
+in the few places of our API that had changed in incompatible way.
+This is mainly of interest to Hibernate Search integrators.
 
 WARNING: Not determined yet. To be determined upon the CR or release.
 
 === SPI changes
 
-WARNING: Not determined yet. To be determined upon the CR or release.
+* Two methods have been removed from `org.hibernate.search.indexes.spi.IndexManagerType`:
+`createAnalyzerStrategy` and `createMissingValueStrategy`.
+To replace them, we added `IndexFamilyImplementor createIndexFamily(ServiceManager, SearchConfiguration)`,
+which creates an intermediary "index family" which in turns provides the analyzer strategy and missing value strategy.
+See the javadoc for `org.hibernate.search.indexes.spi.IndexFamilyImplementor` for more information.
+* `org.hibernate.search.hcore.spi.EnvironmentSynchronizer` now exposes a
+`org.hibernate.search.hcore.spi.EnvironmentSynchronizer#whenEnvironmentDestroying` method.
 
 === Behavior changes
-
-WARNING: Not fully determined yet. To be determined upon the CR or release.
 
 * As of https://hibernate.atlassian.net/browse/HSEARCH-3039[HSEARCH-3039],
 Embedded IDs are no longer analyzed.
