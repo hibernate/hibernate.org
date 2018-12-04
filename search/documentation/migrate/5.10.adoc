@@ -41,8 +41,6 @@ without the `hibernate.search.` prefix, consistently with other constants in the
 in the few places of our API that had changed in incompatible way.
 This is mainly of interest to Hibernate Search integrators.
 
-WARNING: Not determined yet. To be determined upon the CR or release.
-
 === SPI changes
 
 * Two methods have been removed from `org.hibernate.search.indexes.spi.IndexManagerType`:
