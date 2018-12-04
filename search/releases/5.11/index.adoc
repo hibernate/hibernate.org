@@ -1,0 +1,18 @@
+:awestruct-layout: project-releases-series
+:awestruct-project: search
+:awestruct-series_version: "5.11"
+
+[[orm54]]
+=== ORM 5.4
+
+Hibernate Search 5.11 is designed to work with Hibernate ORM 5.4.
+
+[[jdk11]]
+=== JDK11 compatibility
+
+Hibernate Search 5.11 is designed to work with both JDK8 and JDK11.
+
+[[wildfly-14]]
+=== Upgrade to WildFly 14
+
+Hibernate Search's JBoss modules now target WildFly 14.
