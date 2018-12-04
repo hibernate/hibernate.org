@@ -25,7 +25,7 @@ artifacts:
     summary: WildFly feature pack - Amazon IAM authentication for Elasticsearch
 integration_constraints:
   java:
-    version: 8+
+    version: 8
   orm:
     version: 5.2 (>= 5.2.3.Final)
   elasticsearch:

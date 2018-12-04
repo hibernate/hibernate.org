@@ -11,7 +11,7 @@ artifacts:
     summary: JMS backend
 integration_constraints:
   java:
-    version: 7+
+    version: 7 - 8
   orm:
     version: 5.0 - 5.1
   elasticsearch:
