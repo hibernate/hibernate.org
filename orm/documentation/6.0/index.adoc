@@ -1,0 +1,49 @@
+= Documentation - 5.4
+:awestruct-layout: project-documentation-orm
+:awestruct-project: orm
+:awestruct-ormversion:6.0
+
+== Guides and such
+
+link:http://docs.jboss.org/hibernate/orm/{awestruct-ormversion}/quickstart/html_single/[Getting Started Guide]::
+A quickstart-style guide with tutorials.  See also the Obtaining Hibernate section discussing the Hibernate artifacts and how to obtain them.
+
+link:https://github.com/hibernate/hibernate-orm/blob/{awestruct-ormversion}/migration-guide.adoc[Migration Guide]::
+Migration guide covering migration to {awestruct-ormversion} from the previous version
+link:http://docs.jboss.org/hibernate/orm/{awestruct-ormversion}/userguide/html_single/Hibernate_User_Guide.html[User Guide]::
+Guide covering most user facing concepts and APIs of Hibernate
+
+link:http://docs.jboss.org/hibernate/orm/{awestruct-ormversion}/integrationguide/html_single/Hibernate_Integration_Guide.html[Integrations Guide]::
+Guide covering topics of interest for developers looking to develop integrations with Hibernate.
+
+link:http://docs.jboss.org/hibernate/orm/{awestruct-ormversion}/javadocs/[Hibernate JavaDoc]::
+The Hibernate JavaDocs
+
+link:https://docs.jboss.org/hibernate/orm/{awestruct-ormversion}/topical/html_single/wildfly/Wildfly.html[WildFly, updating in]::
+Guide to update WildFly 12 to use the latest version of Hibernate ORM {awestruct-ormversion}
+
+link:http://docs.jboss.org/hibernate/jpa/2.2/api/[JPA 2.2 JavaDoc]::
+The JPA (2.2) JavaDocs
+
+link:/orm/faq/[FAQ]::
+The FAQ
+
+link:https://community.jboss.org/en/hibernate[JBoss-hosted wiki]::
+Wiki (older content) hosted at JBoss.org
+
+link:https://github.com/hibernate/hibernate-orm/wiki/_pages[GitHub-hosted wiki]::
+Wiki hosted at GitHub
+
+== Presentations
+
+Brett did a few interesting presentations available on Slideshare:
+
+* http://www.slideshare.net/brmeyer/orm-jpa-hibernate-overview[Gentle introduction on ORMs and JPA]
+* http://www.slideshare.net/brmeyer/hibernate-orm-performance-31550150[Hibernate ORM: tips, tricks and performance techniques]
+* http://www.slideshare.net/brmeyer/hibernate-orm-features[Not Just ORM: Powerful Hibernate ORM Features and Capabilities]
+
+If you are interested in *Hibernate Performance Tuning*, check out Vlad's presentation:
+
+* https://www.youtube.com/watch?v=BTdTEe9QL5k&t=1s[Video]
+* http://www.slideshare.net/VladMihalcea/high-performance-hibernate-devoxx-france[Slides]
+

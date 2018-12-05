@@ -1,0 +1,24 @@
+:awestruct-layout: project-releases-series
+:awestruct-project: orm
+:awestruct-series_version: "6.0"
+
+
+=== JDBC Performance
+
+6.0 switches reading from JDBC `ResultSet` by name to reading by position.  This
+required significant changes to the Hibernate type system.
+
+
+=== HQL Translation Performance
+
+6.0 switched from Antlr v2 to Antlr v4 for its HQL translation.  Antlr v4
+itself is more performant.  Additionally we refactored the grammars to be
+more efficient
+
+
+=== Criteria Translation Performance
+
+In previous versions of Hibernate, JPA Criteria queries were translated by
+first rendering the Criteria as an HQL query.  6.0 changes this so that
+HQL and Criteria are both translated into the same form : the Semantic Query
+Model (SQM).
