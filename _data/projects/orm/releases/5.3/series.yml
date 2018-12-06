@@ -1,4 +1,6 @@
 summary: JPA 2.2, inheritance caching
+maven:
+  group_id: org.hibernate
 integration_constraints:
   java:
     version: 8+

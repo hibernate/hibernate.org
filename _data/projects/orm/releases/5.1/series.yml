@@ -1,5 +1,6 @@
 summary: Entity joins, load-by-multiple-ids, association traversal in AuditQuery
 maven:
+  group_id: org.hibernate
   main_artifact_id: hibernate-core
   repo:
     central:

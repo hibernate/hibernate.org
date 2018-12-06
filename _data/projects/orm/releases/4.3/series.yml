@@ -2,6 +2,7 @@ summary: JPA 2.1 support
 displayed: false
 reference_doc_path: manual/en-US/html_single/
 maven:
+  group_id: org.hibernate
   main_artifact_id: hibernate-core
   repo:
     central:

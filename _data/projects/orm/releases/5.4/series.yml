@@ -1,4 +1,6 @@
 summary: EntityGraph improvements, JDK 11 support
+maven:
+  group_id: org.hibernate
 integration_constraints:
   java:
     version: 8+

@@ -45,7 +45,7 @@ projects:
     sourceforge_url: http://sourceforge.net/projects/hibernate/files/hibernate-orm/
     zip_file: hibernate-release-VERSION.zip
     maven:
-      group_id: org.hibernate
+      group_id: org.hibernate.orm
       repo:
         central:
           artifact_id_pattern: hibernate-*
