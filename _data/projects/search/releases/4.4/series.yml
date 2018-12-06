@@ -1,5 +1,8 @@
 summary: Dynamic index sharding, new Metadata API, Hibernate ORM 4.2.x compatible
 displayed: false
+maven:
+  group_id: org.hibernate
+  main_artifact_id: hibernate-search-orm
 artifacts:
   - artifact_id: hibernate-search-orm
     summary: Hibernate ORM integration

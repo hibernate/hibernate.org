@@ -1,5 +1,8 @@
 summary: Multi-tenancy, optimisations in criteria based loaders
 displayed: false
+maven:
+  group_id: org.hibernate
+  main_artifact_id: hibernate-search-orm
 artifacts:
   - artifact_id: hibernate-search-orm
     summary: Hibernate ORM integration

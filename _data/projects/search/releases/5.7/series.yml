@@ -1,5 +1,8 @@
 summary: Improved integration with Elasticsearch 2.x, compatible with Hibernate ORM 5.2.x
 displayed: false
+maven:
+  group_id: org.hibernate
+  main_artifact_id: hibernate-search-orm
 artifacts:
   - artifact_id: hibernate-search-orm
     summary: Hibernate ORM integration

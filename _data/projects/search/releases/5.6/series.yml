@@ -1,5 +1,8 @@
 summary: Introduces experimental support for Elasticsearch, last release supporting Hibernate ORM 5.0.z or 5.1.z
 displayed: true
+maven:
+  group_id: org.hibernate
+  main_artifact_id: hibernate-search-orm
 artifacts:
   - artifact_id: hibernate-search-orm
     summary: Hibernate ORM integration

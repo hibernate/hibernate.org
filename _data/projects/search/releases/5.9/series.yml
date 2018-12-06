@@ -1,5 +1,8 @@
 summary: JSR 352 (Batch for Java) mass indexing job, WildFly feature packs, improvements and deprecations paving the road to Search 6
 displayed: true
+maven:
+  group_id: org.hibernate
+  main_artifact_id: hibernate-search-orm
 artifacts:
   - artifact_id: hibernate-search-orm
     summary: Hibernate ORM integration

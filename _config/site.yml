@@ -140,8 +140,8 @@ projects:
     sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-search/
     zip_file: hibernate-search-VERSION-dist.zip
     maven:
-      group_id: org.hibernate
-      main_artifact_id: hibernate-search-orm
+      group_id: org.hibernate.search
+      main_artifact_id: hibernate-search-mapper-orm
       repo:
         central:
           artifact_id_pattern: hibernate-search-*

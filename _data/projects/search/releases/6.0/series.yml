@@ -1,8 +1,5 @@
 summary: API refresh, Bridge 2.0, Lucene 7, Elasticsearch 6.
 displayed: true
-maven:
-  group_id: org.hibernate.search
-  main_artifact_id: hibernate-search-mapper-orm
 artifacts:
   - artifact_id: hibernate-search-mapper-orm
     summary: Hibernate ORM mapper

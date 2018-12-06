@@ -1,5 +1,8 @@
 summary: Upgrade to Lucene 4 and much much more ...
 displayed: false
+maven:
+  group_id: org.hibernate
+  main_artifact_id: hibernate-search-orm
 artifacts:
   - artifact_id: hibernate-search-orm
     summary: Hibernate ORM integration
