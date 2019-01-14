@@ -2,13 +2,14 @@
 :awestruct-layout: project-documentation-orm
 :awestruct-project: orm
 :awestruct-ormversion: 5.4
+:awestruct-githubbranch: master
 
 == Guides and such
 
 link:http://docs.jboss.org/hibernate/orm/{awestruct-ormversion}/quickstart/html_single/[Getting Started Guide]::
 A quickstart-style guide with tutorials.  See also the Obtaining Hibernate section discussing the Hibernate artifacts and how to obtain them.
 
-link:https://github.com/hibernate/hibernate-orm/blob/{awestruct-ormversion}/migration-guide.adoc[Migration Guide]::
+link:https://github.com/hibernate/hibernate-orm/blob/{awestruct-githubbranch}/migration-guide.adoc[Migration Guide]::
 Migration guide covering migration to {awestruct-ormversion} from the previous version
 link:http://docs.jboss.org/hibernate/orm/{awestruct-ormversion}/userguide/html_single/Hibernate_User_Guide.html[User Guide]::
 Guide covering most user facing concepts and APIs of Hibernate
