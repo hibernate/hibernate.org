@@ -15,8 +15,8 @@ you cannot configure custom Lucene directories,
 you cannot ignore bridges in the predicate DSL,
 and so on.
 * APIs are not considered stable yet.
-* The low-level parts of Hibernate Search 5 that improve its efficiency haven't been
-ported to Hibernate Search 6 yet.
+* The low-level parts of the Lucene backend from Hibernate Search 5
+that improve its efficiency haven't been ported to Hibernate Search 6 yet.
 This results in obvious performance bottlenecks,
 such as all the indexing works from a multi-threaded application being executed
 one after another and without any form of batching.
@@ -30,6 +30,7 @@ However, we do not offer all the options that were available in Search 5 (yet),
 and we do not support all the data types (yet).
 ** Automatic indexing of ORM entities as they are persisted within a transaction
 (enabled automatically if Hibernate Search is in your classpath and the entity is mapped).
+** Mass indexing of ORM entities that are already persisted in database.
 ** Search for ORM entities using their Hibernate Search index,
 and retrieving managed entities as results.
 However, we do not offer many options regarding how the entities are retrieved and initialized (yet).
@@ -44,23 +45,22 @@ However, we do not offer all the options that were available in Search 5 (yet).
 ** All the sorts listed in `org.hibernate.search.engine.search.dsl.sort.SearchSortContainerContext`.
 However, we do not offer all the options that were available in Search 5 (yet).
 ** All the projections listed in `org.hibernate.search.engine.search.dsl.projection.SearchProjectionFactoryContext`.
-However, we do not offer all the options that were available in Search 5 (yet).
 
 [[orm-version]]
 === ORM version
 
-Hibernate Search 6 still relies on ORM 5.3 at the moment,
+Hibernate Search 6 still relies on ORM 5.4 at the moment,
 because it requires features that are not yet implemented in ORM 6 (still in development).
 
 [[lucene-7]]
 === Lucene 7
 
-The Lucene backend now uses Lucene 7.5.
+The Lucene backend now uses Lucene 7.6.
 
 [[elasticsearch-6]]
 === Elasticsearch 6
 
-The Elasticsearch backend now works with Elasticsearch 5.6 or 6.5.
+The Elasticsearch backend now works with Elasticsearch 5.6 or 6.6.
 Support for older versions of Elasticsearch was dropped.
 
 [[api-refresh]]
