@@ -11,14 +11,34 @@ If you have a question regarding one of our projects, the following resources wi
 finding the answer:
 
 Documentation::
-Best to first check the documentation. Yes it sounds boring, but knowing a tool makes the difference. +++<br /><a class="ui mini button labeled icon primary" href="/orm/documentation/"><i class="icon book"></i>ORM</a><a class="ui mini button labeled icon primary" href="/search/documentation/"><i class="icon book"></i>Search</a><a class="ui mini button labeled icon primary" href="/validator/documentation/"><i class="icon book"></i>Validator</a><a class="ui mini button labeled icon primary" href="/ogm/documentation/"><i class="icon book"></i>OGM</a>+++
+Best to first check the documentation. Yes it sounds boring, but knowing a tool makes the difference.
++++<br />
+<a class="ui mini button labeled icon primary" href="/orm/documentation/"><i class="icon book"></i>ORM</a>
+<a class="ui mini button labeled icon primary" href="/search/documentation/"><i class="icon book"></i>Search</a>
+<a class="ui mini button labeled icon primary" href="/validator/documentation/"><i class="icon book"></i>Validator</a>
+<a class="ui mini button labeled icon primary" href="/ogm/documentation/"><i class="icon book"></i>OGM</a>
+<a class="ui mini button labeled icon primary" href="http://tools.jboss.org/documentation/"><i class="icon book"></i>Tools</a>
++++
 
 https://stackoverflow.com/[Stack Overflow]::
-After the documentation, probably the best place to look for answers. We actively monitor the following tags: +++<br /><a class="ui label blue" href="https://stackoverflow.com/questions/tagged/hibernate">hibernate</a> <a class="ui label blue" href="https://stackoverflow.com/questions/tagged/hibernate-search">hibernate-search</a> <a class="ui label blue" href="https://stackoverflow.com/questions/tagged/hibernate-validator">hibernate-validator</a> <a class="ui label blue" href="https://stackoverflow.com/questions/tagged/hibernate-ogm">hibernate-ogm</a>+++
+After the documentation, probably the best place to look for answers. We actively monitor the following tags:
++++<br />
+<a class="ui label blue" href="https://stackoverflow.com/questions/tagged/hibernate">hibernate</a>
+<a class="ui label blue" href="https://stackoverflow.com/questions/tagged/hibernate-search">hibernate-search</a>
+<a class="ui label blue" href="https://stackoverflow.com/questions/tagged/hibernate-validator">hibernate-validator</a>
+<a class="ui label blue" href="https://stackoverflow.com/questions/tagged/hibernate-ogm">hibernate-ogm</a>
+<a class="ui label blue" href="https://stackoverflow.com/questions/tagged/hibernate-tools">hibernate-tools</a>
++++
 
 https://discourse.hibernate.org[Forum]::
 If your question doesn't fit the Stack Overflow format, our forum is here for you. Come join us and discuss! We have a category for each project:
-+++<br /><a class="ui label blue" href="https://discourse.hibernate.org/c/hibernate-orm">Hibernate ORM</a> <a class="ui label blue" href="https://discourse.hibernate.org/c/hibernate-search">Hibernate Search</a> <a class="ui label blue" href="https://discourse.hibernate.org/c/hibernate-validator">Hibernate Validator</a> <a class="ui label blue" href="https://discourse.hibernate.org/c/hibernate-ogm">Hibernate OGM</a>+++
++++<br />
+<a class="ui label blue" href="https://discourse.hibernate.org/c/hibernate-orm">Hibernate ORM</a>
+<a class="ui label blue" href="https://discourse.hibernate.org/c/hibernate-search">Hibernate Search</a>
+<a class="ui label blue" href="https://discourse.hibernate.org/c/hibernate-validator">Hibernate Validator</a>
+<a class="ui label blue" href="https://discourse.hibernate.org/c/hibernate-ogm">Hibernate OGM</a>
+<a class="ui label blue" href="https://discourse.hibernate.org/c/hibernate-tools">Hibernate Tools</a>
++++
 
 http://community.jboss.org/en/hibernate/[Wiki]::
 The wiki nicely complements the reference documentation and is improved by the community at large.
@@ -76,6 +96,7 @@ The Hibernate team maintains multiple development-oriented https://zulipchat.com
 <a class="ui label blue" href="https://hibernate.zulipchat.com/#narrow/stream/132092-hibernate-search-dev">hibernate-search-dev</a>
 <a class="ui label blue" href="https://hibernate.zulipchat.com/#narrow/stream/132093-hibernate-validator-dev">hibernate-validator-dev</a>
 <a class="ui label blue" href="https://hibernate.zulipchat.com/#narrow/stream/132091-hibernate-ogm-dev">hibernate-ogm-dev</a>
+<a class="ui label blue" href="https://hibernate.zulipchat.com/#narrow/stream/132104-hibernate-tooling-dev">hibernate-tooling-dev</a>
 +++
 +
 NOTE: You will need to register an account in order to access the chat; registration is free and only requires an email address.
