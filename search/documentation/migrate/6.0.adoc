@@ -91,3 +91,6 @@ WARNING: This section is still incomplete. To be completed upon the CR or releas
 
 * It is no longer possible to map multiple entity types to the same index.
 Each index must be mapped to exactly one entity type.
+* There is no longer a builtin, default bridge for `java.util.Class`.
+If you need to index a `Class<?>`, you will need to write a custom bridge
+(probably from `Class` to `String`).
