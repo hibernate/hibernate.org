@@ -5,6 +5,7 @@ Emmanuel Bernard
 Hibernate is first and foremost an open source community.
 Code, issues and discussions are in the open and each project is released under an open source license.
 
+[questions]
 == Ask questions & find answers
 
 If you have a question regarding one of our projects, the following resources will help you
@@ -64,6 +65,23 @@ NOTE: Bear in mind that people who can help answer your questions may not even s
 irc://irc.freenode.net/#hibernate[IRC user channel]::
 The IRC channels have largely been replaced by the Zulip chat (see above). Still, some
 community members (and developers occasionally) hang out in the +#hibernate+ IRC channel on https://www.freenode.net[Freenode].
+
+https://hibernate.atlassian.net[Issue tracker]::
+If you need to report a bug or request a new feature, look for a similar one on JIRA.
+If you don't find any, create a ticket.
+Here are the pages dedicated to each project:
++++<br />
+<div class="ui labels blue">
+<a class="ui label" href="https://hibernate.atlassian.net/browse/HHH">Hibernate ORM</a>
+<a class="ui label" href="https://hibernate.atlassian.net/browse/HSEARCH">Hibernate Search</a>
+<a class="ui label" href="https://hibernate.atlassian.net/browse/HVAL">Hibernate Validator</a>
+<a class="ui label" href="https://hibernate.atlassian.net/browse/OGM">Hibernate OGM</a>
+<a class="ui label" href="https://hibernate.atlassian.net/browse/HBX">Hibernate Tools</a>
+</div>
++++
++
+NOTE: If you're unsure whether you found a bug or simply made a mistake,
+please try to get help on Stack Overflow or on our forums first (see above).
 
 == Stay connected & up to date
 
