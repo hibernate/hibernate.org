@@ -30,7 +30,7 @@ artifacts:
     summary: WildFly feature pack - JGroups backend
 integration_constraints:
   java:
-    version: 8 - 9
+    version: 8
   orm:
     version: 5.3
   elasticsearch:

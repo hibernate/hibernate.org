@@ -16,6 +16,6 @@ artifacts:
     summary: Annotation processor
 integration_constraints:
   java:
-    version: 6+
+    version: 6 or 7
   bv:
     version: 1.1
