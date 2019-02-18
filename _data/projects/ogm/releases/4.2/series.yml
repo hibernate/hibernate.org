@@ -15,7 +15,7 @@ artifacts:
     summary: Ehcache integration
 integration_constraints:
   java:
-    version: 7+
+    version: 7
   jpa:
     version: 2.0
   orm:
