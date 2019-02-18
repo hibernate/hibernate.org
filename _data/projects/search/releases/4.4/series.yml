@@ -14,7 +14,7 @@ artifacts:
     summary: Analyzer dependencies from Lucene/Solr
 integration_constraints:
   java:
-    version: 6 - 7 - 8
+    version: 6, 7 or 8
   orm:
     version: 4.2
   lucene:

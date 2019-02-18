@@ -12,7 +12,7 @@ artifacts:
     summary: JMS backend
 integration_constraints:
   java:
-    version: 7 - 8
+    version: 7 or 8
   orm:
     version: 4.3
   lucene:
