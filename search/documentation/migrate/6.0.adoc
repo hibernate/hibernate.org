@@ -7,7 +7,7 @@ Yoann Rodière
 :toc-title: Content
 :to_version_short: 6.0
 :from_version_short: 5.11
-:reference_version_full: 6.0.0.Alpha2
+:reference_version_full: 6.0.0.Alpha3
 
 Here we are helping you migrate your existing Search application to the latest and greatest.
 
@@ -34,7 +34,7 @@ you will have to change your Maven dependencies, configuration and more complex 
 but you will be able to delay the more repetitive parts of the migration work (simple queries, simple entity mappings)
 to later.
 
-Finally, for those who cannot, or do not want to, spend the time required to migrate,
+Finally, for those who cannot afford to, or do not want to, spend the time required to migrate,
 we intend to continue maintenance releases (= bugfixes) of Hibernate Search 5.x:
 no end-of-life date has been set at the moment.
 ====
@@ -44,7 +44,7 @@ no end-of-life date has been set at the moment.
 WARNING: This section is still incomplete. To be completed upon the CR or release.
 
 * The Elasticsearch backend now requires Elasticsearch 5.6 or 6.6.
-* The Lucene backend now requires Lucene 7.6.
+* The Lucene backend now requires Lucene 7.7.
 
 === Maven coordinates changes
 
@@ -72,7 +72,9 @@ and set various backend-scoped properties such as the root index path (for local
 or the hosts (for Elasticsearch) instead of configuring these at the index level like in Search 5.
 
 Read the https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#getting-started-configuration[getting started guide, section "configuration"]
-for more information.
+for a quick introduction,
+or the https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#configuration[main "configuration" section of the reference documentation]
+for more in-depth information.
 
 === API changes
 

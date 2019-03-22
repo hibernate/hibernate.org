@@ -10,24 +10,24 @@ Hibernate Search 6.0 is currently a *technology preview* and is not ready for pr
 While the core of Hibernate Search 6 is there, there are still a lot of limitations:
 
 * Features are partially implemented or simply missing.
-For example, you cannot index a `Double` property yet,
+For example, you cannot index a `BigDecimal` property yet,
 you cannot configure custom Lucene directories,
-you cannot ignore bridges in the predicate DSL,
+you cannot override analyzers in the predicate DSL,
 and so on.
 * APIs are not considered stable yet.
 * The low-level parts of the Lucene backend from Hibernate Search 5
 that improve its efficiency haven't been ported to Hibernate Search 6 yet.
 This results in obvious performance bottlenecks,
-such as all the indexing works from a multi-threaded application being executed
-one after another and without any form of batching.
+such as all the indexing from a multi-threaded application being executed
+sequentially and without any kind of batching.
 
 The exact features that are currently implemented and expected to work will be added to the reference documentation
 as new Alpha versions are released, but to sum up, here is what you can start to play with:
 
 * ORM integration:
 ** Mapping of entities using either annotation mapping or programmatic mapping.
-However, we do not offer all the options that were available in Search 5 (yet),
-and we do not support all the data types (yet).
+However, we do not offer all the options that were available in Search 5 (yet).
+Most of the field types supported in Search 5 are supported in Search 6.
 ** Automatic indexing of ORM entities as they are persisted within a transaction
 (enabled automatically if Hibernate Search is in your classpath and the entity is mapped).
 ** Mass indexing of ORM entities that are already persisted in database.
@@ -40,10 +40,10 @@ we know that and will work on a lighter API
 (see https://hibernate.atlassian.net/browse/HSEARCH-3297[HSEARCH-3297],
 https://hibernate.atlassian.net/browse/HSEARCH-3298[HSEARCH-3298]).
 * Search DSL
-** All the predicates listed in `org.hibernate.search.engine.search.dsl.predicate.SearchPredicateFactoryContext`.
-However, we do not offer all the options that were available in Search 5 (yet).
-** All the sorts listed in `org.hibernate.search.engine.search.dsl.sort.SearchSortContainerContext`.
-However, we do not offer all the options that were available in Search 5 (yet).
+** All the predicates available in Search 5, except `facet` and `moreLikeThis`.
+Additionally, the new `id` and `nested` predicates were added.
+See `org.hibernate.search.engine.search.dsl.predicate.SearchPredicateFactoryContext`.
+** All the predicates available in Search 5. See `org.hibernate.search.engine.search.dsl.sort.SearchSortContainerContext`.
 ** All the projections listed in `org.hibernate.search.engine.search.dsl.projection.SearchProjectionFactoryContext`.
 
 [[orm-version]]
@@ -55,7 +55,7 @@ because it requires features that are not yet implemented in ORM 6 (still in dev
 [[lucene-7]]
 === Lucene 7
 
-The Lucene backend now uses Lucene 7.6.
+The Lucene backend now uses Lucene 7.7.
 
 [[elasticsearch-6]]
 === Elasticsearch 6
@@ -67,6 +67,15 @@ Support for older versions of Elasticsearch was dropped.
 === API refresh
 
 A lot of APIs have been changed, for multiple reasons.
+
+==== More consistent API types
+
+The API types consistently use the `Search` prefix: no more mixing `FullText` with `Search` or simply no prefix.
+
+Additionally, the `SearchQuery` type (previously `FullTextQuery`) now defines its own methods
+instead of extending JPA's `TypeQuery`, allowing for an API that makes more sense considering that an index,
+not a database, is being targeted.
+It is still possible to create an adapter that implements JPA's `TypeQuery`.
 
 ==== No more Lucene in Hibernate Search APIs
 
@@ -92,6 +101,10 @@ This is not new for the Lucene integration, but it is for the Elasticsearch inte
 See `org.hibernate.search.engine.search.dsl.predicate.SearchPredicateFactoryContext.extension(SearchPredicateFactoryContextExtension<T>)`
 `org.hibernate.search.backend.elasticsearch.ElasticsearchExtension.get()` and
 `org.hibernate.search.backend.lucene.LuceneExtension.get()`.
+* Simpler syntax for predicates when tareting multiple types in a single query:
+instantiating multiple `QueryBuilders` is no longer needed,
+Hibernate Search takes into account that multiple types are targeted
+and automatically understands checks that targeted fields are compatible across all targeted indexes.
 
 [[bridge-2.0]]
 ==== Bridge 2.0
@@ -107,7 +120,7 @@ by allowing bridges to declare what parts of the entity they use.
 * Predicates on non-String fields will work without having to bypass bridges (`.ignoreFieldBridge()`) like in Search 5.
 * And more!
 
-=== Easier to use automatic indexing
+=== Easier to use, safer automatic indexing
 
 Automatic indexing improvements are not limited to bridges:
 `@IndexedEmbedded` is easier to configure properly in Search 6, too.
