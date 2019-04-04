@@ -2,3 +2,10 @@ date: 2019-03-22
 stable: false
 announcement_url: http://in.relation.to/2019/03/22/hibernate-search-6-0-0-Alpha3
 summary: "More field types, more predicates, more consistent and less verbose API, other bugfixes and improvements."
+artifacts:
+  - artifact_id: hibernate-search-mapper-orm
+    summary: Hibernate ORM mapper
+  - artifact_id: hibernate-search-backend-elasticsearch
+    summary: Elasticsearch backend
+  - artifact_id: hibernate-search-backend-lucene
+    summary: Lucene backend

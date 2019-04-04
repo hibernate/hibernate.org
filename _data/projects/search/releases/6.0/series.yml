@@ -1,12 +1,14 @@
-summary: API refresh, Bridge 2.0, Lucene 7, Elasticsearch 6.
+summary: API refresh, Bridge 2.0, Lucene 8, Elasticsearch 6.
 displayed: true
 artifacts:
   - artifact_id: hibernate-search-mapper-orm
     summary: Hibernate ORM mapper
-  - artifact_id: hibernate-search-backend-elasticsearch
-    summary: Elasticsearch backend
   - artifact_id: hibernate-search-backend-lucene
     summary: Lucene backend
+  - artifact_id: hibernate-search-backend-elasticsearch
+    summary: Elasticsearch backend
+  - artifact_id: hibernate-search-backend-elasticsearch-aws
+    summary: Amazon IAM authentication for Elasticsearch
 integration_constraints:
   java:
     version: 8, 11 or 12
@@ -15,4 +17,4 @@ integration_constraints:
   elasticsearch:
     version: 5.6 - 6.6
   lucene:
-    version: 7.7
+    version: 8.0

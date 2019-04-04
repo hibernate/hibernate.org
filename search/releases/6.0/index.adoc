@@ -12,7 +12,6 @@ While the core of Hibernate Search 6 is there, there are still a lot of limitati
 * Features are partially implemented or simply missing.
 For example, you cannot index a `BigDecimal` property yet,
 you cannot configure custom Lucene directories,
-you cannot override analyzers in the predicate DSL,
 and so on.
 * APIs are not considered stable yet.
 * The low-level parts of the Lucene backend from Hibernate Search 5
@@ -41,7 +40,7 @@ we know that and will work on a lighter API
 https://hibernate.atlassian.net/browse/HSEARCH-3298[HSEARCH-3298]).
 * Search DSL
 ** All the predicates available in Search 5, except `facet` and `moreLikeThis`.
-Additionally, the new `id` and `nested` predicates were added.
+Additionally, the new `id`, `nested` and `exists` predicates were added.
 See `org.hibernate.search.engine.search.dsl.predicate.SearchPredicateFactoryContext`.
 ** All the predicates available in Search 5. See `org.hibernate.search.engine.search.dsl.sort.SearchSortContainerContext`.
 ** All the projections listed in `org.hibernate.search.engine.search.dsl.projection.SearchProjectionFactoryContext`.
@@ -52,10 +51,12 @@ See `org.hibernate.search.engine.search.dsl.predicate.SearchPredicateFactoryCont
 Hibernate Search 6 still relies on ORM 5.4 at the moment,
 because it requires features that are not yet implemented in ORM 6 (still in development).
 
+[[lucene-8]]
+=== Lucene 8
+// Old anchor, kept here to avoid dead links
 [[lucene-7]]
-=== Lucene 7
 
-The Lucene backend now uses Lucene 7.7.
+The Lucene backend now uses Lucene 8.0.
 
 [[elasticsearch-6]]
 === Elasticsearch 6
@@ -95,13 +96,15 @@ The Search DSL is brand new, with several improvements:
 
 * Ability to use lambdas for more concise query definition, even when queries are complex.
 * Type-safe projections thanks to the brand new projection DSL.
+* Various new features and improvements such as a new "exists" predicate,
+the ability to override analyzers on a per-predicate basis, ...
 * Injection of native predicates (`org.apache.lucene.search.Query`, JSON for Elasticsearch)
 within DSL-created predicates.
 This is not new for the Lucene integration, but it is for the Elasticsearch integration.
 See `org.hibernate.search.engine.search.dsl.predicate.SearchPredicateFactoryContext.extension(SearchPredicateFactoryContextExtension<T>)`
 `org.hibernate.search.backend.elasticsearch.ElasticsearchExtension.get()` and
 `org.hibernate.search.backend.lucene.LuceneExtension.get()`.
-* Simpler syntax for predicates when tareting multiple types in a single query:
+* Simpler syntax for predicates when targeting multiple types in a single query:
 instantiating multiple `QueryBuilders` is no longer needed,
 Hibernate Search takes into account that multiple types are targeted
 and automatically understands checks that targeted fields are compatible across all targeted indexes.
