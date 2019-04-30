@@ -34,15 +34,11 @@ Most of the field types supported in Search 5 are supported in Search 6.
 and retrieving managed entities as results.
 However, we do not offer many options regarding how the entities are retrieved and initialized (yet).
 ** Custom, user-defined type bridges, property bridges or value bridges.
-However, the API to retrieve information from POJOs is currently quite cumbersome:
-we know that and will work on a lighter API
-(see https://hibernate.atlassian.net/browse/HSEARCH-3297[HSEARCH-3297],
-https://hibernate.atlassian.net/browse/HSEARCH-3298[HSEARCH-3298]).
 * Search DSL
 ** All the predicates available in Search 5, except `facet` and `moreLikeThis`.
 Additionally, the new `id`, `nested` and `exists` predicates were added.
 See `org.hibernate.search.engine.search.dsl.predicate.SearchPredicateFactoryContext`.
-** All the predicates available in Search 5. See `org.hibernate.search.engine.search.dsl.sort.SearchSortContainerContext`.
+** All the sorts available in Search 5. See `org.hibernate.search.engine.search.dsl.sort.SearchSortContainerContext`.
 ** All the projections listed in `org.hibernate.search.engine.search.dsl.projection.SearchProjectionFactoryContext`.
 
 [[orm-version]]
@@ -58,10 +54,12 @@ because it requires features that are not yet implemented in ORM 6 (still in dev
 
 The Lucene backend now uses Lucene 8.0.
 
+[[elasticsearch-7]]
+=== Elasticsearch 7
+// Old anchor, kept here to avoid dead links
 [[elasticsearch-6]]
-=== Elasticsearch 6
 
-The Elasticsearch backend now works with Elasticsearch 5.6 or 6.6.
+The Elasticsearch backend now works with Elasticsearch 5.6, 6.7 or 7.0.
 Support for older versions of Elasticsearch was dropped.
 
 [[api-refresh]]

@@ -7,7 +7,7 @@ Yoann Rodière
 :toc-title: Content
 :to_version_short: 6.0
 :from_version_short: 5.11
-:reference_version_full: 6.0.0.Alpha4
+:reference_version_full: 6.0.0.Alpha5
 
 Here we are helping you migrate your existing Search application to the latest and greatest.
 
@@ -43,7 +43,7 @@ no end-of-life date has been set at the moment.
 
 WARNING: This section is still incomplete. To be completed upon the CR or release.
 
-* The Elasticsearch backend now requires Elasticsearch 5.6 or 6.6.
+* The Elasticsearch backend now requires Elasticsearch 5.6, 6.7 or 7.0.
 * The Lucene backend now requires Lucene 8.0.
 
 === Maven coordinates changes
