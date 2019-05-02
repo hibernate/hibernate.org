@@ -269,6 +269,13 @@
 	margin-top: 10px !important;
 }
 
+img {
+	border: 0 none;
+	height: auto;
+	max-width: 100%;
+	vertical-align: middle;
+}
+
 hr {
 	border: 0;
 	border-top: 1px dotted #bcae79;
@@ -852,8 +859,3 @@ pre .comment .conum {
 	}
 }
 
-/**
- * Red Hat top banner
- */
-
-@import 'tabzilla'

@@ -21,8 +21,6 @@
 %script(src="#{site.semantic_ui_js_url}#{site.minified}.js")
 %script(src="#{site.slick_js_url}#{site.minified}.js")
 %script(src="#{site.match_height_js_url}#{site.minified}.js")
-/ Tabzilla does not support minification
-%script(src="#{site.jboss_tabzilla_js_url}.js")
 - if real_page.javascripts
   - real_page.javascripts.each do |javascript|
     %script{:src=>javascript, :type=>'text/javascript'}
