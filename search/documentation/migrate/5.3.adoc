@@ -28,6 +28,10 @@ The basic requirements didn't change.
 ==== The Faceting API and engine
 
 The Faceting engine has seen significant improvements.
-Most of the changes don't affect the API, with one very notable exception: you have to add a `@Facet` (or `@Facets`) annotation on the fields which you intend to use for faceting.
+Most of the changes don't affect the API, with two very notable exceptions:
+
+1. You have to add a `@Facet` (or `@Facets`) annotation on the fields which you intend to use for faceting.
+2. The maximum number of facets returned by a query is now 100 by default.
+You can override this to a value of your own by calling `.maxFacetCount( <value> )` when building the faceting request.
 
 A full explanation and examples can be found on the http://in.relation.to/Bloggers/HibernateSearch530Beta1WithNativeLuceneFaceting[this blog post].
