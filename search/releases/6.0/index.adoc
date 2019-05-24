@@ -10,15 +10,10 @@ Hibernate Search 6.0 is currently a *technology preview* and is not ready for pr
 While the core of Hibernate Search 6 is there, there are still a lot of limitations:
 
 * Features are partially implemented or simply missing.
-For example, you cannot index a `BigDecimal` property yet,
+For example, you cannot use faceting,
 you cannot configure custom Lucene directories,
 and so on.
 * APIs are not considered stable yet.
-* The low-level parts of the Lucene backend from Hibernate Search 5
-that improve its efficiency haven't been ported to Hibernate Search 6 yet.
-This results in obvious performance bottlenecks,
-such as all the indexing from a multi-threaded application being executed
-sequentially and without any kind of batching.
 
 The exact features that are currently implemented and expected to work will be added to the reference documentation
 as new Alpha versions are released, but to sum up, here is what you can start to play with:
@@ -28,11 +23,11 @@ as new Alpha versions are released, but to sum up, here is what you can start to
 However, we do not offer all the options that were available in Search 5 (yet).
 Most of the field types supported in Search 5 are supported in Search 6.
 ** Automatic indexing of ORM entities as they are persisted within a transaction
-(enabled automatically if Hibernate Search is in your classpath and the entity is mapped).
+(enabled automatically if Hibernate Search is in your classpath and the entity is `@Indexed`).
 ** Mass indexing of ORM entities that are already persisted in database.
-** Search for ORM entities using their Hibernate Search index,
+** Searching for ORM entities using their Hibernate Search index,
 and retrieving managed entities as results.
-However, we do not offer many options regarding how the entities are retrieved and initialized (yet).
+However, we do not offer many options regarding how the entities are loaded from the database (yet).
 ** Custom, user-defined type bridges, property bridges or value bridges.
 * Search DSL
 ** All the predicates available in Search 5, except `facet` and `moreLikeThis`.
@@ -99,7 +94,7 @@ the ability to override analyzers on a per-predicate basis, ...
 * Injection of native predicates (`org.apache.lucene.search.Query`, JSON for Elasticsearch)
 within DSL-created predicates.
 This is not new for the Lucene integration, but it is for the Elasticsearch integration.
-See `org.hibernate.search.engine.search.dsl.predicate.SearchPredicateFactoryContext.extension(SearchPredicateFactoryContextExtension<T>)`
+See `org.hibernate.search.engine.search.dsl.query.SearchQueryResultDefinitionContext.extension(...)`
 `org.hibernate.search.backend.elasticsearch.ElasticsearchExtension.get()` and
 `org.hibernate.search.backend.lucene.LuceneExtension.get()`.
 * Simpler syntax for predicates when targeting multiple types in a single query:

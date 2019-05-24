@@ -7,7 +7,7 @@ Yoann Rodière
 :toc-title: Content
 :to_version_short: 6.0
 :from_version_short: 5.11
-:reference_version_full: 6.0.0.Alpha5
+:reference_version_full: 6.0.0.Alpha6
 
 Here we are helping you migrate your existing Search application to the latest and greatest.
 
@@ -21,7 +21,7 @@ It refers to Hibernate Search version `{reference_version_full}`. If you think s
 
 [IMPORTANT]
 ====
-Search 6 breaks many APIs, so migrating older projects will be more work than usual.
+Search 6 introduces new APIs, so migrating older projects will be more work than usual.
 This migration guide will be completed as we release new versions and the APIs get more and more stable,
 but for now we recommend to only test Search 6 on small projects.
 
