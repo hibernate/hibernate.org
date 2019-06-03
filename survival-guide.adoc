@@ -282,8 +282,8 @@ For this reason, ou might need to use `git push --force` to overwrite previous e
 
 Pushing changes to the
 link:https://github.com/hibernate/hibernate.org/tree/staging[staging branch]
-will trigger the link:http://ci.hibernate.org/view/Website/job/staging.hibernate.org/[staging.hibernate.org]
-job on the Hibernate link:http://ci.hibernate.org[CI Server]. The content of
+will trigger the link:https://ci.hibernate.org/view/Website/job/staging.hibernate.org/[staging.hibernate.org]
+job on the Hibernate link:https://ci.hibernate.org[CI Server]. The content of
 staging.hibernate.org will be automatically updated as part of a successful
 build.
 
@@ -306,7 +306,7 @@ If you have a push error, rebase first and possibly repeat the <<staging,staging
 
 Pushing changes to the
 link:https://github.com/hibernate/hibernate.org/tree/production[production branch]
-will trigger the link:http://ci.hibernate.org/view/Website/job/www.hibernate.org/[www.hibernate.org]
-job on the Hibernate link:http://ci.hibernate.org[CI Server]. The content of
+will trigger the link:https://ci.hibernate.org/view/Website/job/www.hibernate.org/[www.hibernate.org]
+job on the Hibernate link:https://ci.hibernate.org[CI Server]. The content of
 link:http://hibernate.org[hibernate.org] will be automatically updated as a result
 of a successful build.
