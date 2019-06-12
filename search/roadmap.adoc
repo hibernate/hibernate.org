@@ -1,5 +1,5 @@
 = Roadmap
-Emmanuel Bernard, Sanne Grinovero
+Emmanuel Bernard, Sanne Grinovero, Yoann Rodière
 :awestruct-layout: project-roadmap
 :awestruct-project: search
 :toc:
@@ -12,19 +12,9 @@ You can find a finer grained roadmap in our https://hibernate.atlassian.net/brow
 
 Dates are generally omitted: milestones are released regularly, the Final release is tagged when it's considered stable.
 
-== Hibernate Search 5.11
-
-Upgrade to Hibernate ORM 5.4::
-The main purpose of this release will be to keep up with Hibernate ORM.
-
-Fully tested compatibility with JDK11::
-While Search 5.10 is very likely to be already compatible with JDK11,
-we have not been able to run all of our tests due to building and testing tools being incompatible with JDK11.
-In Search 5.11, we intend to upgrade all of the tools, so that Hibernate Search is fully tested against JDK11.
-
 == Hibernate Search 6.0
 
-Compatible with Hibernate ORM 6, Apache Lucene 7, Elasticsearch 6.
+Compatible with Hibernate ORM 6, Apache Lucene 8, Elasticsearch 7.
 
 API Refresh::
 A significant API refresh is planned to better abstract from the Lucene API so that alternative backends such as Elasticsearch can be used without having Lucene on your classpath.
@@ -41,14 +31,14 @@ by allowing bridges to declare what parts of the entity they use.
 non-String fields should work without having to bypass bridges (`.ignoreFieldBridge()`) like in Search 5,
 bridges should be allowed to define precisely how to project their fields, ...
 
-Upgrade to Apache Lucene 7::
-To provide the full power of some of the new features in Apache Lucene 7, some API changes are needed.
+Upgrade to Apache Lucene 8::
+To provide the full power of some of the new features in Apache Lucene 8, some API changes are needed.
 This includes some API improvements which could have been useful since the upgrade to Lucene 5; since we only apply breaking API changes in major releases these had to wait.
 
-Upgrade to Elasticsearch 6::
-Elasticsearch 6 does not provide the ability to store multiple types in one index anymore.
+Upgrade to Elasticsearch 7::
+Elasticsearch 6 and above do not provide the ability to store multiple types in one index anymore.
 Hibernate Search 6 will address this, possibly by forcing to use different indexes for different types.
-Once this is done, we will add support for Elasticsearch 6.
+Once this is done, we will add support for Elasticsearch 7.
 
 Free-form indexing::
 We're planning to decouple the metadata definition from annotated java classes, to allow better indexing of other more flexible sources;
