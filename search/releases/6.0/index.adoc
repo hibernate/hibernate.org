@@ -7,11 +7,11 @@
 
 Hibernate Search 6.0 is currently a *technology preview* and is not ready for production.
 
-While the core of Hibernate Search 6 is there, there are still a lot of limitations:
+While the core of Hibernate Search 6 is there, there are still significant limitations:
 
 * Features are partially implemented or simply missing.
 For example, you cannot use faceting,
-you cannot configure custom Lucene directories,
+you cannot configure a custom Lucene `Directory`,
 and so on.
 * APIs are not considered stable yet.
 
@@ -32,9 +32,14 @@ However, we do not offer many options regarding how the entities are loaded from
 * Search DSL
 ** All the predicates available in Search 5, except `facet` and `moreLikeThis`.
 Additionally, the new `id`, `nested` and `exists` predicates were added.
-See `org.hibernate.search.engine.search.dsl.predicate.SearchPredicateFactoryContext`.
-** All the sorts available in Search 5. See `org.hibernate.search.engine.search.dsl.sort.SearchSortContainerContext`.
-** All the projections listed in `org.hibernate.search.engine.search.dsl.projection.SearchProjectionFactoryContext`.
+See the part of the documentation about the
+https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl-predicate[predicate DSL].
+** All the sorts available in Search 5.
+See the part of the documentation about the
+https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl-sort[sort DSL].
+** All the projections available in Search 5.
+See the part of the documentation about the
+https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl-projection[projection DSL].
 
 [[orm-version]]
 === ORM version
@@ -54,7 +59,7 @@ The Lucene backend now uses Lucene 8.0.
 // Old anchor, kept here to avoid dead links
 [[elasticsearch-6]]
 
-The Elasticsearch backend now works with Elasticsearch 5.6, 6.7 or 7.0.
+The Elasticsearch backend now works with Elasticsearch 5.6, 6.8 or 7.1.
 Support for older versions of Elasticsearch was dropped.
 
 [[api-refresh]]
