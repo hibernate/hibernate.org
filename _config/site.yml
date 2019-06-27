@@ -484,7 +484,7 @@ profiles:
     news_feed_root_url: https://staging.in.relation.to/feeds
   test:
     << : *base
-    news_feed_root_url: http://in.relation.to/feeds
+    news_feed_root_url: https://in.relation.to/feeds
   staging:
     << : *base
     minify: true
@@ -499,7 +499,7 @@ profiles:
     css_minifier: enabled
     base_url: http://hibernate.org
     enable_google_analytics: true
-    news_feed_root_url: http://in.relation.to/feeds
+    news_feed_root_url: https://in.relation.to/feeds
 
 google_analytics: 
   account: UA-45270411-1
