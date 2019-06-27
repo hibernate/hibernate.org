@@ -481,7 +481,7 @@ profiles:
     semantic_ui_css_url: https://cdn.jsdelivr.net/npm/semantic-ui@2.2.14/dist/semantic
     slick_css_url: https://cdn.jsdelivr.net/npm/slick-carousel@1.7.1/slick/slick
     enable_google_analytics: false
-    news_feed_root_url: http://staging.in.relation.to/feeds
+    news_feed_root_url: https://staging.in.relation.to/feeds
   test:
     << : *base
     news_feed_root_url: http://in.relation.to/feeds
@@ -490,8 +490,8 @@ profiles:
     minify: true
     minified: .min
     css_minifier: enabled
-    base_url: http://staging.hibernate.org
-    news_feed_root_url: http://staging.in.relation.to/feeds
+    base_url: https://staging.hibernate.org
+    news_feed_root_url: https://staging.in.relation.to/feeds
   production:
     << : *base
     minify: true
