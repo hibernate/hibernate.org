@@ -20,10 +20,10 @@
 %link(rel="apple-touch-icon-precomposed" sizes="72x72" href="#{relative("#{site.project_images_url}/apple-touch-icon-72x72-precomposed.png", real_page)}")
 %link(rel="apple-touch-icon-precomposed" href="#{relative("#{site.project_images_url}/apple-touch-icon-precomposed.png", real_page)}")
 
-%script(src="#{site.jquery_js_url}#{site.minified}.js")
-%script(src="#{site.semantic_ui_js_url}#{site.minified}.js")
-%script(src="#{site.slick_js_url}#{site.minified}.js")
-%script(src="#{site.match_height_js_url}#{site.minified}.js")
+%script(src="#{site.jquery_js_url}#{site.minified}.js" crossorigin="anonymous" type="text/javascript" integrity="#{site.jquery_js_url_integrity}")
+%script(src="#{site.semantic_ui_js_url}#{site.minified}.js" crossorigin="anonymous" type="text/javascript" integrity="#{site.semantic_ui_js_url_integrity}")
+%script(src="#{site.slick_js_url}#{site.minified}.js" crossorigin="anonymous" type="text/javascript" integrity="#{site.slick_js_url_integrity}")
+%script(src="#{site.match_height_js_url}#{site.minified}.js" crossorigin="anonymous" type="text/javascript" integrity="#{site.match_height_js_url_integrity}")
 - if real_page.javascripts
   - real_page.javascripts.each do |javascript|
     %script{:src=>javascript, :type=>'text/javascript'}
