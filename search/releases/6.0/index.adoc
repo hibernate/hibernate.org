@@ -10,8 +10,7 @@ Hibernate Search 6.0 is currently a *technology preview* and is not ready for pr
 While the core of Hibernate Search 6 is there, there are still significant limitations:
 
 * Features are partially implemented or simply missing.
-For example, you cannot use faceting,
-you cannot configure a custom Lucene `Directory`,
+For example, you cannot use faceting, full text filters, scrolling,
 and so on.
 * APIs are not considered stable yet.
 
@@ -52,14 +51,14 @@ because it requires features that are not yet implemented in ORM 6 (still in dev
 // Old anchor, kept here to avoid dead links
 [[lucene-7]]
 
-The Lucene backend now uses Lucene 8.0.
+The Lucene backend now uses Lucene 8.1.
 
 [[elasticsearch-7]]
 === Elasticsearch 7
 // Old anchor, kept here to avoid dead links
 [[elasticsearch-6]]
 
-The Elasticsearch backend now works with Elasticsearch 5.6, 6.8 or 7.1.
+The Elasticsearch backend now works with Elasticsearch 5.6, 6.8 or 7.2.
 Support for older versions of Elasticsearch was dropped.
 
 [[api-refresh]]
