@@ -21,12 +21,11 @@ as new Alpha versions are released, but to sum up, here is what you can start to
 ** Mapping of entities using either annotation mapping or programmatic mapping.
 However, we do not offer all the options that were available in Search 5 (yet).
 Most of the field types supported in Search 5 are supported in Search 6.
-** Automatic indexing of ORM entities as they are persisted within a transaction
+** Automatic indexing of ORM entities on transaction commit or session flush (if outside of a transaction)
 (enabled automatically if Hibernate Search is in your classpath and the entity is `@Indexed`).
 ** Mass indexing of ORM entities that are already persisted in database.
 ** Searching for ORM entities using their Hibernate Search index,
 and retrieving managed entities as results.
-However, we do not offer many options regarding how the entities are loaded from the database (yet).
 ** Custom, user-defined type bridges, property bridges or value bridges.
 * Search DSL
 ** All the predicates available in Search 5, except `facet` and `moreLikeThis`.
@@ -46,19 +45,22 @@ https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-
 Hibernate Search 6 still relies on ORM 5.4 at the moment,
 because it requires features that are not yet implemented in ORM 6 (still in development).
 
+Note that only Hibernate ORM 5.4.4.Final or later will work correctly;
+5.4.3.Final and earlier will not.
+
 [[lucene-8]]
 === Lucene 8
 // Old anchor, kept here to avoid dead links
 [[lucene-7]]
 
-The Lucene backend now uses Lucene 8.1.
+The Lucene backend now uses Lucene 8.2.
 
 [[elasticsearch-7]]
 === Elasticsearch 7
 // Old anchor, kept here to avoid dead links
 [[elasticsearch-6]]
 
-The Elasticsearch backend now works with Elasticsearch 5.6, 6.8 or 7.2.
+The Elasticsearch backend now works with Elasticsearch 5.6, 6.8 or 7.3.
 Support for older versions of Elasticsearch was dropped.
 
 [[api-refresh]]
@@ -93,18 +95,18 @@ The Search DSL is brand new, with several improvements:
 
 * Ability to use lambdas for more concise query definition, even when queries are complex.
 * Type-safe projections thanks to the brand new projection DSL.
-* Various new features and improvements such as a new "exists" predicate,
+* Various new features and improvements such as a new `exists` predicate,
 the ability to override analyzers on a per-predicate basis, ...
 * Injection of native predicates (`org.apache.lucene.search.Query`, JSON for Elasticsearch)
 within DSL-created predicates.
 This is not new for the Lucene integration, but it is for the Elasticsearch integration.
-See `org.hibernate.search.engine.search.dsl.query.SearchQueryResultDefinitionContext.extension(...)`
+See `org.hibernate.search.engine.search.dsl.query.SearchQueryHitTypeStep.extension(...)`
 `org.hibernate.search.backend.elasticsearch.ElasticsearchExtension.get()` and
 `org.hibernate.search.backend.lucene.LuceneExtension.get()`.
 * Simpler syntax for predicates when targeting multiple types in a single query:
 instantiating multiple `QueryBuilders` is no longer needed,
 Hibernate Search takes into account that multiple types are targeted
-and automatically understands checks that targeted fields are compatible across all targeted indexes.
+and automatically checks that targeted fields are compatible across all targeted indexes.
 
 [[bridge-2.0]]
 ==== Bridge 2.0
