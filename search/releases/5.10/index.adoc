@@ -18,13 +18,14 @@ then Hibernate Search will automatically retrieve and use field bridges from thi
 This allows you in particular to inject components from your DI context into your field bridges,
 using your DI framework's features (`@java.inject.Inject`, Spring's `@Autowired`, ...).
 
-The integration is already known to work in a CDI 2.0 environment such as WildFly 12,
-and the Spring team will probably make it work as soon as it adds support for JPA 2.2.
+The integration is known to work in a CDI 2.0 environment such as WildFly 17,
+and also in Spring 5.
 
+[[wildfly-jgroups]]
+=== Upgrade to WildFly 17 and JGroups 4
 [[wildfly-12]]
-=== Upgrade to WildFly 12 and JGroups 4
 
-Hibernate Search's JBoss modules now target WildFly 12.
+Hibernate Search's JBoss modules now target WildFly 17.
 This means in particular that the JGroups backend now uses JGroups 4 and is no longer compatible with JGroups 3.
 
 Also, we took this opportunity to move the JGroups backend's JBoss modules out of the engine feature pack to

@@ -1,4 +1,4 @@
-summary: ORM 5.3 and JPA 2.2 compatibility, integration to DI frameworks through Hibernate ORM 5.3, upgrade to WildFly 12 and JGroups 4, JPMS automatic module names.
+summary: ORM 5.3 and JPA 2.2 compatibility, integration to DI frameworks through Hibernate ORM 5.3, upgrade to WildFly 17 and JGroups 4, JPMS automatic module names.
 displayed: true
 maven:
   group_id: org.hibernate
@@ -30,7 +30,7 @@ artifacts:
     summary: WildFly feature pack - JGroups backend
 integration_constraints:
   java:
-    version: 8
+    version: 8 or 11 (with 5.10.7+)
   orm:
     version: 5.3
   elasticsearch:
