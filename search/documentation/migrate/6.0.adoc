@@ -23,7 +23,7 @@ It refers to Hibernate Search version `{reference_version_full}`. If you think s
 ====
 Search 6 introduces new APIs, so migrating older projects will be more work than usual.
 This migration guide will be completed as we release new versions and the APIs get more and more stable,
-but for now we recommend to only test Search 6 on small projects.
+but for now we recommend to only attempt migrating from Search 5 to Search 6 on small projects.
 
 Ultimately, we intend to provide additional "compatibility" modules
 that will allow you to use the Search 5 APIs with Search 6 under the hood.

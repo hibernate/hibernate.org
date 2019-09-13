@@ -5,14 +5,17 @@
 [[preview-status]]
 === Preview status
 
-Hibernate Search 6.0 is currently a *technology preview* and is not ready for production.
+Hibernate Search 6.0 is currently a *technology preview*.
 
-While the core of Hibernate Search 6 is there, there are still significant limitations:
+While the core of Hibernate Search 6 is ready for use in a production environment,
+there are still some limitations:
 
-* Features are partially implemented or simply missing.
-For example, you cannot use faceting, full text filters, scrolling,
-and so on.
-* APIs are not considered stable yet.
+* APIs are not considered completely stable yet.
+* Some of the less frequently used features from Hibernate Search 5 are still missing.
+* There may still be some performance bottlenecks.
+
+If you encounter problems, be sure to https://hibernate.atlassian.net/browse/HSEARCH[report them]:
+new preview versions are released regularly.
 
 The exact features that are currently implemented and expected to work will be added to the reference documentation
 as new Alpha versions are released, but to sum up, here is what you can start to play with:
