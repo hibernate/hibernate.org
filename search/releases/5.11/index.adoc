@@ -12,7 +12,12 @@ Hibernate Search 5.11 is designed to work with Hibernate ORM 5.4.
 
 Hibernate Search 5.11 is designed to work with both JDK8 and JDK11.
 
-[[wildfly-14]]
-=== Upgrade to WildFly 14
+Support for JDK13 was introduced in version 5.11.3.Final.
 
-Hibernate Search's JBoss modules now target WildFly 14.
+[[wildfly]]
+=== Upgrade to WildFly 17
+[[wildfly-14]]
+
+Hibernate Search's JBoss modules of versions 5.11.3.Final and later target WildFly 17.
+
+Hibernate Search's JBoss modules of versions 5.11.0.Final to 5.11.2.Final target WildFly 14.
