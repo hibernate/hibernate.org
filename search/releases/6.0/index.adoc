@@ -10,7 +10,7 @@ Hibernate Search 6.0 is currently a *technology preview*.
 While the core of Hibernate Search 6 is ready for use in a production environment,
 there are still some limitations:
 
-* APIs are not considered completely stable yet.
+* APIs expected to stay stable, but may still change if major implementation issues are detected.
 * Some of the less frequently used features from Hibernate Search 5 are still missing.
 * There may still be some performance bottlenecks.
 
@@ -22,25 +22,38 @@ as new Alpha versions are released, but to sum up, here is what you can start to
 
 * ORM integration:
 ** Mapping of entities using either annotation mapping or programmatic mapping.
-However, we do not offer all the options that were available in Search 5 (yet).
 Most of the field types supported in Search 5 are supported in Search 6.
+See https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#mapper-orm-mapping[mapping]
+in the reference documentation.
+** Custom, user-defined type bridges, property bridges or value bridges.
+See https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#mapper-orm-bridge[bridges]
+in the reference documentation.
 ** Automatic indexing of ORM entities on transaction commit or session flush (if outside of a transaction)
 (enabled automatically if Hibernate Search is in your classpath and the entity is `@Indexed`).
+See https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#mapper-orm-indexing-automatic[automatic indexing]
+in the reference documentation.
 ** Mass indexing of ORM entities that are already persisted in database.
+See https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#mapper-orm-indexing-massindexer[mass indexing]
+in the reference documentation.
 ** Searching for ORM entities using their Hibernate Search index,
 and retrieving managed entities as results.
-** Custom, user-defined type bridges, property bridges or value bridges.
+See https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl-query[query DSL]
+in the reference documentation.
 * Search DSL
 ** All the predicates available in Search 5, except `facet` and `moreLikeThis`.
 Additionally, the new `id`, `nested` and `exists` predicates were added.
-See the part of the documentation about the
-https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl-predicate[predicate DSL].
+See https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl-predicate[predicate DSL]
+in the reference documentation.
 ** All the sorts available in Search 5.
-See the part of the documentation about the
-https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl-sort[sort DSL].
+See https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl-sort[sort DSL]
+in the reference documentation.
 ** All the projections available in Search 5.
-See the part of the documentation about the
-https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl-projection[projection DSL].
+See https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl-projection[projection DSL]
+in the reference documentation.
+** Aggregations, equivalent to the "faceting" feature of Search 5.
+See https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl-aggregation[aggregation DSL]
+in the reference documentation.
+
 
 [[orm-version]]
 === ORM version
@@ -100,12 +113,10 @@ The Search DSL is brand new, with several improvements:
 * Type-safe projections thanks to the brand new projection DSL.
 * Various new features and improvements such as a new `exists` predicate,
 the ability to override analyzers on a per-predicate basis, ...
-* Injection of native predicates (`org.apache.lucene.search.Query`, JSON for Elasticsearch)
+* Injection of native predicates (`org.apache.lucene.search.Query` for Lucene, JSON for Elasticsearch)
 within DSL-created predicates.
 This is not new for the Lucene integration, but it is for the Elasticsearch integration.
-See `org.hibernate.search.engine.search.dsl.query.SearchQueryHitTypeStep.extension(...)`
-`org.hibernate.search.backend.elasticsearch.ElasticsearchExtension.get()` and
-`org.hibernate.search.backend.lucene.LuceneExtension.get()`.
+See https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl-predicate-extensions[predicate extensions].
 * Simpler syntax for predicates when targeting multiple types in a single query:
 instantiating multiple `QueryBuilders` is no longer needed,
 Hibernate Search takes into account that multiple types are targeted
@@ -140,5 +151,5 @@ A mapping error will be reported when the inverse side of the association cannot
 Hibernate Search 6.0 introduces  "nested" fields and predicates,
 similar to the feature with the same name in Elasticsearch.
 
-See `org.hibernate.search.mapper.pojo.mapping.definition.annotation.IndexedEmbedded.storage`
-and `org.hibernate.search.engine.search.dsl.predicate.SearchPredicateFactoryContext.nested()`.
+See https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#mapper-orm-indexedembedded-storage[`@IndexedEmbedded` storage type]
+in the reference documentation.
