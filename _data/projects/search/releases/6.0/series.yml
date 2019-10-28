@@ -11,10 +11,10 @@ artifacts:
     summary: Amazon IAM authentication for Elasticsearch
 integration_constraints:
   java:
-    version: 8, 11 or 12
+    version: 8, 11 or 13
   orm:
     version: 5.4 (>= 5.4.4.Final)
   elasticsearch:
-    version: 5.6 - 7.3
+    version: 5.6 - 7.4
   lucene:
     version: 8.2

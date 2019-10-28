@@ -7,7 +7,7 @@ Yoann Rodière
 :toc-title: Content
 :to_version_short: 6.0
 :from_version_short: 5.11
-:reference_version_full: 6.0.0.Beta1
+:reference_version_full: 6.0.0.Beta2
 
 Here we are helping you migrate your existing Search application to the latest and greatest.
 
@@ -45,7 +45,7 @@ WARNING: This section is still incomplete. To be completed upon the CR or releas
 
 * The Hibernate ORM mapper now requires Hibernate ORM 5.4.4.Final or later
 (5.4.3.Final and earlier won't work correctly).
-* The Elasticsearch backend now requires Elasticsearch 5.6, 6.8 or 7.3.
+* The Elasticsearch backend now requires Elasticsearch 5.6, 6.8 or 7.4.
 * The Lucene backend now requires Lucene 8.2.
 
 === Maven coordinates changes
