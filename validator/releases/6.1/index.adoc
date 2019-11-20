@@ -1,0 +1,19 @@
+:awestruct-layout: project-releases-series
+:awestruct-project: validator
+:awestruct-series_version: "6.1"
+
+=== Jakarta Bean Validation
+
+Hibernate Validator 6.1 uses the Jakarta Bean Validation API artifact i.e. `jakarta.validation:jakarta.validation-api`.
+
+No API changes.
+
+=== Quarkus-tailored bootstrap
+
+To better fit Quarkus architecture, we have developed a new bootstrap that allows to collect the Hibernate Validator metadata at build time.
+
+This allows to drastically reduce the Hibernate Validator contribution to the Quarkus startup time.
+
+=== Performance and memory footprint improvements
+
+Hibernate Validator 6.1 comes with some new performance and memory footprint improvements.
