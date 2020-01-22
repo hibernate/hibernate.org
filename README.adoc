@@ -7,12 +7,27 @@ ifndef::env-github[:outfilesuffix: /]
 
 A bit of Git, a bit of Ruby and you will get your local hibernate.org served.
 
-== Prerequisites
+[[get-the-source]]
+== Get the source
+
+[source]
+----
+> git clone git@github.com:hibernate/hibernate.org.git
+> cd hibernate.org
+----
+
+== Set up the build environment -- the easy way
+
+The easiest way to set up a build environment is to use docker.
+
+See https://github.com/hibernate/awestruct-build-env.
+
+== Set up the build environment -- the hard way
+
+=== Prerequisites
 
 * Get http://git-scm.com[Git]
 * Get https://www.ruby-lang.org/en/[Ruby] > 1.9
-
-== Installation
 
 === Ensure Rake is installed
 
@@ -53,15 +68,7 @@ If you get "_command not found_" or a version < 1.10:
 > gem install bundler
 ----
 
-[[get-the-source]]
-=== Get the source
-
-[source]
-----
-> git clone git@github.com:hibernate/hibernate.org.git
-> cd hibernate.org
-----
-
+[[awestruct-setup]]
 === Setup awestruct
 
 [source]
@@ -69,7 +76,7 @@ If you get "_command not found_" or a version < 1.10:
 > rake setup
 ----
 
-=== Serve the site
+== Serve the site locally
 
 [source]
 ----
@@ -173,10 +180,6 @@ cd ../in.relation.to
 Say yes to .rvmrc execution.
 
 Continue <<awestruct-setup, here>>
-
-=== Bugger that,...
-
-I cannot get the enviroment up and running. Use Docker! Read link:/docker/README{outfilesuffix}[how]!
 
 == License
 
