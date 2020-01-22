@@ -38,7 +38,7 @@ desc 'Setup the environment to run Awestruct using Bundler'
 task :setup do |task, args|
   bundle_command = 'bundle install'
   msg "Executing '#{bundle_command}' in clean Bundler environment"
-  Bundler.with_clean_env do
+  Bundler.with_unbundled_env do
     system bundle_command
   end
 
