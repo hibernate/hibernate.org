@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
 # Main site dependencies
-#gem 'awestruct', '0.5.4.rc3', :git => 'https://github.com/awestruct/awestruct', :tag => 'v0.5.4.rc3'
-gem 'awestruct', '0.5.7'
+gem 'awestruct', '0.6.0.RC1'
 gem 'nokogiri'
 gem 'sass'
 gem 'json'
