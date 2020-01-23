@@ -31,7 +31,7 @@ if !Haml::Filters.constants.map(&:to_s).include?('AsciiDoc')
   Haml::Filters::AsciiDoc.options[:attributes]['notitle!'] = ''
   # copy attributes from site.yml
   attributes = site.asciidoctor[:attributes].each do |key, value|
-  Haml::Filters::AsciiDoc.options[:attributes][key] = value
+    Haml::Filters::AsciiDoc.options[:attributes][key] = value
   end
 end
 
