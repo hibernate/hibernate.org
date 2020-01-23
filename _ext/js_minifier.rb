@@ -62,7 +62,7 @@ module Awestruct
           newOutputPath = File.join(File.dirname(page.output_path.to_s),newFileName)
 
           # Create a temporary file with the merged content.
-          tmpOutputPath = File.join( "./_site_tmp/" , newFileName)
+          tmpOutputPath = File.join( "./_tmp/" , newFileName)
           tmpOutputFile = File.new(tmpOutputPath,"w")
           tmpOutputFile.write(output)
           tmpOutputFile.close
