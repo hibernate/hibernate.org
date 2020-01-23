@@ -1,4 +1,3 @@
-require 'wget_wrapper'
 require 'js_minifier'
 require 'css_minifier'
 require 'html_minifier'
@@ -45,7 +44,6 @@ Awestruct::Extensions::Pipeline.new do
 
   # register extensions and transformers
   extension Awestruct::Extensions::ReleaseFileParser.new
-  extension Awestruct::Extensions::WgetWrapper.new
   transformer Awestruct::Extensions::JsMinifier.new
   transformer Awestruct::Extensions::CssMinifier.new
   transformer Awestruct::Extensions::HtmlMinifier.new
