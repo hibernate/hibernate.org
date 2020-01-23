@@ -1,7 +1,8 @@
 #! /bin/bash
-# clone hibernate.github.io in _tmp if not present
+# clone hibernate.github.io in _publish_tmp if not present
 # copy site to git repo, commit and push
-cd _tmp
+mkdir _publish_tmp 2>/dev/null
+cd _publish_tmp
 if [ ! -d "hibernate.github.io" ];
 then
   git clone --depth 1 git@github.com:hibernate/hibernate.github.io.git
