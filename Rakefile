@@ -75,7 +75,7 @@ end
 desc 'Clean out generated site and temporary files, using [all-keep-deps] removes caches as well, using [all] will also delete local gem files'
 task :clean, :option do |task, args|
   require 'fileutils'
-  dirs = ['.awestruct', '.sass-cache', '_site', '_tmp']
+  dirs = ['.awestruct', '.sass-cache', '_site', '_tmp', '_site_tmp']
   if args[:option] == 'all'
     dirs << '.wget-cache'
   end

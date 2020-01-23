@@ -305,8 +305,8 @@ module Awestruct
 
       private
       def create_doc(group_id, artifact_id, version)
-        # make sure _tmp dir exists
-        tmp_dir = File.join(File.dirname(__FILE__), '..', '_tmp')
+        # make sure _site_tmp dir exists
+        tmp_dir = File.join(File.dirname(__FILE__), '..', '_site_tmp')
         unless File.directory?(tmp_dir)
           p "creating #{tmp_dir}"
           FileUtils.mkdir_p(tmp_dir)
@@ -314,7 +314,7 @@ module Awestruct
 
         gav = "#{group_id}:#{artifact_id}:#{version}"
         pom_name = get_pom_name(group_id, artifact_id, version)
-        # to avoid net access cache the downloaded POMs into the _tmp directory
+        # to avoid net access cache the downloaded POMs into the _site_tmp directory
         cached_pom = File.join(tmp_dir, pom_name)
         if File.exists?(cached_pom)
           $LOG.info "Cache hit: #{gav}" if $LOG.info?
