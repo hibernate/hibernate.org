@@ -9,6 +9,9 @@ css_minifier: disabled
 js_minifier: disabled
 html_minifier: disabled
 
+generation:
+  :in_threads: 1
+
 maven:
   repo:
     central:
