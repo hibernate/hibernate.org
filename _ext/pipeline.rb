@@ -2,7 +2,6 @@ require 'wget_wrapper'
 require 'js_minifier'
 require 'css_minifier'
 require 'html_minifier'
-require 'file_merger'
 require 'relative'
 require 'releases'
 require 'release_file_parser'
@@ -50,7 +49,6 @@ Awestruct::Extensions::Pipeline.new do
   transformer Awestruct::Extensions::JsMinifier.new
   transformer Awestruct::Extensions::CssMinifier.new
   transformer Awestruct::Extensions::HtmlMinifier.new
-  extension Awestruct::Extensions::FileMerger.new
   extension Awestruct::Extensions::Indexifier.new
 
   development = Engine.instance.site.profile == 'development'
