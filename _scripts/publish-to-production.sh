@@ -21,7 +21,7 @@ fi
 # Using _tmp would mean more headaches related to access rights from the container,
 # which usually removes that dir in "rake clean": let's avoid that.
 mkdir _publish_tmp 2>/dev/null
-cd _publish_tmp
+pushd _publish_tmp
 if [ ! -d "hibernate.github.io" ];
 then
   git clone --depth 1 git@github.com:hibernate/hibernate.github.io.git
