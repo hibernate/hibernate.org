@@ -1,5 +1,22 @@
 #!/bin/bash
 
+# Give the container user write access to the code
+chmod -R go+w .
+
+# Update the container image if necessary
+docker pull quay.io/hibernate/awestruct-build-env:latest
+
+# Build the site using the staging profile
+docker run --rm=true --security-opt label:disable \
+    -v $(pwd):/home/dev/website \
+    quay.io/hibernate/awestruct-build-env:latest \
+    "rake setup && rake clean[all] gen[production]"
+rc=$?
+if [[ $rc != 0 ]] ; then
+    echo "ERROR: Site generation failed!"
+    exit $rc
+fi
+
 # Clone hibernate.github.io in _publish_tmp if not present.
 # Using _tmp would mean more headaches related to access rights from the container,
 # which usually removes that dir in "rake clean": let's avoid that.
