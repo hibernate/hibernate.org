@@ -33,9 +33,11 @@ git fetch origin
 git reset --hard origin/master
 
 # copy site to git repo, commit and push.
+# we filter .git to preserve the git metadata
 # we filter cache as in production we shouldn't need that data
 rsync -av \
       --delete \
+      --filter "- .git" \
       --filter "- /cache" \
       ../../_site/ .
 rc=$?
