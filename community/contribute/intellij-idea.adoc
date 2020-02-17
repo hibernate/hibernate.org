@@ -1,0 +1,158 @@
+= Setting up IntelliJ IDEA to contribute to Hibernate projects
+:awestruct-layout: community-standard
+
+Official website: http://www.jetbrains.com/idea/
+
+== Build system integration
+
+=== Identifying the build system
+
+Some of the Hibernate projects use Maven, some others use Gradle.
+After you check out the project from https://github.com/hibernate/[GitHub],
+check if there is a `pom.xml` file in the root of the sources: that means it's a Maven project.
+If there is a `build.gradle` file instead, then you will need to use Gradle to build it.
+
+=== Maven
+
+Maven should work without configuration. Simply import the project as a Maven project.
+
+=== Gradle
+
+In general the IntelliJ IDEA support for importing Gradle projects should be the preferred means of importing the project.
+Support for this feature is massively better in 14.1 than in previous versions.
+
+[NOTE]
+====
+In my (Steve Ebersole's) experience IntelliJ 12.1 is the absolute bare minimum to have Gradle import working.
+Each Hibernate project and its branches should identify any specific requirements for IntelliJ, JDK, etc.
+Typically speaking, I find using Java 8 to run IntelliJ 14.1 the best experience.
+====
+
+Note that automatic importing in IntelliJ IDEA 12 or 13 seems to be problematic on Mac OS X (mavericks).
+Here is a set of workarounds:
+
+* edit `/Applications/IntelliJ\ IDEA\ 13.app/Contents/Info.plist`, look for `JVMSession` and change it to `1.7*`;
+this will make IntelliJ IDEA itself to run on JDK 7 - note that at the time of writing,
+it still did not solve the second gradle import problem and thus might be unnecessary.
+* run `./gradlew idea` from the command line and open the project in IntelliJ IDEA.
+Note that you will need to add the generated source folders (apt, antlr, ...).
+See the Annotation processor section for more info.
+
+== Code style
+
+Download the settings from our GitHub repository:
+
+* For Hibernate ORM: https://raw.githubusercontent.com/hibernate/hibernate-ide-codestyles/master/intellij-14/hibernate_orm.xml[`hibernate_orm.xml`].
+* For Hibernate Search, Validator, OGM: https://raw.githubusercontent.com/hibernate/hibernate-ide-codestyles/master/intellij-14/hibernate_noorm.xml[`intellij-14/hibernate_noorm.xmlhibernate-code-templates-search.xml`].
+
+Here is http://musingsofaprogrammingaddict.blogspot.com/2010/03/import-code-style-settings-into.html[an article on how to set it up in IntelliJ IDEA].
+
+The authoritative code style is defined by the CheckStyle checks file associated with the project;
+be sure to check against those prior to pushing.
+
+== Code templates
+
+The best approach to automatically apply the proper copyright/license headers to newly created files
+is to leverage the Copyright plugin (now a bundled plugin).
+
+Set up on profile per Hibernate project you want to deal with in the Copyright configuration ("Settings" -> "Copyright")
+and then select the one to use for your IntelliJ IDEA project.
+
+Note you can define the profiles once and for all if you go through
+"Other settings" -> "Settings for new projects" -> "Copyright":
+they will be made available automatically in every new IntelliJ IDEA project.
+
+Here are the standard license headers for each project:
+
+* Hibernate ORM:
+
+    /*
+     * Hibernate, Relational Persistence for Idiomatic Java
+     *
+     * License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+     * See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+     */
+
+* Hibernate Search:
+
+    /*
+     * Hibernate Search, full-text search for your domain model
+     *
+     * License: GNU Lesser General Public License (LGPL), version 2.1 or later
+     * See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+     */
+
+* Hibernate Validator:
+
+    /*
+     * Hibernate Validator, declare and validate application constraints
+     *
+     * License: Apache License, Version 2.0
+     * See the license.txt file in the root directory or <http://www.apache.org/licenses/LICENSE-2.0>.
+     */
+
+* Hibernate OGM:
+
+    /*
+     * Hibernate OGM, Domain model persistence for NoSQL datastores
+     *
+     * License: GNU Lesser General Public License (LGPL), version 2.1 or later
+     * See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+     */
+
+== Debugging
+
+NOTE: This information is relative to IntelliJ IDEA version 9.
+
+One important aspect to debugging through Hibernate sources is to make sure that the mere act of debugging
+does not forces proxies to initialize just so the debugger can "show" them.
+In IntelliJ IDEA this is easily configured through what it calls "Data Type Renderers" and "Data Views".
+
+To access this configuration, open your Settings (Ctrl+Alt+S) and go to
+"IDE Settings" -> "Debugger".
+Expand "Debugger" and you will find both "Data Type Renderers" and "Data Views":
+
+1. "Data Views" is general configuration.  Here for sure you will want to disable the "Enable toString() object view".  In general, disable anything that would cause the debugger to force  initialization of the proxy.
+2. "Data Type Renderers". We will need to define 2 specific type renderers:
+a. Entity Proxy renderer
+*** FQN: `org.hibernate.proxy.HibernateProxy`
+*** Rendering: use expression -> `((org.hibernate.proxy.HibernateProxy)this).getHibernateLazyInitializer().isUninitialized() ? ( ((org.hibernate.proxy.HibernateProxy)this).getHibernateLazyInitializer().getEntityName()+"@"+System.identityHashCode(this)+"[proxy;id="+((org.hibernate.proxy.HibernateProxy)this).getHibernateLazyInitializer().getIdentifier()+"]" ) : this.toString()`
+*** Expanding: default; this will force the proxy to initialize (if not already) if the  user attempts to expand the node.
+b. Collection Renderer
+*** FQN: `org.hibernate.collection.AbstractPersistentCollection`
+*** Rendering: use expression -> `((org.hibernate.collection.AbstractPersistentCollection)this).wasInitialized() ? this.toString() : ( ((org.hibernate.collection.AbstractPersistentCollection )this).getClass().getName()+"@"+ System.identityHashCode(this)+" [uninitialized]" )`
+*** Expanding: default; again, this will force the collection to initialize (if not already) if the  user attempts  to expand the node.
+
+== Memory Tuning
+
+If you have issues with memory and GC when running IntelliJ, this might help:
+
+http://piotrga.wordpress.com/2007/06/26/intellij-ideaexevmoptions-revised-for-version-7-and-jdk-6/
+
+== Annotation Processors in Hibernate ORM
+
+NOTE: This applies to Hibernate ORM only.
+
+It's currently recommended to explicitly disable the annotation processors in IntelliJ IDEA.
+From the project settings, "Java Compiler", make sure that:
+
+* "-proc:none" is used as option to javac
+* raise the maximum heap size
+
+Then in the module settings:
+
+* for hibernate-core module add these source folders:
+** `target/generated-src/jaxb/main`
+** `target/generated-src/logging/main`
+** `target/generated-src/antlr/main`
+* for hibernate-entitymanager, add:
+** `target/generated-src/jpamodelgen/test`
+
+== Beyond
+
+Each project has a page dedicated to contributing: what's needed and what is the process.
+
+* https://hibernate.org/orm/contribute/[Hibernate ORM]
+* https://hibernate.org/search/contribute/[Hibernate Search]
+* https://hibernate.org/validator/contribute/[Hibernate Validator]
+* https://hibernate.org/ogm/contribute/[Hibernate OGM]

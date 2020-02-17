@@ -1,0 +1,120 @@
+= Setting up Eclipse to contribute to Hibernate projects
+:awestruct-layout: community-standard
+
+Official website: https://www.eclipse.org/eclipseide/
+
+== Build system integration
+
+=== Identifying the build system
+
+Some of the Hibernate projects use Maven, some others use Gradle.
+After you check out the project from https://github.com/hibernate/[GitHub],
+check if there is a `pom.xml` file in the root of the sources: that means it's a Maven project.
+If there is a `build.gradle` file instead, then you will need to use Gradle to build it.
+
+=== Maven
+
+We recommend using the excellent m2e plugin.
+This plugin is commonly already installed in Eclipse;
+if you suspect it's missing you should be able to find it under "Help" -> "Install New Software".
+
+When importing a Hibernate project using m2e, Eclipse might suggest to install additional plugins,
+for example to handle annotation processors.
+It will ask for permission to automatically download the additional plugins;
+we suggest to allow this as it simplifies development.
+
+=== Gradle
+
+You will need to install "Buildship", the Gradle tools for Eclipse.
+
+Installing it is very simple: just follow
+http://www.vogella.com/tutorials/EclipseGradle/article.html[this step by step tutorial].
+
+After having installed the Gradle tooling, import the project using the "gradle wrapper" approach -- which is the default.
+This might take several minutes, as the Gradle build might need to download dependencies in the background,
+or do some work to analyze the project.
+
+==== Specific instructions for Hibernate ORM in Eclipse
+
+If you're importing the flagship project Hibernate ORM,
+the import process gets a bit more tedious as the Eclipse/Gradle integration is still a bit limited.
+
+After importing the project, you will have Eclipse mention several errors because of "circular dependency problems".
+The project actually doesn't have any circular dependency but the Gradle integration leads it to believe this;
+you will have to go in "Window" -> "Preferences" -> "Java" -> "Compiler" -> "Building",
+find the "Circular Dependencies" problem and have Eclipse ignore the problem
+by categorizing it as "Warning" rather than "Error".
+
+Next, for several modules you will have to manually add some generated sources to the source folders.
+For example for the hibernate-core module, you will need to add `target/generated-src/antlr/main`,
+`target/generated-src/apt/main`, `target/generated-src/apt/test` and `target/generated-src/jaxb/main`.
+Note that these directories might be hidden by default,
+check your Filter options and uncheck "Gradle build folder".
+Use "Build Path" -> "Use as Source Folder" on each of these.
+
+Finally, you will have to manually add the ANT and JBoss Logger dependencies.
+
+== Code formatting
+
+From the Eclipse menu: "Window" -> "Preferences", select "Java" -> "Code Style" -> "Formatter".
+Download https://raw.githubusercontent.com/hibernate/hibernate-ide-codestyles/master/eclipse/hibernate-java-formatting.xml[hibernate-java-formatting.xml]
+from GitHub
+and import it into Eclipse to apply the style the Hibernate team uses consistently across the codebase.
+
+[NOTE]
+====
+Please avoid re-formatting large sections of code, especially when providing a patch:
+we would love to have the diffs highlight the changes which matter.
+
+If you feel the need to fix formatting on an existing source file,
+make sure to isolate your formatting fixes in a separate commit
+that contains exclusively formatting changes (avoid any functional change in that commit)
+and make sure the commit message mentions this.
+====
+
+== Code templates
+
+In the same "Window" -> "Preferences" menu, select "Java" -> "Code Style" -> "Code Templates"
+and import the appropriate file downloaded from our GitHub repository:
+
+* For Hibernate ORM: https://raw.githubusercontent.com/hibernate/hibernate-ide-codestyles/master/eclipse/hibernate-code-template-orm.xml[`hibernate-code-templates-orm.xml`].
+* For Hibernate Search: https://raw.githubusercontent.com/hibernate/hibernate-ide-codestyles/master/eclipse/hibernate-code-template-search.xml[`hibernate-code-templates-search.xml`].
+* For Hibernate OGM: https://raw.githubusercontent.com/hibernate/hibernate-ide-codestyles/master/eclipse/hibernate-code-template-ogm.xml[`hibernate-code-templates-ogm.xml`].
+* For Hibernate Validator: https://raw.githubusercontent.com/hibernate/hibernate-ide-codestyles/master/eclipse/hibernate-code-template-validator.xml[`hibernate-code-templates-validator.xml`].
+
+With these templates, newly created files will automatically have the proper copyright/license headers.
+Feel free to add your nick or full name as author of new files, and optionally provide an email.
+The copyright/license header is a requirement.
+
+You can also use the https://raw.githubusercontent.com/hibernate/hibernate-ide-codestyles/master/eclipse/hibernate-auto-cleanup.xml[`hibernate-auto-cleanup.xml`],
+to be imported into "Java" -> "Code Style" -> "Clean Up".
+
+== Running tests in Eclipse
+
+Some tests involving integration with JGroups and/or Infinispan will start a network connection to themselves
+(via localhost) to simulate a cluster of computers.
+Many JVMs default to IPv6 for this, so either you have that configured correctly
+or you might want to start these tests with these JVM properties set:
+
+[source]
+----
+-Djava.net.preferIPv4Stack=true -Djgroups.bind_addr=127.0.0.1
+----
+
+== Debugging
+
+When debugging, Eclipse might invoke `toString()` methods on the objects you select for inspection.
+This operation could trigger initialization of proxies and so affect the debugged object state.
+Using Eclipse you can customize the way it shows objects: look into "Detail formatters"
+and the link:intellij-idea[IntelliJ IDEA page] for some ideas.
+You could avoid including lazy-loaded details in your `toString()` implementations:
+it also helps to avoid unintended loading during logging, a frequent mistake having terrible effects on performance.
+
+== Beyond
+
+Each project has a page dedicated to contributing: what's needed and what is the process.
+
+* https://hibernate.org/orm/contribute/[Hibernate ORM]
+* https://hibernate.org/search/contribute/[Hibernate Search]
+* https://hibernate.org/validator/contribute/[Hibernate Validator]
+* https://hibernate.org/ogm/contribute/[Hibernate OGM]

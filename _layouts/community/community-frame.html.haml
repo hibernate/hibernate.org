@@ -67,6 +67,29 @@ layout: base
           %i.grid.icon.legal
           Licenses
 
+        .ui.dropdown.link.item{:class => "#{(current_path.start_with?( '/community/contribute/' ) ? "selected" : "")}"}
+          Contribute
+          %i.icon.dropdown
+          .menu
+            - href = "/orm/contribute"
+            %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "selected" : "")}"}
+              Hibernate ORM
+            - href = "/search/contribute"
+            %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "selected" : "")}"}
+              Hibernate Search
+            - href = "/validator/contribute"
+            %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "selected" : "")}"}
+              Hibernate Validator
+            - href = "/ogm/contribute"
+            %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "selected" : "")}"}
+              Hibernate OGM
+            - href = "/community/contribute/intellij-idea/"
+            %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "selected" : "")}"}
+              Set up IntelliJ IDEA
+            - href = "/community/contribute/eclipse-ide/"
+            %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "selected" : "")}"}
+              Set up Eclipse IDE
+
     .column.thirteen.wide.computer.sixteen.wide.mobile
       ~ content
 
