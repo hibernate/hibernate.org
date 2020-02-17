@@ -40,7 +40,7 @@ You can start with http://in.relation.to/2010/10/13/hibernate-moves-to-git-git-t
 
 A good contribution has some or all of the following characteristics:
 
-* it respects the project code style - find templates for https://community.jboss.org/docs/DOC-16649[Eclipse] and https://community.jboss.org/docs/DOC-15468[IntelliJ IDEA]
+* it respects the project code style - find templates for link:/community/contribute/eclipse-ide[Eclipse] and link:/community/contribute/intellij-idea[IntelliJ IDEA]
 * a feature or bug fix has an associated suite of tests
 * documentation is updated
 * the code compiles and the tests pass `mvn clean install`
