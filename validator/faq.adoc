@@ -57,7 +57,7 @@ By implementing a http://docs.jboss.org/hibernate/stable/validator/reference/en-
 
 === How can I access the Hibernate Session or EntityManager within a ConstraintValidator?
 
-See https://community.jboss.org/wiki/AccessingTheHibernateSessionWithinAConstraintValidator[this example].
+See https://developer.jboss.org/wiki/AccessingTheHibernateSessionWithinAConstraintValidator[this example].
 
 === Can I declare constraints dynamically at runtime?
 

@@ -49,7 +49,7 @@ For Java 5, you can use Hibernate Search 3.x.
 
 The Hibernate Search artifacts can be found in Maven's central repository but are released first in the JBoss Maven repository.
 To make sure you always get the latest updates in a timely manner we suggest to add this repository to your global +settings.xml+ file
-(see also https://community.jboss.org/wiki/MavenGettingStarted-Users[Maven Getting Started] for more details).
+(see also https://developer.jboss.org/wiki/MavenGettingStarted-Users[Maven Getting Started] for more details).
 
 This is all you need to add to your pom.xml to get started:
 
