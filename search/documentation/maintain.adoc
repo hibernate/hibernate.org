@@ -33,11 +33,11 @@ Once you trigger the CI job, it automatically pushes artifacts to the Nexus repo
 the distribution to SourceForge and the documentation to docs.jboss.org.
 
 * Transfer the released issues in JIRA to the "Closed state".
-** Got to https://hibernate.atlassian.net/issues/?jql=project%20%3D%20HSEARCH%20AND%20status%20%3D%20Resolved%20AND%20fixVersion%20%3D%205.7.2.Final[this search]
+** Go to https://hibernate.atlassian.net/issues/?jql=project%20%3D%20HSEARCH%20AND%20status%20%3D%20Resolved%20AND%20fixVersion%20%3D%205.7.2.Final[this search]
 ** Select another "fixVersion".
 ** Click the button with three dots on the top right corner of the screen and click "Bulk update all XX issues".
 ** Use the "Transition" action to transition your issues from "Resolved" to "Closed",
-and please check the option to not send email notifications.
+and please uncheck the near the bottom "Send email notifications".
 * Release the https://hibernate.atlassian.net/plugins/servlet/project-config/HSEARCH/versions[version on JIRA].
 * Do *not* update the changelog.txt and README.md, the release job does it for you.
 * Trigger the release on the CI
