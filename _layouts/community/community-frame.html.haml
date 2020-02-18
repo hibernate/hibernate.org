@@ -71,18 +71,9 @@ layout: base
           Contribute
           %i.icon.dropdown
           .menu
-            - href = "/orm/contribute"
+            - href = "/community/contribute/guidelines/"
             %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "selected" : "")}"}
-              Hibernate ORM
-            - href = "/search/contribute"
-            %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "selected" : "")}"}
-              Hibernate Search
-            - href = "/validator/contribute"
-            %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "selected" : "")}"}
-              Hibernate Validator
-            - href = "/ogm/contribute"
-            %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "selected" : "")}"}
-              Hibernate OGM
+              Guidelines
             - href = "/community/contribute/intellij-idea/"
             %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "selected" : "")}"}
               Set up IntelliJ IDEA
