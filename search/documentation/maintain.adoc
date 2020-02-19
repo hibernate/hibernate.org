@@ -37,7 +37,7 @@ the distribution to SourceForge and the documentation to docs.jboss.org.
 ** Select another "fixVersion".
 ** Click the button with three dots on the top right corner of the screen and click "Bulk update all XX issues".
 ** Use the "Transition" action to transition your issues from "Resolved" to "Closed",
-and please uncheck the near the bottom "Send email notifications".
+and please uncheck the option near the bottom "Send email notifications".
 * Release the https://hibernate.atlassian.net/plugins/servlet/project-config/HSEARCH/versions[version on JIRA].
 * Do *not* update the changelog.txt and README.md, the release job does it for you.
 * Trigger the release on the CI
