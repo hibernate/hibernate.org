@@ -80,6 +80,9 @@ layout: base
             - href = "/community/contribute/eclipse-ide/"
             %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "selected" : "")}"}
               Set up Eclipse IDE
+            - href = "/community/contribute/build-hibernate-orm/"
+            %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "selected" : "")}"}
+              Build Hibernate ORM
 
     .column.thirteen.wide.computer.sixteen.wide.mobile
       ~ content

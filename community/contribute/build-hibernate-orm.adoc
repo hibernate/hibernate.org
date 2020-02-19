@@ -1,0 +1,100 @@
+= Build Hibernate ORM (5.x)
+:awestruct-layout: community-standard
+:toc:
+:toc-placement: preamble
+:toc-title: Contents
+
+== Prerequesites
+
+* JDK 7 for 5.0 and 5.1, JDK 8 from version 5.2 onwards
+* https://git-scm.com/[Git]
+* https://gradle.org/[Gradle] (you don't have to install Gradle on your system prior to building Hibernate. You can use the https://docs.gradle.org/current/userguide/gradle_wrapper.html[gradle wrapper] gradlew to bootstrap Gradle and the build. You find gradlew in the root directory of your Hibernate git clone)
+
+== Get the sources
+
+----
+git clone git://github.com/hibernate/hibernate-orm.git
+----
+
+You can also browse the code on https://github.com/hibernate/hibernate-orm[GitHub]
+
+== Build tasks
+=== Build all
+----
+./gradlew clean build
+----
+=== Running tests
+----
+./gradlew test
+----
+
+=== Running test of a single module
+----
+./gradlew test -p hibernate-agroal
+----
+
+=== Running single tests
+`./gradlew test --tests ThisUniquelyNamedTest`
+
+=== Skipping tests
+----
+./gradlew build -x test
+----
+
+=== Other tasks
+You get a full list of available tasks via
+----
+./gradlew --tasks --all
+----
+
+Some important tasks are listed below:
+
+* build - Assembles (jars) and tests this project
+* buildDependents - Assembles and tests this project and all projects that depend on it.  So think of running this in hibernnate-entitymanager, Gradle would assemble and test hibernate-entitymanager as well as hibernate-envers (because envers depends on entitymanager)
+* classes - compiles the main classes
+* clean - Deletes the build directory
+* jar - Generates a jar archive with all the compiled classes
+* testClasses - Assembles the test classes
+* test - Runs the unit tests
+* uploadArchives - think Maven deploy
+* install - installs the project jar to your local maven cache (aka ~/.m2/repository)
+* idea or eclipse - creates the project files for the respective IDE
+
+
+=== Gradle wrapper
+The above examples use the gradle wrapper (gradlew) to run the different build tasks. Using the wrapper you don't have to install Gradle prior to building the source. It also ensures that you are using the right version of gradle as specified in build.gradle. It requires, however, that you specify the path to gradlew. For example if you are in the hibernate-core module you need to use `../gradlew`. One way to avoid this is to add some custom functions or aliases to your `~/.bashrc` (assuming you are using Unix). Something like this might do:
+
+----
+function gradleProjectRoot()
+{
+x=`pwd``; while [ "$x" != "/" ] ; do if [ `find "$x" -maxdepth 1 -name gradlew` ]; then echo "$x"; break; fi; x=`dirname "$x"`; done
+}
+----
+
+----
+function gradlew()
+{
+    `gradleProjectRoot`/gradlew $@
+}
+----
+
+This way you can just type gradlew in any subdirectory of the project root and the right wrapper script will be executed. If you have a better script, let us know :-)
+
+== Idea settings
+
+To create the Idea project files you can run
+----
+./gradlew idea
+----
+After changes to the dependencies you need to clean the project files and recreate them:
+-----
+./gradlew cleanIdea idea
+-----
+
+See also general Idea setup information - https://hibernate.org/community/contribute/intellij-idea/[IntelliJ Information]
+
+
+== Gradle documentation
+* https://docs.gradle.org/current/userguide/userguide_single.html[User Guide]
+* https://docs.gradle.org/current/dsl/index.html[Gradle Build Language (DSL) Reference]
+* You also find a lot of Gradle tips on this https://mrhaki.blogspot.com/search/label/Gradle%3AGoodness[blog]
