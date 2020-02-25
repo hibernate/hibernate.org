@@ -6,19 +6,6 @@ Emmanuel Bernard
 Thanks for your interest! Hibernate Search is an open source project and community.
 We love contributions that scratch somebody's own itch: they bring the project forward.
 
-== Getting and building the code
-
-You will need Maven 3 and git to get and build the sources.
-
-[source]
-----
-git clone git@github.com:hibernate/hibernate-search.git
-cd hibernate-search
-mvn clean install
-----
-
-TIP: You can find more information on how to build Hibernate Search and its documentation on the https://github.com/hibernate/hibernate-search/blob/master/README.md[README file] at the root of the git repository.
-
 == What to contribute
 
 You can contribute anything from code to test to documentation.
@@ -32,19 +19,6 @@ In good open source way, it is better to share a prototype and get input from ev
 We love GitHub pull requests. This is our way to discuss features, review and share code.
 So fork our repository and send a pull request. We are waiting.
 
-[TIP]
-====
-Want to know more about Git and pull requests?
-You can start with http://in.relation.to/2010/10/13/hibernate-moves-to-git-git-tips-and-tricks/[this blog post].
-====
-
-A good contribution has some or all of the following characteristics:
-
-* it respects the project code style - find templates for link:/community/contribute/eclipse-ide[Eclipse] and link:/community/contribute/intellij-idea[IntelliJ IDEA]
-* a feature or bug fix has an associated suite of tests
-* documentation is updated
-* the code compiles and the tests pass `mvn clean install`
-
-And last but not least, come discuss with us.
-We are hanging on the hibernate-dev mailing list and on #hibernate-dev on freenode.
-Find how to join them link:/community/#contribute[here].
+You can find more information on how to start contributing
+on the https://github.com/hibernate/hibernate-search/blob/master/CONTRIBUTING.md[CONTRIBUTING file]
+at the root of the git repository.
