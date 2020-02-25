@@ -71,7 +71,6 @@ make sure to adjust the displayed flag of the series.yml file of the old series.
 *** Update the http://hibernate.org/search/documentation/migrate/[Migration Guide];
 in particular, check the git history for API/SPI changes
 and document them in the migration guide.
-*** Verify the http://hibernate.org/search/documentation/getting-started/[Getting Started] guide.
 ** **If it's a Final release**:
 *** Don't forget to add a line containing `stable: true` to the new YAML release file.
 ** Push to the production branch.

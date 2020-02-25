@@ -7,15 +7,15 @@
 :latest_stable: #{latest_stable_release(page).version}
 :version_matching_orm: #{latest_stable_release(page)['dependencies'].get_version('org.hibernate', 'hibernate-core')}
 :docs_base_url: http://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/
+
+WARNING: This document covers the latest stable release of Hibernate Search 5.
+If you're looking for a getting started guide for Hibernate Search 6,
+see https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#getting-started[here].
   
 Welcome to Hibernate Search.
 The following chapter will guide you through the initial steps required to integrate Hibernate Search 
 into an existing Hibernate enabled application.
 In case you are a new to Hibernate we recommend you start from http://hibernate.org/quick-start.html[here].
-
-NOTE: This document covers the latest stable release of Hibernate Search 5.
-If you're looking for a getting started guide for Hibernate Search 6,
-see https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#getting-started[here].
 
 == System requirements
 [subs="verbatim,attributes"]
