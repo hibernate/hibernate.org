@@ -1,0 +1,305 @@
+= Migration Guide
+:awestruct-layout: project-standard
+:awestruct-project: validator
+
+This page contains everything you need to know when upgrading from one Hibernate Validator version to another.
+
+== 6.1.x
+
+=== 6.1.2.Final
+
+No migration concerns.
+
+=== 6.1.1.Final
+
+No migration concerns.
+
+=== 6.1.0.Final
+
+* `@SafeHtml` has been deprecated and marked for future removal.
+
+== 6.0.x
+ 
+=== 6.0.18.Final
+
+* `@SafeHtml` has been deprecated and marked for future removal.
+
+=== 6.0.17.Final
+
+No migration concerns.
+
+=== 6.0.16.Final
+
+No migration concerns.
+
+=== 6.0.15.Final
+
+No migration concerns.
+
+=== 6.0.14.Final
+
+No migration concerns.
+
+=== 6.0.13.Final
+
+No migration concerns.
+
+=== 6.0.12.Final
+
+* If you are using our CDI integration, be sure that all the beans you want to validate have a Bean Validation annotation (be it a constraint, `@Valid` or `@ValidateOnExecution`). If you need to add an annotation, just add a simple `@ValidateOnExecution` to the class. This limitation was present until 6.0.10.Final and is now back due to a nasty startup time regression of CDI applications.
+
+=== 6.0.11.Final
+
+* We removed the `StaticFieldELResolver` from our `javax.el` resolver list. This feature was added during the 6.x cycle and never documented. If you want to call methods from your EL expressions, just inject an object containing the methods as a variable.
+
+=== 6.0.10.Final
+
+* A few validation messages have been changed to be more consistent. That being said, you should rely on the constraint annotation to categorize your violations rather than on the message.
+* We fixed an issue with the `JPATraversableResolver` not being initialized correctly (and thus we we using the default one): the `JPATraversableResolver` is now used by default in any JPA environment as it should be (thus Hibernate Validator will not validate or cascade lazily loaded properties not already loaded). If it is not the behavior you want, you can override the `TraversableResolver` for your `ValidatorFactory`. This regression was introduced in 6.0.3.Final.
+* We fixed the CDI extension to properly consider the annotations in the hierarchy of a class. Prior to 6.0.10.Final, if the considered class didn't have any validation related annotations but its class hierarchies did, the annotations in the class hierarchy were ignored. This is no longer the case. Note: it worked OK if the considered class itself had at least one validation related annotation.
+
+=== 6.0.9.Final
+
+* The constraint validator payload (incubating feature introduced in 6.0.8.Final) has been moved from the `HibernateConstraintValidatorInitializationContext` to the `HibernateConstraintValidatorContext`. See https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#constraint-validator-payload[the documentation for more information].
+
+=== 6.0.8.Final
+
+No migration concerns.
+
+=== 6.0.7.Final
+
+No migration concerns.
+
+=== 6.0.6.Final
+
+No migration concerns.
+
+* To improve the compatibility with the version previously shipped in WildFly, we reintroduced a few things removed in earlier versions of 6.0:
+** the `hibernate.validator.constraint_mapping_contributor` property (you may now use the `hibernate.validator.constraint_mapping_contributors` property)
+** `ignoreAnnotations()` in the constraint declaration API (you may now use `ignoreAnnotations(boolean)`)
+** These features are deprecated and planned for removal so they will be removed at some point
+
+=== 6.0.5.Final
+
+No migration concerns.
+
+=== 6.0.4.Final
+
+No migration concerns.
+
+=== 6.0.3.Final
+
+No migration concerns.
+
+=== 6.0.2.Final
+
+No migration concerns.
+
+=== 6.0.1.Final
+
+* Hibernate Validator now throws an exception in every case if trying to perform validation on a property or a method not present in a bean (before this version, no errors were thrown if the bean was totally unconstrained and an error was thrown when validating method parameters but not when validating return values). More generally, sanity checks on the various `Validator#validate...()` methods parameters are now always applied, even if the bean is unconstrained.
+
+=== 6.0.0.Final
+
+* *The group id of Hibernate Validator has changed from `org.hibernate` to `org.hibernate.validator`. Refer to the artifacts via `org.hibernate.validator:hibernate-validator:6.0.0.Final`, `org.hibernate.validator:hibernate-validator-cdi:6.0.0.Final` and `org.hibernate.validator:hibernate-validator-annotation-processor:6.0.0.Final`, respectively.*
++
+To ease migration, relocation artifacts will be provided for the HV 6 release family. Examine the output of your build, if you see messages like "[WARNING] The artifact org.hibernate:hibernate-validator:jar:6.0.0.Alpha1 has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.0.Alpha1", you are still using the old GAV coordinates and should upgrade to the new ones.
++
+Also make sure to not depend on HV 5.x and HV 6.x at the same time (as the group ids are different, the dependency resolution algorithm of your build tool fails to detect that these are two versions of the same logical artifact).
+* Removal/change of experimental features in the favor of equivalent functionality standardized in Bean Validation 2.0:
+** The experimental contract `org.hibernate.validator.spi.time.TimeProvider` and related methods `HibernateValidatorConfiguration#timeProvider()`, `HibernateValidatorContext#timeProvider()` and `HibernateConstraintValidatorContext#getTimeProvider()` and related constant `HibernateValidatorConfiguration#TIME_PROVIDER` have been removed. Use `javax.validation.ClockProvider` as defined by BV 2.0 instead (https://hibernate.atlassian.net/browse/HV-1135[HV-1135]).
+** The experimental annotation `org.hibernate.validator.valuehandling.UnwrapValidatedValue`, enum `org.hibernate.validator.valuehandling.UnwrapMode` and the corresponding method `unwrapValidatedValue()` in the constraint declaration API have been removed in the favor of the new `javax.validation.valueextraction.Unwrapping` constraint payloads (https://hibernate.atlassian.net/browse/HV-1207[HV-1207]).
+** The experimental contract `org.hibernate.validator.spi.valuehandling.ValidatedValueUnwrapper`, related methods `HibernateValidatorConfiguration#addValidationValueHandler()` and `HibernateValidatorContext#addValidationValueHandler()` and related constant `HibernateValidatorConfiguration.VALIDATED_VALUE_HANDLERS` have been removed. Implement the standardized interface `javax.validation.valueextraction.ValueExtractor` instead (https://hibernate.atlassian.net/browse/HV-1166[HV-1166]).
+** When you have the following constraint definition `@NotNull Optional<@NotNull String> value` and set `value` to null, HV used to report 2 violations, one for each `@NotNull` defined. This is not the case anymore in HV 6.x, the value in the container is not extracted and validated anymore if the container is null (https://hibernate.atlassian.net/browse/HV-1240[HV-1240]).
+** Property path nodes representing the element of a validated container (e.g. when validating `List<@Email String emails`) are represented by the standardized node type `CONTAINER_ELEMENT` instead of `PROPERTY`* Further changes:
+** `org.hibernate.validator.cfg.defs.NotBlankDef`, `NotEmptyDef` and `EmailDef` create the standardized constraints `@NotBlank`, `@NotEmpty` and `@Email` now instead of the legacy HV-specific counter-parts (https://hibernate.atlassian.net/browse/HV-1368[HV-1368])
+** The parameter name provider implementation `org.hibernate.validator.parameternameprovider.ReflectionParameterNameProvider` has been removed as it got obsolete with Bean Validation 2.0 where retrieval of parameter names via reflection is the default behavior (https://hibernate.atlassian.net/browse/HV-1118[HV-1118]).
+** An implementation of Expression Language 3.0 (JSR 341) is required now. EL 3.0 was the only version mandated by the BV 1.1 spec also before, but HV 5.x could work with EL 2 implementations. E.g. add the following dependency to your project: `org.glassfish:javax.el:3.0.1-b08`.
+** The configuration option `hibernate.validator.constraint_mapping_contributor` (deprecated in 5.3) has been removed. It was replaced by `hibernate.validator.constraint_mapping_contributors` which accepts a comma separated list of contributors. The constant `o.h.v.HibernateValidatorConfiguration#CONSTRAINT_MAPPING_CONTRIBUTOR` has also been removed and replaced by `o.h.v.HibernateValidatorConfiguration#CONSTRAINT_MAPPING_CONTRIBUTORS`.
+** The deprecated method `ignoreAnnotations()` has been removed from the constraint declaration API in favor of `ignoreAnnotations(boolean)` (https://hibernate.atlassian.net/browse/HV-1120[HV-1120])
+** All the implementation classes of the annotation-processor module have been relocated to the `org.hibernate.validator.ap.internal` package. These classes had never been intended for public usage, no migration impact is expected. The only user facing class of that module, `org.hibernate.validator.ap.ConstraintValidationProcessor`, remains unchanged (https://hibernate.atlassian.net/browse/HV-1396[HV-1396]).
+ 
+== 5.4.x
+
+=== 5.4.1.Final
+
+No migration concerns.
+
+=== 5.4.0.Final
+
+No migration concerns.
+
+=== 5.4.0.CR1
+
+No migration concerns.
+
+=== 5.4.0.Beta1
+
+No migration concerns.
+
+== 5.3.x
+
+=== 5.3.4.Final
+
+No migration concerns.
+
+=== 5.3.3.Final
+
+No migration concerns.
+
+=== 5.3.2.Final
+
+No migration concerns.
+
+=== 5.3.1.Final
+
+* We changed slightly the way the `javax.el ExpressionFactory` is initialized. Before this release, if you used a `ResourceBundleMessageInterpolator`, HV could be initialized with only a dependency to the `javax.el` API as the `ExpressionFactory` was not initialized at bootstrap (and it would have failed at message interpolation). As we now initialize the `ExpressionFactory` at bootstrap, if the `ResourceBundleMessageInterpolator` is used, you also need to have a `javax.el` implementation available. So, in the end, either you don't use `ResourceBundleMessageInterpolator` at all and then you don't need any `javax.el` dependency or you use a `ResourceBundleMessageInterpolator` and the `javax.el` API and an implementation are required by HV.
+
+=== 5.3.0.Final
+
+No migration concerns.
+
+=== 5.3.0.CR1
+
+* The (experimental) notion of `ConstraintDefinitionContributor` has been removed from the public API. Instead the new method `ConstraintMapping#constraintDefinition()` should be used when constraint definitions need to be added programmatically. This change makes the API for programmatic constraint definition and declaration consistent with the XML approach for achieving the same. The following elements have been removed:
+** Interface `o.h.v.spi.constraintdefinition.ConstraintDefinitionContributor`
+** Constant `o.h.v.HibernateValidatorConfiguration#CONSTRAINT_DEFINITION_CONTRIBUTORS`
+** Method `o.h.v.HibernateValidatorConfiguration#addConstraintDefinitionContributor()`
+** Method `o.h.v.HibernateValidatorConfiguration#getDefaultConstraintDefinitionContributor()`
+* The possibility to add constraint validators by means of the Java service loader mechanism (via a `META-INF/services/javax.validation.ConstraintValidator` file) remains in place.
+* The configuration option `hibernate.validator.constraint_mapping_contributor` has been deprecated in favor of `hibernate.validator.constraint_mapping_contributors` which accepts a comma separated list of contributors. The constant `o.h.v.HibernateValidatorConfiguration#CONSTRAINT_MAPPING_CONTRIBUTOR` has been deprecated in favor of `o.h.v.HibernateValidatorConfiguration#CONSTRAINT_MAPPING_CONTRIBUTORS` (https://hibernate.atlassian.net/browse/HV-1065[HV-1065])
+
+== 5.2.x
+
+=== 5.2.4.Final
+
+No migration concerns.
+
+=== 5.2.3.Final
+
+No migration concerns.
+
+=== 5.2.2.Final
+
+The method `AnnotationProcessingOptions#ignoreAnnotations()` has been deprecated and scheduled for removal in a future release. Use `AnnotationIgnoreOptions#ignoreAnnotations(boolean)` instead.
+
+=== 5.2.1.Final
+
+No migration concerns.
+
+=== 5.2.0.Final
+
+No migration concerns.
+
+== 5.1.x
+
+=== 5.1.0.CR1
+
+* The `@Mod10Check` and `@Mod11Check` constraints introduced in 5.1.0.Beta1 got an overhaul. Indeces are now always inclusive (especially the `endIndex`) and are always relative to the validated value, independent of `ignoreNonDigitCharacters`. Also `checkDigitPosition` got renamed into `checkDigitIndex`.
+
+=== 5.1.0.Alpha1
+
+* The programmatic constraint declaration API raises a `ValidationException` now in case the same element (type, property, method etc.) is configured more than once within the mappings used to configure one validator factory. While this was possible before, it was not recommended as it may have caused issues when e.g. configuring conflicting annotation ignore options (https://hibernate.atlassian.net/browse/HV-716[HV-716]). Instead select any element to be configured once and apply all required configurations subsequently.
+* When building Hibernate Validator from the sources yourself, you need to use now JDK 7 and Maven 3.0.3 or later. Note that the created binaries are still Java 6 compatible (https://hibernate.atlassian.net/browse/HV-619[HV-619], https://hibernate.atlassian.net/browse/HV-797[HV-797]).
+
+== 5.0.x
+
+=== 5.0.1.Final
+
+No migration concerns.
+
+=== 5.0.0.Final
+
+No migration concerns.
+
+=== 5.0.0.CR5
+
+* The Hibernate Validator CDI portable extension has been extracted from the main JAR into a separate module (https://hibernate.atlassian.net/browse/HV-778[HV-778]). To make use of the extension, the dependency `org.hibernate:hibernate-validator-cdi:5.0.0.CR5` must be added to the classpath.
+
+=== 5.0.0.CR4
+
+No migration concerns. 
+
+=== 5.0.0.CR3
+
+* `@ValidateExecutable` is reamed to `@ValidateOnExecution` and the `ExecutableType.IMPLICIT` is introduced - https://hibernate.atlassian.net/browse/BVAL-437[BVAL-437]
+* `MethodDescriptor#areParametersConstrained` got renamed into `MethodDescriptor#hasConstrainedParameters` and `MethodDescriptor#isReturnValueConstrained` into `MethodDescriptor#hasConstrainedReturnValue` - https://hibernate.atlassian.net/browse/BVAL-432[BVAL-432]
+* XML config element `<validated-executables></validated>` is renamed to `<default-validated-executable-types></default>` and matching `BootstrapConfiguration#getValidatedExecutableTypes` to `BootstrapConfiguration#getDefaultValidatedExecutableTypes` - https://hibernate.atlassian.net/browse/BVAL-435[BVAL-435]
+
+=== 5.0.0.CR2
+
+No migration concerns. 
+
+=== 5.0.0.CR1
+
+* Methods of `ParameterNameProvider` interface return now `List` instead of `String[]` - https://hibernate.atlassian.net/browse/BVAL-409[BVAL-409]
+* `@CrossParameterConstraint` got replaced by `@SupportValidationTarget` - https://hibernate.atlassian.net/browse/BVAL-391[BVAL-391]
+ 
+=== 5.0.0.Beta1
+
+* Renamed `javax.validation.MethodValidator` to `ExecutableValidator`; `j.v.Validator#forMethods()` renamed to `forExecutables()` (https://hibernate.atlassian.net/browse/BVAL-355[BVAL-355])
+* Made methods `j.v.ExecutableValidator#validateConstructorParameters()` and `validateConstructorReturnValue()` more usable (https://hibernate.atlassian.net/browse/BVAL-358[BVAL-358])
+* Deprecated `org.hibernate.validator.messageinterpolation.ValueFormatterMessageInterpolator`; the validated value can now be used within EL expressions (https://hibernate.atlassian.net/browse/BVAL-223[BVAL-223])
+* Removed annotation `javax.validation.cdi.MethodValidated` (https://hibernate.atlassian.net/browse/BVAL-376[BVAL-376])
+* Removed Maven archetype (https://hibernate.atlassian.net/browse/HV-650[HV-650])
+
+=== 5.0.0.Alpha2
+
+* This release requires Bean Validation 1.1.0.Beta2
+* Methods for method validation moved from `javax.validation.Validator` to `MethodValidator` (https://hibernate.atlassian.net/browse/BVAL-310[BVAL-310])
+* `javax.validation.ConfigurationSource` renamed to `BootstrapConfiguration` (https://hibernate.atlassian.net/browse/BVAL-293[BVAL-293])
+* Removed types deprecated in Hibernate Validator 4.3.0 (https://hibernate.atlassian.net/browse/HV-584[HV-584])
+
+=== 5.0.0.Alpha1
+
+* This release requires Bean Validaton 1.1 as a dependency (more concretely 1.1.0.Alpha1)
+* The custom method validation feature has been replaced by the method validation specfied by Bean Validation 1.1
+* The deprecated classes and methods from https://hibernate.atlassian.net/browse/HV-561[HV-561] have been removed. This means if you are using any of the affected APIs you will need to migrate
+
+== 4.3.x
+
+This section describes changes made in different releases of version 4.3.0. It helps you to migrate from version 4.2.0.Final to 4.3.0.Final (yet to be released) or between releases of version 4.3.0. Hibernate Validator 4.3 requires Java 6!
+
+=== 4.3.0.Beta1
+
+https://hibernate.atlassian.net/browse/HV-561[HV-561] introduced several deprecations (see the JavaDoc for https://docs.jboss.org/hibernate/validator/4.3/api/index.html?deprecated-list.html[a complete deprecation list]):
+
+* `org.hibernate.validator.group.DefaultGroupSequenceProvider` is deprecated and replaced by `org.hibernate.validator.group.spi.DefaultGroupSequenceProvider`
+* `org.hibernate.validator.resourceloading.ResourceBundleLocator` is deprecated and replaced by `org.hibernate.validator.spi.resourceloading.ResourceBundleLocator`
+* The constructor of `org.hibernate.validator.cfg.ConstraintMapping` is deprecated. Instances of `ConstraintMapping` are now created via `HibernateValidatorConfiguration#createConstraintMapping()`
+* The package `org.hibernate.validator.method` with its containing classes is deprecated without alternative for now. In Hibernate Validator 5 this package will be removed to align with Bean Validation 1.1. The method level validation methods will then be available via `javax.validation.Validator`.
+* `org.hibernate.validator.internal.util.LazyValidatorFactory` is deprecated and will be removed in HV 5
+
+=== 4.3.0.Alpha1
+
+This is the first release after Hibernate Validator 4.2.0.Final and backwards compatible. However, the used logging framework has changed to JBoss Logging. This means `org.jboss.logging:jboss-logging` is now a required runtime dependency replacing `org.slf4j:slf4j-api`. You can still use slf4j, log4j or Java Logging though. JBoss Logging is only an additional layer which allows to internationalize (i18n) the logging and exception messages as well as provinding unique ids for these messages. Under the hood JBoss Logging will use the logging framework of your choice to log the messages.
+
+*Hibernate Validator now requires a Java 6 runtime.*
+
+== 4.2.x
+
+This section describes changes made in different releases of version 4.2.0. It helps you to migrate from version 4.1.0.Final to 4.2.0.Final or between releases of version 4.2.0.
+
+=== 4.2.0.Final
+
+This release doesn't introduce modifications which can break your existing code if you have already migrated to version 4.2.0.CR1. If you migrate from version 4.1.0.Final the following sections gives you the changes introduced in the different releases leading to this Final version.
+
+=== 4.2.0.CR1
+ 
+As you already know Hibernate Validator allows the configuration of constraints programmatically. The main feature of this release is the programmatic API allowing constraint configuration on method (https://hibernate.atlassian.net/browse/HV-431[HV-431]). To implement this in an unambiguous way we had to make yet some more changes to the programmatic API.
+ 
+Another minor modification which can impact your existing code (if you migrate from Beta2) is https://hibernate.atlassian.net/browse/HV-488[HV-488]. If you use the method metadata API you will see that the method of `MethodDescriptor` named `getParameterConstraints()` was renamed to `getParameterDescriptors()` to avoid confusion.
+ 
+=== 4.2.0.Beta2
+ 
+The version Beta1 has introduced the possibility to specify constraints on methods. If you use this functionality the following changes will impact your code.
+
+A big change introduced in this release is https://hibernate.atlassian.net/browse/HV-421[HV-421] which defines the behavior of parameter constraint validation. Generally a logical AND is used to combine all constraints defined within a class hierarchy on a given field or method. Doing the same for method parameter constraints, however, causes ambiguities with the definition of Programming by contract where subtypes may only weaken preconditions defined by supertypes. For this release we chose a conservative alternative which prohibit multiple parameter constraints on the same parameter within a class hierarchy.
+ 
+Another minor modification is that the method `MethodValidator#validateParameters()` (allowing to validate all parameters of a method) was renamed to `MethodValidator#validateAllParameters()` (https://hibernate.atlassian.net/browse/HV-415[HV-415]).
+
+=== 4.2.0.Beta1
+
+https://hibernate.atlassian.net/browse/BVTCK-12[BVTCK-12] resp. https://hibernate.atlassian.net/browse/HV-395[HV-395] required a change in the `javax.validation.Path` implementation. Unless you iterate over the `Path` instance returned by `Constraint.getPropertyPath()` you are not affected by this change.
+
+When creating own subclasses of `ConstraintDef` is it not necessary anymore to repeat the definitions of message, payload and groups. `ConstraintDef` uses now self-referential generic types.

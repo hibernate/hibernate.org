@@ -296,7 +296,7 @@ projects:
     reference_doc_pdf_path: reference/en-US/pdf/hibernate_validator_reference.pdf
     javadoc_path: api
     getting_started: /validator/documentation/getting-started
-    migration_guide_url: https://developer.jboss.org/wiki/HibernateValidatorMigrationGuide
+    migration_guide_url: /validator/documentation/migration-guide
     blog_tag: Hibernate Validator
     blog_tag_url: hibernate-validator
     license:
@@ -356,11 +356,8 @@ projects:
         - name: Forum
           href: 'https://discourse.hibernate.org/c/hibernate-validator'
           css_class: 'comments'
-        - name: Wiki
-          href: 'https://community.jboss.org/en/hibernate/validator'
-          css_class: 'edit'
         - name: CI
-          href: 'https://hibernate-validator.ci.cloudbees.com/'
+          href: 'https://ci.hibernate.org/'
           css_class: 'treatment'
 
   ##################################################################################################

@@ -2,11 +2,13 @@
 :awestruct-layout: project-documentation
 :awestruct-project: validator
 
+== Migration Guide
+
+The link:migration-guide[migration guide] explains everything you need to know when upgrading to a new Hibernate Validator version.
+
 == Other documentation
 
 link:/validator/faq/[FAQ]::
 Frequently asked questions.
-https://developer.jboss.org/wiki/HibernateValidatorMigrationGuide[Migration guide]::
-To update from earlier versions of Hibernate Validator to the latest.
 link:https://developer.jboss.org/en/hibernate/validator[JBoss-Developer wiki]::
 Old wiki hosted at JBoss.org. Mostly out-of-date content.
