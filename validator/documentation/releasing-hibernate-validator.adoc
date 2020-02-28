@@ -1,0 +1,56 @@
+= Releasing Hibernate Validator
+:awestruct-layout: project-standard
+:awestruct-project: validator
+
+== Release Process
+
+Follow these steps for an official release.
+
+=== Prerequisites
+
+You need to have access to https://ci.hibernate.org/: the release process is now driven by CI.
+
+=== Prepare
+
+* Update the version of validation-api and tck in `pom.xml` if need be
+* Update the version of tck in `pom.xml` if need be
+* Check that everything has been pushed to the upstream repository
+* Check that CI is green for the branch you want to release
+* Before you release try the latest snapshot of Validator in Core to make sure the snapshot works in Hibernate ORM.
+** Use the HV snapshot version in https://github.com/hibernate/hibernate-orm/blob/master/gradle/libraries.gradle[libraries.gradle]
+** Run either the full ORM build or hibernate-core and hibernate-entitymanager
+** A `./gradlew test` in the ORM directory should be sufficient
+* Double check that `distribution/pom.xml` and `distribution/src/main/assembly/dist.xml` list and include all the right dependencies (this is especially important when dependencies changed).
+* Make sure there are no outstanding issues in https://hibernate.atlassian.net/browse/HV[Jira]
+* On https://hibernate.atlassian.net/issues/?jql=project%20%3D%20HV%20AND%20fixVersion%20%3D%206.0.0.Alpha1%20AND%20component%20%3D%20EMPTY%20ORDER%20BY%20priority%20DESC%2C%20updated%20DESC[Jira (adjust the fixVersion)] check that all the issues referenced in this version have a Component set
+ 
+=== Release
+
+* Release https://hibernate.atlassian.net/projects/HV?selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased[the Jira version]
+* Do *NOT* update the changelog.txt and README.md, the release job does it for you.
+* Go to CI, and select http://ci.hibernate.org/view/Validator/job/hibernate-validator-release/[the hibernate-validator-release job]. Click on Build with parameters.
+** *Be careful when filling the form with the build parameters.*
+* Release the artifacts on the JBoss Nexus repository manager. This is a two-steps process.
+** Log into https://repository.jboss.org/nexus/index.html[Nexus] and examine your https://repository.jboss.org/nexus/index.html#stagingRepositories[staging repository]. Click on the `Updated` column 2 times to have the repositories sorted correctly.
+** You can either `Drop` it in order to start over again or you can `Close` and `Release` it making the artifacts available in the live repository. (Click `Refresh` after each action)
+** You can find more information in the description of https://developer.jboss.org/docs/DOC-14608[the JBoss project release process]. A Maven settings.xml for testing the artifacts in the staging repository can be found https://developer.jboss.org/wiki/MavenStagingSettings[here].
+* Transfer the released issues in JIRA to the Closed state. You can use this search https://hibernate.atlassian.net/issues/?jql=project%20%3D%20HV%20AND%20status%20%3D%20Resolved%20AND%20fixVersion%20%3D%205.3.0.CR1[Issue Navigator - Hibernate JIRA] and select another fixVersion. Once you have selected the right version, click on the button with three dots at the top right of the screen and click on Bulk update all XX issues. Use the Transition action to transition your issues from Resolved to Closed.
+ 
+=== Publish
+
+NOTE: In the HTML version of the reference guide, some special characters and the section titles will show up not correctly when opening the file locally. This is a known issue, the documentation looks correct when retrieved via Apache. 
+
+The CI job automatically pushes the distribution to SourceForge and publishes the documentation to docs.jboss.org.
+
+=== Announce
+
+* Update the migration guide: https://github.com/hibernate/hibernate.org/blob/production/validator/documentation/migration-guide.adoc
+* Blog about the release on in.relation.to. Add the tag 'Hibernate Validator' to the  post so it will also appear on the Hibernate Validator project page.
+* Update https://github.com/hibernate/hibernate.org[hibernate.org]:
+** If it is a new major release, add a `_data/projects/validator/releases/series.yml` file and a `validator/releases/<version>/index.adoc` file
+** Add a new release file to `_data/projects/validator/releases`
+* Depending on which series you want to have displayed, make sure to adjust the displayed flag of the `series.yml` file of the old series
+* Deploy to production
+* Send an email to mailto:hibernate-dev@lists.jboss.org[hibernate-dev] and mailto:hibernate-announce@lists.jboss.org[hibernate-announce]
+* Twitter via https://twitter.com/Hibernate[Hibernate] user
+

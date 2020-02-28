@@ -1,0 +1,57 @@
+= Releasing Bean Validation API and specification
+:awestruct-layout: project-standard
+:awestruct-project: validator
+
+Follow these steps for an official release.
+
+WARNING: Bean Validation has been moved to Jakarta EE thus this release process needs an update.
+
+=== Prerequisites
+
+* You need to have access to http://ci.hibernate.org/: the release process is now driven by CI
+* Follow the order of operations - the API has to be released before the specification
+ 
+=== Prepare
+
+* Make sure there are no outstanding issues in https://hibernate.atlassian.net/projects/BVAL/issues[Jira]
+* Release the https://hibernate.atlassian.net/projects/BVAL?selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased[Jira version]
+ 
+=== Release beanvalidation-api
+
+==== Prepare
+
+* Check that everything has been pushed to the upstream repository
+* Check that CI is green for the branch you want to release
+* Before you release try the latest snapshot of the API with the RI (if the RI is up to date with the API)
+
+==== Release
+
+* Go to CI, and select http://ci.hibernate.org/view/Validator/job/beanvalidation-api-release/[the beanvalidation-api-release job]. Click on _Build with parameters_.
+** *Be careful when filling the form with the build parameters*
+** *Fill in the DELIVERY_QUALIFIER if the release is an official JCP release step (use - if not)*
+* Release the artifacts on the JBoss Nexus repository manager. This is a two-steps process.
+** Log into https://repository.jboss.org/nexus/index.html[Nexus] and examine https://repository.jboss.org/nexus/index.html#stagingRepositories[your staging repository]. Click on the _Updated_ column 2 times to have the repositories sorted correctly.
+** You can either drop it in order to start over again or you can close and promote it making the artifacts available in the live repository. (Click _Refresh_ after each action)
+** You can find more information in the description of https://developer.jboss.org/docs/DOC-14608[the JBoss project release process]. A Maven settings.xml for testing the artifacts in the staging repository can be found https://developer.jboss.org/docs/DOC-15664[here].
+* Transfer the released issues in JIRA to the _Closed_ state. You can use this search https://hibernate.atlassian.net/browse/BVAL-560?jql=project%20%3D%20BVAL%20AND%20fixVersion%20%3D%202.0.0.Alpha2%20ORDER%20BY%20priority%20DESC%2C%20updated%20DESC[Issue Navigator - Hibernate JIRA] and select another `fixVersion`. Once you have selected the right version, click on the button with three dots at the top right of the screen and click on _Bulk update all XX issues_. Use the _Transition_ action to transition your issues from _Resolved_ to _Closed_.
+
+=== Release beanvalidation-spec
+
+==== Prepare
+
+* Check that everything has been pushed to the upstream repository
+* Check that you are able to build the TCK audit file via the command ant create-tck-audit-file (a section id might be missing)
+* Check that CI is green for the branch you want to release
+* *The changelog of the spec is now updated automatically: do not update it!*
+
+==== Release
+
+* Go to CI, and select http://ci.hibernate.org/view/Validator/job/beanvalidation-spec-release/[the beanvalidation-spec-release job]. Click on _Build with parameters_.
+** *Be careful when filling the form with the build parameters.*
+** *Fill in the RELEASE_VERSION_QUALIFIER if the release is an official JCP release step*
+** *Fill in the DELIVERY_QUALIFIER if the release is an official JCP release step (use - if not)*
+* The release job pushes the specification to the website repository but there are still some manual steps:
+** Update the home page: http://beanvalidation.org/[Bean Validation - Home]
+** Update the specification page: http://beanvalidation.org/specification/[Bean Validation - Specification]
+** Once the spec is online (ie the website job triggered by the release job is finished), you can generate the HTML diffs using: https://www.changedetection.com/comparepages.html[ChangeDetection - Compare Web Pages]
+
