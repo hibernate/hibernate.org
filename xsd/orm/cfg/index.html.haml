@@ -1,0 +1,35 @@
+---
+layout: title-nocol
+title: Index of /xsd/orm/cfg
+---
+
+- @items = list_entries(File.dirname(__FILE__), '*.xsd')
+
+.ui.floating.warn.icon.message
+  %i.icon.hand.paper
+  .content
+    .header
+      This XML namespace is obsolete
+    %p
+      With recent versions of Hibernate ORM, you should use
+      %a(title="" href="http://www.hibernate.org/xsd/hibernate-configuration") http://www.hibernate.org/xsd/hibernate-configuration
+      instead
+
+%table.ui.table.celled.striped{style: 'width: 80%'}
+  %thead
+    %tr
+      %th Name
+      %th Last modified
+      %th{:align=>'right'} Size
+  %tbody
+    - @items.each_with_index do |row, row_index|
+      %tr
+        - row.each_with_index do |column, column_index|
+          -if column_index == 0
+            %td
+              %a(title=column href="./#{column}") #{column}
+          -else
+            -if column_index < 2
+              %td= "#{column}"
+            -else
+              %td{:align=>'right'}= "#{column}"
