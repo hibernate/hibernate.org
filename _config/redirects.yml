@@ -96,6 +96,7 @@ validator/downloads.html:                     /validator/releases/
 subprojects/validator/docs:                /validator/documentation/
 subprojects/validator/docs.html:           /validator/documentation/
 
+
 ## Tools
 subprojects/tools:                         /tools/
 subprojects/tools.html:                    /tools/
@@ -164,7 +165,14 @@ hib_docs/nhibernate/html/mapping-attributes.html:                      http://nh
 hib_docs/nhibernate/html/performance.html:                             http://nhibernate.info/doc/nhibernate-reference/performance.html
 hib_docs/nhibernate/html/index.html:                                   http://nhibernate.info/doc/nhibernate-reference/
 hib_docs/tools/reference/en/html_single/:                              http://www.jboss.org/tools/docs/
-hib_docs/tools/reference/en/html/ant.html:                             http://docs.jboss.org/hibernate/core/3.6/reference/en-US/html/toolsetguide.html#toolsetguide-s1-5
+hib_docs/tools/reference/en/html/index.html:                           http://docs.jboss.org/tools/4.1.0.Final/en/hibernatetools/html_single/index.html
+hib_docs/tools/reference/en/html/pr01.html:                            http://docs.jboss.org/tools/4.1.0.Final/en/hibernatetools/html_single/index.html#introduction
+hib_docs/tools/reference/en/html/setup.html:                           http://docs.jboss.org/tools/4.1.0.Final/en/hibernatetools/html_single/index.html#setup
+hib_docs/tools/reference/en/html/codegenarchitecture.html:             http://docs.jboss.org/tools/4.1.0.Final/en/hibernatetools/html_single/index.html#codegenarchitecture
+hib_docs/tools/reference/en/html/plugins.html:                         http://docs.jboss.org/tools/4.1.0.Final/en/hibernatetools/html_single/index.html#plugins
+hib_docs/tools/reference/en/html/ant.html:                             http://docs.jboss.org/tools/4.1.0.Final/en/hibernatetools/html_single/index.html#ant
+hib_docs/tools/reference/en/html/reverseengineering.html:              http://docs.jboss.org/tools/4.1.0.Final/en/hibernatetools/html_single/index.html#reverseengineering
+hib_docs/tools/reference/en/html/codegen.html:                         http://docs.jboss.org/tools/4.1.0.Final/en/hibernatetools/html_single/index.html#codegen
 hib_docs/reference/en/html/queryhql-expressions.html:                  http://docs.jboss.org/hibernate/stable/core.old/reference/en/html/queryhql-expressions.html
 
 # Old cwiki redirects
