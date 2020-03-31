@@ -10,7 +10,7 @@ Hibernate Search 6.0 is currently a *technology preview*.
 While the core of Hibernate Search 6 is ready for use in a production environment,
 there are still some limitations:
 
-* APIs expected to stay stable, but may still change if major implementation issues are detected.
+* APIs are expected to stay stable, but may still change if major implementation issues are detected.
 * Some of the less frequently used features from Hibernate Search 5 are still missing.
 * There may still be some performance bottlenecks.
 
@@ -18,7 +18,7 @@ If you encounter problems, be sure to https://hibernate.atlassian.net/browse/HSE
 new preview versions are released regularly.
 
 The exact features that are currently implemented and expected to work will be added to the reference documentation
-as new Alpha versions are released, but to sum up, here is what you can start to play with:
+as new Beta versions are released, but to sum up, here is what you can start to play with:
 
 * ORM integration:
 ** Mapping of entities using either annotation mapping or programmatic mapping.
@@ -69,7 +69,7 @@ Note that only Hibernate ORM 5.4.4.Final or later will work correctly;
 // Old anchor, kept here to avoid dead links
 [[lucene-7]]
 
-The Lucene backend now uses Lucene 8.4.
+The Lucene backend now uses Lucene 8.5.
 
 [[elasticsearch-7]]
 === Elasticsearch 7
@@ -148,7 +148,7 @@ A mapping error will be reported when the inverse side of the association cannot
 [[runtime-joins]]
 === Runtime joins
 
-Hibernate Search 6.0 introduces  "nested" fields and predicates,
+Hibernate Search 6.0 introduces "nested" fields and predicates,
 similar to the feature with the same name in Elasticsearch.
 
 See https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#mapper-orm-indexedembedded-storage[`@IndexedEmbedded` storage type]
