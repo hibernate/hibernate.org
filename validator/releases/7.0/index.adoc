@@ -1,0 +1,9 @@
+:awestruct-layout: project-releases-series
+:awestruct-project: validator
+:awestruct-series_version: "7.0"
+
+=== Jakarta Bean Validation 3.0
+
+Hibernate Validator 7.0 is the reference implementation for Jakarta Bean Validation 3.0.
+
+The main change is that all the dependencies using `javax.` packages are now using `jakarta.*` packages.
