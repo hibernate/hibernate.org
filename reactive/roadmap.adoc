@@ -1,0 +1,21 @@
+= Roadmap
+Davide D'Alto
+:awestruct-layout: project-roadmap
+:awestruct-project: reactive
+:toc:
+:toc-placement: preamble
+:toc-title: Releases
+
+Hibernate Reactive is community driven.
+As such the roadmap constantly evolves to reflect the users needs.
+Dates are generally omitted, we release when we are ready.
+
+== Hibernate Reactive 1.0
+
+Initial support for:
+
+* CRUD operations
+* Queries (HQL, natives and criteria)
+* Fetching associations
+* link:https://smallrye.io/smallrye-mutiny/[Mutiny]-based API 
+* Multiple databases (Db2, MySQL and PostgreSQL)

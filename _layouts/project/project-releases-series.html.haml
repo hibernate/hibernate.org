@@ -168,14 +168,15 @@ project_hero_partial: project/hero-series.html.haml
                     <version>{version}</version>
                 </dependency>
                 ----
-  .five.wide.column.divided
-    %h3 Zip archive
-    %p
-      Direct download is available from SourceForge:
-    %p
-      %a.ui.right.labeled.button.primary.icon{:href => "#{sourceforge_zip_url(project_description, latest_release)}", :title => "Download"}
-        %i.icon.cloud.download
-        Download Zip archive
+  - if project_description[:sourceforge_url]
+    .five.wide.column.divided
+      %h3 Zip archive
+      %p
+        Direct download is available from SourceForge:
+      %p
+        %a.ui.right.labeled.button.primary.icon{:href => "#{sourceforge_zip_url(project_description, latest_release)}", :title => "Download"}
+          %i.icon.cloud.download
+          Download Zip archive
 
 %p
   More information about specific releases (announcements, download links) can be found
@@ -220,8 +221,12 @@ project_hero_partial: project/hero-series.html.haml
 
 %p
   A detailed list of new features, improvements and fixes in this series can be found
-  %a{:href => jira_issues_for_series_url(project_description, series)}
-    on our JIRA instance.
+  - if project_description[:jira][:key]
+    %a{:href => jira_issues_for_series_url(project_description, series)}
+      on our issue tracker.
+  - else
+    %a{:href => github_issues_url(project_description)}
+      on our issue tracker.
 
 ~ content
 
@@ -266,15 +271,20 @@ project_hero_partial: project/hero-series.html.haml
                 %a.ui.small.right.labeled.button.icon{:href => maven_central_search_url(group_id, maven_repo.central.artifact_id_pattern, version)}
                   %i.icon.cloud.cubes
                   Maven artifacts
-              %a.ui.small.right.labeled.button.icon{:href => sourceforge_zip_url(project_description, release)}
-                %i.icon.cloud.download
-                Download
-            %a.ui.small.right.labeled.button.icon{:href => jira_issues_for_release_url(project_description, release)}
-              %i.icon.bug
-              Resolved issues
-            - if release[:announcement_url]
-              %a.ui.small.right.labeled.button.icon{:href => "#{release.announcement_url}"}
-                %i.icon.announcement
-                Release announcement
+
+              - if  project_description[:sourceforge_url]
+                %a.ui.small.right.labeled.button.icon{:href => sourceforge_zip_url(project_description, release)}
+                  %i.icon.cloud.download
+                  Download
+
+              - if project_description[:jira][:key]
+                %a.ui.small.right.labeled.button.icon{:href => jira_issues_for_release_url(project_description, release)}
+                  %i.icon.bug
+                  Resolved issues
+
+              - if release[:announcement_url]
+                %a.ui.small.right.labeled.button.icon{:href => "#{release.announcement_url}"}
+                  %i.icon.announcement
+                  Release announcement
 - else
   %p There are no releases configured for this series.

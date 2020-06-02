@@ -46,6 +46,10 @@ module Awestruct
         return "#{@site.maven.repo.central.web_ui_url}/#artifactdetails#{gav_string}"
       end
 
+      def github_issues_url(project)
+        return "https://github.com/hibernate/#{project.github['project']}/issues?q=is%3Aissue+is%3Aclosed+"
+      end
+
       def jira_issues_for_series_url(project, series)
         versions = series.releases.collect{|r| r.version}
         return jira_issues_for_versions_url(project, versions)

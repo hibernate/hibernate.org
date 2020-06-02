@@ -1,0 +1,12 @@
+summary: Initial release using Hibernate ORM 5.4 and Vert.x 3.9
+displayed: true
+maven:
+  group_id: org.hibernate.reactive
+  main_artifact_id: hibernate-reactive-core
+integration_constraints:
+  java:
+    version: 8
+  orm:
+    version: 5.4
+  vertx:
+    version: 3.9
