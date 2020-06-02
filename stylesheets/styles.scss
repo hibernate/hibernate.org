@@ -352,7 +352,7 @@ pre {
 }
 
 // don't display the TOC on mobile
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 1000px) {
 	#toc {
 		display: none;
 	}

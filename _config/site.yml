@@ -131,9 +131,6 @@ projects:
         - name: Forum
           href: 'https://discourse.hibernate.org/c/hibernate-orm'
           css_class: 'comments'
-        - name: Wiki
-          href: 'https://community.jboss.org/en/hibernate'
-          css_class: 'edit'
         - name: CI
           href: 'https://ci.hibernate.org/'
           css_class: 'treatment'
@@ -484,6 +481,96 @@ projects:
         - name: Wiki
           href: 'https://community.jboss.org/en/hibernate/ogm'
           css_class: 'edit'
+
+  ##################################################################################################
+  # Reactive
+  ##################################################################################################
+  reactive:
+    name: Hibernate Reactive
+    icon: 'icon-retweet'
+    sourceforge_url: 
+    zip_file:
+    links:
+      reference_doc:
+        html: https://docs.jboss.org/hibernate/reactive/{series.version}/reference/html_single/
+        latest_stable:
+          html: https://docs.jboss.org/hibernate/stable/reactive/reference/html_single/
+      javadoc:
+        html: https://docs.jboss.org/hibernate/reactive/{series.version}/javadocs/
+        latest_stable:
+          html: https://docs.jboss.org/hibernate/stable/reactive/javadocs/
+      getting_started_guide:
+        html: /reactive/documentation/getting-started
+    maven:
+      group_id: org.hibernate.reactive
+      main_artifact_id: hibernate-reactive-core
+      repo:
+        central:
+          artifact_id_pattern: hibernate-reactive-*
+        jboss:
+          artifact_id_pattern: hibernate-reactive-*
+        bintray:
+          package: hibernate-reactive
+    blog_tag: Hibernate Reactive
+    blog_tag_url: hibernate-reactive
+    license:
+      name: LGPL V2.1
+      url: http://hibernate.org/license/
+    jira:
+      key:
+    github:
+      project: hibernate-reactive
+    integrations:
+      java:
+        name: Java
+        url: https://www.oracle.com/technetwork/java/javase/downloads/index.html
+      orm:
+        name: Hibernate ORM
+        url: /orm/
+      vertx:
+        name: Vert.x 
+        url: https://vertx.io 
+    menu:
+      intern:
+        - name: About
+          href: '/reactive/'
+          css_class: 'home'
+        - name: Releases
+          href: '/reactive/releases/'
+          css_class: 'tags'
+          releases_submenu: true
+        - name: Documentation
+          href: '/reactive/documentation/'
+          css_class: 'book'
+        - name: Roadmap
+          href: '/reactive/roadmap/'
+          css_class: 'road'
+        - name: Contribute
+          href: '/reactive/contribute/'
+          css_class: 'users'
+        - name: Paid support
+          href: '/reactive/support/'
+          css_class: 'doctor'
+        - name: FAQ
+          href: '/reactive/faq/'
+          css_class: 'circle help'
+      extern:
+        - name: Source code
+          href: 'https://github.com/hibernate/hibernate-reactive'
+          css_class: 'code'
+        - name: Issue tracker
+          href: 'https://github.com/hibernate/hibernate-reactive/issues'
+          css_class: 'bug'
+        - name: Security issue
+          href: 'https://access.redhat.com/security/team/contact/'
+          css_class: 'lock'
+        - name: Forum
+          href: 'https://discourse.hibernate.org/c/hibernate-reactive'
+          css_class: 'comments'
+        - name: CI
+          href: 'https://github.com/hibernate/hibernate-reactive/actions'
+          css_class: 'treatment'
+
  #other projects would come here
 
 ####################################################################################################
