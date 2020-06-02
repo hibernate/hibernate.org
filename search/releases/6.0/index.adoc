@@ -110,7 +110,7 @@ upgrades should be faster.
 The Search DSL is brand new, with several improvements:
 
 * Ability to use lambdas for more concise query definition, even when queries are complex.
-* Type-safe projections thanks to the brand new projection DSL.
+* Type-safe projections thanks to the brand-new projection DSL.
 * Various new features and improvements such as a new `exists` predicate,
 the ability to override analyzers on a per-predicate basis, ...
 * Injection of native predicates (`org.apache.lucene.search.Query` for Lucene, JSON for Elasticsearch)
@@ -130,7 +130,7 @@ so we took this opportunity to overhaul bridge APIs to make bridges more powerfu
 
 The new Bridge APIs are completely different, but with a lot of improvements:
 
-* Custom (user-defined) bridge annotations, allowing to pass type-safe parameters, and not just strings.
+* Custom (user-defined) bridge annotations, allowing the passing of type-safe parameters, and not just strings.
 * Better support for dirty checking optimization in bridges (in `TypeBridge` in particular),
 by allowing bridges to declare what parts of the entity they use.
 * Predicates on non-String fields will work without having to bypass bridges (`.ignoreFieldBridge()`) like in Search 5.
