@@ -85,6 +85,7 @@ WARNING: This section is still incomplete. To be completed upon the CR or releas
 A lot of APIs changed. We recommend to have a look at
 https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#getting-started[the getting started guide] before migrating.
 
+[[factory]]
 ==== `@Factory`
 
 The `@Factory` annotation does not exist in Hibernate Search 6 anymore.
