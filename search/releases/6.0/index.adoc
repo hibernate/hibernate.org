@@ -120,10 +120,15 @@ Hibernate Search 6 will only traverse associations to entities that are actually
 affected by the change, based on `@IndexedEmbedded(includePaths = ...)` and other metadata.
 
 [[runtime-joins]]
-=== Runtime joins
+=== Runtime joins with nested documents
 
 Hibernate Search 6.0 introduces "nested" fields and predicates,
 similar to the feature with the same name in Elasticsearch.
 
-See https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#mapper-orm-indexedembedded-storage[`@IndexedEmbedded` storage type]
+This means in particular that embedded entities can be searched much more finely,
+for example searching for that one book whose author has a given first name *and* last name.
+With the right query, no longer will Hibernate Search return a book authored by "John Smith" and "Jane Doe"
+when you were looking for "John Doe"!
+
+For details, see https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#mapper-orm-indexedembedded-storage[`@IndexedEmbedded` storage type]
 in the reference documentation.
