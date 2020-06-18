@@ -17,46 +17,10 @@ there are still some limitations:
 If you encounter problems, be sure to https://hibernate.atlassian.net/browse/HSEARCH[report them]:
 new preview versions are released regularly.
 
-The exact features that are currently implemented and expected to work will be added to the reference documentation
-as new Beta versions are released, but to sum up, here is what you can start to play with:
-
-* ORM integration:
-** Mapping of entities using either annotation mapping or programmatic mapping.
-Most of the field types supported in Search 5 are supported in Search 6.
-See https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#mapper-orm-mapping[mapping]
-in the reference documentation.
-** Custom, user-defined type bridges, property bridges or value bridges.
-See https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#mapper-orm-bridge[bridges]
-in the reference documentation.
-** Automatic indexing of ORM entities on transaction commit or session flush (if outside of a transaction)
-(enabled automatically if Hibernate Search is in your classpath and the entity is `@Indexed`).
-See https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#mapper-orm-indexing-automatic[automatic indexing]
-in the reference documentation.
-** Mass indexing of ORM entities that are already persisted in database.
-See https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#mapper-orm-indexing-massindexer[mass indexing]
-in the reference documentation.
-** Searching for ORM entities using their Hibernate Search index,
-and retrieving managed entities as results.
-See https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl-query[query DSL]
-in the reference documentation.
-* Search DSL
-** All the predicates available in Search 5, except `facet` and `moreLikeThis`.
-Additionally, the new `id`, `nested` and `exists` predicates were added.
-See https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl-predicate[predicate DSL]
-in the reference documentation.
-** All the sorts available in Search 5.
-See https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl-sort[sort DSL]
-in the reference documentation.
-** All the projections available in Search 5.
-See https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl-projection[projection DSL]
-in the reference documentation.
-** Aggregations, equivalent to the "faceting" feature of Search 5.
-See https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl-aggregation[aggregation DSL]
-in the reference documentation.
-
+=== Dependency upgrades
 
 [[orm-version]]
-=== ORM version
+==== Hibernate ORM
 
 Hibernate Search 6 still relies on ORM 5.4 at the moment,
 because it requires features that are not yet implemented in ORM 6 (still in development).
@@ -65,14 +29,14 @@ Note that only Hibernate ORM 5.4.4.Final or later will work correctly;
 5.4.3.Final and earlier will not.
 
 [[lucene-8]]
-=== Lucene 8
+==== Lucene 8
 // Old anchor, kept here to avoid dead links
 [[lucene-7]]
 
 The Lucene backend now uses Lucene 8.5.
 
 [[elasticsearch-7]]
-=== Elasticsearch 7
+==== Elasticsearch 7
 // Old anchor, kept here to avoid dead links
 [[elasticsearch-6]]
 
