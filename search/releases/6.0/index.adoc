@@ -136,14 +136,24 @@ by allowing bridges to declare what parts of the entity they use.
 * Predicates on non-String fields will work without having to bypass bridges (`.ignoreFieldBridge()`) like in Search 5.
 * And more!
 
-=== Easier to use, safer automatic indexing
+[[automatic-indexing]]
+=== Easier to use, smarter automatic indexing
 
-Automatic indexing improvements are not limited to bridges:
-`@IndexedEmbedded` is easier to configure properly in Search 6, too.
+In Hibernate Search 6, automatic indexing is easier to configure correctly:
 
-To be precise, changes on indexed-embedded entities trigger reindexing of the "embedding" entity automatically,
-and annotating the inverse side of the association with `@ContainedIn` is no longer needed in most cases.
-A mapping error will be reported when the inverse side of the association cannot be resolved.
+* When using `@IndexedEmbedded` on an association,
+Hibernate Search 6 infers the inverse side of the association from Hibernate ORM metadata,
+which allows it to automatically reindex the class hosting the `@IndexedEmbedded` annotation
+when the target of the association changes. `@ContainedIn` is no longer needed.
+* When the inverse side of an association cannot be resolved,
+Hibernate Search 6 will report a mapping error, allowing you to detect risks of out-of-sync indexes early.
+* You can still opt out of automatic reindexing using `@IndexingDependency(reindexOnUpdate = ReindexOnUpdate.NO)`.
+See https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#mapper-orm-reindexing-reindexonupdate[this section of the documentation].
+
+Hibernate Search 6 is also smarter with reindexing.
+When a property changes in an entity that is indexed-embedded in multiple other entities,
+Hibernate Search 6 will only traverse associations to entities that are actually
+affected by the change, based on `@IndexedEmbedded(includePaths = ...)` and other metadata.
 
 [[runtime-joins]]
 === Runtime joins
