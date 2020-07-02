@@ -46,9 +46,9 @@ as part of your application bytecode.
 * The internals are classes and code meant only for Hibernate usage internally.
 
 For the most part we try to denote these distinctions through the placement of classes into packages.
-Classes in packages with _internal_ in the name are part of that internals categorization.
+Classes in packages with _internal_ or _impl_ in the name are part of that internals categorization.
 Classes in packages with _spi_ in the name are part of the SPI.
-Classes in packages with neither _internal_ nor _spi_ in the name are considered part of the API.
+Classes in packages with neither _internal_, _impl_ nor _spi_ in the name are considered part of the API.
 
 _Grouping code into packages in this manner is an ongoing process and is still incomplete.
 The reason we could not do it en masse is, oddly, backwards compatibility._
