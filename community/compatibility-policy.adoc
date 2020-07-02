@@ -8,6 +8,22 @@ or even REST APIs (Elasticsearch).
 When any of these components changes its API, there is a risk that it becomes incompatible.
 This page explains how Hibernate projects try to limit incompatible changes.
 
+[TIP]
+====
+Hibernate projects comply with this compatibility policy on a best effort basis.
+
+For contractually binding warranty, consider paid support:
++++<br />
+<div class="ui labels blue">
+<a class="ui label" href="/orm/support/"><i class="icon doctor"></i>ORM</a>
+<a class="ui label" href="/search/support/"><i class="icon doctor"></i>Search</a>
+<a class="ui label" href="/validator/support/"><i class="icon doctor"></i>Validator</a>
+<a class="ui label" href="/ogm/support/"><i class="icon doctor"></i>OGM</a>
+</div>
++++
+
+====
+
 == Concepts
 
 [[versioning-scheme]]
