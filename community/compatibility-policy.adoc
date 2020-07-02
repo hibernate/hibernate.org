@@ -137,11 +137,50 @@ it is just not guaranteed.
 Users should have no expectations of any kind for compatibility when it comes to "internal" code.
 Internal classes may be altered or even removed at any time, including in micro updates.
 
+[[compatibility-between-hibernate-projects]]
+== Compatibility between Hibernate projects
+
+*Hibernate projects with the same version number are not automatically compatible*.
+
+There is no "release train" in Hibernate projects.
+Each Hibernate project releases new versions independently
+and picks the version of its dependencies according to its needs and compatibility requirements.
+
+For example, Hibernate Search 5.11.5.Final depends on Hibernate ORM 5.4.12.Final.
+Hibernate ORM 5.11.5.Final does not even exist!
+
+[TIP]
+====
+To help you pick compatible versions, we provide a compatibility matrix for each project:
++++<br />
+<div class="ui labels blue">
+<a class="ui label" href="/orm/releases/#compatibility-matrix"><i class="icon table"></i>ORM</a>
+<a class="ui label" href="/search/releases/#compatibility-matrix"><i class="icon table"></i>Search</a>
+<a class="ui label" href="/validator/releases/#compatibility-matrix"><i class="icon table"></i>Validator</a>
+<a class="ui label" href="/ogm/releases/#compatibility-matrix"><i class="icon table"></i>OGM</a>
+</div>
++++
+====
+
 [[compatibility-third-party]]
 == Compatibility with third-party software
 
 This section discusses the expectations users should have regarding
 compatibility between Hibernate projects and third-party software.
+
+[TIP]
+====
+In many cases, you can find the appropriate version of a third-party dependency
+using the compatibility matrix of the relevant project:
++++<br />
+<div class="ui labels blue">
+<a class="ui label" href="/orm/releases/#compatibility-matrix"><i class="icon table"></i>ORM</a>
+<a class="ui label" href="/search/releases/#compatibility-matrix"><i class="icon table"></i>Search</a>
+<a class="ui label" href="/validator/releases/#compatibility-matrix"><i class="icon table"></i>Validator</a>
+<a class="ui label" href="/ogm/releases/#compatibility-matrix"><i class="icon table"></i>OGM</a>
+</div>
++++
+====
 
 [[compatibility-third-party-hsearch-lucene]]
 === Hibernate Search and Lucene
