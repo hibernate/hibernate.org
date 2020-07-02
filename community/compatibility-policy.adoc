@@ -1,104 +1,118 @@
 = Compatibility policy
-Emmanuel Bernard
+Emmanuel Bernard, Yoann Rodiere
 :awestruct-layout: community-standard
 
-Compatibility refers to the ability of one version of a software component to work in place
-of another version of the same software component.
-When "upgrading" versions we refer to "backwards compatibility":
-can the new version be dropped seamlessly into a working system in place of the older version
-and the system continue to work properly.
-This is especially crucial for libraries, like Hibernate.
+Your application interacts with Hibernate libraries,
+and those in turn interact with third-party software: JDBC drivers, other libraries,
+or even REST APIs (Elasticsearch).
+When any of these components changes its API, there is a risk that it becomes incompatible.
+This page explains how Hibernate projects try to limit incompatible changes.
 
-In an ideal world, this backwards compatibility would be maintained indefinitely.
-In the real world, as software is developed over time and evolves it is sometimes necessary
-to change signatures of methods and constructors or to refactor the code in ways (e.g. package changes)
-that might be disruptive to this backwards compatibility.
-Here we will discuss the considerations and guidelines followed by the Hibernate team in regards to this.
+== Concepts
 
-There are 2 topics related discussions when discussing.
-
-
-== Versioning Philosophy
+[[versioning-scheme]]
+=== Versioning scheme
 
 The first topic when discussing our view on compatibility is how we name versions and the semantics of that.
+
+Hibernate projects are versioned according to the following scheme:
+
+```
+major.minor.micro.qualifier
+```
+
+Where:
+
+* `major`, `minor` and `micro` are incrementing integers.
+* `qualifier` is `Alpha1`, `Alpha2`, etc., `Beta1`, `Beta2`, etc., for development releases,
+`CR1`, `CR2`, etc. for candidate releases
+or `Final` for stable releases.
+
+For example: `4.0.0.Final`, `5.2.0.Beta2`, `5.4.0.CR1`.
+
 For the most part we follow the guidelines as defined by
 https://community.jboss.org/wiki/JBossProjectVersioning[JBoss Project Versioning Guidelines],
 so that is a good background material.
 
-Hibernate, however, applies some additional semantics.
-As mentioned in the project page the first number is the major version;
-the second number is the minor version.Hibernate considers the {major}.{minor} combination a release "family".
-We will discuss the implication of release families on compatibility below.
+Hibernate, however, applies some additional semantics. Roughly speaking:
 
-OSGi/JBoss refer to the next number in the version as the "micro".
-For Hibernate, this correlates to maintenance/bugfix releases within a release family.
-Again, we will discuss the implications of this below.
+* Major updates imply potentially incompatible changes to existing APIs. This may include removal of some APIs.
+* Minor updates are simply additions to existing APIs.
+* Micro updates are for bugfixes only.
+* Alpha/Beta updates are for work in progress and may change newly introduced APIs.
 
+Details can be found further down in <<compatibility-api-spi>>.
 
-== Code Categorizations
+[[code-categorization]]
+=== Code categorization
 
-We conceptually divide the classes of the codebase into 3 broad categorizations:
+We conceptually divide the classes of the codebase into 3 broad categories:
+
 * The API is the set of contracts exposed to the application. For example, `Session#save`.
-It represents the intended means for the application to interact with Hibernate.
-Specifically speaking, this is code that we fully expect to be directly linked to (by the compiler)
-as part of your application bytecode.
-* An SPI represents an "integration point" with Hibernate and the contracts needed to perform those integrations.
+It is an interface for your application to interact with Hibernate.
+This is code that we fully expect to be directly linked to your application bytecode by the compiler.
+* An SPI is an "integration point" with Hibernate and the contracts needed to perform those integrations.
+It is an interface for frameworks or third-party libraries (caching implementations, ...)
+to integrate with Hibernate.
 * The internals are classes and code meant only for Hibernate usage internally.
 
-For the most part we try to denote these distinctions through the placement of classes into packages.
-Classes in packages with _internal_ or _impl_ in the name are part of that internals categorization.
-Classes in packages with _spi_ in the name are part of the SPI.
-Classes in packages with neither _internal_, _impl_ nor _spi_ in the name are considered part of the API.
+For the most part we try to denote these distinctions through the placement of classes into packages:
 
-_Grouping code into packages in this manner is an ongoing process and is still incomplete.
-The reason we could not do it en masse is, oddly, backwards compatibility._
+* Classes in packages with `internal` or `impl` in the name are internal.
+* Classes in packages with `spi` in the name are SPI.
+* Classes in packages with neither `internal`, `impl` nor `spi` in the name are API.
 
-_The use of package names for this is unfortunately not granular enough oftentimes.
-Ultimately I would envision a better solution (annotations?)_
+NOTE: For Hibernate ORM, grouping code into packages in this manner is an ongoing process and is still incomplete.
+The reason we could not do it en masse is, oddly, backwards compatibility.
 
-In terms of compatibility considerations, the SPI categorization is unfortunately too broad.
-We have been working on defining it in a more granular fashion.
-A good high level break down (good enough for this discussion anyway) is:
-* The contract itself. E.g., the interfaces a "cache provider" would implement to provide caching services
-as an integration.
-* Inputs and outputs defined as part of those SPI contracts.
+[[compatibility-api-spi]]
+== Compatibility between applications and Hibernate projects
 
-== The "rules"
+This section discusses the expectations users should have regarding
+compatibility between their application and Hibernate projects.
 
-With the understanding of versioning philosophy and categorizations,
-we can now discuss the expectations users should have in terms of compatibility:
+[IMPORTANT]
+====
+The principles below are guidelines. While we strive to follow them as much as possible,
+there are times when exceptions need to be made.
+
+For example, if the design of a small part of the API renders it useless or causes critical bugs,
+we may decide to change it incompatibly in a bugfix (micro) release.
+====
 
 === API
 
-API contracts should be considered stable across all releases within a major version (3.x or 4.x, etc).
-For example, if you develop an application initially using Hibernate version 4.0.0
+API contracts are stable across all releases within a *major* version.
+
+For example, if you develop an application initially using Hibernate ORM version 4.0.0
 and the application only relies on the defined APIs,
 the expectation is that you can drop in any newer Hibernate 4.x version and it will JustWork.
-This is what is called backwards compatibility: meaning that any changes done in 4.3,
-e.g., are done in such a way as to remain compatible with older (backward) versions all the way back to 4.0.
-I personally find the terms confusing because I think of it in terms of "porting" the application
-forward to use a newer version of a library.
-The standard term for this is backward compatibility.
+
+This is what is called _backwards compatibility_: any changes done in 4.3 (for example)
+are done in such a way as to remain compatible with older (backward) versions all the way back to 4.0.
 
 The inverse is something we actually do not guarantee in regards to APIs
 and going back to an older version (reverting).
 An example here would be developing an application using the natural-id API developed in 4.2
-and then trying to drop Hibernate 4.1 or 4.0 into that application.
+and then trying to drop Hibernate ORM 4.1 or 4.0 into that application.
 That won't work.
 
 So within a major version we guarantee APIs to be backwards compatible,
 but not forward compatible.
 Newer releases might **add to** an API, but they should not alter or remove.
 
-_There are times when exceptions to this need to be made.
-E.g., if the design of the API itself is deemed to be problematic._
-
 === SPI
 
-SPI contracts should be considered stable within a release family,
-not necessarily across different release families.
-We do strive to maintain backwards compatibility for SPI contracts across families, it is just not guaranteed.
+SPI contracts are stable across all releases within a *minor* version,
+but not necessarily across different minors of the same major.
+
+For example, an integration developed against Hibernate ORM 4.0.0 will work with 4.0.1 or 4.0.3,
+but not necessarily with 4.1.0.
+
+We do strive to maintain backwards compatibility for SPI contracts across minor versions,
+it is just not guaranteed.
 
 === Internals
 
 Users should have no expectations of any kind for compatibility when it comes to "internal" code.
+Internal classes may be altered or even removed at any time, including in micro updates.
