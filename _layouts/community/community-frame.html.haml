@@ -61,6 +61,12 @@ layout: base
           %i.grid.icon.building.outline
           Corporate contributors
 
+        - href = "/community/compatibility-policy/"
+        - active = (href == current_path)
+        %a.item{:href => "#{relative(href)}", :class => "#{(active ? "active" : "")}"}
+          %i.grid.icon.history
+          Compatibility policy
+
         - href = "/community/license/"
         - active = (href == current_path)
         %a.item{:href => "#{relative(href)}", :class => "#{(active ? "active" : "")}"}
