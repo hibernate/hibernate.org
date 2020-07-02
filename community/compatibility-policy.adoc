@@ -82,6 +82,13 @@ For the most part we try to denote these distinctions through the placement of c
 NOTE: For Hibernate ORM, grouping code into packages in this manner is an ongoing process and is still incomplete.
 The reason we could not do it en masse is, oddly, backwards compatibility.
 
+Additionally, some classes, methods or fields may be annotated to introduce exceptions:
+
+* Code annotated with `@Internal` is internal.
+This annotation is used for code that leaks through API or SPI due to technical constraints or for historical reasons.
+* Code annotated with `@Incubating` is not part of an API or SPI yet, but may be in the future.
+This annotation is used for code that is still under development and may still change incompatibly.
+
 [[compatibility-api-spi]]
 == Compatibility between applications and Hibernate projects
 
@@ -95,9 +102,6 @@ there are times when exceptions need to be made.
 
 For example, if the design of a small part of the API renders it useless or causes critical bugs,
 we may decide to change it incompatibly in a bugfix (micro) release.
-
-Also, code (API or SPI) annotated with `@Incubating` is not covered by this compatibility policy *at all*.
-Incubating API or SPI may change at any time, even in a bugfix (micro) release.
 ====
 
 === API
@@ -131,6 +135,16 @@ but not necessarily with 4.1.0.
 
 We do strive to maintain backwards compatibility for SPI contracts across minor versions,
 it is just not guaranteed.
+
+=== Incubating
+
+Code annotated with `@Incubating` is not covered by this compatibility policy *at all*.
+
+Incubating code change at any time, even in a bugfix (micro) release.
+It may or may not become fully part of an API or SPI in a future release,
+potentially under a different form.
+It may be removed without replacement and without prior notice,
+including in a bugfix (micro) release.
 
 === Internals
 
