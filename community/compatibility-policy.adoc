@@ -27,39 +27,6 @@ For contractually binding warranty, consider paid support:
 
 == Concepts
 
-[[versioning-scheme]]
-=== Versioning scheme
-
-The first topic when discussing our view on compatibility is how we name versions and the semantics of that.
-
-Hibernate projects are versioned according to the following scheme:
-
-```
-major.minor.micro.qualifier
-```
-
-Where:
-
-* `major`, `minor` and `micro` are incrementing integers.
-* `qualifier` is `Alpha1`, `Alpha2`, etc., `Beta1`, `Beta2`, etc., for development releases,
-`CR1`, `CR2`, etc. for candidate releases
-or `Final` for stable releases.
-
-For example: `4.0.0.Final`, `5.2.0.Beta2`, `5.4.0.CR1`.
-
-For the most part we follow the guidelines as defined by
-https://community.jboss.org/wiki/JBossProjectVersioning[JBoss Project Versioning Guidelines],
-so that is a good background material.
-
-Hibernate, however, applies some additional semantics. Roughly speaking:
-
-* Major updates imply potentially incompatible changes to existing APIs. This may include removal of some APIs.
-* Minor updates are simply additions to existing APIs.
-* Micro updates are for bugfixes only.
-* Alpha/Beta updates are for work in progress and may change newly introduced APIs.
-
-Details can be found further down in <<compatibility-api-spi>>.
-
 [[code-categorization]]
 === Code categorization
 
@@ -88,6 +55,37 @@ Additionally, some classes, methods or fields may be annotated to introduce exce
 This annotation is used for code that leaks through API or SPI due to technical constraints or for historical reasons.
 * Code annotated with `@Incubating` is not part of an API or SPI yet, but may be in the future.
 This annotation is used for code that is still under development and may still change incompatibly.
+
+[[versioning-scheme]]
+=== Versioning scheme
+
+Hibernate projects are versioned according to the following scheme:
+
+```
+major.minor.micro.qualifier
+```
+
+Where:
+
+* `major`, `minor` and `micro` are incrementing integers.
+* `qualifier` is `Alpha1`, `Alpha2`, etc., `Beta1`, `Beta2`, etc., for development releases,
+`CR1`, `CR2`, etc. for candidate releases
+or `Final` for stable releases.
+
+For example: `4.0.0.Final`, `5.2.0.Beta2`, `5.4.0.CR1`.
+
+For the most part we follow the guidelines as defined by
+https://community.jboss.org/wiki/JBossProjectVersioning[JBoss Project Versioning Guidelines],
+so that is a good background material.
+
+Hibernate, however, applies some additional semantics. Roughly speaking:
+
+* Major updates imply potentially incompatible changes to existing APIs. This may include removal of some APIs.
+* Minor updates are simply additions to existing APIs.
+* Micro updates are for bugfixes only.
+* Alpha/Beta updates are for work in progress and may change newly introduced APIs.
+
+Details can be found further down in <<compatibility-api-spi>>.
 
 [[compatibility-api-spi]]
 == Compatibility between applications and Hibernate projects
