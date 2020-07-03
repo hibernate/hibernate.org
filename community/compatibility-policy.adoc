@@ -100,6 +100,13 @@ there are times when exceptions need to be made.
 
 For example, if the design of a small part of the API renders it useless or causes critical bugs,
 we may decide to change it incompatibly in a bugfix (micro) release.
+
+Another exception is when backporting support for standards.
+We might decide to introduce "transition" minors that upgrade to a newer version of a standard
+while keeping backward compatibility everywhere else,
+in order to ease the migration to the next major version.
+For example Hibernate ORM 5.5 might upgrade to Jakarta 9's persistence API (and change nothing else)
+to ease the migration to Hibernate ORM 6.0.
 ====
 
 === API
