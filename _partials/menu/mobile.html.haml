@@ -1,0 +1,20 @@
+- real_page = page['real_page']
+- current_path = real_page.output_path.sub(/index\.html$/, "").sub(/\.html$/,"/")
+
+.ui.vertical.inverted.sidebar.left#mobile-menu
+  .ui.vertical.fluid.inverted.text.menu.accordion
+    = partial( 'menu/mobile-section-project.html.haml', {'real_page' => real_page, 'project_name' => 'ORM', 'project_key' => 'orm', 'project_icon' => 'database'})
+    = partial( 'menu/mobile-section-project.html.haml', {'real_page' => real_page, 'project_name' => 'Search', 'project_key' => 'search', 'project_icon' => 'search'})
+    = partial( 'menu/mobile-section-project.html.haml', {'real_page' => real_page, 'project_name' => 'Validator', 'project_key' => 'validator', 'project_icon' => 'checkmark box'})
+    = partial( 'menu/mobile-section-project.html.haml', {'real_page' => real_page, 'project_name' => 'OGM', 'project_key' => 'ogm', 'project_icon' => 'sitemap'})
+    = partial( 'menu/mobile-section-project.html.haml', {'real_page' => real_page, 'project_name' => 'Tools', 'project_key' => 'tools', 'project_icon' => 'wrench'})
+    %a.item(href="/others/")
+      Others
+    = partial( 'menu/mobile-section-community.html.haml', {'real_page' => real_page})
+    %a.item(href="#{site.in_relation_to.base_url}")
+      Blog
+    %a.item(href="#{site.forum.base_url}")
+      Forums
+    %a.item(href="#{site.twitter.base_url}")
+      %i.icon.twitter
+      Follow us

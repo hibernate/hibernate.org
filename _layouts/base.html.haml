@@ -9,7 +9,7 @@
     = partial( page.head_partial.nil? ? 'head.html.haml' : page.head_partial, { "real_page" => page } )
 
   %body.pushable
-    = partial( 'mobile-menu.html.haml', {"real_page" => page} )
+    = partial( 'menu/mobile.html.haml', {"real_page" => page} )
 
     .pusher
 

@@ -1,0 +1,55 @@
+- current_path = page['real_page'].output_path.sub(/index\.html$/, "").sub(/\.html$/,"/")
+- community_active = current_path.start_with?("/community/")
+
+.item
+  %a.title{:class => "#{(community_active ? "active" : "")}"}
+    %i.grid.icon.users
+    %i.dropdown.icon
+    %strong Community
+  .content{:class => "#{(community_active ? "active" : "")}"}
+    .menu.external-links
+      - item_active = (current_path == '/community/')
+      %a.item(href="/community/"){:class => "#{(item_active ? "active" : "")}"}
+        %i.grid.icon.users
+        Community
+      - item_active = (current_path == '/community/contributors/orm/')
+      %a.item(href="/community/contributors/orm/"){:class => "#{(item_active ? "active" : "")}"}
+        %i.grid.icon.database
+        Contributors to ORM
+      - item_active = (current_path == '/community/contributors/search/')
+      %a.item(href="/community/contributors/search/"){:class => "#{(item_active ? "active" : "")}"}
+        %i.grid.icon.search
+        Contributors to Search
+      - item_active = (current_path == '/community/contributors/validator/')
+      %a.item(href="/community/contributors/validator/"){:class => "#{(item_active ? "active" : "")}"}
+        %i.grid.icon.checkmark.box
+        Contributors to Validator
+      - item_active = (current_path == '/community/contributors/ogm/')
+      %a.item(href="/community/contributors/ogm/"){:class => "#{(item_active ? "active" : "")}"}
+        %i.grid.icon.sitemap
+        Contributors to OGM
+      - item_active = (current_path == '/community/corporate-contributors/')
+      %a.item(href="/community/corporate-contributors/"){:class => "#{(item_active ? "active" : "")}"}
+        %i.grid.icon.building.outline
+        Corporate contributors
+      - href = "/community/compatibility-policy/"
+      - active = (href == current_path)
+      %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "active" : "")}"}
+        %i.grid.icon.history
+        Compatibility policy
+      - item_active = (current_path == '/community/license/')
+      %a.item(href="/community/license/"){:class => "#{(item_active ? "active" : "")}"}
+        %i.grid.icon.legal
+        Licenses
+      - href = "/community/contribute/guidelines/"
+      %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "active" : "")}"}
+        Contribute - Guidelines
+      - href = "/community/contribute/intellij-idea/"
+      %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "active" : "")}"}
+        Contribute - Set up IntelliJ IDEA
+      - href = "/community/contribute/eclipse-ide/"
+      %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "active" : "")}"}
+        Contribute - Set up Eclipse IDE
+      - href = "/community/contribute/build-hibernate-orm/"
+      %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "active" : "")}"}
+        Contribute - Build Hibernate ORM
