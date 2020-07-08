@@ -17,7 +17,7 @@
           %i.grid.icon{:class => "#{menu.css_class}"}
           = menu.name
     .menu.external-links
-      - site.projects['orm'].menu.extern.each do |menu|
+      - site.projects[project_key].menu.extern.each do |menu|
         %a.item(href="#{menu.href}")
           %i.grid.icon{:class => "#{menu.css_class}"}
           = menu.name
