@@ -42,10 +42,27 @@
           %a.item(href="/community/corporate-contributors/"){:class => "#{(item_active ? "active" : "")}"}
             %i.grid.icon.building.outline
             Corporate contributors
+          - href = "/community/compatibility-policy/"
+          - active = (href == current_path)
+          %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "active" : "")}"}
+            %i.grid.icon.history
+            Compatibility policy
           - item_active = (current_path == '/community/license/')
           %a.item(href="/community/license/"){:class => "#{(item_active ? "active" : "")}"}
             %i.grid.icon.legal
             Licenses
+          - href = "/community/contribute/guidelines/"
+          %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "active" : "")}"}
+            Contribute - Guidelines
+          - href = "/community/contribute/intellij-idea/"
+          %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "active" : "")}"}
+            Contribute - Set up IntelliJ IDEA
+          - href = "/community/contribute/eclipse-ide/"
+          %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "active" : "")}"}
+            Contribute - Set up Eclipse IDE
+          - href = "/community/contribute/build-hibernate-orm/"
+          %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "active" : "")}"}
+            Contribute - Build Hibernate ORM
     %a.item(href="#{site.in_relation_to.base_url}")
       Blog
     %a.item(href="#{site.forum.base_url}")
