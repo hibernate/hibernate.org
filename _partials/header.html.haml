@@ -1,22 +1,9 @@
 - real_page = page["real_page"]
+
 .ui.container.banner
   .logo
     %a(href='/')
       %img{:src => "/images/hibernate-logo.svg", :alt => 'Hibernate', :width => 200, :height => 53}
   .clearfix
 
-  .ui.stackable.menu.mobile.hidden.print.hidden#nav
-    %a.item{:href => "/orm/", :class=>"#{'active' if real_page.output_path.start_with?('/orm') }"} ORM
-    %a.item{:href => "/search/", :class=>"#{'active' if real_page.output_path.start_with?('/search') }"} Search
-    %a.item{:href => "/validator/", :class=>"#{'active' if real_page.output_path.start_with?('/validator') }"} Validator
-    %a.item{:href => "/ogm/", :class=>"#{'active' if real_page.output_path.start_with?('/ogm') }"} OGM
-    %a.item{:href => "/tools/", :class=>"#{'active' if real_page.output_path.start_with?('/tools') }"} Tools
-    %a.item{:href => "/others/", :class=>"#{'active' if real_page.output_path.start_with?('/others') }"} Others
-    .right.menu
-      %a.item(href="#{site.in_relation_to.base_url}") Blog
-      %a.item(href="#{site.forum.base_url}") Forums
-      %a.item{:href => "/community/", :class=>"#{'active' if real_page.output_path.start_with?('/community') }" } Community
-      %a.item(href="#{site.twitter.base_url}")
-        %i.twitter.icon
-        Follow us      
-
+  = partial( 'menu/desktop-top.html.haml', {"real_page" => real_page} )
