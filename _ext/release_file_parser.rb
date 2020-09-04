@@ -254,7 +254,7 @@ module Awestruct
         @major = v[0].to_i
         @feature_group = v[1].to_i
         @feature = v[2].to_i
-        @bugfix = v[3].to_s
+        @bugfix = v[3] == nil ? nil : VersionBugfix.new(v[3])
       end
 
       def <=>(other)
@@ -270,6 +270,33 @@ module Awestruct
 
       def to_s
         @major.to_s + "." + @feature_group.to_s + "." + @feature.to_s + "." + @bugfix.to_s
+      end
+    end
+
+    class VersionBugfix
+      include Comparable
+
+      attr_reader :prefix, :number
+
+      def initialize(bugfix="")
+        split = bugfix.scan(/^([A-Za-z\-_]+)([0-9]+)?$/)
+        @prefix = split.first[0]
+        @number = split.first[1]&.to_i
+        puts 'parse result: ' + bugfix + ' => ' + @prefix + ', ' + (@number&.to_s||'null')
+      end
+
+      def <=>(other)
+        puts 'parsed: ' + @prefix + ', ' + (@number&.to_s||'null') + ' vs ' + other.prefix + ', ' +  + (other.number&.to_s||'null')
+        return @prefix <=> other.prefix if ((@prefix <=> other.prefix) != 0)
+        return @number <=> other.number
+      end
+
+      def self.sort
+        self.sort!{|a,b| a <=> b}
+      end
+
+      def to_s
+        @bugfix + @number&.to_s
       end
     end
 
