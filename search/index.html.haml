@@ -112,8 +112,8 @@ project_hero_partial: project/search/hero-text.html.haml
                     .matching( "Isaac" ) )
             .fetch( 20 );
 
-    long totalHitCount = result.totalHitCount();
     List<Book> hits = result.hits();
+    long totalHitCount = result.total().hitCount();
     ----
 .feature-block
   :asciidoc
