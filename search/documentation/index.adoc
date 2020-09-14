@@ -1,10 +1,14 @@
 = Documentation
 :awestruct-layout: project-documentation
 :awestruct-project: search
+:page-interpolate: true
+// TODO Remove the override when 6.0 is released as stable
+//:guides_version_family: #{latest_stable_release(page).version_family}
+:guides_version_family: 6.0
 
 == Guides
 
-link:https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#getting-started[Getting started guide]::
+link:https://docs.jboss.org/hibernate/search/{guides_version_family}/reference/en-US/html_single/#getting-started[Getting started guide]::
 For a gentle introduction to the concepts of Hibernate Search without being sidetracked by other technologies.
 link:/search/documentation/migrate/[Migration guides]::
 Helping you to upgrade your existing Search application to the latest and greatest.
@@ -25,3 +29,5 @@ link:/search/faq/[FAQ]::
 Frequently asked questions.
 link:https://developer.jboss.org/en/hibernate/search[JBoss-Developer wiki]::
 Old wiki hosted at JBoss.org. Mostly out-of-date content.
+link:https://docs.jboss.org/hibernate/search/{guides_version_family}/internals/html_single/[Internals]::
+An introduction to the internals of Hibernate Search for contributors.
