@@ -9,6 +9,8 @@ artifacts:
     summary: Elasticsearch backend
   - artifact_id: hibernate-search-backend-elasticsearch-aws
     summary: Amazon IAM authentication for Elasticsearch
+  - artifact_id: hibernate-search-v5migrationhelper-orm
+    summary: Helper for migrating from Hibernate Search 5 to Hibernate Search 6 (Hibernate ORM mapper + Lucene backend)
 integration_constraints:
   java:
     version: 8, 11 or 14

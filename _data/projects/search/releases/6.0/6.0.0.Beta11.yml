@@ -1,0 +1,8 @@
+date: 2020-10-08
+stable: false
+announcement_url: https://in.relation.to/2020/10/09/hibernate-search-6-0-0-Beta11
+summary: >-
+  Default analyzer, ReindexOnUpdate.SHALLOW to limit automatic reindexing to same-entity updates only,
+  new implementation for AWS IAM authentication,
+  migration helper for applications moving from Search 5 to Search 6,
+  upgrades to Lucene 8.6.2 and Hibernate ORM 5.4.22.Final
