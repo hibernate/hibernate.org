@@ -45,7 +45,7 @@ project_hero_partial: project/search/hero-text.html.haml
         private Integer id;
 
         // This property is mapped to a document field
-        @FullTextField(analyzer = "english")
+        @FullTextField
         private String title;
 
         @ManyToMany
@@ -65,7 +65,7 @@ project_hero_partial: project/search/hero-text.html.haml
         private Integer id;
 
         // This property is mapped to a document field
-        @FullTextField(analyzer = "name")
+        @FullTextField
         private String name;
 
         @ManyToMany(mappedBy = "authors")
