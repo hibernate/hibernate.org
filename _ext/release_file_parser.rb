@@ -282,11 +282,9 @@ module Awestruct
         split = bugfix.scan(/^([A-Za-z\-_]+)([0-9]+)?$/)
         @prefix = split.first[0]
         @number = split.first[1]&.to_i
-        puts 'parse result: ' + bugfix + ' => ' + @prefix + ', ' + (@number&.to_s||'null')
       end
 
       def <=>(other)
-        puts 'parsed: ' + @prefix + ', ' + (@number&.to_s||'null') + ' vs ' + other.prefix + ', ' +  + (other.number&.to_s||'null')
         return @prefix <=> other.prefix if ((@prefix <=> other.prefix) != 0)
         return @number <=> other.number
       end
