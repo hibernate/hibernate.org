@@ -1,5 +1,10 @@
 summary: Being maintained as it's included in WildFly. Supports Lucene only, requires Hibernate ORM 5.0.z or 5.1.z
 displayed: false
+links:
+  getting_started_guide:
+    displayed: false
+  migration_guide:
+    html: /search/documentation/migrate/{series.version}/
 maven:
   group_id: org.hibernate
   main_artifact_id: hibernate-search-orm

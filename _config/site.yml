@@ -44,6 +44,12 @@ projects:
     icon: 'icon-table'
     sourceforge_url: http://sourceforge.net/projects/hibernate/files/hibernate-orm/
     zip_file: hibernate-release-VERSION.zip
+    links:
+      getting_started_guide:
+        latest_stable_only: true
+        html: /orm/documentation/getting-started
+      migration_guide:
+        html: https://github.com/hibernate/hibernate-orm/wiki/Migration-Guides
     maven:
       group_id: org.hibernate.orm
       repo:
@@ -56,8 +62,6 @@ projects:
     reference_doc_path: userguide/html_single/Hibernate_User_Guide.html
     reference_pdf:
     javadoc_path: javadocs
-    getting_started: /orm/documentation/getting-started
-    migration_guide_url: https://github.com/hibernate/hibernate-orm/wiki/Migration-Guides
     blog_tag: Hibernate ORM
     blog_tag_url: hibernate-orm
     license:
@@ -139,6 +143,12 @@ projects:
     icon: 'icon-search'
     sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-search/
     zip_file: hibernate-search-VERSION-dist.zip
+    links:
+      getting_started_guide:
+        html: https://docs.jboss.org/hibernate/search/{series.version}/reference/en-US/html_single/#getting-started
+        pdf: https://docs.jboss.org/hibernate/search/{series.version}/reference/en-US/pdf/hibernate_search_reference.pdf#getting-started
+      migration_guide:
+        html: /search/documentation/migrate/{series.version}/
     maven:
       group_id: org.hibernate.search
       main_artifact_id: hibernate-search-mapper-orm
@@ -152,7 +162,6 @@ projects:
     reference_doc_path: reference/en-US/html_single/
     reference_doc_pdf_path: reference/en-US/pdf/hibernate_search_reference.pdf
     javadoc_path: api
-    getting_started: https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#getting-started
     blog_tag: Hibernate Search
     blog_tag_url: hibernate-search
     license:
@@ -282,6 +291,12 @@ projects:
     icon: 'icon-check'
     sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-validator/
     zip_file: hibernate-validator-VERSION-dist.zip
+    links:
+      getting_started_guide:
+        html: https://docs.jboss.org/hibernate/validator/{series.version}/reference/en-US/html_single/#validator-gettingstarted
+        pdf: https://docs.jboss.org/hibernate/validator/{series.version}/reference/en-US/pdf/hibernate_validator_reference.pdf#validator-gettingstarted
+      migration_guide:
+        html: /validator/documentation/migration-guide/#{series.version.dashes}-x
     maven:
       group_id: org.hibernate.validator
       main_artifact_id: hibernate-validator
@@ -295,8 +310,6 @@ projects:
     reference_doc_path: reference/en-US/html_single/
     reference_doc_pdf_path: reference/en-US/pdf/hibernate_validator_reference.pdf
     javadoc_path: api
-    getting_started: /validator/documentation/getting-started
-    migration_guide_url: /validator/documentation/migration-guide
     blog_tag: Hibernate Validator
     blog_tag_url: hibernate-validator
     license:
@@ -368,6 +381,12 @@ projects:
     icon: 'icon-sitemap'
     sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-ogm/
     zip_file: hibernate-ogm-VERSION-dist.zip
+    links:
+      getting_started_guide:
+        html: https://docs.jboss.org/hibernate/ogm/{series.version}/reference/en-US/html_single/#ogm-gettingstarted
+        pdf: https://docs.jboss.org/hibernate/ogm/{series.version}/reference/en-US/pdf/hibernate_ogm_reference.pdf#ogm-gettingstarted
+      migration_guide:
+        html: https://developer.jboss.org/wiki/HibernateOGMMigrationNotes
     maven:
       group_id: org.hibernate.ogm
       main_artifact_id: hibernate-ogm-core
@@ -381,8 +400,6 @@ projects:
     reference_doc_path: reference/en-US/html_single/
     reference_doc_pdf_path: reference/en-US/pdf/hibernate_ogm_reference.pdf
     javadoc_path: api
-    getting_started: /ogm/documentation/getting-started
-    migration_guide_url: https://developer.jboss.org/wiki/HibernateOGMMigrationNotes
     blog_tag: Hibernate OGM
     blog_tag_url: hibernate-ogm
     license:

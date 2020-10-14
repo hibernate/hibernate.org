@@ -10,8 +10,11 @@ Here we are helping you migrate your existing Hibernate Search application to th
 
 == Upgrade to Hibernate Search 5.0.0.Final
 
-The aim of this guide is to assist you migrating an existing Hibernate Search 4 application to
-Hibernate Search 5.
+The aim of this guide is to assist you migrating an existing application based on
+a fairly recent version of Hibernate Search 4, such as _4.4.x_ and _4.5.x_,
+to Hibernate Search 5.
+
+IMPORTANT: If you're upgrading from older versions, please migrate to _4.5.3.Final_ first.
 
 NOTE: This document provides pointers for a migration.
 It refers to Hibernate Search 5.0.0.Final.

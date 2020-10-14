@@ -1,5 +1,10 @@
 summary: Requires Hibernate ORM 5.0.0.Final; Last version compatible with Apache Lucene 4.x
 displayed: false
+links:
+  getting_started_guide:
+    displayed: false
+  migration_guide:
+    html: /search/documentation/migrate/{series.version}/
 maven:
   group_id: org.hibernate
   main_artifact_id: hibernate-search-orm

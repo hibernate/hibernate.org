@@ -1,5 +1,10 @@
 summary: Performance, WildFly 8 compatibility, JPA 2.1 / Hibernate ORM 4.3 compatibility
 displayed: false
+links:
+  getting_started_guide:
+    displayed: false
+  migration_guide:
+    html: https://developer.jboss.org/wiki/HibernateSearchMigrationGuide
 maven:
   group_id: org.hibernate
   main_artifact_id: hibernate-search-orm

@@ -1,0 +1,46 @@
+---
+layout: project-standard
+project_buttons_partial: project/documentation-buttons.html.haml
+---
+-# project migration page
+-# show title, action buttons for migration guides
+
+-# Metadata from site.yml for the project
+- project_description = site.projects[page.project]
+- stable_series = project_description.latest_stable_series
+
+%h2 Migration Guides per Series
+
+%p
+  The following guides are meant to help you upgrading an existing application using
+  = project_description.name
+  to a more recent version.
+  These guides are not automatically generated, but structured to give you the high level overview.
+
+.ui.grid.documentation-versions
+  - project_description.release_series.values.each do |series|
+    - release = series.releases[0]
+    - migration_guide = migration_guide(project_description, series)
+    - if not migration_guide.nil?
+      .ui.row
+        .three.wide.column
+          %span.ui.label.series= series.version
+        .thirteen.wide.column
+          %p
+            %span.ui.label.large
+              %strong= release.version
+              %span.detail= release.date
+            %span.ui.tag.label{:class => "#{release.stable ? 'green' : 'orange'}"} #{release.stable ? 'stable' : 'development'}
+            %p
+              %span.ui.button.disabled
+                Migration guide
+              - if not migration_guide.html_url.nil?
+                %a.ui.right.labeled.icon.button.primary(href="#{migration_guide.html_url}")
+                  %i.icon.file.text.outline
+                  HTML
+              - if not migration_guide.pdf_url.nil?
+                %a.ui.right.labeled.icon.button.primary(href="#{migration_guide.pdf_url}")
+                  %i.icon.file.pdf.outline
+                  PDF
+
+~ content

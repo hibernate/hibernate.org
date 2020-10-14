@@ -8,12 +8,11 @@ project_buttons_partial: project/documentation-buttons.html.haml
 
 -# Metadata from site.yml for the project
 - project_description = site.projects[page.project]
-- get_started_url = site.projects[page.project].getting_started.nil? ? nil : relative("#{site.projects[page.project].getting_started}", page)
 - stable_series = project_description.latest_stable_series
 
 -# Documentation table built from the metadata
 
-%h2 Reference documentation
+%h2 Documentation per Series
 
 - active_series = project_description.release_series.nil? ? nil : project_description.release_series.values.select{|s| s.displayed}
 - if not active_series.nil?
@@ -33,7 +32,7 @@ project_buttons_partial: project/documentation-buttons.html.haml
             = series.summary
           %p
             %span.ui.button.disabled
-              Documentation
+              Reference
             %a.ui.right.labeled.icon.button.primary(href="#{doc_reference_url(project_description, series)}")
               %i.icon.file.text.outline
               HTML
@@ -45,6 +44,32 @@ project_buttons_partial: project/documentation-buttons.html.haml
             %a.ui.right.labeled.icon.button.primary(href="#{javadoc_url(project_description, series)}/")
               %i.icon.code.outline
               API (JavaDoc)
+          - getting_started_guide = getting_started_guide(project_description, series)
+          - if not getting_started_guide.nil?
+            %p
+              %span.ui.button.disabled
+                Getting started guide
+              - if not getting_started_guide.html_url.nil?
+                %a.ui.right.labeled.icon.button.primary(href="#{getting_started_guide.html_url}")
+                  %i.icon.file.text.outline
+                  HTML
+              - if not getting_started_guide.pdf_url.nil?
+                %a.ui.right.labeled.icon.button.primary(href="#{getting_started_guide.pdf_url}")
+                  %i.icon.file.pdf.outline
+                  PDF
+          - migration_guide = migration_guide(project_description, series)
+          - if not migration_guide.nil?
+            %p
+              %span.ui.button.disabled
+                Migration guide
+              - if not migration_guide.html_url.nil?
+                %a.ui.right.labeled.icon.button.primary(href="#{migration_guide.html_url}")
+                  %i.icon.file.text.outline
+                  HTML
+              - if not migration_guide.pdf_url.nil?
+                %a.ui.right.labeled.icon.button.primary(href="#{migration_guide.pdf_url}")
+                  %i.icon.file.pdf.outline
+                  PDF
 - else
   %p There is no reference documentation configured for this project.
 
@@ -83,7 +108,7 @@ project_buttons_partial: project/documentation-buttons.html.haml
               = series.summary
             %p
               %span.ui.button.disabled
-                Documentation
+                Reference
               %a.ui.right.labeled.icon.button.primary(href="#{doc_reference_url(project_description, series)}")
                 %i.icon.file.text.outline
                 HTML
@@ -95,5 +120,31 @@ project_buttons_partial: project/documentation-buttons.html.haml
               %a.ui.right.labeled.icon.button.primary(href="#{javadoc_url(project_description, series)}/")
                 %i.icon.code.outline
                 API (JavaDoc)
+            - getting_started_guide = getting_started_guide(project_description, series)
+            - if not getting_started_guide.nil?
+              %p
+                %span.ui.button.disabled
+                  Getting started guide
+                - if not getting_started_guide.html_url.nil?
+                  %a.ui.right.labeled.icon.button.primary(href="#{getting_started_guide.html_url}")
+                    %i.icon.file.text.outline
+                    HTML
+                - if not getting_started_guide.pdf_url.nil?
+                  %a.ui.right.labeled.icon.button.primary(href="#{getting_started_guide.pdf_url}")
+                    %i.icon.file.pdf.outline
+                    PDF
+            - migration_guide = migration_guide(project_description, series)
+            - if not migration_guide.nil?
+              %p
+                %span.ui.button.disabled
+                  Migration guide
+                - if not migration_guide.html_url.nil?
+                  %a.ui.right.labeled.icon.button.primary(href="#{migration_guide.html_url}")
+                    %i.icon.file.text.outline
+                    HTML
+                - if not migration_guide.pdf_url.nil?
+                  %a.ui.right.labeled.icon.button.primary(href="#{migration_guide.pdf_url}")
+                    %i.icon.file.pdf.outline
+                    PDF
 
 ~ content

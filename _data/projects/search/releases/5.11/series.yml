@@ -1,5 +1,10 @@
 summary: ORM 5.4 compatibility, JDK11 compatibility, upgrade to WildFly 17.
 displayed: true
+links:
+  getting_started_guide:
+    html: /search/documentation/getting-started/
+  migration_guide:
+    html: /search/documentation/migrate/{series.version}/
 maven:
   group_id: org.hibernate
   main_artifact_id: hibernate-search-orm

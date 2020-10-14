@@ -23,13 +23,8 @@ project_hero_partial: project/hero-series.html.haml
 - maven_repo = series_maven[:repo]
 - maven_repo ||= project_maven[:repo]
 
-- if project_description.migration_guide_url.nil?
-  - migration_page_url = '/' + page.project + '/documentation/migrate/' + series.version + '/'
-  - # development releases may not have a migration guide yet
-  - has_migration_page = site.pages.index {|page| page.output_path == (migration_page_url + 'index.html')} != nil
-- else
-  - migration_page_url = project_description.migration_guide_url
-  - has_migration_page = true
+- getting_started_guide = getting_started_guide(project_description, series)
+- migration_guide = migration_guide(project_description, series)
 
 #toc
   #toctitle
@@ -45,13 +40,17 @@ project_hero_partial: project/hero-series.html.haml
     %li
       %a.item{:href => "#get-it"}
         How to get it
+    - if not getting_started_guide.nil?
+      %li
+        %a.item{:href => "#getting_started"}
+          Getting started
+    - if not migration_guide.nil?
+      %li
+        %a.item{:href => "#migrate"}
+          Migrating
     %li
       %a.item{:href => "#whats-new"}
         What's new
-    - if has_migration_page
-      %li
-        %a.item{:href => "#migrate"}
-          Migrate
     %li
       %a.item{:href => "#releases"}
         Releases in this series
@@ -182,6 +181,34 @@ project_hero_partial: project/hero-series.html.haml
   %a{:href => "#releases"}
     here.
 
+- if not getting_started_guide.nil?
+  %h2{:id => "getting_started"} Getting started
+  %p
+    If you want to start using the library, please refer to the getting started guide:
+  %p
+    - if not getting_started_guide.html_url.nil?
+      %a.ui.right.labeled.icon.button(href="#{getting_started_guide.html_url}")
+        %i.icon.file.text.outline
+        HTML
+    - if not getting_started_guide.pdf_url.nil?
+      %a.ui.right.labeled.icon.button(href="#{getting_started_guide.pdf_url}")
+        %i.icon.file.pdf.outline
+        PDF
+
+- if not migration_guide.nil?
+  %h2{:id => "migrate"} Migrating
+  %p
+    If you need to upgrade from a previous series, please refer to the migration guide:
+  %p
+    - if not migration_guide.html_url.nil?
+      %a.ui.right.labeled.icon.button(href="#{migration_guide.html_url}")
+        %i.icon.file.text.outline
+        HTML
+    - if not migration_guide.pdf_url.nil?
+      %a.ui.right.labeled.icon.button(href="#{migration_guide.pdf_url}")
+        %i.icon.file.pdf.outline
+        PDF
+
 %h2{:id => "whats-new"} What's new
 
 - if latest_release[:announcement_url]
@@ -196,13 +223,6 @@ project_hero_partial: project/hero-series.html.haml
     on our JIRA instance.
 
 ~ content
-
-- if has_migration_page
-  %h2{:id => "migrate"} Migrate
-  %p
-    If you need to upgrade from a previous series, please refer to the
-    %a{:href => migration_page_url}
-      migration guide.
 
 %h2{:id => "releases"} Releases in this series
 - unless series.nil?

@@ -1,3 +1,5 @@
+require 'logger'
+
 module Awestruct
   module Extensions
     module Links
@@ -34,6 +36,14 @@ module Awestruct
 
       def doc_root_url(project)
         return project.reference_doc_prefix_url
+      end
+
+      def getting_started_guide(project, series)
+        return DocumentRef.from_patterns(project, series, :getting_started_guide)
+      end
+
+      def migration_guide(project, series)
+        return DocumentRef.from_patterns(project, series, :migration_guide)
       end
 
       def maven_central_search_url(group_id_pattern, artifact_id_pattern, version_pattern)
@@ -88,6 +98,56 @@ module Awestruct
           sourceforge_url = project.sourceforge_url
         end
         return "#{sourceforge_url}#{release.version}/#{project.zip_file}/download".gsub('VERSION', release.version)
+      end
+
+      class DocumentRef
+        @@logger = Logger.new(STDERR)
+        @@logger.level = Logger::INFO
+
+        def self.from_patterns(project, series, link_key)
+          log_prefix = "#{project.name}/#{series.version}/#{link_key}: "
+          link = series&.links&.[](link_key)
+          link ||= project&.links&.[](link_key)
+          if link.nil?
+            @@logger.debug("#{log_prefix}Link is nil")
+            return nil
+          end
+          @@logger.debug("#{log_prefix}Link is #{link}")
+          displayed = link['displayed']
+          if not displayed.nil? and not displayed
+            @@logger.debug("#{log_prefix}Link is not displayed")
+            return nil
+          end
+          latest_stable_only = link['latest_stable_only']
+          if not latest_stable_only.nil? and latest_stable_only and not series.latest_stable
+            @@logger.debug("#{log_prefix}Link is for the latest stable series only")
+            return nil
+          end
+          html_pattern = link['html']
+          pdf_pattern = link['pdf']
+          @@logger.debug("#{log_prefix}Link patterns: #{html_pattern} / #{pdf_pattern}")
+          html_url = _pattern_substitute(html_pattern, project, series)
+          pdf_url = _pattern_substitute(pdf_pattern, project, series)
+          @@logger.debug("#{log_prefix}Link URLs: #{html_url} / #{pdf_url}")
+          if html_url.nil? and pdf_url.nil?
+            return nil
+          end
+          return DocumentRef.new(html_url, pdf_url)
+        end
+        def self._pattern_substitute(pattern, project, series)
+          if pattern.nil?
+            return nil
+          end
+          return pattern.gsub('{series.version}', series.version)
+              .gsub('{series.version.dashes}', series.version.gsub('.', '-'))
+        end
+
+        attr_reader :html_url, :pdf_url
+
+        def initialize(html_url, pdf_url)
+          @html_url = html_url
+          @pdf_url = pdf_url
+        end
       end
     end
   end

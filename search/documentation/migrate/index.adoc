@@ -1,51 +1,7 @@
-= Hibernate Search Migration Guides
-:awestruct-layout: project-standard
+= Migration guides
+:awestruct-layout: project-migrate
 :awestruct-project: search
-
-== Migration Guides
-
-The following guides are meant to help you upgrading an existing application using Hibernate Search to a more recent version.
-This content is not automatically generated, but structured to give you the high level overview.
-
-link:/search/documentation/migrate/6.0[Migration guide to Hibernate Search 6.0]::
-Notes and relevant changes you should keep in mind when upgrading from versions _5.11_ to _6.0_.
-
-link:/search/documentation/migrate/5.11[Migration guide to Hibernate Search 5.11]::
-Notes and relevant changes you should keep in mind when upgrading from versions _5.10_ to _5.11_.
-
-link:/search/documentation/migrate/5.10[Migration guide to Hibernate Search 5.10]::
-Notes and relevant changes you should keep in mind when upgrading from versions _5.9_ to _5.10_.
-
-link:/search/documentation/migrate/5.9[Migration guide to Hibernate Search 5.9]::
-Notes and relevant changes you should keep in mind when upgrading from versions _5.8_ to _5.9_.
-
-link:/search/documentation/migrate/5.8[Migration guide to Hibernate Search 5.8]::
-Notes and relevant changes you should keep in mind when upgrading from versions _5.7_ to _5.8_.
-
-link:/search/documentation/migrate/5.7[Migration guide to Hibernate Search 5.7]::
-Notes and relevant changes you should keep in mind when upgrading from versions _5.6_ to _5.7_.
-
-link:/search/documentation/migrate/5.6[Migration guide to Hibernate Search 5.6]::
-Notes and relevant changes you should keep in mind when upgrading from versions _5.5_ to _5.6_.
-
-link:/search/documentation/migrate/5.5[Migration guide to Hibernate Search 5.5]::
-Notes and relevant changes you should keep in mind when upgrading from versions _5.4_ to _5.5_.
-
-link:/search/documentation/migrate/5.4[Migration guide to Hibernate Search 5.4]::
-Notes and relevant changes you should keep in mind when upgrading from versions _5.3_ to _5.4_.
-
-link:/search/documentation/migrate/5.3[Migration guide to Hibernate Search 5.3]::
-Notes and relevant changes you should keep in mind when upgrading from versions _5.2_ to _5.3_.
-
-link:/search/documentation/migrate/5.2[Migration guide to Hibernate Search 5.2]::
-Notes and relevant changes you should keep in mind when upgrading from versions _5.1_ to _5.2_.
-
-link:/search/documentation/migrate/5.1[Migration guide to Hibernate Search 5.1]::
-Notes and relevant changes you should keep in mind when upgrading from versions _5.0_ to _5.1_.
-
-link:/search/documentation/migrate/5.0[Migration guide for Hibernate Search 5.0]::
-This is what you need when upgrading from a fairly recent version of Hibernate Search 4, such as _4.4.x_ and _4.5.x_.
-If you're upgrading from older versions, please migrate to _4.5.3.Final_ first.
+:page-interpolate: true
 
 == Hibernate Search versions 3 and 4
 

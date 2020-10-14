@@ -6,13 +6,6 @@
 //:guides_version_family: #{latest_stable_release(page).version_family}
 :guides_version_family: 6.0
 
-== Guides
-
-link:https://docs.jboss.org/hibernate/search/{guides_version_family}/reference/en-US/html_single/#getting-started[Getting started guide]::
-For a gentle introduction to the concepts of Hibernate Search without being sidetracked by other technologies.
-link:/search/documentation/migrate/[Migration guides]::
-Helping you to upgrade your existing Search application to the latest and greatest.
-
 == Books and Articles
 
 http://emmanuelbernard.com/books/hsia/[Hibernate Search in Action]::

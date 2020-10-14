@@ -1,5 +1,10 @@
 summary: Experimental integration with Elasticsearch 5.x, AWS integration, improvements and deprecations paving the road to Search 6
 displayed: false
+links:
+  getting_started_guide:
+    displayed: false
+  migration_guide:
+    html: /search/documentation/migrate/{series.version}/
 maven:
   group_id: org.hibernate
   main_artifact_id: hibernate-search-orm

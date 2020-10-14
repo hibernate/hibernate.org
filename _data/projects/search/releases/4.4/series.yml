@@ -1,5 +1,10 @@
 summary: Dynamic index sharding, new Metadata API, Hibernate ORM 4.2.x compatible
 displayed: false
+links:
+  getting_started_guide:
+    displayed: false
+  migration_guide:
+    html: https://developer.jboss.org/wiki/HibernateSearchMigrationGuide
 maven:
   group_id: org.hibernate
   main_artifact_id: hibernate-search-orm
