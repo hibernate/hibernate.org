@@ -69,6 +69,7 @@ Hibernate Search 6.0 only allows single-node applications,
 or multi-node applications where each node works independently, simply sending events to an Elasticsearch cluster.
 +
 This does not account for several challenges that we will address in 6.1:
+
 * When each node sends updates to Elasticsearch independently,
 conflicts may arise when entities are updated simultaneously on different nodes.
 There is a need to prevent, or at least resolve, these conflicts.
