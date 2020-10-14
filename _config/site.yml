@@ -45,6 +45,14 @@ projects:
     sourceforge_url: http://sourceforge.net/projects/hibernate/files/hibernate-orm/
     zip_file: hibernate-release-VERSION.zip
     links:
+      reference_doc:
+        html: https://docs.jboss.org/hibernate/orm/{series.version}/userguide/html_single/Hibernate_User_Guide.html
+        latest_stable:
+          html: https://docs.jboss.org/hibernate/stable/orm/userguide/html_single/Hibernate_User_Guide.html
+      javadoc:
+        html: https://docs.jboss.org/hibernate/orm/{series.version}/javadocs/
+        latest_stable:
+          html: https://docs.jboss.org/hibernate/stable/orm/javadocs/
       getting_started_guide:
         latest_stable_only: true
         html: /orm/documentation/getting-started
@@ -57,11 +65,6 @@ projects:
           artifact_id_pattern: hibernate-*
         bintray:
           package: hibernate-orm
-    reference_doc_prefix_url: https://docs.jboss.org/hibernate/orm/
-    stable_reference_doc_prefix_url: https://docs.jboss.org/hibernate/stable/orm/
-    reference_doc_path: userguide/html_single/Hibernate_User_Guide.html
-    reference_pdf:
-    javadoc_path: javadocs
     blog_tag: Hibernate ORM
     blog_tag_url: hibernate-orm
     license:
@@ -144,6 +147,16 @@ projects:
     sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-search/
     zip_file: hibernate-search-VERSION-dist.zip
     links:
+      reference_doc:
+        html: https://docs.jboss.org/hibernate/search/{series.version}/reference/en-US/html_single/
+        pdf: https://docs.jboss.org/hibernate/search/{series.version}/reference/en-US/pdf/hibernate_search_reference.pdf
+        latest_stable:
+          html: https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/
+          pdf: https://docs.jboss.org/hibernate/stable/search/reference/en-US/pdf/hibernate_search_reference.pdf
+      javadoc:
+        html: https://docs.jboss.org/hibernate/search/{series.version}/api/
+        latest_stable:
+          html: https://docs.jboss.org/hibernate/stable/search/api/
       getting_started_guide:
         html: https://docs.jboss.org/hibernate/search/{series.version}/reference/en-US/html_single/#getting-started
         pdf: https://docs.jboss.org/hibernate/search/{series.version}/reference/en-US/pdf/hibernate_search_reference.pdf#getting-started
@@ -157,11 +170,6 @@ projects:
           artifact_id_pattern: hibernate-search-*
         jboss:
           artifact_id_pattern: hibernate-search-*
-    reference_doc_prefix_url: https://docs.jboss.org/hibernate/search/
-    stable_reference_doc_prefix_url: https://docs.jboss.org/hibernate/stable/search/
-    reference_doc_path: reference/en-US/html_single/
-    reference_doc_pdf_path: reference/en-US/pdf/hibernate_search_reference.pdf
-    javadoc_path: api
     blog_tag: Hibernate Search
     blog_tag_url: hibernate-search
     license:
@@ -292,6 +300,16 @@ projects:
     sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-validator/
     zip_file: hibernate-validator-VERSION-dist.zip
     links:
+      reference_doc:
+        html: https://docs.jboss.org/hibernate/validator/{series.version}/reference/en-US/html_single/
+        pdf: https://docs.jboss.org/hibernate/validator/{series.version}/reference/en-US/pdf/hibernate_validator_reference.pdf
+        latest_stable:
+          html: https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/
+          pdf: https://docs.jboss.org/hibernate/stable/validator/reference/en-US/pdf/hibernate_validator_reference.pdf
+      javadoc:
+        html: https://docs.jboss.org/hibernate/validator/{series.version}/api/
+        latest_stable:
+          html: https://docs.jboss.org/hibernate/stable/validator/api/
       getting_started_guide:
         html: https://docs.jboss.org/hibernate/validator/{series.version}/reference/en-US/html_single/#validator-gettingstarted
         pdf: https://docs.jboss.org/hibernate/validator/{series.version}/reference/en-US/pdf/hibernate_validator_reference.pdf#validator-gettingstarted
@@ -305,11 +323,6 @@ projects:
           artifact_id_pattern: hibernate-validator*
         jboss:
           artifact_id_pattern: hibernate-validator*
-    reference_doc_prefix_url: https://docs.jboss.org/hibernate/validator/
-    stable_reference_doc_prefix_url: https://docs.jboss.org/hibernate/stable/validator/
-    reference_doc_path: reference/en-US/html_single/
-    reference_doc_pdf_path: reference/en-US/pdf/hibernate_validator_reference.pdf
-    javadoc_path: api
     blog_tag: Hibernate Validator
     blog_tag_url: hibernate-validator
     license:
@@ -382,6 +395,16 @@ projects:
     sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-ogm/
     zip_file: hibernate-ogm-VERSION-dist.zip
     links:
+      reference_doc:
+        html: https://docs.jboss.org/hibernate/ogm/{series.version}/reference/en-US/html_single/
+        pdf: https://docs.jboss.org/hibernate/ogm/{series.version}/reference/en-US/pdf/hibernate_ogm_reference.pdf
+        latest_stable:
+          html: https://docs.jboss.org/hibernate/stable/ogm/reference/en-US/html_single/
+          pdf: https://docs.jboss.org/hibernate/stable/ogm/reference/en-US/pdf/hibernate_ogm_reference.pdf
+      javadoc:
+        html: https://docs.jboss.org/hibernate/ogm/{series.version}/api/
+        latest_stable:
+          html: https://docs.jboss.org/hibernate/stable/ogm/api/
       getting_started_guide:
         html: https://docs.jboss.org/hibernate/ogm/{series.version}/reference/en-US/html_single/#ogm-gettingstarted
         pdf: https://docs.jboss.org/hibernate/ogm/{series.version}/reference/en-US/pdf/hibernate_ogm_reference.pdf#ogm-gettingstarted
@@ -395,10 +418,6 @@ projects:
           artifact_id_pattern: hibernate-ogm-*
         jboss:
           artifact_id_pattern: hibernate-ogm-*
-    reference_doc_prefix_url: https://docs.jboss.org/hibernate/ogm/
-    stable_reference_doc_prefix_url: https://docs.jboss.org/hibernate/stable/ogm/
-    reference_doc_path: reference/en-US/html_single/
-    reference_doc_pdf_path: reference/en-US/pdf/hibernate_ogm_reference.pdf
     javadoc_path: api
     blog_tag: Hibernate OGM
     blog_tag_url: hibernate-ogm

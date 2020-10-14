@@ -8,34 +8,12 @@ module Awestruct
         @site = site
       end
 
-      def doc_reference_url(project, series)
-        suffix = series[:reference_doc_path]
-        suffix ||= project.reference_doc_path
-        return suffix.nil? ? nil : "#{doc_root_series_url(project, series)}#{suffix}"
+      def reference_doc(project, series)
+        return DocumentRef.from_patterns(project, series, :reference_doc)
       end
 
-      def doc_reference_pdf_url(project, series)
-        suffix = series[:reference_doc_pdf_path]
-        suffix ||= project.reference_doc_pdf_path
-        return suffix.nil? ? nil : "#{doc_root_series_url(project, series)}#{suffix}"
-      end
-
-      def javadoc_url(project, series)
-        suffix = series[:javadoc_path]
-        suffix ||= project.javadoc_path
-        return suffix.nil? ? nil : "#{doc_root_series_url(project, series)}#{suffix}"
-      end
-
-      def doc_root_series_url(project, series)
-        if series.latest_stable
-          return project.stable_reference_doc_prefix_url
-        else
-          return "#{project.reference_doc_prefix_url}#{series.version}/"
-        end
-      end
-
-      def doc_root_url(project)
-        return project.reference_doc_prefix_url
+      def javadoc(project, series)
+        return DocumentRef.from_patterns(project, series, :javadoc)
       end
 
       def getting_started_guide(project, series)
@@ -122,6 +100,11 @@ module Awestruct
           if not latest_stable_only.nil? and latest_stable_only and not series.latest_stable
             @@logger.debug("#{log_prefix}Link is for the latest stable series only")
             return nil
+          end
+          latest_stable = link['latest_stable']
+          if latest_stable and series.latest_stable
+            link = latest_stable
+            @@logger.debug("#{log_prefix}Link overridden for latest stable: #{link}")
           end
           html_pattern = link['html']
           pdf_pattern = link['pdf']

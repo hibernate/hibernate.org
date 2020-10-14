@@ -31,17 +31,18 @@ project_buttons_partial: project/documentation-buttons.html.haml
           %p
             = series.summary
           %p
+            - reference_doc = reference_doc(project_description, series)
             %span.ui.button.disabled
               Reference
-            %a.ui.right.labeled.icon.button.primary(href="#{doc_reference_url(project_description, series)}")
+            %a.ui.right.labeled.icon.button.primary(href="#{reference_doc.html_url}")
               %i.icon.file.text.outline
               HTML
-            - pdf_url = doc_reference_pdf_url(project_description, series)
-            - if not pdf_url.nil?
-              %a.ui.right.labeled.icon.button.primary(href="#{pdf_url}")
+            - if not reference_doc.pdf_url.nil?
+              %a.ui.right.labeled.icon.button.primary(href="#{reference_doc.pdf_url}")
                 %i.icon.file.pdf.outline
                 PDF
-            %a.ui.right.labeled.icon.button.primary(href="#{javadoc_url(project_description, series)}/")
+            - javadoc = javadoc(project_description, series)
+            %a.ui.right.labeled.icon.button.primary(href="#{javadoc.html_url}")
               %i.icon.code.outline
               API (JavaDoc)
           - getting_started_guide = getting_started_guide(project_description, series)
@@ -107,17 +108,18 @@ project_buttons_partial: project/documentation-buttons.html.haml
             %p
               = series.summary
             %p
+              - reference_doc = reference_doc(project_description, series)
               %span.ui.button.disabled
                 Reference
-              %a.ui.right.labeled.icon.button.primary(href="#{doc_reference_url(project_description, series)}")
+              %a.ui.right.labeled.icon.button.primary(href="#{reference_doc.html_url}")
                 %i.icon.file.text.outline
                 HTML
-              - pdf_url = doc_reference_pdf_url(project_description, series)
-              - if not pdf_url.nil?
-                %a.ui.right.labeled.icon.button.primary(href="#{pdf_url}")
+              - if not reference_doc.pdf_url.nil?
+                %a.ui.right.labeled.icon.button.primary(href="#{reference_doc.pdf_url}")
                   %i.icon.file.pdf.outline
                   PDF
-              %a.ui.right.labeled.icon.button.primary(href="#{javadoc_url(project_description, series)}/")
+              - javadoc = javadoc(project_description, series)
+              %a.ui.right.labeled.icon.button.primary(href="#{javadoc.html_url}")
                 %i.icon.code.outline
                 API (JavaDoc)
             - getting_started_guide = getting_started_guide(project_description, series)

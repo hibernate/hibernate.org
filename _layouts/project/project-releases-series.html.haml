@@ -79,15 +79,16 @@ project_hero_partial: project/hero-series.html.haml
 %p
   Documentation for this specific series can be accessed through the links below:
 %p
-  %a.ui.right.labeled.icon.button(href="#{doc_reference_url(project_description, series)}")
+  - reference_doc = reference_doc(project_description, series)
+  %a.ui.right.labeled.icon.button(href="#{reference_doc.html_url}")
     %i.icon.file.text.outline
     HTML
-  - pdf_url = doc_reference_pdf_url(project_description, series)
-  - if not pdf_url.nil?
-    %a.ui.right.labeled.icon.button(href="#{pdf_url}")
+  - if not reference_doc.pdf_url.nil?
+    %a.ui.right.labeled.icon.button(href="#{reference_doc.pdf_url}")
       %i.icon.file.pdf.outline
       PDF
-  %a.ui.right.labeled.icon.button(href="#{javadoc_url(project_description, series)}/")
+  - javadoc = javadoc(project_description, series)
+  %a.ui.right.labeled.icon.button(href="#{javadoc.html_url}")
     %i.icon.code.outline
     API (JavaDoc)
 

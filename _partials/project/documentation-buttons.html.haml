@@ -12,7 +12,8 @@
       Getting started
 - unless stable_series.nil?
   .jumbotron-button
-    %a.ui.small.right.labeled.icon.button.green{:href => "#{doc_reference_url(project_description, stable_series)}"}
+    - reference_doc = reference_doc(project_description, series)
+    %a.ui.small.right.labeled.icon.button.green{:href => "#{reference_doc.html_url}"}
       %i.right.arrow.icon
       Get documentation for #{stable_series.version}
 
