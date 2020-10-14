@@ -13,7 +13,7 @@ artifacts:
     summary: Helper for migrating from Hibernate Search 5 to Hibernate Search 6 (Hibernate ORM mapper + Lucene backend)
 integration_constraints:
   java:
-    version: 8, 11 or 14
+    version: 8, 11 or 15
   orm:
     version: 5.4 (>= 5.4.4.Final)
   elasticsearch:
