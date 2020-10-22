@@ -5,9 +5,15 @@ project: reactive
 project_hero_partial: project/reactive/hero-text.html.haml
 ---
 
+- project = site.projects[page.project] 
+-# Latest series available unless a stable release exists
+- series = project.latest_stable_series.nil? ? project.latest_series : project.latest_stable_series
+- getting_started_guide = getting_started_guide(project, series)
+
 -# Center body
 .feature-block
   :asciidoc
+    :getting_started_guide_link: #{getting_started_guide.html_url}
     == Reactive Object/Relational Mapping
 
     A reactive API for Hibernate ORM, supporting non-blocking database
@@ -27,4 +33,4 @@ project_hero_partial: project/reactive/hero-text.html.haml
     * link:https://www.mysql.org[MySQL]
     * link:https://www.ibm.com/analytics/db2[Db2]
 
-    Want to see it in action? Move on to the link:documentation/getting-started[getting started guide].
+    Want to see it in action? Move on to the link:{getting_started_guide_link}[getting started guide].

@@ -500,7 +500,7 @@ projects:
         latest_stable:
           html: https://docs.jboss.org/hibernate/stable/reactive/javadocs/
       getting_started_guide:
-        html: /reactive/documentation/getting-started
+        html: /reactive/documentation/{series.version}/reference/html_single/#getting-started
     maven:
       group_id: org.hibernate.reactive
       main_artifact_id: hibernate-reactive-core
