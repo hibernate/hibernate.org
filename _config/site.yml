@@ -492,9 +492,9 @@ projects:
     zip_file:
     links:
       reference_doc:
-        html: https://docs.jboss.org/hibernate/reactive/{series.version}/reference/html_single/
+        html: /reactive/documentation/{series.version}/reference/html_single/
         latest_stable:
-          html: https://docs.jboss.org/hibernate/stable/reactive/reference/html_single/
+          html:
       javadoc:
         html: https://docs.jboss.org/hibernate/reactive/{series.version}/javadocs/
         latest_stable:
@@ -579,6 +579,7 @@ projects:
 asciidoctor:
   :safe: safe
   :attributes:
+    allow-uri-read: ''
     #sitename: WriteAdapt
     idprefix: ''
     idseparator: '-'
