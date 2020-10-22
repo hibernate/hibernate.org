@@ -1,0 +1,15 @@
+= Reference Documentation for 1.0
+:awestruct-layout: project-standard
+:awestruct-project: reactive
+:page-interpolate: true
+:project: #{site.projects[page.project]}
+:latest_release: #{latest_release(page).version}
+:toc:
+:numbered:
+:leveloffset: +1
+
+include::https://raw.githubusercontent.com/hibernate/hibernate-reactive/{latest_release}/documentation/src/main/asciidoc/reference/preface.adoc[]
+
+include::https://raw.githubusercontent.com/hibernate/hibernate-reactive/{latest_release}/documentation/src/main/asciidoc/reference/introduction.adoc[]
+
+:leveloffset: -1
