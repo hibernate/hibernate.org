@@ -497,7 +497,7 @@ projects:
         latest_stable:
           html:
       javadoc:
-        html: https://docs.jboss.org/hibernate/reactive/{series.version}/javadocs/
+        html: /reactive/documentation/{series.version}/javadocs/
         latest_stable:
           html: https://docs.jboss.org/hibernate/stable/reactive/javadocs/
       getting_started_guide:
