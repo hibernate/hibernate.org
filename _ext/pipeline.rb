@@ -47,7 +47,7 @@ Awestruct::Extensions::Pipeline.new do
   transformer Awestruct::Extensions::JsMinifier.new
   transformer Awestruct::Extensions::CssMinifier.new
   transformer Awestruct::Extensions::HtmlMinifier.new
-  extension Awestruct::Extensions::Indexifier.new
+  extension Awestruct::Extensions::Indexifier.new([/^.*\/reactive\/documentation\/\d+\.\d+\/\.*/])
 
   development = Engine.instance.site.profile == 'development'
   if not development
