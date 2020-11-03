@@ -161,7 +161,8 @@ projects:
         html: https://docs.jboss.org/hibernate/search/{series.version}/reference/en-US/html_single/#getting-started
         pdf: https://docs.jboss.org/hibernate/search/{series.version}/reference/en-US/pdf/hibernate_search_reference.pdf#getting-started
       migration_guide:
-        html: /search/documentation/migrate/{series.version}/
+        html: https://docs.jboss.org/hibernate/search/{series.version}/migration/html_single/
+        pdf: https://docs.jboss.org/hibernate/search/{series.version}/migration/pdf/hibernate_search_migration.pdf
     maven:
       group_id: org.hibernate.search
       main_artifact_id: hibernate-search-mapper-orm
