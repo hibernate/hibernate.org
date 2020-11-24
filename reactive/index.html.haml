@@ -16,14 +16,16 @@ project_hero_partial: project/reactive/hero-text.html.haml
     :getting_started_guide_link: #{getting_started_guide.html_url}
     == Reactive Object/Relational Mapping
 
-    A reactive API for Hibernate ORM, supporting non-blocking database
-    drivers and a reactive style of interaction with the database.
+    Hibernate Reactive is a reactive API for Hibernate ORM, supporting non-blocking database drivers and a reactive style
+    of interaction with the database.
 
-    Hibernate Reactive may be used in any plain Java program, but is
-    especially targeted toward usage in reactive environments like
-    https://quarkus.io[Quarkus] and link:https://vertx.io[Vert.x].
+    Hibernate Reactive is intended for use in a reactive programming environment like Vert.x or Quarkus, where interaction
+    with the database should occur in a non-blocking fashion. Persistence operations are orchestrated via the construction
+    of a reactive stream rather than via direct invocation of synchronous functions in procedural Java code.
 
-    We know you have questions, we'll answer them in the link:faq/[FAQ].
+    JDBC, JPA and Hibernate ORM use blocking IO for interaction with the database, and are therefore not appropriate for
+    use in a reactive environment. Hibernate Reactive is a feature rich ORM implementation designed to take advantage of
+    non-blocking database clients. PostgreSQL, MySQL, and DB2 are supported via the Vert.x client libraries.
 
     == Compatibility
 
