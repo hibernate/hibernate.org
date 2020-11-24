@@ -12,10 +12,31 @@ Dates are generally omitted, we release when we are ready.
 
 == Hibernate Reactive 1.0
 
-Initial support for:
+The initial release already supports most features of Hibernate ORM,
+including:
 
-* CRUD operations
-* Queries (HQL, natives and criteria)
-* Fetching associations
-* link:https://smallrye.io/smallrye-mutiny/[Mutiny]-based API 
-* Multiple databases (Db2, MySQL and PostgreSQL)
+* Almost every operation of the `Session` and `StatelessSession` APIs
+* Almost every ORM mapping annotation except for `@ManyToMany` and `@ElementCollection`
+* HQL, native SQL, and `Criteria` queries
+* All association fetching strategies
+* Statement batching
+* Sequence, table, identity, and custom identifier generation
+* Resource-local transactions
+* Optimistic and pessimistic locking
+* Local second-level cache
+* Custom connection management and multitenancy
+* Automatic schema export
+* Choice of `CompletionStage` or link:https://smallrye.io/smallrye-mutiny/[Mutiny]-based APIs
+* Integration with Hibernate Validator, Hibernate JPA metamodel generator, Query Validator,
+  and the Hibernate bytecode enhancer
+* Integration with Quarkus
+
+The following databases are supported via Vert.x the 3 client library:
+
+* Db2, MySQL, and PostgreSQL
+
+We're working on the following missing features:
+
+* `@ManyToMany` and `@ElementCollection`
+* Hi/lo (block) identifier generation
+* Support for SQL Server via the Vert.x 4 client library
