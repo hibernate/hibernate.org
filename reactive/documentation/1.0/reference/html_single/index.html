@@ -779,6 +779,10 @@ generation strategies may be selected using the usual JPA mapping
 annotations: <code>@GeneratedValue</code>, <code>@TableGenerator</code>, <code>@SequenceGenerator</code>.</p>
 </li>
 <li>
+<p>On MySQL, an autoincrement column may be used by specifying
+<code>@GeneratedValue(strategy=GenerationType.IDENTITY)</code></p>
+</li>
+<li>
 <p>Custom id generators may be defined by implementing <code>ReactiveIdentifierGenerator</code>
 and declaring the custom implementation using <code>@GenericGenerator</code>.</p>
 </li>
@@ -2177,7 +2181,7 @@ documentation for details.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-10-08 11:43:03 BST
+Last updated 2020-11-27 18:01:02 GMT
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
