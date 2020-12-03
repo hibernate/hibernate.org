@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.6.1">
 <meta name="author" content="Gavin King">
-<title>Hibernate Reactive 1.0.0.Alpha11 Reference Documentation</title>
+<title>Hibernate Reactive 1.0.0.Beta1 Reference Documentation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <link rel="stylesheet" href="./asciidoctor.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Hibernate Reactive 1.0.0.Alpha11 Reference Documentation</h1>
+<h1>Hibernate Reactive 1.0.0.Beta1 Reference Documentation</h1>
 <div class="details">
 <span id="author" class="author">Gavin King</span><br>
 <span id="email" class="email"><a href="mailto:gavin@hibernate.org">gavin@hibernate.org</a></span><br>
@@ -777,6 +777,10 @@ environment.</p>
 <p>Sequence, table, and <code>UUID</code> id generation is built in, and these id
 generation strategies may be selected using the usual JPA mapping
 annotations: <code>@GeneratedValue</code>, <code>@TableGenerator</code>, <code>@SequenceGenerator</code>.</p>
+</li>
+<li>
+<p>On MySQL, an autoincrement column may be used by specifying
+<code>@GeneratedValue(strategy=GenerationType.IDENTITY)</code></p>
 </li>
 <li>
 <p>Custom id generators may be defined by implementing <code>ReactiveIdentifierGenerator</code>
