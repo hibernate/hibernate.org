@@ -7,6 +7,13 @@
 %meta(HTTP-EQUIV="X-XSS-Protection" content="1; mode=block")
 %meta(HTTP-EQUIV="X-Content-Type-Options" content="nosniff")
 
+%meta(property="og:site_name" content="#{site.title}")
+%meta(property="og:url" content="#{site.base_url}#{real_page.url}")
+%meta(property="og:title" content="#{real_page.title}#{real_page.subtitle ? ' - ' + real_page.subtitle : ''}")
+- if real_page.description
+  %meta(name="og:description" content="#{real_page.description}")
+%meta(property="og:image" content="#{site.base_url}/images/hibernate_icon_whitebkg.svg")
+
 %link(href="#{site.semantic_ui_css_url}#{site.minified}.css" rel="stylesheet")
 %link(href="#{site.slick_css_url}.css" rel="stylesheet")
 %link(href="#{site.slick_css_url}-theme.css" rel="stylesheet")

@@ -607,9 +607,11 @@ profiles:
     semantic_ui_css_url: https://cdn.jsdelivr.net/npm/semantic-ui@2.2.14/dist/semantic
     slick_css_url: https://cdn.jsdelivr.net/npm/slick-carousel@1.7.1/slick/slick
     enable_google_analytics: false
+    base_url: http://0.0.0.0:4242
     news_feed_root_url: https://staging.in.relation.to/feeds
   test:
     << : *base
+    base_url: http://0.0.0.0:4242
     news_feed_root_url: https://in.relation.to/feeds
   staging:
     << : *base
