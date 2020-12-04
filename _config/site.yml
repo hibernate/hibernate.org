@@ -144,7 +144,8 @@ projects:
     name: Hibernate Search
     icon: 'icon-search'
     description: |
-      Integrates Hibernate ORM with Apache Lucene or Elasticsearch by automatically indexing entities, enabling advanced search functionality: full-text, geospatial, aggregations and more.
+      Automatic indexing of Hibernate ORM entities into Apache Lucene or Elasticsearch.
+      Advanced search API: full-text, geospatial, aggregations and more.
     sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-search/
     zip_file: hibernate-search-VERSION-dist.zip
     links:
