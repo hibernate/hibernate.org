@@ -42,6 +42,8 @@ projects:
   orm:
     name: Hibernate ORM
     icon: 'icon-table'
+    description: |
+      Idiomatic persistence for Java and relational databases.
     sourceforge_url: http://sourceforge.net/projects/hibernate/files/hibernate-orm/
     zip_file: hibernate-release-VERSION.zip
     links:
@@ -141,6 +143,8 @@ projects:
   search:
     name: Hibernate Search
     icon: 'icon-search'
+    description: |
+      Integrates Hibernate ORM with Apache Lucene or Elasticsearch by automatically indexing entities, enabling advanced search functionality: full-text, geospatial, aggregations and more.
     sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-search/
     zip_file: hibernate-search-VERSION-dist.zip
     links:
@@ -243,6 +247,10 @@ projects:
   tools:
     name: Hibernate Tools
     icon: 'icon-wrench'
+    description: |
+      Working with Hibernate is very easy and developers enjoy using the APIs and the query language.
+      Even creating mapping metadata is not an overly complex task once you've mastered the basics.
+      Hibernate Tools makes working with Hibernate or JPA even more pleasant.
     blog_tag: JBoss Tools
     blog_tag_url: jboss-tools
     license:
@@ -295,6 +303,8 @@ projects:
   validator:
     name: Hibernate Validator
     icon: 'icon-check'
+    description: |
+      Express validation rules in a standardized way using annotation-based constraints and benefit from transparent integration with a wide variety of frameworks.
     sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-validator/
     zip_file: hibernate-validator-VERSION-dist.zip
     links:
@@ -389,6 +399,7 @@ projects:
   ##################################################################################################
   ogm:
     name: Hibernate OGM
+    description: "The power and simplicity of JPA for NoSQL datastores. Including support for associations, sub-classes, queries and much more."
     icon: 'icon-sitemap'
     sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-ogm/
     zip_file: hibernate-ogm-VERSION-dist.zip
@@ -488,6 +499,8 @@ projects:
   ##################################################################################################
   reactive:
     name: Hibernate Reactive
+    description: |
+      Add a reactive API to Hibernate ORM, supporting non-blocking database drivers and a reactive style of interaction with the database.
     icon: 'icon-retweet'
     sourceforge_url: 
     zip_file:

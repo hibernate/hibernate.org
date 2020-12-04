@@ -1,0 +1,7 @@
+- real_page = page['real_page']
+- project_description = site.projects[real_page.project]
+
+.page-title.small
+  .ui.container
+    %h4
+      = project_description.description
