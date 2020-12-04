@@ -1,4 +1,6 @@
 - real_page = page["real_page"]
+- description = real_page.description || (real_page.project ? site.projects[real_page.project].description : nil)
+
 %meta(charset="utf-8")
 %meta(name="viewport" content="width=device-width, initial-scale=1.0")
 %meta(name="description" content="#{real_page.description}")
@@ -10,9 +12,12 @@
 %meta(property="og:site_name" content="#{site.title}")
 %meta(property="og:url" content="#{site.base_url}#{real_page.url}")
 %meta(property="og:title" content="#{real_page.title}#{real_page.subtitle ? ' - ' + real_page.subtitle : ''}")
-- if real_page.description
-  %meta(name="og:description" content="#{real_page.description}")
+- if description
+  %meta(name="og:description" content="#{description}")
 %meta(property="og:image" content="#{site.base_url}/images/hibernate_icon_whitebkg.svg")
+
+- if description
+  %meta(name="description" content="#{description}")
 
 %link(href="#{site.semantic_ui_css_url}#{site.minified}.css" rel="stylesheet")
 %link(href="#{site.slick_css_url}.css" rel="stylesheet")
