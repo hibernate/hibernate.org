@@ -4,6 +4,28 @@
 
 This page contains everything you need to know when upgrading from one Hibernate Validator version to another.
 
+== 7.0.x
+
+=== 7.0.0.CR1
+
+* Jakarta EE 9 (a.k.a. the big `jakarta.*` package change)
+* XML namespaces changed
+* `@SafeHtml` constraint dropped
+* Expression Language disabled for custom violations by default
+* Expression Language Bean methods execution disabled for constraints by default
+
+See https://in.relation.to/2020/12/08/hibernate-validator-700-62-cr1-released/ for more details.
+
+== 6.2.x
+
+=== 6.2.0.CR1
+
+* `@SafeHtml` constraint dropped
+* Expression Language disabled for custom violations by default
+* Expression Language Bean methods execution disabled for constraints by default
+
+See https://in.relation.to/2020/12/08/hibernate-validator-700-62-cr1-released/ for more details.
+
 == 6.1.x
 
 === 6.1.6.Final
