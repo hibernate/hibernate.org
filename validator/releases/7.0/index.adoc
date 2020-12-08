@@ -7,3 +7,15 @@
 Hibernate Validator 7.0 is the reference implementation for Jakarta Bean Validation 3.0.
 
 The main change is that all the dependencies using `javax.` packages are now using `jakarta.*` packages.
+
+Upgrade to Hibernate Validator 7 is only recommended if you are moving to Jakarta EE 9.
+
+=== Expression Language overhaul (also in 6.2)
+
+Expression Language disabled by default for custom violations.
+
+Ability to define the Expression Language features enabled for more safety.
+
+=== @SafeHtml removal (also in 6.2)
+
+The `@SafeHtml` constraint marked as deprecated for a while has been dropped from the codebase.

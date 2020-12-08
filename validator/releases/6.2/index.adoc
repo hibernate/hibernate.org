@@ -1,0 +1,20 @@
+:awestruct-layout: project-releases-series
+:awestruct-project: validator
+:awestruct-series_version: "6.2"
+
+=== Jakarta Bean Validation
+
+Hibernate Validator 6.2 uses the Jakarta Bean Validation API artifact i.e. `jakarta.validation:jakarta.validation-api` in version 2 and with the `javax.validation.*` package name.
+
+No API changes.
+
+=== Expression Language overhaul
+
+Expression Language disabled by default for custom violations.
+
+Ability to define the Expression Language features enabled for more safety.
+
+=== @SafeHtml removal
+
+The `@SafeHtml` constraint marked as deprecated for a while has been dropped from the codebase.
+
