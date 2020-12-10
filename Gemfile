@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'bundler', '2.1.4'
+
 # Main site dependencies
-gem 'awestruct', '0.6.0.RC1'
+gem 'awestruct', '0.6.1'
 gem 'nokogiri'
 gem 'sass'
 gem 'json'
