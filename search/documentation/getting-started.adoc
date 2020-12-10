@@ -4,17 +4,18 @@
 :toc:
 :toc-placement: preamble
 :page-interpolate: true
-:latest_stable: #{latest_stable_release(page).version}
-:version_matching_orm: #{latest_stable_release(page)['dependencies'].get_version('org.hibernate', 'hibernate-core')}
-:docs_base_url: http://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/
+:latest_511_release_version: #{series(page, '5.11').releases.first.version}
+:version_matching_orm: #{series(page, '5.11').releases.first['dependencies'].get_version('org.hibernate', 'hibernate-core')}
+:docs_base_url: http://docs.jboss.org/hibernate/search/5.11/reference/en-US/html_single/
 
 WARNING: This document covers the latest stable release of Hibernate Search 5.
 If you're looking for a getting started guide for Hibernate Search 6,
 see https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#getting-started[here].
   
 Welcome to Hibernate Search.
-The following chapter will guide you through the initial steps required to integrate Hibernate Search 
+The following chapter will guide you through the initial steps required to integrate Hibernate Search 5.11
 into an existing Hibernate enabled application.
+
 In case you are a new to Hibernate we recommend you start from http://hibernate.org/quick-start.html[here].
 
 == System requirements
@@ -22,11 +23,11 @@ In case you are a new to Hibernate we recommend you start from http://hibernate.
 
 Java Runtime::
 
-To use the latest Hibernate Search version ({latest_stable}) you'll need Java version 8 or greater.
+To use the latest version of the Hibernate Search 5.11 series ({latest_511_release_version}) you'll need Java version 8 or greater.
 You can download a Java Runtime for Windows/Linux/Solaris http://www.oracle.com/technetwork/java/javase/downloads/index.html[here].
 
 Hibernate Search::
-hibernate-search-orm-{latest_stable}.jar and all runtime dependencies.
+hibernate-search-orm-{latest_511_release_version}.jar and all runtime dependencies.
 You can get the jar artifacts either from the _dist/lib_ directory of the Hibernate Search distribution
 or you can download them from the Maven central repository.
 

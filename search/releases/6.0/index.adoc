@@ -1,111 +1,164 @@
 :awestruct-layout: project-releases-series
 :awestruct-project: search
 :awestruct-series_version: "6.0"
-:hsearch-doc-url-prefix: https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/
+:page-interpolate: true
+:hsearch-doc-url-prefix: #{reference_doc(site.projects[page.project], series(page, page.series_version)).html_url}
 :hsearch-jira-url-prefix: https://hibernate.atlassian.net/browse
 
 === Dependency upgrades
 
 [[orm-version]]
-==== Hibernate ORM
-
+Hibernate ORM::
 Hibernate Search 6 relies on Hibernate ORM 5.4.
-
++
 Note that only Hibernate ORM 5.4.4.Final or later will work correctly;
 5.4.3.Final and earlier will not.
 
 [[lucene-8]]
-==== Lucene 8
 // Old anchor, kept here to avoid dead links
-[[lucene-7]]
-
+[[lucene-7]]Lucene 8::
 The Lucene backend now uses Lucene 8.7.
 
 [[elasticsearch-7]]
-==== Elasticsearch 7
 // Old anchor, kept here to avoid dead links
-[[elasticsearch-6]]
-
+[[elasticsearch-6]]Elasticsearch 7::
 The Elasticsearch backend now works with Elasticsearch 5.6, 6.8 or 7.10.
 Support for older versions of Elasticsearch was dropped.
 
 [[api-refresh]]
-=== API refresh
+=== API overhaul
 
-A lot of APIs have been changed, for multiple reasons.
+This is perhaps the most important aspect of Hibernate Search 6: most APIs have changed.
+We didn't take this decision lightly, and we don't intend to do this again anytime soon:
+at this point, breaking APIs was necessary for Hibernate Search to keep improving.
 
-==== More consistent API types
+The primary goal of this overhaul was to abstract away Lucene APIs,
+so that the Elasticsearch backend can become a first-class citizen,
+implemented without any hacks or unnecessary dependencies.
 
-The API types consistently use the `Search` prefix: no more mixing `FullText` with `Search` or simply no prefix.
-
-Additionally, the `SearchQuery` type (previously `FullTextQuery`)
-now link:{hsearch-doc-url-prefix}#search-dsl-query-fetching-results[defines its own methods]
-instead of extending JPA's `TypeQuery`,
-highlighting the fact that it targets an index and not a database, and making it a friendlier API.
-It is still possible to
-link:{hsearch-doc-url-prefix}/#search-dsl-query-object[create an adapter that implements JPA's `TypeQuery`].
-
-==== No more Lucene APIs leaking from Hibernate Search APIs
-
-Hibernate Search APIs now abstract from the Lucene APIs,
-so that alternative backends such as Elasticsearch can be used without having Lucene on your classpath.
-
-This should also improve the ability of the Hibernate Search project
+It goes without saying, but the Lucene backend will remain as important as ever.
+In fact, abstracting away Lucene APIs is good for the Lucene backend too:
+it will give the Hibernate Search project the ability
 to upgrade Lucene as soon as new versions are released.
-In Hibernate Search 5, as Lucene was "part of" Hibernate Search APIs,
-we were severely limited when we wanted to upgrade to a newer Lucene version,
-because any breaking change in Lucene could mean a breaking change for Hibernate Search users, too.
-Now that Lucene APIs are no longer necessary to use Hibernate Search,
-upgrades should be faster.
 
-==== New Search DSL
+Another benefit of the overhaul: since APIs had to change anyway, we took that opportunity to implement
+long-overdue improvements that also required API changes.
+See the following sections to know more about these improvements.
+
+=== Safer, more concise, backend-agnostic Search DSL
 
 The link:{hsearch-doc-url-prefix}#search-dsl[Search DSL] is brand new, with several improvements:
 
+Safer::
+* Search hits link:{hsearch-doc-url-prefix}#search-dsl-query-fetching-results[now have a type],
+even when projecting thanks to the brand-new link:{hsearch-doc-url-prefix}#search-dsl-projection[projection DSL].
+* The implementation for numeric predicates (e.g. `int`-based, `long`-based, `double`-based)
+is now determined from the type of the targeted field, instead of the type of arguments.
+This is safer when passing arguments with the wrong type:
+where Hibernate Search 5 would have generated a predicate that doesn't match anything,
+Hibernate Search 6 will detect the type mismatch and will throw an exception.
+
+More concise::
 * Ability to link:{hsearch-doc-url-prefix}#search-dsl-predicate[use lambdas]
 for more concise query definition,
 link:{hsearch-doc-url-prefix}#search-dsl-predicate-boolean-lambda[even when queries are complex].
-* Type-safe projections thanks to the brand-new link:{hsearch-doc-url-prefix}#search-dsl-projection[projection DSL].
-* Various new features and improvements such as
-a new link:{hsearch-doc-url-prefix}#search-dsl-predicate-exists[`exists` predicate],
-the ability to link:{hsearch-doc-url-prefix}#search-dsl-predicate-common-overriding-analysis[override analyzers on a per-predicate basis], ...
+* link:{hsearch-doc-url-prefix}search-dsl-query-targeting-multiple[Simpler syntax for predicates when targeting multiple types] in a single query:
+instantiating multiple `QueryBuilders` is no longer needed,
+Hibernate Search takes into account that multiple types are targeted
+and automatically checks that targeted fields are compatible across all targeted indexes.
+
+More consistent::
+* The API types consistently use the `Search` prefix: no more mixing `FullText` with `Search` or simply no prefix.
+* The `SearchQuery` type (previously `FullTextQuery`)
+now link:{hsearch-doc-url-prefix}#search-dsl-query-fetching-results[defines its own methods]
+instead of extending JPA's `TypeQuery`,
+highlighting the fact that it targets an index and not a database, and making it a friendlier API.
+When necessary, it is still possible to
+link:{hsearch-doc-url-prefix}/#search-dsl-query-object[retrieve an adapter that implements JPA's `TypeQuery`].
+
+Backend-agnostic by default, with backend-specific extensions::
+* As explained in <<api-refresh>>, the Search DSL no longer exposes Lucene-specific types by default.
+When necessary, native Lucene queries can still be used (see below).
 * Injection of native predicates
 (link:{hsearch-doc-url-prefix}#search-dsl-predicate-extensions-lucene-from-lucene-query[`org.apache.lucene.search.Query` for Lucene],
 link:{hsearch-doc-url-prefix}#search-dsl-predicate-extensions-elasticsearch-from-json[JSON for Elasticsearch])
 within DSL-created predicates.
 This is not new for the Lucene integration, but it is for the Elasticsearch integration.
 See link:{hsearch-doc-url-prefix}#search-dsl-predicate-extensions[predicate extensions].
-* link:{hsearch-doc-url-prefix}search-dsl-query-targeting-multiple[Simpler syntax for predicates when targeting multiple types] in a single query:
-instantiating multiple `QueryBuilders` is no longer needed,
-Hibernate Search takes into account that multiple types are targeted
-and automatically checks that targeted fields are compatible across all targeted indexes.
+* Injection of native link:{hsearch-doc-url-prefix}#search-dsl-sort-extensions[sorts]
+and link:{hsearch-doc-url-prefix}#search-dsl-aggregation-extensions[aggregations]
+within DSL-created Hibernate Search queries.
+* Ability to link:{hsearch-doc-url-prefix}#search-dsl-query-elasticsearch-json[directly manipulate the JSON of Elasticsearch requests/responses].
+
+More features::
+* A new link:{hsearch-doc-url-prefix}#search-dsl-predicate-id[`id` predicate].
+* A new link:{hsearch-doc-url-prefix}#search-dsl-predicate-exists[`exists` predicate].
+* Ability to link:{hsearch-doc-url-prefix}#search-dsl-predicate-common-overriding-analysis[override analyzers on a per-predicate basis].
+* Better support for multi-valued fields for link:{hsearch-doc-url-prefix}#search-dsl-sort-common-multi-value-mode[sorts],
+link:{hsearch-doc-url-prefix}#search-dsl-projection-field-multivalued[projections]
+and link:{hsearch-doc-url-prefix}#search-dsl-aggregation[aggregations (faceting)].
+
+[[mapping]]
+=== Easier mapping
+
+Specialized `@*Field` annotations::
+Hibernate Search 6 offers separate `@*Field` annotations for each major field type:
+link:{hsearch-doc-url-prefix}#mapper-orm-directfieldmapping-annotations[`@GenericField`] works in most cases,
+but you can access more options (analysis, ...)
+with link:{hsearch-doc-url-prefix}#mapper-orm-directfieldmapping-annotations-fulltextfield[`@FullTextField`],
+link:{hsearch-doc-url-prefix}#mapper-orm-directfieldmapping-annotations-keywordfield[`@KeywordField`],
+...
++
+This way, each annotation offers the options that make sense for the selected field types,
+and only those options. No longer will you end up disabling analysis on a numeric field!
+
+Simpler mapping of container types::
+* `@*Field` annotations can be applied directly to `List<String>` or `OptionalInt`
+in order to index the "contained" elements,
+thanks to link:{hsearch-doc-url-prefix}#mapper-orm-containerextractor[container extractors].
+* For more complex types (e.g. `Map<String, Integer>`),
+link:{hsearch-doc-url-prefix}#_explicit_container_extraction[the container extractor can be selected explicitly].
+
+More features::
+* Ability to define a link:{hsearch-doc-url-prefix}#mapper-orm-directfieldmapping-search-analyzer[`searchAnalyzer`],
+to analyze search queries differently from indexed text (useful for auto-complete in particular).
+* Ability to map scaled numbers (`BigDecimal`/`BigInteger`)
+with link:{hsearch-doc-url-prefix}#mapper-orm-directfieldmapping-annotations-scalednumberfield[`@ScaledNumberField`].
 
 [[bridge-2.0]]
-==== Bridge 2.0
+=== More powerful, backend-agnostic bridges
 
-The bridge APIs had to change as part of the API refresh,
-so we took this opportunity to overhaul bridge APIs to make bridges more powerful.
+The new Bridge APIs are different and vastly improved.
 
-The new Bridge APIs are completely different, but with a lot of improvements:
-
-* bridges targeting non-String fields are now first-class citizens:
+Full control over field definitions::
+* Bridges can link:{hsearch-doc-url-prefix}#mapper-orm-bridge-index-field-type-dsl[declare field types precisely],
+allowing in particular to pick an analyzer or to enable aggregation (faceting) on a bridge-declared field.
+* Bridges targeting non-String fields are now first-class citizens:
 when targeting bridge-declared, non-String fields in the Search DSL,
-you will no longer have to bypass bridges (`.ignoreFieldBridge()`) like you had to in Search 5;
-* bridges can link:{hsearch-doc-url-prefix}#mapper-orm-bridge-index-field-type-dsl[define field types precisely],
-allowing in particular to pick an analyzer or to enable aggregation (faceting) on a bridge-declared field;
-* bridges can link:{hsearch-doc-url-prefix}#mapper-orm-bridge-bridgedelement-dependencies[declare the properties they rely on],
-allowing Hibernate Search to reindex less frequently;
-* bridges can link:{hsearch-doc-url-prefix}#mapper-orm-bridge-index-field-dsl-dynamic[declare dynamic fields with a precise type]
-which the Search DSL will be aware of;
-* bridges can be applied with link:{hibernateSearchDocUrl}#mapper-orm-custom-annotations[custom annotations],
-allowing clearer mappings, especially when bridges are parameterized;
-* and link:{hibernateSearchDocUrl}#mapper-orm-bridge[more].
+you will no longer have to bypass bridges (`.ignoreFieldBridge()`) like you had to in Search 5.
+* Bridges can link:{hsearch-doc-url-prefix}#mapper-orm-bridge-index-field-dsl-dynamic[declare dynamic fields with a precise type]
+which the Search DSL will be aware of.
+
+Full control over automatic reindexing::
+Bridges can link:{hsearch-doc-url-prefix}#mapper-orm-bridge-bridgedelement-dependencies[declare the properties they rely on],
+allowing Hibernate Search to reindex less frequently.
+
+Custom bridge annotations::
+Bridges can be applied with link:{hsearch-doc-url-prefix}#mapper-orm-custom-annotations[custom annotations],
+allowing clearer mappings, especially when bridges are parameterized.
++
+For more information about bridges, see link:{hsearch-doc-url-prefix}#mapper-orm-bridge[this section of the documentation].
+
+Backend-agnostic::
+* Field declarations do not involve any Lucene API by default.
+* However, bridges can still declare native fields when necessary,
+be it with link:{hsearch-doc-url-prefix}#backend-lucene-field-types-extension[Lucene]
+or link:{hsearch-doc-url-prefix}#backend-elasticsearch-field-types-extension[Elasticsearch].
 
 [[automatic-indexing]]
-=== Easier to configure, more efficient automatic indexing
+=== Easier to configure, smarter automatic indexing
 
-In Hibernate Search 6, automatic indexing is easier to configure correctly:
-
+Automatic resolution of reindexing requirements::
 * `@ContainedIn` is no longer needed: when using `@IndexedEmbedded` on an association,
 Hibernate Search 6 infers the inverse side of the association from Hibernate ORM metadata,
 which allows it to automatically reindex the class hosting the `@IndexedEmbedded` annotation
@@ -113,17 +166,43 @@ when the target of the association changes.
 * When the inverse side of an association cannot be resolved,
 Hibernate Search 6 will report a mapping error on bootstrap,
 allowing you to detect risks of out-of-sync indexes early.
-* You can still opt out of automatic reindexing locally
-link:{hsearch-doc-url-prefix}#mapper-orm-reindexing-reindexonupdate[using `@IndexingDependency(reindexOnUpdate = ReindexOnUpdate.NO)`].
-* Some want more performance with asynchronous automatic indexing,
+
+Easy override of reindexing requirements::
+* You can opt out of automatic reindexing locally using
+link:{hsearch-doc-url-prefix}#mapper-orm-reindexing-reindexonupdate[`@IndexingDependency(reindexOnUpdate = ...)`].
+* You can declare the dependencies of a `@Transient`, indexed property using
+link:{hsearch-doc-url-prefix}#mapper-orm-reindexing-derivedfrom[`@IndexingDependency(derivedFrom = ...)`].
+
+Easy configuration of indexing synchronization::
+Some want more performance with asynchronous automatic indexing,
 others prefer data safety and immediate visibility of indexed documents with synchronous automatic indexing.
 With Hibernate Search 6, this can all be configured
 with a link:{hsearch-doc-url-prefix}#mapper-orm-indexing-automatic-synchronization[single configuration property].
 
-Hibernate Search 6 is also more efficient when processing changes on complex entity graphs.
+Smarter change processing::
+Hibernate Search 6 is smarter when processing changes on complex entity graphs.
++
 When a property changes in an entity that is indexed-embedded in multiple other entities,
 Hibernate Search 6 will only traverse associations to entities that are actually
 affected by the change, based on `@IndexedEmbedded(includePaths = ...)` and other metadata.
+
+[[schema-management]]
+=== More flexible schema management
+
+Manage the schema on startup::
+Just like Hibernate Search 5, Hibernate Search 6 can
+link:{hsearch-doc-url-prefix}#mapper-orm-schema-management-strategy[manage the schema for you on startup].
+Or not: if this gets in the way, it can be disabled.
+
+Manage the schema on demand::
+Unlike Hibernate Search 5, Hibernate Search 6 offers
+link:{hsearch-doc-url-prefix}#mapper-orm-schema-management-manager[dedicated APIs to trigger schema operations on demand].
+
+Manage the schema when mass indexing::
+The link:{hsearch-doc-url-prefix}#mapper-orm-indexing-massindexer[mass indexer]
+can drop and re-create the schema automatically: you only have to call
+link:{hsearch-doc-url-prefix}#mapper-orm-indexing-massindexer-parameters[.dropAndCreateSchemaOnStart(true)].
+With the Elasticsearch backend, this can be significantly faster than removing all documents from an existing schema.
 
 [[runtime-joins]]
 === Runtime joins with nested documents
@@ -134,18 +213,21 @@ similar to the feature with the same name in Elasticsearch.
 
 This means in particular that indexed-embedded entities can be searched much more finely,
 for example searching for that one book whose author has a given first name *and* last name.
-With the right query, no longer will Hibernate Search return a book authored by "John Smith" and "Jane Doe"
+With the right mapping and the right query,
+no longer will Hibernate Search return a book co-authored by "John Smith" and "Jane Doe"
 when you were looking for "John Doe"!
 
-For details, see link:{hsearch-doc-url-prefix}#mapper-orm-indexedembedded-storage[`@IndexedEmbedded` storage type]
+For details, see link:{hsearch-doc-url-prefix}#mapper-orm-indexedembedded-structure[Structuring embedded elements as nested documents]
 in the reference documentation.
 
-[[schema-management]]
-=== More flexible schema management options
+[[other]]
+=== And more
 
-Creating Elasticsearch indexes with the right mapping can be a complex task.
-Doing it at the right time in a distributed application, even more so.
-
-Just like Hibernate Search 5, Hibernate Search 6 can manage the schema for you on startup,
-but you can also disable automatic schema management and access
-link:{hsearch-doc-url-prefix}#mapper-orm-schema-management-manager[dedicated APIs to trigger schema operations on demand].
+* Better support for traditional JPA batch processes involving a periodic flush/clear:
+Hibernate Search 6 will
+link:{hsearch-doc-url-prefix}#mapper-orm-indexing-automatic-concepts-extraction-on-flush[buffer the documents to index upon flush()],
+to avoid the dreaded `LazyInitializationException` that Hibernate Search 5 would trigger.
+* Better reporting of errors on bootstrap:
+Hibernate Search will provide more context for each error,
+and will collect as many errors as possible before stopping.
+* ...
