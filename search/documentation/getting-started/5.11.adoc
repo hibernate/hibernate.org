@@ -5,12 +5,13 @@
 :toc-placement: preamble
 :page-interpolate: true
 :latest_511_release_version: #{series(page, '5.11').releases.first.version}
+:latest_stable_series_version: #{latest_stable_series(page).version}
 :version_matching_orm: #{series(page, '5.11').releases.first['dependencies'].get_version('org.hibernate', 'hibernate-core')}
 :docs_base_url: http://docs.jboss.org/hibernate/search/5.11/reference/en-US/html_single/
 
 WARNING: This document covers the latest stable release of Hibernate Search 5.
-If you're looking for a getting started guide for Hibernate Search 6,
-see https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#getting-started[here].
+If you're looking for a getting started guide for the latest stable series, Hibernate Search {latest_stable_series_version},
+see link:/search/releases/{latest_stable_series_version}/#getting_started[here].
   
 Welcome to Hibernate Search.
 The following chapter will guide you through the initial steps required to integrate Hibernate Search 5.11

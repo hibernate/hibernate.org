@@ -1,0 +1,44 @@
+---
+layout: project-standard
+---
+-# project getting started page
+-# show title, action buttons for getting started guides
+
+-# Metadata from site.yml for the project
+- project_description = site.projects[page.project]
+- stable_series = project_description.latest_stable_series
+
+%h2 Getting Started Guides per Series
+
+%p
+  The following guides are meant to help you getting started with
+  = project_description.name
+  in an application.
+
+.ui.grid.documentation-versions
+  - project_description.release_series.values.each do |series|
+    - release = series.releases[0]
+    - getting_started_guide = getting_started_guide(project_description, series)
+    - if not getting_started_guide.nil?
+      .ui.row
+        .three.wide.column
+          %span.ui.label.series= series.version
+        .thirteen.wide.column
+          %p
+            %span.ui.label.large
+              %strong= release.version
+              %span.detail= release.date
+            %span.ui.tag.label{:class => "#{release.stable ? 'green' : 'orange'}"} #{release.stable ? 'stable' : 'development'}
+            %p
+              %span.ui.button.disabled
+                Getting started guide
+              - if not getting_started_guide.html_url.nil?
+                %a.ui.right.labeled.icon.button.primary(href="#{getting_started_guide.html_url}")
+                  %i.icon.file.text.outline
+                  HTML
+              - if not getting_started_guide.pdf_url.nil?
+                %a.ui.right.labeled.icon.button.primary(href="#{getting_started_guide.pdf_url}")
+                  %i.icon.file.pdf.outline
+                  PDF
+
+~ content
