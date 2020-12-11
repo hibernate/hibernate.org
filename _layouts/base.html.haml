@@ -1,12 +1,7 @@
 !!! 5
 %html(lang="en")
   %head
-    -# display page title - project name if under a project section or page title - site name otherwise
-    - project_id = page.project ? page.project : site.project
-    - project_name = page.project ? site.projects[page.project].name : site.title
-    - page_title = "#{page.title ? page.title : page.simple_name.capitalize} - #{project_name ? project_name : site.title}"
-    %title= page_title
-    = partial( page.head_partial.nil? ? 'head.html.haml' : page.head_partial, { "real_page" => page } )
+    = partial('head.html.haml', { "real_page" => page } )
 
   %body.pushable
     = partial( 'menu/mobile.html.haml', {"real_page" => page} )
