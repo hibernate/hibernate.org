@@ -44,7 +44,7 @@ projects:
     icon: 'icon-table'
     description: |
       Idiomatic persistence for Java and relational databases.
-    sourceforge_url: http://sourceforge.net/projects/hibernate/files/hibernate-orm/
+    sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-orm/
     zip_file: hibernate-release-VERSION.zip
     links:
       reference_doc:
@@ -71,7 +71,7 @@ projects:
     blog_tag_url: hibernate-orm
     license:
       name: LGPL V2.1
-      url: http://hibernate.org/license/
+      url: https://hibernate.org/license/
     jira:
       key: HHH
     github:
@@ -79,10 +79,10 @@ projects:
     integrations:
       java:
         name: Java
-        url: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+        url: https://www.oracle.com/technetwork/java/javase/downloads/index.html
       jpa:
         name: JPA
-        url: http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html
+        url: https://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html
     menu:
       intern:
         - name: About
@@ -344,13 +344,13 @@ projects:
     integrations:
       java:
         name: Java
-        url: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+        url: https://www.oracle.com/technetwork/java/javase/downloads/index.html
       bv:
         name: Bean Validation
-        url: http://beanvalidation.org/
+        url: https://beanvalidation.org/
       jbv:
         name: Jakarta Bean Validation
-        url: http://beanvalidation.org/
+        url: https://beanvalidation.org/
     menu:
       intern:
         - name: About
@@ -433,7 +433,7 @@ projects:
     blog_tag_url: hibernate-ogm
     license:
       name: LGPL
-      url: http://www.gnu.org/licenses/lgpl.html
+      url: https://www.gnu.org/licenses/lgpl.html
     jira:
       key: OGM
     github:
@@ -441,10 +441,10 @@ projects:
     integrations:
       java:
         name: Java
-        url: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+        url: https://www.oracle.com/technetwork/java/javase/downloads/index.html
       jpa:
         name: JPA
-        url: http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html
+        url: https://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html
       orm:
         name: Hibernate ORM
         url: /orm/
@@ -530,7 +530,7 @@ projects:
     blog_tag_url: hibernate-reactive
     license:
       name: LGPL V2.1
-      url: http://hibernate.org/license/
+      url: https://hibernate.org/license/
     jira:
       key:
     github:
@@ -647,7 +647,7 @@ profiles:
     slick_js_url_integrity: "sha384-wBo76R9TGH6DxuCcambHkpxJKY96xJq59OwZONC0A2v0rlNK9Kb75uRdSgxK5j9+"
     match_height_js_url_integrity: "sha384-8tbVdDPB3bZ0bpwXcWj84BJ4lNn6EWyBX8/Uz+tVSAKxz2u+8lYENBTZMZOF29QA"
     css_minifier: enabled
-    base_url: http://hibernate.org
+    base_url: https://hibernate.org
     enable_google_analytics: true
     news_feed_root_url: https://in.relation.to/feeds
 
