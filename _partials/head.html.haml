@@ -18,6 +18,9 @@
   %meta(name="og:description" content="#{description}")
 %meta(property="og:image" content="#{site.base_url}/images/hibernate_icon_whitebkg.svg")
 
+- if description
+  %meta(name="description" content="#{description}")
+
 %link(href="#{site.semantic_ui_css_url}#{site.minified}.css" rel="stylesheet")
 %link(href="#{site.slick_css_url}.css" rel="stylesheet")
 %link(href="#{site.slick_css_url}-theme.css" rel="stylesheet")
