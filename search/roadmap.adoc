@@ -12,52 +12,6 @@ You can find a finer grained roadmap in our https://hibernate.atlassian.net/brow
 
 Dates are generally omitted: milestones are released regularly, the Final release is tagged when it's considered stable.
 
-== Hibernate Search 6.0
-
-Compatible with Hibernate ORM 6, Apache Lucene 8, Elasticsearch 7.
-
-API overhaul::
-A significant API refresh is planned to better abstract from the Lucene API so that alternative backends such as Elasticsearch can be used without having Lucene on your classpath.
-This will also benefit Lucene users, as the abstraction should allow us to automatically apply more optimisations without the user needing to be a Lucene expert.
-
-More powerful bridges::
-The bridge APIs will have to change as part of the API overhaul,
-so we will take this opportunity to overhaul how bridges work, in order to make them more powerful.
-+
-There are multiple aspects we intend to address:
-* Custom (user-defined) bridge annotations, allowing to pass type-safe parameters, and not just strings
-* Better support for dirty checking optimization in bridges (class/type bridges in particular),
-by allowing bridges to declare what parts of the entity they use.
-* Better integration of bridges in the Search DSL:
-non-String fields should work without having to bypass bridges (`.ignoreFieldBridge()`) like in Search 5,
-bridges should be allowed to define precisely how to project their fields, ...
-
-Upgrade to Apache Lucene 8::
-To provide the full power of some of the new features in Apache Lucene 8, some API changes are needed.
-This includes some API improvements which could have been useful since the upgrade to Lucene 5; since we only apply breaking API changes in major releases these had to wait.
-
-Upgrade to Elasticsearch 7::
-Elasticsearch 6 and above do not provide the ability to store multiple types in one index anymore.
-Hibernate Search 6 will address this, possibly by forcing to use different indexes for different types.
-Once this is done, we will add support for Elasticsearch 7.
-
-Nested documents for runtime joins::
-Expose Lucene's index-time and query-time join capabilities.
-
-Temporary removal of non-essential features::
-Hibernate Search 6.0 is a major rewrite, which will take time.
-In order to make it available to at least some users as early as possible,
-one solution is to reduce the feature coverage of Hibernate Search 6 and only address essential use cases.
-We will temporarily remove some features that are not commonly used,
-or could not be used immediately due to integration constraints,
-and reintroduce them in a later 6.x.
-Note **this is a temporary removal**, we are just delaying some of the work to a later release.
-In particular:
-
-* WildFly integration
-* OSGi integration
-* Clustering support (JMS/JGroups backends)
-
 == Hibernate Search 6.1
 
 Restore the WildFly integration::
