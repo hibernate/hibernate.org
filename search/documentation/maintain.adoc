@@ -29,8 +29,10 @@ which is very specific and might break with the inclusion of new dependencies.
 
 === Perform the release
 
-Once you trigger the CI job, it automatically pushes artifacts to the Nexus repository,
-the distribution to SourceForge and the documentation to docs.jboss.org.
+Once you trigger the CI job, it automatically pushes artifacts to the
+https://repository.jboss.org/nexus/index.html[JBoss Nexus repository manager],
+the distribution to https://sourceforge.net/projects/hibernate/files/hibernate-search/[SourceForge]
+and the documentation to https://docs.jboss.org/hibernate/search/[docs.jboss.org].
 
 * Transfer the released issues in JIRA to the "Closed state".
 ** Go to https://hibernate.atlassian.net/issues/?jql=project%20%3D%20HSEARCH%20AND%20status%20%3D%20Resolved%20AND%20fixVersion%20%3D%205.7.2.Final[this search]
@@ -44,7 +46,7 @@ and please uncheck the option near the bottom "Send email notifications".
 ** Go to CI, to https://ci.hibernate.org/job/hibernate-search/[the "hibernate-search" CI job].
 ** Click the "run" button (the green triangle on top of a clock, to the right) next to the branch you want to release.
 ** **Be careful** when filling the form with the build parameters.
-* Release the artifacts on the JBoss Nexus repository manager.
+* Release the artifacts on the https://repository.jboss.org/nexus/index.html[JBoss Nexus repository manager].
 ** Log into Nexus and examine your staging repository.
 Use the search box to hide all unrelated repositories:
 searching for "hibernate" will show only the ones created by hibernate-ci.
