@@ -6,11 +6,11 @@ Follow these steps for an official release.
 
 WARNING: Bean Validation has been moved to Jakarta EE thus this release process needs an update.
 
-=== Prerequisites
+== Prerequisites
 
 * You need to have access to http://ci.hibernate.org/: the release process is now driven by CI
 
-=== Prepare
+== Prepare
 
 * Update the TCK audit file (`tests/src/main/resources/tck-audit.xml`) as per the latest spec revision and check that it was identical to the preexisting file. If not, you will probably need to update the TCK assertion ids accordingly.
 * Check that everything has been pushed to the upstream repository
@@ -19,7 +19,7 @@ WARNING: Bean Validation has been moved to Jakarta EE thus this release process 
 * Before you release, deploy the TCK and run the Validator tests with this version of the TCK to check everything is OK (run the TCK in container mode)
 * Make sure there are no outstanding issues in https://hibernate.atlassian.net/browse/BVTCK[Jira]
  
-=== Release
+== Release
 
 * Release the https://hibernate.atlassian.net/plugins/servlet/project-config/BVTCK/versions[Jira version]
 * Do NOT update the `changelog.txt` and `README.md`, the release job does it for you.
@@ -31,7 +31,7 @@ WARNING: Bean Validation has been moved to Jakarta EE thus this release process 
 ** You can find more information in the description of https://developer.jboss.org/docs/DOC-14608[the JBoss project release process]. A Maven settings.xml for testing the artifacts in the staging repository can be found https://developer.jboss.org/docs/DOC-15664[here].
 * Transfer the released issues in JIRA to the _Closed_ state. You can use this search https://hibernate.atlassian.net/issues/?jql=project%20%3D%20BVTCK%20AND%20status%20%3D%20Resolved%20AND%20fixVersion%20%3D%202.0.0.Alpha1[Issue Navigator - Hibernate JIRA] and select another `fixVersion`. Once you have selected the right version, click on the button with three dots at the top right of the screen and click on _Bulk update all XX issues_. Use the _Transition_ action to transition your issues from _Resolved_ to _Closed_.
 
-=== Publish
+== Publish
 
 NOTE: In the HTML version of the reference guide, some special characters and the section titles will show up not correctly when opening the file locally. This is a known issue, the documentation looks correct when retrieved via Apache.
 
