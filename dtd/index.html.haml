@@ -5,6 +5,14 @@ title: Index of /dtd
 
 - @items = list_entries(File.dirname(__FILE__), '*.dtd')
 
+.ui.floating.info.icon.message
+  %i.icon.hand.paper
+  .content
+    %p
+      Please keep in mind that DTD versions do NOT match the Hibernate ORM version.
+    %p
+      Just use the highest DTD version that is lower than or equal to your Hibernate ORM version.
+
 %table{:style=>"width: 80%", :class=>"ui table celled striped"}
   %thead
     %tr

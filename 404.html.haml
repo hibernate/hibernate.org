@@ -39,28 +39,47 @@ inhibit_indexifier: true
     .ui.two.column.centered.grid
       .column
         %h2 Oh snap!
-       
-        .ui.floating.info.icon.message
-          %i.icon.hand.paper
-          .content
-            .header
-              (Hand waving): This is not the page you are looking for!
-            %p
-              Looks like you have found a broken link!
 
-        %p
-          Please report it mentioning which page you came from and which link you clicked on:
-        %p.text-center
-          %button.ui.right.label.button.primary#feedback-button
-            %i.icon.arrow.circle.up
-            Report website error
-        %p
-          Otherwise, best is to hit the good old back button or start back at the
-          %a(href="#top") top of the site
-          \.
+        .dead-link
+          .ui.floating.info.icon.message
+            %i.icon.hand.paper
+            .content
+              .header
+                (Hand waving): This is not the page you are looking for!
+              %p
+                Looks like you have found a broken link!
 
-        %p
-          You can also fix the problem yourself by sending a pull request to this GitHub project:
-          %a(href="https://github.com/hibernate/hibernate.org") github.com/hibernate/hibernate.org
-          \.
+          %p
+            Please report it mentioning which page you came from and which link you clicked on:
+          %p.text-center
+            %button.ui.right.label.button.primary#feedback-button
+              %i.icon.arrow.circle.up
+              Report website error
+          %p
+            Otherwise, best is to hit the good old back button or start back at the
+            %a(href="#top") top of the site
+            \.
 
+          %p
+            You can also fix the problem yourself by sending a pull request to this GitHub project:
+            %a(href="https://github.com/hibernate/hibernate.org") github.com/hibernate/hibernate.org
+            \.
+
+        .invalid-dtd(style="display:none;")
+          .ui.floating.info.icon.message
+            %i.icon.hand.paper
+            .content
+              .header
+                (Hand waving): This is not the page you are looking for!
+              %p
+                This DTD does not exist.
+              %p
+                For a list of available DTDs, see
+                %a(href="/dtd/") here.
+
+:javascript
+  console.log(window.location.pathname)
+  if (/^\/dtd\/.*$/.test(window.location.pathname)) {
+    document.querySelector('.dead-link').style.display = 'none';
+    document.querySelector('.invalid-dtd').style.display = 'block';
+  }
