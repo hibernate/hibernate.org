@@ -28,7 +28,7 @@ your `pom.xml`:
 [subs="verbatim,attributes"]
 ----
 <dependency>
-   <groupId>org.hibernate</groupId>
+   <groupId>org.hibernate.validator</groupId>
    <artifactId>hibernate-validator</artifactId>
    <version>{latest_stable}</version>
 </dependency>
@@ -75,7 +75,7 @@ Validator CDI portable extension by adding the following Maven dependency to you
 [subs="verbatim,attributes"]
 ----
 <dependency>
-   <groupId>org.hibernate</groupId>
+   <groupId>org.hibernate.validator</groupId>
    <artifactId>hibernate-validator-cdi</artifactId>
    <version>{latest_stable}</version>
 </dependency>
