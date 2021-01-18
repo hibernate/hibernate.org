@@ -6,7 +6,7 @@
 :toc-placement: preamble
 :latest_stable: #{latest_stable_release(page).version}
 :bv_api: #{latest_stable_release(page)['dependencies'].get_version('javax.validation', 'validation-api')}
-:el-impl: #{latest_stable_release(page)['dependencies'].get_version('org.glassfish', 'javax.el')}
+:el-impl: #{latest_stable_release(page)['dependencies'].get_version('org.glassfish', 'jakarta.el')}
 
 Welcome to Hibernate Validator.
 
@@ -56,7 +56,7 @@ For instance, you can add the following dependency to use the JSR 341 reference 
 ----
 <dependency>
    <groupId>org.glassfish</groupId>
-   <artifactId>javax.el</artifactId>
+   <artifactId>jakarta.el</artifactId>
    <version>{el-impl}</version>
 </dependency>
 ----
