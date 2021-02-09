@@ -157,32 +157,32 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/engine/ReactiveActionQueue.html#addAction-org.hibernate.action.internal.CollectionRecreateAction-">addAction</a></span>(org.hibernate.action.internal.CollectionRecreateAction&nbsp;action)</code>
-<div class="block">Adds a collection (re)create action</div>
-</td>
-</tr>
-<tr id="i2" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/engine/ReactiveActionQueue.html#addAction-org.hibernate.action.internal.CollectionRemoveAction-">addAction</a></span>(org.hibernate.action.internal.CollectionRemoveAction&nbsp;action)</code>
-<div class="block">Adds a collection remove action</div>
-</td>
-</tr>
-<tr id="i3" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/engine/ReactiveActionQueue.html#addAction-org.hibernate.action.internal.CollectionUpdateAction-">addAction</a></span>(org.hibernate.action.internal.CollectionUpdateAction&nbsp;action)</code>
-<div class="block">Adds a collection update action</div>
-</td>
-</tr>
-<tr id="i4" class="altColor">
-<td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/engine/ReactiveActionQueue.html#addAction-org.hibernate.action.internal.OrphanRemovalAction-">addAction</a></span>(org.hibernate.action.internal.OrphanRemovalAction&nbsp;action)</code>
 <div class="block">Adds an orphan removal action</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/engine/ReactiveActionQueue.html#addAction-org.hibernate.action.internal.QueuedOperationCollectionAction-">addAction</a></span>(org.hibernate.action.internal.QueuedOperationCollectionAction&nbsp;action)</code>
 <div class="block">Adds an action relating to a collection queued operation (extra lazy).</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/engine/ReactiveActionQueue.html#addAction-org.hibernate.reactive.engine.impl.ReactiveCollectionRecreateAction-">addAction</a></span>(org.hibernate.reactive.engine.impl.ReactiveCollectionRecreateAction&nbsp;action)</code>
+<div class="block">Adds a collection (re)create action</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/engine/ReactiveActionQueue.html#addAction-org.hibernate.reactive.engine.impl.ReactiveCollectionRemoveAction-">addAction</a></span>(org.hibernate.reactive.engine.impl.ReactiveCollectionRemoveAction&nbsp;action)</code>
+<div class="block">Adds a collection remove action</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/engine/ReactiveActionQueue.html#addAction-org.hibernate.reactive.engine.impl.ReactiveCollectionUpdateAction-">addAction</a></span>(org.hibernate.reactive.engine.impl.ReactiveCollectionUpdateAction&nbsp;action)</code>
+<div class="block">Adds a collection update action</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
@@ -463,13 +463,13 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </dl>
 </li>
 </ul>
-<a name="addAction-org.hibernate.action.internal.CollectionRecreateAction-">
+<a name="addAction-org.hibernate.reactive.engine.impl.ReactiveCollectionRecreateAction-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>addAction</h4>
-<pre>public&nbsp;void&nbsp;addAction(org.hibernate.action.internal.CollectionRecreateAction&nbsp;action)</pre>
+<pre>public&nbsp;void&nbsp;addAction(org.hibernate.reactive.engine.impl.ReactiveCollectionRecreateAction&nbsp;action)</pre>
 <div class="block">Adds a collection (re)create action</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -477,13 +477,13 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </dl>
 </li>
 </ul>
-<a name="addAction-org.hibernate.action.internal.CollectionRemoveAction-">
+<a name="addAction-org.hibernate.reactive.engine.impl.ReactiveCollectionRemoveAction-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>addAction</h4>
-<pre>public&nbsp;void&nbsp;addAction(org.hibernate.action.internal.CollectionRemoveAction&nbsp;action)</pre>
+<pre>public&nbsp;void&nbsp;addAction(org.hibernate.reactive.engine.impl.ReactiveCollectionRemoveAction&nbsp;action)</pre>
 <div class="block">Adds a collection remove action</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -491,13 +491,13 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </dl>
 </li>
 </ul>
-<a name="addAction-org.hibernate.action.internal.CollectionUpdateAction-">
+<a name="addAction-org.hibernate.reactive.engine.impl.ReactiveCollectionUpdateAction-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>addAction</h4>
-<pre>public&nbsp;void&nbsp;addAction(org.hibernate.action.internal.CollectionUpdateAction&nbsp;action)</pre>
+<pre>public&nbsp;void&nbsp;addAction(org.hibernate.reactive.engine.impl.ReactiveCollectionUpdateAction&nbsp;action)</pre>
 <div class="block">Adds a collection update action</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>

@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":18,"i1":18,"i2":18,"i3":18,"i4":6,"i5":18,"i6":18,"i7":18,"i8":18};
+var methods = {"i0":18,"i1":18,"i2":18,"i3":18,"i4":6,"i5":18,"i6":18,"i7":6,"i8":18,"i9":18,"i10":18};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -162,11 +162,19 @@ var activeTableTab = "activeTableTab";
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/loader/ReactiveLoader.html#getReactiveResultSetProcessor--">getReactiveResultSetProcessor</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
+<td class="colFirst"><code>default boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/loader/ReactiveLoader.html#isPostgresSQL-org.hibernate.engine.spi.SharedSessionContractImplementor-">isPostgresSQL</a></span>(org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session)</code>&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>default org.hibernate.dialect.pagination.LimitHandler</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/loader/ReactiveLoader.html#limitHandler-org.hibernate.engine.spi.RowSelection-org.hibernate.engine.spi.SharedSessionContractImplementor-">limitHandler</a></span>(org.hibernate.engine.spi.RowSelection&nbsp;selection,
             org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session)</code>&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>org.hibernate.reactive.pool.impl.Parameters</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/loader/ReactiveLoader.html#parameters--">parameters</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>default <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/loader/ReactiveLoader.html#preprocessSQL-java.lang.String-org.hibernate.engine.spi.QueryParameters-org.hibernate.engine.spi.SessionFactoryImplementor-java.util.List-">preprocessSQL</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;sql,
              org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters,
@@ -175,7 +183,7 @@ var activeTableTab = "activeTableTab";
 <div class="block">Used by query loaders to add stuff like locking and hints/comments</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>default <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/loader/ReactiveLoader.html#reactiveProcessResultSet-java.sql.ResultSet-org.hibernate.engine.spi.QueryParameters-org.hibernate.engine.spi.SharedSessionContractImplementor-boolean-org.hibernate.transform.ResultTransformer-java.util.List-">reactiveProcessResultSet</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/sql/ResultSet.html?is-external=true" title="class or interface in java.sql">ResultSet</a>&nbsp;rs,
                         org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters,
@@ -184,7 +192,7 @@ var activeTableTab = "activeTableTab";
                         org.hibernate.transform.ResultTransformer&nbsp;forcedResultTransformer,
                         <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;org.hibernate.loader.spi.AfterLoadAction&gt;&nbsp;afterLoadActions)</code>&nbsp;</td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>default <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>[]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/loader/ReactiveLoader.html#toParameterArray-org.hibernate.engine.spi.QueryParameters-org.hibernate.engine.spi.SharedSessionContractImplementor-">toParameterArray</a></span>(org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters,
                 org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session)</code>&nbsp;</td>
@@ -204,6 +212,15 @@ var activeTableTab = "activeTableTab";
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a name="isPostgresSQL-org.hibernate.engine.spi.SharedSessionContractImplementor-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isPostgresSQL</h4>
+<pre>default&nbsp;boolean&nbsp;isPostgresSQL(org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session)</pre>
+</li>
+</ul>
 <a name="doReactiveQueryAndInitializeNonLazyCollections-java.lang.String-org.hibernate.engine.spi.SharedSessionContractImplementor-org.hibernate.engine.spi.QueryParameters-">
 <!--   -->
 </a>
@@ -226,6 +243,15 @@ var activeTableTab = "activeTableTab";
                                                                                      org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters,
                                                                                      boolean&nbsp;returnProxies,
                                                                                      org.hibernate.transform.ResultTransformer&nbsp;forcedResultTransformer)</pre>
+</li>
+</ul>
+<a name="parameters--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>parameters</h4>
+<pre>org.hibernate.reactive.pool.impl.Parameters&nbsp;parameters()</pre>
 </li>
 </ul>
 <a name="executeReactiveQueryStatement-java.lang.String-org.hibernate.engine.spi.QueryParameters-java.util.List-org.hibernate.engine.spi.SharedSessionContractImplementor-">
