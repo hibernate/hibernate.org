@@ -257,10 +257,15 @@ project_hero_partial: project/hero-series.html.haml
           - if release[:summary]
             %p
               = release.summary
-          - if available && main_artifact_id
+          - if available && latest_release.version == version
             %p
-              %a.ui.label.blue{:href => maven_central_artifact_url(group_id, main_artifact_id, version)}
-                #{group_id}:#{main_artifact_id}:#{version}
+              %a.ui.small.right.labeled.icon.button{:href => '#get-it'}
+                %i.right.arrow.icon
+                How to get it
+              - if not getting_started_guide.nil?
+                %a.ui.small.right.labeled.icon.button{:href => '#getting_started'}
+                  %i.right.arrow.icon
+                  Getting started
           %p
             - if available
               - if maven_repo[:bintray]
