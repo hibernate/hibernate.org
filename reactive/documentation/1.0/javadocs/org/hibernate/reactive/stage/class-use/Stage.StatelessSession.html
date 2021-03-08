@@ -113,41 +113,16 @@
 </tbody>
 </table>
 <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
-<caption><span>Methods in <a href="../../../../../org/hibernate/reactive/stage/package-summary.html">org.hibernate.reactive.stage</a> that return types with arguments of type <a href="../../../../../org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></span><span class="tabEnd">&nbsp;</span></caption>
+<caption><span>Method parameters in <a href="../../../../../org/hibernate/reactive/stage/package-summary.html">org.hibernate.reactive.stage</a> with type arguments of type <a href="../../../../../org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="../../../../../org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">Stage.StatelessSession.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/stage/Stage.StatelessSession.html#delete-java.lang.Object-">delete</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;entity)</code>
-<div class="block">Delete a row.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="../../../../../org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">Stage.StatelessSession.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/stage/Stage.StatelessSession.html#insert-java.lang.Object-">insert</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;entity)</code>
-<div class="block">Insert a row.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="../../../../../org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">Stage.StatelessSession.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/stage/Stage.StatelessSession.html#refresh-java.lang.Object-">refresh</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;entity)</code>
-<div class="block">Refresh the entity instance state from the database.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="../../../../../org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">Stage.StatelessSession.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/stage/Stage.StatelessSession.html#refresh-java.lang.Object-org.hibernate.LockMode-">refresh</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;entity,
-       org.hibernate.LockMode&nbsp;lockMode)</code>
-<div class="block">Refresh the entity instance state from the database.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="../../../../../org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">Stage.StatelessSession.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/stage/Stage.StatelessSession.html#update-java.lang.Object-">update</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;entity)</code>
-<div class="block">Update a row.</div>
+<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;T&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">Stage.SessionFactory.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/stage/Stage.SessionFactory.html#withStatelessSession-java.util.function.Function-">withStatelessSession</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function">Function</a>&lt;<a href="../../../../../org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;T&gt;&gt;&nbsp;work)</code>
+<div class="block">Perform work using a <a href="../../../../../org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage"><code>stateless session</code></a>.</div>
 </td>
 </tr>
 </tbody>

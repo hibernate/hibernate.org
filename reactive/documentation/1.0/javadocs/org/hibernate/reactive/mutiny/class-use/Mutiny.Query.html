@@ -127,11 +127,19 @@
 <tr class="rowColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">Mutiny.StatelessSession.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#createNativeQuery-java.lang.String-">createNativeQuery</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryString)</code>
-<div class="block">Create an instance of <a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given  SQL query string,
+<div class="block">Create an instance of <a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given SQL query string,
  or SQL update, insert, or delete statement.</div>
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">Mutiny.Session.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html#createNativeQuery-java.lang.String-org.hibernate.reactive.common.AffectedEntities-">createNativeQuery</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryString,
+                 <a href="../../../../../org/hibernate/reactive/common/AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code>
+<div class="block">Create an instance of <a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given SQL query string,
+ or SQL update, insert, or delete statement.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">Mutiny.Session.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html#createNativeQuery-java.lang.String-java.lang.Class-">createNativeQuery</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryString,
                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;R&gt;&nbsp;resultType)</code>
@@ -139,12 +147,21 @@
  string, using the given <code>resultType</code> to interpret the results.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">Mutiny.StatelessSession.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#createNativeQuery-java.lang.String-java.lang.Class-">createNativeQuery</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryString,
                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;R&gt;&nbsp;resultType)</code>
 <div class="block">Create an instance of <a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given SQL query string,
  using the given <code>resultType</code> to interpret the results.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">Mutiny.Session.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html#createNativeQuery-java.lang.String-java.lang.Class-org.hibernate.reactive.common.AffectedEntities-">createNativeQuery</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryString,
+                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;R&gt;&nbsp;resultType,
+                 <a href="../../../../../org/hibernate/reactive/common/AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code>
+<div class="block">Create an instance of <a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given SQL query
+ string, using the given <code>resultType</code> to interpret the results.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -165,7 +182,22 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">Mutiny.Session.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html#createNativeQuery-java.lang.String-org.hibernate.reactive.common.ResultSetMapping-org.hibernate.reactive.common.AffectedEntities-">createNativeQuery</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryString,
+                 <a href="../../../../../org/hibernate/reactive/common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping,
+                 <a href="../../../../../org/hibernate/reactive/common/AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code>
+<div class="block">Create an instance of <a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given SQL query string,
+ using the given <a href="../../../../../org/hibernate/reactive/common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common"><code>ResultSetMapping</code></a> to interpret the result set.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">Mutiny.Session.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html#createQuery-javax.persistence.criteria.CriteriaDelete-">createQuery</a></span>(<a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/criteria/CriteriaDelete.html?is-external=true" title="class or interface in javax.persistence.criteria">CriteriaDelete</a>&lt;R&gt;&nbsp;criteriaDelete)</code>
+<div class="block">Create an instance of <a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given criteria delete.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">Mutiny.StatelessSession.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#createQuery-javax.persistence.criteria.CriteriaDelete-">createQuery</a></span>(<a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/criteria/CriteriaDelete.html?is-external=true" title="class or interface in javax.persistence.criteria">CriteriaDelete</a>&lt;R&gt;&nbsp;criteriaDelete)</code>
 <div class="block">Create an instance of <a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given criteria delete.</div>
 </td>
 </tr>
@@ -177,7 +209,19 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">Mutiny.StatelessSession.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#createQuery-javax.persistence.criteria.CriteriaQuery-">createQuery</a></span>(<a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/criteria/CriteriaQuery.html?is-external=true" title="class or interface in javax.persistence.criteria">CriteriaQuery</a>&lt;R&gt;&nbsp;criteriaQuery)</code>
+<div class="block">Create an instance of <a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given criteria query.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">Mutiny.Session.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html#createQuery-javax.persistence.criteria.CriteriaUpdate-">createQuery</a></span>(<a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/criteria/CriteriaUpdate.html?is-external=true" title="class or interface in javax.persistence.criteria">CriteriaUpdate</a>&lt;R&gt;&nbsp;criteriaUpdate)</code>
+<div class="block">Create an instance of <a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given criteria update.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">Mutiny.StatelessSession.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#createQuery-javax.persistence.criteria.CriteriaUpdate-">createQuery</a></span>(<a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/criteria/CriteriaUpdate.html?is-external=true" title="class or interface in javax.persistence.criteria">CriteriaUpdate</a>&lt;R&gt;&nbsp;criteriaUpdate)</code>
 <div class="block">Create an instance of <a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given criteria update.</div>
 </td>
 </tr>

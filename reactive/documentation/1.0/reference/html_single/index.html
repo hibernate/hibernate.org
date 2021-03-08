@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.6.1">
 <meta name="author" content="Gavin King">
-<title>Hibernate Reactive 1.0.0.Beta4 Reference Documentation</title>
+<title>Hibernate Reactive 1.0.0.CR1 Reference Documentation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <link rel="stylesheet" href="./asciidoctor.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Hibernate Reactive 1.0.0.Beta4 Reference Documentation</h1>
+<h1>Hibernate Reactive 1.0.0.CR1 Reference Documentation</h1>
 <div class="details">
 <span id="author" class="author">Gavin King</span><br>
 <span id="email" class="email"><a href="mailto:gavin@hibernate.org">gavin@hibernate.org</a></span><br>
@@ -120,8 +120,8 @@ to understand when you develop any large-scale project using Hibernate.</p>
 </div>
 <div class="paragraph">
 <p>But, before you start, we recommend taking a quick look at the very
-simplistic example program in the <a href="https://github.com/hibernate/hibernate-reactive/tree/master/example"><code>example</code></a> directory, which
-shows off all the "bits" you&#8217;ll need to get your own program up and
+simplistic example program in the <a href="https://github.com/hibernate/hibernate-reactive/tree/master/examples/session-example"><code>session-example</code></a> directory,
+which shows off all the "bits" you&#8217;ll need to get your own program up and
 running.</p>
 </div>
 <div class="sect2">
@@ -254,7 +254,7 @@ don&#8217;t need. Stick to the basics for now.
 </table>
 </div>
 <div class="paragraph">
-<p>There&#8217;s an example <a href="https://github.com/hibernate/hibernate-reactive/blob/master/example/build.gradle">Gradle build</a> included in the example program.</p>
+<p>There&#8217;s an example <a href="https://github.com/hibernate/hibernate-reactive/blob/master/examples/session-example/build.gradle">Gradle build</a> included in the example program.</p>
 </div>
 </div>
 <div class="sect3">
@@ -264,7 +264,7 @@ don&#8217;t need. Stick to the basics for now.
 document which must be placed, as usual, in the <code>/META-INF</code> directory.</p>
 </div>
 <div class="paragraph">
-<p>An example <a href="https://github.com/hibernate/hibernate-reactive/blob/master/example/src/main/resources/META-INF/persistence.xml"><code>persistence.xml</code></a> file is included in the example
+<p>An example <a href="https://github.com/hibernate/hibernate-reactive/blob/master/examples/session-example/src/main/resources/META-INF/persistence.xml"><code>persistence.xml</code></a> file is included in the example
 program.</p>
 </div>
 <div class="paragraph">
@@ -436,7 +436,7 @@ logger.hibernate.level = debug</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>An example <a href="https://github.com/hibernate/hibernate-reactive/blob/master/example/src/main/resources/log4j2.properties"><code>log4j2.properties</code></a> file is included in the example
+<p>An example <a href="https://github.com/hibernate/hibernate-reactive/blob/master/examples/session-example/src/main/resources/log4j2.properties"><code>log4j2.properties</code></a> file is included in the example
 program.</p>
 </div>
 <div class="paragraph">
@@ -651,8 +651,11 @@ class Author {
 annotations are already supported in Hibernate Reactive, though there are
 still a handful of limitations at this time.</p>
 </div>
+<div class="sect4">
+<h5 id="_common_jpa_annotations"><a class="anchor" href="#_common_jpa_annotations"></a>Common JPA annotations</h5>
 <div class="paragraph">
-<p>The most common and useful mapping annotations include:</p>
+<p>The most common and useful mapping annotations include these standard JPA
+annotations:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -669,57 +672,78 @@ still a handful of limitations at this time.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Entity</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Declares an entity class (a class with its own
-                      database table an persistent identity)</p></td>
+                        database table an persistent identity)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Embeddable</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Declares an embeddable class (a class without its
-                      own persistent identity or database table)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@MappedSuperclass</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A superclass that declares common persistent
+                        fields of its <code>@Entity</code> subclasses</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Embeddable</code> or
+  <code>@Embedded</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Declare an embeddable class (a class without its
+                        own persistent identity or database table)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Inheritance</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Defines how inheritance hierarchies should be
-                      mapped to database tables</p></td>
+                        mapped to database tables</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Id</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies that a field of an entity holds the
-                      persistent identity of the entity, and maps to
-                      the primary key of its table</p></td>
+                        persistent identity of the entity, and maps to
+                        the primary key of its table</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@IdClass</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies a class representing the composite
+                        primary key of the entity (for entities with
+                        multiple <code>@Id</code> fields)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@EmbeddedId</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies that a field of an entity holds the
-                      value of a composite primary key</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies that a field of an entity holds its
+                        composite primary key represented as an
+                        <code>@Embeddable</code> class</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@GeneratedValue</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies that an identifier is a system-generated
-                      surrogate key</p></td>
+                        surrogate key</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Version</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies that a field of an entity holds a version
-                      number used for optimistic locking</p></td>
+                        number used for optimistic locking</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Enumerated</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maps a field holding an <code>enum</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@ManyToOne</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Declares a many-to-one association to a second
-                      entity</p></td>
+                        entity</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@OneToOne</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Declares a one-to-one association to a second
-                      entity</p></td>
+                        entity</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@OneToMany</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Declares a one-to-many association to a second
-                      entity</p></td>
+                        entity</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Table</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies a mapping to a database table</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@SecondaryTable</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies a mapping to a second database table</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Column</code></p></td>
@@ -731,15 +755,110 @@ still a handful of limitations at this time.</p>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect4">
+<h5 id="_useful_hibernate_annotations"><a class="anchor" href="#_useful_hibernate_annotations"></a>Useful Hibernate annotations</h5>
+<div class="paragraph">
+<p>These Hibernate annotations are also quite useful to know about:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Annotation</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Cache</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enables second-level caching for an entity</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Formula</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maps field to SQL expression instead of a column</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@CreationTimestamp</code>, <code>@UpdateTimestamp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Automatically assign a timestamp to a field</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@OptimisticLocking</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enables optimistic locking for entities with no
+                                             <code>@Version</code> field</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@FilterDef</code> and <code>@Filter</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Define a Hibernate filter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@FetchProfile</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines a Hibernate fetch profile</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Generated</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines a property generated by the database</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@GenericGenerator</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Selects a custom id generator</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@DynamicInsert</code> and <code>@DynamicUpdate</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generate SQL dynamically with only needed columns
+                                             (instead of using static SQL generated at startup)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Fetch</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the fetching mode for an association</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@BatchSize</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the batch size for batch fetching an
+                                             association</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@SqlInsert</code>, <code>@SqlUpdate</code>, <code>@SqlDelete</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specify custom DML for entity operations</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@NaturalId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Marks a field or fields as an alternative "natural"
+                                             identifier (unique key) of the entity</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_bean_validation_annotations"><a class="anchor" href="#_bean_validation_annotations"></a>Bean Validation annotations</h5>
 <div class="paragraph">
 <p>Information about Bean Validation annotations may be found in the
 <a href="https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#chapter-bean-constraints">documentation for Hibernate Validator</a>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+for defining a required field, we prefer to use the <code>@NotNull</code>
+annotation from Bean Validation instead of JPA&#8217;s more verbose
+<code>@Basic(optional=false)</code>. Similarly, we prefer to define the length of a
+text field using <code>@Size(100)</code> rather than <code>@Column(length=100)</code>.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_getters_and_setters"><a class="anchor" href="#_getters_and_setters"></a>1.2.2. Getters and setters</h4>
 <div class="paragraph">
-<p>When using Hibernate Reactive <em>outside</em> of the Quarkus environment, you&#8217;ll
+<p>When using Hibernate Reactive <em>outside</em> the Quarkus environment, you&#8217;ll
 need to write your entity classes according to the usual JPA conventions,
 which require:</p>
 </div>
@@ -1194,6 +1313,12 @@ operations defined by JPA:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>detach(Object)</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Disassociate a persistent object from a session without
                          affecting the database</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>getReference(Class,id)</code> or
+  <code>getReference(Object)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obtain a reference to a persistent object without
+                           actually loading its state from the database</p></td>
 </tr>
 </tbody>
 </table>
@@ -1951,10 +2076,82 @@ so all operations are executed immediately when they&#8217;re explicitly called.
 </ul>
 </div>
 <div class="paragraph">
+<p>For a stateless session, you&#8217;re always working with detached objects. Thus,
+the programming model is a bit different:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Method name and parameters</th>
+<th class="tableblock halign-left valign-top">Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>get(Class, Object)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obtain a detached object, given its type and its id,
+                         by executing a <code>select</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fetch(Object)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fetch an association of a detached object</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>refresh(Object)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Refresh the state of a detached object by executing
+                         a <code>select</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>insert(Object)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Immediately <code>insert</code> the state of the given
+                         transient object into the database</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>update(Object)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Immediately <code>update</code> the state of the given detached
+                         object in the database</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete(Object)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Immediately <code>delete</code> the state of the given detached
+                         object from the database</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+There&#8217;s no <code>flush()</code> operation, and so <code>update()</code> is always explicit.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
 <p>In certain circumstances, this makes stateless sessions easier to work with,
 but with the caveat that a stateless session is much more vulnerable to data
 aliasing effects, since it&#8217;s easy to get two non-identical Java objects which
 both represent the same row of a database table.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+If you use <code>fetch()</code> in a stateless session, you can very easily
+obtain two objects representing the same database row!
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>In particular, the absence of a persistence context means that you can safely
@@ -1994,7 +2191,8 @@ limitations:</p>
 <p>persistence operations never cascade to associated instances,</p>
 </li>
 <li>
-<p>collections are completely ignored, and</p>
+<p>changes to <code>@ManyToMany</code> associations and <code>@ElementCollection</code>s cannot be made
+persistent, and</p>
 </li>
 <li>
 <p>operations performed via a stateless session bypass callbacks.</p>
@@ -2181,7 +2379,7 @@ documentation for details.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-02-10 18:18:52 UTC
+Last updated 2021-03-08 14:54:10 UTC
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">

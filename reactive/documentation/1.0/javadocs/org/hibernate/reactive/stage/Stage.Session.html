@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6,"i30":6,"i31":6,"i32":6,"i33":6,"i34":6,"i35":6,"i36":6,"i37":6,"i38":6,"i39":6,"i40":6,"i41":6,"i42":6,"i43":6,"i44":6,"i45":6,"i46":6,"i47":6,"i48":6,"i49":6,"i50":6,"i51":6,"i52":6,"i53":6,"i54":6,"i55":6,"i56":6};
+var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6,"i30":6,"i31":6,"i32":6,"i33":6,"i34":6,"i35":6,"i36":6,"i37":6,"i38":6,"i39":6,"i40":6,"i41":6,"i42":6,"i43":6,"i44":6,"i45":6,"i46":6,"i47":6,"i48":6,"i49":6,"i50":6,"i51":6,"i52":6,"i53":6,"i54":6,"i55":6,"i56":6,"i57":6,"i58":6,"i59":6,"i60":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -186,105 +186,131 @@ extends <a href="../../../../org/hibernate/reactive/common/AutoCloseable.html" t
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#createNamedQuery-java.lang.String-">createNamedQuery</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryName)</code>
-<div class="block">Create an instance of <code>Query</code> for the named query.</div>
+<div class="block">Create an instance of <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the named query.</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#createNamedQuery-java.lang.String-java.lang.Class-">createNamedQuery</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryName,
                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;R&gt;&nbsp;resultType)</code>
-<div class="block">Create an instance of <code>Query</code> for the named query.</div>
+<div class="block">Create an instance of <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the named query.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#createNativeQuery-java.lang.String-">createNativeQuery</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryString)</code>
-<div class="block">Create an instance of <code>Query</code> for the given SQL query string,
+<div class="block">Create an instance of <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
  or SQL update, insert, or delete statement.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#createNativeQuery-java.lang.String-java.lang.Class-">createNativeQuery</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryString,
-                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;R&gt;&nbsp;resultType)</code>
-<div class="block">Create an instance of <code>Query</code> for the given SQL query string,
- using the given <code>resultType</code> to interpret the results.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#createNativeQuery-java.lang.String-org.hibernate.reactive.common.AffectedEntities-">createNativeQuery</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryString,
+                 <a href="../../../../org/hibernate/reactive/common/AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code>
+<div class="block">Create an instance of <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
+ or SQL update, insert, or delete statement.</div>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#createNativeQuery-java.lang.String-org.hibernate.reactive.common.ResultSetMapping-">createNativeQuery</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryString,
-                 <a href="../../../../org/hibernate/reactive/common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping)</code>
-<div class="block">Create an instance of <code>Query</code> for the given SQL query string,
- using the given <a href="../../../../org/hibernate/reactive/common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common"><code>ResultSetMapping</code></a> to interpret the result set.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#createNativeQuery-java.lang.String-java.lang.Class-">createNativeQuery</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryString,
+                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;R&gt;&nbsp;resultType)</code>
+<div class="block">Create an instance of <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
+ using the given <code>resultType</code> to interpret the results.</div>
 </td>
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#createQuery-javax.persistence.criteria.CriteriaDelete-">createQuery</a></span>(<a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/criteria/CriteriaDelete.html?is-external=true" title="class or interface in javax.persistence.criteria">CriteriaDelete</a>&lt;R&gt;&nbsp;criteriaDelete)</code>
-<div class="block">Create an instance of <code>Query</code> for the given criteria delete.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#createNativeQuery-java.lang.String-java.lang.Class-org.hibernate.reactive.common.AffectedEntities-">createNativeQuery</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryString,
+                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;R&gt;&nbsp;resultType,
+                 <a href="../../../../org/hibernate/reactive/common/AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code>
+<div class="block">Create an instance of <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
+ using the given <code>resultType</code> to interpret the results.</div>
 </td>
 </tr>
 <tr id="i11" class="rowColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#createQuery-javax.persistence.criteria.CriteriaQuery-">createQuery</a></span>(<a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/criteria/CriteriaQuery.html?is-external=true" title="class or interface in javax.persistence.criteria">CriteriaQuery</a>&lt;R&gt;&nbsp;criteriaQuery)</code>
-<div class="block">Create an instance of <code>Query</code> for the given criteria query.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#createNativeQuery-java.lang.String-org.hibernate.reactive.common.ResultSetMapping-">createNativeQuery</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryString,
+                 <a href="../../../../org/hibernate/reactive/common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping)</code>
+<div class="block">Create an instance of <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
+ using the given <a href="../../../../org/hibernate/reactive/common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common"><code>ResultSetMapping</code></a> to interpret the result set.</div>
 </td>
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#createQuery-javax.persistence.criteria.CriteriaUpdate-">createQuery</a></span>(<a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/criteria/CriteriaUpdate.html?is-external=true" title="class or interface in javax.persistence.criteria">CriteriaUpdate</a>&lt;R&gt;&nbsp;criteriaUpdate)</code>
-<div class="block">Create an instance of <code>Query</code> for the given criteria update.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#createNativeQuery-java.lang.String-org.hibernate.reactive.common.ResultSetMapping-org.hibernate.reactive.common.AffectedEntities-">createNativeQuery</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryString,
+                 <a href="../../../../org/hibernate/reactive/common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping,
+                 <a href="../../../../org/hibernate/reactive/common/AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code>
+<div class="block">Create an instance of <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
+ using the given <a href="../../../../org/hibernate/reactive/common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common"><code>ResultSetMapping</code></a> to interpret the result set.</div>
 </td>
 </tr>
 <tr id="i13" class="rowColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#createQuery-java.lang.String-">createQuery</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryString)</code>
-<div class="block">Create an instance of <code>Query</code> for the given HQL/JPQL query
- string or HQL/JPQL update or delete statement.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#createQuery-javax.persistence.criteria.CriteriaDelete-">createQuery</a></span>(<a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/criteria/CriteriaDelete.html?is-external=true" title="class or interface in javax.persistence.criteria">CriteriaDelete</a>&lt;R&gt;&nbsp;criteriaDelete)</code>
+<div class="block">Create an instance of <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given criteria delete.</div>
 </td>
 </tr>
 <tr id="i14" class="altColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#createQuery-java.lang.String-java.lang.Class-">createQuery</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryString,
-           <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;R&gt;&nbsp;resultType)</code>
-<div class="block">Create an instance of <code>Query</code> for the given HQL/JPQL query
- string.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#createQuery-javax.persistence.criteria.CriteriaQuery-">createQuery</a></span>(<a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/criteria/CriteriaQuery.html?is-external=true" title="class or interface in javax.persistence.criteria">CriteriaQuery</a>&lt;R&gt;&nbsp;criteriaQuery)</code>
+<div class="block">Create an instance of <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given criteria query.</div>
 </td>
 </tr>
 <tr id="i15" class="rowColor">
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#createQuery-javax.persistence.criteria.CriteriaUpdate-">createQuery</a></span>(<a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/criteria/CriteriaUpdate.html?is-external=true" title="class or interface in javax.persistence.criteria">CriteriaUpdate</a>&lt;R&gt;&nbsp;criteriaUpdate)</code>
+<div class="block">Create an instance of <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given criteria update.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#createQuery-java.lang.String-">createQuery</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryString)</code>
+<div class="block">Create an instance of <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given HQL/JPQL query
+ string or HQL/JPQL update or delete statement.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#createQuery-java.lang.String-java.lang.Class-">createQuery</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryString,
+           <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;R&gt;&nbsp;resultType)</code>
+<div class="block">Create an instance of <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given HQL/JPQL query
+ string.</div>
+</td>
+</tr>
+<tr id="i18" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#detach-java.lang.Object-">detach</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;entity)</code>
 <div class="block">Remove this instance from the session cache.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#disableFetchProfile-java.lang.String-">disableFetchProfile</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
 <div class="block">Disable a particular fetch profile on this session, or do nothing if
  the requested fetch profile is not enabled.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#disableFilter-java.lang.String-">disableFilter</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filterName)</code>
 <div class="block">Disable the named filter for this session.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#enableFetchProfile-java.lang.String-">enableFetchProfile</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
 <div class="block">Enable a particular fetch profile on this session, or do nothing if
  requested fetch profile is already enabled.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>org.hibernate.Filter</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#enableFilter-java.lang.String-">enableFilter</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filterName)</code>
 <div class="block">Enable the named filter for this session.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>&lt;E,T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;T&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#fetch-E-javax.persistence.metamodel.Attribute-">fetch</a></span>(E&nbsp;entity,
      <a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/metamodel/Attribute.html?is-external=true" title="class or interface in javax.persistence.metamodel">Attribute</a>&lt;E,T&gt;&nbsp;field)</code>
@@ -292,13 +318,22 @@ extends <a href="../../../../org/hibernate/reactive/common/AutoCloseable.html" t
  <a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/metamodel/Attribute.html?is-external=true" title="class or interface in javax.persistence.metamodel"><code>attribute metamodel</code></a>.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;T&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#fetch-T-">fetch</a></span>(T&nbsp;association)</code>
 <div class="block">Asynchronously fetch an association that's configured for lazy loading.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i25" class="rowColor">
+<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#find-java.lang.Class-org.hibernate.reactive.common.Identifier-">find</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;entityClass,
+    <a href="../../../../org/hibernate/reactive/common/Identifier.html" title="class in org.hibernate.reactive.common">Identifier</a>&lt;T&gt;&nbsp;naturalId)</code>
+<div class="block">Asynchronously return the persistent instance of the given entity
+ class with the given natural identifiers, or null if there is no
+ such persistent instance.</div>
+</td>
+</tr>
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;T&gt;&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#find-java.lang.Class-java.lang.Object...-">find</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;entityClass,
     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>...&nbsp;ids)</code>
@@ -307,7 +342,7 @@ extends <a href="../../../../org/hibernate/reactive/common/AutoCloseable.html" t
  persistent instance.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;T&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#find-java.lang.Class-java.lang.Object-">find</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;entityClass,
     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;id)</code>
@@ -316,7 +351,7 @@ extends <a href="../../../../org/hibernate/reactive/common/AutoCloseable.html" t
  persistent instance.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;T&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#find-java.lang.Class-java.lang.Object-org.hibernate.LockMode-">find</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;entityClass,
     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;id,
@@ -325,7 +360,7 @@ extends <a href="../../../../org/hibernate/reactive/common/AutoCloseable.html" t
  class with the given identifier, requesting the given <code>LockMode</code>.</div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;T&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#find-javax.persistence.EntityGraph-java.lang.Object-">find</a></span>(<a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/EntityGraph.html?is-external=true" title="class or interface in javax.persistence">EntityGraph</a>&lt;T&gt;&nbsp;entityGraph,
     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;id)</code>
@@ -334,51 +369,51 @@ extends <a href="../../../../org/hibernate/reactive/common/AutoCloseable.html" t
  as a fetch plan.</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#flush--">flush</a></span>()</code>
 <div class="block">Force this session to flush asynchronously.</div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#getBatchSize--">getBatchSize</a></span>()</code>
 <div class="block">The session-level JDBC batch size, or <code>null</code> if it has not been
  overridden.</div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code>org.hibernate.CacheMode</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#getCacheMode--">getCacheMode</a></span>()</code>
 <div class="block">Get the current cache mode.</div>
 </td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i33" class="rowColor">
 <td class="colFirst"><code>org.hibernate.Filter</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#getEnabledFilter-java.lang.String-">getEnabledFilter</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filterName)</code>
 <div class="block">Retrieve a currently enabled filter by name.</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i34" class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/EntityGraph.html?is-external=true" title="class or interface in javax.persistence">EntityGraph</a>&lt;T&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#getEntityGraph-java.lang.Class-java.lang.String-">getEntityGraph</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;rootType,
               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;graphName)</code>
 <div class="block">Obtain a named <a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/EntityGraph.html?is-external=true" title="class or interface in javax.persistence"><code>EntityGraph</code></a></div>
 </td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i35" class="rowColor">
 <td class="colFirst"><code>org.hibernate.FlushMode</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#getFlushMode--">getFlushMode</a></span>()</code>
 <div class="block">Get the current flush mode for this session.</div>
 </td>
 </tr>
-<tr id="i32" class="altColor">
+<tr id="i36" class="altColor">
 <td class="colFirst"><code>org.hibernate.LockMode</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#getLockMode-java.lang.Object-">getLockMode</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;entity)</code>
 <div class="block">Determine the current lock mode of the given entity.</div>
 </td>
 </tr>
-<tr id="i33" class="rowColor">
+<tr id="i37" class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#getReference-java.lang.Class-java.lang.Object-">getReference</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;entityClass,
             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;id)</code>
@@ -386,15 +421,15 @@ extends <a href="../../../../org/hibernate/reactive/common/AutoCloseable.html" t
  given identifier, assuming that the instance exists.</div>
 </td>
 </tr>
-<tr id="i34" class="altColor">
+<tr id="i38" class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#getReference-T-">getReference</a></span>(T&nbsp;entity)</code>
-<div class="block">Return the persistent instance of with the same identity as the
- given instance, which might be detached, assuming that the instance
- is still persistent in the database.</div>
+<div class="block">Return the persistent instance with the same identity as the given
+ instance, which might be detached, assuming that the instance is
+ still persistent in the database.</div>
 </td>
 </tr>
-<tr id="i35" class="rowColor">
+<tr id="i39" class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="../../../../org/hibernate/reactive/common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;T&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#getResultSetMapping-java.lang.Class-java.lang.String-">getResultSetMapping</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;resultType,
                    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;mappingName)</code>
@@ -402,73 +437,73 @@ extends <a href="../../../../org/hibernate/reactive/common/AutoCloseable.html" t
  <a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/SqlResultSetMapping.html?is-external=true" title="class or interface in javax.persistence"><code>SqlResultSetMapping</code></a>.</div>
 </td>
 </tr>
-<tr id="i36" class="altColor">
+<tr id="i40" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#isDefaultReadOnly--">isDefaultReadOnly</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i37" class="rowColor">
+<tr id="i41" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#isFetchProfileEnabled-java.lang.String-">isFetchProfileEnabled</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
 <div class="block">Determine if the fetch profile with the given name is enabled for this
  session.</div>
 </td>
 </tr>
-<tr id="i38" class="altColor">
+<tr id="i42" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#isOpen--">isOpen</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i39" class="rowColor">
+<tr id="i43" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#isReadOnly-java.lang.Object-">isReadOnly</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;entityOrProxy)</code>
 <div class="block">Is the specified entity or proxy read-only?</div>
 </td>
 </tr>
-<tr id="i40" class="altColor">
+<tr id="i44" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#lock-java.lang.Object-org.hibernate.LockMode-">lock</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;entity,
     org.hibernate.LockMode&nbsp;lockMode)</code>
 <div class="block">Obtain the specified lock level upon the given object.</div>
 </td>
 </tr>
-<tr id="i41" class="rowColor">
+<tr id="i45" class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#merge-T...-">merge</a></span>(T...&nbsp;entities)</code>
 <div class="block">Merge multiple entity instances at once.</div>
 </td>
 </tr>
-<tr id="i42" class="altColor">
+<tr id="i46" class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;T&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#merge-T-">merge</a></span>(T&nbsp;entity)</code>
 <div class="block">Copy the state of the given object onto the persistent instance with
  the same identifier.</div>
 </td>
 </tr>
-<tr id="i43" class="rowColor">
+<tr id="i47" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#persist-java.lang.Object...-">persist</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>...&nbsp;entities)</code>
 <div class="block">Persist multiple transient entity instances at once.</div>
 </td>
 </tr>
-<tr id="i44" class="altColor">
+<tr id="i48" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#persist-java.lang.Object-">persist</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;entity)</code>
 <div class="block">Asynchronously persist the given transient instance, first assigning
  a generated identifier.</div>
 </td>
 </tr>
-<tr id="i45" class="rowColor">
+<tr id="i49" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#refresh-java.lang.Object...-">refresh</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>...&nbsp;entities)</code>
 <div class="block">Refresh multiple entity instances at once.</div>
 </td>
 </tr>
-<tr id="i46" class="altColor">
+<tr id="i50" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#refresh-java.lang.Object-">refresh</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;entity)</code>
 <div class="block">Re-read the state of the given instance from the underlying database.</div>
 </td>
 </tr>
-<tr id="i47" class="rowColor">
+<tr id="i51" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#refresh-java.lang.Object-org.hibernate.LockMode-">refresh</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;entity,
        org.hibernate.LockMode&nbsp;lockMode)</code>
@@ -476,45 +511,45 @@ extends <a href="../../../../org/hibernate/reactive/common/AutoCloseable.html" t
  requesting the given <code>LockMode</code>.</div>
 </td>
 </tr>
-<tr id="i48" class="altColor">
+<tr id="i52" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#remove-java.lang.Object...-">remove</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>...&nbsp;entities)</code>
 <div class="block">Remove multiple entity instances at once.</div>
 </td>
 </tr>
-<tr id="i49" class="rowColor">
+<tr id="i53" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#remove-java.lang.Object-">remove</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;entity)</code>
 <div class="block">Asynchronously remove a persistent instance from the datastore.</div>
 </td>
 </tr>
-<tr id="i50" class="altColor">
+<tr id="i54" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#setBatchSize-java.lang.Integer-">setBatchSize</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&nbsp;batchSize)</code>
 <div class="block">Set the session-level JDBC batch size, overriding the batch size set
  by the configuration property <code>hibernate.jdbc.batch_size</code>.</div>
 </td>
 </tr>
-<tr id="i51" class="rowColor">
+<tr id="i55" class="rowColor">
 <td class="colFirst"><code><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#setCacheMode-org.hibernate.CacheMode-">setCacheMode</a></span>(org.hibernate.CacheMode&nbsp;cacheMode)</code>
 <div class="block">Set the <code>cache mode</code> for this session.</div>
 </td>
 </tr>
-<tr id="i52" class="altColor">
+<tr id="i56" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#setDefaultReadOnly-boolean-">setDefaultReadOnly</a></span>(boolean&nbsp;readOnly)</code>
 <div class="block">Change the default for entities and proxies loaded into this session
  from modifiable to read-only mode, or from modifiable to read-only mode.</div>
 </td>
 </tr>
-<tr id="i53" class="rowColor">
+<tr id="i57" class="rowColor">
 <td class="colFirst"><code><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#setFlushMode-org.hibernate.FlushMode-">setFlushMode</a></span>(org.hibernate.FlushMode&nbsp;flushMode)</code>
 <div class="block">Set the <code>flush mode</code> for this session.</div>
 </td>
 </tr>
-<tr id="i54" class="altColor">
+<tr id="i58" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#setReadOnly-java.lang.Object-boolean-">setReadOnly</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;entityOrProxy,
            boolean&nbsp;readOnly)</code>
@@ -522,14 +557,14 @@ extends <a href="../../../../org/hibernate/reactive/common/AutoCloseable.html" t
  object to modifiable mode.</div>
 </td>
 </tr>
-<tr id="i55" class="rowColor">
+<tr id="i59" class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;T&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#unproxy-T-">unproxy</a></span>(T&nbsp;association)</code>
 <div class="block">Asynchronously fetch an association that's configured for lazy loading,
  and unwrap the underlying entity implementation from any proxy.</div>
 </td>
 </tr>
-<tr id="i56" class="altColor">
+<tr id="i60" class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;T&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#withTransaction-java.util.function.Function-">withTransaction</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function">Function</a>&lt;<a href="../../../../org/hibernate/reactive/stage/Stage.Transaction.html" title="interface in org.hibernate.reactive.stage">Stage.Transaction</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;T&gt;&gt;&nbsp;work)</code>
 <div class="block">Performs the given work within the scope of a database transaction,
@@ -644,6 +679,26 @@ extends <a href="../../../../org/hibernate/reactive/common/AutoCloseable.html" t
 </dl>
 </li>
 </ul>
+<a name="find-java.lang.Class-org.hibernate.reactive.common.Identifier-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>find</h4>
+<pre>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;T&gt;&nbsp;find(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;entityClass,
+                            <a href="../../../../org/hibernate/reactive/common/Identifier.html" title="class in org.hibernate.reactive.common">Identifier</a>&lt;T&gt;&nbsp;naturalId)</pre>
+<div class="block">Asynchronously return the persistent instance of the given entity
+ class with the given natural identifiers, or null if there is no
+ such persistent instance.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>entityClass</code> - The entity type</dd>
+<dd><code>naturalId</code> - the natural identifier</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a persistent instance or null via a <code>CompletionStage</code></dd>
+</dl>
+</li>
+</ul>
 <a name="getReference-java.lang.Class-java.lang.Object-">
 <!--   -->
 </a>
@@ -682,9 +737,9 @@ extends <a href="../../../../org/hibernate/reactive/common/AutoCloseable.html" t
 <li class="blockList">
 <h4>getReference</h4>
 <pre>&lt;T&gt;&nbsp;T&nbsp;getReference(T&nbsp;entity)</pre>
-<div class="block">Return the persistent instance of with the same identity as the
- given instance, which might be detached, assuming that the instance
- is still persistent in the database. This method never results in
+<div class="block">Return the persistent instance with the same identity as the given
+ instance, which might be detached, assuming that the instance is
+ still persistent in the database. This method never results in
  access to the underlying data store, and thus might return a proxy
  that must be initialized explicitly using <a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#fetch-T-"><code>fetch(Object)</code></a>.</div>
 <dl>
@@ -902,7 +957,7 @@ extends <a href="../../../../org/hibernate/reactive/common/AutoCloseable.html" t
  </ul>
 
  This operation cascades to associated instances if the association is
- mapped with <code>org.hibernate.annotations.CascadeType#LOCK</code>.</div>
+ mapped with <code>CascadeType.LOCK</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>entity</code> - a managed persistent instance</dd>
@@ -1029,15 +1084,15 @@ extends <a href="../../../../org/hibernate/reactive/common/AutoCloseable.html" t
 <li class="blockList">
 <h4>createQuery</h4>
 <pre>&lt;R&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createQuery(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryString)</pre>
-<div class="block">Create an instance of <code>Query</code> for the given HQL/JPQL query
+<div class="block">Create an instance of <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given HQL/JPQL query
  string or HQL/JPQL update or delete statement. In the case of an
- update or delete, the returned <code>Query</code> must be executed using
- <a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/Query.html?is-external=true#executeUpdate--" title="class or interface in javax.persistence"><code>Query.executeUpdate()</code></a> which returns an affected row count.</div>
+ update or delete, the returned <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> must be executed using
+ <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html#executeUpdate--"><code>Stage.Query.executeUpdate()</code></a> which returns an affected row count.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>queryString</code> - The HQL/JPQL query, update or delete statement</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The <code>Query</code> instance for manipulation and execution</dd>
+<dd>The <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> instance for manipulation and execution</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/EntityManager.html?is-external=true#createQuery-java.lang.String-" title="class or interface in javax.persistence"><code>EntityManager.createQuery(String)</code></a></dd>
 </dl>
@@ -1051,14 +1106,14 @@ extends <a href="../../../../org/hibernate/reactive/common/AutoCloseable.html" t
 <h4>createQuery</h4>
 <pre>&lt;R&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createQuery(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryString,
                                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;R&gt;&nbsp;resultType)</pre>
-<div class="block">Create an instance of <code>Query</code> for the given HQL/JPQL query
+<div class="block">Create an instance of <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given HQL/JPQL query
  string.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>queryString</code> - The HQL/JPQL query</dd>
 <dd><code>resultType</code> - the Java type returned in each row of query results</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The <code>Query</code> instance for manipulation and execution</dd>
+<dd>The <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> instance for manipulation and execution</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/EntityManager.html?is-external=true#createQuery-java.lang.String-java.lang.Class-" title="class or interface in javax.persistence"><code>EntityManager.createQuery(String, Class)</code></a></dd>
 </dl>
@@ -1071,12 +1126,12 @@ extends <a href="../../../../org/hibernate/reactive/common/AutoCloseable.html" t
 <li class="blockList">
 <h4>createNamedQuery</h4>
 <pre>&lt;R&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createNamedQuery(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryName)</pre>
-<div class="block">Create an instance of <code>Query</code> for the named query.</div>
+<div class="block">Create an instance of <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the named query.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>queryName</code> - The name of the query</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The <code>Query</code> instance for manipulation and execution</dd>
+<dd>The <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> instance for manipulation and execution</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/EntityManager.html?is-external=true#createQuery-java.lang.String-" title="class or interface in javax.persistence"><code>EntityManager.createQuery(String)</code></a></dd>
 </dl>
@@ -1090,13 +1145,13 @@ extends <a href="../../../../org/hibernate/reactive/common/AutoCloseable.html" t
 <h4>createNamedQuery</h4>
 <pre>&lt;R&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createNamedQuery(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryName,
                                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;R&gt;&nbsp;resultType)</pre>
-<div class="block">Create an instance of <code>Query</code> for the named query.</div>
+<div class="block">Create an instance of <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the named query.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>queryName</code> - The name of the query</dd>
 <dd><code>resultType</code> - the Java type returned in each row of query results</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The <code>Query</code> instance for manipulation and execution</dd>
+<dd>The <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> instance for manipulation and execution</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/EntityManager.html?is-external=true#createQuery-java.lang.String-java.lang.Class-" title="class or interface in javax.persistence"><code>EntityManager.createQuery(String, Class)</code></a></dd>
 </dl>
@@ -1110,7 +1165,7 @@ extends <a href="../../../../org/hibernate/reactive/common/AutoCloseable.html" t
 <h4>createNativeQuery</h4>
 <pre>&lt;R&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createNativeQuery(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryString,
                                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;R&gt;&nbsp;resultType)</pre>
-<div class="block">Create an instance of <code>Query</code> for the given SQL query string,
+<div class="block">Create an instance of <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
  using the given <code>resultType</code> to interpret the results.
 
  <ul>
@@ -1129,7 +1184,45 @@ extends <a href="../../../../org/hibernate/reactive/common/AutoCloseable.html" t
 <dd><code>queryString</code> - The SQL query</dd>
 <dd><code>resultType</code> - the Java type returned in each row of query results</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The <code>Query</code> instance for manipulation and execution</dd>
+<dd>The <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> instance for manipulation and execution</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/EntityManager.html?is-external=true#createNativeQuery-java.lang.String-java.lang.Class-" title="class or interface in javax.persistence"><code>EntityManager.createNativeQuery(String, Class)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="createNativeQuery-java.lang.String-java.lang.Class-org.hibernate.reactive.common.AffectedEntities-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createNativeQuery</h4>
+<pre>&lt;R&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createNativeQuery(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryString,
+                                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;R&gt;&nbsp;resultType,
+                                     <a href="../../../../org/hibernate/reactive/common/AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</pre>
+<div class="block">Create an instance of <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
+ using the given <code>resultType</code> to interpret the results.
+
+ <ul>
+ <li>If the given result type is <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang"><code>Object</code></a>, or a built-in type
+ such as <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang"><code>String</code></a> or <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang"><code>Integer</code></a>, the result set must
+ have a single column, which will be returned as a scalar.</li>
+ <li>If the given result type is <code>Object[]</code>, then the result set
+ must have multiple columns, which will be returned as elements of
+ arrays of type <code>Object[]</code>.</li>
+ <li>Otherwise, the given result type must be an entity class, in which
+ case the result set column aliases must map to the fields of the
+ entity, and the query will return instances of the entity.</li>
+ </ul>
+
+ Any <a href="../../../../org/hibernate/reactive/common/AffectedEntities.html" title="class in org.hibernate.reactive.common"><code>affected entities</code></a> are synchronized with
+ the database before execution of the query.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>queryString</code> - The SQL query</dd>
+<dd><code>resultType</code> - the Java type returned in each row of query results</dd>
+<dd><code>affectedEntities</code> - The entities which are affected by the query</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> instance for manipulation and execution</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/EntityManager.html?is-external=true#createNativeQuery-java.lang.String-java.lang.Class-" title="class or interface in javax.persistence"><code>EntityManager.createNativeQuery(String, Class)</code></a></dd>
 </dl>
@@ -1143,14 +1236,41 @@ extends <a href="../../../../org/hibernate/reactive/common/AutoCloseable.html" t
 <h4>createNativeQuery</h4>
 <pre>&lt;R&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createNativeQuery(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryString,
                                      <a href="../../../../org/hibernate/reactive/common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping)</pre>
-<div class="block">Create an instance of <code>Query</code> for the given SQL query string,
+<div class="block">Create an instance of <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
  using the given <a href="../../../../org/hibernate/reactive/common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common"><code>ResultSetMapping</code></a> to interpret the result set.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>queryString</code> - The SQL query</dd>
 <dd><code>resultSetMapping</code> - the result set mapping</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The <code>Query</code> instance for manipulation and execution</dd>
+<dd>The <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> instance for manipulation and execution</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#getResultSetMapping-java.lang.Class-java.lang.String-"><code>getResultSetMapping(Class, String)</code></a>, 
+<a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/EntityManager.html?is-external=true#createNativeQuery-java.lang.String-java.lang.String-" title="class or interface in javax.persistence"><code>EntityManager.createNativeQuery(String, String)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="createNativeQuery-java.lang.String-org.hibernate.reactive.common.ResultSetMapping-org.hibernate.reactive.common.AffectedEntities-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createNativeQuery</h4>
+<pre>&lt;R&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createNativeQuery(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryString,
+                                     <a href="../../../../org/hibernate/reactive/common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping,
+                                     <a href="../../../../org/hibernate/reactive/common/AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</pre>
+<div class="block">Create an instance of <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
+ using the given <a href="../../../../org/hibernate/reactive/common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common"><code>ResultSetMapping</code></a> to interpret the result set.
+ <p>
+ Any <a href="../../../../org/hibernate/reactive/common/AffectedEntities.html" title="class in org.hibernate.reactive.common"><code>affected entities</code></a> are synchronized with
+ the database before execution of the query.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>queryString</code> - The SQL query</dd>
+<dd><code>resultSetMapping</code> - the result set mapping</dd>
+<dd><code>affectedEntities</code> - The entities which are affected by the query</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> instance for manipulation and execution</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#getResultSetMapping-java.lang.Class-java.lang.String-"><code>getResultSetMapping(Class, String)</code></a>, 
 <a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/EntityManager.html?is-external=true#createNativeQuery-java.lang.String-java.lang.String-" title="class or interface in javax.persistence"><code>EntityManager.createNativeQuery(String, String)</code></a></dd>
@@ -1164,10 +1284,10 @@ extends <a href="../../../../org/hibernate/reactive/common/AutoCloseable.html" t
 <li class="blockList">
 <h4>createNativeQuery</h4>
 <pre>&lt;R&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createNativeQuery(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryString)</pre>
-<div class="block">Create an instance of <code>Query</code> for the given SQL query string,
+<div class="block">Create an instance of <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
  or SQL update, insert, or delete statement. In the case of an update,
- insert, or delete, the returned <code>Query</code> must be executed using
- <a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/Query.html?is-external=true#executeUpdate--" title="class or interface in javax.persistence"><code>Query.executeUpdate()</code></a> which returns an affected row count.
+ insert, or delete, the returned <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> must be executed using
+ <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html#executeUpdate--"><code>Stage.Query.executeUpdate()</code></a> which returns an affected row count.
  In the case of a query:
 
  <ul>
@@ -1182,6 +1302,36 @@ extends <a href="../../../../org/hibernate/reactive/common/AutoCloseable.html" t
 </dl>
 </li>
 </ul>
+<a name="createNativeQuery-java.lang.String-org.hibernate.reactive.common.AffectedEntities-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createNativeQuery</h4>
+<pre>&lt;R&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createNativeQuery(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryString,
+                                     <a href="../../../../org/hibernate/reactive/common/AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</pre>
+<div class="block">Create an instance of <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
+ or SQL update, insert, or delete statement. In the case of an update,
+ insert, or delete, the returned <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> must be executed using
+ <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html#executeUpdate--"><code>Stage.Query.executeUpdate()</code></a> which returns an affected row count.
+ In the case of a query:
+
+ <ul>
+ <li>If the result set has a single column, the results will be returned
+ as scalars.</li>
+ <li>Otherwise, if the result set has multiple columns, the results will
+ be returned as elements of arrays of type <code>Object[]</code>.</li>
+ </ul>
+
+ Any <a href="../../../../org/hibernate/reactive/common/AffectedEntities.html" title="class in org.hibernate.reactive.common"><code>affected entities</code></a> are synchronized with
+ the database before execution of the statement.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>queryString</code> - The SQL select, update, insert, or delete statement</dd>
+<dd><code>affectedEntities</code> - The entities which are affected by the statement</dd>
+</dl>
+</li>
+</ul>
 <a name="createQuery-javax.persistence.criteria.CriteriaQuery-">
 <!--   -->
 </a>
@@ -1189,12 +1339,12 @@ extends <a href="../../../../org/hibernate/reactive/common/AutoCloseable.html" t
 <li class="blockList">
 <h4>createQuery</h4>
 <pre>&lt;R&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createQuery(<a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/criteria/CriteriaQuery.html?is-external=true" title="class or interface in javax.persistence.criteria">CriteriaQuery</a>&lt;R&gt;&nbsp;criteriaQuery)</pre>
-<div class="block">Create an instance of <code>Query</code> for the given criteria query.</div>
+<div class="block">Create an instance of <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given criteria query.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>criteriaQuery</code> - The <a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/criteria/CriteriaQuery.html?is-external=true" title="class or interface in javax.persistence.criteria"><code>CriteriaQuery</code></a></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The <code>Query</code> instance for manipulation and execution</dd>
+<dd>The <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> instance for manipulation and execution</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/EntityManager.html?is-external=true#createQuery-java.lang.String-" title="class or interface in javax.persistence"><code>EntityManager.createQuery(String)</code></a></dd>
 </dl>
@@ -1207,12 +1357,12 @@ extends <a href="../../../../org/hibernate/reactive/common/AutoCloseable.html" t
 <li class="blockList">
 <h4>createQuery</h4>
 <pre>&lt;R&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createQuery(<a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/criteria/CriteriaUpdate.html?is-external=true" title="class or interface in javax.persistence.criteria">CriteriaUpdate</a>&lt;R&gt;&nbsp;criteriaUpdate)</pre>
-<div class="block">Create an instance of <code>Query</code> for the given criteria update.</div>
+<div class="block">Create an instance of <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given criteria update.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>criteriaUpdate</code> - The <a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/criteria/CriteriaUpdate.html?is-external=true" title="class or interface in javax.persistence.criteria"><code>CriteriaUpdate</code></a></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The <code>Query</code> instance for manipulation and execution</dd>
+<dd>The <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> instance for manipulation and execution</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/EntityManager.html?is-external=true#createQuery-java.lang.String-" title="class or interface in javax.persistence"><code>EntityManager.createQuery(String)</code></a></dd>
 </dl>
@@ -1225,12 +1375,12 @@ extends <a href="../../../../org/hibernate/reactive/common/AutoCloseable.html" t
 <li class="blockList">
 <h4>createQuery</h4>
 <pre>&lt;R&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createQuery(<a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/criteria/CriteriaDelete.html?is-external=true" title="class or interface in javax.persistence.criteria">CriteriaDelete</a>&lt;R&gt;&nbsp;criteriaDelete)</pre>
-<div class="block">Create an instance of <code>Query</code> for the given criteria delete.</div>
+<div class="block">Create an instance of <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given criteria delete.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>criteriaDelete</code> - The <a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/criteria/CriteriaDelete.html?is-external=true" title="class or interface in javax.persistence.criteria"><code>CriteriaDelete</code></a></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The <code>Query</code> instance for manipulation and execution</dd>
+<dd>The <a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> instance for manipulation and execution</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/EntityManager.html?is-external=true#createQuery-java.lang.String-" title="class or interface in javax.persistence"><code>EntityManager.createQuery(String)</code></a></dd>
 </dl>

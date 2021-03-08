@@ -157,54 +157,54 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/engine/ReactiveActionQueue.html#addAction-org.hibernate.action.internal.OrphanRemovalAction-">addAction</a></span>(org.hibernate.action.internal.OrphanRemovalAction&nbsp;action)</code>
-<div class="block">Adds an orphan removal action</div>
-</td>
-</tr>
-<tr id="i2" class="altColor">
-<td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/engine/ReactiveActionQueue.html#addAction-org.hibernate.action.internal.QueuedOperationCollectionAction-">addAction</a></span>(org.hibernate.action.internal.QueuedOperationCollectionAction&nbsp;action)</code>
 <div class="block">Adds an action relating to a collection queued operation (extra lazy).</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/engine/ReactiveActionQueue.html#addAction-org.hibernate.reactive.engine.impl.ReactiveCollectionRecreateAction-">addAction</a></span>(org.hibernate.reactive.engine.impl.ReactiveCollectionRecreateAction&nbsp;action)</code>
 <div class="block">Adds a collection (re)create action</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/engine/ReactiveActionQueue.html#addAction-org.hibernate.reactive.engine.impl.ReactiveCollectionRemoveAction-">addAction</a></span>(org.hibernate.reactive.engine.impl.ReactiveCollectionRemoveAction&nbsp;action)</code>
 <div class="block">Adds a collection remove action</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/engine/ReactiveActionQueue.html#addAction-org.hibernate.reactive.engine.impl.ReactiveCollectionUpdateAction-">addAction</a></span>(org.hibernate.reactive.engine.impl.ReactiveCollectionUpdateAction&nbsp;action)</code>
 <div class="block">Adds a collection update action</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/engine/ReactiveActionQueue.html#addAction-org.hibernate.reactive.engine.impl.ReactiveEntityDeleteAction-">addAction</a></span>(org.hibernate.reactive.engine.impl.ReactiveEntityDeleteAction&nbsp;action)</code>
 <div class="block">Adds an entity delete action</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/engine/ReactiveActionQueue.html#addAction-org.hibernate.reactive.engine.impl.ReactiveEntityIdentityInsertAction-">addAction</a></span>(org.hibernate.reactive.engine.impl.ReactiveEntityIdentityInsertAction&nbsp;action)</code>
 <div class="block">Adds an entity (IDENTITY) insert action</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/engine/ReactiveActionQueue.html#addAction-org.hibernate.reactive.engine.impl.ReactiveEntityRegularInsertAction-">addAction</a></span>(org.hibernate.reactive.engine.impl.ReactiveEntityRegularInsertAction&nbsp;action)</code>&nbsp;</td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/engine/ReactiveActionQueue.html#addAction-org.hibernate.reactive.engine.impl.ReactiveEntityUpdateAction-">addAction</a></span>(org.hibernate.reactive.engine.impl.ReactiveEntityUpdateAction&nbsp;action)</code>
 <div class="block">Adds an entity update action</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/engine/ReactiveActionQueue.html#addAction-org.hibernate.reactive.engine.impl.ReactiveOrphanRemovalAction-">addAction</a></span>(org.hibernate.reactive.engine.impl.ReactiveOrphanRemovalAction&nbsp;action)</code>
+<div class="block">Adds an orphan removal action</div>
 </td>
 </tr>
 <tr id="i10" class="altColor">
@@ -435,13 +435,13 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </dl>
 </li>
 </ul>
-<a name="addAction-org.hibernate.action.internal.OrphanRemovalAction-">
+<a name="addAction-org.hibernate.reactive.engine.impl.ReactiveOrphanRemovalAction-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>addAction</h4>
-<pre>public&nbsp;void&nbsp;addAction(org.hibernate.action.internal.OrphanRemovalAction&nbsp;action)</pre>
+<pre>public&nbsp;void&nbsp;addAction(org.hibernate.reactive.engine.impl.ReactiveOrphanRemovalAction&nbsp;action)</pre>
 <div class="block">Adds an orphan removal action</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>

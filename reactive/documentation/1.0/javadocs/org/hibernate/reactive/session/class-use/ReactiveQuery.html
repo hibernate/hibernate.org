@@ -123,12 +123,12 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/hibernate/reactive/session/ReactiveQuery.html" title="interface in org.hibernate.reactive.session">ReactiveQuery</a>&lt;<a href="../../../../../org/hibernate/reactive/session/Criteria.html" title="type parameter in Criteria">R</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">Criteria.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/session/Criteria.html#build-org.hibernate.reactive.session.impl.CriteriaQueryRenderingContext-org.hibernate.reactive.session.ReactiveSession-">build</a></span>(org.hibernate.reactive.session.impl.CriteriaQueryRenderingContext&nbsp;context,
-     <a href="../../../../../org/hibernate/reactive/session/ReactiveSession.html" title="interface in org.hibernate.reactive.session">ReactiveSession</a>&nbsp;session)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">Criteria.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/session/Criteria.html#build-org.hibernate.reactive.session.impl.CriteriaQueryRenderingContext-org.hibernate.reactive.session.ReactiveQueryExecutor-">build</a></span>(org.hibernate.reactive.session.impl.CriteriaQueryRenderingContext&nbsp;context,
+     <a href="../../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html" title="interface in org.hibernate.reactive.session">ReactiveQueryExecutor</a>&nbsp;session)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="../../../../../org/hibernate/reactive/session/ReactiveQuery.html" title="interface in org.hibernate.reactive.session">ReactiveQuery</a>&lt;T&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">ReactiveSession.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/session/ReactiveSession.html#createReactiveCriteriaQuery-java.lang.String-java.lang.Class-org.hibernate.reactive.session.CriteriaQueryOptions-">createReactiveCriteriaQuery</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;jpaqlString,
+<td class="colLast"><span class="typeNameLabel">ReactiveQueryExecutor.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html#createReactiveCriteriaQuery-java.lang.String-java.lang.Class-org.hibernate.reactive.session.CriteriaQueryOptions-">createReactiveCriteriaQuery</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;jpaqlString,
                            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;resultClass,
                            <a href="../../../../../org/hibernate/reactive/session/CriteriaQueryOptions.html" title="interface in org.hibernate.reactive.session">CriteriaQueryOptions</a>&nbsp;queryOptions)</code>&nbsp;</td>
 </tr>
@@ -152,7 +152,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../../org/hibernate/reactive/session/ReactiveQuery.html" title="interface in org.hibernate.reactive.session">ReactiveQuery</a>&lt;R&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">ReactiveSession.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/session/ReactiveSession.html#createReactiveQuery-org.hibernate.reactive.session.Criteria-">createReactiveQuery</a></span>(<a href="../../../../../org/hibernate/reactive/session/Criteria.html" title="interface in org.hibernate.reactive.session">Criteria</a>&lt;R&gt;&nbsp;criteria)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">ReactiveQueryExecutor.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html#createReactiveQuery-org.hibernate.reactive.session.Criteria-">createReactiveQuery</a></span>(<a href="../../../../../org/hibernate/reactive/session/Criteria.html" title="interface in org.hibernate.reactive.session">Criteria</a>&lt;R&gt;&nbsp;criteria)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../../org/hibernate/reactive/session/ReactiveQuery.html" title="interface in org.hibernate.reactive.session">ReactiveQuery</a>&lt;R&gt;</code></td>
@@ -235,9 +235,13 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/hibernate/reactive/session/ReactiveQuery.html" title="interface in org.hibernate.reactive.session">ReactiveQuery</a>&lt;<a href="../../../../../org/hibernate/reactive/session/ReactiveQuery.html" title="type parameter in ReactiveQuery">R</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">ReactiveQuery.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/session/ReactiveQuery.html#setReadOnly-boolean-">setReadOnly</a></span>(boolean&nbsp;readOnly)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">ReactiveQuery.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/session/ReactiveQuery.html#setQuerySpaces-java.lang.String:A-">setQuerySpaces</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;querySpaces)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/hibernate/reactive/session/ReactiveQuery.html" title="interface in org.hibernate.reactive.session">ReactiveQuery</a>&lt;<a href="../../../../../org/hibernate/reactive/session/ReactiveQuery.html" title="type parameter in ReactiveQuery">R</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">ReactiveQuery.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/session/ReactiveQuery.html#setReadOnly-boolean-">setReadOnly</a></span>(boolean&nbsp;readOnly)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/hibernate/reactive/session/ReactiveQuery.html" title="interface in org.hibernate.reactive.session">ReactiveQuery</a>&lt;<a href="../../../../../org/hibernate/reactive/session/ReactiveQuery.html" title="type parameter in ReactiveQuery">R</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">ReactiveQuery.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/session/ReactiveQuery.html#setResultTransformer-org.hibernate.transform.ResultTransformer-">setResultTransformer</a></span>(org.hibernate.transform.ResultTransformer&nbsp;resultTransformer)</code>&nbsp;</td>
 </tr>

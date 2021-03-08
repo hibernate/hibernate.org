@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6};
+var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -170,32 +170,54 @@ extends <a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecuto
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveDelete-java.lang.Object-">reactiveDelete</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;entity)</code>&nbsp;</td>
 </tr>
 <tr id="i8" class="altColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;T&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveGet-java.lang.Class-java.lang.Object-">reactiveGet</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;entityClass,
-           <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;id)</code>&nbsp;</td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveDeleteAll-java.lang.Object...-">reactiveDeleteAll</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>...&nbsp;entities)</code>&nbsp;</td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;T&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveGet-java.lang.Class-java.lang.Object-org.hibernate.LockMode-">reactiveGet</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;entityClass,
-           <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;id,
-           org.hibernate.LockMode&nbsp;lockMode)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveFetch-T-boolean-">reactiveFetch</a></span>(T&nbsp;association,
+             boolean&nbsp;unproxy)</code>&nbsp;</td>
 </tr>
 <tr id="i10" class="altColor">
+<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveGet-java.lang.Class-java.lang.Object-">reactiveGet</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;? extends T&gt;&nbsp;entityClass,
+           <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;id)</code>&nbsp;</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveGet-java.lang.Class-java.lang.Object-org.hibernate.LockMode-javax.persistence.EntityGraph-">reactiveGet</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;? extends T&gt;&nbsp;entityClass,
+           <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;id,
+           org.hibernate.LockMode&nbsp;lockMode,
+           <a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/EntityGraph.html?is-external=true" title="class or interface in javax.persistence">EntityGraph</a>&lt;T&gt;&nbsp;fetchGraph)</code>&nbsp;</td>
+</tr>
+<tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveInsert-java.lang.Object-">reactiveInsert</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;entity)</code>&nbsp;</td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveInsertAll-java.lang.Object...-">reactiveInsertAll</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>...&nbsp;entities)</code>&nbsp;</td>
+</tr>
+<tr id="i14" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveRefresh-java.lang.Object-">reactiveRefresh</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;entity)</code>&nbsp;</td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveRefresh-java.lang.Object-org.hibernate.LockMode-">reactiveRefresh</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;entity,
                org.hibernate.LockMode&nbsp;lockMode)</code>&nbsp;</td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i16" class="altColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveRefreshAll-java.lang.Object...-">reactiveRefreshAll</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>...&nbsp;entities)</code>&nbsp;</td>
+</tr>
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveUpdate-java.lang.Object-">reactiveUpdate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;entity)</code>&nbsp;</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveUpdateAll-java.lang.Object...-">reactiveUpdateAll</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>...&nbsp;entities)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -203,7 +225,7 @@ extends <a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecuto
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;org.hibernate.reactive.session.<a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html" title="interface in org.hibernate.reactive.session">ReactiveQueryExecutor</a></h3>
-<code><a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html#addBulkCleanupAction-org.hibernate.action.internal.BulkOperationCleanupAction-">addBulkCleanupAction</a>, <a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html#executeReactiveUpdate-org.hibernate.engine.query.spi.sql.NativeSQLQuerySpecification-org.hibernate.engine.spi.QueryParameters-">executeReactiveUpdate</a>, <a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html#executeReactiveUpdate-java.lang.String-org.hibernate.engine.spi.QueryParameters-">executeReactiveUpdate</a>, <a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html#getDialect--">getDialect</a>, <a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html#getFactory--">getFactory</a>, <a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html#getResultSetMapping-java.lang.Class-java.lang.String-">getResultSetMapping</a>, <a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html#getSharedContract--">getSharedContract</a>, <a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html#reactiveList-org.hibernate.engine.query.spi.sql.NativeSQLQuerySpecification-org.hibernate.engine.spi.QueryParameters-">reactiveList</a>, <a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html#reactiveList-java.lang.String-org.hibernate.engine.spi.QueryParameters-">reactiveList</a></code></li>
+<code><a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html#addBulkCleanupAction-org.hibernate.action.internal.BulkOperationCleanupAction-">addBulkCleanupAction</a>, <a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html#createEntityGraph-java.lang.Class-">createEntityGraph</a>, <a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html#createEntityGraph-java.lang.Class-java.lang.String-">createEntityGraph</a>, <a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html#createReactiveCriteriaQuery-java.lang.String-java.lang.Class-org.hibernate.reactive.session.CriteriaQueryOptions-">createReactiveCriteriaQuery</a>, <a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html#createReactiveQuery-org.hibernate.reactive.session.Criteria-">createReactiveQuery</a>, <a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html#executeReactiveUpdate-org.hibernate.engine.query.spi.sql.NativeSQLQuerySpecification-org.hibernate.engine.spi.QueryParameters-">executeReactiveUpdate</a>, <a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html#executeReactiveUpdate-java.lang.String-org.hibernate.engine.spi.QueryParameters-">executeReactiveUpdate</a>, <a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html#getDialect--">getDialect</a>, <a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html#getEntityGraph-java.lang.Class-java.lang.String-">getEntityGraph</a>, <a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html#getFactory--">getFactory</a>, <a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html#getResultSetMapping-java.lang.Class-java.lang.String-">getResultSetMapping</a>, <a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html#getSharedContract--">getSharedContract</a>, <a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html#reactiveInternalLoad-java.lang.String-java.io.Serializable-boolean-boolean-">reactiveInternalLoad</a>, <a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html#reactiveList-org.hibernate.engine.query.spi.sql.NativeSQLQuerySpecification-org.hibernate.engine.spi.QueryParameters-">reactiveList</a>, <a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html#reactiveList-java.lang.String-org.hibernate.engine.spi.QueryParameters-">reactiveList</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.org.hibernate.reactive.session.ReactiveConnectionSupplier">
@@ -232,19 +254,20 @@ extends <a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecuto
 <ul class="blockList">
 <li class="blockList">
 <h4>reactiveGet</h4>
-<pre>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;T&gt;&nbsp;reactiveGet(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;entityClass,
+<pre>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;T&gt;&nbsp;reactiveGet(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;? extends T&gt;&nbsp;entityClass,
                                    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;id)</pre>
 </li>
 </ul>
-<a name="reactiveGet-java.lang.Class-java.lang.Object-org.hibernate.LockMode-">
+<a name="reactiveGet-java.lang.Class-java.lang.Object-org.hibernate.LockMode-javax.persistence.EntityGraph-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>reactiveGet</h4>
-<pre>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;T&gt;&nbsp;reactiveGet(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;entityClass,
+<pre>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;T&gt;&nbsp;reactiveGet(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;? extends T&gt;&nbsp;entityClass,
                                    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;id,
-                                   org.hibernate.LockMode&nbsp;lockMode)</pre>
+                                   org.hibernate.LockMode&nbsp;lockMode,
+                                   <a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/EntityGraph.html?is-external=true" title="class or interface in javax.persistence">EntityGraph</a>&lt;T&gt;&nbsp;fetchGraph)</pre>
 </li>
 </ul>
 <a name="reactiveInsert-java.lang.Object-">
@@ -293,6 +316,42 @@ extends <a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecuto
                                       org.hibernate.LockMode&nbsp;lockMode)</pre>
 </li>
 </ul>
+<a name="reactiveInsertAll-java.lang.Object...-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reactiveInsertAll</h4>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;&nbsp;reactiveInsertAll(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>...&nbsp;entities)</pre>
+</li>
+</ul>
+<a name="reactiveUpdateAll-java.lang.Object...-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reactiveUpdateAll</h4>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;&nbsp;reactiveUpdateAll(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>...&nbsp;entities)</pre>
+</li>
+</ul>
+<a name="reactiveDeleteAll-java.lang.Object...-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reactiveDeleteAll</h4>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;&nbsp;reactiveDeleteAll(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>...&nbsp;entities)</pre>
+</li>
+</ul>
+<a name="reactiveRefreshAll-java.lang.Object...-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reactiveRefreshAll</h4>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;&nbsp;reactiveRefreshAll(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>...&nbsp;entities)</pre>
+</li>
+</ul>
 <a name="createReactiveQuery-java.lang.String-">
 <!--   -->
 </a>
@@ -339,6 +398,18 @@ extends <a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecuto
 <h4>createReactiveNativeQuery</h4>
 <pre>&lt;T&gt;&nbsp;<a href="../../../../org/hibernate/reactive/session/ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.session">ReactiveNativeQuery</a>&lt;T&gt;&nbsp;createReactiveNativeQuery(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;sqlString,
                                                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resultSetMapping)</pre>
+</li>
+</ul>
+<a name="reactiveFetch-java.lang.Object-boolean-">
+<!--   -->
+</a><a name="reactiveFetch-T-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reactiveFetch</h4>
+<pre>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;T&gt;&nbsp;reactiveFetch(T&nbsp;association,
+                                     boolean&nbsp;unproxy)</pre>
 </li>
 </ul>
 <a name="isOpen--">
