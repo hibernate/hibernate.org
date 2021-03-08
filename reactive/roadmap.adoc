@@ -16,7 +16,7 @@ The initial release already supports most features of Hibernate ORM,
 including:
 
 * Almost every operation of the `Session` and `StatelessSession` APIs
-* Almost every ORM mapping annotation except for `@ManyToMany`
+* Almost every ORM mapping annotation
 * HQL, native SQL, and `Criteria` queries
 * All association fetching strategies
 * Statement batching
@@ -33,10 +33,13 @@ including:
 
 The following databases are supported via the Vert.x 3 client library:
 
-* Db2, MySQL, and PostgreSQL
+* PostgreSQL, MySQL, MariaDB, Db2, and CockroachDB.
 
 We're working on the following missing features:
 
-* `@ManyToMany`
-* Hi/lo (block) identifier generation
+* Automatic update or validation of an existing database schema
+ without requiring the use of JDBC.
+* The annotation `@org.hibernate.annotations.Source` for database-generated
+  `@Version` properties.
+* The annotation `@org.hibernate.annotations.CollectionId`.
 * Support for SQL Server via the Vert.x 4 client library
