@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.6.1">
 <meta name="author" content="Gavin King">
-<title>Hibernate Reactive 1.0.0.CR1 Reference Documentation</title>
+<title>Hibernate Reactive 1.0.0.CR2 Reference Documentation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <link rel="stylesheet" href="./asciidoctor.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Hibernate Reactive 1.0.0.CR1 Reference Documentation</h1>
+<h1>Hibernate Reactive 1.0.0.CR2 Reference Documentation</h1>
 <div class="details">
 <span id="author" class="author">Gavin King</span><br>
 <span id="email" class="email"><a href="mailto:gavin@hibernate.org">gavin@hibernate.org</a></span><br>
@@ -120,7 +120,7 @@ to understand when you develop any large-scale project using Hibernate.</p>
 </div>
 <div class="paragraph">
 <p>But, before you start, we recommend taking a quick look at the very
-simplistic example program in the <a href="https://github.com/hibernate/hibernate-reactive/tree/master/examples/session-example"><code>session-example</code></a> directory,
+simplistic example program in the <a href="https://github.com/hibernate/hibernate-reactive/tree/main/examples/session-example"><code>session-example</code></a> directory,
 which shows off all the "bits" you&#8217;ll need to get your own program up and
 running.</p>
 </div>
@@ -254,7 +254,7 @@ don&#8217;t need. Stick to the basics for now.
 </table>
 </div>
 <div class="paragraph">
-<p>There&#8217;s an example <a href="https://github.com/hibernate/hibernate-reactive/blob/master/examples/session-example/build.gradle">Gradle build</a> included in the example program.</p>
+<p>There&#8217;s an example <a href="https://github.com/hibernate/hibernate-reactive/blob/main/examples/session-example/build.gradle">Gradle build</a> included in the example program.</p>
 </div>
 </div>
 <div class="sect3">
@@ -264,7 +264,7 @@ don&#8217;t need. Stick to the basics for now.
 document which must be placed, as usual, in the <code>/META-INF</code> directory.</p>
 </div>
 <div class="paragraph">
-<p>An example <a href="https://github.com/hibernate/hibernate-reactive/blob/master/examples/session-example/src/main/resources/META-INF/persistence.xml"><code>persistence.xml</code></a> file is included in the example
+<p>An example <a href="https://github.com/hibernate/hibernate-reactive/blob/main/examples/session-example/src/main/resources/META-INF/persistence.xml"><code>persistence.xml</code></a> file is included in the example
 program.</p>
 </div>
 <div class="paragraph">
@@ -436,7 +436,7 @@ logger.hibernate.level = debug</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>An example <a href="https://github.com/hibernate/hibernate-reactive/blob/master/examples/session-example/src/main/resources/log4j2.properties"><code>log4j2.properties</code></a> file is included in the example
+<p>An example <a href="https://github.com/hibernate/hibernate-reactive/blob/main/examples/session-example/src/main/resources/log4j2.properties"><code>log4j2.properties</code></a> file is included in the example
 program.</p>
 </div>
 <div class="paragraph">
@@ -1566,7 +1566,7 @@ method of <code>Stage</code> and <code>Mutiny</code>:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">session.find(Author.class, author.id)
-       .chain( author -&gt; Stage.fetch(author.books) )
+       .chain( author -&gt; Mutiny.fetch(author.books) )
        .invoke( books -&gt; ... )</code></pre>
 </div>
 </div>
@@ -1584,6 +1584,31 @@ It&#8217;s very important to make sure you&#8217;ve fetched all the data that
 will be needed before passing control to the process that renders the
 UI! There is no transparent lazy fetching in Hibernate Reactive, so
 patterns like "open session in view" will <em>not help at all</em>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Sometimes you might need to chain multiple calls to <code>fetch()</code>, for
+example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">Mutiny.fetch( session.getReference(detachedAuthor) )
+       .chain( author -&gt; Mutiny.fetch(author.books) )
+       .invoke( books -&gt; ... )</code></pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<code>fetch()</code> isn&#8217;t recursive! You can&#8217;t fetch an association
+belonging to an unfetched entity without fetching the entity instance
+first.
 </td>
 </tr>
 </table>
@@ -2379,7 +2404,7 @@ documentation for details.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-03-08 14:54:10 UTC
+Last updated 2021-04-13 11:08:38 UTC
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
