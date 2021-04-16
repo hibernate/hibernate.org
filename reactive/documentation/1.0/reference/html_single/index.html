@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.6.1">
 <meta name="author" content="Gavin King">
-<title>Hibernate Reactive 1.0.0.CR2 Reference Documentation</title>
+<title>Hibernate Reactive 1.0.0.CR3 Reference Documentation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <link rel="stylesheet" href="./asciidoctor.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Hibernate Reactive 1.0.0.CR2 Reference Documentation</h1>
+<h1>Hibernate Reactive 1.0.0.CR3 Reference Documentation</h1>
 <div class="details">
 <span id="author" class="author">Gavin King</span><br>
 <span id="email" class="email"><a href="mailto:gavin@hibernate.org">gavin@hibernate.org</a></span><br>
@@ -1217,9 +1217,10 @@ created, used, and then discarded within a single logical unit of work.</p>
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-That is to say, you should reuse the same session across multiple
+That is to say, you <em>should</em> reuse the same session across multiple
 persistence operations within a single reactive stream representing a certain
-unit of work, but don&#8217;t share a session between different reactive streams!
+transaction or unit of work, but <em>don&#8217;t</em> share a session between different
+concurrent reactive streams!
 </td>
 </tr>
 </table>
@@ -2404,7 +2405,7 @@ documentation for details.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-04-14 06:54:52 UTC
+Last updated 2021-04-16 15:04:57 UTC
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
