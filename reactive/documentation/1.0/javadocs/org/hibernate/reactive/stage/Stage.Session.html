@@ -99,17 +99,12 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <dl>
-<dt>All Superinterfaces:</dt>
-<dd><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang">AutoCloseable</a></dd>
-</dl>
-<dl>
 <dt>Enclosing interface:</dt>
 <dd><a href="../../../../org/hibernate/reactive/stage/Stage.html" title="interface in org.hibernate.reactive.stage">Stage</a></dd>
 </dl>
 <hr>
 <br>
-<pre>public static interface <span class="typeNameLabel">Stage.Session</span>
-extends <a href="../../../../org/hibernate/reactive/common/AutoCloseable.html" title="interface in org.hibernate.reactive.common">AutoCloseable</a></pre>
+<pre>public static interface <span class="typeNameLabel">Stage.Session</span></pre>
 <div class="block">A non-blocking counterpart to the Hibernate <code>Session</code>
  interface, allowing a reactive style of interaction with the database.
  <p>
@@ -158,7 +153,7 @@ extends <a href="../../../../org/hibernate/reactive/common/AutoCloseable.html" t
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>void</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Session.html#close--">close</a></span>()</code>
 <div class="block">Close the reactive session and release the underlying database
  connection.</div>
@@ -1753,13 +1748,9 @@ extends <a href="../../../../org/hibernate/reactive/common/AutoCloseable.html" t
 <ul class="blockList">
 <li class="blockList">
 <h4>close</h4>
-<pre>void&nbsp;close()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;&nbsp;close()</pre>
 <div class="block">Close the reactive session and release the underlying database
  connection.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseable.html?is-external=true#close--" title="class or interface in java.lang">close</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang">AutoCloseable</a></code></dd>
-</dl>
 </li>
 </ul>
 <a name="isOpen--">

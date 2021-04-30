@@ -159,11 +159,6 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/common/InternalStateAssertions.html#assertUseOnEventLoop--">assertUseOnEventLoop()</a></span> - Static method in class org.hibernate.reactive.common.<a href="org/hibernate/reactive/common/InternalStateAssertions.html" title="class in org.hibernate.reactive.common">InternalStateAssertions</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="org/hibernate/reactive/common/AutoCloseable.html" title="interface in org.hibernate.reactive.common"><span class="typeNameLink">AutoCloseable</span></a> - Interface in <a href="org/hibernate/reactive/common/package-summary.html">org.hibernate.reactive.common</a></dt>
-<dd>
-<div class="block">A Java <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang"><code>AutoCloseable</code></a> which can be inspected
- to determine if it has been closed.</div>
-</dd>
 </dl>
 <a name="I:B">
 <!--   -->
@@ -230,8 +225,6 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/provider/ReactiveServiceRegistryBuilder.html#clearSettings--">clearSettings()</a></span> - Method in class org.hibernate.reactive.provider.<a href="org/hibernate/reactive/provider/ReactiveServiceRegistryBuilder.html" title="class in org.hibernate.reactive.provider">ReactiveServiceRegistryBuilder</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="org/hibernate/reactive/common/AutoCloseable.html#close--">close()</a></span> - Method in interface org.hibernate.reactive.common.<a href="org/hibernate/reactive/common/AutoCloseable.html" title="interface in org.hibernate.reactive.common">AutoCloseable</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Session.html#close--">close()</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></dt>
 <dd>
 <div class="block">Close the reactive session and release the underlying database
@@ -250,9 +243,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/pool/ReactiveConnection.html#close--">close()</a></span> - Method in interface org.hibernate.reactive.pool.<a href="org/hibernate/reactive/pool/ReactiveConnection.html" title="interface in org.hibernate.reactive.pool">ReactiveConnection</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveSession.html#close--">close()</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveSession.html" title="interface in org.hibernate.reactive.session">ReactiveSession</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveStatelessSession.html#close--">close()</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session">ReactiveStatelessSession</a></dt>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveStatelessSession.html#close-java.util.concurrent.CompletableFuture-">close(CompletableFuture&lt;Void&gt;)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session">ReactiveStatelessSession</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.Session.html#close--">close()</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></dt>
 <dd>
@@ -1400,8 +1391,6 @@
 </dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/loader/ReactiveResultSetProcessor.html#isNull-org.hibernate.type.EntityType-java.lang.Object-org.hibernate.engine.spi.SharedSessionContractImplementor-">isNull(EntityType, Object, SharedSessionContractImplementor)</a></span> - Method in interface org.hibernate.reactive.loader.<a href="org/hibernate/reactive/loader/ReactiveResultSetProcessor.html" title="interface in org.hibernate.reactive.loader">ReactiveResultSetProcessor</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="org/hibernate/reactive/common/AutoCloseable.html#isOpen--">isOpen()</a></span> - Method in interface org.hibernate.reactive.common.<a href="org/hibernate/reactive/common/AutoCloseable.html" title="interface in org.hibernate.reactive.common">AutoCloseable</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Session.html#isOpen--">isOpen()</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#isOpen--">isOpen()</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SessionFactory</a></dt>
@@ -1885,6 +1874,8 @@
 <dd>
 <div class="block">Contract representing some process that needs to occur during before transaction completion.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveSession.html#reactiveClose--">reactiveClose()</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveSession.html" title="interface in org.hibernate.reactive.session">ReactiveSession</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/loader/collection/ReactiveCollectionInitializer.html" title="interface in org.hibernate.reactive.loader.collection"><span class="typeNameLink">ReactiveCollectionInitializer</span></a> - Interface in <a href="org/hibernate/reactive/loader/collection/package-summary.html">org.hibernate.reactive.loader.collection</a></dt>
 <dd>
 <div class="block">A reactific <code>CollectionInitializer</code>, the contract implemented
@@ -2154,6 +2145,10 @@
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveSession.html#reactiveRemove-java.lang.Object-">reactiveRemove(Object)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveSession.html" title="interface in org.hibernate.reactive.session">ReactiveSession</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveSession.html#reactiveRemove-java.lang.Object-boolean-org.hibernate.internal.util.collections.IdentitySet-">reactiveRemove(Object, boolean, IdentitySet)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveSession.html" title="interface in org.hibernate.reactive.session">ReactiveSession</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveSession.html#reactiveRemove-java.lang.String-java.lang.Object-boolean-org.hibernate.internal.util.collections.IdentitySet-">reactiveRemove(String, Object, boolean, IdentitySet)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveSession.html" title="interface in org.hibernate.reactive.session">ReactiveSession</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveSession.html#reactiveRemoveOrphanBeforeUpdates-java.lang.String-java.lang.Object-">reactiveRemoveOrphanBeforeUpdates(String, Object)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveSession.html" title="interface in org.hibernate.reactive.session">ReactiveSession</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/event/ReactiveResolveNaturalIdEventListener.html#reactiveResolveNaturalId-org.hibernate.event.spi.ResolveNaturalIdEvent-">reactiveResolveNaturalId(ResolveNaturalIdEvent)</a></span> - Method in interface org.hibernate.reactive.event.<a href="org/hibernate/reactive/event/ReactiveResolveNaturalIdEventListener.html" title="interface in org.hibernate.reactive.event">ReactiveResolveNaturalIdEventListener</a></dt>
 <dd>
