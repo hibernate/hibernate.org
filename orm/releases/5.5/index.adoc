@@ -1,0 +1,13 @@
+:awestruct-layout: project-releases-series
+:awestruct-project: orm
+:awestruct-series_version: "5.5"
+
+
+=== Jakarta JPA work in progress
+
+Hibernate ORM 5.5.0.Alpha1 adds new artifacts with the name suffix "-jakarta" like hibernate-core-jakarta.
+These artifacts are currently work in progress, but will eventually provide support for Jakarta JPA 3.0.
+
+=== Bytecode enhancement
+
+The bytecode enhancement configuration was adapted to turn on enhancement-as-proxy by default and remove the switch for configuring this.
