@@ -293,6 +293,12 @@
 <dd>
 <div class="block">Determine if the given instance belongs to this persistence context.</div>
 </dd>
+<dt><a href="org/hibernate/reactive/context/Context.html" title="interface in org.hibernate.reactive.context"><span class="typeNameLink">Context</span></a> - Interface in <a href="org/hibernate/reactive/context/package-summary.html">org.hibernate.reactive.context</a></dt>
+<dd>
+<div class="block">Abstracts away from the Vert.x <code>Context</code>
+ object, enabling alternative strategies for associating state
+ with the current reactive stream.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveQuery.html#convertQueryException-T-java.lang.Throwable-org.hibernate.query.internal.AbstractProducedQuery-">convertQueryException(T, Throwable, AbstractProducedQuery&lt;?&gt;)</a></span> - Static method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQuery.html" title="interface in org.hibernate.reactive.session">ReactiveQuery</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/provider/ReactivePersistenceProvider.html#createContainerEntityManagerFactory-javax.persistence.spi.PersistenceUnitInfo-java.util.Map-">createContainerEntityManagerFactory(PersistenceUnitInfo, Map)</a></span> - Method in class org.hibernate.reactive.provider.<a href="org/hibernate/reactive/provider/ReactivePersistenceProvider.html" title="class in org.hibernate.reactive.provider">ReactivePersistenceProvider</a></dt>
@@ -579,6 +585,26 @@
 </dd>
 <dt><a href="org/hibernate/reactive/session/CriteriaQueryOptions.html" title="interface in org.hibernate.reactive.session"><span class="typeNameLink">CriteriaQueryOptions</span></a> - Interface in <a href="org/hibernate/reactive/session/package-summary.html">org.hibernate.reactive.session</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Session.html#currentTransaction--">currentTransaction()</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></dt>
+<dd>
+<div class="block">Obtain the transaction currently associated with this session,
+ if any.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#currentTransaction--">currentTransaction()</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
+<dd>
+<div class="block">Obtain the transaction currently associated with this session,
+ if any.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.Session.html#currentTransaction--">currentTransaction()</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></dt>
+<dd>
+<div class="block">Obtain the transaction currently associated with this session,
+ if any.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#currentTransaction--">currentTransaction()</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></dt>
+<dd>
+<div class="block">Obtain the transaction currently associated with this session,
+ if any.</div>
+</dd>
 </dl>
 <a name="I:D">
 <!--   -->
@@ -695,6 +721,10 @@
 </dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/loader/ReactiveLoaderBasedLoader.html#endCollectionLoad-java.lang.Object-org.hibernate.engine.spi.SharedSessionContractImplementor-org.hibernate.persister.collection.CollectionPersister-">endCollectionLoad(Object, SharedSessionContractImplementor, CollectionPersister)</a></span> - Method in interface org.hibernate.reactive.loader.<a href="org/hibernate/reactive/loader/ReactiveLoaderBasedLoader.html" title="interface in org.hibernate.reactive.loader">ReactiveLoaderBasedLoader</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/context/Context.html#execute-java.lang.Runnable-">execute(Runnable)</a></span> - Method in interface org.hibernate.reactive.context.<a href="org/hibernate/reactive/context/Context.html" title="interface in org.hibernate.reactive.context">Context</a></dt>
+<dd>
+<div class="block">Run the given command in a context.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/engine/ReactiveActionQueue.html#execute-E-">execute(E)</a></span> - Method in class org.hibernate.reactive.engine.<a href="org/hibernate/reactive/engine/ReactiveActionQueue.html" title="class in org.hibernate.reactive.engine">ReactiveActionQueue</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/pool/BatchingConnection.html#execute-java.lang.String-">execute(String)</a></span> - Method in class org.hibernate.reactive.pool.<a href="org/hibernate/reactive/pool/BatchingConnection.html" title="class in org.hibernate.reactive.pool">BatchingConnection</a></dt>
@@ -859,6 +889,11 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/provider/ReactivePersistenceProvider.html#generateSchema-java.lang.String-java.util.Map-">generateSchema(String, Map)</a></span> - Method in class org.hibernate.reactive.provider.<a href="org/hibernate/reactive/provider/ReactivePersistenceProvider.html" title="class in org.hibernate.reactive.provider">ReactivePersistenceProvider</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/context/Context.html#get-java.lang.Class-java.lang.String-">get(Class&lt;T&gt;, String)</a></span> - Method in interface org.hibernate.reactive.context.<a href="org/hibernate/reactive/context/Context.html" title="interface in org.hibernate.reactive.context">Context</a></dt>
+<dd>
+<div class="block">Get a value associated with the current reactive stream,
+ or return null.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#get-java.lang.Class-java.lang.Object-">get(Class&lt;T&gt;, Object)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
 <dd>
 <div class="block">Retrieve a row.</div>
@@ -947,6 +982,11 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.Query.html#getCacheRegion--">getCacheRegion()</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/pool/ReactiveConnectionPool.html#getCloseFuture--">getCloseFuture()</a></span> - Method in interface org.hibernate.reactive.pool.<a href="org/hibernate/reactive/pool/ReactiveConnectionPool.html" title="interface in org.hibernate.reactive.pool">ReactiveConnectionPool</a></dt>
+<dd>
+<div class="block">The shutdown of the pool is actually asynchronous but the
+ core service registry won't return the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent"><code>CompletionStage</code></a>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/provider/service/ReactivePersisterClassResolver.html#getCollectionPersisterClass-org.hibernate.mapping.Collection-">getCollectionPersisterClass(Collection)</a></span> - Method in class org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/ReactivePersisterClassResolver.html" title="class in org.hibernate.reactive.provider.service">ReactivePersisterClassResolver</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/loader/ReactiveLoaderBasedLoader.html#getCollectionPersisters--">getCollectionPersisters()</a></span> - Method in interface org.hibernate.reactive.loader.<a href="org/hibernate/reactive/loader/ReactiveLoaderBasedLoader.html" title="interface in org.hibernate.reactive.loader">ReactiveLoaderBasedLoader</a></dt>
@@ -1292,7 +1332,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/loader/CachingReactiveLoader.html#includeInResultRow--">includeInResultRow()</a></span> - Method in interface org.hibernate.reactive.loader.<a href="org/hibernate/reactive/loader/CachingReactiveLoader.html" title="interface in org.hibernate.reactive.loader">CachingReactiveLoader</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="org/hibernate/reactive/loader/ReactiveResultSetProcessor.html#initializeEntity-java.lang.Object-boolean-org.hibernate.engine.spi.SharedSessionContractImplementor-org.hibernate.event.spi.PreLoadEvent-java.lang.Iterable-">initializeEntity(Object, boolean, SharedSessionContractImplementor, PreLoadEvent, Iterable&lt;PreLoadEventListener&gt;)</a></span> - Method in interface org.hibernate.reactive.loader.<a href="org/hibernate/reactive/loader/ReactiveResultSetProcessor.html" title="interface in org.hibernate.reactive.loader">ReactiveResultSetProcessor</a></dt>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/loader/ReactiveResultSetProcessor.html#initializeEntity-java.lang.Object-boolean-org.hibernate.engine.spi.SharedSessionContractImplementor-org.hibernate.event.spi.PreLoadEvent-">initializeEntity(Object, boolean, SharedSessionContractImplementor, PreLoadEvent)</a></span> - Method in interface org.hibernate.reactive.loader.<a href="org/hibernate/reactive/loader/ReactiveResultSetProcessor.html" title="interface in org.hibernate.reactive.loader">ReactiveResultSetProcessor</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/provider/service/NoJdbcConnectionProviderInitiator.html#initiateService-java.util.Map-org.hibernate.service.spi.ServiceRegistryImplementor-">initiateService(Map, ServiceRegistryImplementor)</a></span> - Method in class org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/NoJdbcConnectionProviderInitiator.html" title="class in org.hibernate.reactive.provider.service">NoJdbcConnectionProviderInitiator</a></dt>
 <dd>&nbsp;</dd>
@@ -1705,6 +1745,10 @@
 <div class="block">APIs common to both <a href="org/hibernate/reactive/stage/Stage.html" title="interface in org.hibernate.reactive.stage"><code>Stage</code></a>
  and <a href="org/hibernate/reactive/mutiny/Mutiny.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny</code></a>.</div>
 </dd>
+<dt><a href="org/hibernate/reactive/context/package-summary.html">org.hibernate.reactive.context</a> - package org.hibernate.reactive.context</dt>
+<dd>
+<div class="block">Strategies for associating state with the current reactive stream.</div>
+</dd>
 <dt><a href="org/hibernate/reactive/engine/package-summary.html">org.hibernate.reactive.engine</a> - package org.hibernate.reactive.engine</dt>
 <dd>
 <div class="block">Reactive adaptations of Hibernate ORM's persistence actions.</div>
@@ -1836,6 +1880,10 @@
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/loader/ReactiveLoader.html#preprocessSQL-java.lang.String-org.hibernate.engine.spi.QueryParameters-org.hibernate.engine.spi.SessionFactoryImplementor-java.util.List-">preprocessSQL(String, QueryParameters, SessionFactoryImplementor, List&lt;AfterLoadAction&gt;)</a></span> - Method in interface org.hibernate.reactive.loader.<a href="org/hibernate/reactive/loader/ReactiveLoader.html" title="interface in org.hibernate.reactive.loader">ReactiveLoader</a></dt>
 <dd>
 <div class="block">Used by query loaders to add stuff like locking and hints/comments</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/context/Context.html#put-java.lang.Class-java.lang.String-T-">put(Class&lt;T&gt;, String, T)</a></span> - Method in interface org.hibernate.reactive.context.<a href="org/hibernate/reactive/context/Context.html" title="interface in org.hibernate.reactive.context">Context</a></dt>
+<dd>
+<div class="block">Associate a value with the current reactive stream.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/loader/CachingReactiveLoader.html#putReactiveResultInQueryCache-org.hibernate.engine.spi.SharedSessionContractImplementor-org.hibernate.engine.spi.QueryParameters-org.hibernate.type.Type:A-org.hibernate.cache.spi.QueryResultsCache-org.hibernate.cache.spi.QueryKey-java.util.List-">putReactiveResultInQueryCache(SharedSessionContractImplementor, QueryParameters, Type[], QueryResultsCache, QueryKey, List&lt;Object&gt;)</a></span> - Method in interface org.hibernate.reactive.loader.<a href="org/hibernate/reactive/loader/CachingReactiveLoader.html" title="interface in org.hibernate.reactive.loader">CachingReactiveLoader</a></dt>
 <dd>&nbsp;</dd>
@@ -2285,6 +2333,10 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/provider/service/ReactiveGenerationTarget.html#release--">release()</a></span> - Method in class org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/ReactiveGenerationTarget.html" title="class in org.hibernate.reactive.provider.service">ReactiveGenerationTarget</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/context/Context.html#remove-java.lang.Class-java.lang.String-">remove(Class&lt;?&gt;, String)</a></span> - Method in interface org.hibernate.reactive.context.<a href="org/hibernate/reactive/context/Context.html" title="interface in org.hibernate.reactive.context">Context</a></dt>
+<dd>
+<div class="block">Remove a value associated with the current reactive stream.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Session.html#remove-java.lang.Object-">remove(Object)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></dt>
 <dd>
 <div class="block">Asynchronously remove a persistent instance from the datastore.</div>
@@ -2705,7 +2757,8 @@
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/vertx/VertxInstance.html" title="interface in org.hibernate.reactive.vertx"><span class="typeNameLink">VertxInstance</span></a> - Interface in <a href="org/hibernate/reactive/vertx/package-summary.html">org.hibernate.reactive.vertx</a></dt>
 <dd>
-<div class="block">Used by <code>DefaultSqlClientPool</code>
+<div class="block">Used by <code>DefaultSqlClientPool</code> and
+ <code>org.hibernate.reactive.context.impl.VertxContext</code>
  to obtain an instance of <code>Vertx</code>.</div>
 </dd>
 </dl>

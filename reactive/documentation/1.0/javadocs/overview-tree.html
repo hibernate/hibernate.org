@@ -74,6 +74,7 @@
 <ul class="horizontal">
 <li><a href="org/hibernate/reactive/bulk/package-tree.html">org.hibernate.reactive.bulk</a>, </li>
 <li><a href="org/hibernate/reactive/common/package-tree.html">org.hibernate.reactive.common</a>, </li>
+<li><a href="org/hibernate/reactive/context/package-tree.html">org.hibernate.reactive.context</a>, </li>
 <li><a href="org/hibernate/reactive/engine/package-tree.html">org.hibernate.reactive.engine</a>, </li>
 <li><a href="org/hibernate/reactive/event/package-tree.html">org.hibernate.reactive.event</a>, </li>
 <li><a href="org/hibernate/reactive/example/nativesql/package-tree.html">org.hibernate.reactive.example.nativesql</a>, </li>
@@ -190,6 +191,11 @@
 <li type="circle">org.hibernate.reactive.engine.<a href="org/hibernate/reactive/engine/ReactiveExecutable.html" title="interface in org.hibernate.reactive.engine"><span class="typeNameLink">ReactiveExecutable</span></a> (also extends java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;T&gt;, java.io.<a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>)</li>
 </ul>
 </li>
+<li type="circle">java.util.concurrent.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Executor.html?is-external=true" title="class or interface in java.util.concurrent"><span class="typeNameLink">Executor</span></a>
+<ul>
+<li type="circle">org.hibernate.reactive.context.<a href="org/hibernate/reactive/context/Context.html" title="interface in org.hibernate.reactive.context"><span class="typeNameLink">Context</span></a> (also extends org.hibernate.service.Service)</li>
+</ul>
+</li>
 <li type="circle">java.util.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util"><span class="typeNameLink">Iterator</span></a>&lt;E&gt;
 <ul>
 <li type="circle">org.hibernate.reactive.pool.<a href="org/hibernate/reactive/pool/ReactiveConnection.Result.html" title="interface in org.hibernate.reactive.pool"><span class="typeNameLink">ReactiveConnection.Result</span></a></li>
@@ -232,6 +238,7 @@
 <li type="circle">org.hibernate.reactive.common.<a href="org/hibernate/reactive/common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common"><span class="typeNameLink">ResultSetMapping</span></a>&lt;T&gt;</li>
 <li type="circle">java.io.<a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io"><span class="typeNameLink">Serializable</span></a>
 <ul>
+<li type="circle">org.hibernate.reactive.context.<a href="org/hibernate/reactive/context/Context.html" title="interface in org.hibernate.reactive.context"><span class="typeNameLink">Context</span></a> (also extends java.util.concurrent.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Executor.html?is-external=true" title="class or interface in java.util.concurrent">Executor</a>, org.hibernate.service.Service)</li>
 <li type="circle">org.hibernate.reactive.event.<a href="org/hibernate/reactive/event/ReactiveAutoFlushEventListener.html" title="interface in org.hibernate.reactive.event"><span class="typeNameLink">ReactiveAutoFlushEventListener</span></a></li>
 <li type="circle">org.hibernate.reactive.pool.<a href="org/hibernate/reactive/pool/ReactiveConnectionPool.html" title="interface in org.hibernate.reactive.pool"><span class="typeNameLink">ReactiveConnectionPool</span></a></li>
 <li type="circle">org.hibernate.reactive.event.<a href="org/hibernate/reactive/event/ReactiveDeleteEventListener.html" title="interface in org.hibernate.reactive.event"><span class="typeNameLink">ReactiveDeleteEventListener</span></a></li>
@@ -246,6 +253,7 @@
 <li type="circle">org.hibernate.reactive.event.<a href="org/hibernate/reactive/event/ReactiveResolveNaturalIdEventListener.html" title="interface in org.hibernate.reactive.event"><span class="typeNameLink">ReactiveResolveNaturalIdEventListener</span></a></li>
 <li type="circle">org.hibernate.service.Service
 <ul>
+<li type="circle">org.hibernate.reactive.context.<a href="org/hibernate/reactive/context/Context.html" title="interface in org.hibernate.reactive.context"><span class="typeNameLink">Context</span></a> (also extends java.util.concurrent.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Executor.html?is-external=true" title="class or interface in java.util.concurrent">Executor</a>)</li>
 <li type="circle">org.hibernate.reactive.pool.<a href="org/hibernate/reactive/pool/ReactiveConnectionPool.html" title="interface in org.hibernate.reactive.pool"><span class="typeNameLink">ReactiveConnectionPool</span></a></li>
 <li type="circle">org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/ReactiveMarkerService.html" title="interface in org.hibernate.reactive.provider.service"><span class="typeNameLink">ReactiveMarkerService</span></a></li>
 <li type="circle">org.hibernate.reactive.vertx.<a href="org/hibernate/reactive/vertx/VertxInstance.html" title="interface in org.hibernate.reactive.vertx"><span class="typeNameLink">VertxInstance</span></a></li>

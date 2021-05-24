@@ -325,7 +325,16 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseab
 <pre>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;&nbsp;withSession(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function">Function</a>&lt;<a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a>,io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</pre>
 <div class="block">Perform work using a <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a>.
  <p>
- The session will be closed automatically.</div>
+ <il>
+ <li>If there is already a session associated with the current
+ reactive stream, then the work will be executed using that
+ session.
+ <li>Otherwise, if there is no session associated with the
+ current stream, a new session will be created.
+ </il>
+ <p>
+ The session will be closed automatically, but must be flushed
+ explicitly if necessary.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>work</code> - a function which accepts the session and returns
@@ -344,7 +353,15 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseab
 <div class="block">Perform work using a <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> for
  a specified tenant.
  <p>
- The session will be closed automatically.</div>
+ <il>
+ <li>If there is already a session associated with the current
+ reactive stream, and the given tenant, then the work will be
+ executed using that session.
+ <li>Otherwise, a new session will be created.
+ </il>
+ <p>
+ The session will be closed automatically, but must be flushed
+ explicitly if necessary.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>tenantId</code> - the id of the tenant</dd>
@@ -384,6 +401,14 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseab
 <pre>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;&nbsp;withStatelessSession(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function">Function</a>&lt;<a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a>,io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</pre>
 <div class="block">Perform work using a <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>stateless session</code></a>.
  <p>
+ <il>
+ <li>If there is already a stateless session associated with the
+ current reactive stream, then the work will be executed using that
+ session.
+ <li>Otherwise, if there is no stateless session associated with the
+ current stream, a new stateless session will be created.
+ </il>
+ <p>
  The session will be closed automatically.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -411,7 +436,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseab
 <dd><code>work</code> - a function which accepts the session and returns
              the result of the work as a <code>Uni</code>.</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#withSession-java.util.function.Function-"><code>withSession(Function)</code></a>, 
+<dd><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#withSession-java.lang.String-java.util.function.Function-"><code>withSession(String, Function)</code></a>, 
 <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html#withTransaction-java.util.function.Function-"><code>Mutiny.Session.withTransaction(Function)</code></a></dd>
 </dl>
 </li>

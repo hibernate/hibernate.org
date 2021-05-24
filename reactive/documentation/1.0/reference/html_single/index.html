@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.6.1">
 <meta name="author" content="Gavin King">
-<title>Hibernate Reactive 1.0.0.CR4 Reference Documentation</title>
+<title>Hibernate Reactive 1.0.0.CR5 Reference Documentation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <link rel="stylesheet" href="./asciidoctor.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Hibernate Reactive 1.0.0.CR4 Reference Documentation</h1>
+<h1>Hibernate Reactive 1.0.0.CR5 Reference Documentation</h1>
 <div class="details">
 <span id="author" class="author">Gavin King</span><br>
 <span id="email" class="email"><a href="mailto:gavin@hibernate.org">gavin@hibernate.org</a></span><br>
@@ -1239,6 +1239,11 @@ concurrent reactive streams!
 </div>
 </div>
 <div class="paragraph">
+<p>The resulting <code>Session</code> object is automatically associated with the current
+reactive stream, and so nested calls to <code>withSession()</code> in a given stream
+automatically obtain the same shared session.</p>
+</div>
+<div class="paragraph">
 <p>Alternatively, you may use <code>openSession()</code>, but you must remember to <code>close()</code>
 the session when you&#8217;re done.</p>
 </div>
@@ -1661,6 +1666,26 @@ transaction.</p>
 <p>The session is automatically flushed at the end of the transaction.</p>
 </div>
 <div class="paragraph">
+<p>For a given <code>Session</code> object, nested calls to <code>withTransaction()</code> occur
+within the same shared transaction context. However, notice that the
+transaction is a <em>resource local</em> transaction only, delegated to the
+underlying Vert.x database client, and does not span multiple datasources,
+nor integrate with JPA container-managed transactions.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Hibernate Reactive does not currently support distributed (XA)
+transactions.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
 <p>For extra convenience, there&#8217;s a method that opens a session and starts a
 transaction in one call:</p>
 </div>
@@ -1670,9 +1695,7 @@ transaction in one call:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Note that these are "resource local" transactions, delegated to the underlying
-Vert.x database client. At present Hibernate Reactive does not integrate with
-container-managed transactions.</p>
+<p>This is probably the most convenient thing to use most of the time.</p>
 </div>
 </div>
 </div>
@@ -2405,7 +2428,7 @@ documentation for details.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-04-30 09:24:19 UTC
+Last updated 2021-05-24 13:41:49 UTC
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
