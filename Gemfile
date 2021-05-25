@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'bundler', '2.1.4'
+gem 'bundler', '2.2.17'
 
 # Main site dependencies
 gem 'awestruct', '0.6.1'
@@ -16,7 +16,7 @@ gem 'redcarpet'        # Markdown processing
 gem 'asciidoctor'      # Asciidoc renderer
 
 ## Non Windows
-gem 'therubyracer', :platforms => :ruby
+gem 'mini_racer', :platforms => :ruby
 
 ## Windows
 gem 'win32-open3-19', :platforms => [:mswin, :mingw]
