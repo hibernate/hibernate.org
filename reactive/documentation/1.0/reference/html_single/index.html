@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.6.1">
 <meta name="author" content="Gavin King">
-<title>Hibernate Reactive 1.0.0.CR5 Reference Documentation</title>
+<title>Hibernate Reactive 1.0.0.CR6 Reference Documentation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <link rel="stylesheet" href="./asciidoctor.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Hibernate Reactive 1.0.0.CR5 Reference Documentation</h1>
+<h1>Hibernate Reactive 1.0.0.CR6 Reference Documentation</h1>
 <div class="details">
 <span id="author" class="author">Gavin King</span><br>
 <span id="email" class="email"><a href="mailto:gavin@hibernate.org">gavin@hibernate.org</a></span><br>
@@ -1778,11 +1778,15 @@ following configuration properties:</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.vertx.pool.connect_timeout</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum time to wait when opening a new connection, in milliseconds</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum time to wait when requesting a pooled connection, in milliseconds</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.vertx.pool.idle_timeout</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum time a connection may sit idle, in seconds</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum time a connection may sit idle, in milliseconds</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.vertx.pool.cleaner_period</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Vert.x connection pool cleaner period, in milliseconds</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.vertx.prepared_statement_cache.max_size</code></p></td>
@@ -2428,7 +2432,7 @@ documentation for details.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-05-24 13:41:49 UTC
+Last updated 2021-06-01 17:13:17 UTC
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">

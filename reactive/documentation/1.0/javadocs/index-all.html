@@ -225,6 +225,8 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/provider/ReactiveServiceRegistryBuilder.html#clearSettings--">clearSettings()</a></span> - Method in class org.hibernate.reactive.provider.<a href="org/hibernate/reactive/provider/ReactiveServiceRegistryBuilder.html" title="class in org.hibernate.reactive.provider">ReactiveServiceRegistryBuilder</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Closeable.html#close--">close()</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Closeable.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Closeable</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Session.html#close--">close()</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></dt>
 <dd>
 <div class="block">Close the reactive session and release the underlying database
@@ -244,6 +246,8 @@
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/pool/ReactiveConnection.html#close--">close()</a></span> - Method in interface org.hibernate.reactive.pool.<a href="org/hibernate/reactive/pool/ReactiveConnection.html" title="interface in org.hibernate.reactive.pool">ReactiveConnection</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveStatelessSession.html#close-java.util.concurrent.CompletableFuture-">close(CompletableFuture&lt;Void&gt;)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session">ReactiveStatelessSession</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.Closeable.html#close--">close()</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.Closeable.html" title="interface in org.hibernate.reactive.stage">Stage.Closeable</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.Session.html#close--">close()</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></dt>
 <dd>
@@ -359,11 +363,27 @@
 <dd>
 <div class="block">Create an instance of <a href="org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the named query.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#createNamedQuery-java.lang.String-">createNamedQuery(String)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
+<dd>
+<div class="block">Create an instance of <a href="org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the named query.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#createNamedQuery-java.lang.String-java.lang.Class-">createNamedQuery(String, Class&lt;R&gt;)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
+<dd>
+<div class="block">Create an instance of <a href="org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the named query.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.Session.html#createNamedQuery-java.lang.String-">createNamedQuery(String)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></dt>
 <dd>
 <div class="block">Create an instance of <a href="org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the named query.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.Session.html#createNamedQuery-java.lang.String-java.lang.Class-">createNamedQuery(String, Class&lt;R&gt;)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></dt>
+<dd>
+<div class="block">Create an instance of <a href="org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the named query.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#createNamedQuery-java.lang.String-">createNamedQuery(String)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></dt>
+<dd>
+<div class="block">Create an instance of <a href="org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the named query.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#createNamedQuery-java.lang.String-java.lang.Class-">createNamedQuery(String, Class&lt;R&gt;)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></dt>
 <dd>
 <div class="block">Create an instance of <a href="org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the named query.</div>
 </dd>
@@ -549,31 +569,21 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveQueryExecutor.html#createReactiveCriteriaQuery-java.lang.String-java.lang.Class-org.hibernate.reactive.session.CriteriaQueryOptions-">createReactiveCriteriaQuery(String, Class&lt;T&gt;, CriteriaQueryOptions)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQueryExecutor.html" title="interface in org.hibernate.reactive.session">ReactiveQueryExecutor</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveSession.html#createReactiveNamedQuery-java.lang.String-">createReactiveNamedQuery(String)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveSession.html" title="interface in org.hibernate.reactive.session">ReactiveSession</a></dt>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveQueryExecutor.html#createReactiveNamedQuery-java.lang.String-">createReactiveNamedQuery(String)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQueryExecutor.html" title="interface in org.hibernate.reactive.session">ReactiveQueryExecutor</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveSession.html#createReactiveNamedQuery-java.lang.String-java.lang.Class-">createReactiveNamedQuery(String, Class&lt;R&gt;)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveSession.html" title="interface in org.hibernate.reactive.session">ReactiveSession</a></dt>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveQueryExecutor.html#createReactiveNamedQuery-java.lang.String-java.lang.Class-">createReactiveNamedQuery(String, Class&lt;R&gt;)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQueryExecutor.html" title="interface in org.hibernate.reactive.session">ReactiveQueryExecutor</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveSession.html#createReactiveNativeQuery-java.lang.String-">createReactiveNativeQuery(String)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveSession.html" title="interface in org.hibernate.reactive.session">ReactiveSession</a></dt>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveQueryExecutor.html#createReactiveNativeQuery-java.lang.String-">createReactiveNativeQuery(String)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQueryExecutor.html" title="interface in org.hibernate.reactive.session">ReactiveQueryExecutor</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveSession.html#createReactiveNativeQuery-java.lang.String-java.lang.String-">createReactiveNativeQuery(String, String)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveSession.html" title="interface in org.hibernate.reactive.session">ReactiveSession</a></dt>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveQueryExecutor.html#createReactiveNativeQuery-java.lang.String-java.lang.Class-">createReactiveNativeQuery(String, Class&lt;T&gt;)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQueryExecutor.html" title="interface in org.hibernate.reactive.session">ReactiveQueryExecutor</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveSession.html#createReactiveNativeQuery-java.lang.String-java.lang.Class-">createReactiveNativeQuery(String, Class&lt;T&gt;)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveSession.html" title="interface in org.hibernate.reactive.session">ReactiveSession</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveStatelessSession.html#createReactiveNativeQuery-java.lang.String-">createReactiveNativeQuery(String)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session">ReactiveStatelessSession</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveStatelessSession.html#createReactiveNativeQuery-java.lang.String-java.lang.Class-">createReactiveNativeQuery(String, Class&lt;T&gt;)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session">ReactiveStatelessSession</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveStatelessSession.html#createReactiveNativeQuery-java.lang.String-java.lang.String-">createReactiveNativeQuery(String, String)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session">ReactiveStatelessSession</a></dt>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveQueryExecutor.html#createReactiveNativeQuery-java.lang.String-java.lang.String-">createReactiveNativeQuery(String, String)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQueryExecutor.html" title="interface in org.hibernate.reactive.session">ReactiveQueryExecutor</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveQueryExecutor.html#createReactiveQuery-org.hibernate.reactive.session.Criteria-">createReactiveQuery(Criteria&lt;R&gt;)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQueryExecutor.html" title="interface in org.hibernate.reactive.session">ReactiveQueryExecutor</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveSession.html#createReactiveQuery-java.lang.String-">createReactiveQuery(String)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveSession.html" title="interface in org.hibernate.reactive.session">ReactiveSession</a></dt>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveQueryExecutor.html#createReactiveQuery-java.lang.String-">createReactiveQuery(String)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQueryExecutor.html" title="interface in org.hibernate.reactive.session">ReactiveQueryExecutor</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveSession.html#createReactiveQuery-java.lang.String-java.lang.Class-">createReactiveQuery(String, Class&lt;T&gt;)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveSession.html" title="interface in org.hibernate.reactive.session">ReactiveSession</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveStatelessSession.html#createReactiveQuery-java.lang.String-">createReactiveQuery(String)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session">ReactiveStatelessSession</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveStatelessSession.html#createReactiveQuery-java.lang.String-java.lang.Class-">createReactiveQuery(String, Class&lt;R&gt;)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session">ReactiveStatelessSession</a></dt>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveQueryExecutor.html#createReactiveQuery-java.lang.String-java.lang.Class-">createReactiveQuery(String, Class&lt;R&gt;)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQueryExecutor.html" title="interface in org.hibernate.reactive.session">ReactiveQueryExecutor</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/loader/ReactiveLoaderBasedLoader.html#createSubselects-java.util.List-org.hibernate.engine.spi.QueryParameters-org.hibernate.engine.spi.SharedSessionContractImplementor-">createSubselects(List, QueryParameters, SharedSessionContractImplementor)</a></span> - Method in interface org.hibernate.reactive.loader.<a href="org/hibernate/reactive/loader/ReactiveLoaderBasedLoader.html" title="interface in org.hibernate.reactive.loader">ReactiveLoaderBasedLoader</a></dt>
 <dd>&nbsp;</dd>
@@ -1591,6 +1601,10 @@
 <div class="block">An API for Hibernate Reactive where non-blocking operations are
  represented by a Mutiny <code>Uni</code>.</div>
 </dd>
+<dt><a href="org/hibernate/reactive/mutiny/Mutiny.Closeable.html" title="interface in org.hibernate.reactive.mutiny"><span class="typeNameLink">Mutiny.Closeable</span></a> - Interface in <a href="org/hibernate/reactive/mutiny/package-summary.html">org.hibernate.reactive.mutiny</a></dt>
+<dd>
+<div class="block">An object whose <a href="org/hibernate/reactive/mutiny/Mutiny.Closeable.html#close--"><code>Mutiny.Closeable.close()</code></a> method returns a <code>Uni</code>.</div>
+</dd>
 <dt><a href="org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><span class="typeNameLink">Mutiny.Query</span></a>&lt;<a href="org/hibernate/reactive/mutiny/Mutiny.Query.html" title="type parameter in Mutiny.Query">R</a>&gt; - Interface in <a href="org/hibernate/reactive/mutiny/package-summary.html">org.hibernate.reactive.mutiny</a></dt>
 <dd>
 <div class="block">A non-blocking counterpart to the Hibernate
@@ -1731,7 +1745,15 @@
 <dd>
 <div class="block">Obtain a <a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive stateless session</code></a>.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#openStatelessSession-java.lang.String-">openStatelessSession(String)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SessionFactory</a></dt>
+<dd>
+<div class="block">Obtain a <a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive stateless session</code></a>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.SessionFactory.html#openStatelessSession--">openStatelessSession()</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.SessionFactory.html" title="interface in org.hibernate.reactive.stage">Stage.SessionFactory</a></dt>
+<dd>
+<div class="block">Obtain a <a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage"><code>reactive stateless session</code></a>.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.SessionFactory.html#openStatelessSession-java.lang.String-">openStatelessSession(String)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.SessionFactory.html" title="interface in org.hibernate.reactive.stage">Stage.SessionFactory</a></dt>
 <dd>
 <div class="block">Obtain a <a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage"><code>reactive stateless session</code></a>.</div>
 </dd>
@@ -1850,6 +1872,10 @@
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/example/session/MutinyMain.html#persistenceUnitName-java.lang.String:A-">persistenceUnitName(String[])</a></span> - Static method in class org.hibernate.reactive.example.session.<a href="org/hibernate/reactive/example/session/MutinyMain.html" title="class in org.hibernate.reactive.example.session">MutinyMain</a></dt>
 <dd>
 <div class="block">Return the persistence unit name to use in the example.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/provider/Settings.html#POOL_CLEANER_PERIOD">POOL_CLEANER_PERIOD</a></span> - Static variable in interface org.hibernate.reactive.provider.<a href="org/hibernate/reactive/provider/Settings.html" title="interface in org.hibernate.reactive.provider">Settings</a></dt>
+<dd>
+<div class="block">Property for configuring the Vert.x connection pool.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/provider/Settings.html#POOL_CONNECT_TIMEOUT">POOL_CONNECT_TIMEOUT</a></span> - Static variable in interface org.hibernate.reactive.provider.<a href="org/hibernate/reactive/provider/Settings.html" title="interface in org.hibernate.reactive.provider">Settings</a></dt>
 <dd>
@@ -2639,6 +2665,10 @@
 <div class="block">An API for Hibernate Reactive where non-blocking operations are
  represented by a Java <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent"><code>CompletionStage</code></a>.</div>
 </dd>
+<dt><a href="org/hibernate/reactive/stage/Stage.Closeable.html" title="interface in org.hibernate.reactive.stage"><span class="typeNameLink">Stage.Closeable</span></a> - Interface in <a href="org/hibernate/reactive/stage/package-summary.html">org.hibernate.reactive.stage</a></dt>
+<dd>
+<div class="block">An object whose <a href="org/hibernate/reactive/stage/Stage.Closeable.html#close--"><code>Stage.Closeable.close()</code></a> method returns a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent"><code>CompletionStage</code></a>.</div>
+</dd>
 <dt><a href="org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><span class="typeNameLink">Stage.Query</span></a>&lt;<a href="org/hibernate/reactive/stage/Stage.Query.html" title="type parameter in Stage.Query">R</a>&gt; - Interface in <a href="org/hibernate/reactive/stage/package-summary.html">org.hibernate.reactive.stage</a></dt>
 <dd>
 <div class="block">A non-blocking counterpart to the Hibernate
@@ -2789,7 +2819,15 @@
 <dd>
 <div class="block">Perform work using a <a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>stateless session</code></a>.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#withStatelessSession-java.lang.String-java.util.function.Function-">withStatelessSession(String, Function&lt;Mutiny.StatelessSession, Uni&lt;T&gt;&gt;)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SessionFactory</a></dt>
+<dd>
+<div class="block">Perform work using a <a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>stateless session</code></a>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.SessionFactory.html#withStatelessSession-java.util.function.Function-">withStatelessSession(Function&lt;Stage.StatelessSession, CompletionStage&lt;T&gt;&gt;)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.SessionFactory.html" title="interface in org.hibernate.reactive.stage">Stage.SessionFactory</a></dt>
+<dd>
+<div class="block">Perform work using a <a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage"><code>stateless session</code></a>.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.SessionFactory.html#withStatelessSession-java.lang.String-java.util.function.Function-">withStatelessSession(String, Function&lt;Stage.StatelessSession, CompletionStage&lt;T&gt;&gt;)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.SessionFactory.html" title="interface in org.hibernate.reactive.stage">Stage.SessionFactory</a></dt>
 <dd>
 <div class="block">Perform work using a <a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage"><code>stateless session</code></a>.</div>
 </dd>

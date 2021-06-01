@@ -99,12 +99,17 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <dl>
+<dt>All Superinterfaces:</dt>
+<dd><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Closeable.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Closeable</a></dd>
+</dl>
+<dl>
 <dt>Enclosing interface:</dt>
 <dd><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.html" title="interface in org.hibernate.reactive.mutiny">Mutiny</a></dd>
 </dl>
 <hr>
 <br>
-<pre>public static interface <span class="typeNameLabel">Mutiny.Session</span></pre>
+<pre>public static interface <span class="typeNameLabel">Mutiny.Session</span>
+extends <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Closeable.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Closeable</a></pre>
 <div class="block">A non-blocking counterpart to the Hibernate <code>Session</code>
  interface, allowing a reactive style of interaction with the database.
  <p>
@@ -1789,6 +1794,10 @@ var activeTableTab = "activeTableTab";
 <pre>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;&nbsp;close()</pre>
 <div class="block">Close the reactive session and release the underlying database
  connection.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Closeable.html#close--">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Closeable.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Closeable</a></code></dd>
+</dl>
 </li>
 </ul>
 <a name="isOpen--">
