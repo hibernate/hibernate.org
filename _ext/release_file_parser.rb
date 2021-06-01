@@ -381,7 +381,7 @@ module Awestruct
       def download_pom(base_url, group_id, artifact_id, version, cached_pom)
         uri = get_uri(base_url, group_id, artifact_id, version)
         $LOG.info "Downloading: #{uri.to_s}" if $LOG.info?
-        doc = Nokogiri::XML(open(uri))
+        doc = Nokogiri::XML(URI.open(uri))
         File.open(cached_pom, 'w') { |f| f.print(doc.to_xml) }
         doc
       end
