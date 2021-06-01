@@ -350,22 +350,25 @@ module Awestruct
           begin
             # try to download the pom from Central
             doc = download_pom(@site.maven.repo.central.repo_url, group_id, artifact_id, version, cached_pom)
-          rescue
+          rescue => maven_error
+            $LOG.warn "Error downloading #{gav} from Maven Central: #{maven_error.message}"
             # if it fails, it might be because it wasn't synced yet so let's try to download it from JBoss Nexus
             begin
               doc = download_pom(@site.maven.repo.jboss.repo_url, group_id, artifact_id, version, cached_pom)
-            rescue
+            rescue => jboss_nexus_error
+              $LOG.warn "Error downloading #{gav} from JBoss Nexus: #{jboss_nexus_error.message}"
               # last resort, try bintray
               begin
                 doc = download_pom(@site.maven.repo.bintray.repo_url, group_id, artifact_id, version, cached_pom)
-              rescue => error
+              rescue => bintray_error
+                $LOG.warn "Error downloading #{gav} from Bintray: #{bintray_error.message}"
                 $LOG.warn "Release POM #{gav} not locally cached and unable to retrieve it from Central, from JBoss Nexus or from Bintray"
                 if @site.profile == 'production'
-                  $LOG.error error.message + "\n " + error.backtrace.join("\n ")
+                  $LOG.error maven_error.message + "\n " + maven_error.backtrace.join("\n ")
                   abort "Aborting site generation, since the production build requires the release POM information"
                 else
-                  $LOG.warn error.message + "\n " + error.backtrace.join("\n ")
-                  $LOG.warn "Continue build since we are building the '#{@site.profile}' profile. Note that variables interpolated from the release poms will not display\n"
+                  $LOG.warn maven_error.message + "\n " + maven_error.backtrace.join("\n ")
+                  $LOG.warn "Continuing build since we are building the '#{@site.profile}' profile. Note that variables interpolated from the release poms will not display\n"
                   return nil
                 end
               end
