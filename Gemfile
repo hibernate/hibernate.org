@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'bundler', '2.2.17'
+gem 'bundler', '2.2.18'
 
 # Main site dependencies
 gem 'awestruct', '0.6.1'
@@ -24,6 +24,9 @@ gem 'win32-open3-19', :platforms => [:mswin, :mingw]
 # Test dependencies
 gem 'rspec'
 
+# For previews
+gem 'webrick'
+
 # To enable guard and livereload
 gem 'guard'
 gem 'guard-livereload'
@@ -31,3 +34,4 @@ gem 'yajl-ruby'
 
 # Debugger
 gem 'pry-byebug'
+
