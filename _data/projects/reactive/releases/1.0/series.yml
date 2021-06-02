@@ -1,4 +1,4 @@
-summary: Initial release using Hibernate ORM 5.4 and Vert.x 3.9
+summary: Initial release using Hibernate ORM 5.5 and Vert.x 5.1
 displayed: true
 maven:
   group_id: org.hibernate.reactive
@@ -7,6 +7,6 @@ integration_constraints:
   java:
     version: 8
   orm:
-    version: 5.4
+    version: 5.4, 5.5
   vertx:
-    version: 3.9
+    version: 4.1
