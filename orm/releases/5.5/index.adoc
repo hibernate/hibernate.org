@@ -3,10 +3,19 @@
 :awestruct-series_version: "5.5"
 
 
-=== Jakarta JPA work in progress
+=== Jakarta JPA 2.2 and 3.0
 
-Hibernate ORM 5.5.0.Alpha1 adds new artifacts with the name suffix "-jakarta" like hibernate-core-jakarta.
-These artifacts are currently work in progress, but will eventually provide support for Jakarta JPA 3.0.
+Hibernate ORM 5.5 adds new artifacts with the artifact id suffix "-jakarta" like `hibernate-core-jakarta`.
+
+The `hibernate-core-jakarta` artifact implements the Jakarta JPA 3.0 specification,
+while the `hibernate-core` artifact still implements the Jakarta JPA 2.2 specification.
+
+The artifacts are both certified as compatible implementations:
+
+* https://jakarta.ee/specifications/persistence/2.2/#compatible-implementations
+* https://jakarta.ee/specifications/persistence/3.0/#compatible-implementations
+
+Please note that the Jakarta artifacts are still considered experimental.
 
 === Bytecode enhancement
 
