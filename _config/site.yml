@@ -81,6 +81,9 @@ projects:
       jpa:
         name: JPA
         url: https://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html
+      jakarta_jpa:
+        name: Jakarta JPA
+        url: https://jakarta.ee/specifications/persistence/
     menu:
       intern:
         - name: About
