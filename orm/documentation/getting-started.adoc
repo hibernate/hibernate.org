@@ -35,7 +35,7 @@ Snapshots are only pushed to the JBoss snapshot repository,
 so if you want to use SNAPSHOT versions be sure to add the https://repository.jboss.org/nexus/content/repositories/snapshots/org/hibernate/[JBoss snapshot repository] properly according to your build tool of choice.
 ====
 
-The main Hibernate ORM artifact is named *hibernate-core*.
+The main Hibernate ORM artifact is named *hibernate-core*. If you want to use the Jakarta JPA APIs you can us the *hibernate-core-jakarta* artifact.
 
 [TIP]
 ====
@@ -63,3 +63,30 @@ To use Hibernate ORM in your own project you just need to name a dependency on i
 org.hibernate:hibernate-core:{latest_stable}
 ----
 
+Or in case you want to use the Jakarta JPA API:
+
+[source,xml]
+[subs="verbatim,attributes"]
+.From Maven
+----
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-core-jakarta</artifactId>
+    <version>{latest_stable}</version>
+</dependency>
+<dependency>
+    <groupId>org.glassfish.jaxb</groupId>
+    <artifactId>jaxb-runtime</artifactId>
+    <version>3.0.0</version>
+</dependency>
+----
+
+[source]
+[subs="verbatim,attributes"]
+.From Gradle
+----
+org.hibernate:hibernate-core-jakarta:{latest_stable}
+org.glassfish.jaxb:jaxb-runtime:3.0.0
+----
+
+Note that you need a Jakarta XML Binding implementation when you want to use the Jakarta JPA version.
