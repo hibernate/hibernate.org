@@ -1,5 +1,5 @@
 = Licenses
-Emmanuel Bernard
+Richard Fontana
 :awestruct-layout: community-standard
 
 == Free as in Speech
@@ -11,25 +11,42 @@ You can find under which a specific project is released below its menu or in the
 
 == LGPL 2.1
 
-Most Hibernate projects are released under the link:https://opensource.org/licenses/LGPL-2.1[LGPL v2.1].
+Most Hibernate projects are released under link:https://opensource.org/licenses/LGPL-2.1[LGPL v2.1].
 
-The LGPL is sufficiently flexible to allow the use of Hibernate in both open source and commercial projects.
-The LGPL guarantees that Hibernate and any modifications made to Hibernate will stay open source, protecting our and your work.
-Anyone who wanted to release Hibernate under a different license would have to obtain permission from hundreds of people who have contributed code to Hibernate, which would be impractical.
-Hibernate is and will be open source.
+The maintainers of Hibernate have consistently understood the LGPL to simply allow Hibernate to be used by both open source and proprietary code without any impact on the licensing or distribution of such independent code.
+This interpretation applies regardless of whether a binary that includes Hibernate code is designed to run on the JVM or is a native image generated through use of tools and frameworks like link:https://www.graalvm.org/[GraalVM] and link:https://quarkus.io/[Quarkus].
 
-The use of the unmodified Hibernate binary of course never affects the license of your application or distribution.
-You will never have to pay money to any commercial entity for using or integrating Hibernate.
 
-If you modify Hibernate and redistribute your modifications, the LGPL applies.
-Please submit any modifications to our issue tracking system for review and possible inclusion in the upstream Hibernate project(s).
+=== More detailed explanation
+
+The original version of the LGPL was written in 1991 with embedded C programming in mind, before Java existed.
+This has sometimes led to questions about how to interpret LGPL in a Java context.
+The “L” in LGPL originally stood for “library”; LGPL was designed to enable libraries to be used by proprietary applications in situations that might be impermissible under the ordinary GPL.
+For this reason, the LGPL is classified as a “weak copyleft” license, in contrast to the GPL which is considered a “strong copyleft”.
+The “L” in LGPL was later reinterpreted to mean “lesser”, to communicate the fact that it has more limited scope than the GPL and is not meant exclusively for libraries.
+
+By the 2000s, the LGPL had become one of the most widely used and best known open source licenses.
+At this time, some Java developers naturally began to adopt the LGPL for their projects as a more permissive and flexible alternative to the GPL.
+For projects like Hibernate, the LGPL had a simple interpretation in the Java setting, which can be summarized as follows:
+
+* LGPL requirements are triggered only if there is distribution; internal use is not restricted.
+* Distributors of binaries built from LGPL-licensed source code must comply with the LGPL by providing source code corresponding only to the LGPL-covered parts of the binary.
+** There is no requirement to publish independent code that, for example, merely imports LGPL-covered packages or classes. Such independent code can be under different licensing terms, including proprietary licensing terms or other open source licenses.
+* Modifications of LGPL-licensed source code, if distributed, must be licensed under the LGPL.
+
+This has been the consistent interpretation of the LGPL by the maintainers of Hibernate ever since the project adopted LGPL.
+
+=== Use in GraalVM native images
+
+Recently there has been interest in native compilation for Java using tools like GraalVM, such as commonly used in frameworks like Quarkus.
+The view of the Hibernate maintainers is that native compilation is a technical detail that does not fundamentally change how LGPL works for Java code.
+In a native image that includes LGPL-licensed code from Hibernate, the Hibernate code remains under the terms of the LGPL, but the other code in the generated binary is not affected by the licensing of the Hibernate code.
+
 
 == ASL 2.0
 
-Some Hibernate projects are released under the more permissive link:https://www.apache.org/licenses/LICENSE-2.0.html[ASL 2.0].
+Some Hibernate projects are released under link:https://www.apache.org/licenses/LICENSE-2.0.html[ASL 2.0].
 
-This is mostly due to our work with the Java Community Process.
-Implementing a reference implementation in practice requires such liberal license (or a fully proprietary one strangely enough).
+This is mostly due to our work with the Java Community Process: implementing a reference implementation in practice requires such a liberal license (or a fully proprietary one strangely enough).
 
-Every now and then we do evaluate the option to start or relicense certain projects under liberal licenses like the ASL but our DNA is with the LGPL.
-So the reasons have to be solid.
+
