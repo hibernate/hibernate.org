@@ -5,6 +5,8 @@ Emmanuel Bernard, Sanne Grinovero, Yoann Rodière
 :toc:
 :toc-placement: preamble
 :toc-title: Releases
+:hsearch-doc-url-prefix: https://docs.jboss.org/hibernate/search/5.11/reference/en-US/html_single/
+:hsearch-jira-url-prefix: https://hibernate.atlassian.net/browse
 
 Hibernate Search is a community driven project and as such the roadmap constantly evolves to reflect the users needs.
 
@@ -13,6 +15,9 @@ You can find a finer grained roadmap in our https://hibernate.atlassian.net/brow
 Dates are generally omitted: milestones are released regularly, the Final release is tagged when it's considered stable.
 
 == Hibernate Search 6.1
+
+For a full list of issues currently planned for this series,
+see https://hibernate.atlassian.net/issues/?jql=project%20%3D%20HSEARCH%20AND%20fixVersion%20%3D%206.1-backlog%20ORDER%20BY%20created%20DESC[here].
 
 Restore the WildFly integration::
 The WildFly integration was removed in 6.0 to reduce the work load.
@@ -27,12 +32,72 @@ This does not account for several challenges that we will address in 6.1:
 * When each node sends updates to Elasticsearch independently,
 conflicts may arise when entities are updated simultaneously on different nodes.
 There is a need to prevent, or at least resolve, these conflicts.
+See link:{hsearch-jira-url-prefix}/HSEARCH-3280[HSEARCH-3280].
 * For some use cases where maintenance downtime is not acceptable,
 Hibernate Search needs to provide hot updates at the cluster level:
-allow to boot application nodes with the new mapping,
+allow booting application nodes with the new mapping,
 while some application nodes with the old mapping are still running.
+See link:{hsearch-jira-url-prefix}/HSEARCH-3499[HSEARCH-3499].
 
-== Hibernate Search 6.x
+== Hibernate Search 6.2
+
+For a full list of issues currently planned for this series,
+see https://hibernate.atlassian.net/issues/?jql=project%20%3D%20HSEARCH%20AND%20fixVersion%20%3D%206.2-backlog%20ORDER%20BY%20created%20DESC[here].
+
+Search query features::
+Add more features to the Hibernate Search DSL.
+In particular:
+
+* link:{hsearch-jira-url-prefix}/HSEARCH-2192[HSEARCH-2192] Highlighting in the Search API
+* link:{hsearch-jira-url-prefix}/HSEARCH-917[HSEARCH-917] Add match all terms option when matching in the DSL API
+* link:{hsearch-jira-url-prefix}/HSEARCH-3327[HSEARCH-3327] Add options for match predicates targeting multiple fields
+* link:{hsearch-jira-url-prefix}/HSEARCH-3926[HSEARCH-3926] Predicate on multiple fields designated by a single label/group name/etc. ("_all", copy_to, ...)
+* link:{hsearch-jira-url-prefix}/HSEARCH-3927[HSEARCH-3927] Projection to a DTO/JavaBean/etc.
+* link:{hsearch-jira-url-prefix}/HSEARCH-3943[HSEARCH-3943] Projection nesting: preserving the document structure in projections
+
+Reactive Search::
+Experiment with integrating Hibernate Search with Hibernate Reactive.
++
+See also link:{hsearch-jira-url-prefix}/HSEARCH-3322[HSEARCH-3322],
+link:{hsearch-jira-url-prefix}/HSEARCH-3471[HSEARCH-3471].
+
+Hibernate Search for arbitrary data sources::
+Experimental module allowing integration with a datastore that is not accessed using Hibernate ORM.
++
+Users will need to put in more work to configure it, in particular they will need to capture insert/update/delete events
+themselves.
++
+Nevertheless, this could be useful for people looking to add full-text search to any application,
+not just applications relying on Hibernate ORM.
++
+See also link:{hsearch-jira-url-prefix}/HSEARCH-1800[HSEARCH-1800].
+
+== Hibernate Search 6.3
+
+For a full list of issues currently planned for this series,
+see https://hibernate.atlassian.net/issues/?jql=project%20%3D%20HSEARCH%20AND%20fixVersion%20%3D%206.3-backlog%20ORDER%20BY%20created%20DESC[here].
+
+More advanced mapping::
+Allow more complex setups when it comes to mapping entities to indexes. In particular:
+
+* link:{hsearch-jira-url-prefix}/HSEARCH-3971[HSEARCH-3971] Mapping an entity differently based on a discriminator
+* link:{hsearch-jira-url-prefix}/HSEARCH-3683[HSEARCH-3683] Mapping a single entity type to multiple indexes
+* link:{hsearch-jira-url-prefix}/HSEARCH-3903[HSEARCH-3903] Filters based exclusively on mapper metadata for @IndexedEmbedded
+
+Some specialized field types::
+Add commonly used field types. In particular:
+
+* Fields derived from large blobs, useful when
+  link:{hsearch-jira-url-prefix}/HSEARCH-3350[indexing PDFs with Apache Tika] for example.
+* Maybe more, depending on demand, e.g.
+  link:{hsearch-jira-url-prefix}/HSEARCH-3488[HSEARCH-3488] Add support for nanosecond precision for temporal fields.
+
+Tracing::
+Tracing of search queries and indexing requests to enable easier debugging and performance investigation.
++
+See link:{hsearch-jira-url-prefix}/HSEARCH-4057[HSEARCH-4057].
+
+== Hibernate Search 6.x or later
 
 Restore the OSGi integration::
 The OSGi integration was removed in 6.0 to reduce the work load.
@@ -43,3 +108,9 @@ Free-form indexing::
 We're planning to decouple the metadata definition from annotated java classes, to allow better indexing of other more flexible sources;
 for example to make it easier to index data structured in the JSON format, or other formats whose schema is not known at compile time.
 
+Debezium integration::
+Asynchronous indexing driven by Change Data Capture in the database instead of Hibernate ORM events.
++
+This would allow capturing changes caused by any SQL command, not just those issued by Hibernate ORM.
++
+See link:{hsearch-jira-url-prefix}/HSEARCH-3513[HSEARCH-3513].
