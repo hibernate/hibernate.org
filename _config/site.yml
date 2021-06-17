@@ -196,6 +196,9 @@ projects:
       elasticsearch:
         name: Elasticsearch server
         url: https://www.elastic.co/products/elasticsearch
+      opensearch:
+        name: OpenSearch
+        url: https://www.opensearch.org
     menu:
       intern:
         - name: About
