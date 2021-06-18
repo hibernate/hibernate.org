@@ -138,6 +138,21 @@
 <div class="block">Perform work using a <a href="../../../../../org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage"><code>stateless session</code></a>.</div>
 </td>
 </tr>
+<tr class="altColor">
+<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;T&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">Stage.SessionFactory.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/stage/Stage.SessionFactory.html#withStatelessTransaction-java.util.function.BiFunction-">withStatelessTransaction</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BiFunction.html?is-external=true" title="class or interface in java.util.function">BiFunction</a>&lt;<a href="../../../../../org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a>,<a href="../../../../../org/hibernate/reactive/stage/Stage.Transaction.html" title="interface in org.hibernate.reactive.stage">Stage.Transaction</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;T&gt;&gt;&nbsp;work)</code>
+<div class="block">Perform work using a <a href="../../../../../org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage"><code>reactive session</code></a> within an
+ associated <a href="../../../../../org/hibernate/reactive/stage/Stage.Transaction.html" title="interface in org.hibernate.reactive.stage"><code>transaction</code></a>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;T&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">Stage.SessionFactory.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/stage/Stage.SessionFactory.html#withStatelessTransaction-java.lang.String-java.util.function.BiFunction-">withStatelessTransaction</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tenantId,
+                        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BiFunction.html?is-external=true" title="class or interface in java.util.function">BiFunction</a>&lt;<a href="../../../../../org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a>,<a href="../../../../../org/hibernate/reactive/stage/Stage.Transaction.html" title="interface in org.hibernate.reactive.stage">Stage.Transaction</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;T&gt;&gt;&nbsp;work)</code>
+<div class="block">Perform work using a <a href="../../../../../org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage"><code>reactive session</code></a> within an
+ associated <a href="../../../../../org/hibernate/reactive/stage/Stage.Transaction.html" title="interface in org.hibernate.reactive.stage"><code>transaction</code></a>.</div>
+</td>
+</tr>
 </tbody>
 </table>
 </li>

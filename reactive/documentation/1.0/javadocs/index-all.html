@@ -68,7 +68,7 @@
 <!--   -->
 </a></div>
 <!-- ========= END OF TOP NAVBAR ========= -->
-<div class="contentContainer"><a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:H">H</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:J">J</a>&nbsp;<a href="#I:L">L</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:N">N</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:Q">Q</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:U">U</a>&nbsp;<a href="#I:V">V</a>&nbsp;<a href="#I:W">W</a>&nbsp;<a name="I:A">
+<div class="contentContainer"><a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:H">H</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:J">J</a>&nbsp;<a href="#I:K">K</a>&nbsp;<a href="#I:L">L</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:N">N</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:Q">Q</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:U">U</a>&nbsp;<a href="#I:V">V</a>&nbsp;<a href="#I:W">W</a>&nbsp;<a name="I:A">
 <!--   -->
 </a>
 <h2 class="title">A</h2>
@@ -199,7 +199,7 @@
 <dl>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/loader/CachingReactiveLoader.html#cacheableResultTransformer-org.hibernate.engine.spi.QueryParameters-">cacheableResultTransformer(QueryParameters)</a></span> - Method in interface org.hibernate.reactive.loader.<a href="org/hibernate/reactive/loader/CachingReactiveLoader.html" title="interface in org.hibernate.reactive.loader">CachingReactiveLoader</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="org/hibernate/reactive/loader/CachingReactiveLoader.html" title="interface in org.hibernate.reactive.loader"><span class="typeNameLink">CachingReactiveLoader</span></a> - Interface in <a href="org/hibernate/reactive/loader/package-summary.html">org.hibernate.reactive.loader</a></dt>
+<dt><a href="org/hibernate/reactive/loader/CachingReactiveLoader.html" title="interface in org.hibernate.reactive.loader"><span class="typeNameLink">CachingReactiveLoader</span></a>&lt;<a href="org/hibernate/reactive/loader/CachingReactiveLoader.html" title="type parameter in CachingReactiveLoader">T</a>&gt; - Interface in <a href="org/hibernate/reactive/loader/package-summary.html">org.hibernate.reactive.loader</a></dt>
 <dd>
 <div class="block">Defines common reactive operations inherited by query loaders, in
  particular, interaction with the cache.</div>
@@ -303,6 +303,8 @@
  object, enabling alternative strategies for associating state
  with the current reactive stream.</div>
 </dd>
+<dt><a href="org/hibernate/reactive/context/Context.Key.html" title="class in org.hibernate.reactive.context"><span class="typeNameLink">Context.Key</span></a>&lt;<a href="org/hibernate/reactive/context/Context.Key.html" title="type parameter in Context.Key">T</a>&gt; - Class in <a href="org/hibernate/reactive/context/package-summary.html">org.hibernate.reactive.context</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveQuery.html#convertQueryException-T-java.lang.Throwable-org.hibernate.query.internal.AbstractProducedQuery-">convertQueryException(T, Throwable, AbstractProducedQuery&lt;?&gt;)</a></span> - Static method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQuery.html" title="interface in org.hibernate.reactive.session">ReactiveQuery</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/provider/ReactivePersistenceProvider.html#createContainerEntityManagerFactory-javax.persistence.spi.PersistenceUnitInfo-java.util.Map-">createContainerEntityManagerFactory(PersistenceUnitInfo, Map)</a></span> - Method in class org.hibernate.reactive.provider.<a href="org/hibernate/reactive/provider/ReactivePersistenceProvider.html" title="class in org.hibernate.reactive.provider">ReactivePersistenceProvider</a></dt>
@@ -731,6 +733,8 @@
 </dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/loader/ReactiveLoaderBasedLoader.html#endCollectionLoad-java.lang.Object-org.hibernate.engine.spi.SharedSessionContractImplementor-org.hibernate.persister.collection.CollectionPersister-">endCollectionLoad(Object, SharedSessionContractImplementor, CollectionPersister)</a></span> - Method in interface org.hibernate.reactive.loader.<a href="org/hibernate/reactive/loader/ReactiveLoaderBasedLoader.html" title="interface in org.hibernate.reactive.loader">ReactiveLoaderBasedLoader</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/context/Context.Key.html#equals-java.lang.Object-">equals(Object)</a></span> - Method in class org.hibernate.reactive.context.<a href="org/hibernate/reactive/context/Context.Key.html" title="class in org.hibernate.reactive.context">Context.Key</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/context/Context.html#execute-java.lang.Runnable-">execute(Runnable)</a></span> - Method in interface org.hibernate.reactive.context.<a href="org/hibernate/reactive/context/Context.html" title="interface in org.hibernate.reactive.context">Context</a></dt>
 <dd>
 <div class="block">Run the given command in a context.</div>
@@ -899,7 +903,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/provider/ReactivePersistenceProvider.html#generateSchema-java.lang.String-java.util.Map-">generateSchema(String, Map)</a></span> - Method in class org.hibernate.reactive.provider.<a href="org/hibernate/reactive/provider/ReactivePersistenceProvider.html" title="class in org.hibernate.reactive.provider">ReactivePersistenceProvider</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="org/hibernate/reactive/context/Context.html#get-java.lang.Class-java.lang.String-">get(Class&lt;T&gt;, String)</a></span> - Method in interface org.hibernate.reactive.context.<a href="org/hibernate/reactive/context/Context.html" title="interface in org.hibernate.reactive.context">Context</a></dt>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/context/Context.html#get-org.hibernate.reactive.context.Context.Key-">get(Context.Key&lt;T&gt;)</a></span> - Method in interface org.hibernate.reactive.context.<a href="org/hibernate/reactive/context/Context.html" title="interface in org.hibernate.reactive.context">Context</a></dt>
 <dd>
 <div class="block">Get a value associated with the current reactive stream,
  or return null.</div>
@@ -1307,6 +1311,8 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/engine/ReactiveActionQueue.html#hasBeforeTransactionActions--">hasBeforeTransactionActions()</a></span> - Method in class org.hibernate.reactive.engine.<a href="org/hibernate/reactive/engine/ReactiveActionQueue.html" title="class in org.hibernate.reactive.engine">ReactiveActionQueue</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/context/Context.Key.html#hashCode--">hashCode()</a></span> - Method in class org.hibernate.reactive.context.<a href="org/hibernate/reactive/context/Context.Key.html" title="class in org.hibernate.reactive.context">Context.Key</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/engine/ReactiveActionQueue.html#hasUnresolvedEntityInsertActions--">hasUnresolvedEntityInsertActions()</a></span> - Method in class org.hibernate.reactive.engine.<a href="org/hibernate/reactive/engine/ReactiveActionQueue.html" title="class in org.hibernate.reactive.engine">ReactiveActionQueue</a></dt>
 <dd>
 <div class="block">Are there unresolved entity insert actions that depend on non-nullable associations with a transient entity?</div>
@@ -1495,6 +1501,14 @@
 <h2 class="title">J</h2>
 <dl>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/provider/service/ReactivePersisterClassResolver.html#joinedSubclassEntityPersister--">joinedSubclassEntityPersister()</a></span> - Method in class org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/ReactivePersisterClassResolver.html" title="class in org.hibernate.reactive.provider.service">ReactivePersisterClassResolver</a></dt>
+<dd>&nbsp;</dd>
+</dl>
+<a name="I:K">
+<!--   -->
+</a>
+<h2 class="title">K</h2>
+<dl>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/context/Context.Key.html#Key-java.lang.Class-java.lang.String-">Key(Class&lt;T&gt;, String)</a></span> - Constructor for class org.hibernate.reactive.context.<a href="org/hibernate/reactive/context/Context.Key.html" title="class in org.hibernate.reactive.context">Context.Key</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <a name="I:L">
@@ -1907,7 +1921,7 @@
 <dd>
 <div class="block">Used by query loaders to add stuff like locking and hints/comments</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/hibernate/reactive/context/Context.html#put-java.lang.Class-java.lang.String-T-">put(Class&lt;T&gt;, String, T)</a></span> - Method in interface org.hibernate.reactive.context.<a href="org/hibernate/reactive/context/Context.html" title="interface in org.hibernate.reactive.context">Context</a></dt>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/context/Context.html#put-org.hibernate.reactive.context.Context.Key-T-">put(Context.Key&lt;T&gt;, T)</a></span> - Method in interface org.hibernate.reactive.context.<a href="org/hibernate/reactive/context/Context.html" title="interface in org.hibernate.reactive.context">Context</a></dt>
 <dd>
 <div class="block">Associate a value with the current reactive stream.</div>
 </dd>
@@ -2359,7 +2373,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/provider/service/ReactiveGenerationTarget.html#release--">release()</a></span> - Method in class org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/ReactiveGenerationTarget.html" title="class in org.hibernate.reactive.provider.service">ReactiveGenerationTarget</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="org/hibernate/reactive/context/Context.html#remove-java.lang.Class-java.lang.String-">remove(Class&lt;?&gt;, String)</a></span> - Method in interface org.hibernate.reactive.context.<a href="org/hibernate/reactive/context/Context.html" title="interface in org.hibernate.reactive.context">Context</a></dt>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/context/Context.html#remove-org.hibernate.reactive.context.Context.Key-">remove(Context.Key&lt;?&gt;)</a></span> - Method in interface org.hibernate.reactive.context.<a href="org/hibernate/reactive/context/Context.html" title="interface in org.hibernate.reactive.context">Context</a></dt>
 <dd>
 <div class="block">Remove a value associated with the current reactive stream.</div>
 </dd>
@@ -2831,6 +2845,26 @@
 <dd>
 <div class="block">Perform work using a <a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage"><code>stateless session</code></a>.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#withStatelessTransaction-java.util.function.BiFunction-">withStatelessTransaction(BiFunction&lt;Mutiny.StatelessSession, Mutiny.Transaction, Uni&lt;T&gt;&gt;)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SessionFactory</a></dt>
+<dd>
+<div class="block">Perform work using a <a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> within an
+ associated <a href="org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#withStatelessTransaction-java.lang.String-java.util.function.BiFunction-">withStatelessTransaction(String, BiFunction&lt;Mutiny.StatelessSession, Mutiny.Transaction, Uni&lt;T&gt;&gt;)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SessionFactory</a></dt>
+<dd>
+<div class="block">Perform work using a <a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> for a
+ specified tenant within an associated <a href="org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.SessionFactory.html#withStatelessTransaction-java.util.function.BiFunction-">withStatelessTransaction(BiFunction&lt;Stage.StatelessSession, Stage.Transaction, CompletionStage&lt;T&gt;&gt;)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.SessionFactory.html" title="interface in org.hibernate.reactive.stage">Stage.SessionFactory</a></dt>
+<dd>
+<div class="block">Perform work using a <a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage"><code>reactive session</code></a> within an
+ associated <a href="org/hibernate/reactive/stage/Stage.Transaction.html" title="interface in org.hibernate.reactive.stage"><code>transaction</code></a>.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.SessionFactory.html#withStatelessTransaction-java.lang.String-java.util.function.BiFunction-">withStatelessTransaction(String, BiFunction&lt;Stage.StatelessSession, Stage.Transaction, CompletionStage&lt;T&gt;&gt;)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.SessionFactory.html" title="interface in org.hibernate.reactive.stage">Stage.SessionFactory</a></dt>
+<dd>
+<div class="block">Perform work using a <a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage"><code>reactive session</code></a> within an
+ associated <a href="org/hibernate/reactive/stage/Stage.Transaction.html" title="interface in org.hibernate.reactive.stage"><code>transaction</code></a>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Session.html#withTransaction-java.util.function.Function-">withTransaction(Function&lt;Mutiny.Transaction, Uni&lt;T&gt;&gt;)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></dt>
 <dd>
 <div class="block">Performs the given work within the scope of a database transaction,
@@ -2872,7 +2906,7 @@
  automatically flushing the session.</div>
 </dd>
 </dl>
-<a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:H">H</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:J">J</a>&nbsp;<a href="#I:L">L</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:N">N</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:Q">Q</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:U">U</a>&nbsp;<a href="#I:V">V</a>&nbsp;<a href="#I:W">W</a>&nbsp;</div>
+<a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:H">H</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:J">J</a>&nbsp;<a href="#I:K">K</a>&nbsp;<a href="#I:L">L</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:N">N</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:Q">Q</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:U">U</a>&nbsp;<a href="#I:V">V</a>&nbsp;<a href="#I:W">W</a>&nbsp;</div>
 <!-- ======= START OF BOTTOM NAVBAR ====== -->
 <div class="bottomNav"><a name="navbar.bottom">
 <!--   -->

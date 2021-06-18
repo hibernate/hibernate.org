@@ -92,7 +92,7 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">org.hibernate.reactive.loader</div>
-<h2 title="Interface CachingReactiveLoader" class="title">Interface CachingReactiveLoader</h2>
+<h2 title="Interface CachingReactiveLoader" class="title">Interface CachingReactiveLoader&lt;T&gt;</h2>
 </div>
 <div class="contentContainer">
 <div class="description">
@@ -104,7 +104,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">CachingReactiveLoader</span>
+<pre>public interface <span class="typeNameLabel">CachingReactiveLoader&lt;T&gt;</span>
 extends <a href="../../../../org/hibernate/reactive/loader/ReactiveLoader.html" title="interface in org.hibernate.reactive.loader">ReactiveLoader</a></pre>
 <div class="block">Defines common reactive operations inherited by query loaders, in
  particular, interaction with the cache.</div>
@@ -182,7 +182,7 @@ extends <a href="../../../../org/hibernate/reactive/loader/ReactiveLoader.html" 
                                org.hibernate.cache.spi.QueryKey&nbsp;key)</code>&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/hibernate/reactive/loader/CachingReactiveLoader.html" title="type parameter in CachingReactiveLoader">T</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/loader/CachingReactiveLoader.html#getResultList-java.util.List-org.hibernate.transform.ResultTransformer-">getResultList</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;?&gt;&nbsp;results,
              org.hibernate.transform.ResultTransformer&nbsp;resultTransformer)</code>&nbsp;</td>
 </tr>
@@ -210,14 +210,14 @@ extends <a href="../../../../org/hibernate/reactive/loader/ReactiveLoader.html" 
         org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters)</code>&nbsp;</td>
 </tr>
 <tr id="i10" class="altColor">
-<td class="colFirst"><code>default <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;</code></td>
+<td class="colFirst"><code>default <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/hibernate/reactive/loader/CachingReactiveLoader.html" title="type parameter in CachingReactiveLoader">T</a>&gt;&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/loader/CachingReactiveLoader.html#reactiveListIgnoreQueryCache-java.lang.String-java.lang.String-org.hibernate.engine.spi.SharedSessionContractImplementor-org.hibernate.engine.spi.QueryParameters-">reactiveListIgnoreQueryCache</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;sql,
                             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryIdentifier,
                             org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session,
                             org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters)</code>&nbsp;</td>
 </tr>
 <tr id="i11" class="rowColor">
-<td class="colFirst"><code>default <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;</code></td>
+<td class="colFirst"><code>default <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/hibernate/reactive/loader/CachingReactiveLoader.html" title="type parameter in CachingReactiveLoader">T</a>&gt;&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/loader/CachingReactiveLoader.html#reactiveListUsingQueryCache-java.lang.String-java.lang.String-org.hibernate.engine.spi.SharedSessionContractImplementor-org.hibernate.engine.spi.QueryParameters-java.util.Set-org.hibernate.type.Type:A-">reactiveListUsingQueryCache</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;sql,
                            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryIdentifier,
                            org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session,
@@ -304,10 +304,10 @@ extends <a href="../../../../org/hibernate/reactive/loader/ReactiveLoader.html" 
 <ul class="blockList">
 <li class="blockList">
 <h4>reactiveListIgnoreQueryCache</h4>
-<pre>default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;&nbsp;reactiveListIgnoreQueryCache(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;sql,
-                                                                   <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryIdentifier,
-                                                                   org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session,
-                                                                   org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters)</pre>
+<pre>default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/hibernate/reactive/loader/CachingReactiveLoader.html" title="type parameter in CachingReactiveLoader">T</a>&gt;&gt;&nbsp;reactiveListIgnoreQueryCache(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;sql,
+                                                              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryIdentifier,
+                                                              org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session,
+                                                              org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters)</pre>
 </li>
 </ul>
 <a name="reactiveListUsingQueryCache-java.lang.String-java.lang.String-org.hibernate.engine.spi.SharedSessionContractImplementor-org.hibernate.engine.spi.QueryParameters-java.util.Set-org.hibernate.type.Type:A-">
@@ -316,12 +316,12 @@ extends <a href="../../../../org/hibernate/reactive/loader/ReactiveLoader.html" 
 <ul class="blockList">
 <li class="blockList">
 <h4>reactiveListUsingQueryCache</h4>
-<pre>default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;&nbsp;reactiveListUsingQueryCache(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;sql,
-                                                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryIdentifier,
-                                                                  org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session,
-                                                                  org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters,
-                                                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>&gt;&nbsp;querySpaces,
-                                                                  org.hibernate.type.Type[]&nbsp;resultTypes)</pre>
+<pre>default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/hibernate/reactive/loader/CachingReactiveLoader.html" title="type parameter in CachingReactiveLoader">T</a>&gt;&gt;&nbsp;reactiveListUsingQueryCache(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;sql,
+                                                             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryIdentifier,
+                                                             org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session,
+                                                             org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters,
+                                                             <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>&gt;&nbsp;querySpaces,
+                                                             org.hibernate.type.Type[]&nbsp;resultTypes)</pre>
 </li>
 </ul>
 <a name="transform-org.hibernate.engine.spi.QueryParameters-org.hibernate.cache.spi.QueryKey-java.util.List-org.hibernate.transform.ResultTransformer-">
@@ -426,9 +426,9 @@ extends <a href="../../../../org/hibernate/reactive/loader/ReactiveLoader.html" 
 <ul class="blockList">
 <li class="blockList">
 <h4>getResultList</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;getResultList(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;?&gt;&nbsp;results,
-                           org.hibernate.transform.ResultTransformer&nbsp;resultTransformer)
-                    throws org.hibernate.QueryException</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/hibernate/reactive/loader/CachingReactiveLoader.html" title="type parameter in CachingReactiveLoader">T</a>&gt;&nbsp;getResultList(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;?&gt;&nbsp;results,
+                      org.hibernate.transform.ResultTransformer&nbsp;resultTransformer)
+               throws org.hibernate.QueryException</pre>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>org.hibernate.QueryException</code></dd>
