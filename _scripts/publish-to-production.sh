@@ -1,7 +1,7 @@
 #!/bin/bash -e
 # This script should be invoked from the root of the repo,
 # after the website has been generated,
-# with a clone of https://github.com/hibernate/hibernate.github.io.git
+# with a clone of git@github.com:hibernate/hibernate.github.io.git
 # available in directory _publish_tmp/hibernate.github.io
 
 pushd _publish_tmp/hibernate.github.io

@@ -54,8 +54,8 @@ pipeline {
                                                            noTags      : true,
                                                            reference   : '',
                                                            shallow     : true]],
-                                      userRemoteConfigs: [[credentialsId: 'username-and-token.Hibernate-CI.github.com',
-                                                           url          : 'https://github.com/hibernate/hibernate.github.io.git']]]
+                                      userRemoteConfigs: [[credentialsId: 'ed25519.Hibernate-CI.github.com',
+                                                           url          : 'git@github.com:hibernate/hibernate.github.io.git']]]
                     }
                 }
                 sh '_scripts/publish-to-production.sh'
