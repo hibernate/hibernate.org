@@ -58,7 +58,10 @@ pipeline {
                                                            url          : 'git@github.com:hibernate/hibernate.github.io.git']]]
                     }
                 }
-                sh '_scripts/publish-to-production.sh'
+                // Need an SSH agent to have the key available when pushing to GitHub.
+                sshagent(['ed25519.Hibernate-CI.github.com']) {
+                    sh '_scripts/publish-to-production.sh'
+                }
             }
         }
     }
