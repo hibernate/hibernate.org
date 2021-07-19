@@ -17,7 +17,7 @@ rsync -av \
 
 if git add -A . && git commit -m "Publish generated site"
 then
- git push origin main
+ git push origin HEAD:main
 fi
 
 popd
