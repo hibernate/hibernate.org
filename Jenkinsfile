@@ -57,8 +57,8 @@ pipeline {
                                       userRemoteConfigs: [[credentialsId: 'ed25519.Hibernate-CI.github.com',
                                                            url          : 'git@github.com:hibernate/hibernate.github.io.git']]]
                     }
-                    sh '_scripts/publish-to-production.sh'
                 }
+                sh '_scripts/publish-to-production.sh'
             }
         }
     }
