@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 # This script should be invoked from the root of the repo,
 # after the website has been generated,
 # with a clone of git@github.com:hibernate/hibernate.github.io.git
@@ -14,22 +14,10 @@ rsync -av \
       --filter "- .git" \
       --filter "- /cache" \
       ../../_site/ .
-rc=$?
-if [[ $rc != 0 ]] ; then
-    echo "ERROR: Site sync failed!"
-    exit $rc
-fi
 
-git add -A .
-if git commit -m "Publish generated site";
+if git add -A . && git commit -m "Publish generated site"
 then
- git push origin main;
- rc=$?
-fi
-if [[ $rc != 0 ]] ; then
-  echo "ERROR: Cannot push to 'hibernate.github.io'!"
-  exit $rc
+ git push origin main
 fi
 
 popd
-
