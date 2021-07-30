@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":6,"i2":18,"i3":18};
+var methods = {"i0":18,"i1":6,"i2":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -122,28 +122,22 @@ var activeTableTab = "activeTableTab";
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>default <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/bulk/StatementsWithParameters.html#execute-org.hibernate.reactive.session.ReactiveQueryExecutor-org.hibernate.engine.spi.QueryParameters-">execute</a></span>(<a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html" title="interface in org.hibernate.reactive.session">ReactiveQueryExecutor</a>&nbsp;session,
+       org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters)</code>
+<div class="block">Execute the statements using the query parameters</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>org.hibernate.param.ParameterSpecification[][]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/bulk/StatementsWithParameters.html#getParameterSpecifications--">getParameterSpecifications</a></span>()</code>
 <div class="block">The parameters of the corresponding SQL statements.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/bulk/StatementsWithParameters.html#getSqlStatements--">getSqlStatements</a></span>()</code>
 <div class="block">The SQL statements to be executed.</div>
-</td>
-</tr>
-<tr id="i2" class="altColor">
-<td class="colFirst"><code>default boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/bulk/StatementsWithParameters.html#isSchemaDefinitionStatement-java.lang.String-">isSchemaDefinitionStatement</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;statement)</code>
-<div class="block">Should the result of this statement contribute to the running
- updated row count?</div>
-</td>
-</tr>
-<tr id="i3" class="rowColor">
-<td class="colFirst"><code>default boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/bulk/StatementsWithParameters.html#isTransactionalStatement-java.lang.String-">isTransactionalStatement</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;statement)</code>
-<div class="block">Is the given statement executed inside the current transaction?</div>
 </td>
 </tr>
 </table>
@@ -181,33 +175,15 @@ var activeTableTab = "activeTableTab";
 <div class="block">The parameters of the corresponding SQL statements.</div>
 </li>
 </ul>
-<a name="isTransactionalStatement-java.lang.String-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>isTransactionalStatement</h4>
-<pre>default&nbsp;boolean&nbsp;isTransactionalStatement(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;statement)</pre>
-<div class="block">Is the given statement executed inside the current transaction?</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>true by default</dd>
-</dl>
-</li>
-</ul>
-<a name="isSchemaDefinitionStatement-java.lang.String-">
+<a name="execute-org.hibernate.reactive.session.ReactiveQueryExecutor-org.hibernate.engine.spi.QueryParameters-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>isSchemaDefinitionStatement</h4>
-<pre>default&nbsp;boolean&nbsp;isSchemaDefinitionStatement(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;statement)</pre>
-<div class="block">Should the result of this statement contribute to the running
- updated row count?</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>false for DDL statements by default</dd>
-</dl>
+<h4>execute</h4>
+<pre>default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;execute(<a href="../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html" title="interface in org.hibernate.reactive.session">ReactiveQueryExecutor</a>&nbsp;session,
+                                         org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters)</pre>
+<div class="block">Execute the statements using the query parameters</div>
 </li>
 </ul>
 </li>

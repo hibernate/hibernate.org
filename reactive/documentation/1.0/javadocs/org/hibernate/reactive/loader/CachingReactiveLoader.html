@@ -231,8 +231,9 @@ extends <a href="../../../../org/hibernate/reactive/loader/ReactiveLoader.html" 
 </tr>
 <tr id="i13" class="rowColor">
 <td class="colFirst"><code>default <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>[]</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/loader/CachingReactiveLoader.html#toParameterArray-org.hibernate.engine.spi.QueryParameters-org.hibernate.engine.spi.SharedSessionContractImplementor-">toParameterArray</a></span>(org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters,
-                org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/loader/CachingReactiveLoader.html#toParameterArray-org.hibernate.engine.spi.QueryParameters-org.hibernate.engine.spi.SharedSessionContractImplementor-org.hibernate.dialect.pagination.LimitHandler-">toParameterArray</a></span>(org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters,
+                org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session,
+                org.hibernate.dialect.pagination.LimitHandler&nbsp;limitHandler)</code>&nbsp;</td>
 </tr>
 <tr id="i14" class="altColor">
 <td class="colFirst"><code>default <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;?&gt;</code></td>
@@ -435,17 +436,18 @@ extends <a href="../../../../org/hibernate/reactive/loader/ReactiveLoader.html" 
 </dl>
 </li>
 </ul>
-<a name="toParameterArray-org.hibernate.engine.spi.QueryParameters-org.hibernate.engine.spi.SharedSessionContractImplementor-">
+<a name="toParameterArray-org.hibernate.engine.spi.QueryParameters-org.hibernate.engine.spi.SharedSessionContractImplementor-org.hibernate.dialect.pagination.LimitHandler-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>toParameterArray</h4>
 <pre>default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>[]&nbsp;toParameterArray(org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters,
-                                  org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session)</pre>
+                                  org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session,
+                                  org.hibernate.dialect.pagination.LimitHandler&nbsp;limitHandler)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../org/hibernate/reactive/loader/ReactiveLoader.html#toParameterArray-org.hibernate.engine.spi.QueryParameters-org.hibernate.engine.spi.SharedSessionContractImplementor-">toParameterArray</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/hibernate/reactive/loader/ReactiveLoader.html" title="interface in org.hibernate.reactive.loader">ReactiveLoader</a></code></dd>
+<dd><code><a href="../../../../org/hibernate/reactive/loader/ReactiveLoader.html#toParameterArray-org.hibernate.engine.spi.QueryParameters-org.hibernate.engine.spi.SharedSessionContractImplementor-org.hibernate.dialect.pagination.LimitHandler-">toParameterArray</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/hibernate/reactive/loader/ReactiveLoader.html" title="interface in org.hibernate.reactive.loader">ReactiveLoader</a></code></dd>
 </dl>
 </li>
 </ul>

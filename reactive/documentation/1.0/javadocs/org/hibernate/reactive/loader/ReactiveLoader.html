@@ -194,8 +194,9 @@ var activeTableTab = "activeTableTab";
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>default <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>[]</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/loader/ReactiveLoader.html#toParameterArray-org.hibernate.engine.spi.QueryParameters-org.hibernate.engine.spi.SharedSessionContractImplementor-">toParameterArray</a></span>(org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters,
-                org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/loader/ReactiveLoader.html#toParameterArray-org.hibernate.engine.spi.QueryParameters-org.hibernate.engine.spi.SharedSessionContractImplementor-org.hibernate.dialect.pagination.LimitHandler-">toParameterArray</a></span>(org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters,
+                org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session,
+                org.hibernate.dialect.pagination.LimitHandler&nbsp;limitHandler)</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -328,14 +329,15 @@ var activeTableTab = "activeTableTab";
  when there is no result set mapping.</div>
 </li>
 </ul>
-<a name="toParameterArray-org.hibernate.engine.spi.QueryParameters-org.hibernate.engine.spi.SharedSessionContractImplementor-">
+<a name="toParameterArray-org.hibernate.engine.spi.QueryParameters-org.hibernate.engine.spi.SharedSessionContractImplementor-org.hibernate.dialect.pagination.LimitHandler-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toParameterArray</h4>
 <pre>default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>[]&nbsp;toParameterArray(org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters,
-                                  org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session)</pre>
+                                  org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session,
+                                  org.hibernate.dialect.pagination.LimitHandler&nbsp;limitHandler)</pre>
 </li>
 </ul>
 </li>

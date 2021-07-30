@@ -735,6 +735,10 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/context/Context.Key.html#equals-java.lang.Object-">equals(Object)</a></span> - Method in class org.hibernate.reactive.context.<a href="org/hibernate/reactive/context/Context.Key.html" title="class in org.hibernate.reactive.context">Context.Key</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/bulk/StatementsWithParameters.html#execute-org.hibernate.reactive.session.ReactiveQueryExecutor-org.hibernate.engine.spi.QueryParameters-">execute(ReactiveQueryExecutor, QueryParameters)</a></span> - Method in interface org.hibernate.reactive.bulk.<a href="org/hibernate/reactive/bulk/StatementsWithParameters.html" title="interface in org.hibernate.reactive.bulk">StatementsWithParameters</a></dt>
+<dd>
+<div class="block">Execute the statements using the query parameters</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/context/Context.html#execute-java.lang.Runnable-">execute(Runnable)</a></span> - Method in interface org.hibernate.reactive.context.<a href="org/hibernate/reactive/context/Context.html" title="interface in org.hibernate.reactive.context">Context</a></dt>
 <dd>
 <div class="block">Run the given command in a context.</div>
@@ -769,6 +773,12 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveQueryExecutor.html#executeReactiveUpdate-org.hibernate.engine.query.spi.sql.NativeSQLQuerySpecification-org.hibernate.engine.spi.QueryParameters-">executeReactiveUpdate(NativeSQLQuerySpecification, QueryParameters)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQueryExecutor.html" title="interface in org.hibernate.reactive.session">ReactiveQueryExecutor</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/pool/BatchingConnection.html#executeUnprepared-java.lang.String-">executeUnprepared(String)</a></span> - Method in class org.hibernate.reactive.pool.<a href="org/hibernate/reactive/pool/BatchingConnection.html" title="class in org.hibernate.reactive.pool">BatchingConnection</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/pool/ReactiveConnection.html#executeUnprepared-java.lang.String-">executeUnprepared(String)</a></span> - Method in interface org.hibernate.reactive.pool.<a href="org/hibernate/reactive/pool/ReactiveConnection.html" title="interface in org.hibernate.reactive.pool">ReactiveConnection</a></dt>
+<dd>
+<div class="block">Run sql as statement (instead of preparedStatement)</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Query.html#executeUpdate--">executeUpdate()</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a></dt>
 <dd>
 <div class="block">Asynchronously execute this delete, update, or insert query,
@@ -1481,17 +1491,8 @@
 <dd>
 <div class="block">Is the specified entity or proxy read-only?</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/hibernate/reactive/bulk/StatementsWithParameters.html#isSchemaDefinitionStatement-java.lang.String-">isSchemaDefinitionStatement(String)</a></span> - Method in interface org.hibernate.reactive.bulk.<a href="org/hibernate/reactive/bulk/StatementsWithParameters.html" title="interface in org.hibernate.reactive.bulk">StatementsWithParameters</a></dt>
-<dd>
-<div class="block">Should the result of this statement contribute to the running
- updated row count?</div>
-</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/loader/ReactiveLoaderBasedLoader.html#isSubselectLoadingEnabled--">isSubselectLoadingEnabled()</a></span> - Method in interface org.hibernate.reactive.loader.<a href="org/hibernate/reactive/loader/ReactiveLoaderBasedLoader.html" title="interface in org.hibernate.reactive.loader">ReactiveLoaderBasedLoader</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="org/hibernate/reactive/bulk/StatementsWithParameters.html#isTransactionalStatement-java.lang.String-">isTransactionalStatement(String)</a></span> - Method in interface org.hibernate.reactive.bulk.<a href="org/hibernate/reactive/bulk/StatementsWithParameters.html" title="interface in org.hibernate.reactive.bulk">StatementsWithParameters</a></dt>
-<dd>
-<div class="block">Is the given statement executed inside the current transaction?</div>
-</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/provider/service/NoJdbcConnectionProvider.html#isUnwrappableAs-java.lang.Class-">isUnwrappableAs(Class)</a></span> - Method in class org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/NoJdbcConnectionProvider.html" title="class in org.hibernate.reactive.provider.service">NoJdbcConnectionProvider</a></dt>
 <dd>&nbsp;</dd>
 </dl>
@@ -2723,9 +2724,9 @@
 </a>
 <h2 class="title">T</h2>
 <dl>
-<dt><span class="memberNameLink"><a href="org/hibernate/reactive/loader/CachingReactiveLoader.html#toParameterArray-org.hibernate.engine.spi.QueryParameters-org.hibernate.engine.spi.SharedSessionContractImplementor-">toParameterArray(QueryParameters, SharedSessionContractImplementor)</a></span> - Method in interface org.hibernate.reactive.loader.<a href="org/hibernate/reactive/loader/CachingReactiveLoader.html" title="interface in org.hibernate.reactive.loader">CachingReactiveLoader</a></dt>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/loader/CachingReactiveLoader.html#toParameterArray-org.hibernate.engine.spi.QueryParameters-org.hibernate.engine.spi.SharedSessionContractImplementor-org.hibernate.dialect.pagination.LimitHandler-">toParameterArray(QueryParameters, SharedSessionContractImplementor, LimitHandler)</a></span> - Method in interface org.hibernate.reactive.loader.<a href="org/hibernate/reactive/loader/CachingReactiveLoader.html" title="interface in org.hibernate.reactive.loader">CachingReactiveLoader</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="org/hibernate/reactive/loader/ReactiveLoader.html#toParameterArray-org.hibernate.engine.spi.QueryParameters-org.hibernate.engine.spi.SharedSessionContractImplementor-">toParameterArray(QueryParameters, SharedSessionContractImplementor)</a></span> - Method in interface org.hibernate.reactive.loader.<a href="org/hibernate/reactive/loader/ReactiveLoader.html" title="interface in org.hibernate.reactive.loader">ReactiveLoader</a></dt>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/loader/ReactiveLoader.html#toParameterArray-org.hibernate.engine.spi.QueryParameters-org.hibernate.engine.spi.SharedSessionContractImplementor-org.hibernate.dialect.pagination.LimitHandler-">toParameterArray(QueryParameters, SharedSessionContractImplementor, LimitHandler)</a></span> - Method in interface org.hibernate.reactive.loader.<a href="org/hibernate/reactive/loader/ReactiveLoader.html" title="interface in org.hibernate.reactive.loader">ReactiveLoader</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/engine/ReactiveActionQueue.html#toString--">toString()</a></span> - Method in class org.hibernate.reactive.engine.<a href="org/hibernate/reactive/engine/ReactiveActionQueue.html" title="class in org.hibernate.reactive.engine">ReactiveActionQueue</a></dt>
 <dd>

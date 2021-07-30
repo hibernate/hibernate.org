@@ -82,6 +82,13 @@
 </tr>
 <tbody>
 <tr class="altColor">
+<td class="colFirst"><a href="#org.hibernate.reactive.bulk">org.hibernate.reactive.bulk</a></td>
+<td class="colLast">
+<div class="block">Reactive adaptations of Hibernate ORM's
+ <code>MultiTableBulkIdStrategy</code>.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><a href="#org.hibernate.reactive.session">org.hibernate.reactive.session</a></td>
 <td class="colLast">
 <div class="block">Defines internal contracts between subsystems of Hibernate Reactive
@@ -93,6 +100,27 @@
 </li>
 <li class="blockList">
 <ul class="blockList">
+<li class="blockList"><a name="org.hibernate.reactive.bulk">
+<!--   -->
+</a>
+<h3>Uses of <a href="../../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html" title="interface in org.hibernate.reactive.session">ReactiveQueryExecutor</a> in <a href="../../../../../org/hibernate/reactive/bulk/package-summary.html">org.hibernate.reactive.bulk</a></h3>
+<table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
+<caption><span>Methods in <a href="../../../../../org/hibernate/reactive/bulk/package-summary.html">org.hibernate.reactive.bulk</a> with parameters of type <a href="../../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html" title="interface in org.hibernate.reactive.session">ReactiveQueryExecutor</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>default <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">StatementsWithParameters.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/bulk/StatementsWithParameters.html#execute-org.hibernate.reactive.session.ReactiveQueryExecutor-org.hibernate.engine.spi.QueryParameters-">execute</a></span>(<a href="../../../../../org/hibernate/reactive/session/ReactiveQueryExecutor.html" title="interface in org.hibernate.reactive.session">ReactiveQueryExecutor</a>&nbsp;session,
+       org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters)</code>
+<div class="block">Execute the statements using the query parameters</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
 <li class="blockList"><a name="org.hibernate.reactive.session">
 <!--   -->
 </a>
