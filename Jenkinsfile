@@ -60,10 +60,10 @@ pipeline {
                 }
                 // Need an SSH agent to have the key available when pushing to GitHub.
                 sshagent(['ed25519.Hibernate-CI.github.com']) {
-                    sh '_scripts/publish-to-production.sh'
+                    sh '_scripts/publish-to-production-github-pages.sh'
                 }
                 sshagent(['jenkins.in.relation.to']) {
-                    sh '_scripts/publish-to-production-ci.sh'
+                    sh '_scripts/publish-to-production-self-hosted.sh'
                 }
             }
         }
