@@ -62,6 +62,9 @@ pipeline {
                 sshagent(['ed25519.Hibernate-CI.github.com']) {
                     sh '_scripts/publish-to-production.sh'
                 }
+                sshagent(['jenkins.in.relation.to']) {
+                    sh '_scripts/publish-to-production-ci.sh'
+                }
             }
         }
     }
