@@ -1,7 +1,7 @@
 summary: Performance, HQL, Criteria, Type System
 integration_constraints:
   java:
-    version: 8 or 11
+    version: 8, 11, 16 or 17
   jpa:
     version: 2.2
 
