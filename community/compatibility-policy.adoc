@@ -146,7 +146,7 @@ it is just not guaranteed.
 
 Code annotated with `@Incubating` is not covered by this compatibility policy *at all*.
 
-Incubating code change at any time, even in a bugfix (micro) release.
+Incubating code can change at any time, even in a bugfix (micro) release.
 It may or may not become fully part of an API or SPI in a future release,
 potentially under a different form.
 It may be removed without replacement and without prior notice,
