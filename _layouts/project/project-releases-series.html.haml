@@ -186,7 +186,7 @@ project_hero_partial: project/hero-series.html.haml
 - if not getting_started_guide.nil?
   %h2{:id => "getting_started"} Getting started
   %p
-    If you want to start using the library, please refer to the getting started guide:
+    If you want to start using #{project_description.name}, please refer to the getting started guide:
   %p
     - if not getting_started_guide.html_url.nil?
       %a.ui.right.labeled.icon.button(href="#{getting_started_guide.html_url}")
@@ -212,6 +212,21 @@ project_hero_partial: project/hero-series.html.haml
         PDF
 
 %h2{:id => "whats-new"} What's new
+
+- if ! latest_release.stable
+  :asciidoc
+    :projectName: #{project_description.name}
+    :version: #{series.version}
+    [NOTE]
+    ====
+    {projectName} {version} is still in development:
+
+    * some features may be incomplete;
+    * newly introduced features may change in a backward-incompatible way before the stable release.
+
+    We encourage you to link:#get-it[give it a try] and to link:/community/[let us know]
+    of any bugs or problems you encounter.
+    ====
 
 - if latest_release[:announcement_url]
   %p
