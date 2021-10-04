@@ -15,16 +15,16 @@ project: search
 
     It features:
 
-    * https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#mapper-orm-mapping[**Declarative mapping**]
+    * https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#mapper-orm-mapping[**Declarative mapping**]
     of entity properties to index fields,
     either through annotations or a programmatic API.
-    * https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#mapper-orm-indexing-massindexer[**On-demand mass indexing**]
+    * https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#mapper-orm-indexing-massindexer[**On-demand mass indexing**]
     of all entities in the database,
     to initialize the indexes with pre-existing data.
-    * https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#mapper-orm-indexing-automatic[**On-the-fly automatic indexing**]
+    * https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#mapper-orm-indexing-automatic[**On-the-fly automatic indexing**]
     of entities modified through a Hibernate ORM session,
     to always keep the indexes up-to-date.
-    * https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl[**A Search DSL**]
+    * https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#search-dsl[**A Search DSL**]
     to easily build full-text search queries
     and retrieve the hits as Hibernate ORM entities.
     * And much more! (see below)
@@ -121,11 +121,11 @@ project: search
     Unlike with web search, this is your data, your domain, your application, stored wherever you decide.
 
     You can chose what to index (and how to index it) very precisely with
-    https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#mapper-orm-directfieldmapping[per-property mapping]
-    and go even further with https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#mapper-orm-bridge[custom bridges].
+    https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#mapper-orm-directfieldmapping[per-property mapping]
+    and go even further with https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#mapper-orm-bridge[custom bridges].
 
     You also have far better control on how your data is processed with
-    https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#concepts-analysis[configurable analysis],
+    https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#concepts-analysis[configurable analysis],
     so you can:
 
     * Tune text processing for specific languages.
@@ -138,13 +138,13 @@ project: search
     Designed to be easy to use from the ground up.
     Handles schema initialization, indexing and query syntax transparently while you focus on the business side of your search.
 
-    The Search DSL exposes many different https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl-predicate[predicates]
-    and https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl-sort[sorts]
+    The Search DSL exposes many different https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#search-dsl-predicate[predicates]
+    and https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#search-dsl-sort[sorts]
     through a succinct, easy-to-use API.
 
     And if you need to go beyond, it won't stop you:
-    native https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl-predicate-extensions-lucene-from-lucene-query[Lucene Queries]
-    or https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl-predicate-extensions-elasticsearch-from-json[Elasticsearch JSON]
+    native https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#search-dsl-predicate-extensions-lucene-from-lucene-query[Lucene Queries]
+    or https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#search-dsl-predicate-extensions-elasticsearch-from-json[Elasticsearch JSON]
     can be inserted right in the middle of Search DSL queries.
 .feature-block
   :asciidoc
@@ -159,17 +159,17 @@ project: search
     == Spatial queries
 
     Indexing geo-localized entities is as easy as
-    https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#mapper-orm-geopoint[adding the `@GenericField` annotation].
+    https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#mapper-orm-geopoint[adding the `@GenericField` annotation].
 
-    https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl-predicate-spatial-within[Filter results around a certain location]
+    https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#search-dsl-predicate-spatial-within[Filter results around a certain location]
     like the user position,
-    and use a https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl-sort-distance[distance sort]
+    and use a https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#search-dsl-sort-distance[distance sort]
     to pull to the top the matching pizzerias which are closest to the user.
 .feature-block
   :asciidoc
     == Aggregations
 
-    Get search results https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl-aggregation[aggregated] by groups and categories.
+    Get search results https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#search-dsl-aggregation[aggregated] by groups and categories.
 
     For example webshops will want to show all hits,
     but also display a count of hits by price range and brand.
