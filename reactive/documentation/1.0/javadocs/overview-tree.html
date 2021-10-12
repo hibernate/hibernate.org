@@ -74,6 +74,7 @@
 <ul class="horizontal">
 <li><a href="org/hibernate/reactive/bulk/package-tree.html">org.hibernate.reactive.bulk</a>, </li>
 <li><a href="org/hibernate/reactive/common/package-tree.html">org.hibernate.reactive.common</a>, </li>
+<li><a href="org/hibernate/reactive/common/spi/package-tree.html">org.hibernate.reactive.common.spi</a>, </li>
 <li><a href="org/hibernate/reactive/context/package-tree.html">org.hibernate.reactive.context</a>, </li>
 <li><a href="org/hibernate/reactive/engine/package-tree.html">org.hibernate.reactive.engine</a>, </li>
 <li><a href="org/hibernate/reactive/event/package-tree.html">org.hibernate.reactive.event</a>, </li>
@@ -106,6 +107,17 @@
 </li>
 </ul>
 </li>
+<li type="circle">org.hibernate.tool.schema.extract.internal.AbstractInformationExtractorImpl (implements org.hibernate.tool.schema.extract.spi.InformationExtractor)
+<ul>
+<li type="circle">org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/AbstractReactiveInformationSchemaBasedExtractorImpl.html" title="class in org.hibernate.reactive.provider.service"><span class="typeNameLink">AbstractReactiveInformationSchemaBasedExtractorImpl</span></a>
+<ul>
+<li type="circle">org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/MySqlReactiveInformationExtractorImpl.html" title="class in org.hibernate.reactive.provider.service"><span class="typeNameLink">MySqlReactiveInformationExtractorImpl</span></a></li>
+<li type="circle">org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/PostgreSqlReactiveInformationExtractorImpl.html" title="class in org.hibernate.reactive.provider.service"><span class="typeNameLink">PostgreSqlReactiveInformationExtractorImpl</span></a></li>
+<li type="circle">org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/SqlServerReactiveInformationExtractorImpl.html" title="class in org.hibernate.reactive.provider.service"><span class="typeNameLink">SqlServerReactiveInformationExtractorImpl</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li type="circle">org.hibernate.engine.jdbc.connections.spi.AbstractMultiTenantConnectionProvider (implements org.hibernate.engine.jdbc.connections.spi.MultiTenantConnectionProvider)
 <ul>
 <li type="circle">org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/NoJdbcMultiTenantConnectionProvider.html" title="class in org.hibernate.reactive.provider.service"><span class="typeNameLink">NoJdbcMultiTenantConnectionProvider</span></a></li>
@@ -113,11 +125,20 @@
 </li>
 <li type="circle">org.hibernate.reactive.common.<a href="org/hibernate/reactive/common/AffectedEntities.html" title="class in org.hibernate.reactive.common"><span class="typeNameLink">AffectedEntities</span></a></li>
 <li type="circle">org.hibernate.reactive.pool.<a href="org/hibernate/reactive/pool/BatchingConnection.html" title="class in org.hibernate.reactive.pool"><span class="typeNameLink">BatchingConnection</span></a> (implements org.hibernate.reactive.pool.<a href="org/hibernate/reactive/pool/ReactiveConnection.html" title="interface in org.hibernate.reactive.pool">ReactiveConnection</a>)</li>
-<li type="circle">org.hibernate.reactive.context.<a href="org/hibernate/reactive/context/Context.Key.html" title="class in org.hibernate.reactive.context"><span class="typeNameLink">Context.Key</span></a>&lt;T&gt;</li>
+<li type="circle">org.hibernate.tool.schema.internal.HibernateSchemaManagementTool (implements org.hibernate.tool.schema.spi.SchemaManagementTool, org.hibernate.service.spi.ServiceRegistryAwareService)
+<ul>
+<li type="circle">org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/ReactiveSchemaManagementTool.html" title="class in org.hibernate.reactive.provider.service"><span class="typeNameLink">ReactiveSchemaManagementTool</span></a></li>
+</ul>
+</li>
 <li type="circle">org.hibernate.reactive.common.<a href="org/hibernate/reactive/common/Identifier.html" title="class in org.hibernate.reactive.common"><span class="typeNameLink">Identifier</span></a>&lt;T&gt;
 <ul>
 <li type="circle">org.hibernate.reactive.common.<a href="org/hibernate/reactive/common/Identifier.Composite.html" title="class in org.hibernate.reactive.common"><span class="typeNameLink">Identifier.Composite</span></a>&lt;T&gt;</li>
 <li type="circle">org.hibernate.reactive.common.<a href="org/hibernate/reactive/common/Identifier.Id.html" title="class in org.hibernate.reactive.common"><span class="typeNameLink">Identifier.Id</span></a>&lt;T&gt;</li>
+</ul>
+</li>
+<li type="circle">org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl (implements org.hibernate.tool.schema.extract.spi.ExtractionContext)
+<ul>
+<li type="circle">org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/ReactiveImprovedExtractionContextImpl.html" title="class in org.hibernate.reactive.provider.service"><span class="typeNameLink">ReactiveImprovedExtractionContextImpl</span></a></li>
 </ul>
 </li>
 <li type="circle">org.hibernate.reactive.common.<a href="org/hibernate/reactive/common/InternalStateAssertions.html" title="class in org.hibernate.reactive.common"><span class="typeNameLink">InternalStateAssertions</span></a></li>
@@ -143,6 +164,7 @@
 <li type="circle">org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/ReactivePersisterClassResolverInitiator.html" title="class in org.hibernate.reactive.provider.service"><span class="typeNameLink">ReactivePersisterClassResolverInitiator</span></a> (implements org.hibernate.boot.registry.StandardServiceInitiator&lt;R&gt;)</li>
 <li type="circle">org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/ReactiveQueryTranslatorFactory.html" title="class in org.hibernate.reactive.provider.service"><span class="typeNameLink">ReactiveQueryTranslatorFactory</span></a> (implements org.hibernate.hql.spi.QueryTranslatorFactory)</li>
 <li type="circle">org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/ReactiveQueryTranslatorFactoryInitiator.html" title="class in org.hibernate.reactive.provider.service"><span class="typeNameLink">ReactiveQueryTranslatorFactoryInitiator</span></a> (implements org.hibernate.boot.registry.StandardServiceInitiator&lt;R&gt;)</li>
+<li type="circle">org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/ReactiveSchemaManagementToolInitiator.html" title="class in org.hibernate.reactive.provider.service"><span class="typeNameLink">ReactiveSchemaManagementToolInitiator</span></a> (implements org.hibernate.boot.registry.StandardServiceInitiator&lt;R&gt;)</li>
 <li type="circle">org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/ReactiveSessionFactoryBuilderInitiator.html" title="class in org.hibernate.reactive.provider.service"><span class="typeNameLink">ReactiveSessionFactoryBuilderInitiator</span></a> (implements org.hibernate.boot.registry.StandardServiceInitiator&lt;R&gt;)</li>
 <li type="circle">org.hibernate.persister.internal.StandardPersisterClassResolver (implements org.hibernate.persister.spi.PersisterClassResolver)
 <ul>
@@ -185,6 +207,7 @@
 <li type="circle">org.hibernate.reactive.engine.<a href="org/hibernate/reactive/engine/ReactiveExecutable.html" title="interface in org.hibernate.reactive.engine"><span class="typeNameLink">ReactiveExecutable</span></a> (also extends org.hibernate.action.spi.Executable, java.io.<a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>)</li>
 </ul>
 </li>
+<li type="circle">org.hibernate.reactive.context.<a href="org/hibernate/reactive/context/Context.Key.html" title="interface in org.hibernate.reactive.context"><span class="typeNameLink">Context.Key</span></a>&lt;T&gt;</li>
 <li type="circle">org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/Criteria.html" title="interface in org.hibernate.reactive.session"><span class="typeNameLink">Criteria</span></a>&lt;R&gt;</li>
 <li type="circle">org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/CriteriaQueryOptions.html" title="interface in org.hibernate.reactive.session"><span class="typeNameLink">CriteriaQueryOptions</span></a></li>
 <li type="circle">org.hibernate.action.spi.Executable
@@ -197,6 +220,7 @@
 <li type="circle">org.hibernate.reactive.context.<a href="org/hibernate/reactive/context/Context.html" title="interface in org.hibernate.reactive.context"><span class="typeNameLink">Context</span></a> (also extends org.hibernate.service.Service)</li>
 </ul>
 </li>
+<li type="circle">org.hibernate.reactive.common.spi.<a href="org/hibernate/reactive/common/spi/Implementor.html" title="interface in org.hibernate.reactive.common.spi"><span class="typeNameLink">Implementor</span></a></li>
 <li type="circle">java.util.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util"><span class="typeNameLink">Iterator</span></a>&lt;E&gt;
 <ul>
 <li type="circle">org.hibernate.reactive.pool.<a href="org/hibernate/reactive/pool/ReactiveConnection.Result.html" title="interface in org.hibernate.reactive.pool"><span class="typeNameLink">ReactiveConnection.Result</span></a></li>
@@ -211,6 +235,7 @@
 </li>
 <li type="circle">org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><span class="typeNameLink">Mutiny.Query</span></a>&lt;R&gt;</li>
 <li type="circle">org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><span class="typeNameLink">Mutiny.Transaction</span></a></li>
+<li type="circle">org.hibernate.reactive.common.spi.<a href="org/hibernate/reactive/common/spi/MutinyImplementor.html" title="interface in org.hibernate.reactive.common.spi"><span class="typeNameLink">MutinyImplementor</span></a></li>
 <li type="circle">org.hibernate.reactive.engine.<a href="org/hibernate/reactive/engine/ReactiveAfterTransactionCompletionProcess.html" title="interface in org.hibernate.reactive.engine"><span class="typeNameLink">ReactiveAfterTransactionCompletionProcess</span></a></li>
 <li type="circle">org.hibernate.reactive.engine.<a href="org/hibernate/reactive/engine/ReactiveBeforeTransactionCompletionProcess.html" title="interface in org.hibernate.reactive.engine"><span class="typeNameLink">ReactiveBeforeTransactionCompletionProcess</span></a></li>
 <li type="circle">org.hibernate.reactive.pool.<a href="org/hibernate/reactive/pool/ReactiveConnection.html" title="interface in org.hibernate.reactive.pool"><span class="typeNameLink">ReactiveConnection</span></a></li>

@@ -82,6 +82,10 @@
 </tr>
 <tbody>
 <tr class="altColor">
+<td class="colFirst"><a href="#org.hibernate.reactive.common.spi">org.hibernate.reactive.common.spi</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><a href="#org.hibernate.reactive.mutiny">org.hibernate.reactive.mutiny</a></td>
 <td class="colLast">
 <div class="block">An API for Hibernate Reactive where non-blocking operations are
@@ -93,12 +97,12 @@
 </li>
 <li class="blockList">
 <ul class="blockList">
-<li class="blockList"><a name="org.hibernate.reactive.mutiny">
+<li class="blockList"><a name="org.hibernate.reactive.common.spi">
 <!--   -->
 </a>
-<h3>Uses of <a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a> in <a href="../../../../../org/hibernate/reactive/mutiny/package-summary.html">org.hibernate.reactive.mutiny</a></h3>
+<h3>Uses of <a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a> in <a href="../../../../../org/hibernate/reactive/common/spi/package-summary.html">org.hibernate.reactive.common.spi</a></h3>
 <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
-<caption><span>Methods in <a href="../../../../../org/hibernate/reactive/mutiny/package-summary.html">org.hibernate.reactive.mutiny</a> that return <a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></span><span class="tabEnd">&nbsp;</span></caption>
+<caption><span>Methods in <a href="../../../../../org/hibernate/reactive/common/spi/package-summary.html">org.hibernate.reactive.common.spi</a> that return <a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
@@ -106,14 +110,44 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></code></td>
-<td class="colLast"><span class="typeNameLabel">Mutiny.SessionFactory.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#openStatelessSession--">openStatelessSession</a></span>()</code>
-<div class="block">Obtain a <a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive stateless session</code></a>.</div>
+<td class="colLast"><span class="typeNameLabel">MutinyImplementor.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/common/spi/MutinyImplementor.html#newStatelessSession--">newStatelessSession</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Obtain a <code>reactive stateless session</code>.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></code></td>
+<td class="colLast"><span class="typeNameLabel">MutinyImplementor.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/common/spi/MutinyImplementor.html#newStatelessSession-java.lang.String-">newStatelessSession</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tenantId)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Obtain a <code>reactive stateless session</code>.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList"><a name="org.hibernate.reactive.mutiny">
+<!--   -->
+</a>
+<h3>Uses of <a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a> in <a href="../../../../../org/hibernate/reactive/mutiny/package-summary.html">org.hibernate.reactive.mutiny</a></h3>
+<table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
+<caption><span>Methods in <a href="../../../../../org/hibernate/reactive/mutiny/package-summary.html">org.hibernate.reactive.mutiny</a> that return types with arguments of type <a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">Mutiny.SessionFactory.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#openStatelessSession--">openStatelessSession</a></span>()</code>
+<div class="block">Obtain a <a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive stateless session</code></a>
+<code>Uni</code>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">Mutiny.SessionFactory.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#openStatelessSession-java.lang.String-">openStatelessSession</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tenantId)</code>
-<div class="block">Obtain a <a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive stateless session</code></a>.</div>
+<div class="block">Obtain a <a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive stateless session</code></a>
+ <code>Uni</code>.</div>
 </td>
 </tr>
 </tbody>

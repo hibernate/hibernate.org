@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":18,"i1":18,"i2":18,"i3":6,"i4":18};
+var methods = {"i0":18,"i1":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -152,20 +152,6 @@ var activeTableTab = "activeTableTab";
                 org.hibernate.event.spi.PreLoadEvent&nbsp;preLoadEvent)</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>default boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/loader/ReactiveResultSetProcessor.html#isNull-org.hibernate.type.EntityType-java.lang.Object-org.hibernate.engine.spi.SharedSessionContractImplementor-">isNull</a></span>(org.hibernate.type.EntityType&nbsp;entityType,
-      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;owner,
-      org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session)</code>&nbsp;</td>
-</tr>
-<tr id="i2" class="altColor">
-<td class="colFirst"><code>default <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/loader/ReactiveResultSetProcessor.html#loadByUniqueKey-org.hibernate.type.EntityType-java.lang.Object-org.hibernate.engine.spi.SharedSessionContractImplementor-">loadByUniqueKey</a></span>(org.hibernate.type.EntityType&nbsp;entityType,
-               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;key,
-               org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session)</code>
-<div class="block">Load an instance by a unique key that is not the primary key.</div>
-</td>
-</tr>
-<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/loader/ReactiveResultSetProcessor.html#reactiveExtractResults-java.sql.ResultSet-org.hibernate.engine.spi.SharedSessionContractImplementor-org.hibernate.engine.spi.QueryParameters-org.hibernate.loader.plan.exec.query.spi.NamedParameterContext-boolean-boolean-org.hibernate.transform.ResultTransformer-java.util.List-">reactiveExtractResults</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/sql/ResultSet.html?is-external=true" title="class or interface in java.sql">ResultSet</a>&nbsp;resultSet,
                       org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session,
@@ -175,15 +161,6 @@ var activeTableTab = "activeTableTab";
                       boolean&nbsp;readOnly,
                       org.hibernate.transform.ResultTransformer&nbsp;forcedResultTransformer,
                       <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;org.hibernate.loader.spi.AfterLoadAction&gt;&nbsp;afterLoadActionList)</code>&nbsp;</td>
-</tr>
-<tr id="i4" class="altColor">
-<td class="colFirst"><code>default <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/loader/ReactiveResultSetProcessor.html#resolve-org.hibernate.type.EntityType-java.io.Serializable-java.lang.Object-org.hibernate.engine.spi.SharedSessionContractImplementor-">resolve</a></span>(org.hibernate.type.EntityType&nbsp;entityType,
-       <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>&nbsp;value,
-       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;owner,
-       org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session)</code>
-<div class="block">Replacement for <code>EntityType.resolve(Object, SharedSessionContractImplementor, Object, Boolean)</code></div>
-</td>
 </tr>
 </table>
 </li>
@@ -241,60 +218,13 @@ var activeTableTab = "activeTableTab";
 <a name="initializeEntity-java.lang.Object-boolean-org.hibernate.engine.spi.SharedSessionContractImplementor-org.hibernate.event.spi.PreLoadEvent-">
 <!--   -->
 </a>
-<ul class="blockList">
+<ul class="blockListLast">
 <li class="blockList">
 <h4>initializeEntity</h4>
 <pre>default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;&nbsp;initializeEntity(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;entity,
                                                boolean&nbsp;readOnly,
                                                org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session,
                                                org.hibernate.event.spi.PreLoadEvent&nbsp;preLoadEvent)</pre>
-</li>
-</ul>
-<a name="resolve-org.hibernate.type.EntityType-java.io.Serializable-java.lang.Object-org.hibernate.engine.spi.SharedSessionContractImplementor-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>resolve</h4>
-<pre>default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;resolve(org.hibernate.type.EntityType&nbsp;entityType,
-                                        <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>&nbsp;value,
-                                        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;owner,
-                                        org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session)</pre>
-<div class="block">Replacement for <code>EntityType.resolve(Object, SharedSessionContractImplementor, Object, Boolean)</code></div>
-</li>
-</ul>
-<a name="isNull-org.hibernate.type.EntityType-java.lang.Object-org.hibernate.engine.spi.SharedSessionContractImplementor-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>isNull</h4>
-<pre>default&nbsp;boolean&nbsp;isNull(org.hibernate.type.EntityType&nbsp;entityType,
-                       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;owner,
-                       org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session)</pre>
-</li>
-</ul>
-<a name="loadByUniqueKey-org.hibernate.type.EntityType-java.lang.Object-org.hibernate.engine.spi.SharedSessionContractImplementor-">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>loadByUniqueKey</h4>
-<pre>default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;loadByUniqueKey(org.hibernate.type.EntityType&nbsp;entityType,
-                                                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;key,
-                                                org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session)
-                                         throws org.hibernate.HibernateException</pre>
-<div class="block">Load an instance by a unique key that is not the primary key.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>entityType</code> - The <code>EntityType</code> of the association</dd>
-<dd><code>key</code> - The unique key property value.</dd>
-<dd><code>session</code> - The originating session.</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>The loaded entity</dd>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>org.hibernate.HibernateException</code> - generally indicates problems performing the load.</dd>
-</dl>
 </li>
 </ul>
 </li>

@@ -184,30 +184,32 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseab
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#isOpen--">isOpen</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
+<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#openSession--">openSession</a></span>()</code>
-<div class="block">Obtain a new <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a>, the main
+<div class="block">Obtain a new <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> <code>Uni</code>, the main
  interaction point between the user's program and Hibernate
  Reactive.</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
+<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#openSession-java.lang.String-">openSession</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tenantId)</code>
-<div class="block">Obtain a new <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> for a
+<div class="block">Obtain a new <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> <code>Uni</code> for a
  specified tenant.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
-<td class="colFirst"><code><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></code></td>
+<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#openStatelessSession--">openStatelessSession</a></span>()</code>
-<div class="block">Obtain a <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive stateless session</code></a>.</div>
+<div class="block">Obtain a <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive stateless session</code></a>
+<code>Uni</code>.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
-<td class="colFirst"><code><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></code></td>
+<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#openStatelessSession-java.lang.String-">openStatelessSession</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tenantId)</code>
-<div class="block">Obtain a <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive stateless session</code></a>.</div>
+<div class="block">Obtain a <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive stateless session</code></a>
+ <code>Uni</code>.</div>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
@@ -288,13 +290,12 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseab
 <ul class="blockList">
 <li class="blockList">
 <h4>openSession</h4>
-<pre><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a>&nbsp;openSession()</pre>
-<div class="block">Obtain a new <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a>, the main
+<pre>io.smallrye.mutiny.Uni&lt;<a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a>&gt;&nbsp;openSession()</pre>
+<div class="block">Obtain a new <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> <code>Uni</code>, the main
  interaction point between the user's program and Hibernate
  Reactive.
  <p>
- The underlying database connection is obtained lazily when
- the returned <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Session</code></a> needs to access the database.
+ When the <code>Uni</code> completes successfully it returns a newly created session.
  <p>
  The client must explicitly close the session by calling
  <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html#close--"><code>Mutiny.Session.close()</code></a>.</div>
@@ -310,12 +311,11 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseab
 <ul class="blockList">
 <li class="blockList">
 <h4>openSession</h4>
-<pre><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a>&nbsp;openSession(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tenantId)</pre>
-<div class="block">Obtain a new <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> for a
+<pre>io.smallrye.mutiny.Uni&lt;<a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a>&gt;&nbsp;openSession(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tenantId)</pre>
+<div class="block">Obtain a new <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> <code>Uni</code> for a
  specified tenant.
  <p>
- The underlying database connection is obtained lazily when
- the returned <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Session</code></a> needs to access the database.
+ When the <code>Uni</code> completes successfully it returns a newly created session.
  <p>
  The client must explicitly close the session by calling
  <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html#close--"><code>Mutiny.Session.close()</code></a>.</div>
@@ -333,15 +333,18 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseab
 <ul class="blockList">
 <li class="blockList">
 <h4>openStatelessSession</h4>
-<pre><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a>&nbsp;openStatelessSession()</pre>
-<div class="block">Obtain a <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive stateless session</code></a>.
+<pre>io.smallrye.mutiny.Uni&lt;<a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a>&gt;&nbsp;openStatelessSession()</pre>
+<div class="block">Obtain a <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive stateless session</code></a>
+<code>Uni</code>.
  <p>
- The underlying database connection is obtained lazily when
- the returned <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.StatelessSession</code></a> needs to access the
- database.
+ When the <code>Uni</code> completes successfully it returns a newly created session.
  <p>
  The client must explicitly close the session by calling
  <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#close--"><code>Mutiny.StatelessSession.close()</code></a>.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#withStatelessSession-java.util.function.Function-"><code>withStatelessSession(Function)</code></a></dd>
+</dl>
 </li>
 </ul>
 <a name="openStatelessSession-java.lang.String-">
@@ -350,18 +353,19 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseab
 <ul class="blockList">
 <li class="blockList">
 <h4>openStatelessSession</h4>
-<pre><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a>&nbsp;openStatelessSession(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tenantId)</pre>
-<div class="block">Obtain a <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive stateless session</code></a>.
+<pre>io.smallrye.mutiny.Uni&lt;<a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a>&gt;&nbsp;openStatelessSession(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tenantId)</pre>
+<div class="block">Obtain a <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive stateless session</code></a>
+ <code>Uni</code>.
  <p>
- The underlying database connection is obtained lazily when
- the returned <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.StatelessSession</code></a> needs to access the
- database.
+ When the <code>Uni</code> completes successfully it returns a newly created session.
  <p>
  The client must explicitly close the session by calling
  <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#close--"><code>Mutiny.StatelessSession.close()</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>tenantId</code> - the id of the tenant</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#withStatelessSession-java.lang.String-java.util.function.Function-"><code>withStatelessSession(String, Function)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -429,6 +433,14 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseab
 <div class="block">Perform work using a <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> within an
  associated <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.
  <p>
+ <il>
+ <li>If there is already a session associated with the
+ current reactive stream, then the work will be executed using that
+ session.
+ <li>Otherwise, if there is no session associated with the
+ current stream, a new stateless session will be created.
+ </il>
+ <p>
  The session will be <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html#flush--"><code>flushed</code></a> and closed
  automatically, and the transaction committed automatically.</div>
 <dl>
@@ -450,6 +462,14 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseab
 <pre>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;&nbsp;withStatelessTransaction(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BiFunction.html?is-external=true" title="class or interface in java.util.function">BiFunction</a>&lt;<a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a>,<a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a>,io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</pre>
 <div class="block">Perform work using a <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> within an
  associated <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.
+ <p>
+ <il>
+ <li>If there is already a stateless session associated with the
+ current reactive stream, then the work will be executed using that
+ session.
+ <li>Otherwise, if there is no stateless session associated with the
+ current stream, a new stateless session will be created.
+ </il>
  <p>
  The session will be closed automatically and the transaction committed automatically.</div>
 <dl>
@@ -499,10 +519,10 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseab
  <p>
  <il>
  <li>If there is already a stateless session associated with the
- current reactive stream, then the work will be executed using that
+ current reactive stream and given tenant id, then the work will be executed using that
  session.
  <li>Otherwise, if there is no stateless session associated with the
- current stream, a new stateless session will be created.
+ current stream and given tenant id, a new stateless session will be created.
  </il>
  <p>
  The session will be closed automatically.</div>
@@ -524,6 +544,14 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseab
                                               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BiFunction.html?is-external=true" title="class or interface in java.util.function">BiFunction</a>&lt;<a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a>,<a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a>,io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</pre>
 <div class="block">Perform work using a <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> for a
  specified tenant within an associated <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.
+ <p>
+ <il>
+ <li>If there is already a session associated with the
+ current reactive stream and given tenant id, then the work will be executed using that
+ session.
+ <li>Otherwise, if there is no session associated with the
+ current stream and given tenant id, a new stateless session will be created.
+ </il>
  <p>
  The session will be <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html#flush--"><code>flushed</code></a> and closed
  automatically, and the transaction committed automatically.</div>
@@ -548,6 +576,14 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseab
                                                        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BiFunction.html?is-external=true" title="class or interface in java.util.function">BiFunction</a>&lt;<a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a>,<a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a>,io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</pre>
 <div class="block">Perform work using a <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> for a
  specified tenant within an associated <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.
+ <p>
+ <il>
+ <li>If there is already a stateless session associated with the
+ current reactive stream and given tenant id, then the work will be executed using that
+ session.
+ <li>Otherwise, if there is no stateless session associated with the
+ current stream and given tenant id, a new stateless session will be created.
+ </il>
  <p>
  The session will be closed automatically and the transaction committed automatically.</div>
 <dl>

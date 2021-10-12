@@ -49,7 +49,7 @@ var activeTableTab = "activeTableTab";
 <div class="subNav">
 <ul class="navList">
 <li>Prev&nbsp;Class</li>
-<li><a href="../../../../org/hibernate/reactive/context/Context.Key.html" title="class in org.hibernate.reactive.context"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../org/hibernate/reactive/context/Context.Key.html" title="interface in org.hibernate.reactive.context"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?org/hibernate/reactive/context/Context.html" target="_top">Frames</a></li>
@@ -128,8 +128,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/
 <th class="colLast" scope="col">Interface and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static class&nbsp;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/context/Context.Key.html" title="class in org.hibernate.reactive.context">Context.Key</a>&lt;<a href="../../../../org/hibernate/reactive/context/Context.Key.html" title="type parameter in Context.Key">T</a>&gt;</span></code>&nbsp;</td>
+<td class="colFirst"><code>static interface&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/context/Context.Key.html" title="interface in org.hibernate.reactive.context">Context.Key</a>&lt;<a href="../../../../org/hibernate/reactive/context/Context.Key.html" title="type parameter in Context.Key">T</a>&gt;</span></code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -154,21 +154,21 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/context/Context.html#get-org.hibernate.reactive.context.Context.Key-">get</a></span>(<a href="../../../../org/hibernate/reactive/context/Context.Key.html" title="class in org.hibernate.reactive.context">Context.Key</a>&lt;T&gt;&nbsp;key)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/context/Context.html#get-org.hibernate.reactive.context.Context.Key-">get</a></span>(<a href="../../../../org/hibernate/reactive/context/Context.Key.html" title="interface in org.hibernate.reactive.context">Context.Key</a>&lt;T&gt;&nbsp;key)</code>
 <div class="block">Get a value associated with the current reactive stream,
  or return null.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/context/Context.html#put-org.hibernate.reactive.context.Context.Key-T-">put</a></span>(<a href="../../../../org/hibernate/reactive/context/Context.Key.html" title="class in org.hibernate.reactive.context">Context.Key</a>&lt;T&gt;&nbsp;key,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/context/Context.html#put-org.hibernate.reactive.context.Context.Key-T-">put</a></span>(<a href="../../../../org/hibernate/reactive/context/Context.Key.html" title="interface in org.hibernate.reactive.context">Context.Key</a>&lt;T&gt;&nbsp;key,
    T&nbsp;instance)</code>
 <div class="block">Associate a value with the current reactive stream.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/context/Context.html#remove-org.hibernate.reactive.context.Context.Key-">remove</a></span>(<a href="../../../../org/hibernate/reactive/context/Context.Key.html" title="class in org.hibernate.reactive.context">Context.Key</a>&lt;?&gt;&nbsp;key)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/context/Context.html#remove-org.hibernate.reactive.context.Context.Key-">remove</a></span>(<a href="../../../../org/hibernate/reactive/context/Context.Key.html" title="interface in org.hibernate.reactive.context">Context.Key</a>&lt;?&gt;&nbsp;key)</code>
 <div class="block">Remove a value associated with the current reactive stream.</div>
 </td>
 </tr>
@@ -195,7 +195,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/
 <ul class="blockList">
 <li class="blockList">
 <h4>put</h4>
-<pre>&lt;T&gt;&nbsp;void&nbsp;put(<a href="../../../../org/hibernate/reactive/context/Context.Key.html" title="class in org.hibernate.reactive.context">Context.Key</a>&lt;T&gt;&nbsp;key,
+<pre>&lt;T&gt;&nbsp;void&nbsp;put(<a href="../../../../org/hibernate/reactive/context/Context.Key.html" title="interface in org.hibernate.reactive.context">Context.Key</a>&lt;T&gt;&nbsp;key,
              T&nbsp;instance)</pre>
 <div class="block">Associate a value with the current reactive stream.</div>
 </li>
@@ -206,7 +206,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/
 <ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
-<pre>&lt;T&gt;&nbsp;T&nbsp;get(<a href="../../../../org/hibernate/reactive/context/Context.Key.html" title="class in org.hibernate.reactive.context">Context.Key</a>&lt;T&gt;&nbsp;key)</pre>
+<pre>&lt;T&gt;&nbsp;T&nbsp;get(<a href="../../../../org/hibernate/reactive/context/Context.Key.html" title="interface in org.hibernate.reactive.context">Context.Key</a>&lt;T&gt;&nbsp;key)</pre>
 <div class="block">Get a value associated with the current reactive stream,
  or return null.</div>
 </li>
@@ -217,7 +217,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/
 <ul class="blockList">
 <li class="blockList">
 <h4>remove</h4>
-<pre>void&nbsp;remove(<a href="../../../../org/hibernate/reactive/context/Context.Key.html" title="class in org.hibernate.reactive.context">Context.Key</a>&lt;?&gt;&nbsp;key)</pre>
+<pre>void&nbsp;remove(<a href="../../../../org/hibernate/reactive/context/Context.Key.html" title="interface in org.hibernate.reactive.context">Context.Key</a>&lt;?&gt;&nbsp;key)</pre>
 <div class="block">Remove a value associated with the current reactive stream.</div>
 </li>
 </ul>
@@ -268,7 +268,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/
 <div class="subNav">
 <ul class="navList">
 <li>Prev&nbsp;Class</li>
-<li><a href="../../../../org/hibernate/reactive/context/Context.Key.html" title="class in org.hibernate.reactive.context"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../org/hibernate/reactive/context/Context.Key.html" title="interface in org.hibernate.reactive.context"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?org/hibernate/reactive/context/Context.html" target="_top">Frames</a></li>

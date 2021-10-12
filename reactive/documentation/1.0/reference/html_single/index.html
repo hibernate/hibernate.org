@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.6.1">
 <meta name="author" content="Gavin King">
-<title>Hibernate Reactive 1.0.0.CR9 Reference Documentation</title>
+<title>Hibernate Reactive 1.0.0.CR10 Reference Documentation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <link rel="stylesheet" href="./asciidoctor.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Hibernate Reactive 1.0.0.CR9 Reference Documentation</h1>
+<h1>Hibernate Reactive 1.0.0.CR10 Reference Documentation</h1>
 <div class="details">
 <span id="author" class="author">Gavin King</span><br>
 <span id="email" class="email"><a href="mailto:gavin@hibernate.org">gavin@hibernate.org</a></span><br>
@@ -24,46 +24,48 @@
 <li><a href="#preface">Preface</a></li>
 <li><a href="#getting-started">1. Introduction to Hibernate Reactive</a>
 <ul class="sectlevel2">
-<li><a href="#_setting_up_a_reactive_hibernate_project">1.1. Setting up a reactive Hibernate project</a>
+<li><a href="#_information_about_hibernate_orm">1.1. Information about Hibernate ORM</a></li>
+<li><a href="#_setting_up_a_reactive_hibernate_project">1.2. Setting up a reactive Hibernate project</a>
 <ul class="sectlevel3">
-<li><a href="#_including_hibernate_reactive_in_your_project_build">1.1.1. Including Hibernate Reactive in your project build</a></li>
-<li><a href="#_optional_dependencies">1.1.2. Optional dependencies</a></li>
-<li><a href="#_basic_configuration">1.1.3. Basic configuration</a></li>
-<li><a href="#_automatic_schema_export">1.1.4. Automatic schema export</a></li>
-<li><a href="#_logging_the_generated_sql">1.1.5. Logging the generated SQL</a></li>
-<li><a href="#_minimizing_repetitive_mapping_information">1.1.6. Minimizing repetitive mapping information</a></li>
+<li><a href="#_including_hibernate_reactive_in_your_project_build">1.2.1. Including Hibernate Reactive in your project build</a></li>
+<li><a href="#_optional_dependencies">1.2.2. Optional dependencies</a></li>
+<li><a href="#_basic_configuration">1.2.3. Basic configuration</a></li>
+<li><a href="#_automatic_schema_export">1.2.4. Automatic schema export</a></li>
+<li><a href="#_logging_the_generated_sql">1.2.5. Logging the generated SQL</a></li>
+<li><a href="#_minimizing_repetitive_mapping_information">1.2.6. Minimizing repetitive mapping information</a></li>
 </ul>
 </li>
-<li><a href="#_writing_the_java_code">1.2. Writing the Java code</a>
+<li><a href="#_writing_the_java_code">1.3. Writing the Java code</a>
 <ul class="sectlevel3">
-<li><a href="#_mapping_entity_classes">1.2.1. Mapping entity classes</a></li>
-<li><a href="#_getters_and_setters">1.2.2. Getters and setters</a></li>
-<li><a href="#_identifier_generation">1.2.3. Identifier generation</a></li>
-<li><a href="#_custom_types">1.2.4. Custom types</a></li>
-<li><a href="#_attribute_converters">1.2.5. Attribute converters</a></li>
-<li><a href="#_apis_for_chaining_reactive_operations">1.2.6. APIs for chaining reactive operations</a></li>
-<li><a href="#_obtaining_a_reactive_session_factory">1.2.7. Obtaining a reactive session factory</a></li>
-<li><a href="#_obtaining_a_reactive_session">1.2.8. Obtaining a reactive session</a></li>
-<li><a href="#_using_the_reactive_session">1.2.9. Using the reactive session</a></li>
-<li><a href="#_queries">1.2.10. Queries</a></li>
-<li><a href="#_fetching_lazy_associations">1.2.11. Fetching lazy associations</a></li>
-<li><a href="#_field_level_lazy_fetching">1.2.12. Field-level lazy fetching</a></li>
-<li><a href="#_transactions">1.2.13. Transactions</a></li>
+<li><a href="#_mapping_entity_classes">1.3.1. Mapping entity classes</a></li>
+<li><a href="#_getters_and_setters">1.3.2. Getters and setters</a></li>
+<li><a href="#_code_equals_code_and_code_hashcode_code">1.3.3. <code>equals()</code> and <code>hashCode()</code></a></li>
+<li><a href="#_identifier_generation">1.3.4. Identifier generation</a></li>
+<li><a href="#_custom_types">1.3.5. Custom types</a></li>
+<li><a href="#_attribute_converters">1.3.6. Attribute converters</a></li>
+<li><a href="#_apis_for_chaining_reactive_operations">1.3.7. APIs for chaining reactive operations</a></li>
+<li><a href="#_obtaining_a_reactive_session_factory">1.3.8. Obtaining a reactive session factory</a></li>
+<li><a href="#_obtaining_a_reactive_session">1.3.9. Obtaining a reactive session</a></li>
+<li><a href="#_using_the_reactive_session">1.3.10. Using the reactive session</a></li>
+<li><a href="#_queries">1.3.11. Queries</a></li>
+<li><a href="#_fetching_lazy_associations">1.3.12. Fetching lazy associations</a></li>
+<li><a href="#_field_level_lazy_fetching">1.3.13. Field-level lazy fetching</a></li>
+<li><a href="#_transactions">1.3.14. Transactions</a></li>
 </ul>
 </li>
-<li><a href="#_tuning_and_performance">1.3. Tuning and performance</a>
+<li><a href="#_tuning_and_performance">1.4. Tuning and performance</a>
 <ul class="sectlevel3">
-<li><a href="#_tuning_the_vert_x_pool">1.3.1. Tuning the Vert.x pool</a></li>
-<li><a href="#_enabling_statement_batching">1.3.2. Enabling statement batching</a></li>
-<li><a href="#_association_fetching">1.3.3. Association fetching</a></li>
-<li><a href="#_enabling_the_second_level_cache">1.3.4. Enabling the second-level cache</a></li>
-<li><a href="#_session_cache_management">1.3.5. Session cache management</a></li>
-<li><a href="#_stateless_sessions">1.3.6. Stateless sessions</a></li>
-<li><a href="#_optimistic_and_pessimistic_locking">1.3.7. Optimistic and pessimistic locking</a></li>
+<li><a href="#_tuning_the_vert_x_pool">1.4.1. Tuning the Vert.x pool</a></li>
+<li><a href="#_enabling_statement_batching">1.4.2. Enabling statement batching</a></li>
+<li><a href="#_association_fetching">1.4.3. Association fetching</a></li>
+<li><a href="#_enabling_the_second_level_cache">1.4.4. Enabling the second-level cache</a></li>
+<li><a href="#_session_cache_management">1.4.5. Session cache management</a></li>
+<li><a href="#_stateless_sessions">1.4.6. Stateless sessions</a></li>
+<li><a href="#_optimistic_and_pessimistic_locking">1.4.7. Optimistic and pessimistic locking</a></li>
 </ul>
 </li>
-<li><a href="#_custom_connection_management_and_multitenancy">1.4. Custom connection management and multitenancy</a></li>
-<li><a href="#_next_steps">1.5. Next steps</a></li>
+<li><a href="#_custom_connection_management_and_multitenancy">1.5. Custom connection management and multitenancy</a></li>
+<li><a href="#_next_steps">1.6. Next steps</a></li>
 </ul>
 </li>
 </ul>
@@ -125,7 +127,30 @@ which shows off all the "bits" you&#8217;ll need to get your own program up and
 running.</p>
 </div>
 <div class="sect2">
-<h3 id="_setting_up_a_reactive_hibernate_project"><a class="anchor" href="#_setting_up_a_reactive_hibernate_project"></a>1.1. Setting up a reactive Hibernate project</h3>
+<h3 id="_information_about_hibernate_orm"><a class="anchor" href="#_information_about_hibernate_orm"></a>1.1. Information about Hibernate ORM</h3>
+<div class="paragraph">
+<p>This document assumes some passing familiarity with Hibernate ORM or another
+implementation of JPA. If you&#8217;ve never used JPA before, that&#8217;s OK, but you
+might need to refer to the following sources of information at some points
+in this text:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the <a href="http://hibernate.org/orm/documentation/5.6/">documentation for Hibernate ORM</a>,</p>
+</li>
+<li>
+<p>the <a href="https://jcp.org/aboutJava/communityprocess/mrel/jsr338/index.html">JPA 2.2 specification</a>, or</p>
+</li>
+<li>
+<p><a href="https://www.manning.com/books/java-persistence-with-hibernate-second-edition">Java Persistence with Hibernate</a>,
+the latest edition of the book originally titled <em>Hibernate in Action</em>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_setting_up_a_reactive_hibernate_project"><a class="anchor" href="#_setting_up_a_reactive_hibernate_project"></a>1.2. Setting up a reactive Hibernate project</h3>
 <div class="paragraph">
 <p>If you&#8217;re using Hibernate Reactive outside of the Quarkus environment,
 you&#8217;ll need to:</p>
@@ -147,7 +172,7 @@ using Hibernate configuration properties.</p>
 a preconfigured skeleton project <a href="https://code.quarkus.io/?g=org.acme&amp;a=code-with-quarkus&amp;v=1.0.0-SNAPSHOT&amp;b=MAVEN&amp;c=org.acme.ExampleResource&amp;s=r1s.8XW.fmW.ih0&amp;cn=code.quarkus.io">right here</a>.</p>
 </div>
 <div class="sect3">
-<h4 id="_including_hibernate_reactive_in_your_project_build"><a class="anchor" href="#_including_hibernate_reactive_in_your_project_build"></a>1.1.1. Including Hibernate Reactive in your project build</h4>
+<h4 id="_including_hibernate_reactive_in_your_project_build"><a class="anchor" href="#_including_hibernate_reactive_in_your_project_build"></a>1.2.1. Including Hibernate Reactive in your project build</h4>
 <div class="paragraph">
 <p>Add the following dependency to your project:</p>
 </div>
@@ -176,16 +201,20 @@ driver for your database, one of the following options:</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PostgreSQL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PostgreSQL or CockroachDB</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx:vertx-pg-client:{vertxVersion}</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MySQL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MySQL or MariaDB</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx:vertx-mysql-client:{vertxVersion}</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DB2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx:vertx-db2-client:{vertxVersion}</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SQL Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx:vertx-mssql-client:${vertxVersion}</code></p></td>
 </tr>
 </tbody>
 </table>
@@ -198,7 +227,7 @@ version of Hibernate Reactive you&#8217;re using.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_optional_dependencies"><a class="anchor" href="#_optional_dependencies"></a>1.1.2. Optional dependencies</h4>
+<h4 id="_optional_dependencies"><a class="anchor" href="#_optional_dependencies"></a>1.2.2. Optional dependencies</h4>
 <div class="paragraph">
 <p>Optionally, you might also add any of the following additional features:</p>
 </div>
@@ -234,6 +263,10 @@ version of Hibernate Reactive you&#8217;re using.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Second-level cache support via JCache and EHCache</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.hibernate:hibernate-jcache</code> along with <code>org.ehcache:ehcache</code></p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SCRAM authentication support for PostgreSQL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>com.ongres.scram:client:2.1</code></p></td>
+</tr>
 </tbody>
 </table>
 <div class="paragraph">
@@ -258,7 +291,7 @@ don&#8217;t need. Stick to the basics for now.
 </div>
 </div>
 <div class="sect3">
-<h4 id="_basic_configuration"><a class="anchor" href="#_basic_configuration"></a>1.1.3. Basic configuration</h4>
+<h4 id="_basic_configuration"><a class="anchor" href="#_basic_configuration"></a>1.2.3. Basic configuration</h4>
 <div class="paragraph">
 <p>Hibernate Reactive is configured via the standard JPA <code>persistence.xml</code>
 document which must be placed, as usual, in the <code>/META-INF</code> directory.</p>
@@ -372,7 +405,7 @@ Reactive.
 </div>
 </div>
 <div class="sect3">
-<h4 id="_automatic_schema_export"><a class="anchor" href="#_automatic_schema_export"></a>1.1.4. Automatic schema export</h4>
+<h4 id="_automatic_schema_export"><a class="anchor" href="#_automatic_schema_export"></a>1.2.4. Automatic schema export</h4>
 <div class="paragraph">
 <p>You can have Hibernate Reactive infer your database schema from the mapping
 annotation you&#8217;ve specified in your Java code, and export the schema at
@@ -400,8 +433,13 @@ properties:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">(Optional) If <code>true</code>, automatically create schemas and catalogs</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.persistence.schema-generation.create-source</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(Optional) If <code>metadata-then-script</code> or <code>script-then-metadata</code>,
+                                                               execute an additional SQL script when exported tables and sequences</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.persistence.schema-generation.create-script-source</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">(Optional) The name of a SQL script to be executed after tables are exported</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(Optional) The name of the SQL script to be executed</p></td>
 </tr>
 </tbody>
 </table>
@@ -410,7 +448,7 @@ properties:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_logging_the_generated_sql"><a class="anchor" href="#_logging_the_generated_sql"></a>1.1.5. Logging the generated SQL</h4>
+<h4 id="_logging_the_generated_sql"><a class="anchor" href="#_logging_the_generated_sql"></a>1.2.5. Logging the generated SQL</h4>
 <div class="paragraph">
 <p>To see the generated SQL as it&#8217;s sent to the database, either:</p>
 </div>
@@ -467,7 +505,7 @@ the following settings:</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_minimizing_repetitive_mapping_information"><a class="anchor" href="#_minimizing_repetitive_mapping_information"></a>1.1.6. Minimizing repetitive mapping information</h4>
+<h4 id="_minimizing_repetitive_mapping_information"><a class="anchor" href="#_minimizing_repetitive_mapping_information"></a>1.2.6. Minimizing repetitive mapping information</h4>
 <div class="paragraph">
 <p>The following properties are very useful for minimizing the amount of
 information you&#8217;ll need to explicitly specify in <code>@Table</code> and <code>@Column</code>
@@ -516,7 +554,7 @@ we think you should do it for any nontrivial data model.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_writing_the_java_code"><a class="anchor" href="#_writing_the_java_code"></a>1.2. Writing the Java code</h3>
+<h3 id="_writing_the_java_code"><a class="anchor" href="#_writing_the_java_code"></a>1.3. Writing the Java code</h3>
 <div class="paragraph">
 <p>With that out of the way, we&#8217;re all set to write some Java code!</p>
 </div>
@@ -594,7 +632,7 @@ of framework code.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_mapping_entity_classes"><a class="anchor" href="#_mapping_entity_classes"></a>1.2.1. Mapping entity classes</h4>
+<h4 id="_mapping_entity_classes"><a class="anchor" href="#_mapping_entity_classes"></a>1.3.1. Mapping entity classes</h4>
 <div class="paragraph">
 <p>We won&#8217;t have much to say about the entity classes here, simply because
 the principles behind mapping entity classes in Hibernate Reactive,
@@ -862,7 +900,7 @@ text field using <code>@Size(100)</code> rather than <code>@Column(length=100)</
 </div>
 </div>
 <div class="sect3">
-<h4 id="_getters_and_setters"><a class="anchor" href="#_getters_and_setters"></a>1.2.2. Getters and setters</h4>
+<h4 id="_getters_and_setters"><a class="anchor" href="#_getters_and_setters"></a>1.3.2. Getters and setters</h4>
 <div class="paragraph">
 <p>When using Hibernate Reactive <em>outside</em> the Quarkus environment, you&#8217;ll
 need to write your entity classes according to the usual JPA conventions,
@@ -883,13 +921,97 @@ which require:</p>
 Therefore, external access to persistent fields must be intermediated via
 getter and setter methods defined by the entity class.</p>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+If you access fields of an unfetched entity instance from code
+outside the entity class, you&#8217;ll obtain bogus <code>null</code> or default (zero)
+values!
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>When you use Hibernate Reactive in Quarkus, these requirements are relaxed,
 and you can use public fields instead of getters and setters if you prefer.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_identifier_generation"><a class="anchor" href="#_identifier_generation"></a>1.2.3. Identifier generation</h4>
+<h4 id="_code_equals_code_and_code_hashcode_code"><a class="anchor" href="#_code_equals_code_and_code_hashcode_code"></a>1.3.3. <code>equals()</code> and <code>hashCode()</code></h4>
+<div class="paragraph">
+<p>Entity classes should override <code>equals()</code> and <code>hashCode()</code>. People new to
+Hibernate or JPA are often confused by exactly which fields should be
+included in the <code>hashCode()</code>, so please keep the following principles in
+mind:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You should not include mutable fields in the hashcode, since that would
+require rehashing any collection containing the entity whenever the field
+is mutated.</p>
+</li>
+<li>
+<p>It&#8217;s not completely wrong to include a generated identifier (surrogate
+key) in the hashcode, but since the identifier is not generated until
+the entity instance is made persistent, you must take great care to not
+add it to any hashed collection before the identifier is generated. We
+therefore advise against including any database-generated field in the
+hashcode.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It&#8217;s OK to include any immutable, non-generated field in the hashcode.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+We therefore recommend identifying a <em>natural key</em> for each entity,
+that is, a combination of fields that uniquely identifies an instance of
+the entity, from the perspective of the data model of the program. The
+business key should correspond to a unique constraint on the database,
+and to the fields which are included in <code>equals()</code> and <code>hashCode()</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>That said, an implementation of <code>equals()</code> and <code>hashCode()</code> based on the
+generated identifier of the entity can work <em>if you&#8217;re careful</em>.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+If you can&#8217;t identify a natural key, it might be a sign that
+you need to think more carefully about some aspect of your data model.
+If an entity doesn&#8217;t have a meaningful unique key, then it&#8217;s impossible
+to say what event or object it represents in the "real world" outside
+your program.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Note that even when you&#8217;ve identified a natural key, we still recommend
+the use of a generated surrogate key in foreign keys, since this makes
+your data model <em>much</em> easier to change.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_identifier_generation"><a class="anchor" href="#_identifier_generation"></a>1.3.4. Identifier generation</h4>
 <div class="paragraph">
 <p>One area where the functionality of Hibernate Reactive diverges from plain
 Hibernate is in the area of id generation. Custom identifier generators
@@ -970,7 +1092,7 @@ custom reactive identifier generator.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_custom_types"><a class="anchor" href="#_custom_types"></a>1.2.4. Custom types</h4>
+<h4 id="_custom_types"><a class="anchor" href="#_custom_types"></a>1.3.5. Custom types</h4>
 <div class="paragraph">
 <p>Hibernate custom types based on the <code>UserType</code> interface are targeted toward
 use with JDBC, and depend on interfaces defined by JDBC. So Hibernate Reactive
@@ -1000,7 +1122,7 @@ the Hibernate <code>@Type</code> annotation.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_attribute_converters"><a class="anchor" href="#_attribute_converters"></a>1.2.5. Attribute converters</h4>
+<h4 id="_attribute_converters"><a class="anchor" href="#_attribute_converters"></a>1.3.6. Attribute converters</h4>
 <div class="paragraph">
 <p>Any JPA <code>AttributeConverter</code> works in Hibernate Reactive. For example:</p>
 </div>
@@ -1052,7 +1174,7 @@ JPA specification.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_apis_for_chaining_reactive_operations"><a class="anchor" href="#_apis_for_chaining_reactive_operations"></a>1.2.6. APIs for chaining reactive operations</h4>
+<h4 id="_apis_for_chaining_reactive_operations"><a class="anchor" href="#_apis_for_chaining_reactive_operations"></a>1.3.7. APIs for chaining reactive operations</h4>
 <div class="paragraph">
 <p>When you write persistence logic using Hibernate Reactive, you&#8217;ll be working
 with a reactive <code>Session</code> most of the time. Just to make things a little more
@@ -1155,7 +1277,7 @@ transaction, or unit of work.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_obtaining_a_reactive_session_factory"><a class="anchor" href="#_obtaining_a_reactive_session_factory"></a>1.2.7. Obtaining a reactive session factory</h4>
+<h4 id="_obtaining_a_reactive_session_factory"><a class="anchor" href="#_obtaining_a_reactive_session_factory"></a>1.3.8. Obtaining a reactive session factory</h4>
 <div class="paragraph">
 <p>Whatever you decide, the first step to getting a reactive session is to obtain
 a JPA <code>EntityManagerFactory</code> just as you usually would in plain ol' regular JPA,
@@ -1204,7 +1326,7 @@ configuration based on Hibernate&#8217;s <code>ServiceRegistry</code> architectu
 </div>
 </div>
 <div class="sect3">
-<h4 id="_obtaining_a_reactive_session"><a class="anchor" href="#_obtaining_a_reactive_session"></a>1.2.8. Obtaining a reactive session</h4>
+<h4 id="_obtaining_a_reactive_session"><a class="anchor" href="#_obtaining_a_reactive_session"></a>1.3.9. Obtaining a reactive session</h4>
 <div class="paragraph">
 <p>Persistence operations are exposed via a reactive <code>Session</code> object. It&#8217;s very
 important to understand that most operations of this interface are non-blocking,
@@ -1255,17 +1377,19 @@ the session when you&#8217;re done.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">Session session = sessionFactory.openSession();
-session.find(Book.class, id)
-       .invoke(
-           book -&gt; ... //do something with the book
-       )
-       .eventually(session::close);</code></pre>
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">Uni&lt;Session&gt; sessionUni = sessionFactory.openSession();
+sessionUni.chain(
+        session -&gt; session.find(Book.class, id)
+                .invoke(
+		    book -&gt; ... //do something with the book
+                )
+                .eventually(session::close)
+);</code></pre>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_using_the_reactive_session"><a class="anchor" href="#_using_the_reactive_session"></a>1.2.9. Using the reactive session</h4>
+<h4 id="_using_the_reactive_session"><a class="anchor" href="#_using_the_reactive_session"></a>1.3.10. Using the reactive session</h4>
 <div class="paragraph">
 <p>The <code>Session</code> interface has methods with the same names as methods of the JPA
 <code>EntityManager</code>. You might already be familiar with the following session
@@ -1440,7 +1564,7 @@ that you&#8217;re going to make this mistake, in some form, <em>at least</em> on
 </div>
 </div>
 <div class="sect3">
-<h4 id="_queries"><a class="anchor" href="#_queries"></a>1.2.10. Queries</h4>
+<h4 id="_queries"><a class="anchor" href="#_queries"></a>1.3.11. Queries</h4>
 <div class="paragraph">
 <p>Naturally, the <code>Session</code> interface is a factory for <code>Query</code> instances which
 allow you to set query parameters and execute queries and DML statements:</p>
@@ -1564,7 +1688,7 @@ return session.createQuery(query).getResultList().invoke(
 </div>
 </div>
 <div class="sect3">
-<h4 id="_fetching_lazy_associations"><a class="anchor" href="#_fetching_lazy_associations"></a>1.2.11. Fetching lazy associations</h4>
+<h4 id="_fetching_lazy_associations"><a class="anchor" href="#_fetching_lazy_associations"></a>1.3.12. Fetching lazy associations</h4>
 <div class="paragraph">
 <p>In Hibernate ORM, a lazy association is fetched transparently when the
 association is first accessed within a session. In Hibernate Reactive, on
@@ -1627,7 +1751,7 @@ first.
 </div>
 </div>
 <div class="sect3">
-<h4 id="_field_level_lazy_fetching"><a class="anchor" href="#_field_level_lazy_fetching"></a>1.2.12. Field-level lazy fetching</h4>
+<h4 id="_field_level_lazy_fetching"><a class="anchor" href="#_field_level_lazy_fetching"></a>1.3.13. Field-level lazy fetching</h4>
 <div class="paragraph">
 <p>Similarly, field-level lazy fetching&mdash;an advanced feature, which
 is only supported in conjunction with Hibernate&#8217;s optional compile-time
@@ -1658,7 +1782,7 @@ have very specific requirements.
 </div>
 </div>
 <div class="sect3">
-<h4 id="_transactions"><a class="anchor" href="#_transactions"></a>1.2.13. Transactions</h4>
+<h4 id="_transactions"><a class="anchor" href="#_transactions"></a>1.3.14. Transactions</h4>
 <div class="paragraph">
 <p>The <code>withTransaction()</code> method performs work within the scope of a database
 transaction.</p>
@@ -1706,7 +1830,7 @@ transaction in one call:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_tuning_and_performance"><a class="anchor" href="#_tuning_and_performance"></a>1.3. Tuning and performance</h3>
+<h3 id="_tuning_and_performance"><a class="anchor" href="#_tuning_and_performance"></a>1.4. Tuning and performance</h3>
 <div class="paragraph">
 <p>Once you have a program up and running using Hibernate Reactive to access
 the database, it&#8217;s inevitable that you&#8217;ll find places where performance is
@@ -1759,7 +1883,7 @@ to the database, and/or controlling the size of the session cache.</p>
 the connection pool.</p>
 </div>
 <div class="sect3">
-<h4 id="_tuning_the_vert_x_pool"><a class="anchor" href="#_tuning_the_vert_x_pool"></a>1.3.1. Tuning the Vert.x pool</h4>
+<h4 id="_tuning_the_vert_x_pool"><a class="anchor" href="#_tuning_the_vert_x_pool"></a>1.4.1. Tuning the Vert.x pool</h4>
 <div class="paragraph">
 <p>In <a href="#_basic_configuration">Basic configuration</a> we already saw how to set the size of the
 Vert.x database connection pool. When it comes time for performance tuning,
@@ -1828,7 +1952,7 @@ the Vert.x client by implementing <code>SqlClientPoolConfiguration</code>.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_enabling_statement_batching"><a class="anchor" href="#_enabling_statement_batching"></a>1.3.2. Enabling statement batching</h4>
+<h4 id="_enabling_statement_batching"><a class="anchor" href="#_enabling_statement_batching"></a>1.4.2. Enabling statement batching</h4>
 <div class="paragraph">
 <p>An easy way to improve performance of some transactions with almost no
 work at all is to turn on automatic DML statement batching. Batching
@@ -1875,7 +1999,7 @@ or <code>delete</code> queries, or even native SQL that calls a stored procedure
 </div>
 </div>
 <div class="sect3">
-<h4 id="_association_fetching"><a class="anchor" href="#_association_fetching"></a>1.3.3. Association fetching</h4>
+<h4 id="_association_fetching"><a class="anchor" href="#_association_fetching"></a>1.4.3. Association fetching</h4>
 <div class="paragraph">
 <p>Achieving high performance in ORM means minimizing the number of round
 trips to the database. This goal should be uppermost in your mind
@@ -2002,7 +2126,7 @@ for associations precisely when and where they are needed.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_enabling_the_second_level_cache"><a class="anchor" href="#_enabling_the_second_level_cache"></a>1.3.4. Enabling the second-level cache</h4>
+<h4 id="_enabling_the_second_level_cache"><a class="anchor" href="#_enabling_the_second_level_cache"></a>1.4.4. Enabling the second-level cache</h4>
 <div class="paragraph">
 <p>A classic way to reduce the number of accesses to the database is to
 use a second-level cache, allowing cached data to be shared between
@@ -2089,7 +2213,7 @@ be stored in the second-level cache with the <code>@Cache</code> annotation from
 </div>
 </div>
 <div class="sect3">
-<h4 id="_session_cache_management"><a class="anchor" href="#_session_cache_management"></a>1.3.5. Session cache management</h4>
+<h4 id="_session_cache_management"><a class="anchor" href="#_session_cache_management"></a>1.4.5. Session cache management</h4>
 <div class="paragraph">
 <p>Entity instances aren&#8217;t automatically evicted from the session cache when
 they&#8217;re no longer needed. (The session cache is quite different to the
@@ -2105,7 +2229,7 @@ you should strongly consider an alternative solution: a <em>stateless session</e
 </div>
 </div>
 <div class="sect3">
-<h4 id="_stateless_sessions"><a class="anchor" href="#_stateless_sessions"></a>1.3.6. Stateless sessions</h4>
+<h4 id="_stateless_sessions"><a class="anchor" href="#_stateless_sessions"></a>1.4.6. Stateless sessions</h4>
 <div class="paragraph">
 <p>An arguably-underappreciated feature of Hibernate is the <code>StatelessSession</code>
 interface, which provides a command-oriented, more bare-metal approach to
@@ -2260,7 +2384,7 @@ persistent, and</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_optimistic_and_pessimistic_locking"><a class="anchor" href="#_optimistic_and_pessimistic_locking"></a>1.3.7. Optimistic and pessimistic locking</h4>
+<h4 id="_optimistic_and_pessimistic_locking"><a class="anchor" href="#_optimistic_and_pessimistic_locking"></a>1.4.7. Optimistic and pessimistic locking</h4>
 <div class="paragraph">
 <p>Finally, an aspect of behavior under load that we didn&#8217;t mention above is row-level
 data contention. When many transactions try to read and update the same data, the
@@ -2363,7 +2487,7 @@ of optimistic locking:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_custom_connection_management_and_multitenancy"><a class="anchor" href="#_custom_connection_management_and_multitenancy"></a>1.4. Custom connection management and multitenancy</h3>
+<h3 id="_custom_connection_management_and_multitenancy"><a class="anchor" href="#_custom_connection_management_and_multitenancy"></a>1.5. Custom connection management and multitenancy</h3>
 <div class="paragraph">
 <p>Hibernate Reactive supports custom management of reactive connections by letting
 you define your own implementation of <code>ReactiveConnectionPool</code>, or extend the
@@ -2426,9 +2550,9 @@ or <code>withTransaction()</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_next_steps"><a class="anchor" href="#_next_steps"></a>1.5. Next steps</h3>
+<h3 id="_next_steps"><a class="anchor" href="#_next_steps"></a>1.6. Next steps</h3>
 <div class="paragraph">
-<p>Hibernate Reactive is now integrated in <a href="https://quarkus.io/">Quarkus</a> and <a href="https://quarkus.io/guides/hibernate-orm-panache">Panache</a>.
+<p>Hibernate Reactive is now integrated in <a href="https://quarkus.io/guides/getting-started-reactive">Quarkus</a> and <a href="https://quarkus.io/guides/hibernate-reactive-panache">Panache</a>.
 Configuration works slightly differently in Quarkus, so be sure to check the Quarkus
 documentation for details.</p>
 </div>
@@ -2438,7 +2562,7 @@ documentation for details.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-07-30 12:50:37 UTC
+Last updated 2021-10-12 10:29:01 UTC
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
