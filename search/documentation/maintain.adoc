@@ -30,7 +30,7 @@ which is very specific and might break with the inclusion of new dependencies.
 === Perform the release
 
 Once you trigger the CI job, it automatically pushes artifacts to the
-https://repository.jboss.org/nexus/index.html[JBoss Nexus repository manager],
+https://oss.sonatype.org/#stagingRepositories[OSSRH repository manager],
 the distribution to https://sourceforge.net/projects/hibernate/files/hibernate-search/[SourceForge]
 and the documentation to https://docs.jboss.org/hibernate/search/[docs.jboss.org].
 
@@ -46,18 +46,15 @@ and please uncheck the option near the bottom "Send email notifications".
 ** Go to CI, to https://ci.hibernate.org/job/hibernate-search/[the "hibernate-search" CI job].
 ** Click the "run" button (the green triangle on top of a clock, to the right) next to the branch you want to release.
 ** **Be careful** when filling the form with the build parameters.
-* Release the artifacts on the https://repository.jboss.org/nexus/index.html[JBoss Nexus repository manager].
-** Log into Nexus and examine your staging repository.
-Use the search box to hide all unrelated repositories:
+* Release the artifacts on the https://oss.sonatype.org/#stagingRepositories[OSSRH repository manager].
+** Log into Nexus. The credentials can be found the team's document.
+** Use the search box to hide all unrelated repositories:
 searching for "hibernate" will show only the ones created by hibernate-ci.
-** Test the release in the staging repository.
-+
-You can find more information in the description of the JBoss project https://developer.jboss.org/docs/DOC-14608[release process].
-A Maven `settings.xml` for testing the artifacts in the staging repository can be found
-https://developer.jboss.org/docs/DOC-15664[here].
+** Examine your staging repository
+** If necessary, test the release in the staging repository.
 ** If there is a problem, drop the staging repo, fix the problem, delete the commits pushed by CI and the tag
 (Note: they have been pushed upstream by CI).
-** If everything is ok, promote the staging repo to the releases repository.
+** If everything is ok, select the staging repository and click the "Release" button.
 *** For Search 5.x and below, you will also need to "Close" the repository before you can release it.
 *** Click "Refresh" after each action.
 
