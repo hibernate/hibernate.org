@@ -516,11 +516,11 @@ projects:
       reference_doc:
         html: /reactive/documentation/{series.version}/reference/html_single/
         latest_stable:
-          html:
+          html: /reactive/documentation/{series.version}/reference/html_single/
       javadoc:
         html: /reactive/documentation/{series.version}/javadocs/
         latest_stable:
-          html: https://docs.jboss.org/hibernate/stable/reactive/javadocs/
+          html: /reactive/documentation/{series.version}/javadocs/
       getting_started_guide:
         html: /reactive/documentation/{series.version}/reference/html_single/#getting-started
     maven:
