@@ -27,7 +27,7 @@ Hibernate Search 6.0 only allows single-node applications,
 or multi-node applications where each node works independently, simply sending events to an Elasticsearch cluster.
 +
 In rare cases where two concurrent transactions update different entities that affect the same index document,
-[this can lead to out-of-sync indexes](https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#limitations-parallel-embedded-update).
+https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#limitations-parallel-embedded-update[this can lead to out-of-sync indexes].
 +
 Hibernate Search 6.1 will address this problem by introducing a way to coordinate automatic indexing
 between multiple application nodes.
