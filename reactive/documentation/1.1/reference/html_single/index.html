@@ -1,0 +1,2768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.6.1">
+<meta name="author" content="Davide D'Alto, Gavin King">
+<title>Hibernate Reactive 1.1.0.Final Reference Documentation</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<link rel="stylesheet" href="./asciidoctor.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<h1>Hibernate Reactive 1.1.0.Final Reference Documentation</h1>
+<div class="details">
+<span id="author" class="author">Davide D'Alto</span><br>
+<span id="email" class="email"><a href="mailto:davide@hibernate.org">davide@hibernate.org</a></span><br>
+<span id="author2" class="author">Gavin King</span><br>
+<span id="email2" class="email"><a href="mailto:gavin@hibernate.org">gavin@hibernate.org</a></span><br>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#preface">Preface</a></li>
+<li><a href="#getting-started">1. Introduction to Hibernate Reactive</a>
+<ul class="sectlevel2">
+<li><a href="#_information_about_hibernate_orm">1.1. Information about Hibernate ORM</a></li>
+<li><a href="#_setting_up_a_reactive_hibernate_project">1.2. Setting up a reactive Hibernate project</a>
+<ul class="sectlevel3">
+<li><a href="#_including_hibernate_reactive_in_your_project_build">1.2.1. Including Hibernate Reactive in your project build</a></li>
+<li><a href="#_optional_dependencies">1.2.2. Optional dependencies</a></li>
+<li><a href="#_basic_configuration">1.2.3. Basic configuration</a></li>
+<li><a href="#_automatic_schema_export">1.2.4. Automatic schema export</a></li>
+<li><a href="#_logging_the_generated_sql">1.2.5. Logging the generated SQL</a></li>
+<li><a href="#_minimizing_repetitive_mapping_information">1.2.6. Minimizing repetitive mapping information</a></li>
+</ul>
+</li>
+<li><a href="#_writing_the_java_code">1.3. Writing the Java code</a>
+<ul class="sectlevel3">
+<li><a href="#_mapping_entity_classes">1.3.1. Mapping entity classes</a></li>
+<li><a href="#_getters_and_setters">1.3.2. Getters and setters</a></li>
+<li><a href="#_code_equals_code_and_code_hashcode_code">1.3.3. <code>equals()</code> and <code>hashCode()</code></a></li>
+<li><a href="#_identifier_generation">1.3.4. Identifier generation</a></li>
+<li><a href="#_custom_types">1.3.5. Custom types</a></li>
+<li><a href="#_attribute_converters">1.3.6. Attribute converters</a></li>
+<li><a href="#_apis_for_chaining_reactive_operations">1.3.7. APIs for chaining reactive operations</a></li>
+<li><a href="#_obtaining_a_reactive_session_factory">1.3.8. Obtaining a reactive session factory</a></li>
+<li><a href="#_obtaining_a_reactive_session">1.3.9. Obtaining a reactive session</a></li>
+<li><a href="#_using_the_reactive_session">1.3.10. Using the reactive session</a></li>
+<li><a href="#_queries">1.3.11. Queries</a></li>
+<li><a href="#_fetching_lazy_associations">1.3.12. Fetching lazy associations</a></li>
+<li><a href="#_field_level_lazy_fetching">1.3.13. Field-level lazy fetching</a></li>
+<li><a href="#_transactions">1.3.14. Transactions</a></li>
+<li><a href="#_vert_x_context">1.3.15. Vert.x context</a></li>
+<li><a href="#_vert_x_instance_service">1.3.16. Vert.x instance service</a></li>
+</ul>
+</li>
+<li><a href="#_tuning_and_performance">1.4. Tuning and performance</a>
+<ul class="sectlevel3">
+<li><a href="#_tuning_the_vert_x_pool">1.4.1. Tuning the Vert.x pool</a></li>
+<li><a href="#_enabling_statement_batching">1.4.2. Enabling statement batching</a></li>
+<li><a href="#_association_fetching">1.4.3. Association fetching</a></li>
+<li><a href="#_enabling_the_second_level_cache">1.4.4. Enabling the second-level cache</a></li>
+<li><a href="#_session_cache_management">1.4.5. Session cache management</a></li>
+<li><a href="#_stateless_sessions">1.4.6. Stateless sessions</a></li>
+<li><a href="#_optimistic_and_pessimistic_locking">1.4.7. Optimistic and pessimistic locking</a></li>
+</ul>
+</li>
+<li><a href="#_custom_connection_management_and_multitenancy">1.5. Custom connection management and multitenancy</a></li>
+<li><a href="#_next_steps">1.6. Next steps</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="preface"><a class="anchor" href="#preface"></a>Preface</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Hibernate Reactive is a reactive API for Hibernate ORM, supporting non-blocking database drivers and a reactive style of
+interaction with the database.</p>
+</div>
+<div class="paragraph">
+<p>Hibernate Reactive is intended for use in a reactive programming environment like Vert.x, where interaction with the
+database should occur in a non-blocking fashion. Persistence operations are orchestrated via the construction of a
+reactive stream rather than via direct invocation of synchronous functions in procedural Java code. The reactive stream
+is represented using a chain of Java <code>CompletionStage</code>s or Mutiny <code>Uni</code>s and <code>Multi</code>s.</p>
+</div>
+<div class="paragraph">
+<p>Java persistence frameworks like JDBC, JPA and Hibernate ORM were designed to use blocking IO for interaction with the
+database, and are therefore not appropriate for use in a reactive environment. As far as we know, Hibernate Reactive
+is the first true ORM implementation designed to take advantage of non-blocking database clients. Out of the box, the
+Vert.x clients for PostgreSQL, MySQL, and DB2 are supported, though the architecture is not limited to these drivers.</p>
+</div>
+<div class="paragraph">
+<p>This programming paradigm holds the potential for improved scalability, and more controlled degradation under peak load,
+in some runtime scenarios. However, in general, one should not expect to see an immediate performance gain in all
+performance tests. Indeed, many programs will <strong>not</strong> benefit from the programming model, and those which do benefit might
+only benefit in very specific load scenarios.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="getting-started"><a class="anchor" href="#getting-started"></a>1. Introduction to Hibernate Reactive</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Creating a new project with Hibernate Reactive isn&#8217;t hard at all. In
+this short guide, we&#8217;ll cover all the basic work involved in:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>setting up and configuring a project, and then</p>
+</li>
+<li>
+<p>writing Java code to define a data model and access the database.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Last, we&#8217;ll discuss some topics related to performance that you&#8217;ll need
+to understand when you develop any large-scale project using Hibernate.</p>
+</div>
+<div class="paragraph">
+<p>But, before you start, we recommend taking a quick look at the very
+simplistic example program in the <a href="https://github.com/hibernate/hibernate-reactive/tree/main/examples/session-example"><code>session-example</code></a> directory,
+which shows off all the "bits" you&#8217;ll need to get your own program up and
+running.</p>
+</div>
+<div class="sect2">
+<h3 id="_information_about_hibernate_orm"><a class="anchor" href="#_information_about_hibernate_orm"></a>1.1. Information about Hibernate ORM</h3>
+<div class="paragraph">
+<p>This document assumes some passing familiarity with Hibernate ORM or another
+implementation of JPA. If you&#8217;ve never used JPA before, that&#8217;s OK, but you
+might need to refer to the following sources of information at some points
+in this text:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the <a href="http://hibernate.org/orm/documentation/5.6/">documentation for Hibernate ORM</a>,</p>
+</li>
+<li>
+<p>the <a href="https://jcp.org/aboutJava/communityprocess/mrel/jsr338/index.html">JPA 2.2 specification</a>, or</p>
+</li>
+<li>
+<p><a href="https://www.manning.com/books/java-persistence-with-hibernate-second-edition">Java Persistence with Hibernate</a>,
+the latest edition of the book originally titled <em>Hibernate in Action</em>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_setting_up_a_reactive_hibernate_project"><a class="anchor" href="#_setting_up_a_reactive_hibernate_project"></a>1.2. Setting up a reactive Hibernate project</h3>
+<div class="paragraph">
+<p>If you&#8217;re using Hibernate Reactive outside of the Quarkus environment,
+you&#8217;ll need to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>include Hibernate Reactive itself, along with the appropriate Vert.x
+reactive database client, as dependencies of your project, and</p>
+</li>
+<li>
+<p>configure Hibernate Reactive with information about your database,
+using Hibernate configuration properties.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Or, if you want to use Hibernate Reactive in Quarkus, you can generate
+a preconfigured skeleton project <a href="https://code.quarkus.io/?g=org.acme&amp;a=code-with-quarkus&amp;v=1.0.0-SNAPSHOT&amp;b=MAVEN&amp;c=org.acme.ExampleResource&amp;s=r1s.8XW.fmW.ih0&amp;cn=code.quarkus.io">right here</a>.</p>
+</div>
+<div class="sect3">
+<h4 id="_including_hibernate_reactive_in_your_project_build"><a class="anchor" href="#_including_hibernate_reactive_in_your_project_build"></a>1.2.1. Including Hibernate Reactive in your project build</h4>
+<div class="paragraph">
+<p>Add the following dependency to your project:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>org.hibernate.reactive:hibernate-reactive-core:{version}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where <code>{version}</code> is the version of Hibernate Reactive you&#8217;re using.</p>
+</div>
+<div class="paragraph">
+<p>You&#8217;ll also need to add a dependency for the Vert.x reactive database
+driver for your database, one of the following options:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Database</th>
+<th class="tableblock halign-left valign-top">Driver dependency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PostgreSQL or CockroachDB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx:vertx-pg-client:{vertxVersion}</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MySQL or MariaDB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx:vertx-mysql-client:{vertxVersion}</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DB2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx:vertx-db2-client:{vertxVersion}</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SQL Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx:vertx-mssql-client:${vertxVersion}</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Where <code>{vertxVersion}</code> is the version of Vert.x compatible with the
+version of Hibernate Reactive you&#8217;re using.</p>
+</div>
+<div class="paragraph">
+<p>You don&#8217;t need to depend on the JDBC driver for your database.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_optional_dependencies"><a class="anchor" href="#_optional_dependencies"></a>1.2.2. Optional dependencies</h4>
+<div class="paragraph">
+<p>Optionally, you might also add any of the following additional features:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Optional feature</th>
+<th class="tableblock halign-left valign-top">Dependencies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An <a href="http://www.slf4j.org/">SLF4J</a> logging implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.apache.logging.log4j:log4j-core</code> or <code>org.slf4j:slf4j-jdk14</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Hibernate metamodel generator, if you&#8217;re using the JPA criteria query API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.hibernate:hibernate-jpamodelgen</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hibernate Validator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.hibernate.validator:hibernate-validator</code> and <code>org.glassfish:jakarta.el</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Compile-time checking for your HQL queries</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.hibernate:query-validator</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Second-level cache support via JCache and EHCache</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.hibernate:hibernate-jcache</code> along with <code>org.ehcache:ehcache</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SCRAM authentication support for PostgreSQL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>com.ongres.scram:client:2.1</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>You might also add the Hibernate <a href="https://docs.jboss.org/hibernate/orm/5.4/topical/html_single/bytecode/BytecodeEnhancement.html">bytecode enhancer</a> to your
+Gradle build if you want to use field-level  lazy fetching.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Field-level lazy fetching is an advanced feature that most programs
+don&#8217;t need. Stick to the basics for now.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>There&#8217;s an example <a href="https://github.com/hibernate/hibernate-reactive/blob/main/examples/session-example/build.gradle">Gradle build</a> included in the example program.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_basic_configuration"><a class="anchor" href="#_basic_configuration"></a>1.2.3. Basic configuration</h4>
+<div class="paragraph">
+<p>Hibernate Reactive is configured via the standard JPA <code>persistence.xml</code>
+document which must be placed, as usual, in the <code>/META-INF</code> directory.</p>
+</div>
+<div class="paragraph">
+<p>An example <a href="https://github.com/hibernate/hibernate-reactive/blob/main/examples/session-example/src/main/resources/META-INF/persistence.xml"><code>persistence.xml</code></a> file is included in the example
+program.</p>
+</div>
+<div class="paragraph">
+<p>The only required configuration that&#8217;s really specific to Hibernate
+Reactive is the persistence <code>&lt;provider&gt;</code> element, which must be explicit:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;provider&gt;org.hibernate.reactive.provider.ReactivePersistenceProvider&lt;/provider&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Otherwise, configuration is almost completely transparent&mdash;you can
+configure Hibernate Reactive pretty much exactly as you would usually
+configure Hibernate ORM core.</p>
+</div>
+<div class="paragraph">
+<p>A full list of configuration properties recognized by Hibernate may be
+found in the <a href="https://docs.jboss.org/hibernate/orm/5.4/userguide/html_single/Hibernate_User_Guide.html#configurations">documentation for Hibernate ORM</a>.
+You&#8217;ll never need to touch most of these. The properties you do need at
+this stage are these three:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Configuration property name</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.persistence.jdbc.url</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JDBC URL of your database</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.persistence.jdbc.user</code> and <code>javax.persistence.jdbc.password</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Your database credentials</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>These configuration properties have <code>jdbc</code> in their names, but of course
+there&#8217;s no JDBC in Hibernate Reactive, and these are simply the legacy
+property names defined by the JPA specification. In particular, Hibernate
+Reactive itself parses and interprets the JDBC URL.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You don&#8217;t need to specify <code>hibernate.dialect</code>. The correct Hibernate
+<code>Dialect</code> will be determined for you by Hibernate Reactive.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The Vert.x database client has built-in connection pooling and prepared
+statement caching. You might want to control the size of the connection
+pool:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Configuration property name</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.connection.pool_size</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum size of the reactive connection pool</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>We&#8217;ll learn about more advanced connection pool tuning later, in
+<a href="#_tuning_the_vert_x_pool">Tuning the Vert.x pool</a>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Hibernate has many configurable things, but many exist only to
+maintain compatibility with legacy code, and most configuration properties
+directly related to JDBC or JTA aren&#8217;t relevant in the context of Hibernate
+Reactive.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_automatic_schema_export"><a class="anchor" href="#_automatic_schema_export"></a>1.2.4. Automatic schema export</h4>
+<div class="paragraph">
+<p>You can have Hibernate Reactive infer your database schema from the mapping
+annotation you&#8217;ve specified in your Java code, and export the schema at
+initialization time by specifying one or more of the following configuration
+properties:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Configuration property name</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.persistence.schema-generation.database.action</code></p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>If <code>create</code>, first drop the schema and then export tables, sequences, and constraints.</p>
+</li>
+<li>
+<p>If <code>create-only</code>, export tables, sequences, and constraints.</p>
+</li>
+<li>
+<p>If <code>create-drop</code>, drop the schema and recreate it on SessionFactory startup.
+Additionally, drop the schema on SessionFactory shutdown.</p>
+</li>
+<li>
+<p>If <code>drop</code>, drop the schema on SessionFactory shutdown.</p>
+</li>
+<li>
+<p>If <code>validate</code>, validate the database schema without changing it.</p>
+</li>
+<li>
+<p>If <code>update</code>, only export what&#8217;s missing in the schema.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.persistence.create-database-schemas</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(Optional) If <code>true</code>, automatically create schemas and catalogs</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.persistence.schema-generation.create-source</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(Optional) If <code>metadata-then-script</code> or <code>script-then-metadata</code>, execute an additional SQL script when exported tables and sequences</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.persistence.schema-generation.create-script-source</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(Optional) The name of the SQL script to be executed</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This feature is extremely useful for testing.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Hibernate Reactive doesn&#8217;t support <code>validate</code> and <code>update</code> with Db2.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Schema export uses blocking operations so starting the factory might require special
+handling when using it. Failing to do so will cause an exception:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">io.vertx.core.VertxException: Thread blocked</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can solve this issue using <code>executeBlocking</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">Vertx vertx = ...
+
+Uni&lt;Void&gt; startHibernate = Uni.createFrom().deferred(() -&gt; {
+  emf = Persistence
+    .createEntityManagerFactory("demo")
+    .unwrap(Mutiny.SessionFactory.class);
+
+  return Uni.createFrom().voidItem();
+});
+
+startHibernate = vertx.executeBlocking(startHibernate)
+  .onItem().invoke(() -&gt; logger.info("✅ Hibernate Reactive is ready"));</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_logging_the_generated_sql"><a class="anchor" href="#_logging_the_generated_sql"></a>1.2.5. Logging the generated SQL</h4>
+<div class="paragraph">
+<p>To see the generated SQL as it&#8217;s sent to the database, either:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>set the property <code>hibernate.show_sql</code> to <code>true</code>, or</p>
+</li>
+<li>
+<p>enable debug-level logging for the category <code>org.hibernate.SQL</code>
+using your preferred SLF4J logging implementation.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example, if you&#8217;re using Log4J 2 (as above in <a href="#_optional_dependencies">Optional dependencies</a>),
+add these lines to your <code>log4j2.properties</code> file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-properties" data-lang="properties">logger.hibernate.name = org.hibernate.SQL
+logger.hibernate.level = debug</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>An example <a href="https://github.com/hibernate/hibernate-reactive/blob/main/examples/session-example/src/main/resources/log4j2.properties"><code>log4j2.properties</code></a> file is included in the example
+program.</p>
+</div>
+<div class="paragraph">
+<p>You can make the logged SQL more readable by enabling one or both of
+the following settings:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Configuration property name</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.format_sql</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code>, log SQL in a multiline, indented format</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.highlight_sql</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code>, log SQL with syntax highlighting via ANSI escape codes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_minimizing_repetitive_mapping_information"><a class="anchor" href="#_minimizing_repetitive_mapping_information"></a>1.2.6. Minimizing repetitive mapping information</h4>
+<div class="paragraph">
+<p>The following properties are very useful for minimizing the amount of
+information you&#8217;ll need to explicitly specify in <code>@Table</code> and <code>@Column</code>
+annotations which we&#8217;ll discuss below in <a href="#_mapping_entity_classes">Mapping entity classes</a>:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Configuration property name</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.default_schema</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A default schema name for entities which do not explicitly declare one</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.default_catalog</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A default catalog name for entities which do not explicitly declare one</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.physical_naming_strategy</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>PhysicalNamingStrategy</code> implementing your database naming standards</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Writing your own <code>PhysicalNamingStrategy</code> is an especially good
+way to reduce the clutter of annotations on your entity classes, and
+we think you should do it for any nontrivial data model.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_writing_the_java_code"><a class="anchor" href="#_writing_the_java_code"></a>1.3. Writing the Java code</h3>
+<div class="paragraph">
+<p>With that out of the way, we&#8217;re all set to write some Java code!</p>
+</div>
+<div class="paragraph">
+<p>As is the case in any project that uses Hibernate, your
+persistence-related code comes in two main pieces:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>a representation of your data model in Java, which takes the form
+of a set of annotated entity classes, and</p>
+</li>
+<li>
+<p>a larger number of functions which interact with Hibernate&#8217;s APIs
+to perform the persistence operations associated with your various
+transactions.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The first part, the data or "domain" model, is usually easier to write,
+but doing a great and very clean job of it will strongly affect your
+success in the second part.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Take your time with this code, and try to produce a Java model
+that&#8217;s as close as reasonable to the relational data model. Avoid using
+exotic or advanced mapping features when they&#8217;re not really needed.
+When in the slightest doubt, map a foreign key relationship using
+<code>@ManyToOne</code> with <code>@OneToMany(mappedBy=&#8230;&#8203;)</code> in preference to more
+complicated association mappings.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The second part of the code is much trickier to get right. This code must:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>manage transactions and reactive sessions,</p>
+</li>
+<li>
+<p>construct reactive streams by chaining persistence operations invoked
+on the reactive session,</p>
+</li>
+<li>
+<p>fetch and prepare data needed by the UI, and</p>
+</li>
+<li>
+<p>handle failures.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Some responsibility for transaction and session management, and for
+recovery from certain kinds of failure, can be best handled in some sort
+of framework code.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_mapping_entity_classes"><a class="anchor" href="#_mapping_entity_classes"></a>1.3.1. Mapping entity classes</h4>
+<div class="paragraph">
+<p>We won&#8217;t have much to say about the entity classes here, simply because
+the principles behind mapping entity classes in Hibernate Reactive,
+along with the actual mapping annotations you&#8217;ll use, are all identical
+to regular Hibernate ORM and other implementations of JPA.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Entity
+@Table(name="authors")
+class Author {
+    @Id @GeneratedValue
+    private Integer id;
+
+    @NotNull @Size(max=100)
+    private String name;
+
+    @OneToMany(mappedBy = "author", cascade = PERSIST)
+    private List&lt;Book&gt; books = new ArrayList&lt;&gt;();
+
+    Author(String name) {
+        this.name = name;
+    }
+
+    Author() {}
+
+    // getters and setters...
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You&#8217;re quite free to mix and match:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the regular JPA mapping annotations defined in the package
+<code>javax.persistence</code> with</p>
+</li>
+<li>
+<p>the advanced mapping annotations in <code>org.hibernate.annotations</code>, and even</p>
+</li>
+<li>
+<p>annotations like <code>@NotNull</code> and <code>@Size</code> defined by Bean Validation.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A full list of object/relational mapping annotations may be found in the
+<a href="https://docs.jboss.org/hibernate/orm/5.4/userguide/html_single/Hibernate_User_Guide.html#annotations">documentation for Hibernate ORM</a>. Most mapping
+annotations are already supported in Hibernate Reactive, though there are
+still a handful of limitations at this time.</p>
+</div>
+<div class="sect4">
+<h5 id="_common_jpa_annotations"><a class="anchor" href="#_common_jpa_annotations"></a>Common JPA annotations</h5>
+<div class="paragraph">
+<p>The most common and useful mapping annotations include these standard JPA
+annotations:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Annotation</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Entity</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Declares an entity class (a class with its own
+                        database table an persistent identity)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@MappedSuperclass</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A superclass that declares common persistent
+                        fields of its <code>@Entity</code> subclasses</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Embeddable</code> or
+  <code>@Embedded</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Declare an embeddable class (a class without its
+                        own persistent identity or database table)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Inheritance</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines how inheritance hierarchies should be
+                        mapped to database tables</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Id</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies that a field of an entity holds the
+                        persistent identity of the entity, and maps to
+                        the primary key of its table</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@IdClass</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies a class representing the composite
+                        primary key of the entity (for entities with
+                        multiple <code>@Id</code> fields)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@EmbeddedId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies that a field of an entity holds its
+                        composite primary key represented as an
+                        <code>@Embeddable</code> class</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@GeneratedValue</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies that an identifier is a system-generated
+                        surrogate key</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Version</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies that a field of an entity holds a version
+                        number used for optimistic locking</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Enumerated</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maps a field holding an <code>enum</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@ManyToOne</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Declares a many-to-one association to a second
+                        entity</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@OneToOne</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Declares a one-to-one association to a second
+                        entity</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@OneToMany</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Declares a one-to-many association to a second
+                        entity</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Table</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies a mapping to a database table</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@SecondaryTable</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies a mapping to a second database table</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Column</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies a mapping to a database column</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@JoinColumn</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies a mapping to a database foreign key</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_useful_hibernate_annotations"><a class="anchor" href="#_useful_hibernate_annotations"></a>Useful Hibernate annotations</h5>
+<div class="paragraph">
+<p>These Hibernate annotations are also quite useful to know about:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Annotation</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Cache</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enables second-level caching for an entity</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Formula</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maps field to SQL expression instead of a column</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@CreationTimestamp</code>, <code>@UpdateTimestamp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Automatically assign a timestamp to a field</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@OptimisticLocking</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enables optimistic locking for entities with no
+                                             <code>@Version</code> field</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@FilterDef</code> and <code>@Filter</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Define a Hibernate filter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@FetchProfile</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines a Hibernate fetch profile</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Generated</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines a property generated by the database</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@ColumnDefault</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies a SQL expression used to assign a
+                                             default value to a column.
+                                             (Use in combination with <code>@Generated(INSERT)</code>.)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@GenericGenerator</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Selects a custom id generator</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@DynamicInsert</code> and <code>@DynamicUpdate</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generate SQL dynamically with only needed columns
+                                             (instead of using static SQL generated at startup)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Fetch</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the fetching mode for an association</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@BatchSize</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the batch size for batch fetching an
+                                             association</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@SqlInsert</code>, <code>@SqlUpdate</code>, <code>@SqlDelete</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specify custom DML for entity operations</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@NaturalId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Marks a field or fields as an alternative "natural"
+                                             identifier (unique key) of the entity</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_bean_validation_annotations"><a class="anchor" href="#_bean_validation_annotations"></a>Bean Validation annotations</h5>
+<div class="paragraph">
+<p>Information about Bean Validation annotations may be found in the
+<a href="https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#chapter-bean-constraints">documentation for Hibernate Validator</a>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+for defining a required field, we prefer to use the <code>@NotNull</code>
+annotation from Bean Validation instead of JPA&#8217;s more verbose
+<code>@Basic(optional=false)</code>. Similarly, we prefer to define the length of a
+text field using <code>@Size(100)</code> rather than <code>@Column(length=100)</code>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_getters_and_setters"><a class="anchor" href="#_getters_and_setters"></a>1.3.2. Getters and setters</h4>
+<div class="paragraph">
+<p>When using Hibernate Reactive <em>outside</em> the Quarkus environment, you&#8217;ll
+need to write your entity classes according to the usual JPA conventions,
+which require:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>private fields for persistent attributes, and</p>
+</li>
+<li>
+<p>a nullary constructor.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It&#8217;s illegal to access persistent fields from outside the entity class.
+Therefore, external access to persistent fields must be intermediated via
+getter and setter methods defined by the entity class.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+If you access fields of an unfetched entity instance from code
+outside the entity class, you&#8217;ll obtain bogus <code>null</code> or default (zero)
+values!
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>When you use Hibernate Reactive in Quarkus, these requirements are relaxed,
+and you can use public fields instead of getters and setters if you prefer.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_code_equals_code_and_code_hashcode_code"><a class="anchor" href="#_code_equals_code_and_code_hashcode_code"></a>1.3.3. <code>equals()</code> and <code>hashCode()</code></h4>
+<div class="paragraph">
+<p>Entity classes should override <code>equals()</code> and <code>hashCode()</code>. People new to
+Hibernate or JPA are often confused by exactly which fields should be
+included in the <code>hashCode()</code>, so please keep the following principles in
+mind:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You should not include mutable fields in the hashcode, since that would
+require rehashing any collection containing the entity whenever the field
+is mutated.</p>
+</li>
+<li>
+<p>It&#8217;s not completely wrong to include a generated identifier (surrogate
+key) in the hashcode, but since the identifier is not generated until
+the entity instance is made persistent, you must take great care to not
+add it to any hashed collection before the identifier is generated. We
+therefore advise against including any database-generated field in the
+hashcode.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It&#8217;s OK to include any immutable, non-generated field in the hashcode.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+We therefore recommend identifying a <em>natural key</em> for each entity,
+that is, a combination of fields that uniquely identifies an instance of
+the entity, from the perspective of the data model of the program. The
+business key should correspond to a unique constraint on the database,
+and to the fields which are included in <code>equals()</code> and <code>hashCode()</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>That said, an implementation of <code>equals()</code> and <code>hashCode()</code> based on the
+generated identifier of the entity can work <em>if you&#8217;re careful</em>.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+If you can&#8217;t identify a natural key, it might be a sign that
+you need to think more carefully about some aspect of your data model.
+If an entity doesn&#8217;t have a meaningful unique key, then it&#8217;s impossible
+to say what event or object it represents in the "real world" outside
+your program.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Note that even when you&#8217;ve identified a natural key, we still recommend
+the use of a generated surrogate key in foreign keys, since this makes
+your data model <em>much</em> easier to change.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_identifier_generation"><a class="anchor" href="#_identifier_generation"></a>1.3.4. Identifier generation</h4>
+<div class="paragraph">
+<p>One area where the functionality of Hibernate Reactive diverges from plain
+Hibernate is in the area of id generation. Custom identifier generators
+written to work with Hibernate ORM and JDBC will <em>not</em> work in the reactive
+environment.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Sequence, table, and <code>UUID</code> id generation is built in, and these id
+generation strategies may be selected using the usual JPA mapping
+annotations: <code>@GeneratedValue</code>, <code>@TableGenerator</code>, <code>@SequenceGenerator</code>.</p>
+</li>
+<li>
+<p>On MySQL, an autoincrement column may be used by specifying
+<code>@GeneratedValue(strategy=GenerationType.IDENTITY)</code></p>
+</li>
+<li>
+<p>Custom id generators may be defined by implementing <code>ReactiveIdentifierGenerator</code>
+and declaring the custom implementation using <code>@GenericGenerator</code>.</p>
+</li>
+<li>
+<p>Natural ids&mdash;including composite ids&mdash;may be assigned by the
+program in the usual way.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The standard id generation strategies defined by the JPA specification may
+be customized using the following annotations:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Annotation</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@SequenceGenerator</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Configure a generator based on a database sequence</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@TableGenerator</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Configure a generator based on a row of a database table</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For example, sequence id generation may be specified like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Entity
+@Table(name="authors")
+class Author {
+    @Id @GeneratedValue(generator = "authorIds")
+    @SequenceGenerator(name = "authorIds",
+               sequenceName = "author_ids",
+             allocationSize = 20)
+    Integer id;
+    ...
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can find more information in the JPA specification.</p>
+</div>
+<div class="paragraph">
+<p>If you have very particular requirements, you can check out the Javadoc of
+<code>ReactiveIdentifierGenerator</code> for information on how to implement your own
+custom reactive identifier generator.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_custom_types"><a class="anchor" href="#_custom_types"></a>1.3.5. Custom types</h4>
+<div class="paragraph">
+<p>Hibernate custom types based on the <code>UserType</code> interface are targeted toward
+use with JDBC, and depend on interfaces defined by JDBC. So Hibernate Reactive
+features an adaptor that exposes a partial implementation of JDBC to the
+<code>UserType</code> implementation.</p>
+</div>
+<div class="paragraph">
+<p>Therefore, <em>some</em> existing <code>UserType</code> implementations will work in Hibernate
+Reactive, depending upon precisely which features of JDBC they depend on.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Where possible, use a JPA attribute converter instead of a custom type,
+since attribute converters are not in any way tied to JDBC.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>You may specify a custom type by annotating a field of an entity class with
+the Hibernate <code>@Type</code> annotation.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_attribute_converters"><a class="anchor" href="#_attribute_converters"></a>1.3.6. Attribute converters</h4>
+<div class="paragraph">
+<p>Any JPA <code>AttributeConverter</code> works in Hibernate Reactive. For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Converter
+public class BigIntegerAsString implements AttributeConverter&lt;BigInteger, String&gt; {
+    @Override
+    public String convertToDatabaseColumn(BigInteger attribute) {
+        return attribute == null ? null : attribute.toString(2);
+    }
+
+    @Override
+    public BigInteger convertToEntityAttribute(String string) {
+        return string == null ? null : new BigInteger(string, 2);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You&#8217;ll need to use one or both of these annotations:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Annotation</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Converter</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Declares a class implementing <code>AttributeConverter</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Convert</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies an <code>AttributeConverter</code> converter to use
+                      for a field of an entity class</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>You&#8217;ll find more information in the Javadoc for these annotations and in the
+JPA specification.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_apis_for_chaining_reactive_operations"><a class="anchor" href="#_apis_for_chaining_reactive_operations"></a>1.3.7. APIs for chaining reactive operations</h4>
+<div class="paragraph">
+<p>When you write persistence logic using Hibernate Reactive, you&#8217;ll be working
+with a reactive <code>Session</code> most of the time. Just to make things a little more
+confusing for new users, the reactive <code>Session</code> and its related interfaces all
+come in two flavors:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Stage.Session</code> and friends provide a reactive API based around Java&#8217;s
+<code>CompletionStage</code>, and</p>
+</li>
+<li>
+<p><code>Mutiny.Session</code> and friends provide an API based on <a href="https://smallrye.io/smallrye-mutiny/">Mutiny</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You&#8217;ll need to decide which API you want to use!</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you take the time to look over the types <code>Stage.Session</code> and
+<code>Mutiny.Session</code>, you&#8217;ll notice they&#8217;re almost identical. Choosing between
+them is a matter of deciding which reactive API you want to use for working
+with reactive streams. Your decision won&#8217;t affect what you can do with
+Hibernate Reactive. On the other hand, we&#8217;ve sent a lot of feedback and
+requests for improvement to the Mutiny team, and we think it&#8217;s now the case
+that Hibernate Reactive code is simpler and cleaner with Mutiny.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>These are the most important operations on reactive streams that you&#8217;ll need
+all the time when working with Hibernate Reactive:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Purpose</th>
+<th class="tableblock halign-left valign-top">Java <code>CompletionStage</code></th>
+<th class="tableblock halign-left valign-top">Mutiny <code>Uni</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Chain non-blocking operations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>thenCompose()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>chain()</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transform streamed items</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>thenApply()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>map()</code> and <code>replaceWith()</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Perform an action using streamed items</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>thenAccept()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>invoke()</code> and <code>call()</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Perform cleanup (similar to <code>finally</code>)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>whenComplete()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>eventually()</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>In this introduction, our code examples usually use Mutiny. If you&#8217;re more
+familiar with <code>CompletionStage</code>, you can refer to the above table to help
+you understand the code.</p>
+</div>
+<div class="paragraph">
+<p>When we use the term <em>reactive stream</em> in this document, we mean:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a chain of <code>CompletionStage</code>s, or</p>
+</li>
+<li>
+<p>a chain of Mutiny <code>Uni</code>s and <code>Multi</code>s</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>that is built by the program in order to service a particular request,
+transaction, or unit of work.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_obtaining_a_reactive_session_factory"><a class="anchor" href="#_obtaining_a_reactive_session_factory"></a>1.3.8. Obtaining a reactive session factory</h4>
+<div class="paragraph">
+<p>Whatever you decide, the first step to getting a reactive session is to obtain
+a JPA <code>EntityManagerFactory</code> just as you usually would in plain ol' regular JPA,
+for example, by calling:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">EntityManagerFactory emf = Persistence.createEntityManagerFactory("example");</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now, <code>unwrap()</code> the reactive <code>SessionFactory</code>. If you want to use
+<code>CompletionStage</code>s for chaining reactive operations, ask for a
+<code>Stage.SessionFactory</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">Stage.SessionFactory sessionFactory = emf.unwrap(Stage.SessionFactory.class);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or, if you prefer to use the Mutiny-based API, <code>unwrap()</code> the type
+<code>Mutiny.SessionFactory</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">Mutiny.SessionFactory sessionFactory = emf.unwrap(Mutiny.SessionFactory.class);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Reactive sessions may be obtained from the resulting reactive <code>SessionFactory</code>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+It&#8217;s also possible to construct a reactive <code>SessionFactory</code> via programmatic
+configuration based on Hibernate&#8217;s <code>ServiceRegistry</code> architecture, by using a
+<code>ReactiveServiceRegistryBuilder</code>. But that&#8217;s outside the scope of this document.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_obtaining_a_reactive_session"><a class="anchor" href="#_obtaining_a_reactive_session"></a>1.3.9. Obtaining a reactive session</h4>
+<div class="paragraph">
+<p>Persistence operations are exposed via a reactive <code>Session</code> object. It&#8217;s very
+important to understand that most operations of this interface are non-blocking,
+and execution of SQL against the database is never performed synchronously.
+Persistence operations that belong to a single unit of work must be chained by
+composition within a single reactive stream.</p>
+</div>
+<div class="paragraph">
+<p>Also remember that a Hibernate session is a lightweight object that should be
+created, used, and then discarded within a single logical unit of work.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+That is to say, you <em>should</em> reuse the same session across multiple
+persistence operations within a single reactive stream representing a certain
+transaction or unit of work, but <em>don&#8217;t</em> share a session between different
+concurrent reactive streams!
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To obtain a reactive <code>Session</code> from the <code>SessionFactory</code>, use <code>withSession()</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">sessionFactory.withSession(
+        session -&gt; session.find(Book.class, id)
+                .invoke(
+                    book -&gt; ... //do something with the book
+                )
+);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The resulting <code>Session</code> object is automatically associated with the current
+reactive stream, and so nested calls to <code>withSession()</code> in a given stream
+automatically obtain the same shared session.</p>
+</div>
+<div class="paragraph">
+<p>Alternatively, you may use <code>openSession()</code>, but you must remember to <code>close()</code>
+the session when you&#8217;re done.
+And you must take great care to only access each session from within exactly
+one Vert.x context (See the <a href="#_vert_x_context">Vert.x context</a> paragraph for more details).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">Uni&lt;Session&gt; sessionUni = sessionFactory.openSession();
+sessionUni.chain(
+        session -&gt; session.find(Book.class, id)
+                .invoke(
+		    book -&gt; ... //do something with the book
+                )
+                .eventually(session::close)
+);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_using_the_reactive_session"><a class="anchor" href="#_using_the_reactive_session"></a>1.3.10. Using the reactive session</h4>
+<div class="paragraph">
+<p>The <code>Session</code> interface has methods with the same names as methods of the JPA
+<code>EntityManager</code>. You might already be familiar with the following session
+operations defined by JPA:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Method name and parameters</th>
+<th class="tableblock halign-left valign-top">Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>find(Class,Object)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obtain a persistent object given its type and its id
+                         (primary key)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>persist(Object)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Make a transient object persistent and schedule a SQL
+                         <code>insert</code> statement for later execution</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>remove(Object)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Make a persistent object transient and schedule a SQL
+                         <code>delete</code> statement for later execution</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>merge(Object)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copy the state of a given detached object to a
+                         corresponding managed persistent instance and return
+                         the persistent object</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>refresh(Object)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Refresh the persistent state of an object using a new
+                         SQL <code>select</code> to retrieve the current state from the
+                         database</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>lock(Object)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obtain a pessimistic lock on a persistent object</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>flush()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Detect changes made to persistent objects association
+                         with the session and synchronize the database state
+                         with the state of the session by executing SQL <code>insert</code>,
+                         <code>update</code>, and <code>delete</code> statements</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>detach(Object)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Disassociate a persistent object from a session without
+                         affecting the database</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>getReference(Class,id)</code> or
+  <code>getReference(Object)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obtain a reference to a persistent object without
+                           actually loading its state from the database</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>If you&#8217;re not familiar with these operations, don&#8217;t despair! Their semantics
+are defined in the JPA specification, and in the API documentation, and are
+explained in innumerable articles and blog posts. But if you already have some
+experience with Hibernate or JPA, you&#8217;re right at home!</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Just like in Hibernate ORM, the session is considered to be unusable
+after any of its methods throws an exception. If you receive an exception from
+Hibernate Reactive, you should immediately close and discard the current session.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Now, <em>here&#8217;s where Hibernate Reactive is different:</em> in the reactive API, each
+of these methods returns its result in a non-blocking fashion via a Java
+<code>CompletionStage</code> (or Mutiny <code>Uni</code>). For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">session.find(Book.class, book.id)
+       .invoke( book -&gt; System.out.println(book.title + " is a great book!") )</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>On the other hand, methods with no meaningful return value just return
+<code>CompletionStage&lt;Void&gt;</code> (or <code>Uni&lt;Void&gt;</code>).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">session.find(Book.class, id)
+       .call( book -&gt; session.remove(book) )
+       .call( () -&gt; session.flush() )</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The session will be flushed automatically at the end of a unit of work
+if&mdash;and <em>only</em> if&mdash;you use a transaction, as described below in
+<a href="#_transactions">Transactions</a>. If you don&#8217;t use a transaction, and forget to flush the
+session explicitly, your persistence operations might never be sent to the
+database!
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>An <em>extremely</em> common mistake when using reactive streams is to forget to
+chain the return value of a "void-like" method. For example, in the following
+code, the <code>flush()</code> operation is never executed, because <code>invoke()</code> doesn&#8217;t
+chain its return value to the tip of the stream.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">session.find(Book.class, id)
+       .call( book -&gt; session.remove(book) )
+       .invoke( () -&gt; session.flush() )   //OOPS, WRONG!!</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>So remember:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You must use <code>thenCompose()</code>, not <code>thenAccept()</code>, when calling "void-like"
+methods that return <code>CompletionStage</code>.</p>
+</li>
+<li>
+<p>In Mutiny, you must use <code>call()</code>, not <code>invoke()</code>, when calling "void-like"
+methods that return <code>Uni</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The same problem occurs in the following code, but this time it&#8217;s <code>remove()</code>
+that never gets called:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">session.find(Book.class, id)
+       .call( book -&gt; {
+           session.remove(book);   //OOPS, WRONG!!
+           return session.flush();
+       } )</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you already have some experience with reactive programming, there&#8217;s nothing
+new to learn here. But if you <em>are</em> new to reactive programming, just be aware
+that you&#8217;re going to make this mistake, in some form, <em>at least</em> once!</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_queries"><a class="anchor" href="#_queries"></a>1.3.11. Queries</h4>
+<div class="paragraph">
+<p>Naturally, the <code>Session</code> interface is a factory for <code>Query</code> instances which
+allow you to set query parameters and execute queries and DML statements:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Method name</th>
+<th class="tableblock halign-left valign-top">Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>createQuery()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obtain a <code>Query</code> for executing a query or DML
+                          statement written in HQL or JPQL</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>createNativeQuery()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obtain a <code>Query</code> for executing a query or DML
+                          statement written in the native SQL dialect of
+                          your database</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>createNamedQuery()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obtain a <code>Query</code> for executing a named HQL or SQL
+                          query defined by a <code>@NamedQuery</code> annotation</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>That <code>createQuery()</code> method produces a reactive <code>Query</code>, allowing HQL / JPQL
+queries to be executed asynchronously, always returning their results via a
+<code>CompletionStage</code> (or <code>Uni</code>):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">session.createQuery("select title from Book order by title desc")
+       .getResultList()
+       .invoke( list -&gt; list.forEach(System.out::println) )</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>Query</code> interface defines the following important operations:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Method name</th>
+<th class="tableblock halign-left valign-top">Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>setParameter()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set an argument of a query parameter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>setMaxResults()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Limit the number of results returned by the query</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>setFirstResult()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specify a certain number of initial results to
+be skipped (for result pagination)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>getSingleResult()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Execute a query and obtain the single result</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>getResultList()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Execute a query and obtain the results as a list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>executeUpdate()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Execute a DML statement and obtain the number of
+affected rows</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The Hibernate Reactive <code>Query</code> API doesn&#8217;t support <code>java.util.Date</code>
+or its subclasses in <code>java.sql</code>, nor <code>java.util.Calendar</code>. Always use
+<code>java.time</code> types like <code>LocalDate</code> or <code>LocalDateTime</code> for specifying
+arguments to temporally-typed query parameters.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For  JPA criteria queries, you must first obtain the <code>CriteriaBuilder</code> using
+<code>SessionFactory.getCriteriaBuilder()</code>, and execute your query using
+<code>Session.createQuery()</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">CriteriaQuery&lt;Book&gt; query = factory.getCriteriaBuilder().createQuery(Book.class);
+Root&lt;Author&gt; a = query.from(Author.class);
+Join&lt;Author,Book&gt; b = a.join(Author_.books);
+query.where( a.get(Author_.name).in("Neal Stephenson", "William Gibson") );
+query.select(b);
+return session.createQuery(query).getResultList().invoke(
+        books -&gt; books.forEach( book -&gt; out.println(book.title) )
+);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_fetching_lazy_associations"><a class="anchor" href="#_fetching_lazy_associations"></a>1.3.12. Fetching lazy associations</h4>
+<div class="paragraph">
+<p>In Hibernate ORM, a lazy association is fetched transparently when the
+association is first accessed within a session. In Hibernate Reactive, on
+the other hand, lazy association fetching is an asynchronous process that
+produces a result via a <code>CompletionStage</code> (or <code>Uni</code>).</p>
+</div>
+<div class="paragraph">
+<p>Therefore, lazy fetching is an explicit operation named <code>fetch()</code>, a static
+method of <code>Stage</code> and <code>Mutiny</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">session.find(Author.class, author.id)
+       .chain( author -&gt; Mutiny.fetch(author.books) )
+       .invoke( books -&gt; ... )</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Of course, this isn&#8217;t necessary if you fetch the association eagerly.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+It&#8217;s very important to make sure you&#8217;ve fetched all the data that
+will be needed before passing control to the process that renders the
+UI! There is no transparent lazy fetching in Hibernate Reactive, so
+patterns like "open session in view" will <em>not help at all</em>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Sometimes you might need to chain multiple calls to <code>fetch()</code>, for
+example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">Mutiny.fetch( session.getReference(detachedAuthor) )
+       .chain( author -&gt; Mutiny.fetch(author.books) )
+       .invoke( books -&gt; ... )</code></pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<code>fetch()</code> isn&#8217;t recursive! You can&#8217;t fetch an association
+belonging to an unfetched entity without fetching the entity instance
+first.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_field_level_lazy_fetching"><a class="anchor" href="#_field_level_lazy_fetching"></a>1.3.13. Field-level lazy fetching</h4>
+<div class="paragraph">
+<p>Similarly, field-level lazy fetching&mdash;an advanced feature, which
+is only supported in conjunction with Hibernate&#8217;s optional compile-time
+bytecode enhancer&mdash;is also an explicit operation:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">session.find(Book.class, book.id)
+       .chain( book -&gt; session.fetch(book, Book_.isbn) )
+       .invoke( isbn -&gt; ... )</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that the field to fetch is identified by a JPA metamodel <code>Attribute</code>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+We don&#8217;t encourage you to use field-level lazy fetching unless you
+have very specific requirements.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_transactions"><a class="anchor" href="#_transactions"></a>1.3.14. Transactions</h4>
+<div class="paragraph">
+<p>The <code>withTransaction()</code> method performs work within the scope of a database
+transaction.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">session.withTransaction( tx -&gt; session.persist(book) )</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The session is automatically flushed at the end of the transaction.</p>
+</div>
+<div class="paragraph">
+<p>For a given <code>Session</code> object, nested calls to <code>withTransaction()</code> occur
+within the same shared transaction context. However, notice that the
+transaction is a <em>resource local</em> transaction only, delegated to the
+underlying Vert.x database client, and does not span multiple datasources,
+nor integrate with JPA container-managed transactions.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Hibernate Reactive does not currently support distributed (XA)
+transactions.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For extra convenience, there&#8217;s a method that opens a session and starts a
+transaction in one call:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">sessionFactory.withTransaction( (session, tx) -&gt; session.persist(book) )</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is probably the most convenient thing to use most of the time.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_vert_x_context"><a class="anchor" href="#_vert_x_context"></a>1.3.15. Vert.x context</h4>
+<div class="paragraph">
+<p>The session is not thread-safe, using it in different threads may cause issues that are hard to debug.
+When it&#8217;s created, a session is bound to a <a href="https://vertx.io/blog/an-introduction-to-the-vert-x-context-object/">Vert.x context</a>
+and needs to be used in the same context after that.</p>
+</div>
+<div class="paragraph">
+<p>Hibernate Reactive will take care of this when the application uses <code>withSession</code>,
+<code>withStatelessSession</code> or <code>withTransaction</code> (See <a href="#_obtaining_a_reactive_session">Obtaining a reactive session</a>).</p>
+</div>
+<div class="paragraph">
+<p>When using <code>openSession</code> or <code>openStatelessSession</code>, one need to make sure
+to use it in the right Vert.x context or the following exception might occur:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">HR000068: This method should exclusively be invoked from a Vert.x EventLoop thread; ...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>One way to run the code in the correct Vert.x context is the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">Context currentContext = Vertx.currentContext();
+currentContext.runOnContext( event -&gt; {
+   // Here you will be able to use the session
+});</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_vert_x_instance_service"><a class="anchor" href="#_vert_x_instance_service"></a>1.3.16. Vert.x instance service</h4>
+<div class="paragraph">
+<p>This service tells Hibernate Reactive which Vert.x instance to use when it
+creates a session. It also acts as an integration point for your application
+in case you need a custom Vert.x instance (Hibernate Reactive will create a
+default one otherwise).</p>
+</div>
+<div class="paragraph">
+<p>You can override the service programmatically:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">final Vertx myVertx = ...
+Configuration configuration = new Configuration();
+StandardServiceRegistryBuilder builder = new ReactiveServiceRegistryBuilder()
+        .addService( VertxInstance.class, (VertxInstance) () -&gt; myVertx )
+        .applySettings( configuration.getProperties() );
+StandardServiceRegistry registry = builder.build();
+SessionFactory sessionFactory = configuration.buildSessionFactory( registry );</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or, you can use the <code>ServiceContributor</code> interface and register your implementation of the
+<code>VertxInstance</code> interface:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Add a text file named <code>org.hibernate.service.spi.ServiceContributor</code> under</p>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">/META-INF/services/</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>The text file will contain the path to the class implementing the <code>ServiceContributor</code> interface:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">org.myproject.MyServiceContributor</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is an example of what <code>MyVertxProvider</code> and <code>MyServiceContributor</code> might look like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">public class MyServiceContributor implements ServiceContributor {
+
+  @Override
+  public void contribute(StandardServiceRegistryBuilder serviceRegistryBuilder) {
+    serviceRegistryBuilder.addService( VertxInstance.class, new MyVertxProvider() );
+  }
+
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">public class MyVertxProvider implements VertxInstance {
+
+  private final Vertx vertx;
+
+  public MyVertxProvider() {
+    this.vertx = Vertx.vertx();
+  }
+
+  @Override
+  public Vertx getVertx() {
+    return vertx;
+  }
+
+}</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You can access the <code>ServiceRegistry</code> from the <code>Stage.SessionFactory</code> or
+<code>Mutiny.SessionFactory</code> using the <code>org.hibernate.reactive.common.spi.Implementor</code>
+interface:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">Mutiny.SessionFactory sessionFactory = ...
+VertxInstance vertxInstance = ((Implementor) sessionFactory)
+					.getServiceRegistry()
+ 					.getService( VertxInstance.class );
+Vertx vertx = vertxInstance.getVertx();</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The same will work for <code>Stage.SessionFactory</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tuning_and_performance"><a class="anchor" href="#_tuning_and_performance"></a>1.4. Tuning and performance</h3>
+<div class="paragraph">
+<p>Once you have a program up and running using Hibernate Reactive to access
+the database, it&#8217;s inevitable that you&#8217;ll find places where performance is
+disappointing or unacceptable.</p>
+</div>
+<div class="paragraph">
+<p>Fortunately, most performance problems are relatively easy to solve with
+the tools that Hibernate makes available to you, as long as you keep a
+couple of simple principles in mind.</p>
+</div>
+<div class="paragraph">
+<p>First and most important: the reason you&#8217;re using Hibernate Reactive is
+because it makes things easier. If, for a certain problem, it&#8217;s making
+things <em>harder</em>, stop using it. Solve this problem with a different tool
+instead.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Just because you&#8217;re using Hibernate in your program doesn&#8217;t mean
+you have to use it <em>everywhere</em>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Second: there are two main potential sources of performance bottlenecks in
+a program that uses Hibernate:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>too many round trips to the database, and</p>
+</li>
+<li>
+<p>memory consumption associated with the first-level (session) cache.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>So performance tuning primarily involves reducing the number of accesses
+to the database, and/or controlling the size of the session cache.</p>
+</div>
+<div class="paragraph">
+<p>But before we get to those more advanced topics, we should start by tuning
+the connection pool.</p>
+</div>
+<div class="sect3">
+<h4 id="_tuning_the_vert_x_pool"><a class="anchor" href="#_tuning_the_vert_x_pool"></a>1.4.1. Tuning the Vert.x pool</h4>
+<div class="paragraph">
+<p>In <a href="#_basic_configuration">Basic configuration</a> we already saw how to set the size of the
+Vert.x database connection pool. When it comes time for performance tuning,
+you can further customize the pool and prepared statement cache via the
+following configuration properties:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Configuration property name</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.vertx.pool.max_wait_queue_size</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum connection requests allowed in the wait queue</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.vertx.pool.connect_timeout</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum time to wait when requesting a pooled connection, in milliseconds</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.vertx.pool.idle_timeout</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum time a connection may sit idle, in milliseconds</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.vertx.pool.cleaner_period</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Vert.x connection pool cleaner period, in milliseconds</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.vertx.prepared_statement_cache.max_size</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum size of the prepared statement cache</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.vertx.prepared_statement_cache.sql_limit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum length of prepared statement SQL string that will be cached</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Finally, for more advanced cases, you can write your own code to configure
+the Vert.x client by implementing <code>SqlClientPoolConfiguration</code>.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Configuration property name</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.vertx.pool.configuration_class</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A class implementing <code>SqlClientPoolConfiguration</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_enabling_statement_batching"><a class="anchor" href="#_enabling_statement_batching"></a>1.4.2. Enabling statement batching</h4>
+<div class="paragraph">
+<p>An easy way to improve performance of some transactions with almost no
+work at all is to turn on automatic DML statement batching. Batching
+only helps in cases where a program executes many inserts, updates, or
+deletes against the same table in a single transaction.</p>
+</div>
+<div class="paragraph">
+<p>All you need to do is set a single property:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Configuration property name</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.jdbc.batch_size</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum batch size for SQL statement batching</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>(Again, this property has <code>jdbc</code> in its name, but Hibernate Reactive
+repurposes it for use with the reactive connection.)</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Even better than DML statement batching is the use of HQL <code>update</code>
+or <code>delete</code> queries, or even native SQL that calls a stored procedure!
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_association_fetching"><a class="anchor" href="#_association_fetching"></a>1.4.3. Association fetching</h4>
+<div class="paragraph">
+<p>Achieving high performance in ORM means minimizing the number of round
+trips to the database. This goal should be uppermost in your mind
+whenever you&#8217;re writing data access code with Hibernate. The most
+fundamental rule of thumb in ORM is:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>explicitly specify all the data you&#8217;re going to need right at the start
+of a session/transaction, and fetch it immediately in one or two queries,</p>
+</li>
+<li>
+<p>and only then start navigating associations between persistent entities.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Without question, the most common cause of poorly-performing data access
+code in Java programs is the problem of <em>N+1 selects</em>. Here, a list of N
+rows is retrieved from the database in an initial query, and then
+associated instances of a related entity are fetched using N subsequent
+queries.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Hibernate code which does this is bad code and makes
+Hibernate look bad to people who don&#8217;t realize that it&#8217;s their own
+fault for not following the advice in this section!
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Hibernate provides several strategies for efficiently fetching
+associations and avoiding N+1 selects:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>outer join fetching,</p>
+</li>
+<li>
+<p>batch fetching, and</p>
+</li>
+<li>
+<p>subselect fetching.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Of these, you should almost always use outer join fetching. Batch
+fetching and subselect fetching are only useful in rare cases where
+outer join fetching would result in a cartesian product and a huge
+result set. Unfortunately, outer join fetching simply isn&#8217;t possible
+with lazy fetching.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Avoid the use of lazy fetching, which is often the source of
+N+1 selects.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>It follows from this tip that you shouldn&#8217;t need to use <code>Stage.fetch()</code>
+or <code>Mutiny.fetch()</code> very often!</p>
+</div>
+<div class="paragraph">
+<p>Now, we&#8217;re not saying that associations should be mapped for eager
+fetching by default! That would be a terrible idea, resulting in
+simple session operations that fetch the entire database! Therefore:</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Most associations should be mapped for lazy fetching by default.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>It sounds as if this tip is in contradiction to the previous one, but
+it&#8217;s not. It&#8217;s saying that you must explicitly specify eager fetching
+for associations precisely when and where they are needed.</p>
+</div>
+<div class="paragraph">
+<p>If you need eager fetching in some particular transaction, use:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>left join fetch</code> in HQL,</p>
+</li>
+<li>
+<p>a fetch profile,</p>
+</li>
+<li>
+<p>a JPA <code>EntityGraph</code>, or</p>
+</li>
+<li>
+<p><code>fetch()</code> in a criteria query.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can find much more information about association fetching in the
+<a href="https://docs.jboss.org/hibernate/orm/5.4/userguide/html_single/Hibernate_User_Guide.html#fetching">documentation for Hibernate ORM</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_enabling_the_second_level_cache"><a class="anchor" href="#_enabling_the_second_level_cache"></a>1.4.4. Enabling the second-level cache</h4>
+<div class="paragraph">
+<p>A classic way to reduce the number of accesses to the database is to
+use a second-level cache, allowing cached data to be shared between
+sessions.</p>
+</div>
+<div class="paragraph">
+<p>Hibernate Reactive supports second-level cache implementations that
+perform no blocking I/O.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Make sure you disable any disk-based storage or distributed
+replication used by your preferred cache implementation. A second-level
+cache which uses blocking I/O to interact with the network or disk-based
+storage will at least partially negate the advantages of the reactive
+programming model.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Configuring Hibernate&#8217;s second-level cache is a rather involved topic,
+and quite outside the scope of this document. But in case it helps, we&#8217;re
+testing Hibernate Reactive with the following configuration, which uses
+EHCache as the cache implementation, as above in <a href="#_optional_dependencies">Optional dependencies</a>:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Configuration property name</th>
+<th class="tableblock halign-left valign-top">Property value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.cache.use_second_level_cache</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.cache.region.factory_class</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.hibernate.cache.jcache.JCacheRegionFactory</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.javax.cache.provider</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.ehcache.jsr107.EhcacheCachingProvider</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.javax.cache.uri</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/ehcache.xml</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>If you&#8217;re using EHCache, you&#8217;ll also need to include an <code>ehcache.xml</code> file
+that explicitly configures the behavior of each cache region belonging to
+your entities and collections.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Don&#8217;t forget that you need to explicitly mark each entity that will
+be stored in the second-level cache with the <code>@Cache</code> annotation from
+<code>org.hibernate.annotations</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>You can find much more information about the second-level cache in the
+<a href="https://docs.jboss.org/hibernate/orm/5.4/userguide/html_single/Hibernate_User_Guide.html#caching">documentation for Hibernate ORM</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_session_cache_management"><a class="anchor" href="#_session_cache_management"></a>1.4.5. Session cache management</h4>
+<div class="paragraph">
+<p>Entity instances aren&#8217;t automatically evicted from the session cache when
+they&#8217;re no longer needed. (The session cache is quite different to the
+second-level cache in this respect!) Instead, they stay pinned in memory
+until the session they belong to is discarded by your program.</p>
+</div>
+<div class="paragraph">
+<p>The methods <code>detach()</code> and <code>clear()</code> allow you to remove entities from the
+session cache, making them available for garbage collection. Since most
+sessions are rather short-lived, you won&#8217;t need these operations very often.
+And if you find yourself thinking you <em>do</em> need them in a certain situation,
+you should strongly consider an alternative solution: a <em>stateless session</em>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_stateless_sessions"><a class="anchor" href="#_stateless_sessions"></a>1.4.6. Stateless sessions</h4>
+<div class="paragraph">
+<p>An arguably-underappreciated feature of Hibernate is the <code>StatelessSession</code>
+interface, which provides a command-oriented, more bare-metal approach to
+interacting with the database.</p>
+</div>
+<div class="paragraph">
+<p>You may obtain a reactive stateless session from the <code>SessionFactory</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">Stage.StatelessSession ss = getSessionFactory().openStatelessSession();</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A stateless session:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>doesn&#8217;t have a first-level cache (persistence context), nor does it interact
+with any second-level caches, and</p>
+</li>
+<li>
+<p>doesn&#8217;t implement transactional write-behind or automatic dirty checking,
+so all operations are executed immediately when they&#8217;re explicitly called.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For a stateless session, you&#8217;re always working with detached objects. Thus,
+the programming model is a bit different:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Method name and parameters</th>
+<th class="tableblock halign-left valign-top">Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>get(Class, Object)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obtain a detached object, given its type and its id,
+                         by executing a <code>select</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fetch(Object)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fetch an association of a detached object</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>refresh(Object)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Refresh the state of a detached object by executing
+                         a <code>select</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>insert(Object)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Immediately <code>insert</code> the state of the given
+                         transient object into the database</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>update(Object)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Immediately <code>update</code> the state of the given detached
+                         object in the database</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete(Object)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Immediately <code>delete</code> the state of the given detached
+                         object from the database</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+There&#8217;s no <code>flush()</code> operation, and so <code>update()</code> is always explicit.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>In certain circumstances, this makes stateless sessions easier to work with,
+but with the caveat that a stateless session is much more vulnerable to data
+aliasing effects, since it&#8217;s easy to get two non-identical Java objects which
+both represent the same row of a database table.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+If you use <code>fetch()</code> in a stateless session, you can very easily
+obtain two objects representing the same database row!
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>In particular, the absence of a persistence context means that you can safely
+perform bulk-processing tasks without allocating huge quantities of memory.
+Use of a <code>StatelessSession</code> alleviates the need to call:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>clear()</code> or <code>detach()</code> to perform first-level cache management, and</p>
+</li>
+<li>
+<p><code>setCacheMode()</code> to bypass interaction with the second-level cache.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Stateless sessions can be useful, but for bulk operations on huge datasets,
+Hibernate can&#8217;t possibly compete with stored procedures!
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>When using a stateless session, you should be aware of the following additional
+limitations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>persistence operations never cascade to associated instances,</p>
+</li>
+<li>
+<p>changes to <code>@ManyToMany</code> associations and <code>@ElementCollection</code>s cannot be made
+persistent, and</p>
+</li>
+<li>
+<p>operations performed via a stateless session bypass callbacks.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_optimistic_and_pessimistic_locking"><a class="anchor" href="#_optimistic_and_pessimistic_locking"></a>1.4.7. Optimistic and pessimistic locking</h4>
+<div class="paragraph">
+<p>Finally, an aspect of behavior under load that we didn&#8217;t mention above is row-level
+data contention. When many transactions try to read and update the same data, the
+program might become unresponsive with lock escalation, deadlocks, and lock
+acquisition timeout errors.</p>
+</div>
+<div class="paragraph">
+<p>There&#8217;s two basic approaches to data concurrency in Hibernate:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>optimistic locking using <code>@Version</code> columns, and</p>
+</li>
+<li>
+<p>database-level pessimistic locking using the SQL <code>for update</code> syntax (or equivalent).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In the Hibernate community it&#8217;s <em>much</em> more common to use optimistic locking, and
+Hibernate makes that incredibly easy.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Where possible, in a multiuser system, avoid holding a pessimistic lock across
+a user interaction. Indeed, the usual practice is to avoid having transactions that
+span user interactions. For multiuser systems, optimistic locking is king.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>That said, there <em>is</em> also a place for pessimistic locks, which can sometimes reduce
+the probability of transaction rollbacks.</p>
+</div>
+<div class="paragraph">
+<p>Therefore, the <code>find()</code>, <code>lock()</code>, and <code>refresh()</code> methods of the reactive session
+accept an optional <code>LockMode</code>. You can also specify a <code>LockMode</code> for a query. The
+lock mode can be used to request a pessimistic lock, or to customize the behavior
+of optimistic locking:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><code>LockMode</code> type</th>
+<th class="tableblock halign-left valign-top">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>READ</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An optimistic lock obtained implicitly whenever
+                                  an entity is read from the database using <code>select</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>OPTIMISTIC</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An optimistic lock obtained when an entity is
+                                  read from the database, and verified using a
+                                  <code>select</code> to check the version when the
+                                  transaction completes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>OPTIMISTIC_FORCE_INCREMENT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An optimistic lock obtained when an entity is
+                                  read from the database, and enforced using an
+                                  <code>update</code> to increment the version when the
+                                  transaction completes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>WRITE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A pessimistic lock obtained implicitly whenever
+                                  an entity is written to the database using
+                                  <code>update</code> or <code>insert</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>PESSIMISTIC_READ</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A pessimistic <code>for share</code> lock</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>PESSIMISTIC_WRITE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A pessimistic <code>for update</code> lock</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>PESSIMISTIC_FORCE_INCREMENT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A pessimistic lock enforced using an immediate
+                                  <code>update</code> to increment the version</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_custom_connection_management_and_multitenancy"><a class="anchor" href="#_custom_connection_management_and_multitenancy"></a>1.5. Custom connection management and multitenancy</h3>
+<div class="paragraph">
+<p>Hibernate Reactive supports custom management of reactive connections by letting
+you define your own implementation of <code>ReactiveConnectionPool</code>, or extend the
+built-in implementation <code>DefaultSqlClientPool</code>.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Configuration property name</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.vertx.pool.class</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A class which implements <code>ReactiveConnectionPool</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>A common motivation for defining a custom pool is the need to support multitenancy.
+In a multitenant application, the database or database schema depends on the current
+tenant identifier. The easiest way to set this up in Hibernate Reactive is to extend
+<code>DefaultSqlClientPool</code> and override <code>getTenantPool(String tenantId)</code>.</p>
+</div>
+<div class="paragraph">
+<p>For multitenancy, you&#8217;ll also need to set at least one of the following
+configuration properties defined by Hibernate ORM:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Configuration property name</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.multiTenancy</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The multitenancy strategy: <code>database</code> or <code>schema</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.tenant_identifier_resolver</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(Optional) A class which implements <code>CurrentTenantIdentifierResolver</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>If you don&#8217;t provide a <code>CurrentTenantIdentifierResolver</code>, you can specify
+the tenant id explicitly when you call <code>openSession()</code>, <code>withSession()</code>,
+or <code>withTransaction()</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_next_steps"><a class="anchor" href="#_next_steps"></a>1.6. Next steps</h3>
+<div class="paragraph">
+<p>Hibernate Reactive is now integrated in <a href="https://quarkus.io/guides/getting-started-reactive">Quarkus</a> and <a href="https://quarkus.io/guides/hibernate-reactive-panache">Panache</a>.
+Configuration works slightly differently in Quarkus, so be sure to check the Quarkus
+documentation for details.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2021-11-05 10:08:31 UTC
+</div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
+<script>prettyPrint()</script>
+</body>
+</html>
