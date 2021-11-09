@@ -1,0 +1,12 @@
+summary: Release with Vert.x 4.2
+displayed: true
+maven:
+  group_id: org.hibernate.reactive
+  main_artifact_id: hibernate-reactive-core
+integration_constraints:
+  java:
+    version: 11, 16 or 17
+  orm:
+    version: 5.6
+  vertx:
+    version: 4.2
