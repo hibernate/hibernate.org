@@ -3,7 +3,6 @@
 :awestruct-series_version: "6.0"
 :page-interpolate: true
 :hsearch-doc-url-prefix: #{reference_doc(site.projects[page.project], series(page, page.series_version)).html_url}
-:hsearch-jira-url-prefix: https://hibernate.atlassian.net/browse
 
 === Dependency upgrades
 

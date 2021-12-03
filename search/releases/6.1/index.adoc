@@ -3,19 +3,18 @@
 :awestruct-series_version: "6.1"
 :page-interpolate: true
 :hsearch-doc-url-prefix: #{reference_doc(site.projects[page.project], series(page, page.series_version)).html_url}
-:hsearch-jira-url-prefix: https://hibernate.atlassian.net/browse
 
 === Dependency upgrades
 
 [[orm-version]]
-Hibernate ORM (link:{hsearch-jira-url-prefix}/HSEARCH-4279[HSEARCH-4279])::
-Hibernate Search 6.1 relies on Hibernate ORM 5.5.
+Hibernate ORM::
+Hibernate Search 6.1 relies on Hibernate ORM 5.6.
 
-[[lucene-version]]Lucene (link:{hsearch-jira-url-prefix}/HSEARCH-4169[HSEARCH-4169])::
-The Lucene backend now uses Lucene 8.8.
+[[lucene-version]]Lucene::
+The Lucene backend now uses Lucene 8.11.
 
 [[elasticsearch-version]]
-Elasticsearch (link:{hsearch-jira-url-prefix}/HSEARCH-4235[HSEARCH-4235])::
+Elasticsearch::
 The Elasticsearch backend now works with Elasticsearch 5.6, 6.8 or 7.13.
 
 [[async-indexing]]
@@ -28,39 +27,36 @@ The main goal of Hibernate Search 6.1 is to eliminate these limitations
 by introducing coordination between application nodes
 to implement asynchronous, distributed automatic indexing.
 
-In link:{hsearch-jira-url-prefix}/HSEARCH-3280[HSEARCH-3280],
-we introduce the very first coordination strategy;
-more should follow in later versions of Hibernate Search (e.g. link:{hsearch-jira-url-prefix}/HSEARCH-3513[HSEARCH-3513]).
-This strategy creates a table in the database to push entity change events to,
+Hibernate Search 6.1 introduces the very first coordination strategy: `outbox-polling`.
+This strategy creates an outbox table in the database to push entity change events to,
 and relies on a background processor to consume these events and perform automatic indexing.
 
-image::hsearch-architecture-database-polling-elasticsearch.svg[Clustered architecture with database polling and Elasticsearch backend,align="center",width="100%"]
+image::hsearch-architecture-outbox-polling-elasticsearch.svg[Clustered architecture with outbox polling and Elasticsearch backend,align="center",width="100%"]
 
 Beside eliminating the limitations mentioned above,
 another advantage of this strategy is that
 Hibernate Search will no longer trigger lazy-loading or build documents in application threads,
 which can improve the responsiveness of applications (less work to do on commit).
 
-To learn more about an architecture based on `database-polling` coordination,
-head to link:{hsearch-doc-url-prefix}#architecture-examples-database-polling-elasticsearch[this section of the documentation].
+To learn more about an architecture based on `outbox-polling` coordination,
+head to link:{hsearch-doc-url-prefix}#architecture-examples-outbox-polling-elasticsearch[this section of the documentation].
 You can also get a quick overview of several architectures link:{hsearch-doc-url-prefix}#architecture-examples-overview[here].
 
-To jump right in and try the strategy in a single-node application,
+To jump right in and try the strategy,
 just set the following property
-(you will also need to link:{hsearch-doc-url-prefix}#coordination-database-polling-schema[add tables to your database schema]):
+(you will also need to link:{hsearch-doc-url-prefix}#coordination-outbox-polling-schema[add tables to your database schema]):
 
 [source]
 ----
-hibernate.search.coordination.strategy = database-polling
+hibernate.search.coordination.strategy = outbox-polling
 ----
 
-For multi-node applications, a bit more configuration may be necessary.
-Head to link:{hsearch-doc-url-prefix}#coordination-database-polling[this section of the documentation]
+Head to link:{hsearch-doc-url-prefix}#coordination-outbox-polling[this section of the documentation]
 for more information on how to configure coordination.
 
 [NOTE]
 ====
-The `database-polling` coordination strategy can perfectly well be used with a Lucene backend.
+The `outbox-polling` coordination strategy can perfectly well be used with a Lucene backend.
 
 You will still be limited to a single application node,
 but you will benefit from all the other advantages (data safety, increased application responsiveness, ...).
@@ -69,7 +65,7 @@ but you will benefit from all the other advantages (data safety, increased appli
 [[opensearch]]
 === OpenSearch compatibility
 
-Since link:{hsearch-jira-url-prefix}/HSEARCH-4212[HSEARCH-4212],
+Starting with version 6.1,
 Hibernate Search is also compatible with https://opensearch.org/[OpenSearch] 1.0,
 the Apache 2.0 licensed fork of Elasticsearch,
 and regularly tested against it.
@@ -85,7 +81,7 @@ with OpenSearch, you need to prefix the version with `opensearch:`, e.g. `opense
 [[search-dsl]]
 === Search DSL improvements
 
-New link:{hsearch-doc-url-prefix}#search-dsl-predicate-terms[`terms` predicate] (link:{hsearch-jira-url-prefix}/HSEARCH-2589[HSEARCH-2589])::
+New link:{hsearch-doc-url-prefix}#search-dsl-predicate-terms[`terms` predicate]::
 Matches documents for which a given field contains some terms, any or all of them.
 +
 Useful for enum-typed fields, in particular.
@@ -97,7 +93,7 @@ List<Book> hits = searchSession.search( Book.class )
                 .matchingAny( Genre.CRIME_FICTION, Genre.SCIENCE_FICTION ) )
         .fetchHits( 20 );
 ----
-New link:{hsearch-doc-url-prefix}#search-dsl-predicate-regexp[`regexp` predicate] (link:{hsearch-jira-url-prefix}/HSEARCH-3884[HSEARCH-3884])::
+New link:{hsearch-doc-url-prefix}#search-dsl-predicate-regexp[`regexp` predicate]::
 Matches documents for which a given field contains a word matching the given regular expression.
 +
 [source, JAVA, indent=0]
@@ -107,7 +103,7 @@ List<Book> hits = searchSession.search( Book.class )
                 .matching( "r.*t" ) )
         .fetchHits( 20 );
 ----
-New link:{hsearch-doc-url-prefix}#_id_return_identifiers_of_matched_entities[`id` projection] (link:{hsearch-jira-url-prefix}/HSEARCH-4142[HSEARCH-4142])::
+New link:{hsearch-doc-url-prefix}#_id_return_identifiers_of_matched_entities[`id` projection]::
 Returns the identifier of the matched entity.
 +
 [source, JAVA, indent=0]
@@ -117,7 +113,7 @@ List<Integer> hits = searchSession.search( Book.class )
         .where( f -> f.matchAll() )
         .fetchHits( 20 );
 ----
-link:{hsearch-doc-url-prefix}#search-dsl-sort-common-missing[Configurable `.missing()` behavior] for `distance` sort (link:{hsearch-jira-url-prefix}/HSEARCH-3863[HSEARCH-3863])::
+link:{hsearch-doc-url-prefix}#search-dsl-sort-common-missing[Configurable `.missing()` behavior] for `distance` sort::
 Distance sorts now allow
 specifying the behavior when encountering documents with missing values
 (though only `.missing().first()`/`.missing().last()` are supported with Elasticsearch).
@@ -131,7 +127,7 @@ List<Author> hits = searchSession.search( Author.class )
                 .missing().first() )
         .fetchHits( 20 );
 ----
-link:{hsearch-doc-url-prefix}#search-dsl-paths-relative[Relative field paths] (link:{hsearch-jira-url-prefix}/HSEARCH-4245[HSEARCH-4245])::
+link:{hsearch-doc-url-prefix}#search-dsl-paths-relative[Relative field paths]::
 The Search DSL now allows creating factories (`SearchPredicateFactory`, etc.)
 that accept relative field paths.
 +
@@ -165,7 +161,7 @@ private SearchPredicate matchFirstAndLastName(SearchPredicateFactory f,
 [[mass-indexing-filter]]
 === Conditional mass indexing
 
-link:{hsearch-jira-url-prefix}/HSEARCH-499[HSEARCH-499] introduces the ability
+Hibernate Search 6.1 introduces the ability
 to link:{hsearch-doc-url-prefix}#mapper-orm-indexing-massindexer-conditional[apply the mass indexer to a subset of your entities],
 based on an HQL/JPQL "where" clause.
 
@@ -182,7 +178,7 @@ massIndexer.startAndWait();
 [[named-predicates]]
 === Named predicates
 
-link:{hsearch-jira-url-prefix}/HSEARCH-3325[HSEARCH-3325] adds link:{hsearch-doc-url-prefix}#mapper-orm-bridge-named-predicate[named predicates],
+Hibernate Search 6.1 adds link:{hsearch-doc-url-prefix}#mapper-orm-bridge-named-predicate[named predicates],
 a way to define the search logic as part of a custom binder/bridge.
 
 This is, in a way, the comeback of the
@@ -191,24 +187,26 @@ https://docs.jboss.org/hibernate/search/5.11/reference/en-US/html_single/#query-
 [[elasticsearch-custom-index-settings]]
 === Custom ES index settings
 
-Since link:{hsearch-jira-url-prefix}/HSEARCH-3934[HSEARCH-3934],
+Starting with Hibernate Search 6.1,
 you can link:{hsearch-doc-url-prefix}#_custom_index_settings[provide Hibernate Search with JSON files containing the desired settings of your indexes],
 and Hibernate Search will automatically push these settings
 when it creates/updates the indexes.
 
-[source]
-----
-# To configure the defaults for all indexes:
-hibernate.search.backend.schema_management.settings_file = custom/index-settings.json
-# To configure a specific index:
-hibernate.search.backend.indexes.<index name>.schema_management.settings_file = custom/index-settings.json
-----
+[[elasticsearch-custom-index-mapping]]
+=== Custom ES index mapping
+
+Starting with Hibernate Search 6.1,
+you can link:{hsearch-doc-url-prefix}#_custom_index_mapping[provide Hibernate Search with JSON files containing part of the desired mapping of your indexes],
+and Hibernate Search will automatically merge this mapping with the one it generated,
+so that it gets pushed to Elasticsearch when it creates/updates the indexes.
+
+This is especially useful to set top-level mapping attributes,
+for example https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-source-field.html#disable-source-field[disabling the `_source` field].
 
 [[lucene-reader]]
 === Access to Lucene's `IndexReader`
 
-Thanks to link:{hsearch-jira-url-prefix}/HSEARCH-4065[HSEARCH-4065],
-you can now link:{hsearch-doc-url-prefix}#_retrieving_a_lucene_indexreader[retrieve an `IndexReader`]
+Starting with Hibernate Search 6.1, you can now link:{hsearch-doc-url-prefix}#_retrieving_a_lucene_indexreader[retrieve an `IndexReader`]
 when using the Lucene backend:
 
 [source, JAVA, indent=0]
@@ -227,9 +225,30 @@ While generally not necessary, this can be useful for advanced, low-level operat
 [[lucene-caching]]
 === Lucene low-level hit caching
 
-Since link:{hsearch-jira-url-prefix}/HSEARCH-3880[HSEARCH-3880],
+Starting with version 6.1,
 Hibernate Search allows
 link:{hsearch-doc-url-prefix}#backend-lucene-search-caching[configuring the `QueryCache` and `QueryCachingPolicy`]
 in the Lucene backend,
 adding one more performance tweak for advanced Lucene users.
 
+[[jakarta]]
+=== Jakarta EE
+
+Starting with Hibernate Search 6.1,
+beside the traditional artifacts targeting Java EE (JPA, CDI, ...),
+Hibernate Search now provides link:{hsearch-doc-url-prefix}#other-integrations-jakarta[alternative, experimental artifacts that target Jakarta EE 9.1]
+(Jakarta Persistence 3, Jakarta CDI 3).
+
+These artifacts have their artifact ID suffixed with "-jakarta",
+similarly to the https://in.relation.to/2021/06/02/hibernate-orm-550-final-release/#getting-started-with-the-jakarta-jpa-api[equivalent artifacts for Hibernate ORM]
+(which you should use together).
+
+[[java-modules]]
+=== Java modules
+
+Starting with version 6.1,
+where possible,
+Hibernate Search now provides multi-release JARs with a full https://www.oracle.com/corporate/features/understanding-java-9-modules.html[Java module definition]
+that includes all the dependencies.
+
+This excludes the Lucene backend in particular, because https://issues.apache.org/jira/browse/LUCENE-9499[Lucene 8 has split packages].
