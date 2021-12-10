@@ -152,9 +152,8 @@ extends org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl</p
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/provider/service/ReactiveImprovedExtractionContextImpl.html#ReactiveImprovedExtractionContextImpl-org.hibernate.service.ServiceRegistry-org.hibernate.boot.model.naming.Identifier-org.hibernate.boot.model.naming.Identifier-org.hibernate.tool.schema.extract.spi.ExtractionContext.DatabaseObjectAccess-">ReactiveImprovedExtractionContextImpl</a></span>(org.hibernate.service.ServiceRegistry&nbsp;registry,
-                                     org.hibernate.boot.model.naming.Identifier&nbsp;defaultCatalog,
-                                     org.hibernate.boot.model.naming.Identifier&nbsp;defaultSchema,
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/provider/service/ReactiveImprovedExtractionContextImpl.html#ReactiveImprovedExtractionContextImpl-org.hibernate.service.ServiceRegistry-org.hibernate.boot.model.relational.SqlStringGenerationContext-org.hibernate.tool.schema.extract.spi.ExtractionContext.DatabaseObjectAccess-">ReactiveImprovedExtractionContextImpl</a></span>(org.hibernate.service.ServiceRegistry&nbsp;registry,
+                                     org.hibernate.boot.model.relational.SqlStringGenerationContext&nbsp;sqlStringGenerationContext,
                                      org.hibernate.tool.schema.extract.spi.ExtractionContext.DatabaseObjectAccess&nbsp;databaseObjectAccess)</code>&nbsp;</td>
 </tr>
 </table>
@@ -184,7 +183,7 @@ extends org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl</p
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl</h3>
-<code>cleanup, getDatabaseObjectAccess, getDefaultCatalog, getDefaultSchema, getJdbcConnection, getJdbcDatabaseMetaData, getJdbcEnvironment, getServiceRegistry</code></li>
+<code>cleanup, getDatabaseObjectAccess, getDefaultCatalog, getDefaultSchema, getJdbcConnection, getJdbcDatabaseMetaData, getJdbcEnvironment, getServiceRegistry, getSqlStringGenerationContext</code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
@@ -207,15 +206,14 @@ extends org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl</p
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="ReactiveImprovedExtractionContextImpl-org.hibernate.service.ServiceRegistry-org.hibernate.boot.model.naming.Identifier-org.hibernate.boot.model.naming.Identifier-org.hibernate.tool.schema.extract.spi.ExtractionContext.DatabaseObjectAccess-">
+<a name="ReactiveImprovedExtractionContextImpl-org.hibernate.service.ServiceRegistry-org.hibernate.boot.model.relational.SqlStringGenerationContext-org.hibernate.tool.schema.extract.spi.ExtractionContext.DatabaseObjectAccess-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ReactiveImprovedExtractionContextImpl</h4>
 <pre>public&nbsp;ReactiveImprovedExtractionContextImpl(org.hibernate.service.ServiceRegistry&nbsp;registry,
-                                             org.hibernate.boot.model.naming.Identifier&nbsp;defaultCatalog,
-                                             org.hibernate.boot.model.naming.Identifier&nbsp;defaultSchema,
+                                             org.hibernate.boot.model.relational.SqlStringGenerationContext&nbsp;sqlStringGenerationContext,
                                              org.hibernate.tool.schema.extract.spi.ExtractionContext.DatabaseObjectAccess&nbsp;databaseObjectAccess)</pre>
 </li>
 </ul>

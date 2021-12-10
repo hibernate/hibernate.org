@@ -642,7 +642,15 @@
 <dd>
 <div class="block">Delete multiple rows.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#delete-int-java.lang.Object...-">delete(int, Object...)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></dt>
+<dd>
+<div class="block">Delete multiple rows.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#deleteAll-java.lang.Object...-">deleteAll(Object...)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
+<dd>
+<div class="block">Delete multiple rows.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#deleteAll-int-java.lang.Object...-">deleteAll(int, Object...)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
 <dd>
 <div class="block">Delete multiple rows.</div>
 </dd>
@@ -965,14 +973,14 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Session.html#getBatchSize--">getBatchSize()</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></dt>
 <dd>
-<div class="block">The session-level JDBC batch size, or <code>null</code> if it has not been
+<div class="block">The session-level batch size, or <code>null</code> if it has not been
  overridden.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveSession.html#getBatchSize--">getBatchSize()</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveSession.html" title="interface in org.hibernate.reactive.session">ReactiveSession</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.Session.html#getBatchSize--">getBatchSize()</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></dt>
 <dd>
-<div class="block">The session-level JDBC batch size, or <code>null</code> if it has not been
+<div class="block">The session-level batch size, or <code>null</code> if it has not been
  overridden.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/provider/ReactiveServiceRegistryBuilder.html#getBootstrapServiceRegistry--">getBootstrapServiceRegistry()</a></span> - Method in class org.hibernate.reactive.provider.<a href="org/hibernate/reactive/provider/ReactiveServiceRegistryBuilder.html" title="class in org.hibernate.reactive.provider">ReactiveServiceRegistryBuilder</a></dt>
@@ -1486,9 +1494,17 @@
 <dd>
 <div class="block">Insert multiple rows.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#insert-int-java.lang.Object...-">insert(int, Object...)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></dt>
+<dd>
+<div class="block">Insert multiple rows.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#insertAll-java.lang.Object...-">insertAll(Object...)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
 <dd>
 <div class="block">Insert multiple rows.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#insertAll-int-java.lang.Object...-">insertAll(int, Object...)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
+<dd>
+<div class="block">Insert multiple rows using the specified batch size.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/pool/BatchingConnection.html#insertAndSelectIdentifier-java.lang.String-java.lang.Object:A-">insertAndSelectIdentifier(String, Object[])</a></span> - Method in class org.hibernate.reactive.pool.<a href="org/hibernate/reactive/pool/BatchingConnection.html" title="class in org.hibernate.reactive.pool">BatchingConnection</a></dt>
 <dd>&nbsp;</dd>
@@ -2164,6 +2180,8 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveDeleteAll-java.lang.Object...-">reactiveDeleteAll(Object...)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session">ReactiveStatelessSession</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveDeleteAll-int-java.lang.Object...-">reactiveDeleteAll(int, Object...)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session">ReactiveStatelessSession</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/event/ReactiveDeleteEventListener.html" title="interface in org.hibernate.reactive.event"><span class="typeNameLink">ReactiveDeleteEventListener</span></a> - Interface in <a href="org/hibernate/reactive/event/package-summary.html">org.hibernate.reactive.event</a></dt>
 <dd>
 <div class="block">Defines the contract for handling of deletion events generated from a session.</div>
@@ -2222,7 +2240,7 @@
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/provider/service/ReactiveImprovedExtractionContextImpl.html" title="class in org.hibernate.reactive.provider.service"><span class="typeNameLink">ReactiveImprovedExtractionContextImpl</span></a> - Class in <a href="org/hibernate/reactive/provider/service/package-summary.html">org.hibernate.reactive.provider.service</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="org/hibernate/reactive/provider/service/ReactiveImprovedExtractionContextImpl.html#ReactiveImprovedExtractionContextImpl-org.hibernate.service.ServiceRegistry-org.hibernate.boot.model.naming.Identifier-org.hibernate.boot.model.naming.Identifier-org.hibernate.tool.schema.extract.spi.ExtractionContext.DatabaseObjectAccess-">ReactiveImprovedExtractionContextImpl(ServiceRegistry, Identifier, Identifier, ExtractionContext.DatabaseObjectAccess)</a></span> - Constructor for class org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/ReactiveImprovedExtractionContextImpl.html" title="class in org.hibernate.reactive.provider.service">ReactiveImprovedExtractionContextImpl</a></dt>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/provider/service/ReactiveImprovedExtractionContextImpl.html#ReactiveImprovedExtractionContextImpl-org.hibernate.service.ServiceRegistry-org.hibernate.boot.model.relational.SqlStringGenerationContext-org.hibernate.tool.schema.extract.spi.ExtractionContext.DatabaseObjectAccess-">ReactiveImprovedExtractionContextImpl(ServiceRegistry, SqlStringGenerationContext, ExtractionContext.DatabaseObjectAccess)</a></span> - Constructor for class org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/ReactiveImprovedExtractionContextImpl.html" title="class in org.hibernate.reactive.provider.service">ReactiveImprovedExtractionContextImpl</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/loader/collection/ReactiveCollectionInitializer.html#reactiveInitialize-java.io.Serializable-org.hibernate.engine.spi.SharedSessionContractImplementor-">reactiveInitialize(Serializable, SharedSessionContractImplementor)</a></span> - Method in interface org.hibernate.reactive.loader.collection.<a href="org/hibernate/reactive/loader/collection/ReactiveCollectionInitializer.html" title="interface in org.hibernate.reactive.loader.collection">ReactiveCollectionInitializer</a></dt>
 <dd>&nbsp;</dd>
@@ -2231,6 +2249,8 @@
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveInsert-java.lang.Object-">reactiveInsert(Object)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session">ReactiveStatelessSession</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveInsertAll-java.lang.Object...-">reactiveInsertAll(Object...)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session">ReactiveStatelessSession</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveInsertAll-int-java.lang.Object...-">reactiveInsertAll(int, Object...)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session">ReactiveStatelessSession</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveQueryExecutor.html#reactiveInternalLoad-java.lang.String-java.io.Serializable-boolean-boolean-">reactiveInternalLoad(String, Serializable, boolean, boolean)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQueryExecutor.html" title="interface in org.hibernate.reactive.session">ReactiveQueryExecutor</a></dt>
 <dd>&nbsp;</dd>
@@ -2402,6 +2422,8 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveRefreshAll-java.lang.Object...-">reactiveRefreshAll(Object...)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session">ReactiveStatelessSession</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveRefreshAll-int-java.lang.Object...-">reactiveRefreshAll(int, Object...)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session">ReactiveStatelessSession</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/event/ReactiveRefreshEventListener.html" title="interface in org.hibernate.reactive.event"><span class="typeNameLink">ReactiveRefreshEventListener</span></a> - Interface in <a href="org/hibernate/reactive/event/package-summary.html">org.hibernate.reactive.event</a></dt>
 <dd>
 <div class="block">Defines the contract for handling of refresh events generated from a session.</div>
@@ -2485,7 +2507,8 @@
 </dd>
 <dt><a href="org/hibernate/reactive/session/ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session"><span class="typeNameLink">ReactiveStatelessSession</span></a> - Interface in <a href="org/hibernate/reactive/session/package-summary.html">org.hibernate.reactive.session</a></dt>
 <dd>
-<div class="block">A contract with the Hibernate stateless session backing the user-visible
+<div class="block">Mutiny
+ A contract with the Hibernate stateless session backing the user-visible
  <a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage"><code>reactive session</code></a>.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/loader/entity/ReactiveUniqueEntityLoader.html" title="interface in org.hibernate.reactive.loader.entity"><span class="typeNameLink">ReactiveUniqueEntityLoader</span></a> - Interface in <a href="org/hibernate/reactive/loader/entity/package-summary.html">org.hibernate.reactive.loader.entity</a></dt>
@@ -2496,6 +2519,8 @@
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveUpdate-java.lang.Object-">reactiveUpdate(Object)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session">ReactiveStatelessSession</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveUpdateAll-java.lang.Object...-">reactiveUpdateAll(Object...)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session">ReactiveStatelessSession</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveUpdateAll-int-java.lang.Object...-">reactiveUpdateAll(int, Object...)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session">ReactiveStatelessSession</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Session.html#refresh-java.lang.Object-">refresh(Object)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></dt>
 <dd>
@@ -2535,6 +2560,10 @@
 <dd>
 <div class="block">Refresh the entity instance state from the database.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#refresh-int-java.lang.Object...-">refresh(int, Object...)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></dt>
+<dd>
+<div class="block">Refresh the entity instance state from the database.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#refresh-java.lang.Object-org.hibernate.LockMode-">refresh(Object, LockMode)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></dt>
 <dd>
 <div class="block">Refresh the entity instance state from the database.</div>
@@ -2546,6 +2575,11 @@
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#refreshAll-java.lang.Object...-">refreshAll(Object...)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
 <dd>
 <div class="block">Refresh the entity instance state from the database.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#refreshAll-int-java.lang.Object...-">refreshAll(int, Object...)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
+<dd>
+<div class="block">Refresh the entity instance state from the database
+ using the selected batch size.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/engine/ReactiveActionQueue.html#registerProcess-org.hibernate.action.spi.AfterTransactionCompletionProcess-">registerProcess(AfterTransactionCompletionProcess)</a></span> - Method in class org.hibernate.reactive.engine.<a href="org/hibernate/reactive/engine/ReactiveActionQueue.html" title="class in org.hibernate.reactive.engine">ReactiveActionQueue</a></dt>
 <dd>&nbsp;</dd>
@@ -2623,14 +2657,14 @@
 </dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Session.html#setBatchSize-java.lang.Integer-">setBatchSize(Integer)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></dt>
 <dd>
-<div class="block">Set the session-level JDBC batch size, overriding the batch size set
+<div class="block">Set the session-level batch size, overriding the batch size set
  by the configuration property <code>hibernate.jdbc.batch_size</code>.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveSession.html#setBatchSize-java.lang.Integer-">setBatchSize(Integer)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveSession.html" title="interface in org.hibernate.reactive.session">ReactiveSession</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.Session.html#setBatchSize-java.lang.Integer-">setBatchSize(Integer)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></dt>
 <dd>
-<div class="block">Set the session-level JDBC batch size, overriding the batch size set
+<div class="block">Set the session-level batch size, overriding the batch size set
  by the configuration property <code>hibernate.jdbc.batch_size</code>.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Query.html#setCacheable-boolean-">setCacheable(boolean)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a></dt>
@@ -2979,7 +3013,15 @@
 <dd>
 <div class="block">Update multiple rows.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#update-int-java.lang.Object...-">update(int, Object...)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></dt>
+<dd>
+<div class="block">Update multiple rows.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#updateAll-java.lang.Object...-">updateAll(Object...)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
+<dd>
+<div class="block">Update multiple rows.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#updateAll-int-java.lang.Object...-">updateAll(int, Object...)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
 <dd>
 <div class="block">Update multiple rows.</div>
 </dd>
