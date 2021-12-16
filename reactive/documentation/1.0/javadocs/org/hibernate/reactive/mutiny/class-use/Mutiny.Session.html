@@ -168,7 +168,7 @@
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
 <td class="colLast"><span class="typeNameLabel">Mutiny.Session.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html#setBatchSize-java.lang.Integer-">setBatchSize</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&nbsp;batchSize)</code>
-<div class="block">Set the session-level JDBC batch size, overriding the batch size set
+<div class="block">Set the session-level batch size, overriding the batch size set
  by the configuration property <code>hibernate.jdbc.batch_size</code>.</div>
 </td>
 </tr>
@@ -254,6 +254,13 @@
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>default &lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">Mutiny.SessionFactory.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#withTransaction-java.util.function.Function-">withTransaction</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function">Function</a>&lt;<a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a>,io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</code>
+<div class="block">Perform work using a <a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> within an
+ associated transaction.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">Mutiny.SessionFactory.</span><code><span class="memberNameLink"><a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#withTransaction-java.lang.String-java.util.function.BiFunction-">withTransaction</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tenantId,
                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BiFunction.html?is-external=true" title="class or interface in java.util.function">BiFunction</a>&lt;<a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a>,<a href="../../../../../org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a>,io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</code>

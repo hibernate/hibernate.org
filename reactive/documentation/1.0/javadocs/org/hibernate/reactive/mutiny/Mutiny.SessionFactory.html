@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":18,"i15":6,"i16":6,"i17":18,"i18":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -151,7 +151,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseab
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t5" class="tableTab"><span><a href="javascript:show(16);">Default Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
@@ -247,6 +247,13 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseab
 </td>
 </tr>
 <tr id="i14" class="altColor">
+<td class="colFirst"><code>default &lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#withStatelessTransaction-java.util.function.Function-">withStatelessTransaction</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function">Function</a>&lt;<a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a>,io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</code>
+<div class="block">Perform work using a <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> within an
+ associated <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#withStatelessTransaction-java.lang.String-java.util.function.BiFunction-">withStatelessTransaction</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tenantId,
                         <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BiFunction.html?is-external=true" title="class or interface in java.util.function">BiFunction</a>&lt;<a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a>,<a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a>,io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</code>
@@ -254,14 +261,21 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseab
  specified tenant within an associated <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#withTransaction-java.util.function.BiFunction-">withTransaction</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BiFunction.html?is-external=true" title="class or interface in java.util.function">BiFunction</a>&lt;<a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a>,<a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a>,io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</code>
 <div class="block">Perform work using a <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> within an
  associated <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>default &lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#withTransaction-java.util.function.Function-">withTransaction</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function">Function</a>&lt;<a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a>,io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</code>
+<div class="block">Perform work using a <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> within an
+ associated transaction.</div>
+</td>
+</tr>
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#withTransaction-java.lang.String-java.util.function.BiFunction-">withTransaction</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tenantId,
                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BiFunction.html?is-external=true" title="class or interface in java.util.function">BiFunction</a>&lt;<a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a>,<a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a>,io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</code>
@@ -445,11 +459,70 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseab
  automatically, and the transaction committed automatically.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>work</code> - a function which accepts the session and returns
-             the result of the work as a <code>Uni</code>.</dd>
+<dd><code>work</code> - a function which accepts the session and transaction
+             and returns the result of the work as a <code>Uni</code>.</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#withSession-java.util.function.Function-"><code>withSession(Function)</code></a>, 
 <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html#withTransaction-java.util.function.Function-"><code>Mutiny.Session.withTransaction(Function)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="withTransaction-java.util.function.Function-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>withTransaction</h4>
+<pre>default&nbsp;&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;&nbsp;withTransaction(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function">Function</a>&lt;<a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a>,io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</pre>
+<div class="block">Perform work using a <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> within an
+ associated transaction.
+ <p>
+ <il>
+ <li>If there is already a session associated with the
+ current reactive stream, then the work will be executed using that
+ session.
+ <li>Otherwise, if there is no session associated with the
+ current stream, a new stateless session will be created.
+ </il>
+ <p>
+ The session will be <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html#flush--"><code>flushed</code></a> and closed
+ automatically, and the transaction committed automatically.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>work</code> - a function which accepts the session and returns
+             the result of the work as a <code>Uni</code>.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#withTransaction-java.util.function.BiFunction-"><code>withTransaction(BiFunction)</code></a>, 
+<a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Session.html#withTransaction-java.util.function.Function-"><code>Mutiny.Session.withTransaction(Function)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="withStatelessTransaction-java.util.function.Function-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>withStatelessTransaction</h4>
+<pre>default&nbsp;&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;&nbsp;withStatelessTransaction(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function">Function</a>&lt;<a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a>,io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</pre>
+<div class="block">Perform work using a <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> within an
+ associated <a href="../../../../org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.
+ <p>
+ <il>
+ <li>If there is already a stateless session associated with the
+ current reactive stream, then the work will be executed using that
+ session.
+ <li>Otherwise, if there is no stateless session associated with the
+ current stream, a new stateless session will be created.
+ </il>
+ <p>
+ The session will be closed automatically and the transaction committed automatically.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>work</code> - a function which accepts the stateless session and returns
+             the result of the work as a <code>Uni</code>.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#withStatelessSession-java.util.function.Function-"><code>withStatelessSession(Function)</code></a>, 
+<a href="../../../../org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#withTransaction-java.util.function.Function-"><code>Mutiny.StatelessSession.withTransaction(Function)</code></a></dd>
 </dl>
 </li>
 </ul>

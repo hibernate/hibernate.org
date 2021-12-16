@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.6.1">
 <meta name="author" content="Davide D'Alto, Gavin King">
-<title>Hibernate Reactive 1.0.1.Final Reference Documentation</title>
+<title>Hibernate Reactive 1.0.2.Final Reference Documentation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <link rel="stylesheet" href="./asciidoctor.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Hibernate Reactive 1.0.1.Final Reference Documentation</h1>
+<h1>Hibernate Reactive 1.0.2.Final Reference Documentation</h1>
 <div class="details">
 <span id="author" class="author">Davide D'Alto</span><br>
 <span id="email" class="email"><a href="mailto:davide@hibernate.org">davide@hibernate.org</a></span><br>
@@ -53,23 +53,28 @@
 <li><a href="#_fetching_lazy_associations">1.3.12. Fetching lazy associations</a></li>
 <li><a href="#_field_level_lazy_fetching">1.3.13. Field-level lazy fetching</a></li>
 <li><a href="#_transactions">1.3.14. Transactions</a></li>
-<li><a href="#_vert_x_context">1.3.15. Vert.x context</a></li>
-<li><a href="#_vert_x_instance_service">1.3.16. Vert.x instance service</a></li>
 </ul>
 </li>
-<li><a href="#_tuning_and_performance">1.4. Tuning and performance</a>
+<li><a href="#_integrating_with_vert_x">1.4. Integrating with Vert.x</a>
 <ul class="sectlevel3">
-<li><a href="#_tuning_the_vert_x_pool">1.4.1. Tuning the Vert.x pool</a></li>
-<li><a href="#_enabling_statement_batching">1.4.2. Enabling statement batching</a></li>
-<li><a href="#_association_fetching">1.4.3. Association fetching</a></li>
-<li><a href="#_enabling_the_second_level_cache">1.4.4. Enabling the second-level cache</a></li>
-<li><a href="#_session_cache_management">1.4.5. Session cache management</a></li>
-<li><a href="#_stateless_sessions">1.4.6. Stateless sessions</a></li>
-<li><a href="#_optimistic_and_pessimistic_locking">1.4.7. Optimistic and pessimistic locking</a></li>
+<li><a href="#_sessions_and_vert_x_contexts">1.4.1. Sessions and Vert.x contexts</a></li>
+<li><a href="#_executing_code_in_a_vert_x_context">1.4.2. Executing code in a Vert.x context</a></li>
+<li><a href="#_vert_x_instance_service">1.4.3. Vert.x instance service</a></li>
 </ul>
 </li>
-<li><a href="#_custom_connection_management_and_multitenancy">1.5. Custom connection management and multitenancy</a></li>
-<li><a href="#_next_steps">1.6. Next steps</a></li>
+<li><a href="#_tuning_and_performance">1.5. Tuning and performance</a>
+<ul class="sectlevel3">
+<li><a href="#_tuning_the_vert_x_pool">1.5.1. Tuning the Vert.x pool</a></li>
+<li><a href="#_enabling_statement_batching">1.5.2. Enabling statement batching</a></li>
+<li><a href="#_association_fetching">1.5.3. Association fetching</a></li>
+<li><a href="#_enabling_the_second_level_cache">1.5.4. Enabling the second-level cache</a></li>
+<li><a href="#_session_cache_management">1.5.5. Session cache management</a></li>
+<li><a href="#_stateless_sessions">1.5.6. Stateless sessions</a></li>
+<li><a href="#_optimistic_and_pessimistic_locking">1.5.7. Optimistic and pessimistic locking</a></li>
+</ul>
+</li>
+<li><a href="#_custom_connection_management_and_multitenancy">1.6. Custom connection management and multitenancy</a></li>
+<li><a href="#_next_steps">1.7. Next steps</a></li>
 </ul>
 </li>
 </ul>
@@ -1440,7 +1445,7 @@ automatically obtain the same shared session.</p>
 <p>Alternatively, you may use <code>openSession()</code>, but you must remember to <code>close()</code>
 the session when you&#8217;re done.
 And you must take great care to only access each session from within exactly
-one Vert.x context (See the <a href="#_vert_x_context">Vert.x context</a> paragraph for more details).</p>
+one Vert.x context. (See <a href="#_sessions_and_vert_x_contexts">Sessions and Vert.x contexts</a> more on this).</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1895,103 +1900,121 @@ transaction in one call:</p>
 <p>This is probably the most convenient thing to use most of the time.</p>
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_integrating_with_vert_x"><a class="anchor" href="#_integrating_with_vert_x"></a>1.4. Integrating with Vert.x</h3>
+<div class="paragraph">
+<p>At runtime, interaction with the database happens on a Vert.x thread,
+typically the event loop thread. When you write code that creates and
+destroys Hibernate Reactive sessions, it&#8217;s important to understand how
+sessions relate to threads and <a href="https://vertx.io/blog/an-introduction-to-the-vert-x-context-object/">Vert.x contexts</a>.</p>
+</div>
 <div class="sect3">
-<h4 id="_vert_x_context"><a class="anchor" href="#_vert_x_context"></a>1.3.15. Vert.x context</h4>
-<div class="paragraph">
-<p>The session is not thread-safe, using it in different threads may cause issues that are hard to debug.
-When it&#8217;s created, a session is bound to a <a href="https://vertx.io/blog/an-introduction-to-the-vert-x-context-object/">Vert.x context</a>
-and needs to be used in the same context after that.</p>
+<h4 id="_sessions_and_vert_x_contexts"><a class="anchor" href="#_sessions_and_vert_x_contexts"></a>1.4.1. Sessions and Vert.x contexts</h4>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Remember how in regular old Hibernate JPA, you&#8217;re not supposed to
+share a session between multiple threads? Well, the idea here is essentially
+similar, it&#8217;s just that the notion of a "thread" is a little more slippery,
+or at least more <em>technical</em>. You need to be able to replace the idea of a
+"thread" with the idea of a chain of callbacks occurring on a reactive stream,
+all within the scope of a certain Vert.x <em>local context</em>.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Hibernate Reactive will take care of this when the application uses <code>withSession</code>,
-<code>withStatelessSession</code> or <code>withTransaction</code> (See <a href="#_obtaining_a_reactive_session">Obtaining a reactive session</a>).</p>
-</div>
-<div class="paragraph">
-<p>When using <code>openSession</code> or <code>openStatelessSession</code>, one need to make sure
-to use it in the right Vert.x context or the following exception might occur:</p>
+<p>When you create a session using <code>withSession()</code> or <code>withTransaction()</code>, it&#8217;s
+automatically associated with the current Vert.x
+<a href="https://vertx.io/docs/apidocs/io/vertx/core/Context.html#getLocal-java.lang.Object-">local context</a>, and propagates with the local context,
+as mentioned above in <a href="#_obtaining_a_reactive_session">Obtaining a reactive session</a>. And you&#8217;re only
+allowed to use the session from the thread that owns this local context. If
+you screw up, and use it from a different thread, you might see this error:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">HR000068: This method should exclusively be invoked from a Vert.x EventLoop thread; ...</code></pre>
+<pre>HR000068: This method should exclusively be invoked from a Vert.x EventLoop thread; ...</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>One way to run the code in the correct Vert.x context is the following:</p>
+<p>On the other hand, if you use <code>openSession()</code>, you&#8217;ll have to manage the
+association between sessions and contexts yourself. Now, that&#8217;s in principle
+straightforward, but you&#8217;d be surprised how often people mess up.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+The session is not thread-safe (or "stream-safe"), so using it across
+different threads (or reactive streams) may cause bugs that are <em>extremely</em> hard
+to detect. Don&#8217;t say we didn&#8217;t warn you!
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For example, I bet you would like to be able to write code like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">List&lt;CompletionStage&gt; list = ...
+for (Entity entity : entities) {
+    list.add(session.persist(entity));
+}
+CompletableFuture.allOf(list).thenCompose(session::flush);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Well, we&#8217;re sorry, but that&#8217;s just not allowed. Parallel reactive streams may not
+share a session. Each stream must have its own session.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_executing_code_in_a_vert_x_context"><a class="anchor" href="#_executing_code_in_a_vert_x_context"></a>1.4.2. Executing code in a Vert.x context</h4>
+<div class="paragraph">
+<p>What if you need to run a block of code within the scope of a Vert.x context, but
+the current thread isn&#8217;t associated with a <code>Context</code>? One solution is to obtain a
+Vert.x <code>Context</code> object using <a href="https://vertx.io/docs/apidocs/io/vertx/core/Vertx.html#getOrCreateContext--"><code>getOrCreateContext()</code></a> and
+then call <a href="https://vertx.io/docs/apidocs/io/vertx/core/Context.html#runOnContext-io.vertx.core.Handler-"><code>runOnContext()</code></a> to execute the code in that
+context.</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">Context currentContext = Vertx.currentContext();
 currentContext.runOnContext( event -&gt; {
-   // Here you will be able to use the session
+    // Here you will be able to use the session
 });</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Within the block of code passed to <code>runOnContext()</code>, you&#8217;ll be able to use the
+Hibernate Reactive session associated with the context.</p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="_vert_x_instance_service"><a class="anchor" href="#_vert_x_instance_service"></a>1.3.16. Vert.x instance service</h4>
+<h4 id="_vert_x_instance_service"><a class="anchor" href="#_vert_x_instance_service"></a>1.4.3. Vert.x instance service</h4>
 <div class="paragraph">
-<p>This service tells Hibernate Reactive which Vert.x instance to use when it
-creates a session. It also acts as an integration point for your application
-in case you need a custom Vert.x instance (Hibernate Reactive will create a
-default one otherwise).</p>
-</div>
-<div class="paragraph">
-<p>You can override the service programmatically:</p>
+<p>The <code>VertxInstance</code> service defines how Hibernate Reactive obtains an instance
+of Vert.x. The default implementation just creates one the first time it&#8217;s
+needed. But if your program requires control over how the Vert.x instance is
+created, or how it&#8217;s obtained, you can override the default implementation and
+provide your own <code>VertxInstance</code>. Let&#8217;s consider this example:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">final Vertx myVertx = ...
-Configuration configuration = new Configuration();
-StandardServiceRegistryBuilder builder = new ReactiveServiceRegistryBuilder()
-        .addService( VertxInstance.class, (VertxInstance) () -&gt; myVertx )
-        .applySettings( configuration.getProperties() );
-StandardServiceRegistry registry = builder.build();
-SessionFactory sessionFactory = configuration.buildSessionFactory( registry );</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Or, you can use the <code>ServiceContributor</code> interface and register your implementation of the
-<code>VertxInstance</code> interface:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Add a text file named <code>org.hibernate.service.spi.ServiceContributor</code> under</p>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">/META-INF/services/</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>The text file will contain the path to the class implementing the <code>ServiceContributor</code> interface:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">org.myproject.MyServiceContributor</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>This is an example of what <code>MyVertxProvider</code> and <code>MyServiceContributor</code> might look like:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">public class MyServiceContributor implements ServiceContributor {
-
-  @Override
-  public void contribute(StandardServiceRegistryBuilder serviceRegistryBuilder) {
-    serviceRegistryBuilder.addService( VertxInstance.class, new MyVertxProvider() );
-  }
-
-}</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">public class MyVertxProvider implements VertxInstance {
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">public class MyVertx implements VertxInstance {
 
   private final Vertx vertx;
 
-  public MyVertxProvider() {
+  public MyVertx() {
     this.vertx = Vertx.vertx();
   }
 
@@ -2003,30 +2026,46 @@ SessionFactory sessionFactory = configuration.buildSessionFactory( registry );</
 }</code></pre>
 </div>
 </div>
-</li>
-</ol>
-</div>
 <div class="paragraph">
-<p>You can access the <code>ServiceRegistry</code> from the <code>Stage.SessionFactory</code> or
-<code>Mutiny.SessionFactory</code> using the <code>org.hibernate.reactive.common.spi.Implementor</code>
-interface:</p>
+<p>One way to register this implementation is to configure Hibernate programmatically,
+for example:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">Mutiny.SessionFactory sessionFactory = ...
-VertxInstance vertxInstance = ((Implementor) sessionFactory)
-					.getServiceRegistry()
- 					.getService( VertxInstance.class );
-Vertx vertx = vertxInstance.getVertx();</code></pre>
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">Configuration configuration = new Configuration();
+StandardServiceRegistryBuilder builder = new ReactiveServiceRegistryBuilder()
+        .addService( VertxInstance.class, new MyVertx() )
+        .applySettings( configuration.getProperties() );
+StandardServiceRegistry registry = builder.build();
+SessionFactory sessionFactory = configuration.buildSessionFactory( registry );</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The same will work for <code>Stage.SessionFactory</code>.</p>
+<p>Alternatively, you could implement the <code>ServiceContributor</code> interface.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">public class MyServiceContributor implements ServiceContributor {
+  @Override
+  public void contribute(StandardServiceRegistryBuilder serviceRegistryBuilder) {
+    serviceRegistryBuilder.addService( VertxInstance.class, new MyVertxProvider() );
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To register this <code>ServiceContributor</code>, add a text file named
+<code>org.hibernate.service.spi.ServiceContributor</code> to <code>/META-INF/services/</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">org.myproject.MyServiceContributor</code></pre>
+</div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_tuning_and_performance"><a class="anchor" href="#_tuning_and_performance"></a>1.4. Tuning and performance</h3>
+<h3 id="_tuning_and_performance"><a class="anchor" href="#_tuning_and_performance"></a>1.5. Tuning and performance</h3>
 <div class="paragraph">
 <p>Once you have a program up and running using Hibernate Reactive to access
 the database, it&#8217;s inevitable that you&#8217;ll find places where performance is
@@ -2079,7 +2118,7 @@ to the database, and/or controlling the size of the session cache.</p>
 the connection pool.</p>
 </div>
 <div class="sect3">
-<h4 id="_tuning_the_vert_x_pool"><a class="anchor" href="#_tuning_the_vert_x_pool"></a>1.4.1. Tuning the Vert.x pool</h4>
+<h4 id="_tuning_the_vert_x_pool"><a class="anchor" href="#_tuning_the_vert_x_pool"></a>1.5.1. Tuning the Vert.x pool</h4>
 <div class="paragraph">
 <p>In <a href="#_basic_configuration">Basic configuration</a> we already saw how to set the size of the
 Vert.x database connection pool. When it comes time for performance tuning,
@@ -2148,7 +2187,7 @@ the Vert.x client by implementing <code>SqlClientPoolConfiguration</code>.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_enabling_statement_batching"><a class="anchor" href="#_enabling_statement_batching"></a>1.4.2. Enabling statement batching</h4>
+<h4 id="_enabling_statement_batching"><a class="anchor" href="#_enabling_statement_batching"></a>1.5.2. Enabling statement batching</h4>
 <div class="paragraph">
 <p>An easy way to improve performance of some transactions with almost no
 work at all is to turn on automatic DML statement batching. Batching
@@ -2195,7 +2234,7 @@ or <code>delete</code> queries, or even native SQL that calls a stored procedure
 </div>
 </div>
 <div class="sect3">
-<h4 id="_association_fetching"><a class="anchor" href="#_association_fetching"></a>1.4.3. Association fetching</h4>
+<h4 id="_association_fetching"><a class="anchor" href="#_association_fetching"></a>1.5.3. Association fetching</h4>
 <div class="paragraph">
 <p>Achieving high performance in ORM means minimizing the number of round
 trips to the database. This goal should be uppermost in your mind
@@ -2322,7 +2361,7 @@ for associations precisely when and where they are needed.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_enabling_the_second_level_cache"><a class="anchor" href="#_enabling_the_second_level_cache"></a>1.4.4. Enabling the second-level cache</h4>
+<h4 id="_enabling_the_second_level_cache"><a class="anchor" href="#_enabling_the_second_level_cache"></a>1.5.4. Enabling the second-level cache</h4>
 <div class="paragraph">
 <p>A classic way to reduce the number of accesses to the database is to
 use a second-level cache, allowing cached data to be shared between
@@ -2409,7 +2448,7 @@ be stored in the second-level cache with the <code>@Cache</code> annotation from
 </div>
 </div>
 <div class="sect3">
-<h4 id="_session_cache_management"><a class="anchor" href="#_session_cache_management"></a>1.4.5. Session cache management</h4>
+<h4 id="_session_cache_management"><a class="anchor" href="#_session_cache_management"></a>1.5.5. Session cache management</h4>
 <div class="paragraph">
 <p>Entity instances aren&#8217;t automatically evicted from the session cache when
 they&#8217;re no longer needed. (The session cache is quite different to the
@@ -2425,7 +2464,7 @@ you should strongly consider an alternative solution: a <em>stateless session</e
 </div>
 </div>
 <div class="sect3">
-<h4 id="_stateless_sessions"><a class="anchor" href="#_stateless_sessions"></a>1.4.6. Stateless sessions</h4>
+<h4 id="_stateless_sessions"><a class="anchor" href="#_stateless_sessions"></a>1.5.6. Stateless sessions</h4>
 <div class="paragraph">
 <p>An arguably-underappreciated feature of Hibernate is the <code>StatelessSession</code>
 interface, which provides a command-oriented, more bare-metal approach to
@@ -2580,7 +2619,7 @@ persistent, and</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_optimistic_and_pessimistic_locking"><a class="anchor" href="#_optimistic_and_pessimistic_locking"></a>1.4.7. Optimistic and pessimistic locking</h4>
+<h4 id="_optimistic_and_pessimistic_locking"><a class="anchor" href="#_optimistic_and_pessimistic_locking"></a>1.5.7. Optimistic and pessimistic locking</h4>
 <div class="paragraph">
 <p>Finally, an aspect of behavior under load that we didn&#8217;t mention above is row-level
 data contention. When many transactions try to read and update the same data, the
@@ -2683,7 +2722,7 @@ of optimistic locking:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_custom_connection_management_and_multitenancy"><a class="anchor" href="#_custom_connection_management_and_multitenancy"></a>1.5. Custom connection management and multitenancy</h3>
+<h3 id="_custom_connection_management_and_multitenancy"><a class="anchor" href="#_custom_connection_management_and_multitenancy"></a>1.6. Custom connection management and multitenancy</h3>
 <div class="paragraph">
 <p>Hibernate Reactive supports custom management of reactive connections by letting
 you define your own implementation of <code>ReactiveConnectionPool</code>, or extend the
@@ -2746,7 +2785,7 @@ or <code>withTransaction()</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_next_steps"><a class="anchor" href="#_next_steps"></a>1.6. Next steps</h3>
+<h3 id="_next_steps"><a class="anchor" href="#_next_steps"></a>1.7. Next steps</h3>
 <div class="paragraph">
 <p>Hibernate Reactive is now integrated in <a href="https://quarkus.io/guides/getting-started-reactive">Quarkus</a> and <a href="https://quarkus.io/guides/hibernate-reactive-panache">Panache</a>.
 Configuration works slightly differently in Quarkus, so be sure to check the Quarkus
@@ -2758,7 +2797,7 @@ documentation for details.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-10-29 15:21:04 UTC
+Last updated 2021-12-16 12:16:42 UTC
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
