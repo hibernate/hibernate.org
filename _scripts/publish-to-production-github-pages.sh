@@ -20,7 +20,7 @@ rsync -av \
       --delete \
       --filter "- .git" \
       --filter "- /cache" \
-      "${GENERATED_SITE_DIRECTORY}" .
+      "${GENERATED_SITE_DIRECTORY}/" .
 
 if git add -A . && git commit -m "Publish generated site"
 then
