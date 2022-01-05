@@ -15,7 +15,7 @@ The Lucene backend now uses Lucene 8.11.
 
 [[elasticsearch-version]]
 Elasticsearch::
-The Elasticsearch backend now works with Elasticsearch 5.6, 6.8 or 7.13.
+The Elasticsearch backend now works with Elasticsearch 5.6, 6.8, 7.10 or 7.16.
 
 [[async-indexing]]
 === Asynchronous, distributed automatic indexing
@@ -66,9 +66,9 @@ but you will benefit from all the other advantages (data safety, increased appli
 === OpenSearch compatibility
 
 Starting with version 6.1,
-Hibernate Search is also compatible with https://opensearch.org/[OpenSearch] 1.0,
+Hibernate Search is also compatible with https://opensearch.org/[OpenSearch],
 the Apache 2.0 licensed fork of Elasticsearch,
-and regularly tested against it.
+and regularly tested against versions 1.0 and 1.2.
 
 To use Hibernate Search with OpenSearch,
 use the same Maven artifacts, configuration and API
@@ -230,6 +230,17 @@ Hibernate Search allows
 link:{hsearch-doc-url-prefix}#backend-lucene-search-caching[configuring the `QueryCache` and `QueryCachingPolicy`]
 in the Lucene backend,
 adding one more performance tweak for advanced Lucene users.
+
+[[lucene-analyzer-definition-using-names]]
+=== Lucene analyzer definition using tokenizer/filter names
+
+Starting with Hibernate Search 6.1,
+a `LuceneAnalysisConfigurer` can be implemented without referring to Lucene classes at all,
+link:{hsearch-doc-url-prefix}#backend-lucene-analysis-analyzers-component-by-factory-name[referring to tokenizers and filters using their name]
+instead.
+
+This is useful in some modular environments where the application might have access to Hibernate Search classes,
+but not to Lucene classes.
 
 [[jakarta]]
 === Jakarta EE
