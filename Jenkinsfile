@@ -41,29 +41,14 @@ pipeline {
                 not { changeRequest() }
             }
             steps {
-                // Clone hibernate.github.io in _publish_tmp if not present.
-                // Using _tmp would mean more headaches related to access rights from the container,
-                // which usually removes that dir in "rake clean": let's avoid that.
-                dir ('_publish_tmp/hibernate.github.io') {
-                    script {
-                        checkout changelog: false, poll: false,
-                                scm: [$class           : 'GitSCM', branches: [[name: '*/main']],
-                                      extensions       : [[$class      : 'CloneOption',
-                                                           depth       : 1,
-                                                           honorRefspec: true,
-                                                           noTags      : true,
-                                                           reference   : '',
-                                                           shallow     : true]],
-                                      userRemoteConfigs: [[credentialsId: 'ed25519.Hibernate-CI.github.com',
-                                                           url          : 'git@github.com:hibernate/hibernate.github.io.git']]]
+                configFileProvider([configFile(fileId: 'release.config.ssh', targetLocation: env.HOME + '/.ssh/config')]) {
+                    // Need an SSH agent to have the key available when pushing to GitHub.
+                    sshagent(['ed25519.Hibernate-CI.github.com']) {
+                        sh '_scripts/publish-to-production-github-pages.sh'
                     }
-                }
-                // Need an SSH agent to have the key available when pushing to GitHub.
-                sshagent(['ed25519.Hibernate-CI.github.com']) {
-                    sh '_scripts/publish-to-production-github-pages.sh'
-                }
-                sshagent(['jenkins.in.relation.to']) {
-                    sh '_scripts/publish-to-production-self-hosted.sh'
+                    sshagent(['jenkins.in.relation.to']) {
+                        sh '_scripts/publish-to-production-self-hosted.sh'
+                    }
                 }
             }
         }
