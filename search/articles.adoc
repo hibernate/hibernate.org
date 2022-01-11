@@ -11,6 +11,12 @@ see link:/search/documentation[here] instead.
 
 == Current version
 
+https://community.elastic.co/events/details/elastic-france-presents-elastic-paris-meetup-70-elasticsearch-et-hibernate-search-6/[[French\] Retour d'expérience : Elasticsearch x Hibernate Search 6]::
+A presentation of Hibernate Search 6 and its use in a https://quarkus.io/[Quarkus] application,
+focusing on Elasticsearch and https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#search-mapping-bridge[custom bridges].
++
+Demo code: https://github.com/Sedona-Solutions/beer-manager-hibernate-search
+
 https://www.heise.de/hintergrund/Hibernate-Search-Volltextsuche-in-Spring-Boot-Projekten-6028830.html[[German\] Hibernate Search: Volltextsuche in Spring-Boot-Projekten]::
 A presentation of Hibernate Search 6 and its use in a https://spring.io/projects/spring-boot[Spring Boot] application.
 
@@ -30,12 +36,6 @@ https://in.relation.to/2019/11/12/hibernate-search-quarkus/[Hibernate Search in 
 A tutorial using Hibernate Search 6 and https://quarkus.io/[Quarkus].
 +
 Demo code: https://github.com/hibernate/hibernate-demos/tree/main/hibernate-search/hsearch-quarkus[here].
-
-https://community.elastic.co/events/details/elastic-france-presents-elastic-paris-meetup-70-elasticsearch-et-hibernate-search-6/[[French\] Retour d'expérience : Elasticsearch x Hibernate Search 6]::
-A presentation of Hibernate Search 6 and its use in a https://quarkus.io/[Quarkus] application,
-focusing on Elasticsearch and https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#search-mapping-bridge[custom bridges].
-+
-Demo code: https://github.com/Sedona-Solutions/beer-manager-hibernate-search
 
 == 6.0 Alphas/Betas (slightly different API, but still relevant)
 
