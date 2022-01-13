@@ -20,16 +20,6 @@ artifacts:
     summary: Batch for Java (JSR-352) mass indexing job for the Hibernate ORM mapper for Java EE - JBeret specifics
   - artifact_id: hibernate-search-v5migrationhelper-orm
     summary: Helper for migrating from Hibernate Search 5 to Hibernate Search 6 (Hibernate ORM mapper for Java EE + Lucene backend)
-  - artifact_id: hibernate-search-mapper-orm-jakarta
-    summary: Hibernate ORM mapper for Jakarta EE
-  - artifact_id: hibernate-search-mapper-orm-coordination-outbox-polling-jakarta
-    summary: "\"outbox-polling\" coordination strategy for the Hibernate ORM mapper for Jakarta EE"
-  - artifact_id: hibernate-search-mapper-orm-batch-jsr352-core-jakarta
-    summary: Batch for Java (JSR-352) mass indexing job for the Hibernate ORM mapper for Jakarta EE - Core
-  - artifact_id: hibernate-search-mapper-orm-batch-jsr352-jberet-jakarta
-    summary: Batch for Java (JSR-352) mass indexing job for the Hibernate ORM mapper for Jakarta EE - JBeret specifics
-  - artifact_id: hibernate-search-v5migrationhelper-orm-jakarta
-    summary: Helper for migrating from Hibernate Search 5 to Hibernate Search 6 (Hibernate ORM mapper for Jakarta EE + Lucene backend)
 integration_constraints:
   java:
     version: 8, 11 or 17
