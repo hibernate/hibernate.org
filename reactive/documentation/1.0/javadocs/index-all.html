@@ -305,7 +305,11 @@
  with the current reactive stream.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/context/Context.Key.html" title="interface in org.hibernate.reactive.context"><span class="typeNameLink">Context.Key</span></a>&lt;<a href="org/hibernate/reactive/context/Context.Key.html" title="type parameter in Context.Key">T</a>&gt; - Interface in <a href="org/hibernate/reactive/context/package-summary.html">org.hibernate.reactive.context</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">An object that identifies something we store in the Vert.x
+ local context, usually a <code>Session</code> or
+ <code>StatelessSession</code>, but in principle anything at all.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveQuery.html#convertQueryException-T-java.lang.Throwable-org.hibernate.query.internal.AbstractProducedQuery-">convertQueryException(T, Throwable, AbstractProducedQuery&lt;?&gt;)</a></span> - Static method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQuery.html" title="interface in org.hibernate.reactive.session">ReactiveQuery</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/provider/ReactivePersistenceProvider.html#createContainerEntityManagerFactory-javax.persistence.spi.PersistenceUnitInfo-java.util.Map-">createContainerEntityManagerFactory(PersistenceUnitInfo, Map)</a></span> - Method in class org.hibernate.reactive.provider.<a href="org/hibernate/reactive/provider/ReactivePersistenceProvider.html" title="class in org.hibernate.reactive.provider">ReactivePersistenceProvider</a></dt>
@@ -927,6 +931,14 @@
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/provider/ReactivePersistenceProvider.html#generateSchema-javax.persistence.spi.PersistenceUnitInfo-java.util.Map-">generateSchema(PersistenceUnitInfo, Map)</a></span> - Method in class org.hibernate.reactive.provider.<a href="org/hibernate/reactive/provider/ReactivePersistenceProvider.html" title="class in org.hibernate.reactive.provider">ReactivePersistenceProvider</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/provider/ReactivePersistenceProvider.html#generateSchema-java.lang.String-java.util.Map-">generateSchema(String, Map)</a></span> - Method in class org.hibernate.reactive.provider.<a href="org/hibernate/reactive/provider/ReactivePersistenceProvider.html" title="class in org.hibernate.reactive.provider">ReactivePersistenceProvider</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/tuple/MutinyValueGenerator.html#generateValue-org.hibernate.Session-java.lang.Object-">generateValue(Session, Object)</a></span> - Method in class org.hibernate.reactive.tuple.<a href="org/hibernate/reactive/tuple/MutinyValueGenerator.html" title="class in org.hibernate.reactive.tuple">MutinyValueGenerator</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/tuple/MutinyValueGenerator.html#generateValue-org.hibernate.reactive.mutiny.Mutiny.Session-java.lang.Object-">generateValue(Mutiny.Session, Object)</a></span> - Method in class org.hibernate.reactive.tuple.<a href="org/hibernate/reactive/tuple/MutinyValueGenerator.html" title="class in org.hibernate.reactive.tuple">MutinyValueGenerator</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/tuple/StageValueGenerator.html#generateValue-org.hibernate.Session-java.lang.Object-">generateValue(Session, Object)</a></span> - Method in class org.hibernate.reactive.tuple.<a href="org/hibernate/reactive/tuple/StageValueGenerator.html" title="class in org.hibernate.reactive.tuple">StageValueGenerator</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/tuple/StageValueGenerator.html#generateValue-org.hibernate.reactive.stage.Stage.Session-java.lang.Object-">generateValue(Stage.Session, Object)</a></span> - Method in class org.hibernate.reactive.tuple.<a href="org/hibernate/reactive/tuple/StageValueGenerator.html" title="class in org.hibernate.reactive.tuple">StageValueGenerator</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/context/Context.html#get-org.hibernate.reactive.context.Context.Key-">get(Context.Key&lt;T&gt;)</a></span> - Method in interface org.hibernate.reactive.context.<a href="org/hibernate/reactive/context/Context.html" title="interface in org.hibernate.reactive.context">Context</a></dt>
 <dd>
@@ -1770,6 +1782,12 @@
 </dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/example/session/MutinyMain.html#MutinyMain--">MutinyMain()</a></span> - Constructor for class org.hibernate.reactive.example.session.<a href="org/hibernate/reactive/example/session/MutinyMain.html" title="class in org.hibernate.reactive.example.session">MutinyMain</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="org/hibernate/reactive/tuple/MutinyValueGenerator.html" title="class in org.hibernate.reactive.tuple"><span class="typeNameLink">MutinyValueGenerator</span></a>&lt;<a href="org/hibernate/reactive/tuple/MutinyValueGenerator.html" title="type parameter in MutinyValueGenerator">T</a>&gt; - Class in <a href="org/hibernate/reactive/tuple/package-summary.html">org.hibernate.reactive.tuple</a></dt>
+<dd>
+<div class="block">A reactive <code>ValueGenerator</code> that gives access to a <code>Mutiny.Session</code>.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/tuple/MutinyValueGenerator.html#MutinyValueGenerator--">MutinyValueGenerator()</a></span> - Constructor for class org.hibernate.reactive.tuple.<a href="org/hibernate/reactive/tuple/MutinyValueGenerator.html" title="class in org.hibernate.reactive.tuple">MutinyValueGenerator</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/provider/service/MySqlReactiveInformationExtractorImpl.html" title="class in org.hibernate.reactive.provider.service"><span class="typeNameLink">MySqlReactiveInformationExtractorImpl</span></a> - Class in <a href="org/hibernate/reactive/provider/service/package-summary.html">org.hibernate.reactive.provider.service</a></dt>
 <dd>
 <div class="block">An implementation of <a href="org/hibernate/reactive/provider/service/AbstractReactiveInformationSchemaBasedExtractorImpl.html" title="class in org.hibernate.reactive.provider.service"><code>AbstractReactiveInformationSchemaBasedExtractorImpl</code></a>
@@ -1989,6 +2007,8 @@
 <div class="block">An API for Hibernate Reactive where non-blocking operations are
  represented by a Java <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent"><code>CompletionStage</code></a>.</div>
 </dd>
+<dt><a href="org/hibernate/reactive/tuple/package-summary.html">org.hibernate.reactive.tuple</a> - package org.hibernate.reactive.tuple</dt>
+<dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/vertx/package-summary.html">org.hibernate.reactive.vertx</a> - package org.hibernate.reactive.vertx</dt>
 <dd>
 <div class="block">Integration with Vert.x.</div>
@@ -2809,7 +2829,7 @@
 </dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Query.html#setParameter-int-java.lang.Object-">setParameter(int, Object)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a></dt>
 <dd>
-<div class="block">Set the value of a positional parameter.</div>
+<div class="block">Set the value of an ordinal parameter.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Query.html#setParameter-java.lang.String-java.lang.Object-">setParameter(String, Object)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a></dt>
 <dd>
@@ -2827,7 +2847,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.Query.html#setParameter-int-java.lang.Object-">setParameter(int, Object)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a></dt>
 <dd>
-<div class="block">Set the value of a positional parameter.</div>
+<div class="block">Set the value of an ordinal parameter.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.Query.html#setParameter-java.lang.String-java.lang.Object-">setParameter(String, Object)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a></dt>
 <dd>
@@ -2890,7 +2910,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/provider/Settings.html#SQL_CLIENT_POOL">SQL_CLIENT_POOL</a></span> - Static variable in interface org.hibernate.reactive.provider.<a href="org/hibernate/reactive/provider/Settings.html" title="interface in org.hibernate.reactive.provider">Settings</a></dt>
 <dd>
-<div class="block">Specifies a <code>SqlClientPoolConfiguration</code> class.</div>
+<div class="block">Specifies a <a href="org/hibernate/reactive/pool/ReactiveConnectionPool.html" title="interface in org.hibernate.reactive.pool"><code>ReactiveConnectionPool</code></a> class.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/provider/Settings.html#SQL_CLIENT_POOL_CONFIG">SQL_CLIENT_POOL_CONFIG</a></span> - Static variable in interface org.hibernate.reactive.provider.<a href="org/hibernate/reactive/provider/Settings.html" title="interface in org.hibernate.reactive.provider">Settings</a></dt>
 <dd>
@@ -2939,6 +2959,12 @@
 <div class="block">Allows code within <a href="org/hibernate/reactive/stage/Stage.Session.html#withTransaction-java.util.function.Function-"><code>Stage.Session.withTransaction(Function)</code></a> to mark a
  transaction for rollback.</div>
 </dd>
+<dt><a href="org/hibernate/reactive/tuple/StageValueGenerator.html" title="class in org.hibernate.reactive.tuple"><span class="typeNameLink">StageValueGenerator</span></a>&lt;<a href="org/hibernate/reactive/tuple/StageValueGenerator.html" title="type parameter in StageValueGenerator">T</a>&gt; - Class in <a href="org/hibernate/reactive/tuple/package-summary.html">org.hibernate.reactive.tuple</a></dt>
+<dd>
+<div class="block">A reactive <code>ValueGenerator</code> that gives access to a <code>Stage.Session</code>.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/tuple/StageValueGenerator.html#StageValueGenerator--">StageValueGenerator()</a></span> - Constructor for class org.hibernate.reactive.tuple.<a href="org/hibernate/reactive/tuple/StageValueGenerator.html" title="class in org.hibernate.reactive.tuple">StageValueGenerator</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/bulk/StatementsWithParameters.html" title="interface in org.hibernate.reactive.bulk"><span class="typeNameLink">StatementsWithParameters</span></a> - Interface in <a href="org/hibernate/reactive/bulk/package-summary.html">org.hibernate.reactive.bulk</a></dt>
 <dd>
 <div class="block">A list of SQL statements to be executed as a single logical unit.</div>
@@ -3216,6 +3242,6 @@
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &copy; 2020-2021 <a href="http://redhat.com">Red Hat, Inc</a>. All Rights Reserved.</small></p>
+<p class="legalCopy"><small>Copyright &copy; 2020-2022 <a href="http://redhat.com">Red Hat, Inc</a>. All Rights Reserved.</small></p>
 </body>
 </html>

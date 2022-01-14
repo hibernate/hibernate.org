@@ -269,22 +269,22 @@ var activeTableTab = "activeTableTab";
 </tr>
 <tr id="i20" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="type parameter in Stage.Query">R</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Query.html#setParameter-int-java.lang.Object-">setParameter</a></span>(int&nbsp;position,
-            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code>
-<div class="block">Set the value of a positional parameter.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Query.html#setParameter-int-java.lang.Object-">setParameter</a></span>(int&nbsp;parameter,
+            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;argument)</code>
+<div class="block">Set the value of an ordinal parameter.</div>
 </td>
 </tr>
 <tr id="i21" class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="type parameter in Stage.Query">R</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Query.html#setParameter-javax.persistence.Parameter-T-">setParameter</a></span>(<a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/Parameter.html?is-external=true" title="class or interface in javax.persistence">Parameter</a>&lt;T&gt;&nbsp;name,
-            T&nbsp;value)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Query.html#setParameter-javax.persistence.Parameter-T-">setParameter</a></span>(<a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/Parameter.html?is-external=true" title="class or interface in javax.persistence">Parameter</a>&lt;T&gt;&nbsp;parameter,
+            T&nbsp;argument)</code>
 <div class="block">Set the value of a typed parameter.</div>
 </td>
 </tr>
 <tr id="i22" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="type parameter in Stage.Query">R</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Query.html#setParameter-java.lang.String-java.lang.Object-">setParameter</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
-            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/hibernate/reactive/stage/Stage.Query.html#setParameter-java.lang.String-java.lang.Object-">setParameter</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;parameter,
+            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;argument)</code>
 <div class="block">Set the value of a named parameter.</div>
 </td>
 </tr>
@@ -316,11 +316,16 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>setParameter</h4>
-<pre><a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="type parameter in Stage.Query">R</a>&gt;&nbsp;setParameter(int&nbsp;position,
-                            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
-<div class="block">Set the value of a positional parameter. Positional parameters
+<pre><a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="type parameter in Stage.Query">R</a>&gt;&nbsp;setParameter(int&nbsp;parameter,
+                            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;argument)</pre>
+<div class="block">Set the value of an ordinal parameter. Ordinal parameters
  are numbered from 1, and are specified in the query using
  placeholder tokens of form <code>?1</code>, <code>?2</code>, etc.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>parameter</code> - an integer identifying the ordinal parameter</dd>
+<dd><code>argument</code> - the argument to set</dd>
+</dl>
 </li>
 </ul>
 <a name="setParameter-java.lang.String-java.lang.Object-">
@@ -329,11 +334,16 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>setParameter</h4>
-<pre><a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="type parameter in Stage.Query">R</a>&gt;&nbsp;setParameter(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
-                            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
+<pre><a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="type parameter in Stage.Query">R</a>&gt;&nbsp;setParameter(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;parameter,
+                            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;argument)</pre>
 <div class="block">Set the value of a named parameter. Named parameters are
  specified in the query using placeholder tokens of form
  <code>:name</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>parameter</code> - the name of the parameter</dd>
+<dd><code>argument</code> - the argument to set</dd>
+</dl>
 </li>
 </ul>
 <a name="setParameter-javax.persistence.Parameter-java.lang.Object-">
@@ -344,13 +354,16 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>setParameter</h4>
-<pre>&lt;T&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="type parameter in Stage.Query">R</a>&gt;&nbsp;setParameter(<a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/Parameter.html?is-external=true" title="class or interface in javax.persistence">Parameter</a>&lt;T&gt;&nbsp;name,
-                                T&nbsp;value)</pre>
+<pre>&lt;T&gt;&nbsp;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;<a href="../../../../org/hibernate/reactive/stage/Stage.Query.html" title="type parameter in Stage.Query">R</a>&gt;&nbsp;setParameter(<a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/Parameter.html?is-external=true" title="class or interface in javax.persistence">Parameter</a>&lt;T&gt;&nbsp;parameter,
+                                T&nbsp;argument)</pre>
 <div class="block">Set the value of a typed parameter. Typed parameters are
  obtained from the JPA <a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/criteria/CriteriaBuilder.html?is-external=true" title="class or interface in javax.persistence.criteria"><code>CriteriaBuilder</code></a>, which may
  itself be obtained by calling
  <a href="../../../../org/hibernate/reactive/stage/Stage.SessionFactory.html#getCriteriaBuilder--"><code>Stage.SessionFactory.getCriteriaBuilder()</code></a>.</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>parameter</code> - the parameter</dd>
+<dd><code>argument</code> - the argument to set</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/criteria/CriteriaBuilder.html?is-external=true#parameter-java.lang.Class-" title="class or interface in javax.persistence.criteria"><code>CriteriaBuilder.parameter(Class)</code></a></dd>
 </dl>
@@ -745,6 +758,6 @@ var activeTableTab = "activeTableTab";
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &copy; 2020-2021 <a href="http://redhat.com">Red Hat, Inc</a>. All Rights Reserved.</small></p>
+<p class="legalCopy"><small>Copyright &copy; 2020-2022 <a href="http://redhat.com">Red Hat, Inc</a>. All Rights Reserved.</small></p>
 </body>
 </html>
