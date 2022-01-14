@@ -7,6 +7,7 @@ org.hibernate.reactive.event
 org.hibernate.reactive.example.nativesql
 org.hibernate.reactive.example.session
 org.hibernate.reactive.id
+org.hibernate.reactive.it.verticle
 org.hibernate.reactive.loader
 org.hibernate.reactive.loader.collection
 org.hibernate.reactive.loader.entity
@@ -16,4 +17,5 @@ org.hibernate.reactive.provider
 org.hibernate.reactive.provider.service
 org.hibernate.reactive.session
 org.hibernate.reactive.stage
+org.hibernate.reactive.tuple
 org.hibernate.reactive.vertx
