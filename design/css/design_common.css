@@ -1,0 +1,98 @@
+body { 	margin: 0; padding: 0; font-family: Helvetica, Arial, Verdana, sans-serif; color: black; font-size: 14px; background-image:url("../images/hdr_borderorange.png"); background-repeat:repeat-x; 
+}
+
+.content { margin-left: 20px; width: 70%; }
+
+a:link { color: #005EB6; text-decoration: none; }
+a:active { color: #666666; text-decoration: none; }
+a:visited { color: #005EB6/*#888888*/; text-decoration: none; }
+a:hover { text-decoration:none; }
+
+h1 { line-height: 22px; font: 20px; }
+h2 { line-height: 18px; font: bold 16px; margin: 15px 0px 15px 0px; width: 300px; color:#243446; }
+h3 { line-height: 16px; font: bold 15px; margin: 15px 0px 15px 0px; width: 300px; color:#243446; }
+h4 { line-height: 16px; font: bold 14px; margin: 15px 0px 15px 0px; width: 300px; color:#243446; }
+h5 { line-height: 14px; font: bold 12px; margin: 15px 0px 15px 0px; width: 300px; color:#243446; }
+
+strong { font-weight: bold; }
+em { font-style: italic; }
+
+p { line-height: 150%; margin-block-start: .25em; margin-block-end: .5em;}
+pre { font-family: Andale Mono, Courier New, Courier, monospace; }
+code { }
+
+
+
+.floatright { float:right }
+.floatleft { float:left }
+.floatclear { clear: both; }
+
+ul { }
+li { list-style: none; line-height: 125%; }
+
+hr { border-style: solid; border-color: #dde9ec; border-width:2px; } 
+
+/* ----  Status Page Header, Framework and table styles  ------ */
+
+.status { width: 80%; margin: 0; padding: 0px 0px 60px 0px;}
+.statusheader { width: 225px; text-align: right; padding: 30px 0px 30px 0px; }
+.statustitle { width: 465px; font-size: 11px; padding: 35px 0px 0px 0px; margin: 0px; vertical-align: top; float: right; line-height: 20px; }
+.status dl { padding: 20px 0px 0px 0px; clear: both; }
+.status dt { font-weight: bold;  color: #223A54; float: left; width: 300px; text-align: right; margin: 0; padding: 1px 0px 0px 0px; font-size: 11px; }
+.status dd { padding: 0px 0px 20px 15px; margin: 0px 0px 0px 315px; border-left: 1px solid #d3cab7; }
+.status th { text-align: left; padding: 1px 1px 1px 3px; margin: 0; border: 1px solid white; }
+.status td { background: white; padding: 1px 1px 1px 3px; margin: 0; border: 1px solid white; vertical-align: top; }
+.statusindex { font-size: 10px; padding: 0; margin: 0px 0px 0px 0px; width: 100%; border-collapse: collapse; }
+.statuspadded { height: 10px; padding: 0; }
+.statusgreyrow td { background: #f3f3f3; }
+.statusspec { width: 200px; }
+.statusview { width: 75px; }
+
+
+/* ---- main Page graphics --------- */
+.mainbkg { 
+	background-image:url(../images/hdr_jbossdesignmain.png); 
+	background-repeat:no-repeat;
+	margin-top: 200px;
+}
+
+.mainbkg h5 { 
+	font: bold 1.5em;
+	background-repeat:no-repeat;
+	background-position: right center;
+	line-height: 40px;
+	font-size:14px;
+}
+
+.contentholder { 
+	margin: 30px 0px 0px 200px;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 250px;
+  padding: 10px;
+ /* height: 100px; */
+}
+
+.row {
+  	margin: 30px 0px 0px 200px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.darkbkg { 
+	background-color: black;
+}
+

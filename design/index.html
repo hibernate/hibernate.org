@@ -1,0 +1,399 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Hibernate UI Design</title>
+<link href="css/design_common.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="status">
+  <div>
+    <!-- Header -->
+    <div class="statustitle">
+					<strong>Hibernate </strong><br/>
+					<script type="text/javascript" language="javascript">
+        				<!--	
+						var lastUpdated = document.lastModified;
+						var month = lastUpdated.substring( 0, 2 );
+						var day = lastUpdated.substring( 3, 5 );
+						var year = lastUpdated.substring( 6, 10);
+						
+						lastUpdated = year + "/" + month + "/" + day;						
+						document.write("<b>Updated: " + lastUpdated + "</b><br>");
+						//-->
+        			</script>
+	  </div>
+    <div class="statusheader"><img src="images/hdr_jbossdesign.gif" border="0" alt="jboss.org" /></div>
+    <!-- Body -->
+    <dl>
+      <dt>Logo Files</dt>
+      <dd>
+        <table class="statusindex">
+          <tbody class="statusgreyrow">
+            <tr>
+              <th class="statusspec">Enhancement description</th>
+              <th class="statusview">bitmapped</th>
+              <th class="statusview">vector</th>
+            </tr>
+            <tr>
+              <td class="statusspec"><a href="logo/final/hibernatelogos_archive.zip">Full Archive of files (zip)</a></td>
+              <td class="statusview">&nbsp;</td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="statusspec">Logo (for white bkg) Horizontal : 600px</td>
+              <td class="statusview"><a href="logo/final/hibernate_logo_whitebkg_600px.gif">.gif</a> | <a href="logo/final/hibernate_logo_whitebkg_600px.png">.png</a></td>
+              <td class="statusview"><a href="logo/final/hibernate_logo_whitebkg.ai">.ai</a> | <a href="logo/final/hibernate_logo_whitebkg.svg">.svg</a></td>
+            </tr>
+            <tr>
+              <td class="statusspec">Logo (for white bkg) Horizontal :  450px</td>
+              <td class="statusview"><a href="logo/final/hibernate_logo_whitebkg_450px.gif">.gif</a> | <a href="logo/final/hibernate_logo_whitebkg_450px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="statusspec">Logo (for white bkg) Horizontal : 200px</td>
+              <td class="statusview"><a href="logo/final/hibernate_logo_whitebkg_200px.gif">.gif</a> | <a href="logo/final/hibernate_logo_whitebkg_200px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="statusspec">Logo (for white bkg) Horizontal : 100px</td>
+              <td class="statusview"><a href="logo/final/hibernate_logo_whitebkg_100px.gif">.gif</a> | <a href="logo/final/hibernate_logo_whitebkg_100px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="statusspec">Logo (for white bkg) Stacked : 256px</td>
+              <td class="statusview"><a href="logo/final/hibernate_logo_whitebkg_stacked_256px.gif">.gif</a> | <a href="logo/final/hibernate_logo_whitebkg_stacked_256px.png">.png</a></td>
+              <td class="statusview"><a href="logo/final/hibernate_logo_whitebkg_stacked.ai">.ai</a> | <a href="logo/final/hibernate_logo_whitebkg_stacked.svg">.svg</a></td>
+            </tr>
+            <tr>
+              <td class="statusspec">Logo (for white bkg) Stacked : 128px</td>
+              <td class="statusview"><a href="logo/final/hibernate_logo_whitebkg_stacked_128px.gif">.gif</a> | <a href="logo/final/hibernate_logo_whitebkg_stacked_128px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="statusspec">Logo (for white bkg) Stacked : 64px</td>
+              <td class="statusview"><a href="logo/final/hibernate_logo_whitebkg_stacked_64px.gif">.gif</a> | <a href="logo/final/hibernate_logo_whitebkg_stacked_64px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="statusspec">Icon (for white bkg) : 256px</td>
+              <td class="statusview"><a href="logo/final/hibernate_icon_whitebkg_256px.gif">.gif</a> | <a href="logo/final/hibernate_icon_whitebkg_256px.png">.png</a></td>
+              <td class="statusview"><a href="logo/final/hibernate_icon_whitebkg.ai">.ai</a> | <a href="logo/final/hibernate_icon_whitebkg.svg">.svg</a></td>
+            </tr>
+            <tr>
+              <td class="statusspec">Icon (for white bkg) : 128px</td>
+              <td class="statusview"><a href="logo/final/hibernate_icon_whitebkg_128px.gif">.gif</a> | <a href="logo/final/hibernate_icon_whitebkg_256px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="statusspec">Icon (for white bkg) : 64px</td>
+              <td class="statusview"><a href="logo/final/hibernate_icon_whitebkg_64px.gif">.gif</a> | <a href="logo/final/hibernate_icon_whitebkg_64px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="statusspec">Icon (for white bkg) : 48px</td>
+              <td class="statusview"><a href="logo/final/hibernate_icon_whitebkg_48px.gif">.gif</a> | <a href="logo/final/hibernate_icon_whitebkg_48px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="statusspec">Icon (for white bkg) : 32px</td>
+              <td class="statusview"><a href="logo/final/hibernate_icon_whitebkg_32px.gif">.gif</a> | <a href="logo/final/hibernate_icon_whitebkg_32px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="statusspec">Icon (for white bkg) : 16px</td>
+              <td class="statusview"><a href="logo/final/hibernate_icon_whitebkg_16px.gif">.gif</a> | <a href="logo/final/hibernate_icon_whitebkg_16px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+             <tr>
+              <td class="statusspec">Logo (for dark bkg) Horizontal : 600px</td>
+              <td class="statusview"><a href="logo/final/hibernate_logo_darkbkg_600px.gif">.gif</a> | <a href="logo/final/hibernate_logo_darkbkg_600px.png">.png</a></td>
+              <td class="statusview"><a href="logo/final/hibernate_logo_darkbkg.ai">.ai</a> | <a href="logo/final/hibernate_logo_darkbkg.svg">.svg</a></td>
+            </tr>
+            <tr>
+              <td class="statusspec">Logo (for dark bkg) Horizontal :  450px</td>
+              <td class="statusview"><a href="logo/final/hibernate_logo_darkbkg_450px.gif">.gif</a> | <a href="logo/final/hibernate_logo_darkbkg_450px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="statusspec">Logo (for dark bkg) Horizontal : 200px</td>
+              <td class="statusview"><a href="logo/final/hibernate_logo_darkbkg_200px.gif">.gif</a> | <a href="logo/final/hibernate_logo_darkbkg_200px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="statusspec">Logo (for dark bkg) Horizontal : 100px</td>
+              <td class="statusview"><a href="logo/final/hibernate_logo_darkbkg_100px.gif">.gif</a> | <a href="logo/final/hibernate_logo_darkbkg_100px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="statusspec">Logo (for dark bkg) Stacked : 256px</td>
+              <td class="statusview"><a href="logo/final/hibernate_logo_darkbkg_stacked_256px.gif">.gif</a> | <a href="logo/final/hibernate_logo_darkbkg_stacked_256px.png">.png</a></td>
+              <td class="statusview"><a href="logo/final/hibernate_logo_darkbkg_stacked.ai">.ai</a> | <a href="logo/final/hibernate_logo_darkbkg_stacked.svg">.svg</a></td>
+            </tr>
+            <tr>
+              <td class="statusspec">Logo (for dark bkg) Stacked : 128px</td>
+              <td class="statusview"><a href="logo/final/hibernate_logo_darkbkg_stacked_128px.gif">.gif</a> | <a href="logo/final/hibernate_logo_darkbkg_stacked_128px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="statusspec">Logo (for dark bkg) Stacked : 64px</td>
+              <td class="statusview"><a href="logo/final/hibernate_logo_darkbkg_stacked_64px.gif">.gif</a> | <a href="logo/final/hibernate_logo_darkbkg_stacked_64px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="statusspec">Icon (for dark bkg) : 256px</td>
+              <td class="statusview"><a href="logo/final/hibernate_icon_darkbkg_256px.gif">.gif</a> | <a href="logo/final/hibernate_icon_darkbkg_256px.png">.png</a></td>
+              <td class="statusview"><a href="logo/final/hibernate_icon_darkbkg.ai">.ai</a> | <a href="logo/final/hibernate_icon_darkbkg.svg">.svg</a></td>
+            </tr>
+            <tr>
+              <td class="statusspec">Icon (for dark bkg) : 128px</td>
+              <td class="statusview"><a href="logo/final/hibernate_icon_darkbkg_128px.gif">.gif</a> | <a href="logo/final/hibernate_icon_darkbkg_256px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="statusspec">Icon (for dark bkg) : 64px</td>
+              <td class="statusview"><a href="logo/final/hibernate_icon_darkbkg_64px.gif">.gif</a> | <a href="logo/final/hibernate_icon_darkbkg_64px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="statusspec">Icon (for dark bkg) : 48px</td>
+              <td class="statusview"><a href="logo/final/hibernate_icon_darkbkg_48px.gif">.gif</a> | <a href="logo/final/hibernate_icon_darkbkg_48px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="statusspec">Icon (for dark bkg) : 32px</td>
+              <td class="statusview"><a href="logo/final/hibernate_icon_darkbkg_32px.gif">.gif</a> | <a href="logo/final/hibernate_icon_darkbkg_32px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="statusspec">Icon (for dark bkg) : 16px</td>
+              <td class="statusview"><a href="logo/final/hibernate_icon_darkbkg_16px.gif">.gif</a> | <a href="logo/final/hibernate_icon_darkbkg_16px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+             <tr>
+              <td class="statusspec">Logo (for medium bkg) Horizontal : 600px</td>
+              <td class="statusview"><a href="logo/final/hibernate_logo_mediumbkg_600px.gif">.gif</a> | <a href="logo/final/hibernate_logo_mediumbkg_600px.png">.png</a></td>
+              <td class="statusview"><a href="logo/final/hibernate_logo_mediumbkg.ai">.ai</a> | <a href="logo/final/hibernate_logo_mediumbkg.svg">.svg</a></td>
+            </tr>
+            <tr>
+              <td class="statusspec">Logo (for medium bkg) Horizontal :  450px</td>
+              <td class="statusview"><a href="logo/final/hibernate_logo_mediumbkg_450px.gif">.gif</a> | <a href="logo/final/hibernate_logo_mediumbkg_450px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="statusspec">Logo (for medium bkg) Horizontal : 200px</td>
+              <td class="statusview"><a href="logo/final/hibernate_logo_mediumbkg_200px.gif">.gif</a> | <a href="logo/final/hibernate_logo_mediumbkg_200px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="statusspec">Logo (for medium bkg) Horizontal : 100px</td>
+              <td class="statusview"><a href="logo/final/hibernate_logo_mediumbkg_100px.gif">.gif</a> | <a href="logo/final/hibernate_logo_mediumbkg_100px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="statusspec">Logo (for medium bkg) Stacked : 256px</td>
+              <td class="statusview"><a href="logo/final/hibernate_logo_mediumbkg_stacked_256px.gif">.gif</a> | <a href="logo/final/hibernate_logo_mediumbkg_stacked_256px.png">.png</a></td>
+              <td class="statusview"><a href="logo/final/hibernate_logo_mediumbkg_stacked.ai">.ai</a> | <a href="logo/final/hibernate_logo_mediumbkg_stacked.svg">.svg</a></td>
+            </tr>
+            <tr>
+              <td class="statusspec">Logo (for medium bkg) Stacked : 128px</td>
+              <td class="statusview"><a href="logo/final/hibernate_logo_mediumbkg_stacked_128px.gif">.gif</a> | <a href="logo/final/hibernate_logo_mediumbkg_stacked_128px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="statusspec">Logo (for medium bkg) Stacked : 64px</td>
+              <td class="statusview"><a href="logo/final/hibernate_logo_mediumbkg_stacked_64px.gif">.gif</a> | <a href="logo/final/hibernate_logo_mediumbkg_stacked_64px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="statusspec">Icon (for medium bkg) : 256px</td>
+              <td class="statusview"><a href="logo/final/hibernate_icon_mediumbkg_256px.gif">.gif</a> | <a href="logo/final/hibernate_icon_mediumbkg_256px.png">.png</a></td>
+              <td class="statusview"><a href="logo/final/hibernate_icon_mediumbkg.ai">.ai</a> | <a href="logo/final/hibernate_icon_mediumbkg.svg">.svg</a></td>
+            </tr>
+            <tr>
+              <td class="statusspec">Icon (for medium bkg) : 128px</td>
+              <td class="statusview"><a href="logo/final/hibernate_icon_mediumbkg_128px.gif">.gif</a> | <a href="logo/final/hibernate_icon_mediumbkg_256px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="statusspec">Icon (for medium bkg) : 64px</td>
+              <td class="statusview"><a href="logo/final/hibernate_icon_mediumbkg_64px.gif">.gif</a> | <a href="logo/final/hibernate_icon_mediumbkg_64px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="statusspec">Icon (for medium bkg) : 48px</td>
+              <td class="statusview"><a href="logo/final/hibernate_icon_mediumbkg_48px.gif">.gif</a> | <a href="logo/final/hibernate_icon_mediumbkg_48px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="statusspec">Icon (for medium bkg) : 32px</td>
+              <td class="statusview"><a href="logo/final/hibernate_icon_mediumbkg_32px.gif">.gif</a> | <a href="logo/final/hibernate_icon_mediumbkg_32px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="statusspec">Icon (for medium bkg) : 16px</td>
+              <td class="statusview"><a href="logo/final/hibernate_icon_mediumbkg_16px.gif">.gif</a> | <a href="logo/final/hibernate_icon_mediumbkg_16px.png">.png</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+      </dd>
+    </dl>
+      <dl>
+      <dt>Sticker</dt>
+      <dd>
+        <table class="statusindex">
+          <tbody class="statusgreyrow">
+            <tr>
+              <td class="statusspec">Diecut sticker 3.5 x 1</td>
+              <td class="statusview">&nbsp;</td>
+              <td class="statusview"><a href="sticker/pdf/hibernate_sticker_diecut_3p5x1.pdf">.pdf</a></td>
+              <td class="statusview">&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+      </dd>
+      </dl>
+	  
+	  <dl>
+      <dt>User Guide Web Page</dt>
+      <dd>
+        <table class="statusindex">
+          <tbody class="statusgreyrow">
+            <tr>
+              <td class="statusspec">Full Website for Review</td>
+              <td class="statusview">-</td>
+              <td class="statusview"><a href="user_guide/html.zip">zip file</a></td>
+              <td class="statusview"><a href="https://issues.jboss.org/browse/DESIGN-737#add-comment">Design-737</a></td>
+            </tr>
+              <tr>
+              <td class="statusspec">Full Website Final</td>
+              <td class="statusview">-</td>
+              <td class="statusview"><a href="user_guide/html_final.zip">zip file</a></td>
+              <td class="statusview"><a href="https://issues.jboss.org/browse/DESIGN-737#add-comment">Design-737</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </dd>
+      </dl>
+      
+    <dl>
+      <dt>Banner</dt>
+      <dd>
+        <table class="statusindex">
+          <tbody class="statusgreyrow">
+            <tr>
+              <th class="statusspec">Enhancement description</th>
+              <th class="statusview">HTML</th>
+              <th class="statusview">Source</th>
+              <th class="statusview">JIRA # </th>
+            </tr>
+            <tr>
+              <td class="statusspec">r1v1</td>
+              <td class="statusview"><a href="banner/images/hibernatebanner-r1v1.png">png</a></td>
+              <td class="statusview">vector</td>
+              <td class="statusview">- </td>
+            </tr>
+            <tr>
+              <td class="statusspec">r1v2</td>
+              <td class="statusview"><a href="banner/images/hibernatebanner-r1v2.png">png</a></td>
+              <td class="statusview">vector</td>
+              <td class="statusview">- </td>
+            </tr>
+            <tr>
+              <td class="statusspec">r1v3</td>
+              <td class="statusview"><a href="banner/images/hibernatebanner-r1v3.png">png</a></td>
+              <td class="statusview">vector</td>
+              <td class="statusview">- </td>
+            </tr>
+          </tbody>
+        </table>
+      </dd>
+      <dt>DocBook Styles</dt>
+      <dd>
+        <table class="statusindex">
+          <tbody class="statusgreyrow">
+            <tr>
+              <th class="statusspec">Enhancement description</th>
+              <th class="statusview">HTML</th>
+              <th class="statusview">Source</th>
+              <th class="statusview">JIRA # </th>
+            </tr>
+            <tr>
+              <td class="statusspec">.org DocBook Styles - final</td>
+              <td class="statusview"><a href="DocBook/html/stylesample5.html">Final styles</a></td>
+              <td class="statusview"><a href="DocBook/html/final.zip">.zip</a></td>
+              <td class="statusview"><a href="http://jira.jboss.com/jira/browse/ORG-54">JIRA #54</a></td>
+            </tr>
+            <tr>
+              <td class="statusspec">.org DocBook Styles - header 4</td>
+              <td class="statusview"><a href="DocBook/html/stylesample4.html">Sample styles</a></td>
+              <td class="statusview">-</td>
+              <td class="statusview"><a href="http://jira.jboss.com/jira/browse/ORG-54">JIRA #54</a></td>
+            </tr>
+            <tr>
+              <td class="statusspec">.org DocBook Styles - header 3</td>
+              <td class="statusview"><a href="DocBook/html/stylesample3.html">Sample styles</a></td>
+              <td class="statusview">-</td>
+              <td class="statusview"><a href="http://jira.jboss.com/jira/browse/ORG-54">JIRA #54</a></td>
+            </tr>
+            <tr>
+              <td class="statusspec">.org DocBook Styles - header 2</td>
+              <td class="statusview"><a href="DocBook/html/stylesample2.html">Sample styles</a></td>
+              <td class="statusview">-</td>
+              <td class="statusview"><a href="http://jira.jboss.com/jira/browse/ORG-54">JIRA #54</a></td>
+            </tr>
+            <tr>
+              <td class="statusspec">.org DocBook Styles - header 1</td>
+              <td class="statusview"><a href="DocBook/html/stylesample.html">Sample styles</a></td>
+              <td class="statusview">-</td>
+              <td class="statusview"><a href="http://jira.jboss.com/jira/browse/ORG-54">JIRA #54</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </dd>
+      <dt>Inception/Elaboration</dt>
+      <dd>
+        <table class="statusindex">
+          <tbody class="statusgreyrow">
+            <tr>
+              <th class="statusspec">Enhancement description</th>
+              <th class="statusview">Design</th>
+              <th class="statusview">HTML</th>
+              <th class="statusview">JIRA # </th>
+            </tr>
+            <tr>
+              <td class="statusspec">Icons</td>
+              <td class="statusview">Mockup</td>
+              <td class="statusview">HTML</td>
+              <td class="statusview"><a href="http://jira.jboss.com/jira/browse/JBIDE-336">JBIDE-336</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </dd>
+      <dt>Construction/Transition</dt>
+      <dd>
+        <table class="statusindex">
+          <tbody class="statusgreyrow">
+            <tr>
+              <th class="statusspec">Enhancement description</th>
+              <th class="statusview">Design</th>
+              <th class="statusview">HTML</th>
+              <th class="statusview">JIRA # </th>
+            </tr>
+            <tr>
+              <td class="statusspec">Project</td>
+              <td class="statusview">Mockup</td>
+              <td class="statusview">HTML</td>
+              <td class="statusview">JIRA # </td>
+            </tr>
+          </tbody>
+        </table>
+      </dd>
+    </dl>
+  </div>
+</div>
+</body>
+</html>

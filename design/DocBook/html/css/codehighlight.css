@@ -1,0 +1,158 @@
+SPAN.property {
+        COLOR: #008cca;
+}
+PRE.JAVA {
+	LINE-HEIGHT: 0px
+}
+PRE.XML {
+	LINE-HEIGHT: 8px
+}
+PRE.JSP {
+	LINE-HEIGHT: 0px
+}
+PRE.XHTML {
+	LINE-HEIGHT: 0px
+}
+.java_type {
+	COLOR: #008cca
+}
+.java_keyword {
+	FONT-WEIGHT: bold; COLOR: rgb(0,0,0)
+}
+.java_javadoc_comment {
+	COLOR: rgb(147,147,147); FONT-STYLE: italic; BACKGROUND-COLOR: rgb(247,247,247)
+}
+.java_comment {
+	COLOR: rgb(147,147,147); BACKGROUND-COLOR: rgb(247,247,247)
+}
+.java_operator {
+	COLOR: #003399
+}
+.java_plain {
+	COLOR: rgb(0,0,0)
+}
+.java_literal {
+	COLOR: #ff6600
+}
+PRE CODE {
+	FONT-SIZE: 12px; COLOR: rgb(0,0,0); FONT-FAMILY: monospace; WHITE-SPACE: nowrap
+}
+.java_javadoc_tag {
+	FONT-WEIGHT: bold; COLOR: rgb(147,147,147); FONT-STYLE: italic; BACKGROUND-COLOR: rgb(247,247,247)
+}
+.java_separator {
+	COLOR: #008cca
+}
+.xml_plain {
+	COLOR: rgb(0,0,0)
+}
+.xml_tag_name {
+	COLOR: #3F7F7F
+}
+.xml_comment {
+	COLOR: rgb(147,147,147); BACKGROUND-COLOR: rgb(247,247,247)
+}
+.xml_tag_symbols {
+	COLOR: #008cca
+}
+.xml_rife_tag {
+	COLOR: rgb(0,0,0); BACKGROUND-COLOR: rgb(228,230,160)
+}
+.xml_attribute_value {
+	COLOR: #2A00FF
+}
+.xml_attribute_name {
+	FONT-WEIGHT: bold; COLOR: #7F007F
+}
+.xml_char_data {
+	COLOR: rgb(0,0,0)
+}
+.xml_rife_name {
+	COLOR: #008cca; BACKGROUND-COLOR: rgb(228,230,160)
+}
+.xml_processing_instruction {
+	FONT-WEIGHT: bold; COLOR: rgb(0,0,0); FONT-STYLE: italic
+}
+TD.java {
+	VERTICAL-ALIGN: top; LINE-HEIGHT: 10px
+}
+TD.java-ln {
+	VERTICAL-ALIGN: top; LINE-HEIGHT: 10px
+}
+TT.java {
+	MARGIN-BOTTOM: 0em; LINE-HEIGHT: 10px;
+        font-family: verdana,helvetica,sans-serif;
+}
+TT.java-ln {
+	MARGIN-BOTTOM: 0em; LINE-HEIGHT: 10px
+}
+PRE.java {
+	MARGIN-BOTTOM: 0em; LINE-HEIGHT: 10px
+}
+PRE.java-ln {
+	MARGIN-BOTTOM: 0em; LINE-HEIGHT: 10px
+}
+TD.java-ln {
+	LINE-HEIGHT: 10px; TEXT-ALIGN: right
+}
+TT.java-ln {
+	COLOR: #888888; LINE-HEIGHT: 10px
+}
+PRE.java-ln {
+	COLOR: #888888; LINE-HEIGHT: 10px
+}
+SPAN.java0 {
+	FONT-SIZE: 8pt; COLOR: #ffffff; LINE-HEIGHT: 10px
+}
+SPAN.java1 {
+	FONT-SIZE: 8pt; COLOR: #808080
+}
+SPAN.java2 {
+	FONT-SIZE: 8pt; COLOR: #3f7f5f; LINE-HEIGHT: 10px
+}
+/* Single-line comment */
+SPAN.java3 {
+	FONT-SIZE: 8pt; COLOR: #3f7f5f; LINE-HEIGHT: 10px
+}
+/* Keywords excluding 'return' */
+SPAN.java4 {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #7F1B55; LINE-HEIGHT: 10px
+}
+SPAN.java5 {
+	FONT-SIZE: 8pt; COLOR: #2a00ff; LINE-HEIGHT: 10px
+}
+SPAN.java6 {
+	FONT-SIZE: 8pt; COLOR: #990000; LINE-HEIGHT: 10px
+}
+SPAN.java7 {
+	FONT-SIZE: 8pt; COLOR: #990000; LINE-HEIGHT: 10px
+}
+SPAN.java8 {
+	FONT-SIZE: 8pt; COLOR: #000000; LINE-HEIGHT: 10px
+}
+/* primitive types: long, int, void etc... */
+SPAN.java9 {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #7F0055; LINE-HEIGHT: 10px
+}
+SPAN.java10 {
+	FONT-SIZE: 8pt; COLOR: #000000; LINE-HEIGHT: 10px
+}
+SPAN.java11 {
+	FONT-SIZE: 8pt; COLOR: #7f9fbf; LINE-HEIGHT: 10px
+}
+SPAN.java12 {
+	FONT-SIZE: 8pt; COLOR: #7f7f9f; LINE-HEIGHT: 10px
+}
+SPAN.java13 {
+	FONT-SIZE: 8pt; COLOR: #3f3fbf; LINE-HEIGHT: 10px
+}
+SPAN.java14 {
+	FONT-SIZE: 8pt; COLOR: #3f5fbf; LINE-HEIGHT: 10px
+}
+SPAN.java15 {
+	FONT-SIZE: 8pt; COLOR: #ff6100; LINE-HEIGHT: 10px
+}
+/* Annotations */
+SPAN.java16 {
+	FONT-SIZE: 8pt; COLOR: #646464; LINE-HEIGHT: 10px
+}
