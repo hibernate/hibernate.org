@@ -168,6 +168,10 @@ project_hero_partial: project/hero-series.html.haml
                     <version>{version}</version>
                 </dependency>
                 ----
+      %p
+        To verify signed Maven artifacts, head to
+        %a{:href => "/community/keys/"}
+          this page.
   - if project_description[:sourceforge_url]
     .five.wide.column.divided
       %h3 Zip archive

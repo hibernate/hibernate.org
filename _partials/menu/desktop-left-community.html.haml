@@ -42,6 +42,12 @@
     %i.grid.icon.legal
     Licenses
 
+  - href = "/community/keys/"
+  - active = (href == current_path)
+  %a.item{:href => href, :class => "#{(active ? "active" : "")}"}
+    %i.grid.icon.key
+    Keys
+
   .ui.dropdown.link.item{:class => "#{(current_path.start_with?( '/community/contribute/' ) ? "selected" : "")}"}
     Contribute
     %i.icon.dropdown

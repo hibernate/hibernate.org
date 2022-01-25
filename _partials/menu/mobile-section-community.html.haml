@@ -41,6 +41,10 @@
       %a.item(href="/community/license/"){:class => "#{(item_active ? "active" : "")}"}
         %i.grid.icon.legal
         Licenses
+      - item_active = (current_path == '/community/keys/')
+      %a.item(href="/community/keys/"){:class => "#{(item_active ? "active" : "")}"}
+        %i.grid.icon.key
+        Keys
       - href = "/community/contribute/guidelines/"
       %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "active" : "")}"}
         Contribute - Guidelines
