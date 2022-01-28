@@ -14,25 +14,6 @@ You can find a finer grained roadmap in our https://hibernate.atlassian.net/brow
 
 Dates are generally omitted: milestones are released regularly, the Final release is tagged when it's considered stable.
 
-== Hibernate Search 6.1
-
-For a full list of issues currently planned for this series,
-see https://hibernate.atlassian.net/issues/?jql=project%20%3D%20HSEARCH%20AND%20fixVersion%20%3D%206.1-backlog%20ORDER%20BY%20created%20DESC[here].
-
-Restore the WildFly integration::
-The WildFly integration was removed in 6.0 to reduce the work load.
-We will restore it in 6.1.
-Safe, asynchronous, distributed automatic indexing for clustered applications::
-Hibernate Search 6.0 only allows single-node applications,
-or multi-node applications where each node works independently, simply sending events to an Elasticsearch cluster.
-+
-In rare cases where two concurrent transactions update different entities that affect the same index document,
-https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#limitations-parallel-embedded-update[this can lead to out-of-sync indexes].
-+
-Hibernate Search 6.1 will address this problem by introducing a way to coordinate automatic indexing
-between multiple application nodes.
-See link:{hsearch-jira-url-prefix}/HSEARCH-3280[HSEARCH-3280].
-
 == Hibernate Search 6.2
 
 For a full list of issues currently planned for this series,
