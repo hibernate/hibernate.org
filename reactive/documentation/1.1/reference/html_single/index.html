@@ -2,23 +2,24 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.6.1">
-<meta name="author" content="Davide D'Alto, Gavin King">
-<title>Hibernate Reactive 1.1.2.Final Reference Documentation</title>
+<meta name="generator" content="Asciidoctor 2.0.10">
+<meta name="author" content="Davide D&#8217;Alto, Gavin King">
+<title>Hibernate Reactive 1.1.3.Final Reference Documentation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <link rel="stylesheet" href="./asciidoctor.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Hibernate Reactive 1.1.2.Final Reference Documentation</h1>
+<h1>Hibernate Reactive 1.1.3.Final Reference Documentation</h1>
 <div class="details">
-<span id="author" class="author">Davide D'Alto</span><br>
+<span id="author" class="author">Davide D&#8217;Alto</span><br>
 <span id="email" class="email"><a href="mailto:davide@hibernate.org">davide@hibernate.org</a></span><br>
 <span id="author2" class="author">Gavin King</span><br>
 <span id="email2" class="email"><a href="mailto:gavin@hibernate.org">gavin@hibernate.org</a></span><br>
+<span id="revnumber">version 1.1.3.Final</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -35,13 +36,14 @@
 <li><a href="#_automatic_schema_export">1.2.4. Automatic schema export</a></li>
 <li><a href="#_logging_the_generated_sql">1.2.5. Logging the generated SQL</a></li>
 <li><a href="#_minimizing_repetitive_mapping_information">1.2.6. Minimizing repetitive mapping information</a></li>
+<li><a href="#_nationalized_character_data_in_sql_server">1.2.7. Nationalized character data in SQL Server</a></li>
 </ul>
 </li>
 <li><a href="#_writing_the_java_code">1.3. Writing the Java code</a>
 <ul class="sectlevel3">
 <li><a href="#_mapping_entity_classes">1.3.1. Mapping entity classes</a></li>
 <li><a href="#_getters_and_setters">1.3.2. Getters and setters</a></li>
-<li><a href="#_code_equals_code_and_code_hashcode_code">1.3.3. <code>equals()</code> and <code>hashCode()</code></a></li>
+<li><a href="#_equals_and_hashcode">1.3.3. <code>equals()</code> and <code>hashCode()</code></a></li>
 <li><a href="#_identifier_generation">1.3.4. Identifier generation</a></li>
 <li><a href="#_custom_types">1.3.5. Custom types</a></li>
 <li><a href="#_attribute_converters">1.3.6. Attribute converters</a></li>
@@ -197,7 +199,7 @@ a preconfigured skeleton project <a href="https://code.quarkus.io/?g=org.acme&am
 <p>You&#8217;ll also need to add a dependency for the Vert.x reactive database
 driver for your database, one of the following options:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -240,7 +242,7 @@ version of Hibernate Reactive you&#8217;re using.</p>
 <div class="paragraph">
 <p>Optionally, you might also add any of the following additional features:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -315,7 +317,7 @@ Reactive is the persistence <code>&lt;provider&gt;</code> element, which must be
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;provider&gt;org.hibernate.reactive.provider.ReactivePersistenceProvider&lt;/provider&gt;</code></pre>
+<pre class="prettyprint highlight"><code data-lang="xml">&lt;provider&gt;org.hibernate.reactive.provider.ReactivePersistenceProvider&lt;/provider&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -329,7 +331,7 @@ found in the <a href="https://docs.jboss.org/hibernate/orm/5.4/userguide/html_si
 You&#8217;ll never need to touch most of these. The properties you do need at
 this stage are these three:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -375,7 +377,7 @@ You don&#8217;t need to specify <code>hibernate.dialect</code>. The correct Hibe
 statement caching. You might want to control the size of the connection
 pool:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -421,7 +423,7 @@ annotation you&#8217;ve specified in your Java code, and export the schema at
 initialization time by specifying one or more of the following configuration
 properties:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -435,7 +437,7 @@ properties:</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.persistence.schema-generation.database.action</code></p></td>
-<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
 <p>If <code>create</code>, first drop the schema and then export tables, sequences, and constraints.</p>
@@ -494,7 +496,7 @@ handling when using it. Failing to do so will cause an exception:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">io.vertx.core.VertxException: Thread blocked</code></pre>
+<pre class="prettyprint highlight"><code data-lang="java">io.vertx.core.VertxException: Thread blocked</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -502,7 +504,7 @@ handling when using it. Failing to do so will cause an exception:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">Vertx vertx = ...
+<pre class="prettyprint highlight"><code data-lang="java">Vertx vertx = ...
 
 Uni&lt;Void&gt; startHibernate = Uni.createFrom().deferred(() -&gt; {
   emf = Persistence
@@ -539,7 +541,7 @@ add these lines to your <code>log4j2.properties</code> file:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-properties" data-lang="properties">logger.hibernate.name = org.hibernate.SQL
+<pre class="prettyprint highlight"><code data-lang="properties">logger.hibernate.name = org.hibernate.SQL
 logger.hibernate.level = debug</code></pre>
 </div>
 </div>
@@ -551,7 +553,7 @@ program.</p>
 <p>You can make the logged SQL more readable by enabling one or both of
 the following settings:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -581,7 +583,7 @@ the following settings:</p>
 information you&#8217;ll need to explicitly specify in <code>@Table</code> and <code>@Column</code>
 annotations which we&#8217;ll discuss below in <a href="#_mapping_entity_classes">Mapping entity classes</a>:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -617,6 +619,45 @@ annotations which we&#8217;ll discuss below in <a href="#_mapping_entity_classes
 Writing your own <code>PhysicalNamingStrategy</code> is an especially good
 way to reduce the clutter of annotations on your entity classes, and
 we think you should do it for any nontrivial data model.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_nationalized_character_data_in_sql_server"><a class="anchor" href="#_nationalized_character_data_in_sql_server"></a>1.2.7. Nationalized character data in SQL Server</h4>
+<div class="paragraph">
+<p><em>By default,</em> SQL Server&#8217;s <code>char</code> and <code>varchar</code> types don&#8217;t accommodate
+Unicode data. So, if you&#8217;re working with SQL Server, you might need to
+force Hibernate to use the <code>nchar</code> and <code>nvarchar</code> types.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Configuration property name</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.use_nationalized_character_data</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use <code>nchar</code> and <code>nvarchar</code> instead of <code>char</code> and <code>varchar</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Alternatively, you can configure SQL Server to use the UTF-8 enabled
+collation <code>_UTF8</code>.
 </td>
 </tr>
 </table>
@@ -714,7 +755,7 @@ to regular Hibernate ORM and other implementations of JPA.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Entity
+<pre class="prettyprint highlight"><code data-lang="java">@Entity
 @Table(name="authors")
 class Author {
     @Id @GeneratedValue
@@ -765,7 +806,7 @@ still a handful of limitations at this time.</p>
 <p>The most common and useful mapping annotations include these standard JPA
 annotations:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -869,7 +910,7 @@ annotations:</p>
 <div class="paragraph">
 <p>These Hibernate annotations are also quite useful to know about:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -913,8 +954,8 @@ annotations:</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@ColumnDefault</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies a SQL expression used to assign a
-                                             default value to a column.
-                                             (Use in combination with <code>@Generated(INSERT)</code>.)</p></td>
+                                             default value to a column
+                                             (use in combination with <code>@Generated(INSERT)</code>)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@GenericGenerator</code></p></td>
@@ -942,6 +983,23 @@ annotations:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@NaturalId</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Marks a field or fields as an alternative "natural"
                                              identifier (unique key) of the entity</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Nationalized</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use <code>nchar</code>, <code>nvarchar</code>, or <code>nclob</code> selectively
+                                             for one particular column.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Immutable</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies that an entity or collection is immutable</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@SortNatural</code> or <code>@SortComparator</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maps a <code>SortedSet</code> or <code>SortedMap</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Check</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Declares a SQL <code>check</code> constraint to be added to DDL</p></td>
 </tr>
 </tbody>
 </table>
@@ -1011,7 +1069,7 @@ and you can use public fields instead of getters and setters if you prefer.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_code_equals_code_and_code_hashcode_code"><a class="anchor" href="#_code_equals_code_and_code_hashcode_code"></a>1.3.3. <code>equals()</code> and <code>hashCode()</code></h4>
+<h4 id="_equals_and_hashcode"><a class="anchor" href="#_equals_and_hashcode"></a>1.3.3. <code>equals()</code> and <code>hashCode()</code></h4>
 <div class="paragraph">
 <p>Entity classes should override <code>equals()</code> and <code>hashCode()</code>. People new to
 Hibernate or JPA are often confused by exactly which fields should be
@@ -1113,7 +1171,7 @@ program in the usual way.</p>
 <p>The standard id generation strategies defined by the JPA specification may
 be customized using the following annotations:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1140,7 +1198,7 @@ be customized using the following annotations:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Entity
+<pre class="prettyprint highlight"><code data-lang="java">@Entity
 @Table(name="authors")
 class Author {
     @Id @GeneratedValue(generator = "authorIds")
@@ -1198,7 +1256,7 @@ the Hibernate <code>@Type</code> annotation.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Converter
+<pre class="prettyprint highlight"><code data-lang="java">@Converter
 public class BigIntegerAsString implements AttributeConverter&lt;BigInteger, String&gt; {
     @Override
     public String convertToDatabaseColumn(BigInteger attribute) {
@@ -1215,7 +1273,7 @@ public class BigIntegerAsString implements AttributeConverter&lt;BigInteger, Str
 <div class="paragraph">
 <p>You&#8217;ll need to use one or both of these annotations:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1287,7 +1345,7 @@ that Hibernate Reactive code is simpler and cleaner with Mutiny.
 <p>These are the most important operations on reactive streams that you&#8217;ll need
 all the time when working with Hibernate Reactive:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1355,7 +1413,7 @@ for example, by calling:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">EntityManagerFactory emf = Persistence.createEntityManagerFactory("example");</code></pre>
+<pre class="prettyprint highlight"><code data-lang="JAVA">EntityManagerFactory emf = Persistence.createEntityManagerFactory("example");</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1365,7 +1423,7 @@ for example, by calling:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">Stage.SessionFactory sessionFactory = emf.unwrap(Stage.SessionFactory.class);</code></pre>
+<pre class="prettyprint highlight"><code data-lang="JAVA">Stage.SessionFactory sessionFactory = emf.unwrap(Stage.SessionFactory.class);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1374,7 +1432,7 @@ for example, by calling:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">Mutiny.SessionFactory sessionFactory = emf.unwrap(Mutiny.SessionFactory.class);</code></pre>
+<pre class="prettyprint highlight"><code data-lang="JAVA">Mutiny.SessionFactory sessionFactory = emf.unwrap(Mutiny.SessionFactory.class);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1428,7 +1486,7 @@ concurrent reactive streams!
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">sessionFactory.withSession(
+<pre class="prettyprint highlight"><code data-lang="JAVA">sessionFactory.withSession(
         session -&gt; session.find(Book.class, id)
                 .invoke(
                     book -&gt; ... //do something with the book
@@ -1449,7 +1507,7 @@ one Vert.x context. (See <a href="#_sessions_and_vert_x_contexts">Sessions and V
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">Uni&lt;Session&gt; sessionUni = sessionFactory.openSession();
+<pre class="prettyprint highlight"><code data-lang="JAVA">Uni&lt;Session&gt; sessionUni = sessionFactory.openSession();
 sessionUni.chain(
         session -&gt; session.find(Book.class, id)
                 .invoke(
@@ -1467,7 +1525,7 @@ sessionUni.chain(
 <code>EntityManager</code>. You might already be familiar with the following session
 operations defined by JPA:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1557,7 +1615,7 @@ of these methods returns its result in a non-blocking fashion via a Java
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">session.find(Book.class, book.id)
+<pre class="prettyprint highlight"><code data-lang="JAVA">session.find(Book.class, book.id)
        .invoke( book -&gt; System.out.println(book.title + " is a great book!") )</code></pre>
 </div>
 </div>
@@ -1567,7 +1625,7 @@ of these methods returns its result in a non-blocking fashion via a Java
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">session.find(Book.class, id)
+<pre class="prettyprint highlight"><code data-lang="JAVA">session.find(Book.class, id)
        .call( book -&gt; session.remove(book) )
        .call( () -&gt; session.flush() )</code></pre>
 </div>
@@ -1596,7 +1654,7 @@ chain its return value to the tip of the stream.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">session.find(Book.class, id)
+<pre class="prettyprint highlight"><code data-lang="JAVA">session.find(Book.class, id)
        .call( book -&gt; session.remove(book) )
        .invoke( () -&gt; session.flush() )   //OOPS, WRONG!!</code></pre>
 </div>
@@ -1622,7 +1680,7 @@ that never gets called:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">session.find(Book.class, id)
+<pre class="prettyprint highlight"><code data-lang="JAVA">session.find(Book.class, id)
        .call( book -&gt; {
            session.remove(book);   //OOPS, WRONG!!
            return session.flush();
@@ -1641,7 +1699,7 @@ that you&#8217;re going to make this mistake, in some form, <em>at least</em> on
 <p>Naturally, the <code>Session</code> interface is a factory for <code>Query</code> instances which
 allow you to set query parameters and execute queries and DML statements:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1678,7 +1736,7 @@ queries to be executed asynchronously, always returning their results via a
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">session.createQuery("select title from Book order by title desc")
+<pre class="prettyprint highlight"><code data-lang="JAVA">session.createQuery("select title from Book order by title desc")
        .getResultList()
        .invoke( list -&gt; list.forEach(System.out::println) )</code></pre>
 </div>
@@ -1686,7 +1744,7 @@ queries to be executed asynchronously, always returning their results via a
 <div class="paragraph">
 <p>The <code>Query</code> interface defines the following important operations:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1748,7 +1806,7 @@ arguments to temporally-typed query parameters.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">CriteriaQuery&lt;Book&gt; query = factory.getCriteriaBuilder().createQuery(Book.class);
+<pre class="prettyprint highlight"><code data-lang="JAVA">CriteriaQuery&lt;Book&gt; query = factory.getCriteriaBuilder().createQuery(Book.class);
 Root&lt;Author&gt; a = query.from(Author.class);
 Join&lt;Author,Book&gt; b = a.join(Author_.books);
 query.where( a.get(Author_.name).in("Neal Stephenson", "William Gibson") );
@@ -1773,7 +1831,7 @@ method of <code>Stage</code> and <code>Mutiny</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">session.find(Author.class, author.id)
+<pre class="prettyprint highlight"><code data-lang="JAVA">session.find(Author.class, author.id)
        .chain( author -&gt; Mutiny.fetch(author.books) )
        .invoke( books -&gt; ... )</code></pre>
 </div>
@@ -1802,7 +1860,7 @@ example:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">Mutiny.fetch( session.getReference(detachedAuthor) )
+<pre class="prettyprint highlight"><code data-lang="JAVA">Mutiny.fetch( session.getReference(detachedAuthor) )
        .chain( author -&gt; Mutiny.fetch(author.books) )
        .invoke( books -&gt; ... )</code></pre>
 </div>
@@ -1831,7 +1889,7 @@ bytecode enhancer&mdash;is also an explicit operation:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">session.find(Book.class, book.id)
+<pre class="prettyprint highlight"><code data-lang="JAVA">session.find(Book.class, book.id)
        .chain( book -&gt; session.fetch(book, Book_.isbn) )
        .invoke( isbn -&gt; ... )</code></pre>
 </div>
@@ -1861,7 +1919,7 @@ transaction.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">session.withTransaction( tx -&gt; session.persist(book) )</code></pre>
+<pre class="prettyprint highlight"><code data-lang="JAVA">session.withTransaction( tx -&gt; session.persist(book) )</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1893,7 +1951,7 @@ transaction in one call:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">sessionFactory.withTransaction( (session, tx) -&gt; session.persist(book) )</code></pre>
+<pre class="prettyprint highlight"><code data-lang="JAVA">sessionFactory.withTransaction( (session, tx) -&gt; session.persist(book) )</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1965,7 +2023,7 @@ to detect. Don&#8217;t say we didn&#8217;t warn you!
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">List&lt;CompletionStage&gt; list = ...
+<pre class="prettyprint highlight"><code data-lang="JAVA">List&lt;CompletionStage&gt; list = ...
 for (Entity entity : entities) {
     list.add(session.persist(entity));
 }
@@ -1988,7 +2046,7 @@ context.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">Context currentContext = Vertx.currentContext();
+<pre class="prettyprint highlight"><code data-lang="JAVA">Context currentContext = Vertx.currentContext();
 currentContext.runOnContext( event -&gt; {
     // Here you will be able to use the session
 });</code></pre>
@@ -2010,7 +2068,7 @@ provide your own <code>VertxInstance</code>. Let&#8217;s consider this example:<
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">public class MyVertx implements VertxInstance {
+<pre class="prettyprint highlight"><code data-lang="JAVA">public class MyVertx implements VertxInstance {
 
   private final Vertx vertx;
 
@@ -2032,7 +2090,7 @@ for example:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">Configuration configuration = new Configuration();
+<pre class="prettyprint highlight"><code data-lang="JAVA">Configuration configuration = new Configuration();
 StandardServiceRegistryBuilder builder = new ReactiveServiceRegistryBuilder()
         .addService( VertxInstance.class, new MyVertx() )
         .applySettings( configuration.getProperties() );
@@ -2045,7 +2103,7 @@ SessionFactory sessionFactory = configuration.buildSessionFactory( registry );</
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">public class MyServiceContributor implements ServiceContributor {
+<pre class="prettyprint highlight"><code data-lang="JAVA">public class MyServiceContributor implements ServiceContributor {
   @Override
   public void contribute(StandardServiceRegistryBuilder serviceRegistryBuilder) {
     serviceRegistryBuilder.addService( VertxInstance.class, new MyVertxProvider() );
@@ -2059,7 +2117,7 @@ SessionFactory sessionFactory = configuration.buildSessionFactory( registry );</
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">org.myproject.MyServiceContributor</code></pre>
+<pre class="prettyprint highlight"><code data-lang="JAVA">org.myproject.MyServiceContributor</code></pre>
 </div>
 </div>
 </div>
@@ -2125,7 +2183,7 @@ Vert.x database connection pool. When it comes time for performance tuning,
 you can further customize the pool and prepared statement cache via the
 following configuration properties:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -2167,7 +2225,7 @@ following configuration properties:</p>
 <p>Finally, for more advanced cases, you can write your own code to configure
 the Vert.x client by implementing <code>SqlClientPoolConfiguration</code>.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -2197,7 +2255,7 @@ deletes against the same table in a single transaction.</p>
 <div class="paragraph">
 <p>All you need to do is set a single property:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -2393,7 +2451,7 @@ and quite outside the scope of this document. But in case it helps, we&#8217;re
 testing Hibernate Reactive with the following configuration, which uses
 EHCache as the cache implementation, as above in <a href="#_optional_dependencies">Optional dependencies</a>:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -2475,7 +2533,7 @@ interacting with the database.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-JAVA" data-lang="JAVA">Stage.StatelessSession ss = getSessionFactory().openStatelessSession();</code></pre>
+<pre class="prettyprint highlight"><code data-lang="JAVA">Stage.StatelessSession ss = getSessionFactory().openStatelessSession();</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2497,7 +2555,7 @@ so all operations are executed immediately when they&#8217;re explicitly called.
 <p>For a stateless session, you&#8217;re always working with detached objects. Thus,
 the programming model is a bit different:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -2667,7 +2725,7 @@ accept an optional <code>LockMode</code>. You can also specify a <code>LockMode<
 lock mode can be used to request a pessimistic lock, or to customize the behavior
 of optimistic locking:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -2728,7 +2786,7 @@ of optimistic locking:</p>
 you define your own implementation of <code>ReactiveConnectionPool</code>, or extend the
 built-in implementation <code>DefaultSqlClientPool</code>.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -2756,7 +2814,7 @@ tenant identifier. The easiest way to set this up in Hibernate Reactive is to ex
 <p>For multitenancy, you&#8217;ll also need to set at least one of the following
 configuration properties defined by Hibernate ORM:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -2797,11 +2855,11 @@ documentation for details.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-01-14 10:42:30 UTC
+Version 1.1.3.Final<br>
+Last updated 2022-02-10 14:11:43 UTC
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
-<script>prettyPrint()</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.min.js"></script>
 </body>
 </html>
