@@ -4,6 +4,22 @@
 
 This page contains everything you need to know when upgrading from one Hibernate Validator version to another.
 
+== 8.0.x
+
+=== 8.0.0.Alpha1
+
+* Jakarta EE 10
+* The EL implementation to use is now `org.glassfish.expressly:expressly`:
++
+[source,xml]
+----
+<dependency>
+   <groupId>org.glassfish.expressly</groupId>
+   <artifactId>expressly</artifactId>
+   <version>5.0.0-M1</version>
+</dependency>
+----
+
 == 7.0.x
 
 === 7.0.0.CR1

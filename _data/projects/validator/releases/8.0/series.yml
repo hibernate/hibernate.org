@@ -1,0 +1,16 @@
+summary: Jakarta EE 10, @UUID constraint
+displayed: true
+artifacts:
+  - artifact_id: hibernate-validator
+    summary: Core implementation
+  - artifact_id: hibernate-validator-cdi
+    summary: CDI integration
+  - artifact_id: hibernate-validator-osgi
+    summary: OSGi integration
+  - artifact_id: hibernate-validator-annotation-processor
+    summary: Annotation processor
+integration_constraints:
+  java:
+    version: 11 or 17
+  jbv:
+    version: 3.0

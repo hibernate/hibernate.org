@@ -1,0 +1,13 @@
+:awestruct-layout: project-releases-series
+:awestruct-project: validator
+:awestruct-series_version: "8.0"
+
+=== Jakarta EE 10
+
+Hibernate Validator 8.0 is the reference implementation for Jakarta Bean Validation 3.0 in Jakarta EE 10.
+
+Upgrade to Hibernate Validator 8 is only recommended if you are moving to Jakarta EE 10.
+
+=== UUID constraint
+
+A new `@UUID` constraint was added to validate UUIDs.
