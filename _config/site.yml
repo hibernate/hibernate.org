@@ -355,9 +355,15 @@ projects:
       bv:
         name: Bean Validation
         url: https://beanvalidation.org/
+      ee:
+        name: Java EE
+        url: https://www.oracle.com/java/technologies/java-ee-glance.html
       jbv:
         name: Jakarta Bean Validation
         url: https://beanvalidation.org/
+      jee:
+        name: Jakarta EE
+        url: https://jakarta.ee
     menu:
       intern:
         - name: About
