@@ -77,6 +77,22 @@ div.logo img {
 	.jumbotron-button:not(:first-child) {
 		margin-top: 10px;
 	}
+
+	#project-news {
+		margin-top: -1em;
+		margin-bottom: -1em;
+		h4 {
+			color: #59666c;
+			line-height: 1em;
+		}
+		.icon.news-type {
+			width: 1.5em;
+			color: #59666c;
+		}
+		.item.news.more {
+			text-align: right;
+		}
+	}
 }
 
 /**
