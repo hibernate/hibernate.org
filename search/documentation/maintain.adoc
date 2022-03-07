@@ -73,7 +73,7 @@ and document them in the migration guide.
 ** **If it's a Final release**:
 *** Don't forget to add a line containing `stable: true` to the new YAML release file.
 ** Push to the production branch.
-* Blog about release on http://in.relation.to/[in.relation.to].
+* Blog about release on https://in.relation.to/[in.relation.to].
 Make sure to use the tags "Hibernate Search" and "Releases" for the blog entry.
 * Send an email to hibernate-announce and CC hibernate-dev.
 * Tweet about the release via @Hibernate.

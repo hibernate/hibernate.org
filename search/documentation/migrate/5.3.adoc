@@ -34,4 +34,4 @@ Most of the changes don't affect the API, with two very notable exceptions:
 2. The maximum number of facets returned by a query is now 100 by default.
 You can override this to a value of your own by calling `.maxFacetCount( <value> )` when building the faceting request.
 
-A full explanation and examples can be found on the http://in.relation.to/Bloggers/HibernateSearch530Beta1WithNativeLuceneFaceting[this blog post].
+A full explanation and examples can be found on the https://in.relation.to/Bloggers/HibernateSearch530Beta1WithNativeLuceneFaceting[this blog post].

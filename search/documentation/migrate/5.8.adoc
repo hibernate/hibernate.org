@@ -112,7 +112,7 @@ Please also note those new features that may help when writing new code, but don
  * `.must()` / `.should` in the `QueryBuilder` now accept (and ignore) `null` queries.
  * `QueryBuilder` now offers a new `queryString` method,
    allowing to execute queries written by end users in a controlled way.
-   See http://in.relation.to/2017/04/27/simple-query-string-what-about-it/[this blog post]
+   See https://in.relation.to/2017/04/27/simple-query-string-what-about-it/[this blog post]
    for more information.
  * `FullTextSession.unwrap( FullTextSession.class )` now works correctly
    (it used to throw an exception).
