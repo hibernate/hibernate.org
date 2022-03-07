@@ -13,7 +13,7 @@ title: Hibernate. Everything data.
           %h2
             %span Everything data.
         .right.floated.column.five.wide.middle.aligned.print.hidden
-          #carousel
+          #project-news{:style => 'display:none'}
 .page-title.home
   .ui.container
     %h1 More than an ORM, discover the Hibernate galaxy.
@@ -105,13 +105,13 @@ title: Hibernate. Everything data.
 
       // Work with the response
       success: function( data ) {
-        var carousel = $('#carousel');
-        for (var i = 0; i < data.length; i++) {
-          var entry = data[i];
+        var projectNews = $('#project-news');
+        var segment = $('<div class="ui raised segment" />');
+        segment.append($('<h4>').text('Latest news'));
+        var list = $('<div class="ui relaxed divided list" />');
 
-          var carouselElement = $('<div class="carousel-element" />');
-          var segment = $('<div class="ui raised segment" />');
-          carouselElement.append(segment);
+        for (var i = 0; i < Math.min(data.length, 3); i++) {
+          var entry = data[i];
 
           var ribbonText = 'Community';
           var ribbonIcon = 'users';
@@ -125,19 +125,19 @@ title: Hibernate. Everything data.
               ribbonIcon = 'users';
             }
             else if ( entry.tags.includes('Hibernate ORM') ) {
-              ribbonText = 'ORM';
+              ribbonText = 'Hibernate ORM';
               ribbonIcon = 'database';
             }
             else if ( entry.tags.includes('Hibernate Search') ) {
-              ribbonText = 'Search';
+              ribbonText = 'Hibernate Search';
               ribbonIcon = 'search';
             }
             else if ( entry.tags.includes('Hibernate OGM') ) {
-              ribbonText = 'OGM';
+              ribbonText = 'Hibernate OGM';
               ribbonIcon = 'database';
             }
             else if ( entry.tags.includes('Hibernate Validator') ) {
-              ribbonText = 'Validator';
+              ribbonText = 'Hibernate Validator';
               ribbonIcon = 'check';
             }
             else if ( entry.tags.includes('Hibernate Tools') ) {
@@ -145,36 +145,30 @@ title: Hibernate. Everything data.
               ribbonIcon = 'wrench';
             }
             else if ( entry.tags.includes('Hibernate Reactive') ) {
-              ribbonText = 'Reactive';
+              ribbonText = 'Hibernate Reactive';
               ribbonIcon = 'retweet';
             }
           }
 
-          var ribbon = $('<span class="ui brown right ribbon label" />');
-          var icon = $('<i class="icon ' + ribbonIcon + '" />');
+          var entryItem = $('<div class="item news" />');
+          var icon = $('<i class="large ' + ribbonIcon + ' middle aligned icon news-type" title="' + ribbonText + '" />');
+          entryItem.append(icon);
 
-          segment.append(ribbon);
-          ribbon.append(icon);
-          ribbon.append(ribbonText);
- 
-          var entryItem = $('<h4/>');
-          entryItem.append(
-            $('<a href="' + entry.url + '"/>').text(entry.title)
-          );
-          segment.append(entryItem);
+          var content = $('<div class="middle aligned content" />');
+          content.append($('<a class="header" href="' + entry.url + '" />').text(entry.title));
+          entryItem.append(content);
 
-          carousel.append(carouselElement);
+          list.append(entryItem);
         }
 
-        $('#carousel').slick({
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          autoplay: true,
-          autoplaySpeed: 4000,
-          focusOnSelect: true,
-          arrows: false,
-          dots: true
-        });
+        var moreButton = $('<a href="https://in.relation.to/" class="ui button right labeled icon a primary tiny" />');
+        moreButton.text('More news');
+        moreButton.append($('<i class="right arrow icon" />'));
+        list.append($('<div class="item news more" />').append(moreButton));
+
+        segment.append(list);
+        projectNews.append(segment);
+        projectNews.fadeIn();
       }
     });
   });
