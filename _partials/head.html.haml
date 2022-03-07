@@ -1,6 +1,10 @@
 - real_page = page["real_page"]
+- current_path = real_page.output_path.sub(/index\.html$/, "").sub(/\.html$/,"/")
 - description = real_page.description || (real_page.project ? site.projects[real_page.project].description : nil)
-- page_title = "#{real_page.title ? real_page.title : real_page.simple_name.capitalize} - #{real_page.project ? site.projects[real_page.project].name : site.title}"
+- if current_path == '/'
+  - page_title = "#{real_page.title ? real_page.title : real_page.simple_name.capitalize}"
+- else
+  - page_title = "#{real_page.title ? real_page.title : real_page.simple_name.capitalize} - #{real_page.project ? site.projects[real_page.project].name : site.title}"
 
 %title= page_title
 
