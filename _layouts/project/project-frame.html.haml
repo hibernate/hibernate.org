@@ -14,7 +14,11 @@ layout: base
       displayed_series.push('#{series.version}');
 
 = partial( page.project_banner_partial.nil? ? 'project/banner.html.haml' : page.project_banner_partial, { "real_page" => page } )
-= partial( page.project_hero_partial.nil? ? 'project/empty-hero-text.html.haml' : page.project_hero_partial, { "real_page" => page } )
+
+.heroes
+  = partial( page.project_hero_partial.nil? ? 'project/empty-hero-text.html.haml' : page.project_hero_partial, { "real_page" => page } )
+  - if project_description.deprecation_notice
+    = partial( 'project/deprecation-notice.html.haml', { "real_page" => page } )
 
 -# Project specific navigation menu
 .ui.container.page-content
