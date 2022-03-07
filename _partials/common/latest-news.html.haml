@@ -2,7 +2,7 @@
 - real_page = page["real_page"]
 - project_description = real_page.project.nil? ? nil : site.projects[real_page.project]
 - blog_suffix_url = (project_description.nil? or project_description.blog_tag_url.nil?) ? "" : project_description.blog_tag_url + "/"
-- blog_url = "http://in.relation.to/#{blog_suffix_url}"
+- blog_url = "https://in.relation.to/#{blog_suffix_url}"
 - blog_json_feed = (project_description.nil? or project_description.blog_tag_url.nil?) ? "global" : project_description.blog_tag_url
 
 .ui.segment.raised.news#latest-news{:style => 'display:none'}
