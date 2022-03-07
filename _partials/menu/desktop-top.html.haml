@@ -5,9 +5,10 @@
   %a.item{:href => "/orm/", :class=>"#{'active' if current_path.start_with?('/orm')}"} ORM
   %a.item{:href => "/search/", :class=>"#{'active' if current_path.start_with?('/search')}"} Search
   %a.item{:href => "/validator/", :class=>"#{'active' if current_path.start_with?('/validator')}"} Validator
-  %a.item{:href => "/ogm/", :class=>"#{'active' if current_path.start_with?('/ogm')}"} OGM
-  %a.item{:href => "/tools/", :class=>"#{'active' if current_path.start_with?('/tools')}"} Tools
+  - if current_path.start_with?('/ogm')
+    %a.item{:href => "/ogm/", :class=>"#{'active' if current_path.start_with?('/ogm')}"} OGM
   %a.item{:href => "/reactive/", :class=>"#{'active' if current_path.start_with?('/reactive')}"} Reactive
+  %a.item{:href => "/tools/", :class=>"#{'active' if current_path.start_with?('/tools')}"} Tools
   %a.item{:href => "/others/", :class=>"#{'active' if current_path.start_with?('/others')}"} Others
   .right.menu
     %a.item(href="#{site.in_relation_to.base_url}") Blog

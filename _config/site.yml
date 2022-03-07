@@ -414,6 +414,7 @@ projects:
   ogm:
     name: Hibernate OGM
     description: "The power and simplicity of JPA for NoSQL datastores. Including support for associations, sub-classes, queries and much more."
+    deprecation_notice: "Hibernate OGM is not maintained anymore."
     icon: 'icon-sitemap'
     sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-ogm/
     zip_file: hibernate-ogm-VERSION-dist.zip

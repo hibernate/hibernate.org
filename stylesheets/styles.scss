@@ -104,11 +104,22 @@ div.logo img {
 	border-bottom: 2px solid #DDD;
 	padding-bottom: 20px;
 	padding-top: 20px;
-	margin-bottom: 5px;
 
 	&.small {
 		padding-bottom: 15px;
 		padding-top: 15px;
+	}
+	&.warning {
+		background-color: #fffaf3;
+		h4 {
+			color: #573a08;
+		}
+	}
+	&.negative {
+		background-color: #fff6f6;
+		h4 {
+			color: #9f3a38;
+		}
 	}
 
 	h1 {
@@ -124,6 +135,10 @@ div.logo img {
 		line-height: 1.5em;
 		font-size: 1.2em;
 	}
+}
+
+.heroes .page-title:last-child {
+	margin-bottom: 5px;
 }
 
 /**
