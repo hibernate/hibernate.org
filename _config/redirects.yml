@@ -13,14 +13,6 @@ ForumMailinglists/HowToAskForHelp:         /community/
 about:                                     /
 hibernate.html:                            /
 
-## Illegal URLs frequently requested
-dtd/hibernate-configuration:              /dtd/
-dtd/hibernate-mapping:                    /dtd/
-# These cannot be redirected, since we use HTML/Javascript redirection,
-# which obviously cannot be inserted into a DTD file
-#dtd/hibernate-configuration-4.0.dtd
-#dtd/hibernate-configuration-5.0.dtd
-
 ## URLs I don't know how to map
 37.html:                                   /community/we-lost-that-content/
 #56.html: Using Clobs/Blobs with Oracle and Hibernate
