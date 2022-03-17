@@ -1,0 +1,33 @@
+---
+layout: title-nocol
+title: Index of /dtd
+---
+
+- @items = list_entries(File.dirname(__FILE__), '*.dtd')
+
+.ui.floating.info.icon.message
+  %i.icon.hand.paper
+  .content
+    %p
+      Please keep in mind that DTD versions do NOT match the Hibernate ORM version.
+    %p
+      Just use the highest DTD version that is lower than or equal to your Hibernate ORM version.
+
+%table{:style=>"width: 80%", :class=>"ui table celled striped"}
+  %thead
+    %tr
+      %th Name
+      %th Last modified
+      %th{:style=>'text-align:right'} Size
+  %tbody
+    - @items.each_with_index do |row, row_index|
+      %tr
+        - row.each_with_index do |column, column_index|
+          -if column_index == 0
+            %td
+              %a(title=column href="./#{column}") #{column}
+          -else
+            -if column_index < 2
+              %td= "#{column}"
+            -else
+              %td{:style=>'text-align:right'}= "#{column}"
