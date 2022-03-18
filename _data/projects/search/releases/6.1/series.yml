@@ -25,6 +25,8 @@ integration_constraints:
     version: 8, 11, 17 or 18
   orm:
     version: 5.6
+  orm6:
+    version: 6.0.0.CR1
   elasticsearch:
     version: 5.6 - 7.16
   opensearch:

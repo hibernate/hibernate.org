@@ -190,6 +190,9 @@ projects:
       orm:
         name: Hibernate ORM
         url: /orm/
+      orm6:
+        name: Hibernate ORM 6 (through *-orm6 artifacts)
+        url: /orm/releases/6.0/
       lucene:
         name: Apache Lucene
         url: https://lucene.apache.org/core/
