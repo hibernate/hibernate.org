@@ -126,12 +126,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li>io.vertx.core.AbstractVerticle</li>
 <li>
 <ul class="inheritance">
-<li>io.smallrye.mutiny.vertx.core.AbstractVerticle</li>
-<li>
-<ul class="inheritance">
 <li>org.hibernate.reactive.it.verticle.ProductVerticle</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -146,7 +141,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 <hr>
 <pre>public class <span class="typeNameLabel">ProductVerticle</span>
-extends io.smallrye.mutiny.vertx.core.AbstractVerticle</pre>
+extends io.vertx.core.AbstractVerticle</pre>
 </li>
 </ul>
 </div>
@@ -176,18 +171,11 @@ extends io.smallrye.mutiny.vertx.core.AbstractVerticle</pre>
 </tr>
 </table>
 <ul class="blockList">
-<li class="blockList"><a id="fields.inherited.from.class.io.smallrye.mutiny.vertx.core.AbstractVerticle">
-<!--   -->
-</a>
-<h3>Fields inherited from class&nbsp;io.smallrye.mutiny.vertx.core.AbstractVerticle</h3>
-<code>vertx</code></li>
-</ul>
-<ul class="blockList">
 <li class="blockList"><a id="fields.inherited.from.class.io.vertx.core.AbstractVerticle">
 <!--   -->
 </a>
 <h3>Fields inherited from class&nbsp;io.vertx.core.AbstractVerticle</h3>
-<code>context</code></li>
+<code>context, vertx</code></li>
 </ul>
 </li>
 </ul>
@@ -228,29 +216,22 @@ extends io.smallrye.mutiny.vertx.core.AbstractVerticle</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#asyncStart()">asyncStart</a></span>()</code></th>
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#start(io.vertx.core.Promise)">start</a></span>&#8203;(io.vertx.core.Promise&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;startPromise)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#asyncStop()">asyncStop</a></span>()</code></th>
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stop(io.vertx.core.Promise)">stop</a></span>&#8203;(io.vertx.core.Promise&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;stopPromise)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </table>
-<ul class="blockList">
-<li class="blockList"><a id="methods.inherited.from.class.io.smallrye.mutiny.vertx.core.AbstractVerticle">
-<!--   -->
-</a>
-<h3>Methods inherited from class&nbsp;io.smallrye.mutiny.vertx.core.AbstractVerticle</h3>
-<code>init, start, stop</code></li>
-</ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.io.vertx.core.AbstractVerticle">
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;io.vertx.core.AbstractVerticle</h3>
-<code>config, deploymentID, getVertx, processArgs, start, stop</code></li>
+<code>config, deploymentID, getVertx, init, processArgs, start, stop</code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
@@ -318,29 +299,33 @@ extends io.smallrye.mutiny.vertx.core.AbstractVerticle</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="asyncStart()">
+<a id="start(io.vertx.core.Promise)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>asyncStart</h4>
-<pre class="methodSignature">public&nbsp;io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;asyncStart()</pre>
+<h4>start</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;start&#8203;(io.vertx.core.Promise&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;startPromise)</pre>
 <dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code>start</code>&nbsp;in interface&nbsp;<code>io.vertx.core.Verticle</code></dd>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code>asyncStart</code>&nbsp;in class&nbsp;<code>io.smallrye.mutiny.vertx.core.AbstractVerticle</code></dd>
+<dd><code>start</code>&nbsp;in class&nbsp;<code>io.vertx.core.AbstractVerticle</code></dd>
 </dl>
 </li>
 </ul>
-<a id="asyncStop()">
+<a id="stop(io.vertx.core.Promise)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>asyncStop</h4>
-<pre class="methodSignature">public&nbsp;io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;asyncStop()</pre>
+<h4>stop</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;stop&#8203;(io.vertx.core.Promise&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;stopPromise)</pre>
 <dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code>stop</code>&nbsp;in interface&nbsp;<code>io.vertx.core.Verticle</code></dd>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code>asyncStop</code>&nbsp;in class&nbsp;<code>io.smallrye.mutiny.vertx.core.AbstractVerticle</code></dd>
+<dd><code>stop</code>&nbsp;in class&nbsp;<code>io.vertx.core.AbstractVerticle</code></dd>
 </dl>
 </li>
 </ul>
