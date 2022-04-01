@@ -1,6 +1,5 @@
 summary: JPA 2.1 support
 displayed: false
-reference_doc_path: manual/en-US/html_single/
 maven:
   group_id: org.hibernate
   main_artifact_id: hibernate-core
@@ -10,6 +9,8 @@ maven:
     jboss:
       artifact_id_pattern: hibernate-*
 links:
+  reference_doc:
+    html: https://docs.jboss.org/hibernate/orm/{series.version}/manual/en-US/html_single/
   dist:
     sourceforge:
       zip: https://sourceforge.net/projects/hibernate/files/hibernate-orm/{release.version}/hibernate-release-{release.version}.zip/download
