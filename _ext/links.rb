@@ -71,15 +71,17 @@ module Awestruct
           : lambda {|v| v}
       end
 
-      # Accepts a project description (YML) and a release (YML) and return the Sourceforge URL to the zip download
-      def sourceforge_zip_url(project, release)
-        # this if clause is not idiomatic to Ruby : TODO improve
-        if release.sourceforge_url.instance_of? String
-          sourceforge_url = release.sourceforge_url
-        else
-          sourceforge_url = project.sourceforge_url
+      def dist_sourceforge(project, series, release)
+        return DistRef.from(project, series, release, :sourceforge)
+      end
+
+      def self._pattern_substitute(pattern, project, series = nil, release = nil)
+        if pattern.nil?
+          return nil
         end
-        return "#{sourceforge_url}#{release.version}/#{project.zip_file}/download".gsub('VERSION', release.version)
+        return pattern.gsub('{series.version}', series&.version || '')
+            .gsub('{release.version}', release&.version || '')
+            .gsub('{series.version.dashes}', series&.version&.gsub('.', '-') || '')
       end
 
       class DocumentRef
@@ -113,20 +115,13 @@ module Awestruct
           html_pattern = link['html']
           pdf_pattern = link['pdf']
           @@logger.debug("#{log_prefix}Link patterns: #{html_pattern} / #{pdf_pattern}")
-          html_url = _pattern_substitute(html_pattern, project, series)
-          pdf_url = _pattern_substitute(pdf_pattern, project, series)
+          html_url = Links._pattern_substitute(html_pattern, project, series)
+          pdf_url = Links._pattern_substitute(pdf_pattern, project, series)
           @@logger.debug("#{log_prefix}Link URLs: #{html_url} / #{pdf_url}")
           if html_url.nil? and pdf_url.nil?
             return nil
           end
           return DocumentRef.new(html_url, pdf_url)
-        end
-        def self._pattern_substitute(pattern, project, series)
-          if pattern.nil?
-            return nil
-          end
-          return pattern.gsub('{series.version}', series.version)
-              .gsub('{series.version.dashes}', series.version.gsub('.', '-'))
         end
 
         attr_reader :html_url, :pdf_url
@@ -134,6 +129,41 @@ module Awestruct
         def initialize(html_url, pdf_url)
           @html_url = html_url
           @pdf_url = pdf_url
+        end
+      end
+
+      class DistRef
+        @@logger = Logger.new(STDERR)
+        @@logger.level = Logger::INFO
+
+        def self.from(project, series, release, link_key)
+          log_prefix = "#{project.name}/#{series.version}/#{release&.version}/#{link_key}: "
+          link = series&.links&.dist&.[](link_key)
+          link ||= project&.links&.dist&.[](link_key)
+          if link.nil?
+            @@logger.debug("#{log_prefix}Link is nil")
+            return nil
+          end
+          @@logger.debug("#{log_prefix}Link is #{link}")
+          displayed = link['displayed']
+          if not displayed.nil? and not displayed
+            @@logger.debug("#{log_prefix}Link is not displayed")
+            return nil
+          end
+          zip_pattern = link['zip']
+          @@logger.debug("#{log_prefix}Link patterns: #{zip_pattern}")
+          zip_url = Links._pattern_substitute(zip_pattern, project, series, release)
+          @@logger.debug("#{log_prefix}Link URLs: #{zip_url}")
+          if zip_url.nil?
+            return nil
+          end
+          return DistRef.new(zip_url)
+        end
+
+        attr_reader :zip_url
+
+        def initialize(zip_url)
+          @zip_url = zip_url
         end
       end
     end

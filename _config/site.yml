@@ -44,8 +44,6 @@ projects:
     icon: 'icon-table'
     description: |
       Idiomatic persistence for Java and relational databases.
-    sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-orm/
-    zip_file: hibernate-release-VERSION.zip
     links:
       reference_doc:
         html: https://docs.jboss.org/hibernate/orm/{series.version}/userguide/html_single/Hibernate_User_Guide.html
@@ -60,6 +58,9 @@ projects:
         html: /orm/documentation/getting-started
       migration_guide:
         html: https://github.com/hibernate/hibernate-orm/wiki/Migration-Guides
+      dist:
+        sourceforge:
+          zip: https://sourceforge.net/projects/hibernate/files/hibernate-orm/{release.version}/hibernate-release-{release.version}.zip/download
     maven:
       group_id: org.hibernate.orm
       repo:
@@ -147,8 +148,6 @@ projects:
     description: |
       Automatic indexing of Hibernate ORM entities into Apache Lucene or Elasticsearch.
       Advanced search API: full-text, geospatial, aggregations and more.
-    sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-search/
-    zip_file: hibernate-search-VERSION-dist.zip
     links:
       reference_doc:
         html: https://docs.jboss.org/hibernate/search/{series.version}/reference/en-US/html_single/
@@ -166,6 +165,9 @@ projects:
       migration_guide:
         html: https://docs.jboss.org/hibernate/search/{series.version}/migration/html_single/
         pdf: https://docs.jboss.org/hibernate/search/{series.version}/migration/pdf/hibernate_search_migration.pdf
+      dist:
+        sourceforge:
+          zip: https://sourceforge.net/projects/hibernate/files/hibernate-search/{release.version}/hibernate-search-{release.version}-dist.zip/download
     maven:
       group_id: org.hibernate.search
       main_artifact_id: hibernate-search-mapper-orm
@@ -316,8 +318,6 @@ projects:
     icon: 'icon-check'
     description: |
       Express validation rules in a standardized way using annotation-based constraints and benefit from transparent integration with a wide variety of frameworks.
-    sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-validator/
-    zip_file: hibernate-validator-VERSION-dist.zip
     links:
       reference_doc:
         html: https://docs.jboss.org/hibernate/validator/{series.version}/reference/en-US/html_single/
@@ -334,6 +334,9 @@ projects:
         pdf: https://docs.jboss.org/hibernate/validator/{series.version}/reference/en-US/pdf/hibernate_validator_reference.pdf#validator-gettingstarted
       migration_guide:
         html: /validator/documentation/migration-guide/#{series.version.dashes}-x
+      dist:
+        sourceforge:
+          zip: https://sourceforge.net/projects/hibernate/files/hibernate-validator/{release.version}/hibernate-validator-{release.version}-dist.zip/download
     maven:
       group_id: org.hibernate.validator
       main_artifact_id: hibernate-validator
@@ -419,8 +422,6 @@ projects:
     description: "The power and simplicity of JPA for NoSQL datastores. Including support for associations, sub-classes, queries and much more."
     deprecation_notice: "Hibernate OGM is not maintained anymore."
     icon: 'icon-sitemap'
-    sourceforge_url: https://sourceforge.net/projects/hibernate/files/hibernate-ogm/
-    zip_file: hibernate-ogm-VERSION-dist.zip
     links:
       reference_doc:
         html: https://docs.jboss.org/hibernate/ogm/{series.version}/reference/en-US/html_single/
@@ -437,6 +438,9 @@ projects:
         pdf: https://docs.jboss.org/hibernate/ogm/{series.version}/reference/en-US/pdf/hibernate_ogm_reference.pdf#ogm-gettingstarted
       migration_guide:
         html: https://developer.jboss.org/wiki/HibernateOGMMigrationNotes
+      dist:
+        sourceforge:
+          zip: https://sourceforge.net/projects/hibernate/files/hibernate-ogm/{release.version}/hibernate-ogm-{release.version}-dist.zip/download
     maven:
       group_id: org.hibernate.ogm
       main_artifact_id: hibernate-ogm-core
@@ -520,8 +524,6 @@ projects:
     description: |
       Add a reactive API to Hibernate ORM, supporting non-blocking database drivers and a reactive style of interaction with the database.
     icon: 'icon-retweet'
-    sourceforge_url: 
-    zip_file:
     links:
       reference_doc:
         html: /reactive/documentation/{series.version}/reference/html_single/
@@ -533,6 +535,7 @@ projects:
           html: /reactive/documentation/{series.version}/javadocs/
       getting_started_guide:
         html: /reactive/documentation/{series.version}/reference/html_single/#getting-started
+      dist:
     maven:
       group_id: org.hibernate.reactive
       main_artifact_id: hibernate-reactive-core

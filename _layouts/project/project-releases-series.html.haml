@@ -25,6 +25,7 @@ project_hero_partial: project/hero-series.html.haml
 
 - getting_started_guide = getting_started_guide(project_description, series)
 - migration_guide = migration_guide(project_description, series)
+- dist_sourceforge = dist_sourceforge(project_description, series, latest_release)
 
 #toc
   #toctitle
@@ -172,13 +173,13 @@ project_hero_partial: project/hero-series.html.haml
         To verify signed Maven artifacts, head to
         %a{:href => "/community/keys/"}
           this page.
-  - if project_description[:sourceforge_url]
+  - if dist_sourceforge
     .five.wide.column.divided
       %h3 Zip archive
       %p
         Direct download is available from SourceForge:
       %p
-        %a.ui.right.labeled.button.primary.icon{:href => "#{sourceforge_zip_url(project_description, latest_release)}", :title => "Download"}
+        %a.ui.right.labeled.button.primary.icon{:href => dist_sourceforge.zip_url, :title => "Download"}
           %i.icon.cloud.download
           Download Zip archive
 
@@ -263,6 +264,7 @@ project_hero_partial: project/hero-series.html.haml
       - maven_repo = release_maven[:repo]
       - maven_repo ||= series_maven[:repo]
       - maven_repo ||= project_maven[:repo]
+      - dist_sourceforge = dist_sourceforge(project_description, series, release)
       - version = release.version
       - available = release[:available] == nil || release[:available]
       .ui.row
@@ -296,8 +298,8 @@ project_hero_partial: project/hero-series.html.haml
                   %i.icon.cloud.cubes
                   Maven artifacts
 
-              - if  project_description[:sourceforge_url]
-                %a.ui.small.right.labeled.button.icon{:href => sourceforge_zip_url(project_description, release)}
+              - if dist_sourceforge
+                %a.ui.small.right.labeled.button.icon{:href => dist_sourceforge.zip_url}
                   %i.icon.cloud.download
                   Download
 
