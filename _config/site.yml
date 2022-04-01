@@ -59,8 +59,7 @@ projects:
       migration_guide:
         html: https://github.com/hibernate/hibernate-orm/wiki/Migration-Guides
       dist:
-        sourceforge:
-          zip: https://sourceforge.net/projects/hibernate/files/hibernate-orm/{release.version}/hibernate-release-{release.version}.zip/download
+        # No longer distributing dists on sourceforge, starting with ORM 6.0.
     maven:
       group_id: org.hibernate.orm
       repo:

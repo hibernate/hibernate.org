@@ -7,6 +7,10 @@ maven:
       artifact_id_pattern: hibernate-*
     jboss:
       artifact_id_pattern: hibernate-*
+links:
+  dist:
+    sourceforge:
+      zip: https://sourceforge.net/projects/hibernate/files/hibernate-orm/{release.version}/hibernate-release-{release.version}.zip/download
 artifacts:
   - artifact_id: hibernate-core
     summary: Core implementation
