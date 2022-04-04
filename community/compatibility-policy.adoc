@@ -32,13 +32,13 @@ For contractually binding warranty, consider paid support:
 
 We conceptually divide the classes of the codebase into 3 broad categories:
 
-* The API is the set of contracts exposed to the application. For example, `Session#save`.
-It is an interface for your application to interact with Hibernate.
+* The Application Programming Interface (API) is the set of contracts exposed to the application. For example, `Session#save`.
+It is an interface for your application to interact with a Hibernate library.
 This is code that we fully expect to be directly linked to your application bytecode by the compiler.
-* An SPI is an "integration point" with Hibernate and the contracts needed to perform those integrations.
+* A Service Provider Interface (SPI) is an "integration point" with a Hibernate library and the contracts needed to perform those integrations.
 It is an interface for frameworks or third-party libraries (caching implementations, ...)
-to integrate with Hibernate.
-* The internals are classes and code meant only for Hibernate usage internally.
+to integrate with a Hibernate library.
+* The internals are classes and code meant only for the Hibernate library's usage internally.
 
 For the most part we try to denote these distinctions through the placement of classes into packages:
 
