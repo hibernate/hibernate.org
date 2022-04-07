@@ -6,16 +6,34 @@ Articles, talks and books about Hibernate Search, the most recent ones first.
 
 If you want to add something to the list, link:/community/[contact us]!
 
+== Official documentation
+
 If you're looking for the official getting started guide or reference documentation,
 see link:/search/documentation[here] instead.
 
-== Current version
+== Third-party documentation
+
+https://quarkus.io/guides/hibernate-search-orm-elasticsearch[Quarkus - Hibernate Search guide]::
+The official guide for the Hibernate Search extension in https://quarkus.io/[Quarkus].
+
+== Blog posts
 
 https://dev.to/mozenn/build-a-spring-boot-rest-api-with-full-text-search-using-hibernate-search-4a67[Build a Spring Boot REST API with Full-Text Search using Hibernate Search]::
 A tutorial on how to quickly create a REST API based on https://spring.io/projects/spring-boot/[Spring Boot] and Hibernate Search 6,
 using the Apache Lucene backend.
 +
 Demo code: https://github.com/Mozenn/spring-boot-hibernate-search
+
+https://peter-mueller.gitlab.io/blog/post/2020/11/18/restful-search-with-spring-and-hibernate-search-6/[RESTful Search with Spring and Hibernate Search 6]::
+A tutorial on how to quickly create a REST API based on https://spring.io/[Spring] and Hibernate Search 6,
+using either the Apache Lucene backend or the Elasticsearch backend.
+
+https://in.relation.to/2019/11/12/hibernate-search-quarkus/[Hibernate Search in Quarkus]::
+A tutorial using Hibernate Search 6 and https://quarkus.io/[Quarkus].
++
+Demo code: https://github.com/hibernate/hibernate-demos/tree/main/hibernate-search/hsearch-quarkus[here].
+
+== Talks
 
 https://community.elastic.co/events/details/elastic-france-presents-elastic-paris-meetup-70-elasticsearch-et-hibernate-search-6/[[French\] Retour d'expérience : Elasticsearch x Hibernate Search 6]::
 A presentation of Hibernate Search 6 and its use in a https://quarkus.io/[Quarkus] application,
@@ -31,19 +49,9 @@ A discussion of Hibernate Search 6 in https://quarkus.io/[Quarkus], how to use i
 +
 Demo code: https://github.com/hibernate/hibernate-demos/tree/main/hibernate-search/hsearch-feature-examples[here].
 
-https://peter-mueller.gitlab.io/blog/post/2020/11/18/restful-search-with-spring-and-hibernate-search-6/[RESTful Search with Spring and Hibernate Search 6]::
-A tutorial on how to quickly create a REST API based on https://spring.io/[Spring] and Hibernate Search 6,
-using either the Apache Lucene backend or the Elasticsearch backend.
+== Resources for older versions
 
-https://quarkus.io/guides/hibernate-search-orm-elasticsearch[Quarkus - Hibernate Search guide]::
-The official guide for the Hibernate Search extension in https://quarkus.io/[Quarkus].
-
-https://in.relation.to/2019/11/12/hibernate-search-quarkus/[Hibernate Search in Quarkus]::
-A tutorial using Hibernate Search 6 and https://quarkus.io/[Quarkus].
-+
-Demo code: https://github.com/hibernate/hibernate-demos/tree/main/hibernate-search/hsearch-quarkus[here].
-
-== 6.0 Alphas/Betas (slightly different API, but still relevant)
+=== Hibernate Search 6.0 Alphas/Betas (slightly different API, but still relevant in 6.0+)
 
 https://www.javaadvent.com/2020/12/how-to-keep-elasticsearch-in-sync-with-relational-databases.html[How to Keep Elasticsearch in Sync with Relational Databases?]::
 A tutorial using Hibernate Search 6 and https://quarkus.io/[Quarkus].
@@ -55,7 +63,7 @@ A presentation of Hibernate Search 6 and how it provides integration of Elastics
 +
 Demo code: https://github.com/hibernate/hibernate-demos/tree/main/hibernate-search/hsearch-elasticsearch-wikipedia[here].
 
-== 5.x and below (completely different API)
+=== Hibernate Search 5.x and below (completely different API)
 
 https://reflectoring.io/hibernate-search/[Full-Text Search with Hibernate Search and Spring Boot]::
 A tutorial using Hibernate Search 5 and https://spring.io/projects/spring-boot[Spring Boot].
