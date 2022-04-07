@@ -24,6 +24,9 @@ using the Apache Lucene backend.
 +
 Demo code: https://github.com/Mozenn/spring-boot-hibernate-search
 
+https://www.heise.de/hintergrund/Hibernate-Search-Volltextsuche-in-Spring-Boot-Projekten-6028830.html[[German\] Hibernate Search: Volltextsuche in Spring-Boot-Projekten]::
+A presentation of Hibernate Search 6 and its use in a https://spring.io/projects/spring-boot[Spring Boot] application.
+
 https://peter-mueller.gitlab.io/blog/post/2020/11/18/restful-search-with-spring-and-hibernate-search-6/[RESTful Search with Spring and Hibernate Search 6]::
 A tutorial on how to quickly create a REST API based on https://spring.io/[Spring] and Hibernate Search 6,
 using either the Apache Lucene backend or the Elasticsearch backend.
@@ -40,9 +43,6 @@ A presentation of Hibernate Search 6 and its use in a https://quarkus.io/[Quarku
 focusing on Elasticsearch and https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#search-mapping-bridge[custom bridges].
 +
 Demo code: https://github.com/Sedona-Solutions/beer-manager-hibernate-search
-
-https://www.heise.de/hintergrund/Hibernate-Search-Volltextsuche-in-Spring-Boot-Projekten-6028830.html[[German\] Hibernate Search: Volltextsuche in Spring-Boot-Projekten]::
-A presentation of Hibernate Search 6 and its use in a https://spring.io/projects/spring-boot[Spring Boot] application.
 
 https://www.youtube.com/watch?v=hwxWx-ORVwM[Quarkus Insights #32: Hibernate Search]::
 A discussion of Hibernate Search 6 in https://quarkus.io/[Quarkus], how to use it and how it helps.
