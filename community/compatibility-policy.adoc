@@ -201,6 +201,20 @@ using the compatibility matrix of the relevant project:
 +++
 ====
 
+[[compatibility-third-party-orm-databases]]
+=== Hibernate ORM and relational databases
+
+==== RDBMS version
+
+Each release of Hibernate ORM supports multiple versions of multiple Relational DataBase Management Systems
+(RDBMS, the piece of software giving access to one or more databases).
+
+Supported versions of each RDBMS are stable across all releases within a **minor** version of Hibernate ORM.
+
+For example, upgrading from Hibernate ORM 6.0.0.Final to 6.0.1.Final
+should not require upgrading to a newer version of your RDBMS,
+but upgrading from 6.0.1.Final to 6.1.0.Final may require upgrading to a newer version of your RDBMS.
+
 [[compatibility-third-party-hsearch-lucene]]
 === Hibernate Search and Lucene
 
