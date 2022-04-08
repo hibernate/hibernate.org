@@ -266,8 +266,8 @@ Each release of Hibernate Search supports multiple versions of Elasticsearch/Ope
 Supported versions are stable across all releases within a *minor* version of Hibernate Search.
 
 For example, upgrading from Hibernate Search 6.0.0.Final to 6.0.1.Final
-*should not* require dropping indexes or reindexing,
-but upgrading from 6.0.1.Final to 6.1.0.Final *may* require dropping indexes and reindexing.
+*should not* require upgrading to a newer version of Elasticsearch/OpenSearch,
+but upgrading from 6.0.1.Final to 6.1.0.Final *may* require upgrading to a newer version of Elasticsearch/OpenSearch.
 
 ==== Remote mapping and data
 
