@@ -43,12 +43,8 @@ pipeline {
             steps {
                 configFileProvider([configFile(fileId: 'release.config.ssh', targetLocation: env.HOME + '/.ssh/config'),
                                     configFile(fileId: 'release.config.ssh.knownhosts', targetLocation: env.HOME + '/.ssh/known_hosts')]) {
-                    // Need an SSH agent to have the key available when pushing to GitHub.
-                    sshagent(['ed25519.Hibernate-CI.github.com']) {
-                        sh '_scripts/publish-to-production-github-pages.sh'
-                    }
                     sshagent(['jenkins.in.relation.to']) {
-                        sh '_scripts/publish-to-production-self-hosted.sh'
+                        sh '_scripts/publish-to-production.sh'
                     }
                 }
             }
