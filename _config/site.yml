@@ -168,6 +168,8 @@ projects:
         sourceforge:
           zip: https://sourceforge.net/projects/hibernate/files/hibernate-search/{release.version}/hibernate-search-{release.version}-dist.zip/download
     maven:
+      signing:
+        since: 2022-01-26
       group_id: org.hibernate.search
       main_artifact_id: hibernate-search-mapper-orm
       repo:
@@ -337,6 +339,8 @@ projects:
         sourceforge:
           zip: https://sourceforge.net/projects/hibernate/files/hibernate-validator/{release.version}/hibernate-validator-{release.version}-dist.zip/download
     maven:
+      signing:
+        since: 2022-02-08
       group_id: org.hibernate.validator
       main_artifact_id: hibernate-validator
       repo:
