@@ -120,7 +120,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
 <li>org.hibernate.reactive.engine.ReactiveActionQueue</li>
@@ -132,8 +132,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <hr>
 <pre>public class <span class="typeNameLabel">ReactiveActionQueue</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></pre>
-<div class="block">A reactive counterpart to <code>ActionQueue</code>, where DML
+extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></pre>
+<div class="block">A reactive counterpart to <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/ActionQueue.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink"><code>ActionQueue</code></a>, where DML
  operations are queued before execution during a flush.</div>
 </li>
 </ul>
@@ -221,14 +221,14 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addAction(org.hibernate.reactive.engine.impl.ReactiveEntityIdentityInsertAction)">addAction</a></span>&#8203;(org.hibernate.reactive.engine.impl.ReactiveEntityIdentityInsertAction&nbsp;action)</code></th>
 <td class="colLast">
 <div class="block">Adds an entity (IDENTITY) insert action</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addAction(org.hibernate.reactive.engine.impl.ReactiveEntityRegularInsertAction)">addAction</a></span>&#8203;(org.hibernate.reactive.engine.impl.ReactiveEntityRegularInsertAction&nbsp;action)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -247,7 +247,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </td>
 </tr>
 <tr id="i10" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#afterTransactionCompletion(boolean)">afterTransactionCompletion</a></span>&#8203;(boolean&nbsp;success)</code></th>
 <td class="colLast">
 <div class="block">Performs cleanup of any held cache softlocks.</div>
@@ -262,23 +262,23 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#areTablesToBeUpdated(java.util.Set)">areTablesToBeUpdated</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&nbsp;tables)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#areTablesToBeUpdated(java.util.Set)">areTablesToBeUpdated</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&nbsp;tables)</code></th>
 <td class="colLast">
 <div class="block">Check whether the given tables/query-spaces are to be executed against given the currently queued actions.</div>
 </td>
 </tr>
 <tr id="i13" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#beforeTransactionCompletion()">beforeTransactionCompletion</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Execute any registered <code>BeforeTransactionCompletionProcess</code></div>
+<div class="block">Execute any registered <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/action/spi/BeforeTransactionCompletionProcess.html?is-external=true" title="class or interface in org.hibernate.action.spi" class="externalLink"><code>BeforeTransactionCompletionProcess</code></a></div>
 </td>
 </tr>
 <tr id="i14" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#checkNoUnresolvedActionsAfterOperation()">checkNoUnresolvedActionsAfterOperation</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Throws <code>PropertyValueException</code> if there are any unresolved entity insert actions that depend
+<div class="block">Throws <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/PropertyValueException.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>PropertyValueException</code></a> if there are any unresolved entity insert actions that depend
  on non-nullable associations with a transient entity.</div>
 </td>
 </tr>
@@ -293,19 +293,19 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i17" class="rowColor">
-<td class="colFirst"><code>&lt;E extends <a href="ReactiveExecutable.html" title="interface in org.hibernate.reactive.engine">ReactiveExecutable</a>&gt;<br><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<td class="colFirst"><code>&lt;E extends <a href="ReactiveExecutable.html" title="interface in org.hibernate.reactive.engine">ReactiveExecutable</a>&gt;<br><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#execute(E)">execute</a></span>&#8203;(E&nbsp;executable)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i18" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#executeActions()">executeActions</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Perform all currently queued actions.</div>
 </td>
 </tr>
 <tr id="i19" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#executeInserts()">executeInserts</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Perform all currently queued entity-insertion actions.</div>
@@ -372,12 +372,12 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </tr>
 <tr id="i31" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#registerProcess(org.hibernate.action.spi.AfterTransactionCompletionProcess)">registerProcess</a></span>&#8203;(org.hibernate.action.spi.AfterTransactionCompletionProcess&nbsp;process)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#registerProcess(org.hibernate.action.spi.AfterTransactionCompletionProcess)">registerProcess</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/action/spi/AfterTransactionCompletionProcess.html?is-external=true" title="class or interface in org.hibernate.action.spi" class="externalLink">AfterTransactionCompletionProcess</a>&nbsp;process)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i32" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#registerProcess(org.hibernate.action.spi.BeforeTransactionCompletionProcess)">registerProcess</a></span>&#8203;(org.hibernate.action.spi.BeforeTransactionCompletionProcess&nbsp;process)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#registerProcess(org.hibernate.action.spi.BeforeTransactionCompletionProcess)">registerProcess</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/action/spi/BeforeTransactionCompletionProcess.html?is-external=true" title="class or interface in org.hibernate.action.spi" class="externalLink">BeforeTransactionCompletionProcess</a>&nbsp;process)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i33" class="rowColor">
@@ -401,7 +401,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i37" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a string representation of the object.</div>
@@ -409,8 +409,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </tr>
 <tr id="i38" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#unScheduleDeletion(org.hibernate.engine.spi.EntityEntry,java.lang.Object)">unScheduleDeletion</a></span>&#8203;(org.hibernate.engine.spi.EntityEntry&nbsp;entry,
-                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;rescuedEntity)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#unScheduleDeletion(org.hibernate.engine.spi.EntityEntry,java.lang.Object)">unScheduleDeletion</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/EntityEntry.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">EntityEntry</a>&nbsp;entry,
+                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;rescuedEntity)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </table>
@@ -418,8 +418,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
-<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
 </ul>
 </li>
 </ul>
@@ -476,7 +476,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>addAction</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;addAction&#8203;(org.hibernate.reactive.engine.impl.ReactiveEntityRegularInsertAction&nbsp;action)</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;addAction&#8203;(org.hibernate.reactive.engine.impl.ReactiveEntityRegularInsertAction&nbsp;action)</pre>
 </li>
 </ul>
 <a id="addAction(org.hibernate.reactive.engine.impl.ReactiveEntityIdentityInsertAction)">
@@ -485,7 +485,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>addAction</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;addAction&#8203;(org.hibernate.reactive.engine.impl.ReactiveEntityIdentityInsertAction&nbsp;action)</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;addAction&#8203;(org.hibernate.reactive.engine.impl.ReactiveEntityIdentityInsertAction&nbsp;action)</pre>
 <div class="block">Adds an entity (IDENTITY) insert action</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -627,15 +627,15 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>checkNoUnresolvedActionsAfterOperation</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;checkNoUnresolvedActionsAfterOperation()
-                                            throws org.hibernate.PropertyValueException</pre>
-<div class="block">Throws <code>PropertyValueException</code> if there are any unresolved entity insert actions that depend
+                                            throws <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/PropertyValueException.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">PropertyValueException</a></pre>
+<div class="block">Throws <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/PropertyValueException.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>PropertyValueException</code></a> if there are any unresolved entity insert actions that depend
  on non-nullable associations with a transient entity. This method should be called on completion of an operation
  (after all cascades are completed) that saves an entity.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>org.hibernate.PropertyValueException</code> - if there are any unresolved entity insert actions;
- <code>PropertyValueException.getEntityName()</code> and
- <code>PropertyValueException.getPropertyName()</code> will return the entity name and property value for
+<dd><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/PropertyValueException.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">PropertyValueException</a></code> - if there are any unresolved entity insert actions;
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/PropertyValueException.html?is-external=true#getEntityName()" title="class or interface in org.hibernate" class="externalLink"><code>PropertyValueException.getEntityName()</code></a> and
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/PropertyValueException.html?is-external=true#getPropertyName()" title="class or interface in org.hibernate" class="externalLink"><code>PropertyValueException.getPropertyName()</code></a> will return the entity name and property value for
  the first unresolved entity insert action.</dd>
 </dl>
 </li>
@@ -646,7 +646,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>registerProcess</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;registerProcess&#8203;(org.hibernate.action.spi.AfterTransactionCompletionProcess&nbsp;process)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;registerProcess&#8203;(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/action/spi/AfterTransactionCompletionProcess.html?is-external=true" title="class or interface in org.hibernate.action.spi" class="externalLink">AfterTransactionCompletionProcess</a>&nbsp;process)</pre>
 </li>
 </ul>
 <a id="registerProcess(org.hibernate.action.spi.BeforeTransactionCompletionProcess)">
@@ -655,7 +655,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>registerProcess</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;registerProcess&#8203;(org.hibernate.action.spi.BeforeTransactionCompletionProcess&nbsp;process)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;registerProcess&#8203;(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/action/spi/BeforeTransactionCompletionProcess.html?is-external=true" title="class or interface in org.hibernate.action.spi" class="externalLink">BeforeTransactionCompletionProcess</a>&nbsp;process)</pre>
 </li>
 </ul>
 <a id="registerProcess(org.hibernate.reactive.engine.ReactiveAfterTransactionCompletionProcess)">
@@ -682,11 +682,11 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>executeInserts</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;executeInserts()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;executeInserts()</pre>
 <div class="block">Perform all currently queued entity-insertion actions.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>org.hibernate.HibernateException</code> - error executing queued insertion actions.</dd>
+<dd><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/HibernateException.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">HibernateException</a></code> - error executing queued insertion actions.</dd>
 </dl>
 </li>
 </ul>
@@ -696,11 +696,11 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>executeActions</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;executeActions()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;executeActions()</pre>
 <div class="block">Perform all currently queued actions.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>org.hibernate.HibernateException</code> - error executing queued actions.</dd>
+<dd><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/HibernateException.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">HibernateException</a></code> - error executing queued actions.</dd>
 </dl>
 </li>
 </ul>
@@ -711,11 +711,11 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>prepareActions</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;prepareActions()
-                    throws org.hibernate.HibernateException</pre>
+                    throws <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/HibernateException.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">HibernateException</a></pre>
 <div class="block">Prepares the internal action queues for execution.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>org.hibernate.HibernateException</code> - error preparing actions.</dd>
+<dd><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/HibernateException.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">HibernateException</a></code> - error preparing actions.</dd>
 </dl>
 </li>
 </ul>
@@ -725,7 +725,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>afterTransactionCompletion</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;afterTransactionCompletion&#8203;(boolean&nbsp;success)</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;afterTransactionCompletion&#8203;(boolean&nbsp;success)</pre>
 <div class="block">Performs cleanup of any held cache softlocks.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -739,8 +739,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>beforeTransactionCompletion</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;beforeTransactionCompletion()</pre>
-<div class="block">Execute any registered <code>BeforeTransactionCompletionProcess</code></div>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;beforeTransactionCompletion()</pre>
+<div class="block">Execute any registered <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/action/spi/BeforeTransactionCompletionProcess.html?is-external=true" title="class or interface in org.hibernate.action.spi" class="externalLink"><code>BeforeTransactionCompletionProcess</code></a></div>
 </li>
 </ul>
 <a id="areInsertionsOrDeletionsQueued()">
@@ -763,7 +763,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>areTablesToBeUpdated</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;areTablesToBeUpdated&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&nbsp;tables)</pre>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;areTablesToBeUpdated&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&nbsp;tables)</pre>
 <div class="block">Check whether the given tables/query-spaces are to be executed against given the currently queued actions.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -781,7 +781,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>execute</h4>
-<pre class="methodSignature">public&nbsp;&lt;E extends <a href="ReactiveExecutable.html" title="interface in org.hibernate.reactive.engine">ReactiveExecutable</a>&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;execute&#8203;(E&nbsp;executable)</pre>
+<pre class="methodSignature">public&nbsp;&lt;E extends <a href="ReactiveExecutable.html" title="interface in org.hibernate.reactive.engine">ReactiveExecutable</a>&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;execute&#8203;(E&nbsp;executable)</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>executable</code> - The action to execute</dd>
@@ -794,11 +794,11 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toString()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toString()</pre>
 <div class="block">Returns a string representation of the object.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" class="externalLink">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" class="externalLink">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>a string representation of the object.</dd>
 </dl>
@@ -918,8 +918,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>unScheduleDeletion</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;unScheduleDeletion&#8203;(org.hibernate.engine.spi.EntityEntry&nbsp;entry,
-                               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;rescuedEntity)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;unScheduleDeletion&#8203;(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/EntityEntry.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">EntityEntry</a>&nbsp;entry,
+                               <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;rescuedEntity)</pre>
 </li>
 </ul>
 </li>

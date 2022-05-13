@@ -124,11 +124,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Superinterfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></code></dd>
 </dl>
 <hr>
 <pre>public interface <span class="typeNameLabel">ReactiveLockEventListener</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></pre>
+extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></pre>
 <div class="block">Defines the contract for handling of lock events generated from a session.</div>
 </li>
 </ul>
@@ -151,8 +151,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reactiveOnLock(org.hibernate.event.spi.LockEvent)">reactiveOnLock</a></span>&#8203;(org.hibernate.event.spi.LockEvent&nbsp;event)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reactiveOnLock(org.hibernate.event.spi.LockEvent)">reactiveOnLock</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/event/spi/LockEvent.html?is-external=true" title="class or interface in org.hibernate.event.spi" class="externalLink">LockEvent</a>&nbsp;event)</code></th>
 <td class="colLast">
 <div class="block">Handle the given lock event.</div>
 </td>
@@ -180,14 +180,14 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.
 <ul class="blockListLast">
 <li class="blockList">
 <h4>reactiveOnLock</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;reactiveOnLock&#8203;(org.hibernate.event.spi.LockEvent&nbsp;event)
-                              throws org.hibernate.HibernateException</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;reactiveOnLock&#8203;(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/event/spi/LockEvent.html?is-external=true" title="class or interface in org.hibernate.event.spi" class="externalLink">LockEvent</a>&nbsp;event)
+                              throws <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/HibernateException.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">HibernateException</a></pre>
 <div class="block">Handle the given lock event.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>event</code> - The lock event to be handled.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>org.hibernate.HibernateException</code></dd>
+<dd><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/HibernateException.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">HibernateException</a></code></dd>
 </dl>
 </li>
 </ul>

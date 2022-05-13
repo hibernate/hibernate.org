@@ -124,16 +124,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Superinterfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></code>, <code>org.hibernate.service.Service</code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></code>, <code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/service/Service.html?is-external=true" title="class or interface in org.hibernate.service" class="externalLink">Service</a></code></dd>
 </dl>
 <dl>
 <dt>Functional Interface:</dt>
 <dd>This is a functional interface and can therefore be used as the assignment target for a lambda expression or method reference.</dd>
 </dl>
 <hr>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html?is-external=true" title="class or interface in java.lang" class="externalLink">@FunctionalInterface</a>
+<pre><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/FunctionalInterface.html?is-external=true" title="class or interface in java.lang" class="externalLink">@FunctionalInterface</a>
 public interface <span class="typeNameLabel">VertxInstance</span>
-extends org.hibernate.service.Service</pre>
+extends <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/service/Service.html?is-external=true" title="class or interface in org.hibernate.service" class="externalLink">Service</a></pre>
 <div class="block">Used by <code>DefaultSqlClientPool</code> and
  <code>VertxContext</code>
  to obtain an instance of <code>Vertx</code>. The default instance is
@@ -141,7 +141,7 @@ extends org.hibernate.service.Service</pre>
  <p>
  A program may integrate a custom <a href="VertxInstance.html" title="interface in org.hibernate.reactive.vertx"><code>VertxInstance</code></a>
  with Hibernate Reactive by contributing a new service using a
- <code>StandardServiceInitiator</code>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html?is-external=true" title="class or interface in org.hibernate.boot.registry" class="externalLink"><code>StandardServiceInitiator</code></a>
  or from code-based Hibernate configuration by calling
  <a href="../provider/ReactiveServiceRegistryBuilder.html#addService(java.lang.Class,org.hibernate.service.Service)"><code>ReactiveServiceRegistryBuilder.addService(java.lang.Class, org.hibernate.service.Service)</code></a>.
 

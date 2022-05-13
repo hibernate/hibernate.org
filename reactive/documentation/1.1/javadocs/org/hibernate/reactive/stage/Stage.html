@@ -119,7 +119,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public interface <span class="typeNameLabel">Stage</span></pre>
 <div class="block">An API for Hibernate Reactive where non-blocking operations are
- represented by a Java <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>CompletionStage</code></a>.
+ represented by a Java <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>CompletionStage</code></a>.
  <p>
  The <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a>, <a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Session</code></a>, and <a href="Stage.SessionFactory.html" title="interface in org.hibernate.reactive.stage"><code>Stage.SessionFactory</code></a>
  interfaces declared here are simply non-blocking counterparts to
@@ -148,7 +148,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <td class="colFirst"><code>static interface&nbsp;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="Stage.Closeable.html" title="interface in org.hibernate.reactive.stage">Stage.Closeable</a></span></code></th>
 <td class="colLast">
-<div class="block">An object whose <a href="Stage.Closeable.html#close()"><code>Stage.Closeable.close()</code></a> method returns a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>CompletionStage</code></a>.</div>
+<div class="block">An object whose <a href="Stage.Closeable.html#close()"><code>Stage.Closeable.close()</code></a> method returns a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>CompletionStage</code></a>.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -156,7 +156,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;<a href="Stage.Query.html" title="type parameter in Stage.Query">R</a>&gt;</span></code></th>
 <td class="colLast">
 <div class="block">A non-blocking counterpart to the Hibernate
- <code>Query</code> interface, allowing reactive
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/Query.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink"><code>Query</code></a> interface, allowing reactive
  execution of HQL and JPQL queries.</div>
 </td>
 </tr>
@@ -164,7 +164,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <td class="colFirst"><code>static interface&nbsp;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></span></code></th>
 <td class="colLast">
-<div class="block">A non-blocking counterpart to the Hibernate <code>Session</code>
+<div class="block">A non-blocking counterpart to the Hibernate <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Session.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>Session</code></a>
  interface, allowing a reactive style of interaction with the database.</div>
 </td>
 </tr>
@@ -180,7 +180,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></span></code></th>
 <td class="colLast">
 <div class="block">A non-blocking counterpart to the Hibernate
- <code>StatelessSession</code> interface, which provides a
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>StatelessSession</code></a> interface, which provides a
  command-oriented API for performing bulk operations against a database.</div>
 </td>
 </tr>
@@ -234,7 +234,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;</code></td>
+<td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#fetch(T)">fetch</a></span>&#8203;(T&nbsp;association)</code></th>
 <td class="colLast">
 <div class="block">Asynchronously fetch an association that's configured for lazy loading.</div>
@@ -284,7 +284,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockListLast">
 <li class="blockList">
 <h4>fetch</h4>
-<pre class="methodSignature">static&nbsp;&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;&nbsp;fetch&#8203;(T&nbsp;association)</pre>
+<pre class="methodSignature">static&nbsp;&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;&nbsp;fetch&#8203;(T&nbsp;association)</pre>
 <div class="block">Asynchronously fetch an association that's configured for lazy loading.
 
  <pre>
@@ -296,7 +296,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the fetched association, via a <code>CompletionStage</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>Hibernate.initialize(Object)</code></dd>
+<dd><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Hibernate.html?is-external=true#initialize(java.lang.Object)" title="class or interface in org.hibernate" class="externalLink"><code>Hibernate.initialize(Object)</code></a></dd>
 </dl>
 </li>
 </ul>
