@@ -131,7 +131,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Defines common reactive operations inherited by all kinds of loaders.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>Loader</code></dd>
+<dd><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/loader/Loader.html?is-external=true" title="class or interface in org.hibernate.loader" class="externalLink"><code>Loader</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -155,35 +155,35 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>default void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#discoverTypes(org.hibernate.engine.spi.QueryParameters,java.sql.ResultSet)">discoverTypes</a></span>&#8203;(org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters,
-             <a href="https://docs.oracle.com/javase/8/docs/api/java/sql/ResultSet.html?is-external=true" title="class or interface in java.sql" class="externalLink">ResultSet</a>&nbsp;resultSet)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#discoverTypes(org.hibernate.engine.spi.QueryParameters,java.sql.ResultSet)">discoverTypes</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/QueryParameters.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">QueryParameters</a>&nbsp;queryParameters,
+             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/ResultSet.html?is-external=true" title="class or interface in java.sql" class="externalLink">ResultSet</a>&nbsp;resultSet)</code></th>
 <td class="colLast">
 <div class="block">Used by <code>ReactiveCustomLoader</code>
  when there is no result set mapping.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>default <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doReactiveQueryAndInitializeNonLazyCollections(java.lang.String,org.hibernate.engine.spi.SharedSessionContractImplementor,org.hibernate.engine.spi.QueryParameters)">doReactiveQueryAndInitializeNonLazyCollections</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;sql,
-                                              org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session,
-                                              org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters)</code></th>
+<td class="colFirst"><code>default <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doReactiveQueryAndInitializeNonLazyCollections(java.lang.String,org.hibernate.engine.spi.SharedSessionContractImplementor,org.hibernate.engine.spi.QueryParameters)">doReactiveQueryAndInitializeNonLazyCollections</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;sql,
+                                              <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">SharedSessionContractImplementor</a>&nbsp;session,
+                                              <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/QueryParameters.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">QueryParameters</a>&nbsp;queryParameters)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>default <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doReactiveQueryAndInitializeNonLazyCollections(java.lang.String,org.hibernate.engine.spi.SharedSessionContractImplementor,org.hibernate.engine.spi.QueryParameters,boolean,org.hibernate.transform.ResultTransformer)">doReactiveQueryAndInitializeNonLazyCollections</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;sql,
-                                              org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session,
-                                              org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters,
+<td class="colFirst"><code>default <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doReactiveQueryAndInitializeNonLazyCollections(java.lang.String,org.hibernate.engine.spi.SharedSessionContractImplementor,org.hibernate.engine.spi.QueryParameters,boolean,org.hibernate.transform.ResultTransformer)">doReactiveQueryAndInitializeNonLazyCollections</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;sql,
+                                              <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">SharedSessionContractImplementor</a>&nbsp;session,
+                                              <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/QueryParameters.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">QueryParameters</a>&nbsp;queryParameters,
                                               boolean&nbsp;returnProxies,
-                                              org.hibernate.transform.ResultTransformer&nbsp;forcedResultTransformer)</code></th>
+                                              <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/transform/ResultTransformer.html?is-external=true" title="class or interface in org.hibernate.transform" class="externalLink">ResultTransformer</a>&nbsp;forcedResultTransformer)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code>default <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/sql/ResultSet.html?is-external=true" title="class or interface in java.sql" class="externalLink">ResultSet</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#executeReactiveQueryStatement(java.lang.String,org.hibernate.engine.spi.QueryParameters,java.util.List,org.hibernate.engine.spi.SharedSessionContractImplementor)">executeReactiveQueryStatement</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;sqlStatement,
-                             org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters,
-                             <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.hibernate.loader.spi.AfterLoadAction&gt;&nbsp;afterLoadActions,
-                             org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session)</code></th>
+<td class="colFirst"><code>default <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/ResultSet.html?is-external=true" title="class or interface in java.sql" class="externalLink">ResultSet</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#executeReactiveQueryStatement(java.lang.String,org.hibernate.engine.spi.QueryParameters,java.util.List,org.hibernate.engine.spi.SharedSessionContractImplementor)">executeReactiveQueryStatement</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;sqlStatement,
+                             <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/QueryParameters.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">QueryParameters</a>&nbsp;queryParameters,
+                             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/loader/spi/AfterLoadAction.html?is-external=true" title="class or interface in org.hibernate.loader.spi" class="externalLink">AfterLoadAction</a>&gt;&nbsp;afterLoadActions,
+                             <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">SharedSessionContractImplementor</a>&nbsp;session)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
@@ -193,13 +193,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>default boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isPostgresSQL(org.hibernate.engine.spi.SharedSessionContractImplementor)">isPostgresSQL</a></span>&#8203;(org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isPostgresSQL(org.hibernate.engine.spi.SharedSessionContractImplementor)">isPostgresSQL</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">SharedSessionContractImplementor</a>&nbsp;session)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code>default org.hibernate.dialect.pagination.LimitHandler</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#limitHandler(org.hibernate.engine.spi.RowSelection,org.hibernate.engine.spi.SharedSessionContractImplementor)">limitHandler</a></span>&#8203;(org.hibernate.engine.spi.RowSelection&nbsp;selection,
-            org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session)</code></th>
+<td class="colFirst"><code>default <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/dialect/pagination/LimitHandler.html?is-external=true" title="class or interface in org.hibernate.dialect.pagination" class="externalLink">LimitHandler</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#limitHandler(org.hibernate.engine.spi.RowSelection,org.hibernate.engine.spi.SharedSessionContractImplementor)">limitHandler</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/RowSelection.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">RowSelection</a>&nbsp;selection,
+            <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">SharedSessionContractImplementor</a>&nbsp;session)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
@@ -208,30 +208,30 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i8" class="altColor">
-<td class="colFirst"><code>default <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#preprocessSQL(java.lang.String,org.hibernate.engine.spi.QueryParameters,org.hibernate.engine.spi.SessionFactoryImplementor,java.util.List)">preprocessSQL</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;sql,
-             org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters,
-             org.hibernate.engine.spi.SessionFactoryImplementor&nbsp;factory,
-             <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.hibernate.loader.spi.AfterLoadAction&gt;&nbsp;afterLoadActions)</code></th>
+<td class="colFirst"><code>default <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#preprocessSQL(java.lang.String,org.hibernate.engine.spi.QueryParameters,org.hibernate.engine.spi.SessionFactoryImplementor,java.util.List)">preprocessSQL</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;sql,
+             <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/QueryParameters.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">QueryParameters</a>&nbsp;queryParameters,
+             <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">SessionFactoryImplementor</a>&nbsp;factory,
+             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/loader/spi/AfterLoadAction.html?is-external=true" title="class or interface in org.hibernate.loader.spi" class="externalLink">AfterLoadAction</a>&gt;&nbsp;afterLoadActions)</code></th>
 <td class="colLast">
 <div class="block">Used by query loaders to add stuff like locking and hints/comments</div>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
-<td class="colFirst"><code>default <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reactiveProcessResultSet(java.sql.ResultSet,org.hibernate.engine.spi.QueryParameters,org.hibernate.engine.spi.SharedSessionContractImplementor,boolean,org.hibernate.transform.ResultTransformer,java.util.List)">reactiveProcessResultSet</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/sql/ResultSet.html?is-external=true" title="class or interface in java.sql" class="externalLink">ResultSet</a>&nbsp;rs,
-                        org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters,
-                        org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session,
+<td class="colFirst"><code>default <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reactiveProcessResultSet(java.sql.ResultSet,org.hibernate.engine.spi.QueryParameters,org.hibernate.engine.spi.SharedSessionContractImplementor,boolean,org.hibernate.transform.ResultTransformer,java.util.List)">reactiveProcessResultSet</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/ResultSet.html?is-external=true" title="class or interface in java.sql" class="externalLink">ResultSet</a>&nbsp;rs,
+                        <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/QueryParameters.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">QueryParameters</a>&nbsp;queryParameters,
+                        <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">SharedSessionContractImplementor</a>&nbsp;session,
                         boolean&nbsp;returnProxies,
-                        org.hibernate.transform.ResultTransformer&nbsp;forcedResultTransformer,
-                        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.hibernate.loader.spi.AfterLoadAction&gt;&nbsp;afterLoadActions)</code></th>
+                        <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/transform/ResultTransformer.html?is-external=true" title="class or interface in org.hibernate.transform" class="externalLink">ResultTransformer</a>&nbsp;forcedResultTransformer,
+                        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/loader/spi/AfterLoadAction.html?is-external=true" title="class or interface in org.hibernate.loader.spi" class="externalLink">AfterLoadAction</a>&gt;&nbsp;afterLoadActions)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i10" class="altColor">
-<td class="colFirst"><code>default <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>[]</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toParameterArray(org.hibernate.engine.spi.QueryParameters,org.hibernate.engine.spi.SharedSessionContractImplementor,org.hibernate.dialect.pagination.LimitHandler)">toParameterArray</a></span>&#8203;(org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters,
-                org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session,
-                org.hibernate.dialect.pagination.LimitHandler&nbsp;limitHandler)</code></th>
+<td class="colFirst"><code>default <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>[]</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toParameterArray(org.hibernate.engine.spi.QueryParameters,org.hibernate.engine.spi.SharedSessionContractImplementor,org.hibernate.dialect.pagination.LimitHandler)">toParameterArray</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/QueryParameters.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">QueryParameters</a>&nbsp;queryParameters,
+                <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">SharedSessionContractImplementor</a>&nbsp;session,
+                <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/dialect/pagination/LimitHandler.html?is-external=true" title="class or interface in org.hibernate.dialect.pagination" class="externalLink">LimitHandler</a>&nbsp;limitHandler)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </table>
@@ -257,7 +257,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>isPostgresSQL</h4>
-<pre class="methodSignature">default&nbsp;boolean&nbsp;isPostgresSQL&#8203;(org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session)</pre>
+<pre class="methodSignature">default&nbsp;boolean&nbsp;isPostgresSQL&#8203;(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">SharedSessionContractImplementor</a>&nbsp;session)</pre>
 </li>
 </ul>
 <a id="doReactiveQueryAndInitializeNonLazyCollections(java.lang.String,org.hibernate.engine.spi.SharedSessionContractImplementor,org.hibernate.engine.spi.QueryParameters)">
@@ -266,9 +266,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>doReactiveQueryAndInitializeNonLazyCollections</h4>
-<pre class="methodSignature">default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&gt;&nbsp;doReactiveQueryAndInitializeNonLazyCollections&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;sql,
-                                                                                     org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session,
-                                                                                     org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters)</pre>
+<pre class="methodSignature">default&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&gt;&nbsp;doReactiveQueryAndInitializeNonLazyCollections&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;sql,
+                                                                                     <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">SharedSessionContractImplementor</a>&nbsp;session,
+                                                                                     <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/QueryParameters.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">QueryParameters</a>&nbsp;queryParameters)</pre>
 </li>
 </ul>
 <a id="doReactiveQueryAndInitializeNonLazyCollections(java.lang.String,org.hibernate.engine.spi.SharedSessionContractImplementor,org.hibernate.engine.spi.QueryParameters,boolean,org.hibernate.transform.ResultTransformer)">
@@ -277,11 +277,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>doReactiveQueryAndInitializeNonLazyCollections</h4>
-<pre class="methodSignature">default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&gt;&nbsp;doReactiveQueryAndInitializeNonLazyCollections&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;sql,
-                                                                                     org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session,
-                                                                                     org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters,
+<pre class="methodSignature">default&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&gt;&nbsp;doReactiveQueryAndInitializeNonLazyCollections&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;sql,
+                                                                                     <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">SharedSessionContractImplementor</a>&nbsp;session,
+                                                                                     <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/QueryParameters.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">QueryParameters</a>&nbsp;queryParameters,
                                                                                      boolean&nbsp;returnProxies,
-                                                                                     org.hibernate.transform.ResultTransformer&nbsp;forcedResultTransformer)</pre>
+                                                                                     <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/transform/ResultTransformer.html?is-external=true" title="class or interface in org.hibernate.transform" class="externalLink">ResultTransformer</a>&nbsp;forcedResultTransformer)</pre>
 </li>
 </ul>
 <a id="parameters()">
@@ -299,10 +299,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>executeReactiveQueryStatement</h4>
-<pre class="methodSignature">default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/sql/ResultSet.html?is-external=true" title="class or interface in java.sql" class="externalLink">ResultSet</a>&gt;&nbsp;executeReactiveQueryStatement&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;sqlStatement,
-                                                                 org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters,
-                                                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.hibernate.loader.spi.AfterLoadAction&gt;&nbsp;afterLoadActions,
-                                                                 org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session)</pre>
+<pre class="methodSignature">default&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/ResultSet.html?is-external=true" title="class or interface in java.sql" class="externalLink">ResultSet</a>&gt;&nbsp;executeReactiveQueryStatement&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;sqlStatement,
+                                                                 <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/QueryParameters.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">QueryParameters</a>&nbsp;queryParameters,
+                                                                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/loader/spi/AfterLoadAction.html?is-external=true" title="class or interface in org.hibernate.loader.spi" class="externalLink">AfterLoadAction</a>&gt;&nbsp;afterLoadActions,
+                                                                 <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">SharedSessionContractImplementor</a>&nbsp;session)</pre>
 </li>
 </ul>
 <a id="limitHandler(org.hibernate.engine.spi.RowSelection,org.hibernate.engine.spi.SharedSessionContractImplementor)">
@@ -311,8 +311,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>limitHandler</h4>
-<pre class="methodSignature">default&nbsp;org.hibernate.dialect.pagination.LimitHandler&nbsp;limitHandler&#8203;(org.hibernate.engine.spi.RowSelection&nbsp;selection,
-                                                                   org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session)</pre>
+<pre class="methodSignature">default&nbsp;<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/dialect/pagination/LimitHandler.html?is-external=true" title="class or interface in org.hibernate.dialect.pagination" class="externalLink">LimitHandler</a>&nbsp;limitHandler&#8203;(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/RowSelection.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">RowSelection</a>&nbsp;selection,
+                                  <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">SharedSessionContractImplementor</a>&nbsp;session)</pre>
 </li>
 </ul>
 <a id="reactiveProcessResultSet(java.sql.ResultSet,org.hibernate.engine.spi.QueryParameters,org.hibernate.engine.spi.SharedSessionContractImplementor,boolean,org.hibernate.transform.ResultTransformer,java.util.List)">
@@ -321,12 +321,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>reactiveProcessResultSet</h4>
-<pre class="methodSignature">default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&gt;&nbsp;reactiveProcessResultSet&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/sql/ResultSet.html?is-external=true" title="class or interface in java.sql" class="externalLink">ResultSet</a>&nbsp;rs,
-                                                               org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters,
-                                                               org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session,
+<pre class="methodSignature">default&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&gt;&nbsp;reactiveProcessResultSet&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/ResultSet.html?is-external=true" title="class or interface in java.sql" class="externalLink">ResultSet</a>&nbsp;rs,
+                                                               <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/QueryParameters.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">QueryParameters</a>&nbsp;queryParameters,
+                                                               <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">SharedSessionContractImplementor</a>&nbsp;session,
                                                                boolean&nbsp;returnProxies,
-                                                               org.hibernate.transform.ResultTransformer&nbsp;forcedResultTransformer,
-                                                               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.hibernate.loader.spi.AfterLoadAction&gt;&nbsp;afterLoadActions)</pre>
+                                                               <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/transform/ResultTransformer.html?is-external=true" title="class or interface in org.hibernate.transform" class="externalLink">ResultTransformer</a>&nbsp;forcedResultTransformer,
+                                                               <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/loader/spi/AfterLoadAction.html?is-external=true" title="class or interface in org.hibernate.loader.spi" class="externalLink">AfterLoadAction</a>&gt;&nbsp;afterLoadActions)</pre>
 </li>
 </ul>
 <a id="getReactiveResultSetProcessor()">
@@ -344,14 +344,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>preprocessSQL</h4>
-<pre class="methodSignature">default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;preprocessSQL&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;sql,
-                             org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters,
-                             org.hibernate.engine.spi.SessionFactoryImplementor&nbsp;factory,
-                             <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.hibernate.loader.spi.AfterLoadAction&gt;&nbsp;afterLoadActions)</pre>
+<pre class="methodSignature">default&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;preprocessSQL&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;sql,
+                             <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/QueryParameters.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">QueryParameters</a>&nbsp;queryParameters,
+                             <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">SessionFactoryImplementor</a>&nbsp;factory,
+                             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/loader/spi/AfterLoadAction.html?is-external=true" title="class or interface in org.hibernate.loader.spi" class="externalLink">AfterLoadAction</a>&gt;&nbsp;afterLoadActions)</pre>
 <div class="block">Used by query loaders to add stuff like locking and hints/comments</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>Loader.preprocessSQL(String, QueryParameters, SessionFactoryImplementor, List)</code></dd>
+<dd><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/loader/Loader.html?is-external=true#preprocessSQL(java.lang.String,org.hibernate.engine.spi.QueryParameters,org.hibernate.engine.spi.SessionFactoryImplementor,java.util.List)" title="class or interface in org.hibernate.loader" class="externalLink"><code>Loader.preprocessSQL(String, QueryParameters, SessionFactoryImplementor, List)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -361,8 +361,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>discoverTypes</h4>
-<pre class="methodSignature">default&nbsp;void&nbsp;discoverTypes&#8203;(org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters,
-                           <a href="https://docs.oracle.com/javase/8/docs/api/java/sql/ResultSet.html?is-external=true" title="class or interface in java.sql" class="externalLink">ResultSet</a>&nbsp;resultSet)</pre>
+<pre class="methodSignature">default&nbsp;void&nbsp;discoverTypes&#8203;(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/QueryParameters.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">QueryParameters</a>&nbsp;queryParameters,
+                           <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/ResultSet.html?is-external=true" title="class or interface in java.sql" class="externalLink">ResultSet</a>&nbsp;resultSet)</pre>
 <div class="block">Used by <code>ReactiveCustomLoader</code>
  when there is no result set mapping.</div>
 </li>
@@ -373,9 +373,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toParameterArray</h4>
-<pre class="methodSignature">default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>[]&nbsp;toParameterArray&#8203;(org.hibernate.engine.spi.QueryParameters&nbsp;queryParameters,
-                                  org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session,
-                                  org.hibernate.dialect.pagination.LimitHandler&nbsp;limitHandler)</pre>
+<pre class="methodSignature">default&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>[]&nbsp;toParameterArray&#8203;(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/QueryParameters.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">QueryParameters</a>&nbsp;queryParameters,
+                                  <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">SharedSessionContractImplementor</a>&nbsp;session,
+                                  <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/dialect/pagination/LimitHandler.html?is-external=true" title="class or interface in org.hibernate.dialect.pagination" class="externalLink">LimitHandler</a>&nbsp;limitHandler)</pre>
 </li>
 </ul>
 </li>

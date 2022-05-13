@@ -124,12 +124,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Superinterfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></code>, <code>org.hibernate.service.Service</code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></code>, <code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/service/Service.html?is-external=true" title="class or interface in org.hibernate.service" class="externalLink">Service</a></code></dd>
 </dl>
 <hr>
 <pre>public interface <span class="typeNameLabel">ReactiveConnectionPool</span>
-extends org.hibernate.service.Service</pre>
-<div class="block">A Hibernate <code>Service</code> that provides access to pooled
+extends <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/service/Service.html?is-external=true" title="class or interface in org.hibernate.service" class="externalLink">Service</a></pre>
+<div class="block">A Hibernate <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/service/Service.html?is-external=true" title="class or interface in org.hibernate.service" class="externalLink"><code>Service</code></a> that provides access to pooled
  <a href="ReactiveConnection.html" title="interface in org.hibernate.reactive.pool"><code>reactive connections</code></a>.
  <p>
  A custom implementation of <a href="ReactiveConnectionPool.html" title="interface in org.hibernate.reactive.pool"><code>ReactiveConnectionPool</code></a>
@@ -138,7 +138,7 @@ extends org.hibernate.service.Service</pre>
  <p>
  Alternatively, a program may integrate a custom
  <code>ReactiveConnectionPool</code> by contributing a new service using
- a <code>StandardServiceInitiator</code>
+ a <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html?is-external=true" title="class or interface in org.hibernate.boot.registry" class="externalLink"><code>StandardServiceInitiator</code></a>
  or from code-based Hibernate configuration by calling
  <a href="../provider/ReactiveServiceRegistryBuilder.html#addService(java.lang.Class,org.hibernate.service.Service)"><code>ReactiveServiceRegistryBuilder.addService(java.lang.Class, org.hibernate.service.Service)</code></a>.
 
@@ -169,27 +169,27 @@ extends org.hibernate.service.Service</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCloseFuture()">getCloseFuture</a></span>()</code></th>
 <td class="colLast">
 <div class="block">The shutdown of the pool is actually asynchronous but the
- core service registry won't return the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>CompletionStage</code></a>.</div>
+ core service registry won't return the <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>CompletionStage</code></a>.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="ReactiveConnection.html" title="interface in org.hibernate.reactive.pool">ReactiveConnection</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="ReactiveConnection.html" title="interface in org.hibernate.reactive.pool">ReactiveConnection</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getConnection()">getConnection</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Obtain a reactive connection, returning the connection
- via a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>CompletionStage</code></a>.</div>
+ via a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>CompletionStage</code></a>.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="ReactiveConnection.html" title="interface in org.hibernate.reactive.pool">ReactiveConnection</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getConnection(java.lang.String)">getConnection</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tenantId)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="ReactiveConnection.html" title="interface in org.hibernate.reactive.pool">ReactiveConnection</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getConnection(java.lang.String)">getConnection</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tenantId)</code></th>
 <td class="colLast">
 <div class="block">Obtain a reactive connection for the given tenant id,
- returning the connection via a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>CompletionStage</code></a>.</div>
+ returning the connection via a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>CompletionStage</code></a>.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
@@ -201,7 +201,7 @@ extends org.hibernate.service.Service</pre>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="ReactiveConnection.html" title="interface in org.hibernate.reactive.pool">ReactiveConnection</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getProxyConnection(java.lang.String)">getProxyConnection</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tenantId)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getProxyConnection(java.lang.String)">getProxyConnection</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tenantId)</code></th>
 <td class="colLast">
 <div class="block">Obtain a lazily-initializing reactive connection for the
  given tenant id.</div>
@@ -230,9 +230,9 @@ extends org.hibernate.service.Service</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getConnection</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="ReactiveConnection.html" title="interface in org.hibernate.reactive.pool">ReactiveConnection</a>&gt;&nbsp;getConnection()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="ReactiveConnection.html" title="interface in org.hibernate.reactive.pool">ReactiveConnection</a>&gt;&nbsp;getConnection()</pre>
 <div class="block">Obtain a reactive connection, returning the connection
- via a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>CompletionStage</code></a>.</div>
+ via a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>CompletionStage</code></a>.</div>
 </li>
 </ul>
 <a id="getConnection(java.lang.String)">
@@ -241,9 +241,9 @@ extends org.hibernate.service.Service</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getConnection</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="ReactiveConnection.html" title="interface in org.hibernate.reactive.pool">ReactiveConnection</a>&gt;&nbsp;getConnection&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tenantId)</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="ReactiveConnection.html" title="interface in org.hibernate.reactive.pool">ReactiveConnection</a>&gt;&nbsp;getConnection&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tenantId)</pre>
 <div class="block">Obtain a reactive connection for the given tenant id,
- returning the connection via a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>CompletionStage</code></a>.</div>
+ returning the connection via a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>CompletionStage</code></a>.</div>
 </li>
 </ul>
 <a id="getProxyConnection()">
@@ -264,7 +264,7 @@ extends org.hibernate.service.Service</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getProxyConnection</h4>
-<pre class="methodSignature"><a href="ReactiveConnection.html" title="interface in org.hibernate.reactive.pool">ReactiveConnection</a>&nbsp;getProxyConnection&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tenantId)</pre>
+<pre class="methodSignature"><a href="ReactiveConnection.html" title="interface in org.hibernate.reactive.pool">ReactiveConnection</a>&nbsp;getProxyConnection&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tenantId)</pre>
 <div class="block">Obtain a lazily-initializing reactive connection for the
  given tenant id. The actual connection might be made when
  the returned instance if <a href="ReactiveConnection.html" title="interface in org.hibernate.reactive.pool"><code>ReactiveConnection</code></a> is
@@ -277,9 +277,9 @@ extends org.hibernate.service.Service</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getCloseFuture</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;getCloseFuture()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;getCloseFuture()</pre>
 <div class="block">The shutdown of the pool is actually asynchronous but the
- core service registry won't return the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>CompletionStage</code></a>.
+ core service registry won't return the <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>CompletionStage</code></a>.
  If you need to wait for the underlying pool to be closed,
  after closing the SessionFactory you can get the CompletionStage
  instance from this getter.</div>

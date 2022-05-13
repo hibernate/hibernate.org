@@ -127,16 +127,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>This is a functional interface and can therefore be used as the assignment target for a lambda expression or method reference.</dd>
 </dl>
 <hr>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html?is-external=true" title="class or interface in java.lang" class="externalLink">@FunctionalInterface</a>
+<pre><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/FunctionalInterface.html?is-external=true" title="class or interface in java.lang" class="externalLink">@FunctionalInterface</a>
 public interface <span class="typeNameLabel">ReactiveIdentifierGenerator&lt;Id&gt;</span></pre>
-<div class="block">A replacement for <code>IdentifierGenerator</code>,
+<div class="block">A replacement for <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/id/IdentifierGenerator.html?is-external=true" title="class or interface in org.hibernate.id" class="externalLink"><code>IdentifierGenerator</code></a>,
  which supports a non-blocking method for obtaining the generated
  identifier.
  <p>
  A custom generation strategy may be defined by implementing this
- interface, and, optionally, <code>Configurable</code>,
+ interface, and, optionally, <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/id/Configurable.html?is-external=true" title="class or interface in org.hibernate.id" class="externalLink"><code>Configurable</code></a>,
  and declaring the custom implementation class using
- <code>GenericGenerator</code>.</div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/annotations/GenericGenerator.html?is-external=true" title="class or interface in org.hibernate.annotations" class="externalLink"><code>GenericGenerator</code></a>.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><code>TableReactiveIdentifierGenerator</code>, 
@@ -163,11 +163,11 @@ public interface <span class="typeNameLabel">ReactiveIdentifierGenerator&lt;Id&g
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="ReactiveIdentifierGenerator.html" title="type parameter in ReactiveIdentifierGenerator">Id</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="ReactiveIdentifierGenerator.html" title="type parameter in ReactiveIdentifierGenerator">Id</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#generate(org.hibernate.reactive.session.ReactiveConnectionSupplier,java.lang.Object)">generate</a></span>&#8203;(<a href="../session/ReactiveConnectionSupplier.html" title="interface in org.hibernate.reactive.session">ReactiveConnectionSupplier</a>&nbsp;session,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</code></th>
+        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</code></th>
 <td class="colLast">
-<div class="block">Returns a generated identifier, via a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>CompletionStage</code></a>.</div>
+<div class="block">Returns a generated identifier, via a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>CompletionStage</code></a>.</div>
 </td>
 </tr>
 </table>
@@ -193,9 +193,9 @@ public interface <span class="typeNameLabel">ReactiveIdentifierGenerator&lt;Id&g
 <ul class="blockListLast">
 <li class="blockList">
 <h4>generate</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="ReactiveIdentifierGenerator.html" title="type parameter in ReactiveIdentifierGenerator">Id</a>&gt;&nbsp;generate&#8203;(<a href="../session/ReactiveConnectionSupplier.html" title="interface in org.hibernate.reactive.session">ReactiveConnectionSupplier</a>&nbsp;session,
-                             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</pre>
-<div class="block">Returns a generated identifier, via a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>CompletionStage</code></a>.</div>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="ReactiveIdentifierGenerator.html" title="type parameter in ReactiveIdentifierGenerator">Id</a>&gt;&nbsp;generate&#8203;(<a href="../session/ReactiveConnectionSupplier.html" title="interface in org.hibernate.reactive.session">ReactiveConnectionSupplier</a>&nbsp;session,
+                             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</pre>
+<div class="block">Returns a generated identifier, via a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>CompletionStage</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>session</code> - the reactive session</dd>

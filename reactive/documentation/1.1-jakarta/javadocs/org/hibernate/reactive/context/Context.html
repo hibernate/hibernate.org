@@ -124,11 +124,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Superinterfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Executor.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">Executor</a></code>, <code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></code>, <code>org.hibernate.service.Service</code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/Executor.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">Executor</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></code>, <code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/service/Service.html?is-external=true" title="class or interface in org.hibernate.service" class="externalLink">Service</a></code></dd>
 </dl>
 <hr>
 <pre>public interface <span class="typeNameLabel">Context</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Executor.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">Executor</a>, org.hibernate.service.Service</pre>
+extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/Executor.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">Executor</a>, <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/service/Service.html?is-external=true" title="class or interface in org.hibernate.service" class="externalLink">Service</a></pre>
 <div class="block">Abstracts away from the Vert.x <code>Context</code>
  object, enabling alternative strategies for associating state
  with the current reactive stream.</div>
@@ -181,7 +181,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#execute(java.lang.Runnable)">execute</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang" class="externalLink">Runnable</a>&nbsp;runnable)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#execute(java.lang.Runnable)">execute</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang" class="externalLink">Runnable</a>&nbsp;runnable)</code></th>
 <td class="colLast">
 <div class="block">Run the given command in a context.</div>
 </td>
@@ -266,7 +266,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/
 <ul class="blockListLast">
 <li class="blockList">
 <h4>execute</h4>
-<pre class="methodSignature">void&nbsp;execute&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang" class="externalLink">Runnable</a>&nbsp;runnable)</pre>
+<pre class="methodSignature">void&nbsp;execute&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang" class="externalLink">Runnable</a>&nbsp;runnable)</pre>
 <div class="block">Run the given command in a context.
 
  If there is a context already associated with the call, use
@@ -276,7 +276,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/
  context is created.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Executor.html?is-external=true#execute(java.lang.Runnable)" title="class or interface in java.util.concurrent" class="externalLink">execute</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Executor.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">Executor</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/Executor.html?is-external=true#execute(java.lang.Runnable)" title="class or interface in java.util.concurrent" class="externalLink">execute</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/Executor.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">Executor</a></code></dd>
 </dl>
 </li>
 </ul>

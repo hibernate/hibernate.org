@@ -134,7 +134,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public static interface <span class="typeNameLabel">Mutiny.StatelessSession</span>
 extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Closeable</a></pre>
 <div class="block">A non-blocking counterpart to the Hibernate
- <code>StatelessSession</code> interface, which provides a
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>StatelessSession</code></a> interface, which provides a
  command-oriented API for performing bulk operations against a database.
  <p>
  A stateless session does not implement a first-level cache nor interact
@@ -161,7 +161,7 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
  lack of a first-level cache.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>StatelessSession</code></dd>
+<dd><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>StatelessSession</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -184,7 +184,7 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#close()">close</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Close the reactive session and release the underlying database
@@ -193,37 +193,37 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;jakarta.persistence.EntityGraph&lt;T&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createEntityGraph(java.lang.Class)">createEntityGraph</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;rootType)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createEntityGraph(java.lang.Class)">createEntityGraph</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;rootType)</code></th>
 <td class="colLast">
 <div class="block">Create a new mutable <code>EntityGraph</code></div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;jakarta.persistence.EntityGraph&lt;T&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createEntityGraph(java.lang.Class,java.lang.String)">createEntityGraph</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;rootType,
-                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;graphName)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createEntityGraph(java.lang.Class,java.lang.String)">createEntityGraph</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;rootType,
+                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;graphName)</code></th>
 <td class="colLast">
 <div class="block">Create a new mutable copy of a named <code>EntityGraph</code></div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNamedQuery(java.lang.String)">createNamedQuery</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryName)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNamedQuery(java.lang.String)">createNamedQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryName)</code></th>
 <td class="colLast">
 <div class="block">Create an instance of <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the named query.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNamedQuery(java.lang.String,java.lang.Class)">createNamedQuery</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryName,
-                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNamedQuery(java.lang.String,java.lang.Class)">createNamedQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryName,
+                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</code></th>
 <td class="colLast">
 <div class="block">Create an instance of <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the named query.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNativeQuery(java.lang.String)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNativeQuery(java.lang.String)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString)</code></th>
 <td class="colLast">
 <div class="block">Create an instance of <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given SQL query string,
  or SQL update, insert, or delete statement.</div>
@@ -231,8 +231,8 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNativeQuery(java.lang.String,java.lang.Class)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
-                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNativeQuery(java.lang.String,java.lang.Class)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</code></th>
 <td class="colLast">
 <div class="block">Create an instance of <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given SQL query string,
  using the given <code>resultType</code> to interpret the results.</div>
@@ -240,7 +240,7 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNativeQuery(java.lang.String,org.hibernate.reactive.common.ResultSetMapping)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNativeQuery(java.lang.String,org.hibernate.reactive.common.ResultSetMapping)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
                  <a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping)</code></th>
 <td class="colLast">
 <div class="block">Create an instance of <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given SQL query string,
@@ -270,7 +270,7 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 </tr>
 <tr id="i11" class="rowColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createQuery(java.lang.String)">createQuery</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createQuery(java.lang.String)">createQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString)</code></th>
 <td class="colLast">
 <div class="block">Create an instance of <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given HQL/JPQL query
  string or HQL/JPQL update or delete statement.</div>
@@ -278,8 +278,8 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createQuery(java.lang.String,java.lang.Class)">createQuery</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
-           <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createQuery(java.lang.String,java.lang.Class)">createQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+           <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</code></th>
 <td class="colLast">
 <div class="block">Create an instance of <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given HQL/JPQL query
  string.</div>
@@ -294,23 +294,23 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 </td>
 </tr>
 <tr id="i14" class="altColor">
-<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#delete(java.lang.Object)">delete</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</code></th>
+<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#delete(java.lang.Object)">delete</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</code></th>
 <td class="colLast">
 <div class="block">Delete a row.</div>
 </td>
 </tr>
 <tr id="i15" class="rowColor">
-<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#deleteAll(int,java.lang.Object...)">deleteAll</a></span>&#8203;(int&nbsp;batchSize,
-         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</code></th>
+         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</code></th>
 <td class="colLast">
 <div class="block">Delete multiple rows.</div>
 </td>
 </tr>
 <tr id="i16" class="altColor">
-<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#deleteAll(java.lang.Object...)">deleteAll</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</code></th>
+<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#deleteAll(java.lang.Object...)">deleteAll</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</code></th>
 <td class="colLast">
 <div class="block">Delete multiple rows.</div>
 </td>
@@ -325,63 +325,63 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <tr id="i18" class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get(jakarta.persistence.EntityGraph,java.lang.Object)">get</a></span>&#8203;(jakarta.persistence.EntityGraph&lt;T&gt;&nbsp;entityGraph,
-   <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id)</code></th>
+   <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id)</code></th>
 <td class="colLast">
 <div class="block">Retrieve a row, using the given <code>EntityGraph</code> as a fetch plan.</div>
 </td>
 </tr>
 <tr id="i19" class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get(java.lang.Class,java.lang.Object)">get</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
-   <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get(java.lang.Class,java.lang.Object)">get</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
+   <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id)</code></th>
 <td class="colLast">
 <div class="block">Retrieve a row.</div>
 </td>
 </tr>
 <tr id="i20" class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get(java.lang.Class,java.lang.Object,org.hibernate.LockMode)">get</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
-   <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id,
-   org.hibernate.LockMode&nbsp;lockMode)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get(java.lang.Class,java.lang.Object,org.hibernate.LockMode)">get</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
+   <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id,
+   <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a>&nbsp;lockMode)</code></th>
 <td class="colLast">
 <div class="block">Retrieve a row, obtaining the specified lock mode.</div>
 </td>
 </tr>
 <tr id="i21" class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;jakarta.persistence.EntityGraph&lt;T&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getEntityGraph(java.lang.Class,java.lang.String)">getEntityGraph</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;rootType,
-              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;graphName)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getEntityGraph(java.lang.Class,java.lang.String)">getEntityGraph</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;rootType,
+              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;graphName)</code></th>
 <td class="colLast">
 <div class="block">Obtain a named <code>EntityGraph</code></div>
 </td>
 </tr>
 <tr id="i22" class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;T&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getResultSetMapping(java.lang.Class,java.lang.String)">getResultSetMapping</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;resultType,
-                   <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;mappingName)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getResultSetMapping(java.lang.Class,java.lang.String)">getResultSetMapping</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;resultType,
+                   <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;mappingName)</code></th>
 <td class="colLast">
 <div class="block">Obtain a native SQL result set mapping defined via the annotation
  <code>SqlResultSetMapping</code>.</div>
 </td>
 </tr>
 <tr id="i23" class="rowColor">
-<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#insert(java.lang.Object)">insert</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</code></th>
+<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#insert(java.lang.Object)">insert</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</code></th>
 <td class="colLast">
 <div class="block">Insert a row.</div>
 </td>
 </tr>
 <tr id="i24" class="altColor">
-<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#insertAll(int,java.lang.Object...)">insertAll</a></span>&#8203;(int&nbsp;batchSize,
-         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</code></th>
+         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</code></th>
 <td class="colLast">
 <div class="block">Insert multiple rows using the specified batch size.</div>
 </td>
 </tr>
 <tr id="i25" class="rowColor">
-<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#insertAll(java.lang.Object...)">insertAll</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</code></th>
+<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#insertAll(java.lang.Object...)">insertAll</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</code></th>
 <td class="colLast">
 <div class="block">Insert multiple rows.</div>
 </td>
@@ -392,61 +392,61 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i27" class="rowColor">
-<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#refresh(java.lang.Object)">refresh</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</code></th>
+<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#refresh(java.lang.Object)">refresh</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</code></th>
 <td class="colLast">
 <div class="block">Refresh the entity instance state from the database.</div>
 </td>
 </tr>
 <tr id="i28" class="altColor">
-<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#refresh(java.lang.Object,org.hibernate.LockMode)">refresh</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity,
-       org.hibernate.LockMode&nbsp;lockMode)</code></th>
+<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#refresh(java.lang.Object,org.hibernate.LockMode)">refresh</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity,
+       <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a>&nbsp;lockMode)</code></th>
 <td class="colLast">
 <div class="block">Refresh the entity instance state from the database.</div>
 </td>
 </tr>
 <tr id="i29" class="rowColor">
-<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#refreshAll(int,java.lang.Object...)">refreshAll</a></span>&#8203;(int&nbsp;batchSize,
-          <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</code></th>
+          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</code></th>
 <td class="colLast">
 <div class="block">Refresh the entity instance state from the database
  using the selected batch size.</div>
 </td>
 </tr>
 <tr id="i30" class="altColor">
-<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#refreshAll(java.lang.Object...)">refreshAll</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</code></th>
+<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#refreshAll(java.lang.Object...)">refreshAll</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</code></th>
 <td class="colLast">
 <div class="block">Refresh the entity instance state from the database.</div>
 </td>
 </tr>
 <tr id="i31" class="rowColor">
-<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#update(java.lang.Object)">update</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</code></th>
+<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#update(java.lang.Object)">update</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</code></th>
 <td class="colLast">
 <div class="block">Update a row.</div>
 </td>
 </tr>
 <tr id="i32" class="altColor">
-<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#updateAll(int,java.lang.Object...)">updateAll</a></span>&#8203;(int&nbsp;batchSize,
-         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</code></th>
+         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</code></th>
 <td class="colLast">
 <div class="block">Update multiple rows.</div>
 </td>
 </tr>
 <tr id="i33" class="rowColor">
-<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#updateAll(java.lang.Object...)">updateAll</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</code></th>
+<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#updateAll(java.lang.Object...)">updateAll</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</code></th>
 <td class="colLast">
 <div class="block">Update multiple rows.</div>
 </td>
 </tr>
 <tr id="i34" class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withTransaction(java.util.function.Function)">withTransaction</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function" class="externalLink">Function</a>&lt;<a href="Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a>,&#8203;io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withTransaction(java.util.function.Function)">withTransaction</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function" class="externalLink">Function</a>&lt;<a href="Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a>,&#8203;io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</code></th>
 <td class="colLast">
 <div class="block">Performs the given work within the scope of a database transaction,
  automatically flushing the session.</div>
@@ -475,8 +475,8 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
-<pre class="methodSignature">&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;&nbsp;get&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
-                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id)</pre>
+<pre class="methodSignature">&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;&nbsp;get&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
+                                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id)</pre>
 <div class="block">Retrieve a row.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -485,7 +485,7 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>a detached entity instance, via a <code>Uni</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>StatelessSession.get(Class, Serializable)</code></dd>
+<dd><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html?is-external=true#get(java.lang.Class,java.io.Serializable)" title="class or interface in org.hibernate" class="externalLink"><code>StatelessSession.get(Class, Serializable)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -495,9 +495,9 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
-<pre class="methodSignature">&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;&nbsp;get&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
-                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id,
-                                  org.hibernate.LockMode&nbsp;lockMode)</pre>
+<pre class="methodSignature">&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;&nbsp;get&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
+                                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id,
+                                  <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a>&nbsp;lockMode)</pre>
 <div class="block">Retrieve a row, obtaining the specified lock mode.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -507,7 +507,7 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>a detached entity instance, via a <code>Uni</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>StatelessSession.get(Class, Serializable, LockMode)</code></dd>
+<dd><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html?is-external=true#get(java.lang.Class,java.io.Serializable,org.hibernate.LockMode)" title="class or interface in org.hibernate" class="externalLink"><code>StatelessSession.get(Class, Serializable, LockMode)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -518,7 +518,7 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <li class="blockList">
 <h4>get</h4>
 <pre class="methodSignature">&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;&nbsp;get&#8203;(jakarta.persistence.EntityGraph&lt;T&gt;&nbsp;entityGraph,
-                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id)</pre>
+                                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id)</pre>
 <div class="block">Retrieve a row, using the given <code>EntityGraph</code> as a fetch plan.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -536,7 +536,7 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>createQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;&nbsp;createQuery&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString)</pre>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;&nbsp;createQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString)</pre>
 <div class="block">Create an instance of <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given HQL/JPQL query
  string or HQL/JPQL update or delete statement. In the case of an
  update or delete, the returned <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> must be executed using
@@ -557,8 +557,8 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>createQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;&nbsp;createQuery&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
-                                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</pre>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;&nbsp;createQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+                                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</pre>
 <div class="block">Create an instance of <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given HQL/JPQL query
  string.</div>
 <dl>
@@ -578,7 +578,7 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>createNamedQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;&nbsp;createNamedQuery&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryName)</pre>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;&nbsp;createNamedQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryName)</pre>
 <div class="block">Create an instance of <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the named query.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -596,8 +596,8 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>createNamedQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;&nbsp;createNamedQuery&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryName,
-                                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</pre>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;&nbsp;createNamedQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryName,
+                                     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</pre>
 <div class="block">Create an instance of <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the named query.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -616,7 +616,7 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>createNativeQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;&nbsp;createNativeQuery&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString)</pre>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;&nbsp;createNativeQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString)</pre>
 <div class="block">Create an instance of <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given SQL query string,
  or SQL update, insert, or delete statement. In the case of an update,
  insert, or delete, the returned <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> must be executed using
@@ -635,8 +635,8 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>createNativeQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;&nbsp;createNativeQuery&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
-                                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</pre>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;&nbsp;createNativeQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+                                      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</pre>
 <div class="block">Create an instance of <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given SQL query string,
  using the given <code>resultType</code> to interpret the results.</div>
 <dl>
@@ -656,7 +656,7 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>createNativeQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;&nbsp;createNativeQuery&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;&nbsp;createNativeQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
                                       <a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping)</pre>
 <div class="block">Create an instance of <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given SQL query string,
  using the given <a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common"><code>ResultSetMapping</code></a> to interpret the result set.</div>
@@ -731,13 +731,13 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>insert</h4>
-<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;insert&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</pre>
+<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;insert&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</pre>
 <div class="block">Insert a row.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>entity</code> - a new transient instance</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>StatelessSession.insert(Object)</code></dd>
+<dd><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html?is-external=true#insert(java.lang.Object)" title="class or interface in org.hibernate" class="externalLink"><code>StatelessSession.insert(Object)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -747,13 +747,13 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>insertAll</h4>
-<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;insertAll&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</pre>
+<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;insertAll&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</pre>
 <div class="block">Insert multiple rows.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>entities</code> - new transient instances</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>StatelessSession.insert(Object)</code></dd>
+<dd><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html?is-external=true#insert(java.lang.Object)" title="class or interface in org.hibernate" class="externalLink"><code>StatelessSession.insert(Object)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -763,15 +763,15 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>insertAll</h4>
-<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;insertAll&#8203;(int&nbsp;batchSize,
-                                       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</pre>
+<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;insertAll&#8203;(int&nbsp;batchSize,
+                                       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</pre>
 <div class="block">Insert multiple rows using the specified batch size.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>batchSize</code> - the batch size</dd>
 <dd><code>entities</code> - new transient instances</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>StatelessSession.insert(Object)</code></dd>
+<dd><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html?is-external=true#insert(java.lang.Object)" title="class or interface in org.hibernate" class="externalLink"><code>StatelessSession.insert(Object)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -781,13 +781,13 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>delete</h4>
-<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;delete&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</pre>
+<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;delete&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</pre>
 <div class="block">Delete a row.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>entity</code> - a detached entity instance</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>StatelessSession.delete(Object)</code></dd>
+<dd><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html?is-external=true#delete(java.lang.Object)" title="class or interface in org.hibernate" class="externalLink"><code>StatelessSession.delete(Object)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -797,13 +797,13 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>deleteAll</h4>
-<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;deleteAll&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</pre>
+<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;deleteAll&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</pre>
 <div class="block">Delete multiple rows.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>entities</code> - detached entity instances</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>StatelessSession.delete(Object)</code></dd>
+<dd><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html?is-external=true#delete(java.lang.Object)" title="class or interface in org.hibernate" class="externalLink"><code>StatelessSession.delete(Object)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -813,15 +813,15 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>deleteAll</h4>
-<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;deleteAll&#8203;(int&nbsp;batchSize,
-                                       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</pre>
+<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;deleteAll&#8203;(int&nbsp;batchSize,
+                                       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</pre>
 <div class="block">Delete multiple rows.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>batchSize</code> - the batch size</dd>
 <dd><code>entities</code> - detached entity instances</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>StatelessSession.delete(Object)</code></dd>
+<dd><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html?is-external=true#delete(java.lang.Object)" title="class or interface in org.hibernate" class="externalLink"><code>StatelessSession.delete(Object)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -831,13 +831,13 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>update</h4>
-<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;update&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</pre>
+<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;update&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</pre>
 <div class="block">Update a row.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>entity</code> - a detached entity instance</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>StatelessSession.update(Object)</code></dd>
+<dd><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html?is-external=true#update(java.lang.Object)" title="class or interface in org.hibernate" class="externalLink"><code>StatelessSession.update(Object)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -847,13 +847,13 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>updateAll</h4>
-<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;updateAll&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</pre>
+<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;updateAll&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</pre>
 <div class="block">Update multiple rows.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>entities</code> - detached entity instances</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>StatelessSession.update(Object)</code></dd>
+<dd><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html?is-external=true#update(java.lang.Object)" title="class or interface in org.hibernate" class="externalLink"><code>StatelessSession.update(Object)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -863,15 +863,15 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>updateAll</h4>
-<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;updateAll&#8203;(int&nbsp;batchSize,
-                                       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</pre>
+<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;updateAll&#8203;(int&nbsp;batchSize,
+                                       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</pre>
 <div class="block">Update multiple rows.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>batchSize</code> - the batch size</dd>
 <dd><code>entities</code> - detached entity instances</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>StatelessSession.update(Object)</code></dd>
+<dd><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html?is-external=true#update(java.lang.Object)" title="class or interface in org.hibernate" class="externalLink"><code>StatelessSession.update(Object)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -881,13 +881,13 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>refresh</h4>
-<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;refresh&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</pre>
+<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;refresh&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</pre>
 <div class="block">Refresh the entity instance state from the database.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>entity</code> - The entity to be refreshed.</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>StatelessSession.refresh(Object)</code></dd>
+<dd><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html?is-external=true#refresh(java.lang.Object)" title="class or interface in org.hibernate" class="externalLink"><code>StatelessSession.refresh(Object)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -897,13 +897,13 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>refreshAll</h4>
-<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;refreshAll&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</pre>
+<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;refreshAll&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</pre>
 <div class="block">Refresh the entity instance state from the database.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>entities</code> - The entities to be refreshed.</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>StatelessSession.refresh(Object)</code></dd>
+<dd><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html?is-external=true#refresh(java.lang.Object)" title="class or interface in org.hibernate" class="externalLink"><code>StatelessSession.refresh(Object)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -913,8 +913,8 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>refreshAll</h4>
-<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;refreshAll&#8203;(int&nbsp;batchSize,
-                                        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</pre>
+<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;refreshAll&#8203;(int&nbsp;batchSize,
+                                        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</pre>
 <div class="block">Refresh the entity instance state from the database
  using the selected batch size.</div>
 <dl>
@@ -922,7 +922,7 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <dd><code>batchSize</code> - the batch size</dd>
 <dd><code>entities</code> - The entities to be refreshed.</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>StatelessSession.refresh(Object)</code></dd>
+<dd><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html?is-external=true#refresh(java.lang.Object)" title="class or interface in org.hibernate" class="externalLink"><code>StatelessSession.refresh(Object)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -932,15 +932,15 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>refresh</h4>
-<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;refresh&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity,
-                                     org.hibernate.LockMode&nbsp;lockMode)</pre>
+<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;refresh&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity,
+                                     <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a>&nbsp;lockMode)</pre>
 <div class="block">Refresh the entity instance state from the database.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>entity</code> - The entity to be refreshed.</dd>
 <dd><code>lockMode</code> - The LockMode to be applied.</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>StatelessSession.refresh(Object, LockMode)</code></dd>
+<dd><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html?is-external=true#refresh(java.lang.Object,org.hibernate.LockMode)" title="class or interface in org.hibernate" class="externalLink"><code>StatelessSession.refresh(Object, LockMode)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -967,7 +967,7 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the fetched association, via a <code>Uni</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>Hibernate.initialize(Object)</code></dd>
+<dd><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Hibernate.html?is-external=true#initialize(java.lang.Object)" title="class or interface in org.hibernate" class="externalLink"><code>Hibernate.initialize(Object)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -977,8 +977,8 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>getResultSetMapping</h4>
-<pre class="methodSignature">&lt;T&gt;&nbsp;<a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;T&gt;&nbsp;getResultSetMapping&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;resultType,
-                                            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;mappingName)</pre>
+<pre class="methodSignature">&lt;T&gt;&nbsp;<a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;T&gt;&nbsp;getResultSetMapping&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;resultType,
+                                            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;mappingName)</pre>
 <div class="block">Obtain a native SQL result set mapping defined via the annotation
  <code>SqlResultSetMapping</code>.</div>
 </li>
@@ -989,8 +989,8 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>getEntityGraph</h4>
-<pre class="methodSignature">&lt;T&gt;&nbsp;jakarta.persistence.EntityGraph&lt;T&gt;&nbsp;getEntityGraph&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;rootType,
-                                                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;graphName)</pre>
+<pre class="methodSignature">&lt;T&gt;&nbsp;jakarta.persistence.EntityGraph&lt;T&gt;&nbsp;getEntityGraph&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;rootType,
+                                                      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;graphName)</pre>
 <div class="block">Obtain a named <code>EntityGraph</code></div>
 </li>
 </ul>
@@ -1000,7 +1000,7 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>createEntityGraph</h4>
-<pre class="methodSignature">&lt;T&gt;&nbsp;jakarta.persistence.EntityGraph&lt;T&gt;&nbsp;createEntityGraph&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;rootType)</pre>
+<pre class="methodSignature">&lt;T&gt;&nbsp;jakarta.persistence.EntityGraph&lt;T&gt;&nbsp;createEntityGraph&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;rootType)</pre>
 <div class="block">Create a new mutable <code>EntityGraph</code></div>
 </li>
 </ul>
@@ -1010,8 +1010,8 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>createEntityGraph</h4>
-<pre class="methodSignature">&lt;T&gt;&nbsp;jakarta.persistence.EntityGraph&lt;T&gt;&nbsp;createEntityGraph&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;rootType,
-                                                         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;graphName)</pre>
+<pre class="methodSignature">&lt;T&gt;&nbsp;jakarta.persistence.EntityGraph&lt;T&gt;&nbsp;createEntityGraph&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;rootType,
+                                                         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;graphName)</pre>
 <div class="block">Create a new mutable copy of a named <code>EntityGraph</code></div>
 </li>
 </ul>
@@ -1021,7 +1021,7 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>withTransaction</h4>
-<pre class="methodSignature">&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;&nbsp;withTransaction&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function" class="externalLink">Function</a>&lt;<a href="Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a>,&#8203;io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</pre>
+<pre class="methodSignature">&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;&nbsp;withTransaction&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function" class="externalLink">Function</a>&lt;<a href="Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a>,&#8203;io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</pre>
 <div class="block">Performs the given work within the scope of a database transaction,
  automatically flushing the session. The transaction will be rolled
  back if the work completes with an uncaught exception, or if
@@ -1081,7 +1081,7 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockListLast">
 <li class="blockList">
 <h4>close</h4>
-<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;close()</pre>
+<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;close()</pre>
 <div class="block">Close the reactive session and release the underlying database
  connection.</div>
 <dl>

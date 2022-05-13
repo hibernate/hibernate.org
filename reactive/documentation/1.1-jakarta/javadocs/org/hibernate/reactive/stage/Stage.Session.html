@@ -133,13 +133,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public static interface <span class="typeNameLabel">Stage.Session</span>
 extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactive.stage">Stage.Closeable</a></pre>
-<div class="block">A non-blocking counterpart to the Hibernate <code>Session</code>
+<div class="block">A non-blocking counterpart to the Hibernate <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Session.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>Session</code></a>
  interface, allowing a reactive style of interaction with the database.
  <p>
  The semantics of operations on this interface are identical to the
  semantics of the similarly-named operations of <code>Session</code>, except
  that the operations are performed asynchronously, returning a
- <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>CompletionStage</code></a> without blocking the calling thread.
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>CompletionStage</code></a> without blocking the calling thread.
  <p>
  Entities associated with an <code>Session</code> do not support transparent
  lazy association fetching. Instead, <a href="#fetch(T)"><code>fetch(Object)</code></a> should be used
@@ -154,7 +154,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
  </ul></div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>Session</code></dd>
+<dd><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Session.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>Session</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -185,44 +185,44 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#contains(java.lang.Object)">contains</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#contains(java.lang.Object)">contains</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</code></th>
 <td class="colLast">
 <div class="block">Determine if the given instance belongs to this persistence context.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;jakarta.persistence.EntityGraph&lt;T&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createEntityGraph(java.lang.Class)">createEntityGraph</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;rootType)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createEntityGraph(java.lang.Class)">createEntityGraph</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;rootType)</code></th>
 <td class="colLast">
 <div class="block">Create a new mutable <code>EntityGraph</code></div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;jakarta.persistence.EntityGraph&lt;T&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createEntityGraph(java.lang.Class,java.lang.String)">createEntityGraph</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;rootType,
-                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;graphName)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createEntityGraph(java.lang.Class,java.lang.String)">createEntityGraph</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;rootType,
+                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;graphName)</code></th>
 <td class="colLast">
 <div class="block">Create a new mutable copy of a named <code>EntityGraph</code></div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNamedQuery(java.lang.String)">createNamedQuery</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryName)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNamedQuery(java.lang.String)">createNamedQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryName)</code></th>
 <td class="colLast">
 <div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the named query.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNamedQuery(java.lang.String,java.lang.Class)">createNamedQuery</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryName,
-                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNamedQuery(java.lang.String,java.lang.Class)">createNamedQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryName,
+                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</code></th>
 <td class="colLast">
 <div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the named query.</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNativeQuery(java.lang.String)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNativeQuery(java.lang.String)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString)</code></th>
 <td class="colLast">
 <div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
  or SQL update, insert, or delete statement.</div>
@@ -230,8 +230,8 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNativeQuery(java.lang.String,java.lang.Class)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
-                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNativeQuery(java.lang.String,java.lang.Class)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</code></th>
 <td class="colLast">
 <div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
  using the given <code>resultType</code> to interpret the results.</div>
@@ -239,8 +239,8 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNativeQuery(java.lang.String,java.lang.Class,org.hibernate.reactive.common.AffectedEntities)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
-                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNativeQuery(java.lang.String,java.lang.Class,org.hibernate.reactive.common.AffectedEntities)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType,
                  <a href="../common/AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code></th>
 <td class="colLast">
 <div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
@@ -249,7 +249,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNativeQuery(java.lang.String,org.hibernate.reactive.common.AffectedEntities)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNativeQuery(java.lang.String,org.hibernate.reactive.common.AffectedEntities)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
                  <a href="../common/AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code></th>
 <td class="colLast">
 <div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
@@ -258,7 +258,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNativeQuery(java.lang.String,org.hibernate.reactive.common.ResultSetMapping)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNativeQuery(java.lang.String,org.hibernate.reactive.common.ResultSetMapping)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
                  <a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping)</code></th>
 <td class="colLast">
 <div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
@@ -267,7 +267,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </tr>
 <tr id="i11" class="rowColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNativeQuery(java.lang.String,org.hibernate.reactive.common.ResultSetMapping,org.hibernate.reactive.common.AffectedEntities)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNativeQuery(java.lang.String,org.hibernate.reactive.common.ResultSetMapping,org.hibernate.reactive.common.AffectedEntities)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
                  <a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping,
                  <a href="../common/AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code></th>
 <td class="colLast">
@@ -298,7 +298,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </tr>
 <tr id="i15" class="rowColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createQuery(java.lang.String)">createQuery</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createQuery(java.lang.String)">createQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString)</code></th>
 <td class="colLast">
 <div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given HQL/JPQL query
  string or HQL/JPQL update or delete statement.</div>
@@ -306,8 +306,8 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </tr>
 <tr id="i16" class="altColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createQuery(java.lang.String,java.lang.Class)">createQuery</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
-           <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createQuery(java.lang.String,java.lang.Class)">createQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+           <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</code></th>
 <td class="colLast">
 <div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given HQL/JPQL query
  string.</div>
@@ -323,14 +323,14 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </tr>
 <tr id="i18" class="altColor">
 <td class="colFirst"><code><a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#detach(java.lang.Object)">detach</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#detach(java.lang.Object)">detach</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</code></th>
 <td class="colLast">
 <div class="block">Remove this instance from the session cache.</div>
 </td>
 </tr>
 <tr id="i19" class="rowColor">
 <td class="colFirst"><code><a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#disableFetchProfile(java.lang.String)">disableFetchProfile</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#disableFetchProfile(java.lang.String)">disableFetchProfile</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
 <td class="colLast">
 <div class="block">Disable a particular fetch profile on this session, or do nothing if
  the requested fetch profile is not enabled.</div>
@@ -338,28 +338,28 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </tr>
 <tr id="i20" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#disableFilter(java.lang.String)">disableFilter</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;filterName)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#disableFilter(java.lang.String)">disableFilter</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;filterName)</code></th>
 <td class="colLast">
 <div class="block">Disable the named filter for this session.</div>
 </td>
 </tr>
 <tr id="i21" class="rowColor">
 <td class="colFirst"><code><a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#enableFetchProfile(java.lang.String)">enableFetchProfile</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#enableFetchProfile(java.lang.String)">enableFetchProfile</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
 <td class="colLast">
 <div class="block">Enable a particular fetch profile on this session, or do nothing if
  requested fetch profile is already enabled.</div>
 </td>
 </tr>
 <tr id="i22" class="altColor">
-<td class="colFirst"><code>org.hibernate.Filter</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#enableFilter(java.lang.String)">enableFilter</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;filterName)</code></th>
+<td class="colFirst"><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Filter.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">Filter</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#enableFilter(java.lang.String)">enableFilter</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;filterName)</code></th>
 <td class="colLast">
 <div class="block">Enable the named filter for this session.</div>
 </td>
 </tr>
 <tr id="i23" class="rowColor">
-<td class="colFirst"><code>&lt;E,&#8203;T&gt;<br><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;</code></td>
+<td class="colFirst"><code>&lt;E,&#8203;T&gt;<br><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#fetch(E,jakarta.persistence.metamodel.Attribute)">fetch</a></span>&#8203;(E&nbsp;entity,
      jakarta.persistence.metamodel.Attribute&lt;E,&#8203;T&gt;&nbsp;field)</code></th>
 <td class="colLast">
@@ -368,16 +368,16 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </td>
 </tr>
 <tr id="i24" class="altColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;</code></td>
+<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#fetch(T)">fetch</a></span>&#8203;(T&nbsp;association)</code></th>
 <td class="colLast">
 <div class="block">Asynchronously fetch an association that's configured for lazy loading.</div>
 </td>
 </tr>
 <tr id="i25" class="rowColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;</code></td>
+<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#find(jakarta.persistence.EntityGraph,java.lang.Object)">find</a></span>&#8203;(jakarta.persistence.EntityGraph&lt;T&gt;&nbsp;entityGraph,
-    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id)</code></th>
+    <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id)</code></th>
 <td class="colLast">
 <div class="block">Asynchronously return the persistent instance with the given
  identifier of an entity class, using the given <code>EntityGraph</code>
@@ -385,9 +385,9 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </td>
 </tr>
 <tr id="i26" class="altColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#find(java.lang.Class,java.lang.Object)">find</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
-    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id)</code></th>
+<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#find(java.lang.Class,java.lang.Object)">find</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
+    <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id)</code></th>
 <td class="colLast">
 <div class="block">Asynchronously return the persistent instance of the given entity
  class with the given identifier, or <code>null</code> if there is no such
@@ -395,9 +395,9 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </td>
 </tr>
 <tr id="i27" class="rowColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;T&gt;&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#find(java.lang.Class,java.lang.Object...)">find</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
-    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;ids)</code></th>
+<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;T&gt;&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#find(java.lang.Class,java.lang.Object...)">find</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
+    <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;ids)</code></th>
 <td class="colLast">
 <div class="block">Asynchronously return the persistent instances of the given entity
  class with the given identifiers, or null if there is no such
@@ -405,18 +405,18 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </td>
 </tr>
 <tr id="i28" class="altColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#find(java.lang.Class,java.lang.Object,org.hibernate.LockMode)">find</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
-    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id,
-    org.hibernate.LockMode&nbsp;lockMode)</code></th>
+<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#find(java.lang.Class,java.lang.Object,org.hibernate.LockMode)">find</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
+    <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id,
+    <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a>&nbsp;lockMode)</code></th>
 <td class="colLast">
 <div class="block">Asynchronously return the persistent instance of the given entity
- class with the given identifier, requesting the given <code>LockMode</code>.</div>
+ class with the given identifier, requesting the given <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>LockMode</code></a>.</div>
 </td>
 </tr>
 <tr id="i29" class="rowColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#find(java.lang.Class,org.hibernate.reactive.common.Identifier)">find</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
+<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#find(java.lang.Class,org.hibernate.reactive.common.Identifier)">find</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
     <a href="../common/Identifier.html" title="class in org.hibernate.reactive.common">Identifier</a>&lt;T&gt;&nbsp;naturalId)</code></th>
 <td class="colLast">
 <div class="block">Asynchronously return the persistent instance of the given entity
@@ -425,14 +425,14 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </td>
 </tr>
 <tr id="i30" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#flush()">flush</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Force this session to flush asynchronously.</div>
 </td>
 </tr>
 <tr id="i31" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getBatchSize()">getBatchSize</a></span>()</code></th>
 <td class="colLast">
 <div class="block">The session-level batch size, or <code>null</code> if it has not been
@@ -440,45 +440,45 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </td>
 </tr>
 <tr id="i32" class="altColor">
-<td class="colFirst"><code>org.hibernate.CacheMode</code></td>
+<td class="colFirst"><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/CacheMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">CacheMode</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCacheMode()">getCacheMode</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get the current cache mode.</div>
 </td>
 </tr>
 <tr id="i33" class="rowColor">
-<td class="colFirst"><code>org.hibernate.Filter</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getEnabledFilter(java.lang.String)">getEnabledFilter</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;filterName)</code></th>
+<td class="colFirst"><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Filter.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">Filter</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getEnabledFilter(java.lang.String)">getEnabledFilter</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;filterName)</code></th>
 <td class="colLast">
 <div class="block">Retrieve a currently enabled filter by name.</div>
 </td>
 </tr>
 <tr id="i34" class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;jakarta.persistence.EntityGraph&lt;T&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getEntityGraph(java.lang.Class,java.lang.String)">getEntityGraph</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;rootType,
-              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;graphName)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getEntityGraph(java.lang.Class,java.lang.String)">getEntityGraph</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;rootType,
+              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;graphName)</code></th>
 <td class="colLast">
 <div class="block">Obtain a named <code>EntityGraph</code></div>
 </td>
 </tr>
 <tr id="i35" class="rowColor">
-<td class="colFirst"><code>org.hibernate.FlushMode</code></td>
+<td class="colFirst"><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/FlushMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">FlushMode</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getFlushMode()">getFlushMode</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get the current flush mode for this session.</div>
 </td>
 </tr>
 <tr id="i36" class="altColor">
-<td class="colFirst"><code>org.hibernate.LockMode</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getLockMode(java.lang.Object)">getLockMode</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</code></th>
+<td class="colFirst"><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getLockMode(java.lang.Object)">getLockMode</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</code></th>
 <td class="colLast">
 <div class="block">Determine the current lock mode of the given entity.</div>
 </td>
 </tr>
 <tr id="i37" class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getReference(java.lang.Class,java.lang.Object)">getReference</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
-            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getReference(java.lang.Class,java.lang.Object)">getReference</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
+            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id)</code></th>
 <td class="colLast">
 <div class="block">Return the persistent instance of the given entity class with the
  given identifier, assuming that the instance exists.</div>
@@ -495,8 +495,8 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </tr>
 <tr id="i39" class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;T&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getResultSetMapping(java.lang.Class,java.lang.String)">getResultSetMapping</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;resultType,
-                   <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;mappingName)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getResultSetMapping(java.lang.Class,java.lang.String)">getResultSetMapping</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;resultType,
+                   <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;mappingName)</code></th>
 <td class="colLast">
 <div class="block">Obtain a native SQL result set mapping defined via the annotation
  <code>SqlResultSetMapping</code>.</div>
@@ -509,7 +509,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </tr>
 <tr id="i41" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isFetchProfileEnabled(java.lang.String)">isFetchProfileEnabled</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isFetchProfileEnabled(java.lang.String)">isFetchProfileEnabled</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
 <td class="colLast">
 <div class="block">Determine if the fetch profile with the given name is enabled for this
  session.</div>
@@ -522,21 +522,21 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </tr>
 <tr id="i43" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isReadOnly(java.lang.Object)">isReadOnly</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entityOrProxy)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isReadOnly(java.lang.Object)">isReadOnly</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entityOrProxy)</code></th>
 <td class="colLast">
 <div class="block">Is the specified entity or proxy read-only?</div>
 </td>
 </tr>
 <tr id="i44" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#lock(java.lang.Object,org.hibernate.LockMode)">lock</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity,
-    org.hibernate.LockMode&nbsp;lockMode)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#lock(java.lang.Object,org.hibernate.LockMode)">lock</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity,
+    <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a>&nbsp;lockMode)</code></th>
 <td class="colLast">
 <div class="block">Obtain the specified lock level upon the given object.</div>
 </td>
 </tr>
 <tr id="i45" class="rowColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;</code></td>
+<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#merge(T)">merge</a></span>&#8203;(T&nbsp;entity)</code></th>
 <td class="colLast">
 <div class="block">Copy the state of the given object onto the persistent instance with
@@ -544,67 +544,67 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </td>
 </tr>
 <tr id="i46" class="altColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#merge(T...)">merge</a></span>&#8203;(T...&nbsp;entities)</code></th>
 <td class="colLast">
 <div class="block">Merge multiple entity instances at once.</div>
 </td>
 </tr>
 <tr id="i47" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#persist(java.lang.Object)">persist</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#persist(java.lang.Object)">persist</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</code></th>
 <td class="colLast">
 <div class="block">Asynchronously persist the given transient instance, first assigning
  a generated identifier.</div>
 </td>
 </tr>
 <tr id="i48" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#persist(java.lang.Object...)">persist</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#persist(java.lang.Object...)">persist</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</code></th>
 <td class="colLast">
 <div class="block">Persist multiple transient entity instances at once.</div>
 </td>
 </tr>
 <tr id="i49" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#refresh(java.lang.Object)">refresh</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#refresh(java.lang.Object)">refresh</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</code></th>
 <td class="colLast">
 <div class="block">Re-read the state of the given instance from the underlying database.</div>
 </td>
 </tr>
 <tr id="i50" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#refresh(java.lang.Object...)">refresh</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#refresh(java.lang.Object...)">refresh</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</code></th>
 <td class="colLast">
 <div class="block">Refresh multiple entity instances at once.</div>
 </td>
 </tr>
 <tr id="i51" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#refresh(java.lang.Object,org.hibernate.LockMode)">refresh</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity,
-       org.hibernate.LockMode&nbsp;lockMode)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#refresh(java.lang.Object,org.hibernate.LockMode)">refresh</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity,
+       <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a>&nbsp;lockMode)</code></th>
 <td class="colLast">
 <div class="block">Re-read the state of the given instance from the underlying database,
- requesting the given <code>LockMode</code>.</div>
+ requesting the given <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>LockMode</code></a>.</div>
 </td>
 </tr>
 <tr id="i52" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#remove(java.lang.Object)">remove</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#remove(java.lang.Object)">remove</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</code></th>
 <td class="colLast">
 <div class="block">Asynchronously remove a persistent instance from the datastore.</div>
 </td>
 </tr>
 <tr id="i53" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#remove(java.lang.Object...)">remove</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#remove(java.lang.Object...)">remove</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</code></th>
 <td class="colLast">
 <div class="block">Remove multiple entity instances at once.</div>
 </td>
 </tr>
 <tr id="i54" class="altColor">
 <td class="colFirst"><code><a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setBatchSize(java.lang.Integer)">setBatchSize</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a>&nbsp;batchSize)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setBatchSize(java.lang.Integer)">setBatchSize</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a>&nbsp;batchSize)</code></th>
 <td class="colLast">
 <div class="block">Set the session-level batch size, overriding the batch size set
  by the configuration property <code>hibernate.jdbc.batch_size</code>.</div>
@@ -612,9 +612,9 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </tr>
 <tr id="i55" class="rowColor">
 <td class="colFirst"><code><a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCacheMode(org.hibernate.CacheMode)">setCacheMode</a></span>&#8203;(org.hibernate.CacheMode&nbsp;cacheMode)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCacheMode(org.hibernate.CacheMode)">setCacheMode</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/CacheMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">CacheMode</a>&nbsp;cacheMode)</code></th>
 <td class="colLast">
-<div class="block">Set the <code>cache mode</code> for this session.</div>
+<div class="block">Set the <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/CacheMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>cache mode</code></a> for this session.</div>
 </td>
 </tr>
 <tr id="i56" class="altColor">
@@ -627,14 +627,14 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </tr>
 <tr id="i57" class="rowColor">
 <td class="colFirst"><code><a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setFlushMode(org.hibernate.FlushMode)">setFlushMode</a></span>&#8203;(org.hibernate.FlushMode&nbsp;flushMode)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setFlushMode(org.hibernate.FlushMode)">setFlushMode</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/FlushMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">FlushMode</a>&nbsp;flushMode)</code></th>
 <td class="colLast">
-<div class="block">Set the <code>flush mode</code> for this session.</div>
+<div class="block">Set the <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/FlushMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>flush mode</code></a> for this session.</div>
 </td>
 </tr>
 <tr id="i58" class="altColor">
 <td class="colFirst"><code><a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setReadOnly(java.lang.Object,boolean)">setReadOnly</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entityOrProxy,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setReadOnly(java.lang.Object,boolean)">setReadOnly</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entityOrProxy,
            boolean&nbsp;readOnly)</code></th>
 <td class="colLast">
 <div class="block">Set an unmodified persistent object to read-only mode, or a read-only
@@ -642,7 +642,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </td>
 </tr>
 <tr id="i59" class="rowColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;</code></td>
+<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#unproxy(T)">unproxy</a></span>&#8203;(T&nbsp;association)</code></th>
 <td class="colLast">
 <div class="block">Asynchronously fetch an association that's configured for lazy loading,
@@ -650,8 +650,8 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </td>
 </tr>
 <tr id="i60" class="altColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withTransaction(java.util.function.Function)">withTransaction</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function" class="externalLink">Function</a>&lt;<a href="Stage.Transaction.html" title="interface in org.hibernate.reactive.stage">Stage.Transaction</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;&gt;&nbsp;work)</code></th>
+<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withTransaction(java.util.function.Function)">withTransaction</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function" class="externalLink">Function</a>&lt;<a href="Stage.Transaction.html" title="interface in org.hibernate.reactive.stage">Stage.Transaction</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;&gt;&nbsp;work)</code></th>
 <td class="colLast">
 <div class="block">Performs the given work within the scope of a database transaction,
  automatically flushing the session.</div>
@@ -687,8 +687,8 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>find</h4>
-<pre class="methodSignature">&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;&nbsp;find&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
-                            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id)</pre>
+<pre class="methodSignature">&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;&nbsp;find&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
+                            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id)</pre>
 <div class="block">Asynchronously return the persistent instance of the given entity
  class with the given identifier, or <code>null</code> if there is no such
  persistent instance. If the instance is already associated with
@@ -715,16 +715,16 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>find</h4>
-<pre class="methodSignature">&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;&nbsp;find&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
-                            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id,
-                            org.hibernate.LockMode&nbsp;lockMode)</pre>
+<pre class="methodSignature">&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;&nbsp;find&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
+                            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id,
+                            <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a>&nbsp;lockMode)</pre>
 <div class="block">Asynchronously return the persistent instance of the given entity
- class with the given identifier, requesting the given <code>LockMode</code>.</div>
+ class with the given identifier, requesting the given <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>LockMode</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>entityClass</code> - The entity type</dd>
 <dd><code>id</code> - an identifier</dd>
-<dd><code>lockMode</code> - the requested <code>LockMode</code></dd>
+<dd><code>lockMode</code> - the requested <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>LockMode</code></a></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>a persistent instance or null via a <code>CompletionStage</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -739,8 +739,8 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>find</h4>
-<pre class="methodSignature">&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;&nbsp;find&#8203;(jakarta.persistence.EntityGraph&lt;T&gt;&nbsp;entityGraph,
-                            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id)</pre>
+<pre class="methodSignature">&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;&nbsp;find&#8203;(jakarta.persistence.EntityGraph&lt;T&gt;&nbsp;entityGraph,
+                            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id)</pre>
 <div class="block">Asynchronously return the persistent instance with the given
  identifier of an entity class, using the given <code>EntityGraph</code>
  as a fetch plan.</div>
@@ -760,8 +760,8 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>find</h4>
-<pre class="methodSignature">&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;T&gt;&gt;&nbsp;find&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
-                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;ids)</pre>
+<pre class="methodSignature">&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;T&gt;&gt;&nbsp;find&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
+                                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;ids)</pre>
 <div class="block">Asynchronously return the persistent instances of the given entity
  class with the given identifiers, or null if there is no such
  persistent instance.</div>
@@ -780,7 +780,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>find</h4>
-<pre class="methodSignature">&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;&nbsp;find&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
+<pre class="methodSignature">&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;&nbsp;find&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
                             <a href="../common/Identifier.html" title="class in org.hibernate.reactive.common">Identifier</a>&lt;T&gt;&nbsp;naturalId)</pre>
 <div class="block">Asynchronously return the persistent instance of the given entity
  class with the given natural identifiers, or null if there is no
@@ -800,8 +800,8 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>getReference</h4>
-<pre class="methodSignature">&lt;T&gt;&nbsp;T&nbsp;getReference&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
-                   <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id)</pre>
+<pre class="methodSignature">&lt;T&gt;&nbsp;T&nbsp;getReference&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
+                   <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id)</pre>
 <div class="block">Return the persistent instance of the given entity class with the
  given identifier, assuming that the instance exists. This method
  never results in access to the underlying data store, and thus
@@ -851,7 +851,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>persist</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;persist&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;persist&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</pre>
 <div class="block">Asynchronously persist the given transient instance, first assigning
  a generated identifier. (Or using the current value of the identifier
  property if the entity has assigned identifiers.)
@@ -876,7 +876,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>persist</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;persist&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;persist&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</pre>
 <div class="block">Persist multiple transient entity instances at once.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -890,7 +890,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>remove</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;remove&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;remove&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</pre>
 <div class="block">Asynchronously remove a persistent instance from the datastore. The
  argument may be an instance associated with the receiving session or
  a transient instance with an identifier associated with existing
@@ -906,7 +906,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>entity</code> - the managed persistent instance to be removed</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if the given instance is not managed</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if the given instance is not managed</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><code>EntityManager.remove(Object)</code></dd>
 </dl>
@@ -918,7 +918,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>remove</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;remove&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;remove&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</pre>
 <div class="block">Remove multiple entity instances at once.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -934,7 +934,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>merge</h4>
-<pre class="methodSignature">&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;&nbsp;merge&#8203;(T&nbsp;entity)</pre>
+<pre class="methodSignature">&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;&nbsp;merge&#8203;(T&nbsp;entity)</pre>
 <div class="block">Copy the state of the given object onto the persistent instance with
  the same identifier. If there is no such persistent instance currently
  associated with the session, it will be loaded. Return the persistent
@@ -962,7 +962,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>merge</h4>
-<pre class="methodSignature">&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;merge&#8203;(T...&nbsp;entities)</pre>
+<pre class="methodSignature">&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;merge&#8203;(T...&nbsp;entities)</pre>
 <div class="block">Merge multiple entity instances at once.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -976,7 +976,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>refresh</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;refresh&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;refresh&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</pre>
 <div class="block">Re-read the state of the given instance from the underlying database.
  It is inadvisable to use this to implement long-running sessions that
  span many business tasks. This method is, however, useful in certain
@@ -991,7 +991,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>entity</code> - a managed persistent instance</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if the given instance is not managed</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if the given instance is not managed</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><code>EntityManager.refresh(Object)</code></dd>
 </dl>
@@ -1003,10 +1003,10 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>refresh</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;refresh&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity,
-                              org.hibernate.LockMode&nbsp;lockMode)</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;refresh&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity,
+                              <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a>&nbsp;lockMode)</pre>
 <div class="block">Re-read the state of the given instance from the underlying database,
- requesting the given <code>LockMode</code>.</div>
+ requesting the given <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>LockMode</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>entity</code> - a managed persistent entity instance</dd>
@@ -1022,7 +1022,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>refresh</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;refresh&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;refresh&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</pre>
 <div class="block">Refresh multiple entity instances at once.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -1036,29 +1036,29 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>lock</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;lock&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity,
-                           org.hibernate.LockMode&nbsp;lockMode)</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;lock&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity,
+                           <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a>&nbsp;lockMode)</pre>
 <div class="block">Obtain the specified lock level upon the given object. For example,
  this operation may be used to:
 
  <ul>
- <li>perform a version check with <code>LockMode.PESSIMISTIC_READ</code>,
- <li>upgrade to a pessimistic lock with <code>LockMode.PESSIMISTIC_WRITE</code>,
- <li>force a version increment with <code>LockMode.PESSIMISTIC_FORCE_INCREMENT</code>,
+ <li>perform a version check with <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html?is-external=true#PESSIMISTIC_READ" title="class or interface in org.hibernate" class="externalLink"><code>LockMode.PESSIMISTIC_READ</code></a>,
+ <li>upgrade to a pessimistic lock with <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html?is-external=true#PESSIMISTIC_WRITE" title="class or interface in org.hibernate" class="externalLink"><code>LockMode.PESSIMISTIC_WRITE</code></a>,
+ <li>force a version increment with <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html?is-external=true#PESSIMISTIC_FORCE_INCREMENT" title="class or interface in org.hibernate" class="externalLink"><code>LockMode.PESSIMISTIC_FORCE_INCREMENT</code></a>,
  <li>schedule a version check just before the end of the transaction with
- <code>LockMode.OPTIMISTIC</code>, or
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html?is-external=true#OPTIMISTIC" title="class or interface in org.hibernate" class="externalLink"><code>LockMode.OPTIMISTIC</code></a>, or
  <li>schedule a version increment just before the end of the transaction
- with <code>LockMode.OPTIMISTIC_FORCE_INCREMENT</code>.
+ with <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html?is-external=true#OPTIMISTIC_FORCE_INCREMENT" title="class or interface in org.hibernate" class="externalLink"><code>LockMode.OPTIMISTIC_FORCE_INCREMENT</code></a>.
  </ul>
 
  This operation cascades to associated instances if the association is
- mapped with <code>CascadeType.LOCK</code>.</div>
+ mapped with <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/annotations/CascadeType.html?is-external=true#LOCK" title="class or interface in org.hibernate.annotations" class="externalLink"><code>CascadeType.LOCK</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>entity</code> - a managed persistent instance</dd>
 <dd><code>lockMode</code> - the lock level</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if the given instance is not managed</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if the given instance is not managed</dd>
 </dl>
 </li>
 </ul>
@@ -1068,7 +1068,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>flush</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;flush()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;flush()</pre>
 <div class="block">Force this session to flush asynchronously. Must be called at the
  end of a unit of work, before committing the transaction and closing
  the session. <i>Flushing</i> is the process of synchronizing the
@@ -1091,7 +1091,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>fetch</h4>
-<pre class="methodSignature">&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;&nbsp;fetch&#8203;(T&nbsp;association)</pre>
+<pre class="methodSignature">&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;&nbsp;fetch&#8203;(T&nbsp;association)</pre>
 <div class="block">Asynchronously fetch an association that's configured for lazy loading.
 
  <pre>
@@ -1104,7 +1104,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <dd>the fetched association, via a <code>CompletionStage</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="Stage.html#fetch(T)"><code>Stage.fetch(Object)</code></a>, 
-<code>Hibernate.initialize(Object)</code></dd>
+<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Hibernate.html?is-external=true#initialize(java.lang.Object)" title="class or interface in org.hibernate" class="externalLink"><code>Hibernate.initialize(Object)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -1116,7 +1116,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>fetch</h4>
-<pre class="methodSignature">&lt;E,&#8203;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;&nbsp;fetch&#8203;(E&nbsp;entity,
+<pre class="methodSignature">&lt;E,&#8203;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;&nbsp;fetch&#8203;(E&nbsp;entity,
                                      jakarta.persistence.metamodel.Attribute&lt;E,&#8203;T&gt;&nbsp;field)</pre>
 <div class="block">Fetch a lazy property of the given entity, identified by a JPA
  <code>attribute metamodel</code>. Note that this feature is
@@ -1135,7 +1135,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>unproxy</h4>
-<pre class="methodSignature">&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;&nbsp;unproxy&#8203;(T&nbsp;association)</pre>
+<pre class="methodSignature">&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;&nbsp;unproxy&#8203;(T&nbsp;association)</pre>
 <div class="block">Asynchronously fetch an association that's configured for lazy loading,
  and unwrap the underlying entity implementation from any proxy.
 
@@ -1148,7 +1148,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the fetched association, via a <code>CompletionStage</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>Hibernate.unproxy(Object)</code></dd>
+<dd><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Hibernate.html?is-external=true#unproxy(java.lang.Object)" title="class or interface in org.hibernate" class="externalLink"><code>Hibernate.unproxy(Object)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -1158,7 +1158,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>getLockMode</h4>
-<pre class="methodSignature">org.hibernate.LockMode&nbsp;getLockMode&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</pre>
+<pre class="methodSignature"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a>&nbsp;getLockMode&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</pre>
 <div class="block">Determine the current lock mode of the given entity.</div>
 </li>
 </ul>
@@ -1168,7 +1168,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>contains</h4>
-<pre class="methodSignature">boolean&nbsp;contains&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</pre>
+<pre class="methodSignature">boolean&nbsp;contains&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</pre>
 <div class="block">Determine if the given instance belongs to this persistence context.</div>
 </li>
 </ul>
@@ -1178,7 +1178,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>createQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createQuery&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString)</pre>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString)</pre>
 <div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given HQL/JPQL query
  string or HQL/JPQL update or delete statement. In the case of an
  update or delete, the returned <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> must be executed using
@@ -1199,8 +1199,8 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>createQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createQuery&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
-                               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</pre>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+                               <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</pre>
 <div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given HQL/JPQL query
  string.</div>
 <dl>
@@ -1220,7 +1220,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>createNamedQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createNamedQuery&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryName)</pre>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createNamedQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryName)</pre>
 <div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the named query.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1238,8 +1238,8 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>createNamedQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createNamedQuery&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryName,
-                                    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</pre>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createNamedQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryName,
+                                    <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</pre>
 <div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the named query.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1258,14 +1258,14 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>createNativeQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createNativeQuery&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
-                                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</pre>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createNativeQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+                                     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</pre>
 <div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
  using the given <code>resultType</code> to interpret the results.
 
  <ul>
- <li>If the given result type is <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>Object</code></a>, or a built-in type
- such as <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>String</code></a> or <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>Integer</code></a>, the result set must
+ <li>If the given result type is <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>Object</code></a>, or a built-in type
+ such as <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>String</code></a> or <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>Integer</code></a>, the result set must
  have a single column, which will be returned as a scalar.</li>
  <li>If the given result type is <code>Object[]</code>, then the result set
  must have multiple columns, which will be returned as elements of
@@ -1291,15 +1291,15 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>createNativeQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createNativeQuery&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
-                                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType,
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createNativeQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+                                     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType,
                                      <a href="../common/AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</pre>
 <div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
  using the given <code>resultType</code> to interpret the results.
 
  <ul>
- <li>If the given result type is <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>Object</code></a>, or a built-in type
- such as <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>String</code></a> or <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>Integer</code></a>, the result set must
+ <li>If the given result type is <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>Object</code></a>, or a built-in type
+ such as <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>String</code></a> or <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>Integer</code></a>, the result set must
  have a single column, which will be returned as a scalar.</li>
  <li>If the given result type is <code>Object[]</code>, then the result set
  must have multiple columns, which will be returned as elements of
@@ -1329,7 +1329,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>createNativeQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createNativeQuery&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createNativeQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
                                      <a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping)</pre>
 <div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
  using the given <a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common"><code>ResultSetMapping</code></a> to interpret the result set.</div>
@@ -1351,7 +1351,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>createNativeQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createNativeQuery&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createNativeQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
                                      <a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping,
                                      <a href="../common/AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</pre>
 <div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
@@ -1378,7 +1378,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>createNativeQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createNativeQuery&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString)</pre>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createNativeQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString)</pre>
 <div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
  or SQL update, insert, or delete statement. In the case of an update,
  insert, or delete, the returned <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> must be executed using
@@ -1403,7 +1403,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>createNativeQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createNativeQuery&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createNativeQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
                                      <a href="../common/AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</pre>
 <div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
  or SQL update, insert, or delete statement. In the case of an update,
@@ -1487,15 +1487,15 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>setFlushMode</h4>
-<pre class="methodSignature"><a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a>&nbsp;setFlushMode&#8203;(org.hibernate.FlushMode&nbsp;flushMode)</pre>
-<div class="block">Set the <code>flush mode</code> for this session.
+<pre class="methodSignature"><a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a>&nbsp;setFlushMode&#8203;(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/FlushMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">FlushMode</a>&nbsp;flushMode)</pre>
+<div class="block">Set the <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/FlushMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>flush mode</code></a> for this session.
  <p>
  The flush mode determines the points at which the session is flushed.
  <i>Flushing</i> is the process of synchronizing the underlying persistent
  store with persistable state held in memory.
  <p>
  For a logically "read only" session, it is reasonable to set the session's
- flush mode to <code>FlushMode.MANUAL</code> at the start of the session (in
+ flush mode to <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/FlushMode.html?is-external=true#MANUAL" title="class or interface in org.hibernate" class="externalLink"><code>FlushMode.MANUAL</code></a> at the start of the session (in
  order to achieve some extra performance).</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1509,7 +1509,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>getFlushMode</h4>
-<pre class="methodSignature">org.hibernate.FlushMode&nbsp;getFlushMode()</pre>
+<pre class="methodSignature"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/FlushMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">FlushMode</a>&nbsp;getFlushMode()</pre>
 <div class="block">Get the current flush mode for this session.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -1523,7 +1523,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>detach</h4>
-<pre class="methodSignature"><a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a>&nbsp;detach&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</pre>
+<pre class="methodSignature"><a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a>&nbsp;detach&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</pre>
 <div class="block">Remove this instance from the session cache. Changes to the instance
  will not be synchronized with the database.
  <p>
@@ -1533,8 +1533,8 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>entity</code> - The entity to evict</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang" class="externalLink">NullPointerException</a></code> - if the passed object is <code>null</code></dd>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if the passed object is not defined as an entity</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang" class="externalLink">NullPointerException</a></code> - if the passed object is <code>null</code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if the passed object is not defined as an entity</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><code>EntityManager.detach(Object)</code></dd>
 </dl>
@@ -1561,17 +1561,17 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>enableFetchProfile</h4>
-<pre class="methodSignature"><a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a>&nbsp;enableFetchProfile&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
+<pre class="methodSignature"><a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a>&nbsp;enableFetchProfile&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
 <div class="block">Enable a particular fetch profile on this session, or do nothing if
  requested fetch profile is already enabled.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>name</code> - The name of the fetch profile to be enabled.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>org.hibernate.UnknownProfileException</code> - Indicates that the given name does not
+<dd><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/UnknownProfileException.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">UnknownProfileException</a></code> - Indicates that the given name does not
  match any known profile names</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>for discussion of this feature</code></dd>
+<dd><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/profile/FetchProfile.html?is-external=true" title="class or interface in org.hibernate.engine.profile" class="externalLink"><code>for discussion of this feature</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -1581,8 +1581,8 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>getResultSetMapping</h4>
-<pre class="methodSignature">&lt;T&gt;&nbsp;<a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;T&gt;&nbsp;getResultSetMapping&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;resultType,
-                                            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;mappingName)</pre>
+<pre class="methodSignature">&lt;T&gt;&nbsp;<a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;T&gt;&nbsp;getResultSetMapping&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;resultType,
+                                            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;mappingName)</pre>
 <div class="block">Obtain a native SQL result set mapping defined via the annotation
  <code>SqlResultSetMapping</code>.</div>
 </li>
@@ -1593,8 +1593,8 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>getEntityGraph</h4>
-<pre class="methodSignature">&lt;T&gt;&nbsp;jakarta.persistence.EntityGraph&lt;T&gt;&nbsp;getEntityGraph&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;rootType,
-                                                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;graphName)</pre>
+<pre class="methodSignature">&lt;T&gt;&nbsp;jakarta.persistence.EntityGraph&lt;T&gt;&nbsp;getEntityGraph&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;rootType,
+                                                      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;graphName)</pre>
 <div class="block">Obtain a named <code>EntityGraph</code></div>
 </li>
 </ul>
@@ -1604,7 +1604,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>createEntityGraph</h4>
-<pre class="methodSignature">&lt;T&gt;&nbsp;jakarta.persistence.EntityGraph&lt;T&gt;&nbsp;createEntityGraph&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;rootType)</pre>
+<pre class="methodSignature">&lt;T&gt;&nbsp;jakarta.persistence.EntityGraph&lt;T&gt;&nbsp;createEntityGraph&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;rootType)</pre>
 <div class="block">Create a new mutable <code>EntityGraph</code></div>
 </li>
 </ul>
@@ -1614,8 +1614,8 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>createEntityGraph</h4>
-<pre class="methodSignature">&lt;T&gt;&nbsp;jakarta.persistence.EntityGraph&lt;T&gt;&nbsp;createEntityGraph&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;rootType,
-                                                         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;graphName)</pre>
+<pre class="methodSignature">&lt;T&gt;&nbsp;jakarta.persistence.EntityGraph&lt;T&gt;&nbsp;createEntityGraph&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;rootType,
+                                                         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;graphName)</pre>
 <div class="block">Create a new mutable copy of a named <code>EntityGraph</code></div>
 </li>
 </ul>
@@ -1625,17 +1625,17 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>disableFetchProfile</h4>
-<pre class="methodSignature"><a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a>&nbsp;disableFetchProfile&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
+<pre class="methodSignature"><a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a>&nbsp;disableFetchProfile&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
 <div class="block">Disable a particular fetch profile on this session, or do nothing if
  the requested fetch profile is not enabled.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>name</code> - The name of the fetch profile to be disabled.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>org.hibernate.UnknownProfileException</code> - Indicates that the given name does not
+<dd><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/UnknownProfileException.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">UnknownProfileException</a></code> - Indicates that the given name does not
  match any known profile names</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>for discussion of this feature</code></dd>
+<dd><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/profile/FetchProfile.html?is-external=true" title="class or interface in org.hibernate.engine.profile" class="externalLink"><code>for discussion of this feature</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -1645,7 +1645,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>isFetchProfileEnabled</h4>
-<pre class="methodSignature">boolean&nbsp;isFetchProfileEnabled&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
+<pre class="methodSignature">boolean&nbsp;isFetchProfileEnabled&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
 <div class="block">Determine if the fetch profile with the given name is enabled for this
  session.</div>
 <dl>
@@ -1654,10 +1654,10 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>True if fetch profile is enabled; false if not.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>org.hibernate.UnknownProfileException</code> - Indicates that the given name does not
+<dd><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/UnknownProfileException.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">UnknownProfileException</a></code> - Indicates that the given name does not
  match any known profile names</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>for discussion of this feature</code></dd>
+<dd><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/profile/FetchProfile.html?is-external=true" title="class or interface in org.hibernate.engine.profile" class="externalLink"><code>for discussion of this feature</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -1676,7 +1676,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
  changes are not persisted.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>Session.setDefaultReadOnly(boolean)</code></dd>
+<dd><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Session.html?is-external=true#setDefaultReadOnly(boolean)" title="class or interface in org.hibernate" class="externalLink"><code>Session.setDefaultReadOnly(boolean)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -1700,14 +1700,14 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>setReadOnly</h4>
-<pre class="methodSignature"><a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a>&nbsp;setReadOnly&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entityOrProxy,
+<pre class="methodSignature"><a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a>&nbsp;setReadOnly&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entityOrProxy,
                           boolean&nbsp;readOnly)</pre>
 <div class="block">Set an unmodified persistent object to read-only mode, or a read-only
  object to modifiable mode. In read-only mode, no snapshot is maintained,
  the instance is never dirty checked, and changes are not persisted.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>Session.setReadOnly(Object, boolean)</code></dd>
+<dd><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Session.html?is-external=true#setReadOnly(java.lang.Object,boolean)" title="class or interface in org.hibernate" class="externalLink"><code>Session.setReadOnly(Object, boolean)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -1717,11 +1717,11 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>isReadOnly</h4>
-<pre class="methodSignature">boolean&nbsp;isReadOnly&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entityOrProxy)</pre>
+<pre class="methodSignature">boolean&nbsp;isReadOnly&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entityOrProxy)</pre>
 <div class="block">Is the specified entity or proxy read-only?</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>Session.isReadOnly(Object)</code></dd>
+<dd><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Session.html?is-external=true#isReadOnly(java.lang.Object)" title="class or interface in org.hibernate" class="externalLink"><code>Session.isReadOnly(Object)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -1731,8 +1731,8 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>setCacheMode</h4>
-<pre class="methodSignature"><a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a>&nbsp;setCacheMode&#8203;(org.hibernate.CacheMode&nbsp;cacheMode)</pre>
-<div class="block">Set the <code>cache mode</code> for this session.
+<pre class="methodSignature"><a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a>&nbsp;setCacheMode&#8203;(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/CacheMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">CacheMode</a>&nbsp;cacheMode)</pre>
+<div class="block">Set the <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/CacheMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>cache mode</code></a> for this session.
  <p>
  The cache mode determines the manner in which this session interacts
  with the second level cache.</div>
@@ -1748,7 +1748,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>getCacheMode</h4>
-<pre class="methodSignature">org.hibernate.CacheMode&nbsp;getCacheMode()</pre>
+<pre class="methodSignature"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/CacheMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">CacheMode</a>&nbsp;getCacheMode()</pre>
 <div class="block">Get the current cache mode.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -1762,7 +1762,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>setBatchSize</h4>
-<pre class="methodSignature"><a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a>&nbsp;setBatchSize&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a>&nbsp;batchSize)</pre>
+<pre class="methodSignature"><a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a>&nbsp;setBatchSize&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a>&nbsp;batchSize)</pre>
 <div class="block">Set the session-level batch size, overriding the batch size set
  by the configuration property <code>hibernate.jdbc.batch_size</code>.</div>
 </li>
@@ -1773,7 +1773,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>getBatchSize</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a>&nbsp;getBatchSize()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a>&nbsp;getBatchSize()</pre>
 <div class="block">The session-level batch size, or <code>null</code> if it has not been
  overridden.</div>
 </li>
@@ -1784,7 +1784,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>enableFilter</h4>
-<pre class="methodSignature">org.hibernate.Filter&nbsp;enableFilter&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;filterName)</pre>
+<pre class="methodSignature"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Filter.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">Filter</a>&nbsp;enableFilter&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;filterName)</pre>
 <div class="block">Enable the named filter for this session.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1800,7 +1800,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>disableFilter</h4>
-<pre class="methodSignature">void&nbsp;disableFilter&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;filterName)</pre>
+<pre class="methodSignature">void&nbsp;disableFilter&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;filterName)</pre>
 <div class="block">Disable the named filter for this session.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1814,7 +1814,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>getEnabledFilter</h4>
-<pre class="methodSignature">org.hibernate.Filter&nbsp;getEnabledFilter&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;filterName)</pre>
+<pre class="methodSignature"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Filter.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">Filter</a>&nbsp;getEnabledFilter&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;filterName)</pre>
 <div class="block">Retrieve a currently enabled filter by name.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1830,7 +1830,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>withTransaction</h4>
-<pre class="methodSignature">&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;&nbsp;withTransaction&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function" class="externalLink">Function</a>&lt;<a href="Stage.Transaction.html" title="interface in org.hibernate.reactive.stage">Stage.Transaction</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;&gt;&nbsp;work)</pre>
+<pre class="methodSignature">&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;&nbsp;withTransaction&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function" class="externalLink">Function</a>&lt;<a href="Stage.Transaction.html" title="interface in org.hibernate.reactive.stage">Stage.Transaction</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;&gt;&nbsp;work)</pre>
 <div class="block">Performs the given work within the scope of a database transaction,
  automatically flushing the session. The transaction will be rolled
  back if the work completes with an uncaught exception, or if
@@ -1850,7 +1850,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>work</code> - a function which accepts <a href="Stage.Transaction.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Transaction</code></a> and returns
-             the result of the work as a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>CompletionStage</code></a>.</dd>
+             the result of the work as a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>CompletionStage</code></a>.</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="Stage.SessionFactory.html#withTransaction(java.util.function.BiFunction)"><code>Stage.SessionFactory.withTransaction(BiFunction)</code></a></dd>
 </dl>

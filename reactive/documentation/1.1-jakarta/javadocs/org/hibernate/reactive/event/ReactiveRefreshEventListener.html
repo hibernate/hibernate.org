@@ -124,11 +124,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Superinterfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></code></dd>
 </dl>
 <hr>
 <pre>public interface <span class="typeNameLabel">ReactiveRefreshEventListener</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></pre>
+extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></pre>
 <div class="block">Defines the contract for handling of refresh events generated from a session.</div>
 </li>
 </ul>
@@ -151,15 +151,15 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reactiveOnRefresh(org.hibernate.event.spi.RefreshEvent)">reactiveOnRefresh</a></span>&#8203;(org.hibernate.event.spi.RefreshEvent&nbsp;event)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reactiveOnRefresh(org.hibernate.event.spi.RefreshEvent)">reactiveOnRefresh</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/event/spi/RefreshEvent.html?is-external=true" title="class or interface in org.hibernate.event.spi" class="externalLink">RefreshEvent</a>&nbsp;event)</code></th>
 <td class="colLast">
 <div class="block">Handle the given refresh event.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reactiveOnRefresh(org.hibernate.event.spi.RefreshEvent,org.hibernate.internal.util.collections.IdentitySet)">reactiveOnRefresh</a></span>&#8203;(org.hibernate.event.spi.RefreshEvent&nbsp;event,
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reactiveOnRefresh(org.hibernate.event.spi.RefreshEvent,org.hibernate.internal.util.collections.IdentitySet)">reactiveOnRefresh</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/event/spi/RefreshEvent.html?is-external=true" title="class or interface in org.hibernate.event.spi" class="externalLink">RefreshEvent</a>&nbsp;event,
                  org.hibernate.internal.util.collections.IdentitySet&nbsp;refreshedAlready)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -186,14 +186,14 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.
 <ul class="blockList">
 <li class="blockList">
 <h4>reactiveOnRefresh</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;reactiveOnRefresh&#8203;(org.hibernate.event.spi.RefreshEvent&nbsp;event)
-                                 throws org.hibernate.HibernateException</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;reactiveOnRefresh&#8203;(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/event/spi/RefreshEvent.html?is-external=true" title="class or interface in org.hibernate.event.spi" class="externalLink">RefreshEvent</a>&nbsp;event)
+                                 throws <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/HibernateException.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">HibernateException</a></pre>
 <div class="block">Handle the given refresh event.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>event</code> - The refresh event to be handled.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>org.hibernate.HibernateException</code></dd>
+<dd><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/HibernateException.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">HibernateException</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -203,12 +203,12 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.
 <ul class="blockListLast">
 <li class="blockList">
 <h4>reactiveOnRefresh</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;reactiveOnRefresh&#8203;(org.hibernate.event.spi.RefreshEvent&nbsp;event,
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;reactiveOnRefresh&#8203;(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/event/spi/RefreshEvent.html?is-external=true" title="class or interface in org.hibernate.event.spi" class="externalLink">RefreshEvent</a>&nbsp;event,
                                         org.hibernate.internal.util.collections.IdentitySet&nbsp;refreshedAlready)
-                                 throws org.hibernate.HibernateException</pre>
+                                 throws <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/HibernateException.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">HibernateException</a></pre>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>org.hibernate.HibernateException</code></dd>
+<dd><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/HibernateException.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">HibernateException</a></code></dd>
 </dl>
 </li>
 </ul>

@@ -120,10 +120,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
-<li>org.hibernate.engine.jdbc.connections.spi.AbstractMultiTenantConnectionProvider</li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/jdbc/connections/spi/AbstractMultiTenantConnectionProvider.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.connections.spi" class="externalLink">org.hibernate.engine.jdbc.connections.spi.AbstractMultiTenantConnectionProvider</a></li>
 <li>
 <ul class="inheritance">
 <li>org.hibernate.reactive.provider.service.NoJdbcMultiTenantConnectionProvider</li>
@@ -137,13 +137,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></code>, <code>org.hibernate.engine.jdbc.connections.spi.MultiTenantConnectionProvider</code>, <code>org.hibernate.service.Service</code>, <code>org.hibernate.service.spi.Wrapped</code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></code>, <code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/jdbc/connections/spi/MultiTenantConnectionProvider.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.connections.spi" class="externalLink">MultiTenantConnectionProvider</a></code>, <code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/service/Service.html?is-external=true" title="class or interface in org.hibernate.service" class="externalLink">Service</a></code>, <code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/service/spi/Wrapped.html?is-external=true" title="class or interface in org.hibernate.service.spi" class="externalLink">Wrapped</a></code></dd>
 </dl>
 <hr>
 <pre>public class <span class="typeNameLabel">NoJdbcMultiTenantConnectionProvider</span>
-extends org.hibernate.engine.jdbc.connections.spi.AbstractMultiTenantConnectionProvider</pre>
+extends <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/jdbc/connections/spi/AbstractMultiTenantConnectionProvider.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.connections.spi" class="externalLink">AbstractMultiTenantConnectionProvider</a></pre>
 <div class="block">A dummy Hibernate
- <code>MultiTenantConnectionProvider</code>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/jdbc/connections/spi/MultiTenantConnectionProvider.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.connections.spi" class="externalLink"><code>MultiTenantConnectionProvider</code></a>
  which throws an exception if a JDBC connection is requested.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -191,13 +191,13 @@ extends org.hibernate.engine.jdbc.connections.spi.AbstractMultiTenantConnectionP
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>protected org.hibernate.engine.jdbc.connections.spi.ConnectionProvider</code></td>
+<td class="colFirst"><code>protected <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/jdbc/connections/spi/ConnectionProvider.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.connections.spi" class="externalLink">ConnectionProvider</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAnyConnectionProvider()">getAnyConnectionProvider</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>protected org.hibernate.engine.jdbc.connections.spi.ConnectionProvider</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#selectConnectionProvider(java.lang.String)">selectConnectionProvider</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tenantIdentifier)</code></th>
+<td class="colFirst"><code>protected <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/jdbc/connections/spi/ConnectionProvider.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.connections.spi" class="externalLink">ConnectionProvider</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#selectConnectionProvider(java.lang.String)">selectConnectionProvider</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tenantIdentifier)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </table>
@@ -205,15 +205,15 @@ extends org.hibernate.engine.jdbc.connections.spi.AbstractMultiTenantConnectionP
 <li class="blockList"><a id="methods.inherited.from.class.org.hibernate.engine.jdbc.connections.spi.AbstractMultiTenantConnectionProvider">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;org.hibernate.engine.jdbc.connections.spi.AbstractMultiTenantConnectionProvider</h3>
-<code>getAnyConnection, getConnection, isUnwrappableAs, releaseAnyConnection, releaseConnection, supportsAggressiveRelease, unwrap</code></li>
+<h3>Methods inherited from class&nbsp;org.hibernate.engine.jdbc.connections.spi.<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/jdbc/connections/spi/AbstractMultiTenantConnectionProvider.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.connections.spi" class="externalLink">AbstractMultiTenantConnectionProvider</a></h3>
+<code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/jdbc/connections/spi/AbstractMultiTenantConnectionProvider.html?is-external=true#getAnyConnection()" title="class or interface in org.hibernate.engine.jdbc.connections.spi" class="externalLink">getAnyConnection</a>, <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/jdbc/connections/spi/AbstractMultiTenantConnectionProvider.html?is-external=true#getConnection(java.lang.String)" title="class or interface in org.hibernate.engine.jdbc.connections.spi" class="externalLink">getConnection</a>, <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/jdbc/connections/spi/AbstractMultiTenantConnectionProvider.html?is-external=true#isUnwrappableAs(java.lang.Class)" title="class or interface in org.hibernate.engine.jdbc.connections.spi" class="externalLink">isUnwrappableAs</a>, <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/jdbc/connections/spi/AbstractMultiTenantConnectionProvider.html?is-external=true#releaseAnyConnection(java.sql.Connection)" title="class or interface in org.hibernate.engine.jdbc.connections.spi" class="externalLink">releaseAnyConnection</a>, <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/jdbc/connections/spi/AbstractMultiTenantConnectionProvider.html?is-external=true#releaseConnection(java.lang.String,java.sql.Connection)" title="class or interface in org.hibernate.engine.jdbc.connections.spi" class="externalLink">releaseConnection</a>, <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/jdbc/connections/spi/AbstractMultiTenantConnectionProvider.html?is-external=true#supportsAggressiveRelease()" title="class or interface in org.hibernate.engine.jdbc.connections.spi" class="externalLink">supportsAggressiveRelease</a>, <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/jdbc/connections/spi/AbstractMultiTenantConnectionProvider.html?is-external=true#unwrap(java.lang.Class)" title="class or interface in org.hibernate.engine.jdbc.connections.spi" class="externalLink">unwrap</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
-<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" class="externalLink">toString</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" class="externalLink">toString</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
 </ul>
 </li>
 </ul>
@@ -256,10 +256,10 @@ extends org.hibernate.engine.jdbc.connections.spi.AbstractMultiTenantConnectionP
 <ul class="blockList">
 <li class="blockList">
 <h4>getAnyConnectionProvider</h4>
-<pre class="methodSignature">protected&nbsp;org.hibernate.engine.jdbc.connections.spi.ConnectionProvider&nbsp;getAnyConnectionProvider()</pre>
+<pre class="methodSignature">protected&nbsp;<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/jdbc/connections/spi/ConnectionProvider.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.connections.spi" class="externalLink">ConnectionProvider</a>&nbsp;getAnyConnectionProvider()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code>getAnyConnectionProvider</code>&nbsp;in class&nbsp;<code>org.hibernate.engine.jdbc.connections.spi.AbstractMultiTenantConnectionProvider</code></dd>
+<dd><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/jdbc/connections/spi/AbstractMultiTenantConnectionProvider.html?is-external=true#getAnyConnectionProvider()" title="class or interface in org.hibernate.engine.jdbc.connections.spi" class="externalLink">getAnyConnectionProvider</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/jdbc/connections/spi/AbstractMultiTenantConnectionProvider.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.connections.spi" class="externalLink">AbstractMultiTenantConnectionProvider</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -269,10 +269,10 @@ extends org.hibernate.engine.jdbc.connections.spi.AbstractMultiTenantConnectionP
 <ul class="blockListLast">
 <li class="blockList">
 <h4>selectConnectionProvider</h4>
-<pre class="methodSignature">protected&nbsp;org.hibernate.engine.jdbc.connections.spi.ConnectionProvider&nbsp;selectConnectionProvider&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tenantIdentifier)</pre>
+<pre class="methodSignature">protected&nbsp;<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/jdbc/connections/spi/ConnectionProvider.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.connections.spi" class="externalLink">ConnectionProvider</a>&nbsp;selectConnectionProvider&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tenantIdentifier)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code>selectConnectionProvider</code>&nbsp;in class&nbsp;<code>org.hibernate.engine.jdbc.connections.spi.AbstractMultiTenantConnectionProvider</code></dd>
+<dd><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/jdbc/connections/spi/AbstractMultiTenantConnectionProvider.html?is-external=true#selectConnectionProvider(java.lang.String)" title="class or interface in org.hibernate.engine.jdbc.connections.spi" class="externalLink">selectConnectionProvider</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/jdbc/connections/spi/AbstractMultiTenantConnectionProvider.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.connections.spi" class="externalLink">AbstractMultiTenantConnectionProvider</a></code></dd>
 </dl>
 </li>
 </ul>
