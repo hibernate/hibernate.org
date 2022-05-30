@@ -18,15 +18,19 @@ The official guide for the Hibernate Search extension in https://quarkus.io/[Qua
 
 == Blog posts
 
-https://gauthier-cassany.com/posts/spring-boot-hibernate-search[Build a Spring Boot REST API with Full-Text Search using Hibernate Search]::
+Build a Spring Boot REST API with Full-Text Search using Hibernate Search::
 A tutorial on how to quickly create a REST API based on https://spring.io/projects/spring-boot/[Spring Boot] and Hibernate Search 6,
 using the Apache Lucene backend.
++
+https://gauthier-cassany.com/posts/spring-boot-hibernate-search[Part 1] explains the basics.
+Demo code: https://github.com/Mozenn/spring-boot-hibernate-search
++
+https://gauthier-cassany.com/posts/spring-boot-paginated-search[Part 2] adds pagination.
+Demo code: https://github.com/Mozenn/spring-boot-paginated-search
 +
 Alternate links:
 https://dev.to/mozenn/build-a-spring-boot-rest-api-with-full-text-search-using-hibernate-search-4a67[dev.to],
 https://medium.com/javarevisited/build-a-spring-boot-rest-api-with-full-text-search-using-hibernate-search-88d83bfae5bb[medium.com].
-+
-Demo code: https://github.com/Mozenn/spring-boot-hibernate-search
 
 https://www.heise.de/hintergrund/Hibernate-Search-Volltextsuche-in-Spring-Boot-Projekten-6028830.html[[German\] Hibernate Search: Volltextsuche in Spring-Boot-Projekten]::
 A presentation of Hibernate Search 6 and its use in a https://spring.io/projects/spring-boot[Spring Boot] application.
