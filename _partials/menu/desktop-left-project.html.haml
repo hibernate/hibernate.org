@@ -1,7 +1,7 @@
 - real_page = page['real_page']
 - current_path = page['real_page'].output_path.sub(/index\.html$/, "").sub(/\.html$/,"/")
 - project_description = page['project_description']
-- displayed_series = project_description.release_series.nil? ? nil : project_description.release_series.values.select{|s| s.displayed}
+- displayed_series = project_description.active_release_series
 - stable_series = project_description.latest_stable_series
 
 .ui.fluid.vertical.menu

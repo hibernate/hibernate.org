@@ -123,6 +123,9 @@ module Awestruct
           series[:version] = File.basename( series_dir )
         end
         series[:releases] = Array.new
+        if ( series[:endoflife] == nil )
+          series[:endoflife] = false
+        end
         return series
       end
 
@@ -206,6 +209,10 @@ module Awestruct
             end
           end
         end
+        project[:active_release_series] = project[:release_series].nil? ? nil
+            : project[:release_series].values.select{|s| !s[:displayed].nil? ? s.displayed : !s.endoflife}
+        project[:older_release_series] = project[:release_series].nil? ? nil
+            : project[:release_series].values.select{|s| !s[:displayed].nil? ? !s.displayed : s.endoflife}
       end
 
       def downloadDependencies(project, series)

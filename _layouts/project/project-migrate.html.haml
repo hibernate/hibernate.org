@@ -29,7 +29,7 @@ layout: project-standard
             %span.ui.label.large
               %strong= release.version
               %span.detail= release.date
-            %span.ui.tag.label{:class => "#{release.stable ? 'green' : 'orange'}"} #{release.stable ? 'stable' : 'development'}
+            = partial( 'project/series-status-label.html.haml', { "series" => series, "classes" => "tag" } )
             %p
               %span.ui.button.disabled
                 Migration guide

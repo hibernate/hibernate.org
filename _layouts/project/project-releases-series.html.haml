@@ -56,6 +56,22 @@ project_hero_partial: project/hero-series.html.haml
       %a.item{:href => "#releases"}
         Releases in this series
 
+- if series.endoflife
+  :asciidoc
+    :projectName: #{project_description.name}
+    :version: #{series.version}
+    [WARNING]
+    ====
+    {projectName} {version} has reached its end-of-life:
+
+    * it is unlikely to see another release;
+    * bugs are unlikely to get fixed in this version, even security vulnerabilities;
+    * pull requests against this version will be rejected;
+    * bug reproducers using this version will be given lower priority.
+
+    We encourage you to upgrade to a newer series if possible.
+    ====
+
 - unless series.integration_constraints.nil? || series.integration_constraints.empty?
   %h2{:id => "compatibility"} Compatibility
   %table.ui.collapsing.table.striped.celled.unstackable
@@ -273,7 +289,7 @@ project_hero_partial: project/hero-series.html.haml
       .ui.row
         .three.wide.column
           %p
-            %span.ui.label.version{:class => "#{release.stable ? 'green' : 'orange'}"}
+            %span.ui.label.version{:class => "#{series.endoflife ? 'red' : (release.stable ? 'green' : 'orange')}"}
               = version
           %p
             %small.ui.label= release.date

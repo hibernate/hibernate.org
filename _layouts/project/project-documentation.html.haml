@@ -14,7 +14,7 @@ project_buttons_partial: project/documentation-buttons.html.haml
 
 %h2 Documentation per Series
 
-- active_series = project_description.release_series.nil? ? nil : project_description.release_series.values.select{|s| s.displayed}
+- active_series = project_description.active_release_series
 - if not active_series.nil?
   .ui.grid.documentation-versions
     - active_series.each do |series|
@@ -27,7 +27,7 @@ project_buttons_partial: project/documentation-buttons.html.haml
             %span.ui.label.large
               %strong= release.version
               %span.detail= release.date
-            %span.ui.tag.label{:class => "#{release.stable ? 'green' : 'orange'}"} #{release.stable ? 'stable'   : 'development'}
+            = partial( 'project/series-status-label.html.haml', { "series" => series, "classes" => "tag" } )
           %p
             = series.summary
           %p
@@ -74,7 +74,7 @@ project_buttons_partial: project/documentation-buttons.html.haml
 - else
   %p There is no reference documentation configured for this project.
 
-- older_series = project_description.release_series.nil? ? nil : project_description.release_series.values.select{|s| !s.displayed}
+- older_series = project_description.older_release_series
 - unless older_series.nil? || older_series.empty?
   %p
     %a.ui.button.right.labeled.icon#older-series-button(href="javascript: void(0)")
@@ -104,7 +104,7 @@ project_buttons_partial: project/documentation-buttons.html.haml
               %span.ui.label.large
                 %strong= release.version
                 %span.detail= release.date
-              %span.ui.tag.label{:class => "#{release.stable ? 'green' : 'orange'}"} #{release.stable ? 'stable'   : 'development'}
+              = partial( 'project/series-status-label.html.haml', { "series" => series, "classes" => "tag" } )
             %p
               = series.summary
             %p
