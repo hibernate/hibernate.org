@@ -16,7 +16,7 @@ module Awestruct
     # site['projects'].['<project-name>'].['releases'].['<release-version>'], eg site['projects'].['validator'].['releases'].['5.0.0.Final'].
     #
     # The release data itself is stored in the hash using at the moment the following keys:
-    # version, version_family, date, stable, announcement_url, summary and displayed
+    # version, version_family, date, announcement_url, summary and displayed
     class ReleaseFileParser
 
       def initialize(data_dir="_data")
@@ -157,6 +157,14 @@ module Awestruct
         end
         if ( series != nil )
           release[:version_family] = series.version
+        end
+
+        if release.version =~ /.*\.(Alpha[0-9]+|Beta[0-9]+|CR[0-9]+)$/
+          release.stable = false
+        elsif release.version =~ /.*\.(Final|SP[0-9]+)/
+          release.stable = true
+        else
+          raise "Unsupported version scheme for #{release_file}: #{release.version}"
         end
         
         return release
