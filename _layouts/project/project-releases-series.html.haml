@@ -94,7 +94,7 @@ project_hero_partial: project/hero-series.html.haml
 
 %h2{:id => "documentation"} Documentation
 %p
-  Documentation for this specific series can be accessed through the links below:
+  Documentation for #{project_description.name} #{series.version} can be accessed through the links below:
 %p
   - reference_doc = reference_doc(project_description, series)
   %a.ui.right.labeled.icon.button(href="#{reference_doc.html_url}")
@@ -227,7 +227,7 @@ project_hero_partial: project/hero-series.html.haml
       {projectName} {version} has reached its end-of-life: we recommend you use a newer series if possible.
       ====
   %p
-    If you want to start using #{project_description.name}, please refer to the getting started guide:
+    If you want to start using #{project_description.name} #{series.version}, please refer to the getting started guide:
   %p
     - if not getting_started_guide.html_url.nil?
       %a.ui.right.labeled.icon.button(href="#{getting_started_guide.html_url}")
