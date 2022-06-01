@@ -29,7 +29,7 @@ project_buttons_partial: project/releases-buttons.html.haml
       - release = series.releases[0]
       .column
         .ui.raised.segment.version
-          = partial( 'project/series-status-label.html.haml', { "series" => series, "classes" => "right ribbon" } )
+          = partial( 'project/series-status-label.html.haml', { "series" => series, "classes" => "right ribbon", "tooltipPosition" => "left center" } )
           %h3.ui.header
             = series.version
             %small
@@ -67,7 +67,7 @@ project_buttons_partial: project/releases-buttons.html.haml
         - release = series.releases[0]
         .column
           .ui.raised.segment.version
-            = partial( 'project/series-status-label.html.haml', { "series" => series, "classes" => "right ribbon" } )
+            = partial( 'project/series-status-label.html.haml', { "series" => series, "classes" => "right ribbon", "tooltipPosition" => "left center" } )
             %h3.ui.header
               = series.version
               %small

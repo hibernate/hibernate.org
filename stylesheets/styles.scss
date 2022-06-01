@@ -42,7 +42,7 @@ div.logo img {
 		font-size: 4rem;
 		letter-spacing: 2px;
 
-		span {
+		> span {
 			background-color: #7d8a90;
 			padding: 3px;
 			padding-left: 10px;
@@ -54,7 +54,7 @@ div.logo img {
 		font-size: 2rem;
 		color: white;
 
-		span {
+		> span {
 			background-color: #7d8a90;
 			padding: 3px;
 			padding-left: 10px;
@@ -719,6 +719,11 @@ pre .comment .conum {
 
 .ui.items > .item > .content > a.header {
     color: #4183C4;
+}
+
+// Make sure newlines are properly rendered in tooltips (popups)
+[data-tooltip]:after {
+  white-space: pre;
 }
 
 // Semantic UI has these classes, however they're only applicable to
