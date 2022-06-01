@@ -92,44 +92,26 @@ module Awestruct
       def populateReleaseHashes(releases_dir, release_series_hash, release_hash)
         Dir.foreach(releases_dir) do |file_name|
           file = File.expand_path( file_name, releases_dir )
-          if ( File.directory?( file ) )
-            # skip '.' and '..'
-            if ( file_name.start_with?( "." ) )
-              next
-            else
-              # This directory represents a release series
-              series = createSeries( file )
-              release_series_hash[series.version] = series
+          # skip '.' and '..'
+          if ( file_name.start_with?( "." ) )
+            next
+          else
+            # This directory represents a release series
+            series = createSeries( file )
+            release_series_hash[series.version] = series
 
-              # Populate this series' releases
-              Dir.foreach(file) do |sub_file_name|
-               sub_file = File.expand_path( sub_file_name, file )
-                # skip '.' and '..' and 'series.yml'
-                if ( File.directory?( sub_file ) || File.basename( sub_file ) == "series.yml" )
-                  next
-                else
-                  release = createRelease( sub_file, series )
-                  series.releases.push( release )
-                  release_hash[release.version] = release
-                end
+            # Populate this series' releases
+            Dir.foreach(file) do |sub_file_name|
+             sub_file = File.expand_path( sub_file_name, file )
+              # skip '.' and '..' and 'series.yml'
+              if ( File.directory?( sub_file ) || File.basename( sub_file ) == "series.yml" )
+                next
+              else
+                release = createRelease( sub_file, series )
+                series.releases.push( release )
+                release_hash[release.version] = release
               end
             end
-          else
-            # Old-style release files, directly at the root, with no series info
-            # TODO remove this code if all projects migrate to the "series" paradigm
-            release = createRelease( file, nil )
-            release_hash[release.version] = release
-            # Add a minimal series from the information we can get
-            series_version = release.version_family.to_s # to_s is necessary, some files use symbols instead of strings
-            series = release_series_hash[series_version]
-            if ( series == nil ) 
-              series = OpenStruct.new
-              release_series_hash[series_version] = series
-              series[:version] = series_version
-              series[:releases] = Array.new
-            end
-            series[:displayed] ||= release.displayed
-            series.releases.push( release )
           end
         end
       end
