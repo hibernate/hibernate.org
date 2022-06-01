@@ -2,6 +2,8 @@ summary: >-
   API overhaul.
   Safer and more concise Search DSL, more powerful bridges, smarter automatic indexing, nested documents.
   Upgrades to Lucene 8 and Elasticsearch 7.
+endoflife: true
+displayed: true
 artifacts:
   - artifact_id: hibernate-search-mapper-orm
     summary: Hibernate ORM mapper
