@@ -314,8 +314,17 @@ project_hero_partial: project/hero-series.html.haml
       .ui.row
         .three.wide.column
           %p
-            %span.ui.label.version{:class => "#{series.endoflife ? 'red' : (release.stable ? 'green' : 'orange')}"}
-              = version
+            - if series.endoflife
+              %span.ui.label.version.red
+                %span{:data => {:tooltip => "#{project_description.name} #{series.version} has reached its end-of-life: \n we recommend that you use a newer series if possible.", :position => "right center"}}
+                  = version
+            - elsif release.stable
+              %span.ui.label.version.green
+                = version
+            - else
+              %span.ui.label.version.orange
+                %span{:data => {:tooltip => "This is a development release: be prepared for changes.", :position => "right center"}}
+                  = version
           %p
             %small.ui.label= release.date
         .thirteen.wide.column

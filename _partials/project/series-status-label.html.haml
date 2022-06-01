@@ -1,12 +1,15 @@
 - series = page["series"]
 - classes = page["classes"]
+- tooltipPosition = page["tooltipPosition"] || "bottom center"
 
 - if series.endoflife
   %span.ui.label.red{:class => "#{classes}"}
-    end-of-life
+    %span{:data => {:tooltip => "#{series.project.name} #{series.version} has reached its end-of-life: \n we recommend that you use a newer series if possible.", :position => tooltipPosition}}
+      end-of-life
 - elsif series.stable
   %span.ui.label.green{:class => "#{classes}"}
     stable
 - else
   %span.ui.label.orange{:class => "#{classes}"}
-    development
+    %span{:data => {:tooltip => "#{series.project.name} #{series.version} is still in development: \n we encourage you to try it, but be prepared for changes.", :position => tooltipPosition}}
+      development

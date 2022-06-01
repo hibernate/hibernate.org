@@ -60,7 +60,7 @@ module Awestruct
                 project[:release_series] = release_series_hash
               end
 
-              populateReleaseHashes( entry, release_series_hash, releases_hash )
+              populateReleaseHashes( project, entry )
               
               sortReleaseHashes( project )
               
@@ -89,7 +89,9 @@ module Awestruct
         return project
       end
 
-      def populateReleaseHashes(releases_dir, release_series_hash, release_hash)
+      def populateReleaseHashes(project, releases_dir)
+        release_hash = project[:releases]
+        release_series_hash = project[:release_series]
         Dir.foreach(releases_dir) do |file_name|
           file = File.expand_path( file_name, releases_dir )
           # skip '.' and '..'
@@ -97,7 +99,7 @@ module Awestruct
             next
           else
             # This directory represents a release series
-            series = createSeries( file )
+            series = createSeries( project, file )
             release_series_hash[series.version] = series
 
             # Populate this series' releases
@@ -107,7 +109,7 @@ module Awestruct
               if ( File.directory?( sub_file ) || File.basename( sub_file ) == "series.yml" )
                 next
               else
-                release = createRelease( sub_file, series )
+                release = createRelease( project, series, sub_file )
                 series.releases.push( release )
                 release_hash[release.version] = release
               end
@@ -116,9 +118,11 @@ module Awestruct
         end
       end
 
-      def createSeries(series_dir)
+      def createSeries(project, series_dir)
         series_file = File.expand_path( "./series.yml", series_dir )
         series = @site.engine.load_yaml( series_file )
+
+        series[:project] = project
         if ( series[:version] == nil )
           series[:version] = File.basename( series_dir )
         end
@@ -129,13 +133,15 @@ module Awestruct
         return series
       end
 
-      def createRelease(release_file, series)
+      def createRelease(project, series, release_file)
         unless ( release_file =~ /.*\.yml$/ )
           abort( "The release file #{release_file} does not have the YAML (.yml) extension!" )
         end
 
         release = @site.engine.load_yaml( release_file )
-        
+
+        release[:project] = project
+        release[:series] = series
         if ( release[:version] == nil )
           File.basename( release_file ) =~ /^(.*)\.\w*$/
           release[:version] = $1
