@@ -115,92 +115,101 @@ project_hero_partial: project/hero-series.html.haml
     documentation page.
 
 %h2{:id => "get-it"} How to get it
+- if series.endoflife
+  :asciidoc
+    :projectName: #{project_description.name}
+    :version: #{series.version}
+    [WARNING]
+    ====
+    {projectName} {version} has reached its end-of-life: we recommend you use a newer series if possible.
+    ====
 .ui.grid.equal.height.stackable.download-options
-  - if maven_repo
-    .eleven.wide.column
-      %h3 Maven, Gradle...
-      - if maven_repo[:bintray]
-        %p
-          Maven artifacts of #{project_description.name} are published to
-          %a{:href => site.maven.repo.central.web_ui_url}
-            Maven Central
-          and to
-          %a{:href => site.maven.repo.bintray.web_ui_url}
-            Bintray.
-      - elsif maven_repo[:jboss]
-        %p
-          Maven artifacts of #{project_description.name} are published to
-          %a{:href => site.maven.repo.central.web_ui_url}
-            Maven Central
-          and to the
-          %a{:href => site.maven.repo.jboss.web_ui_url}
-            JBoss Maven repository.
-          Refer to the
-          %a{:href => "http://community.maven.jboss.org/wiki/MavenGettingStarted-Users"} Maven Getting Started guide
-          on the JBoss Wiki for more information on how to configure the JBoss Maven repository.
-      - else
-        %p
-          Maven artifacts of #{project_description.name} are published to
-          %a{:href => site.maven.repo.central.web_ui_url}
-            Maven Central.
-      - if maven_repo[:bintray]
-        %p
-          You can find the Maven coordinates of all artifacts through the link below:
+  .row
+    - if maven_repo
+      .eleven.wide.column
+        %h3 Maven, Gradle...
+        - if maven_repo[:bintray]
           %p
-            %a.ui.right.labeled.button.primary.icon{:href => maven_bintray_url(maven_repo.bintray.package)}
-              %i.icon.cloud.cubes
-              Maven artifacts
-      - elsif maven_repo[:central]
-        %p
-          You can find the Maven coordinates of all artifacts through the link below:
+            Maven artifacts of #{project_description.name} are published to
+            %a{:href => site.maven.repo.central.web_ui_url}
+              Maven Central
+            and to
+            %a{:href => site.maven.repo.bintray.web_ui_url}
+              Bintray.
+        - elsif maven_repo[:jboss]
           %p
-            %a.ui.right.labeled.button.primary.icon{:href => maven_central_search_url(latest_release_group_id, maven_repo.central.artifact_id_pattern, latest_release.version)}
-              %i.icon.cloud.cubes
-              Maven artifacts
-      - if series[:artifacts]
+            Maven artifacts of #{project_description.name} are published to
+            %a{:href => site.maven.repo.central.web_ui_url}
+              Maven Central
+            and to the
+            %a{:href => site.maven.repo.jboss.web_ui_url}
+              JBoss Maven repository.
+            Refer to the
+            %a{:href => "http://community.maven.jboss.org/wiki/MavenGettingStarted-Users"} Maven Getting Started guide
+            on the JBoss Wiki for more information on how to configure the JBoss Maven repository.
+        - else
+          %p
+            Maven artifacts of #{project_description.name} are published to
+            %a{:href => site.maven.repo.central.web_ui_url}
+              Maven Central.
+        - if maven_repo[:bintray]
+          %p
+            You can find the Maven coordinates of all artifacts through the link below:
+            %p
+              %a.ui.right.labeled.button.primary.icon{:href => maven_bintray_url(maven_repo.bintray.package)}
+                %i.icon.cloud.cubes
+                Maven artifacts
+        - elsif maven_repo[:central]
+          %p
+            You can find the Maven coordinates of all artifacts through the link below:
+            %p
+              %a.ui.right.labeled.button.primary.icon{:href => maven_central_search_url(latest_release_group_id, maven_repo.central.artifact_id_pattern, latest_release.version)}
+                %i.icon.cloud.cubes
+                Maven artifacts
+        - if series[:artifacts]
+          %p
+            Below are the Maven coordinates of the main artifacts.
+          %dl.sparse
+            - series.artifacts.each do |artifact|
+              - group_id = latest_release_group_id
+              - artifact_id = artifact.artifact_id
+              - version = latest_release.version
+              - summary = artifact[:summary]
+              - summary ||= artifact.artifact_id
+              %dt
+                %a.ui.label.large.blue{:href => maven_central_artifact_url(group_id, artifact_id, version)}
+                  #{group_id}:#{artifact_id}:#{version}
+              %dd= summary
+              - if false # disabled for now, takes too much vertical space
+                :asciidoc
+                  :groupId: #{group_id}
+                  :artifactId: #{artifact_id}
+                  :version: #{version}
+                  [source,xml]
+                  [subs="verbatim,attributes"]
+                  ----
+                  <dependency>
+                      <groupId>{groupId}</groupId>
+                      <artifactId>{artifactId}</artifactId>
+                      <version>{version}</version>
+                  </dependency>
+                  ----
+        - if project_maven.signing&.since
+          %p
+            All Maven artifacts of this project released after #{project_maven.signing?.since} are signed.
+          %p
+            To verify signed Maven artifacts, head to
+            %a{:href => "/community/keys/"}
+              this page.
+    - if dist_sourceforge
+      .five.wide.column.divided
+        %h3 Zip archive
         %p
-          Below are the Maven coordinates of the main artifacts.
-        %dl.sparse
-          - series.artifacts.each do |artifact|
-            - group_id = latest_release_group_id
-            - artifact_id = artifact.artifact_id
-            - version = latest_release.version
-            - summary = artifact[:summary]
-            - summary ||= artifact.artifact_id
-            %dt
-              %a.ui.label.large.blue{:href => maven_central_artifact_url(group_id, artifact_id, version)}
-                #{group_id}:#{artifact_id}:#{version}
-            %dd= summary
-            - if false # disabled for now, takes too much vertical space
-              :asciidoc
-                :groupId: #{group_id}
-                :artifactId: #{artifact_id}
-                :version: #{version}
-                [source,xml]
-                [subs="verbatim,attributes"]
-                ----
-                <dependency>
-                    <groupId>{groupId}</groupId>
-                    <artifactId>{artifactId}</artifactId>
-                    <version>{version}</version>
-                </dependency>
-                ----
-      - if project_maven.signing&.since
+          Direct download is available from SourceForge:
         %p
-          All Maven artifacts of this project released after #{project_maven.signing?.since} are signed.
-        %p
-          To verify signed Maven artifacts, head to
-          %a{:href => "/community/keys/"}
-            this page.
-  - if dist_sourceforge
-    .five.wide.column.divided
-      %h3 Zip archive
-      %p
-        Direct download is available from SourceForge:
-      %p
-        %a.ui.right.labeled.button.primary.icon{:href => dist_sourceforge.zip_url, :title => "Download"}
-          %i.icon.cloud.download
-          Download Zip archive
+          %a.ui.right.labeled.button.primary.icon{:href => dist_sourceforge.zip_url, :title => "Download"}
+            %i.icon.cloud.download
+            Download Zip archive
 
 %p
   More information about specific releases (announcements, download links) can be found
@@ -209,6 +218,14 @@ project_hero_partial: project/hero-series.html.haml
 
 - if not getting_started_guide.nil?
   %h2{:id => "getting_started"} Getting started
+  - if series.endoflife
+    :asciidoc
+      :projectName: #{project_description.name}
+      :version: #{series.version}
+      [WARNING]
+      ====
+      {projectName} {version} has reached its end-of-life: we recommend you use a newer series if possible.
+      ====
   %p
     If you want to start using #{project_description.name}, please refer to the getting started guide:
   %p
@@ -270,6 +287,14 @@ project_hero_partial: project/hero-series.html.haml
 ~ content
 
 %h2{:id => "releases"} Releases in this series
+- if series.endoflife
+  :asciidoc
+    :projectName: #{project_description.name}
+    :version: #{series.version}
+    [WARNING]
+    ====
+    {projectName} {version} has reached its end-of-life: we recommend you use a newer series if possible.
+    ====
 - unless series.nil?
   .ui.stackable.grid.series-versions
     - series.releases.each do |release|
