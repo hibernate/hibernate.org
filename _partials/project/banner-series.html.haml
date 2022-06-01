@@ -3,7 +3,6 @@
 - project_name = real_page.project ? project_description.name : ''
 - series = project_description.release_series[real_page.series_version]
 - real_page.title = "#{series.version} series"
-- latest_release = series.releases.first
 .jumbotron.small
   .ui.container
     .ui.grid.stackable
@@ -15,7 +14,7 @@
           %h2
             %span
               = real_page.title
-            %span.ui.label.tag{:class => "#{latest_release.stable ? 'green' : 'orange'}"} #{latest_release.stable ? 'stable' : 'development'}
+            = partial( 'project/series-status-label.html.haml', { "series" => series, "classes" => "tag" } )
         .column.four.wide.middle.aligned
           = partial( real_page.project_buttons_partial.nil? ? 'project/empty-buttons.html.haml' : real_page.project_buttons_partial, { "real_page" => real_page } )
 

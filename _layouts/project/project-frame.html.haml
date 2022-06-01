@@ -9,8 +9,7 @@ layout: base
 %script
   var displayed_series = [];
   - unless project_description.release_series.nil?
-    - project_description.release_series.values.each do |series|
-      - unless series.displayed then next end
+    - project_description.active_release_series.each do |series|
       displayed_series.push('#{series.version}');
 
 = partial( page.project_banner_partial.nil? ? 'project/banner.html.haml' : page.project_banner_partial, { "real_page" => page } )

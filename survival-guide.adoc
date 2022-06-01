@@ -203,10 +203,20 @@ in the `_data/<project ID>/releases/<series version>` directory.
 
 For information about the content of each file, see <<data_directory,here>>.
 
-=== Hide an older series
+=== Older/end-of-life'd series
 
-To hide an older series, edit the `_data/<project ID>/releases/<series version>/series.yml` file
-to set the `displayed` attribute to `false` (just add the attribute if it is missing).
+To mark a series as end-of-life (no longer maintained) and display the corresponding warnings,
+edit the `_data/<project ID>/releases/<series version>/series.yml` file
+to set the `endoflife` attribute to `true` (just add the attribute if it is missing).
+
+By default, an end-of-life'd series is considered "older" and not displayed with the other series:
+it is not displayed in the drop-down "Releases" submenu,
+it is moved to its own "Older series" section in the page listing all series,
+and it is not displayed in the project's compatibility matrix.
+
+You can override this behavior, to hide a non-EOL'd series or display an EOL'd series,
+by editing the `_data/<project ID>/releases/<series version>/series.yml` file
+and setting the `displayed` attribute to `true` or `false` (just add the attribute if it is missing).
 
 === Hide a specific release
 
