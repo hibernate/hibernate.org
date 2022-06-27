@@ -2,6 +2,8 @@
 :awestruct-project: orm
 :awestruct-series_version: "6.1"
 
+Check out link:https://in.relation.to/2022/06/24/hibernate-orm-61-features/[this article] which describes the new features in more detail and examples of how to use them!
+
 * Support for sub-query in HQL/Criteria from-clause
 * Store basic arrays and collections using JDBC ARRAY/JSON/XML types
 * Unified `mapping.xml` XSD
