@@ -6,6 +6,19 @@ This page contains everything you need to know when upgrading from one Hibernate
 
 == 8.0.x
 
+=== 8.0.0.CR1
+
+* The `GetterPropertySelectionStrategy` SPI contract has been adjusted.
+  The `getGetterMethodNameCandidates()` method now returns a `List` instead of a `Set`.
+
+=== 8.0.0.Alpha3
+
+No migration concerns.
+
+=== 8.0.0.Alpha2
+
+No migration concerns.
+
 === 8.0.0.Alpha1
 
 * Jakarta EE 10
