@@ -6,20 +6,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
 <meta name="author" content="Davide D&#8217;Alto, Gavin King">
-<title>Hibernate Reactive 1.1.6.Final Reference Documentation</title>
+<title>Hibernate Reactive 1.1.7.Final Reference Documentation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <link rel="stylesheet" href="./asciidoctor.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Hibernate Reactive 1.1.6.Final Reference Documentation</h1>
+<h1>Hibernate Reactive 1.1.7.Final Reference Documentation</h1>
 <div class="details">
 <span id="author" class="author">Davide D&#8217;Alto</span><br>
 <span id="email" class="email"><a href="mailto:davide@hibernate.org">davide@hibernate.org</a></span><br>
 <span id="author2" class="author">Gavin King</span><br>
 <span id="email2" class="email"><a href="mailto:gavin@hibernate.org">gavin@hibernate.org</a></span><br>
-<span id="revnumber">version 1.1.6.Final</span>
+<span id="revnumber">version 1.1.7.Final</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -100,7 +100,8 @@ is represented using a chain of Java <code>CompletionStage</code>s or Mutiny <co
 <p>Java persistence frameworks like JDBC, JPA and Hibernate ORM were designed to use blocking IO for interaction with the
 database, and are therefore not appropriate for use in a reactive environment. As far as we know, Hibernate Reactive
 is the first true ORM implementation designed to take advantage of non-blocking database clients. Out of the box, the
-Vert.x clients for PostgreSQL, MySQL, and DB2 are supported, though the architecture is not limited to these drivers.</p>
+Vert.x clients for PostgreSQL, MySQL, DB2, SQL Server, Oracle, and CockroachDB are supported, though the architecture
+is not limited to these drivers.</p>
 </div>
 <div class="paragraph">
 <p>This programming paradigm holds the potential for improved scalability, and more controlled degradation under peak load,
@@ -328,6 +329,15 @@ Reactive is the persistence <code>&lt;provider&gt;</code> element, which must be
 <p>Otherwise, configuration is almost completely transparent&mdash;you can
 configure Hibernate Reactive pretty much exactly as you would usually
 configure Hibernate ORM core.</p>
+</div>
+<div class="paragraph">
+<p>Just like in regular JPA, you should list your entity classes in <code>persistence.xml</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="xml">&lt;class&gt;org.hibernate.reactive.example.session.Author&lt;/class&gt;
+&lt;class&gt;org.hibernate.reactive.example.session.Book&lt;/class&gt;</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>A full list of configuration properties recognized by Hibernate may be
@@ -2859,8 +2869,8 @@ documentation for details.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 1.1.6.Final<br>
-Last updated 2022-05-19 17:22:52 UTC
+Version 1.1.7.Final<br>
+Last updated 2022-06-30 15:58:41 UTC
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
