@@ -1,0 +1,226 @@
+:awestruct-layout: project-releases-series
+:awestruct-project: search
+:awestruct-series_version: "6.2"
+:page-interpolate: true
+:hsearch-doc-url-prefix: #{reference_doc(site.projects[page.project], series(page, page.series_version)).html_url}
+
+=== Dependency upgrades
+
+[[orm-version]]
+Hibernate ORM::
+Hibernate Search still depends on Hibernate ORM 5.6,
+or Hibernate ORM 6.1 for -orm6 artifacts.
+[[lucene-version]]
+Lucene::
+The Lucene backend still uses Lucene 8.11.
+[[elasticsearch-version]]
+Elasticsearch::
+The Elasticsearch backend now works with Elasticsearch 8.3 and 7.17
+as well as other versions that were already compatible.
+[[opensearch-version]]
+OpenSearch::
+The Elasticsearch backend now works with OpenSearch 1.3 and 2.0
+as well as other versions that were already compatible.
+
+[[mapper-pojo-standalone]]
+=== Standalone POJO Mapper
+
+The Standalone POJO Mapper enables mapping arbitrary POJOs to indexes.
+
+Its key feature compared to the Hibernate ORM integration is its ability to run without Hibernate ORM or a relational database.
+It can be used to index entities coming from an arbitrary datastore or even
+(though that’s not recommended in general) to use Lucene or Elasticsearch as a primary datastore.
+
+For more information about the Standalone POJO Mapper,
+see link:{hsearch-doc-url-prefix}#mapper-pojo-standalone[this section of the reference documentation].
+
+To get started with the Standalone POJO Mapper,
+see link:{hsearch-doc-url-prefix}#mapper-pojo-standalone-getting-started[this getting started guide].
+
+[[mapping-projection]]
+=== Mapping index content to custom types (projection constructors)
+
+Hibernate Search now offers the ability to define projections through the mapping of custom types (typically records),
+by applying the `@ProjectionConstructor` annotation to those types or their constructor:
+
+[source, JAVA, indent=0]
+----
+@ProjectionConstructor
+public record MyBookProjection(String title, List<Author> authors) {
+    @ProjectionConstructor
+    public record Author(String firstName, String lastName) {
+    }
+}
+----
+
+Executing such a projection then becomes as easy as referencing the custom type:
+
+[source, JAVA, indent=0]
+----
+List<MyBookProjection> hits = searchSession.search( Book.class )
+        .select( MyBookProjection.class )
+        .where( f -> f.matchAll() )
+        .fetchHits( 20 );
+----
+
+See link:{hsearch-doc-url-prefix}#mapping-projection[this section of the reference documentation]
+for more information.
+
+[[mapping-improvements]]
+=== Mapping improvements
+
+AAll fields are now projectable by default with the Elasticsearch backend.
+
+This change was made because making a field projectable doesn't incur any performance penalty with the Elasticsearch backend.
+
+Since making a field projectable does have an impact on performance with the Lucene backend,
+the defaults with the Lucene backend didn't change:
+Lucene fields still need to be made projectable explicitly.
+
+[[search-dsl-improvements]]
+=== Search DSL improvements
+
+[[predicate-matchnone]]
+New link:{hsearch-doc-url-prefix}#search-dsl-predicate-match-none[`matchNone` predicate]::
+The `matchNone` predicate matches no documents.
++
+[source, JAVA, indent=0]
+----
+List<Book> hits = searchSession.search( Book.class )
+        .where( f -> f.matchNone() )
+        .fetchHits( 20 );
+----
+[[predicate-bool-new-syntax-root]]
+Shorter syntax for link:{hsearch-doc-url-prefix}#search-dsl-predicate-boolean-lambda[complex, root boolean predicates]::
+Instead of `.where( f -> f.bool( b -> ... ) )`, you can now use `.where( (f, b) -> ... )`:
++
+[source, JAVA, indent=0]
+----
+MySearchParameters searchParameters = getSearchParameters();
+List<Book> hits = searchSession.search( Book.class )
+        .where( (f, b) -> {
+            b.must( f.matchAll() );
+            if ( searchParameters.getGenreFilter() != null ) {
+                b.must( f.match().field( "genre" )
+                        .matching( searchParameters.getGenreFilter() ) );
+            }
+            if ( searchParameters.getFullTextFilter() != null ) {
+                b.must( f.match().fields( "title", "description" )
+                        .matching( searchParameters.getFullTextFilter() ) );
+            }
+            if ( searchParameters.getPageCountMaxFilter() != null ) {
+                b.must( f.range().field( "pageCount" )
+                        .atMost( searchParameters.getPageCountMaxFilter() ) );
+            }
+        } )
+        .fetchHits( 20 );
+----
++
+The older syntax has been deprecated in favor of the new one.
+[[predicate-bool-new-syntax-non-root]]
+Clearer syntax for link:{hsearch-doc-url-prefix}#search-dsl-predicate-boolean-lambda[complex, non-root boolean predicates]::
+Instead of `f.bool( b -> ... )`, you can now use `f.bool().with( b -> ... )`:
++
+[source, JAVA, indent=0]
+----
+MySearchParameters searchParameters = getSearchParameters();
+List<Book> hits = searchSession.search( Book.class )
+        .where( (f, b) -> {
+            b.must( f.matchAll() );
+            if ( searchParameters.getGenreFilter() != null ) {
+                b.must( f.match().field( "genre" )
+                        .matching( searchParameters.getGenreFilter() ) );
+            }
+            if ( !searchParameters.getAuthorFilters().isEmpty() ) {
+                b.must( f.bool().with( b2 -> {
+                    for ( String authorFilter : searchParameters.getAuthorFilters() ) {
+                        b2.should( f.match().fields( "authors.firstName", "authors.lastName" )
+                                .matching( authorFilter ) );
+                    }
+                } ) );
+            }
+        } )
+        .fetchHits( 20 );
+----
++
+The older syntax has been deprecated in favor of the new one.
+[[predicate-nested-new-syntax]]
+Clearer syntax for the link:{hsearch-doc-url-prefix}#search-dsl-predicate-nested[`nested` predicate]::
+Instead of `f.nested().objectField( ... ).nest( f.bool().must( ... ) )`, you can now use `f.nested( ... ).must( ... )`:
++
+[source, JAVA, indent=0]
+----
+List<Book> hits = searchSession.search( Book.class )
+        .where( f -> f.nested( "authors" )
+                .must( f.match().field( "authors.firstName" )
+                        .matching( "isaac" ) )
+                .must( f.match().field( "authors.lastName" )
+                        .matching( "asimov" ) ) )
+        .fetchHits( 20 );
+----
++
+The older syntax has been deprecated in favor of the new one.
+[[predicate-matchnone]]
+New link:{hsearch-doc-url-prefix}#search-dsl-predicate-match-none[`matchNone` predicate]::
+The `matchNone` predicate matches no documents.
++
+[source, JAVA, indent=0]
+----
+List<Book> hits = searchSession.search( Book.class )
+        .where( f -> f.matchNone() )
+        .fetchHits( 20 );
+----
+[[projection-composite-syntax]]
+New syntax for link:{hsearch-doc-url-prefix}#search-dsl-projection-composite[composite projections]::
+The definition of composite projections is now possible with a fluent syntax:
++
+[source, JAVA, indent=0]
+----
+List<MyPair<String, Genre>> hits = searchSession.search( Book.class )
+        .select( f -> f.composite()
+                .from( f.field( "title", String.class ),
+                        f.field( "genre", Genre.class ) )
+                .as( MyPair::new ) )
+        .where( f -> f.matchAll() )
+        .fetchHits( 20 );
+----
++
+Most older syntaxes have been deprecated in favor of the new one.
+[[projection-object]]
+New link:{hsearch-doc-url-prefix}#search-dsl-projection-object[`object` projection]::
+The `object` projection yields one projected value for each object in a given object field.
++
+[source, JAVA, indent=0]
+----
+List<List<MyAuthorName>> hits = searchSession.search( Book.class )
+        .select( f -> f.object( "authors" )
+                .from( f.field( "authors.firstName", String.class ),
+                        f.field( "authors.lastName", String.class ) )
+                .as( MyAuthorName::new )
+                .multi() )
+        .where( f -> f.matchAll() )
+        .fetchHits( 20 );
+----
+[[predicate-matchnone]]
+New link:{hsearch-doc-url-prefix}#search-dsl-projection-constant[`constant` projection]::
+The `constant` projection returns the same value for every single document, the value being provided when defining the projection.
++
+[source, JAVA, indent=0]
+----
+Instant searchRequestTimestamp = Instant.now();
+List<MyPair<Integer, Instant>> hits = searchSession.search( Book.class )
+        .select( f -> f.composite()
+                .from( f.id( Integer.class ), f.constant( searchRequestTimestamp ) )
+                .as( MyPair::new ) )
+        .where( f -> f.matchAll() )
+        .fetchHits( 20 );
+----
+
+[[outbox-polling-improvements]]
+=== `outbox-polling` coordination improvements
+
+You can now customize table names, schema and catalog involved in Hibernate Search's `outbox-polling` coordination strategy
+through simple, straightforward configuration properties.
+
+See link:{hsearch-doc-url-prefix}#_custom_schematable_nameetc[this section of the reference documentation]
+for more information.
