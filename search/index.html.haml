@@ -154,6 +154,11 @@ project: search
     you can also scale out by distributing your application
     and relying on an https://www.elastic.co/products/elasticsearch/[Elasticsearch] cluster for indexing,
     with only a few configuration changes.
+
+    For even better scaling and coordination with the Elasticsearch backend,
+    Hibernate Search can also send entity change events to
+    https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#coordination-database-polling[a transactional outbox table in the database],
+    spreading indexing across multiple asynchronous event processors.
 .feature-block
   :asciidoc
     == Spatial queries
