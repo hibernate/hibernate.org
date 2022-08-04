@@ -9,7 +9,7 @@
 [[orm-version]]
 Hibernate ORM::
 Hibernate Search 6.1 is compatible with Hibernate ORM 5.6,
-but also 6.0 <<orm6,through separate Maven artifacts>>.
+but also with Hibernate ORM 6.0 or 6.1 <<orm6,through separate Maven artifacts>>.
 
 [[lucene-version]]Lucene::
 The Lucene backend now uses Lucene 8.11.
