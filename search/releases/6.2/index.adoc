@@ -69,7 +69,7 @@ for more information.
 [[mapping-improvements]]
 === Mapping improvements
 
-AAll fields are now projectable by default with the Elasticsearch backend.
+All fields are now projectable by default with the Elasticsearch backend.
 
 This change was made because making a field projectable doesn't incur any performance penalty with the Elasticsearch backend.
 
