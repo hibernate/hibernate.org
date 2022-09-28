@@ -904,6 +904,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  class with the given identifiers, or null if there is no such
  persistent instance.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Session.html#find(java.lang.Class,java.lang.Object,javax.persistence.LockModeType)">find(Class&lt;T&gt;, Object, LockModeType)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></dt>
+<dd>
+<div class="block">Asynchronously return the persistent instance of the given entity
+ class with the given identifier, requesting the given <a href="https://jakarta.ee/specifications/platform/8/apidocs/javax/persistence/LockModeType.html?is-external=true" title="class or interface in javax.persistence" class="externalLink"><code>LockModeType</code></a>.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.Session.html#find(java.lang.Class,java.lang.Object,javax.persistence.LockModeType)">find(Class&lt;T&gt;, Object, LockModeType)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></dt>
+<dd>
+<div class="block">Asynchronously return the persistent instance of the given entity
+ class with the given identifier, requesting the given <a href="https://jakarta.ee/specifications/platform/8/apidocs/javax/persistence/LockModeType.html?is-external=true" title="class or interface in javax.persistence" class="externalLink"><code>LockModeType</code></a>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Session.html#find(java.lang.Class,java.lang.Object,org.hibernate.LockMode)">find(Class&lt;T&gt;, Object, LockMode)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></dt>
 <dd>
 <div class="block">Asynchronously return the persistent instance of the given entity
@@ -977,6 +987,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#get(java.lang.Class,java.lang.Object)">get(Class&lt;T&gt;, Object)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></dt>
 <dd>
 <div class="block">Retrieve a row.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#get(java.lang.Class,java.lang.Object,javax.persistence.LockModeType)">get(Class&lt;T&gt;, Object, LockModeType)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
+<dd>
+<div class="block">Retrieve a row, obtaining the specified lock mode.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#get(java.lang.Class,java.lang.Object,javax.persistence.LockModeType)">get(Class&lt;T&gt;, Object, LockModeType)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></dt>
+<dd>
+<div class="block">Retrieve a row, obtaining the specified lock mode.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#get(java.lang.Class,java.lang.Object,org.hibernate.LockMode)">get(Class&lt;T&gt;, Object, LockMode)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
 <dd>
@@ -1735,6 +1753,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Read settings from a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Properties.html?is-external=true" title="class or interface in java.util" class="externalLink"><code>Properties</code></a> file by resource name.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Session.html#lock(java.lang.Object,javax.persistence.LockModeType)">lock(Object, LockModeType)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></dt>
+<dd>
+<div class="block">Obtain the specified lock level upon the given object.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.Session.html#lock(java.lang.Object,javax.persistence.LockModeType)">lock(Object, LockModeType)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></dt>
+<dd>
+<div class="block">Obtain the specified lock level upon the given object.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Session.html#lock(java.lang.Object,org.hibernate.LockMode)">lock(Object, LockMode)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></dt>
 <dd>
 <div class="block">Obtain the specified lock level upon the given object.</div>
@@ -2351,6 +2377,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Defines the contract for handling of reactive session flush events.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/session/ReactiveSession.html#reactiveForceFlush(org.hibernate.engine.spi.EntityEntry)">reactiveForceFlush(EntityEntry)</a></span> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveSession.html" title="interface in org.hibernate.reactive.session">ReactiveSession</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/provider/service/ReactiveGenerationTarget.html" title="class in org.hibernate.reactive.provider.service"><span class="typeNameLink">ReactiveGenerationTarget</span></a> - Class in <a href="org/hibernate/reactive/provider/service/package-summary.html">org.hibernate.reactive.provider.service</a></dt>
 <dd>
 <div class="block">Adaptor that redirects DDL generated by the schema export
@@ -2674,6 +2702,24 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Refresh the entity instance state from the database.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Session.html#refresh(java.lang.Object,javax.persistence.LockModeType)">refresh(Object, LockModeType)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></dt>
+<dd>
+<div class="block">Re-read the state of the given instance from the underlying database,
+ requesting the given <a href="https://jakarta.ee/specifications/platform/8/apidocs/javax/persistence/LockModeType.html?is-external=true" title="class or interface in javax.persistence" class="externalLink"><code>LockModeType</code></a>.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#refresh(java.lang.Object,javax.persistence.LockModeType)">refresh(Object, LockModeType)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
+<dd>
+<div class="block">Refresh the entity instance state from the database.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.Session.html#refresh(java.lang.Object,javax.persistence.LockModeType)">refresh(Object, LockModeType)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></dt>
+<dd>
+<div class="block">Re-read the state of the given instance from the underlying database,
+ requesting the given <a href="https://jakarta.ee/specifications/platform/8/apidocs/javax/persistence/LockModeType.html?is-external=true" title="class or interface in javax.persistence" class="externalLink"><code>LockModeType</code></a>.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#refresh(java.lang.Object,javax.persistence.LockModeType)">refresh(Object, LockModeType)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></dt>
+<dd>
+<div class="block">Refresh the entity instance state from the database.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Session.html#refresh(java.lang.Object,org.hibernate.LockMode)">refresh(Object, LockMode)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></dt>
 <dd>
 <div class="block">Re-read the state of the given instance from the underlying database,
@@ -2837,6 +2883,42 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Set the name of the cache region in which to store this
  query result set if <a href="org/hibernate/reactive/stage/Stage.Query.html#setCacheable(boolean)"><code>caching is enabled</code></a>.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Query.html#setCacheRetrieveMode(javax.persistence.CacheRetrieveMode)">setCacheRetrieveMode(CacheRetrieveMode)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a></dt>
+<dd>
+<div class="block">Set the current <a href="https://jakarta.ee/specifications/platform/8/apidocs/javax/persistence/CacheRetrieveMode.html?is-external=true" title="class or interface in javax.persistence" class="externalLink"><code>CacheRetrieveMode</code></a> in effect while this query
+ is being executed.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Session.html#setCacheRetrieveMode(javax.persistence.CacheRetrieveMode)">setCacheRetrieveMode(CacheRetrieveMode)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></dt>
+<dd>
+<div class="block">Set the <a href="https://jakarta.ee/specifications/platform/8/apidocs/javax/persistence/CacheRetrieveMode.html?is-external=true" title="class or interface in javax.persistence" class="externalLink"><code>CacheRetrieveMode</code></a> for this session.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.Query.html#setCacheRetrieveMode(javax.persistence.CacheRetrieveMode)">setCacheRetrieveMode(CacheRetrieveMode)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a></dt>
+<dd>
+<div class="block">Set the current <a href="https://jakarta.ee/specifications/platform/8/apidocs/javax/persistence/CacheRetrieveMode.html?is-external=true" title="class or interface in javax.persistence" class="externalLink"><code>CacheRetrieveMode</code></a> in effect while this query
+ is being executed.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.Session.html#setCacheRetrieveMode(javax.persistence.CacheRetrieveMode)">setCacheRetrieveMode(CacheRetrieveMode)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></dt>
+<dd>
+<div class="block">Set the <a href="https://jakarta.ee/specifications/platform/8/apidocs/javax/persistence/CacheRetrieveMode.html?is-external=true" title="class or interface in javax.persistence" class="externalLink"><code>CacheRetrieveMode</code></a> for this session.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Query.html#setCacheStoreMode(javax.persistence.CacheStoreMode)">setCacheStoreMode(CacheStoreMode)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a></dt>
+<dd>
+<div class="block">Set the current <a href="https://jakarta.ee/specifications/platform/8/apidocs/javax/persistence/CacheStoreMode.html?is-external=true" title="class or interface in javax.persistence" class="externalLink"><code>CacheStoreMode</code></a> in effect while this query
+ is being executed.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Session.html#setCacheStoreMode(javax.persistence.CacheStoreMode)">setCacheStoreMode(CacheStoreMode)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></dt>
+<dd>
+<div class="block">Set the <a href="https://jakarta.ee/specifications/platform/8/apidocs/javax/persistence/CacheStoreMode.html?is-external=true" title="class or interface in javax.persistence" class="externalLink"><code>CacheStoreMode</code></a> for this session.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.Query.html#setCacheStoreMode(javax.persistence.CacheStoreMode)">setCacheStoreMode(CacheStoreMode)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a></dt>
+<dd>
+<div class="block">Set the current <a href="https://jakarta.ee/specifications/platform/8/apidocs/javax/persistence/CacheStoreMode.html?is-external=true" title="class or interface in javax.persistence" class="externalLink"><code>CacheStoreMode</code></a> in effect while this query
+ is being executed.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.Session.html#setCacheStoreMode(javax.persistence.CacheStoreMode)">setCacheStoreMode(CacheStoreMode)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></dt>
+<dd>
+<div class="block">Set the <a href="https://jakarta.ee/specifications/platform/8/apidocs/javax/persistence/CacheStoreMode.html?is-external=true" title="class or interface in javax.persistence" class="externalLink"><code>CacheStoreMode</code></a> for this session.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Query.html#setComment(java.lang.String)">setComment(String)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a></dt>
 <dd>
 <div class="block">Set the comment for this query.</div>
@@ -2873,6 +2955,24 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  this query when executed, where the results are numbered from
  0.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Query.html#setFlushMode(javax.persistence.FlushModeType)">setFlushMode(FlushModeType)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a></dt>
+<dd>
+<div class="block">Set the current <a href="https://jakarta.ee/specifications/platform/8/apidocs/javax/persistence/FlushModeType.html?is-external=true" title="class or interface in javax.persistence" class="externalLink"><code>FlushModeType</code></a> in effect while this query is
+ being executed.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Session.html#setFlushMode(javax.persistence.FlushModeType)">setFlushMode(FlushModeType)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></dt>
+<dd>
+<div class="block">Set the <a href="https://jakarta.ee/specifications/platform/8/apidocs/javax/persistence/FlushModeType.html?is-external=true" title="class or interface in javax.persistence" class="externalLink"><code>flush mode</code></a> for this session.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.Query.html#setFlushMode(javax.persistence.FlushModeType)">setFlushMode(FlushModeType)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a></dt>
+<dd>
+<div class="block">Set the current <a href="https://jakarta.ee/specifications/platform/8/apidocs/javax/persistence/FlushModeType.html?is-external=true" title="class or interface in javax.persistence" class="externalLink"><code>FlushModeType</code></a> in effect while this query is
+ being executed.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.Session.html#setFlushMode(javax.persistence.FlushModeType)">setFlushMode(FlushModeType)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></dt>
+<dd>
+<div class="block">Set the <a href="https://jakarta.ee/specifications/platform/8/apidocs/javax/persistence/FlushModeType.html?is-external=true" title="class or interface in javax.persistence" class="externalLink"><code>flush mode</code></a> for this session.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Query.html#setFlushMode(org.hibernate.FlushMode)">setFlushMode(FlushMode)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a></dt>
 <dd>
 <div class="block">Set the current <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/FlushMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>FlushMode</code></a> in effect while this query is
@@ -2897,6 +2997,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/it/verticle/Product.html#setId(java.lang.Long)">setId(Long)</a></span> - Method in class org.hibernate.reactive.it.verticle.<a href="org/hibernate/reactive/it/verticle/Product.html" title="class in org.hibernate.reactive.it.verticle">Product</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Query.html#setLockMode(java.lang.String,javax.persistence.LockModeType)">setLockMode(String, LockModeType)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a></dt>
+<dd>
+<div class="block">Set the <a href="https://jakarta.ee/specifications/platform/8/apidocs/javax/persistence/LockModeType.html?is-external=true" title="class or interface in javax.persistence" class="externalLink"><code>LockModeType</code></a> to use for specified alias (as defined in
+ the query's <code>from</code> clause).</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.Query.html#setLockMode(java.lang.String,javax.persistence.LockModeType)">setLockMode(String, LockModeType)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a></dt>
+<dd>
+<div class="block">Set the <a href="https://jakarta.ee/specifications/platform/8/apidocs/javax/persistence/LockModeType.html?is-external=true" title="class or interface in javax.persistence" class="externalLink"><code>LockModeType</code></a> to use for specified alias (as defined in
+ the query's <code>from</code> clause).</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Query.html#setLockMode(java.lang.String,org.hibernate.LockMode)">setLockMode(String, LockMode)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a></dt>
 <dd>
 <div class="block">Set the <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>LockMode</code></a> to use for specified alias (as defined in
@@ -2908,6 +3018,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Set the <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>LockMode</code></a> to use for specified alias (as defined in
  the query's <code>from</code> clause).</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Query.html#setLockMode(javax.persistence.LockModeType)">setLockMode(LockModeType)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a></dt>
+<dd>
+<div class="block">Set the <a href="https://jakarta.ee/specifications/platform/8/apidocs/javax/persistence/LockModeType.html?is-external=true" title="class or interface in javax.persistence" class="externalLink"><code>LockModeType</code></a> to use for the whole query.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/hibernate/reactive/stage/Stage.Query.html#setLockMode(javax.persistence.LockModeType)">setLockMode(LockModeType)</a></span> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a></dt>
+<dd>
+<div class="block">Set the <a href="https://jakarta.ee/specifications/platform/8/apidocs/javax/persistence/LockModeType.html?is-external=true" title="class or interface in javax.persistence" class="externalLink"><code>LockModeType</code></a> to use for the whole query.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/hibernate/reactive/mutiny/Mutiny.Query.html#setLockMode(org.hibernate.LockMode)">setLockMode(LockMode)</a></span> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a></dt>
 <dd>
