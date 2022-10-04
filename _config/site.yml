@@ -97,12 +97,12 @@ projects:
           href: '/orm/documentation/'
           css_class: 'folder open'
           documentation_submenu: true
-        - name: Books
-          href: '/orm/books/'
-          css_class: 'book'
         - name: Migration guides
           href: 'https://github.com/hibernate/hibernate-orm/wiki/Migration-Guides'
           css_class: 'share'
+        - name: Books
+          href: '/orm/books/'
+          css_class: 'book'
         - name: Roadmap
           href: 'https://github.com/hibernate/hibernate-orm/wiki/Roadmap'
           css_class: 'road'
@@ -217,6 +217,9 @@ projects:
         - name: Documentation
           href: '/search/documentation/'
           css_class: 'book'
+        - name: Migration guides
+          href: '/search/documentation/migrate/'
+          css_class: 'share'
         - name: More resources
           href: '/search/more-resources/'
           css_class: 'bookmark'
@@ -385,6 +388,9 @@ projects:
         - name: Documentation
           href: '/validator/documentation/'
           css_class: 'book'
+        - name: Migration guides
+          href: '/validator/documentation/migration-guide/'
+          css_class: 'share'
         - name: Roadmap
           href: '/validator/roadmap/'
           css_class: 'road'
