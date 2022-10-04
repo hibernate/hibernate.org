@@ -5,9 +5,10 @@
 - stable_series = project_description.latest_stable_series
 
 .ui.fluid.vertical.menu
+  - # The active menu item is the menu item with the longest prefix of the current path.
+  - active_menu_item = project_description.menu.intern.select {|element| current_path.start_with?(element.href)}.max {|a, b| a.href.size <=> b.href.size }
   - project_description.menu.intern.each do |menu|
-    -# active if path is a subpath of the menu item. The project home has to be treated differently as every path is a subpath of home
-    - active = (menu.href == "/#{real_page.project}/" && menu.href == current_path) || (menu.href != "/#{real_page.project}/" && current_path.start_with?(menu.href))
+    - active = (menu.href == active_menu_item&.href)
     - if menu.releases_submenu && !displayed_series.nil? && !displayed_series.empty?
       .ui.dropdown.link.item{:class => "#{(active ? "selected" : "")}"}
         #{menu.name}

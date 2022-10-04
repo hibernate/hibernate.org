@@ -11,8 +11,10 @@
     %strong= project_name
   .content{:class => "#{(project_active ? "active" : "")}"}
     .menu.internal-links
+      - # The active menu item is the menu item with the longest prefix of the current path.
+      - active_menu_item = site.projects[project_key].menu.intern.select {|element| current_path.start_with?(element.href)}.max {|a, b| a.href.size <=> b.href.size }
       - site.projects[project_key].menu.intern.each do |menu|
-        - item_active = (menu.href == "/#{project_key}/" && menu.href == current_path) || (menu.href != "/#{project_key}/" && current_path.start_with?(menu.href))
+        - item_active = (menu.href == active_menu_item&.href)
         %a.item(href="#{menu.href}"){:class => "#{(item_active ? "active" : "")}"}
           %i.grid.icon{:class => "#{menu.css_class}"}
           = menu.name
