@@ -191,7 +191,7 @@ List<List<MyAuthorName>> hits = searchSession.search( Book.class )
         .where( f -> f.matchAll() )
         .fetchHits( 20 );
 ----
-[[predicate-matchnone]]
+[[projection-constant]]
 New link:{hsearch-doc-url-prefix}#search-dsl-projection-constant[`constant` projection]::
 The `constant` projection returns the same value for every single document, the value being provided when defining the projection.
 +
