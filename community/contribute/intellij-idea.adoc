@@ -108,7 +108,7 @@ Here are the standard license headers for each project:
 NOTE: This information is relative to IntelliJ IDEA version 9.
 
 One important aspect to debugging through Hibernate sources is to make sure that the mere act of debugging
-does not forces proxies to initialize just so the debugger can "show" them.
+does not force proxies to initialize just so the debugger can "show" them.
 In IntelliJ IDEA this is easily configured through what it calls "Data Type Renderers" and "Data Views".
 
 To access this configuration, open your Settings (Ctrl+Alt+S) and go to
@@ -122,8 +122,8 @@ a. Entity Proxy renderer
 *** Rendering: use expression -> `((org.hibernate.proxy.HibernateProxy)this).getHibernateLazyInitializer().isUninitialized() ? ( ((org.hibernate.proxy.HibernateProxy)this).getHibernateLazyInitializer().getEntityName()+"@"+System.identityHashCode(this)+"[proxy;id="+((org.hibernate.proxy.HibernateProxy)this).getHibernateLazyInitializer().getIdentifier()+"]" ) : this.toString()`
 *** Expanding: default; this will force the proxy to initialize (if not already) if the  user attempts to expand the node.
 b. Collection Renderer
-*** FQN: `org.hibernate.collection.AbstractPersistentCollection`
-*** Rendering: use expression -> `((org.hibernate.collection.AbstractPersistentCollection)this).wasInitialized() ? this.toString() : ( ((org.hibernate.collection.AbstractPersistentCollection )this).getClass().getName()+"@"+ System.identityHashCode(this)+" [uninitialized]" )`
+*** FQN: `org.hibernate.collection.spi.AbstractPersistentCollection`
+*** Rendering: use expression -> `((org.hibernate.collection.spi.AbstractPersistentCollection)this).wasInitialized() ? this.toString() : ( ((org.hibernate.collection.spi.AbstractPersistentCollection )this).getClass().getName()+"@"+ System.identityHashCode(this)+" [uninitialized]" )`
 *** Expanding: default; again, this will force the collection to initialize (if not already) if the  user attempts  to expand the node.
 
 == Memory Tuning
