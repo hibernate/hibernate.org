@@ -1,0 +1,8 @@
+:awestruct-layout: project-releases-series
+:awestruct-project: orm
+:awestruct-series_version: "6.2"
+
+* Support for Java `record`
+* Support for `STRUCT` datatypes
+* Improved generated value support
+* @PartitionKey
