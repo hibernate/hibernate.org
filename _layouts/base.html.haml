@@ -2,6 +2,8 @@
 %html(lang="en")
   %head
     = partial('head.html.haml', { "real_page" => page } )
+    - if site.enable_google_analytics
+      = google_analytics
 
   %body.pushable
     = partial( 'menu/mobile.html.haml', {"real_page" => page} )
@@ -29,8 +31,6 @@
       %span.back-to-top.computer.only
         %a{:href => "javascript: void(0)"} Back to top
 
-    - if site.enable_google_analytics
-      = google_analytics_universal
     - if page.bottom_javascripts
       - page.bottom_javascripts.each do |javascript|
         %script{:src=>javascript, :type=>'text/javascript'}

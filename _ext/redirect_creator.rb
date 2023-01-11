@@ -1,4 +1,5 @@
 require 'awestruct/handlers/base_handler'
+require 'google_analytics_4'
 
 module Awestruct
   module Extensions
@@ -32,7 +33,7 @@ module Awestruct
 
   module Handlers
     class RedirectCreationHandler < BaseHandler
-      include Awestruct::Extensions::GoogleAnalytics
+      include Awestruct::Extensions::GoogleAnalytics4
 
       Default_Redirect_Template = "redirects.template"
       def initialize(site, requested_url, target_url)
@@ -85,7 +86,7 @@ module Awestruct
         file = File.open(template_file, "rb")
         content = file.read
         file.close
-        content % {url: @target_url, google_analytics_universal: google_analytics_universal}
+        content % {url: @target_url, google_analytics: google_analytics}
       end
     end
   end

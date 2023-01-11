@@ -3,7 +3,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="refresh" content="5; url=%{url}">
 
-%{google_analytics_universal}
+%{google_analytics}
 
 <script>
 window.location.href = "%{url}"
