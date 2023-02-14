@@ -1,7 +1,7 @@
 date: 2023-02-13
 announcement_url: https://in.relation.to/2023/02/14/hibernate-search-6-2-0-Alpha2
 summary: >-
-  'and'/'or'/'not' predicates,
+  Simpler 'and'/'or'/'not' predicates,
   mass indexing for multiple tenants,
   switch to UUIDs for identifiers in the `outbox-polling` coordination strategy,
   compatibility with Elasticsearch 8.6 and OpenSearch 2.5,
