@@ -1,7 +1,8 @@
 summary: >-
   Standalone POJO Mapper, mapping of classes/records to projections using @ProjectionConstructor,
   search DSL improvements (including projections on object fields),
-  compatibility with Elasticsearch 8.3 and OpenSearch 2.0.
+  compatibility with Elasticsearch 8.6 and OpenSearch 2.5,
+  upgrade of `-orm6` artifacts to Hibernate ORM 6.2.
 artifacts:
   - artifact_id: hibernate-search-mapper-orm
     summary: Hibernate ORM mapper
@@ -23,14 +24,14 @@ artifacts:
     summary: Helper for migrating from Hibernate Search 5 to Hibernate Search 6 (Hibernate ORM mapper + Lucene backend)
 integration_constraints:
   java:
-    version: 8, 11, 17 or 18
+    version: 8, 11, 17 or 19
   orm:
     version: 5.6
   orm6:
-    version: 6.1 - 6.2
+    version: 6.2
   elasticsearch:
-    version: 5.6 - 8.3
+    version: 5.6 - 8.6
   opensearch:
-    version: 1.0 - 2.0
+    version: 1.0 - 2.5
   lucene:
     version: 8.11

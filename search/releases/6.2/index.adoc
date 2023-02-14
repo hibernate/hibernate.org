@@ -8,18 +8,18 @@
 
 [[orm-version]]
 Hibernate ORM::
-Hibernate Search still depends on Hibernate ORM 5.6,
-or Hibernate ORM 6.1 for -orm6 artifacts.
+Hibernate Search still depends on Hibernate ORM 5.6 by default.
+`-orm6` artifacts depend on Hibernate ORM 6.2.
 [[lucene-version]]
 Lucene::
 The Lucene backend still uses Lucene 8.11.
 [[elasticsearch-version]]
 Elasticsearch::
-The Elasticsearch backend now works with Elasticsearch 8.3 and 7.17
+The Elasticsearch backend now works with Elasticsearch 8.6 and 7.17
 as well as other versions that were already compatible.
 [[opensearch-version]]
 OpenSearch::
-The Elasticsearch backend now works with OpenSearch 1.3 and 2.0
+The Elasticsearch backend now works with OpenSearch 1.3 and 2.5
 as well as other versions that were already compatible.
 
 [[mapper-pojo-standalone]]
@@ -69,10 +69,11 @@ for more information.
 [[mapping-improvements]]
 === Mapping improvements
 
+Projectable fields::
 All fields are now projectable by default with the Elasticsearch backend.
-
++
 This change was made because making a field projectable doesn't incur any performance penalty with the Elasticsearch backend.
-
++
 Since making a field projectable does have an impact on performance with the Lucene backend,
 the defaults with the Lucene backend didn't change:
 Lucene fields still need to be made projectable explicitly.
@@ -80,6 +81,46 @@ Lucene fields still need to be made projectable explicitly.
 [[search-dsl-improvements]]
 === Search DSL improvements
 
+[[predicate-and-or-not]]
+Simpler boolean operators with the link:{hsearch-doc-url-prefix}#search-dsl-predicate-and[`and`]/link:{hsearch-doc-url-prefix}#search-dsl-predicate-or[`or`]/link:{hsearch-doc-url-prefix}#search-dsl-predicate-not[`not`] predicates::
+For simpler use cases, you can now avoid the rather complex link:{hsearch-doc-url-prefix}#search-dsl-predicate-boolean[`bool` predicate]
+and use the new link:{hsearch-doc-url-prefix}#search-dsl-predicate-and[`and`]/link:{hsearch-doc-url-prefix}#search-dsl-predicate-or[`or`]/link:{hsearch-doc-url-prefix}#search-dsl-predicate-not[`not`]
+predicates instead:
++
+[source, JAVA, indent=0]
+----
+List<Book> hits = searchSession.search( Book.class )
+        .where( f -> f.and(
+                        f.match().field( "title" )
+                                .matching( "robot" ),
+                        f.match().field( "description" )
+                                .matching( "crime" )
+        ) )
+        .fetchHits( 20 );
+----
++
+[source, JAVA, indent=0]
+----
+List<Book> hits = searchSession.search( Book.class )
+        .where( f -> f.or(
+                        f.match().field( "title" )
+                                .matching( "robot" ),
+                        f.match().field( "description" )
+                                .matching( "investigation" )
+        ) )
+        .fetchHits( 20 );
+----
++
+[source, JAVA, indent=0]
+----
+List<Book> hits = searchSession.search( Book.class )
+        .where( f -> f.not(
+                f.match()
+                        .field( "genre" )
+                        .matching( Genre.SCIENCE_FICTION )
+        ) )
+        .fetchHits( 20 );
+----
 [[predicate-bool-new-syntax-root]]
 Shorter syntax for link:{hsearch-doc-url-prefix}#search-dsl-predicate-boolean-lambda[complex, root boolean predicates]::
 Instead of `.where( f -> f.bool( b -> ... ) )`, you can now use `.where( (f, b) -> ... )`:
@@ -88,18 +129,18 @@ Instead of `.where( f -> f.bool( b -> ... ) )`, you can now use `.where( (f, b) 
 ----
 MySearchParameters searchParameters = getSearchParameters();
 List<Book> hits = searchSession.search( Book.class )
-        .where( (f, b) -> {
-            b.must( f.matchAll() );
+        .where( (f, root) -> {
+            root.add( f.matchAll() );
             if ( searchParameters.getGenreFilter() != null ) {
-                b.must( f.match().field( "genre" )
+                root.add( f.match().field( "genre" )
                         .matching( searchParameters.getGenreFilter() ) );
             }
             if ( searchParameters.getFullTextFilter() != null ) {
-                b.must( f.match().fields( "title", "description" )
+                root.add( f.match().fields( "title", "description" )
                         .matching( searchParameters.getFullTextFilter() ) );
             }
             if ( searchParameters.getPageCountMaxFilter() != null ) {
-                b.must( f.range().field( "pageCount" )
+                root.add( f.range().field( "pageCount" )
                         .atMost( searchParameters.getPageCountMaxFilter() ) );
             }
         } )
@@ -136,15 +177,15 @@ List<Book> hits = searchSession.search( Book.class )
 The older syntax has been deprecated in favor of the new one.
 [[predicate-nested-new-syntax]]
 Clearer syntax for the link:{hsearch-doc-url-prefix}#search-dsl-predicate-nested[`nested` predicate]::
-Instead of `f.nested().objectField( ... ).nest( f.bool().must( ... ) )`, you can now use `f.nested( ... ).must( ... )`:
+Instead of `f.nested().objectField( ... ).nest( f.bool().must( ... ) )`, you can now use `f.nested( ... ).add( ... )`:
 +
 [source, JAVA, indent=0]
 ----
 List<Book> hits = searchSession.search( Book.class )
         .where( f -> f.nested( "authors" )
-                .must( f.match().field( "authors.firstName" )
+                .add( f.match().field( "authors.firstName" )
                         .matching( "isaac" ) )
-                .must( f.match().field( "authors.lastName" )
+                .add( f.match().field( "authors.lastName" )
                         .matching( "asimov" ) ) )
         .fetchHits( 20 );
 ----
@@ -206,11 +247,35 @@ List<MyPair<Integer, Instant>> hits = searchSession.search( Book.class )
         .fetchHits( 20 );
 ----
 
+[[mass-indexing-improvements]]
+=== Mass indexing improvements
+
+Mass indexing multiple tenants::
+In multi-tenant applications, mass indexing can now handle multiple tenants at once,
+provided you don't pass any tenant identifier when creating the mass indexer,
+and you provided a list of tenants in the Hibernate Search configuration.
+See link:{hsearch-doc-url-prefix}#indexing-massindexer-multitenancy[this section of the reference documentation]
+for more information.
+Setting up thread locals during mass indexing::
+The mass indexer now has a concept of "mass indexing environment",
+allowing for instance to set up custom thread locals in mass indexing threads.
+See the `environment` parameter in link:{hsearch-doc-url-prefix}#indexing-massindexer-parameters[this section of the reference documentation]
+for more information.
+Better exception handling::
+Exceptions thrown by Hibernate ORM during mass indexing
+are now passed to the failure handler as every other exception, instead of aborting the whole mass indexing.
+Smarter defaults for parameters::
+`purgeAllOnStart` is now disabled by default in the mass indexer when `dropAndCreateSchemaOnStart` is enabled.
+
 [[outbox-polling-improvements]]
 === `outbox-polling` coordination improvements
 
-You can now customize table names, schema and catalog involved in Hibernate Search's `outbox-polling` coordination strategy
-through simple, straightforward configuration properties.
-
+Outbox events and agents now use UUIDs for their identifiers::
+The primary key of the relevant tables are now using UUIDs instead of longs,
+to avoid reliance on sequences that were slowing down event processing on some databases.
+The migration guide includes migration scripts for the necessary database schema changes.
+Customizable database schema::
+Simple, straightforward configuration properties now allow customizing the database schema involved in Hibernate Search's `outbox-polling` coordination strategy:
+table names, schema and catalog, type of UUID columns as well as UUID generation strategy (random vs. time).
 See link:{hsearch-doc-url-prefix}#_custom_schematable_nameetc[this section of the reference documentation]
 for more information.
