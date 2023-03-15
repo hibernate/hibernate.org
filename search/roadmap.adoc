@@ -19,15 +19,8 @@ For a full list of issues currently planned for this series,
 see https://hibernate.atlassian.net/issues/?jql=project%20%3D%20HSEARCH%20AND%20fixVersion%20%3D%206.2-backlog%20ORDER%20BY%20created%20DESC[here].
 
 Better control over indexing::
-* Hibernate Search 6.2 will provide ways to suspend automatic indexing.
+Hibernate Search 6.2 will provide ways to suspend automatic indexing.
 See link:{hsearch-jira-url-prefix}/HSEARCH-168[HSEARCH-168], link:{hsearch-jira-url-prefix}/HSEARCH-1383[HSEARCH-1383].
-* For some use cases where maintenance downtime during mass indexing is not acceptable,
-Hibernate Search needs to be able to create a new copy of the index,
-index everything into that new copy,
-and replace the old copy with the new one atomically,
-so that clients can continue querying the old index while mass indexing is in progress,
-and never see an empty index (but only, at worst, an out-of-date index).
-See link:{hsearch-jira-url-prefix}/HSEARCH-3499[HSEARCH-3499].
 Hibernate Search for arbitrary data sources::
 Experimental module allowing integration with a datastore that is not accessed using Hibernate ORM.
 +
@@ -44,12 +37,11 @@ where loading data from the original data source might not be possible:
 
 * link:{hsearch-jira-url-prefix}/HSEARCH-3927[HSEARCH-3927] Projection to a DTO/JavaBean/etc.
 * link:{hsearch-jira-url-prefix}/HSEARCH-3943[HSEARCH-3943] Projection nesting: preserving the document structure in projections
-Mass indexing improvements::
-In particular:
 
-* link:{hsearch-jira-url-prefix}/HSEARCH-3499[HSEARCH-3499] Near-zero-downtime mass indexing when the schema did not change
-* link:{hsearch-jira-url-prefix}/HSEARCH-1032[HSEARCH-1032] MassIndexer with an update mechanism
-* link:{hsearch-jira-url-prefix}/HSEARCH-521[HSEARCH-521] Improve performance of MassIndexer through Eager fetching
++
+Unrelated, other features are to be added to the Hibernate Search DSL:
+
+* link:{hsearch-jira-url-prefix}/HSEARCH-2192[HSEARCH-2192] Highlighting in the Search API
 
 == Hibernate Search 7.0
 
@@ -70,19 +62,20 @@ In particular:
 For a full list of issues currently planned for this series,
 see https://hibernate.atlassian.net/issues/?jql=project%20%3D%20HSEARCH%20AND%20fixVersion%20%3D%207.1-backlog%20ORDER%20BY%20created%20DESC[here].
 
+Mass indexing improvements::
+In particular:
+
+* link:{hsearch-jira-url-prefix}/HSEARCH-3499[HSEARCH-3499] Near-zero-downtime mass indexing when the schema did not change
+* link:{hsearch-jira-url-prefix}/HSEARCH-1032[HSEARCH-1032] MassIndexer with an update mechanism
+* link:{hsearch-jira-url-prefix}/HSEARCH-521[HSEARCH-521] Improve performance of MassIndexer through Eager fetching
+
 Search query features::
 Add more features to the Hibernate Search DSL.
 In particular:
 
-* link:{hsearch-jira-url-prefix}/HSEARCH-2192[HSEARCH-2192] Highlighting in the Search API
 * link:{hsearch-jira-url-prefix}/HSEARCH-917[HSEARCH-917] Add match all terms option when matching in the DSL API
 * link:{hsearch-jira-url-prefix}/HSEARCH-3327[HSEARCH-3327] Add options for match predicates targeting multiple fields
 * link:{hsearch-jira-url-prefix}/HSEARCH-3926[HSEARCH-3926] Predicate on multiple fields designated by a single label/group name/etc. ("_all", copy_to, ...)
-Reactive Search::
-Experiment with integrating Hibernate Search with Hibernate Reactive.
-+
-See also link:{hsearch-jira-url-prefix}/HSEARCH-3322[HSEARCH-3322],
-link:{hsearch-jira-url-prefix}/HSEARCH-3471[HSEARCH-3471].
 
 == Hibernate Search 7.2
 
@@ -118,3 +111,8 @@ Asynchronous indexing driven by Change Data Capture in the database instead of H
 This would allow capturing changes caused by any SQL command, not just those issued by Hibernate ORM.
 +
 See link:{hsearch-jira-url-prefix}/HSEARCH-3513[HSEARCH-3513].
+Reactive Search::
+Experiment with integrating Hibernate Search with Hibernate Reactive.
++
+See also link:{hsearch-jira-url-prefix}/HSEARCH-3322[HSEARCH-3322],
+link:{hsearch-jira-url-prefix}/HSEARCH-3471[HSEARCH-3471].
