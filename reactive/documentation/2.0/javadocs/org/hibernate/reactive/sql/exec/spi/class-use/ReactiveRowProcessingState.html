@@ -107,6 +107,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tbody>
 <tr class="altColor">
+<th class="colFirst" scope="row"><a href="#org.hibernate.reactive.sql.results.graph">org.hibernate.reactive.sql.results.graph</a></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<th class="colFirst" scope="row"><a href="#org.hibernate.reactive.sql.results.graph.entity">org.hibernate.reactive.sql.results.graph.entity</a></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="#org.hibernate.reactive.sql.results.spi">org.hibernate.reactive.sql.results.spi</a></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -115,6 +123,73 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </li>
 <li class="blockList">
 <ul class="blockList">
+<li class="blockList">
+<section><a id="org.hibernate.reactive.sql.results.graph">
+<!--   -->
+</a>
+<h3>Uses of <a href="../ReactiveRowProcessingState.html" title="class in org.hibernate.reactive.sql.exec.spi">ReactiveRowProcessingState</a> in <a href="../../../results/graph/package-summary.html">org.hibernate.reactive.sql.results.graph</a></h3>
+<table class="useSummary">
+<caption><span>Methods in <a href="../../../results/graph/package-summary.html">org.hibernate.reactive.sql.results.graph</a> with parameters of type <a href="../ReactiveRowProcessingState.html" title="class in org.hibernate.reactive.sql.exec.spi">ReactiveRowProcessingState</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Method</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>default <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="../../../results/graph/ReactiveDomainResultsAssembler.html" title="type parameter in ReactiveDomainResultsAssembler">J</a>&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">ReactiveDomainResultsAssembler.</span><code><span class="memberNameLink"><a href="../../../results/graph/ReactiveDomainResultsAssembler.html#reactiveAssemble(org.hibernate.reactive.sql.exec.spi.ReactiveRowProcessingState)">reactiveAssemble</a></span>&#8203;(<a href="../ReactiveRowProcessingState.html" title="class in org.hibernate.reactive.sql.exec.spi">ReactiveRowProcessingState</a>&nbsp;rowProcessingState)</code></th>
+<td class="colLast">
+<div class="block">Convenience form of <a href="../../../results/graph/ReactiveDomainResultsAssembler.html#assemble(org.hibernate.sql.results.jdbc.spi.RowProcessingState,org.hibernate.sql.results.jdbc.spi.JdbcValuesSourceProcessingOptions)"><code>ReactiveDomainResultsAssembler.assemble(RowProcessingState, JdbcValuesSourceProcessingOptions)</code></a></div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="../../../results/graph/ReactiveDomainResultsAssembler.html" title="type parameter in ReactiveDomainResultsAssembler">J</a>&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">ReactiveDomainResultsAssembler.</span><code><span class="memberNameLink"><a href="../../../results/graph/ReactiveDomainResultsAssembler.html#reactiveAssemble(org.hibernate.reactive.sql.exec.spi.ReactiveRowProcessingState,org.hibernate.sql.results.jdbc.spi.JdbcValuesSourceProcessingOptions)">reactiveAssemble</a></span>&#8203;(<a href="../ReactiveRowProcessingState.html" title="class in org.hibernate.reactive.sql.exec.spi">ReactiveRowProcessingState</a>&nbsp;rowProcessingState,
+                <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/sql/results/jdbc/spi/JdbcValuesSourceProcessingOptions.html?is-external=true" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="externalLink">JdbcValuesSourceProcessingOptions</a>&nbsp;options)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">ReactiveInitializer.</span><code><span class="memberNameLink"><a href="../../../results/graph/ReactiveInitializer.html#reactiveInitializeInstance(org.hibernate.reactive.sql.exec.spi.ReactiveRowProcessingState)">reactiveInitializeInstance</a></span>&#8203;(<a href="../ReactiveRowProcessingState.html" title="class in org.hibernate.reactive.sql.exec.spi">ReactiveRowProcessingState</a>&nbsp;rowProcessingState)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">ReactiveInitializer.</span><code><span class="memberNameLink"><a href="../../../results/graph/ReactiveInitializer.html#reactiveResolveInstance(org.hibernate.reactive.sql.exec.spi.ReactiveRowProcessingState)">reactiveResolveInstance</a></span>&#8203;(<a href="../ReactiveRowProcessingState.html" title="class in org.hibernate.reactive.sql.exec.spi">ReactiveRowProcessingState</a>&nbsp;rowProcessingState)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</section>
+</li>
+<li class="blockList">
+<section><a id="org.hibernate.reactive.sql.results.graph.entity">
+<!--   -->
+</a>
+<h3>Uses of <a href="../ReactiveRowProcessingState.html" title="class in org.hibernate.reactive.sql.exec.spi">ReactiveRowProcessingState</a> in <a href="../../../results/graph/entity/package-summary.html">org.hibernate.reactive.sql.results.graph.entity</a></h3>
+<table class="useSummary">
+<caption><span>Methods in <a href="../../../results/graph/entity/package-summary.html">org.hibernate.reactive.sql.results.graph.entity</a> with parameters of type <a href="../ReactiveRowProcessingState.html" title="class in org.hibernate.reactive.sql.exec.spi">ReactiveRowProcessingState</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Method</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">ReactiveAbstractEntityInitializer.</span><code><span class="memberNameLink"><a href="../../../results/graph/entity/ReactiveAbstractEntityInitializer.html#reactiveInitializeInstance(org.hibernate.reactive.sql.exec.spi.ReactiveRowProcessingState)">reactiveInitializeInstance</a></span>&#8203;(<a href="../ReactiveRowProcessingState.html" title="class in org.hibernate.reactive.sql.exec.spi">ReactiveRowProcessingState</a>&nbsp;rowProcessingState)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">ReactiveAbstractEntityInitializer.</span><code><span class="memberNameLink"><a href="../../../results/graph/entity/ReactiveAbstractEntityInitializer.html#reactiveResolveInstance(org.hibernate.reactive.sql.exec.spi.ReactiveRowProcessingState)">reactiveResolveInstance</a></span>&#8203;(<a href="../ReactiveRowProcessingState.html" title="class in org.hibernate.reactive.sql.exec.spi">ReactiveRowProcessingState</a>&nbsp;rowProcessingState)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</section>
+</li>
 <li class="blockList">
 <section><a id="org.hibernate.reactive.sql.results.spi">
 <!--   -->
@@ -130,22 +205,28 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../../../results/spi/ReactiveListResultsConsumer.html" title="type parameter in ReactiveListResultsConsumer">R</a>&gt;&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">ReactiveListResultsConsumer.</span><code><span class="memberNameLink"><a href="../../../results/spi/ReactiveListResultsConsumer.html#consume(org.hibernate.reactive.sql.exec.spi.ReactiveValuesResultSet,org.hibernate.engine.spi.SharedSessionContractImplementor,org.hibernate.sql.results.jdbc.spi.JdbcValuesSourceProcessingOptions,org.hibernate.sql.results.jdbc.internal.JdbcValuesSourceProcessingStateStandardImpl,org.hibernate.reactive.sql.exec.spi.ReactiveRowProcessingState,org.hibernate.sql.results.spi.RowReader)">consume</a></span>&#8203;(<a href="../ReactiveValuesResultSet.html" title="class in org.hibernate.reactive.sql.exec.spi">ReactiveValuesResultSet</a>&nbsp;jdbcValues,
+<th class="colSecond" scope="row"><span class="typeNameLabel">ReactiveListResultsConsumer.</span><code><span class="memberNameLink"><a href="../../../results/spi/ReactiveListResultsConsumer.html#consume(org.hibernate.reactive.sql.exec.spi.ReactiveValuesResultSet,org.hibernate.engine.spi.SharedSessionContractImplementor,org.hibernate.sql.results.jdbc.spi.JdbcValuesSourceProcessingOptions,org.hibernate.sql.results.jdbc.internal.JdbcValuesSourceProcessingStateStandardImpl,org.hibernate.reactive.sql.exec.spi.ReactiveRowProcessingState,org.hibernate.reactive.sql.results.spi.ReactiveRowReader)">consume</a></span>&#8203;(<a href="../ReactiveValuesResultSet.html" title="class in org.hibernate.reactive.sql.exec.spi">ReactiveValuesResultSet</a>&nbsp;jdbcValues,
        <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">SharedSessionContractImplementor</a>&nbsp;session,
        <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/sql/results/jdbc/spi/JdbcValuesSourceProcessingOptions.html?is-external=true" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="externalLink">JdbcValuesSourceProcessingOptions</a>&nbsp;processingOptions,
        <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/sql/results/jdbc/internal/JdbcValuesSourceProcessingStateStandardImpl.html?is-external=true" title="class or interface in org.hibernate.sql.results.jdbc.internal" class="externalLink">JdbcValuesSourceProcessingStateStandardImpl</a>&nbsp;jdbcValuesSourceProcessingState,
        <a href="../ReactiveRowProcessingState.html" title="class in org.hibernate.reactive.sql.exec.spi">ReactiveRowProcessingState</a>&nbsp;rowProcessingState,
-       <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/sql/results/spi/RowReader.html?is-external=true" title="class or interface in org.hibernate.sql.results.spi" class="externalLink">RowReader</a>&lt;<a href="../../../results/spi/ReactiveListResultsConsumer.html" title="type parameter in ReactiveListResultsConsumer">R</a>&gt;&nbsp;rowReader)</code></th>
+       <a href="../../../results/spi/ReactiveRowReader.html" title="interface in org.hibernate.reactive.sql.results.spi">ReactiveRowReader</a>&lt;<a href="../../../results/spi/ReactiveListResultsConsumer.html" title="type parameter in ReactiveListResultsConsumer">R</a>&gt;&nbsp;rowReader)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="../../../results/spi/ReactiveResultsConsumer.html" title="type parameter in ReactiveResultsConsumer">T</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">ReactiveResultsConsumer.</span><code><span class="memberNameLink"><a href="../../../results/spi/ReactiveResultsConsumer.html#consume(org.hibernate.reactive.sql.exec.spi.ReactiveValuesResultSet,org.hibernate.engine.spi.SharedSessionContractImplementor,org.hibernate.sql.results.jdbc.spi.JdbcValuesSourceProcessingOptions,org.hibernate.sql.results.jdbc.internal.JdbcValuesSourceProcessingStateStandardImpl,org.hibernate.reactive.sql.exec.spi.ReactiveRowProcessingState,org.hibernate.sql.results.spi.RowReader)">consume</a></span>&#8203;(<a href="../ReactiveValuesResultSet.html" title="class in org.hibernate.reactive.sql.exec.spi">ReactiveValuesResultSet</a>&nbsp;jdbcValues,
+<th class="colSecond" scope="row"><span class="typeNameLabel">ReactiveResultsConsumer.</span><code><span class="memberNameLink"><a href="../../../results/spi/ReactiveResultsConsumer.html#consume(org.hibernate.reactive.sql.exec.spi.ReactiveValuesResultSet,org.hibernate.engine.spi.SharedSessionContractImplementor,org.hibernate.sql.results.jdbc.spi.JdbcValuesSourceProcessingOptions,org.hibernate.sql.results.jdbc.internal.JdbcValuesSourceProcessingStateStandardImpl,org.hibernate.reactive.sql.exec.spi.ReactiveRowProcessingState,org.hibernate.reactive.sql.results.spi.ReactiveRowReader)">consume</a></span>&#8203;(<a href="../ReactiveValuesResultSet.html" title="class in org.hibernate.reactive.sql.exec.spi">ReactiveValuesResultSet</a>&nbsp;jdbcValues,
        <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">SharedSessionContractImplementor</a>&nbsp;session,
        <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/sql/results/jdbc/spi/JdbcValuesSourceProcessingOptions.html?is-external=true" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="externalLink">JdbcValuesSourceProcessingOptions</a>&nbsp;processingOptions,
        <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/sql/results/jdbc/internal/JdbcValuesSourceProcessingStateStandardImpl.html?is-external=true" title="class or interface in org.hibernate.sql.results.jdbc.internal" class="externalLink">JdbcValuesSourceProcessingStateStandardImpl</a>&nbsp;jdbcValuesSourceProcessingState,
        <a href="../ReactiveRowProcessingState.html" title="class in org.hibernate.reactive.sql.exec.spi">ReactiveRowProcessingState</a>&nbsp;rowProcessingState,
-       <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/sql/results/spi/RowReader.html?is-external=true" title="class or interface in org.hibernate.sql.results.spi" class="externalLink">RowReader</a>&lt;<a href="../../../results/spi/ReactiveResultsConsumer.html" title="type parameter in ReactiveResultsConsumer">R</a>&gt;&nbsp;rowReader)</code></th>
+       <a href="../../../results/spi/ReactiveRowReader.html" title="interface in org.hibernate.reactive.sql.results.spi">ReactiveRowReader</a>&lt;<a href="../../../results/spi/ReactiveResultsConsumer.html" title="type parameter in ReactiveResultsConsumer">R</a>&gt;&nbsp;rowReader)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="../../../results/spi/ReactiveRowReader.html" title="type parameter in ReactiveRowReader">R</a>&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">ReactiveRowReader.</span><code><span class="memberNameLink"><a href="../../../results/spi/ReactiveRowReader.html#reactiveReadRow(org.hibernate.reactive.sql.exec.spi.ReactiveRowProcessingState,org.hibernate.sql.results.jdbc.spi.JdbcValuesSourceProcessingOptions)">reactiveReadRow</a></span>&#8203;(<a href="../ReactiveRowProcessingState.html" title="class in org.hibernate.reactive.sql.exec.spi">ReactiveRowProcessingState</a>&nbsp;processingState,
+               <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/sql/results/jdbc/spi/JdbcValuesSourceProcessingOptions.html?is-external=true" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="externalLink">JdbcValuesSourceProcessingOptions</a>&nbsp;options)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </tbody>

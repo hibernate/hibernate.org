@@ -131,8 +131,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr class="rowColor">
-<th class="colFirst" scope="row"><a href="class-use/NativeParametersRendering.html#org.hibernate.reactive.provider.service">NativeParametersRendering</a></th>
-<td class="colLast">&nbsp;</td>
+<th class="colFirst" scope="row"><a href="class-use/NativeParametersHandling.html#org.hibernate.reactive.provider.service">NativeParametersHandling</a></th>
+<td class="colLast">
+<div class="block">Replaces the JdbcParameterRendererInitiator so to not require
+ users to set AvailableSettings.DIALECT_NATIVE_PARAM_MARKERS : this
+ gets enforces as the Vert.x SQL clients require it.</div>
+</td>
 </tr>
 <tr class="altColor">
 <th class="colFirst" scope="row"><a href="class-use/NoJdbcConnectionProvider.html#org.hibernate.reactive.provider.service">NoJdbcConnectionProvider</a></th>
@@ -171,52 +175,45 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr class="rowColor">
-<th class="colFirst" scope="row"><a href="class-use/PostgreSQLParameterRenderer.html#org.hibernate.reactive.provider.service">PostgreSQLParameterRenderer</a></th>
-<td class="colLast">
-<div class="block">Ensures the rendered SQL matches the syntax of parameters expected by
- the Vert.x PgClient: parameters are rendered with "$1", "$2", etc..</div>
-</td>
-</tr>
-<tr class="altColor">
 <th class="colFirst" scope="row"><a href="class-use/ReactiveDialectFactoryInitiator.html#org.hibernate.reactive.provider.service">ReactiveDialectFactoryInitiator</a></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="class-use/ReactiveMarkerService.html#org.hibernate.reactive.provider.service">ReactiveMarkerService</a></th>
 <td class="colLast">
 <div class="block">This service is only used to "mark" the registry as being
  intended for use by an instance of Hibernate Reactive.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="class-use/ReactiveMarkerServiceInitiator.html#org.hibernate.reactive.provider.service">ReactiveMarkerServiceInitiator</a></th>
 <td class="colLast">
 <div class="block">A Hibernate <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html?is-external=true" title="class or interface in org.hibernate.boot.registry" class="externalLink"><code>service initiator</code></a> for <a href="ReactiveMarkerService.html" title="interface in org.hibernate.reactive.provider.service"><code>ReactiveMarkerService</code></a>.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="class-use/ReactiveMarkerServiceSingleton.html#org.hibernate.reactive.provider.service">ReactiveMarkerServiceSingleton</a></th>
 <td class="colLast">
 <div class="block">A singleton <a href="ReactiveMarkerService.html" title="interface in org.hibernate.reactive.provider.service"><code>ReactiveMarkerService</code></a> that marks the registry as running in "Reactive mode" allowing
  the registration of reactive components.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="class-use/ReactivePersisterClassResolverInitiator.html#org.hibernate.reactive.provider.service">ReactivePersisterClassResolverInitiator</a></th>
 <td class="colLast">
 <div class="block">A Hibernate <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html?is-external=true" title="class or interface in org.hibernate.boot.registry" class="externalLink"><code>service initiator</code></a> that creates a <a href="ReactivePersisterClassResolver.html" title="class in org.hibernate.reactive.provider.service"><code>ReactivePersisterClassResolver</code></a> to register
  the persisters Hibernate Reactive needs.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="class-use/ReactiveSchemaManagementToolInitiator.html#org.hibernate.reactive.provider.service">ReactiveSchemaManagementToolInitiator</a></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="class-use/ReactiveSessionFactoryBuilder.html#org.hibernate.reactive.provider.service">ReactiveSessionFactoryBuilder</a></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="class-use/ReactiveSessionFactoryBuilderInitiator.html#org.hibernate.reactive.provider.service">ReactiveSessionFactoryBuilderInitiator</a></th>
 <td class="colLast">
 <div class="block">A Hibernate <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html?is-external=true" title="class or interface in org.hibernate.boot.registry" class="externalLink"><code>service initiator</code></a> that
@@ -224,17 +221,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  <a href="NoJdbcConnectionProvider.html" title="class in org.hibernate.reactive.provider.service"><code>NoJdbcConnectionProvider</code></a>.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="class-use/ReactiveSqmMultiTableMutationStrategyProviderInitiator.html#org.hibernate.reactive.provider.service">ReactiveSqmMultiTableMutationStrategyProviderInitiator</a></th>
 <td class="colLast">
 <div class="block">Custom variations for SqmMultiTableMutationStrategyProvider</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="class-use/ReactiveValuesMappingProducerProvider.html#org.hibernate.reactive.provider.service">ReactiveValuesMappingProducerProvider</a></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="class-use/ReactiveValuesMappingProducerProviderInitiator.html#org.hibernate.reactive.provider.service">ReactiveValuesMappingProducerProviderInitiator</a></th>
 <td class="colLast">&nbsp;</td>
 </tr>

@@ -112,6 +112,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li><a href="org/hibernate/reactive/id/enhanced/package-tree.html">org.hibernate.reactive.id.enhanced</a>, </li>
 <li><a href="org/hibernate/reactive/id/factory/spi/package-tree.html">org.hibernate.reactive.id.factory.spi</a>, </li>
 <li><a href="org/hibernate/reactive/id/insert/package-tree.html">org.hibernate.reactive.id.insert</a>, </li>
+<li><a href="org/hibernate/reactive/it/package-tree.html">org.hibernate.reactive.it</a>, </li>
+<li><a href="org/hibernate/reactive/it/lazytoone/package-tree.html">org.hibernate.reactive.it.lazytoone</a>, </li>
 <li><a href="org/hibernate/reactive/loader/ast/spi/package-tree.html">org.hibernate.reactive.loader.ast.spi</a>, </li>
 <li><a href="org/hibernate/reactive/loader/entity/package-tree.html">org.hibernate.reactive.loader.entity</a>, </li>
 <li><a href="org/hibernate/reactive/mutiny/package-tree.html">org.hibernate.reactive.mutiny</a>, </li>
@@ -130,6 +132,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li><a href="org/hibernate/reactive/session/package-tree.html">org.hibernate.reactive.session</a>, </li>
 <li><a href="org/hibernate/reactive/sql/exec/spi/package-tree.html">org.hibernate.reactive.sql.exec.spi</a>, </li>
 <li><a href="org/hibernate/reactive/sql/results/package-tree.html">org.hibernate.reactive.sql.results</a>, </li>
+<li><a href="org/hibernate/reactive/sql/results/graph/package-tree.html">org.hibernate.reactive.sql.results.graph</a>, </li>
+<li><a href="org/hibernate/reactive/sql/results/graph/entity/package-tree.html">org.hibernate.reactive.sql.results.graph.entity</a>, </li>
 <li><a href="org/hibernate/reactive/sql/results/spi/package-tree.html">org.hibernate.reactive.sql.results.spi</a>, </li>
 <li><a href="org/hibernate/reactive/stage/package-tree.html">org.hibernate.reactive.stage</a>, </li>
 <li><a href="org/hibernate/reactive/tuple/package-tree.html">org.hibernate.reactive.tuple</a>, </li>
@@ -170,6 +174,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="circle">org.hibernate.boot.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/boot/spi/AbstractDelegatingSessionFactoryBuilderImplementor.html?is-external=true" title="class or interface in org.hibernate.boot.spi" class="externalLink"><span class="typeNameLink">AbstractDelegatingSessionFactoryBuilderImplementor</span></a>&lt;T&gt; (implements org.hibernate.boot.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/boot/spi/SessionFactoryBuilderImplementor.html?is-external=true" title="class or interface in org.hibernate.boot.spi" class="externalLink">SessionFactoryBuilderImplementor</a>)
 <ul>
 <li class="circle">org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/ReactiveSessionFactoryBuilder.html" title="class in org.hibernate.reactive.provider.service"><span class="typeNameLink">ReactiveSessionFactoryBuilder</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="circle">org.hibernate.sql.results.graph.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/sql/results/graph/AbstractFetchParentAccess.html?is-external=true" title="class or interface in org.hibernate.sql.results.graph" class="externalLink"><span class="typeNameLink">AbstractFetchParentAccess</span></a> (implements org.hibernate.sql.results.graph.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/sql/results/graph/FetchParentAccess.html?is-external=true" title="class or interface in org.hibernate.sql.results.graph" class="externalLink">FetchParentAccess</a>)
+<ul>
+<li class="circle">org.hibernate.sql.results.graph.entity.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/sql/results/graph/entity/AbstractEntityInitializer.html?is-external=true" title="class or interface in org.hibernate.sql.results.graph.entity" class="externalLink"><span class="typeNameLink">AbstractEntityInitializer</span></a> (implements org.hibernate.sql.results.graph.entity.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/sql/results/graph/entity/EntityInitializer.html?is-external=true" title="class or interface in org.hibernate.sql.results.graph.entity" class="externalLink">EntityInitializer</a>)
+<ul>
+<li class="circle">org.hibernate.reactive.sql.results.graph.entity.<a href="org/hibernate/reactive/sql/results/graph/entity/ReactiveAbstractEntityInitializer.html" title="class in org.hibernate.reactive.sql.results.graph.entity"><span class="typeNameLink">ReactiveAbstractEntityInitializer</span></a> (implements org.hibernate.reactive.sql.results.graph.<a href="org/hibernate/reactive/sql/results/graph/ReactiveInitializer.html" title="interface in org.hibernate.reactive.sql.results.graph">ReactiveInitializer</a>)</li>
 </ul>
 </li>
 </ul>
@@ -255,11 +268,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </ul>
 </li>
 <li class="circle">org.hibernate.reactive.pool.<a href="org/hibernate/reactive/pool/BatchingConnection.html" title="class in org.hibernate.reactive.pool"><span class="typeNameLink">BatchingConnection</span></a> (implements org.hibernate.reactive.pool.<a href="org/hibernate/reactive/pool/ReactiveConnection.html" title="interface in org.hibernate.reactive.pool">ReactiveConnection</a>)</li>
+<li class="circle">org.hibernate.reactive.it.lazytoone.<a href="org/hibernate/reactive/it/lazytoone/Captain.html" title="class in org.hibernate.reactive.it.lazytoone"><span class="typeNameLink">Captain</span></a></li>
 <li class="circle">org.hibernate.query.sqm.internal.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/sqm/internal/ConcreteSqmSelectQueryPlan.html?is-external=true" title="class or interface in org.hibernate.query.sqm.internal" class="externalLink"><span class="typeNameLink">ConcreteSqmSelectQueryPlan</span></a>&lt;R&gt; (implements org.hibernate.query.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/SelectQueryPlan.html?is-external=true" title="class or interface in org.hibernate.query.spi" class="externalLink">SelectQueryPlan</a>&lt;R&gt;)
 <ul>
 <li class="circle">org.hibernate.reactive.query.sqm.iternal.<a href="org/hibernate/reactive/query/sqm/iternal/ConcreteSqmSelectReactiveQueryPlan.html" title="class in org.hibernate.reactive.query.sqm.iternal"><span class="typeNameLink">ConcreteSqmSelectReactiveQueryPlan</span></a>&lt;R&gt; (implements org.hibernate.reactive.query.sqm.spi.<a href="org/hibernate/reactive/query/sqm/spi/ReactiveSelectQueryPlan.html" title="interface in org.hibernate.reactive.query.sqm.spi">ReactiveSelectQueryPlan</a>&lt;R&gt;)</li>
 </ul>
 </li>
+<li class="circle">org.hibernate.reactive.it.<a href="org/hibernate/reactive/it/Crew.html" title="class in org.hibernate.reactive.it"><span class="typeNameLink">Crew</span></a></li>
 <li class="circle">org.hibernate.persister.collection.mutation.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/persister/collection/mutation/DeleteRowsCoordinatorNoOp.html?is-external=true" title="class or interface in org.hibernate.persister.collection.mutation" class="externalLink"><span class="typeNameLink">DeleteRowsCoordinatorNoOp</span></a> (implements org.hibernate.persister.collection.mutation.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/persister/collection/mutation/DeleteRowsCoordinator.html?is-external=true" title="class or interface in org.hibernate.persister.collection.mutation" class="externalLink">DeleteRowsCoordinator</a>)
 <ul>
 <li class="circle">org.hibernate.reactive.persister.collection.mutation.<a href="org/hibernate/reactive/persister/collection/mutation/ReactiveDeleteRowsCoordinatorNoOp.html" title="class in org.hibernate.reactive.persister.collection.mutation"><span class="typeNameLink">ReactiveDeleteRowsCoordinatorNoOp</span></a> (implements org.hibernate.reactive.persister.collection.mutation.<a href="org/hibernate/reactive/persister/collection/mutation/ReactiveDeleteRowsCoordinator.html" title="interface in org.hibernate.reactive.persister.collection.mutation">ReactiveDeleteRowsCoordinator</a>)</li>
@@ -302,12 +317,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </ul>
 </li>
 <li class="circle">org.hibernate.reactive.tuple.<a href="org/hibernate/reactive/tuple/MutinyGenerator.html" title="class in org.hibernate.reactive.tuple"><span class="typeNameLink">MutinyGenerator</span></a> (implements org.hibernate.generator.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/generator/BeforeExecutionGenerator.html?is-external=true" title="class or interface in org.hibernate.generator" class="externalLink">BeforeExecutionGenerator</a>)</li>
-<li class="circle">org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/NativeParametersRendering.html" title="class in org.hibernate.reactive.provider.service"><span class="typeNameLink">NativeParametersRendering</span></a> (implements org.hibernate.boot.registry.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html?is-external=true" title="class or interface in org.hibernate.boot.registry" class="externalLink">StandardServiceInitiator</a>&lt;R&gt;)</li>
+<li class="circle">org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/NativeParametersHandling.html" title="class in org.hibernate.reactive.provider.service"><span class="typeNameLink">NativeParametersHandling</span></a> (implements org.hibernate.boot.registry.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html?is-external=true" title="class or interface in org.hibernate.boot.registry" class="externalLink">StandardServiceInitiator</a>&lt;R&gt;)</li>
 <li class="circle">org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/NoJdbcConnectionProvider.html" title="class in org.hibernate.reactive.provider.service"><span class="typeNameLink">NoJdbcConnectionProvider</span></a> (implements org.hibernate.engine.jdbc.connections.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/jdbc/connections/spi/ConnectionProvider.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.connections.spi" class="externalLink">ConnectionProvider</a>)</li>
 <li class="circle">org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/NoJdbcConnectionProviderInitiator.html" title="class in org.hibernate.reactive.provider.service"><span class="typeNameLink">NoJdbcConnectionProviderInitiator</span></a> (implements org.hibernate.boot.registry.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html?is-external=true" title="class or interface in org.hibernate.boot.registry" class="externalLink">StandardServiceInitiator</a>&lt;R&gt;)</li>
 <li class="circle">org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/NoJdbcMultiTenantConnectionProviderInitiator.html" title="class in org.hibernate.reactive.provider.service"><span class="typeNameLink">NoJdbcMultiTenantConnectionProviderInitiator</span></a> (implements org.hibernate.boot.registry.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html?is-external=true" title="class or interface in org.hibernate.boot.registry" class="externalLink">StandardServiceInitiator</a>&lt;R&gt;)</li>
 <li class="circle">org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/NoJtaPlatformInitiator.html" title="class in org.hibernate.reactive.provider.service"><span class="typeNameLink">NoJtaPlatformInitiator</span></a> (implements org.hibernate.boot.registry.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html?is-external=true" title="class or interface in org.hibernate.boot.registry" class="externalLink">StandardServiceInitiator</a>&lt;R&gt;)</li>
-<li class="circle">org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/PostgreSQLParameterRenderer.html" title="class in org.hibernate.reactive.provider.service"><span class="typeNameLink">PostgreSQLParameterRenderer</span></a> (implements org.hibernate.sql.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/sql/ast/spi/JdbcParameterRenderer.html?is-external=true" title="class or interface in org.hibernate.sql.ast.spi" class="externalLink">JdbcParameterRenderer</a>)</li>
 <li class="circle">org.hibernate.reactive.query.spi.<a href="org/hibernate/reactive/query/spi/ReactiveAbstractSelectionQuery.html" title="class in org.hibernate.reactive.query.spi"><span class="typeNameLink">ReactiveAbstractSelectionQuery</span></a>&lt;R&gt;</li>
 <li class="circle">org.hibernate.reactive.engine.<a href="org/hibernate/reactive/engine/ReactiveActionQueue.html" title="class in org.hibernate.reactive.engine"><span class="typeNameLink">ReactiveActionQueue</span></a></li>
 <li class="circle">org.hibernate.reactive.loader.entity.<a href="org/hibernate/reactive/loader/entity/ReactiveCacheEntityLoaderHelper.html" title="class in org.hibernate.reactive.loader.entity"><span class="typeNameLink">ReactiveCacheEntityLoaderHelper</span></a></li>
@@ -350,6 +364,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </ul>
 </li>
 <li class="circle">org.hibernate.reactive.engine.jdbc.<a href="org/hibernate/reactive/engine/jdbc/ResultsCheckerUtil.html" title="class in org.hibernate.reactive.engine.jdbc"><span class="typeNameLink">ResultsCheckerUtil</span></a></li>
+<li class="circle">org.hibernate.reactive.it.lazytoone.<a href="org/hibernate/reactive/it/lazytoone/Ship.html" title="class in org.hibernate.reactive.it.lazytoone"><span class="typeNameLink">Ship</span></a></li>
 <li class="circle">org.hibernate.query.sqm.internal.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/sqm/internal/SimpleDeleteQueryPlan.html?is-external=true" title="class or interface in org.hibernate.query.sqm.internal" class="externalLink"><span class="typeNameLink">SimpleDeleteQueryPlan</span></a> (implements org.hibernate.query.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/NonSelectQueryPlan.html?is-external=true" title="class or interface in org.hibernate.query.spi" class="externalLink">NonSelectQueryPlan</a>)
 <ul>
 <li class="circle">org.hibernate.reactive.query.sqm.iternal.<a href="org/hibernate/reactive/query/sqm/iternal/ReactiveSimpleDeleteQueryPlan.html" title="class in org.hibernate.reactive.query.sqm.iternal"><span class="typeNameLink">ReactiveSimpleDeleteQueryPlan</span></a> (implements org.hibernate.reactive.query.sql.spi.<a href="org/hibernate/reactive/query/sql/spi/ReactiveNonSelectQueryPlan.html" title="interface in org.hibernate.reactive.query.sql.spi">ReactiveNonSelectQueryPlan</a>)</li>
@@ -533,6 +548,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </ul>
 </li>
 <li class="circle">org.hibernate.reactive.context.<a href="org/hibernate/reactive/context/Context.Key.html" title="interface in org.hibernate.reactive.context"><span class="typeNameLink">Context.Key</span></a>&lt;T&gt;</li>
+<li class="circle">org.hibernate.sql.results.graph.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/sql/results/graph/DomainResultAssembler.html?is-external=true" title="class or interface in org.hibernate.sql.results.graph" class="externalLink"><span class="typeNameLink">DomainResultAssembler</span></a>&lt;J&gt;
+<ul>
+<li class="circle">org.hibernate.reactive.sql.results.graph.<a href="org/hibernate/reactive/sql/results/graph/ReactiveDomainResultsAssembler.html" title="interface in org.hibernate.reactive.sql.results.graph"><span class="typeNameLink">ReactiveDomainResultsAssembler</span></a>&lt;J&gt;</li>
+</ul>
+</li>
 <li class="circle">org.hibernate.action.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/action/spi/Executable.html?is-external=true" title="class or interface in org.hibernate.action.spi" class="externalLink"><span class="typeNameLink">Executable</span></a>
 <ul>
 <li class="circle">org.hibernate.reactive.engine.<a href="org/hibernate/reactive/engine/ReactiveExecutable.html" title="interface in org.hibernate.reactive.engine"><span class="typeNameLink">ReactiveExecutable</span></a> (also extends java.io.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a>)</li>
@@ -565,6 +585,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/loader/ast/spi/MultiLoader.html?is-external=true" title="class or interface in org.hibernate.loader.ast.spi" class="externalLink"><span class="typeNameLink">MultiLoader</span></a>&lt;T&gt;
 <ul>
 <li class="circle">org.hibernate.reactive.loader.ast.spi.<a href="org/hibernate/reactive/loader/ast/spi/ReactiveMultiIdEntityLoader.html" title="interface in org.hibernate.reactive.loader.ast.spi"><span class="typeNameLink">ReactiveMultiIdEntityLoader</span></a>&lt;T&gt;</li>
+</ul>
+</li>
+<li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/loader/ast/spi/NaturalIdLoader.html?is-external=true" title="class or interface in org.hibernate.loader.ast.spi" class="externalLink"><span class="typeNameLink">NaturalIdLoader</span></a>&lt;T&gt;
+<ul>
+<li class="circle">org.hibernate.reactive.loader.ast.spi.<a href="org/hibernate/reactive/loader/ast/spi/ReactiveNaturalIdLoader.html" title="interface in org.hibernate.reactive.loader.ast.spi"><span class="typeNameLink">ReactiveNaturalIdLoader</span></a>&lt;T&gt;</li>
 </ul>
 </li>
 <li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/loader/ast/spi/SingleEntityLoader.html?is-external=true" title="class or interface in org.hibernate.loader.ast.spi" class="externalLink"><span class="typeNameLink">SingleEntityLoader</span></a>&lt;T&gt;
@@ -648,6 +673,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </ul>
 </li>
 <li class="circle">org.hibernate.reactive.id.<a href="org/hibernate/reactive/id/ReactiveIdentifierGenerator.html" title="interface in org.hibernate.reactive.id"><span class="typeNameLink">ReactiveIdentifierGenerator</span></a>&lt;Id&gt;</li>
+<li class="circle">org.hibernate.reactive.sql.results.graph.<a href="org/hibernate/reactive/sql/results/graph/ReactiveInitializer.html" title="interface in org.hibernate.reactive.sql.results.graph"><span class="typeNameLink">ReactiveInitializer</span></a></li>
 <li class="circle">org.hibernate.reactive.id.insert.<a href="org/hibernate/reactive/id/insert/ReactiveInsertGeneratedIdentifierDelegate.html" title="interface in org.hibernate.reactive.id.insert"><span class="typeNameLink">ReactiveInsertGeneratedIdentifierDelegate</span></a>
 <ul>
 <li class="circle">org.hibernate.reactive.id.insert.<a href="org/hibernate/reactive/id/insert/ReactiveAbstractReturningDelegate.html" title="interface in org.hibernate.reactive.id.insert"><span class="typeNameLink">ReactiveAbstractReturningDelegate</span></a></li>
@@ -667,6 +693,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </li>
 <li class="circle">org.hibernate.reactive.sql.results.spi.<a href="org/hibernate/reactive/sql/results/spi/ReactiveValuesMappingProducer.html" title="interface in org.hibernate.reactive.sql.results.spi"><span class="typeNameLink">ReactiveValuesMappingProducer</span></a></li>
 <li class="circle">org.hibernate.reactive.common.<a href="org/hibernate/reactive/common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common"><span class="typeNameLink">ResultSetMapping</span></a>&lt;T&gt;</li>
+<li class="circle">org.hibernate.sql.results.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/sql/results/spi/RowReader.html?is-external=true" title="class or interface in org.hibernate.sql.results.spi" class="externalLink"><span class="typeNameLink">RowReader</span></a>&lt;R&gt;
+<ul>
+<li class="circle">org.hibernate.reactive.sql.results.spi.<a href="org/hibernate/reactive/sql/results/spi/ReactiveRowReader.html" title="interface in org.hibernate.reactive.sql.results.spi"><span class="typeNameLink">ReactiveRowReader</span></a>&lt;R&gt;</li>
+</ul>
+</li>
 <li class="circle">java.io.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink"><span class="typeNameLink">Serializable</span></a>
 <ul>
 <li class="circle">org.hibernate.reactive.event.<a href="org/hibernate/reactive/event/ReactiveAutoFlushEventListener.html" title="interface in org.hibernate.reactive.event"><span class="typeNameLink">ReactiveAutoFlushEventListener</span></a></li>

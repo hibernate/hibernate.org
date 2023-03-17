@@ -13,6 +13,8 @@ org.hibernate.reactive.id
 org.hibernate.reactive.id.enhanced
 org.hibernate.reactive.id.factory.spi
 org.hibernate.reactive.id.insert
+org.hibernate.reactive.it
+org.hibernate.reactive.it.lazytoone
 org.hibernate.reactive.loader.ast.spi
 org.hibernate.reactive.loader.entity
 org.hibernate.reactive.mutiny
@@ -31,6 +33,8 @@ org.hibernate.reactive.query.sqm.spi
 org.hibernate.reactive.session
 org.hibernate.reactive.sql.exec.spi
 org.hibernate.reactive.sql.results
+org.hibernate.reactive.sql.results.graph
+org.hibernate.reactive.sql.results.graph.entity
 org.hibernate.reactive.sql.results.spi
 org.hibernate.reactive.stage
 org.hibernate.reactive.tuple

@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -216,6 +216,13 @@ extends <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html" title
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#dataTypeCode(java.lang.String)">dataTypeCode</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;typeName)</code></th>
+<td class="colLast">
+<div class="block">Return a JDBC Type code for the given type name</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDatabaseCatalogColumnName(java.lang.String,java.lang.String)">getDatabaseCatalogColumnName</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;catalogColumnName,
                             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;schemaColumnName)</code></th>
@@ -226,7 +233,7 @@ extends <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html" title
  is no valid column containing the catalog name.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDatabaseSchemaColumnName(java.lang.String,java.lang.String)">getDatabaseSchemaColumnName</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;catalogColumnName,
                            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;schemaColumnName)</code></th>
@@ -237,17 +244,17 @@ extends <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html" title
  is no valid column containing the schema name.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getResultSetTableTypesPhysicalTableConstant()">getResultSetTableTypesPhysicalTableConstant</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>protected &lt;T&gt;&nbsp;T</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processCatalogsResultSet(org.hibernate.tool.schema.extract.spi.ExtractionContext.ResultSetProcessor)">processCatalogsResultSet</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/tool/schema/extract/spi/ExtractionContext.ResultSetProcessor.html?is-external=true" title="class or interface in org.hibernate.tool.schema.extract.spi" class="externalLink">ExtractionContext.ResultSetProcessor</a>&lt;T&gt;&nbsp;processor)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>protected &lt;T&gt;&nbsp;T</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processImportedKeysResultSet(java.lang.String,java.lang.String,java.lang.String,org.hibernate.tool.schema.extract.spi.ExtractionContext.ResultSetProcessor)">processImportedKeysResultSet</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;catalog,
                             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;schema,
@@ -255,7 +262,7 @@ extends <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html" title
                             <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/tool/schema/extract/spi/ExtractionContext.ResultSetProcessor.html?is-external=true" title="class or interface in org.hibernate.tool.schema.extract.spi" class="externalLink">ExtractionContext.ResultSetProcessor</a>&lt;T&gt;&nbsp;processor)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>protected &lt;T&gt;&nbsp;T</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processIndexInfoResultSet(java.lang.String,java.lang.String,java.lang.String,boolean,boolean,org.hibernate.tool.schema.extract.spi.ExtractionContext.ResultSetProcessor)">processIndexInfoResultSet</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;catalog,
                          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;schema,
@@ -265,7 +272,7 @@ extends <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html" title
                          <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/tool/schema/extract/spi/ExtractionContext.ResultSetProcessor.html?is-external=true" title="class or interface in org.hibernate.tool.schema.extract.spi" class="externalLink">ExtractionContext.ResultSetProcessor</a>&lt;T&gt;&nbsp;processor)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>protected &lt;T&gt;&nbsp;T</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processPrimaryKeysResultSet(java.lang.String,java.lang.String,org.hibernate.boot.model.naming.Identifier,org.hibernate.tool.schema.extract.spi.ExtractionContext.ResultSetProcessor)">processPrimaryKeysResultSet</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;catalogFilter,
                            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;schemaFilter,
@@ -279,7 +286,7 @@ extends <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html" title
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;org.hibernate.reactive.provider.service.<a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html" title="class in org.hibernate.reactive.provider.service">AbstractReactiveInformationSchemaBasedExtractorImpl</a></h3>
-<code><a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#addExtractedColumnInformation(org.hibernate.tool.schema.extract.spi.TableInformation,java.sql.ResultSet)">addExtractedColumnInformation</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#appendClauseAndParameterIfNotNullOrEmpty(java.lang.String,java.lang.Object,java.lang.StringBuilder,java.util.List)">appendClauseAndParameterIfNotNullOrEmpty</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#dataTypeCode(java.lang.String)">dataTypeCode</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getInformationSchemaColumnsDataTypeColumn()">getInformationSchemaColumnsDataTypeColumn</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetCatalogLabel()">getResultSetCatalogLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetColumnNameLabel()">getResultSetColumnNameLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetColumnPositionColumn()">getResultSetColumnPositionColumn</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetColumnSizeLabel()">getResultSetColumnSizeLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetDecimalDigitsLabel()">getResultSetDecimalDigitsLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetForeignKeyColumnNameLabel()">getResultSetForeignKeyColumnNameLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetForeignKeyLabel()">getResultSetForeignKeyLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetIndexNameLabel()">getResultSetIndexNameLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetIndexTypeLabel()">getResultSetIndexTypeLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetIsNullableLabel()">getResultSetIsNullableLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetPrimaryKeyCatalogLabel()">getResultSetPrimaryKeyCatalogLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetPrimaryKeyColumnNameLabel()">getResultSetPrimaryKeyColumnNameLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetPrimaryKeyNameLabel()">getResultSetPrimaryKeyNameLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetPrimaryKeySchemaLabel()">getResultSetPrimaryKeySchemaLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetPrimaryKeyTableLabel()">getResultSetPrimaryKeyTableLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetRemarksLabel()">getResultSetRemarksLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetSchemaLabel()">getResultSetSchemaLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetSqlTypeCodeLabel()">getResultSetSqlTypeCodeLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetTableNameLabel()">getResultSetTableNameLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetTableTypeLabel()">getResultSetTableTypeLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetTypeNameLabel()">getResultSetTypeNameLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#processColumnsResultSet(java.lang.String,java.lang.String,java.lang.String,java.lang.String,org.hibernate.tool.schema.extract.spi.ExtractionContext.ResultSetProcessor)">processColumnsResultSet</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#processSchemaResultSet(java.lang.String,java.lang.String,org.hibernate.tool.schema.extract.spi.ExtractionContext.ResultSetProcessor)">processSchemaResultSet</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#processTableResultSet(java.lang.String,java.lang.String,java.lang.String,java.lang.String%5B%5D,org.hibernate.tool.schema.extract.spi.ExtractionContext.ResultSetProcessor)">processTableResultSet</a></code></li>
+<code><a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#addExtractedColumnInformation(org.hibernate.tool.schema.extract.spi.TableInformation,java.sql.ResultSet)">addExtractedColumnInformation</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#appendClauseAndParameterIfNotNullOrEmpty(java.lang.String,java.lang.Object,java.lang.StringBuilder,java.util.List)">appendClauseAndParameterIfNotNullOrEmpty</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getInformationSchemaColumnsDataTypeColumn()">getInformationSchemaColumnsDataTypeColumn</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetCatalogLabel()">getResultSetCatalogLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetColumnNameLabel()">getResultSetColumnNameLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetColumnPositionColumn()">getResultSetColumnPositionColumn</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetColumnSizeLabel()">getResultSetColumnSizeLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetDecimalDigitsLabel()">getResultSetDecimalDigitsLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetForeignKeyColumnNameLabel()">getResultSetForeignKeyColumnNameLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetForeignKeyLabel()">getResultSetForeignKeyLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetIndexNameLabel()">getResultSetIndexNameLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetIndexTypeLabel()">getResultSetIndexTypeLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetIsNullableLabel()">getResultSetIsNullableLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetPrimaryKeyCatalogLabel()">getResultSetPrimaryKeyCatalogLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetPrimaryKeyColumnNameLabel()">getResultSetPrimaryKeyColumnNameLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetPrimaryKeyNameLabel()">getResultSetPrimaryKeyNameLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetPrimaryKeySchemaLabel()">getResultSetPrimaryKeySchemaLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetPrimaryKeyTableLabel()">getResultSetPrimaryKeyTableLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetRemarksLabel()">getResultSetRemarksLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetSchemaLabel()">getResultSetSchemaLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetSqlTypeCodeLabel()">getResultSetSqlTypeCodeLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetTableNameLabel()">getResultSetTableNameLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetTableTypeLabel()">getResultSetTableTypeLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetTypeNameLabel()">getResultSetTypeNameLabel</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#processColumnsResultSet(java.lang.String,java.lang.String,java.lang.String,java.lang.String,org.hibernate.tool.schema.extract.spi.ExtractionContext.ResultSetProcessor)">processColumnsResultSet</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#processSchemaResultSet(java.lang.String,java.lang.String,org.hibernate.tool.schema.extract.spi.ExtractionContext.ResultSetProcessor)">processSchemaResultSet</a>, <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#processTableResultSet(java.lang.String,java.lang.String,java.lang.String,java.lang.String%5B%5D,org.hibernate.tool.schema.extract.spi.ExtractionContext.ResultSetProcessor)">processTableResultSet</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.org.hibernate.tool.schema.extract.internal.AbstractInformationExtractorImpl">
@@ -330,6 +337,21 @@ extends <a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html" title
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a id="dataTypeCode(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>dataTypeCode</h4>
+<pre class="methodSignature">protected&nbsp;int&nbsp;dataTypeCode&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;typeName)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#dataTypeCode(java.lang.String)">AbstractReactiveInformationSchemaBasedExtractorImpl</a></code></span></div>
+<div class="block">Return a JDBC Type code for the given type name</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html#dataTypeCode(java.lang.String)">dataTypeCode</a></code>&nbsp;in class&nbsp;<code><a href="AbstractReactiveInformationSchemaBasedExtractorImpl.html" title="class in org.hibernate.reactive.provider.service">AbstractReactiveInformationSchemaBasedExtractorImpl</a></code></dd>
+</dl>
+</li>
+</ul>
 <a id="getResultSetTableTypesPhysicalTableConstant()">
 <!--   -->
 </a>
