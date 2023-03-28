@@ -26,10 +26,10 @@ module Awestruct
 
       def maven_central_search_url(coord, version)
         if coord.artifact_id_pattern?
-          search_string = ERB::Util.url_encode( "g:#{coord.group_id} AND a:#{coord.artifact_id_pattern} AND v:#{version}")
+          search_string = ERB::Util.url_encode("g:#{coord.group_id} AND a:#{coord.artifact_id_pattern} AND v:#{version}")
           return "#{@site.maven.repo.central.web_ui_url}/search?q=#{search_string}"
         else
-          search_string = ERB::Util.url_encode( "g:#{coord.group_id} AND v:#{version}")
+          search_string = ERB::Util.url_encode("g:#{coord.group_id} AND v:#{version}")
           return "#{@site.maven.repo.central.web_ui_url}/search?q=#{search_string}"
         end
       end
