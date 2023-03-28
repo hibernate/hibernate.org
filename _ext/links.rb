@@ -138,7 +138,8 @@ module Awestruct
 
         def self.from(project, series, release, link_key)
           log_prefix = "#{project.name}/#{series.version}/#{release&.version}/#{link_key}: "
-          link = series&.links&.dist&.[](link_key)
+          link = release&.links&.dist&.[](link_key)
+          link ||= series&.links&.dist&.[](link_key)
           link ||= project&.links&.dist&.[](link_key)
           if link.nil?
             @@logger.debug("#{log_prefix}Link is nil")
