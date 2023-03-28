@@ -26,17 +26,16 @@ module Awestruct
 
       def maven_central_search_url(coord, version)
         if coord.artifact_id_pattern?
-          search_string = ERB::Util.url_encode( "|ga|1|g:#{coord.group_id} AND a:#{coord.artifact_id_pattern} AND v:#{version}")
-          return "#{@site.maven.repo.central.web_ui_url}/#search#{search_string}"
+          search_string = ERB::Util.url_encode( "g:#{coord.group_id} AND a:#{coord.artifact_id_pattern} AND v:#{version}")
+          return "#{@site.maven.repo.central.web_ui_url}/search?q=#{search_string}"
         else
-          search_string = ERB::Util.url_encode( "|ga|1|g:#{coord.group_id} AND v:#{version}")
-          return "#{@site.maven.repo.central.web_ui_url}/#search#{search_string}"
+          search_string = ERB::Util.url_encode( "g:#{coord.group_id} AND v:#{version}")
+          return "#{@site.maven.repo.central.web_ui_url}/search?q=#{search_string}"
         end
       end
 
       def maven_central_artifact_url(group_id, artifact_id, version)
-        gav_string = ERB::Util.url_encode( "|#{group_id}|#{artifact_id}|#{version}|")
-        return "#{@site.maven.repo.central.web_ui_url}/#artifactdetails#{gav_string}"
+        return "#{@site.maven.repo.central.web_ui_url}/artifact/#{group_id}/#{artifact_id}/#{version}/jar"
       end
 
       def github_issues_url(project)
