@@ -222,24 +222,15 @@ module Awestruct
       end
 
       def downloadDependencies(project, series)
-        project_maven = project[:maven]
-        if ( project_maven.nil? )
-          return
-        end
         series.each do |series|
-          series_maven = series[:maven] || {}
           if ( series.displayed.nil? || series.displayed )
-            release = series.releases.first
-            release_maven = release[:maven] || {}
-            group_id = release_maven[:group_id]
-            group_id ||= series_maven[:group_id]
-            group_id ||= project_maven[:group_id]
-            main_artifact_id = release_maven[:main_artifact_id]
-            main_artifact_id ||= series_maven[:main_artifact_id]
-            main_artifact_id ||= project_maven[:main_artifact_id]
+            # Only download dependencies for the latest release in the series
+            latest_release = series.releases.first
+            maven_coord = latest_release[:maven]&.[](:coord) || series[:maven]&.[](:coord) || project[:maven]&.[](:coord)
+            group_id = maven_coord&.[](:group_id)
+            main_artifact_id = maven_coord&.[](:main_artifact_id)
             if ( group_id != nil && main_artifact_id != nil )
-              # Only download dependencies for the latest release in the series
-              release.dependencies = ReleaseDependencies.new(@site, group_id, main_artifact_id, release.version)
+              latest_release.dependencies = ReleaseDependencies.new(@site, group_id, main_artifact_id, latest_release.version)
             end
           end
         end
@@ -360,20 +351,14 @@ module Awestruct
               doc = download_pom(@site.maven.repo.jboss.repo_url, group_id, artifact_id, version, cached_pom)
             rescue => jboss_nexus_error
               $LOG.warn "Error downloading #{gav} from JBoss Nexus: #{jboss_nexus_error.message}"
-              # last resort, try bintray
-              begin
-                doc = download_pom(@site.maven.repo.bintray.repo_url, group_id, artifact_id, version, cached_pom)
-              rescue => bintray_error
-                $LOG.warn "Error downloading #{gav} from Bintray: #{bintray_error.message}"
-                $LOG.warn "Release POM #{gav} not locally cached and unable to retrieve it from Central, from JBoss Nexus or from Bintray"
-                if @site.profile == 'production'
-                  $LOG.error maven_error.message + "\n " + maven_error.backtrace.join("\n ")
-                  abort "Aborting site generation, since the production build requires the release POM information"
-                else
-                  $LOG.warn maven_error.message + "\n " + maven_error.backtrace.join("\n ")
-                  $LOG.warn "Continuing build since we are building the '#{@site.profile}' profile. Note that variables interpolated from the release poms will not display\n"
-                  return nil
-                end
+              $LOG.warn "Release POM #{gav} not locally cached and unable to retrieve it from Central or from JBoss Nexus"
+              if @site.profile == 'production'
+                $LOG.error maven_error.message + "\n " + maven_error.backtrace.join("\n ")
+                abort "Aborting site generation, since the production build requires the release POM information"
+              else
+                $LOG.warn maven_error.message + "\n " + maven_error.backtrace.join("\n ")
+                $LOG.warn "Continuing build since we are building the '#{@site.profile}' profile. Note that variables interpolated from the release poms will not display\n"
+                return nil
               end
             end
           end

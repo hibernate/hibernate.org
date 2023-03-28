@@ -17,9 +17,6 @@ maven:
     jboss:
       repo_url: 'https://repository.jboss.org/nexus/content/repositories/public/'
       web_ui_url: 'https://repository.jboss.org/nexus/index.html'
-    bintray:
-      repo_url: 'https://dl.bintray.com/hibernate/artifacts/'
-      web_ui_url: 'https://bintray.com/hibernate'
 
 jira:
   base_url: https://hibernate.atlassian.net/
@@ -61,10 +58,9 @@ projects:
       dist:
         # No longer distributing dists on sourceforge, starting with ORM 6.0.
     maven:
-      group_id: org.hibernate.orm
-      repo:
-        central:
-          artifact_id_pattern: hibernate-*
+      coord:
+        group_id: org.hibernate.orm
+        main_artifact_id: hibernate-core
     blog_tag: Hibernate ORM
     blog_tag_url: hibernate-orm
     license:
@@ -170,13 +166,9 @@ projects:
     maven:
       signing:
         since: 2022-01-26
-      group_id: org.hibernate.search
-      main_artifact_id: hibernate-search-mapper-orm
-      repo:
-        central:
-          artifact_id_pattern: hibernate-search-*
-        jboss:
-          artifact_id_pattern: hibernate-search-*
+      coord:
+        group_id: org.hibernate.search
+        main_artifact_id: hibernate-search-mapper-orm
     blog_tag: Hibernate Search
     blog_tag_url: hibernate-search
     license:
@@ -344,13 +336,9 @@ projects:
     maven:
       signing:
         since: 2022-02-08
-      group_id: org.hibernate.validator
-      main_artifact_id: hibernate-validator
-      repo:
-        central:
-          artifact_id_pattern: hibernate-validator*
-        jboss:
-          artifact_id_pattern: hibernate-validator*
+      coord:
+        group_id: org.hibernate.validator
+        main_artifact_id: hibernate-validator
     blog_tag: Hibernate Validator
     blog_tag_url: hibernate-validator
     license:
@@ -451,13 +439,9 @@ projects:
         sourceforge:
           zip: https://sourceforge.net/projects/hibernate/files/hibernate-ogm/{release.version}/hibernate-ogm-{release.version}-dist.zip/download
     maven:
-      group_id: org.hibernate.ogm
-      main_artifact_id: hibernate-ogm-core
-      repo:
-        central:
-          artifact_id_pattern: hibernate-ogm-*
-        jboss:
-          artifact_id_pattern: hibernate-ogm-*
+      coord:
+        group_id: org.hibernate.ogm
+        main_artifact_id: hibernate-ogm-core
     javadoc_path: api
     blog_tag: Hibernate OGM
     blog_tag_url: hibernate-ogm
@@ -546,13 +530,9 @@ projects:
         html: /reactive/documentation/{series.version}/reference/html_single/#getting-started
       dist:
     maven:
-      group_id: org.hibernate.reactive
-      main_artifact_id: hibernate-reactive-core
-      repo:
-        central:
-          artifact_id_pattern: hibernate-reactive-*
-        jboss:
-          artifact_id_pattern: hibernate-reactive-*
+      coord:
+        group_id: org.hibernate.reactive
+        main_artifact_id: hibernate-reactive-core
     blog_tag: Hibernate Reactive
     blog_tag_url: hibernate-reactive
     license:

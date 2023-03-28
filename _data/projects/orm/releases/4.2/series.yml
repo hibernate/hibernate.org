@@ -1,13 +1,9 @@
 summary: JPA 2.0
 endoflife: true
 maven:
-  group_id: org.hibernate
-  main_artifact_id: hibernate-core
-  repo:
-    central:
-      artifact_id_pattern: hibernate-*
-    jboss:
-      artifact_id_pattern: hibernate-*
+  coord:
+    group_id: org.hibernate
+    main_artifact_id: hibernate-core
 links:
   reference_doc:
     html: https://docs.jboss.org/hibernate/orm/{series.version}/manual/en-US/html_single/

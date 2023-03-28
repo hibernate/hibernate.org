@@ -6,8 +6,10 @@ links:
   migration_guide:
     html: https://developer.jboss.org/docs/DOC-15249
 maven:
-  group_id: org.hibernate
-  main_artifact_id: hibernate-search-orm
+  coord:
+    group_id: org.hibernate
+    main_artifact_id: hibernate-search-orm
+    artifact_id_pattern: hibernate-search-*
 artifacts:
   - artifact_id: hibernate-search-orm
     summary: Hibernate ORM integration

@@ -1,7 +1,9 @@
 summary: Introducing support for Jakarta JPA
 endoflife: true
 maven:
-  group_id: org.hibernate
+  coord:
+    group_id: org.hibernate
+    main_artifact_id: hibernate-core
 links:
   dist:
     sourceforge:

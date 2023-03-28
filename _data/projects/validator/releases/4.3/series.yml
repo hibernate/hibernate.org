@@ -1,12 +1,10 @@
 summary: Last Bean Validation 1.0 compatible version
 endoflife: true
 maven:
-  group_id: org.hibernate
-  repo:
-    central:
-      artifact_id_pattern: hibernate-validator*
-    jboss:
-      artifact_id_pattern: hibernate-validator*
+  coord:
+    group_id: org.hibernate
+    main_artifact_id: hibernate-validator
+    artifact_id_pattern: hibernate-validator-*
 artifacts:
   - artifact_id: hibernate-validator
     summary: Core implementation

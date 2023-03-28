@@ -1,7 +1,9 @@
 summary: JPA 2.2, inheritance caching
 displayed: false
 maven:
-  group_id: org.hibernate
+  coord:
+    group_id: org.hibernate
+    main_artifact_id: hibernate-core
 links:
   dist:
     sourceforge:

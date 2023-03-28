@@ -1,13 +1,9 @@
 summary: Java 8, JCache support, hibernate-entitymanager consolidation
 endoflife: true
 maven:
-  group_id: org.hibernate
-  main_artifact_id: hibernate-core
-  repo:
-    central:
-      artifact_id_pattern: hibernate-*
-    jboss:
-      artifact_id_pattern: hibernate-*
+  coord:
+    group_id: org.hibernate
+    main_artifact_id: hibernate-core
 links:
   dist:
     sourceforge:
