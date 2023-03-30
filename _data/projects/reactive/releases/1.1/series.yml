@@ -1,4 +1,8 @@
 summary: Release with Vert.x 4.2 and integration with Oracle
+maven:
+  artifacts:
+    - artifact_id: hibernate-reactive-core
+      summary: Core implementation
 integration_constraints:
   java:
     version: 11, 16 or 17
