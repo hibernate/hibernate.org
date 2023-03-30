@@ -12,11 +12,11 @@ html_minifier: disabled
 maven:
   repo:
     central:
-      repo_url: 'https://repo.maven.apache.org/maven2/'
+      repo_url: 'https://repo.maven.apache.org/maven2'
       web_ui_url: 'https://central.sonatype.com'
       old_web_ui_url: 'https://search.maven.org'
     jboss:
-      repo_url: 'https://repository.jboss.org/nexus/content/repositories/public/'
+      repo_url: 'https://repository.jboss.org/nexus/content/repositories/public'
       web_ui_url: 'https://repository.jboss.org/nexus/index.html'
 
 jira:

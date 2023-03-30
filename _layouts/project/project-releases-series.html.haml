@@ -174,6 +174,24 @@ project_hero_partial: project/hero-series.html.haml
           %a.ui.right.labeled.button.primary.icon{:href => dist_sourceforge.zip_url, :title => "Download"}
             %i.icon.cloud.download
             Download Zip archive
+    - elsif maven_coord
+      .five.wide.column.divided
+        %h3 Direct download
+        %p
+          Direct download is available from Maven Central:
+          %a.ui.right.labeled.button.primary.icon{:href => maven_central_direct_download_url(maven_coord)}
+            %i.icon.cloud.download
+            Maven Central subdirectory
+        %p
+          See
+          %a{:href => "https://maven.apache.org/plugins/maven-dependency-plugin/examples/copying-project-dependencies.html"}
+            here
+          for how to download all dependencies of your Maven project to a local directory on your filesystem.
+        %p
+          See
+          %a{:href => "https://maven.apache.org/plugins/maven-dependency-plugin/examples/copying-artifacts.html"}
+            here
+          for how to download an explicitly listed set of artifacts to a local directory on your filesystem.
 
 %p
   More information about specific releases (announcements, download links) can be found
