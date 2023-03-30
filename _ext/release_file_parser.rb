@@ -380,7 +380,7 @@ module Awestruct
       end
 
       def get_uri(base_url, group_id, artifact, version)
-        base_url + group_id.gsub(/\./, "/") + '/' + artifact + '/' + version + '/' + get_pom_name(group_id, artifact, version)
+        base_url + '/' + group_id.gsub(/\./, "/") + '/' + artifact + '/' + version + '/' + get_pom_name(group_id, artifact, version)
       end
 
       def get_pom_name(group_id, artifact, version)
