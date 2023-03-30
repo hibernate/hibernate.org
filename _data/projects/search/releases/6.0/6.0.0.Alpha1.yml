@@ -1,10 +1,11 @@
 date: 2018-11-29
 announcement_url: https://in.relation.to/2018/11/29/hibernate-search-6-0-0-Alpha1
 summary: "Initial implementation: a few field types only, a few predicates/sorts/projections only, sub-optimal work orchestration, minimal documentation."
-artifacts:
-  - artifact_id: hibernate-search-mapper-orm
-    summary: Hibernate ORM mapper
-  - artifact_id: hibernate-search-backend-elasticsearch
-    summary: Elasticsearch backend
-  - artifact_id: hibernate-search-backend-lucene
-    summary: Lucene backend
+maven:
+  artifacts:
+    - artifact_id: hibernate-search-mapper-orm
+      summary: Hibernate ORM mapper
+    - artifact_id: hibernate-search-backend-elasticsearch
+      summary: Elasticsearch backend
+    - artifact_id: hibernate-search-backend-lucene
+      summary: Lucene backend

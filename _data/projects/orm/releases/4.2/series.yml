@@ -1,32 +1,32 @@
 summary: JPA 2.0
 endoflife: true
-maven:
-  coord:
-    group_id: org.hibernate
-    main_artifact_id: hibernate-core
 links:
   reference_doc:
     html: https://docs.jboss.org/hibernate/orm/{series.version}/manual/en-US/html_single/
   dist:
     sourceforge:
       zip: https://sourceforge.net/projects/hibernate/files/hibernate-orm/{release.version}/hibernate-release-{release.version}.zip/download
-artifacts:
-  - artifact_id: hibernate-core
-    summary: Core implementation
-  - artifact_id: hibernate-entitymanager
-    summary: JPA support
-  - artifact_id: hibernate-osgi
-    summary: OSGi integration
-  - artifact_id: hibernate-envers
-    summary: Envers audit support
-  - artifact_id: hibernate-c3p0
-    summary: c3p0 connection pooling
-  - artifact_id: hibernate-proxool
-    summary: Proxool connection pooling
-  - artifact_id: hibernate-infinispan
-    summary: Infinispan second-level caching
-  - artifact_id: hibernate-ehcache
-    summary: Ehcache second-level caching
+maven:
+  coord:
+    group_id: org.hibernate
+    main_artifact_id: hibernate-core
+  artifacts:
+    - artifact_id: hibernate-core
+      summary: Core implementation
+    - artifact_id: hibernate-entitymanager
+      summary: JPA support
+    - artifact_id: hibernate-osgi
+      summary: OSGi integration
+    - artifact_id: hibernate-envers
+      summary: Envers audit support
+    - artifact_id: hibernate-c3p0
+      summary: c3p0 connection pooling
+    - artifact_id: hibernate-proxool
+      summary: Proxool connection pooling
+    - artifact_id: hibernate-infinispan
+      summary: Infinispan second-level caching
+    - artifact_id: hibernate-ehcache
+      summary: Ehcache second-level caching
 integration_constraints:
   java:
     version: 6+

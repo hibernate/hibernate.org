@@ -10,15 +10,15 @@ maven:
     group_id: org.hibernate
     main_artifact_id: hibernate-search-orm
     artifact_id_pattern: hibernate-search-*
-artifacts:
-  - artifact_id: hibernate-search-orm
-    summary: Hibernate ORM integration
-  - artifact_id: hibernate-search-elasticsearch
-    summary: Elasticsearch integration
-  - artifact_id: hibernate-search-backend-jgroups
-    summary: JGroups backend
-  - artifact_id: hibernate-search-backend-jms
-    summary: JMS backend
+  artifacts:
+    - artifact_id: hibernate-search-orm
+      summary: Hibernate ORM integration
+    - artifact_id: hibernate-search-elasticsearch
+      summary: Elasticsearch integration
+    - artifact_id: hibernate-search-backend-jgroups
+      summary: JGroups backend
+    - artifact_id: hibernate-search-backend-jms
+      summary: JMS backend
 integration_constraints:
   java:
     version: 7 or 8

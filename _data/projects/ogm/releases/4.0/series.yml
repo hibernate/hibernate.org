@@ -1,13 +1,14 @@
 summary: Last release using Hibernate ORM 4.2 and JPA 2.1. Initial Neo4j integration; support for store-specific native queries.
 endoflife: true
-artifacts:
-  - artifact_id: hibernate-search-infinispan
-    summary: Infinispan integration (embedded)
-  - artifact_id: hibernate-ogm-mongodb
-    summary: MongoDB integration
-  - artifact_id: hibernate-ogm-neo4j
-    summary: Neo4j integration
-  - artifact_id: hibernate-ogm-couchdb
-    summary: CouchDB integration
-  - artifact_id: hibernate-ogm-ehcache
-    summary: Ehcache integration
+maven:
+  artifacts:
+    - artifact_id: hibernate-search-infinispan
+      summary: Infinispan integration (embedded)
+    - artifact_id: hibernate-ogm-mongodb
+      summary: MongoDB integration
+    - artifact_id: hibernate-ogm-neo4j
+      summary: Neo4j integration
+    - artifact_id: hibernate-ogm-couchdb
+      summary: CouchDB integration
+    - artifact_id: hibernate-ogm-ehcache
+      summary: Ehcache integration

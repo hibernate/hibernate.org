@@ -13,6 +13,7 @@ project_hero_partial: project/hero-series.html.haml
 - latest_release = series.releases.first
 
 - project_maven = project_description[:maven] || {}
+- maven_artifacts = latest_release[:maven]&.[](:artifacts) || series[:maven]&.[](:artifacts) || project_maven[:artifacts]
 - maven_coord = latest_release[:maven]&.[](:coord) || series[:maven]&.[](:coord) || project_maven[:coord]
 
 - getting_started_guide = getting_started_guide(project_description, series)
@@ -130,16 +131,15 @@ project_hero_partial: project/hero-series.html.haml
             %a.ui.right.labeled.button.primary.icon{:href => maven_central_search_url(maven_coord, latest_release.version)}
               %i.icon.cloud.cubes
               Maven artifacts
-        - if series[:artifacts]
+        - if maven_artifacts
           %p
             Below are the Maven coordinates of the main artifacts.
           %dl.sparse
-            - series.artifacts.each do |artifact|
+            - maven_artifacts.each do |artifact|
               - group_id = maven_coord.group_id
               - artifact_id = artifact.artifact_id
               - version = latest_release.version
-              - summary = artifact[:summary]
-              - summary ||= artifact.artifact_id
+              - summary = artifact[:summary] || artifact.artifact_id
               %dt
                 %a.ui.label.large.blue{:href => maven_central_artifact_url(group_id, artifact_id, version)}
                   #{group_id}:#{artifact_id}:#{version}

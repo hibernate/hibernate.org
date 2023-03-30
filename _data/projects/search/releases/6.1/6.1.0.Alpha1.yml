@@ -7,20 +7,21 @@ summary: >-
   conditional mass indexing,
   upgrade to Hibernate ORM 5.5.6.Final and Lucene 8.8,
   compatibility with Elasticsearch 7.13.
-artifacts:
-  - artifact_id: hibernate-search-mapper-orm
-    summary: Hibernate ORM mapper
-  - artifact_id: hibernate-search-mapper-orm-coordination-database-polling
-    summary: "\"database-polling\" coordination strategy for the Hibernate ORM mapper"
-  - artifact_id: hibernate-search-backend-lucene
-    summary: Lucene backend
-  - artifact_id: hibernate-search-backend-elasticsearch
-    summary: Elasticsearch/OpenSearch backend
-  - artifact_id: hibernate-search-backend-elasticsearch-aws
-    summary: Amazon IAM authentication for Elasticsearch/OpenSearch
-  - artifact_id: hibernate-search-mapper-orm-batch-jsr352-core
-    summary: Batch for Java (JSR-352) mass indexing job for the Hibernate ORM mapper - Core
-  - artifact_id: hibernate-search-mapper-orm-batch-jsr352-jberet
-    summary: Batch for Java (JSR-352) mass indexing job for the Hibernate ORM mapper - JBeret specifics
-  - artifact_id: hibernate-search-v5migrationhelper-orm
-    summary: Helper for migrating from Hibernate Search 5 to Hibernate Search 6 (Hibernate ORM mapper + Lucene backend)
+maven:
+  artifacts:
+    - artifact_id: hibernate-search-mapper-orm
+      summary: Hibernate ORM mapper
+    - artifact_id: hibernate-search-mapper-orm-coordination-database-polling
+      summary: "\"database-polling\" coordination strategy for the Hibernate ORM mapper"
+    - artifact_id: hibernate-search-backend-lucene
+      summary: Lucene backend
+    - artifact_id: hibernate-search-backend-elasticsearch
+      summary: Elasticsearch/OpenSearch backend
+    - artifact_id: hibernate-search-backend-elasticsearch-aws
+      summary: Amazon IAM authentication for Elasticsearch/OpenSearch
+    - artifact_id: hibernate-search-mapper-orm-batch-jsr352-core
+      summary: Batch for Java (JSR-352) mass indexing job for the Hibernate ORM mapper - Core
+    - artifact_id: hibernate-search-mapper-orm-batch-jsr352-jberet
+      summary: Batch for Java (JSR-352) mass indexing job for the Hibernate ORM mapper - JBeret specifics
+    - artifact_id: hibernate-search-v5migrationhelper-orm
+      summary: Helper for migrating from Hibernate Search 5 to Hibernate Search 6 (Hibernate ORM mapper + Lucene backend)
