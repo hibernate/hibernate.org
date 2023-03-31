@@ -27,8 +27,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var data = {"i0":10,"i1":9};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -227,7 +227,7 @@ extends <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
@@ -237,6 +237,14 @@ extends <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate
 <td class="colFirst"><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/dialect/identity/IdentityColumnSupport.html?is-external=true" title="class or interface in org.hibernate.dialect.identity" class="externalLink">IdentityColumnSupport</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getIdentityColumnSupport()">getIdentityColumnSupport</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#instanceOf(org.hibernate.dialect.Dialect,java.lang.Class...)">instanceOf</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/dialect/Dialect.html?is-external=true" title="class or interface in org.hibernate.dialect" class="externalLink">Dialect</a>&nbsp;dialect,
+          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;?&gt;...&nbsp;dialectClasses)</code></th>
+<td class="colLast">
+<div class="block">A utility method to help checking the actual dialect class.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -288,6 +296,21 @@ extends <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a id="instanceOf(org.hibernate.dialect.Dialect,java.lang.Class...)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>instanceOf</h4>
+<pre class="methodSignature">public static&nbsp;boolean&nbsp;instanceOf&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/dialect/Dialect.html?is-external=true" title="class or interface in org.hibernate.dialect" class="externalLink">Dialect</a>&nbsp;dialect,
+                                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;?&gt;...&nbsp;dialectClasses)</pre>
+<div class="block">A utility method to help checking the actual dialect class.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true, if the dialect is an instance of one of the classes</dd>
+</dl>
+</li>
+</ul>
 <a id="getIdentityColumnSupport()">
 <!--   -->
 </a>
