@@ -155,7 +155,7 @@ module Awestruct
         elsif release.version =~ /.*\.(Final|SP[0-9]+)/
           release.stable = true
         else
-          raise "Unsupported version scheme for #{release_file}: #{release.version}"
+          raise StandardError, "Unsupported version scheme for #{release_file}: #{release.version}"
         end
         
         return release
