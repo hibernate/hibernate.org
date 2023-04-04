@@ -31,7 +31,7 @@ task :default => :preview
 task :init do
   cmd = "bundle check"
   msg cmd
-  system cmd or raise "Bundle dependencies not satisfied. Run 'rake setup' first", :warn
+  system cmd or raise StandardError, "Bundle dependencies not satisfied. Run 'rake setup' first"
 end
 
 desc 'Setup the environment to run Awestruct using Bundler'
@@ -102,7 +102,7 @@ end
 def run_awestruct(args)
   cmd = "bundle exec awestruct #{args}"
   msg cmd
-  system cmd or raise "ERROR: Running Awestruct failed."
+  system cmd or raise StandardError, "ERROR: Running Awestruct failed."
 end
 
 def get_profile(args)
