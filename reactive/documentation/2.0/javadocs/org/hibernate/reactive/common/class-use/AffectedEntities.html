@@ -146,12 +146,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../mutiny/Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;R&gt;</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Mutiny.Session.</span><code><span class="memberNameLink"><a href="../../mutiny/Mutiny.Session.html#createNativeQuery(java.lang.String,java.lang.Class,org.hibernate.reactive.common.AffectedEntities)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType,
                  <a href="../AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code></th>
 <td class="colLast">
-<div class="block">Create an instance of <a href="../../mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given SQL query
+<div class="block">Create an instance of <a href="../../mutiny/Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.SelectionQuery</code></a> for the given SQL query
  string, using the given <code>resultType</code> to interpret the results.</div>
 </td>
 </tr>
@@ -165,13 +165,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../mutiny/Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;R&gt;</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Mutiny.Session.</span><code><span class="memberNameLink"><a href="../../mutiny/Mutiny.Session.html#createNativeQuery(java.lang.String,org.hibernate.reactive.common.ResultSetMapping,org.hibernate.reactive.common.AffectedEntities)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
                  <a href="../ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping,
                  <a href="../AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code></th>
 <td class="colLast">
-<div class="block">Create an instance of <a href="../../mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given SQL query string,
- using the given <a href="../ResultSetMapping.html" title="interface in org.hibernate.reactive.common"><code>ResultSetMapping</code></a> to interpret the result set.</div>
+<div class="block">Create an instance of <a href="../../mutiny/Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.SelectionQuery</code></a> for the given SQL query
+ string, using the given <a href="../ResultSetMapping.html" title="interface in org.hibernate.reactive.common"><code>ResultSetMapping</code></a> to interpret the
+ result set.</div>
 </td>
 </tr>
 </tbody>
@@ -192,20 +193,20 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../query/ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a></code></td>
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../query/ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a>&lt;R&gt;</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ReactiveQueryProducer.</span><code><span class="memberNameLink"><a href="../../session/ReactiveQueryProducer.html#createReactiveNativeQuery(java.lang.String,java.lang.Class,org.hibernate.reactive.common.AffectedEntities)">createReactiveNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
                          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType,
                          <a href="../AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../query/ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a></code></td>
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../query/ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a>&lt;R&gt;</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ReactiveQueryProducer.</span><code><span class="memberNameLink"><a href="../../session/ReactiveQueryProducer.html#createReactiveNativeQuery(java.lang.String,org.hibernate.reactive.common.AffectedEntities)">createReactiveNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
                          <a href="../AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../query/ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a></code></td>
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../query/ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a>&lt;R&gt;</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ReactiveQueryProducer.</span><code><span class="memberNameLink"><a href="../../session/ReactiveQueryProducer.html#createReactiveNativeQuery(java.lang.String,org.hibernate.reactive.common.ResultSetMapping,org.hibernate.reactive.common.AffectedEntities)">createReactiveNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
                          <a href="../ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping,
                          <a href="../AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code></th>
@@ -229,17 +230,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../stage/Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage">Stage.SelectionQuery</a>&lt;R&gt;</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Stage.Session.</span><code><span class="memberNameLink"><a href="../../stage/Stage.Session.html#createNativeQuery(java.lang.String,java.lang.Class,org.hibernate.reactive.common.AffectedEntities)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType,
                  <a href="../AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code></th>
 <td class="colLast">
-<div class="block">Create an instance of <a href="../../stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
- using the given <code>resultType</code> to interpret the results.</div>
+<div class="block">Create an instance of <a href="../../stage/Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.SelectionQuery</code></a> for the given SQL query
+ string, using the given <code>resultType</code> to interpret the results.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../stage/Stage.NativeQuery.html" title="interface in org.hibernate.reactive.stage">Stage.NativeQuery</a>&lt;R&gt;</code></td>
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Stage.Session.</span><code><span class="memberNameLink"><a href="../../stage/Stage.Session.html#createNativeQuery(java.lang.String,org.hibernate.reactive.common.AffectedEntities)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
                  <a href="../AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code></th>
 <td class="colLast">
@@ -248,13 +249,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../stage/Stage.NativeQuery.html" title="interface in org.hibernate.reactive.stage">Stage.NativeQuery</a>&lt;R&gt;</code></td>
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../stage/Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage">Stage.SelectionQuery</a>&lt;R&gt;</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Stage.Session.</span><code><span class="memberNameLink"><a href="../../stage/Stage.Session.html#createNativeQuery(java.lang.String,org.hibernate.reactive.common.ResultSetMapping,org.hibernate.reactive.common.AffectedEntities)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
                  <a href="../ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping,
                  <a href="../AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code></th>
 <td class="colLast">
-<div class="block">Create an instance of <a href="../../stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
- using the given <a href="../ResultSetMapping.html" title="interface in org.hibernate.reactive.common"><code>ResultSetMapping</code></a> to interpret the result set.</div>
+<div class="block">Create an instance of <a href="../../stage/Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.SelectionQuery</code></a> for the given SQL query
+ string, using the given <a href="../ResultSetMapping.html" title="interface in org.hibernate.reactive.common"><code>ResultSetMapping</code></a> to interpret the
+ result set.</div>
 </td>
 </tr>
 </tbody>

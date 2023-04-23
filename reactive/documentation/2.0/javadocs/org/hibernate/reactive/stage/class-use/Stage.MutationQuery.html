@@ -133,11 +133,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>static interface&nbsp;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../Stage.NativeQuery.html" title="interface in org.hibernate.reactive.stage">Stage.NativeQuery</a>&lt;R&gt;</span></code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static interface&nbsp;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -152,288 +147,66 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;R&gt;</code></td>
+<td class="colFirst"><code><a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.Session.</span><code><span class="memberNameLink"><a href="../Stage.Session.html#createMutationQuery(java.lang.String)">createMutationQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString)</code></th>
+<td class="colLast">
+<div class="block">Create an instance of <a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> for the given HQL/JPQL
+ update or delete statement.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Stage.Session.</span><code><span class="memberNameLink"><a href="../Stage.Session.html#createQuery(jakarta.persistence.criteria.CriteriaDelete)">createQuery</a></span>&#8203;(jakarta.persistence.criteria.CriteriaDelete&lt;R&gt;&nbsp;criteriaDelete)</code></th>
 <td class="colLast">
-<div class="block">Create an instance of <a href="../Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given criteria delete.</div>
+<div class="block">Create an instance of <a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> for the given criteria
+ delete.</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;R&gt;</code></td>
+<tr class="altColor">
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Stage.Session.</span><code><span class="memberNameLink"><a href="../Stage.Session.html#createQuery(jakarta.persistence.criteria.CriteriaUpdate)">createQuery</a></span>&#8203;(jakarta.persistence.criteria.CriteriaUpdate&lt;R&gt;&nbsp;criteriaUpdate)</code></th>
 <td class="colLast">
-<div class="block">Create an instance of <a href="../Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given criteria update.</div>
+<div class="block">Create an instance of <a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> for the given criteria
+ update.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;R&gt;</code></td>
+<tr class="rowColor">
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Stage.StatelessSession.</span><code><span class="memberNameLink"><a href="../Stage.StatelessSession.html#createQuery(jakarta.persistence.criteria.CriteriaDelete)">createQuery</a></span>&#8203;(jakarta.persistence.criteria.CriteriaDelete&lt;R&gt;&nbsp;criteriaDelete)</code></th>
 <td class="colLast">
-<div class="block">Create an instance of <a href="../Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given criteria delete.</div>
+<div class="block">Create an instance of <a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> for the given criteria
+ delete.</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;R&gt;</code></td>
+<tr class="altColor">
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Stage.StatelessSession.</span><code><span class="memberNameLink"><a href="../Stage.StatelessSession.html#createQuery(jakarta.persistence.criteria.CriteriaUpdate)">createQuery</a></span>&#8203;(jakarta.persistence.criteria.CriteriaUpdate&lt;R&gt;&nbsp;criteriaUpdate)</code></th>
 <td class="colLast">
-<div class="block">Create an instance of <a href="../Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given criteria update.</div>
+<div class="block">Create an instance of <a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> for the given criteria
+ update.</div>
 </td>
 </tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setComment(java.lang.String)">setComment</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;comment)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setHibernateFlushMode(org.hibernate.FlushMode)">setHibernateFlushMode</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/FlushMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">FlushMode</a>&nbsp;flushMode)</code></th>
+<td class="colFirst"><code><a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameter(int,java.lang.Object)">setParameter</a></span>&#8203;(int&nbsp;parameter,
+            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;argument)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameter(int,java.lang.Object)">setParameter</a></span>&#8203;(int&nbsp;position,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;value)</code></th>
+<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameter(jakarta.persistence.Parameter,T)">setParameter</a></span>&#8203;(jakarta.persistence.Parameter&lt;T&gt;&nbsp;parameter,
+            T&nbsp;argument)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameter(int,java.time.Instant,jakarta.persistence.TemporalType)">setParameter</a></span>&#8203;(int&nbsp;position,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Instant.html?is-external=true" title="class or interface in java.time" class="externalLink">Instant</a>&nbsp;value,
-            jakarta.persistence.TemporalType&nbsp;temporalType)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameter(int,java.util.Calendar,jakarta.persistence.TemporalType)">setParameter</a></span>&#8203;(int&nbsp;position,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Calendar.html?is-external=true" title="class or interface in java.util" class="externalLink">Calendar</a>&nbsp;value,
-            jakarta.persistence.TemporalType&nbsp;temporalType)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameter(int,java.util.Date,jakarta.persistence.TemporalType)">setParameter</a></span>&#8203;(int&nbsp;position,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html?is-external=true" title="class or interface in java.util" class="externalLink">Date</a>&nbsp;value,
-            jakarta.persistence.TemporalType&nbsp;temporalType)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameter(int,P,java.lang.Class)">setParameter</a></span>&#8203;(int&nbsp;position,
-            P&nbsp;value,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;type)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameter(int,P,org.hibernate.query.BindableType)">setParameter</a></span>&#8203;(int&nbsp;position,
-            P&nbsp;value,
-            <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameter(jakarta.persistence.Parameter,java.util.Calendar,jakarta.persistence.TemporalType)">setParameter</a></span>&#8203;(jakarta.persistence.Parameter&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Calendar.html?is-external=true" title="class or interface in java.util" class="externalLink">Calendar</a>&gt;&nbsp;param,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Calendar.html?is-external=true" title="class or interface in java.util" class="externalLink">Calendar</a>&nbsp;value,
-            jakarta.persistence.TemporalType&nbsp;temporalType)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameter(jakarta.persistence.Parameter,java.util.Date,jakarta.persistence.TemporalType)">setParameter</a></span>&#8203;(jakarta.persistence.Parameter&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html?is-external=true" title="class or interface in java.util" class="externalLink">Date</a>&gt;&nbsp;param,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html?is-external=true" title="class or interface in java.util" class="externalLink">Date</a>&nbsp;value,
-            jakarta.persistence.TemporalType&nbsp;temporalType)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameter(jakarta.persistence.Parameter,T)">setParameter</a></span>&#8203;(jakarta.persistence.Parameter&lt;T&gt;&nbsp;param,
-            T&nbsp;value)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameter(java.lang.String,java.lang.Object)">setParameter</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;value)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameter(java.lang.String,java.time.Instant,jakarta.persistence.TemporalType)">setParameter</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Instant.html?is-external=true" title="class or interface in java.time" class="externalLink">Instant</a>&nbsp;value,
-            jakarta.persistence.TemporalType&nbsp;temporalType)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameter(java.lang.String,java.util.Calendar,jakarta.persistence.TemporalType)">setParameter</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Calendar.html?is-external=true" title="class or interface in java.util" class="externalLink">Calendar</a>&nbsp;value,
-            jakarta.persistence.TemporalType&nbsp;temporalType)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameter(java.lang.String,java.util.Date,jakarta.persistence.TemporalType)">setParameter</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html?is-external=true" title="class or interface in java.util" class="externalLink">Date</a>&nbsp;value,
-            jakarta.persistence.TemporalType&nbsp;temporalType)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameter(java.lang.String,P,java.lang.Class)">setParameter</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-            P&nbsp;value,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;type)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameter(java.lang.String,P,org.hibernate.query.BindableType)">setParameter</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-            P&nbsp;value,
-            <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameter(org.hibernate.query.QueryParameter,P,java.lang.Class)">setParameter</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
-            P&nbsp;value,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;type)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameter(org.hibernate.query.QueryParameter,P,org.hibernate.query.BindableType)">setParameter</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
-            P&nbsp;val,
-            <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameter(org.hibernate.query.QueryParameter,T)">setParameter</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;T&gt;&nbsp;parameter,
-            T&nbsp;value)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameterList(int,java.lang.Object%5B%5D)">setParameterList</a></span>&#8203;(int&nbsp;position,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>[]&nbsp;values)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameterList(int,java.util.Collection)">setParameterList</a></span>&#8203;(int&nbsp;position,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&nbsp;values)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameterList(int,java.util.Collection,java.lang.Class)">setParameterList</a></span>&#8203;(int&nbsp;position,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends P&gt;&nbsp;values,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;javaType)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameterList(int,java.util.Collection,org.hibernate.query.BindableType)">setParameterList</a></span>&#8203;(int&nbsp;position,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends P&gt;&nbsp;values,
-                <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameterList(int,P%5B%5D,java.lang.Class)">setParameterList</a></span>&#8203;(int&nbsp;position,
-                P[]&nbsp;values,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;javaType)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameterList(int,P%5B%5D,org.hibernate.query.BindableType)">setParameterList</a></span>&#8203;(int&nbsp;position,
-                P[]&nbsp;values,
-                <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameterList(java.lang.String,java.lang.Object%5B%5D)">setParameterList</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>[]&nbsp;values)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameterList(java.lang.String,java.util.Collection)">setParameterList</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&nbsp;values)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameterList(java.lang.String,java.util.Collection,java.lang.Class)">setParameterList</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends P&gt;&nbsp;values,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;javaType)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameterList(java.lang.String,java.util.Collection,org.hibernate.query.BindableType)">setParameterList</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends P&gt;&nbsp;values,
-                <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameterList(java.lang.String,P%5B%5D,java.lang.Class)">setParameterList</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                P[]&nbsp;values,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;javaType)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameterList(java.lang.String,P%5B%5D,org.hibernate.query.BindableType)">setParameterList</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                P[]&nbsp;values,
-                <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection)">setParameterList</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends P&gt;&nbsp;values)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,java.lang.Class)">setParameterList</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends P&gt;&nbsp;values,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;javaType)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,org.hibernate.query.BindableType)">setParameterList</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends P&gt;&nbsp;values,
-                <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D)">setParameterList</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
-                P[]&nbsp;values)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D,java.lang.Class)">setParameterList</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
-                P[]&nbsp;values,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;javaType)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D,org.hibernate.query.BindableType)">setParameterList</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
-                P[]&nbsp;values,
-                <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setProperties(java.lang.Object)">setProperties</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;bean)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;<a href="../Stage.MutationQuery.html" title="type parameter in Stage.MutationQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setProperties(java.util.Map)">setProperties</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&nbsp;bean)</code></th>
+<td class="colFirst"><code><a href="../Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.MutationQuery.</span><code><span class="memberNameLink"><a href="../Stage.MutationQuery.html#setParameter(java.lang.String,java.lang.Object)">setParameter</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;parameter,
+            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;argument)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </tbody>

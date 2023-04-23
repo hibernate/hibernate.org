@@ -215,7 +215,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage">Stage.SelectionQuery</a>&lt;R&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNamedQuery(java.lang.String,java.lang.Class)">createNamedQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryName,
                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</code></th>
 <td class="colLast">
@@ -231,7 +231,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage">Stage.SelectionQuery</a>&lt;R&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNativeQuery(java.lang.String,java.lang.Class)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</code></th>
 <td class="colLast">
@@ -240,24 +240,27 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </td>
 </tr>
 <tr id="i7" class="rowColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;R&gt;</code></td>
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createQuery(jakarta.persistence.criteria.CriteriaDelete)">createQuery</a></span>&#8203;(jakarta.persistence.criteria.CriteriaDelete&lt;R&gt;&nbsp;criteriaDelete)</code></th>
 <td class="colLast">
-<div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given criteria delete.</div>
+<div class="block">Create an instance of <a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> for the given criteria
+ delete.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage">Stage.SelectionQuery</a>&lt;R&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createQuery(jakarta.persistence.criteria.CriteriaQuery)">createQuery</a></span>&#8203;(jakarta.persistence.criteria.CriteriaQuery&lt;R&gt;&nbsp;criteriaQuery)</code></th>
 <td class="colLast">
-<div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given criteria query.</div>
+<div class="block">Create an instance of <a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.SelectionQuery</code></a> for the given criteria
+ query.</div>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;R&gt;</code></td>
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createQuery(jakarta.persistence.criteria.CriteriaUpdate)">createQuery</a></span>&#8203;(jakarta.persistence.criteria.CriteriaUpdate&lt;R&gt;&nbsp;criteriaUpdate)</code></th>
 <td class="colLast">
-<div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given criteria update.</div>
+<div class="block">Create an instance of <a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> for the given criteria
+ update.</div>
 </td>
 </tr>
 <tr id="i10" class="altColor">
@@ -269,12 +272,12 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </td>
 </tr>
 <tr id="i11" class="rowColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></td>
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage">Stage.SelectionQuery</a>&lt;R&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createQuery(java.lang.String,java.lang.Class)">createQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</code></th>
 <td class="colLast">
-<div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given HQL/JPQL query
- string.</div>
+<div class="block">Create an instance of <a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.SelectionQuery</code></a> for the given HQL/JPQL
+ query string and query result type.</div>
 </td>
 </tr>
 <tr id="i12" class="altColor">
@@ -587,10 +590,10 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>createQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
-                               <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</pre>
-<div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given HQL/JPQL query
- string.</div>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage">Stage.SelectionQuery</a>&lt;R&gt;&nbsp;createQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+                                        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</pre>
+<div class="block">Create an instance of <a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.SelectionQuery</code></a> for the given HQL/JPQL
+ query string and query result type.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>queryString</code> - The HQL/JPQL query</dd>
@@ -645,8 +648,8 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>createNamedQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createNamedQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryName,
-                                    <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</pre>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage">Stage.SelectionQuery</a>&lt;R&gt;&nbsp;createNamedQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryName,
+                                             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</pre>
 <div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the named query.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -665,8 +668,8 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>createNativeQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createNativeQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
-                                     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</pre>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage">Stage.SelectionQuery</a>&lt;R&gt;&nbsp;createNativeQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+                                              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</pre>
 <div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
  using the given <code>resultType</code> to interpret the results.</div>
 <dl>
@@ -686,13 +689,14 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>createQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;&nbsp;createQuery&#8203;(jakarta.persistence.criteria.CriteriaQuery&lt;R&gt;&nbsp;criteriaQuery)</pre>
-<div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given criteria query.</div>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage">Stage.SelectionQuery</a>&lt;R&gt;&nbsp;createQuery&#8203;(jakarta.persistence.criteria.CriteriaQuery&lt;R&gt;&nbsp;criteriaQuery)</pre>
+<div class="block">Create an instance of <a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.SelectionQuery</code></a> for the given criteria
+ query.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>criteriaQuery</code> - The <code>CriteriaQuery</code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> instance for manipulation and execution</dd>
+<dd>The <a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.SelectionQuery</code></a> instance for manipulation and execution</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><code>EntityManager.createQuery(String)</code></dd>
 </dl>
@@ -704,13 +708,14 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>createQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;R&gt;&nbsp;createQuery&#8203;(jakarta.persistence.criteria.CriteriaUpdate&lt;R&gt;&nbsp;criteriaUpdate)</pre>
-<div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given criteria update.</div>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&nbsp;createQuery&#8203;(jakarta.persistence.criteria.CriteriaUpdate&lt;R&gt;&nbsp;criteriaUpdate)</pre>
+<div class="block">Create an instance of <a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> for the given criteria
+ update.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>criteriaUpdate</code> - The <code>CriteriaUpdate</code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> instance for manipulation and execution</dd>
+<dd>The <a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> instance for manipulation and execution</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><code>EntityManager.createQuery(String)</code></dd>
 </dl>
@@ -722,13 +727,14 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <ul class="blockList">
 <li class="blockList">
 <h4>createQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&lt;R&gt;&nbsp;createQuery&#8203;(jakarta.persistence.criteria.CriteriaDelete&lt;R&gt;&nbsp;criteriaDelete)</pre>
-<div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given criteria delete.</div>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a>&nbsp;createQuery&#8203;(jakarta.persistence.criteria.CriteriaDelete&lt;R&gt;&nbsp;criteriaDelete)</pre>
+<div class="block">Create an instance of <a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> for the given criteria
+ delete.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>criteriaDelete</code> - The <code>CriteriaDelete</code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> instance for manipulation and execution</dd>
+<dd>The <a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> instance for manipulation and execution</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><code>EntityManager.createQuery(String)</code></dd>
 </dl>

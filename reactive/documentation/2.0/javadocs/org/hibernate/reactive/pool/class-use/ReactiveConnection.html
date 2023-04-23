@@ -209,6 +209,26 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  returning the connection via a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>CompletionStage</code></a>.</div>
 </td>
 </tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="../ReactiveConnection.html" title="interface in org.hibernate.reactive.pool">ReactiveConnection</a>&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">ReactiveConnectionPool.</span><code><span class="memberNameLink"><a href="../ReactiveConnectionPool.html#getConnection(java.lang.String,org.hibernate.engine.jdbc.spi.SqlExceptionHelper)">getConnection</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tenantId,
+             <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/jdbc/spi/SqlExceptionHelper.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.spi" class="externalLink">SqlExceptionHelper</a>&nbsp;sqlExceptionHelper)</code></th>
+<td class="colLast">
+<div class="block">Obtain a reactive connection for the given tenant id,
+ returning the connection via a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>CompletionStage</code></a>
+ and overriding the default <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/jdbc/spi/SqlExceptionHelper.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.spi" class="externalLink"><code>SqlExceptionHelper</code></a>
+ for the pool.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="../ReactiveConnection.html" title="interface in org.hibernate.reactive.pool">ReactiveConnection</a>&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">ReactiveConnectionPool.</span><code><span class="memberNameLink"><a href="../ReactiveConnectionPool.html#getConnection(org.hibernate.engine.jdbc.spi.SqlExceptionHelper)">getConnection</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/jdbc/spi/SqlExceptionHelper.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.spi" class="externalLink">SqlExceptionHelper</a>&nbsp;sqlExceptionHelper)</code></th>
+<td class="colLast">
+<div class="block">Obtain a reactive connection, returning the connection
+ via a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>CompletionStage</code></a> and overriding the default
+ <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/jdbc/spi/SqlExceptionHelper.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.spi" class="externalLink"><code>SqlExceptionHelper</code></a> for the pool.</div>
+</td>
+</tr>
 </tbody>
 </table>
 <table class="useSummary">

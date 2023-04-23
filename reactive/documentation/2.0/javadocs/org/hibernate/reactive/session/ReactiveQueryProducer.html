@@ -27,8 +27,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":38,"i30":38,"i31":38,"i32":6,"i33":6,"i34":6,"i35":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],32:["t6","Deprecated Methods"]};
+var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6,"i30":6,"i31":6,"i32":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -154,7 +154,7 @@ extends <a href="ReactiveConnectionSupplier.html" title="interface in org.hibern
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
@@ -194,12 +194,12 @@ extends <a href="ReactiveConnectionSupplier.html" title="interface in org.hibern
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;R&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createReactiveMutationQuery(jakarta.persistence.criteria.CriteriaDelete)">createReactiveMutationQuery</a></span>&#8203;(jakarta.persistence.criteria.CriteriaDelete&nbsp;deleteQuery)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createReactiveMutationQuery(jakarta.persistence.criteria.CriteriaDelete)">createReactiveMutationQuery</a></span>&#8203;(jakarta.persistence.criteria.CriteriaDelete&lt;R&gt;&nbsp;deleteQuery)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;R&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createReactiveMutationQuery(jakarta.persistence.criteria.CriteriaUpdate)">createReactiveMutationQuery</a></span>&#8203;(jakarta.persistence.criteria.CriteriaUpdate&nbsp;updateQuery)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createReactiveMutationQuery(jakarta.persistence.criteria.CriteriaUpdate)">createReactiveMutationQuery</a></span>&#8203;(jakarta.persistence.criteria.CriteriaUpdate&lt;R&gt;&nbsp;updateQuery)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i8" class="altColor">
@@ -209,7 +209,7 @@ extends <a href="ReactiveConnectionSupplier.html" title="interface in org.hibern
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;R&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createReactiveMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsertSelect)">createReactiveMutationQuery</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/criteria/JpaCriteriaInsertSelect.html?is-external=true" title="class or interface in org.hibernate.query.criteria" class="externalLink">JpaCriteriaInsertSelect</a>&nbsp;insertSelect)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createReactiveMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsertSelect)">createReactiveMutationQuery</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/criteria/JpaCriteriaInsertSelect.html?is-external=true" title="class or interface in org.hibernate.query.criteria" class="externalLink">JpaCriteriaInsertSelect</a>&lt;R&gt;&nbsp;insertSelect)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i10" class="altColor">
@@ -237,7 +237,7 @@ extends <a href="ReactiveConnectionSupplier.html" title="interface in org.hibern
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i14" class="altColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../query/ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a></code></td>
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../query/ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a>&lt;R&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createReactiveNativeQuery(java.lang.String,java.lang.Class,org.hibernate.reactive.common.AffectedEntities)">createReactiveNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
                          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType,
                          <a href="../common/AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code></th>
@@ -257,19 +257,19 @@ extends <a href="ReactiveConnectionSupplier.html" title="interface in org.hibern
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i17" class="rowColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../query/ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a></code></td>
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../query/ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a>&lt;R&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createReactiveNativeQuery(java.lang.String,org.hibernate.reactive.common.AffectedEntities)">createReactiveNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
                          <a href="../common/AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i18" class="altColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../query/ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a></code></td>
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../query/ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a>&lt;R&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createReactiveNativeQuery(java.lang.String,org.hibernate.reactive.common.ResultSetMapping)">createReactiveNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
                          <a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i19" class="rowColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../query/ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a></code></td>
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../query/ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a>&lt;R&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createReactiveNativeQuery(java.lang.String,org.hibernate.reactive.common.ResultSetMapping,org.hibernate.reactive.common.AffectedEntities)">createReactiveNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
                          <a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping,
                          <a href="../common/AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code></th>
@@ -324,45 +324,23 @@ extends <a href="ReactiveConnectionSupplier.html" title="interface in org.hibern
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i29" class="rowColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../query/ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getNamedReactiveNativeQuery(java.lang.String)">getNamedReactiveNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
-<td class="colLast">
-<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
-</td>
-</tr>
-<tr id="i30" class="altColor">
-<td class="colFirst"><code><a href="../query/ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getNamedReactiveNativeQuery(java.lang.String,java.lang.String)">getNamedReactiveNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                           <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;resultSetMapping)</code></th>
-<td class="colLast">
-<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
-</td>
-</tr>
-<tr id="i31" class="rowColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../query/ReactiveQuery.html" title="interface in org.hibernate.reactive.query">ReactiveQuery</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getNamedReactiveQuery(java.lang.String)">getNamedReactiveQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryName)</code></th>
-<td class="colLast">
-<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
-</td>
-</tr>
-<tr id="i32" class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;T&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getResultSetMapping(java.lang.Class,java.lang.String)">getResultSetMapping</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;resultType,
                    <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;mappingName)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i33" class="rowColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">SharedSessionContractImplementor</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSharedContract()">getSharedContract</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i34" class="altColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;T&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reactiveFetch(T,boolean)">reactiveFetch</a></span>&#8203;(T&nbsp;association,
              boolean&nbsp;unproxy)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i35" class="rowColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reactiveInternalLoad(java.lang.String,java.lang.Object,boolean,boolean)">reactiveInternalLoad</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;entityName,
                     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id,
@@ -606,7 +584,7 @@ extends <a href="ReactiveConnectionSupplier.html" title="interface in org.hibern
 <ul class="blockList">
 <li class="blockList">
 <h4>createReactiveMutationQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;R&gt;&nbsp;createReactiveMutationQuery&#8203;(jakarta.persistence.criteria.CriteriaUpdate&nbsp;updateQuery)</pre>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;R&gt;&nbsp;createReactiveMutationQuery&#8203;(jakarta.persistence.criteria.CriteriaUpdate&lt;R&gt;&nbsp;updateQuery)</pre>
 </li>
 </ul>
 <a id="createReactiveMutationQuery(jakarta.persistence.criteria.CriteriaDelete)">
@@ -615,7 +593,7 @@ extends <a href="ReactiveConnectionSupplier.html" title="interface in org.hibern
 <ul class="blockList">
 <li class="blockList">
 <h4>createReactiveMutationQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;R&gt;&nbsp;createReactiveMutationQuery&#8203;(jakarta.persistence.criteria.CriteriaDelete&nbsp;deleteQuery)</pre>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;R&gt;&nbsp;createReactiveMutationQuery&#8203;(jakarta.persistence.criteria.CriteriaDelete&lt;R&gt;&nbsp;deleteQuery)</pre>
 </li>
 </ul>
 <a id="createReactiveMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsertSelect)">
@@ -624,7 +602,7 @@ extends <a href="ReactiveConnectionSupplier.html" title="interface in org.hibern
 <ul class="blockList">
 <li class="blockList">
 <h4>createReactiveMutationQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;R&gt;&nbsp;createReactiveMutationQuery&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/criteria/JpaCriteriaInsertSelect.html?is-external=true" title="class or interface in org.hibernate.query.criteria" class="externalLink">JpaCriteriaInsertSelect</a>&nbsp;insertSelect)</pre>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;R&gt;&nbsp;createReactiveMutationQuery&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/criteria/JpaCriteriaInsertSelect.html?is-external=true" title="class or interface in org.hibernate.query.criteria" class="externalLink">JpaCriteriaInsertSelect</a>&lt;R&gt;&nbsp;insertSelect)</pre>
 </li>
 </ul>
 <a id="createNativeReactiveMutationQuery(java.lang.String)">
@@ -664,48 +642,14 @@ extends <a href="ReactiveConnectionSupplier.html" title="interface in org.hibern
 <pre class="methodSignature">&lt;R&gt;&nbsp;<a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;R&gt;&nbsp;createNamedReactiveMutationQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
 </li>
 </ul>
-<a id="getNamedReactiveQuery(java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getNamedReactiveQuery</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang" class="externalLink">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true#since()" title="class or interface in java.lang" class="externalLink">since</a>="6.0")
-&lt;R&gt;&nbsp;<a href="../query/ReactiveQuery.html" title="interface in org.hibernate.reactive.query">ReactiveQuery</a>&nbsp;getNamedReactiveQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryName)</pre>
-<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span></div>
-</li>
-</ul>
-<a id="getNamedReactiveNativeQuery(java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getNamedReactiveNativeQuery</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang" class="externalLink">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true#since()" title="class or interface in java.lang" class="externalLink">since</a>="6.0")
-&lt;R&gt;&nbsp;<a href="../query/ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a>&nbsp;getNamedReactiveNativeQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
-<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span></div>
-</li>
-</ul>
-<a id="getNamedReactiveNativeQuery(java.lang.String,java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getNamedReactiveNativeQuery</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang" class="externalLink">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true#since()" title="class or interface in java.lang" class="externalLink">since</a>="6.0")
-<a href="../query/ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a>&nbsp;getNamedReactiveNativeQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                                                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;resultSetMapping)</pre>
-<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span></div>
-</li>
-</ul>
 <a id="createReactiveNativeQuery(java.lang.String,org.hibernate.reactive.common.AffectedEntities)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>createReactiveNativeQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="../query/ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a>&nbsp;createReactiveNativeQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
-                                                  <a href="../common/AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</pre>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="../query/ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a>&lt;R&gt;&nbsp;createReactiveNativeQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+                                                     <a href="../common/AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</pre>
 </li>
 </ul>
 <a id="createReactiveNativeQuery(java.lang.String,java.lang.Class,org.hibernate.reactive.common.AffectedEntities)">
@@ -714,9 +658,9 @@ extends <a href="ReactiveConnectionSupplier.html" title="interface in org.hibern
 <ul class="blockList">
 <li class="blockList">
 <h4>createReactiveNativeQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="../query/ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a>&nbsp;createReactiveNativeQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
-                                                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType,
-                                                  <a href="../common/AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</pre>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="../query/ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a>&lt;R&gt;&nbsp;createReactiveNativeQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+                                                     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType,
+                                                     <a href="../common/AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</pre>
 </li>
 </ul>
 <a id="createReactiveNativeQuery(java.lang.String,org.hibernate.reactive.common.ResultSetMapping)">
@@ -725,8 +669,8 @@ extends <a href="ReactiveConnectionSupplier.html" title="interface in org.hibern
 <ul class="blockList">
 <li class="blockList">
 <h4>createReactiveNativeQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="../query/ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a>&nbsp;createReactiveNativeQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
-                                                  <a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping)</pre>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="../query/ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a>&lt;R&gt;&nbsp;createReactiveNativeQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+                                                     <a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping)</pre>
 </li>
 </ul>
 <a id="createReactiveNativeQuery(java.lang.String,org.hibernate.reactive.common.ResultSetMapping,org.hibernate.reactive.common.AffectedEntities)">
@@ -735,9 +679,9 @@ extends <a href="ReactiveConnectionSupplier.html" title="interface in org.hibern
 <ul class="blockList">
 <li class="blockList">
 <h4>createReactiveNativeQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="../query/ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a>&nbsp;createReactiveNativeQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
-                                                  <a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping,
-                                                  <a href="../common/AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</pre>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="../query/ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a>&lt;R&gt;&nbsp;createReactiveNativeQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+                                                     <a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping,
+                                                     <a href="../common/AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</pre>
 </li>
 </ul>
 <a id="getResultSetMapping(java.lang.Class,java.lang.String)">

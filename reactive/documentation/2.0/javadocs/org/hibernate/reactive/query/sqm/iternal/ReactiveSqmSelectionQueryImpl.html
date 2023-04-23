@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10,"i33":10,"i34":10,"i35":10,"i36":10,"i37":10,"i38":10,"i39":10,"i40":10,"i41":10,"i42":10,"i43":10,"i44":10,"i45":10,"i46":10,"i47":10,"i48":10,"i49":10,"i50":10,"i51":10,"i52":10,"i53":10,"i54":10,"i55":10,"i56":10,"i57":10,"i58":10,"i59":10,"i60":10,"i61":10,"i62":10,"i63":10,"i64":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10,"i33":10,"i34":10,"i35":10,"i36":10,"i37":10,"i38":10,"i39":10,"i40":10,"i41":10,"i42":10,"i43":10,"i44":10,"i45":10,"i46":10,"i47":10,"i48":10,"i49":10,"i50":10,"i51":10,"i52":10,"i53":10,"i54":10,"i55":10,"i56":10,"i57":10,"i58":10,"i59":10,"i60":10,"i61":10,"i62":10,"i63":10,"i64":10,"i65":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -215,7 +215,7 @@ implements <a href="../ReactiveSqmSelectionQuery.html" title="interface in org.h
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(org.hibernate.query.sqm.tree.select.SqmSelectStatement,java.lang.Class,org.hibernate.engine.spi.SharedSessionContractImplementor)">ReactiveSqmSelectionQueryImpl</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/sqm/tree/select/SqmSelectStatement.html?is-external=true" title="class or interface in org.hibernate.query.sqm.tree.select" class="externalLink">SqmSelectStatement</a>&nbsp;criteria,
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(org.hibernate.query.sqm.tree.select.SqmSelectStatement,java.lang.Class,org.hibernate.engine.spi.SharedSessionContractImplementor)">ReactiveSqmSelectionQueryImpl</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/sqm/tree/select/SqmSelectStatement.html?is-external=true" title="class or interface in org.hibernate.query.sqm.tree.select" class="externalLink">SqmSelectStatement</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;&nbsp;criteria,
                              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;&nbsp;expectedResultType,
                              <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">SharedSessionContractImplementor</a>&nbsp;session)</code></th>
 <td class="colLast">&nbsp;</td>
@@ -239,391 +239,397 @@ implements <a href="../ReactiveSqmSelectionQuery.html" title="interface in org.h
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getReactiveSingleResult()">getReactiveSingleResult</a></span>()</code></th>
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#applyGraph(org.hibernate.graph.spi.RootGraphImplementor,org.hibernate.graph.GraphSemantic)">applyGraph</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/graph/spi/RootGraphImplementor.html?is-external=true" title="class or interface in org.hibernate.graph.spi" class="externalLink">RootGraphImplementor</a>&lt;?&gt;&nbsp;graph,
+          <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/graph/GraphSemantic.html?is-external=true" title="class or interface in org.hibernate.graph" class="externalLink">GraphSemantic</a>&nbsp;semantic)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getReactiveSingleResultOrNull()">getReactiveSingleResultOrNull</a></span>()</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getReactiveSingleResult()">getReactiveSingleResult</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getReactiveSingleResultOrNull()">getReactiveSingleResultOrNull</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getResultList()">getResultList</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/stream/Stream.html?is-external=true" title="class or interface in java.util.stream" class="externalLink">Stream</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getResultStream()">getResultStream</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSingleResult()">getSingleResult</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSingleResultOrNull()">getSingleResultOrNull</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reactiveList()">reactiveList</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reactiveUnique()">reactiveUnique</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Optional.html?is-external=true" title="class or interface in java.util" class="externalLink">Optional</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reactiveUniqueResultOptional()">reactiveUniqueResultOptional</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAliasSpecificLockMode(java.lang.String,org.hibernate.LockMode)">setAliasSpecificLockMode</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;alias,
                         <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a>&nbsp;lockMode)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCacheable(boolean)">setCacheable</a></span>&#8203;(boolean&nbsp;cacheable)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCacheMode(org.hibernate.CacheMode)">setCacheMode</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/CacheMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">CacheMode</a>&nbsp;cacheMode)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCacheRegion(java.lang.String)">setCacheRegion</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;regionName)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCacheRetrieveMode(jakarta.persistence.CacheRetrieveMode)">setCacheRetrieveMode</a></span>&#8203;(jakarta.persistence.CacheRetrieveMode&nbsp;cacheRetrieveMode)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCacheStoreMode(jakarta.persistence.CacheStoreMode)">setCacheStoreMode</a></span>&#8203;(jakarta.persistence.CacheStoreMode&nbsp;cacheStoreMode)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setFetchSize(int)">setFetchSize</a></span>&#8203;(int&nbsp;fetchSize)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setFirstResult(int)">setFirstResult</a></span>&#8203;(int&nbsp;startPosition)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setFlushMode(jakarta.persistence.FlushModeType)">setFlushMode</a></span>&#8203;(jakarta.persistence.FlushModeType&nbsp;flushMode)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setFollowOnLocking(boolean)">setFollowOnLocking</a></span>&#8203;(boolean&nbsp;enable)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setHibernateFlushMode(org.hibernate.FlushMode)">setHibernateFlushMode</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/FlushMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">FlushMode</a>&nbsp;flushMode)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setHibernateLockMode(org.hibernate.LockMode)">setHibernateLockMode</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a>&nbsp;lockMode)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setHint(java.lang.String,java.lang.Object)">setHint</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;hintName,
        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;value)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setLockMode(jakarta.persistence.LockModeType)">setLockMode</a></span>&#8203;(jakarta.persistence.LockModeType&nbsp;lockMode)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setLockMode(java.lang.String,org.hibernate.LockMode)">setLockMode</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;alias,
            <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a>&nbsp;lockMode)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setMaxResults(int)">setMaxResults</a></span>&#8203;(int&nbsp;maxResult)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(int,java.lang.Object)">setParameter</a></span>&#8203;(int&nbsp;position,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;value)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(int,java.time.Instant,jakarta.persistence.TemporalType)">setParameter</a></span>&#8203;(int&nbsp;position,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Instant.html?is-external=true" title="class or interface in java.time" class="externalLink">Instant</a>&nbsp;value,
             jakarta.persistence.TemporalType&nbsp;temporalType)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(int,java.util.Calendar,jakarta.persistence.TemporalType)">setParameter</a></span>&#8203;(int&nbsp;position,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Calendar.html?is-external=true" title="class or interface in java.util" class="externalLink">Calendar</a>&nbsp;value,
             jakarta.persistence.TemporalType&nbsp;temporalType)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(int,java.util.Date,jakarta.persistence.TemporalType)">setParameter</a></span>&#8203;(int&nbsp;position,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html?is-external=true" title="class or interface in java.util" class="externalLink">Date</a>&nbsp;value,
             jakarta.persistence.TemporalType&nbsp;temporalType)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(int,P,java.lang.Class)">setParameter</a></span>&#8203;(int&nbsp;position,
             P&nbsp;value,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;javaType)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(int,P,org.hibernate.query.BindableType)">setParameter</a></span>&#8203;(int&nbsp;position,
             P&nbsp;value,
             <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(jakarta.persistence.Parameter,java.util.Calendar,jakarta.persistence.TemporalType)">setParameter</a></span>&#8203;(jakarta.persistence.Parameter&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Calendar.html?is-external=true" title="class or interface in java.util" class="externalLink">Calendar</a>&gt;&nbsp;param,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Calendar.html?is-external=true" title="class or interface in java.util" class="externalLink">Calendar</a>&nbsp;value,
             jakarta.persistence.TemporalType&nbsp;temporalType)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i32" class="altColor">
+<tr id="i33" class="rowColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(jakarta.persistence.Parameter,java.util.Date,jakarta.persistence.TemporalType)">setParameter</a></span>&#8203;(jakarta.persistence.Parameter&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html?is-external=true" title="class or interface in java.util" class="externalLink">Date</a>&gt;&nbsp;param,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html?is-external=true" title="class or interface in java.util" class="externalLink">Date</a>&nbsp;value,
             jakarta.persistence.TemporalType&nbsp;temporalType)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i33" class="rowColor">
+<tr id="i34" class="altColor">
 <td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(jakarta.persistence.Parameter,P)">setParameter</a></span>&#8203;(jakarta.persistence.Parameter&lt;P&gt;&nbsp;parameter,
             P&nbsp;value)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i34" class="altColor">
+<tr id="i35" class="rowColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(java.lang.String,java.lang.Object)">setParameter</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;value)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i35" class="rowColor">
+<tr id="i36" class="altColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(java.lang.String,java.time.Instant,jakarta.persistence.TemporalType)">setParameter</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Instant.html?is-external=true" title="class or interface in java.time" class="externalLink">Instant</a>&nbsp;value,
             jakarta.persistence.TemporalType&nbsp;temporalType)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i36" class="altColor">
+<tr id="i37" class="rowColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(java.lang.String,java.util.Calendar,jakarta.persistence.TemporalType)">setParameter</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Calendar.html?is-external=true" title="class or interface in java.util" class="externalLink">Calendar</a>&nbsp;value,
             jakarta.persistence.TemporalType&nbsp;temporalType)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i37" class="rowColor">
+<tr id="i38" class="altColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(java.lang.String,java.util.Date,jakarta.persistence.TemporalType)">setParameter</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html?is-external=true" title="class or interface in java.util" class="externalLink">Date</a>&nbsp;value,
             jakarta.persistence.TemporalType&nbsp;temporalType)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i38" class="altColor">
+<tr id="i39" class="rowColor">
 <td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(java.lang.String,P,java.lang.Class)">setParameter</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
             P&nbsp;value,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;javaType)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i39" class="rowColor">
+<tr id="i40" class="altColor">
 <td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(java.lang.String,P,org.hibernate.query.BindableType)">setParameter</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
             P&nbsp;value,
             <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i40" class="altColor">
+<tr id="i41" class="rowColor">
 <td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(org.hibernate.query.QueryParameter,P)">setParameter</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
             P&nbsp;value)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i41" class="rowColor">
+<tr id="i42" class="altColor">
 <td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(org.hibernate.query.QueryParameter,P,java.lang.Class)">setParameter</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
             P&nbsp;value,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;javaType)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i42" class="altColor">
+<tr id="i43" class="rowColor">
 <td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(org.hibernate.query.QueryParameter,P,org.hibernate.query.BindableType)">setParameter</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
             P&nbsp;value,
             <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i43" class="rowColor">
+<tr id="i44" class="altColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(int,java.lang.Object%5B%5D)">setParameterList</a></span>&#8203;(int&nbsp;position,
                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>[]&nbsp;values)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i44" class="altColor">
+<tr id="i45" class="rowColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(int,java.util.Collection)">setParameterList</a></span>&#8203;(int&nbsp;position,
                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&nbsp;values)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i45" class="rowColor">
+<tr id="i46" class="altColor">
 <td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(int,java.util.Collection,java.lang.Class)">setParameterList</a></span>&#8203;(int&nbsp;position,
                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends P&gt;&nbsp;values,
                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;javaType)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i46" class="altColor">
+<tr id="i47" class="rowColor">
 <td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(int,java.util.Collection,org.hibernate.query.BindableType)">setParameterList</a></span>&#8203;(int&nbsp;position,
                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends P&gt;&nbsp;values,
                 <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i47" class="rowColor">
+<tr id="i48" class="altColor">
 <td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(int,P%5B%5D,java.lang.Class)">setParameterList</a></span>&#8203;(int&nbsp;position,
                 P[]&nbsp;values,
                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;javaType)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i48" class="altColor">
+<tr id="i49" class="rowColor">
 <td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(int,P%5B%5D,org.hibernate.query.BindableType)">setParameterList</a></span>&#8203;(int&nbsp;position,
                 P[]&nbsp;values,
                 <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i49" class="rowColor">
+<tr id="i50" class="altColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(java.lang.String,java.lang.Object%5B%5D)">setParameterList</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>[]&nbsp;values)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i50" class="altColor">
+<tr id="i51" class="rowColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(java.lang.String,java.util.Collection)">setParameterList</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&nbsp;values)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i51" class="rowColor">
+<tr id="i52" class="altColor">
 <td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(java.lang.String,java.util.Collection,java.lang.Class)">setParameterList</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends P&gt;&nbsp;values,
                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;javaType)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i52" class="altColor">
+<tr id="i53" class="rowColor">
 <td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(java.lang.String,java.util.Collection,org.hibernate.query.BindableType)">setParameterList</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends P&gt;&nbsp;values,
                 <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i53" class="rowColor">
+<tr id="i54" class="altColor">
 <td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(java.lang.String,P%5B%5D,java.lang.Class)">setParameterList</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
                 P[]&nbsp;values,
                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;javaType)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i54" class="altColor">
+<tr id="i55" class="rowColor">
 <td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(java.lang.String,P%5B%5D,org.hibernate.query.BindableType)">setParameterList</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
                 P[]&nbsp;values,
                 <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i55" class="rowColor">
+<tr id="i56" class="altColor">
 <td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection)">setParameterList</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends P&gt;&nbsp;values)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i56" class="altColor">
+<tr id="i57" class="rowColor">
 <td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,java.lang.Class)">setParameterList</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends P&gt;&nbsp;values,
                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;javaType)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i57" class="rowColor">
+<tr id="i58" class="altColor">
 <td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,org.hibernate.query.BindableType)">setParameterList</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends P&gt;&nbsp;values,
                 <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i58" class="altColor">
+<tr id="i59" class="rowColor">
 <td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D)">setParameterList</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
                 P[]&nbsp;values)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i59" class="rowColor">
+<tr id="i60" class="altColor">
 <td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D,java.lang.Class)">setParameterList</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
                 P[]&nbsp;values,
                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;javaType)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i60" class="altColor">
+<tr id="i61" class="rowColor">
 <td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D,org.hibernate.query.BindableType)">setParameterList</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
                 P[]&nbsp;values,
                 <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i61" class="rowColor">
+<tr id="i62" class="altColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setProperties(java.lang.Object)">setProperties</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;bean)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i62" class="altColor">
+<tr id="i63" class="rowColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setProperties(java.util.Map)">setProperties</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&nbsp;map)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i63" class="rowColor">
+<tr id="i64" class="altColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setReadOnly(boolean)">setReadOnly</a></span>&#8203;(boolean&nbsp;readOnly)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i64" class="altColor">
+<tr id="i65" class="rowColor">
 <td class="colFirst"><code><a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setTimeout(int)">setTimeout</a></span>&#8203;(int&nbsp;timeout)</code></th>
 <td class="colLast">&nbsp;</td>
@@ -648,7 +654,7 @@ implements <a href="../ReactiveSqmSelectionQuery.html" title="interface in org.h
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;org.hibernate.query.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query.spi" class="externalLink">AbstractCommonQueryContract</a></h3>
-<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyAdditionalPossibleHints(java.lang.String,java.lang.Object)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyAdditionalPossibleHints</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyAliasSpecificLockModeHint(java.lang.String,java.lang.Object)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyAliasSpecificLockModeHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyCacheableHint(boolean)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyCacheableHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyCacheModeHint(org.hibernate.CacheMode)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyCacheModeHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyCacheRegionHint(java.lang.String)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyCacheRegionHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyCommentHint(java.lang.String)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyCommentHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyEntityGraphHint(java.lang.String,java.lang.Object)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyEntityGraphHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyFetchSizeHint(int)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyFetchSizeHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyFirstResult(int)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyFirstResult</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyFlushModeHint(org.hibernate.FlushMode)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyFlushModeHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyFollowOnLockingHint(java.lang.Boolean)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyFollowOnLockingHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyGraph(java.lang.String,org.hibernate.graph.GraphSemantic)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyGraph</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyGraph(org.hibernate.graph.spi.RootGraphImplementor,org.hibernate.graph.GraphSemantic)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyGraph</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyHibernateLockMode(org.hibernate.LockMode)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyHibernateLockMode</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyHint(java.lang.String,java.lang.Object)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyJpaCacheRetrieveModeHint(jakarta.persistence.CacheRetrieveMode)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyJpaCacheRetrieveModeHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyJpaCacheStoreModeHint(jakarta.persistence.CacheStoreMode)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyJpaCacheStoreModeHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyJpaFlushMode(jakarta.persistence.FlushModeType)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyJpaFlushMode</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyLockModeHint(java.lang.Object)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyLockModeHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyLockModeType(jakarta.persistence.LockModeType)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyLockModeType</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyLockTimeoutHint(int)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyLockTimeoutHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyLockTimeoutHint(java.lang.Integer)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyLockTimeoutHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyMaxResults(int)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyMaxResults</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyResultListTransformer(org.hibernate.query.ResultListTransformer)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyResultListTransformer</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applySelectionHint(java.lang.String,java.lang.Object)" title="class or interface in org.hibernate.query.spi" class="externalLink">applySelectionHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applySynchronizeSpacesHint(java.lang.Object)" title="class or interface in org.hibernate.query.spi" class="externalLink">applySynchronizeSpacesHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyTimeoutHint(int)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyTimeoutHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyTupleTransformer(org.hibernate.query.TupleTransformer)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyTupleTransformer</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#determineType(java.lang.String,java.lang.Class)" title="class or interface in org.hibernate.query.spi" class="externalLink">determineType</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getComment()" title="class or interface in org.hibernate.query.spi" class="externalLink">getComment</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getFirstResult()" title="class or interface in org.hibernate.query.spi" class="externalLink">getFirstResult</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getHibernateFlushMode()" title="class or interface in org.hibernate.query.spi" class="externalLink">getHibernateFlushMode</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getHints()" title="class or interface in org.hibernate.query.spi" class="externalLink">getHints</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getIntegerLiteral(org.hibernate.query.criteria.JpaExpression,int)" title="class or interface in org.hibernate.query.spi" class="externalLink">getIntegerLiteral</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getJpaFlushMode()" title="class or interface in org.hibernate.query.spi" class="externalLink">getJpaFlushMode</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getMaxResults()" title="class or interface in org.hibernate.query.spi" class="externalLink">getMaxResults</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getMaxRows(org.hibernate.query.sqm.tree.select.SqmSelectStatement,int)" title="class or interface in org.hibernate.query.spi" class="externalLink">getMaxRows</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getParameter(int)" title="class or interface in org.hibernate.query.spi" class="externalLink">getParameter</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getParameter(int,java.lang.Class)" title="class or interface in org.hibernate.query.spi" class="externalLink">getParameter</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getParameter(java.lang.String)" title="class or interface in org.hibernate.query.spi" class="externalLink">getParameter</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getParameter(java.lang.String,java.lang.Class)" title="class or interface in org.hibernate.query.spi" class="externalLink">getParameter</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getParameters()" title="class or interface in org.hibernate.query.spi" class="externalLink">getParameters</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getParameterValue(int)" title="class or interface in org.hibernate.query.spi" class="externalLink">getParameterValue</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getParameterValue(jakarta.persistence.Parameter)" title="class or interface in org.hibernate.query.spi" class="externalLink">getParameterValue</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getParameterValue(java.lang.String)" title="class or interface in org.hibernate.query.spi" class="externalLink">getParameterValue</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getQueryOptions()" title="class or interface in org.hibernate.query.spi" class="externalLink">getQueryOptions</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getSession()" title="class or interface in org.hibernate.query.spi" class="externalLink">getSession</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getTimeout()" title="class or interface in org.hibernate.query.spi" class="externalLink">getTimeout</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#isBound(jakarta.persistence.Parameter)" title="class or interface in org.hibernate.query.spi" class="externalLink">isBound</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#locateBinding(int)" title="class or interface in org.hibernate.query.spi" class="externalLink">locateBinding</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#locateBinding(jakarta.persistence.Parameter)" title="class or interface in org.hibernate.query.spi" class="externalLink">locateBinding</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#locateBinding(java.lang.String)" title="class or interface in org.hibernate.query.spi" class="externalLink">locateBinding</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#locateBinding(org.hibernate.query.spi.QueryParameterImplementor)" title="class or interface in org.hibernate.query.spi" class="externalLink">locateBinding</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#putIfNotNull(java.util.Map,java.lang.String,java.lang.Enum)" title="class or interface in org.hibernate.query.spi" class="externalLink">putIfNotNull</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#putIfNotNull(java.util.Map,java.lang.String,java.lang.Object)" title="class or interface in org.hibernate.query.spi" class="externalLink">putIfNotNull</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#setComment(java.lang.String)" title="class or interface in org.hibernate.query.spi" class="externalLink">setComment</a></code></li>
+<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyAdditionalPossibleHints(java.lang.String,java.lang.Object)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyAdditionalPossibleHints</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyAliasSpecificLockModeHint(java.lang.String,java.lang.Object)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyAliasSpecificLockModeHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyCacheableHint(boolean)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyCacheableHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyCacheModeHint(org.hibernate.CacheMode)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyCacheModeHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyCacheRegionHint(java.lang.String)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyCacheRegionHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyCommentHint(java.lang.String)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyCommentHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyEntityGraphHint(java.lang.String,java.lang.Object)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyEntityGraphHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyFetchSizeHint(int)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyFetchSizeHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyFirstResult(int)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyFirstResult</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyFlushModeHint(org.hibernate.FlushMode)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyFlushModeHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyFollowOnLockingHint(java.lang.Boolean)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyFollowOnLockingHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyGraph(java.lang.String,org.hibernate.graph.GraphSemantic)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyGraph</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyHibernateLockMode(org.hibernate.LockMode)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyHibernateLockMode</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyHint(java.lang.String,java.lang.Object)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyJpaCacheRetrieveModeHint(jakarta.persistence.CacheRetrieveMode)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyJpaCacheRetrieveModeHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyJpaCacheStoreModeHint(jakarta.persistence.CacheStoreMode)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyJpaCacheStoreModeHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyJpaFlushMode(jakarta.persistence.FlushModeType)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyJpaFlushMode</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyLockModeHint(java.lang.Object)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyLockModeHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyLockModeType(jakarta.persistence.LockModeType)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyLockModeType</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyLockTimeoutHint(int)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyLockTimeoutHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyLockTimeoutHint(java.lang.Integer)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyLockTimeoutHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyMaxResults(int)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyMaxResults</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyResultListTransformer(org.hibernate.query.ResultListTransformer)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyResultListTransformer</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applySelectionHint(java.lang.String,java.lang.Object)" title="class or interface in org.hibernate.query.spi" class="externalLink">applySelectionHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applySynchronizeSpacesHint(java.lang.Object)" title="class or interface in org.hibernate.query.spi" class="externalLink">applySynchronizeSpacesHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyTimeoutHint(int)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyTimeoutHint</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyTupleTransformer(org.hibernate.query.TupleTransformer)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyTupleTransformer</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#determineType(java.lang.String,java.lang.Class)" title="class or interface in org.hibernate.query.spi" class="externalLink">determineType</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getComment()" title="class or interface in org.hibernate.query.spi" class="externalLink">getComment</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getFirstResult()" title="class or interface in org.hibernate.query.spi" class="externalLink">getFirstResult</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getHibernateFlushMode()" title="class or interface in org.hibernate.query.spi" class="externalLink">getHibernateFlushMode</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getHints()" title="class or interface in org.hibernate.query.spi" class="externalLink">getHints</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getIntegerLiteral(org.hibernate.query.criteria.JpaExpression,int)" title="class or interface in org.hibernate.query.spi" class="externalLink">getIntegerLiteral</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getJpaFlushMode()" title="class or interface in org.hibernate.query.spi" class="externalLink">getJpaFlushMode</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getMaxResults()" title="class or interface in org.hibernate.query.spi" class="externalLink">getMaxResults</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getMaxRows(org.hibernate.query.sqm.tree.select.SqmSelectStatement,int)" title="class or interface in org.hibernate.query.spi" class="externalLink">getMaxRows</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getParameter(int)" title="class or interface in org.hibernate.query.spi" class="externalLink">getParameter</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getParameter(int,java.lang.Class)" title="class or interface in org.hibernate.query.spi" class="externalLink">getParameter</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getParameter(java.lang.String)" title="class or interface in org.hibernate.query.spi" class="externalLink">getParameter</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getParameter(java.lang.String,java.lang.Class)" title="class or interface in org.hibernate.query.spi" class="externalLink">getParameter</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getParameters()" title="class or interface in org.hibernate.query.spi" class="externalLink">getParameters</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getParameterValue(int)" title="class or interface in org.hibernate.query.spi" class="externalLink">getParameterValue</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getParameterValue(jakarta.persistence.Parameter)" title="class or interface in org.hibernate.query.spi" class="externalLink">getParameterValue</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getParameterValue(java.lang.String)" title="class or interface in org.hibernate.query.spi" class="externalLink">getParameterValue</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getQueryOptions()" title="class or interface in org.hibernate.query.spi" class="externalLink">getQueryOptions</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getSession()" title="class or interface in org.hibernate.query.spi" class="externalLink">getSession</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#getTimeout()" title="class or interface in org.hibernate.query.spi" class="externalLink">getTimeout</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#isBound(jakarta.persistence.Parameter)" title="class or interface in org.hibernate.query.spi" class="externalLink">isBound</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#locateBinding(int)" title="class or interface in org.hibernate.query.spi" class="externalLink">locateBinding</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#locateBinding(jakarta.persistence.Parameter)" title="class or interface in org.hibernate.query.spi" class="externalLink">locateBinding</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#locateBinding(java.lang.String)" title="class or interface in org.hibernate.query.spi" class="externalLink">locateBinding</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#locateBinding(org.hibernate.query.spi.QueryParameterImplementor)" title="class or interface in org.hibernate.query.spi" class="externalLink">locateBinding</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#putIfNotNull(java.util.Map,java.lang.String,java.lang.Enum)" title="class or interface in org.hibernate.query.spi" class="externalLink">putIfNotNull</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#putIfNotNull(java.util.Map,java.lang.String,java.lang.Object)" title="class or interface in org.hibernate.query.spi" class="externalLink">putIfNotNull</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#setComment(java.lang.String)" title="class or interface in org.hibernate.query.spi" class="externalLink">setComment</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
@@ -676,7 +682,7 @@ implements <a href="../ReactiveSqmSelectionQuery.html" title="interface in org.h
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;org.hibernate.reactive.query.<a href="../../ReactiveSelectionQuery.html" title="interface in org.hibernate.reactive.query">ReactiveSelectionQuery</a></h3>
-<code><a href="../../ReactiveSelectionQuery.html#getCacheMode()">getCacheMode</a>, <a href="../../ReactiveSelectionQuery.html#getCacheRegion()">getCacheRegion</a>, <a href="../../ReactiveSelectionQuery.html#getCacheRetrieveMode()">getCacheRetrieveMode</a>, <a href="../../ReactiveSelectionQuery.html#getCacheStoreMode()">getCacheStoreMode</a>, <a href="../../ReactiveSelectionQuery.html#getFetchSize()">getFetchSize</a>, <a href="../../ReactiveSelectionQuery.html#getFirstResult()">getFirstResult</a>, <a href="../../ReactiveSelectionQuery.html#getHibernateLockMode()">getHibernateLockMode</a>, <a href="../../ReactiveSelectionQuery.html#getLockMode()">getLockMode</a>, <a href="../../ReactiveSelectionQuery.html#getLockOptions()">getLockOptions</a>, <a href="../../ReactiveSelectionQuery.html#getQueryString()">getQueryString</a>, <a href="../../ReactiveSelectionQuery.html#getReactiveResultList()">getReactiveResultList</a>, <a href="../../ReactiveSelectionQuery.html#isCacheable()">isCacheable</a>, <a href="../../ReactiveSelectionQuery.html#isReadOnly()">isReadOnly</a></code></li>
+<code><a href="../../ReactiveSelectionQuery.html#getCacheMode()">getCacheMode</a>, <a href="../../ReactiveSelectionQuery.html#getCacheRegion()">getCacheRegion</a>, <a href="../../ReactiveSelectionQuery.html#getCacheRetrieveMode()">getCacheRetrieveMode</a>, <a href="../../ReactiveSelectionQuery.html#getCacheStoreMode()">getCacheStoreMode</a>, <a href="../../ReactiveSelectionQuery.html#getFetchSize()">getFetchSize</a>, <a href="../../ReactiveSelectionQuery.html#getFirstResult()">getFirstResult</a>, <a href="../../ReactiveSelectionQuery.html#getHibernateLockMode()">getHibernateLockMode</a>, <a href="../../ReactiveSelectionQuery.html#getLockMode()">getLockMode</a>, <a href="../../ReactiveSelectionQuery.html#getLockOptions()">getLockOptions</a>, <a href="../../ReactiveSelectionQuery.html#getMaxResults()">getMaxResults</a>, <a href="../../ReactiveSelectionQuery.html#getQueryString()">getQueryString</a>, <a href="../../ReactiveSelectionQuery.html#getReactiveResultList()">getReactiveResultList</a>, <a href="../../ReactiveSelectionQuery.html#isCacheable()">isCacheable</a>, <a href="../../ReactiveSelectionQuery.html#isReadOnly()">isReadOnly</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.org.hibernate.query.SelectionQuery">
@@ -755,7 +761,7 @@ implements <a href="../ReactiveSqmSelectionQuery.html" title="interface in org.h
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ReactiveSqmSelectionQueryImpl</h4>
-<pre>public&nbsp;ReactiveSqmSelectionQueryImpl&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/sqm/tree/select/SqmSelectStatement.html?is-external=true" title="class or interface in org.hibernate.query.sqm.tree.select" class="externalLink">SqmSelectStatement</a>&nbsp;criteria,
+<pre>public&nbsp;ReactiveSqmSelectionQueryImpl&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/sqm/tree/select/SqmSelectStatement.html?is-external=true" title="class or interface in org.hibernate.query.sqm.tree.select" class="externalLink">SqmSelectStatement</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;&nbsp;criteria,
                                      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;&nbsp;expectedResultType,
                                      <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">SharedSessionContractImplementor</a>&nbsp;session)</pre>
 </li>
@@ -2260,7 +2266,7 @@ implements <a href="../ReactiveSqmSelectionQuery.html" title="interface in org.h
 <a id="setProperties(java.lang.Object)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>setProperties</h4>
 <pre class="methodSignature">public&nbsp;<a href="ReactiveSqmSelectionQueryImpl.html" title="class in org.hibernate.reactive.query.sqm.iternal">ReactiveSqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;&nbsp;setProperties&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;bean)</pre>
@@ -2279,6 +2285,22 @@ implements <a href="../ReactiveSqmSelectionQuery.html" title="interface in org.h
 <dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/sqm/SqmSelectionQuery.html?is-external=true#setProperties(java.lang.Object)" title="class or interface in org.hibernate.query.sqm" class="externalLink">setProperties</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/sqm/SqmSelectionQuery.html?is-external=true" title="class or interface in org.hibernate.query.sqm" class="externalLink">SqmSelectionQuery</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></dd>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/sqm/internal/SqmSelectionQueryImpl.html?is-external=true#setProperties(java.lang.Object)" title="class or interface in org.hibernate.query.sqm.internal" class="externalLink">setProperties</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/sqm/internal/SqmSelectionQueryImpl.html?is-external=true" title="class or interface in org.hibernate.query.sqm.internal" class="externalLink">SqmSelectionQueryImpl</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a id="applyGraph(org.hibernate.graph.spi.RootGraphImplementor,org.hibernate.graph.GraphSemantic)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>applyGraph</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;applyGraph&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/graph/spi/RootGraphImplementor.html?is-external=true" title="class or interface in org.hibernate.graph.spi" class="externalLink">RootGraphImplementor</a>&lt;?&gt;&nbsp;graph,
+                       <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/graph/GraphSemantic.html?is-external=true" title="class or interface in org.hibernate.graph" class="externalLink">GraphSemantic</a>&nbsp;semantic)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../ReactiveSelectionQuery.html#applyGraph(org.hibernate.graph.spi.RootGraphImplementor,org.hibernate.graph.GraphSemantic)">applyGraph</a></code>&nbsp;in interface&nbsp;<code><a href="../../ReactiveSelectionQuery.html" title="interface in org.hibernate.reactive.query">ReactiveSelectionQuery</a>&lt;<a href="ReactiveSqmSelectionQueryImpl.html" title="type parameter in ReactiveSqmSelectionQueryImpl">R</a>&gt;</code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true#applyGraph(org.hibernate.graph.spi.RootGraphImplementor,org.hibernate.graph.GraphSemantic)" title="class or interface in org.hibernate.query.spi" class="externalLink">applyGraph</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/spi/AbstractCommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query.spi" class="externalLink">AbstractCommonQueryContract</a></code></dd>
 </dl>
 </li>
 </ul>

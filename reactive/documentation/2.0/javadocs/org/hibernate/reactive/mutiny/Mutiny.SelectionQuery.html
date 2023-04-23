@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":18,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6,"i30":6,"i31":6,"i32":6,"i33":6,"i34":6,"i35":6,"i36":6,"i37":6,"i38":6,"i39":6,"i40":6,"i41":6,"i42":6,"i43":6,"i44":6,"i45":6,"i46":6,"i47":6,"i48":6,"i49":6,"i50":6,"i51":6,"i52":6,"i53":6,"i54":6,"i55":6,"i56":6,"i57":6,"i58":6,"i59":6,"i60":6,"i61":6,"i62":6,"i63":6,"i64":6,"i65":6,"i66":6,"i67":6,"i68":6,"i69":6,"i70":6,"i71":6,"i72":6};
+var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":18,"i16":18,"i17":6,"i18":6,"i19":18,"i20":6,"i21":18,"i22":18,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6,"i30":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -125,11 +125,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Superinterfaces:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
+<dd><code><a href="Mutiny.AbstractQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.AbstractQuery</a></code></dd>
 </dl>
 <dl>
 <dt>All Known Subinterfaces:</dt>
-<dd><code><a href="Mutiny.NativeQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.NativeQuery</a>&lt;R&gt;</code>, <code><a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></dd>
+<dd><code><a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></dd>
 </dl>
 <dl>
 <dt>Enclosing interface:</dt>
@@ -137,7 +137,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 <hr>
 <pre>public static interface <span class="typeNameLabel">Mutiny.SelectionQuery&lt;R&gt;</span>
-extends <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></pre>
+extends <a href="Mutiny.AbstractQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.AbstractQuery</a></pre>
 </li>
 </ul>
 </div>
@@ -161,7 +161,9 @@ extends <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate
 <tr id="i0" class="altColor">
 <td class="colFirst"><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/CacheMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">CacheMode</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCacheMode()">getCacheMode</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Obtain the <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/CacheMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>CacheMode</code></a> in effect for this query.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
@@ -179,424 +181,218 @@ extends <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getFetchSize()">getFetchSize</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i5" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getFirstResult()">getFirstResult</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/FlushMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">FlushMode</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getFlushMode()">getFlushMode</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Obtain the <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/FlushMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>FlushMode</code></a> in effect for this query.</div>
+</td>
+</tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getHibernateLockMode()">getHibernateLockMode</a></span>()</code></th>
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMaxResults()">getMaxResults</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
-<td class="colFirst"><code>jakarta.persistence.LockModeType</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getLockMode()">getLockMode</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getResultList()">getResultList</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Asynchronously execute this query, returning the query results
+ as a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink"><code>List</code></a>, via a <code>Uni</code>.</div>
+</td>
 </tr>
 <tr id="i8" class="altColor">
-<td class="colFirst"><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/LockOptions.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockOptions</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getLockOptions()">getLockOptions</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i9" class="rowColor">
-<td class="colFirst"><code>default io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getResultList()">getResultList</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i10" class="altColor">
 <td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSingleResult()">getSingleResult</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Asynchronously execute this query, returning a single row that
+ matches the query, throwing an exception if the query returns
+ zero rows or more than one matching row.</div>
+</td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSingleResultOrNull()">getSingleResultOrNull</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Asynchronously execute this query, returning a single row that
+ matches the query, or <code>null</code> if the query returns no results,
+ throwing an exception if the query returns more than one matching
+ row.</div>
+</td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isCacheable()">isCacheable</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isReadOnly()">isReadOnly</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i14" class="altColor">
-<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#list()">list</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i15" class="rowColor">
-<td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAliasSpecificLockMode(java.lang.String,org.hibernate.LockMode)">setAliasSpecificLockMode</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;alias,
-                        <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a>&nbsp;lockMode)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i16" class="altColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCacheable(boolean)">setCacheable</a></span>&#8203;(boolean&nbsp;cacheable)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Enable or disable caching of this query result set in the
+ second-level query cache.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCacheMode(org.hibernate.CacheMode)">setCacheMode</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/CacheMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">CacheMode</a>&nbsp;cacheMode)</code></th>
+<td class="colLast">
+<div class="block">Set the current <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/CacheMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>CacheMode</code></a> in effect while this query
+ is being executed.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCacheRegion(java.lang.String)">setCacheRegion</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;cacheRegion)</code></th>
+<td class="colLast">
+<div class="block">Set the name of the cache region in which to store this
+ query result set if <a href="#setCacheable(boolean)"><code>caching is enabled</code></a>.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>default <a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCacheRetrieveMode(jakarta.persistence.CacheRetrieveMode)">setCacheRetrieveMode</a></span>&#8203;(jakarta.persistence.CacheRetrieveMode&nbsp;cacheRetrieveMode)</code></th>
+<td class="colLast">
+<div class="block">Set the current <code>CacheRetrieveMode</code> in effect while this query
+ is being executed.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>default <a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCacheStoreMode(jakarta.persistence.CacheStoreMode)">setCacheStoreMode</a></span>&#8203;(jakarta.persistence.CacheStoreMode&nbsp;cacheStoreMode)</code></th>
+<td class="colLast">
+<div class="block">Set the current <code>CacheStoreMode</code> in effect while this query
+ is being executed.</div>
+</td>
 </tr>
 <tr id="i17" class="rowColor">
 <td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCacheMode(org.hibernate.CacheMode)">setCacheMode</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/CacheMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">CacheMode</a>&nbsp;cacheMode)</code></th>
-<td class="colLast">&nbsp;</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setComment(java.lang.String)">setComment</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;comment)</code></th>
+<td class="colLast">
+<div class="block">Set the comment for this query.</div>
+</td>
 </tr>
 <tr id="i18" class="altColor">
 <td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCacheRegion(java.lang.String)">setCacheRegion</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;cacheRegion)</code></th>
-<td class="colLast">&nbsp;</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setFirstResult(int)">setFirstResult</a></span>&#8203;(int&nbsp;firstResult)</code></th>
+<td class="colLast">
+<div class="block">Set the position of the first result that may be returned by
+ this query when executed, where the results are numbered from
+ 0.</div>
+</td>
 </tr>
 <tr id="i19" class="rowColor">
-<td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCacheRetrieveMode(jakarta.persistence.CacheRetrieveMode)">setCacheRetrieveMode</a></span>&#8203;(jakarta.persistence.CacheRetrieveMode&nbsp;cacheRetrieveMode)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colFirst"><code>default <a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setFlushMode(jakarta.persistence.FlushModeType)">setFlushMode</a></span>&#8203;(jakarta.persistence.FlushModeType&nbsp;flushModeType)</code></th>
+<td class="colLast">
+<div class="block">Set the current <code>FlushModeType</code> in effect while this query is
+ being executed.</div>
+</td>
 </tr>
 <tr id="i20" class="altColor">
 <td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCacheStoreMode(jakarta.persistence.CacheStoreMode)">setCacheStoreMode</a></span>&#8203;(jakarta.persistence.CacheStoreMode&nbsp;cacheStoreMode)</code></th>
-<td class="colLast">&nbsp;</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setFlushMode(org.hibernate.FlushMode)">setFlushMode</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/FlushMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">FlushMode</a>&nbsp;flushMode)</code></th>
+<td class="colLast">
+<div class="block">Set the current <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/FlushMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>FlushMode</code></a> in effect while this query is
+ being executed.</div>
+</td>
 </tr>
 <tr id="i21" class="rowColor">
-<td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setFetchSize(int)">setFetchSize</a></span>&#8203;(int&nbsp;fetchSize)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colFirst"><code>default <a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setLockMode(jakarta.persistence.LockModeType)">setLockMode</a></span>&#8203;(jakarta.persistence.LockModeType&nbsp;lockModeType)</code></th>
+<td class="colLast">
+<div class="block">Set the <code>LockModeType</code> to use for the whole query.</div>
+</td>
 </tr>
 <tr id="i22" class="altColor">
-<td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setFirstResult(int)">setFirstResult</a></span>&#8203;(int&nbsp;startPosition)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colFirst"><code>default <a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setLockMode(java.lang.String,jakarta.persistence.LockModeType)">setLockMode</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;alias,
+           jakarta.persistence.LockModeType&nbsp;lockModeType)</code></th>
+<td class="colLast">
+<div class="block">Set the <code>LockModeType</code> to use for specified alias (as defined in
+ the query's <code>from</code> clause).</div>
+</td>
 </tr>
 <tr id="i23" class="rowColor">
 <td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setFlushMode(jakarta.persistence.FlushModeType)">setFlushMode</a></span>&#8203;(jakarta.persistence.FlushModeType&nbsp;flushMode)</code></th>
-<td class="colLast">&nbsp;</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setLockMode(java.lang.String,org.hibernate.LockMode)">setLockMode</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;alias,
+           <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a>&nbsp;lockMode)</code></th>
+<td class="colLast">
+<div class="block">Set the <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>LockMode</code></a> to use for specified alias (as defined in
+ the query's <code>from</code> clause).</div>
+</td>
 </tr>
 <tr id="i24" class="altColor">
 <td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setFollowOnLocking(boolean)">setFollowOnLocking</a></span>&#8203;(boolean&nbsp;enable)</code></th>
-<td class="colLast">&nbsp;</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setLockMode(org.hibernate.LockMode)">setLockMode</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a>&nbsp;lockMode)</code></th>
+<td class="colLast">
+<div class="block">Set the <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>LockMode</code></a> to use for the whole query.</div>
+</td>
 </tr>
 <tr id="i25" class="rowColor">
 <td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setHibernateFlushMode(org.hibernate.FlushMode)">setHibernateFlushMode</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/FlushMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">FlushMode</a>&nbsp;flushMode)</code></th>
-<td class="colLast">&nbsp;</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setMaxResults(int)">setMaxResults</a></span>&#8203;(int&nbsp;maxResults)</code></th>
+<td class="colLast">
+<div class="block">Set the maximum number of results that may be returned by this
+ query when executed.</div>
+</td>
 </tr>
 <tr id="i26" class="altColor">
 <td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setHibernateLockMode(org.hibernate.LockMode)">setHibernateLockMode</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a>&nbsp;lockMode)</code></th>
-<td class="colLast">&nbsp;</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(int,java.lang.Object)">setParameter</a></span>&#8203;(int&nbsp;parameter,
+            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;argument)</code></th>
+<td class="colLast">
+<div class="block">Set the value of an ordinal parameter.</div>
+</td>
 </tr>
 <tr id="i27" class="rowColor">
-<td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setHint(java.lang.String,java.lang.Object)">setHint</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;hintName,
-       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;value)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(jakarta.persistence.Parameter,T)">setParameter</a></span>&#8203;(jakarta.persistence.Parameter&lt;T&gt;&nbsp;parameter,
+            T&nbsp;argument)</code></th>
+<td class="colLast">
+<div class="block">Set the value of a typed parameter.</div>
+</td>
 </tr>
 <tr id="i28" class="altColor">
 <td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setLockMode(jakarta.persistence.LockModeType)">setLockMode</a></span>&#8203;(jakarta.persistence.LockModeType&nbsp;lockMode)</code></th>
-<td class="colLast">&nbsp;</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(java.lang.String,java.lang.Object)">setParameter</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;parameter,
+            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;argument)</code></th>
+<td class="colLast">
+<div class="block">Set the value of a named parameter.</div>
+</td>
 </tr>
 <tr id="i29" class="rowColor">
 <td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setLockMode(java.lang.String,org.hibernate.LockMode)">setLockMode</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;alias,
-           <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a>&nbsp;lockMode)</code></th>
-<td class="colLast">&nbsp;</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setPlan(jakarta.persistence.EntityGraph)">setPlan</a></span>&#8203;(jakarta.persistence.EntityGraph&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;entityGraph)</code></th>
+<td class="colLast">
+<div class="block">Set the <code>EntityGraph</code> that will be used as a fetch plan for
+ the root entity returned by this query.</div>
+</td>
 </tr>
 <tr id="i30" class="altColor">
 <td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setMaxResults(int)">setMaxResults</a></span>&#8203;(int&nbsp;maxResult)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i31" class="rowColor">
-<td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(int,java.lang.Object)">setParameter</a></span>&#8203;(int&nbsp;position,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;value)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i32" class="altColor">
-<td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(int,java.time.Instant,jakarta.persistence.TemporalType)">setParameter</a></span>&#8203;(int&nbsp;position,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Instant.html?is-external=true" title="class or interface in java.time" class="externalLink">Instant</a>&nbsp;value,
-            jakarta.persistence.TemporalType&nbsp;temporalType)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i33" class="rowColor">
-<td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(int,java.util.Calendar,jakarta.persistence.TemporalType)">setParameter</a></span>&#8203;(int&nbsp;position,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Calendar.html?is-external=true" title="class or interface in java.util" class="externalLink">Calendar</a>&nbsp;value,
-            jakarta.persistence.TemporalType&nbsp;temporalType)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i34" class="altColor">
-<td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(int,java.util.Date,jakarta.persistence.TemporalType)">setParameter</a></span>&#8203;(int&nbsp;position,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html?is-external=true" title="class or interface in java.util" class="externalLink">Date</a>&nbsp;value,
-            jakarta.persistence.TemporalType&nbsp;temporalType)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i35" class="rowColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(int,P,java.lang.Class)">setParameter</a></span>&#8203;(int&nbsp;position,
-            P&nbsp;value,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;type)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i36" class="altColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(int,P,org.hibernate.query.BindableType)">setParameter</a></span>&#8203;(int&nbsp;position,
-            P&nbsp;value,
-            <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i37" class="rowColor">
-<td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(jakarta.persistence.Parameter,java.util.Calendar,jakarta.persistence.TemporalType)">setParameter</a></span>&#8203;(jakarta.persistence.Parameter&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Calendar.html?is-external=true" title="class or interface in java.util" class="externalLink">Calendar</a>&gt;&nbsp;param,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Calendar.html?is-external=true" title="class or interface in java.util" class="externalLink">Calendar</a>&nbsp;value,
-            jakarta.persistence.TemporalType&nbsp;temporalType)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i38" class="altColor">
-<td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(jakarta.persistence.Parameter,java.util.Date,jakarta.persistence.TemporalType)">setParameter</a></span>&#8203;(jakarta.persistence.Parameter&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html?is-external=true" title="class or interface in java.util" class="externalLink">Date</a>&gt;&nbsp;param,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html?is-external=true" title="class or interface in java.util" class="externalLink">Date</a>&nbsp;value,
-            jakarta.persistence.TemporalType&nbsp;temporalType)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i39" class="rowColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(jakarta.persistence.Parameter,T)">setParameter</a></span>&#8203;(jakarta.persistence.Parameter&lt;T&gt;&nbsp;param,
-            T&nbsp;value)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i40" class="altColor">
-<td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(java.lang.String,java.lang.Object)">setParameter</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;value)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i41" class="rowColor">
-<td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(java.lang.String,java.time.Instant,jakarta.persistence.TemporalType)">setParameter</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Instant.html?is-external=true" title="class or interface in java.time" class="externalLink">Instant</a>&nbsp;value,
-            jakarta.persistence.TemporalType&nbsp;temporalType)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i42" class="altColor">
-<td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(java.lang.String,java.util.Calendar,jakarta.persistence.TemporalType)">setParameter</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Calendar.html?is-external=true" title="class or interface in java.util" class="externalLink">Calendar</a>&nbsp;value,
-            jakarta.persistence.TemporalType&nbsp;temporalType)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i43" class="rowColor">
-<td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(java.lang.String,java.util.Date,jakarta.persistence.TemporalType)">setParameter</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html?is-external=true" title="class or interface in java.util" class="externalLink">Date</a>&nbsp;value,
-            jakarta.persistence.TemporalType&nbsp;temporalType)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i44" class="altColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(java.lang.String,P,java.lang.Class)">setParameter</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-            P&nbsp;value,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;type)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i45" class="rowColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(java.lang.String,P,org.hibernate.query.BindableType)">setParameter</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-            P&nbsp;value,
-            <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i46" class="altColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(org.hibernate.query.QueryParameter,P,java.lang.Class)">setParameter</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
-            P&nbsp;value,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;type)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i47" class="rowColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(org.hibernate.query.QueryParameter,P,org.hibernate.query.BindableType)">setParameter</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
-            P&nbsp;val,
-            <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i48" class="altColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(org.hibernate.query.QueryParameter,T)">setParameter</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;T&gt;&nbsp;parameter,
-            T&nbsp;value)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i49" class="rowColor">
-<td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(int,java.lang.Object%5B%5D)">setParameterList</a></span>&#8203;(int&nbsp;position,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>[]&nbsp;values)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i50" class="altColor">
-<td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(int,java.util.Collection)">setParameterList</a></span>&#8203;(int&nbsp;position,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&nbsp;values)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i51" class="rowColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(int,java.util.Collection,java.lang.Class)">setParameterList</a></span>&#8203;(int&nbsp;position,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends P&gt;&nbsp;values,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;javaType)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i52" class="altColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(int,java.util.Collection,org.hibernate.query.BindableType)">setParameterList</a></span>&#8203;(int&nbsp;position,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends P&gt;&nbsp;values,
-                <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i53" class="rowColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(int,P%5B%5D,java.lang.Class)">setParameterList</a></span>&#8203;(int&nbsp;position,
-                P[]&nbsp;values,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;javaType)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i54" class="altColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(int,P%5B%5D,org.hibernate.query.BindableType)">setParameterList</a></span>&#8203;(int&nbsp;position,
-                P[]&nbsp;values,
-                <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i55" class="rowColor">
-<td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(java.lang.String,java.lang.Object%5B%5D)">setParameterList</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>[]&nbsp;values)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i56" class="altColor">
-<td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(java.lang.String,java.util.Collection)">setParameterList</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&nbsp;values)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i57" class="rowColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(java.lang.String,java.util.Collection,java.lang.Class)">setParameterList</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends P&gt;&nbsp;values,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;javaType)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i58" class="altColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(java.lang.String,java.util.Collection,org.hibernate.query.BindableType)">setParameterList</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends P&gt;&nbsp;values,
-                <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i59" class="rowColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(java.lang.String,P%5B%5D,java.lang.Class)">setParameterList</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                P[]&nbsp;values,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;javaType)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i60" class="altColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(java.lang.String,P%5B%5D,org.hibernate.query.BindableType)">setParameterList</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                P[]&nbsp;values,
-                <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i61" class="rowColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection)">setParameterList</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends P&gt;&nbsp;values)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i62" class="altColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,java.lang.Class)">setParameterList</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends P&gt;&nbsp;values,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;javaType)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i63" class="rowColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,org.hibernate.query.BindableType)">setParameterList</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends P&gt;&nbsp;values,
-                <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i64" class="altColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D)">setParameterList</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
-                P[]&nbsp;values)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i65" class="rowColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D,java.lang.Class)">setParameterList</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
-                P[]&nbsp;values,
-                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;javaType)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i66" class="altColor">
-<td class="colFirst"><code>&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D,org.hibernate.query.BindableType)">setParameterList</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
-                P[]&nbsp;values,
-                <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i67" class="rowColor">
-<td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setProperties(java.lang.Object)">setProperties</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;bean)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i68" class="altColor">
-<td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setProperties(java.util.Map)">setProperties</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&nbsp;bean)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i69" class="rowColor">
-<td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setReadOnly(boolean)">setReadOnly</a></span>&#8203;(boolean&nbsp;readOnly)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i70" class="altColor">
-<td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setTimeout(int)">setTimeout</a></span>&#8203;(int&nbsp;timeout)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i71" class="rowColor">
-<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#uniqueResult()">uniqueResult</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Execute the query and return, the single result of the query as a <code>Uni</code>.</div>
+<div class="block">Set the read-only/modifiable mode for entities and proxies
+ loaded by this Query.</div>
 </td>
-</tr>
-<tr id="i72" class="altColor">
-<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Optional.html?is-external=true" title="class or interface in java.util" class="externalLink">Optional</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#uniqueResultOptional()">uniqueResultOptional</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
-<li class="blockList"><a id="methods.inherited.from.class.org.hibernate.query.CommonQueryContract">
+<li class="blockList"><a id="methods.inherited.from.class.org.hibernate.reactive.mutiny.Mutiny.AbstractQuery">
 <!--   -->
 </a>
-<h3>Methods inherited from interface&nbsp;org.hibernate.query.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></h3>
-<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#getComment()" title="class or interface in org.hibernate.query" class="externalLink">getComment</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#getFlushMode()" title="class or interface in org.hibernate.query" class="externalLink">getFlushMode</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#getHibernateFlushMode()" title="class or interface in org.hibernate.query" class="externalLink">getHibernateFlushMode</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#getTimeout()" title="class or interface in org.hibernate.query" class="externalLink">getTimeout</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setComment(java.lang.String)" title="class or interface in org.hibernate.query" class="externalLink">setComment</a></code></li>
+<h3>Methods inherited from interface&nbsp;org.hibernate.reactive.mutiny.<a href="Mutiny.AbstractQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.AbstractQuery</a></h3>
+<code><a href="Mutiny.AbstractQuery.html#getComment()">getComment</a></code></li>
 </ul>
 </li>
 </ul>
@@ -614,166 +410,41 @@ extends <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="list()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>list</h4>
-<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&gt;&nbsp;list()</pre>
-</li>
-</ul>
-<a id="getResultList()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getResultList</h4>
-<pre class="methodSignature">default&nbsp;io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&gt;&nbsp;getResultList()</pre>
-</li>
-</ul>
-<a id="getSingleResult()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getSingleResult</h4>
-<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;getSingleResult()</pre>
-</li>
-</ul>
-<a id="getSingleResultOrNull()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getSingleResultOrNull</h4>
-<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;getSingleResultOrNull()</pre>
-</li>
-</ul>
-<a id="uniqueResult()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>uniqueResult</h4>
-<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;uniqueResult()</pre>
-<div class="block">Execute the query and return, the single result of the query as a <code>Uni</code>.
- The <code>Uni</code> will emit the result of the query, or <code>null</code>, if the query
- had no results.
- <p>
-     If there is more than one result, the uni will fail with <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/NonUniqueResultException.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>NonUniqueResultException</code></a>
- </p></div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>a <code>Uni</code> that emits the result of the query or <code>null</code></dd>
-</dl>
-</li>
-</ul>
-<a id="uniqueResultOptional()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>uniqueResultOptional</h4>
-<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Optional.html?is-external=true" title="class or interface in java.util" class="externalLink">Optional</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&gt;&nbsp;uniqueResultOptional()</pre>
-</li>
-</ul>
-<a id="setHint(java.lang.String,java.lang.Object)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setHint</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setHint&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;hintName,
-                                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;value)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setHint(java.lang.String,java.lang.Object)" title="class or interface in org.hibernate.query" class="externalLink">setHint</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setFlushMode(jakarta.persistence.FlushModeType)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setFlushMode</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setFlushMode&#8203;(jakarta.persistence.FlushModeType&nbsp;flushMode)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setFlushMode(jakarta.persistence.FlushModeType)" title="class or interface in org.hibernate.query" class="externalLink">setFlushMode</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setHibernateFlushMode(org.hibernate.FlushMode)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setHibernateFlushMode</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setHibernateFlushMode&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/FlushMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">FlushMode</a>&nbsp;flushMode)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setHibernateFlushMode(org.hibernate.FlushMode)" title="class or interface in org.hibernate.query" class="externalLink">setHibernateFlushMode</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setTimeout(int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setTimeout</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setTimeout&#8203;(int&nbsp;timeout)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setTimeout(int)" title="class or interface in org.hibernate.query" class="externalLink">setTimeout</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="getFetchSize()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getFetchSize</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a>&nbsp;getFetchSize()</pre>
-</li>
-</ul>
-<a id="setFetchSize(int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setFetchSize</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setFetchSize&#8203;(int&nbsp;fetchSize)</pre>
-</li>
-</ul>
-<a id="isReadOnly()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>isReadOnly</h4>
-<pre class="methodSignature">boolean&nbsp;isReadOnly()</pre>
-</li>
-</ul>
-<a id="setReadOnly(boolean)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setReadOnly</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setReadOnly&#8203;(boolean&nbsp;readOnly)</pre>
-</li>
-</ul>
 <a id="setMaxResults(int)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setMaxResults</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setMaxResults&#8203;(int&nbsp;maxResult)</pre>
+<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setMaxResults&#8203;(int&nbsp;maxResults)</pre>
+<div class="block">Set the maximum number of results that may be returned by this
+ query when executed.</div>
+</li>
+</ul>
+<a id="setFirstResult(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setFirstResult</h4>
+<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setFirstResult&#8203;(int&nbsp;firstResult)</pre>
+<div class="block">Set the position of the first result that may be returned by
+ this query when executed, where the results are numbered from
+ 0.</div>
+</li>
+</ul>
+<a id="getMaxResults()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMaxResults</h4>
+<pre class="methodSignature">int&nbsp;getMaxResults()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the maximum number results, or <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html?is-external=true#MAX_VALUE" title="class or interface in java.lang" class="externalLink"><code>Integer.MAX_VALUE</code></a>
+          if not set</dd>
+</dl>
 </li>
 </ul>
 <a id="getFirstResult()">
@@ -783,24 +454,198 @@ extends <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate
 <li class="blockList">
 <h4>getFirstResult</h4>
 <pre class="methodSignature">int&nbsp;getFirstResult()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the first result, or 0 if not set</dd>
+</dl>
 </li>
 </ul>
-<a id="setFirstResult(int)">
+<a id="getSingleResult()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setFirstResult</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setFirstResult&#8203;(int&nbsp;startPosition)</pre>
+<h4>getSingleResult</h4>
+<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;getSingleResult()</pre>
+<div class="block">Asynchronously execute this query, returning a single row that
+ matches the query, throwing an exception if the query returns
+ zero rows or more than one matching row. If the query has multiple
+ results per row, the results are returned in an instance of
+ <code>Object[]</code>.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the single resulting row</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>jakarta.persistence.NoResultException</code> - if there is no result</dd>
+<dd><code>jakarta.persistence.NonUniqueResultException</code> - if there are multiple results</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><code>Query.getSingleResult()</code></dd>
+</dl>
 </li>
 </ul>
-<a id="getCacheMode()">
+<a id="getSingleResultOrNull()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getCacheMode</h4>
-<pre class="methodSignature"><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/CacheMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">CacheMode</a>&nbsp;getCacheMode()</pre>
+<h4>getSingleResultOrNull</h4>
+<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;getSingleResultOrNull()</pre>
+<div class="block">Asynchronously execute this query, returning a single row that
+ matches the query, or <code>null</code> if the query returns no results,
+ throwing an exception if the query returns more than one matching
+ row. If the query has multiple results per row, the results are
+ returned in an instance of <code>Object[]</code>.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the single resulting row or <code>null</code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>jakarta.persistence.NonUniqueResultException</code> - if there are multiple results</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="#getSingleResult()"><code>getSingleResult()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a id="getResultList()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getResultList</h4>
+<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&gt;&nbsp;getResultList()</pre>
+<div class="block">Asynchronously execute this query, returning the query results
+ as a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink"><code>List</code></a>, via a <code>Uni</code>. If the query
+ has multiple results per row, the results are returned in an
+ instance of <code>Object[]</code>.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the resulting rows as a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink"><code>List</code></a></dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><code>Query.getResultList()</code></dd>
+</dl>
+</li>
+</ul>
+<a id="setReadOnly(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setReadOnly</h4>
+<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setReadOnly&#8203;(boolean&nbsp;readOnly)</pre>
+<div class="block">Set the read-only/modifiable mode for entities and proxies
+ loaded by this Query. This setting overrides the default setting
+ for the persistence context.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="Mutiny.Session.html#setDefaultReadOnly(boolean)"><code>Mutiny.Session.setDefaultReadOnly(boolean)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a id="isReadOnly()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isReadOnly</h4>
+<pre class="methodSignature">boolean&nbsp;isReadOnly()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the read-only/modifiable mode</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="Mutiny.Session.html#isDefaultReadOnly()"><code>Mutiny.Session.isDefaultReadOnly()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a id="setCacheable(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCacheable</h4>
+<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setCacheable&#8203;(boolean&nbsp;cacheable)</pre>
+<div class="block">Enable or disable caching of this query result set in the
+ second-level query cache.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>cacheable</code> - <code>true</code> if this query is cacheable</dd>
+</dl>
+</li>
+</ul>
+<a id="isCacheable()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isCacheable</h4>
+<pre class="methodSignature">boolean&nbsp;isCacheable()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if this query is cacheable</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="#setCacheable(boolean)"><code>setCacheable(boolean)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a id="setCacheRegion(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCacheRegion</h4>
+<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setCacheRegion&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;cacheRegion)</pre>
+<div class="block">Set the name of the cache region in which to store this
+ query result set if <a href="#setCacheable(boolean)"><code>caching is enabled</code></a>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>cacheRegion</code> - the name of the cache region</dd>
+</dl>
+</li>
+</ul>
+<a id="getCacheRegion()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCacheRegion</h4>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getCacheRegion()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the name of the cache region</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="#setCacheRegion(java.lang.String)"><code>setCacheRegion(String)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a id="setCacheMode(org.hibernate.CacheMode)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCacheMode</h4>
+<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setCacheMode&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/CacheMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">CacheMode</a>&nbsp;cacheMode)</pre>
+<div class="block">Set the current <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/CacheMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>CacheMode</code></a> in effect while this query
+ is being executed.</div>
+</li>
+</ul>
+<a id="setCacheStoreMode(jakarta.persistence.CacheStoreMode)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCacheStoreMode</h4>
+<pre class="methodSignature">default&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setCacheStoreMode&#8203;(jakarta.persistence.CacheStoreMode&nbsp;cacheStoreMode)</pre>
+<div class="block">Set the current <code>CacheStoreMode</code> in effect while this query
+ is being executed.</div>
+</li>
+</ul>
+<a id="setCacheRetrieveMode(jakarta.persistence.CacheRetrieveMode)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCacheRetrieveMode</h4>
+<pre class="methodSignature">default&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setCacheRetrieveMode&#8203;(jakarta.persistence.CacheRetrieveMode&nbsp;cacheRetrieveMode)</pre>
+<div class="block">Set the current <code>CacheRetrieveMode</code> in effect while this query
+ is being executed.</div>
 </li>
 </ul>
 <a id="getCacheStoreMode()">
@@ -821,89 +666,68 @@ extends <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate
 <pre class="methodSignature">jakarta.persistence.CacheRetrieveMode&nbsp;getCacheRetrieveMode()</pre>
 </li>
 </ul>
-<a id="setCacheMode(org.hibernate.CacheMode)">
+<a id="getCacheMode()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setCacheMode</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setCacheMode&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/CacheMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">CacheMode</a>&nbsp;cacheMode)</pre>
-</li>
-</ul>
-<a id="setCacheStoreMode(jakarta.persistence.CacheStoreMode)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setCacheStoreMode</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setCacheStoreMode&#8203;(jakarta.persistence.CacheStoreMode&nbsp;cacheStoreMode)</pre>
-</li>
-</ul>
-<a id="setCacheRetrieveMode(jakarta.persistence.CacheRetrieveMode)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setCacheRetrieveMode</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setCacheRetrieveMode&#8203;(jakarta.persistence.CacheRetrieveMode&nbsp;cacheRetrieveMode)</pre>
+<h4>getCacheMode</h4>
+<pre class="methodSignature"><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/CacheMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">CacheMode</a>&nbsp;getCacheMode()</pre>
+<div class="block">Obtain the <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/CacheMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>CacheMode</code></a> in effect for this query. By default,
+ the query inherits the <code>CacheMode</code> of the <a href="Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Session</code></a>
+ from which is originates.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="#setCacheMode(org.hibernate.CacheMode)"><code>setCacheMode(CacheMode)</code></a></dd>
+<dd><a href="Mutiny.Session.html#getCacheMode()"><code>Mutiny.Session.getCacheMode()</code></a></dd>
 </dl>
 </li>
 </ul>
-<a id="isCacheable()">
+<a id="setFlushMode(org.hibernate.FlushMode)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>isCacheable</h4>
-<pre class="methodSignature">boolean&nbsp;isCacheable()</pre>
+<h4>setFlushMode</h4>
+<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setFlushMode&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/FlushMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">FlushMode</a>&nbsp;flushMode)</pre>
+<div class="block">Set the current <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/FlushMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>FlushMode</code></a> in effect while this query is
+ being executed.</div>
 </li>
 </ul>
-<a id="setCacheable(boolean)">
+<a id="setFlushMode(jakarta.persistence.FlushModeType)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setCacheable</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setCacheable&#8203;(boolean&nbsp;cacheable)</pre>
+<h4>setFlushMode</h4>
+<pre class="methodSignature">default&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setFlushMode&#8203;(jakarta.persistence.FlushModeType&nbsp;flushModeType)</pre>
+<div class="block">Set the current <code>FlushModeType</code> in effect while this query is
+ being executed.</div>
 </li>
 </ul>
-<a id="getCacheRegion()">
+<a id="getFlushMode()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getCacheRegion</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getCacheRegion()</pre>
+<h4>getFlushMode</h4>
+<pre class="methodSignature"><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/FlushMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">FlushMode</a>&nbsp;getFlushMode()</pre>
+<div class="block">Obtain the <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/FlushMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>FlushMode</code></a> in effect for this query. By default,
+ the query inherits the <code>FlushMode</code> of the <a href="Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Session</code></a>
+ from which is originates.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="Mutiny.Session.html#getFlushMode()"><code>Mutiny.Session.getFlushMode()</code></a></dd>
+</dl>
 </li>
 </ul>
-<a id="setCacheRegion(java.lang.String)">
+<a id="setLockMode(org.hibernate.LockMode)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setCacheRegion</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setCacheRegion&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;cacheRegion)</pre>
-</li>
-</ul>
-<a id="getLockOptions()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getLockOptions</h4>
-<pre class="methodSignature"><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/LockOptions.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockOptions</a>&nbsp;getLockOptions()</pre>
-</li>
-</ul>
-<a id="getLockMode()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getLockMode</h4>
-<pre class="methodSignature">jakarta.persistence.LockModeType&nbsp;getLockMode()</pre>
+<h4>setLockMode</h4>
+<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setLockMode&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a>&nbsp;lockMode)</pre>
+<div class="block">Set the <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>LockMode</code></a> to use for the whole query.</div>
 </li>
 </ul>
 <a id="setLockMode(jakarta.persistence.LockModeType)">
@@ -912,25 +736,8 @@ extends <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate
 <ul class="blockList">
 <li class="blockList">
 <h4>setLockMode</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setLockMode&#8203;(jakarta.persistence.LockModeType&nbsp;lockMode)</pre>
-</li>
-</ul>
-<a id="getHibernateLockMode()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getHibernateLockMode</h4>
-<pre class="methodSignature"><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a>&nbsp;getHibernateLockMode()</pre>
-</li>
-</ul>
-<a id="setHibernateLockMode(org.hibernate.LockMode)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setHibernateLockMode</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setHibernateLockMode&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a>&nbsp;lockMode)</pre>
+<pre class="methodSignature">default&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setLockMode&#8203;(jakarta.persistence.LockModeType&nbsp;lockModeType)</pre>
+<div class="block">Set the <code>LockModeType</code> to use for the whole query.</div>
 </li>
 </ul>
 <a id="setLockMode(java.lang.String,org.hibernate.LockMode)">
@@ -941,118 +748,45 @@ extends <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate
 <h4>setLockMode</h4>
 <pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setLockMode&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;alias,
                                      <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a>&nbsp;lockMode)</pre>
-</li>
-</ul>
-<a id="setAliasSpecificLockMode(java.lang.String,org.hibernate.LockMode)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setAliasSpecificLockMode</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setAliasSpecificLockMode&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;alias,
-                                                  <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a>&nbsp;lockMode)</pre>
-</li>
-</ul>
-<a id="setFollowOnLocking(boolean)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setFollowOnLocking</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setFollowOnLocking&#8203;(boolean&nbsp;enable)</pre>
-</li>
-</ul>
-<a id="setParameter(java.lang.String,java.lang.Object)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameter</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameter&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                                      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;value)</pre>
+<div class="block">Set the <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>LockMode</code></a> to use for specified alias (as defined in
+ the query's <code>from</code> clause).</div>
 <dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameter(java.lang.String,java.lang.Object)" title="class or interface in org.hibernate.query" class="externalLink">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>alias</code> - the from clause alias</dd>
+<dd><code>lockMode</code> - the requested <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>LockMode</code></a></dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/Query.html?is-external=true#setLockMode(java.lang.String,org.hibernate.LockMode)" title="class or interface in org.hibernate.query" class="externalLink"><code>Query.setLockMode(String,LockMode)</code></a></dd>
 </dl>
 </li>
 </ul>
-<a id="setParameter(java.lang.String,java.lang.Object,java.lang.Class)">
-<!--   -->
-</a><a id="setParameter(java.lang.String,P,java.lang.Class)">
+<a id="setLockMode(java.lang.String,jakarta.persistence.LockModeType)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setParameter</h4>
-<pre class="methodSignature">&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameter&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                                          P&nbsp;value,
-                                          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;type)</pre>
+<h4>setLockMode</h4>
+<pre class="methodSignature">default&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setLockMode&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;alias,
+                                             jakarta.persistence.LockModeType&nbsp;lockModeType)</pre>
+<div class="block">Set the <code>LockModeType</code> to use for specified alias (as defined in
+ the query's <code>from</code> clause).</div>
 <dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameter(java.lang.String,P,java.lang.Class)" title="class or interface in org.hibernate.query" class="externalLink">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>alias</code> - the from clause alias</dd>
+<dd><code>lockModeType</code> - the requested <code>LockModeType</code></dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/Query.html?is-external=true#setLockMode(java.lang.String,org.hibernate.LockMode)" title="class or interface in org.hibernate.query" class="externalLink"><code>Query.setLockMode(String,LockMode)</code></a></dd>
 </dl>
 </li>
 </ul>
-<a id="setParameter(java.lang.String,java.lang.Object,org.hibernate.query.BindableType)">
-<!--   -->
-</a><a id="setParameter(java.lang.String,P,org.hibernate.query.BindableType)">
+<a id="setPlan(jakarta.persistence.EntityGraph)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setParameter</h4>
-<pre class="methodSignature">&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameter&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                                          P&nbsp;value,
-                                          <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameter(java.lang.String,P,org.hibernate.query.BindableType)" title="class or interface in org.hibernate.query" class="externalLink">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameter(java.lang.String,java.time.Instant,jakarta.persistence.TemporalType)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameter</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameter&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                                      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Instant.html?is-external=true" title="class or interface in java.time" class="externalLink">Instant</a>&nbsp;value,
-                                      jakarta.persistence.TemporalType&nbsp;temporalType)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameter(java.lang.String,java.time.Instant,jakarta.persistence.TemporalType)" title="class or interface in org.hibernate.query" class="externalLink">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameter(java.lang.String,java.util.Calendar,jakarta.persistence.TemporalType)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameter</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameter&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                                      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Calendar.html?is-external=true" title="class or interface in java.util" class="externalLink">Calendar</a>&nbsp;value,
-                                      jakarta.persistence.TemporalType&nbsp;temporalType)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameter(java.lang.String,java.util.Calendar,jakarta.persistence.TemporalType)" title="class or interface in org.hibernate.query" class="externalLink">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameter(java.lang.String,java.util.Date,jakarta.persistence.TemporalType)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameter</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameter&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                                      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html?is-external=true" title="class or interface in java.util" class="externalLink">Date</a>&nbsp;value,
-                                      jakarta.persistence.TemporalType&nbsp;temporalType)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameter(java.lang.String,java.util.Date,jakarta.persistence.TemporalType)" title="class or interface in org.hibernate.query" class="externalLink">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
+<h4>setPlan</h4>
+<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setPlan&#8203;(jakarta.persistence.EntityGraph&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;entityGraph)</pre>
+<div class="block">Set the <code>EntityGraph</code> that will be used as a fetch plan for
+ the root entity returned by this query.</div>
 </li>
 </ul>
 <a id="setParameter(int,java.lang.Object)">
@@ -1061,140 +795,39 @@ extends <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate
 <ul class="blockList">
 <li class="blockList">
 <h4>setParameter</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameter&#8203;(int&nbsp;position,
-                                      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;value)</pre>
+<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameter&#8203;(int&nbsp;parameter,
+                                      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;argument)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Mutiny.AbstractQuery.html#setParameter(int,java.lang.Object)">Mutiny.AbstractQuery</a></code></span></div>
+<div class="block">Set the value of an ordinal parameter. Ordinal parameters
+ are numbered from 1, and are specified in the query using
+ placeholder tokens of form <code>?1</code>, <code>?2</code>, etc.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameter(int,java.lang.Object)" title="class or interface in org.hibernate.query" class="externalLink">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
+<dd><code><a href="Mutiny.AbstractQuery.html#setParameter(int,java.lang.Object)">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="Mutiny.AbstractQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.AbstractQuery</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>parameter</code> - an integer identifying the ordinal parameter</dd>
+<dd><code>argument</code> - the argument to set</dd>
 </dl>
 </li>
 </ul>
-<a id="setParameter(int,java.lang.Object,java.lang.Class)">
-<!--   -->
-</a><a id="setParameter(int,P,java.lang.Class)">
+<a id="setParameter(java.lang.String,java.lang.Object)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setParameter</h4>
-<pre class="methodSignature">&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameter&#8203;(int&nbsp;position,
-                                          P&nbsp;value,
-                                          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;type)</pre>
+<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameter&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;parameter,
+                                      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;argument)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Mutiny.AbstractQuery.html#setParameter(java.lang.String,java.lang.Object)">Mutiny.AbstractQuery</a></code></span></div>
+<div class="block">Set the value of a named parameter. Named parameters are
+ specified in the query using placeholder tokens of form
+ <code>:name</code>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameter(int,P,java.lang.Class)" title="class or interface in org.hibernate.query" class="externalLink">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameter(int,java.lang.Object,org.hibernate.query.BindableType)">
-<!--   -->
-</a><a id="setParameter(int,P,org.hibernate.query.BindableType)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameter</h4>
-<pre class="methodSignature">&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameter&#8203;(int&nbsp;position,
-                                          P&nbsp;value,
-                                          <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameter(int,P,org.hibernate.query.BindableType)" title="class or interface in org.hibernate.query" class="externalLink">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameter(int,java.time.Instant,jakarta.persistence.TemporalType)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameter</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameter&#8203;(int&nbsp;position,
-                                      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Instant.html?is-external=true" title="class or interface in java.time" class="externalLink">Instant</a>&nbsp;value,
-                                      jakarta.persistence.TemporalType&nbsp;temporalType)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameter(int,java.time.Instant,jakarta.persistence.TemporalType)" title="class or interface in org.hibernate.query" class="externalLink">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameter(int,java.util.Date,jakarta.persistence.TemporalType)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameter</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameter&#8203;(int&nbsp;position,
-                                      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html?is-external=true" title="class or interface in java.util" class="externalLink">Date</a>&nbsp;value,
-                                      jakarta.persistence.TemporalType&nbsp;temporalType)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameter(int,java.util.Date,jakarta.persistence.TemporalType)" title="class or interface in org.hibernate.query" class="externalLink">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameter(int,java.util.Calendar,jakarta.persistence.TemporalType)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameter</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameter&#8203;(int&nbsp;position,
-                                      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Calendar.html?is-external=true" title="class or interface in java.util" class="externalLink">Calendar</a>&nbsp;value,
-                                      jakarta.persistence.TemporalType&nbsp;temporalType)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameter(int,java.util.Calendar,jakarta.persistence.TemporalType)" title="class or interface in org.hibernate.query" class="externalLink">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameter(org.hibernate.query.QueryParameter,java.lang.Object)">
-<!--   -->
-</a><a id="setParameter(org.hibernate.query.QueryParameter,T)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameter</h4>
-<pre class="methodSignature">&lt;T&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameter&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;T&gt;&nbsp;parameter,
-                                          T&nbsp;value)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameter(org.hibernate.query.QueryParameter,T)" title="class or interface in org.hibernate.query" class="externalLink">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameter(org.hibernate.query.QueryParameter,java.lang.Object,java.lang.Class)">
-<!--   -->
-</a><a id="setParameter(org.hibernate.query.QueryParameter,P,java.lang.Class)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameter</h4>
-<pre class="methodSignature">&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameter&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
-                                          P&nbsp;value,
-                                          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;type)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameter(org.hibernate.query.QueryParameter,P,java.lang.Class)" title="class or interface in org.hibernate.query" class="externalLink">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameter(org.hibernate.query.QueryParameter,java.lang.Object,org.hibernate.query.BindableType)">
-<!--   -->
-</a><a id="setParameter(org.hibernate.query.QueryParameter,P,org.hibernate.query.BindableType)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameter</h4>
-<pre class="methodSignature">&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameter&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
-                                          P&nbsp;val,
-                                          <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameter(org.hibernate.query.QueryParameter,P,org.hibernate.query.BindableType)" title="class or interface in org.hibernate.query" class="externalLink">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
+<dd><code><a href="Mutiny.AbstractQuery.html#setParameter(java.lang.String,java.lang.Object)">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="Mutiny.AbstractQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.AbstractQuery</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>parameter</code> - the name of the parameter</dd>
+<dd><code>argument</code> - the argument to set</dd>
 </dl>
 </li>
 </ul>
@@ -1206,345 +839,39 @@ extends <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate
 <ul class="blockList">
 <li class="blockList">
 <h4>setParameter</h4>
-<pre class="methodSignature">&lt;T&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameter&#8203;(jakarta.persistence.Parameter&lt;T&gt;&nbsp;param,
-                                          T&nbsp;value)</pre>
+<pre class="methodSignature">&lt;T&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameter&#8203;(jakarta.persistence.Parameter&lt;T&gt;&nbsp;parameter,
+                                          T&nbsp;argument)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Mutiny.AbstractQuery.html#setParameter(jakarta.persistence.Parameter,T)">Mutiny.AbstractQuery</a></code></span></div>
+<div class="block">Set the value of a typed parameter. Typed parameters are
+ obtained from the JPA <code>CriteriaBuilder</code>, which may
+ itself be obtained by calling
+ <a href="Mutiny.SessionFactory.html#getCriteriaBuilder()"><code>Mutiny.SessionFactory.getCriteriaBuilder()</code></a>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameter(jakarta.persistence.Parameter,T)" title="class or interface in org.hibernate.query" class="externalLink">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
+<dd><code><a href="Mutiny.AbstractQuery.html#setParameter(jakarta.persistence.Parameter,T)">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="Mutiny.AbstractQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.AbstractQuery</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>parameter</code> - the parameter</dd>
+<dd><code>argument</code> - the argument to set</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><code>CriteriaBuilder.parameter(Class)</code></dd>
 </dl>
 </li>
 </ul>
-<a id="setParameter(jakarta.persistence.Parameter,java.util.Calendar,jakarta.persistence.TemporalType)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameter</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameter&#8203;(jakarta.persistence.Parameter&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Calendar.html?is-external=true" title="class or interface in java.util" class="externalLink">Calendar</a>&gt;&nbsp;param,
-                                      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Calendar.html?is-external=true" title="class or interface in java.util" class="externalLink">Calendar</a>&nbsp;value,
-                                      jakarta.persistence.TemporalType&nbsp;temporalType)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameter(jakarta.persistence.Parameter,java.util.Calendar,jakarta.persistence.TemporalType)" title="class or interface in org.hibernate.query" class="externalLink">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameter(jakarta.persistence.Parameter,java.util.Date,jakarta.persistence.TemporalType)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameter</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameter&#8203;(jakarta.persistence.Parameter&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html?is-external=true" title="class or interface in java.util" class="externalLink">Date</a>&gt;&nbsp;param,
-                                      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html?is-external=true" title="class or interface in java.util" class="externalLink">Date</a>&nbsp;value,
-                                      jakarta.persistence.TemporalType&nbsp;temporalType)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameter(jakarta.persistence.Parameter,java.util.Date,jakarta.persistence.TemporalType)" title="class or interface in org.hibernate.query" class="externalLink">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameterList(java.lang.String,java.util.Collection)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameterList</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameterList&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                                          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&nbsp;values)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameterList(java.lang.String,java.util.Collection)" title="class or interface in org.hibernate.query" class="externalLink">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameterList(java.lang.String,java.util.Collection,java.lang.Class)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameterList</h4>
-<pre class="methodSignature">&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameterList&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                                              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends P&gt;&nbsp;values,
-                                              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;javaType)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameterList(java.lang.String,java.util.Collection,java.lang.Class)" title="class or interface in org.hibernate.query" class="externalLink">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameterList(java.lang.String,java.util.Collection,org.hibernate.query.BindableType)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameterList</h4>
-<pre class="methodSignature">&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameterList&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                                              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends P&gt;&nbsp;values,
-                                              <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameterList(java.lang.String,java.util.Collection,org.hibernate.query.BindableType)" title="class or interface in org.hibernate.query" class="externalLink">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameterList(java.lang.String,java.lang.Object[])">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameterList</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameterList&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                                          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>[]&nbsp;values)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameterList(java.lang.String,java.lang.Object%5B%5D)" title="class or interface in org.hibernate.query" class="externalLink">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameterList(java.lang.String,java.lang.Object[],java.lang.Class)">
-<!--   -->
-</a><a id="setParameterList(java.lang.String,P[],java.lang.Class)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameterList</h4>
-<pre class="methodSignature">&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameterList&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                                              P[]&nbsp;values,
-                                              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;javaType)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameterList(java.lang.String,P%5B%5D,java.lang.Class)" title="class or interface in org.hibernate.query" class="externalLink">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameterList(java.lang.String,java.lang.Object[],org.hibernate.query.BindableType)">
-<!--   -->
-</a><a id="setParameterList(java.lang.String,P[],org.hibernate.query.BindableType)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameterList</h4>
-<pre class="methodSignature">&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameterList&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                                              P[]&nbsp;values,
-                                              <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameterList(java.lang.String,P%5B%5D,org.hibernate.query.BindableType)" title="class or interface in org.hibernate.query" class="externalLink">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameterList(int,java.util.Collection)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameterList</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameterList&#8203;(int&nbsp;position,
-                                          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&nbsp;values)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameterList(int,java.util.Collection)" title="class or interface in org.hibernate.query" class="externalLink">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameterList(int,java.util.Collection,java.lang.Class)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameterList</h4>
-<pre class="methodSignature">&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameterList&#8203;(int&nbsp;position,
-                                              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends P&gt;&nbsp;values,
-                                              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;javaType)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameterList(int,java.util.Collection,java.lang.Class)" title="class or interface in org.hibernate.query" class="externalLink">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameterList(int,java.util.Collection,org.hibernate.query.BindableType)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameterList</h4>
-<pre class="methodSignature">&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameterList&#8203;(int&nbsp;position,
-                                              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends P&gt;&nbsp;values,
-                                              <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameterList(int,java.util.Collection,org.hibernate.query.BindableType)" title="class or interface in org.hibernate.query" class="externalLink">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameterList(int,java.lang.Object[])">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameterList</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameterList&#8203;(int&nbsp;position,
-                                          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>[]&nbsp;values)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameterList(int,java.lang.Object%5B%5D)" title="class or interface in org.hibernate.query" class="externalLink">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameterList(int,java.lang.Object[],java.lang.Class)">
-<!--   -->
-</a><a id="setParameterList(int,P[],java.lang.Class)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameterList</h4>
-<pre class="methodSignature">&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameterList&#8203;(int&nbsp;position,
-                                              P[]&nbsp;values,
-                                              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;javaType)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameterList(int,P%5B%5D,java.lang.Class)" title="class or interface in org.hibernate.query" class="externalLink">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameterList(int,java.lang.Object[],org.hibernate.query.BindableType)">
-<!--   -->
-</a><a id="setParameterList(int,P[],org.hibernate.query.BindableType)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameterList</h4>
-<pre class="methodSignature">&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameterList&#8203;(int&nbsp;position,
-                                              P[]&nbsp;values,
-                                              <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameterList(int,P%5B%5D,org.hibernate.query.BindableType)" title="class or interface in org.hibernate.query" class="externalLink">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameterList(org.hibernate.query.QueryParameter,java.util.Collection)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameterList</h4>
-<pre class="methodSignature">&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameterList&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
-                                              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends P&gt;&nbsp;values)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection)" title="class or interface in org.hibernate.query" class="externalLink">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,java.lang.Class)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameterList</h4>
-<pre class="methodSignature">&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameterList&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
-                                              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends P&gt;&nbsp;values,
-                                              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;javaType)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,java.lang.Class)" title="class or interface in org.hibernate.query" class="externalLink">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,org.hibernate.query.BindableType)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameterList</h4>
-<pre class="methodSignature">&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameterList&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
-                                              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends P&gt;&nbsp;values,
-                                              <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,org.hibernate.query.BindableType)" title="class or interface in org.hibernate.query" class="externalLink">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameterList(org.hibernate.query.QueryParameter,java.lang.Object[])">
-<!--   -->
-</a><a id="setParameterList(org.hibernate.query.QueryParameter,P[])">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameterList</h4>
-<pre class="methodSignature">&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameterList&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
-                                              P[]&nbsp;values)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D)" title="class or interface in org.hibernate.query" class="externalLink">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameterList(org.hibernate.query.QueryParameter,java.lang.Object[],java.lang.Class)">
-<!--   -->
-</a><a id="setParameterList(org.hibernate.query.QueryParameter,P[],java.lang.Class)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameterList</h4>
-<pre class="methodSignature">&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameterList&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
-                                              P[]&nbsp;values,
-                                              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;P&gt;&nbsp;javaType)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D,java.lang.Class)" title="class or interface in org.hibernate.query" class="externalLink">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setParameterList(org.hibernate.query.QueryParameter,java.lang.Object[],org.hibernate.query.BindableType)">
-<!--   -->
-</a><a id="setParameterList(org.hibernate.query.QueryParameter,P[],org.hibernate.query.BindableType)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setParameterList</h4>
-<pre class="methodSignature">&lt;P&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setParameterList&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/QueryParameter.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
-                                              P[]&nbsp;values,
-                                              <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/BindableType.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">BindableType</a>&lt;P&gt;&nbsp;type)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D,org.hibernate.query.BindableType)" title="class or interface in org.hibernate.query" class="externalLink">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setProperties(java.lang.Object)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setProperties</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setProperties&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;bean)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setProperties(java.lang.Object)" title="class or interface in org.hibernate.query" class="externalLink">setProperties</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="setProperties(java.util.Map)">
+<a id="setComment(java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>setProperties</h4>
-<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setProperties&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&nbsp;bean)</pre>
+<h4>setComment</h4>
+<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setComment&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;comment)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Mutiny.AbstractQuery.html#setComment(java.lang.String)">Mutiny.AbstractQuery</a></code></span></div>
+<div class="block">Set the comment for this query. This comment will be prepended
+ to the SQL query sent to the database.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true#setProperties(java.util.Map)" title="class or interface in org.hibernate.query" class="externalLink">setProperties</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/CommonQueryContract.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">CommonQueryContract</a></code></dd>
+<dd><code><a href="Mutiny.AbstractQuery.html#setComment(java.lang.String)">setComment</a></code>&nbsp;in interface&nbsp;<code><a href="Mutiny.AbstractQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.AbstractQuery</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>comment</code> - The human-readable comment</dd>
 </dl>
 </li>
 </ul>

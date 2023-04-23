@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10};
+var data = {"i0":10,"i1":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -89,7 +89,7 @@ loadScripts(document, 'script');</script>
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
 <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
@@ -124,12 +124,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
-<li><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/jdbc/env/internal/JdbcEnvironmentInitiator.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.env.internal" class="externalLink">org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator</a></li>
-<li>
-<ul class="inheritance">
 <li>org.hibernate.reactive.provider.service.NoJdbcEnvironmentInitiator</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -142,7 +137,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 <hr>
 <pre>public class <span class="typeNameLabel">NoJdbcEnvironmentInitiator</span>
-extends <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/jdbc/env/internal/JdbcEnvironmentInitiator.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.env.internal" class="externalLink">JdbcEnvironmentInitiator</a></pre>
+extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>
+implements <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html?is-external=true" title="class or interface in org.hibernate.boot.registry" class="externalLink">StandardServiceInitiator</a>&lt;<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/jdbc/env/spi/JdbcEnvironment.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.env.spi" class="externalLink">JdbcEnvironment</a>&gt;</pre>
 <div class="block">A Hibernate <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html?is-external=true" title="class or interface in org.hibernate.boot.registry" class="externalLink"><code>service initiator</code></a> that
  provides an implementation of <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/jdbc/env/spi/JdbcEnvironment.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.env.spi" class="externalLink"><code>JdbcEnvironment</code></a> that infers
  the Hibernate <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/dialect/Dialect.html?is-external=true" title="class or interface in org.hibernate.dialect" class="externalLink"><code>Dialect</code></a> from the JDBC URL.</div>
@@ -152,23 +148,6 @@ extends <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
-<!-- ======== NESTED CLASS SUMMARY ======== -->
-<section>
-<ul class="blockList">
-<li class="blockList"><a id="nested.class.summary">
-<!--   -->
-</a>
-<h3>Nested Class Summary</h3>
-<ul class="blockList">
-<li class="blockList"><a id="nested.classes.inherited.from.class.org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator">
-<!--   -->
-</a>
-<h3>Nested classes/interfaces inherited from class&nbsp;org.hibernate.engine.jdbc.env.internal.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/jdbc/env/internal/JdbcEnvironmentInitiator.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.env.internal" class="externalLink">JdbcEnvironmentInitiator</a></h3>
-<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/jdbc/env/internal/JdbcEnvironmentInitiator.ConnectionProviderJdbcConnectionAccess.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.env.internal" class="externalLink">JdbcEnvironmentInitiator.ConnectionProviderJdbcConnectionAccess</a>, <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/jdbc/env/internal/JdbcEnvironmentInitiator.MultiTenantConnectionProviderJdbcConnectionAccess.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.env.internal" class="externalLink">JdbcEnvironmentInitiator.MultiTenantConnectionProviderJdbcConnectionAccess</a></code></li>
-</ul>
-</li>
-</ul>
-</section>
 <!-- =========== FIELD SUMMARY =========== -->
 <section>
 <ul class="blockList">
@@ -233,24 +212,12 @@ extends <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/dialect/Dialect.html?is-external=true" title="class or interface in org.hibernate.dialect" class="externalLink">Dialect</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#guessDialect(java.lang.String)">guessDialect</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;url)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/jdbc/env/spi/JdbcEnvironment.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.env.spi" class="externalLink">JdbcEnvironment</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#initiateService(java.util.Map,org.hibernate.service.spi.ServiceRegistryImplementor)">initiateService</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&nbsp;configurationValues,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#initiateService(java.util.Map,org.hibernate.service.spi.ServiceRegistryImplementor)">initiateService</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&nbsp;configurationValues,
                <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/service/spi/ServiceRegistryImplementor.html?is-external=true" title="class or interface in org.hibernate.service.spi" class="externalLink">ServiceRegistryImplementor</a>&nbsp;registry)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </table>
-<ul class="blockList">
-<li class="blockList"><a id="methods.inherited.from.class.org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator">
-<!--   -->
-</a>
-<h3>Methods inherited from class&nbsp;org.hibernate.engine.jdbc.env.internal.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/jdbc/env/internal/JdbcEnvironmentInitiator.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.env.internal" class="externalLink">JdbcEnvironmentInitiator</a></h3>
-<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/jdbc/env/internal/JdbcEnvironmentInitiator.html?is-external=true#buildBootstrapJdbcConnectionAccess(org.hibernate.service.spi.ServiceRegistryImplementor)" title="class or interface in org.hibernate.engine.jdbc.env.internal" class="externalLink">buildBootstrapJdbcConnectionAccess</a></code></li>
-</ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
 <!--   -->
@@ -322,34 +289,21 @@ extends <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/service/spi/ServiceInitiator.html?is-external=true#getServiceInitiated()" title="class or interface in org.hibernate.service.spi" class="externalLink">getServiceInitiated</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/service/spi/ServiceInitiator.html?is-external=true" title="class or interface in org.hibernate.service.spi" class="externalLink">ServiceInitiator</a>&lt;<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/jdbc/env/spi/JdbcEnvironment.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.env.spi" class="externalLink">JdbcEnvironment</a>&gt;</code></dd>
-<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/jdbc/env/internal/JdbcEnvironmentInitiator.html?is-external=true#getServiceInitiated()" title="class or interface in org.hibernate.engine.jdbc.env.internal" class="externalLink">getServiceInitiated</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/jdbc/env/internal/JdbcEnvironmentInitiator.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.env.internal" class="externalLink">JdbcEnvironmentInitiator</a></code></dd>
 </dl>
 </li>
 </ul>
 <a id="initiateService(java.util.Map,org.hibernate.service.spi.ServiceRegistryImplementor)">
 <!--   -->
 </a>
-<ul class="blockList">
+<ul class="blockListLast">
 <li class="blockList">
 <h4>initiateService</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/jdbc/env/spi/JdbcEnvironment.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.env.spi" class="externalLink">JdbcEnvironment</a>&nbsp;initiateService&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&nbsp;configurationValues,
+<pre class="methodSignature">public&nbsp;<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/jdbc/env/spi/JdbcEnvironment.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.env.spi" class="externalLink">JdbcEnvironment</a>&nbsp;initiateService&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&nbsp;configurationValues,
                                        <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/service/spi/ServiceRegistryImplementor.html?is-external=true" title="class or interface in org.hibernate.service.spi" class="externalLink">ServiceRegistryImplementor</a>&nbsp;registry)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html?is-external=true#initiateService(java.util.Map,org.hibernate.service.spi.ServiceRegistryImplementor)" title="class or interface in org.hibernate.boot.registry" class="externalLink">initiateService</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html?is-external=true" title="class or interface in org.hibernate.boot.registry" class="externalLink">StandardServiceInitiator</a>&lt;<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/jdbc/env/spi/JdbcEnvironment.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.env.spi" class="externalLink">JdbcEnvironment</a>&gt;</code></dd>
-<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/jdbc/env/internal/JdbcEnvironmentInitiator.html?is-external=true#initiateService(java.util.Map,org.hibernate.service.spi.ServiceRegistryImplementor)" title="class or interface in org.hibernate.engine.jdbc.env.internal" class="externalLink">initiateService</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/jdbc/env/internal/JdbcEnvironmentInitiator.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.env.internal" class="externalLink">JdbcEnvironmentInitiator</a></code></dd>
 </dl>
-</li>
-</ul>
-<a id="guessDialect(java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>guessDialect</h4>
-<pre class="methodSignature">protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/dialect/Dialect.html?is-external=true" title="class or interface in org.hibernate.dialect" class="externalLink">Dialect</a>&gt;&nbsp;guessDialect&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;url)</pre>
 </li>
 </ul>
 </li>
@@ -404,7 +358,7 @@ extends <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
 <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>

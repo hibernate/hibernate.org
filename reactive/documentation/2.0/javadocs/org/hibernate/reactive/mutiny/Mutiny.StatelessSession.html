@@ -215,11 +215,11 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 </td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;R&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNamedQuery(java.lang.String,java.lang.Class)">createNamedQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryName,
                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</code></th>
 <td class="colLast">
-<div class="block">Create an instance of <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the named query.</div>
+<div class="block">Create an instance of <a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.SelectionQuery</code></a> for the named query.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
@@ -231,28 +231,30 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 </td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;R&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNativeQuery(java.lang.String,java.lang.Class)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</code></th>
 <td class="colLast">
-<div class="block">Create an instance of <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given SQL query string,
- using the given <code>resultType</code> to interpret the results.</div>
+<div class="block">Create an instance of <a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.SelectionQuery</code></a> for the given SQL query
+ string, using the given <code>resultType</code> to interpret the results.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;R&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createNativeQuery(java.lang.String,org.hibernate.reactive.common.ResultSetMapping)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
                  <a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping)</code></th>
 <td class="colLast">
-<div class="block">Create an instance of <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given SQL query string,
- using the given <a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common"><code>ResultSetMapping</code></a> to interpret the result set.</div>
+<div class="block">Create an instance of <a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.SelectionQuery</code></a> for the given SQL query
+ string, using the given <a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common"><code>ResultSetMapping</code></a> to interpret the
+ result set.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;R&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createQuery(jakarta.persistence.criteria.CriteriaQuery)">createQuery</a></span>&#8203;(jakarta.persistence.criteria.CriteriaQuery&lt;R&gt;&nbsp;criteriaQuery)</code></th>
 <td class="colLast">
-<div class="block">Create an instance of <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given criteria query.</div>
+<div class="block">Create an instance of <a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.SelectionQuery</code></a> for the given criteria
+ query.</div>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
@@ -264,12 +266,12 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 </td>
 </tr>
 <tr id="i10" class="altColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;R&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createQuery(java.lang.String,java.lang.Class)">createQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</code></th>
 <td class="colLast">
-<div class="block">Create an instance of <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given HQL/JPQL query
- string.</div>
+<div class="block">Create an instance of <a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.SelectionQuery</code></a> for the given HQL/JPQL
+ query string and query result type.</div>
 </td>
 </tr>
 <tr id="i11" class="rowColor">
@@ -583,10 +585,10 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>createQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;&nbsp;createQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
-                                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</pre>
-<div class="block">Create an instance of <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given HQL/JPQL query
- string.</div>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;R&gt;&nbsp;createQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+                                         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</pre>
+<div class="block">Create an instance of <a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.SelectionQuery</code></a> for the given HQL/JPQL
+ query string and query result type.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>queryString</code> - The HQL/JPQL query</dd>
@@ -622,15 +624,15 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>createNamedQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;&nbsp;createNamedQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryName,
-                                     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</pre>
-<div class="block">Create an instance of <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the named query.</div>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;R&gt;&nbsp;createNamedQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryName,
+                                              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</pre>
+<div class="block">Create an instance of <a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.SelectionQuery</code></a> for the named query.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>queryName</code> - The name of the query</dd>
 <dd><code>resultType</code> - the Java type returned in each row of query results</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> instance for manipulation and execution</dd>
+<dd>The <a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.SelectionQuery</code></a> instance for manipulation and execution</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><code>EntityManager.createQuery(String, Class)</code></dd>
 </dl>
@@ -661,10 +663,10 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>createNativeQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;&nbsp;createNativeQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
-                                      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</pre>
-<div class="block">Create an instance of <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given SQL query string,
- using the given <code>resultType</code> to interpret the results.</div>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;R&gt;&nbsp;createNativeQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+                                               <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;R&gt;&nbsp;resultType)</pre>
+<div class="block">Create an instance of <a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.SelectionQuery</code></a> for the given SQL query
+ string, using the given <code>resultType</code> to interpret the results.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>queryString</code> - The SQL query</dd>
@@ -682,10 +684,11 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>createNativeQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;&nbsp;createNativeQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
-                                      <a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping)</pre>
-<div class="block">Create an instance of <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given SQL query string,
- using the given <a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common"><code>ResultSetMapping</code></a> to interpret the result set.</div>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;R&gt;&nbsp;createNativeQuery&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+                                               <a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping)</pre>
+<div class="block">Create an instance of <a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.SelectionQuery</code></a> for the given SQL query
+ string, using the given <a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common"><code>ResultSetMapping</code></a> to interpret the
+ result set.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>queryString</code> - The SQL query</dd>
@@ -703,13 +706,14 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <ul class="blockList">
 <li class="blockList">
 <h4>createQuery</h4>
-<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;&nbsp;createQuery&#8203;(jakarta.persistence.criteria.CriteriaQuery&lt;R&gt;&nbsp;criteriaQuery)</pre>
-<div class="block">Create an instance of <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given criteria query.</div>
+<pre class="methodSignature">&lt;R&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;R&gt;&nbsp;createQuery&#8203;(jakarta.persistence.criteria.CriteriaQuery&lt;R&gt;&nbsp;criteriaQuery)</pre>
+<div class="block">Create an instance of <a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.SelectionQuery</code></a> for the given criteria
+ query.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>criteriaQuery</code> - The <code>CriteriaQuery</code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> instance for manipulation and execution</dd>
+<dd>The <a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.SelectionQuery</code></a> instance for manipulation and execution</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><code>EntityManager.createQuery(String)</code></dd>
 </dl>
