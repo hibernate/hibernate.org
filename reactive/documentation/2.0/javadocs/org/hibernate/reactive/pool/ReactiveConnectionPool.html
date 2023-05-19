@@ -14,7 +14,7 @@
 <!--[if IE]>
 <script type="text/javascript" src="../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../../../../jquery/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../../../../jquery/jquery-3.6.1.min.js"></script>
 <script type="text/javascript" src="../../../../jquery/jquery-ui.min.js"></script>
 </head>
 <body>
@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6};
+var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -213,21 +213,6 @@ extends <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate
  <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/jdbc/spi/SqlExceptionHelper.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.spi" class="externalLink"><code>SqlExceptionHelper</code></a> for the pool.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
-<td class="colFirst"><code><a href="ReactiveConnection.html" title="interface in org.hibernate.reactive.pool">ReactiveConnection</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getProxyConnection()">getProxyConnection</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Obtain a lazily-initializing reactive connection.</div>
-</td>
-</tr>
-<tr id="i6" class="altColor">
-<td class="colFirst"><code><a href="ReactiveConnection.html" title="interface in org.hibernate.reactive.pool">ReactiveConnection</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getProxyConnection(java.lang.String)">getProxyConnection</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tenantId)</code></th>
-<td class="colLast">
-<div class="block">Obtain a lazily-initializing reactive connection for the
- given tenant id.</div>
-</td>
-</tr>
 </table>
 </li>
 </ul>
@@ -291,31 +276,6 @@ extends <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate
  returning the connection via a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>CompletionStage</code></a>
  and overriding the default <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/jdbc/spi/SqlExceptionHelper.html?is-external=true" title="class or interface in org.hibernate.engine.jdbc.spi" class="externalLink"><code>SqlExceptionHelper</code></a>
  for the pool.</div>
-</li>
-</ul>
-<a id="getProxyConnection()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getProxyConnection</h4>
-<pre class="methodSignature"><a href="ReactiveConnection.html" title="interface in org.hibernate.reactive.pool">ReactiveConnection</a>&nbsp;getProxyConnection()</pre>
-<div class="block">Obtain a lazily-initializing reactive connection. The
- actual connection might be made when the returned
- instance if <a href="ReactiveConnection.html" title="interface in org.hibernate.reactive.pool"><code>ReactiveConnection</code></a> is first used.</div>
-</li>
-</ul>
-<a id="getProxyConnection(java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getProxyConnection</h4>
-<pre class="methodSignature"><a href="ReactiveConnection.html" title="interface in org.hibernate.reactive.pool">ReactiveConnection</a>&nbsp;getProxyConnection&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tenantId)</pre>
-<div class="block">Obtain a lazily-initializing reactive connection for the
- given tenant id. The actual connection might be made when
- the returned instance if <a href="ReactiveConnection.html" title="interface in org.hibernate.reactive.pool"><code>ReactiveConnection</code></a> is
- first used.</div>
 </li>
 </ul>
 <a id="getCloseFuture()">

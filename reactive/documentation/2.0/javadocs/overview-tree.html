@@ -14,7 +14,7 @@
 <!--[if IE]>
 <script type="text/javascript" src="jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="jquery/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="jquery/jquery-3.6.1.min.js"></script>
 <script type="text/javascript" src="jquery/jquery-ui.min.js"></script>
 </head>
 <body>
@@ -136,6 +136,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li><a href="org/hibernate/reactive/sql/results/spi/package-tree.html">org.hibernate.reactive.sql.results.spi</a>, </li>
 <li><a href="org/hibernate/reactive/stage/package-tree.html">org.hibernate.reactive.stage</a>, </li>
 <li><a href="org/hibernate/reactive/tuple/package-tree.html">org.hibernate.reactive.tuple</a>, </li>
+<li><a href="org/hibernate/reactive/type/descriptor/jdbc/package-tree.html">org.hibernate.reactive.type.descriptor.jdbc</a>, </li>
 <li><a href="org/hibernate/reactive/vertx/package-tree.html">org.hibernate.reactive.vertx</a></li>
 </ul>
 </div>
@@ -313,6 +314,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="circle">org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/NoJtaPlatformInitiator.html" title="class in org.hibernate.reactive.provider.service"><span class="typeNameLink">NoJtaPlatformInitiator</span></a> (implements org.hibernate.boot.registry.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html?is-external=true" title="class or interface in org.hibernate.boot.registry" class="externalLink">StandardServiceInitiator</a>&lt;R&gt;)</li>
 <li class="circle">org.hibernate.reactive.query.spi.<a href="org/hibernate/reactive/query/spi/ReactiveAbstractSelectionQuery.html" title="class in org.hibernate.reactive.query.spi"><span class="typeNameLink">ReactiveAbstractSelectionQuery</span></a>&lt;R&gt;</li>
 <li class="circle">org.hibernate.reactive.engine.<a href="org/hibernate/reactive/engine/ReactiveActionQueue.html" title="class in org.hibernate.reactive.engine"><span class="typeNameLink">ReactiveActionQueue</span></a></li>
+<li class="circle">org.hibernate.reactive.type.descriptor.jdbc.<a href="org/hibernate/reactive/type/descriptor/jdbc/ReactiveArrayJdbcType.html" title="class in org.hibernate.reactive.type.descriptor.jdbc"><span class="typeNameLink">ReactiveArrayJdbcType</span></a> (implements org.hibernate.type.descriptor.jdbc.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/type/descriptor/jdbc/JdbcType.html?is-external=true" title="class or interface in org.hibernate.type.descriptor.jdbc" class="externalLink">JdbcType</a>)</li>
 <li class="circle">org.hibernate.reactive.loader.entity.<a href="org/hibernate/reactive/loader/entity/ReactiveCacheEntityLoaderHelper.html" title="class in org.hibernate.reactive.loader.entity"><span class="typeNameLink">ReactiveCacheEntityLoaderHelper</span></a></li>
 <li class="circle">org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/ReactiveGenerationTarget.html" title="class in org.hibernate.reactive.provider.service"><span class="typeNameLink">ReactiveGenerationTarget</span></a> (implements org.hibernate.tool.schema.internal.exec.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/tool/schema/internal/exec/GenerationTarget.html?is-external=true" title="class or interface in org.hibernate.tool.schema.internal.exec" class="externalLink">GenerationTarget</a>)</li>
 <li class="circle">org.hibernate.reactive.id.factory.spi.<a href="org/hibernate/reactive/id/factory/spi/ReactiveIdentifierGeneratorFactoryInitiator.html" title="class in org.hibernate.reactive.id.factory.spi"><span class="typeNameLink">ReactiveIdentifierGeneratorFactoryInitiator</span></a> (implements org.hibernate.boot.registry.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html?is-external=true" title="class or interface in org.hibernate.boot.registry" class="externalLink">StandardServiceInitiator</a>&lt;R&gt;)</li>
@@ -505,14 +507,28 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </li>
 <li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/loader/ast/spi/Loader.html?is-external=true" title="class or interface in org.hibernate.loader.ast.spi" class="externalLink"><span class="typeNameLink">Loader</span></a>
 <ul>
+<li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/loader/ast/spi/CollectionLoader.html?is-external=true" title="class or interface in org.hibernate.loader.ast.spi" class="externalLink"><span class="typeNameLink">CollectionLoader</span></a>
+<ul>
+<li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/loader/ast/spi/CollectionBatchLoader.html?is-external=true" title="class or interface in org.hibernate.loader.ast.spi" class="externalLink"><span class="typeNameLink">CollectionBatchLoader</span></a> (also extends org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/loader/ast/spi/BatchLoader.html?is-external=true" title="class or interface in org.hibernate.loader.ast.spi" class="externalLink">BatchLoader</a>)
+<ul>
+<li class="circle">org.hibernate.reactive.loader.ast.spi.<a href="org/hibernate/reactive/loader/ast/spi/ReactiveCollectionBatchLoader.html" title="interface in org.hibernate.reactive.loader.ast.spi"><span class="typeNameLink">ReactiveCollectionBatchLoader</span></a> (also extends org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/loader/ast/spi/BatchLoader.html?is-external=true" title="class or interface in org.hibernate.loader.ast.spi" class="externalLink">BatchLoader</a>, org.hibernate.reactive.loader.ast.internal.ReactiveCollectionLoader)</li>
+</ul>
+</li>
+<li class="circle">org.hibernate.reactive.loader.ast.internal.ReactiveCollectionLoader
+<ul>
+<li class="circle">org.hibernate.reactive.loader.ast.spi.<a href="org/hibernate/reactive/loader/ast/spi/ReactiveCollectionBatchLoader.html" title="interface in org.hibernate.reactive.loader.ast.spi"><span class="typeNameLink">ReactiveCollectionBatchLoader</span></a> (also extends org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/loader/ast/spi/BatchLoader.html?is-external=true" title="class or interface in org.hibernate.loader.ast.spi" class="externalLink">BatchLoader</a>, org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/loader/ast/spi/CollectionBatchLoader.html?is-external=true" title="class or interface in org.hibernate.loader.ast.spi" class="externalLink">CollectionBatchLoader</a>)</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/loader/ast/spi/EntityLoader.html?is-external=true" title="class or interface in org.hibernate.loader.ast.spi" class="externalLink"><span class="typeNameLink">EntityLoader</span></a>
 <ul>
-<li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/loader/ast/spi/MultiLoader.html?is-external=true" title="class or interface in org.hibernate.loader.ast.spi" class="externalLink"><span class="typeNameLink">MultiLoader</span></a>&lt;T&gt;
+<li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/loader/ast/spi/EntityMultiLoader.html?is-external=true" title="class or interface in org.hibernate.loader.ast.spi" class="externalLink"><span class="typeNameLink">EntityMultiLoader</span></a>&lt;T&gt; (also extends org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/loader/ast/spi/MultiKeyLoader.html?is-external=true" title="class or interface in org.hibernate.loader.ast.spi" class="externalLink">MultiKeyLoader</a>)
 <ul>
 <li class="circle">org.hibernate.reactive.loader.ast.spi.<a href="org/hibernate/reactive/loader/ast/spi/ReactiveMultiIdEntityLoader.html" title="interface in org.hibernate.reactive.loader.ast.spi"><span class="typeNameLink">ReactiveMultiIdEntityLoader</span></a>&lt;T&gt;</li>
 </ul>
 </li>
-<li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/loader/ast/spi/NaturalIdLoader.html?is-external=true" title="class or interface in org.hibernate.loader.ast.spi" class="externalLink"><span class="typeNameLink">NaturalIdLoader</span></a>&lt;T&gt;
+<li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/loader/ast/spi/NaturalIdLoader.html?is-external=true" title="class or interface in org.hibernate.loader.ast.spi" class="externalLink"><span class="typeNameLink">NaturalIdLoader</span></a>&lt;T&gt; (also extends org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/loader/ast/spi/MultiKeyLoader.html?is-external=true" title="class or interface in org.hibernate.loader.ast.spi" class="externalLink">MultiKeyLoader</a>)
 <ul>
 <li class="circle">org.hibernate.reactive.loader.ast.spi.<a href="org/hibernate/reactive/loader/ast/spi/ReactiveNaturalIdLoader.html" title="interface in org.hibernate.reactive.loader.ast.spi"><span class="typeNameLink">ReactiveNaturalIdLoader</span></a>&lt;T&gt;</li>
 </ul>
@@ -525,6 +541,30 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="circle">org.hibernate.reactive.loader.ast.spi.<a href="org/hibernate/reactive/loader/ast/spi/ReactiveSingleIdEntityLoader.html" title="interface in org.hibernate.reactive.loader.ast.spi"><span class="typeNameLink">ReactiveSingleIdEntityLoader</span></a>&lt;T&gt;</li>
 </ul>
 </li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/loader/ast/spi/MultiKeyLoader.html?is-external=true" title="class or interface in org.hibernate.loader.ast.spi" class="externalLink"><span class="typeNameLink">MultiKeyLoader</span></a>
+<ul>
+<li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/loader/ast/spi/BatchLoader.html?is-external=true" title="class or interface in org.hibernate.loader.ast.spi" class="externalLink"><span class="typeNameLink">BatchLoader</span></a>
+<ul>
+<li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/loader/ast/spi/CollectionBatchLoader.html?is-external=true" title="class or interface in org.hibernate.loader.ast.spi" class="externalLink"><span class="typeNameLink">CollectionBatchLoader</span></a> (also extends org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/loader/ast/spi/CollectionLoader.html?is-external=true" title="class or interface in org.hibernate.loader.ast.spi" class="externalLink">CollectionLoader</a>)
+<ul>
+<li class="circle">org.hibernate.reactive.loader.ast.spi.<a href="org/hibernate/reactive/loader/ast/spi/ReactiveCollectionBatchLoader.html" title="interface in org.hibernate.reactive.loader.ast.spi"><span class="typeNameLink">ReactiveCollectionBatchLoader</span></a> (also extends org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/loader/ast/spi/BatchLoader.html?is-external=true" title="class or interface in org.hibernate.loader.ast.spi" class="externalLink">BatchLoader</a>, org.hibernate.reactive.loader.ast.internal.ReactiveCollectionLoader)</li>
+</ul>
+</li>
+<li class="circle">org.hibernate.reactive.loader.ast.spi.<a href="org/hibernate/reactive/loader/ast/spi/ReactiveCollectionBatchLoader.html" title="interface in org.hibernate.reactive.loader.ast.spi"><span class="typeNameLink">ReactiveCollectionBatchLoader</span></a> (also extends org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/loader/ast/spi/CollectionBatchLoader.html?is-external=true" title="class or interface in org.hibernate.loader.ast.spi" class="externalLink">CollectionBatchLoader</a>, org.hibernate.reactive.loader.ast.internal.ReactiveCollectionLoader)</li>
+</ul>
+</li>
+<li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/loader/ast/spi/EntityMultiLoader.html?is-external=true" title="class or interface in org.hibernate.loader.ast.spi" class="externalLink"><span class="typeNameLink">EntityMultiLoader</span></a>&lt;T&gt; (also extends org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/loader/ast/spi/EntityLoader.html?is-external=true" title="class or interface in org.hibernate.loader.ast.spi" class="externalLink">EntityLoader</a>)
+<ul>
+<li class="circle">org.hibernate.reactive.loader.ast.spi.<a href="org/hibernate/reactive/loader/ast/spi/ReactiveMultiIdEntityLoader.html" title="interface in org.hibernate.reactive.loader.ast.spi"><span class="typeNameLink">ReactiveMultiIdEntityLoader</span></a>&lt;T&gt;</li>
+</ul>
+</li>
+<li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/loader/ast/spi/NaturalIdLoader.html?is-external=true" title="class or interface in org.hibernate.loader.ast.spi" class="externalLink"><span class="typeNameLink">NaturalIdLoader</span></a>&lt;T&gt; (also extends org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/loader/ast/spi/EntityLoader.html?is-external=true" title="class or interface in org.hibernate.loader.ast.spi" class="externalLink">EntityLoader</a>)
+<ul>
+<li class="circle">org.hibernate.reactive.loader.ast.spi.<a href="org/hibernate/reactive/loader/ast/spi/ReactiveNaturalIdLoader.html" title="interface in org.hibernate.reactive.loader.ast.spi"><span class="typeNameLink">ReactiveNaturalIdLoader</span></a>&lt;T&gt;</li>
 </ul>
 </li>
 </ul>
@@ -553,7 +593,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </ul>
 </li>
 <li class="circle">org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><span class="typeNameLink">Mutiny.Transaction</span></a></li>
-<li class="circle">org.hibernate.reactive.common.spi.<a href="org/hibernate/reactive/common/spi/MutinyImplementor.html" title="interface in org.hibernate.reactive.common.spi"><span class="typeNameLink">MutinyImplementor</span></a></li>
 <li class="circle">org.hibernate.query.named.<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/query/named/NameableQuery.html?is-external=true" title="class or interface in org.hibernate.query.named" class="externalLink"><span class="typeNameLink">NameableQuery</span></a>
 <ul>
 <li class="circle">org.hibernate.reactive.query.sql.spi.<a href="org/hibernate/reactive/query/sql/spi/ReactiveNativeQueryImplementor.html" title="interface in org.hibernate.reactive.query.sql.spi"><span class="typeNameLink">ReactiveNativeQueryImplementor</span></a>&lt;R&gt; (also extends org.hibernate.reactive.query.<a href="org/hibernate/reactive/query/ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a>&lt;R&gt;, org.hibernate.reactive.query.<a href="org/hibernate/reactive/query/ReactiveQueryImplementor.html" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a>&lt;R&gt;)</li>
