@@ -6,20 +6,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
 <meta name="author" content="Davide D&#8217;Alto, Gavin King">
-<title>Hibernate Reactive 2.0.0.CR2 Reference Documentation</title>
+<title>Hibernate Reactive 2.0.0.Final Reference Documentation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <link rel="stylesheet" href="./asciidoctor.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Hibernate Reactive 2.0.0.CR2 Reference Documentation</h1>
+<h1>Hibernate Reactive 2.0.0.Final Reference Documentation</h1>
 <div class="details">
 <span id="author" class="author">Davide D&#8217;Alto</span><br>
 <span id="email" class="email"><a href="mailto:davide@hibernate.org">davide@hibernate.org</a></span><br>
 <span id="author2" class="author">Gavin King</span><br>
 <span id="email2" class="email"><a href="mailto:gavin@hibernate.org">gavin@hibernate.org</a></span><br>
-<span id="revnumber">version 2.0.0.CR2</span>
+<span id="revnumber">version 2.0.0.Final</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -2077,12 +2077,22 @@ straightforward, but you&#8217;d be surprised how often people mess up.</p>
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-The session is not thread-safe (or "stream-safe"), so using it across
-different threads (or reactive streams) may cause bugs that are <em>extremely</em> hard
-to detect. Don&#8217;t say we didn&#8217;t warn you!
+The Hibernate session is not thread-safe (nor "stream-safe"), so using
+it across different threads (or reactive streams) may cause bugs that are <em>extremely</em>
+hard to detect. Don&#8217;t say we didn&#8217;t warn you!
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>More than a few users are surprised by this restriction. But we insist that it&#8217;s
+completely natural. An atomic operation of the session, from your point of view as
+a user of the session, is a method like <code>flush()</code>, <code>find()</code>, or <code>getResultList()</code>.
+Any one of those methods can result in <em>multiple interactions with the database</em>.
+And between such interactions, the session is simply not in a well-defined state.
+Reactive streams are a kind of thread, and it&#8217;s quite unreasonable to expect that
+reactive programming should vanish away your concurrency problems in a shimmering
+puff of pixie dust. That&#8217;s not how these things work.</p>
 </div>
 <div class="paragraph">
 <p>For example, I bet you would like to be able to write code like this:</p>
@@ -2877,8 +2887,8 @@ tenant identifier. The easiest way to set this up in Hibernate Reactive is to ex
 <code>DefaultSqlClientPool</code> and override <code>getTenantPool(String tenantId)</code>.</p>
 </div>
 <div class="paragraph">
-<p>For multitenancy, you&#8217;ll also need to set at least one of the following
-configuration properties defined by Hibernate ORM:</p>
+<p>For multitenancy, might also need to set the following configuration property defined
+by Hibernate ORM:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -2893,10 +2903,6 @@ configuration properties defined by Hibernate ORM:</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.multiTenancy</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The multitenancy strategy: <code>database</code> or <code>schema</code></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.tenant_identifier_resolver</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">(Optional) A class which implements <code>CurrentTenantIdentifierResolver</code></p></td>
 </tr>
@@ -2906,6 +2912,20 @@ configuration properties defined by Hibernate ORM:</p>
 <p>If you don&#8217;t provide a <code>CurrentTenantIdentifierResolver</code>, you can specify
 the tenant id explicitly when you call <code>openSession()</code>, <code>withSession()</code>,
 or <code>withTransaction()</code>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You don&#8217;t need a custom pool if you&#8217;re using <em>discriminator</em>-based multitenancy.
+In that case, all you need is to declare the <code>@TenantId</code> properties of your entities,
+just like in Hibernate ORM 6.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -2921,8 +2941,8 @@ documentation for details.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 2.0.0.CR2<br>
-Last updated 2023-05-19 12:41:15 UTC
+Version 2.0.0.Final<br>
+Last updated 2023-06-01 11:23:37 UTC
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
