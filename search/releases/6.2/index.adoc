@@ -63,7 +63,130 @@ List<MyBookProjection> hits = searchSession.search( Book.class )
         .fetchHits( 20 );
 ----
 
+More advanced projections can be configured through explicit annotations,
+for example a projection to the entity identifier:
+
+[source, JAVA, indent=0]
+----
+@ProjectionConstructor
+public record MyBookIdAndTitleProjection(
+        @IdProjection // <1>
+        Integer id,
+        String title // <2>
+) {
+}
+----
+<1> Projects to the entity identifier (explicit projection through an explicit annotation)
+<2> Projects to field `title` (implicit projection)
+
+Explicit annotations also allow configuring field projections more precisely,
+for example setting the path of a field projection to something else
+than just the name of the constructor parameter:
+
+[source, JAVA, indent=0]
+----
+@ProjectionConstructor
+public record MyBookTitleAndAuthorNamesProjection(
+        @FieldProjection // <1>
+        String title,
+        @FieldProjection(path = "authors.lastName") // <2>
+        List<String> authorLastNames
+) {
+}
+----
+<1> Projects to field `title` (path derived from the name of the constructor parameter)
+<2> Projects to field `authors.lastName` (explicit path)
+
 See link:{hsearch-doc-url-prefix}#mapping-projection[this section of the reference documentation]
+for more information.
+
+[[search-highlighting]]
+=== Highlighting
+
+Hibernate Search now offers a new feature in the Search DSL: highlighting.
+
+Highlighting is a projection that returns fragments from full-text fields of matched documents that caused a query match.
+Specific terms that caused the match are "highlighted" with a pair of opening and closing tags.
+It can help a user to quickly identify the information they were searching for on a results page.
+
+For example, one can enable highlighting on a full-text field like this:
+
+[source, JAVA, indent=0]
+----
+@Entity
+@Indexed
+public class Book {
+    @Id
+    private Integer id;
+
+    @FullTextField(analyzer = "english")
+    private String title;
+
+    @FullTextField(analyzer = "english", projectable = Projectable.YES)
+    private String description;
+}
+----
+
+And then retrieve highlights like this:
+
+[source, JAVA, indent=0]
+----
+SearchSession searchSession = /* ... */
+
+List<List<String>> result = searchSession.search( Book.class )
+        .select( f -> f.highlight( "description" ) )
+        .where( f -> f.match().field( "description" ).matching( "robot" ) )
+        .fetchHits( 20 );
+----
+
+Which can for example return the following highlights:
+
+[source, indent=0]
+----
+# Hit #0
+["A <em>robot</em> becomes self-aware."]
+# Hit #1
+["A <em>robot</em> helps investigate a murder on an extrasolar colony.", "On this planet, <em>robots</em> are used extensively."]
+# etc.
+----
+
+This is a simple example, but highligting can be configured extensively.
+See link:{hsearch-doc-url-prefix}#search-dsl-highlighting[this section of the reference documentation]
+for more information.
+
+[[indexing-plan-filter]]
+=== Indexing plan filters
+
+With link:{hsearch-jira-url-prefix}/HSEARCH-168[HSEARCH-168]/link:{hsearch-jira-url-prefix}/HSEARCH-1383[HSEARCH-1383],
+Hibernate Search now allow enabling/disabling indexing in indexing plans (which include in particular automatic indexing),
+both fully (for all types) or on a per-type basis.
+
+For example, the following will disable automatic indexing
+for future changes on all instances of the class `Company`,
+except for instances of its subclass `Customer`:
+
+[source, JAVA, indent=0]
+----
+SearchMapping searchMapping = /* ... */
+searchMapping.indexingPlanFilter(
+        ctx -> ctx.exclude( Company.class )
+                .include( Customer.class )
+);
+----
+
+Indexing plan filters can also be configured per-session
+(though limitations apply when using the link:{hsearch-doc-url-prefix}#coordination-outbox-polling[`outbox-polling` coordination strategy]):
+
+[source, JAVA, indent=0]
+----
+SearchSession searchSession = /* ... */
+searchSession.indexingPlanFilter(
+        ctx -> ctx.exclude( Company.class )
+                .include( Customer.class )
+);
+----
+
+See link:{hsearch-doc-url-prefix}#indexing-plan-filter[this section of the reference documentation]
 for more information.
 
 [[mapping-improvements]]
@@ -74,7 +197,7 @@ All fields are now projectable by default with the Elasticsearch backend.
 +
 This change was made because making a field projectable doesn't incur any performance penalty with the Elasticsearch backend.
 +
-Since making a field projectable does have an impact on performance with the Lucene backend,
+Since making a field projectable *does* have an impact on performance with the Lucene backend,
 the defaults with the Lucene backend didn't change:
 Lucene fields still need to be made projectable explicitly.
 
@@ -246,6 +369,35 @@ List<MyPair<Integer, Instant>> hits = searchSession.search( Book.class )
         .where( f -> f.matchAll() )
         .fetchHits( 20 );
 ----
+[[missing-lowest-highest]]
+link:{hsearch-doc-url-prefix}#search-dsl-sort-common-missing[`.missing().lowest()`/`.missing().highest()` options] in sorts::
+When sorting on a field that may not have a value for some documents,
+it was already possible to use `.missing().first()`/`.missing().last()`
+to tell Hibernate Search to put such documents in first/last position (respectively),
+regardless of sorting order (ascending/descending).
++
+--
+It is now possible, as an alternative, to use `.missing().lowest()`/`.missing().highest()`
+to tell Hibernate Search to consider such documents as having the lowest/highest value (respectively),
+taking into account sorting order (ascending/descending):
+
+* `.missing().lowest()` puts documents with no value in the first position when using ascending order
+or in the last position when using descending order.
+* `.missing().highest()` puts documents with no value in the last position when using ascending order
+or in the first position when using descending order. The documents with no value will go first if descending order is used.
+
+This is mostly useful when the position of missing values is hardcoded,
+but the sort order is given by the user:
+
+[source, JAVA, indent=0]
+----
+SortOrder orderFromUser = /* ... */;
+List<Book> hits = searchSession.search( Book.class )
+        .where( f -> f.matchAll() )
+        .sort( f -> f.field( "pageCount" ).missing().lowest().order( orderFromuser ) )
+        .fetchHits( 20 );
+----
+--
 
 [[mass-indexing-improvements]]
 === Mass indexing improvements
@@ -278,4 +430,34 @@ Customizable database schema::
 Simple, straightforward configuration properties now allow customizing the database schema involved in Hibernate Search's `outbox-polling` coordination strategy:
 table names, schema and catalog, type of UUID columns as well as UUID generation strategy (random vs. time).
 See link:{hsearch-doc-url-prefix}#_custom_schematable_nameetc[this section of the reference documentation]
+for more information.
+
+[[elasticsearch-schema-export]]
+=== Elasticsearch schema export
+
+It is now possible to export the Elasticsearch schema that Hibernate Search expects to JSON files on the filesystem:
+
+[source, JAVA, indent=0]
+----
+SearchSchemaManager schemaManager = searchSession.schemaManager();
+schemaManager.exportExpectedSchema( Path.of( "mydirectory" ) );
+----
+
+The code above will result in a directory tree similar to this:
+
+[source, indent=0]
+----
+# For the default backend: backend/indexes/<index-name>/<file>
+mydirectory/backend/indexes/customer/create-index.json
+mydirectory/backend/indexes/customer/create-index-query-params.json
+mydirectory/backend/indexes/order/create-index.json
+mydirectory/backend/indexes/order/create-index-query-params.json
+# For additional named backends: backend/<backend-name>/indexes/<index-name>/<file>
+mydirectory/backends/auth/indexes/user/create-index.json
+mydirectory/backends/auth/indexes/user/create-index-query-params.json
+mydirectory/backends/auth/indexes/usergroup/create-index.json
+mydirectory/backends/auth/indexes/usergroup/create-index-query-params.json
+----
+
+See link:{hsearch-doc-url-prefix}#schema-management-export[this section of the reference documentation]
 for more information.
