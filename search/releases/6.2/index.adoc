@@ -384,7 +384,7 @@ taking into account sorting order (ascending/descending):
 * `.missing().lowest()` puts documents with no value in the first position when using ascending order
 or in the last position when using descending order.
 * `.missing().highest()` puts documents with no value in the last position when using ascending order
-or in the first position when using descending order. The documents with no value will go first if descending order is used.
+or in the first position when using descending order.
 
 This is mostly useful when the position of missing values is hardcoded,
 but the sort order is given by the user:
