@@ -1,6 +1,8 @@
 summary: Improved bootstrapping, hibernate-java8, hibernate-spatial, Karaf support
 endoflife: true
 links:
+  getting_started_guide:
+    html: https://docs.jboss.org/hibernate/orm/{series.version}/quickstart/en-US/html_single/
   dist:
     sourceforge:
       zip: https://sourceforge.net/projects/hibernate/files/hibernate-orm/{release.version}/hibernate-release-{release.version}.zip/download

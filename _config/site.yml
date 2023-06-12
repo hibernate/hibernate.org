@@ -76,8 +76,7 @@ projects:
         latest_stable:
           html: https://docs.jboss.org/hibernate/stable/orm/javadocs/
       getting_started_guide:
-        latest_stable_only: true
-        html: /orm/documentation/getting-started
+        html: https://docs.jboss.org/hibernate/orm/{series.version}/quickstart/html_single/
       migration_guide:
         html: https://github.com/hibernate/hibernate-orm/wiki/Migration-Guides
       dist:
