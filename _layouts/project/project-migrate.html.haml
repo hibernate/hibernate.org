@@ -31,14 +31,14 @@ layout: project-standard
               %span.detail= release.date
             = partial( 'project/series-status-label.html.haml', { "series" => series, "classes" => "tag" } )
             %p
-              %span.ui.button.disabled
+              %span.ui.label.basic.horizontal
                 Migration guide
               - if not migration_guide.html_url.nil?
-                %a.ui.right.labeled.icon.button.primary(href="#{migration_guide.html_url}")
+                %a.ui.right.labeled.icon.button.small(href="#{migration_guide.html_url}")
                   %i.icon.file.text.outline
                   HTML
               - if not migration_guide.pdf_url.nil?
-                %a.ui.right.labeled.icon.button.primary(href="#{migration_guide.pdf_url}")
+                %a.ui.right.labeled.icon.button.small(href="#{migration_guide.pdf_url}")
                   %i.icon.file.pdf.outline
                   PDF
 

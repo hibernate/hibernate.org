@@ -128,7 +128,7 @@ project_hero_partial: project/hero-series.html.haml
         %p
           You can find the Maven coordinates of all artifacts through the link below:
           %p
-            %a.ui.right.labeled.button.primary.icon{:href => maven_central_search_url(maven_coord, latest_release.version)}
+            %a.ui.right.labeled.button.small.icon{:href => maven_central_search_url(maven_coord, latest_release.version)}
               %i.icon.cloud.cubes
               Maven artifacts
         - if maven_artifacts
@@ -141,7 +141,7 @@ project_hero_partial: project/hero-series.html.haml
               - version = latest_release.version
               - summary = artifact[:summary] || artifact.artifact_id
               %dt
-                %a.ui.label.large.blue{:href => maven_central_artifact_url(group_id, artifact_id, version)}
+                %a.ui.label.large{:href => maven_central_artifact_url(group_id, artifact_id, version)}
                   #{group_id}:#{artifact_id}:#{version}
               %dd= summary
               - if false # disabled for now, takes too much vertical space
@@ -172,14 +172,14 @@ project_hero_partial: project/hero-series.html.haml
           %p
             A ZIP archive containing all JAR files, documentation and source is available from SourceForge:
             %p
-              %a.ui.right.labeled.button.primary.icon{:href => dist_sourceforge.zip_url, :title => "Download"}
+              %a.ui.right.labeled.button.small.icon{:href => dist_sourceforge.zip_url, :title => "Download"}
                 %i.icon.cloud.download
                 Download ZIP archive
         - if maven_coord
           %p
             Individual Maven artifacts may be downloaded directly from Maven Central:
             %p
-              %a.ui.right.labeled.button.primary.icon{:href => maven_central_direct_download_url(maven_coord)}
+              %a.ui.right.labeled.button.small.icon{:href => maven_central_direct_download_url(maven_coord)}
                 %i.icon.folder.open
                 Maven Central subdirectory
             %p
@@ -212,11 +212,11 @@ project_hero_partial: project/hero-series.html.haml
     If you want to start using #{project_description.name} #{series.version}, please refer to the getting started guide:
   %p
     - if not getting_started_guide.html_url.nil?
-      %a.ui.right.labeled.icon.button(href="#{getting_started_guide.html_url}")
+      %a.ui.right.labeled.icon.button.small(href="#{getting_started_guide.html_url}")
         %i.icon.file.text.outline
         HTML
     - if not getting_started_guide.pdf_url.nil?
-      %a.ui.right.labeled.icon.button(href="#{getting_started_guide.pdf_url}")
+      %a.ui.right.labeled.icon.button.small(href="#{getting_started_guide.pdf_url}")
         %i.icon.file.pdf.outline
         PDF
 
@@ -226,11 +226,11 @@ project_hero_partial: project/hero-series.html.haml
     If you need to upgrade from a previous series, please refer to the migration guide:
   %p
     - if not migration_guide.html_url.nil?
-      %a.ui.right.labeled.icon.button(href="#{migration_guide.html_url}")
+      %a.ui.right.labeled.icon.button.small(href="#{migration_guide.html_url}")
         %i.icon.file.text.outline
         HTML
     - if not migration_guide.pdf_url.nil?
-      %a.ui.right.labeled.icon.button(href="#{migration_guide.pdf_url}")
+      %a.ui.right.labeled.icon.button.small(href="#{migration_guide.pdf_url}")
         %i.icon.file.pdf.outline
         PDF
 
