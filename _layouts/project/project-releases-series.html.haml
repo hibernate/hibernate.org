@@ -134,30 +134,20 @@ project_hero_partial: project/hero-series.html.haml
         - if maven_artifacts
           %p
             Below are the Maven coordinates of the main artifacts.
-          %dl.sparse
+          %div.ui.relaxed.divided.list
             - maven_artifacts.each do |artifact|
               - group_id = maven_coord.group_id
               - artifact_id = artifact.artifact_id
               - version = latest_release.version
               - summary = artifact[:summary] || artifact.artifact_id
-              %dt
-                %a.ui.label.large{:href => maven_central_artifact_url(group_id, artifact_id, version)}
-                  #{group_id}:#{artifact_id}:#{version}
-              %dd= summary
-              - if false # disabled for now, takes too much vertical space
-                :asciidoc
-                  :groupId: #{group_id}
-                  :artifactId: #{artifact_id}
-                  :version: #{version}
-                  [source,xml]
-                  [subs="verbatim,attributes"]
-                  ----
-                  <dependency>
-                      <groupId>{groupId}</groupId>
-                      <artifactId>{artifactId}</artifactId>
-                      <version>{version}</version>
-                  </dependency>
-                  ----
+              %div.item
+                %div.right.floated.content
+                  %a.ui.button.tiny.icon{:href => maven_central_search_url(maven_coord, latest_release.version)}
+                    %i.icon.cloud.cube
+                %div.header
+                  <span class="faded">#{group_id}:</span>#{artifact_id}</strong><span class="faded">:#{version}</span>
+                %div.content
+                  %div.description= summary
         - if project_maven.signing&.since
           %p
             All Maven artifacts of this project released after #{project_maven.signing?.since} are signed.
