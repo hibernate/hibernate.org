@@ -142,7 +142,7 @@ project_hero_partial: project/hero-series.html.haml
               - summary = artifact[:summary] || artifact.artifact_id
               %div.item
                 %div.right.floated.content
-                  %a.ui.button.tiny.icon{:href => maven_central_search_url(maven_coord, latest_release.version)}
+                  %a.ui.button.tiny.icon{:href => maven_central_artifact_url(group_id, artifact_id, version)}
                     %i.icon.cloud.cube
                 %div.header
                   <span class="faded">#{group_id}:</span>#{artifact_id}</strong><span class="faded">:#{version}</span>
