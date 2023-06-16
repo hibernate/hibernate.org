@@ -15,16 +15,19 @@ minified: .min
 maven:
   repo:
     central:
+      name: Maven Central
       repo_url: 'https://repo.maven.apache.org/maven2'
       web_ui_url: 'https://central.sonatype.com'
       old_web_ui_url: 'https://search.maven.org'
       help_setup_url: 'https://central.sonatype.org/consume/'
     ossrh_snapshots:
+      name: OSSRH snapshots
       repo_url: 'https://oss.sonatype.org/content/repositories/snapshots'
       web_ui_url: 'https://oss.sonatype.org/'
     jboss:
+      name: JBoss Nexus
       repo_url: 'https://repository.jboss.org/nexus/content/repositories/public'
-      web_ui_url: 'https://repository.jboss.org/nexus/index.html'
+      web_ui_url: 'https://oss.sonatype.org/#view-repositories;snapshots~browsestorage'
 
 # Various settings
 enable_google_analytics: false
@@ -89,6 +92,9 @@ projects:
       coord:
         group_id: org.hibernate.orm
         main_artifact_id: hibernate-core
+      repo:
+        releases: central
+        snapshots: ossrh_snapshots
     blog_tag: Hibernate ORM
     blog_tag_url: hibernate-orm
     license:
@@ -197,6 +203,9 @@ projects:
       coord:
         group_id: org.hibernate.search
         main_artifact_id: hibernate-search-mapper-orm
+      repo:
+        releases: central
+        snapshots: ossrh_snapshots
     blog_tag: Hibernate Search
     blog_tag_url: hibernate-search
     license:
@@ -367,6 +376,9 @@ projects:
       coord:
         group_id: org.hibernate.validator
         main_artifact_id: hibernate-validator
+      repo:
+        releases: central
+        snapshots: ossrh_snapshots
     blog_tag: Hibernate Validator
     blog_tag_url: hibernate-validator
     license:
@@ -470,6 +482,9 @@ projects:
       coord:
         group_id: org.hibernate.ogm
         main_artifact_id: hibernate-ogm-core
+      repo:
+        releases: central
+        snapshots: jboss
     javadoc_path: api
     blog_tag: Hibernate OGM
     blog_tag_url: hibernate-ogm
@@ -561,6 +576,9 @@ projects:
       coord:
         group_id: org.hibernate.reactive
         main_artifact_id: hibernate-reactive-core
+      repo:
+        releases: central
+        snapshots: jboss
     blog_tag: Hibernate Reactive
     blog_tag_url: hibernate-reactive
     license:

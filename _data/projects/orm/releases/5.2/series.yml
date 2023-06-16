@@ -8,6 +8,8 @@ maven:
   coord:
     group_id: org.hibernate
     main_artifact_id: hibernate-core
+  repo:
+    snapshots: jboss
   artifacts:
     - artifact_id: hibernate-core
       summary: Core implementation (includes JPA)

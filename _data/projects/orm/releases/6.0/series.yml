@@ -1,6 +1,8 @@
 summary: Performance, HQL, Criteria, Type System
 endoflife: true
 maven:
+  repo:
+    snapshots: jboss
   artifacts:
     - artifact_id: hibernate-core
       summary: Core implementation

@@ -10,6 +10,8 @@ maven:
     group_id: org.hibernate
     main_artifact_id: hibernate-search-orm
     artifact_id_pattern: hibernate-search-*
+  repo:
+    snapshots: jboss
   artifacts:
     - artifact_id: hibernate-search-orm
       summary: Hibernate ORM integration

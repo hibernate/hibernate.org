@@ -24,29 +24,8 @@ module Awestruct
         return DocumentRef.from_patterns(project, series, :migration_guide)
       end
 
-      def maven_central_search_url(coord, version)
-        if coord.artifact_id_pattern?
-          # The new Maven Central WebUI doesn't support artifact ID patterns, so we fall back to the old WebUI.
-          search_string = ERB::Util.url_encode("g:#{coord.group_id} AND a:#{coord.artifact_id_pattern} AND v:#{version}")
-          return "#{@site.maven.repo.central.old_web_ui_url}/search?q=#{search_string}"
-        else
-          search_string = ERB::Util.url_encode("g:#{coord.group_id} v:#{version}")
-          return "#{@site.maven.repo.central.web_ui_url}/search?q=#{search_string}&sort=name"
-        end
-      end
-
-      def maven_central_artifact_url(group_id, artifact_id, version)
-        return "#{@site.maven.repo.central.web_ui_url}/artifact/#{group_id}/#{artifact_id}/#{version}"
-      end
-
-      def maven_central_direct_download_url(coord)
-        group_id_path = coord.group_id.gsub('.', '/')
-        return "#{@site.maven.repo.central.repo_url}/#{group_id_path}/"
-      end
-
-      def ossrh_snapshots_direct_download_url(coord)
-        group_id_path = coord.group_id.gsub('.', '/')
-        return "#{@site.maven.repo.ossrh_snapshots.repo_url}/#{group_id_path}/"
+      def maven(project, series, release)
+        return MavenRef.from(@site, project, series, release)
       end
 
       def github_issues_url(project)
@@ -85,6 +64,81 @@ module Awestruct
         return pattern.gsub('{series.version}', series&.version || '')
             .gsub('{release.version}', release&.version || '')
             .gsub('{series.version.dashes}', series&.version&.gsub('.', '-') || '')
+      end
+
+      class MavenRef
+        @@logger = Logger.new(STDERR)
+        @@logger.level = Logger::INFO
+
+        def self.from(site, project, series, release)
+          log_prefix = "#{project.name}/#{series.version}/#{release.version}: "
+          project_maven = project[:maven] || {}
+          series_maven = series[:maven] || {}
+          release_maven = release[:maven] || {}
+          maven_coord = release_maven&.[](:coord) || series_maven&.[](:coord) || project_maven[:coord]
+          @@logger.debug("#{log_prefix}Coord: #{maven_coord}")
+          maven_signing = project_maven&.[](:signing)
+          maven_repo = {}
+          maven_repo[:releases] = MavenRepoRef.from( site, release_maven&.[](:repo)&.[](:releases) || series_maven&.[](:repo)&.[](:releases) || project_maven&.[](:repo)&.[](:releases) )
+          maven_repo[:snapshots] = MavenRepoRef.from( site, release_maven&.[](:repo)&.[](:snapshots) || series_maven&.[](:repo)&.[](:snapshots) || project_maven&.[](:repo)&.[](:snapshots) )
+          @@logger.debug("#{log_prefix}Repo: #{maven_repo}")
+          maven_artifacts = release_maven&.[](:artifacts) || series_maven&.[](:artifacts) || project_maven[:artifacts]
+          @@logger.debug("#{log_prefix}Artifacts: #{maven_artifacts}")
+          return MavenRef.new(maven_coord, maven_signing, maven_artifacts, maven_repo)
+        end
+
+        attr_reader :coord, :signing, :artifacts, :repo
+
+        def initialize(coord, signing, artifacts, repo)
+          @coord = coord
+          @signing = signing
+          @artifacts = artifacts
+          @repo = repo
+        end
+      end
+
+      class MavenRepoRef
+        def self.from(site, id)
+          data = site.maven.repo&.[](id)
+          return MavenRepoRef.new(id, data)
+        end
+
+        attr_reader :id, :data
+
+        def initialize(id, data)
+          @id = id
+          @data = data
+        end
+
+        def to_s
+          @id
+        end
+
+        def web_ui_all_artifacts_url(coord, version)
+          if @id != 'central'
+            raise StandardError, "Cannot generate web UI artifact links for repository: #{@id}"
+          end
+          if coord.artifact_id_pattern?
+            # The new Maven Central WebUI doesn't support artifact ID patterns, so we fall back to the old WebUI.
+            search_string = ERB::Util.url_encode("g:#{coord.group_id} AND a:#{coord.artifact_id_pattern} AND v:#{version}")
+            return "#{@data.old_web_ui_url}/search?q=#{search_string}"
+          else
+            search_string = ERB::Util.url_encode("g:#{coord.group_id} v:#{version}")
+            return "#{@data.web_ui_url}/search?q=#{search_string}&sort=name"
+          end
+        end
+
+        def web_ui_artifact_url(group_id, artifact_id, version)
+          if @id != 'central'
+            raise StandardError, "Cannot generate web UI artifact links for repository: #{@id}"
+          end
+          return "#{@data.web_ui_url}/artifact/#{group_id}/#{artifact_id}/#{version}"
+        end
+
+        def direct_download_url(coord)
+          group_id_path = coord.group_id.gsub('.', '/')
+          return "#{@data.repo_url}/#{group_id_path}/"
+        end
       end
 
       class DocumentRef

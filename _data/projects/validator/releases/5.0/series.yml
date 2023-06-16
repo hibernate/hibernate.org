@@ -5,6 +5,8 @@ maven:
     group_id: org.hibernate
     main_artifact_id: hibernate-validator
     artifact_id_pattern: hibernate-validator-*
+  repo:
+    snapshots: jboss
   artifacts:
     - artifact_id: hibernate-validator
       summary: Core implementation
