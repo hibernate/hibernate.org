@@ -18,6 +18,10 @@ maven:
       repo_url: 'https://repo.maven.apache.org/maven2'
       web_ui_url: 'https://central.sonatype.com'
       old_web_ui_url: 'https://search.maven.org'
+      help_setup_url: 'https://central.sonatype.org/consume/'
+    ossrh_snapshots:
+      repo_url: 'https://oss.sonatype.org/content/repositories/snapshots'
+      web_ui_url: 'https://oss.sonatype.org/'
     jboss:
       repo_url: 'https://repository.jboss.org/nexus/content/repositories/public'
       web_ui_url: 'https://repository.jboss.org/nexus/index.html'

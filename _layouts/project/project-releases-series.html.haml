@@ -45,6 +45,10 @@ project_hero_partial: project/hero-series.html.haml
     %li
       %a.item{:href => "#whats-new"}
         What's new
+    - if maven_coord && !series.endoflife
+      %li
+        %a.item{:href => "#snapshots"}
+          Development versions (SNAPSHOTS)
     %li
       %a.item{:href => "#releases"}
         Releases in this series
@@ -125,6 +129,13 @@ project_hero_partial: project/hero-series.html.haml
           Maven artifacts of #{project_description.name} are published to
           %a{:href => site.maven.repo.central.web_ui_url}
             Maven Central.
+        %p
+          Most build tools fetch artifacts from Maven Central by default,
+          but if that's not the case for you,
+          see
+          %a{:href => site.maven.repo.central.help_setup_url}
+            this page
+          to configure your build tool.
         %p
           You can find the Maven coordinates of all artifacts through the link below:
           %p
@@ -257,6 +268,33 @@ project_hero_partial: project/hero-series.html.haml
       on our issue tracker.
 
 ~ content
+
+- if maven_coord && !series.endoflife
+  %h2{:id => "snapshots"} Development versions (SNAPSHOTS)
+  %p
+    The latest development versions of Maven artifacts for #{project_description.name}
+    are published to
+    %a{:href => site.maven.repo.ossrh_snapshots.web_ui_url}
+      the OSSRH snapshots repository.
+  %p
+    %a.ui.right.labeled.button.small.icon{:href => ossrh_snapshots_direct_download_url(maven_coord)}
+      %i.icon.folder.open
+      OSSRH snapshots subdirectory
+  %p
+    You should only need those (unstable) versions for testing recently merged patches,
+    and should never use them in production.
+  %p
+    To consume these artifacts, you may need to configure your build tool to fetch artifacts
+    from
+    %code= site.maven.repo.ossrh_snapshots.repo_url
+    and to enable snapshots:
+  %p
+    %a.ui.right.labeled.button.small.icon{:href => "https://maven.apache.org/settings.html#repositories"}
+      %i.icon.external.alternate
+      Maven
+    %a.ui.right.labeled.button.small.icon{:href => "https://docs.gradle.org/current/userguide/declaring_repositories.html#maven_repository_filtering"}
+      %i.icon.external.alternate
+      Gradle
 
 %h2{:id => "releases"} Releases in this series
 - if series.endoflife

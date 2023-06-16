@@ -44,6 +44,11 @@ module Awestruct
         return "#{@site.maven.repo.central.repo_url}/#{group_id_path}/"
       end
 
+      def ossrh_snapshots_direct_download_url(coord)
+        group_id_path = coord.group_id.gsub('.', '/')
+        return "#{@site.maven.repo.ossrh_snapshots.repo_url}/#{group_id_path}/"
+      end
+
       def github_issues_url(project)
         return "https://github.com/hibernate/#{project.github['project']}/issues?q=is%3Aissue+is%3Aclosed+"
       end
