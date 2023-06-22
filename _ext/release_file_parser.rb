@@ -335,7 +335,7 @@ module Awestruct
         pom_name = get_pom_name(group_id, artifact_id, version)
         # to avoid net access cache the downloaded POMs into the _tmp directory
         cached_pom = File.join(tmp_dir, pom_name)
-        if File.exists?(cached_pom)
+        if File.exist?(cached_pom)
           $LOG.info "Cache hit: #{gav}" if $LOG.info?
           f = File.open(cached_pom)
           doc = Nokogiri::XML(f)
