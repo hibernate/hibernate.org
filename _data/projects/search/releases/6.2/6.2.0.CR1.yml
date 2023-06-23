@@ -1,0 +1,10 @@
+date: 2023-06-26
+announcement_url: https://in.relation.to/2023/06/26/hibernate-search-6-2-0-CR1
+summary: >-
+  New `excludePaths` filter for `@IndexedEmbedded`,
+  `includePaths`/`includeDepth`/`excludePaths` filters for `@ObjectProjection`,
+  compatibility with OpenSearch 2.8,
+  upgrade to Hibernate ORM 5.6.15.Final,
+  upgrade of `-orm6` artifacts to Hibernate ORM 6.2.5.Final,
+  dropped compatibility of `-orm6` artifacts with Hibernate ORM 6.0/6.1,
+  other bugfixes and improvements.

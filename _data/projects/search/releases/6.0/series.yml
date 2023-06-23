@@ -3,6 +3,10 @@ summary: >-
   Safer and more concise Search DSL, more powerful bridges, smarter automatic indexing, nested documents.
   Upgrades to Lucene 8 and Elasticsearch 7.
 endoflife: true
+links:
+  getting_started_guide:
+    html: https://docs.jboss.org/hibernate/search/{series.version}/reference/en-US/html_single/#getting-started
+    pdf: https://docs.jboss.org/hibernate/search/{series.version}/reference/en-US/pdf/hibernate_search_reference.pdf#getting-started
 maven:
   artifacts:
     - artifact_id: hibernate-search-mapper-orm

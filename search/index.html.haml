@@ -21,7 +21,7 @@ project: search
     * https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#mapper-orm-indexing-massindexer[**On-demand mass indexing**]
     of all entities in the database,
     to initialize the indexes with pre-existing data.
-    * https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#mapper-orm-indexing-automatic[**On-the-fly automatic indexing**]
+    * https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#mapper-orm-indexing-automatic[**On-the-fly listener-triggered indexing**]
     of entities modified through a Hibernate ORM session,
     to always keep the indexes up-to-date.
     * https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#search-dsl[**A Search DSL**]
@@ -84,7 +84,7 @@ project: search
     indexer.startAndWait();
     ----
 
-    Automatic indexing does not require any change to code based on JPA or Hibernate ORM:
+    Listener-triggered indexing does not require any change to code based on JPA or Hibernate ORM:
 
     [source,java]
     ----

@@ -19,7 +19,7 @@ The Elasticsearch backend now works with Elasticsearch 8.8 and 7.17
 as well as other versions that were already compatible.
 [[opensearch-version]]
 OpenSearch::
-The Elasticsearch backend now works with OpenSearch 1.3 and 2.7
+The Elasticsearch backend now works with OpenSearch 1.3 and 2.8
 as well as other versions that were already compatible.
 
 [[mapper-pojo-standalone]]
@@ -192,6 +192,13 @@ for more information.
 [[mapping-improvements]]
 === Mapping improvements
 
+`@IndexedEmbedded(excludePaths = ...)`::
+The `@IndexedEmbedded` annotation now exposes an `excludePaths` attribute,
+allowing the inclusion of all paths with only a few selectively excluded,
+as opposed to the previous approach of selectively including paths with `includePaths`.
++
+See link:{hsearch-doc-url-prefix}#mapping-indexedembedded-filtering[this section of the reference documentation]
+for more information.
 Projectable fields::
 All fields are now projectable by default with the Elasticsearch backend.
 +
