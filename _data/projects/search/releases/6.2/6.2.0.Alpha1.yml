@@ -1,7 +1,7 @@
 date: 2022-07-12
 announcement_url: https://in.relation.to/2022/07/12/hibernate-search-6-2-0-Alpha1
 summary: >-
-  Standalone POJO Mapper, mapping of classes/records to projections using @ProjectionConstructor,
+  Standalone POJO Mapper, mapping of classes/records to projections using `@ProjectionConstructor`,
   search DSL improvements (including projections on object fields),
   compatibility with Elasticsearch 8.3 and OpenSearch 2.0,
   other bugfixes and improvements.

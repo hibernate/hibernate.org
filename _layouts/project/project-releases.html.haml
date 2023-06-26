@@ -34,7 +34,10 @@ project_buttons_partial: project/releases-buttons.html.haml
             = series.version
             %small
               = release.date
-          %p= series.summary
+          %p
+            :asciidoc
+              :doctype: inline
+              #{series.summary.strip}
           .ui.right.aligned.basic.segment
             %a.ui.right.labeled.icon.button.primary{:href => "./#{series.version}/"}
               %i.right.arrow.icon
@@ -72,7 +75,10 @@ project_buttons_partial: project/releases-buttons.html.haml
               = series.version
               %small
                 = release.date
-            %p= series.summary
+            %p
+              :asciidoc
+                :doctype: inline
+                #{series.summary.strip}
             .ui.right.aligned.basic.segment
               %a.ui.right.labeled.icon.button.primary{:href => "./#{series.version}/"}
                 %i.right.arrow.icon

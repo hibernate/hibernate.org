@@ -155,7 +155,10 @@ project_hero_partial: project/hero-series.html.haml
                 %div.header
                   <span class="faded">#{group_id}:</span>#{artifact_id}</strong><span class="faded">:#{version}</span>
                 %div.content
-                  %div.description= artifact[:summary] || artifact.artifact_id
+                  %div.description
+                    :asciidoc
+                      :doctype: inline
+                      #{(artifact[:summary] || artifact.artifact_id).strip}
         - if latest_release_maven&.signing&.since
           %p
             All Maven artifacts of this project released after #{latest_release_maven.signing.since} are signed.
@@ -330,7 +333,9 @@ project_hero_partial: project/hero-series.html.haml
         .thirteen.wide.column
           - if release[:summary]
             %p
-              = release.summary
+              :asciidoc
+                :doctype: inline
+                #{release.summary.strip}
           - if available && latest_release.version == version
             %p
               %a.ui.small.right.labeled.icon.button{:href => '#get-it'}

@@ -4,5 +4,6 @@
 .page-title.small
   .ui.container
     %h4
-      = series.summary
-      
+      :asciidoc
+        :doctype: inline
+        #{series.summary.strip}
