@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10};
+var data = {"i0":10,"i1":10,"i2":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -138,12 +138,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/persister/entity/mutation/UpdateCoordinator.html?is-external=true" title="class or interface in org.hibernate.persister.entity.mutation" class="externalLink">UpdateCoordinator</a></code>, <code><a href="ReactiveUpdateCoordinator.html" title="interface in org.hibernate.reactive.persister.entity.mutation">ReactiveUpdateCoordinator</a></code></dd>
+<dd><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/persister/entity/mutation/UpdateCoordinator.html?is-external=true" title="class or interface in org.hibernate.persister.entity.mutation" class="externalLink">UpdateCoordinator</a></code>, <code><a href="ReactiveScopedUpdateCoordinator.html" title="interface in org.hibernate.reactive.persister.entity.mutation">ReactiveScopedUpdateCoordinator</a></code>, <code><a href="ReactiveUpdateCoordinator.html" title="interface in org.hibernate.reactive.persister.entity.mutation">ReactiveUpdateCoordinator</a></code></dd>
 </dl>
 <hr>
 <pre>public class <span class="typeNameLabel">ReactiveUpdateCoordinatorNoOp</span>
 extends <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/persister/entity/mutation/UpdateCoordinatorNoOp.html?is-external=true" title="class or interface in org.hibernate.persister.entity.mutation" class="externalLink">UpdateCoordinatorNoOp</a>
-implements <a href="ReactiveUpdateCoordinator.html" title="interface in org.hibernate.reactive.persister.entity.mutation">ReactiveUpdateCoordinator</a></pre>
+implements <a href="ReactiveScopedUpdateCoordinator.html" title="interface in org.hibernate.reactive.persister.entity.mutation">ReactiveScopedUpdateCoordinator</a>, <a href="ReactiveUpdateCoordinator.html" title="interface in org.hibernate.reactive.persister.entity.mutation">ReactiveUpdateCoordinator</a></pre>
 </li>
 </ul>
 </div>
@@ -209,6 +209,11 @@ implements <a href="ReactiveUpdateCoordinator.html" title="interface in org.hibe
                 int[]&nbsp;dirtyAttributeIndexes,
                 boolean&nbsp;hasDirtyCollection,
                 <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">SharedSessionContractImplementor</a>&nbsp;session)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="ReactiveScopedUpdateCoordinator.html" title="interface in org.hibernate.reactive.persister.entity.mutation">ReactiveScopedUpdateCoordinator</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#makeScopedCoordinator()">makeScopedCoordinator</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </table>
@@ -294,7 +299,7 @@ implements <a href="ReactiveUpdateCoordinator.html" title="interface in org.hibe
 <a id="coordinateReactiveUpdate(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object[],java.lang.Object,java.lang.Object[],int[],boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>coordinateReactiveUpdate</h4>
 <pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;coordinateReactiveUpdate&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity,
@@ -308,7 +313,20 @@ implements <a href="ReactiveUpdateCoordinator.html" title="interface in org.hibe
                                                       <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html?is-external=true" title="class or interface in org.hibernate.engine.spi" class="externalLink">SharedSessionContractImplementor</a>&nbsp;session)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="ReactiveUpdateCoordinator.html#coordinateReactiveUpdate(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object%5B%5D,java.lang.Object,java.lang.Object%5B%5D,int%5B%5D,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)">coordinateReactiveUpdate</a></code>&nbsp;in interface&nbsp;<code><a href="ReactiveUpdateCoordinator.html" title="interface in org.hibernate.reactive.persister.entity.mutation">ReactiveUpdateCoordinator</a></code></dd>
+<dd><code><a href="ReactiveScopedUpdateCoordinator.html#coordinateReactiveUpdate(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object%5B%5D,java.lang.Object,java.lang.Object%5B%5D,int%5B%5D,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)">coordinateReactiveUpdate</a></code>&nbsp;in interface&nbsp;<code><a href="ReactiveScopedUpdateCoordinator.html" title="interface in org.hibernate.reactive.persister.entity.mutation">ReactiveScopedUpdateCoordinator</a></code></dd>
+</dl>
+</li>
+</ul>
+<a id="makeScopedCoordinator()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>makeScopedCoordinator</h4>
+<pre class="methodSignature">public&nbsp;<a href="ReactiveScopedUpdateCoordinator.html" title="interface in org.hibernate.reactive.persister.entity.mutation">ReactiveScopedUpdateCoordinator</a>&nbsp;makeScopedCoordinator()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="ReactiveUpdateCoordinator.html#makeScopedCoordinator()">makeScopedCoordinator</a></code>&nbsp;in interface&nbsp;<code><a href="ReactiveUpdateCoordinator.html" title="interface in org.hibernate.reactive.persister.entity.mutation">ReactiveUpdateCoordinator</a></code></dd>
 </dl>
 </li>
 </ul>
