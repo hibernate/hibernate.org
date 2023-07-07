@@ -35,7 +35,7 @@ For more information about the Standalone POJO Mapper,
 see link:{hsearch-doc-url-prefix}#mapper-pojo-standalone[this section of the reference documentation].
 
 To get started with the Standalone POJO Mapper,
-see link:{hsearch-doc-url-prefix}#mapper-pojo-standalone-getting-started[this getting started guide].
+see link:{hsearch-getting-started-standadlone-url-prefix}[this getting started guide].
 
 [[mapping-projection]]
 === Mapping index content to custom types (projection constructors)
@@ -157,8 +157,8 @@ for more information.
 [[indexing-plan-filter]]
 === Indexing plan filters
 
-With link:{hsearch-jira-url-prefix}/HSEARCH-168[HSEARCH-168]/link:{hsearch-jira-url-prefix}/HSEARCH-1383[HSEARCH-1383],
-Hibernate Search now allow enabling/disabling indexing in indexing plans (which include in particular automatic indexing),
+Hibernate Search now allows enabling/disabling indexing in indexing plans
+(which includes in particular listener-triggered indexing),
 both fully (for all types) or on a per-type basis.
 
 For example, the following will disable automatic indexing
@@ -195,7 +195,7 @@ for more information.
 `@IndexedEmbedded(excludePaths = ...)`::
 The `@IndexedEmbedded` annotation now exposes an `excludePaths` attribute,
 allowing the inclusion of all paths with only a few selectively excluded,
-as opposed to the previous approach of selectively including paths with `includePaths`.
+as opposed to the pre-existing approach of selectively including paths with `includePaths`.
 +
 See link:{hsearch-doc-url-prefix}#mapping-indexedembedded-filtering[this section of the reference documentation]
 for more information.
