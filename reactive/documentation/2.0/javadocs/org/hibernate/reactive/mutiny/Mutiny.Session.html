@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6,"i30":18,"i31":6,"i32":6,"i33":6,"i34":6,"i35":6,"i36":6,"i37":6,"i38":6,"i39":6,"i40":6,"i41":6,"i42":6,"i43":6,"i44":6,"i45":6,"i46":6,"i47":18,"i48":6,"i49":6,"i50":6,"i51":6,"i52":6,"i53":6,"i54":18,"i55":6,"i56":6,"i57":6,"i58":6,"i59":6,"i60":6,"i61":18,"i62":18,"i63":6,"i64":18,"i65":6,"i66":6,"i67":6,"i68":6};
+var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6,"i30":18,"i31":6,"i32":6,"i33":6,"i34":6,"i35":6,"i36":6,"i37":6,"i38":6,"i39":6,"i40":6,"i41":6,"i42":6,"i43":6,"i44":6,"i45":6,"i46":6,"i47":6,"i48":18,"i49":6,"i50":6,"i51":6,"i52":6,"i53":6,"i54":6,"i55":18,"i56":6,"i57":6,"i58":6,"i59":6,"i60":6,"i61":6,"i62":18,"i63":18,"i64":6,"i65":18,"i66":6,"i67":6,"i68":6,"i69":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -492,20 +492,27 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 </td>
 </tr>
 <tr id="i38" class="altColor">
+<td class="colFirst"><code><a href="Mutiny.SessionFactory.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SessionFactory</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getFactory()">getFactory</a></span>()</code></th>
+<td class="colLast">
+<div class="block">The <a href="Mutiny.SessionFactory.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.SessionFactory</code></a> which created this session.</div>
+</td>
+</tr>
+<tr id="i39" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/FlushMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">FlushMode</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getFlushMode()">getFlushMode</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get the current flush mode for this session.</div>
 </td>
 </tr>
-<tr id="i39" class="rowColor">
+<tr id="i40" class="altColor">
 <td class="colFirst"><code><a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getLockMode(java.lang.Object)">getLockMode</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</code></th>
 <td class="colLast">
 <div class="block">Determine the current lock mode of the given entity.</div>
 </td>
 </tr>
-<tr id="i40" class="altColor">
+<tr id="i41" class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getReference(java.lang.Class,java.lang.Object)">getReference</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;entityClass,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;id)</code></th>
@@ -514,7 +521,7 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
  given identifier, assuming that the instance exists.</div>
 </td>
 </tr>
-<tr id="i41" class="rowColor">
+<tr id="i42" class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getReference(T)">getReference</a></span>&#8203;(T&nbsp;entity)</code></th>
 <td class="colLast">
@@ -523,7 +530,7 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
  still persistent in the database.</div>
 </td>
 </tr>
-<tr id="i42" class="altColor">
+<tr id="i43" class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;T&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getResultSetMapping(java.lang.Class,java.lang.String)">getResultSetMapping</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;resultType,
                    <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;mappingName)</code></th>
@@ -532,12 +539,12 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
  <code>SqlResultSetMapping</code>.</div>
 </td>
 </tr>
-<tr id="i43" class="rowColor">
+<tr id="i44" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isDefaultReadOnly()">isDefaultReadOnly</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i44" class="altColor">
+<tr id="i45" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isFetchProfileEnabled(java.lang.String)">isFetchProfileEnabled</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
 <td class="colLast">
@@ -545,19 +552,19 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
  session.</div>
 </td>
 </tr>
-<tr id="i45" class="rowColor">
+<tr id="i46" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isOpen()">isOpen</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i46" class="altColor">
+<tr id="i47" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isReadOnly(java.lang.Object)">isReadOnly</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entityOrProxy)</code></th>
 <td class="colLast">
 <div class="block">Is the specified entity or proxy read-only?</div>
 </td>
 </tr>
-<tr id="i47" class="rowColor">
+<tr id="i48" class="altColor">
 <td class="colFirst"><code>default io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#lock(java.lang.Object,jakarta.persistence.LockModeType)">lock</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity,
     jakarta.persistence.LockModeType&nbsp;lockModeType)</code></th>
@@ -565,7 +572,7 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <div class="block">Obtain the specified lock level upon the given object.</div>
 </td>
 </tr>
-<tr id="i48" class="altColor">
+<tr id="i49" class="rowColor">
 <td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#lock(java.lang.Object,org.hibernate.LockMode)">lock</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity,
     <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a>&nbsp;lockMode)</code></th>
@@ -573,7 +580,7 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <div class="block">Obtain the specified lock level upon the given object.</div>
 </td>
 </tr>
-<tr id="i49" class="rowColor">
+<tr id="i50" class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#merge(T)">merge</a></span>&#8203;(T&nbsp;entity)</code></th>
 <td class="colLast">
@@ -581,14 +588,14 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
  the same identifier.</div>
 </td>
 </tr>
-<tr id="i50" class="altColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#mergeAll(T...)">mergeAll</a></span>&#8203;(T...&nbsp;entities)</code></th>
+<tr id="i51" class="rowColor">
+<td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#mergeAll(java.lang.Object...)">mergeAll</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</code></th>
 <td class="colLast">
 <div class="block">Merge multiple entity instances at once.</div>
 </td>
 </tr>
-<tr id="i51" class="rowColor">
+<tr id="i52" class="altColor">
 <td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#persist(java.lang.Object)">persist</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</code></th>
 <td class="colLast">
@@ -596,21 +603,21 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
  a generated identifier.</div>
 </td>
 </tr>
-<tr id="i52" class="altColor">
+<tr id="i53" class="rowColor">
 <td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#persistAll(java.lang.Object...)">persistAll</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</code></th>
 <td class="colLast">
 <div class="block">Persist multiple transient entity instances at once.</div>
 </td>
 </tr>
-<tr id="i53" class="rowColor">
+<tr id="i54" class="altColor">
 <td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#refresh(java.lang.Object)">refresh</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</code></th>
 <td class="colLast">
 <div class="block">Re-read the state of the given instance from the underlying database.</div>
 </td>
 </tr>
-<tr id="i54" class="altColor">
+<tr id="i55" class="rowColor">
 <td class="colFirst"><code>default io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#refresh(java.lang.Object,jakarta.persistence.LockModeType)">refresh</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity,
        jakarta.persistence.LockModeType&nbsp;lockModeType)</code></th>
@@ -619,7 +626,7 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
  requesting the given <code>LockModeType</code>.</div>
 </td>
 </tr>
-<tr id="i55" class="rowColor">
+<tr id="i56" class="altColor">
 <td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#refresh(java.lang.Object,org.hibernate.LockMode)">refresh</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity,
        <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">LockMode</a>&nbsp;lockMode)</code></th>
@@ -628,28 +635,28 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
  requesting the given <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/LockMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>LockMode</code></a>.</div>
 </td>
 </tr>
-<tr id="i56" class="altColor">
+<tr id="i57" class="rowColor">
 <td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#refreshAll(java.lang.Object...)">refreshAll</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</code></th>
 <td class="colLast">
 <div class="block">Refresh multiple entity instances at once.</div>
 </td>
 </tr>
-<tr id="i57" class="rowColor">
+<tr id="i58" class="altColor">
 <td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#remove(java.lang.Object)">remove</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</code></th>
 <td class="colLast">
 <div class="block">Asynchronously remove a persistent instance from the datastore.</div>
 </td>
 </tr>
-<tr id="i58" class="altColor">
+<tr id="i59" class="rowColor">
 <td class="colFirst"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeAll(java.lang.Object...)">removeAll</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</code></th>
 <td class="colLast">
 <div class="block">Remove multiple entity instances at once.</div>
 </td>
 </tr>
-<tr id="i59" class="rowColor">
+<tr id="i60" class="altColor">
 <td class="colFirst"><code><a href="Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setBatchSize(java.lang.Integer)">setBatchSize</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a>&nbsp;batchSize)</code></th>
 <td class="colLast">
@@ -657,28 +664,28 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
  by the configuration property <code>hibernate.jdbc.batch_size</code>.</div>
 </td>
 </tr>
-<tr id="i60" class="altColor">
+<tr id="i61" class="rowColor">
 <td class="colFirst"><code><a href="Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCacheMode(org.hibernate.CacheMode)">setCacheMode</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/CacheMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">CacheMode</a>&nbsp;cacheMode)</code></th>
 <td class="colLast">
 <div class="block">Set the <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/CacheMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>cache mode</code></a> for this session.</div>
 </td>
 </tr>
-<tr id="i61" class="rowColor">
+<tr id="i62" class="altColor">
 <td class="colFirst"><code>default <a href="Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCacheRetrieveMode(jakarta.persistence.CacheRetrieveMode)">setCacheRetrieveMode</a></span>&#8203;(jakarta.persistence.CacheRetrieveMode&nbsp;cacheRetrieveMode)</code></th>
 <td class="colLast">
 <div class="block">Set the <code>CacheRetrieveMode</code> for this session.</div>
 </td>
 </tr>
-<tr id="i62" class="altColor">
+<tr id="i63" class="rowColor">
 <td class="colFirst"><code>default <a href="Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCacheStoreMode(jakarta.persistence.CacheStoreMode)">setCacheStoreMode</a></span>&#8203;(jakarta.persistence.CacheStoreMode&nbsp;cacheStoreMode)</code></th>
 <td class="colLast">
 <div class="block">Set the <code>CacheStoreMode</code> for this session.</div>
 </td>
 </tr>
-<tr id="i63" class="rowColor">
+<tr id="i64" class="altColor">
 <td class="colFirst"><code><a href="Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setDefaultReadOnly(boolean)">setDefaultReadOnly</a></span>&#8203;(boolean&nbsp;readOnly)</code></th>
 <td class="colLast">
@@ -686,21 +693,21 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
  from modifiable to read-only mode, or from modifiable to read-only mode.</div>
 </td>
 </tr>
-<tr id="i64" class="altColor">
+<tr id="i65" class="rowColor">
 <td class="colFirst"><code>default <a href="Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setFlushMode(jakarta.persistence.FlushModeType)">setFlushMode</a></span>&#8203;(jakarta.persistence.FlushModeType&nbsp;flushModeType)</code></th>
 <td class="colLast">
 <div class="block">Set the <code>flush mode</code> for this session.</div>
 </td>
 </tr>
-<tr id="i65" class="rowColor">
+<tr id="i66" class="altColor">
 <td class="colFirst"><code><a href="Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setFlushMode(org.hibernate.FlushMode)">setFlushMode</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/FlushMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">FlushMode</a>&nbsp;flushMode)</code></th>
 <td class="colLast">
 <div class="block">Set the <a href="https://docs.jboss.org/hibernate/orm/6.2/javadocs/org/hibernate/FlushMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>flush mode</code></a> for this session.</div>
 </td>
 </tr>
-<tr id="i66" class="altColor">
+<tr id="i67" class="rowColor">
 <td class="colFirst"><code><a href="Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setReadOnly(java.lang.Object,boolean)">setReadOnly</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entityOrProxy,
            boolean&nbsp;readOnly)</code></th>
@@ -709,7 +716,7 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
  object to modifiable mode.</div>
 </td>
 </tr>
-<tr id="i67" class="rowColor">
+<tr id="i68" class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#unproxy(T)">unproxy</a></span>&#8203;(T&nbsp;association)</code></th>
 <td class="colLast">
@@ -717,7 +724,7 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
  and unwrap the underlying entity implementation from any proxy.</div>
 </td>
 </tr>
-<tr id="i68" class="altColor">
+<tr id="i69" class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withTransaction(java.util.function.Function)">withTransaction</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function" class="externalLink">Function</a>&lt;<a href="Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a>,&#8203;io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</code></th>
 <td class="colLast">
@@ -1046,15 +1053,13 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 </dl>
 </li>
 </ul>
-<a id="mergeAll(java.lang.Object[])">
-<!--   -->
-</a><a id="mergeAll(T...)">
+<a id="mergeAll(java.lang.Object...)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>mergeAll</h4>
-<pre class="methodSignature">&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;mergeAll&#8203;(T...&nbsp;entities)</pre>
+<pre class="methodSignature">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html?is-external=true" title="class or interface in java.lang" class="externalLink">Void</a>&gt;&nbsp;mergeAll&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;entities)</pre>
 <div class="block">Merge multiple entity instances at once.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -2102,7 +2107,7 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <a id="isOpen()">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>isOpen</h4>
 <pre class="methodSignature">boolean&nbsp;isOpen()</pre>
@@ -2110,6 +2115,16 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>false if <a href="Mutiny.Closeable.html#close()"><code>Mutiny.Closeable.close()</code></a> has been called</dd>
 </dl>
+</li>
+</ul>
+<a id="getFactory()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getFactory</h4>
+<pre class="methodSignature"><a href="Mutiny.SessionFactory.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SessionFactory</a>&nbsp;getFactory()</pre>
+<div class="block">The <a href="Mutiny.SessionFactory.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.SessionFactory</code></a> which created this session.</div>
 </li>
 </ul>
 </li>
