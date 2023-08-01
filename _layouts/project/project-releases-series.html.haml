@@ -51,7 +51,7 @@ project_hero_partial: project/hero-series.html.haml
       %a.item{:href => "#releases"}
         Releases in this series
 
-- if series.endoflife
+- if series.status == 'endoflife'
   :asciidoc
     :projectName: #{project_description.name}
     :version: #{series.version}
@@ -64,7 +64,22 @@ project_hero_partial: project/hero-series.html.haml
     * pull requests against this version will be rejected;
     * bug reproducers using this version will be given lower priority.
 
-    We encourage you to upgrade to a newer series if possible.
+    We recommend that you upgrade to a newer series if possible.
+    ====
+- elsif series.status == 'limited-support'
+  :asciidoc
+    :projectName: #{project_description.name}
+    :version: #{series.version}
+    [WARNING]
+    ====
+    {projectName} {version} is in limited support mode:
+
+    * releases may be delayed until a significant need arises;
+    * bugs will only be fixed if they are considered significant enough or in the context of paid support;
+    * pull requests against this version might be rejected for bugs that are not considered critical enough;
+    * bug reproducers using this version will be given lower priority.
+
+    We recommend that you upgrade to a newer series if possible or look for link:../../support[paid support].
     ====
 
 - unless series.integration_constraints.nil? || series.integration_constraints.empty?
@@ -110,13 +125,21 @@ project_hero_partial: project/hero-series.html.haml
     documentation page.
 
 %h2{:id => "get-it"} How to get it
-- if series.endoflife
+- if series.status == 'end-of-life'
   :asciidoc
     :projectName: #{project_description.name}
     :version: #{series.version}
     [WARNING]
     ====
-    {projectName} {version} has reached its end-of-life: we recommend you use a newer series if possible.
+    {projectName} {version} has reached its end-of-life: we recommend that you upgrade to a newer series if possible.
+    ====
+- elsif series.status == 'limited-support'
+  :asciidoc
+    :projectName: #{project_description.name}
+    :version: #{series.version}
+    [WARNING]
+    ====
+    {projectName} {version} is in limited maintenance mode: we recommend that you upgrade to a newer series if possible or look for link:../../support[paid support].
     ====
 .ui.grid.equal.height.stackable.download-options
   .row
@@ -202,13 +225,21 @@ project_hero_partial: project/hero-series.html.haml
 
 - if not getting_started_guide.nil?
   %h2{:id => "getting_started"} Getting started
-  - if series.endoflife
+  - if series.status == 'end-of-life'
     :asciidoc
       :projectName: #{project_description.name}
       :version: #{series.version}
       [WARNING]
       ====
-      {projectName} {version} has reached its end-of-life: we recommend you use a newer series if possible.
+      {projectName} {version} has reached its end-of-life: we recommend that you upgrade to a newer series if possible.
+      ====
+  - elsif series.status == 'limited-support'
+    :asciidoc
+      :projectName: #{project_description.name}
+      :version: #{series.version}
+      [WARNING]
+      ====
+      {projectName} {version} is in limited maintenance mode: we recommend that you upgrade to a newer series if possible or look for link:../../support[paid support].
       ====
   %p
     If you want to start using #{project_description.name} #{series.version}, please refer to the getting started guide:
@@ -300,13 +331,21 @@ project_hero_partial: project/hero-series.html.haml
       Gradle
 
 %h2{:id => "releases"} Releases in this series
-- if series.endoflife
+- if series.status == 'end-of-life'
   :asciidoc
     :projectName: #{project_description.name}
     :version: #{series.version}
     [WARNING]
     ====
-    {projectName} {version} has reached its end-of-life: we recommend you use a newer series if possible.
+    {projectName} {version} has reached its end-of-life: we recommend that you upgrade to a newer series if possible.
+    ====
+- elsif series.status == 'limited-support'
+  :asciidoc
+    :projectName: #{project_description.name}
+    :version: #{series.version}
+    [WARNING]
+    ====
+    {projectName} {version} is in limited maintenance mode: we recommend that you upgrade to a newer series if possible or look for link:../../support[paid support].
     ====
 - unless series.nil?
   .ui.stackable.grid.series-versions
@@ -317,17 +356,21 @@ project_hero_partial: project/hero-series.html.haml
       .ui.row
         .three.wide.column
           %p
-            - if series.endoflife
+            - if series.status == 'end-of-life'
               %span.ui.label.version.red
-                %span{:data => {:tooltip => "#{project_description.name} #{series.version} has reached its end-of-life: \n we recommend that you use a newer series if possible.", :position => "right center"}}
+                %span{:data => {:tooltip => "#{project_description.name} #{series.version} has reached its end-of-life: \nwe recommend that you upgrade to a newer series if possible, \nbecause we are unlikely to fix bugs or provide new releases for this series.", :position => "right center"}}
                   = version
-            - elsif release.stable
-              %span.ui.label.version.green
-                = version
-            - else
+            - elsif !release.stable
               %span.ui.label.version.orange
                 %span{:data => {:tooltip => "This is a development release: be prepared for changes.", :position => "right center"}}
                   = version
+            - elsif series.status == 'limited-support'
+              %span.ui.label.version.yellow
+                %span{:data => {:tooltip => "#{project_description.name} #{series.version} is in limited support mode: \nwe recommend that you upgrade to a newer series if possible \nor look for paid support, because we will not always fix bugs \nor provide timely releases for this series.\nDownstream frameworks or commercial offerings (e.g. Red Hat's) \nmay provide stronger guarantees.", :position => "right center"}}
+                  = version
+            - else
+              %span.ui.label.version.green
+                = version
           %p
             %small.ui.label= release.date
         .thirteen.wide.column

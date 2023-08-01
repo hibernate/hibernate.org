@@ -2,14 +2,23 @@
 - classes = page["classes"]
 - tooltipPosition = page["tooltipPosition"] || "bottom center"
 
-- if series.endoflife
+- if series.status == 'end-of-life'
   %span.ui.label.red{:class => "#{classes}"}
-    %span{:data => {:tooltip => "#{series.project.name} #{series.version} has reached its end-of-life: \n we recommend that you use a newer series if possible.", :position => tooltipPosition}}
+    %span{:data => tooltipPosition == "none" ? Hash.new : {:tooltip => "#{series.project.name} #{series.version} has reached its end-of-life: \nwe recommend that you upgrade to a newer series if possible, \nbecause we are unlikely to fix bugs or provide new releases for this series.", :position => tooltipPosition}}
       end-of-life
-- elsif series.stable
+- elsif series.status == 'stable'
   %span.ui.label.green{:class => "#{classes}"}
     stable
-- else
+- elsif series.status == 'latest-stable'
+  %span.ui.label.green{:class => "#{classes}"}
+    latest stable
+- elsif series.status == 'development'
   %span.ui.label.orange{:class => "#{classes}"}
-    %span{:data => {:tooltip => "#{series.project.name} #{series.version} is still in development: \n we encourage you to try it, but be prepared for changes.", :position => tooltipPosition}}
+    %span{:data => tooltipPosition == "none" ? Hash.new : {:tooltip => "#{series.project.name} #{series.version} is still in development: \nwe encourage you to try it, but be prepared for changes.", :position => tooltipPosition}}
       development
+- elsif series.status == 'limited-support'
+  %span.ui.label.yellow{:class => "#{classes}"}
+    %span{:data => tooltipPosition == "none" ? Hash.new : {:tooltip => "#{series.project.name} #{series.version} is in limited support mode: \nwe recommend that you upgrade to a newer series if possible \nor look for paid support, because we will not always fix bugs \nor provide timely releases for this series.\nDownstream frameworks or commercial offerings (e.g. Red Hat's) \nmay provide stronger guarantees.", :position => tooltipPosition}}
+      limited-support
+- else
+  - raise StandardError, "Unsupported series status: #{series.status}"

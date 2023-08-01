@@ -203,11 +203,27 @@ in the `_data/<project ID>/releases/<series version>` directory.
 
 For information about the content of each file, see <<data_directory,here>>.
 
-=== Older/end-of-life'd series
+=== Series status
 
-To mark a series as end-of-life (no longer maintained) and display the corresponding warnings,
+By default, a series will have the following status (the small label appearing here and there on the website):
+
+* `development` if all it's releases are unstable (still in development);
+* `latest-stable` if it's the latest series with a stable release;
+* `end-of-life` otherwise.
+
+To override this status,
 edit the `_data/<project ID>/releases/<series version>/series.yml` file
-to set the `endoflife` attribute to `true` (just add the attribute if it is missing).
+to set the `status` attribute to `true` (just add the attribute if it is missing).
+
+This attribute can in particular be set to:
+
+`limited-support`::
+to convey the intent of not automatically fixing all bugs,
+while downstream frameworks (Quarkus, WildFly) or commercial offerings (RHBQ, RHEAP)
+may still provide stronger guarantees.
+`stable`::
+to convey the intent of still actively maintaining the series,
+even if it is not the latest stable.
 
 By default, an end-of-life'd series is considered "older" and not displayed with the other series:
 it is not displayed in the drop-down "Releases" submenu,
@@ -220,7 +236,8 @@ and setting the `displayed` attribute to `true` or `false` (just add the attribu
 
 === Hide a specific release
 
-To hide an older series, edit the `_data/<project ID>/releases/<series version>/<release version>.yml` file
+To hide a specific release (not a series),
+edit the `_data/<project ID>/releases/<series version>/<release version>.yml` file
 to set the `displayed` attribute to `false` (just add the attribute if it is missing).
 
 To only hide download links and Maven coordinates,

@@ -127,9 +127,6 @@ module Awestruct
           series[:version] = File.basename( series_dir )
         end
         series[:releases] = Array.new
-        if ( series[:endoflife] == nil )
-          series[:endoflife] = false
-        end
         return series
       end
 
@@ -200,25 +197,40 @@ module Awestruct
             series.releases = releases
 
             series.stable = releases.first.stable
-            series.latest = false
-            series.latest_stable = false
 
             if !found_series
               found_series = true
               series.latest = true
               project[:latest_series] = series
+            else
+              series.latest = false
             end
             if !found_stable_series && series.stable
               found_stable_series = true
               series.latest_stable = true
               project[:latest_stable_series] = series
+              if series[:status] == nil
+                series[:status] = 'latest-stable'
+              end
+            else
+              series.latest_stable = false
+              if series[:status] == nil
+                if !series.stable
+                  series[:status] = 'development'
+                else
+                  # By default, stable series that are not the latest are considered end-of-life'd.
+                  # This can be overridden in yaml.
+                  series[:status] = 'end-of-life'
+                end
+              end
             end
+            series[:endoflife] = series[:status] == 'end-of-life'
           end
         end
         project[:active_release_series] = project[:release_series].nil? ? nil
-            : project[:release_series].values.select{|s| !s[:displayed].nil? ? s.displayed : !s.endoflife}
+            : project[:release_series].values.select{|s| !s[:displayed].nil? ? s.displayed : s[:status] != 'end-of-life'}
         project[:older_release_series] = project[:release_series].nil? ? nil
-            : project[:release_series].values.select{|s| !s[:displayed].nil? ? !s.displayed : s.endoflife}
+            : project[:release_series].values.select{|s| !s[:displayed].nil? ? !s.displayed : s[:status] == 'end-of-life'}
       end
 
       def downloadDependencies(project, series)

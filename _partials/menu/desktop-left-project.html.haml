@@ -22,13 +22,8 @@
             - submenu_active = current_path.start_with?(submenu_href)
             %a.item{:href => submenu_href, :class => "#{(submenu_active ? "selected" : "")}"}
               #{series.version}
-              - latest_release = series.releases[0]
-              - if !latest_release.stable
-                &nbsp;&nbsp;
-                %span.ui.label.orange development
-              - elsif stable_series.version == series.version
-                &nbsp;&nbsp;
-                %span.ui.label.green latest stable
+              &nbsp;&nbsp;
+              = partial( 'project/series-status-label.html.haml', { "series" => series, "tooltipPosition" => "right center" } )
     - elsif menu.documentation_submenu
       // Here we want to display all the known versions
       - documentation_displayed_series = project_description.release_series.values
@@ -41,11 +36,10 @@
             - submenu_active = current_path.start_with?(submenu_href)
             %a.item{:href => "#{submenu_href}", :class => "#{(submenu_active ? "selected" : "")}"}
               #{series.version}
-              - latest_release = series.releases[0]
-              - if !latest_release.stable
+              - if !series.stable
                 &nbsp;&nbsp;
                 %span.ui.label.orange development
-              - elsif stable_series.version == series.version
+              - elsif series.latest_stable
                 &nbsp;&nbsp;
                 %span.ui.label.green latest stable
     - else
