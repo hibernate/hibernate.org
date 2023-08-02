@@ -1,9 +1,8 @@
 - real_page = page["real_page"]
 
-.ui.container.banner
-  .logo
-    %a(href='/')
-      %img{:src => "/images/hibernate-logo.svg", :alt => 'Hibernate', :width => 200, :height => 53}
+.ui.container.banner.computer.only
+  %a.logo.hibernate(href='/')
+    %img{:src => "/images/hibernate-logo.svg", :alt => 'Hibernate'}
   .clearfix
 
   = partial( 'menu/desktop-top.html.haml', {"real_page" => real_page} )

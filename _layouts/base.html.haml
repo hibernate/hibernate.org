@@ -10,10 +10,13 @@
 
     .pusher
 
-      .mobile-menu-button-bar.mobile.only.print.hidden
+      .mobile-menu-button-bar.computer.hidden.print.hidden
+        %a.logo.hibernate(href='/')
+          %img{:src => "/images/hibernate-logo.svg", :alt => 'Hibernate'}
         %a.item#mobile-menu-toggle
           %i.sidebar.icon
           Menu
+        .clearfix
 
       / begin accesibility skip to top
       %ul.sr-only

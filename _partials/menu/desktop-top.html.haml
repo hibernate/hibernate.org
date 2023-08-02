@@ -1,7 +1,7 @@
 - real_page = page['real_page']
 - current_path = real_page.output_path.sub(/index\.html$/, "").sub(/\.html$/,"/")
 
-.ui.stackable.menu.mobile.hidden.print.hidden#nav
+.ui.stackable.menu#nav
   %a.item{:href => "/orm/", :class=>"#{'active' if current_path.start_with?('/orm')}"} ORM
   %a.item{:href => "/search/", :class=>"#{'active' if current_path.start_with?('/search')}"} Search
   %a.item{:href => "/validator/", :class=>"#{'active' if current_path.start_with?('/validator')}"} Validator

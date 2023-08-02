@@ -1,20 +1,15 @@
 /**
- * Red Hat logo image
- */
-
-div.logo img {
-    height: 44px;
-    width: auto;
-}
-
-/**
  * Banner
  */
 
 .banner {
-	.logo {
+	.logo.hibernate {
 		margin-top: 12px;
 		float: left;
+		img {
+			height: 44px;
+			width: auto;
+		}
 	}
 
 	.ui.menu {
@@ -382,13 +377,6 @@ pre {
 	}
 }
 
-// don't display the TOC on mobile
-@media only screen and (max-width: 1000px) {
-	#toc {
-		display: none;
-	}
-}
-
 /**
  * Home page
  */
@@ -697,8 +685,16 @@ pre .comment .conum {
 		text-align: right;
 	}
 	
-	.sponsor .logo:not(:last-child) {
-		margin-bottom: 20px;
+	.sponsor .logo {
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+		&.redhat, &.redhatdevelopers {
+			img {
+				height: 44px;
+				width: auto;
+			}
+		}
 	}
 }
 
@@ -718,12 +714,12 @@ pre .comment .conum {
 }
 
 .ui.items > .item > .content > a.header {
-    color: #4183C4;
+		color: #4183C4;
 }
 
 // Make sure newlines are properly rendered in tooltips (popups)
 [data-tooltip]:after {
-  white-space: pre;
+	white-space: pre;
 }
 
 // Semantic UI has these classes, however they're only applicable to
@@ -822,8 +818,8 @@ pre .comment .conum {
  * Various utilities
  */
 .faded {
-  font-weight: 400 !important;
-  opacity: 0.5;
+	font-weight: 400 !important;
+	opacity: 0.5;
 }
 
 /**
@@ -875,12 +871,21 @@ pre .comment .conum {
 
 .mobile-menu-button-bar {
 	background-color: #444;
-	border-bottom: 1px solid black;
-	padding: 10px;
+
+	.logo.hibernate {
+		float: right;
+		img {
+			margin: 4px;
+			height: 32px;
+			width: auto;
+		}
+	}
 
 	a.item {
+		margin: 10px;
 		cursor: pointer;
 		color: white;
+		float: left;
 
 		&:hover {
 			color: #DDD;
