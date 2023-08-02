@@ -26,10 +26,8 @@
           %a.item{:href => "https://access.redhat.com/security/team/contact/", :title => "Report a security issue"} Report a security issue
           %a.item{:href => "#{relative("/community/license", real_page)}", :title => "License"} License
       .five.wide.column.sponsor
-        .logo
-          %a(href="https://www.redhat.com/")
-            %img{:src => "/images/sponsored-by-redhat.svg", :title => "Red Hat"}
-        -#.logo
-          %a(href="https://developers.redhat.com/")
-            %img{:src => "#{relative("/images/redhat-developers.png", real_page)}", :title => "Red Hat Developers", :width => 216, :height => 48}
+        %a.logo.redhat(href="https://www.redhat.com/")
+          %img{:src => "/images/sponsored-by-redhat.svg", :title => "Red Hat"}
+        -#%a.logo.redhatdevelopers(href="https://developers.redhat.com/")
+          %img{:src => "#{relative("/images/redhat-developers.png", real_page)}", :title => "Red Hat Developers", :width => 216, :height => 48}
  

@@ -18,7 +18,8 @@ project_hero_partial: project/hero-series.html.haml
 - migration_guide = migration_guide(project_description, series)
 - dist_sourceforge = dist_sourceforge(project_description, series, latest_release)
 
-#toc
+-# The TOC is just for convenience but too large for mobile
+#toc.mobile.hidden
   #toctitle
     Quick links
   %ul
