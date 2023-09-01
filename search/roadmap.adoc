@@ -13,36 +13,6 @@ You can find a finer grained roadmap in our https://hibernate.atlassian.net/brow
 
 Dates are generally omitted: milestones are released regularly, the Final release is tagged when it's considered stable.
 
-== Hibernate Search 6.2
-
-For a full list of issues currently planned for this series,
-see https://hibernate.atlassian.net/issues/?jql=project%20%3D%20HSEARCH%20AND%20fixVersion%20%3D%206.2-backlog%20ORDER%20BY%20created%20DESC[here].
-
-Better control over indexing::
-Hibernate Search 6.2 will provide ways to suspend automatic indexing.
-See link:{hsearch-jira-url-prefix}/HSEARCH-168[HSEARCH-168], link:{hsearch-jira-url-prefix}/HSEARCH-1383[HSEARCH-1383].
-Hibernate Search for arbitrary data sources::
-Experimental module allowing integration with a datastore that is not accessed using Hibernate ORM.
-+
-Users will need to put in more work to configure it, in particular they will need to capture insert/update/delete events
-themselves.
-+
-Nevertheless, this could be useful for people looking to add full-text search to any application,
-not just applications relying on Hibernate ORM.
-+
-See also link:{hsearch-jira-url-prefix}/HSEARCH-1800[HSEARCH-1800].
-Search query features::
-These are rather important features when using Hibernate Search with arbitrary data sources,
-where loading data from the original data source might not be possible:
-
-* link:{hsearch-jira-url-prefix}/HSEARCH-3927[HSEARCH-3927] Projection to a DTO/JavaBean/etc.
-* link:{hsearch-jira-url-prefix}/HSEARCH-3943[HSEARCH-3943] Projection nesting: preserving the document structure in projections
-
-+
-Unrelated, other features are to be added to the Hibernate Search DSL:
-
-* link:{hsearch-jira-url-prefix}/HSEARCH-2192[HSEARCH-2192] Highlighting in the Search API
-
 == Hibernate Search 7.0
 
 For a full list of issues currently planned for this series,
