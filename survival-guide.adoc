@@ -279,7 +279,8 @@ The `series.yml` file may contain the following attributes:
 *** `group_id`: the Maven group ID. Optional: defaults to the group ID defined on the series, or on the project.
 *** `summary`: a short text (6/7 words at most) summarizing the purpose of this artifact. You can use Asciidoc syntax here.
 ** `integration_constraints`: a map, with keys being the integration IDs defined in `site.yml`,
-   and values being objects with a `version` attribute describing the version constraints summarily (about a dozen characters).
+   and values being objects with a `version` attribute describing the version constraints summarily
+   (about a dozen characters, and you can use Asciidoc syntax here).
 
 The `<release>.yml` files must be named after the release version (e.g. `5.6.0.Final.yml`)
 and may contain the following attributes:

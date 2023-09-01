@@ -106,7 +106,9 @@ project_buttons_partial: project/releases-buttons.html.haml
               - if constraint == nil
                 N/A
               - else
-                #{constraint.version}
+                :asciidoc
+                  :doctype: inline
+                  #{constraint.version}
   %p
     See also the
     %a{:href => "/community/compatibility-policy"}

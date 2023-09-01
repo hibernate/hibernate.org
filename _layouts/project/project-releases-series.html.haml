@@ -93,7 +93,9 @@ project_hero_partial: project/hero-series.html.haml
           %a{:href => "#{integration.url}"}
             = integration["name"]
         %td
-          #{constraint.version}
+          :asciidoc
+            :doctype: inline
+            #{constraint.version}
   %p
     Not compatible with your requirements? Have a look at the
     %a{:href => "../"}
