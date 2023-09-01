@@ -41,9 +41,9 @@ integration_constraints:
   java:
     version: 8, 11, 17, 20 or 21
   orm:
-    version: 5.6
-  orm6:
-    version: 6.2
+    version: >-
+      5.6 in the main artifacts,
+      https://docs.jboss.org/hibernate/search/6.2/reference/en-US/html_single/#other-integrations-orm6[6.2 through `*-orm6` artifacts]
   elasticsearch:
     version: 5.6 - 8.9
   opensearch:
