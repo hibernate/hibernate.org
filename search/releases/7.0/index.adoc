@@ -1,0 +1,84 @@
+:awestruct-layout: project-releases-series
+:awestruct-project: search
+:awestruct-series_version: "7.0"
+:page-interpolate: true
+:hsearch-doc-url-prefix: #{reference_doc(site.projects[page.project], series(page, page.series_version)).html_url}
+
+=== Dependency upgrades
+
+[[java-version]]
+Java::
+Hibernate Search is now using JDK 11 as a baseline and can work on JDK 11, 17 or 21.
+Compatibility with JDK 8 was dropped.
+[[orm-version]]
+Hibernate ORM::
+Hibernate Search depends on Hibernate ORM 6.3 as it fully switched to Jakarta EE.
+There are no `-orm6`/`-jakarta` artifacts or Java EE compatibility anymore.
+[[lucene-version]]
+Lucene::
+The Lucene backend now uses Lucene 9.7.
+Upgrading requires reindexing, see the migration guide for details.
+[[elasticsearch-version]]
+Elasticsearch::
+The Elasticsearch backend now works with Elasticsearch 8.9 and 7.17
+as well as other versions that were already compatible.
+Compatibility with Elasticsearch 5.x/6.x is removed.
+[[opensearch-version]]
+OpenSearch::
+The Elasticsearch backend now works with OpenSearch 1.3 and 2.9
+as well as other versions that were already compatible.
+
+[[hibernate-search-bom]]
+=== Hibernate Search BOM
+
+Hibernate Search now offers a BOM providing dependency management for all of its published artifacts.
+It can be imported as part of your dependency management to keep the versions of Hibernate Search artifacts aligned:
+
+[source, XML, indent=0]
+----
+<dependencyManagement>
+    <dependencies>
+        <!-- Import Hibernate Search BOM to get all of its artifact versions aligned: -->
+        <dependency>
+            <groupId>org.hibernate.search</groupId>
+            <artifactId>hibernate-search-bom</artifactId>
+            <version>{hibernateSearchVersion}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+        <!-- Any other dependency management entries -->
+    </dependencies>
+</dependencyManagement>
+<!-- ... -->
+<dependencies>
+    <!-- Declare dependencies -->
+    <dependency>
+        <groupId>org.hibernate.search</groupId>
+        <artifactId>hibernate-search-mapper-orm</artifactId>
+        <!-- The version is managed by the BOM above -->
+    </dependency>
+    <dependency>
+        <groupId>org.hibernate.search</groupId>
+        <artifactId>hibernate-search-backend-elasticsearch</artifactId>
+        <!-- The version is managed by the BOM above -->
+    </dependency>
+    <!-- Any other dependency entries -->
+</dependencies>
+----
+
+[[aws-opensearch-serverless]]
+=== Amazon OpenSearch Serverless experimental compatibility
+
+Hibernate Search now has incubating compatibility with Amazon OpenSearch Serverless.
+
+Amazon OpenSearch Serverless has certain limitations compared to a regular OpenSearch cluster
+and link:https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-genref.html[may not support all operations] a regular cluster does.
+Compatibility with Amazon OpenSearch Serverless must be enabled explicitly by setting the backend version property:
+
+[source, properties, indent=0]
+----
+hibernate.search.backend.version=amazon-opensearch-serverless
+----
+
+See link:{hsearch-doc-url-prefix}#backend-elasticsearch-compatibility-amazon-opensearch-serverless[this section of the reference documentation]
+for more information, in particular about limitations.
