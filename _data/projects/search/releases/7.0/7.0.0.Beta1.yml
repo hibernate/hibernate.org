@@ -1,0 +1,9 @@
+date: 2023-09-05
+announcement_url: https://in.relation.to/2023/09/05/hibernate-search-7-0-0-Beta1
+summary: >-
+  JDK 11 as a baseline,
+  switch to Jakarta EE, compatibility with ORM 6.3 and no `-orm6` artifacts, 
+  upgrade to Lucene 9 in the Lucene backend,
+  published Hibernate Search BOM,
+  experimental compatibility with Amazon OpenSearch Serverless,
+  drop compatibility with EOL'd Elasticsearch versions 5.x - 6.x
