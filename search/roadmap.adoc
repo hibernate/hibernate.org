@@ -32,57 +32,23 @@ In particular:
 For a full list of issues currently planned for this series,
 see https://hibernate.atlassian.net/issues/?jql=project%20%3D%20HSEARCH%20AND%20fixVersion%20%3D%207.1-backlog%20ORDER%20BY%20created%20DESC[here].
 
-Mass indexing improvements::
-In particular:
-
-* link:{hsearch-jira-url-prefix}/HSEARCH-3499[HSEARCH-3499] Near-zero-downtime mass indexing when the schema did not change
-* link:{hsearch-jira-url-prefix}/HSEARCH-1032[HSEARCH-1032] MassIndexer with an update mechanism
-* link:{hsearch-jira-url-prefix}/HSEARCH-521[HSEARCH-521] Improve performance of MassIndexer through Eager fetching
-
-Search query features::
-Add more features to the Hibernate Search DSL.
-In particular:
-
-* link:{hsearch-jira-url-prefix}/HSEARCH-917[HSEARCH-917] Add match all terms option when matching in the DSL API
-* link:{hsearch-jira-url-prefix}/HSEARCH-3327[HSEARCH-3327] Add options for match predicates targeting multiple fields
-* link:{hsearch-jira-url-prefix}/HSEARCH-3926[HSEARCH-3926] Predicate on multiple fields designated by a single label/group name/etc. ("_all", copy_to, ...)
+* link:{hsearch-jira-url-prefix}/HSEARCH-4949[HSEARCH-4949] Vector search (experimental)
+* link:{hsearch-jira-url-prefix}/HSEARCH-4951[HSEARCH-4951] Static metamodel for Hibernate Search
+* link:{hsearch-jira-url-prefix}/HSEARCH-4962[HSEARCH-4962] APIs to support Hibernate Search Tools
 
 == Hibernate Search 7.2
 
 For a full list of issues currently planned for this series,
 see https://hibernate.atlassian.net/issues/?jql=project%20%3D%20HSEARCH%20AND%20fixVersion%20%3D%207.2-backlog%20ORDER%20BY%20created%20DESC[here].
 
-More advanced mapping::
-Allow more complex setups when it comes to mapping entities to indexes. In particular:
+* link:{hsearch-jira-url-prefix}/HSEARCH-4974[HSEARCH-4970] Better observability in Hibernate Search
+* link:{hsearch-jira-url-prefix}/HSEARCH-4977[HSEARCH-4977] Better highlighting/projections in nested fields
+* link:{hsearch-jira-url-prefix}/HSEARCH-4954[HSEARCH-4954] Near-zero-downtime reindexing
+* link:{hsearch-jira-url-prefix}/HSEARCH-4956[HSEARCH-4956] Reindexing for high-cardinality associations
 
-* link:{hsearch-jira-url-prefix}/HSEARCH-3971[HSEARCH-3971] Mapping an entity differently based on a discriminator
-* link:{hsearch-jira-url-prefix}/HSEARCH-3683[HSEARCH-3683] Mapping a single entity type to multiple indexes
-* link:{hsearch-jira-url-prefix}/HSEARCH-3903[HSEARCH-3903] Filters based exclusively on mapper metadata for @IndexedEmbedded
-Some specialized field types::
-Add commonly used field types. In particular:
+== Later
 
-* Fields derived from large blobs, useful when
-  link:{hsearch-jira-url-prefix}/HSEARCH-3350[indexing PDFs with Apache Tika] for example.
-* Maybe more, depending on demand, e.g.
-  link:{hsearch-jira-url-prefix}/HSEARCH-3488[HSEARCH-3488] Add support for nanosecond precision for temporal fields.
-Tracing::
-Tracing of search queries and indexing requests to enable easier debugging and performance investigation.
-+
-See link:{hsearch-jira-url-prefix}/HSEARCH-4057[HSEARCH-4057].
-
-== Hibernate Search 7.x or later
-
-Free-form indexing::
-We're planning to decouple the metadata definition from annotated java classes, to allow better indexing of other more flexible sources;
-for example to make it easier to index data structured in the JSON format, or other formats whose schema is not known at compile time.
-Debezium integration::
-Asynchronous indexing driven by Change Data Capture in the database instead of Hibernate ORM events.
-+
-This would allow capturing changes caused by any SQL command, not just those issued by Hibernate ORM.
-+
-See link:{hsearch-jira-url-prefix}/HSEARCH-3513[HSEARCH-3513].
-Reactive Search::
-Experiment with integrating Hibernate Search with Hibernate Reactive.
-+
-See also link:{hsearch-jira-url-prefix}/HSEARCH-3322[HSEARCH-3322],
-link:{hsearch-jira-url-prefix}/HSEARCH-3471[HSEARCH-3471].
+If the feature you are looking for is not on the roadmap,
+look for it https://hibernate.atlassian.net/issues/?jql=project%20%3D%20HSEARCH%20AND%20resolution%20not%20in%20(%22Fixed%22)%20AND%20fixVersion%20%3D%20EMPTY%20ORDER%20BY%20created%20DESC[here]
+or link:{hsearch-jira-url-prefix}/HSEARCH[submit a Jira issue],
+and consider link:/search/contribute/[contributing].
