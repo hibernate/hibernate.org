@@ -6,7 +6,6 @@
 :page-interpolate: true
 :latest_511_release_version: #{series(page, '5.11').releases.first.version}
 :latest_stable_series_version: #{latest_stable_series(page).version}
-:version_matching_orm: #{series(page, '5.11').releases.first['dependencies'].get_version('org.hibernate', 'hibernate-core')}
 :docs_base_url: http://docs.jboss.org/hibernate/search/5.11/reference/en-US/html_single/
 
 WARNING: This document covers the latest stable release of Hibernate Search 5.
@@ -33,8 +32,8 @@ You can get the jar artifacts either from the _dist/lib_ directory of the Hibern
 or you can download them from the Maven central repository.
 
 Hibernate ORM::
-You will need hibernate-core-{version_matching_orm}.jar and its transitive dependencies (either from
-http://sourceforge.net/projects/hibernate/files/hibernate4/{version_matching_orm}/[Sourceforge] or the Maven central repository).
+You will need `hibernate-core` version 5.4 and its transitive dependencies.
+See link:/orm/releases/5.4/#get-it[here] for information on how to get these.
 
 JPA 2.2::
 Even though Hibernate Search can be used without needing JPA annotations the following instructions will use them for basic entity configuration (_@Entity, @Id, @OneToMany,..._).

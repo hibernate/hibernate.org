@@ -1,6 +1,3 @@
-require 'nokogiri'
-require 'open-uri'
-require 'uri'
 require 'fileutils'
 
 module Awestruct
@@ -63,8 +60,6 @@ module Awestruct
               populateReleaseHashes( project, entry )
               
               sortReleaseHashes( project )
-              
-              downloadDependencies( project, release_series_hash.values )
             else
               findReleaseFiles( site, entry )
             end
@@ -232,21 +227,6 @@ module Awestruct
         project[:older_release_series] = project[:release_series].nil? ? nil
             : project[:release_series].values.select{|s| !s[:displayed].nil? ? !s.displayed : s[:status] == 'end-of-life'}
       end
-
-      def downloadDependencies(project, series)
-        series.each do |series|
-          if ( series.displayed.nil? || series.displayed )
-            # Only download dependencies for the latest release in the series
-            latest_release = series.releases.first
-            maven_coord = latest_release[:maven]&.[](:coord) || series[:maven]&.[](:coord) || project[:maven]&.[](:coord)
-            group_id = maven_coord&.[](:group_id)
-            main_artifact_id = maven_coord&.[](:main_artifact_id)
-            if ( group_id != nil && main_artifact_id != nil )
-              latest_release.dependencies = ReleaseDependencies.new(@site, group_id, main_artifact_id, latest_release.version)
-            end
-          end
-        end
-      end
     end
             
     # Custom version class able to understand and compare the project versions of Hibernate projects
@@ -301,129 +281,6 @@ module Awestruct
 
       def to_s
         @bugfix + @number&.to_s
-      end
-    end
-
-    # Helper class to retrieve the dependencies of a release by parsing the release POM
-    class ReleaseDependencies
-      def initialize(site, group_id, artifact_id, version)
-        # init instance variables
-        @properties = Hash.new
-        @dependencies = Hash.new
-        @site = site
-
-        # try loading the pom
-        doc = create_doc(group_id, artifact_id, version)
-        unless doc == nil
-          if has_parent(doc)
-            # parent pom needs to be loaded first
-            parent_doc = create_doc(doc.xpath('//parent/groupId').text, doc.xpath('//parent/artifactId').text, doc.xpath('//parent/version').text)
-            unless parent_doc == nil
-              process_doc(parent_doc)
-            end
-          end
-          process_doc(doc)
-        end
-      end
-
-      def get_value(property)
-        @properties[property]
-      end
-
-      def get_version(group_id, artifact_id)
-        @dependencies[group_id + ':' + artifact_id]
-      end
-
-      private
-      def create_doc(group_id, artifact_id, version)
-        # make sure _tmp dir exists
-        tmp_dir = File.join(File.dirname(__FILE__), '..', '_tmp')
-        unless File.directory?(tmp_dir)
-          p "creating #{tmp_dir}"
-          FileUtils.mkdir_p(tmp_dir)
-        end
-
-        gav = "#{group_id}:#{artifact_id}:#{version}"
-        pom_name = get_pom_name(group_id, artifact_id, version)
-        # to avoid net access cache the downloaded POMs into the _tmp directory
-        cached_pom = File.join(tmp_dir, pom_name)
-        if File.exist?(cached_pom)
-          $LOG.info "Cache hit: #{gav}" if $LOG.info?
-          f = File.open(cached_pom)
-          doc = Nokogiri::XML(f)
-          f.close
-        else
-          begin
-            # try to download the pom from Central
-            doc = download_pom(@site.maven.repo.central.repo_url, group_id, artifact_id, version, cached_pom)
-          rescue => maven_error
-            $LOG.warn "Error downloading #{gav} from Maven Central: #{maven_error.message}"
-            # if it fails, it might be because it wasn't synced yet so let's try to download it from JBoss Nexus
-            begin
-              doc = download_pom(@site.maven.repo.jboss.repo_url, group_id, artifact_id, version, cached_pom)
-            rescue => jboss_nexus_error
-              $LOG.warn "Error downloading #{gav} from JBoss Nexus: #{jboss_nexus_error.message}"
-              $LOG.warn "Release POM #{gav} not locally cached and unable to retrieve it from Central or from JBoss Nexus"
-              if @site.profile == 'production'
-                $LOG.error maven_error.message + "\n " + maven_error.backtrace.join("\n ")
-                abort "Aborting site generation, since the production build requires the release POM information"
-              else
-                $LOG.warn maven_error.message + "\n " + maven_error.backtrace.join("\n ")
-                $LOG.warn "Continuing build since we are building the '#{@site.profile}' profile. Note that variables interpolated from the release poms will not display\n"
-                return nil
-              end
-            end
-          end
-        end
-        doc.remove_namespaces!
-      end
-
-      def download_pom(base_url, group_id, artifact_id, version, cached_pom)
-        uri = get_uri(base_url, group_id, artifact_id, version)
-        $LOG.info "Downloading: #{uri.to_s}" if $LOG.info?
-        doc = Nokogiri::XML(URI.open(uri))
-        File.open(cached_pom, 'w') { |f| f.print(doc.to_xml) }
-        doc
-      end
-
-      def process_doc(doc)
-        load_properties(doc)
-        extract_dependencies(doc)
-      end
-
-      def get_uri(base_url, group_id, artifact, version)
-        base_url + '/' + group_id.gsub(/\./, "/") + '/' + artifact + '/' + version + '/' + get_pom_name(group_id, artifact, version)
-      end
-
-      def get_pom_name(group_id, artifact, version)
-        artifact + '-' + version + '.pom'
-      end
-
-      def has_parent(doc)
-        !doc.xpath('//parent').empty?
-      end
-
-      def load_properties(doc)
-        doc.xpath('//properties/*') .each do |property|
-          key = property.name
-          value = property.text
-          @properties[key] = value
-        end
-      end
-
-      def extract_dependencies(doc)
-        doc.xpath('//dependency') .each do |dependency|
-          group_id = dependency.xpath('./groupId').text
-          artifact_id = dependency.xpath('./artifactId').text
-          version = dependency.xpath('./version').text
-          if ( version =~ /\$\{(.*)\}/ )
-            version = @properties[$1]
-          end
-          key = group_id + ':' + artifact_id
-          if @dependencies[key] == nil
-            @dependencies[key] = version
-          end
-        end
       end
     end
   end

@@ -4,7 +4,6 @@ gem 'bundler', '2.4.10'
 
 # Main site dependencies
 gem 'awestruct', '0.6.5'
-gem 'nokogiri'
 gem 'sass'
 gem 'json'
 gem 'haml', '< 6.0'    # Haml 6 would require udpating our filter registration code
