@@ -2,8 +2,31 @@ date: 2023-09-05
 announcement_url: https://in.relation.to/2023/09/05/hibernate-search-7-0-0-Beta1
 summary: >-
   JDK 11 as a baseline,
-  switch to Jakarta EE, compatibility with ORM 6.3 and no `-orm6` artifacts, 
+  switch to Jakarta EE, compatibility with ORM 6.3 without `-orm6` artifacts, 
   upgrade to Lucene 9 in the Lucene backend,
   published Hibernate Search BOM,
   experimental compatibility with Amazon OpenSearch Serverless,
-  drop compatibility with EOL'd Elasticsearch versions 5.x - 6.x
+  dropped compatibility with EOL'd Elasticsearch versions 5.x - 6.x,
+  other bugfixes and improvements
+maven:
+  artifacts:
+    - artifact_id: hibernate-search-bom
+      summary: Hibernate Search BOM
+    - artifact_id: hibernate-search-mapper-orm
+      summary: Hibernate ORM mapper
+    - artifact_id: hibernate-search-mapper-orm-coordination-outbox-polling
+      summary: "\"outbox-polling\" coordination strategy for the Hibernate ORM mapper"
+    - artifact_id: hibernate-search-mapper-pojo-standalone
+      summary: Standalone POJO mapper
+    - artifact_id: hibernate-search-backend-lucene
+      summary: Lucene backend
+    - artifact_id: hibernate-search-backend-elasticsearch
+      summary: Elasticsearch/OpenSearch backend
+    - artifact_id: hibernate-search-backend-elasticsearch-aws
+      summary: Amazon IAM authentication for Elasticsearch/OpenSearch
+    - artifact_id: hibernate-search-mapper-orm-batch-jsr352-core
+      summary: Jakarta Batch mass indexing job for the Hibernate ORM mapper - Core
+    - artifact_id: hibernate-search-mapper-orm-batch-jsr352-jberet
+      summary: Jakarta Batch mass indexing job for the Hibernate ORM mapper - JBeret specifics
+    - artifact_id: hibernate-search-v5migrationhelper-orm
+      summary: Helper for migrating from Hibernate Search 5 to Hibernate Search 6/7 (Hibernate ORM mapper + Lucene backend)

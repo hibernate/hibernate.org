@@ -12,21 +12,23 @@ Hibernate Search is now using JDK 11 as a baseline and can work on JDK 11, 17 or
 Compatibility with JDK 8 was dropped.
 [[orm-version]]
 Hibernate ORM::
-Hibernate Search depends on Hibernate ORM 6.3 as it fully switched to Jakarta EE.
+Hibernate Search now depends on Hibernate ORM 6.3 as it fully switched to Jakarta EE.
 There are no `-orm6`/`-jakarta` artifacts or Java EE compatibility anymore.
 [[lucene-version]]
 Lucene::
-The Lucene backend now uses Lucene 9.7.
+The Lucene backend now uses Lucene 9.8.
 Upgrading requires reindexing, see the migration guide for details.
 [[elasticsearch-version]]
 Elasticsearch::
-The Elasticsearch backend now works with Elasticsearch 8.9 and 7.17
-as well as other versions that were already compatible.
-Compatibility with Elasticsearch 5.x/6.x is removed.
+The Elasticsearch backend works with Elasticsearch 8.10 as well as other versions that were already compatible --
+except for the following versions whose compatibility was dropped, because they already reached their end of life:
+* 5.x/6.x
+* 7.0-7.9
 [[opensearch-version]]
 OpenSearch::
-The Elasticsearch backend now works with OpenSearch 1.3 and 2.9
-as well as other versions that were already compatible.
+The Elasticsearch backend works with OpenSearch 2.10 and 2.11 as well as other versions that were already compatible --
+except for versions 1.0, 1.1 and 1.2 whose compatibility was dropped,
+because they already reached their end of life.
 
 [[hibernate-search-bom]]
 === Hibernate Search BOM
@@ -82,3 +84,24 @@ hibernate.search.backend.version=amazon-opensearch-serverless
 
 See link:{hsearch-doc-url-prefix}#backend-elasticsearch-compatibility-amazon-opensearch-serverless[this section of the reference documentation]
 for more information, in particular about limitations.
+
+[[orm-discriminator-multi-tenancy]]
+=== Compatibility with Hibernate ORM's discriminator-based multi-tenancy
+
+With link:{hsearch-jira-url-prefix}/HSEARCH-4403[HSEARCH-4403],
+Hibernate Search can now index Hibernate ORM entities
+that take advantage of
+https://docs.jboss.org/hibernate/orm/6.3/userguide/html_single/Hibernate_User_Guide.html#multitenacy-hibernate-TenantId[discriminator-based multi-tenancy in the database (`@TenandId`)].
+
+[[renamings]]
+=== Maven artifact renamings
+
+Some Hibernate Search Maven artifacts have been renamed:
+
+* link:{hsearch-jira-url-prefix}/HSEARCH-4940[HSEARCH-4940]
+Maven artifacts related to JSR-352 artifacts were renamed to reflect the move to the Jakarta EE specification:
+** `hibernate-search-mapper-orm-batch-jsr352-core` was renamed to `hibernate-search-mapper-orm-jakarta-batch-core`.
+** `hibernate-search-mapper-orm-batch-jsr352-jberet` was renamed to `hibernate-search-mapper-orm-jakarta-batch-jberet`.
+* link:{hsearch-jira-url-prefix}/HSEARCH-4928[HSEARCH-4928]
+The artifact `hibernate-search-mapper-orm-coordination-outbox-polling`
+was renamed to `hibernate-search-mapper-orm-outbox-polling`.

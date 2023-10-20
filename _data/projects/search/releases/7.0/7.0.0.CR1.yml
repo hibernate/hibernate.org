@@ -1,0 +1,10 @@
+date: 2023-09-05
+announcement_url: https://in.relation.to/2023/10/23/hibernate-search-7-0-0-CR1
+summary: >-
+  Compatibility with Hibernate ORM's discriminator-based multi-tenancy,
+  compatibility with Elasticsearch 8.10 and OpenSearch 2.9/2.10/2.11,
+  dropped compatibility with EOL'd Elasticsearch versions 7.0-7.9 and OpenSearch versions 1.0-1.2,
+  upgrade to Hibernate ORM 6.3.1.Final,
+  upgrade to Lucene 9.8,
+  some Maven artifact renamings,
+  other bugfixes and improvements
