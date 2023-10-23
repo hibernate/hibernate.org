@@ -88,7 +88,6 @@ for more information, in particular about limitations.
 [[orm-discriminator-multi-tenancy]]
 === Compatibility with Hibernate ORM's discriminator-based multi-tenancy
 
-With link:{hsearch-jira-url-prefix}/HSEARCH-4403[HSEARCH-4403],
 Hibernate Search can now index Hibernate ORM entities
 that take advantage of
 https://docs.jboss.org/hibernate/orm/6.3/userguide/html_single/Hibernate_User_Guide.html#multitenacy-hibernate-TenantId[discriminator-based multi-tenancy in the database (`@TenandId`)].
@@ -98,10 +97,8 @@ https://docs.jboss.org/hibernate/orm/6.3/userguide/html_single/Hibernate_User_Gu
 
 Some Hibernate Search Maven artifacts have been renamed:
 
-* link:{hsearch-jira-url-prefix}/HSEARCH-4940[HSEARCH-4940]
-Maven artifacts related to JSR-352 artifacts were renamed to reflect the move to the Jakarta EE specification:
+* Maven artifacts related to JSR-352 artifacts were renamed to reflect the move to the Jakarta EE specification:
 ** `hibernate-search-mapper-orm-batch-jsr352-core` was renamed to `hibernate-search-mapper-orm-jakarta-batch-core`.
 ** `hibernate-search-mapper-orm-batch-jsr352-jberet` was renamed to `hibernate-search-mapper-orm-jakarta-batch-jberet`.
-* link:{hsearch-jira-url-prefix}/HSEARCH-4928[HSEARCH-4928]
-The artifact `hibernate-search-mapper-orm-coordination-outbox-polling`
+* The artifact `hibernate-search-mapper-orm-coordination-outbox-polling`
 was renamed to `hibernate-search-mapper-orm-outbox-polling`.
