@@ -46,7 +46,7 @@ A tutorial using Hibernate Search 6 and https://quarkus.io/[Quarkus].
 +
 Demo code: https://github.com/hibernate/hibernate-demos/tree/main/hibernate-search/hsearch-quarkus
 
-== Talks
+== Talks and videos
 
 https://community-conference.elastic.co/session/305406[[French\] ElasticCC: Indexation au fil de l'eau de données relationnelles via Hibernate Search]::
 A presentation of Hibernate Search 6 to Elasticsearch users.
@@ -60,6 +60,11 @@ A presentation of Hibernate Search 6 and its use in a https://quarkus.io/[Quarku
 focusing on Elasticsearch and https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#search-mapping-bridge[custom bridges].
 +
 Demo code: https://github.com/Sedona-Solutions/beer-manager-hibernate-search
+
+https://www.youtube.com/watch?v=Nnh_DuzA3BM[Hibernate Search with Quarkus]::
+A demonstration of how to use Hibernate Search in a Vue.js webapp with a REST backend using Quarkus 2.7.
++
+Demo code: https://github.com/redhat-mw-demos/quarkus-hibernate-search-starter-demo
 
 https://www.youtube.com/watch?v=hwxWx-ORVwM[Quarkus Insights #32: Hibernate Search]::
 A discussion of Hibernate Search 6 in https://quarkus.io/[Quarkus], how to use it and how it helps.
