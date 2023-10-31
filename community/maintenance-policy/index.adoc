@@ -1,5 +1,10 @@
 = Maintenance Policy
 :awestruct-layout: community-standard
+:development: pass:[<span class="ui small label orange">development</span>]
+:latest-stable: pass:[<span class="ui small label green">latest-stable</span>]
+:stable: pass:[<span class="ui small label green">stable</span>]
+:limited-support: pass:[<span class="ui small label yellow">limited-support</span>]
+:end-of-life: pass:[<span class="ui small label red">end-of-life</span>]
 
 [[background]]
 == Background
@@ -31,20 +36,20 @@ Therefore, "maintain" here means -
 [[levels]]
 == Maintenance Levels
 
-development::
-  Series which are still in pre-Final development are generally maintained at the same level as `(latest-)stable` releases, except that we reserve the right to make changes in new API and SPI.
-(latest-)stable::
+{development}::
+  Series which are still in pre-Final development are generally maintained at the same level as {latest-stable}/{stable} releases, except that we reserve the right to make changes in new API and SPI.
+{latest-stable}/{stable}::
   Series which are fully maintained.  Most Hibernate projects limit full maintainability to just the latest series; Hibernate Validator maintains multiple series.
-limited-support::
-  A level of maintainability between `stable` and `end-of-life` - backports to these series are highly restricted and releases are not guarenteed.  We recommend that you upgrade to a newer
+{limited-support}::
+  A level of maintainability between {latest-stable}/{stable} and {end-of-life} - backports to these series are highly restricted and releases are not guarenteed.  We recommend that you upgrade to a newer
   series if possible or look for paid support - downstream frameworks or commercial offerings (e.g. Red Hat's) may provide stronger guarantees.
-end-of-life::
+{end-of-life}::
   The version has reached the end of its maintenance and support lifecycle.  We recommend that you upgrade to a newer series, if possible, because we are unlikely to fix bugs or provide
   new releases for this series.
 
 [[take-aways]]
 == Take-aways
 
-* Only bug-reports verified against the `(latest-)stable` and `development` series are accepted.
-* Bug-fixes and improvements are only applied to `(latest-)stable` and `development` (and sometimes to `limited-support`) series.
-* Only `development` and `(latest-)stable` series are actively released.  Occasional releases of `limited-support` series may happen, but should not be expected. 
+* Only bug-reports verified against the {latest-stable}/{stable} and {development} series are accepted.
+* Bug-fixes and improvements are only applied to {latest-stable}/{stable} and {development} (and sometimes to {limited-support}) series.
+* Only {development} and {latest-stable}/{stable} series are actively released.  Occasional releases of {limited-support} series may happen, but should not be expected.
