@@ -66,6 +66,8 @@ project_hero_partial: project/hero-series.html.haml
     * bug reproducers using this version will be given lower priority.
 
     We recommend that you upgrade to a newer series if possible.
+
+    See also the link:/community/maintenance-policy[Maintenance policy].
     ====
 - elsif series.status == 'limited-support'
   :asciidoc
@@ -81,6 +83,8 @@ project_hero_partial: project/hero-series.html.haml
     * bug reproducers using this version will be given lower priority.
 
     We recommend that you upgrade to a newer series if possible or look for link:../../support[paid support].
+
+    See also the link:/community/maintenance-policy[Maintenance policy].
     ====
 
 - unless series.integration_constraints.nil? || series.integration_constraints.empty?
@@ -103,7 +107,10 @@ project_hero_partial: project/hero-series.html.haml
   %p
     See also the
     %a{:href => "/community/compatibility-policy"}
-      Compatibility policy.
+      Compatibility policy
+    and
+    %a{:href => "/community/maintenance-policy"}
+      Maintenance policy.
 
 %h2{:id => "documentation"} Documentation
 %p
@@ -135,6 +142,8 @@ project_hero_partial: project/hero-series.html.haml
     [WARNING]
     ====
     {projectName} {version} has reached its end-of-life: we recommend that you upgrade to a newer series if possible.
+
+    See also the link:/community/maintenance-policy[Maintenance policy].
     ====
 - elsif series.status == 'limited-support'
   :asciidoc
@@ -143,6 +152,8 @@ project_hero_partial: project/hero-series.html.haml
     [WARNING]
     ====
     {projectName} {version} is in limited maintenance mode: we recommend that you upgrade to a newer series if possible or look for link:../../support[paid support].
+
+    See also the link:/community/maintenance-policy[Maintenance policy].
     ====
 .ui.grid.equal.height.stackable.download-options
   .row
@@ -235,6 +246,8 @@ project_hero_partial: project/hero-series.html.haml
       [WARNING]
       ====
       {projectName} {version} has reached its end-of-life: we recommend that you upgrade to a newer series if possible.
+
+      See also the link:/community/maintenance-policy[Maintenance policy].
       ====
   - elsif series.status == 'limited-support'
     :asciidoc
@@ -243,6 +256,8 @@ project_hero_partial: project/hero-series.html.haml
       [WARNING]
       ====
       {projectName} {version} is in limited maintenance mode: we recommend that you upgrade to a newer series if possible or look for link:../../support[paid support].
+
+      See also the link:/community/maintenance-policy[Maintenance policy].
       ====
   %p
     If you want to start using #{project_description.name} #{series.version}, please refer to the getting started guide:
@@ -341,6 +356,8 @@ project_hero_partial: project/hero-series.html.haml
     [WARNING]
     ====
     {projectName} {version} has reached its end-of-life: we recommend that you upgrade to a newer series if possible.
+
+    See also the link:/community/maintenance-policy[Maintenance policy].
     ====
 - elsif series.status == 'limited-support'
   :asciidoc
@@ -349,6 +366,8 @@ project_hero_partial: project/hero-series.html.haml
     [WARNING]
     ====
     {projectName} {version} is in limited maintenance mode: we recommend that you upgrade to a newer series if possible or look for link:../../support[paid support].
+
+    See also the link:/community/maintenance-policy[Maintenance policy].
     ====
 - unless series.nil?
   .ui.stackable.grid.series-versions
