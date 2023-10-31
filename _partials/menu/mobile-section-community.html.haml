@@ -37,6 +37,11 @@
       %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "active" : "")}"}
         %i.grid.icon.history
         Compatibility policy
+      - href = "/community/maintenance-policy/"
+      - active = (href == current_path)
+      %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "active" : "")}"}
+        %i.grid.icon.wrench
+        Maintenance policy
       - item_active = (current_path == '/community/license/')
       %a.item(href="/community/license/"){:class => "#{(item_active ? "active" : "")}"}
         %i.grid.icon.legal
