@@ -19,11 +19,11 @@ discussion, there are a few important considerations:
 * Pre-Final releases (Alpha, Beta and CR) are actively in-development and subject to justifiable API and SPI changes.
 * Final releases are considered stable - aside from changes necessary for bugfixes, the code is considered stable.
 * A `{major}.{minor}` combination (6.0, 6.1, 6.2, e.g.) is called a series.
-* Branches and maintainability are based on series.
+* Branches and maintenance are based on series.
 
 [NOTE]
 ====
-link:/community/compatibility-policy/#compatibility-api-spi[Compatibility] affects maintainability as well.
+link:/community/compatibility-policy/#compatibility-api-spi[Compatibility] affects maintenance as well.
 ====
 
 Therefore, "maintain" here means:
@@ -39,12 +39,12 @@ Therefore, "maintain" here means:
 {latest-stable}/{stable}::
 Series which are fully maintained.
 +
-Most Hibernate projects limit full maintainability to just the latest series; Hibernate Validator maintains multiple series.
+Most Hibernate projects limit full maintenance to just the latest series; Hibernate Validator maintains multiple series.
 {development}::
 Series which are still in pre-Final development are generally maintained at the same level as {latest-stable}/{stable} releases,
 except that we reserve the right to make changes in new API and SPI.
 {limited-support}::
-A level of maintainability between {latest-stable}/{stable} and {end-of-life}.
+A level of maintenance between {latest-stable}/{stable} and {end-of-life}.
 +
 Backports to these series are highly restricted and releases are not guaranteed.
 +
