@@ -13,7 +13,7 @@ Hibernate is a series of large projects, and yet its core development team is am
 
 One of the lowest-hanging fruits for us in this regard is to maintain just the most recent release series. It is just not practical for us to support more than 1 or 2 branches simultaneously.
 
-Discussions about maintenance invariably depend on discussions about https://hibernate.org/community/compatibility-policy/#versioning-scheme[versioning].  For the purposes of this
+Discussions about maintenance invariably depend on discussions about link:/community/compatibility-policy/#versioning-scheme[versioning].  For the purposes of this
 discussion, there are a few important considerations -
 
 * Pre-Final releases (Alpha, Beta and CR) are actively in-development and subject to justifiable API and SPI changes.
@@ -23,7 +23,7 @@ discussion, there are a few important considerations -
 
 [NOTE]
 ====
-https://hibernate.org/community/compatibility-policy/#compatibility-api-spi[Compatibility] affects maintainability as well.
+link:/community/compatibility-policy/#compatibility-api-spi[Compatibility] affects maintainability as well.
 ====
 
 Therefore, "maintain" here means -
@@ -41,7 +41,7 @@ Therefore, "maintain" here means -
 {latest-stable}/{stable}::
   Series which are fully maintained.  Most Hibernate projects limit full maintainability to just the latest series; Hibernate Validator maintains multiple series.
 {limited-support}::
-  A level of maintainability between {latest-stable}/{stable} and {end-of-life} - backports to these series are highly restricted and releases are not guarenteed.  We recommend that you upgrade to a newer
+  A level of maintainability between {latest-stable}/{stable} and {end-of-life} - backports to these series are highly restricted and releases are not guaranteed.  We recommend that you upgrade to a newer
   series if possible or look for paid support - downstream frameworks or commercial offerings (e.g. Red Hat's) may provide stronger guarantees.
 {end-of-life}::
   The version has reached the end of its maintenance and support lifecycle.  We recommend that you upgrade to a newer series, if possible, because we are unlikely to fix bugs or provide
