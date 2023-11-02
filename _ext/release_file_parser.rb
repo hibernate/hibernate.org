@@ -149,6 +149,14 @@ module Awestruct
         else
           raise StandardError, "Unsupported version scheme for #{release_file}: #{release.version}"
         end
+
+        if release[:scm_tag] == nil
+          if project.github['final_suffix_in_tags']
+            release[:scm_tag] = release.version
+          else
+            release[:scm_tag] = release.version =~ /^(.*).Final$/ ? $1 : release.version
+          end
+        end
         
         return release
       end
@@ -220,6 +228,13 @@ module Awestruct
               end
             end
             series[:endoflife] = series[:status] == 'end-of-life'
+
+            # The latest series might have its own branch, or might still be on main.
+            # We don't know so we won't try to guess.
+            if series[:scm_branch] == nil && !series.latest
+              series[:scm_branch] = series.version
+            end
+            series.latest_scm_ref = series[:scm_branch] || series.releases&.first&.scm_tag
           end
         end
         project[:active_release_series] = project[:release_series].nil? ? nil

@@ -85,7 +85,7 @@ projects:
       getting_started_guide:
         html: https://docs.jboss.org/hibernate/orm/{series.version}/quickstart/html_single/
       migration_guide:
-        html: https://github.com/hibernate/hibernate-orm/wiki/Migration-Guides
+        html: https://github.com/hibernate/hibernate-orm/blob/{series.latest_scm_ref}/migration-guide.adoc
       dist:
         # No longer distributing dists on sourceforge, starting with ORM 6.0.
     maven:
@@ -215,6 +215,7 @@ projects:
       key: HSEARCH
     github:
       project: hibernate-search
+      final_suffix_in_tags: true
     integrations:
       java:
         name: Java
@@ -385,6 +386,7 @@ projects:
       key: HV
     github:
       project: hibernate-validator
+      final_suffix_in_tags: true
     integrations:
       java:
         name: Java
@@ -492,6 +494,7 @@ projects:
       key: OGM
     github:
       project: hibernate-ogm
+      final_suffix_in_tags: true
     integrations:
       java:
         name: Java

@@ -62,6 +62,7 @@ module Awestruct
           return nil
         end
         return pattern.gsub('{series.version}', series&.version || '')
+            .gsub('{series.latest_scm_ref}', series&.latest_scm_ref || '')
             .gsub('{release.version}', release&.version || '')
             .gsub('{series.version.dashes}', series&.version&.gsub('.', '-') || '')
       end
