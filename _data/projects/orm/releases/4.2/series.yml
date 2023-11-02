@@ -7,6 +7,8 @@ links:
   dist:
     sourceforge:
       zip: https://sourceforge.net/projects/hibernate/files/hibernate-orm/{release.version}/hibernate-release-{release.version}.zip/download
+  migration_guide:
+    html:
 maven:
   coord:
     group_id: org.hibernate
