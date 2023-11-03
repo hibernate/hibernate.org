@@ -2,6 +2,7 @@
 :awestruct-project: search
 :awestruct-series_version: "7.0"
 :page-interpolate: true
+:latest-release-version: #{series(page, page.series_version).releases.first.version}
 :hsearch-doc-url-prefix: #{reference_doc(site.projects[page.project], series(page, page.series_version)).html_url}
 
 === Dependency upgrades
@@ -36,7 +37,7 @@ because they already reached their end of life.
 Hibernate Search now offers a BOM providing dependency management for all of its published artifacts.
 It can be imported as part of your dependency management to keep the versions of Hibernate Search artifacts aligned:
 
-[source, XML, indent=0]
+[source, XML, indent=0, subs="+attributes"]
 ----
 <dependencyManagement>
     <dependencies>
@@ -44,7 +45,7 @@ It can be imported as part of your dependency management to keep the versions of
         <dependency>
             <groupId>org.hibernate.search</groupId>
             <artifactId>hibernate-search-bom</artifactId>
-            <version>{hibernateSearchVersion}</version>
+            <version>{latest-release-version}</version>
             <type>pom</type>
             <scope>import</scope>
         </dependency>
