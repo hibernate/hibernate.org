@@ -48,6 +48,23 @@ Demo code: https://github.com/hibernate/hibernate-demos/tree/main/hibernate-sear
 
 == Talks and videos
 
+https://www.youtube.com/watch?v=0-e4wkRwTIo[Quarkus Insights #145: What’s new in Hibernate Search]::
+A discussion of new features in Hibernate Search 6.1/6.2 in the context of https://quarkus.io/[Quarkus].
++
+Slides: https://yrodiere.github.io/presentation/2023-11-quarkus-insights-whats-new-hibernate-search/
++
+Demo code:
++
+* Demo 1 (search): https://github.com/hibernate/hibernate-demos/tree/main/hibernate-search/hsearch-feature-examples/search-advanced
+* Demo 2 (outbox polling): https://github.com/hibernate/hibernate-demos/tree/main/hibernate-search/hsearch-outbox-polling
+
+https://2023.rivieradev.fr/session/1140[[French\] Recherche plein-texte distribuée avec Quarkus, Hibernate ORM, Hibernate Search et Elasticsearch]::
+A presentation of outbox-polling coordination in Hibernate Search 6.1+, with a demo using https://quarkus.io/[Quarkus].
++
+Slides: https://yrodiere.github.io/presentation/2023-07-rivieradev-quarkus-hsearch/
++
+Demo code: https://github.com/hibernate/hibernate-demos/tree/main/hibernate-search/hsearch-outbox-polling
+
 https://community-conference.elastic.co/session/305406[[French\] ElasticCC: Indexation au fil de l'eau de données relationnelles via Hibernate Search]::
 A presentation of Hibernate Search 6 to Elasticsearch users.
 +
