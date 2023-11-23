@@ -77,12 +77,12 @@ title: Corporate contributors
         %p Atlassian provides us with a free instance of JIRA.
   .item
     .image
-      %a(href='https://github.com/')
-        %img{:src => "#{relative("/images/contributors/github.png", page)}"}
+      %a(href='https://gradle.com/develocity/')
+        %img{:src => "#{relative("/images/contributors/gradle-develocity.png", page)}"}
     .content
-      %a.header(href='https://github.com/') GitHub
+      %a.header(href='https://gradle.com/develocity/') Develocity
       .description
-        %p Our source code is hosted on GitHub and we use GitHub Actions for part of our CI.
+        %p Gradle hosts a build scan and a remote build cache server to help speed up Hibernate ORM builds.
   .item
     .image
       %a(href='https://www.discourse.org/')
@@ -91,6 +91,14 @@ title: Corporate contributors
       %a.header(href='https://www.discourse.org/') Discourse
       .description
         %p Our community forums are hosted on a free instance provided by Discourse.
+  .item
+    .image
+      %a(href='https://github.com/')
+        %img{:src => "#{relative("/images/contributors/github.png", page)}"}
+    .content
+      %a.header(href='https://github.com/') GitHub
+      .description
+        %p Our source code is hosted on GitHub and we use GitHub Actions for part of our CI.
   .item
     .image
       %a(href='https://zulip.com/')
@@ -104,7 +112,6 @@ title: Corporate contributors
             Zulip Cloud Standard
           instance.
         %p Zulip is an open-source modern team chat app designed to keep both live and asynchronous conversations organized.
-
 :javascript
   $(document).ready(function() {
     $('#contributors .image').matchHeight({ byRow: true });
