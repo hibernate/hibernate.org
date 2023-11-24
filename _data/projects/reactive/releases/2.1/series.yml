@@ -1,0 +1,12 @@
+summary: Release with Hibernate ORM 6.3 and Vert.x 4.5
+maven:
+  artifacts:
+    - artifact_id: hibernate-reactive-core
+      summary: Core implementation
+integration_constraints:
+  java:
+    version: 11, 17, 20, or 21
+  orm:
+    version: 6.3
+  vertx:
+    version: 4.5
