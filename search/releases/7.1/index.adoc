@@ -1,0 +1,60 @@
+:awestruct-layout: project-releases-series
+:awestruct-project: search
+:awestruct-series_version: "7.1"
+:page-interpolate: true
+:latest-release-version: #{series(page, page.series_version).releases.first.version}
+:hsearch-doc-url-prefix: #{reference_doc(site.projects[page.project], series(page, page.series_version)).html_url}
+
+[[vector-search]]
+=== Vector search for the Lucene Backend
+
+Hibernate Search now allows vector search in the Lucene backend as an incubating feature.
+Vector search provides the tools to search over binary (images, audio or video) or text data:
+external tools convert that data to vectors (arrays of bytes or floats, also called "embeddings"),
+which are then used for indexing and queries in Hibernate Search.
+Hibernate Search introduces a new field type -- `@VectorField` and a new predicate `knn`, so that the vectors can be indexed
+and then searched upon.
+
+Vector fields can work with vector data represented as `byte` or `float` arrays in the documents.
+Out of the box `byte[]` and `float[]` property types will work with the new field type. For any other entity property types,
+a custom link:{hsearch-doc-url-prefix}#binding-valuebridge[value bridge]
+or link:{hsearch-doc-url-prefix}#binding-valuebridge-valuebinder[value binder] should be implemented.
+Keep in mind that indexed vectors *must* be of the same length
+and that this length should be specified upfront for the schema to be created:
+
+[source, Java, indent=0, subs="+attributes"]
+----
+@Entity
+@Indexed
+public class Book {
+
+	@Id
+	private Integer id;
+
+	@VectorField(dimension = 512)
+	private float[] coverImageEmbeddings;
+
+	// Other properties ...
+}
+----
+
+Searching for vector similarities is performed via a `knn` predicate:
+
+[source, Java, indent=0, subs="+attributes"]
+----
+float[] coverImageEmbeddingsVector = /*...*/
+
+List<Book> hits = searchSession.search( Book.class )
+.where( f ->
+    // provide the number of similar documents to look for:
+    f.knn( 5 )
+        // the name of the vector field:
+        .field( "coverImageEmbeddings" )
+         // matched documents will be the ones whose indexed vector
+         // is "most similar" to this vector
+        .matching( coverImageEmbeddingsVector )
+    // additionally an optional filter can be supplied
+    // to provide a regular fulltext search predicate
+    .filter( f.match().field( "authors.firstName" ).matching( "arthur" ) )
+).fetchHits( 20 );
+----
