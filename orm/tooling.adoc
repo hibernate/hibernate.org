@@ -56,19 +56,7 @@ SetJoin<Order, Item> itemNode = cq.from(Order.class).join(Order_.items);
 cq.where( cb.equal(itemNode.get(Item_.id), 5 ) ).distinct(true);
 ----
 
-To use Hibernate Metamodel Generator add the following dependency to your build classpath:
-
-[source,xml]
-[subs="verbatim,attributes"]
-----
-<dependency>
-  <groupId>org.hibernate</groupId>
-  <artifactId>hibernate-jpamodelgen</artifactId>
-  <version>{latest_stable}</version>
-</dependency>
-----
-
-For more information and setup options refer to the link:https://docs.jboss.org/hibernate/orm/{version_family}/userguide/html_single/Hibernate_User_Guide.html#tooling-modelgen[online documentation].
+For more information on the use and setup options refer to the link:https://docs.jboss.org/hibernate/orm/{version_family}/userguide/html_single/Hibernate_User_Guide.html#tooling-modelgen[online documentation].
 
 [TIP]
 ====
