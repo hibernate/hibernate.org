@@ -7,6 +7,7 @@ summary: >-
   Elasticsearch schema export,
   compatibility with Elasticsearch 8.9 and OpenSearch 2.9,
   upgrade of `-orm6` artifacts to Hibernate ORM 6.2.
+status: limited-support
 maven:
   artifacts:
     - artifact_id: hibernate-search-mapper-orm-orm6
