@@ -48,6 +48,6 @@ integration_constraints:
   elasticsearch:
     version: 5.6 - 8.10
   opensearch:
-    version: 1.0 - 2.10
+    version: 1.0 - 2.11
   lucene:
     version: 8.11
