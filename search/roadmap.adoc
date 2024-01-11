@@ -13,20 +13,6 @@ You can find a finer grained roadmap in our https://hibernate.atlassian.net/brow
 
 Dates are generally omitted: milestones are released regularly, the Final release is tagged when it's considered stable.
 
-== Hibernate Search 7.0
-
-For a full list of issues currently planned for this series,
-see https://hibernate.atlassian.net/issues/?jql=project%20%3D%20HSEARCH%20AND%20fixVersion%20%3D%207.0-backlog%20ORDER%20BY%20created%20DESC[here].
-
-Upgrade baseline requirements::
-Upgrade to newer versions of dependencies and drop compatibility with older technologies.
-In particular:
-
-* link:{hsearch-jira-url-prefix}/HSEARCH-4556[HSEARCH-4556] Require JDK 11 (at least)
-* link:{hsearch-jira-url-prefix}/HSEARCH-4393[HSEARCH-4393] Upgrade to Lucene 9.x (which requires JDK 11)
-* link:{hsearch-jira-url-prefix}/HSEARCH-4394[HSEARCH-4394] Switch from Java EE to Jakarta EE
-* link:{hsearch-jira-url-prefix}/HSEARCH-4395[HSEARCH-4395] Upgrade to Hibernate ORM 6 (with requires Jakarta EE instead of Java EE) and drop compatibility with Hibernate ORM 5
-
 == Hibernate Search 7.1
 
 For a full list of issues currently planned for this series,
