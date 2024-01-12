@@ -2,6 +2,7 @@ org.hibernate.reactive.boot.spi
 org.hibernate.reactive.common
 org.hibernate.reactive.common.spi
 org.hibernate.reactive.context
+org.hibernate.reactive.dialect
 org.hibernate.reactive.engine
 org.hibernate.reactive.engine.jdbc
 org.hibernate.reactive.engine.spi
@@ -33,6 +34,7 @@ org.hibernate.reactive.query.sqm.mutation.spi
 org.hibernate.reactive.query.sqm.spi
 org.hibernate.reactive.session
 org.hibernate.reactive.sql.exec.spi
+org.hibernate.reactive.sql.model
 org.hibernate.reactive.sql.results
 org.hibernate.reactive.sql.results.graph
 org.hibernate.reactive.sql.results.graph.entity
@@ -41,4 +43,3 @@ org.hibernate.reactive.stage
 org.hibernate.reactive.tuple
 org.hibernate.reactive.type.descriptor.jdbc
 org.hibernate.reactive.vertx
-org.hibernate.type.descriptor.jdbc

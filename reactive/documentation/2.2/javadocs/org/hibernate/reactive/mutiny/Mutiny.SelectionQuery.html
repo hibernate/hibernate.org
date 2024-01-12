@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":18,"i17":18,"i18":6,"i19":6,"i20":18,"i21":6,"i22":18,"i23":18,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6,"i30":6,"i31":6,"i32":6};
+var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":18,"i17":18,"i18":6,"i19":6,"i20":18,"i21":6,"i22":18,"i23":18,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6,"i30":6,"i31":6,"i32":6,"i33":6,"i34":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -356,12 +356,28 @@ extends <a href="Mutiny.AbstractQuery.html" title="interface in org.hibernate.re
 </tr>
 <tr id="i27" class="rowColor">
 <td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setOrder(java.util.List)">setOrder</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/query/Order.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">Order</a>&lt;? super <a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&gt;&nbsp;orderList)</code></th>
+<td class="colLast">
+<div class="block">If the result type of this query is an entity class, add one or more
+ <a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/query/Order.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">rules</a> for ordering the query results.</div>
+</td>
+</tr>
+<tr id="i28" class="altColor">
+<td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setOrder(org.hibernate.query.Order)">setOrder</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/query/Order.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">Order</a>&lt;? super <a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;order)</code></th>
+<td class="colLast">
+<div class="block">If the result type of this query is an entity class, add a
+ <a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/query/Order.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">rule</a> for ordering the query results.</div>
+</td>
+</tr>
+<tr id="i29" class="rowColor">
+<td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setPage(org.hibernate.query.Page)">setPage</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/query/Page.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">Page</a>&nbsp;page)</code></th>
 <td class="colLast">
 <div class="block">Set the <a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/query/Page.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">page</a> of results to return.</div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(int,java.lang.Object)">setParameter</a></span>&#8203;(int&nbsp;parameter,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;argument)</code></th>
@@ -369,7 +385,7 @@ extends <a href="Mutiny.AbstractQuery.html" title="interface in org.hibernate.re
 <div class="block">Set the value of an ordinal parameter.</div>
 </td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(jakarta.persistence.Parameter,T)">setParameter</a></span>&#8203;(jakarta.persistence.Parameter&lt;T&gt;&nbsp;parameter,
             T&nbsp;argument)</code></th>
@@ -377,7 +393,7 @@ extends <a href="Mutiny.AbstractQuery.html" title="interface in org.hibernate.re
 <div class="block">Set the value of a typed parameter.</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParameter(java.lang.String,java.lang.Object)">setParameter</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;parameter,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;argument)</code></th>
@@ -385,7 +401,7 @@ extends <a href="Mutiny.AbstractQuery.html" title="interface in org.hibernate.re
 <div class="block">Set the value of a named parameter.</div>
 </td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i33" class="rowColor">
 <td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setPlan(jakarta.persistence.EntityGraph)">setPlan</a></span>&#8203;(jakarta.persistence.EntityGraph&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;entityGraph)</code></th>
 <td class="colLast">
@@ -393,7 +409,7 @@ extends <a href="Mutiny.AbstractQuery.html" title="interface in org.hibernate.re
  the root entity returned by this query.</div>
 </td>
 </tr>
-<tr id="i32" class="altColor">
+<tr id="i34" class="altColor">
 <td class="colFirst"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setReadOnly(boolean)">setReadOnly</a></span>&#8203;(boolean&nbsp;readOnly)</code></th>
 <td class="colLast">
@@ -810,6 +826,42 @@ extends <a href="Mutiny.AbstractQuery.html" title="interface in org.hibernate.re
 </dl>
 </li>
 </ul>
+<a id="setOrder(java.util.List)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setOrder</h4>
+<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setOrder&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/query/Order.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">Order</a>&lt;? super <a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&gt;&nbsp;orderList)</pre>
+<div class="block">If the result type of this query is an entity class, add one or more
+ <a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/query/Order.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">rules</a> for ordering the query results.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>orderList</code> - one or more instances of <a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/query/Order.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink"><code>Order</code></a></dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/query/Order.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink"><code>Order</code></a>, 
+<a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/query/Query.html?is-external=true#setOrder(java.util.List)" title="class or interface in org.hibernate.query" class="externalLink"><code>Query.setOrder(List)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a id="setOrder(org.hibernate.query.Order)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setOrder</h4>
+<pre class="methodSignature"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;setOrder&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/query/Order.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">Order</a>&lt;? super <a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;order)</pre>
+<div class="block">If the result type of this query is an entity class, add a
+ <a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/query/Order.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink">rule</a> for ordering the query results.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>order</code> - an instance of <a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/query/Order.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink"><code>Order</code></a></dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/query/Order.html?is-external=true" title="class or interface in org.hibernate.query" class="externalLink"><code>Order</code></a>, 
+<a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/query/Query.html?is-external=true#setOrder(org.hibernate.query.Order)" title="class or interface in org.hibernate.query" class="externalLink"><code>Query.setOrder(Order)</code></a></dd>
+</dl>
+</li>
+</ul>
 <a id="setPlan(jakarta.persistence.EntityGraph)">
 <!--   -->
 </a>
@@ -987,7 +1039,7 @@ extends <a href="Mutiny.AbstractQuery.html" title="interface in org.hibernate.re
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small>Copyright &copy; 2020-2023 <a href="http://redhat.com">Red Hat, Inc</a>. All Rights Reserved.</small></p>
+<p class="legalCopy"><small>Copyright &copy; 2020-2024 <a href="http://redhat.com">Red Hat, Inc</a>. All Rights Reserved.</small></p>
 </footer>
 </body>
 </html>

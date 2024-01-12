@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -90,13 +90,13 @@ loadScripts(document, 'script');</script>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -140,7 +140,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>
 implements <a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/type/descriptor/jdbc/JdbcType.html?is-external=true" title="class or interface in org.hibernate.type.descriptor.jdbc" class="externalLink">JdbcType</a></pre>
 <div class="block"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/Connection.html?is-external=true" title="class or interface in java.sql" class="externalLink"><code>Connection</code></a> has a method <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/Connection.html?is-external=true#createArrayOf(java.lang.String,java.lang.Object%5B%5D)" title="class or interface in java.sql" class="externalLink"><code>Connection.createArrayOf(String, Object[])</code></a>, but we don't have
- it in Vert.x SQL Client.</div>
+ it in Vert.x SQL Client.
+ <p>
+     Plus, the Vert.x SQL client accept arrays as parameters.
+ </p></div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/type/descriptor/jdbc/ArrayJdbcType.html?is-external=true" title="class or interface in org.hibernate.type.descriptor.jdbc" class="externalLink"><code>ArrayJdbcType</code></a>, 
@@ -152,29 +155,6 @@ implements <a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibern
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
-<!-- =========== FIELD SUMMARY =========== -->
-<section>
-<ul class="blockList">
-<li class="blockList"><a id="field.summary">
-<!--   -->
-</a>
-<h3>Field Summary</h3>
-<table class="memberSummary">
-<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colFirst" scope="col">Modifier and Type</th>
-<th class="colSecond" scope="col">Field</th>
-<th class="colLast" scope="col">Description</th>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static <a href="ReactiveArrayJdbcType.html" title="class in org.hibernate.reactive.type.descriptor.jdbc">ReactiveArrayJdbcType</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#INSTANCE">INSTANCE</a></span></code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-</table>
-</li>
-</ul>
-</section>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <section>
 <ul class="blockList">
@@ -221,43 +201,48 @@ implements <a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibern
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/type/descriptor/jdbc/JdbcType.html?is-external=true" title="class or interface in org.hibernate.type.descriptor.jdbc" class="externalLink">JdbcType</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getElementJdbcType()">getElementJdbcType</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>&lt;X&gt;&nbsp;<a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/type/descriptor/ValueExtractor.html?is-external=true" title="class or interface in org.hibernate.type.descriptor" class="externalLink">ValueExtractor</a>&lt;X&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getExtractor(org.hibernate.type.descriptor.java.JavaType)">getExtractor</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/type/descriptor/java/JavaType.html?is-external=true" title="class or interface in org.hibernate.type.descriptor.java" class="externalLink">JavaType</a>&lt;X&gt;&nbsp;javaTypeDescriptor)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getFriendlyName()">getFriendlyName</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/type/descriptor/jdbc/JdbcLiteralFormatter.html?is-external=true" title="class or interface in org.hibernate.type.descriptor.jdbc" class="externalLink">JdbcLiteralFormatter</a>&lt;T&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getJdbcLiteralFormatter(org.hibernate.type.descriptor.java.JavaType)">getJdbcLiteralFormatter</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/type/descriptor/java/JavaType.html?is-external=true" title="class or interface in org.hibernate.type.descriptor.java" class="externalLink">JavaType</a>&lt;T&gt;&nbsp;javaTypeDescriptor)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/type/descriptor/java/JavaType.html?is-external=true" title="class or interface in org.hibernate.type.descriptor.java" class="externalLink">JavaType</a>&lt;T&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getJdbcRecommendedJavaTypeMapping(java.lang.Integer,java.lang.Integer,org.hibernate.type.spi.TypeConfiguration)">getJdbcRecommendedJavaTypeMapping</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a>&nbsp;precision,
                                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a>&nbsp;scale,
                                  <a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/type/spi/TypeConfiguration.html?is-external=true" title="class or interface in org.hibernate.type.spi" class="externalLink">TypeConfiguration</a>&nbsp;typeConfiguration)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getJdbcTypeCode()">getJdbcTypeCode</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;?&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPreferredJavaTypeClass(org.hibernate.type.descriptor.WrapperOptions)">getPreferredJavaTypeClass</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/type/descriptor/WrapperOptions.html?is-external=true" title="class or interface in org.hibernate.type.descriptor" class="externalLink">WrapperOptions</a>&nbsp;options)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hashCode()">hashCode</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
@@ -286,25 +271,6 @@ implements <a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibern
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
-<!-- ============ FIELD DETAIL =========== -->
-<section>
-<ul class="blockList">
-<li class="blockList"><a id="field.detail">
-<!--   -->
-</a>
-<h3>Field Detail</h3>
-<a id="INSTANCE">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>INSTANCE</h4>
-<pre>public static final&nbsp;<a href="ReactiveArrayJdbcType.html" title="class in org.hibernate.reactive.type.descriptor.jdbc">ReactiveArrayJdbcType</a> INSTANCE</pre>
-</li>
-</ul>
-</li>
-</ul>
-</section>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <section>
 <ul class="blockList">
@@ -424,6 +390,15 @@ implements <a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibern
 </dl>
 </li>
 </ul>
+<a id="getElementJdbcType()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getElementJdbcType</h4>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/type/descriptor/jdbc/JdbcType.html?is-external=true" title="class or interface in org.hibernate.type.descriptor.jdbc" class="externalLink">JdbcType</a>&nbsp;getElementJdbcType()</pre>
+</li>
+</ul>
 <a id="toString()">
 <!--   -->
 </a>
@@ -516,13 +491,13 @@ implements <a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibern
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -532,7 +507,7 @@ implements <a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibern
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small>Copyright &copy; 2020-2023 <a href="http://redhat.com">Red Hat, Inc</a>. All Rights Reserved.</small></p>
+<p class="legalCopy"><small>Copyright &copy; 2020-2024 <a href="http://redhat.com">Red Hat, Inc</a>. All Rights Reserved.</small></p>
 </footer>
 </body>
 </html>
