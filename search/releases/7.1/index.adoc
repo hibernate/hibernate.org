@@ -5,10 +5,20 @@
 :latest-release-version: #{series(page, page.series_version).releases.first.version}
 :hsearch-doc-url-prefix: #{reference_doc(site.projects[page.project], series(page, page.series_version)).html_url}
 
-[[vector-search]]
-=== Vector search for the Lucene Backend
+=== Dependency upgrades
 
-Hibernate Search now allows vector search in the Lucene backend as an incubating feature.
+[[lucene-version]]
+Lucene::
+The Lucene backend now uses Lucene 9.9.
+Besides other improvements it brings better vector search performance.
+[[elasticsearch-version]]
+Elasticsearch::
+The Elasticsearch backend works with Elasticsearch 8.12 as well as other versions that were already compatible.
+
+[[vector-search]]
+=== Vector search for Lucene and Elasticsearch Backends
+
+Hibernate Search now allows vector search in Lucene and Elasticsearch backends as an incubating feature.
 Vector search provides the tools to search over binary (images, audio or video) or text data:
 external tools convert that data to vectors (arrays of bytes or floats, also called "embeddings"),
 which are then used for indexing and queries in Hibernate Search.
@@ -57,4 +67,43 @@ List<Book> hits = searchSession.search( Book.class )
     // to provide a regular fulltext search predicate
     .filter( f.match().field( "authors.firstName" ).matching( "arthur" ) )
 ).fetchHits( 20 );
+----
+
+Note that each backend may have its own specifics and limitations with regard to the vector search.
+For more details look at the related link:{hsearch-doc-url-prefix}#search-dsl-predicate-knn-limitations[documentation].
+
+[[metamodel-field-capabilities]]
+=== Looking up the capabilities of each field in the metamodel
+
+It is now possible to see which capabilities (predicates/sorts/projections/etc.)
+are available for a field when link:{hsearch-doc-url-prefix}#mapping-inspect[inspecting the metamodel]:
+
+[source, Java, indent=0, subs="+attributes"]
+----
+SearchMapping mapping = /*...*/ ;
+// Retrieve a SearchIndexedEntity:
+SearchIndexedEntity<Book> bookEntity = mapping.indexedEntity( Book.class );
+// Get the descriptor for that index.
+// The descriptor exposes the index metamodel:
+IndexDescriptor indexDescriptor = bookEntity.indexManager().descriptor();
+
+// Retrieve a field by name
+// and inspect its capabilities if such field is present:
+indexDescriptor.field( "releaseDate" ).ifPresent( field -> {
+	if ( field.isValueField() ) {
+		// Get the descriptor for the field type:
+		IndexValueFieldTypeDescriptor type = field.toValueField().type();
+		// Inspect the "traits" of a field type:
+		// each trait represents a predicate/sort/projection/aggregation
+		// that can be used on fields of that type.
+		Set<String> traits = type.traits();
+		if ( traits.contains( IndexFieldTraits.Aggregations.RANGE ) ) {
+			// ...
+		}
+		if ( traits.contains( IndexFieldTraits.Predicates.EXISTS ) ) {
+			// ...
+		}
+		// ...
+	}
+} );
 ----
