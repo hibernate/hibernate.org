@@ -107,3 +107,81 @@ indexDescriptor.field( "releaseDate" ).ifPresent( field -> {
 	}
 } );
 ----
+
+[[search-dsl-predicate-query-string]]
+=== Query string predicate
+
+The `queryString` predicate matches documents according to a structured query given as a string.
+It allows building more advanced query strings (using Lucene's query language) and has more configuration options than a
+link:{hsearch-doc-url-prefix}#search-dsl-predicate-simple-query-string[`simpleQueryString` predicate].
+
+====
+[source, JAVA, indent=0, subs="+callouts"]
+----
+List<Book> hits = searchSession.search( Book.class )
+    .where( f -> f.queryString().field( "description" )
+        .matching( "robots +(crime investigation disappearance)^10 +\"investigation help\"~2 -/(dis)?a[p]+ea?ance/" ) )
+    .fetchHits( 20 );
+----
+The query string, in this predicate, will result in a boolean query with 4 clauses:
+
+* a should clause matching `robots`;
+* two must clauses
+** another boolean query constructed from `(crime || investigation || disappearance)` string with a boost of `10`
+** a query matching the phrase `investigation help` with the phrase slop equals to `2`
+* a must not clause matching a regular expression `(dis)?a[p]+ea?ance`
+
++
+Note that each of the mentioned clauses may itself end up being translated into other types of queries.
+====
+
+See this section of the reference documentation on the link:{hsearch-doc-url-prefix}#search-dsl-predicate-query-string[`queryString` predicate]
+for more information.
+
+[[standalon-pojo-mapper-simpler-entity-registration]]
+=== Simpler entity registration in the Standalone POJO mapper
+
+Hibernate Search simplifies how link:{hsearch-doc-url-prefix}#concepts-entity[entities] can be defined.
+For standalone mapper now it is enough to annotate your entities with the `@SearchEntity` annotation.
+
+====
+[source, Java, indent=0, subs="+attributes"]
+----
+@SearchEntity // <1>
+// ... Other annotations, e.g. @Indexed if this entity needs to be mapped to an index.
+public class Book {
+
+    @Id
+    private Integer id;
+
+    // Other properties ...
+}
+----
+<1> Annotate the type with `@SearchEntity` so it is treated as an entity.
+====
+
+Another update related to this is a way the `SearchMappingBuilder` builder is created.
+Now it requires an annotated type source to be provided.
+
+====
+[source, Java, indent=0, subs="+attributes"]
+----
+CloseableSearchMapping searchMapping =
+SearchMapping.builder( AnnotatedTypeSource.fromClasses( // <1>
+        Book.class, Associate.class, Manager.class ))
+    .property( "hibernate.search.backend.hosts", "elasticsearch.mycompany.com" ) // <2>
+// ...
+    .build(); // <3>
+----
+<1> Create a builder, passing an `AnnotatedTypeSource` to let Hibernate Search know where to look for annotations.
++
+Thanks to link:{hsearch-doc-url-prefix}#mapping-classpath-scanning[classpath scanning],
+your `AnnotatedTypeSource` only needs to include one class
+from each JAR containing annotated types.
+Other types should be automatically discovered.
+<2> Set additional configuration properties.
+<3> Build the `SearchMapping`.
+====
+
+See this section of the reference documentation on the link:{hsearch-doc-url-prefix}#mapping-entitydefinition[entity definition]
+for more information.
