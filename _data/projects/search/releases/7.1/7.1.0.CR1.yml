@@ -1,0 +1,8 @@
+date: 2024-02-12
+announcement_url: https://in.relation.to/2024/02/12/hibernate-search-7-1-0-CR1
+summary: >-
+  Better aligning of the knn predicate between backends and removing previous limitations,
+  new query string predicate,
+  simplify entity registration in the Standalone POJO mapper,
+  allow targeting entities by name in the Standalone POJO Mapper,
+  other improvements and dependency upgrades

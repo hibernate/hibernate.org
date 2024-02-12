@@ -1,6 +1,8 @@
 summary: >-
   Vector search in both Lucene and Elasticsearch backends,
   allow looking up the capabilities of each field in the metamodel,
+  new query string predicate,
+  simplify entity registration in the Standalone POJO mapper,
   compatibility with Elasticsearch 8.12,
   upgrade to Lucene 9.9,
   other bugfixes, improvements and upgrades
