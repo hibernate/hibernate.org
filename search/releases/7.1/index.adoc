@@ -14,6 +14,9 @@ Besides other improvements it brings better vector search performance.
 [[elasticsearch-version]]
 Elasticsearch::
 The Elasticsearch backend works with Elasticsearch 8.12 as well as other versions that were already compatible.
+[[opensearch-version]]
+OpenSearch::
+The Elasticsearch backend works with OpenSearch 2.12 as well as other versions that were already compatible.
 
 [[vector-search]]
 === Vector search for Lucene and Elasticsearch Backends
