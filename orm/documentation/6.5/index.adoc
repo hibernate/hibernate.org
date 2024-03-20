@@ -1,0 +1,50 @@
+= Documentation - 6.4
+:awestruct-layout: project-documentation-orm
+:awestruct-project: orm
+:awestruct-ormversion: 6.5
+:doc-url-base: http://docs.jboss.org/hibernate/orm/{awestruct-ormversion}
+:doc-userguide: {doc-url-base}/userguide
+
+== Guides and such
+
+link:{doc-url-base}/migration-guide/migration-guide.html[Migration Guide]::
+    Migration guide covering migration to {awestruct-ormversion} from the previous version
+
+link:{doc-url-base}/introduction/html_single/Hibernate_Introduction.html[Hibernate 6 Guide]::
+    Introductory guide to Hibernate ORM 6
+
+link:{doc-url-base}/querylanguage/html_single/Hibernate_Query_Language.html[Hibernate Query Language Guide]::
+    Guide to the Hibernate Query Language
+
+link:{doc-url-base}/userguide/html_single/Hibernate_User_Guide.html[User Guide]::
+    Guide covering most user facing concepts and APIs of Hibernate
+
+link:{doc-url-base}/quickstart/html_single/[Getting Started Guide]::
+    A quickstart-style guide with tutorials.  See also the Obtaining Hibernate section discussing the Hibernate artifacts and how to obtain them.
+
+link:{doc-url-base}/integrationguide/html_single/Hibernate_Integration_Guide.html[Integrations Guide]::
+    Guide covering topics of interest for developers looking to develop integrations with Hibernate.
+
+link:{doc-url-base}/javadocs/[Hibernate JavaDoc]::
+    The Hibernate JavaDocs
+
+link:https://jakarta.ee/specifications/persistence/3.1/apidocs/[Jakarta Persistence 3.1 JavaDoc]::
+    The Jakarta Persistence (3.1) JavaDocs
+
+link:/orm/faq/[FAQ]::
+    The FAQ
+
+link:https://github.com/hibernate/hibernate-orm/wiki/_pages[GitHub-hosted wiki]::
+    Wiki hosted at GitHub
+
+link:{doc-url-base}/incubating/incubating.txt[Incubating report]::
+    Report of code that is considered incubating, and therefore subject to change.
+
+link:{doc-url-base}/deprecated/deprecated.txt[Deprecation report]::
+    Report of code that is considered deprecated.  Defined as the union of `@Deprecated` and `@Remove`
+
+link:{doc-url-base}/internals/internal.txt[Internals report]::
+    Report of code that is considered internal and not supported for use by code other than Hibernate itself.
+
+link:{doc-url-base}/dialect/dialect.html[Dialect report]::
+    Report of supported databases and versions
