@@ -686,13 +686,13 @@ pre .comment .conum {
 	}
 	
 	.sponsor .logo {
+		display: block;
 		&:not(:last-child) {
 			margin-bottom: 20px;
 		}
-		&.redhat, &.redhatdevelopers {
+		&.redhat, &.redhatdevelopers, &.commonhaus {
 			img {
-				height: 44px;
-				width: auto;
+				width: 186px;
 			}
 		}
 	}
