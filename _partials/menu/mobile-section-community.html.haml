@@ -12,6 +12,12 @@
       %a.item(href="/community/"){:class => "#{(item_active ? "active" : "")}"}
         %i.grid.icon.users
         Community
+      - href = "/community/commonhaus/"
+      %a.item{:href => href, :class => "#{(current_path == href ? "active" : "")}"}
+        Commonhaus - Membership
+      - href = "/community/commonhaus/faq-joining/"
+      %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "active" : "")}"}
+        Commonhaus - Joining FAQ
       - item_active = (current_path == '/community/contributors/orm/')
       %a.item(href="/community/contributors/orm/"){:class => "#{(item_active ? "active" : "")}"}
         %i.grid.icon.database

@@ -1,0 +1,80 @@
+= Hibernate joining Commonhaus -- Frequently-asked questions
+:awestruct-layout: community-standard
+
+This page compiles answers to frequently-asked questions regarding
+link:../[Hibernate joining the Commonhaus Foundation].
+
+[[why-foundation]]
+== Why move to a foundation?
+
+We would like to open up space for other groups and companies to also feel included in the project.
+
+[[which-projects]]
+== Which Hibernate projects are moving to a foundation?
+
+All Hibernate projects are moving, including in particular ORM, Validator, Reactive, Search, and Tools.
+
+[[what-is-commonhaus]]
+== What is Commonhaus?
+
+See https://www.commonhaus.org/.
+
+[[why-commonhaus]]
+== Why Commonhaus?
+
+The main reason to pick Commonhaus over another foundation was its link:https://www.commonhaus.org/about/governance.html[governance framework], which emphasizes project self-governance.
+
+See in particular link:https://www.commonhaus.org/about/#our-guiding-principles[its guiding principles].
+
+[[why-not-other-foundation]]
+== Why not [put your favorite foundation here]?
+
+See https://www.commonhaus.org/about/faq.html[Commonhaus’ own FAQ].
+
+[[what-is-the-move]]
+== What does the move consist of exactly?
+
+The move consists of donating intellectual property owned by Red Hat and related to Hibernate projects.
+
+The donated intellectual property includes in particular:
+
+* the Hibernate trademark;
+* related domain names.
+
+It does not include copyright, since Red Hat does not have exclusive claims to copyright on Hibernate code.
+
+[[is-redhat-reducing-funding]]
+== Is Red Hat reducing funding for Hibernate development?
+
+No.
+
+[[how-is-redhat-involvement-changing]]
+== How is Red Hat’s involvement in Hibernate changing?
+
+Red Hat’s involvement in Hibernate remains as strong as ever.
+
+The Hibernate team is expecting increased collaboration between Red Hat and other companies,
+which may require setting time aside to get new contributors on board --
+but that would also mean more work being done overall.
+
+[[what-is-changing-for-contributors]]
+== What is changing in practice for contributors to Hibernate projects?
+
+Commonhaus requires Hibernate to adhere to its link:https://www.commonhaus.org/policies/[policies],
+including in particular its link:https://www.commonhaus.org/policies/code-of-conduct/[code of conduct],
+link:https://www.commonhaus.org/policies/ip-policy/[intellectual property policy]
+and link:https://www.commonhaus.org/policies/trademark-policy/[trademark policy].
+
+Only the link:https://www.commonhaus.org/policies/code-of-conduct/[code of conduct]
+is expected to affect everyday work of contributors,
+and then in a good way.
+
+The project’s core contributors, internal governance and processes remain the same.
+
+[[further-changes]]
+== Are there plans for further changes?
+
+The only other planned change is
+link:https://in.relation.to/2023/11/18/license/[moving Hibernate projects to the Apache License (v2)],
+but this is not a requirement to join the Commonhaus foundation,
+and for most projects the license change is still in early investigation phases.

@@ -7,6 +7,17 @@
     %i.grid.icon.users
     Community
 
+  .ui.dropdown.link.item{:class => "#{(current_path.start_with?( '/community/commonhaus/' ) ? "selected" : "")}"}
+    Commonhaus
+    %i.icon.dropdown
+    .menu
+      - href = "/community/commonhaus/"
+      %a.item{:href => href, :class => "#{(current_path == href ? "selected" : "")}"}
+        Membership
+      - href = "/community/commonhaus/faq-joining/"
+      %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "selected" : "")}"}
+        Joining FAQ
+
   .ui.dropdown.link.item{:class => "#{(current_path.start_with?( '/community/contributors/' ) ? "selected" : "")}"}
     Contributors
     %i.icon.dropdown
