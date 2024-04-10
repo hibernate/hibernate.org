@@ -1,7 +1,7 @@
 summary: >-
   JDK 11 as a baseline,
   switch to Jakarta EE, compatibility with ORM 6.4 without `-orm6` artifacts, 
-  compatibility with Elasticsearch 8.10/8.11 and OpenSearch 2.9/2.10/2.11,
+  compatibility with Elasticsearch 8.10/8.11/8.12 and OpenSearch 2.9/2.10/2.11,
   upgrade to Lucene 9 in the Lucene backend,
   published Hibernate Search BOM,
   experimental compatibility with Amazon OpenSearch Serverless,
@@ -36,7 +36,7 @@ integration_constraints:
   orm:
     version: 6.4
   elasticsearch:
-    version: 7.10 - 8.11
+    version: 7.10 - 8.12
   opensearch:
     version: 1.3 - 2.11
   lucene:

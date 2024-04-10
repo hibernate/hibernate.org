@@ -3,7 +3,7 @@ summary: >-
   allow looking up the capabilities of each field in the metamodel,
   new query string predicate,
   simplify entity registration in the Standalone POJO mapper,
-  compatibility with Elasticsearch 8.12 and OpenSearch 2.12,
+  compatibility with Elasticsearch 8.12/8.13 and OpenSearch 2.12/2.13,
   upgrade to Lucene 9.9,
   other bugfixes, improvements and upgrades
 maven:
@@ -34,8 +34,8 @@ integration_constraints:
   orm:
     version: 6.4
   elasticsearch:
-    version: 7.10 - 8.12
+    version: 7.10 - 8.13
   opensearch:
-    version: 1.3 - 2.12
+    version: 1.3 - 2.13
   lucene:
     version: 9.9

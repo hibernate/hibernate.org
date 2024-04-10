@@ -13,10 +13,10 @@ The Lucene backend now uses Lucene 9.9.
 Besides other improvements it brings better vector search performance.
 [[elasticsearch-version]]
 Elasticsearch::
-The Elasticsearch backend works with Elasticsearch 8.12 as well as other versions that were already compatible.
+The Elasticsearch backend works with Elasticsearch 8.12/8.13 as well as other versions that were already compatible.
 [[opensearch-version]]
 OpenSearch::
-The Elasticsearch backend works with OpenSearch 2.12 as well as other versions that were already compatible.
+The Elasticsearch backend works with OpenSearch 2.12/2.13 as well as other versions that were already compatible.
 
 [[vector-search]]
 === Vector search for Lucene and Elasticsearch Backends
