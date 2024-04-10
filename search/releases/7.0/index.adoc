@@ -21,7 +21,7 @@ The Lucene backend now uses Lucene 9.8.
 Upgrading requires reindexing, see the migration guide for details.
 [[elasticsearch-version]]
 Elasticsearch::
-The Elasticsearch backend works with Elasticsearch 8.10/8.11 as well as other versions that were already compatible --
+The Elasticsearch backend works with Elasticsearch 8.10/8.11/8.12 as well as other versions that were already compatible --
 except for the following versions whose compatibility was dropped, because they already reached their end of life:
 * 5.x/6.x
 * 7.0-7.9
