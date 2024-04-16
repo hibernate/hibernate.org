@@ -1,0 +1,24 @@
+summary: Java Time Handling, Configurable Query Cache Layout, records as @IdClass, auto-enabled Filters, Key-based Pagination, Jakarta Data (tech preview)
+maven:
+  artifacts:
+    - artifact_id: hibernate-core
+      summary: Core implementation
+    - artifact_id: hibernate-spatial
+      summary: Spatial support
+    - artifact_id: hibernate-envers
+      summary: Envers audit support
+    - artifact_id: hibernate-agroal
+      summary: Agroal connection pooling
+    - artifact_id: hibernate-hikaricp
+      summary: HikariCP connection pooling
+    - artifact_id: hibernate-c3p0
+      summary: c3p0 connection pooling
+    - artifact_id: hibernate-proxool
+      summary: Proxool connection pooling
+    - artifact_id: hibernate-jcache
+      summary: JCache second-level caching
+integration_constraints:
+  java:
+    version: 17 or 21
+  jakarta_jpa:
+    version: 3.2
