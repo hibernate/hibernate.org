@@ -24,35 +24,33 @@ title: Corporate contributors
           %a.ui.blue.label(href='/ogm/') Hibernate OGM
           %a.ui.blue.label(href='/tools/') Hibernate Tools
 
-.ui.three.column.grid.stackable#contributors
-  .column
-    .ui.card.fluid
-      .image
-        %a(href='https://www.sap.com/')
-          %img{:src => "#{relative("/images/contributors/sap.png", page)}"}
-      .content
-        .header
-          %a(href='https://www.sap.com/') SAP
-        .description
-          %p SAP is the market leader in enterprise application software, and announced SAP HANA, a breakthrough in-memory database, which provides advanced analytics on multi-modal data (e.g. streaming, time-series, graph, or geo-spatial data).
-          %p SAP contributes to the Hibernate ORM, Search, and OGM projects to ensure the best support for SAP HANA in your application.
-      .extra.content
-        %a.ui.blue.label(href='/orm/') Hibernate ORM
-        %a.ui.blue.label(href='/search/') Hibernate Search
-        %a.ui.blue.label(href='/ogm/') Hibernate OGM
-  .column
-    .ui.card.fluid
-      .image
-        %a(href='https://www.epam.com/')
-          %img{:src => "#{relative("/images/contributors/epam.png", page)}"}
-      .content
-        .header
-          %a(href='https://www.epam.com/') EPAM Systems, Inc.
-        .description
-          %p EPAM Systems, Inc. provides complex software engineering solutions and technology services with delivery capacity distributed across Central and Eastern Europe. It delivers services to clients located primarily in North America, Western Europe, and Central and Eastern Europe or CEE.
-          %p EPAM Systems, Inc. contributed developers time to the Hibernate OGM project.
-      .extra.content
-        %a.ui.blue.label(href='/ogm/') Hibernate OGM
+.ui.stackable.corporate-contributors#contributors
+  .ui.card.fluid.contributor
+    .image
+      %a(href='https://www.sap.com/')
+        %img{:src => "#{relative("/images/contributors/sap.png", page)}"}
+    .content
+      .header
+        %a(href='https://www.sap.com/') SAP
+      .description
+        %p SAP is the market leader in enterprise application software, and announced SAP HANA, a breakthrough in-memory database, which provides advanced analytics on multi-modal data (e.g. streaming, time-series, graph, or geo-spatial data).
+        %p SAP contributes to the Hibernate ORM, Search, and OGM projects to ensure the best support for SAP HANA in your application.
+    .extra.content
+      %a.ui.blue.label(href='/orm/') Hibernate ORM
+      %a.ui.blue.label(href='/search/') Hibernate Search
+      %a.ui.blue.label(href='/ogm/') Hibernate OGM
+  .ui.card.fluid.contributor
+    .image
+      %a(href='https://www.epam.com/')
+        %img{:src => "#{relative("/images/contributors/epam.png", page)}"}
+    .content
+      .header
+        %a(href='https://www.epam.com/') EPAM Systems, Inc.
+      .description
+        %p EPAM Systems, Inc. provides complex software engineering solutions and technology services with delivery capacity distributed across Central and Eastern Europe. It delivers services to clients located primarily in North America, Western Europe, and Central and Eastern Europe or CEE.
+        %p EPAM Systems, Inc. contributed developers time to the Hibernate OGM project.
+    .extra.content
+      %a.ui.blue.label(href='/ogm/') Hibernate OGM
 
 %p &nbsp;
 
@@ -121,9 +119,3 @@ title: Corporate contributors
             Zulip Cloud Standard
           instance.
         %p Zulip is an open-source modern team chat app designed to keep both live and asynchronous conversations organized.
-:javascript
-  $(document).ready(function() {
-    $('#contributors .image').matchHeight({ byRow: true });
-    $('#contributors .card').matchHeight({ byRow: true });
-  });
-

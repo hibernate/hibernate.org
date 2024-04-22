@@ -19,85 +19,77 @@ title: Hibernate. Everything data.
     %h1 More than an ORM, discover the Hibernate galaxy.
 .ui.container.content#content
   .projects
-    .ui.three.column.doubling.grid.stackable
-      .column
+    .ui.doubling.stackable
+      .project
         .ui.raised.segment.orm
-          .project
-            %h3.ui.header
-              %a{:href => relative("/orm/")} Hibernate ORM
-            %p
-              %i.big.icon.database
-              Domain model persistence for relational databases.
-            .ui.right.aligned.basic.segment
-              %a.ui.button.right.labeled.icon.a.primary{:href => relative("/orm/")}
-                %i.right.arrow.icon
-                More
-      .column
+          %h3.ui.header
+            %a{:href => relative("/orm/")} Hibernate ORM
+          %p
+            %i.big.icon.database
+            Domain model persistence for relational databases.
+          .ui.right.aligned.basic.segment
+            %a.ui.button.right.labeled.icon.a.primary{:href => relative("/orm/")}
+              %i.right.arrow.icon
+              More
+      .project
         .ui.raised.segment.search
-          .project
-            %h3.ui.header
-              %a{:href => relative("/search/")} Hibernate Search
-            %p
-              %i.big.icon.search
-              Full-text search for your domain model.
-            .ui.right.aligned.basic.segment
-              %a.button.ui.right.labeled.icon.a.primary{:href => relative("/search/")}
-                %i.right.arrow.icon
-                More
-      .column
+          %h3.ui.header
+            %a{:href => relative("/search/")} Hibernate Search
+          %p
+            %i.big.icon.search
+            Full-text search for your domain model.
+          .ui.right.aligned.basic.segment
+            %a.button.ui.right.labeled.icon.a.primary{:href => relative("/search/")}
+              %i.right.arrow.icon
+              More
+      .project
         .ui.raised.segment.validator
-          .project
-            %h3.ui.header
-              %a{:href => relative("/validator/")} Hibernate Validator
-            %p
-              %i.big.icon.checkmark.box
-              Annotation based constraints for your domain model.
-            .ui.right.aligned.basic.segment
-              %a.ui.button.right.labeled.icon.a.primary{:href => relative("/validator/")}
-                %i.right.arrow.icon
-                More
-      .column
+          %h3.ui.header
+            %a{:href => relative("/validator/")} Hibernate Validator
+          %p
+            %i.big.icon.checkmark.box
+            Annotation based constraints for your domain model.
+          .ui.right.aligned.basic.segment
+            %a.ui.button.right.labeled.icon.a.primary{:href => relative("/validator/")}
+              %i.right.arrow.icon
+              More
+      .project
         .ui.raised.segment.tools
-          .project
-            %h3.ui.header
-              %a{:href => relative("/reactive/")} Hibernate Reactive
-            %p
-              %i.big.icon.retweet
-              Reactive domain model persistence for relational databases.
-            .ui.right.aligned.basic.segment
-              %a.ui.button.right.labeled.icon.a.primary{:href => relative("/reactive/")}
-                %i.right.arrow.icon
-                More
-      .column
+          %h3.ui.header
+            %a{:href => relative("/reactive/")} Hibernate Reactive
+          %p
+            %i.big.icon.retweet
+            Reactive domain model persistence for relational databases.
+          .ui.right.aligned.basic.segment
+            %a.ui.button.right.labeled.icon.a.primary{:href => relative("/reactive/")}
+              %i.right.arrow.icon
+              More
+      .project
         .ui.raised.segment.tools
-          .project
-            %h3.ui.header
-              %a{:href => relative("/tools/")} Hibernate Tools
-            %p
-              %i.big.icon.wrench
-              Command line tools and IDE plugins for your Hibernate usages.
-            .ui.right.aligned.basic.segment
-              %a.ui.button.right.labeled.icon.a.primary{:href => relative("/tools/")}
-                %i.right.arrow.icon
-                More
-      .column
+          %h3.ui.header
+            %a{:href => relative("/tools/")} Hibernate Tools
+          %p
+            %i.big.icon.wrench
+            Command line tools and IDE plugins for your Hibernate usages.
+          .ui.right.aligned.basic.segment
+            %a.ui.button.right.labeled.icon.a.primary{:href => relative("/tools/")}
+              %i.right.arrow.icon
+              More
+      .project
         .ui.raised.segment.tools
-          .project
-            %h3.ui.header
-              %a{:href => relative("/others/")} Others
-            %p
-              %i.big.icon.retweet
-              Other Hibernate related projects (e.g. Hibernate OGM, Hibernate Shards).
-            .ui.right.aligned.basic.segment
-              %a.ui.button.right.labeled.icon.a.primary{:href => relative("/others/")}
-                %i.right.arrow.icon
-                More
+          %h3.ui.header
+            %a{:href => relative("/others/")} Others
+          %p
+            %i.big.icon.retweet
+            Other Hibernate related projects (e.g. Hibernate OGM, Hibernate Shards).
+          .ui.right.aligned.basic.segment
+            %a.ui.button.right.labeled.icon.a.primary{:href => relative("/others/")}
+              %i.right.arrow.icon
+              More
       .column
 
 :javascript
   $(document).ready(function() {
-    $('.project').matchHeight({ byRow: false });
-
     $.ajax({
       url: "#{site.news_feed_root_url}/global.json",
       jsonpCallback: "getBlogEntries",
