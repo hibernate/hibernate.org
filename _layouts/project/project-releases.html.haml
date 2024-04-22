@@ -24,24 +24,25 @@ project_buttons_partial: project/releases-buttons.html.haml
 %h2 Series
 - active_series = project_description.active_release_series
 - unless active_series.nil? || active_series.empty?
-  .ui.three.column.doubling.grid.series.active-series.stackable
+  .ui.doubling.series.active-series.stackable
     - active_series.each do |series|
       - release = series.releases[0]
       .column
         .ui.raised.segment.version
           = partial( 'project/series-status-label.html.haml', { "series" => series, "classes" => "right ribbon", "tooltipPosition" => "left center" } )
-          %h3.ui.header
-            = series.version
-            %small
-              = release.date
-          %p
-            :asciidoc
-              :doctype: inline
-              #{series.summary.strip}
-          .ui.right.aligned.basic.segment
-            %a.ui.right.labeled.icon.button.primary{:href => "./#{series.version}/"}
-              %i.right.arrow.icon
-              More info
+          %div.description
+            %h3.ui.header
+              = series.version
+              %small
+                = release.date
+            %p
+              :asciidoc
+                :doctype: inline
+                #{series.summary.strip}
+            .ui.right.aligned.basic.segment
+              %a.ui.right.labeled.icon.button.primary{:href => "./#{series.version}/"}
+                %i.right.arrow.icon
+                More info
 - else
   %p There are no active series for this project.
 
@@ -65,24 +66,25 @@ project_buttons_partial: project/releases-buttons.html.haml
 
   #older-series
     %h2 Older series
-    .ui.three.column.doubling.grid.series.older-series.stackable
+    .ui.doubling.series.older-series.stackable
       - older_series.each do |series|
         - release = series.releases[0]
         .column
           .ui.raised.segment.version
             = partial( 'project/series-status-label.html.haml', { "series" => series, "classes" => "right ribbon", "tooltipPosition" => "left center" } )
-            %h3.ui.header
-              = series.version
-              %small
-                = release.date
-            %p
-              :asciidoc
-                :doctype: inline
-                #{series.summary.strip}
-            .ui.right.aligned.basic.segment
-              %a.ui.right.labeled.icon.button.primary{:href => "./#{series.version}/"}
-                %i.right.arrow.icon
-                More info
+            %div.description
+              %h3.ui.header
+                = series.version
+                %small
+                  = release.date
+              %p
+                :asciidoc
+                  :doctype: inline
+                  #{series.summary.strip}
+              .ui.right.aligned.basic.segment
+                %a.ui.right.labeled.icon.button.primary{:href => "./#{series.version}/"}
+                  %i.right.arrow.icon
+                  More info
 
 - unless project_description.integrations.nil?
   %h2#compatibility-matrix Compatibility matrix
@@ -118,9 +120,3 @@ project_buttons_partial: project/releases-buttons.html.haml
       Maintenance policy.
 
 ~ content
-
-:javascript
-  $(document).ready(function() {
-    $('.active-series .segment.version').matchHeight({ byRow: false });
-    $('.older-series .segment.version').matchHeight({ byRow: false });
-  });

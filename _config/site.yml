@@ -43,8 +43,6 @@ semantic_ui_css_url: https://cdn.jsdelivr.net/npm/semantic-ui@2.2.14/dist/semant
 slick_js_url: https://cdn.jsdelivr.net/npm/slick-carousel@1.7.1/slick/slick
 slick_js_url_integrity: "sha384-wBo76R9TGH6DxuCcambHkpxJKY96xJq59OwZONC0A2v0rlNK9Kb75uRdSgxK5j9+"
 slick_css_url: https://cdn.jsdelivr.net/npm/slick-carousel@1.7.1/slick/slick
-match_height_js_url: https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/jquery.matchHeight
-match_height_js_url_integrity: "sha384-8tbVdDPB3bZ0bpwXcWj84BJ4lNn6EWyBX8/Uz+tVSAKxz2u+8lYENBTZMZOF29QA"
 
 jborg_fonts_url: https://static.jboss.org/theme/fonts
 jborg_images_url: https://static.jboss.org/theme/images
@@ -667,7 +665,6 @@ profiles:
     jquery_js_url_integrity: "sha384-VC7EHu0lDzZyFfmjTPJq+DFyIn8TUGAJbEtpXquazFVr00Q/OOx//RjiZ9yU9+9m"
     semantic_ui_js_url_integrity: "sha384-/OCHdyuUZjDPStDj7ti/VaVeGQ4U9HxuJhh0FNfMTf0eO1VeBLAam8EiKCIK+jso"
     slick_js_url_integrity: "sha384-vIgLoBvIiHAJ0ttXa/pf/vpP9JgaN/9dCH6zbhDPEF3H8fvQXE0wHjS/LauoTNF1"
-    match_height_js_url_integrity: "sha384-D8EGqA4RDS0QY+wost+7zHDvbdfROh6ZoMQHET/pkhRQltALRUHUrtO3AtNcelvc"
     enable_google_analytics: false
     base_url: http://0.0.0.0:4242
     news_feed_root_url: https://staging.in.relation.to/feeds
@@ -679,7 +676,6 @@ profiles:
     jquery_js_url_integrity: "sha384-VC7EHu0lDzZyFfmjTPJq+DFyIn8TUGAJbEtpXquazFVr00Q/OOx//RjiZ9yU9+9m"
     semantic_ui_js_url_integrity: "sha384-/OCHdyuUZjDPStDj7ti/VaVeGQ4U9HxuJhh0FNfMTf0eO1VeBLAam8EiKCIK+jso"
     slick_js_url_integrity: "sha384-vIgLoBvIiHAJ0ttXa/pf/vpP9JgaN/9dCH6zbhDPEF3H8fvQXE0wHjS/LauoTNF1"
-    match_height_js_url_integrity: "sha384-D8EGqA4RDS0QY+wost+7zHDvbdfROh6ZoMQHET/pkhRQltALRUHUrtO3AtNcelvc"
     base_url: http://0.0.0.0:4242
     news_feed_root_url: https://in.relation.to/feeds
   staging:
