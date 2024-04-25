@@ -220,6 +220,7 @@ module Awestruct
               if series[:status] == nil
                 if !series.stable
                   series[:status] = 'development'
+                  project[:next_dev_series] = series
                 else
                   # By default, stable series that are not the latest are considered end-of-life'd.
                   # This can be overridden in yaml.

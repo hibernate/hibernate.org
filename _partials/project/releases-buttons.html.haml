@@ -1,7 +1,7 @@
 - real_page = page["real_page"]
 - stable_series = latest_stable_series(real_page)
 - series = latest_series(real_page)
-- dev_series = series != stable_series ? series : nil
+- dev_series = next_dev_series(real_page)
 
 - if not (stable_series.nil? && dev_series.nil?)
   - unless stable_series.nil?

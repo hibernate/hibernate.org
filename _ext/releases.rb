@@ -22,6 +22,11 @@ module Awestruct
         return project.latest_series
       end
 
+      def next_dev_series(p = page)
+        project = site.projects[p.project]
+        return project.next_dev_series
+      end
+
       def series(p = page, version)
         project = site.projects[p.project]
         return project.release_series[version]
