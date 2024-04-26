@@ -1275,17 +1275,25 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <h4>fetch</h4>
 <pre class="methodSignature">&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;&nbsp;fetch&#8203;(T&nbsp;association)</pre>
 <div class="block">Asynchronously fetch an association that's configured for lazy loading.
-
+ <p>
  <pre>
  <code>session.fetch(author.getBook()).thenAccept(book -&gt; print(book.getTitle()));</code>
- </pre></div>
+ </pre>
+ </p>
+ <p>
+ It can also initialize proxys. For example:
+ <pre>
+ <code>session.fetch(session.getReference(Author.class, authorId))</code>
+ </pre>
+ </p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>association</code> - a lazy-loaded association</dd>
+<dd><code>association</code> - a lazy-loaded association, or a proxy</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the fetched association, via a <code>Uni</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="Mutiny.html#fetch(T)"><code>Mutiny.fetch(Object)</code></a>, 
+<a href="#getReference(java.lang.Class,java.lang.Object)"><code>getReference(Class, Object)</code></a>, 
 <a href="https://docs.jboss.org/hibernate/orm/6.5/javadocs/org/hibernate/Hibernate.html?is-external=true#initialize(java.lang.Object)" title="class or interface in org.hibernate" class="externalLink"><code>Hibernate.initialize(Object)</code></a></dd>
 </dl>
 </li>

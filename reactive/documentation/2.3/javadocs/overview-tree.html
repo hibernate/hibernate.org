@@ -115,6 +115,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li><a href="org/hibernate/reactive/id/insert/package-tree.html">org.hibernate.reactive.id.insert</a>, </li>
 <li><a href="org/hibernate/reactive/it/package-tree.html">org.hibernate.reactive.it</a>, </li>
 <li><a href="org/hibernate/reactive/it/lazytoone/package-tree.html">org.hibernate.reactive.it.lazytoone</a>, </li>
+<li><a href="org/hibernate/reactive/it/reference/package-tree.html">org.hibernate.reactive.it.reference</a>, </li>
 <li><a href="org/hibernate/reactive/it/techempower/package-tree.html">org.hibernate.reactive.it.techempower</a>, </li>
 <li><a href="org/hibernate/reactive/it/techempower/utils/package-tree.html">org.hibernate.reactive.it.techempower.utils</a>, </li>
 <li><a href="org/hibernate/reactive/it/verticle/package-tree.html">org.hibernate.reactive.it.verticle</a>, </li>
@@ -204,9 +205,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul>
 <li class="circle">org.hibernate.persister.entity.mutation.<a href="https://docs.jboss.org/hibernate/orm/6.5/javadocs/org/hibernate/persister/entity/mutation/AbstractDeleteCoordinator.html?is-external=true" title="class or interface in org.hibernate.persister.entity.mutation" class="externalLink"><span class="typeNameLink">AbstractDeleteCoordinator</span></a> (implements org.hibernate.persister.entity.mutation.<a href="https://docs.jboss.org/hibernate/orm/6.5/javadocs/org/hibernate/persister/entity/mutation/DeleteCoordinator.html?is-external=true" title="class or interface in org.hibernate.persister.entity.mutation" class="externalLink">DeleteCoordinator</a>)
 <ul>
+<li class="circle">org.hibernate.persister.entity.mutation.<a href="https://docs.jboss.org/hibernate/orm/6.5/javadocs/org/hibernate/persister/entity/mutation/DeleteCoordinatorSoft.html?is-external=true" title="class or interface in org.hibernate.persister.entity.mutation" class="externalLink"><span class="typeNameLink">DeleteCoordinatorSoft</span></a>
+<ul>
+<li class="circle">org.hibernate.reactive.persister.entity.mutation.<a href="org/hibernate/reactive/persister/entity/mutation/ReactiveDeleteCoordinatorSoft.html" title="class in org.hibernate.reactive.persister.entity.mutation"><span class="typeNameLink">ReactiveDeleteCoordinatorSoft</span></a> (implements org.hibernate.reactive.persister.entity.mutation.<a href="org/hibernate/reactive/persister/entity/mutation/ReactiveAbstractDeleteCoordinator.html" title="interface in org.hibernate.reactive.persister.entity.mutation">ReactiveAbstractDeleteCoordinator</a>)</li>
+</ul>
+</li>
 <li class="circle">org.hibernate.persister.entity.mutation.<a href="https://docs.jboss.org/hibernate/orm/6.5/javadocs/org/hibernate/persister/entity/mutation/DeleteCoordinatorStandard.html?is-external=true" title="class or interface in org.hibernate.persister.entity.mutation" class="externalLink"><span class="typeNameLink">DeleteCoordinatorStandard</span></a>
 <ul>
-<li class="circle">org.hibernate.reactive.persister.entity.mutation.<a href="org/hibernate/reactive/persister/entity/mutation/ReactiveDeleteCoordinator.html" title="class in org.hibernate.reactive.persister.entity.mutation"><span class="typeNameLink">ReactiveDeleteCoordinator</span></a></li>
+<li class="circle">org.hibernate.reactive.persister.entity.mutation.<a href="org/hibernate/reactive/persister/entity/mutation/ReactiveDeleteCoordinator.html" title="class in org.hibernate.reactive.persister.entity.mutation"><span class="typeNameLink">ReactiveDeleteCoordinator</span></a> (implements org.hibernate.reactive.persister.entity.mutation.<a href="org/hibernate/reactive/persister/entity/mutation/ReactiveAbstractDeleteCoordinator.html" title="interface in org.hibernate.reactive.persister.entity.mutation">ReactiveAbstractDeleteCoordinator</a>)</li>
 </ul>
 </li>
 </ul>
@@ -268,6 +274,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </li>
 <li class="circle">org.hibernate.reactive.example.nativesql.<a href="org/hibernate/reactive/example/nativesql/Author.html" title="class in org.hibernate.reactive.example.nativesql"><span class="typeNameLink">Author</span></a></li>
 <li class="circle">org.hibernate.reactive.example.session.<a href="org/hibernate/reactive/example/session/Author.html" title="class in org.hibernate.reactive.example.session"><span class="typeNameLink">Author</span></a></li>
+<li class="circle">org.hibernate.reactive.it.reference.<a href="org/hibernate/reactive/it/reference/Author.html" title="class in org.hibernate.reactive.it.reference"><span class="typeNameLink">Author</span></a></li>
 <li class="circle">org.hibernate.sql.exec.internal.<a href="https://docs.jboss.org/hibernate/orm/6.5/javadocs/org/hibernate/sql/exec/internal/BaseExecutionContext.html?is-external=true" title="class or interface in org.hibernate.sql.exec.internal" class="externalLink"><span class="typeNameLink">BaseExecutionContext</span></a> (implements org.hibernate.sql.exec.spi.<a href="https://docs.jboss.org/hibernate/orm/6.5/javadocs/org/hibernate/sql/exec/spi/ExecutionContext.html?is-external=true" title="class or interface in org.hibernate.sql.exec.spi" class="externalLink">ExecutionContext</a>)
 <ul>
 <li class="circle">org.hibernate.reactive.sql.exec.spi.<a href="org/hibernate/reactive/sql/exec/spi/ReactiveRowProcessingState.html" title="class in org.hibernate.reactive.sql.exec.spi"><span class="typeNameLink">ReactiveRowProcessingState</span></a> (implements org.hibernate.sql.results.jdbc.spi.<a href="https://docs.jboss.org/hibernate/orm/6.5/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html?is-external=true" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="externalLink">RowProcessingState</a>)</li>
@@ -276,6 +283,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="circle">org.hibernate.reactive.pool.<a href="org/hibernate/reactive/pool/BatchingConnection.html" title="class in org.hibernate.reactive.pool"><span class="typeNameLink">BatchingConnection</span></a> (implements org.hibernate.reactive.pool.<a href="org/hibernate/reactive/pool/ReactiveConnection.html" title="interface in org.hibernate.reactive.pool">ReactiveConnection</a>)</li>
 <li class="circle">org.hibernate.reactive.example.nativesql.<a href="org/hibernate/reactive/example/nativesql/Book.html" title="class in org.hibernate.reactive.example.nativesql"><span class="typeNameLink">Book</span></a></li>
 <li class="circle">org.hibernate.reactive.example.session.<a href="org/hibernate/reactive/example/session/Book.html" title="class in org.hibernate.reactive.example.session"><span class="typeNameLink">Book</span></a></li>
+<li class="circle">org.hibernate.reactive.it.reference.<a href="org/hibernate/reactive/it/reference/Book.html" title="class in org.hibernate.reactive.it.reference"><span class="typeNameLink">Book</span></a></li>
 <li class="circle">org.hibernate.reactive.it.lazytoone.<a href="org/hibernate/reactive/it/lazytoone/Captain.html" title="class in org.hibernate.reactive.it.lazytoone"><span class="typeNameLink">Captain</span></a></li>
 <li class="circle">org.hibernate.reactive.it.<a href="org/hibernate/reactive/it/Crew.html" title="class in org.hibernate.reactive.it"><span class="typeNameLink">Crew</span></a></li>
 <li class="circle">org.hibernate.sql.model.jdbc.<a href="https://docs.jboss.org/hibernate/orm/6.5/javadocs/org/hibernate/sql/model/jdbc/DeleteOrUpsertOperation.html?is-external=true" title="class or interface in org.hibernate.sql.model.jdbc" class="externalLink"><span class="typeNameLink">DeleteOrUpsertOperation</span></a> (implements org.hibernate.sql.model.<a href="https://docs.jboss.org/hibernate/orm/6.5/javadocs/org/hibernate/sql/model/SelfExecutingUpdateOperation.html?is-external=true" title="class or interface in org.hibernate.sql.model" class="externalLink">SelfExecutingUpdateOperation</a>)
@@ -803,6 +811,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </li>
 </ul>
 </li>
+<li class="circle">org.hibernate.reactive.persister.entity.mutation.<a href="org/hibernate/reactive/persister/entity/mutation/ReactiveAbstractDeleteCoordinator.html" title="interface in org.hibernate.reactive.persister.entity.mutation"><span class="typeNameLink">ReactiveAbstractDeleteCoordinator</span></a></li>
 <li class="circle">org.hibernate.reactive.engine.<a href="org/hibernate/reactive/engine/ReactiveAfterTransactionCompletionProcess.html" title="interface in org.hibernate.reactive.engine"><span class="typeNameLink">ReactiveAfterTransactionCompletionProcess</span></a></li>
 <li class="circle">org.hibernate.reactive.engine.<a href="org/hibernate/reactive/engine/ReactiveBeforeTransactionCompletionProcess.html" title="interface in org.hibernate.reactive.engine"><span class="typeNameLink">ReactiveBeforeTransactionCompletionProcess</span></a></li>
 <li class="circle">org.hibernate.reactive.pool.<a href="org/hibernate/reactive/pool/ReactiveConnection.html" title="interface in org.hibernate.reactive.pool"><span class="typeNameLink">ReactiveConnection</span></a></li>

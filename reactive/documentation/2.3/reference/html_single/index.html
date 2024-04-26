@@ -6,21 +6,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.18">
 <meta name="author" content="Davide D&#8217;Alto, Gavin King">
-<title>Hibernate Reactive 2.3.0.CR1 Reference Documentation</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
-<link rel="stylesheet" href="./asciidoctor.css">
+<title>Hibernate Reactive 2.3.0.Final Reference Documentation</title>
+<link rel="stylesheet" href="./css/hibernate.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
+<link rel="stylesheet" href="./rouge-github.css">
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Hibernate Reactive 2.3.0.CR1 Reference Documentation</h1>
+<h1>Hibernate Reactive 2.3.0.Final Reference Documentation</h1>
 <div class="details">
 <span id="author" class="author">Davide D&#8217;Alto</span><br>
 <span id="email" class="email"><a href="mailto:davide@hibernate.org">davide@hibernate.org</a></span><br>
 <span id="author2" class="author">Gavin King</span><br>
 <span id="email2" class="email"><a href="mailto:gavin@hibernate.org">gavin@hibernate.org</a></span><br>
-<span id="revnumber">version 2.3.0.CR1</span>
+<span id="revnumber">version 2.3.0.Final</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -323,7 +322,7 @@ Reactive is the persistence <code>&lt;provider&gt;</code> element, which must be
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="xml">&lt;provider&gt;org.hibernate.reactive.provider.ReactivePersistenceProvider&lt;/provider&gt;</code></pre>
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;provider&gt;</span>org.hibernate.reactive.provider.ReactivePersistenceProvider<span class="nt">&lt;/provider&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -336,8 +335,8 @@ configure Hibernate ORM core.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="xml">&lt;class&gt;org.hibernate.reactive.example.session.Author&lt;/class&gt;
-&lt;class&gt;org.hibernate.reactive.example.session.Book&lt;/class&gt;</code></pre>
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;class&gt;</span>org.hibernate.reactive.example.session.Author<span class="nt">&lt;/class&gt;</span>
+<span class="nt">&lt;class&gt;</span>org.hibernate.reactive.example.session.Book<span class="nt">&lt;/class&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -511,7 +510,7 @@ handling when using it. Failing to do so will cause an exception:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="java">io.vertx.core.VertxException: Thread blocked</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="n">io</span><span class="o">.</span><span class="na">vertx</span><span class="o">.</span><span class="na">core</span><span class="o">.</span><span class="na">VertxException</span><span class="o">:</span> <span class="nc">Thread</span> <span class="n">blocked</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -519,18 +518,18 @@ handling when using it. Failing to do so will cause an exception:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="java">Vertx vertx = ...
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">Vertx</span> <span class="n">vertx</span> <span class="o">=</span> <span class="o">...</span>
 
-Uni&lt;Void&gt; startHibernate = Uni.createFrom().deferred(() -&gt; {
-  emf = Persistence
-    .createEntityManagerFactory("demo")
-    .unwrap(Mutiny.SessionFactory.class);
+<span class="nc">Uni</span><span class="o">&lt;</span><span class="nc">Void</span><span class="o">&gt;</span> <span class="n">startHibernate</span> <span class="o">=</span> <span class="nc">Uni</span><span class="o">.</span><span class="na">createFrom</span><span class="o">().</span><span class="na">deferred</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="o">{</span>
+  <span class="n">emf</span> <span class="o">=</span> <span class="nc">Persistence</span>
+    <span class="o">.</span><span class="na">createEntityManagerFactory</span><span class="o">(</span><span class="s">"demo"</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">unwrap</span><span class="o">(</span><span class="nc">Mutiny</span><span class="o">.</span><span class="na">SessionFactory</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
 
-  return Uni.createFrom().voidItem();
-});
+  <span class="k">return</span> <span class="nc">Uni</span><span class="o">.</span><span class="na">createFrom</span><span class="o">().</span><span class="na">voidItem</span><span class="o">();</span>
+<span class="o">});</span>
 
-startHibernate = vertx.executeBlocking(startHibernate)
-  .onItem().invoke(() -&gt; logger.info("✅ Hibernate Reactive is ready"));</code></pre>
+<span class="n">startHibernate</span> <span class="o">=</span> <span class="n">vertx</span><span class="o">.</span><span class="na">executeBlocking</span><span class="o">(</span><span class="n">startHibernate</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">onItem</span><span class="o">().</span><span class="na">invoke</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"✅ Hibernate Reactive is ready"</span><span class="o">));</span></code></pre>
 </div>
 </div>
 </div>
@@ -556,8 +555,8 @@ add these lines to your <code>log4j2.properties</code> file:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="properties">logger.hibernate.name = org.hibernate.SQL
-logger.hibernate.level = debug</code></pre>
+<pre class="rouge highlight"><code data-lang="properties"><span class="py">logger.hibernate.name</span> <span class="p">=</span> <span class="s">org.hibernate.SQL</span>
+<span class="py">logger.hibernate.level</span> <span class="p">=</span> <span class="s">debug</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -770,26 +769,26 @@ to regular Hibernate ORM and other implementations of JPA.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="java">@Entity
-@Table(name="authors")
-class Author {
-    @Id @GeneratedValue
-    private Integer id;
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"authors"</span><span class="o">)</span>
+<span class="kd">class</span> <span class="nc">Author</span> <span class="o">{</span>
+    <span class="nd">@Id</span> <span class="nd">@GeneratedValue</span>
+    <span class="kd">private</span> <span class="nc">Integer</span> <span class="n">id</span><span class="o">;</span>
 
-    @NotNull @Size(max=100)
-    private String name;
+    <span class="nd">@NotNull</span> <span class="nd">@Size</span><span class="o">(</span><span class="n">max</span><span class="o">=</span><span class="mi">100</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
 
-    @OneToMany(mappedBy = "author", cascade = PERSIST)
-    private List&lt;Book&gt; books = new ArrayList&lt;&gt;();
+    <span class="nd">@OneToMany</span><span class="o">(</span><span class="n">mappedBy</span> <span class="o">=</span> <span class="s">"author"</span><span class="o">,</span> <span class="n">cascade</span> <span class="o">=</span> <span class="no">PERSIST</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Book</span><span class="o">&gt;</span> <span class="n">books</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
 
-    Author(String name) {
-        this.name = name;
-    }
+    <span class="nc">Author</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
 
-    Author() {}
+    <span class="nc">Author</span><span class="o">()</span> <span class="o">{}</span>
 
-    // getters and setters...
-}</code></pre>
+    <span class="c1">// getters and setters...</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1219,16 +1218,16 @@ be customized using the following annotations:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="java">@Entity
-@Table(name="authors")
-class Author {
-    @Id @GeneratedValue(generator = "authorIds")
-    @SequenceGenerator(name = "authorIds",
-               sequenceName = "author_ids",
-             allocationSize = 20)
-    Integer id;
-    ...
-}</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"authors"</span><span class="o">)</span>
+<span class="kd">class</span> <span class="nc">Author</span> <span class="o">{</span>
+    <span class="nd">@Id</span> <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">generator</span> <span class="o">=</span> <span class="s">"authorIds"</span><span class="o">)</span>
+    <span class="nd">@SequenceGenerator</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"authorIds"</span><span class="o">,</span>
+               <span class="n">sequenceName</span> <span class="o">=</span> <span class="s">"author_ids"</span><span class="o">,</span>
+             <span class="n">allocationSize</span> <span class="o">=</span> <span class="mi">20</span><span class="o">)</span>
+    <span class="nc">Integer</span> <span class="n">id</span><span class="o">;</span>
+    <span class="o">...</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1277,18 +1276,18 @@ the Hibernate <code>@Type</code> annotation.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="java">@Converter
-public class BigIntegerAsString implements AttributeConverter&lt;BigInteger, String&gt; {
-    @Override
-    public String convertToDatabaseColumn(BigInteger attribute) {
-        return attribute == null ? null : attribute.toString(2);
-    }
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Converter</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BigIntegerAsString</span> <span class="kd">implements</span> <span class="nc">AttributeConverter</span><span class="o">&lt;</span><span class="nc">BigInteger</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">convertToDatabaseColumn</span><span class="o">(</span><span class="nc">BigInteger</span> <span class="n">attribute</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">attribute</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">?</span> <span class="kc">null</span> <span class="o">:</span> <span class="n">attribute</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+    <span class="o">}</span>
 
-    @Override
-    public BigInteger convertToEntityAttribute(String string) {
-        return string == null ? null : new BigInteger(string, 2);
-    }
-}</code></pre>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">BigInteger</span> <span class="nf">convertToEntityAttribute</span><span class="o">(</span><span class="nc">String</span> <span class="n">string</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">string</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">?</span> <span class="kc">null</span> <span class="o">:</span> <span class="k">new</span> <span class="nc">BigInteger</span><span class="o">(</span><span class="n">string</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1434,7 +1433,7 @@ for example, by calling:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="JAVA">EntityManagerFactory emf = Persistence.createEntityManagerFactory("example");</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">EntityManagerFactory</span> <span class="n">emf</span> <span class="o">=</span> <span class="nc">Persistence</span><span class="o">.</span><span class="na">createEntityManagerFactory</span><span class="o">(</span><span class="s">"example"</span><span class="o">);</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1444,7 +1443,7 @@ for example, by calling:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="JAVA">Stage.SessionFactory sessionFactory = emf.unwrap(Stage.SessionFactory.class);</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">Stage</span><span class="o">.</span><span class="na">SessionFactory</span> <span class="n">sessionFactory</span> <span class="o">=</span> <span class="n">emf</span><span class="o">.</span><span class="na">unwrap</span><span class="o">(</span><span class="nc">Stage</span><span class="o">.</span><span class="na">SessionFactory</span><span class="o">.</span><span class="na">class</span><span class="o">);</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1453,7 +1452,7 @@ for example, by calling:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="JAVA">Mutiny.SessionFactory sessionFactory = emf.unwrap(Mutiny.SessionFactory.class);</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">Mutiny</span><span class="o">.</span><span class="na">SessionFactory</span> <span class="n">sessionFactory</span> <span class="o">=</span> <span class="n">emf</span><span class="o">.</span><span class="na">unwrap</span><span class="o">(</span><span class="nc">Mutiny</span><span class="o">.</span><span class="na">SessionFactory</span><span class="o">.</span><span class="na">class</span><span class="o">);</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1507,12 +1506,12 @@ concurrent reactive streams!
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="JAVA">sessionFactory.withSession(
-        session -&gt; session.find(Book.class, id)
-                .invoke(
-                    book -&gt; ... //do something with the book
-                )
-);</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="n">sessionFactory</span><span class="o">.</span><span class="na">withSession</span><span class="o">(</span>
+        <span class="n">session</span> <span class="o">-&gt;</span> <span class="n">session</span><span class="o">.</span><span class="na">find</span><span class="o">(</span><span class="nc">Book</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">id</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">invoke</span><span class="o">(</span>
+                    <span class="n">book</span> <span class="o">-&gt;</span> <span class="o">...</span> <span class="c1">//do something with the book</span>
+                <span class="o">)</span>
+<span class="o">);</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1528,14 +1527,14 @@ one Vert.x context. (See <a href="#_sessions_and_vert_x_contexts">Sessions and V
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="JAVA">Uni&lt;Session&gt; sessionUni = sessionFactory.openSession();
-sessionUni.chain(
-        session -&gt; session.find(Book.class, id)
-                .invoke(
-		    book -&gt; ... //do something with the book
-                )
-                .eventually(session::close)
-);</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">Uni</span><span class="o">&lt;</span><span class="nc">Session</span><span class="o">&gt;</span> <span class="n">sessionUni</span> <span class="o">=</span> <span class="n">sessionFactory</span><span class="o">.</span><span class="na">openSession</span><span class="o">();</span>
+<span class="n">sessionUni</span><span class="o">.</span><span class="na">chain</span><span class="o">(</span>
+        <span class="n">session</span> <span class="o">-&gt;</span> <span class="n">session</span><span class="o">.</span><span class="na">find</span><span class="o">(</span><span class="nc">Book</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">id</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">invoke</span><span class="o">(</span>
+		    <span class="n">book</span> <span class="o">-&gt;</span> <span class="o">...</span> <span class="c1">//do something with the book</span>
+                <span class="o">)</span>
+                <span class="o">.</span><span class="na">eventually</span><span class="o">(</span><span class="nl">session:</span><span class="o">:</span><span class="n">close</span><span class="o">)</span>
+<span class="o">);</span></code></pre>
 </div>
 </div>
 </div>
@@ -1636,8 +1635,8 @@ of these methods returns its result in a non-blocking fashion via a Java
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="JAVA">session.find(Book.class, book.id)
-       .invoke( book -&gt; System.out.println(book.title + " is a great book!") )</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="n">session</span><span class="o">.</span><span class="na">find</span><span class="o">(</span><span class="nc">Book</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">book</span><span class="o">.</span><span class="na">id</span><span class="o">)</span>
+       <span class="o">.</span><span class="na">invoke</span><span class="o">(</span> <span class="n">book</span> <span class="o">-&gt;</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">book</span><span class="o">.</span><span class="na">title</span> <span class="o">+</span> <span class="s">" is a great book!"</span><span class="o">)</span> <span class="o">)</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1646,9 +1645,9 @@ of these methods returns its result in a non-blocking fashion via a Java
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="JAVA">session.find(Book.class, id)
-       .call( book -&gt; session.remove(book) )
-       .call( () -&gt; session.flush() )</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="n">session</span><span class="o">.</span><span class="na">find</span><span class="o">(</span><span class="nc">Book</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">id</span><span class="o">)</span>
+       <span class="o">.</span><span class="na">call</span><span class="o">(</span> <span class="n">book</span> <span class="o">-&gt;</span> <span class="n">session</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">book</span><span class="o">)</span> <span class="o">)</span>
+       <span class="o">.</span><span class="na">call</span><span class="o">(</span> <span class="o">()</span> <span class="o">-&gt;</span> <span class="n">session</span><span class="o">.</span><span class="na">flush</span><span class="o">()</span> <span class="o">)</span></code></pre>
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -1675,9 +1674,9 @@ chain its return value to the tip of the stream.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="JAVA">session.find(Book.class, id)
-       .call( book -&gt; session.remove(book) )
-       .invoke( () -&gt; session.flush() )   //OOPS, WRONG!!</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="n">session</span><span class="o">.</span><span class="na">find</span><span class="o">(</span><span class="nc">Book</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">id</span><span class="o">)</span>
+       <span class="o">.</span><span class="na">call</span><span class="o">(</span> <span class="n">book</span> <span class="o">-&gt;</span> <span class="n">session</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">book</span><span class="o">)</span> <span class="o">)</span>
+       <span class="o">.</span><span class="na">invoke</span><span class="o">(</span> <span class="o">()</span> <span class="o">-&gt;</span> <span class="n">session</span><span class="o">.</span><span class="na">flush</span><span class="o">()</span> <span class="o">)</span>   <span class="c1">//OOPS, WRONG!!</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1701,11 +1700,11 @@ that never gets called:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="JAVA">session.find(Book.class, id)
-       .call( book -&gt; {
-           session.remove(book);   //OOPS, WRONG!!
-           return session.flush();
-       } )</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="n">session</span><span class="o">.</span><span class="na">find</span><span class="o">(</span><span class="nc">Book</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">id</span><span class="o">)</span>
+       <span class="o">.</span><span class="na">call</span><span class="o">(</span> <span class="n">book</span> <span class="o">-&gt;</span> <span class="o">{</span>
+           <span class="n">session</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">book</span><span class="o">);</span>   <span class="c1">//OOPS, WRONG!!</span>
+           <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="na">flush</span><span class="o">();</span>
+       <span class="o">}</span> <span class="o">)</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1757,9 +1756,9 @@ queries to be executed asynchronously, always returning their results via a
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="JAVA">session.createQuery("select title from Book order by title desc")
-       .getResultList()
-       .invoke( list -&gt; list.forEach(System.out::println) )</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="n">session</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="s">"select title from Book order by title desc"</span><span class="o">)</span>
+       <span class="o">.</span><span class="na">getResultList</span><span class="o">()</span>
+       <span class="o">.</span><span class="na">invoke</span><span class="o">(</span> <span class="n">list</span> <span class="o">-&gt;</span> <span class="n">list</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">)</span> <span class="o">)</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1827,14 +1826,14 @@ arguments to temporally-typed query parameters.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="JAVA">CriteriaQuery&lt;Book&gt; query = factory.getCriteriaBuilder().createQuery(Book.class);
-Root&lt;Author&gt; a = query.from(Author.class);
-Join&lt;Author,Book&gt; b = a.join(Author_.books);
-query.where( a.get(Author_.name).in("Neal Stephenson", "William Gibson") );
-query.select(b);
-return session.createQuery(query).getResultList().invoke(
-        books -&gt; books.forEach( book -&gt; out.println(book.title) )
-);</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">CriteriaQuery</span><span class="o">&lt;</span><span class="nc">Book</span><span class="o">&gt;</span> <span class="n">query</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="na">getCriteriaBuilder</span><span class="o">().</span><span class="na">createQuery</span><span class="o">(</span><span class="nc">Book</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+<span class="nc">Root</span><span class="o">&lt;</span><span class="nc">Author</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="nc">Author</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+<span class="nc">Join</span><span class="o">&lt;</span><span class="nc">Author</span><span class="o">,</span><span class="nc">Book</span><span class="o">&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="n">Author_</span><span class="o">.</span><span class="na">books</span><span class="o">);</span>
+<span class="n">query</span><span class="o">.</span><span class="na">where</span><span class="o">(</span> <span class="n">a</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Author_</span><span class="o">.</span><span class="na">name</span><span class="o">).</span><span class="na">in</span><span class="o">(</span><span class="s">"Neal Stephenson"</span><span class="o">,</span> <span class="s">"William Gibson"</span><span class="o">)</span> <span class="o">);</span>
+<span class="n">query</span><span class="o">.</span><span class="na">select</span><span class="o">(</span><span class="n">b</span><span class="o">);</span>
+<span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="n">query</span><span class="o">).</span><span class="na">getResultList</span><span class="o">().</span><span class="na">invoke</span><span class="o">(</span>
+        <span class="n">books</span> <span class="o">-&gt;</span> <span class="n">books</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span> <span class="n">book</span> <span class="o">-&gt;</span> <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">book</span><span class="o">.</span><span class="na">title</span><span class="o">)</span> <span class="o">)</span>
+<span class="o">);</span></code></pre>
 </div>
 </div>
 </div>
@@ -1852,9 +1851,9 @@ method of <code>Stage</code> and <code>Mutiny</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="JAVA">session.find(Author.class, author.id)
-       .chain( author -&gt; Mutiny.fetch(author.books) )
-       .invoke( books -&gt; ... )</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="n">session</span><span class="o">.</span><span class="na">find</span><span class="o">(</span><span class="nc">Author</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">author</span><span class="o">.</span><span class="na">id</span><span class="o">)</span>
+       <span class="o">.</span><span class="na">chain</span><span class="o">(</span> <span class="n">author</span> <span class="o">-&gt;</span> <span class="nc">Mutiny</span><span class="o">.</span><span class="na">fetch</span><span class="o">(</span><span class="n">author</span><span class="o">.</span><span class="na">books</span><span class="o">)</span> <span class="o">)</span>
+       <span class="o">.</span><span class="na">invoke</span><span class="o">(</span> <span class="n">books</span> <span class="o">-&gt;</span> <span class="o">...</span> <span class="o">)</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1881,9 +1880,9 @@ example:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="JAVA">Mutiny.fetch( session.getReference(detachedAuthor) )
-       .chain( author -&gt; Mutiny.fetch(author.books) )
-       .invoke( books -&gt; ... )</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">Mutiny</span><span class="o">.</span><span class="na">fetch</span><span class="o">(</span> <span class="n">session</span><span class="o">.</span><span class="na">getReference</span><span class="o">(</span><span class="n">detachedAuthor</span><span class="o">)</span> <span class="o">)</span>
+       <span class="o">.</span><span class="na">chain</span><span class="o">(</span> <span class="n">author</span> <span class="o">-&gt;</span> <span class="nc">Mutiny</span><span class="o">.</span><span class="na">fetch</span><span class="o">(</span><span class="n">author</span><span class="o">.</span><span class="na">books</span><span class="o">)</span> <span class="o">)</span>
+       <span class="o">.</span><span class="na">invoke</span><span class="o">(</span> <span class="n">books</span> <span class="o">-&gt;</span> <span class="o">...</span> <span class="o">)</span></code></pre>
 </div>
 </div>
 <div class="admonitionblock important">
@@ -1913,7 +1912,7 @@ bytecode enhancer&mdash;is also an explicit operation.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="JAVA">@Basic(fetch=LAZY) String isbn;</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Basic</span><span class="o">(</span><span class="n">fetch</span><span class="o">=</span><span class="no">LAZY</span><span class="o">)</span> <span class="nc">String</span> <span class="n">isbn</span><span class="o">;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1954,9 +1953,9 @@ overloaded version of the <code>fetch()</code> operation:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="JAVA">session.find(Book.class, book.id)
-       .chain( book -&gt; session.fetch(book, Book_.isbn) )
-       .invoke( isbn -&gt; ... )</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="n">session</span><span class="o">.</span><span class="na">find</span><span class="o">(</span><span class="nc">Book</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">book</span><span class="o">.</span><span class="na">id</span><span class="o">)</span>
+       <span class="o">.</span><span class="na">chain</span><span class="o">(</span> <span class="n">book</span> <span class="o">-&gt;</span> <span class="n">session</span><span class="o">.</span><span class="na">fetch</span><span class="o">(</span><span class="n">book</span><span class="o">,</span> <span class="n">Book_</span><span class="o">.</span><span class="na">isbn</span><span class="o">)</span> <span class="o">)</span>
+       <span class="o">.</span><span class="na">invoke</span><span class="o">(</span> <span class="n">isbn</span> <span class="o">-&gt;</span> <span class="o">...</span> <span class="o">)</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1986,7 +1985,7 @@ transaction.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="JAVA">session.withTransaction( tx -&gt; session.persist(book) )</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="n">session</span><span class="o">.</span><span class="na">withTransaction</span><span class="o">(</span> <span class="n">tx</span> <span class="o">-&gt;</span> <span class="n">session</span><span class="o">.</span><span class="na">persist</span><span class="o">(</span><span class="n">book</span><span class="o">)</span> <span class="o">)</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2018,7 +2017,7 @@ transaction in one call:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="JAVA">sessionFactory.withTransaction( (session, tx) -&gt; session.persist(book) )</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="n">sessionFactory</span><span class="o">.</span><span class="na">withTransaction</span><span class="o">(</span> <span class="o">(</span><span class="n">session</span><span class="o">,</span> <span class="n">tx</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">session</span><span class="o">.</span><span class="na">persist</span><span class="o">(</span><span class="n">book</span><span class="o">)</span> <span class="o">)</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2100,11 +2099,11 @@ puff of pixie dust. That&#8217;s not how these things work.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="JAVA">List&lt;CompletionStage&gt; list = ...
-for (Entity entity : entities) {
-    list.add(session.persist(entity));
-}
-CompletableFuture.allOf(list).thenCompose(session::flush);</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">List</span><span class="o">&lt;</span><span class="nc">CompletionStage</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="o">...</span>
+<span class="k">for</span> <span class="o">(</span><span class="nc">Entity</span> <span class="n">entity</span> <span class="o">:</span> <span class="n">entities</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">session</span><span class="o">.</span><span class="na">persist</span><span class="o">(</span><span class="n">entity</span><span class="o">));</span>
+<span class="o">}</span>
+<span class="nc">CompletableFuture</span><span class="o">.</span><span class="na">allOf</span><span class="o">(</span><span class="n">list</span><span class="o">).</span><span class="na">thenCompose</span><span class="o">(</span><span class="nl">session:</span><span class="o">:</span><span class="n">flush</span><span class="o">);</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2123,10 +2122,10 @@ context.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="JAVA">Context currentContext = Vertx.currentContext();
-currentContext.runOnContext( event -&gt; {
-    // Here you will be able to use the session
-});</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">Context</span> <span class="n">currentContext</span> <span class="o">=</span> <span class="nc">Vertx</span><span class="o">.</span><span class="na">currentContext</span><span class="o">();</span>
+<span class="n">currentContext</span><span class="o">.</span><span class="na">runOnContext</span><span class="o">(</span> <span class="n">event</span> <span class="o">-&gt;</span> <span class="o">{</span>
+    <span class="c1">// Here you will be able to use the session</span>
+<span class="o">});</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2145,20 +2144,20 @@ provide your own <code>VertxInstance</code>. Let&#8217;s consider this example:<
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="JAVA">public class MyVertx implements VertxInstance {
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyVertx</span> <span class="kd">implements</span> <span class="nc">VertxInstance</span> <span class="o">{</span>
 
-  private final Vertx vertx;
+  <span class="kd">private</span> <span class="kd">final</span> <span class="nc">Vertx</span> <span class="n">vertx</span><span class="o">;</span>
 
-  public MyVertx() {
-    this.vertx = Vertx.vertx();
-  }
+  <span class="kd">public</span> <span class="nf">MyVertx</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">vertx</span> <span class="o">=</span> <span class="nc">Vertx</span><span class="o">.</span><span class="na">vertx</span><span class="o">();</span>
+  <span class="o">}</span>
 
-  @Override
-  public Vertx getVertx() {
-    return vertx;
-  }
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="nc">Vertx</span> <span class="nf">getVertx</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">vertx</span><span class="o">;</span>
+  <span class="o">}</span>
 
-}</code></pre>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2167,12 +2166,12 @@ for example:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="JAVA">Configuration configuration = new Configuration();
-StandardServiceRegistryBuilder builder = new ReactiveServiceRegistryBuilder()
-        .addService( VertxInstance.class, new MyVertx() )
-        .applySettings( configuration.getProperties() );
-StandardServiceRegistry registry = builder.build();
-SessionFactory sessionFactory = configuration.buildSessionFactory( registry );</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">Configuration</span> <span class="n">configuration</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Configuration</span><span class="o">();</span>
+<span class="nc">StandardServiceRegistryBuilder</span> <span class="n">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ReactiveServiceRegistryBuilder</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">addService</span><span class="o">(</span> <span class="nc">VertxInstance</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="k">new</span> <span class="nc">MyVertx</span><span class="o">()</span> <span class="o">)</span>
+        <span class="o">.</span><span class="na">applySettings</span><span class="o">(</span> <span class="n">configuration</span><span class="o">.</span><span class="na">getProperties</span><span class="o">()</span> <span class="o">);</span>
+<span class="nc">StandardServiceRegistry</span> <span class="n">registry</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="na">build</span><span class="o">();</span>
+<span class="nc">SessionFactory</span> <span class="n">sessionFactory</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="na">buildSessionFactory</span><span class="o">(</span> <span class="n">registry</span> <span class="o">);</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2180,12 +2179,12 @@ SessionFactory sessionFactory = configuration.buildSessionFactory( registry );</
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="JAVA">public class MyServiceContributor implements ServiceContributor {
-  @Override
-  public void contribute(StandardServiceRegistryBuilder serviceRegistryBuilder) {
-    serviceRegistryBuilder.addService( VertxInstance.class, new MyVertxProvider() );
-  }
-}</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyServiceContributor</span> <span class="kd">implements</span> <span class="nc">ServiceContributor</span> <span class="o">{</span>
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">contribute</span><span class="o">(</span><span class="nc">StandardServiceRegistryBuilder</span> <span class="n">serviceRegistryBuilder</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">serviceRegistryBuilder</span><span class="o">.</span><span class="na">addService</span><span class="o">(</span> <span class="nc">VertxInstance</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="k">new</span> <span class="nc">MyVertxProvider</span><span class="o">()</span> <span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2194,7 +2193,7 @@ SessionFactory sessionFactory = configuration.buildSessionFactory( registry );</
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="JAVA">org.myproject.MyServiceContributor</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="n">org</span><span class="o">.</span><span class="na">myproject</span><span class="o">.</span><span class="na">MyServiceContributor</span></code></pre>
 </div>
 </div>
 </div>
@@ -2610,7 +2609,7 @@ interacting with the database.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="JAVA">Stage.StatelessSession ss = getSessionFactory().openStatelessSession();</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">Stage</span><span class="o">.</span><span class="na">StatelessSession</span> <span class="n">ss</span> <span class="o">=</span> <span class="n">getSessionFactory</span><span class="o">().</span><span class="na">openStatelessSession</span><span class="o">();</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2942,10 +2941,9 @@ documentation for details.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 2.3.0.CR1<br>
-Last updated 2024-04-15 13:53:07 UTC
+Version 2.3.0.Final<br>
+Last updated 2024-04-26 07:43:18 UTC
 </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.min.js"></script>
 </body>
 </html>

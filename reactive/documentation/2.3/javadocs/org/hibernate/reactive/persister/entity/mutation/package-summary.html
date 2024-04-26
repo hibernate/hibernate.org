@@ -107,17 +107,23 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tbody>
 <tr class="altColor">
+<th class="colFirst" scope="row"><a href="ReactiveAbstractDeleteCoordinator.html" title="interface in org.hibernate.reactive.persister.entity.mutation">ReactiveAbstractDeleteCoordinator</a></th>
+<td class="colLast">
+<div class="block">With this interface we can have multiple delete coordinators that extend <a href="https://docs.jboss.org/hibernate/orm/6.5/javadocs/org/hibernate/persister/entity/mutation/AbstractDeleteCoordinator.html?is-external=true" title="class or interface in org.hibernate.persister.entity.mutation" class="externalLink"><code>AbstractDeleteCoordinator</code></a>.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="ReactiveInsertCoordinator.html" title="interface in org.hibernate.reactive.persister.entity.mutation">ReactiveInsertCoordinator</a></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="ReactiveScopedUpdateCoordinator.html" title="interface in org.hibernate.reactive.persister.entity.mutation">ReactiveScopedUpdateCoordinator</a></th>
 <td class="colLast">
 <div class="block">Scoped to a single operation, so that we can keep
  instance scoped state.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="ReactiveUpdateCoordinator.html" title="interface in org.hibernate.reactive.persister.entity.mutation">ReactiveUpdateCoordinator</a></th>
 <td class="colLast">
 <div class="block">A reactive <a href="https://docs.jboss.org/hibernate/orm/6.5/javadocs/org/hibernate/persister/entity/mutation/UpdateCoordinator.html?is-external=true" title="class or interface in org.hibernate.persister.entity.mutation" class="externalLink"><code>UpdateCoordinator</code></a> that allows the creation of a <a href="ReactiveScopedUpdateCoordinator.html" title="interface in org.hibernate.reactive.persister.entity.mutation"><code>ReactiveScopedUpdateCoordinator</code></a> scoped
@@ -140,18 +146,22 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<th class="colFirst" scope="row"><a href="ReactiveDeleteCoordinatorSoft.html" title="class in org.hibernate.reactive.persister.entity.mutation">ReactiveDeleteCoordinatorSoft</a></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="ReactiveInsertCoordinatorStandard.html" title="class in org.hibernate.reactive.persister.entity.mutation">ReactiveInsertCoordinatorStandard</a></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="ReactiveMergeCoordinator.html" title="class in org.hibernate.reactive.persister.entity.mutation">ReactiveMergeCoordinator</a></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="ReactiveUpdateCoordinatorNoOp.html" title="class in org.hibernate.reactive.persister.entity.mutation">ReactiveUpdateCoordinatorNoOp</a></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="ReactiveUpdateCoordinatorStandard.html" title="class in org.hibernate.reactive.persister.entity.mutation">ReactiveUpdateCoordinatorStandard</a></th>
 <td class="colLast">
 <div class="block">Reactive version of <a href="https://docs.jboss.org/hibernate/orm/6.5/javadocs/org/hibernate/persister/entity/mutation/UpdateCoordinatorStandard.html?is-external=true" title="class or interface in org.hibernate.persister.entity.mutation" class="externalLink"><code>UpdateCoordinatorStandard</code></a>, but it cannot be shared between multiple update operations.</div>
