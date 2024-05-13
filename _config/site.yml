@@ -83,7 +83,7 @@ projects:
       getting_started_guide:
         html: https://docs.jboss.org/hibernate/orm/{series.version}/quickstart/html_single/
       migration_guide:
-        html: https://github.com/hibernate/hibernate-orm/blob/{series.latest_scm_ref}/migration-guide.adoc
+        html: https://docs.jboss.org/hibernate/orm/{series.version}/migration-guide/migration-guide.html
       dist:
         # No longer distributing dists on sourceforge, starting with ORM 6.0.
     maven:

@@ -3,6 +3,8 @@ links:
   dist:
     sourceforge:
       zip: https://sourceforge.net/projects/hibernate/files/hibernate-orm/{release.version}/hibernate-release-{release.version}.zip/download
+  migration_guide:
+    html: https://github.com/hibernate/hibernate-orm/blob/5.2/migration-guide.adoc
 maven:
   coord:
     group_id: org.hibernate
