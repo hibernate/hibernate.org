@@ -1,0 +1,42 @@
+summary: >-
+  Enable query string predicates on numeric/date fields,
+  query parameters,
+  document tree projection for the Lucene backend,
+  new APIs to work with analyzers,
+  compatibility with OpenSearch 2.14,
+  upgrade to Lucene 9.10,
+  upgrade to Hibernate ORM 6.5,
+  other bugfixes, improvements and upgrades
+maven:
+  artifacts:
+    - artifact_id: hibernate-search-bom
+      summary: Hibernate Search BOM
+    - artifact_id: hibernate-search-mapper-orm
+      summary: Hibernate ORM mapper
+    - artifact_id: hibernate-search-mapper-orm-outbox-polling
+      summary: "\"outbox-polling\" coordination strategy for the Hibernate ORM mapper"
+    - artifact_id: hibernate-search-mapper-pojo-standalone
+      summary: Standalone POJO mapper
+    - artifact_id: hibernate-search-backend-lucene
+      summary: Lucene backend
+    - artifact_id: hibernate-search-backend-elasticsearch
+      summary: Elasticsearch/OpenSearch backend
+    - artifact_id: hibernate-search-backend-elasticsearch-aws
+      summary: Amazon IAM authentication for Elasticsearch/OpenSearch
+    - artifact_id: hibernate-search-mapper-orm-jakarta-batch-core
+      summary: Jakarta Batch mass indexing job for the Hibernate ORM mapper - Core
+    - artifact_id: hibernate-search-mapper-orm-jakarta-batch-jberet
+      summary: Jakarta Batch mass indexing job for the Hibernate ORM mapper - JBeret specifics
+    - artifact_id: hibernate-search-v5migrationhelper-orm
+      summary: Helper for migrating from Hibernate Search 5 to Hibernate Search 6/7 (Hibernate ORM mapper + Lucene backend)
+integration_constraints:
+  java:
+    version: 11, 17, 21 or 22
+  orm:
+    version: 6.5
+  elasticsearch:
+    version: 7.10 - 8.13
+  opensearch:
+    version: 1.3 - 2.14
+  lucene:
+    version: "9.10"
