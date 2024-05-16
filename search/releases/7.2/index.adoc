@@ -1,0 +1,169 @@
+:awestruct-layout: project-releases-series
+:awestruct-project: search
+:awestruct-series_version: "7.2"
+:page-interpolate: true
+:latest-release-version: #{series(page, page.series_version).releases.first.version}
+:hsearch-doc-url-prefix: #{reference_doc(site.projects[page.project], series(page, page.series_version)).html_url}
+
+=== Dependency upgrades
+
+[[orm-version]]
+Hibernate ORM::
+Hibernate Search now depends on Hibernate ORM 6.5.1.Final.
+[[lucene-version]]
+Lucene::
+The Lucene backend now uses Lucene 9.10.0.
+[[opensearch-version]]
+OpenSearch::
+The Elasticsearch backend works with OpenSearch 2.14, as well as other versions that were already compatible.
+
+[[query-string-numeric-date-fields]]
+=== `queryString`/`simpleQueryString` predicates for numeric/date fields
+
+link:{hsearch-doc-url-prefix}#search-dsl-predicate-simple-query-string[`simpleQueryString`] and
+link:{hsearch-doc-url-prefix}#search-dsl-predicate-query-string[`queryString`]
+can now be applied to numeric and date fields.
+
+[source, Java, indent=0, subs="+attributes"]
+----
+List<Book> hits = searchSession.search( Book.class )
+        .where( f -> f.queryString()
+                .field( "numberOfPages" )
+                .matching( "[350 TO 800]" )
+        )
+        .fetchHits( 20 );
+----
+
+See corresponding sections in link:{hsearch-doc-url-prefix}#search-dsl-predicate-simpleQueryString-format-types[`simpleQueryString`]
+link:{hsearch-doc-url-prefix}#search-dsl-predicate-query-string-format-types[`queryString`] documentation
+for details.
+
+[[minimum-should-match-for-match]]
+=== `match` predicate and minimum number of terms that should match
+
+With the introduction of the `minimumShouldMatch` option,
+similar to the ones already available for the
+link:{hsearch-doc-url-prefix}#search-dsl-predicate-boolean-minimumshouldmatch[`bool`],
+link:{hsearch-doc-url-prefix}#search-dsl-predicate-query-string-minimumshouldmatch[`queryString`],
+link:{hsearch-doc-url-prefix}#search-dsl-predicate-simple-query-string-minimumshouldmatch[`simpleQueryString`] predicates,
+it is now possible to require that
+an arbitrary number of terms from the match string are present in the document
+in order for the `match` predicate to match.
+
+====
+[source, JAVA, indent=0, subs="+callouts"]
+----
+List<Book> hits = searchSession.search( Book.class )
+        .where( f -> f.match()
+                .field( "title" )
+                .matching( "investigation detective automatic" )
+                .minimumShouldMatchNumber( 2 ) ) // <1>
+        .fetchHits( 20 ); // <2>
+----
+<1> At least two terms must match for this predicate to match.
+<2> All returned hits will match at least two of the terms:
+their titles will match either `investigation` and `detective`,
+`investigation` and `automatic`, `detective` and `automatic`, or all three of these terms.
+====
+
+[[query-paramters]]
+=== Basic support for parameters at the query level
+
+A number of `withParameters(..)` methods were introduced to the Search DSL.
+Through them, it is now possible to construct
+link:{hsearch-doc-url-prefix}#search-dsl-aggregation-withparameters[aggregations],
+link:{hsearch-doc-url-prefix}#search-dsl-predicate-withparameters[predicates],
+link:{hsearch-doc-url-prefix}#search-dsl-projection-withparameters[projections],
+and link:{hsearch-doc-url-prefix}#search-dsl-sort-withparameters[sorts]
+using link:{hsearch-doc-url-prefix}#search-dsl-query-parameters[query parameters].
+These can be helpful when there is a need to use the same parameter in multiple parts of the query
+or when the same query has to be executed for various parameter values.
+
+====
+[source, JAVA, indent=0, subs="+callouts"]
+----
+SearchScope<Book> scope = searchSession.scope( Book.class );
+SearchPredicateFactory factory = scope.predicate();
+SearchPredicate predefinedPredicate = factory.withParameters(
+        params -> factory.bool() // <1>
+                .should( factory.match().field( "title" )
+                        .matching( params.get( "title-param", String.class ) ) ) // <2>
+                .filter( factory.match().field( "genre" )
+                        .matching( params.get( "genre-param", Genre.class ) ) ) // <3>
+).toPredicate();
+
+List<Book> crimeBooks = searchSession.search( Book.class )
+        .where( predefinedPredicate ) // <4>
+        .param( "title-param", "robot" )  // <5>
+        .param( "genre-param", Genre.CRIME_FICTION )
+        .fetchHits( 20 );
+
+List<Book> scienceFictionBooks = searchSession.search( Book.class )
+        .where( predefinedPredicate ) // <6>
+        .param( "title-param", "spaceship" ) // <7>
+        .param( "genre-param", Genre.SCIENCE_FICTION )
+        .fetchHits( 20 );
+----
+<1> Start creating the `.withParameters()` predicate.
+<2> Access the query parameter `title-param` of `String` type when constructing the predicate.
+<3> Access the query parameter `genre-param` of `Genre` enum type when constructing the predicate.
+<4> Use the predefined, parameterized predicate in a query.
+<5> Set parameters required by the predicate at the query level.
+<6> Reuse the predefined, parameterized predicate in a query.
+<7> Set a different pair of parameters required by the predicate at the query level.
+====
+
+[[distance-projection]]
+=== `@DistanceProjection` to map a constructor parameter to a distance projection
+
+With the introduction of the query parameters, it is now possible to define a
+link:{hsearch-doc-url-prefix}#search-dsl-projection-distance-mapping[`@DistanceProjection`]
+that can be used in the projection constructors.
+
+====
+[source, JAVA, indent=0, subs="+callouts"]
+----
+@ProjectionConstructor
+public record MyAuthorPlaceProjection(
+        @DistanceProjection( // <1>
+                fromParam = "point-param", // <2>
+                path = "placeOfBirth") // <3>
+        Double distance ) {
+}
+----
+<1> Annotate the parameter that should receive the distance value with `@DistanceProjection`.
+<2> Specify the query parameter that will be used to calculate the distance from.
+<3> Optionally, customize the path, since most likely the `GeoPoint` property of the entity will have a different name from the
+distance property in a projection.
+
+[source, JAVA, indent=0, subs="+callouts"]
+----
+List<MyAuthorPlaceProjection> hits = searchSession.search( Author.class )
+        .select( MyAuthorPlaceProjection.class )
+        .where( f -> f.matchAll() )
+        .param( "point-param", GeoPoint.of( latitude, longitude ) ) // <1>
+        .fetchHits( 20 );
+----
+<1> Pass a query parameter value, with the same name `point-param` as in the `@DistanceProjection` `fromParam` of a projection constructor.
+====
+
+[[document-tree-projection]]
+=== Document tree projection
+
+With the Lucene backend, requesting a document tree projection is now possible.
+This new link:{hsearch-doc-url-prefix}#search-dsl-projection-extensions-lucene-document-tree[`.documentTree()`]
+projection returns the matched document as a tree containing native Lucene `Document` and corresponding nested tree nodes.
+
+[source, Java, indent=0, subs="+attributes"]
+----
+List<DocumentTree> hits = searchSession.search( Book.class )
+        .extension( LuceneExtension.get() )
+        .select( f -> f.documentTree() )
+        .where( f -> f.matchAll() )
+        .fetchHits( 20 );
+
+DocumentTree documentTree = hits.get( 0 );
+Document rootDocument = documentTree.document();
+Map<String, Collection<DocumentTree>> nestedDocuments = documentTree.nested();
+// ...
+----
