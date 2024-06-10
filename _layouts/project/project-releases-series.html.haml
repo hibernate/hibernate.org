@@ -395,6 +395,9 @@ project_hero_partial: project/hero-series.html.haml
                 = version
           %p
             %small.ui.label= release.date
+          %p
+            %small.ui.label
+              %a{:href => "#{release.license.url}"}= release.license.name
         .thirteen.wide.column
           - if release[:summary]
             %p

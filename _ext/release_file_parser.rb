@@ -121,6 +121,11 @@ module Awestruct
         if ( series[:version] == nil )
           series[:version] = File.basename( series_dir )
         end
+
+        if ( series[:license] == nil )
+          series[:license] = project.license
+        end
+
         series[:releases] = Array.new
         return series
       end
@@ -156,6 +161,10 @@ module Awestruct
           else
             release[:scm_tag] = release.version =~ /^(.*).Final$/ ? $1 : release.version
           end
+        end
+
+        if ( release[:license] == nil )
+          release[:license] = series.license
         end
         
         return release

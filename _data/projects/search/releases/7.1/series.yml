@@ -6,6 +6,9 @@ summary: >-
   compatibility with Elasticsearch 8.12/8.13 and OpenSearch 2.12/2.13,
   upgrade to Lucene 9.9,
   other bugfixes, improvements and upgrades
+license:
+  name: LGPL v2.1
+  url: https://raw.github.com/hibernate/hibernate-search/7.1/lgpl.txt
 maven:
   artifacts:
     - artifact_id: hibernate-search-bom

@@ -207,8 +207,10 @@ projects:
     blog_tag: Hibernate Search
     blog_tag_url: hibernate-search
     license:
-      name: LGPL v2.1
-      url: https://raw.github.com/hibernate/hibernate-search/main/lgpl.txt
+      name: ASL v2
+      url: https://raw.github.com/hibernate/hibernate-search/main/LICENSE.txt
+      # This data is also overridden in relevant series.yml and 7.2.0.Alpha1.yml to display correctly on releases pages
+      since: "7.2.0.Alpha2"
     jira:
       key: HSEARCH
     github:

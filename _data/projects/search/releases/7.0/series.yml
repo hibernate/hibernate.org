@@ -8,6 +8,9 @@ summary: >-
   dropped compatibility with EOL'd Elasticsearch versions 5.x, 6.x, 7.0-7.9 and OpenSearch versions 1.0-1.2,
   other bugfixes and improvements
 status: limited-support
+license:
+  name: LGPL v2.1
+  url: https://raw.github.com/hibernate/hibernate-search/7.0/lgpl.txt
 maven:
   artifacts:
     - artifact_id: hibernate-search-bom
