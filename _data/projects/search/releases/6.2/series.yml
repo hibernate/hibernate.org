@@ -8,6 +8,9 @@ summary: >-
   compatibility with Elasticsearch 8.9 and OpenSearch 2.9,
   upgrade of `-orm6` artifacts to Hibernate ORM 6.2.
 status: limited-support
+license:
+  name: LGPL v2.1
+  url: https://raw.github.com/hibernate/hibernate-search/6.2/lgpl.txt
 maven:
   artifacts:
     - artifact_id: hibernate-search-mapper-orm-orm6

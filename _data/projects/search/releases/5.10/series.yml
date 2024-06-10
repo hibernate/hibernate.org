@@ -1,6 +1,9 @@
 summary: ORM 5.3 and JPA 2.2 compatibility, integration to DI frameworks through Hibernate ORM 5.3, upgrade to WildFly 17 and JGroups 4, JPMS automatic module names.
 status: limited-support
 displayed: false
+license:
+  name: LGPL v2.1
+  url: https://raw.github.com/hibernate/hibernate-search/5.10/lgpl.txt
 links:
   getting_started_guide:
     displayed: false

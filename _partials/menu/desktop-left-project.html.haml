@@ -55,3 +55,7 @@
 .license
   Released under the
   %a{:href => "#{project_description.license.url}"}= project_description.license.name
+  - if project_description.license.since
+    since version
+    #{project_description.license.since}
+    (check release descriptions for earlier versions)
