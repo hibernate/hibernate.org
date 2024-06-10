@@ -9,10 +9,13 @@
 
 [[orm-version]]
 Hibernate ORM::
-Hibernate Search now depends on Hibernate ORM 6.5.1.Final.
+Hibernate Search now depends on Hibernate ORM 6.5.2.Final.
 [[lucene-version]]
 Lucene::
-The Lucene backend now uses Lucene 9.10.0.
+The Lucene backend now uses Lucene 9.11.0.
+[[elasticsearch-version]]
+Elasticsearch::
+The Elasticsearch backend works with Elasticsearch 8.14, as well as other versions that were already compatible.
 [[opensearch-version]]
 OpenSearch::
 The Elasticsearch backend works with OpenSearch 2.14, as well as other versions that were already compatible.
@@ -167,3 +170,25 @@ Document rootDocument = documentTree.document();
 Map<String, Collection<DocumentTree>> nestedDocuments = documentTree.nested();
 // ...
 ----
+
+[[range-within-withinany]]
+=== `within`/`withinAny` for the range predicate
+
+The link:{hsearch-doc-url-prefix}#search-dsl-predicate-range[`range`] predicate can now accept multiple ranges,
+matching the document when the value is within at least one of the provided ranges.
+
+[source, Java, indent=0, subs="+attributes"]
+----
+List<Book> hits = searchSession.search( Book.class )
+        .where( f -> f.range().field( "pageCount" )
+                .withinAny(
+                        Range.between( 200, 250 ),
+                        Range.between( 500, 800 )
+                ) )
+        .fetchHits( 20 );
+----
+
+== Switch project license to Apache License 2.0
+
+We are also pleased to announce that Hibernate Search 7.2.0.Alpha2 is licensed under Apache License 2.0.
+This change is a part of a broader initiative link:https://in.relation.to/2023/11/18/license/[to re-license Hibernate projects with the Apache License 2.0].
