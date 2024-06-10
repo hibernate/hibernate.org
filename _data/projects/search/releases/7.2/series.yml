@@ -1,10 +1,12 @@
 summary: >-
-  Enable query string predicates on numeric/date fields,
+  Switch project license to Apache License 2.0,
+  enable query string predicates on numeric/date fields,
   query parameters,
   document tree projection for the Lucene backend,
   new APIs to work with analyzers,
+  compatibility with Elasticsearch 8.14,
   compatibility with OpenSearch 2.14,
-  upgrade to Lucene 9.10,
+  upgrade to Lucene 9.11,
   upgrade to Hibernate ORM 6.5,
   other bugfixes, improvements and upgrades
 maven:
@@ -35,8 +37,8 @@ integration_constraints:
   orm:
     version: 6.5
   elasticsearch:
-    version: 7.10 - 8.13
+    version: 7.10 - 8.14
   opensearch:
     version: 1.3 - 2.14
   lucene:
-    version: "9.10"
+    version: 9.11
