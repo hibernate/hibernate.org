@@ -12,26 +12,34 @@ users needs and contributions.
 You can find a fine grained roadmap in our https://hibernate.atlassian.net/browse/HV[issue tracker],
 but this page is a good starting point to see where we are going.
 
-== Hibernate Validator 6.2
+== Hibernate Validator 9.0
 
-Engine::
-Explore more bootstrap changes to improve Quarkus support of all Hibernate Validator features. +
-Explore taking some distance from the reflection API (e.g. dealing with `Type` is rather confusing, replace some of the types with memory-friendly counterparts (`Method`?), do not rely on `TypeVariable`). Note that it might also help with the future usage of Jandex for annotation discovery. +
-Add support for JSON validation at the root level (i.e. validating a root JSON object) and at the property level (i.e. validating a JSON property of a given bean) +
-Support JDK 10 and 11
+For a full list of issues currently planned for this series,
+see https://hibernate.atlassian.net/issues/?jql=fixVersion%20=%2032281%20ORDER%20BY%20created%20ASC[here].
 
-Java modularization::
-Optionally support usage of method handles for accessing bean states (https://hibernate.atlassian.net/browse/HV-1226[HV-1226]) +
-Explore usage of http://download.java.net/java/jdk9/docs/api/java/util/spi/ResourceBundleProvider.html[ResourceBundleProvider] for obtaining validation error messages from other modules +
-Providing Hibernate Validator with JDK 9 module descriptors
+* link:{hsearch-jira-url-prefix}/HV-1991[HV-1991] Upgrade to JDK 17 as the baseline and drop JDK 11 compatibility
+* link:{hsearch-jira-url-prefix}/HV-1979[HV-1979] Upgrade to jakarta.validation-api 3.1.0
+* link:{hsearch-jira-url-prefix}/HV-1975[HV-1975] Remove the Security Manager integration.
+With Security Manager being deprecated for some time and planned for removal, its integration in Hibernate Validator becomes obsolete.
+* link:{hsearch-jira-url-prefix}/HV-1967[HV-1967] Remove the obsolete Wildfly patching module `hibernate-validator-modules` or consider replacing it with the feature pack.
+* Make Hibernate Validator build reproducible.
+* Include more constraints.
 
 == Future versions
 
 Engine::
+Improve performance for cascading validation of large lists. (https://hibernate.atlassian.net/browse/HV-1831[HV-1831])
 Explore the ability to validate an object and a list of changes (https://hibernate.atlassian.net/browse/BVAL-214[BVAL-214]) +
 Explore support for constraint ordering (http://beanvalidation.org/proposals/BVAL-248/[BVAL-248]) +
 Explore the usage of https://github.com/wildfly/jandex[Jandex] (a Java annotation indexer and offline reflection library) to build the metadata (https://hibernate.atlassian.net/browse/HV-644[HV-644]) +
 Explore message interpolators receiving several locales (https://hibernate.atlassian.net/browse/HV-1436[HV-1436])
+Explore taking some distance from the reflection API (e.g. dealing with `Type` is rather confusing, replace some of the types with memory-friendly counterparts (`Method`?), do not rely on `TypeVariable`). Note that it might also help with the future usage of Jandex for annotation discovery. +
+Add support for JSON validation at the root level (i.e. validating a root JSON object) and at the property level (i.e. validating a JSON property of a given bean) +
+
+Java modularization::
+Providing Hibernate Validator with JDK 9 module descriptors
+Explore usage of http://download.java.net/java/jdk9/docs/api/java/util/spi/ResourceBundleProvider.html[ResourceBundleProvider] for obtaining validation error messages from other modules +
+Optionally support usage of method handles for accessing bean states (https://hibernate.atlassian.net/browse/HV-1226[HV-1226]) +
 
 Remote API::
 Provide an HTTP endpoint which allows to validate single properties and also exposes constraint metadata via JSON (https://hibernate.atlassian.net/browse/HV-1500[HV-1500]). Web applications can integrate that endpoint to allow client-side validation of their models.
