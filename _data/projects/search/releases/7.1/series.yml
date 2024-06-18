@@ -35,7 +35,7 @@ integration_constraints:
   java:
     version: 11, 17 or 21
   orm:
-    version: 6.4
+    version: 6.4/6.5
   elasticsearch:
     version: 7.10 - 8.13
   opensearch:
