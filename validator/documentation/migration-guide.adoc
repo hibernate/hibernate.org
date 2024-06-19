@@ -4,6 +4,46 @@
 
 This page contains everything you need to know when upgrading from one Hibernate Validator version to another.
 
+[[migration-guide-9-0-x]]
+== 9.0.x
+
+=== 9.0.0.Beta2
+
+==== Upgrades
+
+* Hibernate Validator now requires JDK 17.
+* Hibernate Validator is now based on link:https://jakarta.ee/specifications/bean-validation/3.1/jakarta-validation-spec-3.1[Jakarta Validation 3.1].
+* Hibernate Validator is now based on the link:https://jakarta.ee/specifications/expression-language/6.0/jakarta-expression-language-spec-6.0[Jakarta Expression Language 6.0].
+Hence, it will be required to provide a compatible implementation of this version of the expression language API, e.g. Expressly 6.0.
+* Hibernate Validator also bumps other Jakarta EE specification versions to align them with the ones required by the Jakarta EE 11.
+Among them:
+link:https://jakarta.ee/specifications/persistence/3.2/jakarta-persistence-spec-3.2[Jakarta Persistence 3.2],
+link:https://jakarta.ee/specifications/cdi/4.1/jakarta-cdi-spec-4.1[Jakarta Contexts and Dependency Injection 4.1],
+link:https://jakarta.ee/specifications/dependency-injection/2.0/jakarta-injection-spec-2.0[Jakarta Dependency Injection 2.0],
+link:https://jakarta.ee/specifications/interceptors/2.2/jakarta-interceptors-spec-2.2[Jakarta Interceptors 2.2].
+
+==== Removals
+
+* With `java.lang.SecurityManager` being link:https://openjdk.org/jeps/411[deprecated for removal] without an alternative for some time now,
+it is time to remove the Security Manager integration from Hibernate Validator.
+Starting with this version Hibernate Validator will not consider Security Manager rules anymore.
+* Hibernate Validator stops publishing some of the previously published modules. Most of them were not supposed to be used
+by the end users. The list of the modules with reasons why they aren't published is provided below:
+  - `hibernate-validator-modules`: with the most recent versions of WildFly
+this method of patching the server is no longer available. While there are alternatives, patching of validation modules in WildFly
+will not be provided by Hibernate Validator at this moment.
+  - `hibernate-validator-performance`: a set of performance tests that have no value for the end users.
+  - `hibernate-validator-build-config`: build configurations required to compile/package the artifacts, but which have no value for the end users.
+  - `hibernate-validator-tck-runner`:  a test harness that helps running Jakarta Validation TCK and have no value for the end users.
+  - `hibernate-validator-integrationtest-wildfly`: a set of tests that have no value for the end users.
+  - `hibernate-validator-parent`: with published artifact flattening the pom files, publishing the parent POM is no longer required.
+  - `hibernate-validator-documentation`: documentation is published to the link:/validator/documentation/[documentation page].
+  - `hibernate-validator-distribution`: is published to link:https://sourceforge.net/projects/hibernate/files/hibernate-validator/[SourceForge]
+and has no use for those leveraging Maven repositories.
+* From now on, Hibernate Validator CDI extension will not allow injecting the `org.hibernate.validator.internal.engine.ValidatorFactoryImpl` and
+`org.hibernate.validator.internal.engine.ValidatorImpl` types, i.e. `@Inject ValidatorFactoryImpl factory;` or `@Inject ValidatorImpl validator;` will fail.
+It is still possible to inject these as any of the public interfaces they implement, e.g. `@Inject HibernateValidatorFactory factory;` or `@Inject Validator validator;`/`@Inject ExecutableValidator validator;`.
+
 == 8.0.x
 
 === 8.0.0.CR1
@@ -90,7 +130,7 @@ No migration concerns.
 * `@SafeHtml` has been deprecated and marked for future removal.
 
 == 6.0.x
- 
+
 === 6.0.23.Final
 
 No migration concerns.
@@ -209,7 +249,7 @@ Also make sure to not depend on HV 5.x and HV 6.x at the same time (as the group
 ** The configuration option `hibernate.validator.constraint_mapping_contributor` (deprecated in 5.3) has been removed. It was replaced by `hibernate.validator.constraint_mapping_contributors` which accepts a comma separated list of contributors. The constant `o.h.v.HibernateValidatorConfiguration#CONSTRAINT_MAPPING_CONTRIBUTOR` has also been removed and replaced by `o.h.v.HibernateValidatorConfiguration#CONSTRAINT_MAPPING_CONTRIBUTORS`.
 ** The deprecated method `ignoreAnnotations()` has been removed from the constraint declaration API in favor of `ignoreAnnotations(boolean)` (https://hibernate.atlassian.net/browse/HV-1120[HV-1120])
 ** All the implementation classes of the annotation-processor module have been relocated to the `org.hibernate.validator.ap.internal` package. These classes had never been intended for public usage, no migration impact is expected. The only user facing class of that module, `org.hibernate.validator.ap.ConstraintValidationProcessor`, remains unchanged (https://hibernate.atlassian.net/browse/HV-1396[HV-1396]).
- 
+
 == 5.4.x
 
 === 5.4.1.Final
@@ -309,7 +349,7 @@ No migration concerns.
 
 === 5.0.0.CR4
 
-No migration concerns. 
+No migration concerns.
 
 === 5.0.0.CR3
 
@@ -319,13 +359,13 @@ No migration concerns.
 
 === 5.0.0.CR2
 
-No migration concerns. 
+No migration concerns.
 
 === 5.0.0.CR1
 
 * Methods of `ParameterNameProvider` interface return now `List` instead of `String[]` - https://hibernate.atlassian.net/browse/BVAL-409[BVAL-409]
 * `@CrossParameterConstraint` got replaced by `@SupportValidationTarget` - https://hibernate.atlassian.net/browse/BVAL-391[BVAL-391]
- 
+
 === 5.0.0.Beta1
 
 * Renamed `javax.validation.MethodValidator` to `ExecutableValidator`; `j.v.Validator#forMethods()` renamed to `forExecutables()` (https://hibernate.atlassian.net/browse/BVAL-355[BVAL-355])
@@ -376,17 +416,17 @@ This section describes changes made in different releases of version 4.2.0. It h
 This release doesn't introduce modifications which can break your existing code if you have already migrated to version 4.2.0.CR1. If you migrate from version 4.1.0.Final the following sections gives you the changes introduced in the different releases leading to this Final version.
 
 === 4.2.0.CR1
- 
+
 As you already know Hibernate Validator allows the configuration of constraints programmatically. The main feature of this release is the programmatic API allowing constraint configuration on method (https://hibernate.atlassian.net/browse/HV-431[HV-431]). To implement this in an unambiguous way we had to make yet some more changes to the programmatic API.
- 
+
 Another minor modification which can impact your existing code (if you migrate from Beta2) is https://hibernate.atlassian.net/browse/HV-488[HV-488]. If you use the method metadata API you will see that the method of `MethodDescriptor` named `getParameterConstraints()` was renamed to `getParameterDescriptors()` to avoid confusion.
- 
+
 === 4.2.0.Beta2
- 
+
 The version Beta1 has introduced the possibility to specify constraints on methods. If you use this functionality the following changes will impact your code.
 
 A big change introduced in this release is https://hibernate.atlassian.net/browse/HV-421[HV-421] which defines the behavior of parameter constraint validation. Generally a logical AND is used to combine all constraints defined within a class hierarchy on a given field or method. Doing the same for method parameter constraints, however, causes ambiguities with the definition of Programming by contract where subtypes may only weaken preconditions defined by supertypes. For this release we chose a conservative alternative which prohibit multiple parameter constraints on the same parameter within a class hierarchy.
- 
+
 Another minor modification is that the method `MethodValidator#validateParameters()` (allowing to validate all parameters of a method) was renamed to `MethodValidator#validateAllParameters()` (https://hibernate.atlassian.net/browse/HV-415[HV-415]).
 
 === 4.2.0.Beta1
