@@ -1,0 +1,27 @@
+summary: >-
+  This series targets Jakarta EE 11.
+  It implements Jakarta Validation 3.1.
+  New constraints: @KorRRN, @Bitcoin,
+  removal of the Security Manager integration,
+  BOM for simpler dependency management,
+  dependency updates,
+  improvements and bug fixes.
+maven:
+  artifacts:
+    - artifact_id: hibernate-validator-bom
+      summary: BOM to help manage published Hibernate Validator artifacts
+    - artifact_id: hibernate-validator
+      summary: Core implementation
+    - artifact_id: hibernate-validator-cdi
+      summary: CDI integration
+    - artifact_id: hibernate-validator-annotation-processor
+      summary: Annotation processor
+    - artifact_id: hibernate-validator-test-utils
+      summary: Set of test utilities that can help testing custom constraints.
+integration_constraints:
+  java:
+    version: 17, 21 or 22
+  jbv:
+    version: 3.1
+  jee:
+    version: 11

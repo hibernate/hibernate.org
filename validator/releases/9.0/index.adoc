@@ -1,0 +1,38 @@
+:awestruct-layout: project-releases-series
+:awestruct-project: validator
+:awestruct-series_version: "9.0"
+
+=== Jakarta EE 11
+
+Hibernate Validator 9.0 is targeted to be the reference implementation for Jakarta Bean Validation 3.1 in Jakarta EE 11.
+
+Upgrade to Hibernate Validator 9 is required if you are moving to Jakarta EE 11.
+
+With Jakarta EE 11 upgrade the minimum required Java version is 17.
+
+=== New constraints
+
+This release also brings new constraints.
+
+==== Country-specific South Korean RRN constraint
+
+The new constraint `@KorRRN` was added to validate the Korean resident registration numbers.
+
+==== Bitcoin address constraint
+
+The new `@Bitcoin` constraint was added to validate whether BTC (Bitcoin) addresses are well-formed.
+
+==== Alphanumeric CNPJ
+
+A new configuration option was added to the `@CNPJ` constraint to allow validating the upcoming alphanumeric format of the number.
+
+=== Hibernate Validator BOM
+
+Hibernate Validator now offers a BOM providing dependency management for all of its published artifacts.
+It can be imported as part of your dependency management to keep the versions of Hibernate Validator artifacts aligned.
+
+=== Removal of the Security Manager integration
+
+With the security manager being deprecated without an alternative for some time now,
+we took the opportunity provided by the specification requirement of the minimum Java version
+to remove the integration of the Security Manager from Hibernate Validator.
