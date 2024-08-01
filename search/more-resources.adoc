@@ -21,6 +21,18 @@ The https://quarkus.io/[Quarkus] guide to use Hibernate Search in Standalone mod
 
 == Blog posts
 
+https://quarkus.io/blog/search-indexing-rollover/[Leveraging Hibernate Search capabilities in a Quarkus application without a database]::
+This is the second post in the quarkus.search.io series on using the Hibernate Search Standalone mapper
+to mass index data from a set of flat files without initially knowing the total number of entities and reading the files just once.
++
+The quarkus.search.io application code: https://github.com/quarkusio/search.quarkus.io
+
+https://quarkus.io/blog/search-indexing-rollover/[Indexing rollover with Quarkus and Hibernate Search]::
+This is the first post in the quarkus.search.io series on reindexing all search data
+without downtime when using Hibernate Search and an Elasticsearch backend.
++
+The quarkus.search.io application code: https://github.com/quarkusio/search.quarkus.io
+
 Build a Spring Boot REST API with Full-Text Search using Hibernate Search::
 A tutorial on how to quickly create a REST API based on https://spring.io/projects/spring-boot/[Spring Boot] and Hibernate Search 6,
 using the Apache Lucene backend.
