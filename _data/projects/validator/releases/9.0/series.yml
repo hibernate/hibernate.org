@@ -1,7 +1,7 @@
 summary: >-
   This series targets Jakarta EE 11.
   It implements Jakarta Validation 3.1.
-  New constraints: @KorRRN, @Bitcoin,
+  New constraints: @KorRRN, @BitcoinAddress,
   removal of the Security Manager integration,
   BOM for simpler dependency management,
   dependency updates,
