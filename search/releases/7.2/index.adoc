@@ -9,16 +9,16 @@
 
 [[orm-version]]
 Hibernate ORM::
-Hibernate Search now depends on Hibernate ORM 6.5.2.Final.
+Hibernate Search now depends on Hibernate ORM 6.6.0.CR2.
 [[lucene-version]]
 Lucene::
-The Lucene backend now uses Lucene 9.11.0.
+The Lucene backend now uses Lucene 9.11.1.
 [[elasticsearch-version]]
 Elasticsearch::
 The Elasticsearch backend works with Elasticsearch 8.14, as well as other versions that were already compatible.
 [[opensearch-version]]
 OpenSearch::
-The Elasticsearch backend works with OpenSearch 2.14, as well as other versions that were already compatible.
+The Elasticsearch backend works with OpenSearch 2.14 and 2.15, as well as other versions that were already compatible.
 
 [[query-string-numeric-date-fields]]
 === `queryString`/`simpleQueryString` predicates for numeric/date fields
@@ -187,6 +187,73 @@ List<Book> hits = searchSession.search( Book.class )
                 ) )
         .fetchHits( 20 );
 ----
+
+[[search-dsl-predicate-knn]]
+=== `knn` predicate updates
+
+The `knn` predicate, besides the existing `.requiredMinimumSimilarity(..)` filter,
+now also has a score-based alternative: `requiredMinimumScore(..)`.
+With knn search, similarity and score are derived one from the other, and in some scenarios, it may be simpler to use score,
+while in others -- similarity.
+
+Starting with OpenSearch 2.14, these filters are now also available for the OpenSearch distribution of the Elasticsearch backend.
+
+To remind you how the vector search works: for vector fields to be indexed, they should be annotated with a  `@VectorField` annotation:
+
+[source, Java, indent=0, subs="+attributes"]
+----
+@Entity
+@Indexed
+public class Book {
+
+    @Id
+    private Integer id;
+
+    @VectorField(dimension = 512)
+    private float[] coverImageEmbeddings;
+
+    // Other properties ...
+}
+----
+
+Then, searching for vector similarities is performed via a `knn` predicate:
+
+====
+[source, Java, indent=0, subs="+callouts"]
+----
+float[] coverImageEmbeddingsVector = /*...*/
+
+List<Book> hits = searchSession.search( Book.class )
+.where( f ->
+    f.knn( 5 ) // <1>
+        .field( "coverImageEmbeddings" ) // <2>
+        .matching( coverImageEmbeddingsVector ) // <3>
+        .requiredMinimumSimilarity( similarity ) // <4>
+).fetchHits( 20 );
+----
+<1> Provide the number of similar documents to look for.
+<2> Specify the name of the vector field.
+<3> Provide a reference vector; matched documents will be the ones whose indexed vector
+is "most similar" to this vector.
+<4> Specify the minimum required similarity between the reference and indexed vectors;
+documents where indexed vector similarity is less than the specified `similarity` value will be filtered out.
+Alternatively, the `requiredMinimumScore( score )` filter can be applied instead of the `requiredMinimumSimilarity( similarity )`.
+====
+
+[[search-dsl-predicate-prefix]]
+=== Prefix predicate
+
+The `prefix` predicate matches documents for which a given field has a value starting with a given string.
+
+====
+[source, JAVA, indent=0, subs="+callouts"]
+----
+List<Book> hits = searchSession.search( Book.class )
+    .where( f -> f.prefix().field( "description" )
+        .matching( "rob" ) )
+    .fetchHits( 20 );
+----
+====
 
 == Switch project license to Apache License 2.0
 
