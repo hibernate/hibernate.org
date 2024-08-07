@@ -1,0 +1,12 @@
+summary: Release compatible with Hibernate ORM 6.6
+maven:
+  artifacts:
+    - artifact_id: hibernate-reactive-core
+      summary: Core implementation
+integration_constraints:
+  java:
+    version: 11, 17, 20, 21, and 22
+  orm:
+    version: 6.6
+  vertx:
+    version: 4.5
