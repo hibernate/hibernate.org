@@ -9,16 +9,16 @@
 
 [[orm-version]]
 Hibernate ORM::
-Hibernate Search now depends on Hibernate ORM 6.6.0.CR2.
+Hibernate Search now depends on Hibernate ORM 6.6.0.Final.
 [[lucene-version]]
 Lucene::
 The Lucene backend now uses Lucene 9.11.1.
 [[elasticsearch-version]]
 Elasticsearch::
-The Elasticsearch backend works with Elasticsearch 8.14, as well as other versions that were already compatible.
+The Elasticsearch backend works with Elasticsearch 8.14 and 8.15, as well as other versions that were already compatible.
 [[opensearch-version]]
 OpenSearch::
-The Elasticsearch backend works with OpenSearch 2.14 and 2.15, as well as other versions that were already compatible.
+The Elasticsearch backend works with OpenSearch 2.14, 2.15 and 2.16, as well as other versions that were already compatible.
 
 [[query-string-numeric-date-fields]]
 === `queryString`/`simpleQueryString` predicates for numeric/date fields
