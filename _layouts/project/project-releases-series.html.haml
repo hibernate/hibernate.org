@@ -338,7 +338,7 @@ project_hero_partial: project/hero-series.html.haml
   %p
     To consume these artifacts, you may need to configure your build tool to fetch artifacts
     from
-    %code= snapshots_repo.data.direct_download_url(latest_release_maven.coord)
+    %code= snapshots_repo.data.repo_url
     and to enable snapshots:
   %p
     %a.ui.right.labeled.button.small.icon{:href => "https://maven.apache.org/settings.html#repositories"}
