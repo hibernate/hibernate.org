@@ -19,6 +19,16 @@ The Elasticsearch backend works with Elasticsearch 8.14 and 8.15, as well as oth
 [[opensearch-version]]
 OpenSearch::
 The Elasticsearch backend works with OpenSearch 2.14, 2.15 and 2.16, as well as other versions that were already compatible.
+[[jboss-logging]]
+JBoss Logging::
+Hibernate Search now depends on JBoss Logging 3.6.
++
+[WARNING]
+====
+If you are using Hibernate Search with Hibernate ORM integration, or if your application has a dependency on JBoss Logging
+for any other reasons, make sure to enforce the resolution of JBoss Logging dependency to 3.6, as otherwise you may experience
+errors on startup.
+====
 
 [[query-string-numeric-date-fields]]
 === `queryString`/`simpleQueryString` predicates for numeric/date fields
