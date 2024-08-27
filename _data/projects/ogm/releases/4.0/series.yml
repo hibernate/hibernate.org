@@ -1,4 +1,5 @@
 summary: Last release using Hibernate ORM 4.2 and JPA 2.1. Initial Neo4j integration; support for store-specific native queries.
+status: end-of-life
 maven:
   artifacts:
     - artifact_id: hibernate-search-infinispan
