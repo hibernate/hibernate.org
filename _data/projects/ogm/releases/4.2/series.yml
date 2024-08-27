@@ -13,6 +13,9 @@ maven:
       summary: Cassandra integration
     - artifact_id: hibernate-ogm-ehcache
       summary: Ehcache integration
+links:
+  migration_guide:
+    html: https://developer.jboss.org/docs/DOC-52281
 integration_constraints:
   java:
     version: 7

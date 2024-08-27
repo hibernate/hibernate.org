@@ -9,6 +9,9 @@ maven:
       summary: MongoDB integration
     - artifact_id: hibernate-ogm-neo4j
       summary: Neo4j integration
+links:
+  migration_guide:
+    html: https://developer.jboss.org/docs/DOC-52281
 integration_constraints:
   java:
     version: 8

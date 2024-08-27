@@ -15,6 +15,9 @@ maven:
       summary: Ehcache integration
     - artifact_id: hibernate-ogm-redis
       summary: Redis integration
+links:
+  migration_guide:
+    html: https://developer.jboss.org/docs/DOC-52281
 integration_constraints:
   java:
     version: 7 or 8
