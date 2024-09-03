@@ -7,6 +7,39 @@ This page contains everything you need to know when upgrading from one Hibernate
 [[migration-guide-9-0-x]]
 == 9.0.x
 
+=== 9.0.0.Beta3
+
+==== Behaviour
+
+Predefined scope validator factory now may add more beans and constraints besides the ones provided through the `PredefinedScopeHibernateValidatorConfiguration`.
+These beans and constraints are added based on the metadata from the `validation.xml` and related validation constraint mapping XMLs.
+To get the previous behavior, `PredefinedScopeHibernateValidatorConfiguration#includeBeansAndConstraintsDefinedOnlyInXml(..)` can be called
+passing `false` as a parameter.
+
+==== Removals
+
+* Removals of deprecated constraints:
+  - `org.hibernate.validator.constraints.Email`: a corresponding Jakarta Validation alternative
+  `jakarta.validation.constraints.Email` has been available since Bean Validation 2.0.
+  - `org.hibernate.validator.constraints.NotBlank`: a corresponding Jakarta Validation alternative
+  `jakarta.validation.constraints.NotBlank` has been available since Bean Validation 2.0.
+  - `org.hibernate.validator.constraints.NotEmpty`: a corresponding Jakarta Validation alternative
+  `jakarta.validation.constraints.NotEmpty` has been available since Bean Validation 2.0.
+  - `org.hibernate.validator.constraints.ModCheck`: a corresponding, more specific, Hibernate Validator alternatives
+  `org.hibernate.validator.constraints.Mod10Check`/`org.hibernate.validator.constraints.Mod11Check` have been available since 5.1.
+* Deprecated configuration property 1hibernate.validator.constraint_mapping_contributor`
+removed. An alternative `hibernate.validator.constraint_mapping_contributors` accepting multiple
+comma-separated contributors has been available since 5.3.
+* Retrieving the parameter names via reflection is enabled by default since 6.0,
+hence the deprecated at that time `ReflectionParameterNameProvider` is now removed.
+* The deprecated `PredefinedScopeHibernateValidatorConfiguration#initializeLocales(..)` is removed
+since it is a part of an incubating API and has been deprecated since the introduction of an alternative
+`BaseHibernateValidatorConfiguration#locales(..)` in 6.1.1.
+* The deprecated `AnnotationProcessingOptions` is removed, since an alternative `AnnotationIgnoreOptions`
+has been available since 6.0.
+* The deprecated DSL `PropertyTarget#property(..)` method is removed as a more precise alternatives
+`PropertyTarget#getter(..)` and `PropertyTarget#field(..)` have been available since 6.1.
+
 === 9.0.0.Beta2
 
 ==== Upgrades
