@@ -36,3 +36,23 @@ It can be imported as part of your dependency management to keep the versions of
 With the security manager being deprecated without an alternative for some time now,
 we took the opportunity provided by the specification requirement of the minimum Java version
 to remove the integration of the Security Manager from Hibernate Validator.
+
+=== Removal of the deprecated constraints, configuration properties and methods
+
+With the new major release of Hibernate Validator some of the constraints, configuration properties,
+and public API methods/classes that have been deprecated for a few major versions now are removed.
+For a detailed list of removed deprecated items see the link:/validator/documentation/migration-guide#9-0-x[migration guide].
+
+=== OSGi integration
+
+Starting with Hibernate Validator 9.0, the Hibernate team no longer tests nor maintains the OSGi integration.
+For users who would want to experiment with Hibernate Validator in an OSGi environment,
+we will keep the existing manifest entries in place as they were.
+
+[WARNING]
+====
+Even though we no longer maintain the Hibernate Validator OSGi integration,
+we do encourage the community members interested in it to come forward with pull requests
+if they encounter some issues. In such a case, we will try to guide the submitter through the contribution process
+and assess the suggested patch for inclusion in the build.
+====
