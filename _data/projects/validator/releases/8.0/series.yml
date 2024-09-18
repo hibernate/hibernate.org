@@ -9,7 +9,7 @@ maven:
       summary: Annotation processor
 integration_constraints:
   java:
-    version: 11, 17 or 21
+    version: 11, 17, 21, 22 or 23
   jbv:
     version: 3.0
   jee:
