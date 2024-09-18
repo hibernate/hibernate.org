@@ -17,6 +17,6 @@ maven:
       summary: JCache second-level caching
 integration_constraints:
   java:
-    version: 11, 17 or 21
+    version: 11, 17, 21, 22 or 23
   jakarta_jpa:
     version: 3.1

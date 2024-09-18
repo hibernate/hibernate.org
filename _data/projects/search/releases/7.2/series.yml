@@ -33,7 +33,7 @@ maven:
       summary: Helper for migrating from Hibernate Search 5 to Hibernate Search 6/7 (Hibernate ORM mapper + Lucene backend)
 integration_constraints:
   java:
-    version: 11, 17, 21 or 22
+    version: 11, 17, 21, 22 or 23
   orm:
     version: 6.6
   elasticsearch:
