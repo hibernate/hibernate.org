@@ -2,12 +2,3 @@
 :awestruct-layout: project-releases
 :awestruct-project: orm
 
-== Supported JPA Versions
-        
-* JPA 1.0: ORM 3.2+
-* JPA 2.0: ORM 3.5+
-* JPA 2.1: ORM 4.3+
-* JPA 2.2: ORM 5.3+
-* JPA 3.0: ORM 5.5+
-
-Note that newer ORM releases are backwards compatible with older JPA versions (ex: ORM 4.3 with JPA 1.0).  However, newer ORM releases may not be compatible with older JPA containers.
