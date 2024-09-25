@@ -1,14 +1,7 @@
 summary: >-
-  Switch project license to Apache License 2.0,
-  enable query string predicates on numeric/date fields,
-  query parameters,
-  document tree projection for the Lucene backend,
-  new APIs to work with analyzers,
-  compatibility with Elasticsearch 8.14 and 8.15,
-  compatibility with OpenSearch 2.14, 2.15 and 2.16,
-  upgrade to Lucene 9.11,
-  upgrade to Hibernate ORM 6.6,
-  other bugfixes, improvements and upgrades
+  Re-licensing as Apache License 2.0,
+  query string predicates on numeric/date fields,
+  analyzer API
 maven:
   artifacts:
     - artifact_id: hibernate-search-bom

@@ -1,11 +1,7 @@
 summary: >-
-  Vector search in both Lucene and Elasticsearch backends,
-  allow looking up the capabilities of each field in the metamodel,
+  Vector search,
   new query string predicate,
-  simplify entity registration in the Standalone POJO mapper,
-  compatibility with Elasticsearch 8.12/8.13 and OpenSearch 2.12/2.13,
-  upgrade to Lucene 9.9,
-  other bugfixes, improvements and upgrades
+  simplified Standalone POJO mapper
 license:
   name: LGPL v2.1
   url: https://raw.github.com/hibernate/hibernate-search/7.1/lgpl.txt
