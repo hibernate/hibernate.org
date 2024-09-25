@@ -35,6 +35,6 @@ links:
 integration_constraints:
   java:
     version: 8, 11 or 17 (with 5.3.22+)
-  jpa:
+  java_ee_jpa:
     version: 2.2
 

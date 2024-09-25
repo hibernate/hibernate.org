@@ -35,5 +35,5 @@ maven:
 integration_constraints:
   java:
     version: 6 or 7
-  jpa:
+  java_ee_jpa:
     version: 2.1

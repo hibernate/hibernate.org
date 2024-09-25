@@ -18,5 +18,5 @@ maven:
 integration_constraints:
   java:
     version: 6, 7 or 8
-  bv:
+  java_ee_bv:
     version: 1.1

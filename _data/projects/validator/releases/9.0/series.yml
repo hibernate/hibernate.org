@@ -21,7 +21,7 @@ maven:
 integration_constraints:
   java:
     version: 17, 21, 22 or 23
-  jbv:
+  jakarta_ee_bv:
     version: 3.1
-  jee:
+  jakarta_ee:
     version: 11

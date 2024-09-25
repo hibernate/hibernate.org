@@ -21,7 +21,7 @@ links:
 integration_constraints:
   java:
     version: 7 or 8
-  jpa:
+  java_ee_jpa:
     version: 2.1
   orm:
     version: 5.0
