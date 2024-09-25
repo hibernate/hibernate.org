@@ -101,20 +101,25 @@ project_buttons_partial: project/releases-buttons.html.haml
             = series.version
     %tbody
       - project_description.integrations.each_pair do |integration_id, integration|
-        %tr
-          %td.left.aligned
-            %a{:href => "#{integration['url']}"}
-              = integration["name"]
-            - project_description.active_release_series.each do |series|
-              - constraint = series.integration_constraints[integration_id]
-              - if constraint == nil
-                %td.disabled
-                  N/A
-              - else
-                %td
-                  :asciidoc
-                    :doctype: inline
-                    #{constraint.version}
+        - has_constraint = false
+        - project_description.active_release_series.each do |series|
+          - if series.integration_constraints[integration_id]
+            - has_constraint = true
+        - if has_constraint
+          %tr
+            %td.left.aligned
+              %a{:href => "#{integration['url']}"}
+                = integration["name"]
+              - project_description.active_release_series.each do |series|
+                - constraint = series.integration_constraints[integration_id]
+                - if constraint == nil
+                  %td.disabled
+                    N/A
+                - else
+                  %td
+                    :asciidoc
+                      :doctype: inline
+                      #{constraint.version}
   %p
     See also the
     %a{:href => "/community/compatibility-policy"}
