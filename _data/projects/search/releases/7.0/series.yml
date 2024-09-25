@@ -1,12 +1,6 @@
 summary: >-
-  JDK 11 as a baseline,
-  switch to Jakarta EE, compatibility with ORM 6.4 without `-orm6` artifacts, 
-  compatibility with Elasticsearch 8.10/8.11/8.12 and OpenSearch 2.9/2.10/2.11,
-  upgrade to Lucene 9 in the Lucene backend,
-  published Hibernate Search BOM,
-  experimental compatibility with Amazon OpenSearch Serverless,
-  dropped compatibility with EOL'd Elasticsearch versions 5.x, 6.x, 7.0-7.9 and OpenSearch versions 1.0-1.2,
-  other bugfixes and improvements
+  Switch to Jakarta EE / ORM 6.4 without `-orm6` artifacts, 
+  Hibernate Search BOM
 status: limited-support
 license:
   name: LGPL v2.1

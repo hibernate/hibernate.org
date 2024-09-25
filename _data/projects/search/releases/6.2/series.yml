@@ -1,12 +1,9 @@
 summary: >-
-  Standalone POJO Mapper, mapping of classes/records to projections using `@ProjectionConstructor`,
+  Standalone POJO Mapper,
+  projection to custom (annotated) types,
   highlighting,
-  indexing plan filters to suspend automatic indexing,
   `excludePaths` for `@IndexedEmbedded`,
-  search DSL improvements (including projections on object fields),
-  Elasticsearch schema export,
-  compatibility with Elasticsearch 8.9 and OpenSearch 2.9,
-  upgrade of `-orm6` artifacts to Hibernate ORM 6.2.
+  Elasticsearch schema export
 status: limited-support
 license:
   name: LGPL v2.1
