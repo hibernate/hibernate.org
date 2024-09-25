@@ -37,4 +37,6 @@ integration_constraints:
     version: 8, 11 or 17 (with 5.4.32+)
   java_ee_jpa:
     version: 2.2
+  java_ee:
+    version: 8
 
