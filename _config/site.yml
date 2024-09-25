@@ -112,6 +112,12 @@ projects:
       jakarta_ee_jpa:
         name: Jakarta Persistence
         url: https://jakarta.ee/specifications/persistence/
+      java_ee:
+        name: Java EE
+        url: https://www.oracle.com/java/technologies/java-ee-glance.html
+      jakarta_ee:
+        name: Jakarta EE
+        url: https://jakarta.ee
     menu:
       intern:
         - name: About

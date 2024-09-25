@@ -22,3 +22,5 @@ integration_constraints:
     version: 17, 21 or 23
   jakarta_ee_jpa:
     version: 3.2
+  jakarta_ee:
+    version: 11
