@@ -89,11 +89,11 @@ project_hero_partial: project/hero-series.html.haml
 
 - unless series.integration_constraints.nil? || series.integration_constraints.empty?
   %h2{:id => "compatibility"} Compatibility
-  %table.ui.collapsing.table.striped.celled.unstackable
+  %table.ui.collapsing.definition.table.striped.celled.unstackable.center.aligned
     - series.integration_constraints.each_pair do |integration_id,constraint|
       - integration = project_description.integrations[integration_id]
       %tr
-        %td
+        %td.left.aligned
           %a{:href => "#{integration.url}"}
             = integration["name"]
         %td

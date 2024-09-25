@@ -88,29 +88,33 @@ project_buttons_partial: project/releases-buttons.html.haml
 
 - unless project_description.integrations.nil?
   %h2#compatibility-matrix Compatibility matrix
-  %table.ui.table.unstackable.celled.striped
+  %table.ui.definition.table.unstackable.celled.striped.center.aligned
     %thead
       %tr
         %th
+        %th.text-center{:colspan => project_description.active_release_series.size}
           = project_description.name
+      %tr
+        %th
         - project_description.active_release_series.each do |series|
           %th
             = series.version
     %tbody
       - project_description.integrations.each_pair do |integration_id, integration|
         %tr
-          %td
+          %td.left.aligned
             %a{:href => "#{integration['url']}"}
               = integration["name"]
-          - project_description.active_release_series.each do |series|
-            - constraint = series.integration_constraints[integration_id]
-            %td
+            - project_description.active_release_series.each do |series|
+              - constraint = series.integration_constraints[integration_id]
               - if constraint == nil
-                N/A
+                %td.disabled
+                  N/A
               - else
-                :asciidoc
-                  :doctype: inline
-                  #{constraint.version}
+                %td
+                  :asciidoc
+                    :doctype: inline
+                    #{constraint.version}
   %p
     See also the
     %a{:href => "/community/compatibility-policy"}
