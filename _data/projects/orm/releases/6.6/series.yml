@@ -18,5 +18,5 @@ maven:
 integration_constraints:
   java:
     version: 11, 17, 21, 22 or 23
-  jakarta_jpa:
+  jakarta_ee_jpa:
     version: 3.1

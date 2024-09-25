@@ -10,7 +10,7 @@ maven:
 integration_constraints:
   java:
     version: 8, 11 or 17
-  jbv:
+  jakarta_ee_bv:
     version: 3.0
-  jee:
+  jakarta_ee:
     version: 9

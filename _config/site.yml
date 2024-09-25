@@ -106,10 +106,10 @@ projects:
       java:
         name: Java
         url: https://www.oracle.com/technetwork/java/javase/downloads/index.html
-      jpa:
+      java_ee_jpa:
         name: JPA
         url: https://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html
-      jakarta_jpa:
+      jakarta_ee_jpa:
         name: Jakarta Persistence
         url: https://jakarta.ee/specifications/persistence/
     menu:
@@ -391,16 +391,16 @@ projects:
       java:
         name: Java
         url: https://www.oracle.com/technetwork/java/javase/downloads/index.html
-      bv:
+      java_ee_bv:
         name: Bean Validation
         url: https://beanvalidation.org/
-      ee:
+      java_ee:
         name: Java EE
         url: https://www.oracle.com/java/technologies/java-ee-glance.html
-      jbv:
+      jakarta_ee_bv:
         name: Jakarta Bean Validation
         url: https://beanvalidation.org/
-      jee:
+      jakarta_ee:
         name: Jakarta EE
         url: https://jakarta.ee
     menu:
@@ -499,7 +499,7 @@ projects:
       java:
         name: Java
         url: https://www.oracle.com/technetwork/java/javase/downloads/index.html
-      jpa:
+      java_ee_jpa:
         name: JPA
         url: https://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html
       orm:
