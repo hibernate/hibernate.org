@@ -193,8 +193,12 @@ projects:
         latest_stable:
           html: https://docs.jboss.org/hibernate/stable/search/api/
       getting_started_guide:
-        html: https://docs.jboss.org/hibernate/search/{series.version}/getting-started/orm/en-US/html_single/
-        pdf: https://docs.jboss.org/hibernate/search/{series.version}/getting-started/orm/en-US/pdf/hibernate_search_getting_started_orm.pdf
+        - name: ORM
+          html: https://docs.jboss.org/hibernate/search/{series.version}/getting-started/orm/en-US/html_single/
+          pdf: https://docs.jboss.org/hibernate/search/{series.version}/getting-started/orm/en-US/pdf/hibernate_search_getting_started_orm.pdf
+        - name: Standalone
+          html: https://docs.jboss.org/hibernate/search/{series.version}/getting-started/standalone/en-US/html_single/
+          pdf: https://docs.jboss.org/hibernate/search/{series.version}/getting-started/standalone/en-US/pdf/hibernate_search_getting_started_standalone.pdf
       migration_guide:
         html: https://docs.jboss.org/hibernate/search/{series.version}/migration/html_single/
         pdf: https://docs.jboss.org/hibernate/search/{series.version}/migration/pdf/hibernate_search_migration.pdf

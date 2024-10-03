@@ -2,13 +2,16 @@
 - project_description = site.projects[real_page.project]
 - stable_series = latest_stable_series(real_page)
 - series = latest_series(real_page)
-- get_started_url = stable_series.nil? ? nil : getting_started_guide(project_description, stable_series)&.html_url
+- getting_started_guides = stable_series.nil? ? [] : getting_started_guides(project_description, stable_series)
 
-- if not get_started_url.nil?
-  .jumbotron-button
-    %a.ui.small.right.labeled.icon.button{:href => "#{get_started_url}"}
-      %i.right.arrow.icon
-      Getting started
+- if not getting_started_guides.empty?
+  - getting_started_guides.each do |getting_started_guide|
+    .jumbotron-button
+      %a.ui.small.right.labeled.icon.button{:href => "#{getting_started_guide&.html_url}"}
+        %i.right.arrow.icon
+        Getting started
+        - if getting_started_guide.name
+          = "(#{getting_started_guide.name})"
 - unless stable_series.nil?
   .jumbotron-button
     - reference_doc = reference_doc(project_description, series)

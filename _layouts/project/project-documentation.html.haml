@@ -47,11 +47,12 @@ project_buttons_partial: project/documentation-buttons.html.haml
             %a.ui.right.labeled.icon.button.small(href="#{javadoc.html_url}")
               %i.icon.code.outline
               API (JavaDoc)
-          - getting_started_guide = getting_started_guide(project_description, series)
-          - if not getting_started_guide.nil?
+          - getting_started_guides(project_description, series).each do |getting_started_guide|
             %p
               %span.ui.label.basic.horizontal
                 Getting started guide
+                - if getting_started_guide.name
+                  = "(#{getting_started_guide.name})"
               - if not getting_started_guide.html_url.nil?
                 %a.ui.right.labeled.icon.button.small(href="#{getting_started_guide.html_url}")
                   %i.icon.file.text.outline
@@ -124,11 +125,12 @@ project_buttons_partial: project/documentation-buttons.html.haml
               %a.ui.right.labeled.icon.button.small(href="#{javadoc.html_url}")
                 %i.icon.code.outline
                 API (JavaDoc)
-            - getting_started_guide = getting_started_guide(project_description, series)
-            - if not getting_started_guide.nil?
+            - getting_started_guides(project_description, series).each do |getting_started_guide|
               %p
                 %span.ui.label.basic.horizontal
                   Getting started guide
+                  - if getting_started_guide.name
+                    = "(#{getting_started_guide.name})"
                 - if not getting_started_guide.html_url.nil?
                   %a.ui.right.labeled.icon.button.small(href="#{getting_started_guide.html_url}")
                     %i.icon.file.text.outline

@@ -7,12 +7,12 @@ project: reactive
 - project = site.projects[page.project] 
 -# Latest series available unless a stable release exists
 - series = project.latest_stable_series.nil? ? project.latest_series : project.latest_stable_series
-- getting_started_guide = getting_started_guide(project, series)
+- getting_started_guides = getting_started_guides(project, series)
 
 -# Center body
 .feature-block
   :asciidoc
-    :getting_started_guide_link: #{getting_started_guide.html_url}
+    :getting_started_guide_link: #{getting_started_guides.first.html_url}
     :introduction: http://hibernate.org/reactive/documentation/1.0/reference/html_single/
     :build: http://hibernate.org/reactive/documentation/1.0/reference/html_single/#_including_hibernate_reactive_in_your_project_build
     :config: http://hibernate.org/reactive/documentation/1.0/reference/html_single/#_basic_configuration
