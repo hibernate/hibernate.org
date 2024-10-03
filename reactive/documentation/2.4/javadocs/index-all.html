@@ -1287,6 +1287,8 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="org/hibernate/reactive/type/descriptor/jdbc/ReactiveArrayJdbcType.html#getBinder(org.hibernate.type.descriptor.java.JavaType)" class="member-name-link">getBinder(JavaType&lt;X&gt;)</a> - Method in class org.hibernate.reactive.type.descriptor.jdbc.<a href="org/hibernate/reactive/type/descriptor/jdbc/ReactiveArrayJdbcType.html" title="class in org.hibernate.reactive.type.descriptor.jdbc">ReactiveArrayJdbcType</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="org/hibernate/reactive/type/descriptor/jdbc/ReactiveJsonJdbcType.html#getBinder(org.hibernate.type.descriptor.java.JavaType)" class="member-name-link">getBinder(JavaType&lt;X&gt;)</a> - Method in class org.hibernate.reactive.type.descriptor.jdbc.<a href="org/hibernate/reactive/type/descriptor/jdbc/ReactiveJsonJdbcType.html" title="class in org.hibernate.reactive.type.descriptor.jdbc">ReactiveJsonJdbcType</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/type/descriptor/jdbc/ReactiveOracleArrayJdbcType.html#getBinder(org.hibernate.type.descriptor.java.JavaType)" class="member-name-link">getBinder(JavaType&lt;X&gt;)</a> - Method in class org.hibernate.reactive.type.descriptor.jdbc.<a href="org/hibernate/reactive/type/descriptor/jdbc/ReactiveOracleArrayJdbcType.html" title="class in org.hibernate.reactive.type.descriptor.jdbc">ReactiveOracleArrayJdbcType</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/it/reference/Author.html#getBook()" class="member-name-link">getBook()</a> - Method in class org.hibernate.reactive.it.reference.<a href="org/hibernate/reactive/it/reference/Author.html" title="class in org.hibernate.reactive.it.reference">Author</a></dt>
@@ -1496,6 +1498,8 @@ loadScripts(document, 'script');</script>
 <dt><a href="org/hibernate/reactive/provider/service/ReactiveSchemaManagementTool.html#getExtractionTool()" class="member-name-link">getExtractionTool()</a> - Method in class org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/ReactiveSchemaManagementTool.html" title="class in org.hibernate.reactive.provider.service">ReactiveSchemaManagementTool</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/type/descriptor/jdbc/ReactiveArrayJdbcType.html#getExtractor(org.hibernate.type.descriptor.java.JavaType)" class="member-name-link">getExtractor(JavaType&lt;X&gt;)</a> - Method in class org.hibernate.reactive.type.descriptor.jdbc.<a href="org/hibernate/reactive/type/descriptor/jdbc/ReactiveArrayJdbcType.html" title="class in org.hibernate.reactive.type.descriptor.jdbc">ReactiveArrayJdbcType</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="org/hibernate/reactive/type/descriptor/jdbc/ReactiveJsonJdbcType.html#getExtractor(org.hibernate.type.descriptor.java.JavaType)" class="member-name-link">getExtractor(JavaType&lt;X&gt;)</a> - Method in class org.hibernate.reactive.type.descriptor.jdbc.<a href="org/hibernate/reactive/type/descriptor/jdbc/ReactiveJsonJdbcType.html" title="class in org.hibernate.reactive.type.descriptor.jdbc">ReactiveJsonJdbcType</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/mutiny/Mutiny.Session.html#getFactory()" class="member-name-link">getFactory()</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></dt>
 <dd>
@@ -2244,6 +2248,8 @@ loadScripts(document, 'script');</script>
 <dt><a href="org/hibernate/reactive/query/sqm/spi/ReactiveNativeQueryInterpreter.html#INSTANCE" class="member-name-link">INSTANCE</a> - Static variable in class org.hibernate.reactive.query.sqm.spi.<a href="org/hibernate/reactive/query/sqm/spi/ReactiveNativeQueryInterpreter.html" title="class in org.hibernate.reactive.query.sqm.spi">ReactiveNativeQueryInterpreter</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/type/descriptor/jdbc/ReactiveArrayJdbcTypeConstructor.html#INSTANCE" class="member-name-link">INSTANCE</a> - Static variable in class org.hibernate.reactive.type.descriptor.jdbc.<a href="org/hibernate/reactive/type/descriptor/jdbc/ReactiveArrayJdbcTypeConstructor.html" title="class in org.hibernate.reactive.type.descriptor.jdbc">ReactiveArrayJdbcTypeConstructor</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="org/hibernate/reactive/type/descriptor/jdbc/ReactiveJsonJdbcType.html#INSTANCE" class="member-name-link">INSTANCE</a> - Static variable in class org.hibernate.reactive.type.descriptor.jdbc.<a href="org/hibernate/reactive/type/descriptor/jdbc/ReactiveJsonJdbcType.html" title="class in org.hibernate.reactive.type.descriptor.jdbc">ReactiveJsonJdbcType</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/common/InternalStateAssertions.html" class="type-name-link" title="class in org.hibernate.reactive.common">InternalStateAssertions</a> - Class in <a href="org/hibernate/reactive/common/package-summary.html">org.hibernate.reactive.common</a></dt>
 <dd>
@@ -3265,6 +3271,12 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/sql/exec/spi/ReactiveJdbcMutationExecutor.html" class="type-name-link" title="interface in org.hibernate.reactive.sql.exec.spi">ReactiveJdbcMutationExecutor</a> - Interface in <a href="org/hibernate/reactive/sql/exec/spi/package-summary.html">org.hibernate.reactive.sql.exec.spi</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="org/hibernate/reactive/type/descriptor/jdbc/ReactiveJsonJdbcType.html" class="type-name-link" title="class in org.hibernate.reactive.type.descriptor.jdbc">ReactiveJsonJdbcType</a> - Class in <a href="org/hibernate/reactive/type/descriptor/jdbc/package-summary.html">org.hibernate.reactive.type.descriptor.jdbc</a></dt>
+<dd>
+<div class="block">Map a JSON column as <code>JsonObject</code></div>
+</dd>
+<dt><a href="org/hibernate/reactive/type/descriptor/jdbc/ReactiveJsonJdbcType.html#%3Cinit%3E(org.hibernate.metamodel.mapping.EmbeddableMappingType)" class="member-name-link">ReactiveJsonJdbcType(EmbeddableMappingType)</a> - Constructor for class org.hibernate.reactive.type.descriptor.jdbc.<a href="org/hibernate/reactive/type/descriptor/jdbc/ReactiveJsonJdbcType.html" title="class in org.hibernate.reactive.type.descriptor.jdbc">ReactiveJsonJdbcType</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/query/ReactiveSelectionQuery.html#reactiveList()" class="member-name-link">reactiveList()</a> - Method in interface org.hibernate.reactive.query.<a href="org/hibernate/reactive/query/ReactiveSelectionQuery.html" title="interface in org.hibernate.reactive.query">ReactiveSelectionQuery</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/query/spi/ReactiveAbstractSelectionQuery.html#reactiveList()" class="member-name-link">reactiveList()</a> - Method in class org.hibernate.reactive.query.spi.<a href="org/hibernate/reactive/query/spi/ReactiveAbstractSelectionQuery.html" title="class in org.hibernate.reactive.query.spi">ReactiveAbstractSelectionQuery</a></dt>
@@ -3812,6 +3824,8 @@ loadScripts(document, 'script');</script>
 <div class="block">Remove multiple entity instances at once.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/sql/results/ReactiveResultSetMapping.html#resolve(org.hibernate.sql.results.jdbc.spi.JdbcValuesMetadata,org.hibernate.engine.spi.LoadQueryInfluencers,org.hibernate.engine.spi.SessionFactoryImplementor)" class="member-name-link">resolve(JdbcValuesMetadata, LoadQueryInfluencers, SessionFactoryImplementor)</a> - Method in class org.hibernate.reactive.sql.results.<a href="org/hibernate/reactive/sql/results/ReactiveResultSetMapping.html" title="class in org.hibernate.reactive.sql.results">ReactiveResultSetMapping</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="org/hibernate/reactive/type/descriptor/jdbc/ReactiveJsonJdbcType.html#resolveAggregateJdbcType(org.hibernate.metamodel.mapping.EmbeddableMappingType,java.lang.String,org.hibernate.metamodel.spi.RuntimeModelCreationContext)" class="member-name-link">resolveAggregateJdbcType(EmbeddableMappingType, String, RuntimeModelCreationContext)</a> - Method in class org.hibernate.reactive.type.descriptor.jdbc.<a href="org/hibernate/reactive/type/descriptor/jdbc/ReactiveJsonJdbcType.html" title="class in org.hibernate.reactive.type.descriptor.jdbc">ReactiveJsonJdbcType</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/persister/entity/mutation/ReactiveInsertCoordinatorStandard.html#resolveBatchKeyAccess(boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">resolveBatchKeyAccess(boolean, SharedSessionContractImplementor)</a> - Method in class org.hibernate.reactive.persister.entity.mutation.<a href="org/hibernate/reactive/persister/entity/mutation/ReactiveInsertCoordinatorStandard.html" title="class in org.hibernate.reactive.persister.entity.mutation">ReactiveInsertCoordinatorStandard</a></dt>
 <dd>&nbsp;</dd>
@@ -5355,6 +5369,8 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:T">T</h2>
 <dl class="index">
+<dt><a href="org/hibernate/reactive/type/descriptor/jdbc/ReactiveJsonJdbcType.html#toJsonObject(X,org.hibernate.type.descriptor.java.JavaType,org.hibernate.type.descriptor.WrapperOptions)" class="member-name-link">toJsonObject(X, JavaType&lt;X&gt;, WrapperOptions)</a> - Method in class org.hibernate.reactive.type.descriptor.jdbc.<a href="org/hibernate/reactive/type/descriptor/jdbc/ReactiveJsonJdbcType.html" title="class in org.hibernate.reactive.type.descriptor.jdbc">ReactiveJsonJdbcType</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/query/sql/spi/ReactiveNativeQueryImplementor.html#toMemento(java.lang.String)" class="member-name-link">toMemento(String)</a> - Method in interface org.hibernate.reactive.query.sql.spi.<a href="org/hibernate/reactive/query/sql/spi/ReactiveNativeQueryImplementor.html" title="interface in org.hibernate.reactive.query.sql.spi">ReactiveNativeQueryImplementor</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/sql/results/ReactiveResultSetMapping.html#toMemento(java.lang.String)" class="member-name-link">toMemento(String)</a> - Method in class org.hibernate.reactive.sql.results.<a href="org/hibernate/reactive/sql/results/ReactiveResultSetMapping.html" title="class in org.hibernate.reactive.sql.results">ReactiveResultSetMapping</a></dt>

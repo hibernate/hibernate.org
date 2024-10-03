@@ -6,20 +6,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.18">
 <meta name="author" content="Davide D&#8217;Alto, Gavin King">
-<title>Hibernate Reactive 2.4.1.Final Reference Documentation</title>
+<title>Hibernate Reactive 2.4.2-SNAPSHOT Reference Documentation</title>
 <link rel="stylesheet" href="./css/hibernate.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="./rouge-github.css">
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Hibernate Reactive 2.4.1.Final Reference Documentation</h1>
+<h1>Hibernate Reactive 2.4.2-SNAPSHOT Reference Documentation</h1>
 <div class="details">
 <span id="author" class="author">Davide D&#8217;Alto</span><br>
 <span id="email" class="email"><a href="mailto:davide@hibernate.org">davide@hibernate.org</a></span><br>
 <span id="author2" class="author">Gavin King</span><br>
 <span id="email2" class="email"><a href="mailto:gavin@hibernate.org">gavin@hibernate.org</a></span><br>
-<span id="revnumber">version 2.4.1.Final</span>
+<span id="revnumber">version 2.4.2-SNAPSHOT</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -45,16 +45,17 @@
 <li><a href="#_getters_and_setters">1.3.2. Getters and setters</a></li>
 <li><a href="#_equals_and_hashcode">1.3.3. <code>equals()</code> and <code>hashCode()</code></a></li>
 <li><a href="#_identifier_generation">1.3.4. Identifier generation</a></li>
-<li><a href="#_custom_types">1.3.5. Custom types</a></li>
-<li><a href="#_attribute_converters">1.3.6. Attribute converters</a></li>
-<li><a href="#_apis_for_chaining_reactive_operations">1.3.7. APIs for chaining reactive operations</a></li>
-<li><a href="#_obtaining_a_reactive_session_factory">1.3.8. Obtaining a reactive session factory</a></li>
-<li><a href="#_obtaining_a_reactive_session">1.3.9. Obtaining a reactive session</a></li>
-<li><a href="#_using_the_reactive_session">1.3.10. Using the reactive session</a></li>
-<li><a href="#_queries">1.3.11. Queries</a></li>
-<li><a href="#_fetching_lazy_associations">1.3.12. Fetching lazy associations</a></li>
-<li><a href="#_field_level_lazy_fetching">1.3.13. Field-level lazy fetching</a></li>
-<li><a href="#_transactions">1.3.14. Transactions</a></li>
+<li><a href="#_json_mapping">1.3.5. JSON Mapping</a></li>
+<li><a href="#_custom_types">1.3.6. Custom types</a></li>
+<li><a href="#_attribute_converters">1.3.7. Attribute converters</a></li>
+<li><a href="#_apis_for_chaining_reactive_operations">1.3.8. APIs for chaining reactive operations</a></li>
+<li><a href="#_obtaining_a_reactive_session_factory">1.3.9. Obtaining a reactive session factory</a></li>
+<li><a href="#_obtaining_a_reactive_session">1.3.10. Obtaining a reactive session</a></li>
+<li><a href="#_using_the_reactive_session">1.3.11. Using the reactive session</a></li>
+<li><a href="#_queries">1.3.12. Queries</a></li>
+<li><a href="#_fetching_lazy_associations">1.3.13. Fetching lazy associations</a></li>
+<li><a href="#_field_level_lazy_fetching">1.3.14. Field-level lazy fetching</a></li>
+<li><a href="#_transactions">1.3.15. Transactions</a></li>
 </ul>
 </li>
 <li><a href="#_integrating_with_vert_x">1.4. Integrating with Vert.x</a>
@@ -1240,7 +1241,55 @@ custom reactive identifier generator.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_custom_types"><a class="anchor" href="#_custom_types"></a>1.3.5. Custom types</h4>
+<h4 id="_json_mapping"><a class="anchor" href="#_json_mapping"></a>1.3.5. JSON Mapping</h4>
+<div class="paragraph">
+<p>Like in Hibernate ORM, it&#8217;s possible to map a JSON field using the <a href="https://docs.jboss.org/hibernate/orm/6.6/userguide/html_single/Hibernate_User_Guide.html#basic-mapping-json">SqlTypes.JSON</a>
+or <a href="https://docs.jboss.org/hibernate/orm/6.6/userguide/html_single/Hibernate_User_Guide.html#_jsonxml_aggregate_embeddable_mapping">an embeddable</a>.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Supports for JSON is limited to PostgreSQL and MySQL.
+Only PostgreSQL supports mapping a JSON using an embeddable
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Hibernate Reactive will recognize field of type <code>io.vertx.core.json.JsonObject</code>
+as JSON columns:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Entity</span>
+<span class="kd">class</span> <span class="nc">Example</span> <span class="o">{</span>
+
+    <span class="nc">JsonObject</span> <span class="n">jsonField</span><span class="o">;</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Finally, the <a href="https://github.com/hibernate/hibernate-reactive/blob/main/hibernate-reactive-core/src/test/java/org/hibernate/reactive/types/StringToJsonConverter.java">org.hibernate.reactive.StringToJsonConverter</a> converter is available
+for mapping a string to a JSON column:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Entity</span>
+<span class="kd">class</span> <span class="nc">Example</span> <span class="o">{</span>
+
+    <span class="nd">@Convert</span><span class="o">(</span><span class="n">converter</span> <span class="o">=</span> <span class="nc">StringToJsonConverter</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+    <span class="nc">String</span> <span class="n">json</span><span class="o">;</span>
+
+<span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_custom_types"><a class="anchor" href="#_custom_types"></a>1.3.6. Custom types</h4>
 <div class="paragraph">
 <p>Hibernate custom types based on the <code>UserType</code> interface are targeted toward
 use with JDBC, and depend on interfaces defined by JDBC. So Hibernate Reactive
@@ -1270,7 +1319,7 @@ the Hibernate <code>@Type</code> annotation.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_attribute_converters"><a class="anchor" href="#_attribute_converters"></a>1.3.6. Attribute converters</h4>
+<h4 id="_attribute_converters"><a class="anchor" href="#_attribute_converters"></a>1.3.7. Attribute converters</h4>
 <div class="paragraph">
 <p>Any JPA <code>AttributeConverter</code> works in Hibernate Reactive. For example:</p>
 </div>
@@ -1322,7 +1371,7 @@ JPA specification.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_apis_for_chaining_reactive_operations"><a class="anchor" href="#_apis_for_chaining_reactive_operations"></a>1.3.7. APIs for chaining reactive operations</h4>
+<h4 id="_apis_for_chaining_reactive_operations"><a class="anchor" href="#_apis_for_chaining_reactive_operations"></a>1.3.8. APIs for chaining reactive operations</h4>
 <div class="paragraph">
 <p>When you write persistence logic using Hibernate Reactive, you&#8217;ll be working
 with a reactive <code>Session</code> most of the time. Just to make things a little more
@@ -1425,7 +1474,7 @@ transaction, or unit of work.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_obtaining_a_reactive_session_factory"><a class="anchor" href="#_obtaining_a_reactive_session_factory"></a>1.3.8. Obtaining a reactive session factory</h4>
+<h4 id="_obtaining_a_reactive_session_factory"><a class="anchor" href="#_obtaining_a_reactive_session_factory"></a>1.3.9. Obtaining a reactive session factory</h4>
 <div class="paragraph">
 <p>Whatever you decide, the first step to getting a reactive session is to obtain
 a JPA <code>EntityManagerFactory</code> just as you usually would in plain ol' regular JPA,
@@ -1474,7 +1523,7 @@ configuration based on Hibernate&#8217;s <code>ServiceRegistry</code> architectu
 </div>
 </div>
 <div class="sect3">
-<h4 id="_obtaining_a_reactive_session"><a class="anchor" href="#_obtaining_a_reactive_session"></a>1.3.9. Obtaining a reactive session</h4>
+<h4 id="_obtaining_a_reactive_session"><a class="anchor" href="#_obtaining_a_reactive_session"></a>1.3.10. Obtaining a reactive session</h4>
 <div class="paragraph">
 <p>Persistence operations are exposed via a reactive <code>Session</code> object. It&#8217;s very
 important to understand that most operations of this interface are non-blocking,
@@ -1539,7 +1588,7 @@ one Vert.x context. (See <a href="#_sessions_and_vert_x_contexts">Sessions and V
 </div>
 </div>
 <div class="sect3">
-<h4 id="_using_the_reactive_session"><a class="anchor" href="#_using_the_reactive_session"></a>1.3.10. Using the reactive session</h4>
+<h4 id="_using_the_reactive_session"><a class="anchor" href="#_using_the_reactive_session"></a>1.3.11. Using the reactive session</h4>
 <div class="paragraph">
 <p>The <code>Session</code> interface has methods with the same names as methods of the JPA
 <code>EntityManager</code>. You might already be familiar with the following session
@@ -1714,7 +1763,7 @@ that you&#8217;re going to make this mistake, in some form, <em>at least</em> on
 </div>
 </div>
 <div class="sect3">
-<h4 id="_queries"><a class="anchor" href="#_queries"></a>1.3.11. Queries</h4>
+<h4 id="_queries"><a class="anchor" href="#_queries"></a>1.3.12. Queries</h4>
 <div class="paragraph">
 <p>Naturally, the <code>Session</code> interface is a factory for <code>Query</code> instances which
 allow you to set query parameters and execute queries and DML statements:</p>
@@ -1838,7 +1887,7 @@ arguments to temporally-typed query parameters.
 </div>
 </div>
 <div class="sect3">
-<h4 id="_fetching_lazy_associations"><a class="anchor" href="#_fetching_lazy_associations"></a>1.3.12. Fetching lazy associations</h4>
+<h4 id="_fetching_lazy_associations"><a class="anchor" href="#_fetching_lazy_associations"></a>1.3.13. Fetching lazy associations</h4>
 <div class="paragraph">
 <p>In Hibernate ORM, a lazy association is fetched transparently when the
 association is first accessed within a session. In Hibernate Reactive, on
@@ -1901,7 +1950,7 @@ first.
 </div>
 </div>
 <div class="sect3">
-<h4 id="_field_level_lazy_fetching"><a class="anchor" href="#_field_level_lazy_fetching"></a>1.3.13. Field-level lazy fetching</h4>
+<h4 id="_field_level_lazy_fetching"><a class="anchor" href="#_field_level_lazy_fetching"></a>1.3.14. Field-level lazy fetching</h4>
 <div class="paragraph">
 <p>Similarly, field-level lazy fetching&mdash;an advanced feature, which
 is only supported in conjunction with Hibernate&#8217;s optional compile-time
@@ -1978,7 +2027,7 @@ as vulnerable to N+1 selects as lazy association fetching.
 </div>
 </div>
 <div class="sect3">
-<h4 id="_transactions"><a class="anchor" href="#_transactions"></a>1.3.14. Transactions</h4>
+<h4 id="_transactions"><a class="anchor" href="#_transactions"></a>1.3.15. Transactions</h4>
 <div class="paragraph">
 <p>The <code>withTransaction()</code> method performs work within the scope of a database
 transaction.</p>
@@ -2941,8 +2990,8 @@ documentation for details.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 2.4.1.Final<br>
-Last updated 2024-09-18 17:12:28 +0200
+Version 2.4.2-SNAPSHOT<br>
+Last updated 2024-09-18 16:55:41 +0200
 </div>
 </div>
 </body>
