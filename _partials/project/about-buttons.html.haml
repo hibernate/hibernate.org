@@ -3,13 +3,16 @@
 - stable_series = latest_stable_series(real_page)
 - series = latest_series(real_page)
 - dev_series = next_dev_series(real_page)
-- get_started_url = project_description.nil? || stable_series.nil? ? nil : getting_started_guide(project_description, stable_series)&.html_url
+- getting_started_guides = project_description.nil? || stable_series.nil? ? [] : getting_started_guides(project_description, stable_series)
 
-- if not get_started_url.nil?
-  .jumbotron-button
-    %a.ui.small.right.labeled.icon.button{:href => "#{get_started_url}"}
-      %i.right.arrow.icon
-      Getting started
+- if not getting_started_guides.empty?
+  - getting_started_guides.each do |getting_started_guide|
+    .jumbotron-button
+      %a.ui.small.right.labeled.icon.button{:href => "#{getting_started_guide&.html_url}"}
+        %i.right.arrow.icon
+        Getting started
+        - if getting_started_guide.name
+          = "(#{getting_started_guide.name})"
 - if not (stable_series.nil? && dev_series.nil?)
   - unless stable_series.nil?
     .jumbotron-button

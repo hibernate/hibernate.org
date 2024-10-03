@@ -16,8 +16,8 @@ module Awestruct
         return DocumentRef.from_patterns(project, series, :javadoc)
       end
 
-      def getting_started_guide(project, series)
-        return DocumentRef.from_patterns(project, series, :getting_started_guide)
+      def getting_started_guides(project, series)
+        return DocumentRef.from_patterns_multi(project, series, :getting_started_guide)
       end
 
       def migration_guide(project, series)
@@ -148,13 +148,32 @@ module Awestruct
 
         def self.from_patterns(project, series, link_key)
           log_prefix = "#{project.name}/#{series.version}/#{link_key}: "
-          link = series&.links&.[](link_key)
-          link ||= project&.links&.[](link_key)
+          link_root = series&.links&.[](link_key)
+          link_root ||= project&.links&.[](link_key)
+          return from_patterns_single(project, series, link_key, link_root)
+        end
+
+        def self.from_patterns_multi(project, series, link_key)
+          log_prefix = "#{project.name}/#{series.version}/#{link_key}: "
+          link_root = series&.links&.[](link_key)
+          link_root ||= project&.links&.[](link_key)
+          links = []
+          if link_root.kind_of?(Array)
+            link_root.each do |link|
+              links.push(from_patterns_single(project, series, link_key, link))
+            end
+          else
+            links.push(from_patterns_single(project, series, link_key, link_root))
+          end
+          return links.compact
+        end
+
+        def self.from_patterns_single(project, series, link_key, link)
+          log_prefix = "#{project.name}/#{series.version}/#{link_key}: "
           if link.nil?
             @@logger.debug("#{log_prefix}Link is nil")
             return nil
           end
-          @@logger.debug("#{log_prefix}Link is #{link}")
           displayed = link['displayed']
           if not displayed.nil? and not displayed
             @@logger.debug("#{log_prefix}Link is not displayed")
@@ -165,6 +184,8 @@ module Awestruct
             @@logger.debug("#{log_prefix}Link is for the latest stable series only")
             return nil
           end
+          name = link['name']
+          @@logger.debug("#{log_prefix}Link name: #{name}")
           latest_stable = link['latest_stable']
           if latest_stable and series.latest_stable
             link = latest_stable
@@ -179,12 +200,13 @@ module Awestruct
           if html_url.nil? and pdf_url.nil?
             return nil
           end
-          return DocumentRef.new(html_url, pdf_url)
+          return DocumentRef.new(name, html_url, pdf_url)
         end
 
-        attr_reader :html_url, :pdf_url
+        attr_reader :name, :html_url, :pdf_url
 
-        def initialize(html_url, pdf_url)
+        def initialize(name, html_url, pdf_url)
+          @name = name
           @html_url = html_url
           @pdf_url = pdf_url
         end

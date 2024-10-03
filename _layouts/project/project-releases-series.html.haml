@@ -14,7 +14,7 @@ project_hero_partial: project/hero-series.html.haml
 
 - latest_release_maven = maven(project_description, series, latest_release)
 
-- getting_started_guide = getting_started_guide(project_description, series)
+- getting_started_guides = getting_started_guides(project_description, series)
 - migration_guide = migration_guide(project_description, series)
 - dist_sourceforge = dist_sourceforge(project_description, series, latest_release)
 
@@ -33,7 +33,7 @@ project_hero_partial: project/hero-series.html.haml
     %li
       %a.item{:href => "#get-it"}
         How to get it
-    - if not getting_started_guide.nil?
+    - if not getting_started_guides.empty?
       %li
         %a.item{:href => "#getting_started"}
           Getting started
@@ -237,7 +237,7 @@ project_hero_partial: project/hero-series.html.haml
   %a{:href => "#releases"}
     here.
 
-- if not getting_started_guide.nil?
+- if not getting_started_guides.empty?
   %h2{:id => "getting_started"} Getting started
   - if series.status == 'end-of-life'
     :asciidoc
@@ -261,15 +261,19 @@ project_hero_partial: project/hero-series.html.haml
       ====
   %p
     If you want to start using #{project_description.name} #{series.version}, please refer to the getting started guide:
-  %p
-    - if not getting_started_guide.html_url.nil?
-      %a.ui.right.labeled.icon.button.small(href="#{getting_started_guide.html_url}")
-        %i.icon.file.text.outline
-        HTML
-    - if not getting_started_guide.pdf_url.nil?
-      %a.ui.right.labeled.icon.button.small(href="#{getting_started_guide.pdf_url}")
-        %i.icon.file.pdf.outline
-        PDF
+  - getting_started_guides.each do |getting_started_guide|
+    %p
+      - if getting_started_guide.name
+        %span.ui.label.basic.horizontal
+          = getting_started_guide.name
+      - if not getting_started_guide.html_url.nil?
+        %a.ui.right.labeled.icon.button.small(href="#{getting_started_guide.html_url}")
+          %i.icon.file.text.outline
+          HTML
+      - if not getting_started_guide.pdf_url.nil?
+        %a.ui.right.labeled.icon.button.small(href="#{getting_started_guide.pdf_url}")
+          %i.icon.file.pdf.outline
+          PDF
 
 - if not migration_guide.nil?
   %h2{:id => "migrate"} Migrating
