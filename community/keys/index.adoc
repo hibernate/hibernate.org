@@ -2,9 +2,23 @@
 :awestruct-layout: community-standard
 
 When we sign Maven artifacts of Hibernate libraries,
-we use a PGP key with the following fingerprint:
+we use a PGP key registered at link:https://keys.openpgp.org/search?q=ci%40hibernate.org[https://keys.openpgp.org/]
+with the email address `ci@hibernate.org`.
+
+We currently use a PGP key with the following fingerprint:
+
+[source]
+----
+1452 F358 49B5 0750 F6A3  BBB4 B540 1135 8B35 2F85
+----
+
+See also https://keys.openpgp.org/search?q=1452F35849B50750F6A3BBB4B54011358B352F85
+
+Older releases, before 2024-10-11, were signed with a PGP key with the following fingerprint:
 
 [source]
 ----
 894F 14D9 8D7F 20D5 E826  45E3 DFE1 0210 8BF9 381F
 ----
+
+See also https://keys.openpgp.org/search?q=894F14D98D7F20D5E82645E3DFE102108BF9381F
