@@ -1,0 +1,2 @@
+This directory is mapped to .well-known` using Apache HTTP configuration on our server.
+We can't name it `.well-known` in the source tree because awestruct ignores all files starting with a dot.
