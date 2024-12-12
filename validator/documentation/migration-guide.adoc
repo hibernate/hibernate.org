@@ -7,6 +7,18 @@ This page contains everything you need to know when upgrading from one Hibernate
 [[migration-guide-9-0-x]]
 == 9.0.x
 
+=== 9.0.0.CR1
+
+==== Removals
+
+Starting with Hibernate Validator 9.0, we are no longer publishing relocation POMs for the older group id `org.hibernate` previously used by the following artifacts:
+
+- `org.hibernate:hibernate-validator-annotation-processor`
+- `org.hibernate:hibernate-validator-cdi`
+- `org.hibernate:hibernate-validator`
+
+As a reminder: `org.hibernate.validator` is the current group id for Hibernate Validator artifacts.
+
 === 9.0.0.Beta3
 
 ==== Behaviour
