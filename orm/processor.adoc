@@ -1,0 +1,94 @@
+= Processor
+:awestruct-layout: project-standard
+:awestruct-project: orm
+:page-interpolate: true
+:project: #{site.projects[page.project]}
+:latest_stable: #{latest_stable_release(page).version}
+:version_family: #{latest_stable_release(page).version_family}
+
+link:https://docs.jboss.org/hibernate/orm/{version_family}/introduction/html_single/Hibernate_Introduction.html#generator[Hibernate Processor] is a standard Java annotation processor which produces the Jakarta Persistence static metamodel, validates queries at compilation time, and implements Jakarta Data link:https://docs.jboss.org/hibernate/orm/{version_family}/repositories/html_single/Hibernate_Data_Repositories.html[repositories].
+
+== Jakarta Persistence static metamodel
+
+The static metamodel is a standard part of JPA.
+It lets us reference the persistent fields and properties of an entity in a completely typesafe way.
+Consider the entity class `Order`:
+
+[source,java]
+----
+@Entity
+public class Order {
+    @Id
+    @GeneratedValue
+    Integer id;
+    @ManyToOne
+    Customer customer;
+    @OneToMany
+    Set<Item> items;
+    BigDecimal totalCost;
+    // standard setter/getter methods
+}
+----
+
+Hibernate Processor would generate the static metamodel class `Order_`, something like this:
+
+[source,java]
+----
+@StaticMetamodel(Order.class)
+public class Order_ {
+    public static volatile SingularAttribute<Order, Integer> id;
+    public static volatile SingularAttribute<Order, Customer> customer;
+    public static volatile SetAttribute<Order, Item> items;
+    public static volatile SingularAttribute<Order, BigDecimal> totalCost;
+}
+----
+
+The static metamodel class allows to write criteria queries like this, without the use of strings:
+
+[source,java]
+----
+var builder = entityManager.getCriteriaBuilder();
+var query = builder.createQuery(Order.class);
+var item = query.from(Order.class).join(Order_.items);
+query.where(builder.equal(item.get(Item_.id), 5)).distinct(true);
+----
+
+== Query validation
+
+Hibernate Processor is able to completely validate HQL, JPQL, and JDQL queries provided via annotations--for example, using a JPA `@NamedQuery` annotation, a Jakarta Data `@Query` annotation, or a Hibernate `@HQL` annotation--and report any errors in the syntax or typing of the query at compilation time.
+
+== Hibernate Data Repositories
+
+Hibernate Processor is the thing which provides the implementation of a `@Repository` interface in our implementation of Jakarta Data, link:https://docs.jboss.org/hibernate/orm/{version_family}/repositories/html_single/Hibernate_Data_Repositories.html[Hibernate Data Repositories].
+
+You write a repository interface like this:
+
+[source,java]
+----
+@Transactional
+@Repository
+public interface Library {
+
+    @Find
+    Optional<Book> byIsbn(String isbn);
+
+    @Find
+    List<Book> byTitle(@Pattern String title);
+
+    @Insert
+    void add(Book book);
+
+    @Delete
+    void delete(String isbn);
+
+    @Find
+    List<Book> allBooks(Sort<Book> bookSort);
+
+    @Find
+    @OrderBy("isbn")
+    List<Book> allBooks();
+
+}
+----
+
+Then Hibernate Processor provides an implementation which complies with the semantics defined by the Jakarta Data specification.

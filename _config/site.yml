@@ -140,6 +140,9 @@ projects:
         - name: Roadmap
           href: 'https://github.com/hibernate/hibernate-orm/wiki/Roadmap'
           css_class: 'road'
+        - name: Processor
+          href: '/orm/processor/'
+          css_class: 'cogs'
         - name: Tooling
           href: '/orm/tooling/'
           css_class: 'wrench'

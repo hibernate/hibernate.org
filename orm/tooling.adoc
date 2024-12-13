@@ -6,65 +6,18 @@
 :latest_stable: #{latest_stable_release(page).version}
 :version_family: #{latest_stable_release(page).version_family}
 
-Hibernate offers a series of tools for developers to use in their tool chain. The most prominent
-being link:/tools/[Hibernate Tools] which is a set of link:http://www.eclipse.org/[Eclipse] plugins
-and part of link:http://jboss.org/tools[JBoss Tools]. But there is more ...
+Hibernate ORM doesn't require the use of special build tools or IDE plugins.
+In particular, it does not depend on the use of a bytecode processor.
+But _if you're comfortable_ using an annotation processor, bytecode processor, or IDE plugin, we can offer some additional things which are otherwise impossible.
 
-== Hibernate Metamodel Generator
+== Tooling for Hibernate ORM
 
-Hibernate Metamodel Generator is an annotation processor automating the generation of the static
-metamodel classes needed for typesafe Criteria queries as defined by JPA 2. For example, for the
-class +Order+:
+Tooling for Hibernate ORM includes:
 
+- link:/orm/processor/[Hibernate Processor], the annotation processor which produces the Jakarta Persistence static metamodel, validates queries at compilation time, and implements Jakarta Data link:/repositories/[repositories],
+- the link:https://docs.jboss.org/hibernate/orm/{version_family}/userguide/html_single/Hibernate_User_Guide.html#tooling-gradle[Gradle plugin] and link:https://docs.jboss.org/hibernate/orm/{version_family}/userguide/html_single/Hibernate_User_Guide.html#tooling-maven[Maven plugin] which perform optional bytecode enhancement at build time, and
+- link:/tools/[Hibernate Tools] which is a suite of link:http://www.eclipse.org/[Eclipse] plugins
+and part of link:http://jboss.org/tools[JBoss Tools].
 
-[source,java]
-----
-@Entity
-public class Order {
-    @Id
-    @GeneratedValue
-    Integer id;
-    @ManyToOne
-    Customer customer;
-    @OneToMany
-    Set<Item> items;
-    BigDecimal totalCost;
-    // standard setter/getter methods
-}
-----
-
-It would generate the metamodel class +Order_+:
-
-[source,java]
-----
-@StaticMetamodel(Order.class)
-public class Order_ {
-    public static volatile SingularAttribute<Order, Integer> id;
-    public static volatile SingularAttribute<Order, Customer> customer;
-    public static volatile SetAttribute<Order, Item> items;
-    public static volatile SingularAttribute<Order, BigDecimal> totalCost;
-}
-----
-
-Which in turn allows to write queries like this:
-
-[source,java]
-----
-CriteriaBuilder cb = entityManager.getCriteriaBuilder();
-CriteriaQuery<Order> cq = cb.createQuery(Order.class);
-SetJoin<Order, Item> itemNode = cq.from(Order.class).join(Order_.items);
-cq.where( cb.equal(itemNode.get(Item_.id), 5 ) ).distinct(true);
-----
-
-To use Hibernate Metamodel Generator you can add it as an annotation processor to your classpath: find details on how to do that link:https://docs.jboss.org/hibernate/orm/6.3/userguide/html_single/Hibernate_User_Guide.html#tooling-gradle-modelgen[here for Gradle] and link:https://docs.jboss.org/hibernate/orm/6.4/userguide/html_single/Hibernate_User_Guide.html#tooling-maven-modelgen[here for Maven].
-
-For more information and setup options refer to the link:https://docs.jboss.org/hibernate/orm/{version_family}/userguide/html_single/Hibernate_User_Guide.html#tooling-modelgen[online documentation].
-
-[TIP]
-====
-Prior to Hibernate ORM 4.3, Hibernate Metamodel Generator was hosted as a
-link:https://github.com/hibernate/hibernate-metamodelgen[stand-alone project]. As of ORM 4.3 it is
-part of the main ORM release. Issues should be reported in the
-link:https://hibernate.atlassian.net/browse/HHH[ORM issue tracker].
-====
+Note that containers like WildFly and Quarkus are able to perform bytecode enhancement automatically, _without_ the Gradle or Maven plugin.
 
