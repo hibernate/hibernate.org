@@ -331,6 +331,16 @@ img {
 	vertical-align: middle;
 }
 
+.left>div>img {
+	float: left;
+	padding: 15px;
+}
+
+.right>div>img {
+	float: right;
+	padding: 15px;
+}
+
 hr {
 	border: 0;
 	border-top: 1px dotted #bcae79;
