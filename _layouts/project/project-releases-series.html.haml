@@ -94,8 +94,8 @@ project_hero_partial: project/hero-series.html.haml
       - integration = project_description.integrations[integration_id]
       %tr
         %td.left.aligned
-          %a{:href => "#{integration.url}"}
-            = integration["name"]
+          %a{:href => "#{integration&.url}"}
+            = integration&.name
         %td
           :asciidoc
             :doctype: inline
