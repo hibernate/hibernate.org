@@ -299,6 +299,39 @@ projects:
           css_class: 'treatment'
 
   ##################################################################################################
+  # Repositories
+  ##################################################################################################
+  repositories:
+    name: Hibernate Data Repositories
+    icon: 'icon-university'
+    description: |
+      Hibernate Data Repositories offers a simpler and much more type-safe programming model, and an implementation of Jakarta Data.
+      Find your mistakes at compilation time.
+    blog_tag: Hibernate Data Repositories
+    blog_tag_url: repositories
+    license:
+      name: LGPL v2.1
+      url: https://github.com/hibernate/hibernate-tools/blob/master/lgpl.txt
+    menu:
+      intern:
+        - name: About
+          href: '/repositories/'
+          css_class: 'home'
+      extern:
+        - name: Documentation
+          href: '/repositories/documentation/'
+          css_class: 'book'
+        - name: Source code
+          href: 'https://github.com/hibernate/hibernate-orm'
+          css_class: 'code'
+        - name: Issue tracker
+          href: 'https://hibernate.atlassian.net/browse/HHH'
+          css_class: 'bug'
+        - name: Security issue
+          href: 'https://access.redhat.com/security/team/contact/'
+          css_class: 'lock'
+
+  ##################################################################################################
   # Tools
   ##################################################################################################
   tools:

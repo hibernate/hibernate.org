@@ -1,0 +1,33 @@
+---
+layout: project-about
+title: A different way to use Hibernate.
+project: repositories
+---
+
+-# Center body
+.feature-block
+  :asciidoc
+    == Jakarta Data and Hibernate ORM
+
+    Hibernate Data Repositories is an implementation of the Jakarta Data
+    specification targeting relational databases and backed by Hibernate ORM.
+    Standard Jakarta Data repositories delegate persistence operations to a
+    Hibernate `StatelessSession`.
+
+  %img{:src => "/images/repo.png", :alt => 'Repository'}
+
+  :asciidoc
+    Entity classes are mapped using the familiar annotations defined by Jakarta
+    Persistence, and queries may be written in the Hibernate Query Language, a
+    superset of the Jakarta Data Query Language (JDQL). On the other hand, the
+    programming model for interacting with the database is quite different in
+    Jakarta Data from the model you might be used to from Jakarta Persistence.
+.feature-block
+  :asciidoc
+    == Compile-time type safety
+
+    Repository interfaces enable complete compile-time type safety for queries
+    and other persistence operations. Hibernate Data Repositories includes a
+    complete syntax validator and type checker for HQL, JPQL, and JDQL. Find
+    mistakes in your queries immediately, _without_ needing to run any tests.
+

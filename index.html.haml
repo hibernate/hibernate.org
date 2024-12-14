@@ -67,12 +67,12 @@ title: Hibernate. Everything data.
       .project
         .ui.raised.segment.tools
           %h3.ui.header
-            %a{:href => relative("/tools/")} Hibernate Tools
+            %a{:href => relative("/repositories/")} Data Repositories
           %p
-            %i.big.icon.wrench
-            Command line tools and IDE plugins for your Hibernate usages.
+            %i.big.icon.university
+            A simplified programming model based on Jakarta Data.
           .ui.right.aligned.basic.segment
-            %a.ui.button.right.labeled.icon.a.primary{:href => relative("/tools/")}
+            %a.ui.button.right.labeled.icon.a.primary{:href => relative("/repositories/")}
               %i.right.arrow.icon
               More
       .project
@@ -131,6 +131,10 @@ title: Hibernate. Everything data.
             else if ( entry.tags.includes('Hibernate Validator') ) {
               ribbonText = 'Hibernate Validator';
               ribbonIcon = 'check';
+            }
+            else if ( entry.tags.includes('Hibernate Data Repositories') ) {
+              ribbonText = 'Repositories';
+              ribbonIcon = 'university';
             }
             else if ( entry.tags.includes('Hibernate Tools') ) {
               ribbonText = 'Tooling';
