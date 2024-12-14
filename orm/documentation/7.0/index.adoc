@@ -10,14 +10,17 @@
 link:{doc-url-base}/migration-guide/migration-guide.html[Migration Guide]::
     Migration guide covering migration to {awestruct-ormversion} from the previous version
 
-link:{doc-url-base}/introduction/html_single/Hibernate_Introduction.html[Hibernate ORM Guide]::
-    Introductory guide to Hibernate ORM
+link:{doc-url-base}/introduction/html_single/Hibernate_Introduction.html[A Short Guide to Hibernate ORM]::
+    A readable and opinionated introduction to Hibernate 7, full of useful advice and tips
 
-link:{doc-url-base}/querylanguage/html_single/Hibernate_Query_Language.html[Hibernate Query Language Guide]::
-    Guide to the Hibernate Query Language
+link:{doc-url-base}/querylanguage/html_single/Hibernate_Query_Language.html[A Guide to Hibernate Query Language]::
+    A complete guide to the Hibernate Query Language
+
+link:{doc-url-base}/repositories/html_single/Hibernate_Data_Repositories.html[Introducing Hibernate Data Repositories]::
+    A quick introduction to our implementation of Jakarta Data
 
 link:{doc-url-base}/userguide/html_single/Hibernate_User_Guide.html[User Guide]::
-    Guide covering most user facing concepts and APIs of Hibernate
+    Detailed reference documentation covering most user-facing concepts, features, and APIs
 
 link:{doc-url-base}/quickstart/html_single/[Getting Started Guide]::
     A quickstart-style guide with tutorials.  See also the Obtaining Hibernate section discussing the Hibernate artifacts and how to obtain them.
