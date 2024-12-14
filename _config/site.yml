@@ -310,15 +310,22 @@ projects:
         latest_stable:
           html: https://docs.jboss.org/hibernate/stable/orm/repositories/html_single/Hibernate_Data_Repositories.html
       javadoc:
-        html: https://docs.jboss.org/hibernate/orm/{series.version}/api/
+        html: https://jakarta.ee/specifications/data/1.0/apidocs/
         latest_stable:
-          html: https://docs.jboss.org/hibernate/stable/orm/api/
-      getting_started_guide:
-        html: https://docs.jboss.org/hibernate/orm/{series.version}/quickstart/html_single/
+          html: https://jakarta.ee/specifications/data/1.0/apidocs/
+#      getting_started_guide:
+#        html: https://docs.jboss.org/hibernate/orm/{series.version}/quickstart/html_single/
       migration_guide:
         html: https://docs.jboss.org/hibernate/orm/{series.version}/migration-guide/migration-guide.html
+    maven:
+      coord:
+        group_id: org.hibernate.orm
+        main_artifact_id: hibernate-processor
+      repo:
+        releases: central
+        snapshots: ossrh_snapshots
     blog_tag: Hibernate Data Repositories
-    blog_tag_url: repositories
+    blog_tag_url: hibernate-data-repositories
     license:
       name: LGPL v2.1
       url: https://github.com/hibernate/hibernate-tools/blob/master/lgpl.txt
@@ -327,6 +334,9 @@ projects:
     github:
       project: hibernate-orm
     integrations:
+      java:
+        name: Java
+        url: https://www.oracle.com/technetwork/java/javase/downloads/index.html
       jakarta_ee_data:
         name: Jakarta Data
         url: https://jakarta.ee/specifications/data/
