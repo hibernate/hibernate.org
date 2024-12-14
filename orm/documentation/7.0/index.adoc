@@ -5,7 +5,7 @@
 :doc-url-base: http://docs.jboss.org/hibernate/orm/{awestruct-ormversion}
 :doc-userguide: {doc-url-base}/userguide
 
-== Guides and such
+== Guides and specifications
 
 link:{doc-url-base}/migration-guide/migration-guide.html[Migration Guide]::
     Migration guide covering migration to {awestruct-ormversion} from the previous version
@@ -23,16 +23,29 @@ link:{doc-url-base}/userguide/html_single/Hibernate_User_Guide.html[User Guide]:
     Detailed reference documentation covering most user-facing concepts, features, and APIs
 
 link:{doc-url-base}/quickstart/html_single/[Getting Started]::
-    A quickstart-style tutorial. See the _Obtaining Hibernate_ section for information about artifacts and how to obtain them.
+    A quickstart-style tutorial--the section _Obtaining Hibernate_ has information about artifacts and how to get them
 
 link:{doc-url-base}/integrationguide/html_single/Hibernate_Integration_Guide.html[Integrations Guide]::
     Documentation covering topics of interest to framework, library, and container developers working on integration with Hibernate
+
+link:https://quarkus.io/guides/hibernate-orm[Hibernate ORM and Jakarta Persistence in Quarkus]::
+    How to use Hibernate in Quarkus
+
+link:https://jakarta.ee/specifications/persistence/3.2/jakarta-persistence-spec-3.2[Jakarta Persistence]::
+    The Jakarta Persistence Specification (version 3.2)
+
+link:https://jakarta.ee/specifications/persistence/3.2/jakarta-persistence-spec-3.2.pdf[Jakarta Persistence (PDF)]::
+The Jakarta Persistence Specification (version 3.2) in PDF format
+
+== API documentation
 
 link:{doc-url-base}/javadocs/[Hibernate Javadoc]::
     The Hibernate API documentation
 
 link:https://jakarta.ee/specifications/persistence/3.2/apidocs/[Jakarta Persistence 3.2 Javadoc]::
-    The Jakarta Persistence (3.2) API documentation
+    The Jakarta Persistence API documentation (version 3.2)
+
+== More information
 
 link:/orm/faq/[FAQ]::
     The FAQ
