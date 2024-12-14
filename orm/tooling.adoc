@@ -16,8 +16,31 @@ Tooling for Hibernate ORM includes:
 
 - link:/orm/processor/[Hibernate Processor], the annotation processor which produces the Jakarta Persistence static metamodel, validates queries at compilation time, and implements Jakarta Data link:/repositories/[repositories],
 - the link:https://docs.jboss.org/hibernate/orm/{version_family}/userguide/html_single/Hibernate_User_Guide.html#tooling-gradle[Gradle plugin] and link:https://docs.jboss.org/hibernate/orm/{version_family}/userguide/html_single/Hibernate_User_Guide.html#tooling-maven[Maven plugin] which perform optional bytecode enhancement at build time, and
-- link:/tools/[Hibernate Tools] which is a suite of link:http://www.eclipse.org/[Eclipse] plugins
-and part of link:http://jboss.org/tools[JBoss Tools].
 
 Note that containers like WildFly and Quarkus are able to perform bytecode enhancement automatically, _without_ the Gradle or Maven plugin.
+
+== Hibernate Tools
+
+link:/tools/[Hibernate Tools] is a suite of link:http://www.eclipse.org/[Eclipse] plugins
+and part of link:http://jboss.org/tools[JBoss Tools].
+
+image::https://static.jboss.org/hibernate/images/tools/hibernatetools_screen2.gif[Live HQL query editing,float="right"]
+
+[discrete]
+=== Console
+
+The _Hibernate Console_ perspective allows you to configure database connections, provides visualization of classes and their relationships, and allows you to execute HQL queries interactively against your database and browse the query results.
+
+image::https://static.jboss.org/hibernate/images/tools/hibernatetools_screen1.gif[Mapping editor,float="left"]
+
+[discrete]
+=== Mapping Editor
+
+The _Mapping Editor_ is an editor for Hibernate XML mapping files, supporting auto-completion and syntax highlighting.
+The editor even supports semantic auto-completion for class names, property/field names, table names and column names.
+
+[discrete]
+=== Reverse Engineering
+
+Finally, the most powerful feature of Hibernate Tools is a database reverse engineering tool that generates domain model classes and Hibernate mapping files directly from a given database schema.
 
