@@ -377,7 +377,7 @@ Hibernate Search offers several ways to configure the analyzer to be used (see {
 
 When using the +@Analyzer+ annotation one can either specify the fully qualified classname of the analyzer to use or one   can refer to an
 analyzer definition defined by the +@AnalyzerDef+ annotation. In the latter case the Solr analyzer framework with its   factories approach is utilized.
-To find out more about the factory classes available you can either browse the Solr JavaDoc or read the corresponding   section on the
+To find out more about the factory classes available you can either browse the Solr Javadoc or read the corresponding   section on the
 link:$$http://wiki.apache.org/solr/AnalyzersTokenizersTokenFilters$$[Solr Wiki.]
 
 In the example below a StandardTokenizerFactory is used followed by two filter factories, LowerCaseFilterFactory and   SnowballPorterFilterFactory.

@@ -438,7 +438,7 @@ This section describes changes made in different releases of version 4.3.0. It h
 
 === 4.3.0.Beta1
 
-https://hibernate.atlassian.net/browse/HV-561[HV-561] introduced several deprecations (see the JavaDoc for https://docs.jboss.org/hibernate/validator/4.3/api/index.html?deprecated-list.html[a complete deprecation list]):
+https://hibernate.atlassian.net/browse/HV-561[HV-561] introduced several deprecations (see the Javadoc for https://docs.jboss.org/hibernate/validator/4.3/api/index.html?deprecated-list.html[a complete deprecation list]):
 
 * `org.hibernate.validator.group.DefaultGroupSequenceProvider` is deprecated and replaced by `org.hibernate.validator.group.spi.DefaultGroupSequenceProvider`
 * `org.hibernate.validator.resourceloading.ResourceBundleLocator` is deprecated and replaced by `org.hibernate.validator.spi.resourceloading.ResourceBundleLocator`
