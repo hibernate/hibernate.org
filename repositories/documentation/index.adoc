@@ -1,26 +1,5 @@
 = Documentation
 :awestruct-layout: project-documentation
 :awestruct-project: repositories
-:page-interpolate: true
-:awestruct-ormversion: 7.0
-:doc-url-base: http://docs.jboss.org/hibernate/orm/{awestruct-ormversion}
-
-== Guides and specifications
-
-link:{doc-url-base}/repositories/html_single/Hibernate_Data_Repositories.html[Introducing Hibernate Data Repositories]::
-    A quick introduction to our implementation of Jakarta Data
-
-link:https://jakarta.ee/specifications/data/1.0/jakarta-data-1.0[Jakarta Data]::
-    The Jakarta Data specification
-
-link:https://jakarta.ee/specifications/data/1.0/jakarta-data-1.0.pdf[Jakarta Data (PDF)]::
-    The Jakarta Data specification in PDF format
-
-
-== API documentation
-
-link:https://jakarta.ee/specifications/data/1.0/apidocs/jakarta.data/module-summary.html[Jakarta Data Javadoc]::
-    The API documentation for Jakarta Data
-
 
 
