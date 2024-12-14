@@ -1,0 +1,14 @@
+summary: Jakarta Data 1.0, compatibility with Hibernate ORM 6
+maven:
+  artifacts:
+    - artifact_id: hibernate-jpamodelgen
+      summary: Annotation processor
+    - artifact_id: hibernate-core
+      summary: Runtime support
+integration_constraints:
+  java:
+    version: 17, 21 or 23
+  jakarta_ee_data:
+    version: 1.0
+  jakarta_ee:
+    version: 11

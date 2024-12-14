@@ -1,3 +1,18 @@
 = Documentation
 :awestruct-layout: project-documentation
 :awestruct-project: repositories
+:page-interpolate: true
+
+++++
+<script>
+    var versionTokens = stable_releases[0].split(".");
+    var latestVersionPath = versionTokens[0] + "." + versionTokens[1] + "/";
+
+    var meta = document.createElement('meta');
+    meta.httpEquiv = "refresh";
+    meta.content = "5; url=" + latestVersionPath;
+    document.getElementsByTagName('head')[0].appendChild(meta);
+
+    window.location = latestVersionPath;
+</script>
+++++

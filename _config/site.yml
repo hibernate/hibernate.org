@@ -304,20 +304,49 @@ projects:
     description: |
       Hibernate Data Repositories offers a simpler and much more type-safe programming model, and an implementation of Jakarta Data.
       Find your mistakes at compilation time.
+    links:
+      reference_doc:
+        html: https://docs.jboss.org/hibernate/orm/{series.version}/repositories/html_single/Hibernate_Data_Repositories.html
+        latest_stable:
+          html: https://docs.jboss.org/hibernate/stable/orm/repositories/html_single/Hibernate_Data_Repositories.html
+      javadoc:
+        html: https://docs.jboss.org/hibernate/orm/{series.version}/api/
+        latest_stable:
+          html: https://docs.jboss.org/hibernate/stable/orm/api/
+      getting_started_guide:
+        html: https://docs.jboss.org/hibernate/orm/{series.version}/quickstart/html_single/
+      migration_guide:
+        html: https://docs.jboss.org/hibernate/orm/{series.version}/migration-guide/migration-guide.html
     blog_tag: Hibernate Data Repositories
     blog_tag_url: repositories
     license:
       name: LGPL v2.1
       url: https://github.com/hibernate/hibernate-tools/blob/master/lgpl.txt
+    jira:
+      key: HHH
+    github:
+      project: hibernate-orm
+    integrations:
+      jakarta_ee_data:
+        name: Jakarta Data
+        url: https://jakarta.ee/specifications/data/
+      jakarta_ee:
+        name: Jakarta EE
+        url: https://jakarta.ee
     menu:
       intern:
         - name: About
           href: '/repositories/'
           css_class: 'home'
-      extern:
+        - name: Releases
+          href: '/repositories/releases/'
+          css_class: 'tags'
+          releases_submenu: true
         - name: Documentation
           href: '/repositories/documentation/'
-          css_class: 'book'
+          css_class: 'folder open'
+          documentation_submenu: true
+      extern:
         - name: Source code
           href: 'https://github.com/hibernate/hibernate-orm'
           css_class: 'code'
