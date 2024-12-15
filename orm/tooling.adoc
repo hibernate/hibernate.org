@@ -5,6 +5,9 @@
 :project: #{site.projects[page.project]}
 :latest_stable: #{latest_stable_release(page).version}
 :version_family: #{latest_stable_release(page).version_family}
+:toc:
+:toc-placement: preamble
+:toc-title: Contents
 
 Hibernate ORM doesn't require the use of special build tools or IDE plugins.
 In particular, it does not depend on the use of a bytecode processor.
