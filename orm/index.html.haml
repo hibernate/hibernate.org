@@ -9,43 +9,52 @@ project: orm
   :asciidoc
     == Object/Relational Mapping
 
-    Hibernate ORM enables developers to more easily write applications whose data outlives the application process.  As an Object/Relational Mapping (ORM) framework, Hibernate is concerned with data persistence as it applies to relational databases (via JDBC).
-    Unfamiliar with the notion of ORM? link:/orm/what-is-an-orm/[Read here].
+    Hibernate makes relational data visible to a program written in Java, in a natural and type-safe form, making it easy to write complex queries and work with their results, letting the program easily synchronize changes made in memory with the database, respecting the ACID properties of transactions, and allowing performance optimizations to be made after the basic persistence logic has already been written.
+
+    Unfamiliar with the notion of object/relational mapping? link:/orm/what-is-an-orm/[Read more here].
 
 .feature-block
   :asciidoc
-    == JPA Provider
+    == Jakarta Persistence (JPA) compatibility
 
-    In addition to its own "native" API, Hibernate is also an implementation of the Java Persistence API (JPA) specification.  As such, it can be easily used in any environment supporting JPA including Java SE applications, Java EE application servers, Enterprise OSGi containers, etc.
+    Right alongside its own "native" API, Hibernate provides an implementation of the Jakarta Persistence specification.
+    In fact, the first version of JPA was inspired by the success of Hibernate 2, and Hibernate was the major influence on the specification and API.
+
+    This, Hibernate can be easily used in any environment supporting JPA: Java SE standalone applications, Java EE servers like https://www.wildfly.org[WildFly], and other containers including https://quarkus.io[Quarkus].
 
 .feature-block
   :asciidoc
     == Idiomatic persistence
 
-    Hibernate enables you to develop persistent classes following natural Object-oriented idioms including inheritance, polymorphism, association, composition, and the Java collections framework.  Hibernate requires no interfaces or base classes for persistent classes and enables any class or data structure to be persistent.
+    Hibernate lets you write persistent classes following natural object-oriented idioms including inheritance and polymorphism, representing associations using standard Java collections.
+    Hibernate does not require a persistent class to implement an interface, extend a base class, or depend on any other intrusive framework-specific API.
+    Information about object/relational mappings may be provided by annotating the persistent class with annotations defined by Jakarta Persistence, or by supplying mappings in XML.
 
 .feature-block
   :asciidoc
-    == High Performance
+    == Tunable performance
 
-    Hibernate supports lazy initialization, numerous fetching strategies and optimistic locking with automatic versioning and time stamping. Hibernate requires no special database tables or fields and generates much of the SQL at system initialization time instead of at runtime.
+    Hibernate provides flexible data fetching strategies, and an extremely-tunable two-level caching architecture.
+    For managing concurrent data access, Hibernate defaults to optimistic locking with automatic versioning or time-stamping, but pessimistic locks may be explicitly requested.
+    Most SQL is generated at system initialization time instead of at runtime.
 
-    Hibernate consistently offers superior performance over straight JDBC code, both in terms of developer productivity and runtime performance.
-
-.feature-block
-  :asciidoc
-    == Scalable
-
-    Hibernate was designed to work in an application server cluster and deliver a highly scalable architecture. Hibernate scales well in any environment: Use it to drive your in-house Intranet that serves hundreds of users or for mission-critical applications that serve hundreds of thousands.
+    Hibernate consistently achieves superior performance over hand-written JDBC code, in both runtime efficiency and developer productivity.
+    Importantly, Hibernate makes it much easier to tune the performance of code _after_ it is written.
 
 .feature-block
   :asciidoc
-    == Reliable
+    == Extreme scalability and robustness
 
-    Hibernate is well known for its excellent stability and quality, proven by the acceptance and use by tens of thousands of Java developers.
+    From its very beginnings more than two decades ago, Hibernate was designed specifically for use in highly concurrent environments and in server clusters.
+    Since then, its architecture has been proven via heavy production usage in innumerable enterprise systems covering every major industry, and by its acceptance among hundreds of thousands of Java developers across more than two decades.
 
 .feature-block
   :asciidoc
-    == Extensible
+    == Developer joy
 
-    Hibernate is highly configurable and extensible.
+    Adoption of Hibernate was originally driven by grassroots Java developers looking for a way out of the quagmire of handwritten object/relational mapping code, in-house ORM frameworks, and failed industry standards like entity beans.
+    Later, Hibernate was the first major Java development tool to move from XML to annotations--at a time when other frameworks were still promoting the heavy use of XML for just about any task--and this was a critical step in improving the productivity of Java enterprise development as a whole.
+
+    The most recent major versions of Hibernate have placed a central focus on improved error reporting and compile-time type safety, leading to a great improvement in developer experience.
+    This work are driven
+
