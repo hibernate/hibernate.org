@@ -21,5 +21,12 @@ link:https://jakarta.ee/specifications/data/1.0/jakarta-data-1.0.pdf[Jakarta Dat
 link:https://jakarta.ee/specifications/data/1.0/apidocs/jakarta.data/module-summary.html[Jakarta Data Javadoc]::
     The API documentation for Jakarta Data
 
+== Example projects
+
+link:https://github.com/gavinking/data-demo[Hibernate Data Repositories]::
+    A very simple demo app showing Hibernate Data Repositories being called from a `main()` method in Java SE
+
+link:https://github.com/gavinking/data-demo-quarkus-mvn[Hibernate Data Repositories on Quarkus]::
+    An example running on Quarkus
 
 
