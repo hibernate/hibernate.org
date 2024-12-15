@@ -315,8 +315,8 @@ projects:
           html: https://jakarta.ee/specifications/data/1.0/apidocs/
 #      getting_started_guide:
 #        html: https://docs.jboss.org/hibernate/orm/{series.version}/quickstart/html_single/
-      migration_guide:
-        html: https://docs.jboss.org/hibernate/orm/{series.version}/migration-guide/migration-guide.html
+#      migration_guide:
+#        html: https://docs.jboss.org/hibernate/orm/{series.version}/migration-guide/migration-guide.html
     maven:
       coord:
         group_id: org.hibernate.orm
@@ -343,6 +343,9 @@ projects:
       jakarta_ee:
         name: Jakarta EE
         url: https://jakarta.ee
+      orm:
+        name: Hibernate ORM
+        url: /orm/
     menu:
       intern:
         - name: About
