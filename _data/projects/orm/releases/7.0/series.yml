@@ -21,6 +21,8 @@ maven:
       summary: JCache second-level caching
     - artifact_id: hibernate-micrometer
       summary: Integration for Micrometer
+    - artifact_id: hibernate-jfr
+      summary: Integration for Java Flight Recorder
     - artifact_id: hibernate-community-dialects
       summary: Community-maintained SQL dialects
     - artifact_id: hibernate-processor
