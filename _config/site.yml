@@ -137,9 +137,6 @@ projects:
         - name: Books
           href: '/orm/books/'
           css_class: 'book'
-        - name: Roadmap
-          href: 'https://github.com/hibernate/hibernate-orm/wiki/Roadmap'
-          css_class: 'road'
         - name: Processor
           href: '/orm/processor/'
           css_class: 'cogs'
@@ -171,6 +168,9 @@ projects:
         - name: CI
           href: 'https://ci.hibernate.org/'
           css_class: 'treatment'
+        - name: Roadmap
+          href: 'https://github.com/hibernate/hibernate-orm/wiki/Roadmap'
+          css_class: 'road'
 
   ##################################################################################################
   # Search
@@ -695,9 +695,9 @@ projects:
         - name: Documentation
           href: '/reactive/documentation/'
           css_class: 'book'
-        - name: Roadmap
-          href: '/reactive/roadmap/'
-          css_class: 'road'
+#        - name: Roadmap
+#          href: '/reactive/roadmap/'
+#          css_class: 'road'
         - name: Paid support
           href: '/reactive/support/'
           css_class: 'doctor'
