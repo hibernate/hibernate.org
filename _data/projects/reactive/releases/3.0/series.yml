@@ -1,0 +1,12 @@
+summary: Release compatible with Hibernate ORM 7
+maven:
+  artifacts:
+    - artifact_id: hibernate-reactive-core
+      summary: Core implementation
+integration_constraints:
+  java:
+    version: 17, 20, 21, 22 or 23
+  orm:
+    version: 7.0
+  vertx:
+    version: 4.5
