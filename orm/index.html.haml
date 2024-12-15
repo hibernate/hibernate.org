@@ -57,6 +57,18 @@ project: orm
 
 .feature-block
   :asciidoc
+    == Powerful query language
+
+    Hibernate Query Language (HQL) is an incredibly powerful object-oriented dialect of SQL, with almost every feature of ANSI SQL `SELECT` statements you've ever heard of.
+    Arguably, it supports more of ANSI SQL than most relational databases.
+
+    Since link:/orm/processor/[Hibernate Processor] has access to your entities and their mapping annotations at compilation time, it's able to completely validate the syntax and typing of a HQL query when you compile your Java code.
+    link:/orm/tooling/[Hibernate Tools] and IntelliJ IDEA even provide automatic code completion and validation for HQL queries as you type.
+
+    If all else fails, Hibernate lets you write your own SQL queries in the native dialect of your database.
+
+.feature-block
+  :asciidoc
     == Developer joy
 
     Adoption of Hibernate was originally driven by grassroots Java developers looking for a way out of the quagmire of handwritten object/relational mapping code, in-house ORM frameworks, and failed industry standards like entity beans.
