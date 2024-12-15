@@ -68,7 +68,7 @@ projects:
   ##################################################################################################
   orm:
     name: Hibernate ORM
-    icon: 'icon-table'
+    icon: 'icon-database'
     description: |
       Idiomatic persistence for Java and relational databases.
     links:
@@ -431,7 +431,7 @@ projects:
   ##################################################################################################
   validator:
     name: Hibernate Validator
-    icon: 'icon-check'
+    icon: 'icon-checkmark box'
     description: |
       Express validation rules in a standardized way using annotation-based constraints and benefit from transparent integration with a wide variety of frameworks.
     links:
