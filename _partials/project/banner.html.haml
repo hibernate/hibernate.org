@@ -1,13 +1,15 @@
 - real_page = page["real_page"]
 - project_name = real_page.project ? site.projects[real_page.project].name : ''
+- project_icon = real_page.project ? site.projects[real_page.project].icon : ''
 - page_title = "#{real_page.title ? real_page.title : real_page.simple_name.capitalize}"
 .jumbotron.small
   .ui.container
     .ui.grid.stackable
       .column.row
-        .column.twelve.wide.middle.aligned 
+        .column.twelve.wide.middle.aligned
           %h1
             %span
+              %i{:class => "grid #{project_icon&.gsub('-',' ')}"}
               = project_name
           %h2
             %span
