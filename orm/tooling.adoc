@@ -16,12 +16,24 @@ Tooling for Hibernate ORM includes:
 
 - link:/orm/processor/[Hibernate Processor], the annotation processor which produces the Jakarta Persistence static metamodel, validates queries at compilation time, and implements Jakarta Data link:/repositories/[repositories],
 - the link:https://docs.jboss.org/hibernate/orm/{version_family}/userguide/html_single/Hibernate_User_Guide.html#tooling-gradle[Gradle plugin] and link:https://docs.jboss.org/hibernate/orm/{version_family}/userguide/html_single/Hibernate_User_Guide.html#tooling-maven[Maven plugin] which perform optional bytecode enhancement at build time, and
+- the `hibernate-jfr` and `hibernate-micrometer` modules which provide integration with Java Flight Recorder and link:https://github.com/micrometer-metrics/micrometer[Micrometer].
 
-Note that containers like WildFly and Quarkus are able to perform bytecode enhancement automatically, _without_ the Gradle or Maven plugin.
+Note that containers like https://www.wildfly.org[WildFly] and https://quarkus.io[Quarkus] are able to perform bytecode enhancement automatically, _without_ the Gradle or Maven plugin.
+WildFly, Quarkus, and other Java containers have built-in support for Micrometer.
+You can learn more about using link:https://quarkus.io/guides/telemetry-micrometer[Micrometer in Quarkus].
+
+== Relational schema management
+
+Hibernate ORM comes with schema management built in.
+Hibernate is able to infer a schema from mapping annotations or XML mappings and link:https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#automatic-schema-export[automatically export the schema to the database], or verify that the inferred schema is consistent with the pre-existing schema.
+This functionality is especially useful for testing.
+The schema management tool can even truncate tables to link:https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#testing[clean up between tests].
+
+For more advanced schema evolution needs, Hibernate can be used together with a tool like link:https://github.com/flyway/flyway[Flyway].
 
 == Hibernate Tools
 
-link:/tools/[Hibernate Tools] is a suite of link:http://www.eclipse.org/[Eclipse] plugins
+link:https://tools.jboss.org/features/hibernate.html[Hibernate Tools] is a suite of link:https://eclipseide.org[Eclipse] plugins
 and part of link:http://jboss.org/tools[JBoss Tools].
 
 image::https://static.jboss.org/hibernate/images/tools/hibernatetools_screen2.gif[Live HQL query editing,float="right"]
