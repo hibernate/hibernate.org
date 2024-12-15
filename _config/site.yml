@@ -313,8 +313,8 @@ projects:
         html: https://jakarta.ee/specifications/data/1.0/apidocs/
         latest_stable:
           html: https://jakarta.ee/specifications/data/1.0/apidocs/
-#      getting_started_guide:
-#        html: https://docs.jboss.org/hibernate/orm/{series.version}/quickstart/html_single/
+      getting_started_guide:
+        html: https://docs.jboss.org/hibernate/orm/{series.version}/repositories/html_single/Hibernate_Data_Repositories.html#configuration-integration
 #      migration_guide:
 #        html: https://docs.jboss.org/hibernate/orm/{series.version}/migration-guide/migration-guide.html
     maven:
