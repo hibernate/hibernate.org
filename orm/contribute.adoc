@@ -2,10 +2,8 @@
 :awestruct-layout: project-contribute
 :awestruct-project: orm
 
-Thanks for your interest! Hibernate ORM is an open source project and community.  Contributions, of any type or any 
-scope, drive the project forward!  
-
-There's many ways to become part of the community and contribute--coding Java is a small part of the work involved in maintaining this project.
+Thanks for your interest! Hibernate ORM is an open source project and community.
+There's many ways to be part of the community and make a contribution--coding Java is a small part of the work involved in maintaining this project.
 
 
 == Helping other users
@@ -19,7 +17,6 @@ A great way to get involved in the community is to share your knowledge with oth
 
 An extension of helping other users is to contribute documentation.
 It's the help that keeps on giving!
-
 Whether you simply fix a typo, reword an unclear section, or add a whole new section or topic, improving the documentation helps everyone.
 
 
@@ -58,3 +55,14 @@ Details on building the project are covered in the https://github.com/hibernate/
 `CONTRIBUTING.md` covers all branches.
 `README.md` is specific to each branch, as it contains information that varies based on the branch's `javac` requirements, build tool (Gradle, Maven, Ant), etc.
 ====
+
+[[community-dialects]]
+== Maintaining a community dialect
+
+One area where we really depend on the community is in maintenance of the https://github.com/hibernate/hibernate-orm/tree/main/hibernate-community-dialects/src/main/java/org/hibernate/community/dialect[Community Dialects].
+The Community Dialects module defines compatibility with a range of older databases, including Informix, Ingres, and Teradata, along with incubating support for SQLLite.
+These dialects are not maintained by the Hibernate team since we have no way to test them.
+
+There's plenty of ways these dialects may be polished or extended.
+In particular, they're usually missing support for advanced or more recent features of HQL.
+So if you happen to have access to one of these databases, we'd love it if you could help out!
