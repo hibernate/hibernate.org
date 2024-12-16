@@ -15,6 +15,25 @@ project: repositories
     Hibernate `StatelessSession`.
 
   %img{:src => "/images/repo.png", :alt => 'Repository'}
+  %p
+  :asciidoc
+    In the example above, the Jakarta Data annotations `@Repository`, `@Find`,
+    `@Query`, and `@OrderBy` are used together with link:/validator/[Validation]
+    annotations like `@NotNull` and `@NotBlank`.
+
+.feature-block
+  :asciidoc
+    == Minimal magic
+
+    When you compile a repository interface,
+    link:/orm/processor[Hibernate Processor] generates an implementation of
+    the interface, meticulously checking for mistakes and inconsistencies,
+    and reporting them using easily understandable compiler error messages.
+
+    The generated code is simple and extremely readable, and uses only public
+    APIs of Hibernate ORM. It's no more difficult to debug a repository than
+    it is to debug your own hand-written Hibernate code.
+
 .feature-block
   :asciidoc
     == Compatible with existing entities and queries
