@@ -5,28 +5,27 @@
 :project: #{site.projects[page.project]}
 :latest_stable: #{latest_stable_release(page).version}
 
-The Envers module is a core Hibernate model that works both with Hibernate and JPA.  In fact, you can use Envers anywhere Hibernate works whether that
-is standalone, inside WildFly or JBoss AS, Spring, Grails, etc.
-
-The Envers module aims to provide an easy auditing / versioning solution for entity classes.  
+Envers is an extension to Hibernate ORM that provides an easy way to add auditing / versioning for entities.
 
 == Features
 
-- Auditing of all mappings defined by the JPA specification
-- Auditing some Hibernate mappings that extend JPA, e.g. custom types and collections/maps of "simple" types like Strings, Integers.
-- Logging data for each revision using a "revision entity"
-- Querying historical snapshots of an entity and its associations
+Envers provides:
 
-== Quick Intro
+- auditing for all O/R mappings defined by the JPA specification, along with some mappings specific to Hibernate ORM,
+- logged change data for each revision using a _revision entity_, and
+- querying for historical snapshots of an entity and its associations.
 
-In order for Envers to build the necessary historical audit tables and store the changes made to audited entities and their associations, the following is all
-that is required to get started:
+Much like source code version control, Envers uses the concept of _revisions_.
+A revision identifies the full set of changes to audited entity fields which occurred within a given transaction.
 
-- Add the `hibernate-envers` dependency to your classpath.
-- Annotate your entity or entity properties with the `@Audited` annotation.
-- Make sure your entities using immutable unique identifiers (primary keys).
+== Overview
 
-=== A simple example
+In order for Envers to build the necessary historical audit tables and store the change data for audited entities and their associations, you'll need to:
+
+- add `org.hibernate.orm:hibernate-envers` as a dependency, and
+- annotate your entities or their fields with the `@Audited` annotation.
+
+The `@Audited` annotation just specifies that a field should be audited:
 
 [source,java]
 ----
@@ -48,22 +47,17 @@ public class Person {
 }
 ----
 
-[TIP]
-=====
-You can find a step-by-step Envers tutorial in the link:http://docs.jboss.org/hibernate/orm/current/quickstart/html_single/#tutorial_envers[Getting started guide].
+Then the `AuditReader` interface allows us to:
 
-Comprehensive documentation is available in the link:http://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html#envers[User's guide].
-=====
+- query an entity at a given revision and retrieve a _partial_ view of the state of that entity at that specific revision,
+- access lists of revisions associated with a given entity type or restricted by a given date range, and
+- obtain revision metadata specifying when a change occurred, along with additional custom attributes you have stored on the revision entity based on your application-specific needs.
 
-== Revisioning
+== Getting started
 
-Much like source code version control, Envers uses a concept of *revisions*.  
+The link:https://docs.jboss.org/hibernate/orm/current/quickstart/html_single/#tutorial_envers[Getting Started] guide for Hibernate ORM includes an example using Envers.
 
-A revision identifies a collection of changes to entities and their associations for all audited attributes that occured within the boundary of a transaction.  These
-revisions are global and numeric.  
+Documentation is available in the Hibernate ORM link:https://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html#envers[User Guide].
 
-The `AuditReader` API provides numerous ways to query for entities at particular revisions and retrieve a _partial_ view of what that entity looked like at that 
-specific revision.  It also allows you to get access to lists of revisions associated with an entity type or restricted by a date range.  The API also provides
-a way to get the revision metadata so you can know when a change occured plus any additional custom attributes you may have stored on the revision entity based
-on your implementation needs.
+
 
