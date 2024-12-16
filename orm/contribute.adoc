@@ -5,59 +5,56 @@
 Thanks for your interest! Hibernate ORM is an open source project and community.  Contributions, of any type or any 
 scope, drive the project forward!  
 
-There are lots of ways to become part of the community and contribute, not just writing/fixing code...
+There's many ways to become part of the community and contribute--coding Java is a small part of the work involved in maintaining this project.
 
 
-== Help Other Users
+== Helping other users
 
-The link:/community/[community] page lists a few places for users to find help such as Zulip and forums.  Not to mention
-that users often look for help in other places such as StackOverflow or JBoss forums.  A great way to get involved in the
-community is to share your knowledge with others who need it.
-
-
-== Improve Documentation
-
-An extension of helping other users is to contribute documentation.  Its the help that keeps on giving!  
-
-Whether you simply fix a typo, re-word an unclear section or add a whole new section/topic, improving the documentation
-helps everyone.
+The link:/community/[community] page lists several places for users to find help, such as Zulip and the forum.
+And users often look for help in other places such as StackOverflow.
+A great way to get involved in the community is to share your knowledge with others who need it.
 
 
-== Discuss Development
+== Improving documentation
 
-As the development team discusses design of new features or tries to prioritize work it is great to have input from 
-users.  As the saying goes, it is better to measure twice and cut once; and the more eyes we have on theses designs 
-and the more voices in the discussions, the better measurements we get.
+An extension of helping other users is to contribute documentation.
+It's the help that keeps on giving!
 
-You can find the different places to get involved in discussing development
-on the link:/community#contribute[Community] page.
+Whether you simply fix a typo, reword an unclear section, or add a whole new section or topic, improving the documentation helps everyone.
 
 
-== Report/Investigate Bugs
+== Discussing development
 
-Trying out releases and reporting/fixing problems is in many ways the cornerstone of open source development.  It is 
-especially critical in the case of early releases (Alphas and Betas) as we are trying to solidify APIs and contracts.
+As the development team discusses design of new features or tries to prioritize work, it's great to have input from users.
+You can find the different places to get involved in development discussions on the link:/community#contribute[Community] page.
 
-When creating a bug report, please have a test case available that can be 1.) used to reproduce the issue and 2.)
-used as a long-term regression test.
+
+== Reporting and investigate bugs
+
+Trying out releases and reporting and fixing problems is in many ways the cornerstone of open source development.
+It's especially critical in the case of early releases (Alphas and Betas) as we are trying to solidify APIs and contracts.
+A huge problem faced by open source projects like Hibernate is that most users avoid tring out a new release until _after_ it's already gone final!
+
+When creating a bug report, please have a test case available that can be used to reproduce the issue and act as a long-term regression test.
 Please see https://github.com/hibernate/hibernate-test-case-templates[Hibernate Test Case Templates] for an easy
 way to start!
 
-Even if you cannot help code the fix for a bug, submitting test cases for reported 
-https://hibernate.atlassian.net/issues/?jql=project%20%3D%20HHH%20AND%20status%20%3D%20%22Awaiting%20Test%20Case%22[bugs that did not provide tests] 
-is a great help get these bugs resolved.
+Even if you can't provide a fix for a bug, submitting a test case for a reported
+https://hibernate.atlassian.net/issues/?jql=project%20%3D%20HHH%20AND%20status%20%3D%20%22Awaiting%20Test%20Case%22[bug that didn't come with a test] is a great start on getting the bug resolved.
 
-Speaking of JIRA, helping us identify issues that duplicate other issues or that are out of date is a great help as well.  And voting
-for issues that are important to you is important in terms of how the development team sets priorities.
+Speaking of JIRA, helping us identify issues that duplicate other issues or that are out of date is also a huge help.
+And voting for issues that are important to you is important in terms of how the development team sets priorities.
+Believe it or not, we really do pay more attention to issues with more votes!
 
 
-== Contribute code
+== Contributing code
 
-Details on contribiuting code (and documentation) are covered in the CONTRIBUTING.md file available in the repository's root directory (https://github.com/hibernate/hibernate-orm/blob/master/CONTRIBUTING.md).
+Details on contributing code and documentation are covered in https://github.com/hibernate/hibernate-orm/blob/master/CONTRIBUTING.md[`CONTRIBUTING.md`] in the repository root directory.
 
-Details on building the project are covered in the README.md file also available in the repository's root directory (https://github.com/hibernate/hibernate-orm/blob/master/README.md).
+Details on building the project are covered in the https://github.com/hibernate/hibernate-orm/blob/master/README.md[`README.md`], also in the repository root directory.
 
 [NOTE]
 ====
-CONTRIBUTING.md covers all branches.  README.md is specific to each branch, as it contains building information that varies based on the branch's `javac` requirements, build tool (Gradle, Maven, Ant), etc.
+`CONTRIBUTING.md` covers all branches.
+`README.md` is specific to each branch, as it contains information that varies based on the branch's `javac` requirements, build tool (Gradle, Maven, Ant), etc.
 ====
