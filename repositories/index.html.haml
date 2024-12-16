@@ -57,3 +57,14 @@ project: repositories
     complete syntax validator and type checker for HQL, JPQL, and JDQL. Find
     mistakes in your queries immediately, _without_ needing to run any tests.
 
+.feature-block
+  :asciidoc
+    == Quarkus integration
+
+    Hibernate Data Repositories 6.6 works in Quarkus. Just add:
+
+    - `jakarta.data:jakarta.data-api` and
+    - `org.hibernate.orm:hibernate-jpamodelgen`
+
+    as dependencies via Maven.
+
