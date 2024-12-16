@@ -31,18 +31,18 @@ project: reactive
     of synchronous functions in procedural Java code.
 
     JDBC, JPA and Hibernate ORM use blocking IO for interaction with the database, and are therefore not appropriate for
-    use in a reactive environment. Hibernate Reactive is a feature rich ORM implementation designed to take advantage of
+    use in a reactive environment. Hibernate Reactive is a feature-rich ORM implementation designed to take advantage of
     non-blocking database clients.
 
-    == Compatibility
+    == Compatible with popular databases
 
-    Hibernate Reactive requires:
+    Hibernate Reactive works with the Vert.x reactive database clients for:
 
-    - Java 11,
-    - Hibernate ORM 6.2, and
-    - the Vert.x 4.4 reactive database client for your database.
-
-    It works with PostgreSQL, MySQL, MariaDB, Db2, SQL Server, Oracle and CockroachDB.
+    - https://vertx.io/docs/vertx-pg-client/java/[PostgreSQL and CockroachDB],
+    - https://vertx.io/docs/vertx-mysql-client/java/[MySQL and MariaDB],
+    - https://vertx.io/docs/vertx-db2-client/java/[Db2],
+    - https://vertx.io/docs/vertx-mssql-client/java/[SQL Server], and
+    - https://vertx.io/docs/vertx-oracle-client/java/[Oracle].
 
     == Getting Started
 
