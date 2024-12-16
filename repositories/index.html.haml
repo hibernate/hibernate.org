@@ -37,6 +37,7 @@ project: repositories
 .feature-block
   :asciidoc
     == Compatible with existing entities and queries
+    :programming-model: https://docs.jboss.org/hibernate/orm/7.0/repositories/html_single/Hibernate_Data_Repositories.html#programming-model
 
     Entity classes are mapped using the familiar annotations defined by Jakarta
     Persistence, and queries may be written in the Hibernate Query Language, a
@@ -44,9 +45,9 @@ project: repositories
     entities and queries that already work in Hibernate ORM, you can use them
     without change in Hibernate Data Repositories.
 
-    On the other hand, the programming model for interacting with the database
-    is quite different in Jakarta Data from the model you might be used to from
-    Jakarta Persistence.
+    On the other hand, the link:{programming-model}[programming model] for
+    interacting with the database is quite different in Jakarta Data from the
+    model you might be used to from Jakarta Persistence.
 .feature-block
   :asciidoc
     == Compile-time type safety
