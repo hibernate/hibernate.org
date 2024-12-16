@@ -21,9 +21,13 @@ project: repositories
 
     Entity classes are mapped using the familiar annotations defined by Jakarta
     Persistence, and queries may be written in the Hibernate Query Language, a
-    superset of the Jakarta Data Query Language (JDQL). On the other hand, the
-    programming model for interacting with the database is quite different in
-    Jakarta Data from the model you might be used to from Jakarta Persistence.
+    superset of the Jakarta Data Query Language (JDQL). If you have existing
+    entities and queries that already work in Hibernate ORM, you can use them
+    without change in Hibernate Data Repositories.
+
+    On the other hand, the programming model for interacting with the database
+    is quite different in Jakarta Data from the model you might be used to from
+    Jakarta Persistence.
 .feature-block
   :asciidoc
     == Compile-time type safety
