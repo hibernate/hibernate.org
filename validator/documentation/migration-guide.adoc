@@ -39,7 +39,7 @@ passing `false` as a parameter.
   `jakarta.validation.constraints.NotEmpty` has been available since Bean Validation 2.0.
   - `org.hibernate.validator.constraints.ModCheck`: a corresponding, more specific, Hibernate Validator alternatives
   `org.hibernate.validator.constraints.Mod10Check`/`org.hibernate.validator.constraints.Mod11Check` have been available since 5.1.
-* Deprecated configuration property 1hibernate.validator.constraint_mapping_contributor`
+* Deprecated configuration property `hibernate.validator.constraint_mapping_contributor`
 removed. An alternative `hibernate.validator.constraint_mapping_contributors` accepting multiple
 comma-separated contributors has been available since 5.3.
 * Retrieving the parameter names via reflection is enabled by default since 6.0,
