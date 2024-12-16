@@ -16,6 +16,8 @@ project: orm
     - respecting the ACID properties of **transactions**,
     - and allowing **performance optimizations** to be made after the basic persistence logic has already been written.
 
+    Hibernate is the most successful ORM solution ever, in any programming language.
+
     Unfamiliar with the notion of object/relational mapping? link:/orm/what-is-an-orm/[Read more here].
 
 .feature-block
@@ -35,6 +37,7 @@ project: orm
 
     Hibernate lets you write persistent classes following natural object-oriented idioms including inheritance and polymorphism, representing associations using standard Java collections.
     Hibernate does not require a persistent class to implement an interface, extend a base class, or depend on any other intrusive framework-specific API.
+
     Information about object/relational mappings may be provided by annotating the persistent class with annotations defined by Jakarta Persistence, or by supplying mappings in XML.
 
 .feature-block
@@ -46,13 +49,13 @@ project: orm
     Most SQL is generated at system initialization time instead of at runtime.
 
     Hibernate consistently achieves superior performance over hand-written JDBC code, in both runtime efficiency and developer productivity.
-    Importantly, Hibernate makes it much easier to tune the performance of code _after_ it is written.
+    Importantly, Hibernate makes it much easier to tune the performance of code _after_ it's written.
 
 .feature-block
   :asciidoc
     == Extreme scalability and robustness
 
-    From its very beginnings more than two decades ago, Hibernate was designed specifically for use in highly concurrent environments and in server clusters.
+    From its very birth more than two decades ago, Hibernate was designed specifically for use in highly concurrent environments and in server clusters.
     Since then, its architecture has been proven via heavy production usage in innumerable enterprise systems covering every major industry, and by its acceptance among hundreds of thousands of Java developers across more than two decades.
 
 .feature-block
