@@ -72,6 +72,16 @@ project: orm
 
 .feature-block
   :asciidoc
+    == Compatibility with a wide range of databases
+
+    Hibernate is tested every day on PostgreSQL, MySQL, Db2, Oracle, SQL Server, Sybase ASE, EDB, TiDB, MariaDB, HANA, CockroachDB, H2, and HSQLDB.
+    There's even built-in support for https://cloud.google.com/spanner/docs/use-hibernate[Spanner].
+
+    The Community Dialects module defines compatibility with a range of older databases, including Informix, Ingres, and Teradata, along with incubating support for SQLLite.
+    These dialects are not supported by the Hibernate team and come with limitations, especially around advanced features of the query language.
+
+.feature-block
+  :asciidoc
     == Developer joy
 
     Adoption of Hibernate was originally driven by grassroots Java developers looking for a way out of the quagmire of handwritten object/relational mapping code, in-house ORM frameworks, and failed industry standards like entity beans.
