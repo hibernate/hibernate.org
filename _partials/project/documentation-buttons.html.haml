@@ -14,7 +14,7 @@
           = "(#{getting_started_guide.name})"
 - unless stable_series.nil?
   .jumbotron-button
-    - reference_doc = reference_doc(project_description, series)
+    - reference_doc = reference_doc(project_description, stable_series)
     %a.ui.small.right.labeled.icon.button.green{:href => "#{reference_doc.html_url}"}
       %i.right.arrow.icon
       Get documentation for #{stable_series.version}
