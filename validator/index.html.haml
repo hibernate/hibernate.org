@@ -7,9 +7,9 @@ project: validator
 -# Center body
 .feature-block
   :asciidoc
-    == Application layer agnostic validation
+    == Validation across multiple layers
 
-    Hibernate Validator allows to express and validate application constraints. The default metadata source are annotations, with the ability to override and extend through the use of XML. It is not tied to a specific application tier or programming model and is available for both server and client application programming. But a simple example says more than 1000 words:
+    Hibernate Validator expresses constraints using annotations.
 
     [source,java]
     ----
@@ -28,28 +28,59 @@ project: validator
        // ...
     }
     ----
+    If necessary, the constraints may be overridden in XML.
+
+    Such constraints are not tied to a specific architectural tier, programming model, or framework.
+    Constraints might apply to entity classes, Jakarta Data link:/repositories/[repository methods], or Jakarta RESTful web service endpoints.
+    And Validator is not tied to the server--it works just as well for client-side Java programming.
 
 .feature-block
   :asciidoc
-    == Extendable
+    == Bean Validation reference implementation
 
-    Hibernate Validator offers a http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#chapter-bootstrapping[configurable bootstrap API] as well as a range of http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#section-builtin-constraints[built-in constraints]. The latter can easily be extended by creating http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#validator-customconstraints[custom constraints].
+    Hibernate Validator is the reference implementation for the https://beanvalidation.org/[Bean Validation] specification.
+    Indeed, the original specification was inspired by an early version of Hibernate Validator.
+
+    Bean Validation is an integral part of the Jakarta platform, incorporated by the Persistence, Data, RESTful Web Services, MVC, and Faces specifications, and by that black sheep of the Hibernate family, https://www.cdi-spec.org[CDI].
+
+.feature-block
+  :asciidoc
+    == Programmatic or automatic constraint validation
+
+    Constraints may be validated programmatically, but many Java frameworks and libraries--including Hibernate ORM--feature built-in support for Bean Validation, making it easy to enforce the constraints completely declaratively.
+
+    For example, a constraint is validated automatically if it applies to:
+
+    - a field of an entity class,
+    - a parameter of a repository method, or
+    - a parameter of a RESTful web service endpoint.
+
+    To see all this in action, you can try out https://quarkus.io/guides/validation[Hibernate Validator in Quarkus].
+
+.feature-block
+  :asciidoc
+    == Custom constraints
+
+    The Bean Validation standard specifies a range of predefined constraint types, and Hibernate Validator adds even more, even including some country-specific constraint types such as `@TituloEleitoral`.
+
+    But the true power of Bean Validation lies in how easy it is to define https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#validator-customconstraints[custom constraints] precisely capturing the semantics of application-specific types.
 
 .feature-block
   :asciidoc
     == Rich metadata API
 
-    Hibernate Validator gives access to constraint configuration via a http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#validator-metadata-api[metadata API] facilitating, for example, tooling integration.
+    The Bean Validation https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#validator-metadata-api[metadata API] facilitates tooling integration and metaprogramming.
+    Naturally, Hibernate Validator goes beyond the spec.
+    The https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#section-programmatic-api[programmatic constraint configuration API] allows constraints to be created programmatically.
+.feature-block
+  :asciidoc
+    == Compile-time type safety
+
+    The annotation-based approach is by nature quite type safe, but there's even an https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#validator-annotation-processor[annotation processor] which raises compilation errors when constraint annotations are used incorrectly, for example, if the `@Past` annotation is applied to a field of type `String`.
 
 .feature-block
   :asciidoc
-    == Reference implementation
+    == Integration with Hibernate ORM
 
-    Hibernate Validator 6.x is the reference implementation http://beanvalidation.org/[Bean Validation 2.0].
-
-.feature-block
-  :asciidoc
-    == Added value
-
-    Hibernate Validator offers additional value on top of the features required by Bean Validation. For example, a http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#section-programmatic-api[programmatic constraint configuration API] as well as an http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#validator-annotation-processor[annotation processor] which plugs into the build process and raises compilation errors whenever constraint annotations are incorrectly used.
+    Hibernate ORM not only validates constraints automatically before writing to the database; it even adjusts the DDL generated by the schema management tooling to reflect certain constraints such as `@Size`, `@NotNull`, `@NotBlank`, `@Max`, `@Min`, and `@Digits`.
 
