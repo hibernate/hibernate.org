@@ -34,14 +34,14 @@ For more advanced schema evolution needs, Hibernate can be used together with a 
 == Tools for monitoring and profiling
 
 Hibernate collects statistics as it goes.
-Your program can access this information via an API, but some environments report it automatically.
+Your program can access this information link:https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#statistics[via an API], but some environments report it automatically.
 
 - Hibernate Micrometer reports statistics via link:https://github.com/micrometer-metrics/micrometer[Micrometer].
 WildFly, Quarkus, and other Java containers have built-in support for Micrometer.
 You can learn more about using link:https://quarkus.io/guides/telemetry-micrometer[Micrometer in Quarkus].
 
-- Hibernate JFR reports persistence-related events to Java Flight Recorder.
-No configuration is required: just include the module `org.hibernate.orm:hibernate-jfr` as a runtime dependency and you're all set.
+- link:https://docs.jboss.org/hibernate/orm/{version_family}/userguide/html_single/Hibernate_User_Guide.html#appendix-monitoring-with-JFR[Hibernate JFR] reports persistence-related events to Java Flight Recorder.
+No configuration is required: just include the module `org.hibernate.orm:hibernate-jfr` as a runtime dependency, and you're all set.
 
 image:../images/jfr.png[JFR integration]
 
