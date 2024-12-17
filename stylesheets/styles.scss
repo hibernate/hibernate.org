@@ -355,6 +355,11 @@ pre {
 	padding: 1%;
 	white-space: pre;
 	border-radius: 0.3rem;
+	font-family: Inconsolata, monospace;
+}
+
+code, kbd, samp {
+	font-family: Inconsolata, monospace;
 }
 
 #preamble {
