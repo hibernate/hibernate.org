@@ -1,0 +1,130 @@
+:awestruct-layout: project-releases-series
+:awestruct-project: search
+:awestruct-series_version: "8.0"
+:page-interpolate: true
+:latest-release-version: #{series(page, page.series_version).releases.first.version}
+:hsearch-doc-url-prefix: #{reference_doc(site.projects[page.project], series(page, page.series_version)).html_url}
+
+=== Dependency upgrades
+
+[[java-version]]
+JDK::
+Hibernate Search upgrades to JDK 17 as the baseline and drops JDK 11 compatibility.
+[[orm-version]]
+Hibernate ORM::
+Hibernate Search now targets the Hibernate ORM 7.0 series, which implements Jakarta Persistence 3.2.0.
+In particular, it is currently based on Hibernate ORM 7.0.0.Beta3.
+[[lucene-version]]
+Lucene::
+The Lucene backend now uses Lucene 9.12.1.
+[[elasticsearch-version]]
+Elasticsearch::
+The Elasticsearch backend is compatible with Elasticsearch 8.16 and 8.17, as well as other already compatible versions.
+[[opensearch-version]]
+OpenSearch::
+The Elasticsearch backend works with OpenSearch 2.17 and 2.18, as well as other already compatible versions.
+
+[[metric-aggregations]]
+=== Metric aggregations
+
+The Hibernate Search DSL now allows requesting metric aggregations:
+
+====
+[source, Java, indent=0, subs="+attributes"]
+----
+AggregationKey<Double> avgPriceKey = AggregationKey.of( "avgPrice" ); // <1>
+AggregationKey<LocalDate> oldestReleaseKey = AggregationKey.of( "oldestRelease" ); // <2>
+
+SearchResult<Book> result = searchSession.search( Book.class )
+    .where( f -> f.matchAll() )
+    .aggregation( avgPriceKey, f -> f.avg().field( "price", Double.class ) ) // <3>
+    .aggregation( oldestReleaseKey, f -> f.min().field( "releaseDate", LocalDate.class ) ) // <4>
+    .fetch( 20 );
+
+Double avgPrice = result.aggregation( avgPriceKey ); // <5>
+LocalDate oldestRelease = result.aggregation( oldestReleaseKey );
+----
+<1> Create an aggregation key for an average price aggregation.
+<2> Create an aggregation key for a minimum date aggregation.
+<3> Request an `.avg()` aggregation on the price field.
+Specifying `Double` here defines the expected return type of the computed aggregation.
+<4> Request a `.min()` aggregation on the release date field.
+Specifying `LocalDate` here defines the expected return type of the computed aggregation.
+<5> Extract the aggregated value from the results.
+====
+
+See the corresponding section on link:{hsearch-doc-url-prefix}#search-dsl-aggregation-metric[metric aggregations]
+to learn which aggregations are available.
+
+[[backend-lucene-next]]
+=== New Lucene backend
+
+While Hibernate Search 8.0 still targets JDK 17, Lucene, starting with version 10,
+is leveraging new Java APIs, particularly to work with memory, that are available starting with JDK 21.
+To give users an option to work with the newer Lucene version, Hibernate Search introduces the
+`hibernate-search-backend-lucene-next` backend.
+
+Currently, this backend is backed by Lucene 10 and requires JDK 21. In terms of functionality,
+both Lucene-based backends have the same search capabilities.
+
+See link:{hsearch-doc-url-prefix}#other-integrations-lucene-next[this section] of the reference documentation
+to learn more.
+
+[[multi-collectors]]
+=== Projecting multivalued fields
+
+It is now possible to use other collection types than `List` for multivalued projections:
+
+.Using a Set to collect author names in a projection constructor
+====
+[source, JAVA, indent=0, subs="+callouts"]
+----
+@ProjectionConstructor
+public record MyBookProjection(
+    @IdProjection Integer id,
+    String title,
+    Set<String> authors) {  // <1>
+}
+----
+<1> Using `Set` as a collection for a multivalued projection.
+====
+.Using the set collector within projection DSL
+====
+[source, JAVA, indent=0, subs="+callouts"]
+----
+List<Set<String>> hits = searchSession.search( Book.class )
+    .select( f -> f.field( "authors.lastName", String.class ).set() ) // <1>
+    .where( f -> f.matchAll() )
+    .fetchHits( 20 );
+----
+<1> Using the set collector.
+====
+
+Hibernate Search comes with implementation for most popular collections,
+but it is also possible to extend it and use a custom collector for an unsupported collection:
+
+====
+[source, JAVA, indent=0, subs="+callouts"]
+----
+List<MyCustomCollection<String>> hits = searchSession.search( Book.class )
+    .select( f -> f.field( "authors.lastName", String.class ).collector( new MyCustomCollector() ) ) // <1>
+    .where( f -> f.matchAll() )
+    .fetchHits( 20 );
+----
+<1> Pass an instance of `ProjectionCollector.Provider` to the `.collector()` method.
+====
+
+[[logging-categories]]
+=== Logging categories
+
+Hibernate Search now utilizes logging categories instead of FQCNs. It is now easier to enable logging
+when debugging a particular area of Hibernate Search:
+
+[source, properties, indent=0, subs="+callouts"]
+----
+# Set logging level for massindexing events to `TRACE`:
+org.hibernate.search.mapper.massindexing=TRACE
+----
+
+See the corresponding section on link:{hsearch-doc-url-prefix}#logging-categories-aggregated[logging categories]
+to find out which categories are available.
