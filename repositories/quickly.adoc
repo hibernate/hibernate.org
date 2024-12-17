@@ -1,0 +1,55 @@
+= Repositories, quickly
+:awestruct-layout: project-standard
+:awestruct-project: repositories
+
+A Jakarta Data repository interface exposes a typesafe API for interacting with a datastore.
+Here's a quick overview of the kinds of methods you'll find on a repository interface.
+
+== #1 Automatic query methods
+
+In an automatic query method, the return type encodes the queried entity type, and the method parameters match the persistent fields of the entity by type and name.
+
+[source,java]
+@Find Optional<Book> byIsbn(String isbn);
+
+The parameter names and types are validated against the entity fields at compilation time.
+
+// This is the simplest way to express a database query in Java.
+
+== #2 Annotated query methods
+
+An annotated query method lets us write a query in HQL, JDQL, or SQL.
+Query parameters are matched to method parameters by name or by position.
+
+[source,java]
+@Query("where title like :titlePattern order by publicationDate")
+List<Book> byTitle(@NotBlank String titlePattern);
+
+The syntax and typing of the query is completely validated at compilation time.
+
+== #3 Lifecycle methods
+
+A lifecycle method inserts, updates, deletes, or upserts a record in the database.
+
+[source,java]
+@Save void upsert(Book book);
+
+Calling a lifecycle method causes in an immediate database update.
+
+== #4 Resource accessor methods
+
+A resource accessor method exposes the underlying `StatelessSession` for direct use by the client.
+
+[source,java]
+StatelessSession session();
+
+== #5 Default methods
+
+A `default` method is one you implement yourself.
+
+[source,java]
+default void refresh(Book book) {
+    session().refresh(book);
+}
+
+The method may call the resource accessor method to obtain the `StatelessSession`.
