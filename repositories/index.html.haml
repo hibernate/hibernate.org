@@ -14,7 +14,7 @@ project: repositories
     Standard Jakarta Data repositories delegate persistence operations to a
     Hibernate `StatelessSession`.
 
-    image:../images/repository.png[Repository]
+    image:/images/repository.png[Repository]
 
     In the example above, the Jakarta Data annotations `@Repository`, `@Find`,
     `@Query`, and `@Insert` are used together with JTA's `@Transactional` and
@@ -55,6 +55,21 @@ project: repositories
     and other persistence operations. Hibernate Data Repositories includes a
     complete syntax validator and type checker for HQL, JPQL, and JDQL. Find
     mistakes in your queries immediately, _without_ needing to run any tests.
+
+.feature-block
+  :asciidoc
+    == Flexible sorting and paging
+    :key-based: https://docs.jboss.org/hibernate/orm/7.0/repositories/html_single/Hibernate_Data_Repositories.html#_key_based_pagination
+    :static-metamodel: https://docs.jboss.org/hibernate/orm/7.0/repositories/html_single/Hibernate_Data_Repositories.html#_the_static_metamodel
+
+    Jakarta Data features flexible APIs for limiting, sorting, and paging
+    query results. Alongside standard `offset` / `limit`-style pagination,
+    link:{key-based}[key-based pagination] is also provided.
+
+    The link:{static-metamodel}[static metamodel] provides type safety for
+    dynamic sorting criteria.
+
+    image:/images/sort.png[Sort]
 
 .feature-block
   :asciidoc

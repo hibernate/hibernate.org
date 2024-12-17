@@ -43,7 +43,7 @@ You can learn more about using link:https://quarkus.io/guides/telemetry-micromet
 - link:https://docs.jboss.org/hibernate/orm/{version_family}/userguide/html_single/Hibernate_User_Guide.html#appendix-monitoring-with-JFR[Hibernate JFR] reports persistence-related events to Java Flight Recorder.
 No configuration is required: just include the module `org.hibernate.orm:hibernate-jfr` as a runtime dependency, and you're all set.
 
-image:../images/jfr.png[JFR integration]
+image:/images/jfr.png[JFR integration]
 
 == Hibernate Tools
 
