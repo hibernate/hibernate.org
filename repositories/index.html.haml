@@ -14,12 +14,11 @@ project: repositories
     Standard Jakarta Data repositories delegate persistence operations to a
     Hibernate `StatelessSession`.
 
-  %img{:src => "/images/repo.png", :alt => 'Repository'}
-  %p
-  :asciidoc
+    image:../images/repository.png[Repository]
+
     In the example above, the Jakarta Data annotations `@Repository`, `@Find`,
-    `@Query`, and `@OrderBy` are used together with link:/validator/[Validation]
-    annotations like `@NotNull` and `@NotBlank`.
+    `@Query`, and `@Insert` are used together with JTA's `@Transactional` and
+    the link:/validator/[Validation] annotation `@NotBlank`.
 
 .feature-block
   :asciidoc
