@@ -359,6 +359,9 @@ projects:
           href: '/repositories/documentation/'
           css_class: 'folder open'
           documentation_submenu: true
+        - name: Quickly
+          href: quickly
+          css_class: 'rocket'
       extern:
         - name: Source code
           href: 'https://github.com/hibernate/hibernate-orm'
