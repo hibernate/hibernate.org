@@ -50,6 +50,7 @@ project: repositories
     On the other hand, the link:{programming-model}[programming model] for
     interacting with the database is quite different in Jakarta Data from the
     model you might be used to from Jakarta Persistence.
+
 .feature-block
   :asciidoc
     == Compile-time type safety
@@ -73,6 +74,16 @@ project: repositories
     dynamic sorting criteria.
 
     image:/images/sort.png[Sort]
+
+.feature-block
+  :asciidoc
+    == Reactive repositories
+
+    Complete integration with link:/reactive[Hibernate Reactive] is coming in
+    Hibernate Data Repositories 7. A reactive repository method returns a
+    reactive stream.
+
+    image:/images/reactive-repository.png[Reactive repository]
 
 .feature-block
   :asciidoc
