@@ -160,7 +160,6 @@ project_hero_partial: project/hero-series.html.haml
     - if latest_release_maven.coord
       - releases_repo = latest_release_maven.repo[:releases]
       .eleven.wide.column
-        %h3 Maven, Gradle...
         %p
           Maven artifacts of #{project_description.name} are published to
           %a{:href => releases_repo.data.web_ui_url}

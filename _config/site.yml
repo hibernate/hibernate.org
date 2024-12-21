@@ -131,6 +131,9 @@ projects:
           href: '/orm/documentation/'
           css_class: 'folder open'
           documentation_submenu: true
+        - name: Quickly
+          href: '/orm/quickly/'
+          css_class: 'rocket'
         - name: Migration guides
           href: '/orm/documentation/migrate/'
           css_class: 'share'
@@ -360,7 +363,7 @@ projects:
           css_class: 'folder open'
           documentation_submenu: true
         - name: Quickly
-          href: quickly
+          href: '/repositories/quickly/'
           css_class: 'rocket'
       extern:
         - name: Source code

@@ -237,15 +237,12 @@
 		margin-bottom: 0.3em;
 	}
 
-	h2 {
-		font-size: 1.7rem;
-	}
-
 	p {
 		margin: 0 0 10px;
 	}
 
 	h2 {
+		font-size: 1.7rem;
 		margin-top: 10px !important;
 		color: #59666c;
 		border-bottom: 2px solid #bcae79;
@@ -267,6 +264,9 @@
 		color: #666;
 		font-size: 1.5em;
 		margin-bottom: 15px;
+		border-bottom: 2px dotted #bcae79;
+		padding-bottom: 2px;
+		display: inline-block;
 	}
 
 	h4 {

@@ -1,0 +1,176 @@
+= ORM, quickly
+:awestruct-layout: project-standard
+:awestruct-project: orm
+
+Hibernate ORM has a huge API surface, but here's a list of the operations that you'll need all the time.
+
+== Stateful sessions
+
+A Hibernate https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/Session.html[`Session`] or JPA `EntityManager` represents a stateful persistence context.
+That is, it maintains a set of associated entities, automatically detects modifications made to the entities, and propagates such modifications to the database.
+
+=== #1 find
+
+The `find()` method fetches the entity with the given primary key from the database.
+
+[source, java]
+var book = session.find(Book.class, isbn)
+
+The returned entity is associated with the persistence context, and so any modifications you make its state will be automatically propagated to the database when the session flushes.
+
+Optionally, `find()` accepts one or more ``FindOption``s, customizing locking, timeout, or interaction with the second-level cache.
+
+[source, java]
+var book = session.find(Book.class, isbn, LockModeType.PESSIMISTIC_WRITE, CacheStoreMode.BYPASS)
+
+The `find()` method even accepts an `EntityGraph`, allowing you to specify the associations you would like to fetch.
+
+=== #2 persist
+
+The `persist()` method add an entity to the persistence context, and schedules it for insertion in the database.
+
+[source,java]
+session.persist(book);
+
+The actual insertion doesn't happen until the session flushes.
+
+=== #3 refresh
+
+The `refresh()` method overwrites the state of the given entity with the current persistent state held by the database.
+
+[source, java]
+session.refresh(book)
+
+=== #4 lock
+
+The `lock()` method may be used to upgrade the current lock mode of an entity.
+
+[source, java]
+session.lock(book, LockModeType.PESSIMISTIC_FORCE_INCREMENT)
+
+=== #5 merge
+
+The `merge()` method merges the state of an entity which is not associated with the persistence context into the current persistence context.
+
+[source, java]
+var managedBook = session.merge(detachedBook);
+
+A call to `merge()` returns an entity associated with the persistence context, with the same state as the entity passed as an argument to `merge()`.
+
+=== #6 remove
+
+The `remove()` method schedules an entity for deletion from the database.
+
+[source, java]
+session.remove(book);
+
+The actual deletion doesn't happen until the session flushes.
+
+=== #7 selection queries
+
+Selection queries retrieve data from the database.
+
+[source,java]
+var books =
+        session.createSelectionQuery("where title like :title order by publicationDate", Book.class)
+                .setParameter("title", title);
+                .setMaxResults(50)
+                .getResultList();
+
+The entities returned in the query result set are associated with the persistence context.
+
+=== #8 mutation queries
+
+Mutation queries update or delete data.
+
+[source,java]
+session.createMutationQuery("update Order set status = PROCESSED, processed = local datetime where status = IN_PROCESS")
+        .executeUpdate();
+
+=== #9 criteria queries
+
+A criteria query is a query constructed programmatically.
+
+[source, java]
+var query = builder.createQuery(Book.class);
+var book = query.from(Book.class);
+var where = builder.conjunction();
+if (titlePattern != null) {
+    where = builder.and(where, builder.like(book.get(Book_.title), titlePattern));
+}
+if (namePattern != null) {
+    var author = book.join(Book_.author);
+    where = builder.and(where, builder.like(author.get(Author_.name), namePattern));
+}
+query.select(book).where(where)
+    .orderBy(builder.asc(book.get(Book_.title)));
+
+=== #10 native queries
+
+Native queries let you write a query in the native SQL dialect of your database, map its result set to Java objects, and execute the SQL via Hibernate.
+In older versions of Hibernate, native SQL queries were used quite often--but since Hibernate 6, HQL is so powerful that they're now rarely needed.
+
+== Stateless sessions
+
+The https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html[`StatelessSession`] offers a simplified programming model, allowing more direct control over interaction with the database.
+A stateless session doesn't have an associated persistence context, and so a change is only made to the database when you explicitly ask for it.
+
+=== #1 get
+
+The `get()` method retrieves an entity from the database, but doesn't associate it with any persistence context.
+
+[source, java]
+var book = session.get(Book.class, isbn)
+
+Optionally, you can specify a `LockMode`, or an `EntityGraph`.
+
+=== #2 insert
+
+The `insert()` method directly inserts an entity in the database.
+
+[source,java]
+session.insert(book);
+
+=== #3 update
+
+The `update()` operation immediately updates the database.
+
+[source,java]
+session.update(book);
+
+For a stateless session, updates to the database never happen automatically.
+
+=== #4 upsert
+
+The `upsert()` operation results in execution of a SQL `MERGE` statement.
+
+[source,java]
+session.upsert(book);
+
+=== #5 delete
+
+The `delete()` operation immediately deletes the entity from the database.
+
+[source,java]
+session.delete(book);
+
+=== #6 fetch
+
+The `fetch()` method initializes an unfetched association.
+
+[source,java]
+session.fetch(book.getAuthors());
+
+For a stateless session, lazy fetching never happens transparently nor by accident.
+
+=== #7 refresh
+
+The `refresh()` method overwrites the state of the given entity with the current persistent state held by the database.
+
+[source, java]
+session.refresh(book)
+
+=== #8 selection, update, criteria, and native queries
+
+Queries work the same with a stateless session as they do in a stateful session, with one clear difference: the entities returned by the query are never associated with any persistence context.
+
