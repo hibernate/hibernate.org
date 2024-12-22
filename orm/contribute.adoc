@@ -60,7 +60,7 @@ Details on building the project are covered in the https://github.com/hibernate/
 == Maintaining a community dialect
 
 One area where we really depend on the community is in maintenance of the https://github.com/hibernate/hibernate-orm/tree/main/hibernate-community-dialects/src/main/java/org/hibernate/community/dialect[Community Dialects].
-The Community Dialects module defines compatibility with a range of older databases, including Informix, Ingres, and Teradata, along with incubating support for SQLLite.
+The Community Dialects module defines compatibility with a range of older databases, including Informix, Ingres, and Teradata, along with incubating support for SQLite.
 These dialects are not maintained by the Hibernate team since we have no way to test them.
 
 There's plenty of ways these dialects may be polished or extended.
