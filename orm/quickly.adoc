@@ -25,7 +25,9 @@ You can call `evict()` to remove it from the persistence context.
 Optionally, `find()` accepts one or more ``FindOption``s, customizing https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#optimistic-and-pessimistic-locking[locking], timeout, or interaction with the https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#second-level-cache[second-level cache].
 
 [source, java]
-var book = session.find(Book.class, isbn, LockModeType.PESSIMISTIC_WRITE, CacheStoreMode.BYPASS)
+var book = session.find(Book.class, isbn,
+                       LockModeType.PESSIMISTIC_WRITE,
+                       CacheStoreMode.BYPASS)
 
 The `find()` method even accepts an `EntityGraph`, allowing you to https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#entity-graph[specify the associations you would like to fetch].
 
