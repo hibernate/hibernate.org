@@ -5,11 +5,11 @@
 :toc-placement: preamble
 :toc-title: Overview
 
-Hibernate ORM has a huge API surface, but here's a list of the operations that you'll need all the time.
+Hibernate ORM has a huge API surface, but here's a list of the session operations and O/R mappings that you'll need all the time.
 
 == Stateful sessions
 
-A Hibernate https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/Session.html[`Session`] or JPA `EntityManager` represents a stateful persistence context.
+A Hibernate https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/Session.html[`Session`] or JPA `EntityManager` represents a stateful https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#persistence-contexts[persistence context].
 That is, it maintains a set of associated entities, automatically detects modifications made to the entities, and propagates such modifications to the database.
 
 === #1 find
@@ -19,14 +19,15 @@ The `find()` method fetches the entity with the given primary key from the datab
 [source, java]
 var book = session.find(Book.class, isbn)
 
-The returned entity is associated with the persistence context, and so any modifications you make its state will be automatically propagated to the database when the session flushes.
+The returned entity is associated with the persistence context, and so any modifications you make its state will be automatically propagated to the database when the session https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#flush[flushes].
+You can call `evict()` to remove it from the persistence context.
 
-Optionally, `find()` accepts one or more ``FindOption``s, customizing locking, timeout, or interaction with the second-level cache.
+Optionally, `find()` accepts one or more ``FindOption``s, customizing https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#optimistic-and-pessimistic-locking[locking], timeout, or interaction with the https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#second-level-cache[second-level cache].
 
 [source, java]
 var book = session.find(Book.class, isbn, LockModeType.PESSIMISTIC_WRITE, CacheStoreMode.BYPASS)
 
-The `find()` method even accepts an `EntityGraph`, allowing you to specify the associations you would like to fetch.
+The `find()` method even accepts an `EntityGraph`, allowing you to https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#entity-graph[specify the associations you would like to fetch].
 
 === #2 persist
 
@@ -92,7 +93,7 @@ session.createMutationQuery("update Order set status = PROCESSED, processed = lo
 
 === #9 criteria queries
 
-A criteria query is a query constructed programmatically.
+A https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#criteria-queries[criteria query] is a query constructed programmatically.
 
 [source, java]
 var query = builder.createQuery(Book.class);
@@ -110,12 +111,12 @@ query.select(book).where(where)
 
 === #10 native queries
 
-Native queries let you write a query in the native SQL dialect of your database, map its result set to Java objects, and execute the SQL via Hibernate.
+https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#native-queries[Native queries] let you write a query in the native SQL dialect of your database, map its result set to Java objects, and execute the SQL via Hibernate.
 In older versions of Hibernate, native SQL queries were used quite often--but since Hibernate 6, HQL is so powerful that they're now rarely needed.
 
 == Stateless sessions
 
-The https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html[`StatelessSession`] offers a simplified programming model, allowing more direct control over interaction with the database.
+The https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html[`StatelessSession`] offers a https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#stateless-sessions[simplified programming model], allowing more direct control over interaction with the database.
 A stateless session doesn't have an associated persistence context, and so a change is only made to the database when you explicitly ask for it.
 
 === #1 get
@@ -164,7 +165,7 @@ The `fetch()` method initializes an unfetched association.
 [source,java]
 session.fetch(book.getAuthors());
 
-For a stateless session, lazy fetching never happens transparently nor by accident.
+For a stateless session, https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#proxies-and-lazy-fetching[lazy fetching] never happens transparently nor by accident.
 
 === #7 refresh
 
@@ -176,4 +177,201 @@ session.refresh(book)
 === #8 selection, update, criteria, and native queries
 
 Queries work the same with a stateless session as they do in a stateful session, with one clear difference: the entities returned by the query are never associated with any persistence context.
+
+== Common mappings
+
+Hibernate has an incredibly rich set of annotations for mapping Java classes to relational database tables, but you'll only need a tiny fraction of them.
+In fact, you're more likely to have success with Hibernate if you avoid the use of more exotic mappings until you run into a situation where you _really need one_.
+
+=== #1 Entity classes
+
+An https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#entity-clases[entity class] is a plain Java class that maps a database table.
+We know when something is an entity because it's annotated `@Entity`.
+
+[source,java]
+@Entity
+class Book { ... }
+
+You can explicitly specify the name of the https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#table-mappings[mapped database table] using `@Table`.
+
+[source,java]
+@Entity
+@Table(name="books")
+class Book { ... }
+
+The `@SecondaryTable` annotation lets us map the fields of a single entity class across multiple tables.
+
+=== #2 Entity inheritance
+
+An entity may inherit a second entity.
+
+[source,java]
+@Entity
+class Book extends Document { ... }
+
+[source,java]
+@Entity
+class Document { ... }
+
+By default, the two entities map the same database table.
+If we have a normalized database schema, we can use `@Inheritance(strategy=JOINED)`.
+
+[source,java]
+@Entity
+@Table(name = "books")
+class Book extends Document { ... }
+
+[source,java]
+@Entity
+@Inheritance(strategy=JOINED)
+@Table(name = "documents")
+class Document { ... }
+
+A third option is `@Inheritance(strategy=TABLE_PER_CLASS)`.
+You can learn more about inheritance mappings https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#mapping-inheritance[here].
+
+=== #3 Basic attributes
+
+A https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#basic-attributes[basic attribute] is a field or property of a Java class which maps a column of a database table.
+Usually, the type of the field or property is a primitive type like `boolean`, `int`, `double`, or `byte[]`, or a type that comes built-in to Java, like `String`, `BigDecimal`, or `LocalDateTime`.
+
+[source,java]
+String name;
+
+You can specify the https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#column-mappings[mapped column] using the `@Column` annotation.
+
+[source,java]
+@Column(name="author_name")
+String name;
+
+If you have a field or property that maps to a single column, but its type isn't one of the basic types build in to Hibernate, you can use an https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#converters[`AttributeConverter`].
+
+=== #4 Identifiers
+
+An entity must have an https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#identifier-attributes[identifier] mapping the primary key of the database table.
+
+[source,java]
+@Id
+String isbn;
+
+If the primary key is a _surrogate key_, you can let Hibernate or the database itself https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#generated-identifiers[generate the identifier].
+
+[source,java]
+@Id @GeneratedValue
+UUID id;
+
+On the other hand, in a schema which uses https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#natural-identifiers[natural keys], we often need to map a composite primary key using `@EmbeddedId` or `@IdClass`.
+You can read about these options https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#composite-identifiers[here].
+
+=== #5 Versions and timestamps
+
+The `@Version` annotation declares a field which is used for https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#version-attributes[automatic optimistic locking].
+
+[source,java]
+@Version
+LocalDateTime lastUpdated;
+
+=== #6 Associations
+
+There's quite a range of different kinds of association mapping, but most of the time all you need is a https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#many-to-one[bidirectional one-to-many association].
+
+[source,java]
+----
+@Entity
+class Book {
+    @Id
+    String isbn;
+
+    @ManyToOne(fetch=LAZY)
+    Publisher publisher;
+}
+----
+
+[source,java]
+----
+@Entity
+class Publisher {
+    @Id @GeneratedValue
+    Long id;
+
+    @OneToMany(mappedBy=Book_.PUBLISHER)
+    List<Book> books;
+}
+----
+
+You may use `@JoinColumn` to specify the https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#join-column-mappings[foreign key mapping].
+
+[source,java]
+----
+@Entity
+class Book {
+    @Id
+    String isbn;
+
+    @ManyToOne(fetch=LAZY)
+    @JoinColumn(name = "book_publisher_id",
+                referencedColumnName = "publisher_id")
+    Publisher publisher;
+}
+----
+
+[source,java]
+----
+@Entity
+class Publisher {
+    @Id @GeneratedValue
+    @Column(name = "publisher_id")
+    Long id;
+
+    @OneToMany(mappedBy=Book_.PUBLISHER)
+    List<Book> books;
+}
+----
+
+You can learn all about association mappings https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#associations[here].
+
+=== #7 Embeddable classes
+
+Some fine-grained Java classes don't map to their own database table.
+Instead, each instance of the class belongs to an entity, and the fields of the class map columns of the table mapped by the owning entity.
+We declare such classes using the `@Embeddable` annotation.
+
+[source,java]
+----
+@Embeddable
+class Name {
+    String first;
+    String last;
+    Character initial;
+}
+----
+[source,java]
+----
+@Entity
+class Author {
+    @Id
+    String ssn;
+
+    Name name;
+}
+----
+
+You can read more about embeddable classes https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#embeddable-objects[here].
+An embeddable class may even be mapped to a database https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#mapping-embeddables[UDT or JSON type].
+
+=== #8 Enumerated types
+
+A Java `enum` might map a `tinyint` column holding its ordinal value, or a `varchar` column holding its name.
+The `@Enumerated` annotation https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#enums[selects between the two options].
+
+[source,java]
+@Enumerated(STRING)
+DayOfWeek dayOfWeek;
+
+Alternatively, on MySQL, PostgreSQL, or Oracle, a Java `enum` might map to a https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#named-enums[database enum type].
+
+=== #9 Collections and arrays
+
+A collection or array might map a https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#element-collections[separate database table], or even a https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#arrays[native SQL `array` type].
+We advise new users to steer clear of these mappings at first.
 
