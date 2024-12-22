@@ -5,7 +5,7 @@
 :toc-placement: preamble
 :toc-title: Overview
 
-Hibernate ORM has a huge API surface, but here's a list of the session operations and O/R mappings that you'll need all the time.
+Hibernate ORM has a huge API surface, but here's a list of the most fundamental session operations and O/R mappings that you'll need all the time.
 
 == Stateful sessions
 
@@ -119,6 +119,8 @@ In older versions of Hibernate, native SQL queries were used quite often--but si
 The https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html[`StatelessSession`] offers a https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#stateless-sessions[simplified programming model], allowing more direct control over interaction with the database.
 A stateless session doesn't have an associated persistence context, and so a change is only made to the database when you explicitly ask for it.
 
+TIP: If you find yourself juggling the `flush()`, `detach()`, and `clear()` methods of a stateful session, that's a sure indication that you might be better off going stateless.
+
 === #1 get
 
 The `get()` method retrieves an entity from the database, but doesn't associate it with any persistence context.
@@ -181,7 +183,8 @@ Queries work the same with a stateless session as they do in a stateful session,
 == Common mappings
 
 Hibernate has an incredibly rich set of annotations for mapping Java classes to relational database tables, but you'll only need a tiny fraction of them.
-In fact, you're more likely to have success with Hibernate if you avoid the use of more exotic mappings until you run into a situation where you _really need one_.
+
+TIP: In fact, you're more likely to have success with Hibernate if you avoid the use of more exotic mappings until you run into a situation where you _really need one_.
 
 === #1 Entity classes
 
@@ -373,5 +376,6 @@ Alternatively, on MySQL, PostgreSQL, or Oracle, a Java `enum` might map to a htt
 === #9 Collections and arrays
 
 A collection or array might map a https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#element-collections[separate database table], or even a https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#arrays[native SQL `array` type].
-We advise new users to steer clear of these mappings at first.
+
+CAUTION: It's easy to overuse these mappings.
 
