@@ -5,6 +5,8 @@ Emmanuel Bernard
 Hibernate is first and foremost an open source community.
 Code, issues and discussions are in the open and each project is released under an open source license.
 
+NOTE: To report security issues, please follow instructions found https://access.redhat.com/security/team/contact/[here].
+
 [questions]
 == Ask questions & find answers
 
@@ -95,6 +97,10 @@ There are many forms of contribution, from helping other users on the forum, to 
 issues, writing documentation or providing code patches.
 
 If you want to know more, look through one of these avenues:
+
+Reporting security issues::
+For security issues, please do not use our (public) issue tracker.
+Instead, follow instructions found https://access.redhat.com/security/team/contact/[here].
 
 https://hibernate.atlassian.net[Jira issue tracker]::
 Jira is where most tasks are reported and tracked.
