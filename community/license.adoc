@@ -9,9 +9,16 @@ Hibernate is Free Software.
 
 You can find under which a specific project is released below its menu or in the code source.
 
+== ASL 2.0
+
+Some Hibernate projects are released under link:https://opensource.org/licenses/Apache-2.0[ASL 2.0].
+This is the case for link:/validator[Hibernate Validator], link:/reactive[Hibernate Reactive], and (since version 7.2.0.Alpha2) link:/search[Hibernate Search].
+
+The Hibernate team is link:https://in.relation.to/2023/11/18/license/[trying to move more projects to this license].
+
 == LGPL 2.1
 
-Most Hibernate projects are released under link:https://opensource.org/licenses/LGPL-2.1[LGPL v2.1].
+Hibernate projects have historically been released, and in some cases still are, under link:https://opensource.org/licenses/LGPL-2.1[LGPL v2.1].
 
 The maintainers of Hibernate have consistently understood the LGPL to simply allow Hibernate to be used by both open source and proprietary code without any impact on the licensing or distribution of such independent code.
 This interpretation applies regardless of whether a binary that includes Hibernate code is designed to run on the JVM or is a native image generated through use of tools and frameworks like link:https://www.graalvm.org/[GraalVM] and link:https://quarkus.io/[Quarkus].
@@ -41,9 +48,3 @@ This has been the consistent interpretation of the LGPL by the maintainers of Hi
 Recently there has been interest in native compilation for Java using tools like GraalVM, such as commonly used in frameworks like Quarkus.
 The view of the Hibernate maintainers is that native compilation is a technical detail that does not fundamentally change how LGPL works for Java code.
 In a native image that includes LGPL-licensed code from Hibernate, the Hibernate code remains under the terms of the LGPL, but the other code in the generated binary is not affected by the licensing of the Hibernate code.
-
-
-== ASL 2.0
-
-Some Hibernate projects are released under link:https://opensource.org/licenses/Apache-2.0[ASL 2.0],
-and the Hibernate team is link:https://in.relation.to/2023/11/18/license/[trying to move more projects to that license].
