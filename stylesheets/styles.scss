@@ -264,15 +264,20 @@
 		color: #666;
 		font-size: 1.5em;
 		margin-bottom: 15px;
-		border-bottom: 2px dotted #bcae79;
-		padding-bottom: 2px;
-		display: inline-block;
 	}
 
 	h4 {
 		margin-top: 15px !important;
 		color: #888;
 		font-size: 1.3em;
+	}
+
+	.sectionbody {
+		h3 {
+			border-bottom: 2px dotted #bcae79;
+			padding-bottom: 2px;
+			display: inline-block;
+		}
 	}
 
 	.sect1:not(:last-child) {
