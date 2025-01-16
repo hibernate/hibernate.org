@@ -150,7 +150,7 @@ projects:
           href: '/orm/envers/'
           css_class: 'time'
         - name: Contribute
-          href: '/orm/contribute/'
+          href: '/community/contribute/'
           css_class: 'users'
         - name: Paid support
           href: '/orm/support/'
@@ -267,7 +267,7 @@ projects:
           href: '/search/roadmap/'
           css_class: 'road'
         - name: Contribute
-          href: '/search/contribute/'
+          href: '/community/contribute/'
           css_class: 'users'
         - name: Tooling
           href: '/search/tooling/'
@@ -410,9 +410,9 @@ projects:
           #- name: Roadmap
           #  href: '/search/roadmap/'
           #  css_class: 'road'
-          #- name: Contribute
-          #  href: '/search/contribute/'
-          #  css_class: 'users'
+        - name: Contribute
+          href: '/community/contribute/'
+          css_class: 'users'
         - name: Source code
           href: 'https://github.com/hibernate/hibernate-tools'
           css_class: 'code'
@@ -513,7 +513,7 @@ projects:
           href: '/validator/roadmap/'
           css_class: 'road'
         - name: Contribute
-          href: '/validator/contribute/'
+          href: '/community/contribute/'
           css_class: 'users'
         - name: Tooling
           href: '/validator/tooling/'
@@ -615,7 +615,7 @@ projects:
           href: '/ogm/roadmap/'
           css_class: 'road'
         - name: Contribute
-          href: '/ogm/contribute/'
+          href: '/community/contribute/'
           css_class: 'users'
         - name: Paid support
           href: '/ogm/support/'
@@ -704,6 +704,9 @@ projects:
 #        - name: Roadmap
 #          href: '/reactive/roadmap/'
 #          css_class: 'road'
+        - name: Contribute
+          href: '/community/contribute/'
+          css_class: 'users'
         - name: Paid support
           href: '/reactive/support/'
           css_class: 'doctor'
