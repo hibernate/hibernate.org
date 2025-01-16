@@ -1,0 +1,119 @@
+= Contribute to Hibernate projects
+:awestruct-layout: community-standard
+:toc:
+:toc-placement: preamble
+:toc-title: Contents
+
+Thanks for your interest! Hibernate is an open source project and community.
+There's many ways to be part of the community and make a contribution -- coding Java is a small part of the work involved in maintaining the projects.
+
+
+== Helping other users
+
+The link:/community/[Community] page lists several places for users to find help, such as Zulip and the forum.
+And users often look for help in other places such as StackOverflow.
+A great way to get involved in the community is to share your knowledge with others who need it.
+
+
+== Improving documentation
+
+An extension of helping other users is to contribute documentation.
+It's the help that keeps on giving!
+Whether you simply fix a typo, reword an unclear section, or add a whole new section or topic, improving the documentation helps everyone.
+
+
+== Discussing development
+
+As the development team discusses design of new features or tries to prioritize work, it's great to have input from users.
+You can find the different places to get involved in development discussions on the link:/community#contribute[Community] page.
+
+
+== Reporting and investigating bugs
+
+NOTE: For security issues, please do not use our (public) issue tracker.
+Instead, follow instructions found https://access.redhat.com/security/team/contact/[here].
+
+Trying out releases and reporting and fixing problems is in many ways the cornerstone of open source development.
+It's especially critical in the case of early releases (Alphas and Betas) as we are trying to solidify APIs and contracts.
+A huge problem faced by open source projects like Hibernate is that most users avoid trying out a new release until _after_ it's already gone final!
+
+When creating a bug report, please have a test case available that can be used to reproduce the issue and act as a long-term regression test.
+Please see https://github.com/hibernate/hibernate-test-case-templates[Hibernate Test Case Templates] for an easy
+way to start!
+
+Even if you can't provide a fix for a bug, submitting a test case for a reported
+https://hibernate.atlassian.net/issues/?jql=status%20%3D%20%22Awaiting%20response%22[bug that didn't come with a test] is a great start on getting the bug resolved.
+
+Speaking of JIRA, helping us identify issues that duplicate other issues or that are out of date is also a huge help.
+And voting for issues that are important to you is important in terms of how the development team sets priorities.
+Believe it or not, we really do pay more attention to issues with more votes!
+
+
+== Contributing code
+
+We love contributions that scratch somebody's own itch: they bring the project forward.
+If you do not have a specific itch to scratch, you can pick something from "good first issues": see https://hibernate.atlassian.net/issues/?filter=13761[here for Jira-tracked issues] (most main projects) and https://github.com/search?q=org%3Ahibernate+is%3Aissue+label%3A%22good+first+issue%22+is%3Aopen&type=issues[here for GitHub-tracked issues] (Hibernate Reactive).
+
+Details on contributing code and documentation are covered in `CONTRIBUTING.md` in the repository root directory:
+
++++
+<div class="ui labels blue">
+<a class="ui label" href="https://github.com/hibernate/hibernate-orm/blob/main/CONTRIBUTING.md">Hibernate ORM</a>
+<a class="ui label" href="https://github.com/hibernate/hibernate-search/blob/main/CONTRIBUTING.md">Hibernate Search</a>
+<a class="ui label" href="https://github.com/hibernate/hibernate-validator/blob/main/CONTRIBUTING.md">Hibernate Validator</a>
+</div>
++++
+
+Details on building the project are covered in the `README` (also in the repository root directory) or `CONTRIBUTING.md`, depending on the project:
+
++++
+<div class="ui labels blue">
+<a class="ui label" href="https://github.com/hibernate/hibernate-orm/blob/main/README.adoc">Hibernate ORM</a>
+<a class="ui label" href="https://github.com/hibernate/hibernate-search/blob/main/CONTRIBUTING.md">Hibernate Search</a>
+<a class="ui label" href="https://github.com/hibernate/hibernate-validator/blob/main/CONTRIBUTING.md">Hibernate Validator</a>
+<a class="ui label" href="https://github.com/hibernate/hibernate-reactive/blob/main/README.md">Hibernate Reactive</a>
+</div>
++++
+
+[NOTE]
+====
+Building instructions are specific to each branch, as they may contain information that varies based on the branch's `javac` requirements, build tool (Gradle, Maven, Ant), etc.
+====
+
+
+[[community-dialects]]
+== Maintaining a community dialect for Hibernate ORM
+
+One area where we really depend on the community is in maintenance of the https://github.com/hibernate/hibernate-orm/tree/main/hibernate-community-dialects/src/main/java/org/hibernate/community/dialect[Community Dialects] in Hibernate ORM.
+The Community Dialects module defines compatibility with a range of older databases, including Informix, Ingres, and Teradata, along with incubating support for SQLite.
+These dialects are not maintained by the Hibernate team since we have no way to test them.
+
+There's plenty of ways these dialects may be polished or extended.
+In particular, they're usually missing support for advanced or more recent features of HQL.
+So if you happen to have access to one of these databases, we'd love it if you could help out!
+
+
+[[design-philosophy]]
+== Design philosophy
+
+Here is a set of principles driving the design of Hibernate projects.
+The goal of these projects is to improve developer productivity and ease of use.
+
+When adding a feature, we ask this pool of questions:
+
+1. Does it feel like the right way of doing things?
+If it is not we tend to wait till the idea matures
+2. Can it be done with an existing construct with similar or less complexity?
+Several ways of doing things is counter-productive.
+3. Is this feature wrong?
+For example, does it encourage bad practice?
+4. Is this a popular request?
+5. Is this feature useful?
+That is the reason for asking "What's your use case?"
+6. Is it the most readable approach?
+7. Is the feature designed consistently with the rest of the library?
+
+None of these questions should slow down innovation but we want high quality libraries.
+Keeping them both useful and simple is a constant battle against the easier way of adding features ad nauseum.
+The team believes it is his responsibility to be the guardian of these principles.
+We are here to make the world a better place, not give food to guideline writers.

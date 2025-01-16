@@ -18,6 +18,18 @@
       - href = "/community/commonhaus/faq-joining/"
       %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "active" : "")}"}
         Commonhaus - Joining FAQ
+      - href = "/community/contribute/"
+      %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "active" : "")}"}
+        Contribute - Guidelines
+      - href = "/community/contribute/intellij-idea/"
+      %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "active" : "")}"}
+        Contribute - Set up IntelliJ IDEA
+      - href = "/community/contribute/eclipse-ide/"
+      %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "active" : "")}"}
+        Contribute - Set up Eclipse IDE
+      - href = "/community/contribute/build-hibernate-orm/"
+      %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "active" : "")}"}
+        Contribute - Build Hibernate ORM
       - item_active = (current_path == '/community/contributors/orm/')
       %a.item(href="/community/contributors/orm/"){:class => "#{(item_active ? "active" : "")}"}
         %i.grid.icon.database
@@ -56,15 +68,3 @@
       %a.item(href="/community/keys/"){:class => "#{(item_active ? "active" : "")}"}
         %i.grid.icon.key
         Keys
-      - href = "/community/contribute/guidelines/"
-      %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "active" : "")}"}
-        Contribute - Guidelines
-      - href = "/community/contribute/intellij-idea/"
-      %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "active" : "")}"}
-        Contribute - Set up IntelliJ IDEA
-      - href = "/community/contribute/eclipse-ide/"
-      %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "active" : "")}"}
-        Contribute - Set up Eclipse IDE
-      - href = "/community/contribute/build-hibernate-orm/"
-      %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "active" : "")}"}
-        Contribute - Build Hibernate ORM
