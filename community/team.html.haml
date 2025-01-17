@@ -1,0 +1,69 @@
+---
+layout: community-standard
+title: Hibernate Team
+---
+
+%h2{:id => "leaders"} Project Leaders
+
+.ui.icon.message
+  %i.icon.id.badge
+  .content
+    This is a list of all
+    %a(href="/community/governance/#roles")
+      Hibernate Project Leaders
+    \.
+
+.contributor-list.leader-list
+  - site.governance.leaders.each do |login, project_names|
+    - project_names_joined = project_names.map { |key| site.projects[key].name } .join( ', ' )
+    .ui.card.contributor{:"data-github-login" => login, :"data-project-names" => project_names_joined}
+      .content
+        .header
+          %a{:href => "https://github.com/#{login}"}
+            #{login}
+      .extra.content
+        Leader of #{project_names_joined}.
+
+%h2{:id => "members"} Members
+
+.ui.icon.message
+  %i.icon.id.badge
+  .content
+    This is a list of all
+    %a(href="/community/governance/#roles")
+      Hibernate Members
+    who decided to make their membership public on GitHub.
+
+%p &nbsp;
+
+.text-center#list-loader
+  %i.notched.circle.loading.icon.massive
+
+#list.contributor-list(style="display:none")
+
+:javascript
+  $(document).ready(function() {
+    var contributorsNameMapping = #{site.data_json['contributors-name-mapping']}
+    $.getJSON( "https://api.github.com/orgs/hibernate/public_members", function( data ) {
+      var items = [];
+      data.forEach( function( member ) {
+        var memberName = contributorsNameMapping[member.login] ? contributorsNameMapping[member.login] : member.login;
+
+        var item = $( '<div class="ui card contributor"/>' )
+          .append( $( '<div class="image"/>' ).append( $('<img src="' + member.avatar_url + '" />' ) ) )
+          .append( $( '<div class="content" />' ).append( $( '<div class="header" />' ).append( $( '<a href="' + member.html_url + '" />' ).text( memberName ) ) ) )
+
+        var leaderItem = $( '.leader-list [data-github-login=' + member.login + ']' )
+        if ( leaderItem.length ) {
+          item.append( $( '<div class="extra content" />' ).text( 'Leader of ' + leaderItem.data( 'project-names' ) + '.' ) );
+          leaderItem.replaceWith( item.clone() );
+        }
+
+        items.push(item);
+      });
+
+      $( '#list' ).append( items );
+      $( '#list-loader' ).hide();
+      $( '#list' ).fadeIn();
+    });
+  });

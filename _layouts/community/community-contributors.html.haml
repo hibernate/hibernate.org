@@ -17,10 +17,10 @@ layout: community-standard
 
 %p &nbsp;
 
-.text-center#contributor-loader
+.text-center#list-loader
   %i.notched.circle.loading.icon.massive
 
-#contributor-list(style="display:none")
+#list.contributor-list(style="display:none")
 
 :javascript
   $(document).ready(function() {
@@ -38,8 +38,8 @@ layout: community-standard
         );
       });
 
-      $( '#contributor-list' ).append( items );
-      $( '#contributor-loader' ).hide();
-      $( '#contributor-list' ).fadeIn();
+      $( '#list' ).append( items );
+      $( '#list-loader' ).hide();
+      $( '#list' ).fadeIn();
     });
   });
