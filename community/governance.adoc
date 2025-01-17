@@ -1,0 +1,80 @@
+= Governance
+:toc:
+:awestruct-layout: community-standard
+
+This document outlines the governance model for Hibernate projects.
+This governance model is designed to uphold the principles of transparency, open collaboration, and community involvement.
+
+[[roles]]
+== Roles and Responsibilities
+
+- **Contributors:** Anyone who contributes to Hibernate projects in any form.
+- **Members:** Contributors eligible for write access to a Hibernate code repository.
+  Responsible for reviewing and merging contributions in their area of expertise.
+- **Project Leaders:** Elected members (at most one per code repository) with higher decision power whenever the project they lead is directly affected.
+  Responsible for steering project direction, and for enforcing compliance with requirements of the Commonhaus Foundation.
+
+Small or inactive projects may not have a leader,
+in which case Members interested in the project will steer the project direction.
+
+[[decision-making]]
+== Decision-Making
+
+Hibernate projects follow the https://www.commonhaus.org/bylaws/decision-making.html[Commonhaus decision-making process], with one additional provision.
+
+Consensus-seeking (lazy consensus)::
+Projects primarily aim for a consensus-based decision-making process, where Members and active contributors discuss and come to an agreement.
+Voting::
+In situations where consensus cannot be reached, decisions may be made through a simple majority vote among Members.
+Conflict Resolution::
+If conflicts arise, Members are responsible for facilitating a resolution. The https://www.commonhaus.org/bylaws/cf-council.html[Commonhaus Foundation Council] (CFC) can be asked to mediate the discussion, if necessary.
+Overruling _(Hibernate-specific)_::
+Project Leaders hold the power to overrule any decision directly affecting the project they lead.
+This allows for swift decisions on urgent or critical matters.
+Appeal to such overruling follows conflict resolution rules described above.
+// This is intended to balance the very extensive power of project leaders.
+In extreme cases, abuse of this power may result in the role of Project Leader being revoked (see below).
+
+[[role-granting-revoking]]
+== Role granting/revoking
+
+The role of Member or Project Leader is granted or revoked through the <<decision-making,decision-making process>>,
+with additional restrictions:
+
+1. The discussion must happen on the Hibernate development mailing list, as listed in the link:/community[Community page on this website].
+// This prevents a Project Leader overruling their own revocation, or arbitrarily instating/revoking others.
+2. Project Leaders may not use their overruling power.
+// This is consistent with Commonhaus' own processes, which use supermajority for critical decisions.
+3. If consensus cannot be reached,
+   the ensuing vote requires supermajority approval by two-thirds of voting Members, instead of simple majority.
+// This is long on purpose, to eliminates the risk of a decision being taken "in absentia" during e.g. holidays.
+// The assumption is that decisions around the project can be taken collectively, or by the previous leader, in the interim.
+4. Discussions regarding the role of Project Leader may not last less than 30 days.
+
+Eligible candidates are:
+
+For the role of Member::
+Any contributor.
+For the role of Project Leader::
+Any contributor to the project they will lead, provided the candidate is a Commonhaus Foundation member,
+// TODO update link upon the PR getting merged.
+and agrees to become a Signatory of the https://github.com/commonhaus/foundation/pull/219/files#diff-64f58a8e70e16b011f35a30256797c538e6a951da4e9985943b55f4abe6e94b1[Commonhaus Fiscal Sponsorship Agreement] before taking on their new role.
+
+Members and Project Leaders keep their role indefinitely, unless they resign or a new decision revokes their role.
+
+The list of Members and Project Leaders is kept up-to-date on the link:/community/team["Team" page] of this website.
+
+[[code-of-conduct]]
+== Code of Conduct
+
+All participants in Hibernate projects are expected to adhere to the https://www.commonhaus.org/policies/code-of-conduct/[Commonhaus Foundation Code of Conduct]. Please ensure you are familiar with its guidelines and expectations, as it's essential for maintaining a positive and collaborative environment.
+
+[[trademark-policy]]
+== Trademark Policy
+
+The Hibernate logos, icons, and domain names are protected by trademark rights. Usage of these trademarks must adhere to the https://www.commonhaus.org/policies/trademark-policy/[Commonhaus Foundation Trademark Policy].
+
+[[contributing]]
+== Contributing
+
+We welcome all forms of contribution, from code improvements to documentation and design. For details on how to contribute and the process your contributions will follow, please read our link:/community/contribute/[Contributing Guidelines].

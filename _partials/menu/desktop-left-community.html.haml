@@ -7,6 +7,12 @@
     %i.grid.icon.users
     Community
 
+  - href = "/community/governance/"
+  - active = (href == current_path)
+  %a.item{:href => href, :class => "#{(active ? "active" : "")}"}
+    %i.grid.icon.university
+    Governance
+
   .ui.dropdown.link.item{:class => "#{(current_path.start_with?( '/community/commonhaus/' ) ? "selected" : "")}"}
     Commonhaus
     %i.icon.dropdown
@@ -34,6 +40,12 @@
       - href = "/community/contribute/build-hibernate-orm/"
       %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "selected" : "")}"}
         Build Hibernate ORM
+
+  - href = "/community/team/"
+  - active = (href == current_path)
+  %a.item{:href => href, :class => "#{(active ? "active" : "")}"}
+    %i.grid.icon.id.badge
+    Team
 
   .ui.dropdown.link.item{:class => "#{(current_path.start_with?( '/community/contributors/' ) ? "selected" : "")}"}
     Contributors

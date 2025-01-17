@@ -12,6 +12,10 @@
       %a.item(href="/community/"){:class => "#{(item_active ? "active" : "")}"}
         %i.grid.icon.users
         Community
+      - href = "/community/governance/"
+      %a.item{:href => href, :class => "#{(current_path == href ? "active" : "")}"}
+        %i.grid.icon.university
+        Governance
       - href = "/community/commonhaus/"
       %a.item{:href => href, :class => "#{(current_path == href ? "active" : "")}"}
         Commonhaus - Membership
@@ -30,6 +34,10 @@
       - href = "/community/contribute/build-hibernate-orm/"
       %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "active" : "")}"}
         Contribute - Build Hibernate ORM
+      - href = "/community/team/"
+      %a.item{:href => href, :class => "#{(current_path == href ? "active" : "")}"}
+        %i.grid.icon.id.badge
+        Team
       - item_active = (current_path == '/community/contributors/orm/')
       %a.item(href="/community/contributors/orm/"){:class => "#{(item_active ? "active" : "")}"}
         %i.grid.icon.database

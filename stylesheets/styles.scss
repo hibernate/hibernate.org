@@ -729,7 +729,7 @@ pre .comment .conum {
 	}
 }
 
-#contributor-list {
+.contributor-list {
 	display: grid;
 	grid-auto-rows: 1fr;
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
