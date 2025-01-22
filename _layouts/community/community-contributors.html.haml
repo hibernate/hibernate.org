@@ -24,30 +24,22 @@ layout: community-standard
 
 :javascript
   $(document).ready(function() {
-  });
+    var contributorsNameMapping = #{site.data_json['contributors-name-mapping']}
+    $.getJSON( "https://api.github.com/repos/hibernate/#{project_description.github.project}/contributors", function( data ) {
+      var items = [];
+      data.forEach( function( contributor ) {
+        var contributorName = contributorsNameMapping[contributor.login] ? contributorsNameMapping[contributor.login] : contributor.login;
 
-
-:javascript
-  $(document).ready(function() {
-    var contributorsNameMapping;
-    $.getJSON( "/community/contributors/contributors-name-mapping.json", function( data ) {
-      contributorsNameMapping = data;
-      $.getJSON( "https://api.github.com/repos/hibernate/#{project_description.github.project}/contributors", function( data ) {
-        var items = [];
-        data.forEach( function( contributor ) {
-          var contributorName = contributorsNameMapping ? (contributorsNameMapping[contributor.login] ? contributorsNameMapping[contributor.login] : contributor.login) : contributor.login;
-
-          items.push(
-              $( '<div class="ui card contributor"/>' )
-                .append( $( '<div class="image"/>' ).append( $('<img src="' + contributor.avatar_url + '" />' ) ) )
-                .append( $( '<div class="content" />' ).append( $( '<div class="header" />' ).append( $( '<a href="' + contributor.html_url + '" />' ).text( contributorName ) ) ) )
-                .append( $( '<div class="extra content" />' ).append( $( '<span class="right floated" />' ).text( contributor.contributions + ' commit' + ( contributor.contributions > 1 ? 's' : '' ) ) ) )
-          );
-        });
-
-        $( '#contributor-list' ).append( items );
-        $( '#contributor-loader' ).hide();
-        $( '#contributor-list' ).fadeIn();
+        items.push(
+            $( '<div class="ui card contributor"/>' )
+              .append( $( '<div class="image"/>' ).append( $('<img src="' + contributor.avatar_url + '" />' ) ) )
+              .append( $( '<div class="content" />' ).append( $( '<div class="header" />' ).append( $( '<a href="' + contributor.html_url + '" />' ).text( contributorName ) ) ) )
+              .append( $( '<div class="extra content" />' ).append( $( '<span class="right floated" />' ).text( contributor.contributions + ' commit' + ( contributor.contributions > 1 ? 's' : '' ) ) ) )
+        );
       });
+
+      $( '#contributor-list' ).append( items );
+      $( '#contributor-loader' ).hide();
+      $( '#contributor-list' ).fadeIn();
     });
   });

@@ -5,6 +5,7 @@ require 'google_analytics_4'
 require 'relative'
 require 'releases'
 require 'release_file_parser'
+require 'data_file_parser'
 require 'redirect_creator'
 require 'directory_listing'
 require 'links'
@@ -45,6 +46,7 @@ Awestruct::Extensions::Pipeline.new do
 
   # register extensions and transformers
   extension Awestruct::Extensions::ReleaseFileParser.new
+  extension Awestruct::Extensions::DataFileParser.new
   transformer Awestruct::Extensions::JsMinifier.new
   transformer Awestruct::Extensions::CssMinifier.new
   transformer Awestruct::Extensions::HtmlMinifier.new
