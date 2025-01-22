@@ -44,6 +44,7 @@ title: Hibernate Team
 :javascript
   $(document).ready(function() {
     var contributorsNameMapping = #{site.data_json['contributors-name-mapping']}
+    var governance = #{site.data_json['governance']}
     $.getJSON( "https://api.github.com/orgs/hibernate/public_members", function( data ) {
       var items = [];
       data.forEach( function( member ) {
@@ -52,6 +53,11 @@ title: Hibernate Team
         var item = $( '<div class="ui card contributor"/>' )
           .append( $( '<div class="image"/>' ).append( $('<img src="' + member.avatar_url + '" />' ) ) )
           .append( $( '<div class="content" />' ).append( $( '<div class="header" />' ).append( $( '<a href="' + member.html_url + '" />' ).text( memberName ) ) ) )
+
+        var roles = governance.roles[member.login]
+        if ( roles ) {
+          item.append( $( '<div class="extra content" />' ).html( roles.join(', ') + '.' ) );
+        }
 
         var leaderItem = $( '.leader-list [data-github-login=' + member.login + ']' )
         if ( leaderItem.length ) {
