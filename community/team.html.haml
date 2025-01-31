@@ -45,7 +45,8 @@ title: Hibernate Team
   $(document).ready(function() {
     var contributorsNameMapping = #{site.data_json['contributors-name-mapping']}
     var governance = #{site.data_json['governance']}
-    $.getJSON( "https://api.github.com/orgs/hibernate/public_members", function( data ) {
+    // https://docs.github.com/en/rest/orgs/members?apiVersion=2022-11-28#list-public-organization-members
+    $.getJSON( "https://api.github.com/orgs/hibernate/public_members?per_page=100", function( data ) {
       var items = [];
       data.forEach( function( member ) {
         var memberName = contributorsNameMapping[member.login] ? contributorsNameMapping[member.login] : member.login;
