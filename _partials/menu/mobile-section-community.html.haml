@@ -50,6 +50,14 @@
       %a.item(href="/community/contributors/validator/"){:class => "#{(item_active ? "active" : "")}"}
         %i.grid.icon.checkmark.box
         Contributors to Validator
+      - item_active = (current_path == '/community/contributors/reactive/')
+      %a.item(href="/community/contributors/reactive/"){:class => "#{(item_active ? "active" : "")}"}
+        %i.grid.icon.sitemap
+        Contributors to Reactive
+      - item_active = (current_path == '/community/contributors/tools/')
+      %a.item(href="/community/contributors/tools/"){:class => "#{(item_active ? "active" : "")}"}
+        %i.grid.icon.sitemap
+        Contributors to Tools
       - item_active = (current_path == '/community/contributors/ogm/')
       %a.item(href="/community/contributors/ogm/"){:class => "#{(item_active ? "active" : "")}"}
         %i.grid.icon.sitemap

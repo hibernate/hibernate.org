@@ -63,6 +63,12 @@
       - href = "/community/contributors/reactive/"
       %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "selected" : "")}"}
         Hibernate Reactive
+      - href = "/community/contributors/tools/"
+      %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "selected" : "")}"}
+        Hibernate Tools
+      - href = "/community/contributors/ogm/"
+      %a.item{:href => href, :class => "#{(current_path.start_with?( href ) ? "selected" : "")}"}
+        Hibernate OGM
 
   - href = "/community/corporate-contributors/"
   - active = (href == current_path)
