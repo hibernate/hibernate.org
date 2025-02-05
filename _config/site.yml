@@ -391,6 +391,10 @@ projects:
     license:
       name: LGPL v2.1
       url: https://github.com/hibernate/hibernate-tools/blob/master/lgpl.txt
+    jira:
+      key: HBX
+    github:
+      project: hibernate-tools
     menu:
       intern:
         - name: About
