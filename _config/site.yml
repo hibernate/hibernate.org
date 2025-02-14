@@ -383,13 +383,15 @@ projects:
     name: Hibernate Tools
     icon: 'icon-wrench'
     description: |
-      Working with Hibernate is very easy and developers enjoy using the APIs and the query language.
-      Even creating mapping metadata is not an overly complex task once you've mastered the basics.
-      Hibernate Tools makes working with Hibernate or JPA even more pleasant.
-    blog_tag: JBoss Tools
-    blog_tag_url: jboss-tools
+      Working with Hibernate is very easy and developers enjoy using the APIs and the query language.<br/>
+      But sometimes you want to get started with a quick prototype or overcome the burden of creating lots of entities 
+      that reflect your database structure.<br/>
+      Hibernate Tools and its reverse engineering functionalities will help you and make 
+      working with Hibernate and JPA even more pleasant.
+    blog_tag: Hibernate Tools
+    blog_tag_url: hibernate-tools
     license:
-      name: LGPL v2.1
+      name: LGPL V2.1
       url: https://github.com/hibernate/hibernate-tools/blob/master/lgpl.txt
     jira:
       key: HBX
@@ -400,23 +402,10 @@ projects:
         - name: About
           href: '/tools/'
           css_class: 'home'
-      extern:
-        - name: Downloads
-          href: 'https://tools.jboss.org/downloads/'
-          css_class: 'cloud download'
-        - name: Documentation
-          href: 'https://tools.jboss.org/documentation/'
-          css_class: 'book'
-          #TODO add FAQ, Roadmap and Contribute page
-          #- name: FAQ
-          #  href: '/search/faq/'
-          #  css_class: 'circle help'
-          #- name: Roadmap
-          #  href: '/search/roadmap/'
-          #  css_class: 'road'
         - name: Contribute
           href: '/community/contribute/'
           css_class: 'users'
+      extern:
         - name: Source code
           href: 'https://github.com/hibernate/hibernate-tools'
           css_class: 'code'
@@ -429,9 +418,6 @@ projects:
         - name: Forum
           href: 'https://discourse.hibernate.org/c/hibernate-tools'
           css_class: 'comments'
-        - name: Wiki
-          href: 'https://community.jboss.org/en/tools'
-          css_class: 'edit'
         - name: CI
           href: 'https://ci.hibernate.org/view/Tools/'
           css_class: 'treatment'
