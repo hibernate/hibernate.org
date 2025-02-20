@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="script.js"></script>
-<script type="text/javascript" src="script-dir/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="script-dir/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="index-page">
@@ -486,6 +486,30 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/provider/service/ReactiveSqmMultiTableMutationStrategyProvider.html#createInsertStrategy(org.hibernate.metamodel.mapping.EntityMappingType,org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess)" class="member-name-link">createInsertStrategy(EntityMappingType, MappingModelCreationProcess)</a> - Method in class org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/ReactiveSqmMultiTableMutationStrategyProvider.html" title="class in org.hibernate.reactive.provider.service">ReactiveSqmMultiTableMutationStrategyProvider</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="org/hibernate/reactive/mutiny/Mutiny.Session.html#createMutationQuery(jakarta.persistence.criteria.CriteriaDelete)" class="member-name-link">createMutationQuery(CriteriaDelete&lt;?&gt;)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></dt>
+<dd>
+<div class="block">Create an instance of <a href="org/hibernate/reactive/mutiny/Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> for the given delete tree.</div>
+</dd>
+<dt><a href="org/hibernate/reactive/stage/Stage.Session.html#createMutationQuery(jakarta.persistence.criteria.CriteriaDelete)" class="member-name-link">createMutationQuery(CriteriaDelete&lt;?&gt;)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></dt>
+<dd>
+<div class="block">Create an instance of <a href="org/hibernate/reactive/stage/Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> for the given delete tree.</div>
+</dd>
+<dt><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#createMutationQuery(jakarta.persistence.criteria.CriteriaDelete)" class="member-name-link">createMutationQuery(CriteriaDelete&lt;?&gt;)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></dt>
+<dd>
+<div class="block">Create an instance of <a href="org/hibernate/reactive/stage/Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> for the given delete tree.</div>
+</dd>
+<dt><a href="org/hibernate/reactive/mutiny/Mutiny.Session.html#createMutationQuery(jakarta.persistence.criteria.CriteriaUpdate)" class="member-name-link">createMutationQuery(CriteriaUpdate&lt;?&gt;)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></dt>
+<dd>
+<div class="block">Create an instance of <a href="org/hibernate/reactive/mutiny/Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> for the given update tree.</div>
+</dd>
+<dt><a href="org/hibernate/reactive/stage/Stage.Session.html#createMutationQuery(jakarta.persistence.criteria.CriteriaUpdate)" class="member-name-link">createMutationQuery(CriteriaUpdate&lt;?&gt;)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></dt>
+<dd>
+<div class="block">Create an instance of <a href="org/hibernate/reactive/stage/Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> for the given update tree.</div>
+</dd>
+<dt><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#createMutationQuery(jakarta.persistence.criteria.CriteriaUpdate)" class="member-name-link">createMutationQuery(CriteriaUpdate&lt;?&gt;)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></dt>
+<dd>
+<div class="block">Create an instance of <a href="org/hibernate/reactive/stage/Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> for the given update tree.</div>
+</dd>
 <dt><a href="org/hibernate/reactive/mutiny/Mutiny.Session.html#createMutationQuery(java.lang.String)" class="member-name-link">createMutationQuery(String)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></dt>
 <dd>
 <div class="block">Create an instance of <a href="org/hibernate/reactive/mutiny/Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> for the given HQL/JPQL
@@ -505,6 +529,18 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Create an instance of <a href="org/hibernate/reactive/stage/Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> for the given HQL/JPQL
  update or delete statement.</div>
+</dd>
+<dt><a href="org/hibernate/reactive/mutiny/Mutiny.Session.html#createMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsert)" class="member-name-link">createMutationQuery(JpaCriteriaInsert&lt;?&gt;)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></dt>
+<dd>
+<div class="block">Create a <a href="org/hibernate/reactive/mutiny/Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> from the given insert select criteria tree</div>
+</dd>
+<dt><a href="org/hibernate/reactive/stage/Stage.Session.html#createMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsert)" class="member-name-link">createMutationQuery(JpaCriteriaInsert&lt;?&gt;)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></dt>
+<dd>
+<div class="block">Create a <a href="org/hibernate/reactive/stage/Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> from the given insert select criteria tree</div>
+</dd>
+<dt><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#createMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsert)" class="member-name-link">createMutationQuery(JpaCriteriaInsert&lt;?&gt;)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></dt>
+<dd>
+<div class="block">Create a <a href="org/hibernate/reactive/stage/Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> from the given insert select criteria tree</div>
 </dd>
 <dt><a href="org/hibernate/reactive/provider/service/ReactiveSqmMultiTableMutationStrategyProvider.html#createMutationStrategy(org.hibernate.metamodel.mapping.EntityMappingType,org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess)" class="member-name-link">createMutationStrategy(EntityMappingType, MappingModelCreationProcess)</a> - Method in class org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/ReactiveSqmMultiTableMutationStrategyProvider.html" title="class in org.hibernate.reactive.provider.service">ReactiveSqmMultiTableMutationStrategyProvider</a></dt>
 <dd>&nbsp;</dd>
@@ -642,6 +678,10 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Create an instance of <a href="org/hibernate/reactive/mutiny/Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> for the given criteria delete.</div>
 </dd>
+<dt><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#createQuery(jakarta.persistence.criteria.CriteriaDelete)" class="member-name-link">createQuery(CriteriaDelete&lt;R&gt;)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
+<dd>
+<div class="block">Create an instance of <a href="org/hibernate/reactive/mutiny/Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> for the given criteria delete.</div>
+</dd>
 <dt><a href="org/hibernate/reactive/stage/Stage.Session.html#createQuery(jakarta.persistence.criteria.CriteriaDelete)" class="member-name-link">createQuery(CriteriaDelete&lt;R&gt;)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></dt>
 <dd>
 <div class="block">Create an instance of <a href="org/hibernate/reactive/stage/Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> for the given criteria
@@ -673,6 +713,10 @@ loadScripts(document, 'script');</script>
  query.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/mutiny/Mutiny.Session.html#createQuery(jakarta.persistence.criteria.CriteriaUpdate)" class="member-name-link">createQuery(CriteriaUpdate&lt;R&gt;)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></dt>
+<dd>
+<div class="block">Create an instance of <a href="org/hibernate/reactive/mutiny/Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> for the given criteria update.</div>
+</dd>
+<dt><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#createQuery(jakarta.persistence.criteria.CriteriaUpdate)" class="member-name-link">createQuery(CriteriaUpdate&lt;R&gt;)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
 <dd>
 <div class="block">Create an instance of <a href="org/hibernate/reactive/mutiny/Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> for the given criteria update.</div>
 </dd>
@@ -742,7 +786,7 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/session/ReactiveQueryProducer.html#createReactiveMutationQuery(java.lang.String)" class="member-name-link">createReactiveMutationQuery(String)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQueryProducer.html" title="interface in org.hibernate.reactive.session">ReactiveQueryProducer</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="org/hibernate/reactive/session/ReactiveQueryProducer.html#createReactiveMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsertSelect)" class="member-name-link">createReactiveMutationQuery(JpaCriteriaInsertSelect&lt;R&gt;)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQueryProducer.html" title="interface in org.hibernate.reactive.session">ReactiveQueryProducer</a></dt>
+<dt><a href="org/hibernate/reactive/session/ReactiveQueryProducer.html#createReactiveMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsert)" class="member-name-link">createReactiveMutationQuery(JpaCriteriaInsert&lt;R&gt;)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQueryProducer.html" title="interface in org.hibernate.reactive.session">ReactiveQueryProducer</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/session/ReactiveQueryProducer.html#createReactiveNamedQuery(java.lang.String,java.lang.Class)" class="member-name-link">createReactiveNamedQuery(String, Class&lt;R&gt;)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQueryProducer.html" title="interface in org.hibernate.reactive.session">ReactiveQueryProducer</a></dt>
 <dd>&nbsp;</dd>
@@ -751,13 +795,19 @@ loadScripts(document, 'script');</script>
 <dt><a href="org/hibernate/reactive/session/ReactiveQueryProducer.html#createReactiveNativeQuery(java.lang.String,java.lang.Class)" class="member-name-link">createReactiveNativeQuery(String, Class&lt;R&gt;)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQueryProducer.html" title="interface in org.hibernate.reactive.session">ReactiveQueryProducer</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/session/ReactiveQueryProducer.html#createReactiveNativeQuery(java.lang.String,java.lang.Class,java.lang.String)" class="member-name-link">createReactiveNativeQuery(String, Class&lt;R&gt;, String)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQueryProducer.html" title="interface in org.hibernate.reactive.session">ReactiveQueryProducer</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
+</dd>
 <dt><a href="org/hibernate/reactive/session/ReactiveQueryProducer.html#createReactiveNativeQuery(java.lang.String,java.lang.Class,org.hibernate.reactive.common.AffectedEntities)" class="member-name-link">createReactiveNativeQuery(String, Class&lt;R&gt;, AffectedEntities)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQueryProducer.html" title="interface in org.hibernate.reactive.session">ReactiveQueryProducer</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/session/ReactiveQueryProducer.html#createReactiveNativeQuery(java.lang.String,java.lang.String)" class="member-name-link">createReactiveNativeQuery(String, String)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQueryProducer.html" title="interface in org.hibernate.reactive.session">ReactiveQueryProducer</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
+</dd>
 <dt><a href="org/hibernate/reactive/session/ReactiveQueryProducer.html#createReactiveNativeQuery(java.lang.String,java.lang.String,java.lang.Class)" class="member-name-link">createReactiveNativeQuery(String, String, Class&lt;R&gt;)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQueryProducer.html" title="interface in org.hibernate.reactive.session">ReactiveQueryProducer</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
+</dd>
 <dt><a href="org/hibernate/reactive/session/ReactiveQueryProducer.html#createReactiveNativeQuery(java.lang.String,org.hibernate.reactive.common.AffectedEntities)" class="member-name-link">createReactiveNativeQuery(String, AffectedEntities)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQueryProducer.html" title="interface in org.hibernate.reactive.session">ReactiveQueryProducer</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/session/ReactiveQueryProducer.html#createReactiveNativeQuery(java.lang.String,org.hibernate.reactive.common.ResultSetMapping)" class="member-name-link">createReactiveNativeQuery(String, ResultSetMapping&lt;R&gt;)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQueryProducer.html" title="interface in org.hibernate.reactive.session">ReactiveQueryProducer</a></dt>
@@ -874,6 +924,16 @@ loadScripts(document, 'script');</script>
 <dt><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#deleteAll(java.lang.Object...)" class="member-name-link">deleteAll(Object...)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
 <dd>
 <div class="block">Delete multiple rows.</div>
+</dd>
+<dt><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#deleteMultiple(java.util.List)" class="member-name-link">deleteMultiple(List&lt;?&gt;)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
+<dd>
+<div class="block">Delete multiple rows, using the size of the
+ given list as the batch size.</div>
+</dd>
+<dt><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#deleteMultiple(java.util.List)" class="member-name-link">deleteMultiple(List&lt;?&gt;)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></dt>
+<dd>
+<div class="block">Delete multiple rows, using the size of the
+ given list as the batch size.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/persister/collection/mutation/ReactiveDeleteRowsCoordinatorNoOp.html#deleteRows(org.hibernate.collection.spi.PersistentCollection,java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">deleteRows(PersistentCollection&lt;?&gt;, Object, SharedSessionContractImplementor)</a> - Method in class org.hibernate.reactive.persister.collection.mutation.<a href="org/hibernate/reactive/persister/collection/mutation/ReactiveDeleteRowsCoordinatorNoOp.html" title="class in org.hibernate.reactive.persister.collection.mutation">ReactiveDeleteRowsCoordinatorNoOp</a></dt>
 <dd>&nbsp;</dd>
@@ -1238,6 +1298,14 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Retrieve a row.</div>
 </dd>
+<dt><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#get(java.lang.Class,java.lang.Object...)" class="member-name-link">get(Class&lt;T&gt;, Object...)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
+<dd>
+<div class="block">Retrieve multiple rows.</div>
+</dd>
+<dt><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#get(java.lang.Class,java.lang.Object...)" class="member-name-link">get(Class&lt;T&gt;, Object...)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></dt>
+<dd>
+<div class="block">Retrieve multiple rows.</div>
+</dd>
 <dt><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#get(java.lang.Class,java.lang.Object,jakarta.persistence.LockModeType)" class="member-name-link">get(Class&lt;T&gt;, Object, LockModeType)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
 <dd>
 <div class="block">Retrieve a row, obtaining the specified lock mode.</div>
@@ -1371,6 +1439,8 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/stage/Stage.SelectionQuery.html#getCacheStoreMode()" class="member-name-link">getCacheStoreMode()</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage">Stage.SelectionQuery</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="org/hibernate/reactive/query/spi/ReactiveAbstractSelectionQuery.html#getCallback()" class="member-name-link">getCallback()</a> - Method in class org.hibernate.reactive.query.spi.<a href="org/hibernate/reactive/query/spi/ReactiveAbstractSelectionQuery.html" title="class in org.hibernate.reactive.query.spi">ReactiveAbstractSelectionQuery</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/it/lazytoone/Ship.html#getCaptain()" class="member-name-link">getCaptain()</a> - Method in class org.hibernate.reactive.it.lazytoone.<a href="org/hibernate/reactive/it/lazytoone/Ship.html" title="class in org.hibernate.reactive.it.lazytoone">Ship</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/pool/ReactiveConnectionPool.html#getCloseFuture()" class="member-name-link">getCloseFuture()</a> - Method in interface org.hibernate.reactive.pool.<a href="org/hibernate/reactive/pool/ReactiveConnectionPool.html" title="interface in org.hibernate.reactive.pool">ReactiveConnectionPool</a></dt>
@@ -1436,7 +1506,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Given a catalog column name and a schema column name in an
  information_schema table/view, this method returns the column
  used for storing the catalog name, or <code null/>, if there
- is no valid column containing the catalog name.</div>
+ is no valid column containing the catalog name.</code></div>
 </dd>
 <dt><a href="org/hibernate/reactive/provider/service/MySqlReactiveInformationExtractorImpl.html#getDatabaseCatalogColumnName(java.lang.String,java.lang.String)" class="member-name-link">getDatabaseCatalogColumnName(String, String)</a> - Method in class org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/MySqlReactiveInformationExtractorImpl.html" title="class in org.hibernate.reactive.provider.service">MySqlReactiveInformationExtractorImpl</a></dt>
 <dd>&nbsp;</dd>
@@ -1449,7 +1519,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Given a catalog column name and a schema column name in an
  information_schema table/view, this method returns the column
  used for storing the schema name, or <code null/>, if there
- is no valid column containing the schema name.</div>
+ is no valid column containing the schema name.</code></div>
 </dd>
 <dt><a href="org/hibernate/reactive/provider/service/MySqlReactiveInformationExtractorImpl.html#getDatabaseSchemaColumnName(java.lang.String,java.lang.String)" class="member-name-link">getDatabaseSchemaColumnName(String, String)</a> - Method in class org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/MySqlReactiveInformationExtractorImpl.html" title="class in org.hibernate.reactive.provider.service">MySqlReactiveInformationExtractorImpl</a></dt>
 <dd>&nbsp;</dd>
@@ -1633,8 +1703,18 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/it/verticle/Product.html#getId()" class="member-name-link">getId()</a> - Method in class org.hibernate.reactive.it.verticle.<a href="org/hibernate/reactive/it/verticle/Product.html" title="class in org.hibernate.reactive.it.verticle">Product</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#getIdentifier(java.lang.Object)" class="member-name-link">getIdentifier(Object)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
+<dd>
+<div class="block">Return the identifier value of the given entity, which may be detached.</div>
+</dd>
 <dt><a href="org/hibernate/reactive/session/ReactiveSession.html#getIdentifier(java.lang.Object)" class="member-name-link">getIdentifier(Object)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveSession.html" title="interface in org.hibernate.reactive.session">ReactiveSession</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="org/hibernate/reactive/session/ReactiveStatelessSession.html#getIdentifier(java.lang.Object)" class="member-name-link">getIdentifier(Object)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session">ReactiveStatelessSession</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#getIdentifier(java.lang.Object)" class="member-name-link">getIdentifier(Object)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></dt>
+<dd>
+<div class="block">Return the identifier value of the given entity, which may be detached.</div>
+</dd>
 <dt><a href="org/hibernate/reactive/provider/service/AbstractReactiveInformationSchemaBasedExtractorImpl.html#getInformationSchemaColumnsDataTypeColumn()" class="member-name-link">getInformationSchemaColumnsDataTypeColumn()</a> - Method in class org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/AbstractReactiveInformationSchemaBasedExtractorImpl.html" title="class in org.hibernate.reactive.provider.service">AbstractReactiveInformationSchemaBasedExtractorImpl</a></dt>
 <dd>
 <div class="block">Gets the name of column in information_schema.columns for the
@@ -1946,11 +2026,7 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/provider/service/AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetTableTypesPhysicalTableConstant()" class="member-name-link">getResultSetTableTypesPhysicalTableConstant()</a> - Method in class org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/AbstractReactiveInformationSchemaBasedExtractorImpl.html" title="class in org.hibernate.reactive.provider.service">AbstractReactiveInformationSchemaBasedExtractorImpl</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="org/hibernate/reactive/provider/service/MySqlReactiveInformationExtractorImpl.html#getResultSetTableTypesPhysicalTableConstant()" class="member-name-link">getResultSetTableTypesPhysicalTableConstant()</a> - Method in class org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/MySqlReactiveInformationExtractorImpl.html" title="class in org.hibernate.reactive.provider.service">MySqlReactiveInformationExtractorImpl</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/provider/service/OracleSqlReactiveInformationExtractorImpl.html#getResultSetTableTypesPhysicalTableConstant()" class="member-name-link">getResultSetTableTypesPhysicalTableConstant()</a> - Method in class org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/OracleSqlReactiveInformationExtractorImpl.html" title="class in org.hibernate.reactive.provider.service">OracleSqlReactiveInformationExtractorImpl</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="org/hibernate/reactive/provider/service/PostgreSqlReactiveInformationExtractorImpl.html#getResultSetTableTypesPhysicalTableConstant()" class="member-name-link">getResultSetTableTypesPhysicalTableConstant()</a> - Method in class org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/PostgreSqlReactiveInformationExtractorImpl.html" title="class in org.hibernate.reactive.provider.service">PostgreSqlReactiveInformationExtractorImpl</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/provider/service/AbstractReactiveInformationSchemaBasedExtractorImpl.html#getResultSetTypeNameLabel()" class="member-name-link">getResultSetTypeNameLabel()</a> - Method in class org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/AbstractReactiveInformationSchemaBasedExtractorImpl.html" title="class in org.hibernate.reactive.provider.service">AbstractReactiveInformationSchemaBasedExtractorImpl</a></dt>
 <dd>&nbsp;</dd>
@@ -2219,13 +2295,21 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/pool/ReactiveConnection.html#insertAndSelectIdentifierAsResultSet(java.lang.String,java.lang.Object%5B%5D,java.lang.Class,java.lang.String)" class="member-name-link">insertAndSelectIdentifierAsResultSet(String, Object[], Class&lt;?&gt;, String)</a> - Method in interface org.hibernate.reactive.pool.<a href="org/hibernate/reactive/pool/ReactiveConnection.html" title="interface in org.hibernate.reactive.pool">ReactiveConnection</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#insertMultiple(java.util.List)" class="member-name-link">insertMultiple(List&lt;?&gt;)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
+<dd>
+<div class="block">Insert multiple rows, using the size of the
+ given list as the batch size.</div>
+</dd>
+<dt><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#insertMultiple(java.util.List)" class="member-name-link">insertMultiple(List&lt;?&gt;)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></dt>
+<dd>
+<div class="block">Insert multiple rows, using the size of the
+ given list as the batch size.</div>
+</dd>
 <dt><a href="org/hibernate/reactive/persister/collection/mutation/ReactiveInsertRowsCoordinatorNoOp.html#insertRows(org.hibernate.collection.spi.PersistentCollection,java.lang.Object,org.hibernate.persister.collection.mutation.InsertRowsCoordinator.EntryFilter,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">insertRows(PersistentCollection&lt;?&gt;, Object, InsertRowsCoordinator.EntryFilter, SharedSessionContractImplementor)</a> - Method in class org.hibernate.reactive.persister.collection.mutation.<a href="org/hibernate/reactive/persister/collection/mutation/ReactiveInsertRowsCoordinatorNoOp.html" title="class in org.hibernate.reactive.persister.collection.mutation">ReactiveInsertRowsCoordinatorNoOp</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/persister/collection/mutation/ReactiveInsertRowsCoordinatorStandard.html#insertRows(org.hibernate.collection.spi.PersistentCollection,java.lang.Object,org.hibernate.persister.collection.mutation.InsertRowsCoordinator.EntryFilter,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">insertRows(PersistentCollection&lt;?&gt;, Object, InsertRowsCoordinator.EntryFilter, SharedSessionContractImplementor)</a> - Method in class org.hibernate.reactive.persister.collection.mutation.<a href="org/hibernate/reactive/persister/collection/mutation/ReactiveInsertRowsCoordinatorStandard.html" title="class in org.hibernate.reactive.persister.collection.mutation">ReactiveInsertRowsCoordinatorStandard</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/sql/results/spi/ReactiveListResultsConsumer.html#instance(org.hibernate.reactive.sql.results.spi.ReactiveListResultsConsumer.UniqueSemantic)" class="member-name-link">instance(ReactiveListResultsConsumer.UniqueSemantic)</a> - Static method in class org.hibernate.reactive.sql.results.spi.<a href="org/hibernate/reactive/sql/results/spi/ReactiveListResultsConsumer.html" title="class in org.hibernate.reactive.sql.results.spi">ReactiveListResultsConsumer</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="org/hibernate/reactive/loader/entity/ReactiveCacheEntityLoaderHelper.html#INSTANCE" class="member-name-link">INSTANCE</a> - Static variable in class org.hibernate.reactive.loader.entity.<a href="org/hibernate/reactive/loader/entity/ReactiveCacheEntityLoaderHelper.html" title="class in org.hibernate.reactive.loader.entity">ReactiveCacheEntityLoaderHelper</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/provider/service/NativeParametersHandling.html#INSTANCE" class="member-name-link">INSTANCE</a> - Static variable in class org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/NativeParametersHandling.html" title="class in org.hibernate.reactive.provider.service">NativeParametersHandling</a></dt>
 <dd>
@@ -2391,10 +2475,6 @@ loadScripts(document, 'script');</script>
 <div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
 <div class="deprecation-comment">use <a href="org/hibernate/reactive/loader/ast/spi/ReactiveSingleIdEntityLoader.html#reactiveLoadDatabaseSnapshot(java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)"><code>ReactiveSingleIdEntityLoader.reactiveLoadDatabaseSnapshot(Object, SharedSessionContractImplementor)</code></a></div>
 </div>
-</dd>
-<dt><a href="org/hibernate/reactive/loader/entity/ReactiveCacheEntityLoaderHelper.html#loadFromSessionCache(org.hibernate.event.spi.LoadEvent,org.hibernate.engine.spi.EntityKey,org.hibernate.event.spi.LoadEventListener.LoadType)" class="member-name-link">loadFromSessionCache(LoadEvent, EntityKey, LoadEventListener.LoadType)</a> - Method in class org.hibernate.reactive.loader.entity.<a href="org/hibernate/reactive/loader/entity/ReactiveCacheEntityLoaderHelper.html" title="class in org.hibernate.reactive.loader.entity">ReactiveCacheEntityLoaderHelper</a></dt>
-<dd>
-<div class="block">Attempts to locate the entity in the session-level cache.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/it/techempower/utils/LocalRandom.html" class="type-name-link" title="interface in org.hibernate.reactive.it.techempower.utils">LocalRandom</a> - Interface in <a href="org/hibernate/reactive/it/techempower/utils/package-summary.html">org.hibernate.reactive.it.techempower.utils</a></dt>
 <dd>&nbsp;</dd>
@@ -2648,10 +2728,6 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:O">O</h2>
 <dl class="index">
-<dt><a href="org/hibernate/reactive/event/ReactiveResolveNaturalIdEventListener.html#onReactiveResolveNaturalId(org.hibernate.event.spi.ResolveNaturalIdEvent)" class="member-name-link">onReactiveResolveNaturalId(ResolveNaturalIdEvent)</a> - Method in interface org.hibernate.reactive.event.<a href="org/hibernate/reactive/event/ReactiveResolveNaturalIdEventListener.html" title="interface in org.hibernate.reactive.event">ReactiveResolveNaturalIdEventListener</a></dt>
-<dd>
-<div class="block">Handle the given resolve natural id event.</div>
-</dd>
 <dt><a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#openSession()" class="member-name-link">openSession()</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SessionFactory</a></dt>
 <dd>
 <div class="block">Obtain a new <a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> <code>Uni</code>, the main
@@ -2752,8 +2828,6 @@ loadScripts(document, 'script');</script>
 <dt><a href="org/hibernate/reactive/it/verticle/package-summary.html">org.hibernate.reactive.it.verticle</a> - package org.hibernate.reactive.it.verticle</dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/loader/ast/spi/package-summary.html">org.hibernate.reactive.loader.ast.spi</a> - package org.hibernate.reactive.loader.ast.spi</dt>
-<dd>&nbsp;</dd>
-<dt><a href="org/hibernate/reactive/loader/entity/package-summary.html">org.hibernate.reactive.loader.entity</a> - package org.hibernate.reactive.loader.entity</dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/mutiny/package-summary.html">org.hibernate.reactive.mutiny</a> - package org.hibernate.reactive.mutiny</dt>
 <dd>
@@ -3055,6 +3129,12 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Constructs an action queue bound to the given session.</div>
 </dd>
+<dt><a href="org/hibernate/reactive/loader/ast/spi/ReactiveAfterLoadAction.html#reactiveAfterLoad(java.lang.Object,org.hibernate.metamodel.mapping.EntityMappingType,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">reactiveAfterLoad(Object, EntityMappingType, SharedSessionContractImplementor)</a> - Method in interface org.hibernate.reactive.loader.ast.spi.<a href="org/hibernate/reactive/loader/ast/spi/ReactiveAfterLoadAction.html" title="interface in org.hibernate.reactive.loader.ast.spi">ReactiveAfterLoadAction</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="org/hibernate/reactive/loader/ast/spi/ReactiveAfterLoadAction.html" class="type-name-link" title="interface in org.hibernate.reactive.loader.ast.spi">ReactiveAfterLoadAction</a> - Interface in <a href="org/hibernate/reactive/loader/ast/spi/package-summary.html">org.hibernate.reactive.loader.ast.spi</a></dt>
+<dd>
+<div class="block">Reactive version of <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/AfterLoadAction.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link"><code>AfterLoadAction</code></a></div>
+</dd>
 <dt><a href="org/hibernate/reactive/engine/ReactiveAfterTransactionCompletionProcess.html" class="type-name-link" title="interface in org.hibernate.reactive.engine">ReactiveAfterTransactionCompletionProcess</a> - Interface in <a href="org/hibernate/reactive/engine/package-summary.html">org.hibernate.reactive.engine</a></dt>
 <dd>
 <div class="block">Contract representing some process that needs to occur during after transaction completion.</div>
@@ -3088,8 +3168,6 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Contract representing some process that needs to occur during before transaction completion.</div>
 </dd>
-<dt><a href="org/hibernate/reactive/loader/entity/ReactiveCacheEntityLoaderHelper.html" class="type-name-link" title="class in org.hibernate.reactive.loader.entity">ReactiveCacheEntityLoaderHelper</a> - Class in <a href="org/hibernate/reactive/loader/entity/package-summary.html">org.hibernate.reactive.loader.entity</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/session/ReactiveSession.html#reactiveClose()" class="member-name-link">reactiveClose()</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveSession.html" title="interface in org.hibernate.reactive.session">ReactiveSession</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/loader/ast/spi/ReactiveCollectionBatchLoader.html" class="type-name-link" title="interface in org.hibernate.reactive.loader.ast.spi">ReactiveCollectionBatchLoader</a> - Interface in <a href="org/hibernate/reactive/loader/ast/spi/package-summary.html">org.hibernate.reactive.loader.ast.spi</a></dt>
@@ -3223,11 +3301,13 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="org/hibernate/reactive/provider/service/ReactiveGenerationTarget.html#%3Cinit%3E(org.hibernate.service.ServiceRegistry)" class="member-name-link">ReactiveGenerationTarget(ServiceRegistry)</a> - Constructor for class org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/ReactiveGenerationTarget.html" title="class in org.hibernate.reactive.provider.service">ReactiveGenerationTarget</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveGet(java.lang.Class,java.lang.Object)" class="member-name-link">reactiveGet(Class&lt;? extends T&gt;, Object)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session">ReactiveStatelessSession</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveGet(java.lang.Class,java.lang.Object,org.hibernate.LockMode,jakarta.persistence.EntityGraph)" class="member-name-link">reactiveGet(Class&lt;? extends T&gt;, Object, LockMode, EntityGraph&lt;T&gt;)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session">ReactiveStatelessSession</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/session/ReactiveSession.html#reactiveGet(java.lang.Class,java.lang.Object)" class="member-name-link">reactiveGet(Class&lt;T&gt;, Object)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveSession.html" title="interface in org.hibernate.reactive.session">ReactiveSession</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveGet(java.lang.Class,java.lang.Object)" class="member-name-link">reactiveGet(Class&lt;T&gt;, Object)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session">ReactiveStatelessSession</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveGet(java.lang.Class,java.lang.Object...)" class="member-name-link">reactiveGet(Class&lt;T&gt;, Object...)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session">ReactiveStatelessSession</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveGet(java.lang.Class,java.lang.Object,org.hibernate.LockMode,jakarta.persistence.EntityGraph)" class="member-name-link">reactiveGet(Class&lt;T&gt;, Object, LockMode, EntityGraph&lt;T&gt;)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session">ReactiveStatelessSession</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveGet(java.lang.String,java.lang.Object)" class="member-name-link">reactiveGet(String, Object)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session">ReactiveStatelessSession</a></dt>
 <dd>&nbsp;</dd>
@@ -3338,6 +3418,8 @@ loadScripts(document, 'script');</script>
 <div class="block">Defines the contract for handling of load events generated from a session.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/session/ReactiveSession.html#reactiveLock(java.lang.Object,org.hibernate.LockOptions)" class="member-name-link">reactiveLock(Object, LockOptions)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveSession.html" title="interface in org.hibernate.reactive.session">ReactiveSession</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="org/hibernate/reactive/session/ReactiveSession.html#reactiveLock(java.lang.String,java.lang.Object,org.hibernate.LockOptions)" class="member-name-link">reactiveLock(String, Object, LockOptions)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveSession.html" title="interface in org.hibernate.reactive.session">ReactiveSession</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/event/ReactiveLockEventListener.html" class="type-name-link" title="interface in org.hibernate.reactive.event">ReactiveLockEventListener</a> - Interface in <a href="org/hibernate/reactive/event/package-summary.html">org.hibernate.reactive.event</a></dt>
 <dd>
@@ -3561,10 +3643,6 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/sql/results/graph/ReactiveInitializer.html#reactiveResolveKey(org.hibernate.sql.results.jdbc.spi.RowProcessingState)" class="member-name-link">reactiveResolveKey(RowProcessingState)</a> - Method in interface org.hibernate.reactive.sql.results.graph.<a href="org/hibernate/reactive/sql/results/graph/ReactiveInitializer.html" title="interface in org.hibernate.reactive.sql.results.graph">ReactiveInitializer</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="org/hibernate/reactive/event/ReactiveResolveNaturalIdEventListener.html" class="type-name-link" title="interface in org.hibernate.reactive.event">ReactiveResolveNaturalIdEventListener</a> - Interface in <a href="org/hibernate/reactive/event/package-summary.html">org.hibernate.reactive.event</a></dt>
-<dd>
-<div class="block">Defines the contract for handling of resolve natural id events generated from a session.</div>
-</dd>
 <dt><a href="org/hibernate/reactive/sql/results/spi/ReactiveResultsConsumer.html" class="type-name-link" title="interface in org.hibernate.reactive.sql.results.spi">ReactiveResultsConsumer</a>&lt;<a href="org/hibernate/reactive/sql/results/spi/ReactiveResultsConsumer.html" title="type parameter in ReactiveResultsConsumer">T</a>,<wbr><a href="org/hibernate/reactive/sql/results/spi/ReactiveResultsConsumer.html" title="type parameter in ReactiveResultsConsumer">R</a>&gt; - Interface in <a href="org/hibernate/reactive/sql/results/spi/package-summary.html">org.hibernate.reactive.sql.results.spi</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/sql/results/ReactiveResultSetMapping.html" class="type-name-link" title="class in org.hibernate.reactive.sql.results">ReactiveResultSetMapping</a> - Class in <a href="org/hibernate/reactive/sql/results/package-summary.html">org.hibernate.reactive.sql.results</a></dt>
@@ -3838,6 +3916,16 @@ loadScripts(document, 'script');</script>
 <dt><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#refreshAll(java.lang.Object...)" class="member-name-link">refreshAll(Object...)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
 <dd>
 <div class="block">Refresh the entity instance state from the database.</div>
+</dd>
+<dt><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#refreshMultiple(java.util.List)" class="member-name-link">refreshMultiple(List&lt;?&gt;)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
+<dd>
+<div class="block">Refresh the entity instance state from the database
+ using the size of the given list as the batch size.</div>
+</dd>
+<dt><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#refreshMultiple(java.util.List)" class="member-name-link">refreshMultiple(List&lt;?&gt;)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></dt>
+<dd>
+<div class="block">Refresh the entity instance state from the database,
+ using the size of the given list as the batch size.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/sql/exec/spi/ReactiveRowProcessingState.html#registerNonExists(org.hibernate.sql.results.graph.entity.EntityFetch)" class="member-name-link">registerNonExists(EntityFetch)</a> - Method in class org.hibernate.reactive.sql.exec.spi.<a href="org/hibernate/reactive/sql/exec/spi/ReactiveRowProcessingState.html" title="class in org.hibernate.reactive.sql.exec.spi">ReactiveRowProcessingState</a></dt>
 <dd>&nbsp;</dd>
@@ -5532,6 +5620,16 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Update multiple rows.</div>
 </dd>
+<dt><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#updateMultiple(java.util.List)" class="member-name-link">updateMultiple(List&lt;?&gt;)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
+<dd>
+<div class="block">Update multiple rows, using the size of the
+ given list as the batch size.</div>
+</dd>
+<dt><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#updateMultiple(java.util.List)" class="member-name-link">updateMultiple(List&lt;?&gt;)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></dt>
+<dd>
+<div class="block">Update multiple rows, using the size of the
+ given list as the batch size.</div>
+</dd>
 <dt><a href="org/hibernate/reactive/persister/collection/mutation/ReactiveUpdateRowsCoordinatorNoOp.html#updateRows(java.lang.Object,org.hibernate.collection.spi.PersistentCollection,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">updateRows(Object, PersistentCollection&lt;?&gt;, SharedSessionContractImplementor)</a> - Method in class org.hibernate.reactive.persister.collection.mutation.<a href="org/hibernate/reactive/persister/collection/mutation/ReactiveUpdateRowsCoordinatorNoOp.html" title="class in org.hibernate.reactive.persister.collection.mutation">ReactiveUpdateRowsCoordinatorNoOp</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/persister/collection/mutation/ReactiveUpdateRowsCoordinatorOneToMany.html#updateRows(java.lang.Object,org.hibernate.collection.spi.PersistentCollection,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">updateRows(Object, PersistentCollection&lt;?&gt;, SharedSessionContractImplementor)</a> - Method in class org.hibernate.reactive.persister.collection.mutation.<a href="org/hibernate/reactive/persister/collection/mutation/ReactiveUpdateRowsCoordinatorOneToMany.html" title="class in org.hibernate.reactive.persister.collection.mutation">ReactiveUpdateRowsCoordinatorOneToMany</a></dt>
@@ -5741,7 +5839,7 @@ the order they are declared.</div>
 <a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:H">H</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:J">J</a>&nbsp;<a href="#I:L">L</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:N">N</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:U">U</a>&nbsp;<a href="#I:V">V</a>&nbsp;<a href="#I:W">W</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="allpackages-index.html">All&nbsp;Packages</a><span class="vertical-separator">|</span><a href="constant-values.html">Constant&nbsp;Field&nbsp;Values</a><span class="vertical-separator">|</span><a href="serialized-form.html">Serialized&nbsp;Form</a></main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small>Copyright &copy; 2020-2024 <a href="http://redhat.com">Red Hat, Inc</a>. All Rights Reserved.</small></p>
+<p class="legal-copy"><small>Copyright &copy; 2020-2025 <a href="http://redhat.com">Red Hat, Inc</a>. All Rights Reserved.</small></p>
 </footer>
 </div>
 </div>

@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="script.js"></script>
-<script type="text/javascript" src="script-dir/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="script-dir/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="deprecated-list-page">
@@ -52,9 +52,27 @@ loadScripts(document, 'script');</script>
 <h1 title="Deprecated API" class="title">Deprecated API</h1>
 <h2 title="Contents">Contents</h2>
 <ul>
+<li><a href="#for-removal">Terminally Deprecated</a></li>
 <li><a href="#method">Methods</a></li>
 </ul>
 </div>
+<ul class="block-list">
+<li>
+<div id="for-removal">
+<div class="caption"><span>Terminally Deprecated Elements</span></div>
+<div class="summary-table two-column-summary">
+<div class="table-header col-first">Element</div>
+<div class="table-header col-last">Description</div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/reactive/session/ReactiveQueryProducer.html#createReactiveNativeQuery(java.lang.String,java.lang.Class,java.lang.String)">org.hibernate.reactive.session.ReactiveQueryProducer.createReactiveNativeQuery<wbr>(String, Class&lt;R&gt;, String)</a></div>
+<div class="col-last even-row-color"></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/reactive/session/ReactiveQueryProducer.html#createReactiveNativeQuery(java.lang.String,java.lang.String)">org.hibernate.reactive.session.ReactiveQueryProducer.createReactiveNativeQuery<wbr>(String, String)</a></div>
+<div class="col-last odd-row-color"></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/reactive/session/ReactiveQueryProducer.html#createReactiveNativeQuery(java.lang.String,java.lang.String,java.lang.Class)">org.hibernate.reactive.session.ReactiveQueryProducer.createReactiveNativeQuery<wbr>(String, String, Class&lt;R&gt;)</a></div>
+<div class="col-last even-row-color"></div>
+</div>
+</div>
+</li>
+</ul>
 <ul class="block-list">
 <li>
 <div id="method">
@@ -86,13 +104,19 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">
 <div class="deprecation-comment">not a reactive method</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/reactive/stage/Stage.Session.html#createQuery(java.lang.String)">org.hibernate.reactive.stage.Stage.Session.createQuery<wbr>(String)</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/reactive/session/ReactiveQueryProducer.html#createReactiveNativeQuery(java.lang.String,java.lang.Class,java.lang.String)">org.hibernate.reactive.session.ReactiveQueryProducer.createReactiveNativeQuery<wbr>(String, Class&lt;R&gt;, String)</a></div>
+<div class="col-last even-row-color"></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/reactive/session/ReactiveQueryProducer.html#createReactiveNativeQuery(java.lang.String,java.lang.String)">org.hibernate.reactive.session.ReactiveQueryProducer.createReactiveNativeQuery<wbr>(String, String)</a></div>
+<div class="col-last odd-row-color"></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/reactive/session/ReactiveQueryProducer.html#createReactiveNativeQuery(java.lang.String,java.lang.String,java.lang.Class)">org.hibernate.reactive.session.ReactiveQueryProducer.createReactiveNativeQuery<wbr>(String, String, Class&lt;R&gt;)</a></div>
+<div class="col-last even-row-color"></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/reactive/stage/Stage.Session.html#createQuery(java.lang.String)">org.hibernate.reactive.stage.Stage.Session.createQuery<wbr>(String)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">See explanation in
  <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryProducer.html#createSelectionQuery(java.lang.String)" title="class or interface in org.hibernate.query" class="external-link"><code>QueryProducer.createSelectionQuery(String)</code></a></div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#createQuery(java.lang.String)">org.hibernate.reactive.stage.Stage.StatelessSession.createQuery<wbr>(String)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#createQuery(java.lang.String)">org.hibernate.reactive.stage.Stage.StatelessSession.createQuery<wbr>(String)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">See explanation in
  <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryProducer.html#createSelectionQuery(java.lang.String)" title="class or interface in org.hibernate.query" class="external-link"><code>QueryProducer.createSelectionQuery(String)</code></a></div>
 </div>
@@ -103,7 +127,7 @@ loadScripts(document, 'script');</script>
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small>Copyright &copy; 2020-2024 <a href="http://redhat.com">Red Hat, Inc</a>. All Rights Reserved.</small></p>
+<p class="legal-copy"><small>Copyright &copy; 2020-2025 <a href="http://redhat.com">Red Hat, Inc</a>. All Rights Reserved.</small></p>
 </footer>
 </div>
 </div>

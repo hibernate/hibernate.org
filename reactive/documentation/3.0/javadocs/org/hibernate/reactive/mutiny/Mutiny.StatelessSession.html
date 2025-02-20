@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="../../../../script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../../../script.js"></script>
-<script type="text/javascript" src="../../../../script-dir/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="../../../../script-dir/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="../../../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
@@ -187,11 +187,21 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
  string, using the given <a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common"><code>ResultSetMapping</code></a> to interpret the
  result set.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;R&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;R&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createQuery(jakarta.persistence.criteria.CriteriaQuery)" class="member-name-link">createQuery</a><wbr>(jakarta.persistence.criteria.CriteriaQuery&lt;R&gt;&nbsp;criteriaQuery)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;R&gt;&nbsp;<a href="Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createQuery(jakarta.persistence.criteria.CriteriaDelete)" class="member-name-link">createQuery</a><wbr>(jakarta.persistence.criteria.CriteriaDelete&lt;R&gt;&nbsp;criteriaDelete)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Create an instance of <a href="Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> for the given criteria delete.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;R&gt;&nbsp;<a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;R&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createQuery(jakarta.persistence.criteria.CriteriaQuery)" class="member-name-link">createQuery</a><wbr>(jakarta.persistence.criteria.CriteriaQuery&lt;R&gt;&nbsp;criteriaQuery)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Create an instance of <a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.SelectionQuery</code></a> for the given criteria
  query.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;R&gt;&nbsp;<a href="Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createQuery(jakarta.persistence.criteria.CriteriaUpdate)" class="member-name-link">createQuery</a><wbr>(jakarta.persistence.criteria.CriteriaUpdate&lt;R&gt;&nbsp;criteriaUpdate)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Create an instance of <a href="Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> for the given criteria update.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code>&lt;R&gt;&nbsp;<a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="#createQuery(java.lang.String)" class="member-name-link">createQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString)</code></div>
@@ -237,22 +247,34 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Delete multiple rows.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#fetch(T)" class="member-name-link">fetch</a><wbr>(T&nbsp;association)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#deleteMultiple(java.util.List)" class="member-name-link">deleteMultiple</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;?&gt;&nbsp;entities)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Asynchronously fetch an association that's configured for lazy loading.</div>
+<div class="block">Delete multiple rows, using the size of the
+ given list as the batch size.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#get(jakarta.persistence.EntityGraph,java.lang.Object)" class="member-name-link">get</a><wbr>(jakarta.persistence.EntityGraph&lt;T&gt;&nbsp;entityGraph,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#fetch(T)" class="member-name-link">fetch</a><wbr>(T&nbsp;association)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Retrieve a row, using the given <code>EntityGraph</code> as a fetch plan.</div>
+<div class="block">Asynchronously fetch an association that's configured for lazy loading.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#get(java.lang.Class,java.lang.Object)" class="member-name-link">get</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;entityClass,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#get(jakarta.persistence.EntityGraph,java.lang.Object)" class="member-name-link">get</a><wbr>(jakarta.persistence.EntityGraph&lt;T&gt;&nbsp;entityGraph,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Retrieve a row, using the given <code>EntityGraph</code> as a fetch plan.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#get(java.lang.Class,java.lang.Object)" class="member-name-link">get</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;entityClass,
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Retrieve a row.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;T&gt;&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#get(java.lang.Class,java.lang.Object...)" class="member-name-link">get</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;entityClass,
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;ids)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Retrieve multiple rows.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default &lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#get(java.lang.Class,java.lang.Object,jakarta.persistence.LockModeType)" class="member-name-link">get</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;entityClass,
@@ -279,28 +301,39 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">The <a href="Mutiny.SessionFactory.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.SessionFactory</code></a> which created this session.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;T&gt;&nbsp;<a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;T&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getResultSetMapping(java.lang.Class,java.lang.String)" class="member-name-link">getResultSetMapping</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;resultType,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;mappingName)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getIdentifier(java.lang.Object)" class="member-name-link">getIdentifier</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Return the identifier value of the given entity, which may be detached.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;T&gt;&nbsp;<a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;T&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getResultSetMapping(java.lang.Class,java.lang.String)" class="member-name-link">getResultSetMapping</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;resultType,
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;mappingName)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Obtain a native SQL result set mapping defined via the annotation
  <code>SqlResultSetMapping</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#insert(java.lang.Object)" class="member-name-link">insert</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#insert(java.lang.Object)" class="member-name-link">insert</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Insert a row.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#insertAll(int,java.lang.Object...)" class="member-name-link">insertAll</a><wbr>(int&nbsp;batchSize,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#insertAll(int,java.lang.Object...)" class="member-name-link">insertAll</a><wbr>(int&nbsp;batchSize,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;entities)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Insert multiple rows using the specified batch size.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#insertAll(java.lang.Object...)" class="member-name-link">insertAll</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;entities)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#insertAll(java.lang.Object...)" class="member-name-link">insertAll</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;entities)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Insert multiple rows.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#insertMultiple(java.util.List)" class="member-name-link">insertMultiple</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;?&gt;&nbsp;entities)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Insert multiple rows, using the size of the
+ given list as the batch size.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isOpen()" class="member-name-link">isOpen</a>()</code></div>
@@ -335,20 +368,32 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <div class="block">Refresh the entity instance state from the database.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#update(java.lang.Object)" class="member-name-link">update</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#refreshMultiple(java.util.List)" class="member-name-link">refreshMultiple</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;?&gt;&nbsp;entities)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Update a row.</div>
+<div class="block">Refresh the entity instance state from the database
+ using the size of the given list as the batch size.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#updateAll(int,java.lang.Object...)" class="member-name-link">updateAll</a><wbr>(int&nbsp;batchSize,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#update(java.lang.Object)" class="member-name-link">update</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Update a row.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#updateAll(int,java.lang.Object...)" class="member-name-link">updateAll</a><wbr>(int&nbsp;batchSize,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;entities)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Update multiple rows.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#updateAll(java.lang.Object...)" class="member-name-link">updateAll</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;entities)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Update multiple rows.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#updateAll(java.lang.Object...)" class="member-name-link">updateAll</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;entities)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#updateMultiple(java.util.List)" class="member-name-link">updateMultiple</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;?&gt;&nbsp;entities)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Update multiple rows.</div>
+<div class="block">Update multiple rows, using the size of the
+ given list as the batch size.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#upsert(java.lang.Object)" class="member-name-link">upsert</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</code></div>
@@ -397,6 +442,27 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <dd>
 <ul class="see-list-long">
 <li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#get(java.lang.Class,java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.get(Class, Object)</code></a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="get(java.lang.Class,java.lang.Object...)">
+<h3>get</h3>
+<div class="member-signature"><span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;T&gt;&gt;</span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;entityClass,
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;ids)</span></div>
+<div class="block">Retrieve multiple rows.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>entityClass</code> - The class of the entity to retrieve</dd>
+<dd><code>ids</code> - The ids of the entities to retrieve</dd>
+<dt>Returns:</dt>
+<dd>a list of detached entity instances, via a <code>Uni</code></dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="see-list-long">
+<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#getMultiple(java.lang.Class,java.util.List)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.getMultiple(Class, List)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -680,6 +746,32 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 </section>
 </li>
 <li>
+<section class="detail" id="createQuery(jakarta.persistence.criteria.CriteriaUpdate)">
+<h3>createQuery</h3>
+<div class="member-signature"><span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></span>&nbsp;<span class="element-name">createQuery</span><wbr><span class="parameters">(jakarta.persistence.criteria.CriteriaUpdate&lt;R&gt;&nbsp;criteriaUpdate)</span></div>
+<div class="block">Create an instance of <a href="Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> for the given criteria update.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>criteriaUpdate</code> - The <code>CriteriaUpdate</code></dd>
+<dt>Returns:</dt>
+<dd>The <a href="Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> instance for manipulation and execution</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="createQuery(jakarta.persistence.criteria.CriteriaDelete)">
+<h3>createQuery</h3>
+<div class="member-signature"><span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></span>&nbsp;<span class="element-name">createQuery</span><wbr><span class="parameters">(jakarta.persistence.criteria.CriteriaDelete&lt;R&gt;&nbsp;criteriaDelete)</span></div>
+<div class="block">Create an instance of <a href="Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> for the given criteria delete.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>criteriaDelete</code> - The <code>CriteriaDelete</code></dd>
+<dt>Returns:</dt>
+<dd>The <a href="Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> instance for manipulation and execution</dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="insert(java.lang.Object)">
 <h3>insert</h3>
 <div class="member-signature"><span class="return-type">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">insert</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</span></div>
@@ -722,6 +814,24 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>batchSize</code> - the batch size</dd>
+<dd><code>entities</code> - new transient instances</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="see-list-long">
+<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#insert(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.insert(Object)</code></a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="insertMultiple(java.util.List)">
+<h3>insertMultiple</h3>
+<div class="member-signature"><span class="return-type">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">insertMultiple</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;?&gt;&nbsp;entities)</span></div>
+<div class="block">Insert multiple rows, using the size of the
+ given list as the batch size.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
 <dd><code>entities</code> - new transient instances</dd>
 <dt>See Also:</dt>
 <dd>
@@ -786,6 +896,24 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 </section>
 </li>
 <li>
+<section class="detail" id="deleteMultiple(java.util.List)">
+<h3>deleteMultiple</h3>
+<div class="member-signature"><span class="return-type">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">deleteMultiple</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;?&gt;&nbsp;entities)</span></div>
+<div class="block">Delete multiple rows, using the size of the
+ given list as the batch size.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>entities</code> - detached entity instances</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="see-list-long">
+<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#delete(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.delete(Object)</code></a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="update(java.lang.Object)">
 <h3>update</h3>
 <div class="member-signature"><span class="return-type">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">update</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</span></div>
@@ -839,17 +967,18 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 </section>
 </li>
 <li>
-<section class="detail" id="refresh(java.lang.Object)">
-<h3>refresh</h3>
-<div class="member-signature"><span class="return-type">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">refresh</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</span></div>
-<div class="block">Refresh the entity instance state from the database.</div>
+<section class="detail" id="updateMultiple(java.util.List)">
+<h3>updateMultiple</h3>
+<div class="member-signature"><span class="return-type">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">updateMultiple</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;?&gt;&nbsp;entities)</span></div>
+<div class="block">Update multiple rows, using the size of the
+ given list as the batch size.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>entity</code> - The entity to be refreshed.</dd>
+<dd><code>entities</code> - detached entity instances</dd>
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#refresh(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.refresh(Object)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#update(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.update(Object)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -896,6 +1025,23 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 </section>
 </li>
 <li>
+<section class="detail" id="refresh(java.lang.Object)">
+<h3>refresh</h3>
+<div class="member-signature"><span class="return-type">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">refresh</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</span></div>
+<div class="block">Refresh the entity instance state from the database.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>entity</code> - The entity to be refreshed.</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="see-list-long">
+<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#refresh(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.refresh(Object)</code></a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="refreshAll(java.lang.Object...)">
 <h3>refreshAll</h3>
 <div class="member-signature"><span class="return-type">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">refreshAll</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;entities)</span></div>
@@ -922,6 +1068,24 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>batchSize</code> - the batch size</dd>
+<dd><code>entities</code> - The entities to be refreshed.</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="see-list-long">
+<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#refresh(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.refresh(Object)</code></a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="refreshMultiple(java.util.List)">
+<h3>refreshMultiple</h3>
+<div class="member-signature"><span class="return-type">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">refreshMultiple</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;?&gt;&nbsp;entities)</span></div>
+<div class="block">Refresh the entity instance state from the database
+ using the size of the given list as the batch size.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
 <dd><code>entities</code> - The entities to be refreshed.</dd>
 <dt>See Also:</dt>
 <dd>
@@ -993,6 +1157,21 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 <li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/Hibernate.html#initialize(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>Hibernate.initialize(Object)</code></a></li>
 </ul>
 </dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getIdentifier(java.lang.Object)">
+<h3>getIdentifier</h3>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">getIdentifier</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</span></div>
+<div class="block">Return the identifier value of the given entity, which may be detached.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>entity</code> - a persistent instance associated with this session</dd>
+<dt>Returns:</dt>
+<dd>the identifier</dd>
+<dt>Since:</dt>
+<dd>3.0</dd>
 </dl>
 </section>
 </li>
@@ -1115,7 +1294,7 @@ extends <a href="Mutiny.Closeable.html" title="interface in org.hibernate.reacti
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small>Copyright &copy; 2020-2024 <a href="http://redhat.com">Red Hat, Inc</a>. All Rights Reserved.</small></p>
+<p class="legal-copy"><small>Copyright &copy; 2020-2025 <a href="http://redhat.com">Red Hat, Inc</a>. All Rights Reserved.</small></p>
 </footer>
 </div>
 </div>

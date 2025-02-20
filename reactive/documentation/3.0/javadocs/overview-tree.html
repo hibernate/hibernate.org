@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="script.js"></script>
-<script type="text/javascript" src="script-dir/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="script-dir/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="tree-page">
@@ -74,7 +74,6 @@ loadScripts(document, 'script');</script>
 <li><a href="org/hibernate/reactive/it/techempower/utils/package-tree.html">org.hibernate.reactive.it.techempower.utils</a>, </li>
 <li><a href="org/hibernate/reactive/it/verticle/package-tree.html">org.hibernate.reactive.it.verticle</a>, </li>
 <li><a href="org/hibernate/reactive/loader/ast/spi/package-tree.html">org.hibernate.reactive.loader.ast.spi</a>, </li>
-<li><a href="org/hibernate/reactive/loader/entity/package-tree.html">org.hibernate.reactive.loader.entity</a>, </li>
 <li><a href="org/hibernate/reactive/mutiny/package-tree.html">org.hibernate.reactive.mutiny</a>, </li>
 <li><a href="org/hibernate/reactive/persister/collection/mutation/package-tree.html">org.hibernate.reactive.persister.collection.mutation</a>, </li>
 <li><a href="org/hibernate/reactive/persister/entity/mutation/package-tree.html">org.hibernate.reactive.persister.entity.mutation</a>, </li>
@@ -294,7 +293,6 @@ loadScripts(document, 'script');</script>
 </ul>
 </li>
 <li class="circle">org.hibernate.reactive.type.descriptor.jdbc.<a href="org/hibernate/reactive/type/descriptor/jdbc/ReactiveArrayJdbcTypeConstructor.html" class="type-name-link" title="class in org.hibernate.reactive.type.descriptor.jdbc">ReactiveArrayJdbcTypeConstructor</a> (implements org.hibernate.type.descriptor.jdbc.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/type/descriptor/jdbc/JdbcTypeConstructor.html" title="class or interface in org.hibernate.type.descriptor.jdbc" class="external-link">JdbcTypeConstructor</a>)</li>
-<li class="circle">org.hibernate.reactive.loader.entity.<a href="org/hibernate/reactive/loader/entity/ReactiveCacheEntityLoaderHelper.html" class="type-name-link" title="class in org.hibernate.reactive.loader.entity">ReactiveCacheEntityLoaderHelper</a></li>
 <li class="circle">org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/ReactiveGenerationTarget.html" class="type-name-link" title="class in org.hibernate.reactive.provider.service">ReactiveGenerationTarget</a> (implements org.hibernate.tool.schema.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/tool/schema/spi/GenerationTarget.html" title="class or interface in org.hibernate.tool.schema.spi" class="external-link">GenerationTarget</a>)</li>
 <li class="circle">org.hibernate.reactive.persister.collection.mutation.<a href="org/hibernate/reactive/persister/collection/mutation/ReactiveInsertRowsCoordinatorNoOp.html" class="type-name-link" title="class in org.hibernate.reactive.persister.collection.mutation">ReactiveInsertRowsCoordinatorNoOp</a> (implements org.hibernate.reactive.persister.collection.mutation.<a href="org/hibernate/reactive/persister/collection/mutation/ReactiveInsertRowsCoordinator.html" title="interface in org.hibernate.reactive.persister.collection.mutation">ReactiveInsertRowsCoordinator</a>)</li>
 <li class="circle">org.hibernate.reactive.persister.collection.mutation.<a href="org/hibernate/reactive/persister/collection/mutation/ReactiveInsertRowsCoordinatorStandard.html" class="type-name-link" title="class in org.hibernate.reactive.persister.collection.mutation">ReactiveInsertRowsCoordinatorStandard</a> (implements org.hibernate.reactive.persister.collection.mutation.<a href="org/hibernate/reactive/persister/collection/mutation/ReactiveInsertRowsCoordinator.html" title="interface in org.hibernate.reactive.persister.collection.mutation">ReactiveInsertRowsCoordinator</a>)</li>
@@ -788,6 +786,7 @@ loadScripts(document, 'script');</script>
 </ul>
 </li>
 <li class="circle">org.hibernate.reactive.persister.entity.mutation.<a href="org/hibernate/reactive/persister/entity/mutation/ReactiveAbstractDeleteCoordinator.html" class="type-name-link" title="interface in org.hibernate.reactive.persister.entity.mutation">ReactiveAbstractDeleteCoordinator</a></li>
+<li class="circle">org.hibernate.reactive.loader.ast.spi.<a href="org/hibernate/reactive/loader/ast/spi/ReactiveAfterLoadAction.html" class="type-name-link" title="interface in org.hibernate.reactive.loader.ast.spi">ReactiveAfterLoadAction</a></li>
 <li class="circle">org.hibernate.reactive.engine.<a href="org/hibernate/reactive/engine/ReactiveAfterTransactionCompletionProcess.html" class="type-name-link" title="interface in org.hibernate.reactive.engine">ReactiveAfterTransactionCompletionProcess</a></li>
 <li class="circle">org.hibernate.reactive.engine.<a href="org/hibernate/reactive/engine/ReactiveBeforeTransactionCompletionProcess.html" class="type-name-link" title="interface in org.hibernate.reactive.engine">ReactiveBeforeTransactionCompletionProcess</a></li>
 <li class="circle">org.hibernate.reactive.pool.<a href="org/hibernate/reactive/pool/ReactiveConnection.html" class="type-name-link" title="interface in org.hibernate.reactive.pool">ReactiveConnection</a></li>
@@ -811,7 +810,6 @@ loadScripts(document, 'script');</script>
 <li class="circle">org.hibernate.reactive.persister.entity.mutation.<a href="org/hibernate/reactive/persister/entity/mutation/ReactiveInsertCoordinator.html" class="type-name-link" title="interface in org.hibernate.reactive.persister.entity.mutation">ReactiveInsertCoordinator</a></li>
 <li class="circle">org.hibernate.reactive.sql.exec.spi.<a href="org/hibernate/reactive/sql/exec/spi/ReactiveJdbcMutationExecutor.html" class="type-name-link" title="interface in org.hibernate.reactive.sql.exec.spi">ReactiveJdbcMutationExecutor</a></li>
 <li class="circle">org.hibernate.reactive.event.<a href="org/hibernate/reactive/event/ReactivePersistEventListener.html" class="type-name-link" title="interface in org.hibernate.reactive.event">ReactivePersistEventListener</a></li>
-<li class="circle">org.hibernate.reactive.event.<a href="org/hibernate/reactive/event/ReactiveResolveNaturalIdEventListener.html" class="type-name-link" title="interface in org.hibernate.reactive.event">ReactiveResolveNaturalIdEventListener</a></li>
 <li class="circle">org.hibernate.reactive.sql.results.spi.<a href="org/hibernate/reactive/sql/results/spi/ReactiveResultsConsumer.html" class="type-name-link" title="interface in org.hibernate.reactive.sql.results.spi">ReactiveResultsConsumer</a>&lt;T,<wbr>R&gt;</li>
 <li class="circle">org.hibernate.reactive.persister.entity.mutation.<a href="org/hibernate/reactive/persister/entity/mutation/ReactiveScopedUpdateCoordinator.html" class="type-name-link" title="interface in org.hibernate.reactive.persister.entity.mutation">ReactiveScopedUpdateCoordinator</a></li>
 <li class="circle">org.hibernate.reactive.sql.exec.spi.<a href="org/hibernate/reactive/sql/exec/spi/ReactiveSelectExecutor.html" class="type-name-link" title="interface in org.hibernate.reactive.sql.exec.spi">ReactiveSelectExecutor</a></li>
@@ -949,7 +947,7 @@ loadScripts(document, 'script');</script>
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small>Copyright &copy; 2020-2024 <a href="http://redhat.com">Red Hat, Inc</a>. All Rights Reserved.</small></p>
+<p class="legal-copy"><small>Copyright &copy; 2020-2025 <a href="http://redhat.com">Red Hat, Inc</a>. All Rights Reserved.</small></p>
 </footer>
 </div>
 </div>
