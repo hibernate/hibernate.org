@@ -15,8 +15,6 @@ maven:
       summary: HikariCP connection pooling
     - artifact_id: hibernate-c3p0
       summary: c3p0 connection pooling
-    - artifact_id: hibernate-ucp
-      summary: Support for Oracle UCP
     - artifact_id: hibernate-jcache
       summary: JCache second-level caching
     - artifact_id: hibernate-micrometer
