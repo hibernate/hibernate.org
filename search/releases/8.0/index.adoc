@@ -5,6 +5,8 @@
 :latest-release-version: #{series(page, page.series_version).releases.first.version}
 :hsearch-doc-url-prefix: #{reference_doc(site.projects[page.project], series(page, page.series_version)).html_url}
 
+****
+[discrete]
 === Dependency upgrades
 
 [[java-version]]
@@ -25,6 +27,7 @@ OpenSearch::
 The Elasticsearch backend works with OpenSearch 2.17, 2.18 and 2.19, as well as other already compatible versions.
 
 [[metric-aggregations]]
+[discrete]
 === Metric aggregations
 
 The Hibernate Search DSL now allows requesting metric aggregations:
@@ -57,6 +60,7 @@ See the corresponding section on link:{hsearch-doc-url-prefix}#search-dsl-aggreg
 to learn which aggregations are available.
 
 [[backend-lucene-next]]
+[discrete]
 === New Lucene backend
 
 While Hibernate Search 8.0 still targets JDK 17, Lucene, starting with version 10,
@@ -71,6 +75,7 @@ See link:{hsearch-doc-url-prefix}#other-integrations-lucene-next[this section] o
 to learn more.
 
 [[multi-collectors]]
+[discrete]
 === Projecting multivalued fields
 
 It is now possible to use other collection types than `List` for multivalued projections:
@@ -115,6 +120,7 @@ List<MyCustomCollection<String>> hits = searchSession.search( Book.class )
 ====
 
 [[logging-categories]]
+[discrete]
 === Logging categories
 
 Hibernate Search now utilizes logging categories instead of FQCNs. It is now easier to enable logging
@@ -128,3 +134,4 @@ org.hibernate.search.mapper.massindexing=TRACE
 
 See the corresponding section on link:{hsearch-doc-url-prefix}#logging-categories-aggregated[logging categories]
 to find out which categories are available.
+****
