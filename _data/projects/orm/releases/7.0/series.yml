@@ -25,6 +25,8 @@ maven:
       summary: Community-maintained SQL dialects
     - artifact_id: hibernate-processor
       summary: Hibernate Processor compile-time tooling
+    - artifact_id: hibernate-scan-jandex
+      summary: Leverages Jandex to support managed-resource scanning (entity discovery, etc) in Hibernate ORM.
 integration_constraints:
   java:
     version: 17, 21 or 23
