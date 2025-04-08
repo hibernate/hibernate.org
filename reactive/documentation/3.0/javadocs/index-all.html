@@ -788,6 +788,8 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/session/ReactiveQueryProducer.html#createReactiveMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsert)" class="member-name-link">createReactiveMutationQuery(JpaCriteriaInsert&lt;R&gt;)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQueryProducer.html" title="interface in org.hibernate.reactive.session">ReactiveQueryProducer</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="org/hibernate/reactive/session/ReactiveQueryProducer.html#createReactiveNamedQuery(java.lang.String)" class="member-name-link">createReactiveNamedQuery(String)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQueryProducer.html" title="interface in org.hibernate.reactive.session">ReactiveQueryProducer</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/session/ReactiveQueryProducer.html#createReactiveNamedQuery(java.lang.String,java.lang.Class)" class="member-name-link">createReactiveNamedQuery(String, Class&lt;R&gt;)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQueryProducer.html" title="interface in org.hibernate.reactive.session">ReactiveQueryProducer</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/session/ReactiveQueryProducer.html#createReactiveNativeQuery(java.lang.String)" class="member-name-link">createReactiveNativeQuery(String)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQueryProducer.html" title="interface in org.hibernate.reactive.session">ReactiveQueryProducer</a></dt>
@@ -911,7 +913,8 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#delete(java.lang.Object...)" class="member-name-link">delete(Object...)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></dt>
 <dd>
-<div class="block">Delete multiple rows.</div>
+<div class="block">Delete multiple rows, using the number of the
+ given entities as the batch size.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/persister/entity/mutation/ReactiveDeleteCoordinator.html#delete(java.lang.Object,java.lang.Object,java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">delete(Object, Object, Object, SharedSessionContractImplementor)</a> - Method in class org.hibernate.reactive.persister.entity.mutation.<a href="org/hibernate/reactive/persister/entity/mutation/ReactiveDeleteCoordinator.html" title="class in org.hibernate.reactive.persister.entity.mutation">ReactiveDeleteCoordinator</a></dt>
 <dd>&nbsp;</dd>
@@ -923,7 +926,8 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#deleteAll(java.lang.Object...)" class="member-name-link">deleteAll(Object...)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
 <dd>
-<div class="block">Delete multiple rows.</div>
+<div class="block">Delete multiple rows, using the number of the
+ given entities as the batch size.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#deleteMultiple(java.util.List)" class="member-name-link">deleteMultiple(List&lt;?&gt;)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
 <dd>
@@ -2273,7 +2277,8 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#insert(java.lang.Object...)" class="member-name-link">insert(Object...)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></dt>
 <dd>
-<div class="block">Insert multiple rows.</div>
+<div class="block">Insert multiple rows, using the number of the
+ given entities as the batch size.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/persister/entity/mutation/ReactiveInsertCoordinatorStandard.html#insert(java.lang.Object,java.lang.Object%5B%5D,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">insert(Object, Object[], SharedSessionContractImplementor)</a> - Method in class org.hibernate.reactive.persister.entity.mutation.<a href="org/hibernate/reactive/persister/entity/mutation/ReactiveInsertCoordinatorStandard.html" title="class in org.hibernate.reactive.persister.entity.mutation">ReactiveInsertCoordinatorStandard</a></dt>
 <dd>&nbsp;</dd>
@@ -2285,7 +2290,8 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#insertAll(java.lang.Object...)" class="member-name-link">insertAll(Object...)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
 <dd>
-<div class="block">Insert multiple rows.</div>
+<div class="block">Insert multiple rows, using the number of the
+ given entities as the batch size.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/pool/BatchingConnection.html#insertAndSelectIdentifier(java.lang.String,java.lang.Object%5B%5D,java.lang.Class,java.lang.String)" class="member-name-link">insertAndSelectIdentifier(String, Object[], Class&lt;T&gt;, String)</a> - Method in class org.hibernate.reactive.pool.<a href="org/hibernate/reactive/pool/BatchingConnection.html" title="class in org.hibernate.reactive.pool">BatchingConnection</a></dt>
 <dd>&nbsp;</dd>
@@ -2674,16 +2680,16 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/provider/service/NoJdbcConnectionProviderInitiator.html" class="type-name-link" title="class in org.hibernate.reactive.provider.service">NoJdbcConnectionProviderInitiator</a> - Class in <a href="org/hibernate/reactive/provider/service/package-summary.html">org.hibernate.reactive.provider.service</a></dt>
 <dd>
-<div class="block">A Hibernate <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html" title="class or interface in org.hibernate.boot.registry" class="external-link"><code>service initiator</code></a> that
- wraps the Hibernate <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/jdbc/connections/spi/ConnectionProvider.html" title="class or interface in org.hibernate.engine.jdbc.connections.spi" class="external-link"><code>ConnectionProvider</code></a> in an instance of
+<div class="block">A Hibernate <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html" title="class or interface in org.hibernate.boot.registry" class="external-link">service initiator</a>
+ that wraps the Hibernate <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/jdbc/connections/spi/ConnectionProvider.html" title="class or interface in org.hibernate.engine.jdbc.connections.spi" class="external-link"><code>ConnectionProvider</code></a> in an instance of
  <a href="org/hibernate/reactive/provider/service/NoJdbcConnectionProvider.html" title="class in org.hibernate.reactive.provider.service"><code>NoJdbcConnectionProvider</code></a>.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/provider/service/NoJdbcConnectionProviderInitiator.html#%3Cinit%3E()" class="member-name-link">NoJdbcConnectionProviderInitiator()</a> - Constructor for class org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/NoJdbcConnectionProviderInitiator.html" title="class in org.hibernate.reactive.provider.service">NoJdbcConnectionProviderInitiator</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/provider/service/NoJdbcEnvironmentInitiator.html" class="type-name-link" title="class in org.hibernate.reactive.provider.service">NoJdbcEnvironmentInitiator</a> - Class in <a href="org/hibernate/reactive/provider/service/package-summary.html">org.hibernate.reactive.provider.service</a></dt>
 <dd>
-<div class="block">A Hibernate <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html" title="class or interface in org.hibernate.boot.registry" class="external-link"><code>service initiator</code></a> that
- provides an implementation of <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/jdbc/env/spi/JdbcEnvironment.html" title="class or interface in org.hibernate.engine.jdbc.env.spi" class="external-link"><code>JdbcEnvironment</code></a> that infers
+<div class="block">A Hibernate <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html" title="class or interface in org.hibernate.boot.registry" class="external-link">service initiator</a>
+ that provides an implementation of <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/jdbc/env/spi/JdbcEnvironment.html" title="class or interface in org.hibernate.engine.jdbc.env.spi" class="external-link"><code>JdbcEnvironment</code></a> that infers
  the Hibernate <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/dialect/Dialect.html" title="class or interface in org.hibernate.dialect" class="external-link"><code>Dialect</code></a> from the JDBC URL.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/provider/service/NoJdbcEnvironmentInitiator.html#%3Cinit%3E()" class="member-name-link">NoJdbcEnvironmentInitiator()</a> - Constructor for class org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/NoJdbcEnvironmentInitiator.html" title="class in org.hibernate.reactive.provider.service">NoJdbcEnvironmentInitiator</a></dt>
@@ -2698,14 +2704,15 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/provider/service/NoJdbcMultiTenantConnectionProviderInitiator.html" class="type-name-link" title="class in org.hibernate.reactive.provider.service">NoJdbcMultiTenantConnectionProviderInitiator</a> - Class in <a href="org/hibernate/reactive/provider/service/package-summary.html">org.hibernate.reactive.provider.service</a></dt>
 <dd>
-<div class="block">A Hibernate <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html" title="class or interface in org.hibernate.boot.registry" class="external-link"><code>service initiator</code></a> for
- <a href="org/hibernate/reactive/provider/service/NoJdbcMultiTenantConnectionProvider.html" title="class in org.hibernate.reactive.provider.service"><code>NoJdbcMultiTenantConnectionProvider</code></a>.</div>
+<div class="block">A Hibernate <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html" title="class or interface in org.hibernate.boot.registry" class="external-link">service initiator</a>
+ for <a href="org/hibernate/reactive/provider/service/NoJdbcMultiTenantConnectionProvider.html" title="class in org.hibernate.reactive.provider.service"><code>NoJdbcMultiTenantConnectionProvider</code></a>.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/provider/service/NoJdbcMultiTenantConnectionProviderInitiator.html#%3Cinit%3E()" class="member-name-link">NoJdbcMultiTenantConnectionProviderInitiator()</a> - Constructor for class org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/NoJdbcMultiTenantConnectionProviderInitiator.html" title="class in org.hibernate.reactive.provider.service">NoJdbcMultiTenantConnectionProviderInitiator</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/provider/service/NoJtaPlatformInitiator.html" class="type-name-link" title="class in org.hibernate.reactive.provider.service">NoJtaPlatformInitiator</a> - Class in <a href="org/hibernate/reactive/provider/service/package-summary.html">org.hibernate.reactive.provider.service</a></dt>
 <dd>
-<div class="block">A Hibernate <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html" title="class or interface in org.hibernate.boot.registry" class="external-link"><code>service initiator</code></a> for the non-configured form of JTA platform.</div>
+<div class="block">A Hibernate <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html" title="class or interface in org.hibernate.boot.registry" class="external-link">service initiator</a>
+ for the non-configured form of JTA platform.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/provider/service/NoJtaPlatformInitiator.html#%3Cinit%3E()" class="member-name-link">NoJtaPlatformInitiator()</a> - Constructor for class org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/NoJtaPlatformInitiator.html" title="class in org.hibernate.reactive.provider.service">NoJtaPlatformInitiator</a></dt>
 <dd>&nbsp;</dd>
@@ -3432,7 +3439,8 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="org/hibernate/reactive/provider/service/ReactiveMarkerServiceInitiator.html" class="type-name-link" title="class in org.hibernate.reactive.provider.service">ReactiveMarkerServiceInitiator</a> - Class in <a href="org/hibernate/reactive/provider/service/package-summary.html">org.hibernate.reactive.provider.service</a></dt>
 <dd>
-<div class="block">A Hibernate <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html" title="class or interface in org.hibernate.boot.registry" class="external-link"><code>service initiator</code></a> for <a href="org/hibernate/reactive/provider/service/ReactiveMarkerService.html" title="interface in org.hibernate.reactive.provider.service"><code>ReactiveMarkerService</code></a>.</div>
+<div class="block">A Hibernate <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html" title="class or interface in org.hibernate.boot.registry" class="external-link">service initiator</a> for
+ <a href="org/hibernate/reactive/provider/service/ReactiveMarkerService.html" title="interface in org.hibernate.reactive.provider.service"><code>ReactiveMarkerService</code></a>.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/provider/service/ReactiveMarkerServiceSingleton.html" class="type-name-link" title="class in org.hibernate.reactive.provider.service">ReactiveMarkerServiceSingleton</a> - Class in <a href="org/hibernate/reactive/provider/service/package-summary.html">org.hibernate.reactive.provider.service</a></dt>
 <dd>
@@ -3568,8 +3576,9 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/provider/service/ReactivePersisterClassResolverInitiator.html" class="type-name-link" title="class in org.hibernate.reactive.provider.service">ReactivePersisterClassResolverInitiator</a> - Class in <a href="org/hibernate/reactive/provider/service/package-summary.html">org.hibernate.reactive.provider.service</a></dt>
 <dd>
-<div class="block">A Hibernate <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html" title="class or interface in org.hibernate.boot.registry" class="external-link"><code>service initiator</code></a> that creates a <a href="org/hibernate/reactive/provider/service/ReactivePersisterClassResolver.html" title="class in org.hibernate.reactive.provider.service"><code>ReactivePersisterClassResolver</code></a> to register
- the persisters Hibernate Reactive needs.</div>
+<div class="block">A Hibernate <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html" title="class or interface in org.hibernate.boot.registry" class="external-link">service initiator</a>
+ that creates a <a href="org/hibernate/reactive/provider/service/ReactivePersisterClassResolver.html" title="class in org.hibernate.reactive.provider.service"><code>ReactivePersisterClassResolver</code></a> to register the
+ persisters needed by Hibernate Reactive.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/provider/service/ReactivePersisterClassResolverInitiator.html#%3Cinit%3E()" class="member-name-link">ReactivePersisterClassResolverInitiator()</a> - Constructor for class org.hibernate.reactive.provider.service.<a href="org/hibernate/reactive/provider/service/ReactivePersisterClassResolverInitiator.html" title="class in org.hibernate.reactive.provider.service">ReactivePersisterClassResolverInitiator</a></dt>
 <dd>&nbsp;</dd>
@@ -3705,9 +3714,9 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/provider/service/ReactiveSessionFactoryBuilderInitiator.html" class="type-name-link" title="class in org.hibernate.reactive.provider.service">ReactiveSessionFactoryBuilderInitiator</a> - Class in <a href="org/hibernate/reactive/provider/service/package-summary.html">org.hibernate.reactive.provider.service</a></dt>
 <dd>
-<div class="block">A Hibernate <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html" title="class or interface in org.hibernate.boot.registry" class="external-link"><code>service initiator</code></a> that
- wraps the Hibernate <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/jdbc/connections/spi/ConnectionProvider.html" title="class or interface in org.hibernate.engine.jdbc.connections.spi" class="external-link"><code>ConnectionProvider</code></a> in an instance of
- <a href="org/hibernate/reactive/provider/service/NoJdbcConnectionProvider.html" title="class in org.hibernate.reactive.provider.service"><code>NoJdbcConnectionProvider</code></a>.</div>
+<div class="block">A Hibernate <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html" title="class or interface in org.hibernate.boot.registry" class="external-link">service initiator</a> that wraps
+ the Hibernate <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/jdbc/connections/spi/ConnectionProvider.html" title="class or interface in org.hibernate.engine.jdbc.connections.spi" class="external-link"><code>ConnectionProvider</code></a>
+ in an instance of <a href="org/hibernate/reactive/provider/service/NoJdbcConnectionProvider.html" title="class in org.hibernate.reactive.provider.service"><code>NoJdbcConnectionProvider</code></a>.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/engine/spi/ReactiveSharedSessionContractImplementor.html" class="type-name-link" title="interface in org.hibernate.reactive.engine.spi">ReactiveSharedSessionContractImplementor</a> - Interface in <a href="org/hibernate/reactive/engine/spi/package-summary.html">org.hibernate.reactive.engine.spi</a></dt>
 <dd>&nbsp;</dd>
@@ -3812,6 +3821,8 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveUpsert(java.lang.String,java.lang.Object)" class="member-name-link">reactiveUpsert(String, Object)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session">ReactiveStatelessSession</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="org/hibernate/reactive/session/ReactiveStatelessSession.html#reactiveUpsertAll(int,java.lang.Object...)" class="member-name-link">reactiveUpsertAll(int, Object...)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session">ReactiveStatelessSession</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/sql/results/spi/ReactiveValuesMappingProducer.html" class="type-name-link" title="interface in org.hibernate.reactive.sql.results.spi">ReactiveValuesMappingProducer</a> - Interface in <a href="org/hibernate/reactive/sql/results/spi/package-summary.html">org.hibernate.reactive.sql.results.spi</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/provider/service/ReactiveValuesMappingProducerProvider.html" class="type-name-link" title="class in org.hibernate.reactive.provider.service">ReactiveValuesMappingProducerProvider</a> - Class in <a href="org/hibernate/reactive/provider/service/package-summary.html">org.hibernate.reactive.provider.service</a></dt>
@@ -3866,7 +3877,8 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#refresh(java.lang.Object...)" class="member-name-link">refresh(Object...)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></dt>
 <dd>
-<div class="block">Refresh the entity instance state from the database.</div>
+<div class="block">Refresh the entity instance state from the database, using the number of the
+ given entities as the batch size.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/mutiny/Mutiny.Session.html#refresh(java.lang.Object,jakarta.persistence.LockModeType)" class="member-name-link">refresh(Object, LockModeType)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></dt>
 <dd>
@@ -3915,7 +3927,8 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#refreshAll(java.lang.Object...)" class="member-name-link">refreshAll(Object...)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
 <dd>
-<div class="block">Refresh the entity instance state from the database.</div>
+<div class="block">Refresh the entity instance state from the database, using the number of the
+ given entities as the batch size.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#refreshMultiple(java.util.List)" class="member-name-link">refreshMultiple(List&lt;?&gt;)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
 <dd>
@@ -4510,12 +4523,6 @@ loadScripts(document, 'script');</script>
 <dt><a href="org/hibernate/reactive/it/reference/Author.html#setName(java.lang.String)" class="member-name-link">setName(String)</a> - Method in class org.hibernate.reactive.it.reference.<a href="org/hibernate/reactive/it/reference/Author.html" title="class in org.hibernate.reactive.it.reference">Author</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/it/verticle/Product.html#setName(java.lang.String)" class="member-name-link">setName(String)</a> - Method in class org.hibernate.reactive.it.verticle.<a href="org/hibernate/reactive/it/verticle/Product.html" title="class in org.hibernate.reactive.it.verticle">Product</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="org/hibernate/reactive/query/ReactiveQueryImplementor.html#setOptionalEntityName(java.lang.String)" class="member-name-link">setOptionalEntityName(String)</a> - Method in interface org.hibernate.reactive.query.<a href="org/hibernate/reactive/query/ReactiveQueryImplementor.html" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="org/hibernate/reactive/query/ReactiveQueryImplementor.html#setOptionalId(java.io.Serializable)" class="member-name-link">setOptionalId(Serializable)</a> - Method in interface org.hibernate.reactive.query.<a href="org/hibernate/reactive/query/ReactiveQueryImplementor.html" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="org/hibernate/reactive/query/ReactiveQueryImplementor.html#setOptionalObject(java.lang.Object)" class="member-name-link">setOptionalObject(Object)</a> - Method in interface org.hibernate.reactive.query.<a href="org/hibernate/reactive/query/ReactiveQueryImplementor.html" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/query/ReactiveSelectionQuery.html#setOrder(java.util.List)" class="member-name-link">setOrder(List&lt;? extends Order&lt;? super R&gt;&gt;)</a> - Method in interface org.hibernate.reactive.query.<a href="org/hibernate/reactive/query/ReactiveSelectionQuery.html" title="interface in org.hibernate.reactive.query">ReactiveSelectionQuery</a></dt>
 <dd>&nbsp;</dd>
@@ -5592,7 +5599,8 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#update(java.lang.Object...)" class="member-name-link">update(Object...)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></dt>
 <dd>
-<div class="block">Update multiple rows.</div>
+<div class="block">Update multiple rows, using the number of the
+ given entities as the batch size.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/persister/entity/mutation/ReactiveUpdateCoordinatorNoOp.html#update(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object%5B%5D,java.lang.Object,java.lang.Object%5B%5D,int%5B%5D,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">update(Object, Object, Object, Object[], Object, Object[], int[], boolean, SharedSessionContractImplementor)</a> - Method in class org.hibernate.reactive.persister.entity.mutation.<a href="org/hibernate/reactive/persister/entity/mutation/ReactiveUpdateCoordinatorNoOp.html" title="class in org.hibernate.reactive.persister.entity.mutation">ReactiveUpdateCoordinatorNoOp</a></dt>
 <dd>&nbsp;</dd>
@@ -5618,7 +5626,8 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#updateAll(java.lang.Object...)" class="member-name-link">updateAll(Object...)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
 <dd>
-<div class="block">Update multiple rows.</div>
+<div class="block">Update multiple rows, using the number of the
+ given entities as the batch size.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#updateMultiple(java.util.List)" class="member-name-link">updateMultiple(List&lt;?&gt;)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
 <dd>
@@ -5648,6 +5657,40 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#upsert(java.lang.String,java.lang.Object)" class="member-name-link">upsert(String, Object)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#upsertAll(int,java.lang.Object...)" class="member-name-link">upsertAll(int, Object...)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
+<dd>
+<div class="block">Use a SQL <code>merge into</code> statement to perform
+ an upsert on multiple rows using the specified batch size.</div>
+</dd>
+<dt><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#upsertAll(int,java.lang.Object...)" class="member-name-link">upsertAll(int, Object...)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></dt>
+<dd>
+<div class="block">Use a SQL <code>merge into</code> statement to perform
+ an upsert on multiple rows using the specified batch size.</div>
+</dd>
+<dt><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#upsertAll(java.lang.Object...)" class="member-name-link">upsertAll(Object...)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
+<dd>
+<div class="block">Use a SQL <code>merge into</code> statement to perform
+ an upsert on multiple rows using the size of the given array
+ as batch size.</div>
+</dd>
+<dt><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#upsertAll(java.lang.Object...)" class="member-name-link">upsertAll(Object...)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></dt>
+<dd>
+<div class="block">Use a SQL <code>merge into</code> statement to perform
+ an upsert on multiple rows using the size of the given array
+ as batch size.</div>
+</dd>
+<dt><a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html#upsertMultiple(java.util.List)" class="member-name-link">upsertMultiple(List&lt;?&gt;)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></dt>
+<dd>
+<div class="block">Use a SQL <code>merge into</code> statement to perform
+ an upsert on multiple rows using the size of the given list
+ as batch size.</div>
+</dd>
+<dt><a href="org/hibernate/reactive/stage/Stage.StatelessSession.html#upsertMultiple(java.util.List)" class="member-name-link">upsertMultiple(List&lt;?&gt;)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></dt>
+<dd>
+<div class="block">Use a SQL <code>merge into</code> statement to perform
+ an upsert on multiple rows using the size of the given list
+ as batch size.</div>
+</dd>
 <dt><a href="org/hibernate/reactive/it/techempower/VertxServer.html#USE_DOCKER" class="member-name-link">USE_DOCKER</a> - Static variable in class org.hibernate.reactive.it.techempower.<a href="org/hibernate/reactive/it/techempower/VertxServer.html" title="class in org.hibernate.reactive.it.techempower">VertxServer</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/it/verticle/VertxServer.html#USE_DOCKER" class="member-name-link">USE_DOCKER</a> - Static variable in class org.hibernate.reactive.it.verticle.<a href="org/hibernate/reactive/it/verticle/VertxServer.html" title="class in org.hibernate.reactive.it.verticle">VertxServer</a></dt>
