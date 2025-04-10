@@ -96,8 +96,10 @@ projects:
     blog_tag: Hibernate ORM
     blog_tag_url: hibernate-orm
     license:
-      name: LGPL V2.1
-      url: https://hibernate.org/license/
+      name: ASL v2
+      url: https://raw.github.com/hibernate/hibernate-orm/main/LICENSE.txt
+      # This data is also overridden in relevant series.yml and earlier 7.0.0.{Alpha,Beta}*.yml to display correctly on releases pages
+      since: "7.0.0.Beta5"
     jira:
       key: HHH
     github:
@@ -476,7 +478,7 @@ projects:
     blog_tag_url: hibernate-validator
     license:
       name: ASL v2
-      url: https://raw.github.com/hibernate/hibernate-validator/master/license.txt
+      url: https://raw.github.com/hibernate/hibernate-validator/main/LICENSE.txt
     jira:
       key: HV
     github:
