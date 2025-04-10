@@ -4,21 +4,24 @@ Richard Fontana
 
 == Free as in Speech
 
-Hibernate projects are licensed under either the LGPL 2.1 or the ASL 2.0.
+Hibernate projects are licensed under either the ASL 2.0, or in some cases LGPL 2.1.
 Hibernate is Free Software.
 
 You can find under which a specific project is released below its menu or in the code source.
 
 == ASL 2.0
 
-Some Hibernate projects are released under link:https://opensource.org/licenses/Apache-2.0[ASL 2.0].
-This is the case for link:/validator[Hibernate Validator], link:/reactive[Hibernate Reactive], and (since version 7.2.0.Alpha2) link:/search[Hibernate Search].
+Most Hibernate projects, in their recent versions, are released under link:https://opensource.org/licenses/Apache-2.0[ASL 2.0]:
 
-The Hibernate team is link:https://in.relation.to/2023/11/18/license/[trying to move more projects to this license].
+* link:/orm[Hibernate ORM] since version 7.0.0.Beta5
+* link:/validator[Hibernate Validator] since its inception
+* link:/reactive[Hibernate Reactive] since its inception
+* link:/search[Hibernate Search] since version 7.2.0.Alpha2
 
 == LGPL 2.1
 
-Hibernate projects have historically been released, and in some cases still are, under link:https://opensource.org/licenses/LGPL-2.1[LGPL v2.1].
+Some Hibernate projects have historically been released under link:https://opensource.org/licenses/LGPL-2.1[LGPL v2.1],
+and link:/tools[Hibernate Tools] still is.
 
 The maintainers of Hibernate have consistently understood the LGPL to simply allow Hibernate to be used by both open source and proprietary code without any impact on the licensing or distribution of such independent code.
 This interpretation applies regardless of whether a binary that includes Hibernate code is designed to run on the JVM or is a native image generated through use of tools and frameworks like link:https://www.graalvm.org/[GraalVM] and link:https://quarkus.io/[Quarkus].
