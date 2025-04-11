@@ -14,8 +14,6 @@ project_hero_partial: project/hero-series.html.haml
 
 - latest_release_maven = maven(project_description, series, latest_release)
 
-- getting_started_guides = getting_started_guides(project_description, series)
-- migration_guide = migration_guide(project_description, series)
 - dist_sourceforge = dist_sourceforge(project_description, series, latest_release)
 
 -# The TOC is just for convenience but too large for mobile
@@ -33,14 +31,6 @@ project_hero_partial: project/hero-series.html.haml
     %li
       %a.item{:href => "#get-it"}
         How to get it
-    - if not getting_started_guides.empty?
-      %li
-        %a.item{:href => "#getting_started"}
-          Getting started
-    - if not migration_guide.nil?
-      %li
-        %a.item{:href => "#migrate"}
-          Migrating
     %li
       %a.item{:href => "#whats-new"}
         What's new
@@ -113,21 +103,29 @@ project_hero_partial: project/hero-series.html.haml
       Maintenance policy.
 
 %h2{:id => "documentation"} Documentation
+- if series.status == 'end-of-life'
+  :asciidoc
+    :projectName: #{project_description.name}
+    :version: #{series.version}
+    [WARNING]
+    ====
+    {projectName} {version} has reached its end-of-life: we recommend that you upgrade to a newer series if possible.
+
+    See also the link:/community/maintenance-policy[Maintenance policy].
+    ====
+- elsif series.status == 'limited-support'
+  :asciidoc
+    :projectName: #{project_description.name}
+    :version: #{series.version}
+    [WARNING]
+    ====
+    {projectName} {version} is in limited maintenance mode: we recommend that you upgrade to a newer series if possible or look for link:../../support[paid support].
+
+    See also the link:/community/maintenance-policy[Maintenance policy].
+    ====
 %p
   Documentation for #{project_description.name} #{series.version} can be accessed through the links below:
-%p
-  - reference_doc = reference_doc(project_description, series)
-  %a.ui.right.labeled.icon.button(href="#{reference_doc.html_url}")
-    %i.icon.file.text.outline
-    HTML
-  - if not reference_doc.pdf_url.nil?
-    %a.ui.right.labeled.icon.button(href="#{reference_doc.pdf_url}")
-      %i.icon.file.pdf.outline
-      PDF
-  - javadoc = javadoc(project_description, series)
-  %a.ui.right.labeled.icon.button(href="#{javadoc.html_url}")
-    %i.icon.code.outline
-    API (Javadoc)
+= partial( 'project/series-documentation.html.haml', { "project" => project_description, "series" => series, "anchors" => true } )
 
 %p
   You can find more documentation for all series on the
@@ -235,58 +233,6 @@ project_hero_partial: project/hero-series.html.haml
   More information about specific releases (announcements, download links) can be found
   %a{:href => "#releases"}
     here.
-
-- if not getting_started_guides.empty?
-  %h2{:id => "getting_started"} Getting started
-  - if series.status == 'end-of-life'
-    :asciidoc
-      :projectName: #{project_description.name}
-      :version: #{series.version}
-      [WARNING]
-      ====
-      {projectName} {version} has reached its end-of-life: we recommend that you upgrade to a newer series if possible.
-
-      See also the link:/community/maintenance-policy[Maintenance policy].
-      ====
-  - elsif series.status == 'limited-support'
-    :asciidoc
-      :projectName: #{project_description.name}
-      :version: #{series.version}
-      [WARNING]
-      ====
-      {projectName} {version} is in limited maintenance mode: we recommend that you upgrade to a newer series if possible or look for link:../../support[paid support].
-
-      See also the link:/community/maintenance-policy[Maintenance policy].
-      ====
-  %p
-    If you want to start using #{project_description.name} #{series.version}, please refer to the getting started guide:
-  - getting_started_guides.each do |getting_started_guide|
-    %p
-      - if getting_started_guide.name
-        %span.ui.label.basic.horizontal
-          = getting_started_guide.name
-      - if not getting_started_guide.html_url.nil?
-        %a.ui.right.labeled.icon.button.small(href="#{getting_started_guide.html_url}")
-          %i.icon.file.text.outline
-          HTML
-      - if not getting_started_guide.pdf_url.nil?
-        %a.ui.right.labeled.icon.button.small(href="#{getting_started_guide.pdf_url}")
-          %i.icon.file.pdf.outline
-          PDF
-
-- if not migration_guide.nil?
-  %h2{:id => "migrate"} Migrating
-  %p
-    If you need to upgrade from a previous series, please refer to the migration guide:
-  %p
-    - if not migration_guide.html_url.nil?
-      %a.ui.right.labeled.icon.button.small(href="#{migration_guide.html_url}")
-        %i.icon.file.text.outline
-        HTML
-    - if not migration_guide.pdf_url.nil?
-      %a.ui.right.labeled.icon.button.small(href="#{migration_guide.pdf_url}")
-        %i.icon.file.pdf.outline
-        PDF
 
 %h2{:id => "whats-new"} What's new
 
