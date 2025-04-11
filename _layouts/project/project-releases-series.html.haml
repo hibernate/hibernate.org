@@ -76,6 +76,20 @@ project_hero_partial: project/hero-series.html.haml
 
     See also the link:/community/maintenance-policy[Maintenance policy].
     ====
+- elsif series.status == 'development'
+  :asciidoc
+    :projectName: #{project_description.name}
+    :version: #{series.version}
+    [NOTE]
+    ====
+    {projectName} {version} is still in development:
+
+    * some features may be incomplete;
+    * newly introduced features may change in a backward-incompatible way before the stable release.
+
+    We encourage you to link:#get-it[give it a try] and to link:/community/[let us know]
+    of any bugs or problems you encounter.
+    ====
 
 - unless series.integration_constraints.nil? || series.integration_constraints.empty?
   %h2{:id => "compatibility"} Compatibility
@@ -103,26 +117,6 @@ project_hero_partial: project/hero-series.html.haml
       Maintenance policy.
 
 %h2{:id => "documentation"} Documentation
-- if series.status == 'end-of-life'
-  :asciidoc
-    :projectName: #{project_description.name}
-    :version: #{series.version}
-    [WARNING]
-    ====
-    {projectName} {version} has reached its end-of-life: we recommend that you upgrade to a newer series if possible.
-
-    See also the link:/community/maintenance-policy[Maintenance policy].
-    ====
-- elsif series.status == 'limited-support'
-  :asciidoc
-    :projectName: #{project_description.name}
-    :version: #{series.version}
-    [WARNING]
-    ====
-    {projectName} {version} is in limited maintenance mode: we recommend that you upgrade to a newer series if possible or look for link:../../support[paid support].
-
-    See also the link:/community/maintenance-policy[Maintenance policy].
-    ====
 %p
   Documentation for #{project_description.name} #{series.version} can be accessed through the links below:
 = partial( 'project/series-documentation.html.haml', { "project" => project_description, "series" => series, "anchors" => true } )
@@ -133,26 +127,11 @@ project_hero_partial: project/hero-series.html.haml
     documentation page.
 
 %h2{:id => "get-it"} How to get it
-- if series.status == 'end-of-life'
-  :asciidoc
-    :projectName: #{project_description.name}
-    :version: #{series.version}
-    [WARNING]
-    ====
-    {projectName} {version} has reached its end-of-life: we recommend that you upgrade to a newer series if possible.
 
-    See also the link:/community/maintenance-policy[Maintenance policy].
-    ====
-- elsif series.status == 'limited-support'
-  :asciidoc
-    :projectName: #{project_description.name}
-    :version: #{series.version}
-    [WARNING]
-    ====
-    {projectName} {version} is in limited maintenance mode: we recommend that you upgrade to a newer series if possible or look for link:../../support[paid support].
+%p
+  Current series status:
+  = partial( 'project/series-status-label.html.haml', { "series" => series } )
 
-    See also the link:/community/maintenance-policy[Maintenance policy].
-    ====
 .ui.grid.equal.height.stackable.download-options
   .row
     - if latest_release_maven.coord
@@ -235,21 +214,6 @@ project_hero_partial: project/hero-series.html.haml
     here.
 
 %h2{:id => "whats-new"} What's new
-
-- if ! latest_release.stable
-  :asciidoc
-    :projectName: #{project_description.name}
-    :version: #{series.version}
-    [NOTE]
-    ====
-    {projectName} {version} is still in development:
-
-    * some features may be incomplete;
-    * newly introduced features may change in a backward-incompatible way before the stable release.
-
-    We encourage you to link:#get-it[give it a try] and to link:/community/[let us know]
-    of any bugs or problems you encounter.
-    ====
 
 - if latest_release[:announcement_url]
   %p
