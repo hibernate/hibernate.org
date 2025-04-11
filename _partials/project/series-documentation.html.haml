@@ -1,0 +1,53 @@
+- project_description = page.project
+- series = page.series
+- anchors = page.anchors
+
+- getting_started_guides = getting_started_guides(project_description, series)
+- if anchors && ! getting_started_guides.empty?
+  - # Legacy anchor, kept just so we don't break existing links
+  %a{:id => "getting_started"}
+- getting_started_guides.each do |getting_started_guide|
+  %p
+    %span.ui.label.basic.horizontal
+      Getting started guide
+      - if getting_started_guide.name
+        = "(#{getting_started_guide.name})"
+    - if not getting_started_guide.html_url.nil?
+      %a.ui.right.labeled.icon.button.small(href="#{getting_started_guide.html_url}")
+        %i.icon.file.text.outline
+        HTML
+    - if not getting_started_guide.pdf_url.nil?
+      %a.ui.right.labeled.icon.button.small(href="#{getting_started_guide.pdf_url}")
+        %i.icon.file.pdf.outline
+        PDF
+- migration_guide = migration_guide(project_description, series)
+- if not migration_guide.nil?
+  %p
+    - if anchors
+      - # Legacy anchor, kept just so we don't break existing links
+      %a{:id => "migrate"}
+    %span.ui.label.basic.horizontal
+      Migration guide
+    - if not migration_guide.html_url.nil?
+      %a.ui.right.labeled.icon.button.small(href="#{migration_guide.html_url}")
+        %i.icon.file.text.outline
+        HTML
+    - if not migration_guide.pdf_url.nil?
+      %a.ui.right.labeled.icon.button.small(href="#{migration_guide.pdf_url}")
+        %i.icon.file.pdf.outline
+        PDF
+- reference_doc = reference_doc(project_description, series)
+%p
+  %span.ui.label.basic.horizontal
+    Reference
+  %a.ui.right.labeled.icon.button.small(href="#{reference_doc.html_url}")
+    %i.icon.file.text.outline
+    HTML
+  - if not reference_doc.pdf_url.nil?
+    %a.ui.right.labeled.icon.button.small(href="#{reference_doc.pdf_url}")
+      %i.icon.file.pdf.outline
+      PDF
+  - javadoc = javadoc(project_description, series)
+  %a.ui.right.labeled.icon.button.small(href="#{javadoc.html_url}")
+    %i.icon.code.outline
+    API (Javadoc)
