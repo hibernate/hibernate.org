@@ -20,6 +20,19 @@
       %a.ui.right.labeled.icon.button.small(href="#{getting_started_guide.pdf_url}")
         %i.icon.file.pdf.outline
         PDF
+- whats_new = whats_new(project_description, series)
+- if not whats_new.nil?
+  %p
+    %span.ui.label.basic.horizontal
+      What's new
+    - if not whats_new.html_url.nil?
+      %a.ui.right.labeled.icon.button.small(href="#{whats_new.html_url}")
+        %i.icon.file.text.outline
+        HTML
+    - if not whats_new.pdf_url.nil?
+      %a.ui.right.labeled.icon.button.small(href="#{whats_new.pdf_url}")
+        %i.icon.file.pdf.outline
+        PDF
 - migration_guide = migration_guide(project_description, series)
 - if not migration_guide.nil?
   %p

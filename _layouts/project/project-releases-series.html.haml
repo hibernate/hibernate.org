@@ -257,6 +257,20 @@ project_hero_partial: project/hero-series.html.haml
     %a{:href => "#{latest_release.announcement_url}"}
       #{latest_release.version}.
 
+- whats_new = whats_new(project_description, series)
+- if not whats_new.nil?
+  %p
+    Highlights of new features and enhancements can be found here:
+  %p
+    - if not whats_new.html_url.nil?
+      %a.ui.right.labeled.icon.button.small(href="#{whats_new.html_url}")
+        %i.icon.file.text.outline
+        HTML
+    - if not whats_new.pdf_url.nil?
+      %a.ui.right.labeled.icon.button.small(href="#{whats_new.pdf_url}")
+        %i.icon.file.pdf.outline
+        PDF
+
 %p
   A detailed list of new features, improvements and fixes in this series can be found
   - if project_description[:jira][:key]
