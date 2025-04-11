@@ -24,6 +24,10 @@ module Awestruct
         return DocumentRef.from_patterns(project, series, :migration_guide)
       end
 
+      def whats_new(project, series)
+        return DocumentRef.from_patterns(project, series, :whats_new)
+      end
+
       def maven(project, series, release)
         return MavenRef.from(@site, project, series, release)
       end
