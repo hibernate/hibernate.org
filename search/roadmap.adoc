@@ -15,6 +15,7 @@ Dates are generally omitted: milestones are released regularly, the Final releas
 == Hibernate Search 8.0
 
 The main goals for the 8.0 series are:
+
 * introduce the static metamodel as an incubating feature (link:{hsearch-jira-url-prefix}/HSEARCH-4951[HSEARCH-4951])
 * provide integration with Hibernate ORM 7.0 (link:{hsearch-jira-url-prefix}/HSEARCH-5082[HSEARCH-5082])
 
@@ -24,6 +25,7 @@ see https://hibernate.atlassian.net/issues/?jql=project%20%3D%20HSEARCH%20AND%20
 == Hibernate Search 8.1
 
 The main goals for the 8.1 series are:
+
 * introduce the bucket aggregations (link:{hsearch-jira-url-prefix}/HSEARCH-3661[HSEARCH-3661])
 * continue improving the static metamodel, in particular look into generating finder methods (link:{hsearch-jira-url-prefix}/HSEARCH-4953[HSEARCH-4953])
 * experiment with Maven 4 (link:{hsearch-jira-url-prefix}/HSEARCH-5304[HSEARCH-5304])
@@ -39,6 +41,7 @@ The main goals for the 8.2 series are:
 * Near-zero-downtime reindexing (link:{hsearch-jira-url-prefix}/HSEARCH-4954[HSEARCH-4954])
 * Readonly indexes (link:{hsearch-jira-url-prefix}/HSEARCH-5261[HSEARCH-5261])
 * Suggesters (link:{hsearch-jira-url-prefix}/HSEARCH-5357[HSEARCH-5357])
+* Integration with the stateless Hibernate ORM session (link:{hsearch-jira-url-prefix}/HSEARCH-5339[HSEARCH-5339])
 
 For a full list of issues currently planned for this series,
 see https://hibernate.atlassian.net/issues/?jql=project%20%3D%20HSEARCH%20AND%20fixVersion%20%3D%208.2-backlog%20ORDER%20BY%20created%20DESC[here].
