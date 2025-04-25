@@ -49,6 +49,19 @@
       %a.ui.right.labeled.icon.button.small(href="#{migration_guide.pdf_url}")
         %i.icon.file.pdf.outline
         PDF
+- short_guide = short_guide(project_description, series)
+- if not short_guide.nil?
+  %p
+    %span.ui.label.basic.horizontal
+      Short guide
+    - if not short_guide.html_url.nil?
+      %a.ui.right.labeled.icon.button.small(href="#{short_guide.html_url}")
+        %i.icon.file.text.outline
+        HTML
+    - if not short_guide.pdf_url.nil?
+      %a.ui.right.labeled.icon.button.small(href="#{short_guide.pdf_url}")
+        %i.icon.file.pdf.outline
+        PDF
 - reference_doc = reference_doc(project_description, series)
 %p
   %span.ui.label.basic.horizontal
