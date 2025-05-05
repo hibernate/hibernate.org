@@ -140,6 +140,16 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/criteria/HibernateCriteriaBuilder.html" title="class or interface in org.hibernate.query.criteria" class="external-link">HibernateCriteriaBuilder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getCriteriaBuilder()" class="member-name-link">getCriteriaBuilder</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getCurrentSession()" class="member-name-link">getCurrentSession</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Return the current instance of <a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Session</code></a>, if any.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getCurrentStatelessSession()" class="member-name-link">getCurrentStatelessSession</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Return the current instance of <a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Session</code></a>, if any.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>jakarta.persistence.metamodel.Metamodel</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getMetamodel()" class="member-name-link">getMetamodel</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
@@ -643,6 +653,39 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="member-signature"><span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/stat/Statistics.html" title="class or interface in org.hibernate.stat" class="external-link">Statistics</a></span>&nbsp;<span class="element-name">getStatistics</span>()</div>
 <div class="block">Obtain the <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/stat/Statistics.html" title="class or interface in org.hibernate.stat" class="external-link"><code>Statistics</code></a> object exposing factory-level
  metrics.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getCurrentSession()">
+<h3>getCurrentSession</h3>
+<div class="member-signature"><span class="return-type"><a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></span>&nbsp;<span class="element-name">getCurrentSession</span>()</div>
+<div class="block">Return the current instance of <a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Session</code></a>, if any.
+ A current session exists only when this method is called
+ from within an invocation of <a href="#withSession(java.util.function.Function)"><code>withSession(Function)</code></a>
+ or <a href="#withTransaction(java.util.function.Function)"><code>withTransaction(Function)</code></a>.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the current instance, if any, or <code>null</code></dd>
+<dt>Since:</dt>
+<dd>3.0</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getCurrentStatelessSession()">
+<h3>getCurrentStatelessSession</h3>
+<div class="member-signature"><span class="return-type"><a href="Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">Stage.StatelessSession</a></span>&nbsp;<span class="element-name">getCurrentStatelessSession</span>()</div>
+<div class="block">Return the current instance of <a href="Stage.Session.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Session</code></a>, if any.
+ A current session exists only when this method is called
+ from within an invocation of
+ <a href="#withStatelessSession(java.util.function.Function)"><code>withStatelessSession(Function)</code></a> or
+ <a href="#withStatelessTransaction(java.util.function.Function)"><code>withStatelessTransaction(Function)</code></a>.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the current instance, if any, or <code>null</code></dd>
+<dt>Since:</dt>
+<dd>3.0</dd>
+</dl>
 </section>
 </li>
 <li>

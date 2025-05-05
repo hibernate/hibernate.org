@@ -60,6 +60,8 @@ loadScripts(document, 'script');</script>
 <div class="block">An API for Hibernate Reactive where non-blocking operations are
  represented by a Mutiny <code>Uni</code>.</div>
 </div>
+<div class="col-first odd-row-color"><a href="#org.hibernate.reactive.mutiny.delegation">org.hibernate.reactive.mutiny.delegation</a></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <section class="class-uses">
 <ul class="block-list">
@@ -127,6 +129,35 @@ loadScripts(document, 'script');</script>
 <div class="block">Performs the given work within the scope of a database transaction,
  automatically flushing the session.</div>
 </div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="org.hibernate.reactive.mutiny.delegation">
+<h2>Uses of <a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a> in <a href="../delegation/package-summary.html">org.hibernate.reactive.mutiny.delegation</a></h2>
+<div class="caption"><span>Methods in <a href="../delegation/package-summary.html">org.hibernate.reactive.mutiny.delegation</a> that return <a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code><a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MutinySessionDelegator.</span><code><a href="../delegation/MutinySessionDelegator.html#currentTransaction()" class="member-name-link">currentTransaction</a>()</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MutinyStatelessSessionDelegator.</span><code><a href="../delegation/MutinyStatelessSessionDelegator.html#currentTransaction()" class="member-name-link">currentTransaction</a>()</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+</div>
+<div class="caption"><span>Method parameters in <a href="../delegation/package-summary.html">org.hibernate.reactive.mutiny.delegation</a> with type arguments of type <a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MutinySessionDelegator.</span><code><a href="../delegation/MutinySessionDelegator.html#withTransaction(java.util.function.Function)" class="member-name-link">withTransaction</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a>,<wbr>io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MutinyStatelessSessionDelegator.</span><code><a href="../delegation/MutinyStatelessSessionDelegator.html#withTransaction(java.util.function.Function)" class="member-name-link">withTransaction</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a>,<wbr>io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>

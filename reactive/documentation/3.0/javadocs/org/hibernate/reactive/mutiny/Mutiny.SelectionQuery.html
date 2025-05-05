@@ -253,18 +253,6 @@ extends <a href="Mutiny.AbstractQuery.html" title="interface in org.hibernate.re
  query when executed.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setOrder(java.util.List)" class="member-name-link">setOrder</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/Order.html" title="class or interface in org.hibernate.query" class="external-link">Order</a>&lt;? super <a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&gt;&nbsp;orderList)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">If the result type of this query is an entity class, add one or more
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/Order.html" title="class or interface in org.hibernate.query" class="external-link">rules</a> for ordering the query results.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setOrder(org.hibernate.query.Order)" class="member-name-link">setOrder</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/Order.html" title="class or interface in org.hibernate.query" class="external-link">Order</a>&lt;? super <a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;order)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">If the result type of this query is an entity class, add a
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/Order.html" title="class or interface in org.hibernate.query" class="external-link">rule</a> for ordering the query results.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setPage(org.hibernate.query.Page)" class="member-name-link">setPage</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/Page.html" title="class or interface in org.hibernate.query" class="external-link">Page</a>&nbsp;page)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Set the <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/Page.html" title="class or interface in org.hibernate.query" class="external-link">page</a> of results to return.</div>
@@ -678,44 +666,6 @@ extends <a href="Mutiny.AbstractQuery.html" title="interface in org.hibernate.re
 <dd>
 <ul class="see-list-long">
 <li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/Query.html#setLockMode(java.lang.String,org.hibernate.LockMode)" title="class or interface in org.hibernate.query" class="external-link"><code>Query.setLockMode(String,LockMode)</code></a></li>
-</ul>
-</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="setOrder(java.util.List)">
-<h3>setOrder</h3>
-<div class="member-signature"><span class="return-type"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</span>&nbsp;<span class="element-name">setOrder</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/Order.html" title="class or interface in org.hibernate.query" class="external-link">Order</a>&lt;? super <a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&gt;&nbsp;orderList)</span></div>
-<div class="block">If the result type of this query is an entity class, add one or more
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/Order.html" title="class or interface in org.hibernate.query" class="external-link">rules</a> for ordering the query results.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>orderList</code> - one or more instances of <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/Order.html" title="class or interface in org.hibernate.query" class="external-link"><code>Order</code></a></dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/Order.html" title="class or interface in org.hibernate.query" class="external-link"><code>Order</code></a></li>
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/Query.html#setOrder(java.util.List)" title="class or interface in org.hibernate.query" class="external-link"><code>Query.setOrder(List)</code></a></li>
-</ul>
-</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="setOrder(org.hibernate.query.Order)">
-<h3>setOrder</h3>
-<div class="member-signature"><span class="return-type"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;<a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;</span>&nbsp;<span class="element-name">setOrder</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/Order.html" title="class or interface in org.hibernate.query" class="external-link">Order</a>&lt;? super <a href="Mutiny.SelectionQuery.html" title="type parameter in Mutiny.SelectionQuery">R</a>&gt;&nbsp;order)</span></div>
-<div class="block">If the result type of this query is an entity class, add a
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/Order.html" title="class or interface in org.hibernate.query" class="external-link">rule</a> for ordering the query results.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>order</code> - an instance of <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/Order.html" title="class or interface in org.hibernate.query" class="external-link"><code>Order</code></a></dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/Order.html" title="class or interface in org.hibernate.query" class="external-link"><code>Order</code></a></li>
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/Query.html#setOrder(org.hibernate.query.Order)" title="class or interface in org.hibernate.query" class="external-link"><code>Query.setOrder(Order)</code></a></li>
 </ul>
 </dd>
 </dl>

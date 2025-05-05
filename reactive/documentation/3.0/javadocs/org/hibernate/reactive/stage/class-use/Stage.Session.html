@@ -96,58 +96,63 @@ loadScripts(document, 'script');</script>
  requested fetch profile is already enabled.</div>
 </div>
 <div class="col-first even-row-color"><code><a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Stage.Session.</span><code><a href="../Stage.Session.html#setBatchSize(java.lang.Integer)" class="member-name-link">setBatchSize</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;batchSize)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Stage.SessionFactory.</span><code><a href="../Stage.SessionFactory.html#getCurrentSession()" class="member-name-link">getCurrentSession</a>()</code></div>
 <div class="col-last even-row-color">
+<div class="block">Return the current instance of <a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Session</code></a>, if any.</div>
+</div>
+<div class="col-first odd-row-color"><code><a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Stage.Session.</span><code><a href="../Stage.Session.html#setBatchSize(java.lang.Integer)" class="member-name-link">setBatchSize</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;batchSize)</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Set the session-level batch size, overriding the batch size set
  by the configuration property <code>hibernate.jdbc.batch_size</code>.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Stage.Session.</span><code><a href="../Stage.Session.html#setCacheMode(org.hibernate.CacheMode)" class="member-name-link">setCacheMode</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/CacheMode.html" title="class or interface in org.hibernate" class="external-link">CacheMode</a>&nbsp;cacheMode)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code><a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Stage.Session.</span><code><a href="../Stage.Session.html#setCacheMode(org.hibernate.CacheMode)" class="member-name-link">setCacheMode</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/CacheMode.html" title="class or interface in org.hibernate" class="external-link">CacheMode</a>&nbsp;cacheMode)</code></div>
+<div class="col-last even-row-color">
 <div class="block">Set the <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/CacheMode.html" title="class or interface in org.hibernate" class="external-link"><code>cache mode</code></a> for this session.</div>
 </div>
-<div class="col-first even-row-color"><code>default <a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Stage.Session.</span><code><a href="../Stage.Session.html#setCacheRetrieveMode(jakarta.persistence.CacheRetrieveMode)" class="member-name-link">setCacheRetrieveMode</a><wbr>(jakarta.persistence.CacheRetrieveMode&nbsp;cacheRetrieveMode)</code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>default <a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Stage.Session.</span><code><a href="../Stage.Session.html#setCacheRetrieveMode(jakarta.persistence.CacheRetrieveMode)" class="member-name-link">setCacheRetrieveMode</a><wbr>(jakarta.persistence.CacheRetrieveMode&nbsp;cacheRetrieveMode)</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Set the <code>CacheRetrieveMode</code> for this session.</div>
 </div>
-<div class="col-first odd-row-color"><code>default <a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Stage.Session.</span><code><a href="../Stage.Session.html#setCacheStoreMode(jakarta.persistence.CacheStoreMode)" class="member-name-link">setCacheStoreMode</a><wbr>(jakarta.persistence.CacheStoreMode&nbsp;cacheStoreMode)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>default <a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Stage.Session.</span><code><a href="../Stage.Session.html#setCacheStoreMode(jakarta.persistence.CacheStoreMode)" class="member-name-link">setCacheStoreMode</a><wbr>(jakarta.persistence.CacheStoreMode&nbsp;cacheStoreMode)</code></div>
+<div class="col-last even-row-color">
 <div class="block">Set the <code>CacheStoreMode</code> for this session.</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Stage.Session.</span><code><a href="../Stage.Session.html#setDefaultReadOnly(boolean)" class="member-name-link">setDefaultReadOnly</a><wbr>(boolean&nbsp;readOnly)</code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code><a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Stage.Session.</span><code><a href="../Stage.Session.html#setDefaultReadOnly(boolean)" class="member-name-link">setDefaultReadOnly</a><wbr>(boolean&nbsp;readOnly)</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Change the default for entities and proxies loaded into this session
  from modifiable to read-only mode, or from modifiable to read-only mode.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Stage.Session.</span><code><a href="../Stage.Session.html#setFetchBatchSize(int)" class="member-name-link">setFetchBatchSize</a><wbr>(int&nbsp;batchSize)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code><a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Stage.Session.</span><code><a href="../Stage.Session.html#setFetchBatchSize(int)" class="member-name-link">setFetchBatchSize</a><wbr>(int&nbsp;batchSize)</code></div>
+<div class="col-last even-row-color">
 <div class="block">Set the maximum batch size for batch fetching associations by
  id in this session.</div>
 </div>
-<div class="col-first even-row-color"><code>default <a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Stage.Session.</span><code><a href="../Stage.Session.html#setFlushMode(jakarta.persistence.FlushModeType)" class="member-name-link">setFlushMode</a><wbr>(jakarta.persistence.FlushModeType&nbsp;flushModeType)</code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>default <a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Stage.Session.</span><code><a href="../Stage.Session.html#setFlushMode(jakarta.persistence.FlushModeType)" class="member-name-link">setFlushMode</a><wbr>(jakarta.persistence.FlushModeType&nbsp;flushModeType)</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Set the <code>flush mode</code> for this session.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Stage.Session.</span><code><a href="../Stage.Session.html#setFlushMode(org.hibernate.FlushMode)" class="member-name-link">setFlushMode</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/FlushMode.html" title="class or interface in org.hibernate" class="external-link">FlushMode</a>&nbsp;flushMode)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code><a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Stage.Session.</span><code><a href="../Stage.Session.html#setFlushMode(org.hibernate.FlushMode)" class="member-name-link">setFlushMode</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/FlushMode.html" title="class or interface in org.hibernate" class="external-link">FlushMode</a>&nbsp;flushMode)</code></div>
+<div class="col-last even-row-color">
 <div class="block">Set the <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/FlushMode.html" title="class or interface in org.hibernate" class="external-link"><code>flush mode</code></a> for this session.</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Stage.Session.</span><code><a href="../Stage.Session.html#setReadOnly(java.lang.Object,boolean)" class="member-name-link">setReadOnly</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entityOrProxy,
+<div class="col-first odd-row-color"><code><a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Stage.Session.</span><code><a href="../Stage.Session.html#setReadOnly(java.lang.Object,boolean)" class="member-name-link">setReadOnly</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entityOrProxy,
  boolean&nbsp;readOnly)</code></div>
-<div class="col-last even-row-color">
+<div class="col-last odd-row-color">
 <div class="block">Set an unmodified persistent object to read-only mode, or a read-only
  object to modifiable mode.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Stage.Session.</span><code><a href="../Stage.Session.html#setSubselectFetchingEnabled(boolean)" class="member-name-link">setSubselectFetchingEnabled</a><wbr>(boolean&nbsp;enabled)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code><a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Stage.Session.</span><code><a href="../Stage.Session.html#setSubselectFetchingEnabled(boolean)" class="member-name-link">setSubselectFetchingEnabled</a><wbr>(boolean&nbsp;enabled)</code></div>
+<div class="col-last even-row-color">
 <div class="block">Enable or disable subselect fetching in this session.</div>
 </div>
 </div>

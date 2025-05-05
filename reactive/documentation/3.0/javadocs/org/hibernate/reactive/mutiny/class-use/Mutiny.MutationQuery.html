@@ -60,6 +60,8 @@ loadScripts(document, 'script');</script>
 <div class="block">An API for Hibernate Reactive where non-blocking operations are
  represented by a Mutiny <code>Uni</code>.</div>
 </div>
+<div class="col-first odd-row-color"><a href="#org.hibernate.reactive.mutiny.delegation">org.hibernate.reactive.mutiny.delegation</a></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <section class="class-uses">
 <ul class="block-list">
@@ -81,67 +83,98 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code><a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Mutiny.Session.</span><code><a href="../Mutiny.Session.html#createMutationQuery(jakarta.persistence.criteria.CriteriaDelete)" class="member-name-link">createMutationQuery</a><wbr>(jakarta.persistence.criteria.CriteriaDelete&lt;?&gt;&nbsp;deleteQuery)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Mutiny.QueryProducer.</span><code><a href="../Mutiny.QueryProducer.html#createMutationQuery(jakarta.persistence.criteria.CriteriaDelete)" class="member-name-link">createMutationQuery</a><wbr>(jakarta.persistence.criteria.CriteriaDelete&lt;?&gt;&nbsp;deleteQuery)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Create an instance of <a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> for the given delete tree.</div>
 </div>
 <div class="col-first odd-row-color"><code><a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Mutiny.Session.</span><code><a href="../Mutiny.Session.html#createMutationQuery(jakarta.persistence.criteria.CriteriaUpdate)" class="member-name-link">createMutationQuery</a><wbr>(jakarta.persistence.criteria.CriteriaUpdate&lt;?&gt;&nbsp;updateQuery)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Mutiny.QueryProducer.</span><code><a href="../Mutiny.QueryProducer.html#createMutationQuery(jakarta.persistence.criteria.CriteriaUpdate)" class="member-name-link">createMutationQuery</a><wbr>(jakarta.persistence.criteria.CriteriaUpdate&lt;?&gt;&nbsp;updateQuery)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">Create an instance of <a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> for the given update tree.</div>
 </div>
 <div class="col-first even-row-color"><code><a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Mutiny.Session.</span><code><a href="../Mutiny.Session.html#createMutationQuery(java.lang.String)" class="member-name-link">createMutationQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Mutiny.QueryProducer.</span><code><a href="../Mutiny.QueryProducer.html#createMutationQuery(java.lang.String)" class="member-name-link">createMutationQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Create an instance of <a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> for the given HQL/JPQL
  update or delete statement.</div>
 </div>
 <div class="col-first odd-row-color"><code><a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Mutiny.Session.</span><code><a href="../Mutiny.Session.html#createMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsert)" class="member-name-link">createMutationQuery</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/criteria/JpaCriteriaInsert.html" title="class or interface in org.hibernate.query.criteria" class="external-link">JpaCriteriaInsert</a>&lt;?&gt;&nbsp;insert)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Mutiny.QueryProducer.</span><code><a href="../Mutiny.QueryProducer.html#createMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsert)" class="member-name-link">createMutationQuery</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/criteria/JpaCriteriaInsert.html" title="class or interface in org.hibernate.query.criteria" class="external-link">JpaCriteriaInsert</a>&lt;?&gt;&nbsp;insert)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">Create a <a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> from the given insert select criteria tree</div>
 </div>
+<div class="col-first even-row-color"><code>&lt;R&gt;&nbsp;<a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Mutiny.QueryProducer.</span><code><a href="../Mutiny.QueryProducer.html#createQuery(jakarta.persistence.criteria.CriteriaDelete)" class="member-name-link">createQuery</a><wbr>(jakarta.persistence.criteria.CriteriaDelete&lt;R&gt;&nbsp;criteriaDelete)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Create an instance of <a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> for the given criteria delete.</div>
+</div>
+<div class="col-first odd-row-color"><code>&lt;R&gt;&nbsp;<a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Mutiny.QueryProducer.</span><code><a href="../Mutiny.QueryProducer.html#createQuery(jakarta.persistence.criteria.CriteriaUpdate)" class="member-name-link">createQuery</a><wbr>(jakarta.persistence.criteria.CriteriaUpdate&lt;R&gt;&nbsp;criteriaUpdate)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Create an instance of <a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> for the given criteria update.</div>
+</div>
 <div class="col-first even-row-color"><code><a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Mutiny.StatelessSession.</span><code><a href="../Mutiny.StatelessSession.html#createMutationQuery(java.lang.String)" class="member-name-link">createMutationQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString)</code></div>
-<div class="col-last even-row-color">
-<div class="block">Create an instance of <a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> for the given HQL/JPQL
- update or delete statement.</div>
-</div>
-<div class="col-first odd-row-color"><code>&lt;R&gt;&nbsp;<a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Mutiny.Session.</span><code><a href="../Mutiny.Session.html#createQuery(jakarta.persistence.criteria.CriteriaDelete)" class="member-name-link">createQuery</a><wbr>(jakarta.persistence.criteria.CriteriaDelete&lt;R&gt;&nbsp;criteriaDelete)</code></div>
-<div class="col-last odd-row-color">
-<div class="block">Create an instance of <a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> for the given criteria delete.</div>
-</div>
-<div class="col-first even-row-color"><code>&lt;R&gt;&nbsp;<a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Mutiny.Session.</span><code><a href="../Mutiny.Session.html#createQuery(jakarta.persistence.criteria.CriteriaUpdate)" class="member-name-link">createQuery</a><wbr>(jakarta.persistence.criteria.CriteriaUpdate&lt;R&gt;&nbsp;criteriaUpdate)</code></div>
-<div class="col-last even-row-color">
-<div class="block">Create an instance of <a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> for the given criteria update.</div>
-</div>
-<div class="col-first odd-row-color"><code>&lt;R&gt;&nbsp;<a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Mutiny.StatelessSession.</span><code><a href="../Mutiny.StatelessSession.html#createQuery(jakarta.persistence.criteria.CriteriaDelete)" class="member-name-link">createQuery</a><wbr>(jakarta.persistence.criteria.CriteriaDelete&lt;R&gt;&nbsp;criteriaDelete)</code></div>
-<div class="col-last odd-row-color">
-<div class="block">Create an instance of <a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> for the given criteria delete.</div>
-</div>
-<div class="col-first even-row-color"><code>&lt;R&gt;&nbsp;<a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Mutiny.StatelessSession.</span><code><a href="../Mutiny.StatelessSession.html#createQuery(jakarta.persistence.criteria.CriteriaUpdate)" class="member-name-link">createQuery</a><wbr>(jakarta.persistence.criteria.CriteriaUpdate&lt;R&gt;&nbsp;criteriaUpdate)</code></div>
-<div class="col-last even-row-color">
-<div class="block">Create an instance of <a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> for the given criteria update.</div>
-</div>
+<div class="col-second even-row-color"><span class="type-name-label">Mutiny.MutationQuery.</span><code><a href="../Mutiny.MutationQuery.html#setComment(java.lang.String)" class="member-name-link">setComment</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;comment)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Mutiny.MutationQuery.</span><code><a href="../Mutiny.MutationQuery.html#setComment(java.lang.String)" class="member-name-link">setComment</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;comment)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Mutiny.MutationQuery.</span><code><a href="../Mutiny.MutationQuery.html#setParameter(int,java.lang.Object)" class="member-name-link">setParameter</a><wbr>(int&nbsp;parameter,
+<div class="col-second odd-row-color"><span class="type-name-label">Mutiny.MutationQuery.</span><code><a href="../Mutiny.MutationQuery.html#setParameter(int,java.lang.Object)" class="member-name-link">setParameter</a><wbr>(int&nbsp;parameter,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;argument)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>&lt;T&gt;&nbsp;<a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Mutiny.MutationQuery.</span><code><a href="../Mutiny.MutationQuery.html#setParameter(jakarta.persistence.Parameter,T)" class="member-name-link">setParameter</a><wbr>(jakarta.persistence.Parameter&lt;T&gt;&nbsp;parameter,
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>&lt;T&gt;&nbsp;<a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Mutiny.MutationQuery.</span><code><a href="../Mutiny.MutationQuery.html#setParameter(jakarta.persistence.Parameter,T)" class="member-name-link">setParameter</a><wbr>(jakarta.persistence.Parameter&lt;T&gt;&nbsp;parameter,
  T&nbsp;argument)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Mutiny.MutationQuery.</span><code><a href="../Mutiny.MutationQuery.html#setParameter(java.lang.String,java.lang.Object)" class="member-name-link">setParameter</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;parameter,
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;argument)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="org.hibernate.reactive.mutiny.delegation">
+<h2>Uses of <a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a> in <a href="../delegation/package-summary.html">org.hibernate.reactive.mutiny.delegation</a></h2>
+<div class="caption"><span>Methods in <a href="../delegation/package-summary.html">org.hibernate.reactive.mutiny.delegation</a> that return <a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code><a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MutinySessionDelegator.</span><code><a href="../delegation/MutinySessionDelegator.html#createMutationQuery(jakarta.persistence.criteria.CriteriaDelete)" class="member-name-link">createMutationQuery</a><wbr>(jakarta.persistence.criteria.CriteriaDelete&lt;?&gt;&nbsp;deleteQuery)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MutinySessionDelegator.</span><code><a href="../delegation/MutinySessionDelegator.html#createMutationQuery(jakarta.persistence.criteria.CriteriaUpdate)" class="member-name-link">createMutationQuery</a><wbr>(jakarta.persistence.criteria.CriteriaUpdate&lt;?&gt;&nbsp;updateQuery)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Mutiny.MutationQuery.</span><code><a href="../Mutiny.MutationQuery.html#setParameter(java.lang.String,java.lang.Object)" class="member-name-link">setParameter</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;parameter,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;argument)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MutinySessionDelegator.</span><code><a href="../delegation/MutinySessionDelegator.html#createMutationQuery(java.lang.String)" class="member-name-link">createMutationQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MutinySessionDelegator.</span><code><a href="../delegation/MutinySessionDelegator.html#createMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsert)" class="member-name-link">createMutationQuery</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/criteria/JpaCriteriaInsert.html" title="class or interface in org.hibernate.query.criteria" class="external-link">JpaCriteriaInsert</a>&lt;?&gt;&nbsp;insert)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MutinyStatelessSessionDelegator.</span><code><a href="../delegation/MutinyStatelessSessionDelegator.html#createMutationQuery(jakarta.persistence.criteria.CriteriaDelete)" class="member-name-link">createMutationQuery</a><wbr>(jakarta.persistence.criteria.CriteriaDelete&lt;?&gt;&nbsp;deleteQuery)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MutinyStatelessSessionDelegator.</span><code><a href="../delegation/MutinyStatelessSessionDelegator.html#createMutationQuery(jakarta.persistence.criteria.CriteriaUpdate)" class="member-name-link">createMutationQuery</a><wbr>(jakarta.persistence.criteria.CriteriaUpdate&lt;?&gt;&nbsp;updateQuery)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MutinyStatelessSessionDelegator.</span><code><a href="../delegation/MutinyStatelessSessionDelegator.html#createMutationQuery(java.lang.String)" class="member-name-link">createMutationQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MutinyStatelessSessionDelegator.</span><code><a href="../delegation/MutinyStatelessSessionDelegator.html#createMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsert)" class="member-name-link">createMutationQuery</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/criteria/JpaCriteriaInsert.html" title="class or interface in org.hibernate.query.criteria" class="external-link">JpaCriteriaInsert</a>&lt;?&gt;&nbsp;insert)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>&lt;R&gt;&nbsp;<a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MutinySessionDelegator.</span><code><a href="../delegation/MutinySessionDelegator.html#createQuery(jakarta.persistence.criteria.CriteriaDelete)" class="member-name-link">createQuery</a><wbr>(jakarta.persistence.criteria.CriteriaDelete&lt;R&gt;&nbsp;criteriaDelete)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>&lt;R&gt;&nbsp;<a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MutinySessionDelegator.</span><code><a href="../delegation/MutinySessionDelegator.html#createQuery(jakarta.persistence.criteria.CriteriaUpdate)" class="member-name-link">createQuery</a><wbr>(jakarta.persistence.criteria.CriteriaUpdate&lt;R&gt;&nbsp;criteriaUpdate)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>&lt;R&gt;&nbsp;<a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MutinyStatelessSessionDelegator.</span><code><a href="../delegation/MutinyStatelessSessionDelegator.html#createQuery(jakarta.persistence.criteria.CriteriaDelete)" class="member-name-link">createQuery</a><wbr>(jakarta.persistence.criteria.CriteriaDelete&lt;R&gt;&nbsp;criteriaDelete)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>&lt;R&gt;&nbsp;<a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MutinyStatelessSessionDelegator.</span><code><a href="../delegation/MutinyStatelessSessionDelegator.html#createQuery(jakarta.persistence.criteria.CriteriaUpdate)" class="member-name-link">createQuery</a><wbr>(jakarta.persistence.criteria.CriteriaUpdate&lt;R&gt;&nbsp;criteriaUpdate)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>

@@ -65,8 +65,10 @@ loadScripts(document, 'script');</script>
 <div class="block">An API for Hibernate Reactive where non-blocking operations are
  represented by a Mutiny <code>Uni</code>.</div>
 </div>
-<div class="col-first even-row-color"><a href="#org.hibernate.reactive.stage">org.hibernate.reactive.stage</a></div>
-<div class="col-last even-row-color">
+<div class="col-first even-row-color"><a href="#org.hibernate.reactive.mutiny.delegation">org.hibernate.reactive.mutiny.delegation</a></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><a href="#org.hibernate.reactive.stage">org.hibernate.reactive.stage</a></div>
+<div class="col-last odd-row-color">
 <div class="block">An API for Hibernate Reactive where non-blocking operations are
  represented by a Java <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link"><code>CompletionStage</code></a>.</div>
 </div>
@@ -115,6 +117,21 @@ loadScripts(document, 'script');</script>
  class with the given natural identifier, or null if there is no
  such persistent instance.</div>
 </div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="org.hibernate.reactive.mutiny.delegation">
+<h2>Uses of <a href="../Identifier.html" title="class in org.hibernate.reactive.common">Identifier</a> in <a href="../../mutiny/delegation/package-summary.html">org.hibernate.reactive.mutiny.delegation</a></h2>
+<div class="caption"><span>Methods in <a href="../../mutiny/delegation/package-summary.html">org.hibernate.reactive.mutiny.delegation</a> with parameters of type <a href="../Identifier.html" title="class in org.hibernate.reactive.common">Identifier</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MutinySessionDelegator.</span><code><a href="../../mutiny/delegation/MutinySessionDelegator.html#find(java.lang.Class,org.hibernate.reactive.common.Identifier)" class="member-name-link">find</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;entityClass,
+ <a href="../Identifier.html" title="class in org.hibernate.reactive.common">Identifier</a>&lt;T&gt;&nbsp;naturalId)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>

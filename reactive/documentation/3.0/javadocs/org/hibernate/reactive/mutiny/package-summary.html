@@ -42,7 +42,7 @@ loadScripts(document, 'script');</script>
 <ul class="sub-nav-list">
 <li>Package:&nbsp;</li>
 <li><a href="#package-description">Description</a>&nbsp;|&nbsp;</li>
-<li>Related Packages&nbsp;|&nbsp;</li>
+<li><a href="#related-package-summary">Related Packages</a>&nbsp;|&nbsp;</li>
 <li><a href="#class-summary">Classes and Interfaces</a></li>
 </ul>
 </div>
@@ -76,6 +76,17 @@ loadScripts(document, 'script');</script>
 <section class="summary">
 <ul class="summary-list">
 <li>
+<div id="related-package-summary">
+<div class="caption"><span>Related Packages</span></div>
+<div class="summary-table two-column-summary">
+<div class="table-header col-first">Package</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><a href="delegation/package-summary.html">org.hibernate.reactive.mutiny.delegation</a></div>
+<div class="col-last even-row-color">&nbsp;</div>
+</div>
+</div>
+</li>
+<li>
 <div id="class-summary">
 <div class="caption"><span>Interfaces</span></div>
 <div class="summary-table two-column-summary">
@@ -100,25 +111,30 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color class-summary class-summary-tab1">&nbsp;</div>
 <div class="col-first even-row-color class-summary class-summary-tab1"><a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab1">&nbsp;</div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;R&gt;</div>
-<div class="col-last odd-row-color class-summary class-summary-tab1">&nbsp;</div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab1">
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Mutiny.QueryProducer.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.QueryProducer</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab1">
+<div class="block">Operations common to objects which act as factories for instances of
+ <a href="Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a>.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;R&gt;</div>
+<div class="col-last even-row-color class-summary class-summary-tab1">&nbsp;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">A non-blocking counterpart to the Hibernate <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/Session.html" title="class or interface in org.hibernate" class="external-link"><code>Session</code></a>
  interface, allowing a reactive style of interaction with the database.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Mutiny.SessionFactory.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SessionFactory</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab1">
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Mutiny.SessionFactory.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SessionFactory</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Factory for <a href="Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive sessions</code></a>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab1">
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">A non-blocking counterpart to the Hibernate
  <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession</code></a> interface, which provides a
  command-oriented API for performing bulk operations against a database.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab1">
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Allows code within <a href="Mutiny.Session.html#withTransaction(java.util.function.Function)"><code>Mutiny.Session.withTransaction(Function)</code></a> to mark a
  transaction for rollback.</div>
 </div>

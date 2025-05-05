@@ -75,7 +75,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Superinterfaces:</dt>
-<dd><code><a href="Stage.Closeable.html" title="interface in org.hibernate.reactive.stage">Stage.Closeable</a></code></dd>
+<dd><code><a href="Stage.Closeable.html" title="interface in org.hibernate.reactive.stage">Stage.Closeable</a></code>, <code><a href="Stage.QueryProducer.html" title="interface in org.hibernate.reactive.stage">Stage.QueryProducer</a></code></dd>
 </dl>
 <dl class="notes">
 <dt>Enclosing interface:</dt>
@@ -83,7 +83,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public static interface </span><span class="element-name type-name-label">Stage.StatelessSession</span><span class="extends-implements">
-extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactive.stage">Stage.Closeable</a></span></div>
+extends <a href="Stage.QueryProducer.html" title="interface in org.hibernate.reactive.stage">Stage.QueryProducer</a>, <a href="Stage.Closeable.html" title="interface in org.hibernate.reactive.stage">Stage.Closeable</a></span></div>
 <div class="block">A non-blocking counterpart to the Hibernate
  <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession</code></a> interface, which provides a
  command-oriented API for performing bulk operations against a database.
@@ -126,7 +126,7 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">Default Methods</button><button id="method-summary-table-tab6" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab6', 3)" class="table-tab">Deprecated Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">Default Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
@@ -137,102 +137,6 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Close the reactive session and release the underlying database
  connection.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;T&gt;&nbsp;jakarta.persistence.EntityGraph&lt;T&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createEntityGraph(java.lang.Class)" class="member-name-link">createEntityGraph</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;rootType)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Create a new mutable <code>EntityGraph</code></div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;T&gt;&nbsp;jakarta.persistence.EntityGraph&lt;T&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createEntityGraph(java.lang.Class,java.lang.String)" class="member-name-link">createEntityGraph</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;rootType,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;graphName)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Create a new mutable copy of a named <code>EntityGraph</code></div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createMutationQuery(jakarta.persistence.criteria.CriteriaDelete)" class="member-name-link">createMutationQuery</a><wbr>(jakarta.persistence.criteria.CriteriaDelete&lt;?&gt;&nbsp;deleteQuery)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Create an instance of <a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> for the given delete tree.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createMutationQuery(jakarta.persistence.criteria.CriteriaUpdate)" class="member-name-link">createMutationQuery</a><wbr>(jakarta.persistence.criteria.CriteriaUpdate&lt;?&gt;&nbsp;updateQuery)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Create an instance of <a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> for the given update tree.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createMutationQuery(java.lang.String)" class="member-name-link">createMutationQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Create an instance of <a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> for the given HQL/JPQL
- update or delete statement.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsert)" class="member-name-link">createMutationQuery</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/criteria/JpaCriteriaInsert.html" title="class or interface in org.hibernate.query.criteria" class="external-link">JpaCriteriaInsert</a>&lt;?&gt;&nbsp;insert)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Create a <a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> from the given insert select criteria tree</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createNamedQuery(java.lang.String)" class="member-name-link">createNamedQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryName)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the named query.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;R&gt;&nbsp;<a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage">Stage.SelectionQuery</a>&lt;R&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createNamedQuery(java.lang.String,java.lang.Class)" class="member-name-link">createNamedQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryName,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;R&gt;&nbsp;resultType)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the named query.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createNativeQuery(java.lang.String)" class="member-name-link">createNativeQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
- or SQL update, insert, or delete statement.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;R&gt;&nbsp;<a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage">Stage.SelectionQuery</a>&lt;R&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createNativeQuery(java.lang.String,java.lang.Class)" class="member-name-link">createNativeQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;R&gt;&nbsp;resultType)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
- using the given <code>resultType</code> to interpret the results.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;R&gt;&nbsp;<a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createQuery(jakarta.persistence.criteria.CriteriaDelete)" class="member-name-link">createQuery</a><wbr>(jakarta.persistence.criteria.CriteriaDelete&lt;R&gt;&nbsp;criteriaDelete)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Create an instance of <a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> for the given criteria
- delete.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;R&gt;&nbsp;<a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage">Stage.SelectionQuery</a>&lt;R&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createQuery(jakarta.persistence.criteria.CriteriaQuery)" class="member-name-link">createQuery</a><wbr>(jakarta.persistence.criteria.CriteriaQuery&lt;R&gt;&nbsp;criteriaQuery)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Create an instance of <a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.SelectionQuery</code></a> for the given criteria
- query.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;R&gt;&nbsp;<a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createQuery(jakarta.persistence.criteria.CriteriaUpdate)" class="member-name-link">createQuery</a><wbr>(jakarta.persistence.criteria.CriteriaUpdate&lt;R&gt;&nbsp;criteriaUpdate)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Create an instance of <a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> for the given criteria
- update.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code>&lt;R&gt;&nbsp;<a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="#createQuery(java.lang.String)" class="member-name-link">createQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6">
-<div class="block"><span class="deprecated-label">Deprecated.</span>
-<div class="deprecation-comment">See explanation in
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryProducer.html#createSelectionQuery(java.lang.String)" title="class or interface in org.hibernate.query" class="external-link"><code>QueryProducer.createSelectionQuery(String)</code></a></div>
-</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;R&gt;&nbsp;<a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage">Stage.SelectionQuery</a>&lt;R&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createQuery(java.lang.String,java.lang.Class)" class="member-name-link">createQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;R&gt;&nbsp;resultType)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Create an instance of <a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.SelectionQuery</code></a> for the given HQL/JPQL
- query string and query result type.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;R&gt;&nbsp;<a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage">Stage.SelectionQuery</a>&lt;R&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createSelectionQuery(java.lang.String,java.lang.Class)" class="member-name-link">createSelectionQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;R&gt;&nbsp;resultType)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Create an instance of <a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.SelectionQuery</code></a> for the given HQL/JPQL
- query string.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Stage.Transaction.html" title="interface in org.hibernate.reactive.stage">Stage.Transaction</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#currentTransaction()" class="member-name-link">currentTransaction</a>()</code></div>
@@ -300,11 +204,10 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Retrieve a row, obtaining the specified lock mode.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;T&gt;&nbsp;jakarta.persistence.EntityGraph&lt;T&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getEntityGraph(java.lang.Class,java.lang.String)" class="member-name-link">getEntityGraph</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;rootType,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;graphName)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Obtain a named <code>EntityGraph</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default jakarta.persistence.criteria.CriteriaBuilder</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getCriteriaBuilder()" class="member-name-link">getCriteriaBuilder</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Convenience method to obtain the <code>CriteriaBuilder</code>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Stage.SessionFactory.html" title="interface in org.hibernate.reactive.stage">Stage.SessionFactory</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getFactory()" class="member-name-link">getFactory</a>()</code></div>
@@ -316,103 +219,92 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Return the identifier value of the given entity, which may be detached.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;T&gt;&nbsp;<a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;T&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getResultSetMapping(java.lang.Class,java.lang.String)" class="member-name-link">getResultSetMapping</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;resultType,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;mappingName)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Obtain a native SQL result set mapping defined via the annotation
- <code>SqlResultSetMapping</code>.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#insert(int,java.lang.Object...)" class="member-name-link">insert</a><wbr>(int&nbsp;batchSize,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#insert(int,java.lang.Object...)" class="member-name-link">insert</a><wbr>(int&nbsp;batchSize,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;entities)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Insert multiple rows.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#insert(java.lang.Object)" class="member-name-link">insert</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#insert(java.lang.Object)" class="member-name-link">insert</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Insert a row.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#insert(java.lang.Object...)" class="member-name-link">insert</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;entities)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#insert(java.lang.Object...)" class="member-name-link">insert</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;entities)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Insert multiple rows, using the number of the
  given entities as the batch size.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#insertMultiple(java.util.List)" class="member-name-link">insertMultiple</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;?&gt;&nbsp;entities)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#insertMultiple(java.util.List)" class="member-name-link">insertMultiple</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;?&gt;&nbsp;entities)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Insert multiple rows, using the size of the
  given list as the batch size.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isOpen()" class="member-name-link">isOpen</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#refresh(int,java.lang.Object...)" class="member-name-link">refresh</a><wbr>(int&nbsp;batchSize,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;entities)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Refresh the entity instance state from the database.</div>
-</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isOpen()" class="member-name-link">isOpen</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#refresh(java.lang.Object)" class="member-name-link">refresh</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#refresh(int,java.lang.Object...)" class="member-name-link">refresh</a><wbr>(int&nbsp;batchSize,
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;entities)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Refresh the entity instance state from the database.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#refresh(java.lang.Object...)" class="member-name-link">refresh</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;entities)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#refresh(java.lang.Object)" class="member-name-link">refresh</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Refresh the entity instance state from the database.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#refresh(java.lang.Object...)" class="member-name-link">refresh</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;entities)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Refresh the entity instance state from the database, using the number of the
  given entities as the batch size.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#refresh(java.lang.Object,jakarta.persistence.LockModeType)" class="member-name-link">refresh</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#refresh(java.lang.Object,jakarta.persistence.LockModeType)" class="member-name-link">refresh</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  jakarta.persistence.LockModeType&nbsp;lockModeType)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Refresh the entity instance state from the database.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#refresh(java.lang.Object,org.hibernate.LockMode)" class="member-name-link">refresh</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Refresh the entity instance state from the database.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#refreshMultiple(java.util.List)" class="member-name-link">refreshMultiple</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;?&gt;&nbsp;entities)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#refresh(java.lang.Object,org.hibernate.LockMode)" class="member-name-link">refresh</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
+ <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Refresh the entity instance state from the database.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#refreshMultiple(java.util.List)" class="member-name-link">refreshMultiple</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;?&gt;&nbsp;entities)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Refresh the entity instance state from the database,
  using the size of the given list as the batch size.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#update(int,java.lang.Object...)" class="member-name-link">update</a><wbr>(int&nbsp;batchSize,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#update(int,java.lang.Object...)" class="member-name-link">update</a><wbr>(int&nbsp;batchSize,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;entities)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Update multiple rows.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#update(java.lang.Object)" class="member-name-link">update</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#update(java.lang.Object)" class="member-name-link">update</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Update a row.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#update(java.lang.Object...)" class="member-name-link">update</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;entities)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#update(java.lang.Object...)" class="member-name-link">update</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;entities)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Update multiple rows, using the number of the
  given entities as the batch size.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#updateMultiple(java.util.List)" class="member-name-link">updateMultiple</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;?&gt;&nbsp;entities)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#updateMultiple(java.util.List)" class="member-name-link">updateMultiple</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;?&gt;&nbsp;entities)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Update multiple rows, using the size of the
  given list as the batch size.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#upsert(java.lang.Object)" class="member-name-link">upsert</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#upsert(java.lang.String,java.lang.Object)" class="member-name-link">upsert</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#upsert(java.lang.Object)" class="member-name-link">upsert</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#upsertAll(int,java.lang.Object...)" class="member-name-link">upsertAll</a><wbr>(int&nbsp;batchSize,
@@ -444,6 +336,9 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </div>
 </div>
 </div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-org.hibernate.reactive.stage.Stage.QueryProducer">Methods inherited from interface&nbsp;org.hibernate.reactive.stage.<a href="Stage.QueryProducer.html" title="interface in org.hibernate.reactive.stage">Stage.QueryProducer</a></h3>
+<code><a href="Stage.QueryProducer.html#createEntityGraph(java.lang.Class)">createEntityGraph</a>, <a href="Stage.QueryProducer.html#createEntityGraph(java.lang.Class,java.lang.String)">createEntityGraph</a>, <a href="Stage.QueryProducer.html#createMutationQuery(jakarta.persistence.criteria.CriteriaDelete)">createMutationQuery</a>, <a href="Stage.QueryProducer.html#createMutationQuery(jakarta.persistence.criteria.CriteriaUpdate)">createMutationQuery</a>, <a href="Stage.QueryProducer.html#createMutationQuery(java.lang.String)">createMutationQuery</a>, <a href="Stage.QueryProducer.html#createMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsert)">createMutationQuery</a>, <a href="Stage.QueryProducer.html#createNamedQuery(java.lang.String)">createNamedQuery</a>, <a href="Stage.QueryProducer.html#createNamedQuery(java.lang.String,java.lang.Class)">createNamedQuery</a>, <a href="Stage.QueryProducer.html#createNativeQuery(java.lang.String)">createNativeQuery</a>, <a href="Stage.QueryProducer.html#createNativeQuery(java.lang.String,java.lang.Class)">createNativeQuery</a>, <a href="Stage.QueryProducer.html#createNativeQuery(java.lang.String,java.lang.Class,org.hibernate.reactive.common.AffectedEntities)">createNativeQuery</a>, <a href="Stage.QueryProducer.html#createNativeQuery(java.lang.String,org.hibernate.reactive.common.AffectedEntities)">createNativeQuery</a>, <a href="Stage.QueryProducer.html#createNativeQuery(java.lang.String,org.hibernate.reactive.common.ResultSetMapping)">createNativeQuery</a>, <a href="Stage.QueryProducer.html#createNativeQuery(java.lang.String,org.hibernate.reactive.common.ResultSetMapping,org.hibernate.reactive.common.AffectedEntities)">createNativeQuery</a>, <a href="Stage.QueryProducer.html#createQuery(jakarta.persistence.criteria.CriteriaDelete)">createQuery</a>, <a href="Stage.QueryProducer.html#createQuery(jakarta.persistence.criteria.CriteriaQuery)">createQuery</a>, <a href="Stage.QueryProducer.html#createQuery(jakarta.persistence.criteria.CriteriaUpdate)">createQuery</a>, <a href="Stage.QueryProducer.html#createQuery(jakarta.persistence.TypedQueryReference)">createQuery</a>, <a href="Stage.QueryProducer.html#createQuery(java.lang.String)">createQuery</a>, <a href="Stage.QueryProducer.html#createQuery(java.lang.String,java.lang.Class)">createQuery</a>, <a href="Stage.QueryProducer.html#createSelectionQuery(java.lang.String,java.lang.Class)">createSelectionQuery</a>, <a href="Stage.QueryProducer.html#getEntityGraph(java.lang.Class,java.lang.String)">getEntityGraph</a>, <a href="Stage.QueryProducer.html#getResultSetMapping(java.lang.Class,java.lang.String)">getResultSetMapping</a></code></div>
 </section>
 </li>
 </ul>
@@ -556,295 +451,6 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <dd><code>id</code> - The id of the entity to retrieve</dd>
 <dt>Returns:</dt>
 <dd>a detached entity instance, via a <code>CompletionStage</code></dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="createQuery(java.lang.String)">
-<h3>createQuery</h3>
-<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>
-</span><span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</span>&nbsp;<span class="element-name">createQuery</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString)</span></div>
-<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
-<div class="deprecation-comment">See explanation in
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryProducer.html#createSelectionQuery(java.lang.String)" title="class or interface in org.hibernate.query" class="external-link"><code>QueryProducer.createSelectionQuery(String)</code></a></div>
-</div>
-<div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given HQL/JPQL query
- string or HQL/JPQL update or delete statement. In the case of an
- update or delete, the returned <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> must be executed using
- <a href="Stage.MutationQuery.html#executeUpdate()"><code>Stage.MutationQuery.executeUpdate()</code></a> which returns an affected row count.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>queryString</code> - The HQL/JPQL query, update or delete statement</dd>
-<dt>Returns:</dt>
-<dd>The <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> instance for manipulation and execution</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/Session.html#createQuery(java.lang.String)" title="class or interface in org.hibernate" class="external-link"><code>Session.createQuery(String)</code></a></li>
-</ul>
-</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="createQuery(java.lang.String,java.lang.Class)">
-<h3>createQuery</h3>
-<div class="member-signature"><span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage">Stage.SelectionQuery</a>&lt;R&gt;</span>&nbsp;<span class="element-name">createQuery</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;R&gt;&nbsp;resultType)</span></div>
-<div class="block">Create an instance of <a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.SelectionQuery</code></a> for the given HQL/JPQL
- query string and query result type.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>queryString</code> - The HQL/JPQL query</dd>
-<dd><code>resultType</code> - the Java type returned in each row of query results</dd>
-<dt>Returns:</dt>
-<dd>The <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> instance for manipulation and execution</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/Session.html#createQuery(java.lang.String,java.lang.Class)" title="class or interface in org.hibernate" class="external-link"><code>Session.createQuery(String, Class)</code></a></li>
-</ul>
-</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="createSelectionQuery(java.lang.String,java.lang.Class)">
-<h3>createSelectionQuery</h3>
-<div class="member-signature"><span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage">Stage.SelectionQuery</a>&lt;R&gt;</span>&nbsp;<span class="element-name">createSelectionQuery</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;R&gt;&nbsp;resultType)</span></div>
-<div class="block">Create an instance of <a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.SelectionQuery</code></a> for the given HQL/JPQL
- query string.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>queryString</code> - The HQL/JPQL query</dd>
-<dt>Returns:</dt>
-<dd>The <a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.SelectionQuery</code></a> instance for manipulation and execution</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list-long">
-<li><code>EntityManager.createQuery(String, Class)</code></li>
-</ul>
-</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="createMutationQuery(java.lang.String)">
-<h3>createMutationQuery</h3>
-<div class="member-signature"><span class="return-type"><a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a></span>&nbsp;<span class="element-name">createMutationQuery</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString)</span></div>
-<div class="block">Create an instance of <a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> for the given HQL/JPQL
- update or delete statement.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>queryString</code> - The HQL/JPQL query, update or delete statement</dd>
-<dt>Returns:</dt>
-<dd>The <a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> instance for manipulation and execution</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list-long">
-<li><code>EntityManager.createQuery(String)</code></li>
-</ul>
-</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="createMutationQuery(jakarta.persistence.criteria.CriteriaUpdate)">
-<h3>createMutationQuery</h3>
-<div class="member-signature"><span class="return-type"><a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a></span>&nbsp;<span class="element-name">createMutationQuery</span><wbr><span class="parameters">(jakarta.persistence.criteria.CriteriaUpdate&lt;?&gt;&nbsp;updateQuery)</span></div>
-<div class="block">Create an instance of <a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> for the given update tree.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>updateQuery</code> - the update criteria query</dd>
-<dt>Returns:</dt>
-<dd>The <a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> instance for manipulation and execution</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryProducer.html#createMutationQuery(jakarta.persistence.criteria.CriteriaUpdate)" title="class or interface in org.hibernate.query" class="external-link"><code>QueryProducer.createMutationQuery(CriteriaUpdate)</code></a></li>
-</ul>
-</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="createMutationQuery(jakarta.persistence.criteria.CriteriaDelete)">
-<h3>createMutationQuery</h3>
-<div class="member-signature"><span class="return-type"><a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a></span>&nbsp;<span class="element-name">createMutationQuery</span><wbr><span class="parameters">(jakarta.persistence.criteria.CriteriaDelete&lt;?&gt;&nbsp;deleteQuery)</span></div>
-<div class="block">Create an instance of <a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> for the given delete tree.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>deleteQuery</code> - the delete criteria query</dd>
-<dt>Returns:</dt>
-<dd>The <a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> instance for manipulation and execution</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryProducer.html#createMutationQuery(jakarta.persistence.criteria.CriteriaDelete)" title="class or interface in org.hibernate.query" class="external-link"><code>QueryProducer.createMutationQuery(CriteriaDelete)</code></a></li>
-</ul>
-</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="createMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsert)">
-<h3>createMutationQuery</h3>
-<div class="member-signature"><span class="return-type"><a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a></span>&nbsp;<span class="element-name">createMutationQuery</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/criteria/JpaCriteriaInsert.html" title="class or interface in org.hibernate.query.criteria" class="external-link">JpaCriteriaInsert</a>&lt;?&gt;&nbsp;insert)</span></div>
-<div class="block">Create a <a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> from the given insert select criteria tree</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>insert</code> - the insert select criteria query</dd>
-<dt>Returns:</dt>
-<dd>The <a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> instance for manipulation and execution</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryProducer.html#createMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsert)" title="class or interface in org.hibernate.query" class="external-link"><code>QueryProducer.createMutationQuery(JpaCriteriaInsert)</code></a></li>
-</ul>
-</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="createNativeQuery(java.lang.String)">
-<h3>createNativeQuery</h3>
-<div class="member-signature"><span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</span>&nbsp;<span class="element-name">createNativeQuery</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString)</span></div>
-<div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
- or SQL update, insert, or delete statement. In the case of an update,
- insert, or delete, the returned <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> must be executed using
- <a href="Stage.MutationQuery.html#executeUpdate()"><code>Stage.MutationQuery.executeUpdate()</code></a> which returns an affected row count.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>queryString</code> - The SQL select, update, insert, or delete statement</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryProducer.html#createNativeQuery(java.lang.String)" title="class or interface in org.hibernate.query" class="external-link"><code>QueryProducer.createNativeQuery(String)</code></a></li>
-</ul>
-</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="createNamedQuery(java.lang.String)">
-<h3>createNamedQuery</h3>
-<div class="member-signature"><span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</span>&nbsp;<span class="element-name">createNamedQuery</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryName)</span></div>
-<div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the named query.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>queryName</code> - The name of the query</dd>
-<dt>Returns:</dt>
-<dd>The <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> instance for manipulation and execution</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list-long">
-<li><code>EntityManager.createQuery(String)</code></li>
-</ul>
-</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="createNamedQuery(java.lang.String,java.lang.Class)">
-<h3>createNamedQuery</h3>
-<div class="member-signature"><span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage">Stage.SelectionQuery</a>&lt;R&gt;</span>&nbsp;<span class="element-name">createNamedQuery</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryName,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;R&gt;&nbsp;resultType)</span></div>
-<div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the named query.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>queryName</code> - The name of the query</dd>
-<dd><code>resultType</code> - the Java type returned in each row of query results</dd>
-<dt>Returns:</dt>
-<dd>The <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> instance for manipulation and execution</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list-long">
-<li><code>EntityManager.createQuery(String, Class)</code></li>
-</ul>
-</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="createNativeQuery(java.lang.String,java.lang.Class)">
-<h3>createNativeQuery</h3>
-<div class="member-signature"><span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage">Stage.SelectionQuery</a>&lt;R&gt;</span>&nbsp;<span class="element-name">createNativeQuery</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;R&gt;&nbsp;resultType)</span></div>
-<div class="block">Create an instance of <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
- using the given <code>resultType</code> to interpret the results.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>queryString</code> - The SQL query</dd>
-<dd><code>resultType</code> - the Java type returned in each row of query results</dd>
-<dt>Returns:</dt>
-<dd>The <a href="Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> instance for manipulation and execution</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryProducer.html#createNativeQuery(java.lang.String,java.lang.Class)" title="class or interface in org.hibernate.query" class="external-link"><code>QueryProducer.createNativeQuery(String, Class)</code></a></li>
-</ul>
-</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="createQuery(jakarta.persistence.criteria.CriteriaQuery)">
-<h3>createQuery</h3>
-<div class="member-signature"><span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage">Stage.SelectionQuery</a>&lt;R&gt;</span>&nbsp;<span class="element-name">createQuery</span><wbr><span class="parameters">(jakarta.persistence.criteria.CriteriaQuery&lt;R&gt;&nbsp;criteriaQuery)</span></div>
-<div class="block">Create an instance of <a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.SelectionQuery</code></a> for the given criteria
- query.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>criteriaQuery</code> - The <code>CriteriaQuery</code></dd>
-<dt>Returns:</dt>
-<dd>The <a href="Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.SelectionQuery</code></a> instance for manipulation and execution</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list-long">
-<li><code>EntityManager.createQuery(String)</code></li>
-</ul>
-</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="createQuery(jakarta.persistence.criteria.CriteriaUpdate)">
-<h3>createQuery</h3>
-<div class="member-signature"><span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a></span>&nbsp;<span class="element-name">createQuery</span><wbr><span class="parameters">(jakarta.persistence.criteria.CriteriaUpdate&lt;R&gt;&nbsp;criteriaUpdate)</span></div>
-<div class="block">Create an instance of <a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> for the given criteria
- update.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>criteriaUpdate</code> - The <code>CriteriaUpdate</code></dd>
-<dt>Returns:</dt>
-<dd>The <a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> instance for manipulation and execution</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list-long">
-<li><code>EntityManager.createQuery(String)</code></li>
-</ul>
-</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="createQuery(jakarta.persistence.criteria.CriteriaDelete)">
-<h3>createQuery</h3>
-<div class="member-signature"><span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage">Stage.MutationQuery</a></span>&nbsp;<span class="element-name">createQuery</span><wbr><span class="parameters">(jakarta.persistence.criteria.CriteriaDelete&lt;R&gt;&nbsp;criteriaDelete)</span></div>
-<div class="block">Create an instance of <a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> for the given criteria
- delete.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>criteriaDelete</code> - The <code>CriteriaDelete</code></dd>
-<dt>Returns:</dt>
-<dd>The <a href="Stage.MutationQuery.html" title="interface in org.hibernate.reactive.stage"><code>Stage.MutationQuery</code></a> instance for manipulation and execution</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list-long">
-<li><code>EntityManager.createQuery(String)</code></li>
-</ul>
-</dd>
 </dl>
 </section>
 </li>
@@ -1191,24 +797,6 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </section>
 </li>
 <li>
-<section class="detail" id="upsert(java.lang.String,java.lang.Object)">
-<h3>upsert</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">upsert</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</span></div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>entityName</code> - The entityName for the entity to be merged</dd>
-<dd><code>entity</code> - a detached entity instance</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#upsert(java.lang.String,java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.upsert(String, Object)</code></a></li>
-</ul>
-</dd>
-</dl>
-</section>
-</li>
-<li>
 <section class="detail" id="upsertAll(java.lang.Object...)">
 <h3>upsertAll</h3>
 <div class="member-signature"><span class="annotations"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/Incubating.html" title="class or interface in org.hibernate" class="external-link">@Incubating</a>
@@ -1311,38 +899,6 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 </section>
 </li>
 <li>
-<section class="detail" id="getResultSetMapping(java.lang.Class,java.lang.String)">
-<h3>getResultSetMapping</h3>
-<div class="member-signature"><span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;T&gt;</span>&nbsp;<span class="element-name">getResultSetMapping</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;resultType,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;mappingName)</span></div>
-<div class="block">Obtain a native SQL result set mapping defined via the annotation
- <code>SqlResultSetMapping</code>.</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getEntityGraph(java.lang.Class,java.lang.String)">
-<h3>getEntityGraph</h3>
-<div class="member-signature"><span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">jakarta.persistence.EntityGraph&lt;T&gt;</span>&nbsp;<span class="element-name">getEntityGraph</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;rootType,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;graphName)</span></div>
-<div class="block">Obtain a named <code>EntityGraph</code></div>
-</section>
-</li>
-<li>
-<section class="detail" id="createEntityGraph(java.lang.Class)">
-<h3>createEntityGraph</h3>
-<div class="member-signature"><span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">jakarta.persistence.EntityGraph&lt;T&gt;</span>&nbsp;<span class="element-name">createEntityGraph</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;rootType)</span></div>
-<div class="block">Create a new mutable <code>EntityGraph</code></div>
-</section>
-</li>
-<li>
-<section class="detail" id="createEntityGraph(java.lang.Class,java.lang.String)">
-<h3>createEntityGraph</h3>
-<div class="member-signature"><span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">jakarta.persistence.EntityGraph&lt;T&gt;</span>&nbsp;<span class="element-name">createEntityGraph</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;rootType,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;graphName)</span></div>
-<div class="block">Create a new mutable copy of a named <code>EntityGraph</code></div>
-</section>
-</li>
-<li>
 <section class="detail" id="withTransaction(java.util.function.Function)">
 <h3>withTransaction</h3>
 <div class="member-signature"><span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;T&gt;</span>&nbsp;<span class="element-name">withTransaction</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="Stage.Transaction.html" title="interface in org.hibernate.reactive.stage">Stage.Transaction</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;T&gt;&gt;&nbsp;work)</span></div>
@@ -1418,6 +974,19 @@ extends <a href="Stage.Closeable.html" title="interface in org.hibernate.reactiv
 <h3>getFactory</h3>
 <div class="member-signature"><span class="return-type"><a href="Stage.SessionFactory.html" title="interface in org.hibernate.reactive.stage">Stage.SessionFactory</a></span>&nbsp;<span class="element-name">getFactory</span>()</div>
 <div class="block">The <a href="Stage.SessionFactory.html" title="interface in org.hibernate.reactive.stage"><code>Stage.SessionFactory</code></a> which created this session.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getCriteriaBuilder()">
+<h3>getCriteriaBuilder</h3>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">jakarta.persistence.criteria.CriteriaBuilder</span>&nbsp;<span class="element-name">getCriteriaBuilder</span>()</div>
+<div class="block">Convenience method to obtain the <code>CriteriaBuilder</code>.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="Stage.QueryProducer.html#getCriteriaBuilder()">getCriteriaBuilder</a></code>&nbsp;in interface&nbsp;<code><a href="Stage.QueryProducer.html" title="interface in org.hibernate.reactive.stage">Stage.QueryProducer</a></code></dd>
+<dt>Since:</dt>
+<dd>3</dd>
+</dl>
 </section>
 </li>
 </ul>

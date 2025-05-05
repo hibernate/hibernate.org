@@ -60,13 +60,15 @@ loadScripts(document, 'script');</script>
 <div class="block">An API for Hibernate Reactive where non-blocking operations are
  represented by a Mutiny <code>Uni</code>.</div>
 </div>
-<div class="col-first odd-row-color"><a href="#org.hibernate.reactive.session">org.hibernate.reactive.session</a></div>
-<div class="col-last odd-row-color">
+<div class="col-first odd-row-color"><a href="#org.hibernate.reactive.mutiny.delegation">org.hibernate.reactive.mutiny.delegation</a></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><a href="#org.hibernate.reactive.session">org.hibernate.reactive.session</a></div>
+<div class="col-last even-row-color">
 <div class="block">Defines internal contracts between subsystems of Hibernate Reactive
  and the <a href="../../session/ReactiveSession.html" title="interface in org.hibernate.reactive.session"><code>ReactiveSession</code></a>.</div>
 </div>
-<div class="col-first even-row-color"><a href="#org.hibernate.reactive.stage">org.hibernate.reactive.stage</a></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><a href="#org.hibernate.reactive.stage">org.hibernate.reactive.stage</a></div>
+<div class="col-last odd-row-color">
 <div class="block">An API for Hibernate Reactive where non-blocking operations are
  represented by a Java <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link"><code>CompletionStage</code></a>.</div>
 </div>
@@ -82,7 +84,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>&lt;R&gt;&nbsp;<a href="../../mutiny/Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;R&gt;</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Mutiny.Session.</span><code><a href="../../mutiny/Mutiny.Session.html#createNativeQuery(java.lang.String,java.lang.Class,org.hibernate.reactive.common.AffectedEntities)" class="member-name-link">createNativeQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString,
+<div class="col-second even-row-color"><span class="type-name-label">Mutiny.QueryProducer.</span><code><a href="../../mutiny/Mutiny.QueryProducer.html#createNativeQuery(java.lang.String,java.lang.Class,org.hibernate.reactive.common.AffectedEntities)" class="member-name-link">createNativeQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;R&gt;&nbsp;resultType,
  <a href="../AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code></div>
 <div class="col-last even-row-color">
@@ -90,14 +92,14 @@ loadScripts(document, 'script');</script>
  string, using the given <code>resultType</code> to interpret the results.</div>
 </div>
 <div class="col-first odd-row-color"><code>&lt;R&gt;&nbsp;<a href="../../mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Mutiny.Session.</span><code><a href="../../mutiny/Mutiny.Session.html#createNativeQuery(java.lang.String,org.hibernate.reactive.common.AffectedEntities)" class="member-name-link">createNativeQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString,
+<div class="col-second odd-row-color"><span class="type-name-label">Mutiny.QueryProducer.</span><code><a href="../../mutiny/Mutiny.QueryProducer.html#createNativeQuery(java.lang.String,org.hibernate.reactive.common.AffectedEntities)" class="member-name-link">createNativeQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString,
  <a href="../AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">Create an instance of <a href="../../mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Query</code></a> for the given SQL query string,
  or SQL update, insert, or delete statement.</div>
 </div>
 <div class="col-first even-row-color"><code>&lt;R&gt;&nbsp;<a href="../../mutiny/Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;R&gt;</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Mutiny.Session.</span><code><a href="../../mutiny/Mutiny.Session.html#createNativeQuery(java.lang.String,org.hibernate.reactive.common.ResultSetMapping,org.hibernate.reactive.common.AffectedEntities)" class="member-name-link">createNativeQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString,
+<div class="col-second even-row-color"><span class="type-name-label">Mutiny.QueryProducer.</span><code><a href="../../mutiny/Mutiny.QueryProducer.html#createNativeQuery(java.lang.String,org.hibernate.reactive.common.ResultSetMapping,org.hibernate.reactive.common.AffectedEntities)" class="member-name-link">createNativeQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString,
  <a href="../ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping,
  <a href="../AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code></div>
 <div class="col-last even-row-color">
@@ -105,6 +107,45 @@ loadScripts(document, 'script');</script>
  string, using the given <a href="../ResultSetMapping.html" title="interface in org.hibernate.reactive.common"><code>ResultSetMapping</code></a> to interpret the
  result set.</div>
 </div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="org.hibernate.reactive.mutiny.delegation">
+<h2>Uses of <a href="../AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a> in <a href="../../mutiny/delegation/package-summary.html">org.hibernate.reactive.mutiny.delegation</a></h2>
+<div class="caption"><span>Methods in <a href="../../mutiny/delegation/package-summary.html">org.hibernate.reactive.mutiny.delegation</a> with parameters of type <a href="../AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>&lt;R&gt;&nbsp;<a href="../../mutiny/Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;R&gt;</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MutinySessionDelegator.</span><code><a href="../../mutiny/delegation/MutinySessionDelegator.html#createNativeQuery(java.lang.String,java.lang.Class,org.hibernate.reactive.common.AffectedEntities)" class="member-name-link">createNativeQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString,
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;R&gt;&nbsp;resultType,
+ <a href="../AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>&lt;R&gt;&nbsp;<a href="../../mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MutinySessionDelegator.</span><code><a href="../../mutiny/delegation/MutinySessionDelegator.html#createNativeQuery(java.lang.String,org.hibernate.reactive.common.AffectedEntities)" class="member-name-link">createNativeQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString,
+ <a href="../AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>&lt;R&gt;&nbsp;<a href="../../mutiny/Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;R&gt;</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MutinySessionDelegator.</span><code><a href="../../mutiny/delegation/MutinySessionDelegator.html#createNativeQuery(java.lang.String,org.hibernate.reactive.common.ResultSetMapping,org.hibernate.reactive.common.AffectedEntities)" class="member-name-link">createNativeQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString,
+ <a href="../ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping,
+ <a href="../AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>&lt;R&gt;&nbsp;<a href="../../mutiny/Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;R&gt;</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MutinyStatelessSessionDelegator.</span><code><a href="../../mutiny/delegation/MutinyStatelessSessionDelegator.html#createNativeQuery(java.lang.String,java.lang.Class,org.hibernate.reactive.common.AffectedEntities)" class="member-name-link">createNativeQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString,
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;R&gt;&nbsp;resultType,
+ <a href="../AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>&lt;R&gt;&nbsp;<a href="../../mutiny/Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MutinyStatelessSessionDelegator.</span><code><a href="../../mutiny/delegation/MutinyStatelessSessionDelegator.html#createNativeQuery(java.lang.String,org.hibernate.reactive.common.AffectedEntities)" class="member-name-link">createNativeQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString,
+ <a href="../AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>&lt;R&gt;&nbsp;<a href="../../mutiny/Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;R&gt;</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MutinyStatelessSessionDelegator.</span><code><a href="../../mutiny/delegation/MutinyStatelessSessionDelegator.html#createNativeQuery(java.lang.String,org.hibernate.reactive.common.ResultSetMapping,org.hibernate.reactive.common.AffectedEntities)" class="member-name-link">createNativeQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString,
+ <a href="../ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping,
+ <a href="../AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -142,7 +183,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>&lt;R&gt;&nbsp;<a href="../../stage/Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage">Stage.SelectionQuery</a>&lt;R&gt;</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Stage.Session.</span><code><a href="../../stage/Stage.Session.html#createNativeQuery(java.lang.String,java.lang.Class,org.hibernate.reactive.common.AffectedEntities)" class="member-name-link">createNativeQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString,
+<div class="col-second even-row-color"><span class="type-name-label">Stage.QueryProducer.</span><code><a href="../../stage/Stage.QueryProducer.html#createNativeQuery(java.lang.String,java.lang.Class,org.hibernate.reactive.common.AffectedEntities)" class="member-name-link">createNativeQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;R&gt;&nbsp;resultType,
  <a href="../AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code></div>
 <div class="col-last even-row-color">
@@ -150,14 +191,14 @@ loadScripts(document, 'script');</script>
  string, using the given <code>resultType</code> to interpret the results.</div>
 </div>
 <div class="col-first odd-row-color"><code>&lt;R&gt;&nbsp;<a href="../../stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage">Stage.Query</a>&lt;R&gt;</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Stage.Session.</span><code><a href="../../stage/Stage.Session.html#createNativeQuery(java.lang.String,org.hibernate.reactive.common.AffectedEntities)" class="member-name-link">createNativeQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString,
+<div class="col-second odd-row-color"><span class="type-name-label">Stage.QueryProducer.</span><code><a href="../../stage/Stage.QueryProducer.html#createNativeQuery(java.lang.String,org.hibernate.reactive.common.AffectedEntities)" class="member-name-link">createNativeQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString,
  <a href="../AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">Create an instance of <a href="../../stage/Stage.Query.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Query</code></a> for the given SQL query string,
  or SQL update, insert, or delete statement.</div>
 </div>
 <div class="col-first even-row-color"><code>&lt;R&gt;&nbsp;<a href="../../stage/Stage.SelectionQuery.html" title="interface in org.hibernate.reactive.stage">Stage.SelectionQuery</a>&lt;R&gt;</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Stage.Session.</span><code><a href="../../stage/Stage.Session.html#createNativeQuery(java.lang.String,org.hibernate.reactive.common.ResultSetMapping,org.hibernate.reactive.common.AffectedEntities)" class="member-name-link">createNativeQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString,
+<div class="col-second even-row-color"><span class="type-name-label">Stage.QueryProducer.</span><code><a href="../../stage/Stage.QueryProducer.html#createNativeQuery(java.lang.String,org.hibernate.reactive.common.ResultSetMapping,org.hibernate.reactive.common.AffectedEntities)" class="member-name-link">createNativeQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString,
  <a href="../ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping,
  <a href="../AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code></div>
 <div class="col-last even-row-color">

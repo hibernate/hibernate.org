@@ -60,12 +60,25 @@ loadScripts(document, 'script');</script>
 <div class="block">An API for Hibernate Reactive where non-blocking operations are
  represented by a Mutiny <code>Uni</code>.</div>
 </div>
+<div class="col-first odd-row-color"><a href="#org.hibernate.reactive.mutiny.delegation">org.hibernate.reactive.mutiny.delegation</a></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <section class="class-uses">
 <ul class="block-list">
 <li>
 <section class="detail" id="org.hibernate.reactive.mutiny">
 <h2>Uses of <a href="../Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a> in <a href="../package-summary.html">org.hibernate.reactive.mutiny</a></h2>
+<div class="caption"><span>Methods in <a href="../package-summary.html">org.hibernate.reactive.mutiny</a> that return <a href="../Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code><a href="../Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Mutiny.SessionFactory.</span><code><a href="../Mutiny.SessionFactory.html#getCurrentStatelessSession()" class="member-name-link">getCurrentStatelessSession</a>()</code></div>
+<div class="col-last even-row-color">
+<div class="block">Return the current instance of <a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Session</code></a>, if any.</div>
+</div>
+</div>
 <div class="caption"><span>Methods in <a href="../package-summary.html">org.hibernate.reactive.mutiny</a> that return types with arguments of type <a href="../Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></span></div>
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
@@ -119,6 +132,31 @@ loadScripts(document, 'script');</script>
 <div class="block">Perform work using a <a href="../Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> within an
  associated <a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.</div>
 </div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="org.hibernate.reactive.mutiny.delegation">
+<h2>Uses of <a href="../Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a> in <a href="../delegation/package-summary.html">org.hibernate.reactive.mutiny.delegation</a></h2>
+<div class="caption"><span>Classes in <a href="../delegation/package-summary.html">org.hibernate.reactive.mutiny.delegation</a> that implement <a href="../Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Class</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>class&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../delegation/MutinyStatelessSessionDelegator.html" class="type-name-link" title="class in org.hibernate.reactive.mutiny.delegation">MutinyStatelessSessionDelegator</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Wraps a <a href="../delegation/MutinyStatelessSessionDelegator.html#delegate()">MutinyStatelessSessionDelegator.delegate()</a> stateless session.</div>
+</div>
+</div>
+<div class="caption"><span>Methods in <a href="../delegation/package-summary.html">org.hibernate.reactive.mutiny.delegation</a> that return <a href="../Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>abstract <a href="../Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MutinyStatelessSessionDelegator.</span><code><a href="../delegation/MutinyStatelessSessionDelegator.html#delegate()" class="member-name-link">delegate</a>()</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
