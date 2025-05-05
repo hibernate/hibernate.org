@@ -89,10 +89,6 @@ project: repositories
   :asciidoc
     == Quarkus integration
 
-    Hibernate Data Repositories 6.6 works in Quarkus. Just add:
-
-    - `jakarta.data:jakarta.data-api` and
-    - `org.hibernate.orm:hibernate-jpamodelgen`
-
-    as dependencies via Maven.
-
+    Hibernate Data Repositories 6.6 works in Quarkus. Just add `jakarta.data:jakarta.data-api` as a dependency,
+    and link:https://quarkus.io/guides/hibernate-orm#jakarta-data[configure the `hibernate-jpamodelgen` annotation processor]
+    according to your build tool rules.
