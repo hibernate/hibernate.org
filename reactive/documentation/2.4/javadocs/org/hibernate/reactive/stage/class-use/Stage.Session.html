@@ -167,34 +167,41 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">Stage.SessionFactory.</span><code><span class="memberNameLink"><a href="../Stage.SessionFactory.html#getCurrentSession()">getCurrentSession</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Return the current instance of <a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage"><code>Stage.Session</code></a>, if any.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Stage.Session.</span><code><span class="memberNameLink"><a href="../Stage.Session.html#setBatchSize(java.lang.Integer)">setBatchSize</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a>&nbsp;batchSize)</code></th>
 <td class="colLast">
 <div class="block">Set the session-level batch size, overriding the batch size set
  by the configuration property <code>hibernate.jdbc.batch_size</code>.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Stage.Session.</span><code><span class="memberNameLink"><a href="../Stage.Session.html#setCacheMode(org.hibernate.CacheMode)">setCacheMode</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.6/javadocs/org/hibernate/CacheMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">CacheMode</a>&nbsp;cacheMode)</code></th>
 <td class="colLast">
 <div class="block">Set the <a href="https://docs.jboss.org/hibernate/orm/6.6/javadocs/org/hibernate/CacheMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>cache mode</code></a> for this session.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>default <a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Stage.Session.</span><code><span class="memberNameLink"><a href="../Stage.Session.html#setCacheRetrieveMode(jakarta.persistence.CacheRetrieveMode)">setCacheRetrieveMode</a></span>&#8203;(jakarta.persistence.CacheRetrieveMode&nbsp;cacheRetrieveMode)</code></th>
 <td class="colLast">
 <div class="block">Set the <code>CacheRetrieveMode</code> for this session.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>default <a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Stage.Session.</span><code><span class="memberNameLink"><a href="../Stage.Session.html#setCacheStoreMode(jakarta.persistence.CacheStoreMode)">setCacheStoreMode</a></span>&#8203;(jakarta.persistence.CacheStoreMode&nbsp;cacheStoreMode)</code></th>
 <td class="colLast">
 <div class="block">Set the <code>CacheStoreMode</code> for this session.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Stage.Session.</span><code><span class="memberNameLink"><a href="../Stage.Session.html#setDefaultReadOnly(boolean)">setDefaultReadOnly</a></span>&#8203;(boolean&nbsp;readOnly)</code></th>
 <td class="colLast">
@@ -202,7 +209,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  from modifiable to read-only mode, or from modifiable to read-only mode.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Stage.Session.</span><code><span class="memberNameLink"><a href="../Stage.Session.html#setFetchBatchSize(int)">setFetchBatchSize</a></span>&#8203;(int&nbsp;batchSize)</code></th>
 <td class="colLast">
@@ -210,21 +217,21 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  id in this session.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>default <a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Stage.Session.</span><code><span class="memberNameLink"><a href="../Stage.Session.html#setFlushMode(jakarta.persistence.FlushModeType)">setFlushMode</a></span>&#8203;(jakarta.persistence.FlushModeType&nbsp;flushModeType)</code></th>
 <td class="colLast">
 <div class="block">Set the <code>flush mode</code> for this session.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Stage.Session.</span><code><span class="memberNameLink"><a href="../Stage.Session.html#setFlushMode(org.hibernate.FlushMode)">setFlushMode</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.6/javadocs/org/hibernate/FlushMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">FlushMode</a>&nbsp;flushMode)</code></th>
 <td class="colLast">
 <div class="block">Set the <a href="https://docs.jboss.org/hibernate/orm/6.6/javadocs/org/hibernate/FlushMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>flush mode</code></a> for this session.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Stage.Session.</span><code><span class="memberNameLink"><a href="../Stage.Session.html#setReadOnly(java.lang.Object,boolean)">setReadOnly</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entityOrProxy,
            boolean&nbsp;readOnly)</code></th>
@@ -233,7 +240,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  object to modifiable mode.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Stage.Session.</span><code><span class="memberNameLink"><a href="../Stage.Session.html#setSubselectFetchingEnabled(boolean)">setSubselectFetchingEnabled</a></span>&#8203;(boolean&nbsp;enabled)</code></th>
 <td class="colLast">

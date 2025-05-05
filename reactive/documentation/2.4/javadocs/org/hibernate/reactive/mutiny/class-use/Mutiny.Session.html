@@ -114,6 +114,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr class="rowColor">
+<th class="colFirst" scope="row"><a href="#org.hibernate.reactive.mutiny.delegation">org.hibernate.reactive.mutiny.delegation</a></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="#org.hibernate.reactive.tuple">org.hibernate.reactive.tuple</a></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -167,34 +171,41 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">Mutiny.SessionFactory.</span><code><span class="memberNameLink"><a href="../Mutiny.SessionFactory.html#getCurrentSession()">getCurrentSession</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Return the current instance of <a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Session</code></a>, if any.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Mutiny.Session.</span><code><span class="memberNameLink"><a href="../Mutiny.Session.html#setBatchSize(java.lang.Integer)">setBatchSize</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a>&nbsp;batchSize)</code></th>
 <td class="colLast">
 <div class="block">Set the session-level batch size, overriding the batch size set
  by the configuration property <code>hibernate.jdbc.batch_size</code>.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Mutiny.Session.</span><code><span class="memberNameLink"><a href="../Mutiny.Session.html#setCacheMode(org.hibernate.CacheMode)">setCacheMode</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.6/javadocs/org/hibernate/CacheMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">CacheMode</a>&nbsp;cacheMode)</code></th>
 <td class="colLast">
 <div class="block">Set the <a href="https://docs.jboss.org/hibernate/orm/6.6/javadocs/org/hibernate/CacheMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>cache mode</code></a> for this session.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>default <a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Mutiny.Session.</span><code><span class="memberNameLink"><a href="../Mutiny.Session.html#setCacheRetrieveMode(jakarta.persistence.CacheRetrieveMode)">setCacheRetrieveMode</a></span>&#8203;(jakarta.persistence.CacheRetrieveMode&nbsp;cacheRetrieveMode)</code></th>
 <td class="colLast">
 <div class="block">Set the <code>CacheRetrieveMode</code> for this session.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>default <a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Mutiny.Session.</span><code><span class="memberNameLink"><a href="../Mutiny.Session.html#setCacheStoreMode(jakarta.persistence.CacheStoreMode)">setCacheStoreMode</a></span>&#8203;(jakarta.persistence.CacheStoreMode&nbsp;cacheStoreMode)</code></th>
 <td class="colLast">
 <div class="block">Set the <code>CacheStoreMode</code> for this session.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Mutiny.Session.</span><code><span class="memberNameLink"><a href="../Mutiny.Session.html#setDefaultReadOnly(boolean)">setDefaultReadOnly</a></span>&#8203;(boolean&nbsp;readOnly)</code></th>
 <td class="colLast">
@@ -202,7 +213,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  from modifiable to read-only mode, or from modifiable to read-only mode.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Mutiny.Session.</span><code><span class="memberNameLink"><a href="../Mutiny.Session.html#setFetchBatchSize(int)">setFetchBatchSize</a></span>&#8203;(int&nbsp;batchSize)</code></th>
 <td class="colLast">
@@ -210,21 +221,21 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  id in this session.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>default <a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Mutiny.Session.</span><code><span class="memberNameLink"><a href="../Mutiny.Session.html#setFlushMode(jakarta.persistence.FlushModeType)">setFlushMode</a></span>&#8203;(jakarta.persistence.FlushModeType&nbsp;flushModeType)</code></th>
 <td class="colLast">
 <div class="block">Set the <code>flush mode</code> for this session.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Mutiny.Session.</span><code><span class="memberNameLink"><a href="../Mutiny.Session.html#setFlushMode(org.hibernate.FlushMode)">setFlushMode</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.6/javadocs/org/hibernate/FlushMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">FlushMode</a>&nbsp;flushMode)</code></th>
 <td class="colLast">
 <div class="block">Set the <a href="https://docs.jboss.org/hibernate/orm/6.6/javadocs/org/hibernate/FlushMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink"><code>flush mode</code></a> for this session.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Mutiny.Session.</span><code><span class="memberNameLink"><a href="../Mutiny.Session.html#setReadOnly(java.lang.Object,boolean)">setReadOnly</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entityOrProxy,
            boolean&nbsp;readOnly)</code></th>
@@ -233,7 +244,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  object to modifiable mode.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Mutiny.Session.</span><code><span class="memberNameLink"><a href="../Mutiny.Session.html#setSubselectFetchingEnabled(boolean)">setSubselectFetchingEnabled</a></span>&#8203;(boolean&nbsp;enabled)</code></th>
 <td class="colLast">
@@ -317,6 +328,116 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Perform work using a <a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> within an
  associated transaction.</div>
 </td>
+</tr>
+</tbody>
+</table>
+</section>
+</li>
+<li class="blockList">
+<section><a id="org.hibernate.reactive.mutiny.delegation">
+<!--   -->
+</a>
+<h3>Uses of <a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a> in <a href="../delegation/package-summary.html">org.hibernate.reactive.mutiny.delegation</a></h3>
+<table class="useSummary">
+<caption><span>Classes in <a href="../delegation/package-summary.html">org.hibernate.reactive.mutiny.delegation</a> that implement <a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Class</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>class&nbsp;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../delegation/MutinySessionDelegator.html" title="class in org.hibernate.reactive.mutiny.delegation">MutinySessionDelegator</a></span></code></th>
+<td class="colLast">
+<div class="block">Wraps a <a href="../delegation/MutinySessionDelegator.html#delegate()">MutinySessionDelegator.delegate()</a> session.</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="useSummary">
+<caption><span>Methods in <a href="../delegation/package-summary.html">org.hibernate.reactive.mutiny.delegation</a> that return <a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Method</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinySessionDelegator.</span><code><span class="memberNameLink"><a href="../delegation/MutinySessionDelegator.html#clear()">clear</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract <a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinySessionDelegator.</span><code><span class="memberNameLink"><a href="../delegation/MutinySessionDelegator.html#delegate()">delegate</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinySessionDelegator.</span><code><span class="memberNameLink"><a href="../delegation/MutinySessionDelegator.html#detach(java.lang.Object)">detach</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entity)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinySessionDelegator.</span><code><span class="memberNameLink"><a href="../delegation/MutinySessionDelegator.html#disableFetchProfile(java.lang.String)">disableFetchProfile</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinySessionDelegator.</span><code><span class="memberNameLink"><a href="../delegation/MutinySessionDelegator.html#enableFetchProfile(java.lang.String)">enableFetchProfile</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinySessionDelegator.</span><code><span class="memberNameLink"><a href="../delegation/MutinySessionDelegator.html#setBatchSize(java.lang.Integer)">setBatchSize</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a>&nbsp;batchSize)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinySessionDelegator.</span><code><span class="memberNameLink"><a href="../delegation/MutinySessionDelegator.html#setCacheMode(org.hibernate.CacheMode)">setCacheMode</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.6/javadocs/org/hibernate/CacheMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">CacheMode</a>&nbsp;cacheMode)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinySessionDelegator.</span><code><span class="memberNameLink"><a href="../delegation/MutinySessionDelegator.html#setCacheRetrieveMode(jakarta.persistence.CacheRetrieveMode)">setCacheRetrieveMode</a></span>&#8203;(jakarta.persistence.CacheRetrieveMode&nbsp;cacheRetrieveMode)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinySessionDelegator.</span><code><span class="memberNameLink"><a href="../delegation/MutinySessionDelegator.html#setCacheStoreMode(jakarta.persistence.CacheStoreMode)">setCacheStoreMode</a></span>&#8203;(jakarta.persistence.CacheStoreMode&nbsp;cacheStoreMode)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinySessionDelegator.</span><code><span class="memberNameLink"><a href="../delegation/MutinySessionDelegator.html#setDefaultReadOnly(boolean)">setDefaultReadOnly</a></span>&#8203;(boolean&nbsp;readOnly)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinySessionDelegator.</span><code><span class="memberNameLink"><a href="../delegation/MutinySessionDelegator.html#setFetchBatchSize(int)">setFetchBatchSize</a></span>&#8203;(int&nbsp;batchSize)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinySessionDelegator.</span><code><span class="memberNameLink"><a href="../delegation/MutinySessionDelegator.html#setFlushMode(jakarta.persistence.FlushModeType)">setFlushMode</a></span>&#8203;(jakarta.persistence.FlushModeType&nbsp;flushModeType)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinySessionDelegator.</span><code><span class="memberNameLink"><a href="../delegation/MutinySessionDelegator.html#setFlushMode(org.hibernate.FlushMode)">setFlushMode</a></span>&#8203;(<a href="https://docs.jboss.org/hibernate/orm/6.6/javadocs/org/hibernate/FlushMode.html?is-external=true" title="class or interface in org.hibernate" class="externalLink">FlushMode</a>&nbsp;flushMode)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinySessionDelegator.</span><code><span class="memberNameLink"><a href="../delegation/MutinySessionDelegator.html#setReadOnly(java.lang.Object,boolean)">setReadOnly</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;entityOrProxy,
+           boolean&nbsp;readOnly)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinySessionDelegator.</span><code><span class="memberNameLink"><a href="../delegation/MutinySessionDelegator.html#setSubselectFetchingEnabled(boolean)">setSubselectFetchingEnabled</a></span>&#8203;(boolean&nbsp;enabled)</code></th>
+<td class="colLast">&nbsp;</td>
 </tr>
 </tbody>
 </table>

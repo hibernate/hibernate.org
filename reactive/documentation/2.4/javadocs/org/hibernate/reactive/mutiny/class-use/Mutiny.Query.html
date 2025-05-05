@@ -113,6 +113,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  represented by a Mutiny <code>Uni</code>.</div>
 </td>
 </tr>
+<tr class="rowColor">
+<th class="colFirst" scope="row"><a href="#org.hibernate.reactive.mutiny.delegation">org.hibernate.reactive.mutiny.delegation</a></th>
+<td class="colLast">&nbsp;</td>
+</tr>
 </tbody>
 </table>
 </li>
@@ -294,6 +298,63 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <td class="colFirst"><code><a href="../Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;<a href="../Mutiny.Query.html" title="type parameter in Mutiny.Query">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Mutiny.Query.</span><code><span class="memberNameLink"><a href="../Mutiny.Query.html#setReadOnly(boolean)">setReadOnly</a></span>&#8203;(boolean&nbsp;readOnly)</code></th>
 <td class="colLast">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</section>
+</li>
+<li class="blockList">
+<section><a id="org.hibernate.reactive.mutiny.delegation">
+<!--   -->
+</a>
+<h3>Uses of <a href="../Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a> in <a href="../delegation/package-summary.html">org.hibernate.reactive.mutiny.delegation</a></h3>
+<table class="useSummary">
+<caption><span>Methods in <a href="../delegation/package-summary.html">org.hibernate.reactive.mutiny.delegation</a> that return <a href="../Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Method</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinySessionDelegator.</span><code><span class="memberNameLink"><a href="../delegation/MutinySessionDelegator.html#createNamedQuery(java.lang.String)">createNamedQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryName)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinyStatelessSessionDelegator.</span><code><span class="memberNameLink"><a href="../delegation/MutinyStatelessSessionDelegator.html#createNamedQuery(java.lang.String)">createNamedQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryName)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinySessionDelegator.</span><code><span class="memberNameLink"><a href="../delegation/MutinySessionDelegator.html#createNativeQuery(java.lang.String)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinySessionDelegator.</span><code><span class="memberNameLink"><a href="../delegation/MutinySessionDelegator.html#createNativeQuery(java.lang.String,org.hibernate.reactive.common.AffectedEntities)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+                 <a href="../../common/AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinyStatelessSessionDelegator.</span><code><span class="memberNameLink"><a href="../delegation/MutinyStatelessSessionDelegator.html#createNativeQuery(java.lang.String)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinySessionDelegator.</span><code><span class="memberNameLink"><a href="../delegation/MutinySessionDelegator.html#createQuery(java.lang.String)">createQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString)</code></th>
+<td class="colLast">
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinyStatelessSessionDelegator.</span><code><span class="memberNameLink"><a href="../delegation/MutinyStatelessSessionDelegator.html#createQuery(java.lang.String)">createQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString)</code></th>
+<td class="colLast">
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
+</td>
 </tr>
 </tbody>
 </table>

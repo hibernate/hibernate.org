@@ -113,6 +113,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  represented by a Mutiny <code>Uni</code>.</div>
 </td>
 </tr>
+<tr class="rowColor">
+<th class="colFirst" scope="row"><a href="#org.hibernate.reactive.mutiny.delegation">org.hibernate.reactive.mutiny.delegation</a></th>
+<td class="colLast">&nbsp;</td>
+</tr>
 </tbody>
 </table>
 </li>
@@ -123,6 +127,23 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <!--   -->
 </a>
 <h3>Uses of <a href="../Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a> in <a href="../package-summary.html">org.hibernate.reactive.mutiny</a></h3>
+<table class="useSummary">
+<caption><span>Methods in <a href="../package-summary.html">org.hibernate.reactive.mutiny</a> that return <a href="../Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Method</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">Mutiny.SessionFactory.</span><code><span class="memberNameLink"><a href="../Mutiny.SessionFactory.html#getCurrentStatelessSession()">getCurrentStatelessSession</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Return the current instance of <a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.Session</code></a>, if any.</div>
+</td>
+</tr>
+</tbody>
+</table>
 <table class="useSummary">
 <caption><span>Methods in <a href="../package-summary.html">org.hibernate.reactive.mutiny</a> that return types with arguments of type <a href="../Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
@@ -196,6 +217,45 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Perform work using a <a href="../Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> within an
  associated <a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.</div>
 </td>
+</tr>
+</tbody>
+</table>
+</section>
+</li>
+<li class="blockList">
+<section><a id="org.hibernate.reactive.mutiny.delegation">
+<!--   -->
+</a>
+<h3>Uses of <a href="../Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a> in <a href="../delegation/package-summary.html">org.hibernate.reactive.mutiny.delegation</a></h3>
+<table class="useSummary">
+<caption><span>Classes in <a href="../delegation/package-summary.html">org.hibernate.reactive.mutiny.delegation</a> that implement <a href="../Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Class</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>class&nbsp;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../delegation/MutinyStatelessSessionDelegator.html" title="class in org.hibernate.reactive.mutiny.delegation">MutinyStatelessSessionDelegator</a></span></code></th>
+<td class="colLast">
+<div class="block">Wraps a <a href="../delegation/MutinyStatelessSessionDelegator.html#delegate()">MutinyStatelessSessionDelegator.delegate()</a> stateless session.</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="useSummary">
+<caption><span>Methods in <a href="../delegation/package-summary.html">org.hibernate.reactive.mutiny.delegation</a> that return <a href="../Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Method</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>abstract <a href="../Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinyStatelessSessionDelegator.</span><code><span class="memberNameLink"><a href="../delegation/MutinyStatelessSessionDelegator.html#delegate()">delegate</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
 </tr>
 </tbody>
 </table>

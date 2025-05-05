@@ -114,13 +114,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr class="rowColor">
+<th class="colFirst" scope="row"><a href="#org.hibernate.reactive.mutiny.delegation">org.hibernate.reactive.mutiny.delegation</a></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="#org.hibernate.reactive.session">org.hibernate.reactive.session</a></th>
 <td class="colLast">
 <div class="block">Defines internal contracts between subsystems of Hibernate Reactive
  and the <a href="../../session/ReactiveSession.html" title="interface in org.hibernate.reactive.session"><code>ReactiveSession</code></a>.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="#org.hibernate.reactive.stage">org.hibernate.reactive.stage</a></th>
 <td class="colLast">
 <div class="block">An API for Hibernate Reactive where non-blocking operations are
@@ -203,6 +207,64 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  string, using the given <a href="../ResultSetMapping.html" title="interface in org.hibernate.reactive.common"><code>ResultSetMapping</code></a> to interpret the
  result set.</div>
 </td>
+</tr>
+</tbody>
+</table>
+</section>
+</li>
+<li class="blockList">
+<section><a id="org.hibernate.reactive.mutiny.delegation">
+<!--   -->
+</a>
+<h3>Uses of <a href="../ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a> in <a href="../../mutiny/delegation/package-summary.html">org.hibernate.reactive.mutiny.delegation</a></h3>
+<table class="useSummary">
+<caption><span>Methods in <a href="../../mutiny/delegation/package-summary.html">org.hibernate.reactive.mutiny.delegation</a> that return <a href="../ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Method</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="../ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;T&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinySessionDelegator.</span><code><span class="memberNameLink"><a href="../../mutiny/delegation/MutinySessionDelegator.html#getResultSetMapping(java.lang.Class,java.lang.String)">getResultSetMapping</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;resultType,
+                   <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;mappingName)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="../ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;T&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinyStatelessSessionDelegator.</span><code><span class="memberNameLink"><a href="../../mutiny/delegation/MutinyStatelessSessionDelegator.html#getResultSetMapping(java.lang.Class,java.lang.String)">getResultSetMapping</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;resultType,
+                   <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;mappingName)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table class="useSummary">
+<caption><span>Methods in <a href="../../mutiny/delegation/package-summary.html">org.hibernate.reactive.mutiny.delegation</a> with parameters of type <a href="../ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Method</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../mutiny/Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;R&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinySessionDelegator.</span><code><span class="memberNameLink"><a href="../../mutiny/delegation/MutinySessionDelegator.html#createNativeQuery(java.lang.String,org.hibernate.reactive.common.ResultSetMapping)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+                 <a href="../ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../mutiny/Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;R&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinySessionDelegator.</span><code><span class="memberNameLink"><a href="../../mutiny/delegation/MutinySessionDelegator.html#createNativeQuery(java.lang.String,org.hibernate.reactive.common.ResultSetMapping,org.hibernate.reactive.common.AffectedEntities)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+                 <a href="../ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping,
+                 <a href="../AffectedEntities.html" title="class in org.hibernate.reactive.common">AffectedEntities</a>&nbsp;affectedEntities)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../mutiny/Mutiny.SelectionQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SelectionQuery</a>&lt;R&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinyStatelessSessionDelegator.</span><code><span class="memberNameLink"><a href="../../mutiny/delegation/MutinyStatelessSessionDelegator.html#createNativeQuery(java.lang.String,org.hibernate.reactive.common.ResultSetMapping)">createNativeQuery</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;queryString,
+                 <a href="../ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;R&gt;&nbsp;resultSetMapping)</code></th>
+<td class="colLast">&nbsp;</td>
 </tr>
 </tbody>
 </table>

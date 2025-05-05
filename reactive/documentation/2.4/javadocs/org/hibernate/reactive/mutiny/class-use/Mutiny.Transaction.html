@@ -113,6 +113,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  represented by a Mutiny <code>Uni</code>.</div>
 </td>
 </tr>
+<tr class="rowColor">
+<th class="colFirst" scope="row"><a href="#org.hibernate.reactive.mutiny.delegation">org.hibernate.reactive.mutiny.delegation</a></th>
+<td class="colLast">&nbsp;</td>
+</tr>
 </tbody>
 </table>
 </li>
@@ -206,6 +210,53 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Performs the given work within the scope of a database transaction,
  automatically flushing the session.</div>
 </td>
+</tr>
+</tbody>
+</table>
+</section>
+</li>
+<li class="blockList">
+<section><a id="org.hibernate.reactive.mutiny.delegation">
+<!--   -->
+</a>
+<h3>Uses of <a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a> in <a href="../delegation/package-summary.html">org.hibernate.reactive.mutiny.delegation</a></h3>
+<table class="useSummary">
+<caption><span>Methods in <a href="../delegation/package-summary.html">org.hibernate.reactive.mutiny.delegation</a> that return <a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Method</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinySessionDelegator.</span><code><span class="memberNameLink"><a href="../delegation/MutinySessionDelegator.html#currentTransaction()">currentTransaction</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinyStatelessSessionDelegator.</span><code><span class="memberNameLink"><a href="../delegation/MutinyStatelessSessionDelegator.html#currentTransaction()">currentTransaction</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table class="useSummary">
+<caption><span>Method parameters in <a href="../delegation/package-summary.html">org.hibernate.reactive.mutiny.delegation</a> with type arguments of type <a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Method</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinySessionDelegator.</span><code><span class="memberNameLink"><a href="../delegation/MutinySessionDelegator.html#withTransaction(java.util.function.Function)">withTransaction</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function" class="externalLink">Function</a>&lt;<a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a>,&#8203;io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MutinyStatelessSessionDelegator.</span><code><span class="memberNameLink"><a href="../delegation/MutinyStatelessSessionDelegator.html#withTransaction(java.util.function.Function)">withTransaction</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function" class="externalLink">Function</a>&lt;<a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a>,&#8203;io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</code></th>
+<td class="colLast">&nbsp;</td>
 </tr>
 </tbody>
 </table>
