@@ -2,9 +2,6 @@
 :awestruct-layout: project-documentation
 :awestruct-project: search
 :page-interpolate: true
-// TODO Remove the override when 6.0 is released as stable
-//:guides_version_family: #{latest_stable_release(page).version_family}
-:guides_version_family: 6.0
 
 == Other documentation
 
