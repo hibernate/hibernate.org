@@ -383,15 +383,11 @@ projects:
     name: Hibernate Tools
     icon: 'icon-wrench'
     description: |
-      Working with Hibernate is very easy and developers enjoy using the APIs and the query language.<br/>
-      But sometimes you want to get started with a quick prototype or overcome the burden of creating lots of entities 
-      that reflect your database structure.<br/>
-      Hibernate Tools and its reverse engineering functionalities will help you and make 
-      working with Hibernate and JPA even more pleasant.
+      Reverse engineer Java entities from an existing SQL database schema.
     blog_tag: Hibernate Tools
     blog_tag_url: hibernate-tools
     license:
-      name: LGPL V2.1
+      name: LGPL v2.1
       url: https://github.com/hibernate/hibernate-tools/blob/master/lgpl.txt
     jira:
       key: HBX
