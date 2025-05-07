@@ -84,6 +84,7 @@ module Awestruct
         file = File.open(template_file, "rb")
         content = file.read
         file.close
+        content % {url: @target_url}
       end
     end
   end
