@@ -29,11 +29,6 @@ maven:
       repo_url: 'https://repository.jboss.org/nexus/content/repositories/public'
       web_ui_url: 'https://oss.sonatype.org/#view-repositories;snapshots~browsestorage'
 
-# Various settings
-enable_google_analytics: false
-google_analytics:
-  id: G-6XDRJZ1Q1R
-
 # Various resources
 jquery_js_url: https://code.jquery.com/jquery-3.1.1
 jquery_js_url_integrity: "sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7"
@@ -751,7 +746,6 @@ profiles:
     jquery_js_url_integrity: "sha384-VC7EHu0lDzZyFfmjTPJq+DFyIn8TUGAJbEtpXquazFVr00Q/OOx//RjiZ9yU9+9m"
     semantic_ui_js_url_integrity: "sha384-/OCHdyuUZjDPStDj7ti/VaVeGQ4U9HxuJhh0FNfMTf0eO1VeBLAam8EiKCIK+jso"
     slick_js_url_integrity: "sha384-vIgLoBvIiHAJ0ttXa/pf/vpP9JgaN/9dCH6zbhDPEF3H8fvQXE0wHjS/LauoTNF1"
-    enable_google_analytics: false
     base_url: http://0.0.0.0:4242
     news_feed_root_url: https://staging.in.relation.to/feeds
   test:
@@ -769,5 +763,4 @@ profiles:
     news_feed_root_url: https://staging.in.relation.to/feeds
   production:
     base_url: https://hibernate.org
-    enable_google_analytics: true
     news_feed_root_url: https://in.relation.to/feeds

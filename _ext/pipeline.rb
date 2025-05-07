@@ -1,7 +1,6 @@
 require 'js_minifier'
 require 'css_minifier'
 require 'html_minifier'
-require 'google_analytics_4'
 require 'relative'
 require 'releases'
 require 'release_file_parser'
@@ -38,7 +37,6 @@ end
 Awestruct::Extensions::Pipeline.new do
   # register helpers to be used in templates
   helper Awestruct::Extensions::Partial
-  helper Awestruct::Extensions::GoogleAnalytics4
   helper Awestruct::Extensions::Relative
   helper Awestruct::Extensions::Releases
   helper Awestruct::Extensions::DirectoryListing

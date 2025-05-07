@@ -2,8 +2,6 @@
 %html(lang="en")
   %head
     = partial('head.html.haml', { "real_page" => page } )
-    - if site.enable_google_analytics
-      = google_analytics
 
   %body.pushable
     = partial( 'menu/mobile.html.haml', {"real_page" => page} )
