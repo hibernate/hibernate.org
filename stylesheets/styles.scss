@@ -1032,3 +1032,71 @@ pre .comment .conum {
 	}
 }
 
+// copy to clipboard:
+
+pre.highlight {
+	position: relative;
+
+	.btn-copy {
+		cursor: pointer;
+		transition: opacity 0.3s ease-in-out;
+		opacity: 0;
+		padding: 2px 6px;
+		position: absolute;
+		right: 0.825rem;
+		top: 0.025rem;
+		background-color: transparent;
+		border: none;
+
+		&:focus {
+			opacity: 0.5;
+		}
+	}
+}
+
+.listingblock {
+	&:hover {
+		.btn-copy {
+			opacity: 0.5;
+		}
+
+		code[data-lang]::before {
+			opacity: 0.5;
+		}
+
+		.tooltip-text.show {
+			opacity: 1;
+		}
+	}
+
+	code[data-lang] {
+		&::before {
+			display: block;
+			content: attr(data-lang) '|';
+			top: .425rem;
+			right: 2.2rem;
+			transition: opacity 0.3s ease-in-out;
+			opacity: 0;
+			position: absolute;
+			font-size: .75em;
+			line-height: 1;
+			text-transform: uppercase;
+			color: inherit;
+		}
+	}
+}
+
+.tooltip-text {
+	display: block;
+	position: absolute;
+	top: 1.5rem;
+	right: 4px;
+	background: #444;
+	color: #fff;
+	padding: 6px 10px;
+	border-radius: 4px;
+	white-space: nowrap;
+	z-index: 1;
+	opacity: 0;
+	font-size: 11px;
+}

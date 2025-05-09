@@ -40,6 +40,7 @@
 %link(href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet")
 %script(src="#{site.jquery_js_url}#{site.minified}.js" crossorigin="anonymous" type="text/javascript" integrity="#{site.jquery_js_url_integrity}")
 %script(src="#{site.semantic_ui_js_url}#{site.minified}.js" crossorigin="anonymous" type="text/javascript" integrity="#{site.semantic_ui_js_url_integrity}")
+%script(src="#{site.clipboard_js_url}#{site.minified}.js" crossorigin="anonymous" type="text/javascript" integrity="#{site.clipboard_js_url_integrity}")
 - if real_page.javascripts
   - real_page.javascripts.each do |javascript|
     %script{:src=>javascript, :type=>'text/javascript'}
