@@ -58,3 +58,47 @@
             $('body, html').animate({scrollTop:0}, 800);
           });
         });
+
+    :javascript
+       /*
+        * This is an adapted version of https://github.com/quarkusio/quarkusio.github.io/blob/317db07ca629dc331455692d2976ecece95319cd/assets/javascript/copy.js
+        */
+        const codes = document.querySelectorAll('pre.highlight > code');
+        let index = 0;
+        codes.forEach((code) => {
+
+          code.setAttribute("id", "code" + index);
+
+          const block = document.createElement('div');
+          block.className = "tooltip";
+
+          const btn = document.createElement('i');
+          btn.className = "btn-copy ui copy outline icon";
+          btn.setAttribute("data-clipboard-action", "copy");
+          btn.setAttribute("data-clipboard-target", "#code" + index);
+          btn.setAttribute("title", "Copy to clipboard");
+          btn.setAttribute("float-right", "true");
+          code.before(btn);
+
+          const tooltip = document.createElement('div');
+          tooltip.className = "tooltip-text";
+          tooltip.textContent = "Copied!";
+          code.before(tooltip);
+
+          index++;
+        });
+
+        const clipboard = new ClipboardJS('.btn-copy');
+        clipboard.on('success', function (e) {
+          e.clearSelection();
+          e.trigger.className = e.trigger.className.replace("copy outline icon", "check icon");
+          e.trigger.setAttribute("title", "Copied!");
+          e.trigger.nextSibling.classList.toggle("show");
+          e.trigger.blur();
+
+          setTimeout(function () {
+            e.trigger.className = e.trigger.className.replace("check icon", "copy outline icon");
+            e.trigger.setAttribute("title", "Copy to clipboard");
+            e.trigger.nextSibling.classList.toggle("show");
+          }, 1500);
+        });
