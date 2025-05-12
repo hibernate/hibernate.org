@@ -15,16 +15,16 @@ Hibernate Search upgrades to JDK 17 as the baseline and drops JDK 11 compatibili
 [[orm-version]]
 Hibernate ORM::
 Hibernate Search now targets the Hibernate ORM 7.0 series, which implements Jakarta Persistence 3.2.0.
-In particular, it is currently based on Hibernate ORM 7.0.0.Beta4.
+In particular, it is currently based on Hibernate ORM 7.0.0.CR1.
 [[lucene-version]]
 Lucene::
-The Lucene backend now uses Lucene 9.12.1.
+The Lucene backend now uses Lucene 9.12.1, while the `lucene-next` relies on Lucene 10.2.1
 [[elasticsearch-version]]
 Elasticsearch::
-The Elasticsearch backend is compatible with Elasticsearch 8.16 and 8.17, as well as other already compatible versions.
+The Elasticsearch backend is compatible with Elasticsearch 8.16, 8.17, 8.18 and 9.0, as well as other already compatible versions.
 [[opensearch-version]]
 OpenSearch::
-The Elasticsearch backend works with OpenSearch 2.17, 2.18 and 2.19, as well as other already compatible versions.
+The Elasticsearch backend works with OpenSearch 2.17, 2.18, 2.19 and 3.0, as well as other already compatible versions.
 
 [[metric-aggregations]]
 [discrete]
@@ -134,4 +134,78 @@ org.hibernate.search.mapper.massindexing=TRACE
 
 See the corresponding section on link:{hsearch-doc-url-prefix}#logging-categories-aggregated[logging categories]
 to find out which categories are available.
+
+[[static-metamodel]]
+[discrete]
+=== Static metamodel
+
+Hibernate Search's link:{hsearch-doc-url-prefix}#static-metamodel[static metamodel] is a set of generated classes that represents the structure of each entity's index,
+thereby allowing type-safe references to index fields when creating search queries through the link:{hsearch-doc-url-prefix}#search-dsl[Search DSL].
+
+The basic principles are very similar to the link:{horm-doc-url-prefix}#tooling-modelgen[JPA static metamodel available in Hibernate ORM],
+but in the case of Search the metamodel is about indexes rather than entities.
+
+To try out this new feature, add the annotation processor to the build configuration:
+
+====
+[source,XML,subs="+attributes"]
+----
+<plugin>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <executions>
+        <execution>
+            <id>default-compile</id>
+            <configuration>
+                <annotationProcessors>
+                    <annotationProcessor>org.hibernate.search.processor.HibernateSearchProcessor</annotationProcessor> <1>
+                </annotationProcessors>
+                <annotationProcessorPaths>
+                    <path>
+                        <groupId>org.hibernate.search</groupId>
+                        <artifactId>hibernate-search-processor</artifactId> <2>
+                    </path>
+                    <path>
+                        <groupId>org.hibernate.search</groupId>
+                        <artifactId>hibernate-search-backend-lucene</artifactId> <3>
+                    </path>
+                </annotationProcessorPaths>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+----
+
+<1> Provide the fully qualified class name of the annotation processor that generates the metamodel.
+<2> Add the `org.hibernate.search:hibernate-search-processor` dependency to the annotation processor path (a superset of the compile path),
+so the Java compiler can find the processor.
+<3> Add the backend dependency, in this example, the Lucene backend, to the annotation processor path.
+
+NOTE: The version of both annotation processor and backend dependencies can be omitted in the definition of the annotation paths,
+because they are defined in the Hibernate Search BOM, which we recommend you import via dependency management.
+This way the generated metamodel classes will be based on the same backend that the application uses.
+====
+
+And then use the generated metamodel classes to create search queries, e.g.:
+
+====
+[source, JAVA, indent=0, subs="+callouts"]
+----
+SearchSession searchSession = /* ... */; // <1>
+var scope = Book__.INDEX.scope( searchSession ); // <2>
+
+List<Book> hits = searchSession.search( scope )
+    .where( f -> f.match()
+        .field( Book__.INDEX.title ).field( Book__.INDEX.description ) // <3>
+        .matching( "robot" ) )
+    .fetchHits( 20 );
+----
+<1> Obtain the search session.
+<2> Create the search scope over the book index. Using such scope in the link:{hsearch-doc-url-prefix}#search-dsl[Search DSL] will automatically
+limit acceptable field references to the ones obtained from the `Book__.INDEX`
+<3> Use the metamodel to reference the fields when creating the queries.
+====
+
+
+See the corresponding section on link:{hsearch-doc-url-prefix}#static-metamodel[static metamodel]
+to find out more.
 ****
