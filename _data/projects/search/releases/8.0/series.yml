@@ -28,6 +28,8 @@ maven:
       summary: Jakarta Batch mass indexing job for the Hibernate ORM mapper - JBeret specifics
     - artifact_id: hibernate-search-v5migrationhelper-orm
       summary: Helper for migrating from Hibernate Search 5 to Hibernate Search 6/7 (Hibernate ORM mapper + Lucene backend)
+    - artifact_id: hibernate-search-processor
+      summary: Hibernate Search annotation processor capable of generating the static metamodel
 integration_constraints:
   java:
     version: 17, 21, or 23
