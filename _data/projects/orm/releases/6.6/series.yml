@@ -3,7 +3,8 @@ license:
   name: LGPL v2.1
   url: https://raw.github.com/hibernate/hibernate-orm/6.6/lgpl.txt
 links:
-  whats_new: # Nothing, we put it directly on the website
+  whats_new:
+    html: "/orm/releases/{series.version}/#whats-new"
 maven:
   artifacts:
     - artifact_id: hibernate-core

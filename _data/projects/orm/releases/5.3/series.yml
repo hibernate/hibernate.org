@@ -35,7 +35,8 @@ links:
       zip: https://sourceforge.net/projects/hibernate/files/hibernate-orm/{release.version}/hibernate-release-{release.version}.zip/download
   migration_guide:
     html: https://github.com/hibernate/hibernate-orm/blob/5.3/migration-guide.adoc
-  whats_new: # Nothing, we put it directly on the website
+  whats_new:
+    html: "/orm/releases/{series.version}/#whats-new"
 integration_constraints:
   java:
     version: 8, 11 or 17 (with 5.3.22+)
