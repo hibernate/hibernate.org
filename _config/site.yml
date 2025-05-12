@@ -207,6 +207,8 @@ projects:
       migration_guide:
         html: https://docs.jboss.org/hibernate/search/{series.version}/migration/html_single/
         pdf: https://docs.jboss.org/hibernate/search/{series.version}/migration/pdf/hibernate_search_migration.pdf
+      whats_new:
+        html: "/search/releases/{series.version}/#whats-new"
       dist:
         sourceforge:
           zip: https://sourceforge.net/projects/hibernate/files/hibernate-search/{release.version}/hibernate-search-{release.version}-dist.zip/download
@@ -444,6 +446,8 @@ projects:
         pdf: https://docs.jboss.org/hibernate/validator/{series.version}/reference/en-US/pdf/hibernate_validator_reference.pdf#validator-gettingstarted
       migration_guide:
         html: /validator/documentation/migration-guide/#{series.version.dashes}-x
+      whats_new:
+        html: "/validator/releases/{series.version}/#whats-new"
       dist:
         sourceforge:
           zip: https://sourceforge.net/projects/hibernate/files/hibernate-validator/{release.version}/hibernate-validator-{release.version}-dist.zip/download
@@ -553,6 +557,8 @@ projects:
         pdf: https://docs.jboss.org/hibernate/ogm/{series.version}/reference/en-US/pdf/hibernate_ogm_reference.pdf#ogm-gettingstarted
       migration_guide:
         html: https://docs.jboss.org/hibernate/stable/ogm/reference/en-US/html_single/#ogm-migrating
+      whats_new:
+        html: "/ogm/releases/{series.version}/#whats-new"
       dist:
         sourceforge:
           zip: https://sourceforge.net/projects/hibernate/files/hibernate-ogm/{release.version}/hibernate-ogm-{release.version}-dist.zip/download
@@ -650,6 +656,8 @@ projects:
           html: /reactive/documentation/{series.version}/javadocs/
       getting_started_guide:
         html: /reactive/documentation/{series.version}/reference/html_single/#getting-started
+      whats_new:
+        html: "/reactive/releases/{series.version}/#whats-new"
       dist:
     maven:
       coord:
