@@ -7,6 +7,8 @@ project_hero_partial: project/hero-series.html.haml
 -# Provides info about a particular series
 -# List releases defined for the given series
 
+- current_path = page.output_path.sub(/index\.html$/, "").sub(/\.html$/,"/")
+
 -# Metadata from site.yml for the project
 - project_description = site.projects[page.project]
 - series = project_description.release_series[page.series_version]
@@ -222,7 +224,7 @@ project_hero_partial: project/hero-series.html.haml
       #{latest_release.version}.
 
 - whats_new = whats_new(project_description, series)
-- if not whats_new.nil?
+- if !whats_new.nil? && (!whats_new.html_url.nil? && !whats_new.html_url.start_with?(current_path) || !whats_new.pdf_url.nil?)
   %p
     Highlights of new features and enhancements can be found here:
   %p

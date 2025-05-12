@@ -12,7 +12,8 @@ links:
       zip: https://sourceforge.net/projects/hibernate/files/hibernate-orm/{release.version}/hibernate-release-{release.version}.zip/download
   migration_guide:
     html:
-  whats_new: # Nothing, we put it directly on the website
+  whats_new:
+    html: "/orm/releases/{series.version}/#whats-new"
 maven:
   coord:
     group_id: org.hibernate
