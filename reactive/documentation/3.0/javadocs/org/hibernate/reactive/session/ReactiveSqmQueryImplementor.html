@@ -182,21 +182,21 @@ extends <a href="../query/ReactiveQueryImplementor.html" title="interface in org
 <div class="block"><code>Query</code> override</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameter(int,P,java.lang.Class)" class="member-name-link">setParameter</a><wbr>(int&nbsp;position,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameter(int,P,jakarta.persistence.metamodel.Type)" class="member-name-link">setParameter</a><wbr>(int&nbsp;position,
  P&nbsp;value,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;P&gt;&nbsp;type)</code></div>
+ jakarta.persistence.metamodel.Type&lt;P&gt;&nbsp;type)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Bind the given argument to an ordinal query parameter using the given
- Class reference to attempt to determine the <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a>
- to use.</div>
+ <code>Type</code>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameter(int,P,org.hibernate.query.BindableType)" class="member-name-link">setParameter</a><wbr>(int&nbsp;position,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameter(int,P,java.lang.Class)" class="member-name-link">setParameter</a><wbr>(int&nbsp;position,
  P&nbsp;value,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link">BindableType</a>&lt;P&gt;&nbsp;type)</code></div>
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;P&gt;&nbsp;type)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Bind the given argument to an ordinal query parameter using the given
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a>.</div>
+ Class reference to attempt to determine the <code>Type</code>
+ to use.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameter(jakarta.persistence.Parameter,java.util.Calendar,jakarta.persistence.TemporalType)" class="member-name-link">setParameter</a><wbr>(jakarta.persistence.Parameter&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Calendar.html" title="class or interface in java.util" class="external-link">Calendar</a>&gt;&nbsp;param,
@@ -235,24 +235,24 @@ extends <a href="../query/ReactiveQueryImplementor.html" title="interface in org
  jakarta.persistence.TemporalType&nbsp;temporalType)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameter(java.lang.String,P,java.lang.Class)" class="member-name-link">setParameter</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameter(java.lang.String,P,jakarta.persistence.metamodel.Type)" class="member-name-link">setParameter</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  P&nbsp;value,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;P&gt;&nbsp;type)</code></div>
+ jakarta.persistence.metamodel.Type&lt;P&gt;&nbsp;type)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameter(java.lang.String,P,org.hibernate.query.BindableType)" class="member-name-link">setParameter</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameter(java.lang.String,P,java.lang.Class)" class="member-name-link">setParameter</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  P&nbsp;value,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link">BindableType</a>&lt;P&gt;&nbsp;type)</code></div>
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;P&gt;&nbsp;type)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameter(org.hibernate.query.QueryParameter,P,java.lang.Class)" class="member-name-link">setParameter</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
- P&nbsp;value,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;P&gt;&nbsp;type)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameter(org.hibernate.query.QueryParameter,P,jakarta.persistence.metamodel.Type)" class="member-name-link">setParameter</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
+ P&nbsp;val,
+ jakarta.persistence.metamodel.Type&lt;P&gt;&nbsp;type)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameter(org.hibernate.query.QueryParameter,P,org.hibernate.query.BindableType)" class="member-name-link">setParameter</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
- P&nbsp;val,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link">BindableType</a>&lt;P&gt;&nbsp;type)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameter(org.hibernate.query.QueryParameter,P,java.lang.Class)" class="member-name-link">setParameter</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
+ P&nbsp;value,
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;P&gt;&nbsp;type)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;T&gt;&nbsp;<a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameter(org.hibernate.query.QueryParameter,T)" class="member-name-link">setParameter</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link">QueryParameter</a>&lt;T&gt;&nbsp;parameter,
@@ -271,38 +271,38 @@ extends <a href="../query/ReactiveQueryImplementor.html" title="interface in org
 <div class="block">Bind multiple arguments to an ordinal query parameter.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameterList(int,java.util.Collection,java.lang.Class)" class="member-name-link">setParameterList</a><wbr>(int&nbsp;position,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameterList(int,java.util.Collection,jakarta.persistence.metamodel.Type)" class="member-name-link">setParameterList</a><wbr>(int&nbsp;position,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends P&gt;&nbsp;values,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;P&gt;&nbsp;javaType)</code></div>
+ jakarta.persistence.metamodel.Type&lt;P&gt;&nbsp;type)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Bind multiple arguments to an ordinal query parameter using the given
- Class reference to attempt to determine the <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a>
- to use.</div>
+ <code>Type</code>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameterList(int,java.util.Collection,org.hibernate.query.BindableType)" class="member-name-link">setParameterList</a><wbr>(int&nbsp;position,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameterList(int,java.util.Collection,java.lang.Class)" class="member-name-link">setParameterList</a><wbr>(int&nbsp;position,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends P&gt;&nbsp;values,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link">BindableType</a>&lt;P&gt;&nbsp;type)</code></div>
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;P&gt;&nbsp;javaType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Bind multiple arguments to an ordinal query parameter using the given
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a>.</div>
+ Class reference to attempt to determine the <code>Type</code>
+ to use.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameterList(int,P%5B%5D,java.lang.Class)" class="member-name-link">setParameterList</a><wbr>(int&nbsp;position,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameterList(int,P%5B%5D,jakarta.persistence.metamodel.Type)" class="member-name-link">setParameterList</a><wbr>(int&nbsp;position,
  P[]&nbsp;values,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;P&gt;&nbsp;javaType)</code></div>
+ jakarta.persistence.metamodel.Type&lt;P&gt;&nbsp;type)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Bind multiple arguments to an ordinal query parameter using the given
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link"><code>Class</code></a> reference to attempt to determine the <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a>
- to use.</div>
+ <code>Type</code>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameterList(int,P%5B%5D,org.hibernate.query.BindableType)" class="member-name-link">setParameterList</a><wbr>(int&nbsp;position,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameterList(int,P%5B%5D,java.lang.Class)" class="member-name-link">setParameterList</a><wbr>(int&nbsp;position,
  P[]&nbsp;values,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link">BindableType</a>&lt;P&gt;&nbsp;type)</code></div>
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;P&gt;&nbsp;javaType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Bind multiple arguments to an ordinal query parameter using the given
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a>.</div>
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link"><code>Class</code></a> reference to attempt to determine the <code>Type</code>
+ to use.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameterList(java.lang.String,java.lang.Object%5B%5D)" class="member-name-link">setParameterList</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
@@ -315,34 +315,34 @@ extends <a href="../query/ReactiveQueryImplementor.html" title="interface in org
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&nbsp;values)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameterList(java.lang.String,java.util.Collection,java.lang.Class)" class="member-name-link">setParameterList</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameterList(java.lang.String,java.util.Collection,jakarta.persistence.metamodel.Type)" class="member-name-link">setParameterList</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends P&gt;&nbsp;values,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;P&gt;&nbsp;javaType)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameterList(java.lang.String,java.util.Collection,org.hibernate.query.BindableType)" class="member-name-link">setParameterList</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends P&gt;&nbsp;values,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link">BindableType</a>&lt;P&gt;&nbsp;type)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Bind multiple arguments to a named query parameter using the given
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a>.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameterList(java.lang.String,P%5B%5D,java.lang.Class)" class="member-name-link">setParameterList</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- P[]&nbsp;values,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;P&gt;&nbsp;javaType)</code></div>
+ jakarta.persistence.metamodel.Type&lt;P&gt;&nbsp;type)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Bind multiple arguments to a named query parameter using the given
- Class reference to attempt to determine the <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a>
- to use.</div>
+ <code>Type</code>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameterList(java.lang.String,P%5B%5D,org.hibernate.query.BindableType)" class="member-name-link">setParameterList</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameterList(java.lang.String,java.util.Collection,java.lang.Class)" class="member-name-link">setParameterList</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends P&gt;&nbsp;values,
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;P&gt;&nbsp;javaType)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameterList(java.lang.String,P%5B%5D,jakarta.persistence.metamodel.Type)" class="member-name-link">setParameterList</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  P[]&nbsp;values,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link">BindableType</a>&lt;P&gt;&nbsp;type)</code></div>
+ jakarta.persistence.metamodel.Type&lt;P&gt;&nbsp;type)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Bind multiple arguments to a named query parameter using the given
+ <code>Type</code>.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameterList(java.lang.String,P%5B%5D,java.lang.Class)" class="member-name-link">setParameterList</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ P[]&nbsp;values,
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;P&gt;&nbsp;javaType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Bind multiple arguments to a named query parameter using the given
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a>.</div>
+ Class reference to attempt to determine the <code>Type</code>
+ to use.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection)" class="member-name-link">setParameterList</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
@@ -352,21 +352,21 @@ extends <a href="../query/ReactiveQueryImplementor.html" title="interface in org
  <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link"><code>QueryParameter</code></a>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,java.lang.Class)" class="member-name-link">setParameterList</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,jakarta.persistence.metamodel.Type)" class="member-name-link">setParameterList</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends P&gt;&nbsp;values,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;P&gt;&nbsp;javaType)</code></div>
+ jakarta.persistence.metamodel.Type&lt;P&gt;&nbsp;type)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Bind multiple arguments to the query parameter represented by the given
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link"><code>QueryParameter</code></a> using the given Class reference to attempt to
- determine the <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a> to use.</div>
+ <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link"><code>QueryParameter</code></a>, inferring the <code>Type</code>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,org.hibernate.query.BindableType)" class="member-name-link">setParameterList</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,java.lang.Class)" class="member-name-link">setParameterList</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends P&gt;&nbsp;values,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link">BindableType</a>&lt;P&gt;&nbsp;type)</code></div>
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;P&gt;&nbsp;javaType)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Bind multiple arguments to the query parameter represented by the given
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link"><code>QueryParameter</code></a>, inferring the <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a>.</div>
+ <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link"><code>QueryParameter</code></a> using the given Class reference to attempt to
+ determine the <code>Type</code> to use.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D)" class="member-name-link">setParameterList</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
@@ -376,21 +376,21 @@ extends <a href="../query/ReactiveQueryImplementor.html" title="interface in org
  given <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link"><code>QueryParameter</code></a></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D,java.lang.Class)" class="member-name-link">setParameterList</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D,jakarta.persistence.metamodel.Type)" class="member-name-link">setParameterList</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
  P[]&nbsp;values,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;P&gt;&nbsp;javaType)</code></div>
+ jakarta.persistence.metamodel.Type&lt;P&gt;&nbsp;type)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Bind multiple arguments to the query parameter represented by the
- given <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link"><code>QueryParameter</code></a> using the given Class reference to attempt
- to determine the <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a> to use.</div>
+ given <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link"><code>QueryParameter</code></a>, inferring the <code>Type</code>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;P&gt;&nbsp;<a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D,org.hibernate.query.BindableType)" class="member-name-link">setParameterList</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D,java.lang.Class)" class="member-name-link">setParameterList</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
  P[]&nbsp;values,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link">BindableType</a>&lt;P&gt;&nbsp;type)</code></div>
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;P&gt;&nbsp;javaType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Bind multiple arguments to the query parameter represented by the
- given <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link"><code>QueryParameter</code></a>, inferring the <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a>.</div>
+ given <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link"><code>QueryParameter</code></a> using the given Class reference to attempt
+ to determine the <code>Type</code> to use.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setProperties(java.lang.Object)" class="member-name-link">setProperties</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;bean)</code></div>
@@ -423,7 +423,7 @@ extends <a href="../query/ReactiveQueryImplementor.html" title="interface in org
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.hibernate.query.CommonQueryContract">Methods inherited from interface&nbsp;org.hibernate.query.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html" title="class or interface in org.hibernate.query" class="external-link">CommonQueryContract</a></h3>
-<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#getFlushMode()" title="class or interface in org.hibernate.query" class="external-link">getFlushMode</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#getHibernateFlushMode()" title="class or interface in org.hibernate.query" class="external-link">getHibernateFlushMode</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#getQueryFlushMode()" title="class or interface in org.hibernate.query" class="external-link">getQueryFlushMode</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#getTimeout()" title="class or interface in org.hibernate.query" class="external-link">getTimeout</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#setQueryFlushMode(org.hibernate.query.QueryFlushMode)" title="class or interface in org.hibernate.query" class="external-link">setQueryFlushMode</a></code></div>
+<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#getFlushMode()" title="class or interface in org.hibernate.query" class="external-link">getFlushMode</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#getHibernateFlushMode()" title="class or interface in org.hibernate.query" class="external-link">getHibernateFlushMode</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#getQueryFlushMode()" title="class or interface in org.hibernate.query" class="external-link">getQueryFlushMode</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#getTimeout()" title="class or interface in org.hibernate.query" class="external-link">getTimeout</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#setQueryFlushMode(org.hibernate.query.QueryFlushMode)" title="class or interface in org.hibernate.query" class="external-link">setQueryFlushMode</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#setTimeout(jakarta.persistence.Timeout)" title="class or interface in org.hibernate.query" class="external-link">setTimeout</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.hibernate.query.named.NameableQuery">Methods inherited from interface&nbsp;org.hibernate.query.named.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NameableQuery.html" title="class or interface in org.hibernate.query.named" class="external-link">NameableQuery</a></h3>
 <code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NameableQuery.html#toMemento(java.lang.String)" title="class or interface in org.hibernate.query.named" class="external-link">toMemento</a></code></div>
@@ -720,22 +720,22 @@ extends <a href="../query/ReactiveQueryImplementor.html" title="interface in org
 </section>
 </li>
 <li>
-<section class="detail" id="setParameter(java.lang.String,P,org.hibernate.query.BindableType)">
-<h3 id="setParameter(java.lang.String,java.lang.Object,org.hibernate.query.BindableType)">setParameter</h3>
+<section class="detail" id="setParameter(java.lang.String,P,jakarta.persistence.metamodel.Type)">
+<h3 id="setParameter(java.lang.String,java.lang.Object,jakarta.persistence.metamodel.Type)">setParameter</h3>
 <div class="member-signature"><span class="type-parameters">&lt;P&gt;</span>&nbsp;<span class="return-type"><a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</span>&nbsp;<span class="element-name">setParameter</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  P&nbsp;value,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link">BindableType</a>&lt;P&gt;&nbsp;type)</span></div>
+ jakarta.persistence.metamodel.Type&lt;P&gt;&nbsp;type)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#setParameter(java.lang.String,P,org.hibernate.query.BindableType)" title="class or interface in org.hibernate.query" class="external-link">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html" title="class or interface in org.hibernate.query" class="external-link">CommonQueryContract</a></code></dd>
+<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#setParameter(java.lang.String,P,jakarta.persistence.metamodel.Type)" title="class or interface in org.hibernate.query" class="external-link">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html" title="class or interface in org.hibernate.query" class="external-link">CommonQueryContract</a></code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveMutationQuery.html#setParameter(java.lang.String,P,org.hibernate.query.BindableType)">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveMutationQuery.html#setParameter(java.lang.String,P,jakarta.persistence.metamodel.Type)">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveQuery.html#setParameter(java.lang.String,P,org.hibernate.query.BindableType)">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQuery.html" title="interface in org.hibernate.reactive.query">ReactiveQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveQuery.html#setParameter(java.lang.String,P,jakarta.persistence.metamodel.Type)">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQuery.html" title="interface in org.hibernate.reactive.query">ReactiveQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveQueryImplementor.html#setParameter(java.lang.String,P,org.hibernate.query.BindableType)">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQueryImplementor.html" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveQueryImplementor.html#setParameter(java.lang.String,P,jakarta.persistence.metamodel.Type)">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQueryImplementor.html" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveSelectionQuery.html#setParameter(java.lang.String,P,org.hibernate.query.BindableType)">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveSelectionQuery.html" title="interface in org.hibernate.reactive.query">ReactiveSelectionQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveSelectionQuery.html#setParameter(java.lang.String,P,jakarta.persistence.metamodel.Type)">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveSelectionQuery.html" title="interface in org.hibernate.reactive.query">ReactiveSelectionQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
@@ -827,7 +827,7 @@ extends <a href="../query/ReactiveQueryImplementor.html" title="interface in org
 <dd>
 <ul class="see-list-long">
 <li><a href="../query/ReactiveQuery.html#setParameter(int,P,java.lang.Class)"><code>ReactiveQuery.setParameter(int, Object, Class)</code></a></li>
-<li><a href="../query/ReactiveQuery.html#setParameter(int,P,org.hibernate.query.BindableType)"><code>ReactiveQuery.setParameter(int, Object, BindableType)</code></a></li>
+<li><a href="../query/ReactiveQuery.html#setParameter(int,P,jakarta.persistence.metamodel.Type)"><code>ReactiveQuery.setParameter(int, Object, Type)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -841,8 +841,8 @@ extends <a href="../query/ReactiveQueryImplementor.html" title="interface in org
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;P&gt;&nbsp;type)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../query/ReactiveQuery.html#setParameter(int,P,java.lang.Class)">ReactiveQuery</a></code></span></div>
 <div class="block">Bind the given argument to an ordinal query parameter using the given
- Class reference to attempt to determine the <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a>
- to use.  If unable to determine an appropriate <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a>,
+ Class reference to attempt to determine the <code>Type</code>
+ to use.  If unable to determine an appropriate <code>Type</code>,
  <a href="../query/ReactiveQuery.html#setParameter(int,java.lang.Object)"><code>ReactiveQuery.setParameter(int, Object)</code></a> is used.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
@@ -858,32 +858,32 @@ extends <a href="../query/ReactiveQueryImplementor.html" title="interface in org
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="../query/ReactiveQuery.html#setParameter(int,P,org.hibernate.query.BindableType)"><code>ReactiveQuery.setParameter(int, Object, BindableType)</code></a></li>
+<li><a href="../query/ReactiveQuery.html#setParameter(int,P,jakarta.persistence.metamodel.Type)"><code>ReactiveQuery.setParameter(int, Object, Type)</code></a></li>
 </ul>
 </dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="setParameter(int,P,org.hibernate.query.BindableType)">
-<h3 id="setParameter(int,java.lang.Object,org.hibernate.query.BindableType)">setParameter</h3>
+<section class="detail" id="setParameter(int,P,jakarta.persistence.metamodel.Type)">
+<h3 id="setParameter(int,java.lang.Object,jakarta.persistence.metamodel.Type)">setParameter</h3>
 <div class="member-signature"><span class="type-parameters">&lt;P&gt;</span>&nbsp;<span class="return-type"><a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</span>&nbsp;<span class="element-name">setParameter</span><wbr><span class="parameters">(int&nbsp;position,
  P&nbsp;value,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link">BindableType</a>&lt;P&gt;&nbsp;type)</span></div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../query/ReactiveQuery.html#setParameter(int,P,org.hibernate.query.BindableType)">ReactiveQuery</a></code></span></div>
+ jakarta.persistence.metamodel.Type&lt;P&gt;&nbsp;type)</span></div>
+<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../query/ReactiveQuery.html#setParameter(int,P,jakarta.persistence.metamodel.Type)">ReactiveQuery</a></code></span></div>
 <div class="block">Bind the given argument to an ordinal query parameter using the given
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a>.</div>
+ <code>Type</code>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#setParameter(int,P,org.hibernate.query.BindableType)" title="class or interface in org.hibernate.query" class="external-link">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html" title="class or interface in org.hibernate.query" class="external-link">CommonQueryContract</a></code></dd>
+<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#setParameter(int,P,jakarta.persistence.metamodel.Type)" title="class or interface in org.hibernate.query" class="external-link">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html" title="class or interface in org.hibernate.query" class="external-link">CommonQueryContract</a></code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveMutationQuery.html#setParameter(int,P,org.hibernate.query.BindableType)">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveMutationQuery.html#setParameter(int,P,jakarta.persistence.metamodel.Type)">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveQuery.html#setParameter(int,P,org.hibernate.query.BindableType)">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQuery.html" title="interface in org.hibernate.reactive.query">ReactiveQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveQuery.html#setParameter(int,P,jakarta.persistence.metamodel.Type)">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQuery.html" title="interface in org.hibernate.reactive.query">ReactiveQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveQueryImplementor.html#setParameter(int,P,org.hibernate.query.BindableType)">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQueryImplementor.html" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveQueryImplementor.html#setParameter(int,P,jakarta.persistence.metamodel.Type)">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQueryImplementor.html" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveSelectionQuery.html#setParameter(int,P,org.hibernate.query.BindableType)">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveSelectionQuery.html" title="interface in org.hibernate.reactive.query">ReactiveSelectionQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveSelectionQuery.html#setParameter(int,P,jakarta.persistence.metamodel.Type)">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveSelectionQuery.html" title="interface in org.hibernate.reactive.query">ReactiveSelectionQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
@@ -994,22 +994,22 @@ extends <a href="../query/ReactiveQueryImplementor.html" title="interface in org
 </section>
 </li>
 <li>
-<section class="detail" id="setParameter(org.hibernate.query.QueryParameter,P,org.hibernate.query.BindableType)">
-<h3 id="setParameter(org.hibernate.query.QueryParameter,java.lang.Object,org.hibernate.query.BindableType)">setParameter</h3>
+<section class="detail" id="setParameter(org.hibernate.query.QueryParameter,P,jakarta.persistence.metamodel.Type)">
+<h3 id="setParameter(org.hibernate.query.QueryParameter,java.lang.Object,jakarta.persistence.metamodel.Type)">setParameter</h3>
 <div class="member-signature"><span class="type-parameters">&lt;P&gt;</span>&nbsp;<span class="return-type"><a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</span>&nbsp;<span class="element-name">setParameter</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
  P&nbsp;val,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link">BindableType</a>&lt;P&gt;&nbsp;type)</span></div>
+ jakarta.persistence.metamodel.Type&lt;P&gt;&nbsp;type)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#setParameter(org.hibernate.query.QueryParameter,P,org.hibernate.query.BindableType)" title="class or interface in org.hibernate.query" class="external-link">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html" title="class or interface in org.hibernate.query" class="external-link">CommonQueryContract</a></code></dd>
+<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#setParameter(org.hibernate.query.QueryParameter,P,jakarta.persistence.metamodel.Type)" title="class or interface in org.hibernate.query" class="external-link">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html" title="class or interface in org.hibernate.query" class="external-link">CommonQueryContract</a></code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveMutationQuery.html#setParameter(org.hibernate.query.QueryParameter,P,org.hibernate.query.BindableType)">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveMutationQuery.html#setParameter(org.hibernate.query.QueryParameter,P,jakarta.persistence.metamodel.Type)">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveQuery.html#setParameter(org.hibernate.query.QueryParameter,P,org.hibernate.query.BindableType)">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQuery.html" title="interface in org.hibernate.reactive.query">ReactiveQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveQuery.html#setParameter(org.hibernate.query.QueryParameter,P,jakarta.persistence.metamodel.Type)">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQuery.html" title="interface in org.hibernate.reactive.query">ReactiveQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveQueryImplementor.html#setParameter(org.hibernate.query.QueryParameter,P,org.hibernate.query.BindableType)">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQueryImplementor.html" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveQueryImplementor.html#setParameter(org.hibernate.query.QueryParameter,P,jakarta.persistence.metamodel.Type)">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQueryImplementor.html" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveSelectionQuery.html#setParameter(org.hibernate.query.QueryParameter,P,org.hibernate.query.BindableType)">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveSelectionQuery.html" title="interface in org.hibernate.reactive.query">ReactiveSelectionQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveSelectionQuery.html#setParameter(org.hibernate.query.QueryParameter,P,jakarta.persistence.metamodel.Type)">setParameter</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveSelectionQuery.html" title="interface in org.hibernate.reactive.query">ReactiveSelectionQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
@@ -1112,25 +1112,25 @@ extends <a href="../query/ReactiveQueryImplementor.html" title="interface in org
 </section>
 </li>
 <li>
-<section class="detail" id="setParameterList(java.lang.String,java.util.Collection,org.hibernate.query.BindableType)">
+<section class="detail" id="setParameterList(java.lang.String,java.util.Collection,jakarta.persistence.metamodel.Type)">
 <h3>setParameterList</h3>
 <div class="member-signature"><span class="type-parameters">&lt;P&gt;</span>&nbsp;<span class="return-type"><a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</span>&nbsp;<span class="element-name">setParameterList</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends P&gt;&nbsp;values,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link">BindableType</a>&lt;P&gt;&nbsp;type)</span></div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../query/ReactiveQuery.html#setParameterList(java.lang.String,java.util.Collection,org.hibernate.query.BindableType)">ReactiveQuery</a></code></span></div>
+ jakarta.persistence.metamodel.Type&lt;P&gt;&nbsp;type)</span></div>
+<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../query/ReactiveQuery.html#setParameterList(java.lang.String,java.util.Collection,jakarta.persistence.metamodel.Type)">ReactiveQuery</a></code></span></div>
 <div class="block">Bind multiple arguments to a named query parameter using the given
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a>.</div>
+ <code>Type</code>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#setParameterList(java.lang.String,java.util.Collection,org.hibernate.query.BindableType)" title="class or interface in org.hibernate.query" class="external-link">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html" title="class or interface in org.hibernate.query" class="external-link">CommonQueryContract</a></code></dd>
+<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#setParameterList(java.lang.String,java.util.Collection,jakarta.persistence.metamodel.Type)" title="class or interface in org.hibernate.query" class="external-link">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html" title="class or interface in org.hibernate.query" class="external-link">CommonQueryContract</a></code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveMutationQuery.html#setParameterList(java.lang.String,java.util.Collection,org.hibernate.query.BindableType)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveMutationQuery.html#setParameterList(java.lang.String,java.util.Collection,jakarta.persistence.metamodel.Type)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveQuery.html#setParameterList(java.lang.String,java.util.Collection,org.hibernate.query.BindableType)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQuery.html" title="interface in org.hibernate.reactive.query">ReactiveQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveQuery.html#setParameterList(java.lang.String,java.util.Collection,jakarta.persistence.metamodel.Type)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQuery.html" title="interface in org.hibernate.reactive.query">ReactiveQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveQueryImplementor.html#setParameterList(java.lang.String,java.util.Collection,org.hibernate.query.BindableType)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQueryImplementor.html" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveQueryImplementor.html#setParameterList(java.lang.String,java.util.Collection,jakarta.persistence.metamodel.Type)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQueryImplementor.html" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveSelectionQuery.html#setParameterList(java.lang.String,java.util.Collection,org.hibernate.query.BindableType)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveSelectionQuery.html" title="interface in org.hibernate.reactive.query">ReactiveSelectionQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveSelectionQuery.html#setParameterList(java.lang.String,java.util.Collection,jakarta.persistence.metamodel.Type)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveSelectionQuery.html" title="interface in org.hibernate.reactive.query">ReactiveSelectionQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Returns:</dt>
 <dd><code>this</code>, for method chaining</dd>
 </dl>
@@ -1170,8 +1170,8 @@ extends <a href="../query/ReactiveQueryImplementor.html" title="interface in org
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;P&gt;&nbsp;javaType)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../query/ReactiveQuery.html#setParameterList(java.lang.String,P%5B%5D,java.lang.Class)">ReactiveQuery</a></code></span></div>
 <div class="block">Bind multiple arguments to a named query parameter using the given
- Class reference to attempt to determine the <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a>
- to use.  If unable to determine an appropriate <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a>,
+ Class reference to attempt to determine the <code>Type</code>
+ to use.  If unable to determine an appropriate <code>Type</code>,
  <a href="../query/ReactiveQuery.html#setParameterList(java.lang.String,java.util.Collection)"><code>ReactiveQuery.setParameterList(String, Collection)</code></a> is used.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
@@ -1189,32 +1189,32 @@ extends <a href="../query/ReactiveQueryImplementor.html" title="interface in org
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="../query/ReactiveQuery.html#setParameterList(java.lang.String,P%5B%5D,org.hibernate.query.BindableType)"><code>ReactiveQuery.setParameterList(java.lang.String, Object[], BindableType)</code></a></li>
+<li><a href="../query/ReactiveQuery.html#setParameterList(java.lang.String,P%5B%5D,jakarta.persistence.metamodel.Type)"><code>ReactiveQuery.setParameterList(java.lang.String, Object[], Type)</code></a></li>
 </ul>
 </dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="setParameterList(java.lang.String,P[],org.hibernate.query.BindableType)">
-<h3 id="setParameterList(java.lang.String,java.lang.Object[],org.hibernate.query.BindableType)">setParameterList</h3>
+<section class="detail" id="setParameterList(java.lang.String,P[],jakarta.persistence.metamodel.Type)">
+<h3 id="setParameterList(java.lang.String,java.lang.Object[],jakarta.persistence.metamodel.Type)">setParameterList</h3>
 <div class="member-signature"><span class="type-parameters">&lt;P&gt;</span>&nbsp;<span class="return-type"><a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</span>&nbsp;<span class="element-name">setParameterList</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  P[]&nbsp;values,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link">BindableType</a>&lt;P&gt;&nbsp;type)</span></div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../query/ReactiveQuery.html#setParameterList(java.lang.String,P%5B%5D,org.hibernate.query.BindableType)">ReactiveQuery</a></code></span></div>
+ jakarta.persistence.metamodel.Type&lt;P&gt;&nbsp;type)</span></div>
+<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../query/ReactiveQuery.html#setParameterList(java.lang.String,P%5B%5D,jakarta.persistence.metamodel.Type)">ReactiveQuery</a></code></span></div>
 <div class="block">Bind multiple arguments to a named query parameter using the given
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a>.</div>
+ <code>Type</code>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#setParameterList(java.lang.String,P%5B%5D,org.hibernate.query.BindableType)" title="class or interface in org.hibernate.query" class="external-link">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html" title="class or interface in org.hibernate.query" class="external-link">CommonQueryContract</a></code></dd>
+<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#setParameterList(java.lang.String,P%5B%5D,jakarta.persistence.metamodel.Type)" title="class or interface in org.hibernate.query" class="external-link">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html" title="class or interface in org.hibernate.query" class="external-link">CommonQueryContract</a></code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveMutationQuery.html#setParameterList(java.lang.String,P%5B%5D,org.hibernate.query.BindableType)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveMutationQuery.html#setParameterList(java.lang.String,P%5B%5D,jakarta.persistence.metamodel.Type)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveQuery.html#setParameterList(java.lang.String,P%5B%5D,org.hibernate.query.BindableType)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQuery.html" title="interface in org.hibernate.reactive.query">ReactiveQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveQuery.html#setParameterList(java.lang.String,P%5B%5D,jakarta.persistence.metamodel.Type)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQuery.html" title="interface in org.hibernate.reactive.query">ReactiveQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveQueryImplementor.html#setParameterList(java.lang.String,P%5B%5D,org.hibernate.query.BindableType)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQueryImplementor.html" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveQueryImplementor.html#setParameterList(java.lang.String,P%5B%5D,jakarta.persistence.metamodel.Type)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQueryImplementor.html" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveSelectionQuery.html#setParameterList(java.lang.String,P%5B%5D,org.hibernate.query.BindableType)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveSelectionQuery.html" title="interface in org.hibernate.reactive.query">ReactiveSelectionQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveSelectionQuery.html#setParameterList(java.lang.String,P%5B%5D,jakarta.persistence.metamodel.Type)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveSelectionQuery.html" title="interface in org.hibernate.reactive.query">ReactiveSelectionQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Returns:</dt>
 <dd><code>this</code>, for method chaining</dd>
 </dl>
@@ -1254,8 +1254,8 @@ extends <a href="../query/ReactiveQueryImplementor.html" title="interface in org
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;P&gt;&nbsp;javaType)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../query/ReactiveQuery.html#setParameterList(int,java.util.Collection,java.lang.Class)">ReactiveQuery</a></code></span></div>
 <div class="block">Bind multiple arguments to an ordinal query parameter using the given
- Class reference to attempt to determine the <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a>
- to use.  If unable to determine an appropriate <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a>,
+ Class reference to attempt to determine the <code>Type</code>
+ to use.  If unable to determine an appropriate <code>Type</code>,
  <a href="../query/ReactiveQuery.html#setParameterList(java.lang.String,java.util.Collection)"><code>ReactiveQuery.setParameterList(String, Collection)</code></a> is used.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
@@ -1273,32 +1273,32 @@ extends <a href="../query/ReactiveQueryImplementor.html" title="interface in org
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="../query/ReactiveQuery.html#setParameterList(int,java.util.Collection,org.hibernate.query.BindableType)"><code>ReactiveQuery.setParameterList(int, Collection, BindableType)</code></a></li>
+<li><a href="../query/ReactiveQuery.html#setParameterList(int,java.util.Collection,jakarta.persistence.metamodel.Type)"><code>ReactiveQuery.setParameterList(int, Collection, Type)</code></a></li>
 </ul>
 </dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="setParameterList(int,java.util.Collection,org.hibernate.query.BindableType)">
+<section class="detail" id="setParameterList(int,java.util.Collection,jakarta.persistence.metamodel.Type)">
 <h3>setParameterList</h3>
 <div class="member-signature"><span class="type-parameters">&lt;P&gt;</span>&nbsp;<span class="return-type"><a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</span>&nbsp;<span class="element-name">setParameterList</span><wbr><span class="parameters">(int&nbsp;position,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends P&gt;&nbsp;values,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link">BindableType</a>&lt;P&gt;&nbsp;type)</span></div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../query/ReactiveQuery.html#setParameterList(int,java.util.Collection,org.hibernate.query.BindableType)">ReactiveQuery</a></code></span></div>
+ jakarta.persistence.metamodel.Type&lt;P&gt;&nbsp;type)</span></div>
+<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../query/ReactiveQuery.html#setParameterList(int,java.util.Collection,jakarta.persistence.metamodel.Type)">ReactiveQuery</a></code></span></div>
 <div class="block">Bind multiple arguments to an ordinal query parameter using the given
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a>.</div>
+ <code>Type</code>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#setParameterList(int,java.util.Collection,org.hibernate.query.BindableType)" title="class or interface in org.hibernate.query" class="external-link">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html" title="class or interface in org.hibernate.query" class="external-link">CommonQueryContract</a></code></dd>
+<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#setParameterList(int,java.util.Collection,jakarta.persistence.metamodel.Type)" title="class or interface in org.hibernate.query" class="external-link">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html" title="class or interface in org.hibernate.query" class="external-link">CommonQueryContract</a></code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveMutationQuery.html#setParameterList(int,java.util.Collection,org.hibernate.query.BindableType)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveMutationQuery.html#setParameterList(int,java.util.Collection,jakarta.persistence.metamodel.Type)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveQuery.html#setParameterList(int,java.util.Collection,org.hibernate.query.BindableType)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQuery.html" title="interface in org.hibernate.reactive.query">ReactiveQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveQuery.html#setParameterList(int,java.util.Collection,jakarta.persistence.metamodel.Type)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQuery.html" title="interface in org.hibernate.reactive.query">ReactiveQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveQueryImplementor.html#setParameterList(int,java.util.Collection,org.hibernate.query.BindableType)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQueryImplementor.html" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveQueryImplementor.html#setParameterList(int,java.util.Collection,jakarta.persistence.metamodel.Type)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQueryImplementor.html" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveSelectionQuery.html#setParameterList(int,java.util.Collection,org.hibernate.query.BindableType)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveSelectionQuery.html" title="interface in org.hibernate.reactive.query">ReactiveSelectionQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveSelectionQuery.html#setParameterList(int,java.util.Collection,jakarta.persistence.metamodel.Type)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveSelectionQuery.html" title="interface in org.hibernate.reactive.query">ReactiveSelectionQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Returns:</dt>
 <dd><code>this</code>, for method chaining</dd>
 </dl>
@@ -1338,8 +1338,8 @@ extends <a href="../query/ReactiveQueryImplementor.html" title="interface in org
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;P&gt;&nbsp;javaType)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../query/ReactiveQuery.html#setParameterList(int,P%5B%5D,java.lang.Class)">ReactiveQuery</a></code></span></div>
 <div class="block">Bind multiple arguments to an ordinal query parameter using the given
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link"><code>Class</code></a> reference to attempt to determine the <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a>
- to use. If unable to determine an appropriate <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a>,
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link"><code>Class</code></a> reference to attempt to determine the <code>Type</code>
+ to use. If unable to determine an appropriate <code>Type</code>,
  <a href="../query/ReactiveQuery.html#setParameterList(java.lang.String,java.util.Collection)"><code>ReactiveQuery.setParameterList(String, Collection)</code></a> is used.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
@@ -1357,32 +1357,32 @@ extends <a href="../query/ReactiveQueryImplementor.html" title="interface in org
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="../query/ReactiveQuery.html#setParameterList(int,P%5B%5D,org.hibernate.query.BindableType)"><code>ReactiveQuery.setParameterList(int, Object[], BindableType)</code></a></li>
+<li><a href="../query/ReactiveQuery.html#setParameterList(int,P%5B%5D,jakarta.persistence.metamodel.Type)"><code>ReactiveQuery.setParameterList(int, Object[], Type)</code></a></li>
 </ul>
 </dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="setParameterList(int,P[],org.hibernate.query.BindableType)">
-<h3 id="setParameterList(int,java.lang.Object[],org.hibernate.query.BindableType)">setParameterList</h3>
+<section class="detail" id="setParameterList(int,P[],jakarta.persistence.metamodel.Type)">
+<h3 id="setParameterList(int,java.lang.Object[],jakarta.persistence.metamodel.Type)">setParameterList</h3>
 <div class="member-signature"><span class="type-parameters">&lt;P&gt;</span>&nbsp;<span class="return-type"><a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</span>&nbsp;<span class="element-name">setParameterList</span><wbr><span class="parameters">(int&nbsp;position,
  P[]&nbsp;values,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link">BindableType</a>&lt;P&gt;&nbsp;type)</span></div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../query/ReactiveQuery.html#setParameterList(int,P%5B%5D,org.hibernate.query.BindableType)">ReactiveQuery</a></code></span></div>
+ jakarta.persistence.metamodel.Type&lt;P&gt;&nbsp;type)</span></div>
+<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../query/ReactiveQuery.html#setParameterList(int,P%5B%5D,jakarta.persistence.metamodel.Type)">ReactiveQuery</a></code></span></div>
 <div class="block">Bind multiple arguments to an ordinal query parameter using the given
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a>.</div>
+ <code>Type</code>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#setParameterList(int,P%5B%5D,org.hibernate.query.BindableType)" title="class or interface in org.hibernate.query" class="external-link">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html" title="class or interface in org.hibernate.query" class="external-link">CommonQueryContract</a></code></dd>
+<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#setParameterList(int,P%5B%5D,jakarta.persistence.metamodel.Type)" title="class or interface in org.hibernate.query" class="external-link">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html" title="class or interface in org.hibernate.query" class="external-link">CommonQueryContract</a></code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveMutationQuery.html#setParameterList(int,P%5B%5D,org.hibernate.query.BindableType)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveMutationQuery.html#setParameterList(int,P%5B%5D,jakarta.persistence.metamodel.Type)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveQuery.html#setParameterList(int,P%5B%5D,org.hibernate.query.BindableType)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQuery.html" title="interface in org.hibernate.reactive.query">ReactiveQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveQuery.html#setParameterList(int,P%5B%5D,jakarta.persistence.metamodel.Type)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQuery.html" title="interface in org.hibernate.reactive.query">ReactiveQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveQueryImplementor.html#setParameterList(int,P%5B%5D,org.hibernate.query.BindableType)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQueryImplementor.html" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveQueryImplementor.html#setParameterList(int,P%5B%5D,jakarta.persistence.metamodel.Type)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQueryImplementor.html" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveSelectionQuery.html#setParameterList(int,P%5B%5D,org.hibernate.query.BindableType)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveSelectionQuery.html" title="interface in org.hibernate.reactive.query">ReactiveSelectionQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveSelectionQuery.html#setParameterList(int,P%5B%5D,jakarta.persistence.metamodel.Type)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveSelectionQuery.html" title="interface in org.hibernate.reactive.query">ReactiveSelectionQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Returns:</dt>
 <dd><code>this</code>, for method chaining</dd>
 </dl>
@@ -1427,8 +1427,8 @@ extends <a href="../query/ReactiveQueryImplementor.html" title="interface in org
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../query/ReactiveQuery.html#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,java.lang.Class)">ReactiveQuery</a></code></span></div>
 <div class="block">Bind multiple arguments to the query parameter represented by the given
  <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link"><code>QueryParameter</code></a> using the given Class reference to attempt to
- determine the <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a> to use. If unable to determine an
- appropriate <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a>, <a href="../query/ReactiveQuery.html#setParameterList(java.lang.String,java.util.Collection)"><code>ReactiveQuery.setParameterList(String, Collection)</code></a>
+ determine the <code>Type</code> to use. If unable to determine an
+ appropriate <code>Type</code>, <a href="../query/ReactiveQuery.html#setParameterList(java.lang.String,java.util.Collection)"><code>ReactiveQuery.setParameterList(String, Collection)</code></a>
  is used.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
@@ -1446,35 +1446,35 @@ extends <a href="../query/ReactiveQueryImplementor.html" title="interface in org
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="../query/ReactiveQuery.html#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,org.hibernate.query.BindableType)"><code>ReactiveQuery.setParameterList(QueryParameter, java.util.Collection, BindableType)</code></a></li>
+<li><a href="../query/ReactiveQuery.html#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,jakarta.persistence.metamodel.Type)"><code>ReactiveQuery.setParameterList(QueryParameter, java.util.Collection, Type)</code></a></li>
 </ul>
 </dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,org.hibernate.query.BindableType)">
+<section class="detail" id="setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,jakarta.persistence.metamodel.Type)">
 <h3>setParameterList</h3>
 <div class="member-signature"><span class="type-parameters">&lt;P&gt;</span>&nbsp;<span class="return-type"><a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</span>&nbsp;<span class="element-name">setParameterList</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends P&gt;&nbsp;values,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link">BindableType</a>&lt;P&gt;&nbsp;type)</span></div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../query/ReactiveQuery.html#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,org.hibernate.query.BindableType)">ReactiveQuery</a></code></span></div>
+ jakarta.persistence.metamodel.Type&lt;P&gt;&nbsp;type)</span></div>
+<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../query/ReactiveQuery.html#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,jakarta.persistence.metamodel.Type)">ReactiveQuery</a></code></span></div>
 <div class="block">Bind multiple arguments to the query parameter represented by the given
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link"><code>QueryParameter</code></a>, inferring the <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a>.
+ <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link"><code>QueryParameter</code></a>, inferring the <code>Type</code>.
  <p>
  The "type mapping" for the binding is inferred from the type of the first
  collection element.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,org.hibernate.query.BindableType)" title="class or interface in org.hibernate.query" class="external-link">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html" title="class or interface in org.hibernate.query" class="external-link">CommonQueryContract</a></code></dd>
+<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,jakarta.persistence.metamodel.Type)" title="class or interface in org.hibernate.query" class="external-link">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html" title="class or interface in org.hibernate.query" class="external-link">CommonQueryContract</a></code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveMutationQuery.html#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,org.hibernate.query.BindableType)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveMutationQuery.html#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,jakarta.persistence.metamodel.Type)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveQuery.html#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,org.hibernate.query.BindableType)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQuery.html" title="interface in org.hibernate.reactive.query">ReactiveQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveQuery.html#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,jakarta.persistence.metamodel.Type)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQuery.html" title="interface in org.hibernate.reactive.query">ReactiveQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveQueryImplementor.html#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,org.hibernate.query.BindableType)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQueryImplementor.html" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveQueryImplementor.html#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,jakarta.persistence.metamodel.Type)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQueryImplementor.html" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveSelectionQuery.html#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,org.hibernate.query.BindableType)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveSelectionQuery.html" title="interface in org.hibernate.reactive.query">ReactiveSelectionQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveSelectionQuery.html#setParameterList(org.hibernate.query.QueryParameter,java.util.Collection,jakarta.persistence.metamodel.Type)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveSelectionQuery.html" title="interface in org.hibernate.reactive.query">ReactiveSelectionQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Returns:</dt>
 <dd><code>this</code>, for method chaining</dd>
 </dl>
@@ -1520,8 +1520,8 @@ extends <a href="../query/ReactiveQueryImplementor.html" title="interface in org
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../query/ReactiveQuery.html#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D,java.lang.Class)">ReactiveQuery</a></code></span></div>
 <div class="block">Bind multiple arguments to the query parameter represented by the
  given <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link"><code>QueryParameter</code></a> using the given Class reference to attempt
- to determine the <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a> to use.  If unable to
- determine an appropriate <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a>,
+ to determine the <code>Type</code> to use.  If unable to
+ determine an appropriate <code>Type</code>,
  <a href="../query/ReactiveQuery.html#setParameterList(java.lang.String,java.util.Collection)"><code>ReactiveQuery.setParameterList(String, Collection)</code></a> is used</div>
 <dl class="notes">
 <dt>Specified by:</dt>
@@ -1539,35 +1539,35 @@ extends <a href="../query/ReactiveQueryImplementor.html" title="interface in org
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="../query/ReactiveQuery.html#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D,org.hibernate.query.BindableType)"><code>ReactiveQuery.setParameterList(QueryParameter, Object[], BindableType)</code></a></li>
+<li><a href="../query/ReactiveQuery.html#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D,jakarta.persistence.metamodel.Type)"><code>ReactiveQuery.setParameterList(QueryParameter, Object[], Type)</code></a></li>
 </ul>
 </dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="setParameterList(org.hibernate.query.QueryParameter,P[],org.hibernate.query.BindableType)">
-<h3 id="setParameterList(org.hibernate.query.QueryParameter,java.lang.Object[],org.hibernate.query.BindableType)">setParameterList</h3>
+<section class="detail" id="setParameterList(org.hibernate.query.QueryParameter,P[],jakarta.persistence.metamodel.Type)">
+<h3 id="setParameterList(org.hibernate.query.QueryParameter,java.lang.Object[],jakarta.persistence.metamodel.Type)">setParameterList</h3>
 <div class="member-signature"><span class="type-parameters">&lt;P&gt;</span>&nbsp;<span class="return-type"><a href="ReactiveSqmQueryImplementor.html" title="interface in org.hibernate.reactive.session">ReactiveSqmQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</span>&nbsp;<span class="element-name">setParameterList</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link">QueryParameter</a>&lt;P&gt;&nbsp;parameter,
  P[]&nbsp;values,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link">BindableType</a>&lt;P&gt;&nbsp;type)</span></div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../query/ReactiveQuery.html#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D,org.hibernate.query.BindableType)">ReactiveQuery</a></code></span></div>
+ jakarta.persistence.metamodel.Type&lt;P&gt;&nbsp;type)</span></div>
+<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../query/ReactiveQuery.html#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D,jakarta.persistence.metamodel.Type)">ReactiveQuery</a></code></span></div>
 <div class="block">Bind multiple arguments to the query parameter represented by the
- given <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link"><code>QueryParameter</code></a>, inferring the <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/BindableType.html" title="class or interface in org.hibernate.query" class="external-link"><code>BindableType</code></a>.
+ given <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryParameter.html" title="class or interface in org.hibernate.query" class="external-link"><code>QueryParameter</code></a>, inferring the <code>Type</code>.
  <p>
  The "type mapping" for the binding is inferred from the type of
  the first collection element</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D,org.hibernate.query.BindableType)" title="class or interface in org.hibernate.query" class="external-link">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html" title="class or interface in org.hibernate.query" class="external-link">CommonQueryContract</a></code></dd>
+<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D,jakarta.persistence.metamodel.Type)" title="class or interface in org.hibernate.query" class="external-link">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html" title="class or interface in org.hibernate.query" class="external-link">CommonQueryContract</a></code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveMutationQuery.html#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D,org.hibernate.query.BindableType)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveMutationQuery.html#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D,jakarta.persistence.metamodel.Type)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveQuery.html#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D,org.hibernate.query.BindableType)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQuery.html" title="interface in org.hibernate.reactive.query">ReactiveQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveQuery.html#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D,jakarta.persistence.metamodel.Type)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQuery.html" title="interface in org.hibernate.reactive.query">ReactiveQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveQueryImplementor.html#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D,org.hibernate.query.BindableType)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQueryImplementor.html" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveQueryImplementor.html#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D,jakarta.persistence.metamodel.Type)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveQueryImplementor.html" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../query/ReactiveSelectionQuery.html#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D,org.hibernate.query.BindableType)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveSelectionQuery.html" title="interface in org.hibernate.reactive.query">ReactiveSelectionQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
+<dd><code><a href="../query/ReactiveSelectionQuery.html#setParameterList(org.hibernate.query.QueryParameter,P%5B%5D,jakarta.persistence.metamodel.Type)">setParameterList</a></code>&nbsp;in interface&nbsp;<code><a href="../query/ReactiveSelectionQuery.html" title="interface in org.hibernate.reactive.query">ReactiveSelectionQuery</a>&lt;<a href="ReactiveSqmQueryImplementor.html" title="type parameter in ReactiveSqmQueryImplementor">R</a>&gt;</code></dd>
 <dt>Returns:</dt>
 <dd><code>this</code>, for method chaining</dd>
 </dl>
