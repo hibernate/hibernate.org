@@ -15,6 +15,8 @@ module Awestruct
     # The release data itself is stored in the hash using at the moment the following keys:
     # version, version_family, date, announcement_url, summary and displayed
     class ReleaseFileParser
+      @@logger = Logger.new(STDERR)
+      @@logger.level = Logger::INFO
 
       def initialize(data_dir="_data")
         @data_dir = data_dir
@@ -30,63 +32,51 @@ module Awestruct
 
         # register the parent hash for all releases with the site
         @projects_hash = site[:projects]
-        if @projects_hash == nil
-           @projects_hash = Hash.new
-           site[:projects] = @projects_hash
-        end
 
         # traverse the file system to find the release information
-        findReleaseFiles( site, "#{site.dir}/#{@data_dir}" )
-      end
-
-      def findReleaseFiles(site, dir)
-        Dir[ "#{dir}/*" ].each do |entry|
-          if ( File.directory?( entry ) )
-            if ( entry =~ /releases/ )
-              project = getProject( entry )
-
-              releases_hash = project[:releases]
-              if ( releases_hash == nil )
-                releases_hash = Hash.new
-                project[:releases] = releases_hash
-              end
-              
-              release_series_hash = project[:release_series]
-              if ( release_series_hash == nil )
-                release_series_hash = Hash.new
-                project[:release_series] = release_series_hash
-              end
-
-              populateReleaseHashes( project, entry )
-              
-              sortReleaseHashes( project )
-            else
-              findReleaseFiles( site, entry )
-            end
+        @projects_hash.each do |project_id, project|
+          if (project[:id] == nil)
+            project[:id] = project_id
           end
+          findReleaseFiles(project)
         end
       end
-      
-      def getProject(sub_dir)
-        parent_dir = File.dirname( sub_dir )
-        project_id = File.basename( parent_dir )
 
-        project = @projects_hash[project_id]
-        if project == nil
-          project = Hash.new
-          @projects_hash[project_id] = project
+      def findReleaseFiles(project)
+        subproject_of = project['subproject_of']
+        # Copy releases from a different directory tree for projects that are "part of" another
+        if subproject_of
+          project_id = subproject_of['project_id']
+          subproject_id = project[:id]
+          since_series = Version.new(subproject_of['since_series'])
+        else
+          project_id = project[:id]
+          subproject_id = nil
+          since_series = nil
         end
-        
-        if (project[:id] == nil)
-          project[:id] = project_id
+
+        releases_dir = "#{@data_dir}/projects/#{project_id}/releases/"
+        if !File.directory?(releases_dir)
+          @@logger.info("#{project['name']} Skipping release processing as the release dir does not exist: #{releases_dir}")
+          return
         end
-        
-        return project
+        populateReleaseHashes( project, subproject_id, since_series, releases_dir )
+
+        sortReleaseHashes( project )
       end
 
-      def populateReleaseHashes(project, releases_dir)
+      def populateReleaseHashes(project, subproject_id, since_series, releases_dir)
         release_hash = project[:releases]
+        if release_hash == nil
+          release_hash = Hash.new
+          project[:releases] = release_hash
+        end
         release_series_hash = project[:release_series]
+        if release_series_hash == nil
+          release_series_hash = Hash.new
+          project[:release_series] = release_series_hash
+        end
+
         Dir.foreach(releases_dir) do |file_name|
           file = File.expand_path( file_name, releases_dir )
           # skip '.' and '..'
@@ -94,7 +84,12 @@ module Awestruct
             next
           else
             # This directory represents a release series
-            series = createSeries( project, file )
+            series = createSeries( project, subproject_id, file )
+
+            if since_series && Version.new(series.version) < since_series
+              next
+            end
+
             release_series_hash[series.version] = series
 
             # Populate this series' releases
@@ -104,7 +99,7 @@ module Awestruct
               if ( File.directory?( sub_file ) || File.basename( sub_file ) == "series.yml" )
                 next
               else
-                release = createRelease( project, series, sub_file )
+                release = createRelease( project, subproject_id, series, sub_file )
                 series.releases.push( release )
                 release_hash[release.version] = release
               end
@@ -113,9 +108,14 @@ module Awestruct
         end
       end
 
-      def createSeries(project, series_dir)
+      def createSeries(project, subproject_id, series_dir)
         series_file = File.expand_path( "./series.yml", series_dir )
         series = @site.engine.load_yaml( series_file )
+
+        subproject_series = subproject_id == nil ? nil : series[:subprojects]&.[](subproject_id)
+        if subproject_series
+          series = series.merge(subproject_series)
+        end
 
         series[:project] = project
         if ( series[:version] == nil )
@@ -123,19 +123,24 @@ module Awestruct
         end
 
         if ( series[:license] == nil )
-          series[:license] = project.license
+          series[:license] = project['license']
         end
 
         series[:releases] = Array.new
         return series
       end
 
-      def createRelease(project, series, release_file)
+      def createRelease(project, subproject_id, series, release_file)
         unless ( release_file =~ /.*\.yml$/ )
           abort( "The release file #{release_file} does not have the YAML (.yml) extension!" )
         end
 
         release = @site.engine.load_yaml( release_file )
+
+        subproject_release = subproject_id == nil ? nil : release[:subprojects]&.[](subproject_id)
+        if subproject_release
+          release = release.merge(subproject_release)
+        end
 
         release[:project] = project
         release[:series] = series
@@ -156,7 +161,7 @@ module Awestruct
         end
 
         if release[:scm_tag] == nil
-          if project.github['final_suffix_in_tags']
+          if project['github']['final_suffix_in_tags']
             release[:scm_tag] = release.version
           else
             release[:scm_tag] = release.version =~ /^(.*).Final$/ ? $1 : release.version
@@ -253,7 +258,7 @@ module Awestruct
             : project[:release_series].values.select{|s| !s[:displayed].nil? ? !s.displayed : s[:status] == 'end-of-life'}
       end
     end
-            
+
     # Custom version class able to understand and compare the project versions of Hibernate projects
     class Version
       include Comparable
