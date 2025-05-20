@@ -7,6 +7,7 @@ maven:
       summary: CDI integration
     - artifact_id: hibernate-validator-annotation-processor
       summary: Annotation processor
+status: limited-support
 integration_constraints:
   java:
     version: 11, 17, 21, 22 or 23
