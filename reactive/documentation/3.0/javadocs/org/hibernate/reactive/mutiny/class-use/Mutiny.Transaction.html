@@ -95,14 +95,15 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><span class="type-name-label">Mutiny.SessionFactory.</span><code><a href="../Mutiny.SessionFactory.html#withStatelessTransaction(java.lang.String,java.util.function.BiFunction)" class="member-name-link">withStatelessTransaction</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;tenantId,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link">BiFunction</a>&lt;<a href="../Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a>,<wbr><a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a>,<wbr>io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Perform work using a <a href="../Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> for a
- specified tenant within an associated <a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.</div>
+<div class="block">Perform work using a <a href="../Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">reactive session</a>
+ for the tenant with the specified tenant id within an associated
+ <a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.</div>
 </div>
 <div class="col-first odd-row-color"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">Mutiny.SessionFactory.</span><code><a href="../Mutiny.SessionFactory.html#withStatelessTransaction(java.util.function.BiFunction)" class="member-name-link">withStatelessTransaction</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link">BiFunction</a>&lt;<a href="../Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.StatelessSession</a>,<wbr><a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a>,<wbr>io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Perform work using a <a href="../Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> within an
- associated <a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.</div>
+<div class="block">Perform work using a <a href="../Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">reactive session</a>
+ within an associated <a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.</div>
 </div>
 <div class="col-first even-row-color"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">Mutiny.Session.</span><code><a href="../Mutiny.Session.html#withTransaction(java.util.function.Function)" class="member-name-link">withTransaction</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a>,<wbr>io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</code></div>
@@ -114,14 +115,15 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><span class="type-name-label">Mutiny.SessionFactory.</span><code><a href="../Mutiny.SessionFactory.html#withTransaction(java.lang.String,java.util.function.BiFunction)" class="member-name-link">withTransaction</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;tenantId,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link">BiFunction</a>&lt;<a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a>,<wbr><a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a>,<wbr>io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Perform work using a <a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> for a
- specified tenant within an associated <a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.</div>
+<div class="block">Perform work using a <a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">reactive session</a> for
+ the tenant with the specified tenant id within an associated
+ <a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.</div>
 </div>
 <div class="col-first even-row-color"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">Mutiny.SessionFactory.</span><code><a href="../Mutiny.SessionFactory.html#withTransaction(java.util.function.BiFunction)" class="member-name-link">withTransaction</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link">BiFunction</a>&lt;<a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a>,<wbr><a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a>,<wbr>io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Perform work using a <a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> within an
- associated <a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.</div>
+<div class="block">Perform work using a <a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">reactive session</a>
+ within an associated <a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.</div>
 </div>
 <div class="col-first odd-row-color"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">Mutiny.StatelessSession.</span><code><a href="../Mutiny.StatelessSession.html#withTransaction(java.util.function.Function)" class="member-name-link">withTransaction</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="../Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Transaction</a>,<wbr>io.smallrye.mutiny.Uni&lt;T&gt;&gt;&nbsp;work)</code></div>

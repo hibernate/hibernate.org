@@ -2858,7 +2858,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="org/hibernate/reactive/stage/Stage.SessionFactory.html#openSession()" class="member-name-link">openSession()</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.SessionFactory.html" title="interface in org.hibernate.reactive.stage">Stage.SessionFactory</a></dt>
 <dd>
-<div class="block">Obtain a new <a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage"><code>reactive session</code></a> <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link"><code>CompletionStage</code></a>, the main
+<div class="block">Obtain a new <a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">reactive session</a> <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link"><code>CompletionStage</code></a>, the main
  interaction point between the user's program and Hibernate
  Reactive.</div>
 </dd>
@@ -2869,7 +2869,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="org/hibernate/reactive/stage/Stage.SessionFactory.html#openSession(java.lang.String)" class="member-name-link">openSession(String)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.SessionFactory.html" title="interface in org.hibernate.reactive.stage">Stage.SessionFactory</a></dt>
 <dd>
-<div class="block">Obtain a new <a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage"><code>reactive session</code></a> <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link"><code>CompletionStage</code></a> for a
+<div class="block">Obtain a new <a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">reactive session</a> <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link"><code>CompletionStage</code></a> for a
  specified tenant.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#openStatelessSession()" class="member-name-link">openStatelessSession()</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SessionFactory</a></dt>
@@ -5908,92 +5908,96 @@ the order they are declared.</div>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#withSession(java.lang.String,java.util.function.Function)" class="member-name-link">withSession(String, Function&lt;Mutiny.Session, Uni&lt;T&gt;&gt;)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SessionFactory</a></dt>
 <dd>
-<div class="block">Perform work using a <a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> for
+<div class="block">Perform work using a <a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">reactive session</a> for
  a specified tenant.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/stage/Stage.SessionFactory.html#withSession(java.lang.String,java.util.function.Function)" class="member-name-link">withSession(String, Function&lt;Stage.Session, CompletionStage&lt;T&gt;&gt;)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.SessionFactory.html" title="interface in org.hibernate.reactive.stage">Stage.SessionFactory</a></dt>
 <dd>
-<div class="block">Perform work using a <a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage"><code>reactive session</code></a> for a
+<div class="block">Perform work using a <a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">reactive session</a> for a
  specified tenant.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#withSession(java.util.function.Function)" class="member-name-link">withSession(Function&lt;Mutiny.Session, Uni&lt;T&gt;&gt;)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SessionFactory</a></dt>
 <dd>
-<div class="block">Perform work using a <a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a>.</div>
+<div class="block">Perform work using a <a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">reactive session</a>.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/stage/Stage.SessionFactory.html#withSession(java.util.function.Function)" class="member-name-link">withSession(Function&lt;Stage.Session, CompletionStage&lt;T&gt;&gt;)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.SessionFactory.html" title="interface in org.hibernate.reactive.stage">Stage.SessionFactory</a></dt>
 <dd>
-<div class="block">Perform work using a <a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage"><code>reactive session</code></a>.</div>
+<div class="block">Perform work using a <a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">reactive session</a>.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#withStatelessSession(java.lang.String,java.util.function.Function)" class="member-name-link">withStatelessSession(String, Function&lt;Mutiny.StatelessSession, Uni&lt;T&gt;&gt;)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SessionFactory</a></dt>
 <dd>
-<div class="block">Perform work using a <a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>stateless session</code></a>.</div>
+<div class="block">Perform work using a <a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">stateless session</a>.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/stage/Stage.SessionFactory.html#withStatelessSession(java.lang.String,java.util.function.Function)" class="member-name-link">withStatelessSession(String, Function&lt;Stage.StatelessSession, CompletionStage&lt;T&gt;&gt;)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.SessionFactory.html" title="interface in org.hibernate.reactive.stage">Stage.SessionFactory</a></dt>
 <dd>
-<div class="block">Perform work using a <a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage"><code>stateless session</code></a>.</div>
+<div class="block">Perform work using a <a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">stateless session</a>.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#withStatelessSession(java.util.function.Function)" class="member-name-link">withStatelessSession(Function&lt;Mutiny.StatelessSession, Uni&lt;T&gt;&gt;)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SessionFactory</a></dt>
 <dd>
-<div class="block">Perform work using a <a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>stateless session</code></a>.</div>
+<div class="block">Perform work using a <a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">stateless session</a>.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/stage/Stage.SessionFactory.html#withStatelessSession(java.util.function.Function)" class="member-name-link">withStatelessSession(Function&lt;Stage.StatelessSession, CompletionStage&lt;T&gt;&gt;)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.SessionFactory.html" title="interface in org.hibernate.reactive.stage">Stage.SessionFactory</a></dt>
 <dd>
-<div class="block">Perform work using a <a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage"><code>stateless session</code></a>.</div>
+<div class="block">Perform work using a <a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">stateless session</a>.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#withStatelessTransaction(java.lang.String,java.util.function.BiFunction)" class="member-name-link">withStatelessTransaction(String, BiFunction&lt;Mutiny.StatelessSession, Mutiny.Transaction, Uni&lt;T&gt;&gt;)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SessionFactory</a></dt>
 <dd>
-<div class="block">Perform work using a <a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> for a
- specified tenant within an associated <a href="org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.</div>
+<div class="block">Perform work using a <a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">reactive session</a>
+ for the tenant with the specified tenant id within an associated
+ <a href="org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/stage/Stage.SessionFactory.html#withStatelessTransaction(java.lang.String,java.util.function.BiFunction)" class="member-name-link">withStatelessTransaction(String, BiFunction&lt;Stage.StatelessSession, Stage.Transaction, CompletionStage&lt;T&gt;&gt;)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.SessionFactory.html" title="interface in org.hibernate.reactive.stage">Stage.SessionFactory</a></dt>
 <dd>
-<div class="block">Perform work using a <a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage"><code>reactive session</code></a> within an
- associated <a href="org/hibernate/reactive/stage/Stage.Transaction.html" title="interface in org.hibernate.reactive.stage"><code>transaction</code></a>.</div>
+<div class="block">Perform work using a <a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">reactive session</a>
+ for the tenant with the specified tenant id within an associated
+ <a href="org/hibernate/reactive/stage/Stage.Transaction.html" title="interface in org.hibernate.reactive.stage"><code>transaction</code></a>.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#withStatelessTransaction(java.util.function.BiFunction)" class="member-name-link">withStatelessTransaction(BiFunction&lt;Mutiny.StatelessSession, Mutiny.Transaction, Uni&lt;T&gt;&gt;)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SessionFactory</a></dt>
 <dd>
-<div class="block">Perform work using a <a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> within an
- associated <a href="org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.</div>
+<div class="block">Perform work using a <a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">reactive session</a>
+ within an associated <a href="org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/stage/Stage.SessionFactory.html#withStatelessTransaction(java.util.function.BiFunction)" class="member-name-link">withStatelessTransaction(BiFunction&lt;Stage.StatelessSession, Stage.Transaction, CompletionStage&lt;T&gt;&gt;)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.SessionFactory.html" title="interface in org.hibernate.reactive.stage">Stage.SessionFactory</a></dt>
 <dd>
-<div class="block">Perform work using a <a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage"><code>reactive session</code></a> within an
- associated <a href="org/hibernate/reactive/stage/Stage.Transaction.html" title="interface in org.hibernate.reactive.stage"><code>transaction</code></a>.</div>
+<div class="block">Perform work using a <a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">reactive session</a>
+ within an associated <a href="org/hibernate/reactive/stage/Stage.Transaction.html" title="interface in org.hibernate.reactive.stage"><code>transaction</code></a>.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#withStatelessTransaction(java.util.function.Function)" class="member-name-link">withStatelessTransaction(Function&lt;Mutiny.StatelessSession, Uni&lt;T&gt;&gt;)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SessionFactory</a></dt>
 <dd>
-<div class="block">Perform work using a <a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> within an
- associated <a href="org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.</div>
+<div class="block">Perform work using a <a href="org/hibernate/reactive/mutiny/Mutiny.StatelessSession.html" title="interface in org.hibernate.reactive.mutiny">reactive session</a>
+ within an associated <a href="org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/stage/Stage.SessionFactory.html#withStatelessTransaction(java.util.function.Function)" class="member-name-link">withStatelessTransaction(Function&lt;Stage.StatelessSession, CompletionStage&lt;T&gt;&gt;)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.SessionFactory.html" title="interface in org.hibernate.reactive.stage">Stage.SessionFactory</a></dt>
 <dd>
-<div class="block">Perform work using a <a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage"><code>reactive session</code></a> within an
- associated <a href="org/hibernate/reactive/stage/Stage.Transaction.html" title="interface in org.hibernate.reactive.stage"><code>transaction</code></a>.</div>
+<div class="block">Perform work using a <a href="org/hibernate/reactive/stage/Stage.StatelessSession.html" title="interface in org.hibernate.reactive.stage">reactive session</a>
+ within an associated <a href="org/hibernate/reactive/stage/Stage.Transaction.html" title="interface in org.hibernate.reactive.stage"><code>transaction</code></a>.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#withTransaction(java.lang.String,java.util.function.BiFunction)" class="member-name-link">withTransaction(String, BiFunction&lt;Mutiny.Session, Mutiny.Transaction, Uni&lt;T&gt;&gt;)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SessionFactory</a></dt>
 <dd>
-<div class="block">Perform work using a <a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> for a
- specified tenant within an associated <a href="org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.</div>
+<div class="block">Perform work using a <a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">reactive session</a> for
+ the tenant with the specified tenant id within an associated
+ <a href="org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/stage/Stage.SessionFactory.html#withTransaction(java.lang.String,java.util.function.BiFunction)" class="member-name-link">withTransaction(String, BiFunction&lt;Stage.Session, Stage.Transaction, CompletionStage&lt;T&gt;&gt;)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.SessionFactory.html" title="interface in org.hibernate.reactive.stage">Stage.SessionFactory</a></dt>
 <dd>
-<div class="block">Perform work using a <a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage"><code>reactive session</code></a> for a
- specified tenant within an associated <a href="org/hibernate/reactive/stage/Stage.Transaction.html" title="interface in org.hibernate.reactive.stage"><code>transaction</code></a>.</div>
+<div class="block">Perform work using a <a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">reactive session</a> for
+ the tenant with the specified tenant id within an associated
+ <a href="org/hibernate/reactive/stage/Stage.Transaction.html" title="interface in org.hibernate.reactive.stage"><code>transaction</code></a>.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#withTransaction(java.util.function.BiFunction)" class="member-name-link">withTransaction(BiFunction&lt;Mutiny.Session, Mutiny.Transaction, Uni&lt;T&gt;&gt;)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SessionFactory</a></dt>
 <dd>
-<div class="block">Perform work using a <a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> within an
- associated <a href="org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.</div>
+<div class="block">Perform work using a <a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">reactive session</a>
+ within an associated <a href="org/hibernate/reactive/mutiny/Mutiny.Transaction.html" title="interface in org.hibernate.reactive.mutiny"><code>transaction</code></a>.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/stage/Stage.SessionFactory.html#withTransaction(java.util.function.BiFunction)" class="member-name-link">withTransaction(BiFunction&lt;Stage.Session, Stage.Transaction, CompletionStage&lt;T&gt;&gt;)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.SessionFactory.html" title="interface in org.hibernate.reactive.stage">Stage.SessionFactory</a></dt>
 <dd>
-<div class="block">Perform work using a <a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage"><code>reactive session</code></a> within an
+<div class="block">Perform work using a <a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">reactive session</a> within an
  associated <a href="org/hibernate/reactive/stage/Stage.Transaction.html" title="interface in org.hibernate.reactive.stage"><code>transaction</code></a>.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html#withTransaction(java.util.function.Function)" class="member-name-link">withTransaction(Function&lt;Mutiny.Session, Uni&lt;T&gt;&gt;)</a> - Method in interface org.hibernate.reactive.mutiny.<a href="org/hibernate/reactive/mutiny/Mutiny.SessionFactory.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.SessionFactory</a></dt>
 <dd>
-<div class="block">Perform work using a <a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny"><code>reactive session</code></a> within an
- associated transaction.</div>
+<div class="block">Perform work using a <a href="org/hibernate/reactive/mutiny/Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">reactive session</a>
+ within an associated transaction.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/mutiny/delegation/MutinySessionDelegator.html#withTransaction(java.util.function.Function)" class="member-name-link">withTransaction(Function&lt;Mutiny.Transaction, Uni&lt;T&gt;&gt;)</a> - Method in class org.hibernate.reactive.mutiny.delegation.<a href="org/hibernate/reactive/mutiny/delegation/MutinySessionDelegator.html" title="class in org.hibernate.reactive.mutiny.delegation">MutinySessionDelegator</a></dt>
 <dd>&nbsp;</dd>
@@ -6011,7 +6015,7 @@ the order they are declared.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/stage/Stage.SessionFactory.html#withTransaction(java.util.function.Function)" class="member-name-link">withTransaction(Function&lt;Stage.Session, CompletionStage&lt;T&gt;&gt;)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.SessionFactory.html" title="interface in org.hibernate.reactive.stage">Stage.SessionFactory</a></dt>
 <dd>
-<div class="block">Perform work using a <a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage"><code>reactive session</code></a> within an
+<div class="block">Perform work using a <a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">reactive session</a> within an
  associated transaction.</div>
 </dd>
 <dt><a href="org/hibernate/reactive/stage/Stage.Session.html#withTransaction(java.util.function.Function)" class="member-name-link">withTransaction(Function&lt;Stage.Transaction, CompletionStage&lt;T&gt;&gt;)</a> - Method in interface org.hibernate.reactive.stage.<a href="org/hibernate/reactive/stage/Stage.Session.html" title="interface in org.hibernate.reactive.stage">Stage.Session</a></dt>
