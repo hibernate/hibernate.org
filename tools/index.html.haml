@@ -7,7 +7,7 @@ project: tools
 -# Center body
 .feature-block
   :asciidoc
-    == Reverse Engineering from a Database
+    == Reverse engineering from a database
 
     Hibernate Tools is a set of build plugins and a Java library that can be used to generate Hibernate/JPA entities starting
     from your relational database structure. The default behavior of the code generator is highly customizable via
@@ -20,13 +20,13 @@ project: tools
 
 .feature-block
   :asciidoc
-    == Project Configuration
+    == Project configuration
 
-    For the purpose of a quick introduction, let's assume that you have a database running, e.g.
-    https://github.com/maxandersen/sakila-h2[H2 Sakila database] reacheable at the following JDBC URL:
+    For the purpose of a quick introduction, let's suppose that we have a database running, for example,
+    https://github.com/maxandersen/sakila-h2[H2 Sakila database], reachable at the following JDBC URL:
     `jdbc:h2:tcp://localhost/./sakila`.
 
-    Let's assume as well that a `hibernate.properties` file below is available somewhere on the project's class path:
+    Let's also suppose that the following `hibernate.properties` file is available somewhere on the project class path:
 
     [listing]
     hibernate.connection.driver_class=org.h2.Driver
@@ -35,17 +35,16 @@ project: tools
     hibernate.default_catalog=SAKILA
     hibernate.default_schema=PUBLIC
 
-    With this in place let's show some possible uses of the reverse engineering tooling to create Java classes from the
+    With this in place, let's show some possible uses of the reverse engineering tooling to create Java classes from the
     database.
 
 .feature-block
   :asciidoc
-    == Using the Maven Plugin
+    == Using the Maven plugin
 
-    The Hibernate Tools Maven plugin can be used either directly or by configuration
-    in the `pom.xml` file of your project to generate entity classes or other artefacts. Let's assume you have created
-    a Maven project with the following `pom.xml` file.
-
+    The Hibernate Tools Maven plugin can be used either directly or by configuration in the `pom.xml` file of our
+    project to generate entity classes or other artefacts.
+    Let's assume we have created a Maven project with the following `pom.xml` file.
 
     [source, xml]
     ----
@@ -82,13 +81,13 @@ project: tools
 
     Let's assume as well that the `src/main/resources` folder contains the `hibernate.properties` file shown earlier.
 
-    Having this in place simply issuing
+    Having this in place, simply issuing:
     [source]
     -----
     mvn org.hibernate.tool:hibernate-tools-maven:${hibernate.version}:hbm2java
     -----
-    from a command line prompt in the project folder would use all the default settings to generate Java classes
-    for all the tables in `target/generated-sources/`.
+    from a command line prompt in the project folder will use all the default settings to generate Java classes for the
+    tables in `target/generated-sources/`.
 
     [source]
     -----
@@ -102,17 +101,16 @@ project: tools
     me@machine foo %
     -----
 
-
     Of course all these defaults can be overridden and tuned. Please consult the documentation for more information.
 
 .feature-block
   :asciidoc
-    == Using Gradle Tasks
+    == Using Gradle tasks
 
-    Let's assume in this case that we start off with a very simple default Gradle application, e.g. created with
-    `gradle init --type java-application  --dsl groovy`.
+    Let's assume in this case that we start off with a very simple default Gradle application, for example, a project
+     created via `gradle init --type java-application  --dsl groovy`.
 
-    With this setup, we replace the contents of the file `app/build.gradle` with the code below :
+    With this setup, we replace the contents of the file `app/build.gradle` with the code below:
 
     [source, groovy]
     -----
@@ -130,19 +128,19 @@ project: tools
     }
     -----
 
-    As a last precondition, we make sure that the above `hibernate.properties` file is present in
-    folder `app/src/main/resources`.
+    As a final precondition, we make sure that the above `hibernate.properties` file is present in folder
+    `app/src/main/resources`.
 
-    With this in place, issuing
+    With this in place, issuing:
     [source]
     -----
     gradle generateJava
     -----
-    will use all the default settings to generate Java classes for all the tables in `app/generated-sources/`.
+    will use all the default settings to generate Java classes for the tables in `app/generated-sources/`.
 
 .feature-block
   :asciidoc
-    == Using Good Old Ant
+    == Using good old Ant
 
     Creating an Ant project is very simple. We only need a `build.xml` file to be present in the root of the project.
     In order to manage the needed dependencies, the easiest way is to use the Ant tasks provided by Apache Ivy.
@@ -180,9 +178,9 @@ project: tools
     </project>
     -----
 
-    With the `hibernate.properties` file from above also present in the root of the project, simply issuing
+    With the `hibernate.properties` file from above also present in the root of the project, simply issuing:
     [source]
     -----
     ant reveng
     -----
-    would generate the Java files in the folder `generated-sources`.
+    generates the Java files in the folder `generated-sources`.
