@@ -176,12 +176,28 @@
 .projects {
 	margin-top: 30px;
 
-	.ui.grid {
-    justify-content: space-around;
-  }
-
 	.ui.segment {
 		background-color: #fafafa;
+	}
+
+	.project {
+		.ui.raised.segment {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+
+			.ui.basic.segment {
+				margin-top: auto;
+			}
+		}
+	}
+
+	.ui.doubling.stackable {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+		align-items: stretch;
+		column-gap: 28px;
+		row-gap: 28px;
 	}
 }
 
