@@ -10,7 +10,8 @@
       = partial( 'menu/mobile-section-project.html.haml', {'real_page' => real_page, 'project_name' => 'OGM', 'project_key' => 'ogm', 'project_icon' => 'sitemap'})
     = partial( 'menu/mobile-section-project.html.haml', {'real_page' => real_page, 'project_name' => 'Reactive', 'project_key' => 'reactive', 'project_icon' => 'flask'})
     = partial( 'menu/mobile-section-project.html.haml', {'real_page' => real_page, 'project_name' => 'Repositories', 'project_key' => 'repositories', 'project_icon' => 'university'})
-    = partial( 'menu/mobile-section-project.html.haml', {'real_page' => real_page, 'project_name' => 'Tools', 'project_key' => 'tools', 'project_icon' => 'wrench'})
+    - if current_path.start_with?('/tools')
+      = partial( 'menu/mobile-section-project.html.haml', {'real_page' => real_page, 'project_name' => 'Tools', 'project_key' => 'tools', 'project_icon' => 'wrench'})
     %a.item(href="/others/")
       Others
     = partial( 'menu/mobile-section-community.html.haml', {'real_page' => real_page})
