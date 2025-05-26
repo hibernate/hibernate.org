@@ -1,4 +1,5 @@
 summary: Release compatible with Hibernate ORM 6.6
+:status: limited-support
 maven:
   artifacts:
     - artifact_id: hibernate-reactive-core
