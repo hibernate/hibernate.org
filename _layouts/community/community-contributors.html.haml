@@ -11,9 +11,23 @@ layout: community-standard
 .ui.icon.message
   %i.icon.users
   .content
-    Here is a list of the most active contributors to the #{project_description.name} project. Want the full list? Go to our
-    %a(href='https://github.com/hibernate/#{project_description.github.project}/graphs/contributors') GitHub page
-    \.
+    Here is a list of the most active contributors to the #{project_description.name} project.
+
+    Want more info?
+    - if project_description.copyright
+      %ul
+        %li
+          See our
+          %a(href='https://github.com/hibernate/#{project_description.github.project}/graphs/contributors') GitHub page
+          for the full list.
+        %li
+          See
+          %a{:href => project_description.copyright.url} this file
+          for a list of corporate and individual copyright owners.
+    - else
+      See our
+      %a(href='https://github.com/hibernate/#{project_description.github.project}/graphs/contributors') GitHub page
+      for the full list.
 
 %p &nbsp;
 
