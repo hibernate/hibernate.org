@@ -2,6 +2,7 @@ summary: >-
   Re-licensing as Apache License 2.0,
   query string predicates on numeric/date fields,
   analyzer API
+status: limited-support
 maven:
   artifacts:
     - artifact_id: hibernate-search-bom
