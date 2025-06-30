@@ -5,6 +5,9 @@ inhibit_indexifier: true
 ---
 
 :javascript
+  $(document).ready(function() {
+    jQuery("#wayback-button").attr("href", "https://web.archive.org/web/*/" + window.location.href);
+  });
   jQuery.ajax({
     url: "https://hibernate.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e/en_US-ny35gm-1988229788/6206/19/1.4.1/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector-embededjs/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector-embededjs.js?collectorId=7d71341e",
     type: "get",
@@ -50,7 +53,15 @@ inhibit_indexifier: true
                 Looks like you have found a broken link!
 
           %p
-            Please report it mentioning which page you came from and which link you clicked on:
+            Please check the link doesn't contain an error: people make mistakes,
+            and AI chatbots in particular are known to spontaneously generate invalid links.
+            The Wayback Machine can help you there:
+          %p.text-center
+            %a.ui.right.label.button.primary#wayback-button
+              %i.icon.arrow.circle.up
+              Check if this page used to exist
+          %p
+            If you are certain the link used to work, report it, mentioning which page you came from and which link you clicked on:
           %p.text-center
             %button.ui.right.label.button.primary#feedback-button
               %i.icon.arrow.circle.up
