@@ -75,11 +75,11 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Superinterfaces:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/EntityLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">EntityLoader</a></code>, <code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/Loader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">Loader</a></code>, <code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/MultiKeyLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">MultiKeyLoader</a></code>, <code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/NaturalIdLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">NaturalIdLoader</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;T&gt;&gt;</code></dd>
+<dd><code>org.hibernate.loader.ast.spi.EntityLoader</code>, <code>org.hibernate.loader.ast.spi.Loader</code>, <code>org.hibernate.loader.ast.spi.MultiKeyLoader</code>, <code>org.hibernate.loader.ast.spi.NaturalIdLoader&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;T&gt;&gt;</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">ReactiveNaturalIdLoader&lt;T&gt;</span><span class="extends-implements">
-extends <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/NaturalIdLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">NaturalIdLoader</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;T&gt;&gt;</span></div>
+extends org.hibernate.loader.ast.spi.NaturalIdLoader&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;T&gt;&gt;</span></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -96,21 +96,21 @@ extends <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#resolveIdToNaturalId(java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">resolveIdToNaturalId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#resolveNaturalIdToId(java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">resolveNaturalIdToId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;naturalIdValue,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-org.hibernate.loader.ast.spi.EntityLoader">Methods inherited from interface&nbsp;org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/EntityLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">EntityLoader</a></h3>
-<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/EntityLoader.html#getLoadable()" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">getLoadable</a></code></div>
+<h3 id="methods-inherited-from-class-org.hibernate.loader.ast.spi.EntityLoader">Methods inherited from interface&nbsp;org.hibernate.loader.ast.spi.EntityLoader</h3>
+<code>getLoadable</code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-org.hibernate.loader.ast.spi.NaturalIdLoader">Methods inherited from interface&nbsp;org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/NaturalIdLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">NaturalIdLoader</a></h3>
-<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/NaturalIdLoader.html#load(java.lang.Object,org.hibernate.loader.ast.spi.NaturalIdLoadOptions,org.hibernate.engine.spi.SharedSessionContractImplementor)" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">load</a></code></div>
+<h3 id="methods-inherited-from-class-org.hibernate.loader.ast.spi.NaturalIdLoader">Methods inherited from interface&nbsp;org.hibernate.loader.ast.spi.NaturalIdLoader</h3>
+<code>load</code></div>
 </section>
 </li>
 </ul>
@@ -126,10 +126,10 @@ extends <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate
 <section class="detail" id="resolveNaturalIdToId(java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)">
 <h3>resolveNaturalIdToId</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</span>&nbsp;<span class="element-name">resolveNaturalIdToId</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;naturalIdValue,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/NaturalIdLoader.html#resolveNaturalIdToId(java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">resolveNaturalIdToId</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/NaturalIdLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">NaturalIdLoader</a>&lt;<a href="ReactiveNaturalIdLoader.html" title="type parameter in ReactiveNaturalIdLoader">T</a>&gt;</code></dd>
+<dd><code>resolveNaturalIdToId</code>&nbsp;in interface&nbsp;<code>org.hibernate.loader.ast.spi.NaturalIdLoader&lt;<a href="ReactiveNaturalIdLoader.html" title="type parameter in ReactiveNaturalIdLoader">T</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
@@ -137,10 +137,10 @@ extends <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate
 <section class="detail" id="resolveIdToNaturalId(java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)">
 <h3>resolveIdToNaturalId</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</span>&nbsp;<span class="element-name">resolveIdToNaturalId</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/NaturalIdLoader.html#resolveIdToNaturalId(java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">resolveIdToNaturalId</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/NaturalIdLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">NaturalIdLoader</a>&lt;<a href="ReactiveNaturalIdLoader.html" title="type parameter in ReactiveNaturalIdLoader">T</a>&gt;</code></dd>
+<dd><code>resolveIdToNaturalId</code>&nbsp;in interface&nbsp;<code>org.hibernate.loader.ast.spi.NaturalIdLoader&lt;<a href="ReactiveNaturalIdLoader.html" title="type parameter in ReactiveNaturalIdLoader">T</a>&gt;</code></dd>
 </dl>
 </section>
 </li>

@@ -82,7 +82,7 @@ loadScripts(document, 'script');</script>
 <dd><code><a href="ReactiveSession.html" title="interface in org.hibernate.reactive.session">ReactiveSession</a></code>, <code><a href="ReactiveStatelessSession.html" title="interface in org.hibernate.reactive.session">ReactiveStatelessSession</a></code></dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="annotations"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/Incubating.html" title="class or interface in org.hibernate" class="external-link">@Incubating</a>
+<div class="type-signature"><span class="annotations"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Incubating.html" title="class or interface in org.hibernate" class="external-link">@Incubating</a>
 </span><span class="modifiers">public interface </span><span class="element-name type-name-label">ReactiveQueryProducer</span><span class="extends-implements">
 extends <a href="ReactiveConnectionSupplier.html" title="interface in org.hibernate.reactive.session">ReactiveConnectionSupplier</a></span></div>
 <div class="block">Executes queries in a non-blocking fashion.</div>
@@ -90,8 +90,8 @@ extends <a href="ReactiveConnectionSupplier.html" title="interface in org.hibern
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryProducer.html" title="class or interface in org.hibernate.query" class="external-link"><code>QueryProducer</code></a></li>
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link"><code>SharedSessionContractImplementor</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/QueryProducer.html" title="class or interface in org.hibernate.query" class="external-link"><code>QueryProducer</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link"><code>SharedSessionContractImplementor</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -139,7 +139,7 @@ extends <a href="ReactiveConnectionSupplier.html" title="interface in org.hibern
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createReactiveMutationQuery(java.lang.String)" class="member-name-link">createReactiveMutationQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;hqlString)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;R&gt;&nbsp;<a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;R&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createReactiveMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsert)" class="member-name-link">createReactiveMutationQuery</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/criteria/JpaCriteriaInsert.html" title="class or interface in org.hibernate.query.criteria" class="external-link">JpaCriteriaInsert</a>&lt;R&gt;&nbsp;insert)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createReactiveMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsert)" class="member-name-link">createReactiveMutationQuery</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/criteria/JpaCriteriaInsert.html" title="class or interface in org.hibernate.query.criteria" class="external-link">JpaCriteriaInsert</a>&lt;R&gt;&nbsp;insert)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;R&gt;&nbsp;<a href="../query/ReactiveQueryImplementor.html" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a>&lt;R&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createReactiveNamedQuery(java.lang.String)" class="member-name-link">createReactiveNamedQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString)</code></div>
@@ -213,21 +213,21 @@ extends <a href="ReactiveConnectionSupplier.html" title="interface in org.hibern
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createReactiveSelectionQuery(java.lang.String,java.lang.Class)" class="member-name-link">createReactiveSelectionQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;hqlString,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;R&gt;&nbsp;resultType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/dialect/Dialect.html" title="class or interface in org.hibernate.dialect" class="external-link">Dialect</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/dialect/Dialect.html" title="class or interface in org.hibernate.dialect" class="external-link">Dialect</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getDialect()" class="member-name-link">getDialect</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;T&gt;&nbsp;jakarta.persistence.EntityGraph&lt;T&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getEntityGraph(java.lang.Class,java.lang.String)" class="member-name-link">getEntityGraph</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;entity,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getFactory()" class="member-name-link">getFactory</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;T&gt;&nbsp;<a href="../common/ResultSetMapping.html" title="interface in org.hibernate.reactive.common">ResultSetMapping</a>&lt;T&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getResultSetMapping(java.lang.Class,java.lang.String)" class="member-name-link">getResultSetMapping</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;resultType,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;mappingName)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getSharedContract()" class="member-name-link">getSharedContract</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;T&gt;</code></div>
@@ -260,19 +260,19 @@ extends <a href="ReactiveConnectionSupplier.html" title="interface in org.hibern
 <li>
 <section class="detail" id="getFactory()">
 <h3>getFactory</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a></span>&nbsp;<span class="element-name">getFactory</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a></span>&nbsp;<span class="element-name">getFactory</span>()</div>
 </section>
 </li>
 <li>
 <section class="detail" id="getSharedContract()">
 <h3>getSharedContract</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a></span>&nbsp;<span class="element-name">getSharedContract</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a></span>&nbsp;<span class="element-name">getSharedContract</span>()</div>
 </section>
 </li>
 <li>
 <section class="detail" id="getDialect()">
 <h3>getDialect</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/dialect/Dialect.html" title="class or interface in org.hibernate.dialect" class="external-link">Dialect</a></span>&nbsp;<span class="element-name">getDialect</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/dialect/Dialect.html" title="class or interface in org.hibernate.dialect" class="external-link">Dialect</a></span>&nbsp;<span class="element-name">getDialect</span>()</div>
 </section>
 </li>
 <li>
@@ -425,7 +425,7 @@ extends <a href="ReactiveConnectionSupplier.html" title="interface in org.hibern
 <li>
 <section class="detail" id="createReactiveMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsert)">
 <h3>createReactiveMutationQuery</h3>
-<div class="member-signature"><span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;R&gt;</span>&nbsp;<span class="element-name">createReactiveMutationQuery</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/criteria/JpaCriteriaInsert.html" title="class or interface in org.hibernate.query.criteria" class="external-link">JpaCriteriaInsert</a>&lt;R&gt;&nbsp;insert)</span></div>
+<div class="member-signature"><span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="../query/ReactiveMutationQuery.html" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;R&gt;</span>&nbsp;<span class="element-name">createReactiveMutationQuery</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/criteria/JpaCriteriaInsert.html" title="class or interface in org.hibernate.query.criteria" class="external-link">JpaCriteriaInsert</a>&lt;R&gt;&nbsp;insert)</span></div>
 </section>
 </li>
 <li>

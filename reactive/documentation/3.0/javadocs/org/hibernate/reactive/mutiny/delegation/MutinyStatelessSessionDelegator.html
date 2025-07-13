@@ -146,7 +146,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
  update or delete statement.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsert)" class="member-name-link">createMutationQuery</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/criteria/JpaCriteriaInsert.html" title="class or interface in org.hibernate.query.criteria" class="external-link">JpaCriteriaInsert</a>&lt;?&gt;&nbsp;insert)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsert)" class="member-name-link">createMutationQuery</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/criteria/JpaCriteriaInsert.html" title="class or interface in org.hibernate.query.criteria" class="external-link">JpaCriteriaInsert</a>&lt;?&gt;&nbsp;insert)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Create a <a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> from the given insert select criteria tree</div>
 </div>
@@ -225,7 +225,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;R&gt;&nbsp;<a href="../Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createQuery(jakarta.persistence.TypedQueryReference)" class="member-name-link">createQuery</a><wbr>(jakarta.persistence.TypedQueryReference&lt;R&gt;&nbsp;typedQueryReference)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Create a typed <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/Query.html" title="class or interface in org.hibernate.query" class="external-link"><code>Query</code></a> instance for the given typed query reference.</div>
+<div class="block">Create a typed <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/Query.html" title="class or interface in org.hibernate.query" class="external-link"><code>Query</code></a> instance for the given typed query reference.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>&lt;R&gt;&nbsp;<a href="../Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#createQuery(java.lang.String)" class="member-name-link">createQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString)</code></div>
@@ -311,7 +311,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#get(java.lang.Class,java.lang.Object,org.hibernate.LockMode)" class="member-name-link">get</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;entityClass,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</code></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Retrieve a row, obtaining the specified lock mode.</div>
 </div>
@@ -382,7 +382,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#refresh(java.lang.Object,org.hibernate.LockMode)" class="member-name-link">refresh</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</code></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Refresh the entity instance state from the database.</div>
 </div>
@@ -515,7 +515,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#get(java.lang.Class,java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.get(Class, Object)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html#get(java.lang.Class,java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.get(Class, Object)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -585,7 +585,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#getMultiple(java.lang.Class,java.util.List)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.getMultiple(Class, List)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html#getMultiple(java.lang.Class,java.util.List)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.getMultiple(Class, List)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -639,7 +639,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <h3>get</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">io.smallrye.mutiny.Uni&lt;T&gt;</span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;entityClass,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</span></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Mutiny.StatelessSession.html#get(java.lang.Class,java.lang.Object,org.hibernate.LockMode)">Mutiny.StatelessSession</a></code></span></div>
 <div class="block">Retrieve a row, obtaining the specified lock mode.</div>
 <dl class="notes">
@@ -654,7 +654,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#get(java.lang.Class,java.lang.Object,org.hibernate.LockMode)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.get(Class, Object, LockMode)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html#get(java.lang.Class,java.lang.Object,org.hibernate.LockMode)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.get(Class, Object, LockMode)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -699,7 +699,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#insert(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.insert(Object)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html#insert(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.insert(Object)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -721,7 +721,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#update(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.update(Object)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html#update(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.update(Object)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -773,7 +773,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#get(java.lang.Class,java.lang.Object,org.hibernate.LockMode)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.get(Class, Object, LockMode)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html#get(java.lang.Class,java.lang.Object,org.hibernate.LockMode)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.get(Class, Object, LockMode)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -793,7 +793,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#update(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.update(Object)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html#update(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.update(Object)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -816,7 +816,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#refresh(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.refresh(Object)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html#refresh(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.refresh(Object)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -827,18 +827,18 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <h3>createQuery</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="../Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</span>&nbsp;<span class="element-name">createQuery</span><wbr><span class="parameters">(jakarta.persistence.TypedQueryReference&lt;R&gt;&nbsp;typedQueryReference)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Mutiny.QueryProducer.html#createQuery(jakarta.persistence.TypedQueryReference)">Mutiny.QueryProducer</a></code></span></div>
-<div class="block">Create a typed <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/Query.html" title="class or interface in org.hibernate.query" class="external-link"><code>Query</code></a> instance for the given typed query reference.</div>
+<div class="block">Create a typed <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/Query.html" title="class or interface in org.hibernate.query" class="external-link"><code>Query</code></a> instance for the given typed query reference.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Mutiny.QueryProducer.html#createQuery(jakarta.persistence.TypedQueryReference)">createQuery</a></code>&nbsp;in interface&nbsp;<code><a href="../Mutiny.QueryProducer.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.QueryProducer</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>typedQueryReference</code> - the type query reference</dd>
 <dt>Returns:</dt>
-<dd>The <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/Query.html" title="class or interface in org.hibernate.query" class="external-link"><code>Query</code></a> instance for execution</dd>
+<dd>The <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/Query.html" title="class or interface in org.hibernate.query" class="external-link"><code>Query</code></a> instance for execution</dd>
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryProducer.html#createQuery(jakarta.persistence.TypedQueryReference)" title="class or interface in org.hibernate.query" class="external-link"><code>QueryProducer.createQuery(TypedQueryReference)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/QueryProducer.html#createQuery(jakarta.persistence.TypedQueryReference)" title="class or interface in org.hibernate.query" class="external-link"><code>QueryProducer.createQuery(TypedQueryReference)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -883,7 +883,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#delete(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.delete(Object)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html#delete(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.delete(Object)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -905,7 +905,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#refresh(java.lang.Object,org.hibernate.LockMode)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.refresh(Object, LockMode)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html#refresh(java.lang.Object,org.hibernate.LockMode)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.refresh(Object, LockMode)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -974,7 +974,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#delete(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.delete(Object)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html#delete(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.delete(Object)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -995,7 +995,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#delete(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.delete(Object)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html#delete(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.delete(Object)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1016,7 +1016,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#update(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.update(Object)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html#update(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.update(Object)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1049,7 +1049,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <li>
 <section class="detail" id="upsert(java.lang.Object)">
 <h3>upsert</h3>
-<div class="member-signature"><span class="annotations"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/Incubating.html" title="class or interface in org.hibernate" class="external-link">@Incubating</a>
+<div class="member-signature"><span class="annotations"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Incubating.html" title="class or interface in org.hibernate" class="external-link">@Incubating</a>
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">upsert</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Mutiny.StatelessSession.html#upsert(java.lang.Object)">Mutiny.StatelessSession</a></code></span></div>
 <div class="block">Use a SQL <code>merge into</code> statement to perform an upsert.</div>
@@ -1061,7 +1061,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#upsert(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.upsert(Object)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html#upsert(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.upsert(Object)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1104,7 +1104,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#refresh(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.refresh(Object)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html#refresh(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.refresh(Object)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1127,7 +1127,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <li>
 <section class="detail" id="upsertMultiple(java.util.List)">
 <h3>upsertMultiple</h3>
-<div class="member-signature"><span class="annotations"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/Incubating.html" title="class or interface in org.hibernate" class="external-link">@Incubating</a>
+<div class="member-signature"><span class="annotations"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Incubating.html" title="class or interface in org.hibernate" class="external-link">@Incubating</a>
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">upsertMultiple</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;?&gt;&nbsp;entities)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Mutiny.StatelessSession.html#upsertMultiple(java.util.List)">Mutiny.StatelessSession</a></code></span></div>
 <div class="block">Use a SQL <code>merge into</code> statement to perform
@@ -1141,7 +1141,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#upsert(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.upsert(Object)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html#upsert(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.upsert(Object)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1179,7 +1179,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#insert(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.insert(Object)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html#insert(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.insert(Object)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1271,7 +1271,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#refresh(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.refresh(Object)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html#refresh(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.refresh(Object)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1307,7 +1307,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#update(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.update(Object)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html#update(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.update(Object)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1399,7 +1399,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#refresh(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.refresh(Object)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html#refresh(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.refresh(Object)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1428,7 +1428,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/Hibernate.html#initialize(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>Hibernate.initialize(Object)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Hibernate.html#initialize(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>Hibernate.initialize(Object)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1437,7 +1437,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <li>
 <section class="detail" id="upsertAll(java.lang.Object...)">
 <h3>upsertAll</h3>
-<div class="member-signature"><span class="annotations"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/Incubating.html" title="class or interface in org.hibernate" class="external-link">@Incubating</a>
+<div class="member-signature"><span class="annotations"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Incubating.html" title="class or interface in org.hibernate" class="external-link">@Incubating</a>
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">upsertAll</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;entities)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Mutiny.StatelessSession.html#upsertAll(java.lang.Object...)">Mutiny.StatelessSession</a></code></span></div>
 <div class="block">Use a SQL <code>merge into</code> statement to perform
@@ -1451,7 +1451,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#upsert(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.upsert(Object)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html#upsert(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.upsert(Object)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1483,7 +1483,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <li>
 <section class="detail" id="upsertAll(int,java.lang.Object...)">
 <h3>upsertAll</h3>
-<div class="member-signature"><span class="annotations"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/Incubating.html" title="class or interface in org.hibernate" class="external-link">@Incubating</a>
+<div class="member-signature"><span class="annotations"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Incubating.html" title="class or interface in org.hibernate" class="external-link">@Incubating</a>
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">upsertAll</span><wbr><span class="parameters">(int&nbsp;batchSize,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;entities)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Mutiny.StatelessSession.html#upsertAll(int,java.lang.Object...)">Mutiny.StatelessSession</a></code></span></div>
@@ -1498,7 +1498,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#upsert(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.upsert(Object)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html#upsert(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.upsert(Object)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1530,7 +1530,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#insert(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.insert(Object)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html#insert(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.insert(Object)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1551,7 +1551,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#insert(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.insert(Object)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html#insert(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.insert(Object)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1561,7 +1561,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <section class="detail" id="refresh(java.lang.Object,org.hibernate.LockMode)">
 <h3>refresh</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">refresh</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</span></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Mutiny.StatelessSession.html#refresh(java.lang.Object,org.hibernate.LockMode)">Mutiny.StatelessSession</a></code></span></div>
 <div class="block">Refresh the entity instance state from the database.</div>
 <dl class="notes">
@@ -1573,7 +1573,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#refresh(java.lang.Object,org.hibernate.LockMode)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.refresh(Object, LockMode)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html#refresh(java.lang.Object,org.hibernate.LockMode)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.refresh(Object, LockMode)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1595,7 +1595,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/StatelessSession.html#delete(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.delete(Object)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/StatelessSession.html#delete(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>StatelessSession.delete(Object)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1617,7 +1617,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryProducer.html#createMutationQuery(jakarta.persistence.criteria.CriteriaUpdate)" title="class or interface in org.hibernate.query" class="external-link"><code>QueryProducer.createMutationQuery(CriteriaUpdate)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/QueryProducer.html#createMutationQuery(jakarta.persistence.criteria.CriteriaUpdate)" title="class or interface in org.hibernate.query" class="external-link"><code>QueryProducer.createMutationQuery(CriteriaUpdate)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1639,7 +1639,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryProducer.html#createMutationQuery(jakarta.persistence.criteria.CriteriaDelete)" title="class or interface in org.hibernate.query" class="external-link"><code>QueryProducer.createMutationQuery(CriteriaDelete)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/QueryProducer.html#createMutationQuery(jakarta.persistence.criteria.CriteriaDelete)" title="class or interface in org.hibernate.query" class="external-link"><code>QueryProducer.createMutationQuery(CriteriaDelete)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1648,7 +1648,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <li>
 <section class="detail" id="createMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsert)">
 <h3>createMutationQuery</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></span>&nbsp;<span class="element-name">createMutationQuery</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/criteria/JpaCriteriaInsert.html" title="class or interface in org.hibernate.query.criteria" class="external-link">JpaCriteriaInsert</a>&lt;?&gt;&nbsp;insert)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></span>&nbsp;<span class="element-name">createMutationQuery</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/criteria/JpaCriteriaInsert.html" title="class or interface in org.hibernate.query.criteria" class="external-link">JpaCriteriaInsert</a>&lt;?&gt;&nbsp;insert)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Mutiny.QueryProducer.html#createMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsert)">Mutiny.QueryProducer</a></code></span></div>
 <div class="block">Create a <a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> from the given insert select criteria tree</div>
 <dl class="notes">
@@ -1661,7 +1661,7 @@ implements <a href="../Mutiny.StatelessSession.html" title="interface in org.hib
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryProducer.html#createMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsert)" title="class or interface in org.hibernate.query" class="external-link"><code>QueryProducer.createMutationQuery(JpaCriteriaInsert)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/QueryProducer.html#createMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsert)" title="class or interface in org.hibernate.query" class="external-link"><code>QueryProducer.createMutationQuery(JpaCriteriaInsert)</code></a></li>
 </ul>
 </dd>
 </dl>

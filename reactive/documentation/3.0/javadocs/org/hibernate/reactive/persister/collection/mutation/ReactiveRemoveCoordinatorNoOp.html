@@ -73,18 +73,18 @@ loadScripts(document, 'script');</script>
 <h1 title="Class ReactiveRemoveCoordinatorNoOp" class="title">Class ReactiveRemoveCoordinatorNoOp</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/persister/collection/mutation/RemoveCoordinatorNoOp.html" title="class or interface in org.hibernate.persister.collection.mutation" class="external-link">org.hibernate.persister.collection.mutation.RemoveCoordinatorNoOp</a>
+<div class="inheritance">org.hibernate.persister.collection.mutation.RemoveCoordinatorNoOp
 <div class="inheritance">org.hibernate.reactive.persister.collection.mutation.ReactiveRemoveCoordinatorNoOp</div>
 </div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/persister/collection/mutation/CollectionOperationCoordinator.html" title="class or interface in org.hibernate.persister.collection.mutation" class="external-link">CollectionOperationCoordinator</a></code>, <code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/persister/collection/mutation/RemoveCoordinator.html" title="class or interface in org.hibernate.persister.collection.mutation" class="external-link">RemoveCoordinator</a></code>, <code><a href="ReactiveRemoveCoordinator.html" title="interface in org.hibernate.reactive.persister.collection.mutation">ReactiveRemoveCoordinator</a></code></dd>
+<dd><code>org.hibernate.persister.collection.mutation.CollectionOperationCoordinator</code>, <code>org.hibernate.persister.collection.mutation.RemoveCoordinator</code>, <code><a href="ReactiveRemoveCoordinator.html" title="interface in org.hibernate.reactive.persister.collection.mutation">ReactiveRemoveCoordinator</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">ReactiveRemoveCoordinatorNoOp</span>
-<span class="extends-implements">extends <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/persister/collection/mutation/RemoveCoordinatorNoOp.html" title="class or interface in org.hibernate.persister.collection.mutation" class="external-link">RemoveCoordinatorNoOp</a>
+<span class="extends-implements">extends org.hibernate.persister.collection.mutation.RemoveCoordinatorNoOp
 implements <a href="ReactiveRemoveCoordinator.html" title="interface in org.hibernate.reactive.persister.collection.mutation">ReactiveRemoveCoordinator</a></span></div>
 </section>
 <section class="summary">
@@ -97,7 +97,7 @@ implements <a href="ReactiveRemoveCoordinator.html" title="interface in org.hibe
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(org.hibernate.persister.collection.mutation.CollectionMutationTarget)" class="member-name-link">ReactiveRemoveCoordinatorNoOp</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/persister/collection/mutation/CollectionMutationTarget.html" title="class or interface in org.hibernate.persister.collection.mutation" class="external-link">CollectionMutationTarget</a>&nbsp;mutationTarget)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(org.hibernate.persister.collection.mutation.CollectionMutationTarget)" class="member-name-link">ReactiveRemoveCoordinatorNoOp</a><wbr>(org.hibernate.persister.collection.mutation.CollectionMutationTarget&nbsp;mutationTarget)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -115,7 +115,7 @@ implements <a href="ReactiveRemoveCoordinator.html" title="interface in org.hibe
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reactiveDeleteAllRows(java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">reactiveDeleteAllRows</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;key,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
@@ -124,17 +124,17 @@ implements <a href="ReactiveRemoveCoordinator.html" title="interface in org.hibe
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-org.hibernate.persister.collection.mutation.RemoveCoordinatorNoOp">Methods inherited from class&nbsp;org.hibernate.persister.collection.mutation.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/persister/collection/mutation/RemoveCoordinatorNoOp.html" title="class or interface in org.hibernate.persister.collection.mutation" class="external-link">RemoveCoordinatorNoOp</a></h3>
-<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/persister/collection/mutation/RemoveCoordinatorNoOp.html#deleteAllRows(java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)" title="class or interface in org.hibernate.persister.collection.mutation" class="external-link">deleteAllRows</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/persister/collection/mutation/RemoveCoordinatorNoOp.html#getMutationTarget()" title="class or interface in org.hibernate.persister.collection.mutation" class="external-link">getMutationTarget</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/persister/collection/mutation/RemoveCoordinatorNoOp.html#getSqlString()" title="class or interface in org.hibernate.persister.collection.mutation" class="external-link">getSqlString</a></code></div>
+<h3 id="methods-inherited-from-class-org.hibernate.persister.collection.mutation.RemoveCoordinatorNoOp">Methods inherited from class&nbsp;org.hibernate.persister.collection.mutation.RemoveCoordinatorNoOp</h3>
+<code>deleteAllRows, getMutationTarget, getSqlString</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-org.hibernate.persister.collection.mutation.CollectionOperationCoordinator">Methods inherited from interface&nbsp;org.hibernate.persister.collection.mutation.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/persister/collection/mutation/CollectionOperationCoordinator.html" title="class or interface in org.hibernate.persister.collection.mutation" class="external-link">CollectionOperationCoordinator</a></h3>
-<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/persister/collection/mutation/CollectionOperationCoordinator.html#getMutationTarget()" title="class or interface in org.hibernate.persister.collection.mutation" class="external-link">getMutationTarget</a></code></div>
+<h3 id="methods-inherited-from-class-org.hibernate.persister.collection.mutation.CollectionOperationCoordinator">Methods inherited from interface&nbsp;org.hibernate.persister.collection.mutation.CollectionOperationCoordinator</h3>
+<code>getMutationTarget</code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-org.hibernate.persister.collection.mutation.RemoveCoordinator">Methods inherited from interface&nbsp;org.hibernate.persister.collection.mutation.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/persister/collection/mutation/RemoveCoordinator.html" title="class or interface in org.hibernate.persister.collection.mutation" class="external-link">RemoveCoordinator</a></h3>
-<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/persister/collection/mutation/RemoveCoordinator.html#deleteAllRows(java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)" title="class or interface in org.hibernate.persister.collection.mutation" class="external-link">deleteAllRows</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/persister/collection/mutation/RemoveCoordinator.html#getSqlString()" title="class or interface in org.hibernate.persister.collection.mutation" class="external-link">getSqlString</a></code></div>
+<h3 id="methods-inherited-from-class-org.hibernate.persister.collection.mutation.RemoveCoordinator">Methods inherited from interface&nbsp;org.hibernate.persister.collection.mutation.RemoveCoordinator</h3>
+<code>deleteAllRows, getSqlString</code></div>
 </section>
 </li>
 </ul>
@@ -149,7 +149,7 @@ implements <a href="ReactiveRemoveCoordinator.html" title="interface in org.hibe
 <li>
 <section class="detail" id="&lt;init&gt;(org.hibernate.persister.collection.mutation.CollectionMutationTarget)">
 <h3>ReactiveRemoveCoordinatorNoOp</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ReactiveRemoveCoordinatorNoOp</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/persister/collection/mutation/CollectionMutationTarget.html" title="class or interface in org.hibernate.persister.collection.mutation" class="external-link">CollectionMutationTarget</a>&nbsp;mutationTarget)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ReactiveRemoveCoordinatorNoOp</span><wbr><span class="parameters">(org.hibernate.persister.collection.mutation.CollectionMutationTarget&nbsp;mutationTarget)</span></div>
 </section>
 </li>
 </ul>
@@ -164,7 +164,7 @@ implements <a href="ReactiveRemoveCoordinator.html" title="interface in org.hibe
 <section class="detail" id="reactiveDeleteAllRows(java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)">
 <h3>reactiveDeleteAllRows</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">reactiveDeleteAllRows</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;key,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="ReactiveRemoveCoordinator.html#reactiveDeleteAllRows(java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)">reactiveDeleteAllRows</a></code>&nbsp;in interface&nbsp;<code><a href="ReactiveRemoveCoordinator.html" title="interface in org.hibernate.reactive.persister.collection.mutation">ReactiveRemoveCoordinator</a></code></dd>
@@ -177,7 +177,7 @@ implements <a href="ReactiveRemoveCoordinator.html" title="interface in org.hibe
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
 <dl class="notes">
 <dt>Overrides:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/persister/collection/mutation/RemoveCoordinatorNoOp.html#toString()" title="class or interface in org.hibernate.persister.collection.mutation" class="external-link">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/persister/collection/mutation/RemoveCoordinatorNoOp.html" title="class or interface in org.hibernate.persister.collection.mutation" class="external-link">RemoveCoordinatorNoOp</a></code></dd>
+<dd><code>toString</code>&nbsp;in class&nbsp;<code>org.hibernate.persister.collection.mutation.RemoveCoordinatorNoOp</code></dd>
 </dl>
 </section>
 </li>

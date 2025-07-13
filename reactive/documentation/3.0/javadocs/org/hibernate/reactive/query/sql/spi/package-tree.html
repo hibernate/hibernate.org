@@ -60,8 +60,8 @@ loadScripts(document, 'script');</script>
 <ul>
 <li class="circle">java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" class="type-name-link external-link" title="class or interface in java.lang">Object</a>
 <ul>
-<li class="circle">org.hibernate.reactive.query.sql.spi.<a href="ReactiveNamedNativeQueryMemento.html" class="type-name-link" title="class in org.hibernate.reactive.query.sql.spi">ReactiveNamedNativeQueryMemento</a>&lt;E&gt; (implements org.hibernate.query.sql.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sql/spi/NamedNativeQueryMemento.html" title="class or interface in org.hibernate.query.sql.spi" class="external-link">NamedNativeQueryMemento</a>&lt;E&gt;)</li>
-<li class="circle">org.hibernate.reactive.query.sql.spi.<a href="ReactiveNamedSqmQueryMemento.html" class="type-name-link" title="class in org.hibernate.reactive.query.sql.spi">ReactiveNamedSqmQueryMemento</a>&lt;E&gt; (implements org.hibernate.query.sqm.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/spi/NamedSqmQueryMemento.html" title="class or interface in org.hibernate.query.sqm.spi" class="external-link">NamedSqmQueryMemento</a>&lt;E&gt;)</li>
+<li class="circle">org.hibernate.reactive.query.sql.spi.<a href="ReactiveNamedNativeQueryMemento.html" class="type-name-link" title="class in org.hibernate.reactive.query.sql.spi">ReactiveNamedNativeQueryMemento</a>&lt;E&gt; (implements org.hibernate.query.sql.spi.NamedNativeQueryMemento&lt;E&gt;)</li>
+<li class="circle">org.hibernate.reactive.query.sql.spi.<a href="ReactiveNamedSqmQueryMemento.html" class="type-name-link" title="class in org.hibernate.reactive.query.sql.spi">ReactiveNamedSqmQueryMemento</a>&lt;E&gt; (implements org.hibernate.query.sqm.spi.NamedSqmQueryMemento&lt;E&gt;)</li>
 </ul>
 </li>
 </ul>
@@ -69,7 +69,7 @@ loadScripts(document, 'script');</script>
 <section class="hierarchy">
 <h2 title="Interface Hierarchy">Interface Hierarchy</h2>
 <ul>
-<li class="circle">org.hibernate.query.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/CommonQueryContract.html" class="type-name-link external-link" title="class or interface in org.hibernate.query">CommonQueryContract</a>
+<li class="circle">org.hibernate.query.<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/CommonQueryContract.html" class="type-name-link external-link" title="class or interface in org.hibernate.query">CommonQueryContract</a>
 <ul>
 <li class="circle">org.hibernate.reactive.query.<a href="../../ReactiveMutationQuery.html" class="type-name-link" title="interface in org.hibernate.reactive.query">ReactiveMutationQuery</a>&lt;R&gt;
 <ul>
@@ -77,12 +77,12 @@ loadScripts(document, 'script');</script>
 <ul>
 <li class="circle">org.hibernate.reactive.query.<a href="../../ReactiveNativeQuery.html" class="type-name-link" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a>&lt;R&gt;
 <ul>
-<li class="circle">org.hibernate.reactive.query.sql.spi.<a href="ReactiveNativeQueryImplementor.html" class="type-name-link" title="interface in org.hibernate.reactive.query.sql.spi">ReactiveNativeQueryImplementor</a>&lt;R&gt; (also extends org.hibernate.query.named.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NameableQuery.html" title="class or interface in org.hibernate.query.named" class="external-link">NameableQuery</a>, org.hibernate.reactive.query.<a href="../../ReactiveQueryImplementor.html" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a>&lt;R&gt;)</li>
+<li class="circle">org.hibernate.reactive.query.sql.spi.<a href="ReactiveNativeQueryImplementor.html" class="type-name-link" title="interface in org.hibernate.reactive.query.sql.spi">ReactiveNativeQueryImplementor</a>&lt;R&gt; (also extends org.hibernate.query.named.NameableQuery, org.hibernate.reactive.query.<a href="../../ReactiveQueryImplementor.html" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a>&lt;R&gt;)</li>
 </ul>
 </li>
 <li class="circle">org.hibernate.reactive.query.<a href="../../ReactiveQueryImplementor.html" class="type-name-link" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a>&lt;R&gt;
 <ul>
-<li class="circle">org.hibernate.reactive.query.sql.spi.<a href="ReactiveNativeQueryImplementor.html" class="type-name-link" title="interface in org.hibernate.reactive.query.sql.spi">ReactiveNativeQueryImplementor</a>&lt;R&gt; (also extends org.hibernate.query.named.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NameableQuery.html" title="class or interface in org.hibernate.query.named" class="external-link">NameableQuery</a>, org.hibernate.reactive.query.<a href="../../ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a>&lt;R&gt;)</li>
+<li class="circle">org.hibernate.reactive.query.sql.spi.<a href="ReactiveNativeQueryImplementor.html" class="type-name-link" title="interface in org.hibernate.reactive.query.sql.spi">ReactiveNativeQueryImplementor</a>&lt;R&gt; (also extends org.hibernate.query.named.NameableQuery, org.hibernate.reactive.query.<a href="../../ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a>&lt;R&gt;)</li>
 </ul>
 </li>
 </ul>
@@ -95,12 +95,12 @@ loadScripts(document, 'script');</script>
 <ul>
 <li class="circle">org.hibernate.reactive.query.<a href="../../ReactiveNativeQuery.html" class="type-name-link" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a>&lt;R&gt;
 <ul>
-<li class="circle">org.hibernate.reactive.query.sql.spi.<a href="ReactiveNativeQueryImplementor.html" class="type-name-link" title="interface in org.hibernate.reactive.query.sql.spi">ReactiveNativeQueryImplementor</a>&lt;R&gt; (also extends org.hibernate.query.named.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NameableQuery.html" title="class or interface in org.hibernate.query.named" class="external-link">NameableQuery</a>, org.hibernate.reactive.query.<a href="../../ReactiveQueryImplementor.html" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a>&lt;R&gt;)</li>
+<li class="circle">org.hibernate.reactive.query.sql.spi.<a href="ReactiveNativeQueryImplementor.html" class="type-name-link" title="interface in org.hibernate.reactive.query.sql.spi">ReactiveNativeQueryImplementor</a>&lt;R&gt; (also extends org.hibernate.query.named.NameableQuery, org.hibernate.reactive.query.<a href="../../ReactiveQueryImplementor.html" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a>&lt;R&gt;)</li>
 </ul>
 </li>
 <li class="circle">org.hibernate.reactive.query.<a href="../../ReactiveQueryImplementor.html" class="type-name-link" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a>&lt;R&gt;
 <ul>
-<li class="circle">org.hibernate.reactive.query.sql.spi.<a href="ReactiveNativeQueryImplementor.html" class="type-name-link" title="interface in org.hibernate.reactive.query.sql.spi">ReactiveNativeQueryImplementor</a>&lt;R&gt; (also extends org.hibernate.query.named.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NameableQuery.html" title="class or interface in org.hibernate.query.named" class="external-link">NameableQuery</a>, org.hibernate.reactive.query.<a href="../../ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a>&lt;R&gt;)</li>
+<li class="circle">org.hibernate.reactive.query.sql.spi.<a href="ReactiveNativeQueryImplementor.html" class="type-name-link" title="interface in org.hibernate.reactive.query.sql.spi">ReactiveNativeQueryImplementor</a>&lt;R&gt; (also extends org.hibernate.query.named.NameableQuery, org.hibernate.reactive.query.<a href="../../ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a>&lt;R&gt;)</li>
 </ul>
 </li>
 </ul>
@@ -109,14 +109,14 @@ loadScripts(document, 'script');</script>
 </li>
 </ul>
 </li>
-<li class="circle">org.hibernate.query.named.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NameableQuery.html" class="type-name-link external-link" title="class or interface in org.hibernate.query.named">NameableQuery</a>
+<li class="circle">org.hibernate.query.named.NameableQuery
 <ul>
 <li class="circle">org.hibernate.reactive.query.sql.spi.<a href="ReactiveNativeQueryImplementor.html" class="type-name-link" title="interface in org.hibernate.reactive.query.sql.spi">ReactiveNativeQueryImplementor</a>&lt;R&gt; (also extends org.hibernate.reactive.query.<a href="../../ReactiveNativeQuery.html" title="interface in org.hibernate.reactive.query">ReactiveNativeQuery</a>&lt;R&gt;, org.hibernate.reactive.query.<a href="../../ReactiveQueryImplementor.html" title="interface in org.hibernate.reactive.query">ReactiveQueryImplementor</a>&lt;R&gt;)</li>
 </ul>
 </li>
-<li class="circle">org.hibernate.query.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/spi/QueryPlan.html" class="type-name-link external-link" title="class or interface in org.hibernate.query.spi">QueryPlan</a>
+<li class="circle">org.hibernate.query.spi.<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/spi/QueryPlan.html" class="type-name-link external-link" title="class or interface in org.hibernate.query.spi">QueryPlan</a>
 <ul>
-<li class="circle">org.hibernate.query.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/spi/NonSelectQueryPlan.html" class="type-name-link external-link" title="class or interface in org.hibernate.query.spi">NonSelectQueryPlan</a>
+<li class="circle">org.hibernate.query.spi.<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/spi/NonSelectQueryPlan.html" class="type-name-link external-link" title="class or interface in org.hibernate.query.spi">NonSelectQueryPlan</a>
 <ul>
 <li class="circle">org.hibernate.reactive.query.sql.spi.<a href="ReactiveNonSelectQueryPlan.html" class="type-name-link" title="interface in org.hibernate.reactive.query.sql.spi">ReactiveNonSelectQueryPlan</a></li>
 </ul>

@@ -75,16 +75,16 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Superinterfaces:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/EntityLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">EntityLoader</a></code>, <code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/EntityMultiLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">EntityMultiLoader</a>&lt;T&gt;</code>, <code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/Loader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">Loader</a></code>, <code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/MultiIdEntityLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">MultiIdEntityLoader</a>&lt;T&gt;</code>, <code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/MultiKeyLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">MultiKeyLoader</a></code></dd>
+<dd><code>org.hibernate.loader.ast.spi.EntityLoader</code>, <code>org.hibernate.loader.ast.spi.EntityMultiLoader&lt;T&gt;</code>, <code>org.hibernate.loader.ast.spi.Loader</code>, <code>org.hibernate.loader.ast.spi.MultiIdEntityLoader&lt;T&gt;</code>, <code>org.hibernate.loader.ast.spi.MultiKeyLoader</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">ReactiveMultiIdEntityLoader&lt;T&gt;</span><span class="extends-implements">
-extends <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/MultiIdEntityLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">MultiIdEntityLoader</a>&lt;T&gt;</span></div>
+extends org.hibernate.loader.ast.spi.MultiIdEntityLoader&lt;T&gt;</span></div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/MultiIdEntityLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link"><code>MultiIdEntityLoader</code></a></li>
+<li><code>MultiIdEntityLoader</code></li>
 </ul>
 </dd>
 </dl>
@@ -104,20 +104,20 @@ extends <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default &lt;K&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="ReactiveMultiIdEntityLoader.html" title="type parameter in ReactiveMultiIdEntityLoader">T</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#load(K%5B%5D,org.hibernate.loader.ast.spi.MultiIdLoadOptions,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">load</a><wbr>(K[]&nbsp;ids,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/MultiIdLoadOptions.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">MultiIdLoadOptions</a>&nbsp;options,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+ org.hibernate.loader.ast.spi.MultiIdLoadOptions&nbsp;options,
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;K&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="ReactiveMultiIdEntityLoader.html" title="type parameter in ReactiveMultiIdEntityLoader">T</a>&gt;&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reactiveLoad(K%5B%5D,org.hibernate.loader.ast.spi.MultiIdLoadOptions,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">reactiveLoad</a><wbr>(K[]&nbsp;ids,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/MultiIdLoadOptions.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">MultiIdLoadOptions</a>&nbsp;options,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+ org.hibernate.loader.ast.spi.MultiIdLoadOptions&nbsp;options,
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-org.hibernate.loader.ast.spi.EntityLoader">Methods inherited from interface&nbsp;org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/EntityLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">EntityLoader</a></h3>
-<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/EntityLoader.html#getLoadable()" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">getLoadable</a></code></div>
+<h3 id="methods-inherited-from-class-org.hibernate.loader.ast.spi.EntityLoader">Methods inherited from interface&nbsp;org.hibernate.loader.ast.spi.EntityLoader</h3>
+<code>getLoadable</code></div>
 </section>
 </li>
 </ul>
@@ -133,11 +133,11 @@ extends <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate
 <section class="detail" id="load(K[],org.hibernate.loader.ast.spi.MultiIdLoadOptions,org.hibernate.engine.spi.SharedSessionContractImplementor)">
 <h3 id="load(java.lang.Object[],org.hibernate.loader.ast.spi.MultiIdLoadOptions,org.hibernate.engine.spi.SharedSessionContractImplementor)">load</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="type-parameters">&lt;K&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="ReactiveMultiIdEntityLoader.html" title="type parameter in ReactiveMultiIdEntityLoader">T</a>&gt;</span>&nbsp;<span class="element-name">load</span><wbr><span class="parameters">(K[]&nbsp;ids,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/MultiIdLoadOptions.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">MultiIdLoadOptions</a>&nbsp;options,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
+ org.hibernate.loader.ast.spi.MultiIdLoadOptions&nbsp;options,
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/MultiIdEntityLoader.html#load(K%5B%5D,org.hibernate.loader.ast.spi.MultiIdLoadOptions,org.hibernate.engine.spi.SharedSessionContractImplementor)" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">load</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/MultiIdEntityLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">MultiIdEntityLoader</a>&lt;<a href="ReactiveMultiIdEntityLoader.html" title="type parameter in ReactiveMultiIdEntityLoader">T</a>&gt;</code></dd>
+<dd><code>load</code>&nbsp;in interface&nbsp;<code>org.hibernate.loader.ast.spi.MultiIdEntityLoader&lt;<a href="ReactiveMultiIdEntityLoader.html" title="type parameter in ReactiveMultiIdEntityLoader">T</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
@@ -145,8 +145,8 @@ extends <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate
 <section class="detail" id="reactiveLoad(K[],org.hibernate.loader.ast.spi.MultiIdLoadOptions,org.hibernate.engine.spi.SharedSessionContractImplementor)">
 <h3 id="reactiveLoad(java.lang.Object[],org.hibernate.loader.ast.spi.MultiIdLoadOptions,org.hibernate.engine.spi.SharedSessionContractImplementor)">reactiveLoad</h3>
 <div class="member-signature"><span class="type-parameters">&lt;K&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="ReactiveMultiIdEntityLoader.html" title="type parameter in ReactiveMultiIdEntityLoader">T</a>&gt;&gt;</span>&nbsp;<span class="element-name">reactiveLoad</span><wbr><span class="parameters">(K[]&nbsp;ids,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/MultiIdLoadOptions.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">MultiIdLoadOptions</a>&nbsp;options,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
+ org.hibernate.loader.ast.spi.MultiIdLoadOptions&nbsp;options,
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
 </section>
 </li>
 </ul>

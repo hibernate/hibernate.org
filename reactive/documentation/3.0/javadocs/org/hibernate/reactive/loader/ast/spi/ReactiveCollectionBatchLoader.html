@@ -71,16 +71,16 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Superinterfaces:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/BatchLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">BatchLoader</a></code>, <code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/CollectionBatchLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">CollectionBatchLoader</a></code>, <code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/CollectionLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">CollectionLoader</a></code>, <code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/Loader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">Loader</a></code>, <code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/MultiKeyLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">MultiKeyLoader</a></code>, <code>org.hibernate.reactive.loader.ast.internal.ReactiveCollectionLoader</code></dd>
+<dd><code>org.hibernate.loader.ast.spi.BatchLoader</code>, <code>org.hibernate.loader.ast.spi.CollectionBatchLoader</code>, <code>org.hibernate.loader.ast.spi.CollectionLoader</code>, <code>org.hibernate.loader.ast.spi.Loader</code>, <code>org.hibernate.loader.ast.spi.MultiKeyLoader</code>, <code>org.hibernate.reactive.loader.ast.internal.ReactiveCollectionLoader</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">ReactiveCollectionBatchLoader</span><span class="extends-implements">
-extends <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/CollectionBatchLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">CollectionBatchLoader</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/BatchLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">BatchLoader</a>, org.hibernate.reactive.loader.ast.internal.ReactiveCollectionLoader</span></div>
+extends org.hibernate.loader.ast.spi.CollectionBatchLoader, org.hibernate.loader.ast.spi.BatchLoader, org.hibernate.reactive.loader.ast.internal.ReactiveCollectionLoader</span></div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/CollectionBatchLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link"><code>CollectionBatchLoader</code></a></li>
+<li><code>CollectionBatchLoader</code></li>
 </ul>
 </dd>
 </dl>
@@ -92,8 +92,8 @@ extends <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-org.hibernate.loader.ast.spi.BatchLoader">Methods inherited from interface&nbsp;org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/BatchLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">BatchLoader</a></h3>
-<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/BatchLoader.html#getDomainBatchSize()" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">getDomainBatchSize</a></code></div>
+<h3 id="methods-inherited-from-class-org.hibernate.loader.ast.spi.BatchLoader">Methods inherited from interface&nbsp;org.hibernate.loader.ast.spi.BatchLoader</h3>
+<code>getDomainBatchSize</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.hibernate.reactive.loader.ast.internal.ReactiveCollectionLoader">Methods inherited from interface&nbsp;org.hibernate.reactive.loader.ast.internal.ReactiveCollectionLoader</h3>
 <code>getLoadable, load, reactiveLoad</code></div>

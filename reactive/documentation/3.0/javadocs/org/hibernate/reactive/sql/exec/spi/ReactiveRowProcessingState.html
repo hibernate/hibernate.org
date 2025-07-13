@@ -73,24 +73,24 @@ loadScripts(document, 'script');</script>
 <h1 title="Class ReactiveRowProcessingState" class="title">Class ReactiveRowProcessingState</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/internal/BaseExecutionContext.html" title="class or interface in org.hibernate.sql.exec.internal" class="external-link">org.hibernate.sql.exec.internal.BaseExecutionContext</a>
+<div class="inheritance">org.hibernate.sql.exec.internal.BaseExecutionContext
 <div class="inheritance">org.hibernate.reactive.sql.exec.spi.ReactiveRowProcessingState</div>
 </div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/spi/ExecutionContext.html" title="class or interface in org.hibernate.sql.exec.spi" class="external-link">ExecutionContext</a></code>, <code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">RowProcessingState</a></code></dd>
+<dd><code>org.hibernate.sql.exec.spi.ExecutionContext</code>, <code>org.hibernate.sql.results.jdbc.spi.RowProcessingState</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">ReactiveRowProcessingState</span>
-<span class="extends-implements">extends <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/internal/BaseExecutionContext.html" title="class or interface in org.hibernate.sql.exec.internal" class="external-link">BaseExecutionContext</a>
-implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">RowProcessingState</a></span></div>
+<span class="extends-implements">extends org.hibernate.sql.exec.internal.BaseExecutionContext
+implements org.hibernate.sql.results.jdbc.spi.RowProcessingState</span></div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/internal/RowProcessingStateStandardImpl.html" title="class or interface in org.hibernate.sql.results.internal" class="external-link"><code>RowProcessingStateStandardImpl</code></a></li>
+<li><code>RowProcessingStateStandardImpl</code></li>
 </ul>
 </dd>
 </dl>
@@ -105,8 +105,8 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(org.hibernate.sql.results.jdbc.internal.JdbcValuesSourceProcessingStateStandardImpl,org.hibernate.sql.exec.spi.ExecutionContext,org.hibernate.reactive.sql.results.spi.ReactiveRowReader,org.hibernate.reactive.sql.exec.spi.ReactiveValuesResultSet)" class="member-name-link">ReactiveRowProcessingState</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/internal/JdbcValuesSourceProcessingStateStandardImpl.html" title="class or interface in org.hibernate.sql.results.jdbc.internal" class="external-link">JdbcValuesSourceProcessingStateStandardImpl</a>&nbsp;resultSetProcessingState,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/spi/ExecutionContext.html" title="class or interface in org.hibernate.sql.exec.spi" class="external-link">ExecutionContext</a>&nbsp;executionContext,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(org.hibernate.sql.results.jdbc.internal.JdbcValuesSourceProcessingStateStandardImpl,org.hibernate.sql.exec.spi.ExecutionContext,org.hibernate.reactive.sql.results.spi.ReactiveRowReader,org.hibernate.reactive.sql.exec.spi.ReactiveValuesResultSet)" class="member-name-link">ReactiveRowProcessingState</a><wbr>(org.hibernate.sql.results.jdbc.internal.JdbcValuesSourceProcessingStateStandardImpl&nbsp;resultSetProcessingState,
+ org.hibernate.sql.exec.spi.ExecutionContext&nbsp;executionContext,
  <a href="../../results/spi/ReactiveRowReader.html" title="interface in org.hibernate.reactive.sql.results.spi">ReactiveRowReader</a>&lt;?&gt;&nbsp;rowReader,
  <a href="ReactiveValuesResultSet.html" title="class in org.hibernate.reactive.sql.exec.spi">ReactiveValuesResultSet</a>&nbsp;jdbcValues)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
@@ -124,7 +124,7 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#determineEffectiveLockMode(java.lang.String)" class="member-name-link">determineEffectiveLockMode</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;alias)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
@@ -133,19 +133,19 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEntityId()" class="member-name-link">getEntityId</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T extends <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/graph/InitializerData.html" title="class or interface in org.hibernate.sql.results.graph" class="external-link">InitializerData</a>&gt;<br>T</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T extends org.hibernate.sql.results.graph.InitializerData&gt;<br>T</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getInitializerData(int)" class="member-name-link">getInitializerData</a><wbr>(int&nbsp;initializerId)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getJdbcValue(int)" class="member-name-link">getJdbcValue</a><wbr>(int&nbsp;position)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/JdbcValuesSourceProcessingState.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">JdbcValuesSourceProcessingState</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.hibernate.sql.results.jdbc.spi.JdbcValuesSourceProcessingState</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getJdbcValuesSourceProcessingState()" class="member-name-link">getJdbcValuesSourceProcessingState</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/spi/QueryOptions.html" title="class or interface in org.hibernate.query.spi" class="external-link">QueryOptions</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/spi/QueryOptions.html" title="class or interface in org.hibernate.query.spi" class="external-link">QueryOptions</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getQueryOptions()" class="member-name-link">getQueryOptions</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/spi/RowReader.html" title="class or interface in org.hibernate.sql.results.spi" class="external-link">RowReader</a>&lt;?&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.hibernate.sql.results.spi.RowReader&lt;?&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRowReader()" class="member-name-link">getRowReader</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
@@ -158,27 +158,27 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#next()" class="member-name-link">next</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerNonExists(org.hibernate.sql.results.graph.entity.EntityFetch)" class="member-name-link">registerNonExists</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/graph/entity/EntityFetch.html" title="class or interface in org.hibernate.sql.results.graph.entity" class="external-link">EntityFetch</a>&nbsp;fetch)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerNonExists(org.hibernate.sql.results.graph.entity.EntityFetch)" class="member-name-link">registerNonExists</a><wbr>(org.hibernate.sql.results.graph.entity.EntityFetch&nbsp;fetch)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setInitializerData(int,org.hibernate.sql.results.graph.InitializerData)" class="member-name-link">setInitializerData</a><wbr>(int&nbsp;initializerId,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/graph/InitializerData.html" title="class or interface in org.hibernate.sql.results.graph" class="external-link">InitializerData</a>&nbsp;state)</code></div>
+ org.hibernate.sql.results.graph.InitializerData&nbsp;state)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-org.hibernate.sql.exec.internal.BaseExecutionContext">Methods inherited from class&nbsp;org.hibernate.sql.exec.internal.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/internal/BaseExecutionContext.html" title="class or interface in org.hibernate.sql.exec.internal" class="external-link">BaseExecutionContext</a></h3>
-<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/internal/BaseExecutionContext.html#getCallback()" title="class or interface in org.hibernate.sql.exec.internal" class="external-link">getCallback</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/internal/BaseExecutionContext.html#getLoadQueryInfluencers()" title="class or interface in org.hibernate.sql.exec.internal" class="external-link">getLoadQueryInfluencers</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/internal/BaseExecutionContext.html#getQueryIdentifier(java.lang.String)" title="class or interface in org.hibernate.sql.exec.internal" class="external-link">getQueryIdentifier</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/internal/BaseExecutionContext.html#getQueryParameterBindings()" title="class or interface in org.hibernate.sql.exec.internal" class="external-link">getQueryParameterBindings</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/internal/BaseExecutionContext.html#getSession()" title="class or interface in org.hibernate.sql.exec.internal" class="external-link">getSession</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/internal/BaseExecutionContext.html#isTransactionActive()" title="class or interface in org.hibernate.sql.exec.internal" class="external-link">isTransactionActive</a></code></div>
+<h3 id="methods-inherited-from-class-org.hibernate.sql.exec.internal.BaseExecutionContext">Methods inherited from class&nbsp;org.hibernate.sql.exec.internal.BaseExecutionContext</h3>
+<code>getCallback, getLoadQueryInfluencers, getQueryIdentifier, getQueryParameterBindings, getSession, isTransactionActive</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-org.hibernate.sql.exec.spi.ExecutionContext">Methods inherited from interface&nbsp;org.hibernate.sql.exec.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/spi/ExecutionContext.html" title="class or interface in org.hibernate.sql.exec.spi" class="external-link">ExecutionContext</a></h3>
-<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/spi/ExecutionContext.html#afterStatement(org.hibernate.resource.jdbc.spi.LogicalConnectionImplementor)" title="class or interface in org.hibernate.sql.exec.spi" class="external-link">afterStatement</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/spi/ExecutionContext.html#getCallback()" title="class or interface in org.hibernate.sql.exec.spi" class="external-link">getCallback</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/spi/ExecutionContext.html#getCollectionKey()" title="class or interface in org.hibernate.sql.exec.spi" class="external-link">getCollectionKey</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/spi/ExecutionContext.html#getEntityInstance()" title="class or interface in org.hibernate.sql.exec.spi" class="external-link">getEntityInstance</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/spi/ExecutionContext.html#getEntityUniqueKey()" title="class or interface in org.hibernate.sql.exec.spi" class="external-link">getEntityUniqueKey</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/spi/ExecutionContext.html#getEntityUniqueKeyAttributePath()" title="class or interface in org.hibernate.sql.exec.spi" class="external-link">getEntityUniqueKeyAttributePath</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/spi/ExecutionContext.html#getLoadQueryInfluencers()" title="class or interface in org.hibernate.sql.exec.spi" class="external-link">getLoadQueryInfluencers</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/spi/ExecutionContext.html#getQueryIdentifier(java.lang.String)" title="class or interface in org.hibernate.sql.exec.spi" class="external-link">getQueryIdentifier</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/spi/ExecutionContext.html#getQueryParameterBindings()" title="class or interface in org.hibernate.sql.exec.spi" class="external-link">getQueryParameterBindings</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/spi/ExecutionContext.html#getRootEntityDescriptor()" title="class or interface in org.hibernate.sql.exec.spi" class="external-link">getRootEntityDescriptor</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/spi/ExecutionContext.html#getSession()" title="class or interface in org.hibernate.sql.exec.spi" class="external-link">getSession</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/spi/ExecutionContext.html#hasCallbackActions()" title="class or interface in org.hibernate.sql.exec.spi" class="external-link">hasCallbackActions</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/spi/ExecutionContext.html#hasQueryExecutionToBeAddedToStatistics()" title="class or interface in org.hibernate.sql.exec.spi" class="external-link">hasQueryExecutionToBeAddedToStatistics</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/spi/ExecutionContext.html#isScrollResult()" title="class or interface in org.hibernate.sql.exec.spi" class="external-link">isScrollResult</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/spi/ExecutionContext.html#isTransactionActive()" title="class or interface in org.hibernate.sql.exec.spi" class="external-link">isTransactionActive</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/spi/ExecutionContext.html#registerLoadingEntityHolder(org.hibernate.engine.spi.EntityHolder)" title="class or interface in org.hibernate.sql.exec.spi" class="external-link">registerLoadingEntityHolder</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/spi/ExecutionContext.html#upgradeLocks()" title="class or interface in org.hibernate.sql.exec.spi" class="external-link">upgradeLocks</a></code></div>
+<h3 id="methods-inherited-from-class-org.hibernate.sql.exec.spi.ExecutionContext">Methods inherited from interface&nbsp;org.hibernate.sql.exec.spi.ExecutionContext</h3>
+<code>afterStatement, getCallback, getCollectionKey, getEntityInstance, getEntityUniqueKey, getEntityUniqueKeyAttributePath, getLoadQueryInfluencers, getQueryIdentifier, getQueryParameterBindings, getRootEntityDescriptor, getSession, hasCallbackActions, hasQueryExecutionToBeAddedToStatistics, isScrollResult, isTransactionActive, registerLoadingEntityHolder, upgradeLocks</code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-org.hibernate.sql.results.jdbc.spi.RowProcessingState">Methods inherited from interface&nbsp;org.hibernate.sql.results.jdbc.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">RowProcessingState</a></h3>
-<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html#getJdbcValue(org.hibernate.sql.ast.spi.SqlSelection)" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">getJdbcValue</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html#unwrap()" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">unwrap</a></code></div>
+<h3 id="methods-inherited-from-class-org.hibernate.sql.results.jdbc.spi.RowProcessingState">Methods inherited from interface&nbsp;org.hibernate.sql.results.jdbc.spi.RowProcessingState</h3>
+<code>getJdbcValue, unwrap</code></div>
 </section>
 </li>
 </ul>
@@ -193,8 +193,8 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <li>
 <section class="detail" id="&lt;init&gt;(org.hibernate.sql.results.jdbc.internal.JdbcValuesSourceProcessingStateStandardImpl,org.hibernate.sql.exec.spi.ExecutionContext,org.hibernate.reactive.sql.results.spi.ReactiveRowReader,org.hibernate.reactive.sql.exec.spi.ReactiveValuesResultSet)">
 <h3>ReactiveRowProcessingState</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ReactiveRowProcessingState</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/internal/JdbcValuesSourceProcessingStateStandardImpl.html" title="class or interface in org.hibernate.sql.results.jdbc.internal" class="external-link">JdbcValuesSourceProcessingStateStandardImpl</a>&nbsp;resultSetProcessingState,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/spi/ExecutionContext.html" title="class or interface in org.hibernate.sql.exec.spi" class="external-link">ExecutionContext</a>&nbsp;executionContext,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ReactiveRowProcessingState</span><wbr><span class="parameters">(org.hibernate.sql.results.jdbc.internal.JdbcValuesSourceProcessingStateStandardImpl&nbsp;resultSetProcessingState,
+ org.hibernate.sql.exec.spi.ExecutionContext&nbsp;executionContext,
  <a href="../../results/spi/ReactiveRowReader.html" title="interface in org.hibernate.reactive.sql.results.spi">ReactiveRowReader</a>&lt;?&gt;&nbsp;rowReader,
  <a href="ReactiveValuesResultSet.html" title="class in org.hibernate.reactive.sql.exec.spi">ReactiveValuesResultSet</a>&nbsp;jdbcValues)</span></div>
 </section>
@@ -216,10 +216,10 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <li>
 <section class="detail" id="getJdbcValuesSourceProcessingState()">
 <h3>getJdbcValuesSourceProcessingState</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/JdbcValuesSourceProcessingState.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">JdbcValuesSourceProcessingState</a></span>&nbsp;<span class="element-name">getJdbcValuesSourceProcessingState</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.hibernate.sql.results.jdbc.spi.JdbcValuesSourceProcessingState</span>&nbsp;<span class="element-name">getJdbcValuesSourceProcessingState</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html#getJdbcValuesSourceProcessingState()" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">getJdbcValuesSourceProcessingState</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">RowProcessingState</a></code></dd>
+<dd><code>getJdbcValuesSourceProcessingState</code>&nbsp;in interface&nbsp;<code>org.hibernate.sql.results.jdbc.spi.RowProcessingState</code></dd>
 </dl>
 </section>
 </li>
@@ -229,17 +229,17 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">getEntityId</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/spi/ExecutionContext.html#getEntityId()" title="class or interface in org.hibernate.sql.exec.spi" class="external-link">getEntityId</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/spi/ExecutionContext.html" title="class or interface in org.hibernate.sql.exec.spi" class="external-link">ExecutionContext</a></code></dd>
+<dd><code>getEntityId</code>&nbsp;in interface&nbsp;<code>org.hibernate.sql.exec.spi.ExecutionContext</code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="determineEffectiveLockMode(java.lang.String)">
 <h3>determineEffectiveLockMode</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a></span>&nbsp;<span class="element-name">determineEffectiveLockMode</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;alias)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a></span>&nbsp;<span class="element-name">determineEffectiveLockMode</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;alias)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html#determineEffectiveLockMode(java.lang.String)" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">determineEffectiveLockMode</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">RowProcessingState</a></code></dd>
+<dd><code>determineEffectiveLockMode</code>&nbsp;in interface&nbsp;<code>org.hibernate.sql.results.jdbc.spi.RowProcessingState</code></dd>
 </dl>
 </section>
 </li>
@@ -249,17 +249,18 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">needsResolveState</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html#needsResolveState()" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">needsResolveState</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">RowProcessingState</a></code></dd>
+<dd><code>needsResolveState</code>&nbsp;in interface&nbsp;<code>org.hibernate.sql.results.jdbc.spi.RowProcessingState</code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getInitializerData(int)">
 <h3>getInitializerData</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T extends <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/graph/InitializerData.html" title="class or interface in org.hibernate.sql.results.graph" class="external-link">InitializerData</a>&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name">getInitializerData</span><wbr><span class="parameters">(int&nbsp;initializerId)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters-long">&lt;T extends org.hibernate.sql.results.graph.InitializerData&gt;</span>
+<span class="return-type">T</span>&nbsp;<span class="element-name">getInitializerData</span><wbr><span class="parameters">(int&nbsp;initializerId)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html#getInitializerData(int)" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">getInitializerData</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">RowProcessingState</a></code></dd>
+<dd><code>getInitializerData</code>&nbsp;in interface&nbsp;<code>org.hibernate.sql.results.jdbc.spi.RowProcessingState</code></dd>
 </dl>
 </section>
 </li>
@@ -267,20 +268,20 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <section class="detail" id="setInitializerData(int,org.hibernate.sql.results.graph.InitializerData)">
 <h3>setInitializerData</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setInitializerData</span><wbr><span class="parameters">(int&nbsp;initializerId,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/graph/InitializerData.html" title="class or interface in org.hibernate.sql.results.graph" class="external-link">InitializerData</a>&nbsp;state)</span></div>
+ org.hibernate.sql.results.graph.InitializerData&nbsp;state)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html#setInitializerData(int,org.hibernate.sql.results.graph.InitializerData)" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">setInitializerData</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">RowProcessingState</a></code></dd>
+<dd><code>setInitializerData</code>&nbsp;in interface&nbsp;<code>org.hibernate.sql.results.jdbc.spi.RowProcessingState</code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getRowReader()">
 <h3>getRowReader</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/spi/RowReader.html" title="class or interface in org.hibernate.sql.results.spi" class="external-link">RowReader</a>&lt;?&gt;</span>&nbsp;<span class="element-name">getRowReader</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.hibernate.sql.results.spi.RowReader&lt;?&gt;</span>&nbsp;<span class="element-name">getRowReader</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html#getRowReader()" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">getRowReader</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">RowProcessingState</a></code></dd>
+<dd><code>getRowReader</code>&nbsp;in interface&nbsp;<code>org.hibernate.sql.results.jdbc.spi.RowProcessingState</code></dd>
 </dl>
 </section>
 </li>
@@ -290,17 +291,17 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">getJdbcValue</span><wbr><span class="parameters">(int&nbsp;position)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html#getJdbcValue(int)" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">getJdbcValue</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">RowProcessingState</a></code></dd>
+<dd><code>getJdbcValue</code>&nbsp;in interface&nbsp;<code>org.hibernate.sql.results.jdbc.spi.RowProcessingState</code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="registerNonExists(org.hibernate.sql.results.graph.entity.EntityFetch)">
 <h3>registerNonExists</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">registerNonExists</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/graph/entity/EntityFetch.html" title="class or interface in org.hibernate.sql.results.graph.entity" class="external-link">EntityFetch</a>&nbsp;fetch)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">registerNonExists</span><wbr><span class="parameters">(org.hibernate.sql.results.graph.entity.EntityFetch&nbsp;fetch)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html#registerNonExists(org.hibernate.sql.results.graph.entity.EntityFetch)" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">registerNonExists</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">RowProcessingState</a></code></dd>
+<dd><code>registerNonExists</code>&nbsp;in interface&nbsp;<code>org.hibernate.sql.results.jdbc.spi.RowProcessingState</code></dd>
 </dl>
 </section>
 </li>
@@ -310,7 +311,7 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isQueryCacheHit</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html#isQueryCacheHit()" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">isQueryCacheHit</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">RowProcessingState</a></code></dd>
+<dd><code>isQueryCacheHit</code>&nbsp;in interface&nbsp;<code>org.hibernate.sql.results.jdbc.spi.RowProcessingState</code></dd>
 </dl>
 </section>
 </li>
@@ -320,19 +321,19 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">finishRowProcessing</span><wbr><span class="parameters">(boolean&nbsp;wasAdded)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html#finishRowProcessing(boolean)" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">finishRowProcessing</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">RowProcessingState</a></code></dd>
+<dd><code>finishRowProcessing</code>&nbsp;in interface&nbsp;<code>org.hibernate.sql.results.jdbc.spi.RowProcessingState</code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getQueryOptions()">
 <h3>getQueryOptions</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/spi/QueryOptions.html" title="class or interface in org.hibernate.query.spi" class="external-link">QueryOptions</a></span>&nbsp;<span class="element-name">getQueryOptions</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/spi/QueryOptions.html" title="class or interface in org.hibernate.query.spi" class="external-link">QueryOptions</a></span>&nbsp;<span class="element-name">getQueryOptions</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/spi/ExecutionContext.html#getQueryOptions()" title="class or interface in org.hibernate.sql.exec.spi" class="external-link">getQueryOptions</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/spi/ExecutionContext.html" title="class or interface in org.hibernate.sql.exec.spi" class="external-link">ExecutionContext</a></code></dd>
+<dd><code>getQueryOptions</code>&nbsp;in interface&nbsp;<code>org.hibernate.sql.exec.spi.ExecutionContext</code></dd>
 <dt>Overrides:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/internal/BaseExecutionContext.html#getQueryOptions()" title="class or interface in org.hibernate.sql.exec.internal" class="external-link">getQueryOptions</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/exec/internal/BaseExecutionContext.html" title="class or interface in org.hibernate.sql.exec.internal" class="external-link">BaseExecutionContext</a></code></dd>
+<dd><code>getQueryOptions</code>&nbsp;in class&nbsp;<code>org.hibernate.sql.exec.internal.BaseExecutionContext</code></dd>
 </dl>
 </section>
 </li>

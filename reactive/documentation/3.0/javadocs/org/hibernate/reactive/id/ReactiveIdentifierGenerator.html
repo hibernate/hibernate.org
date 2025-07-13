@@ -75,25 +75,25 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Superinterfaces:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/generator/Generator.html" title="class or interface in org.hibernate.generator" class="external-link">Generator</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></code></dd>
+<dd><code>org.hibernate.generator.Generator</code>, <code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></code></dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="annotations"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/Incubating.html" title="class or interface in org.hibernate" class="external-link">@Incubating</a>
+<div class="type-signature"><span class="annotations"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Incubating.html" title="class or interface in org.hibernate" class="external-link">@Incubating</a>
 </span><span class="modifiers">public interface </span><span class="element-name type-name-label">ReactiveIdentifierGenerator&lt;Id&gt;</span><span class="extends-implements">
-extends <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/generator/Generator.html" title="class or interface in org.hibernate.generator" class="external-link">Generator</a></span></div>
-<div class="block">A replacement for <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/id/IdentifierGenerator.html" title="class or interface in org.hibernate.id" class="external-link"><code>IdentifierGenerator</code></a>,
+extends org.hibernate.generator.Generator</span></div>
+<div class="block">A replacement for <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/id/IdentifierGenerator.html" title="class or interface in org.hibernate.id" class="external-link"><code>IdentifierGenerator</code></a>,
  which supports a non-blocking method for obtaining the generated
  identifier.
  <p>
  A custom generation strategy may be defined by implementing this
- interface, and, optionally, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/id/Configurable.html" title="class or interface in org.hibernate.id" class="external-link"><code>Configurable</code></a>,
+ interface, and, optionally, <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/id/Configurable.html" title="class or interface in org.hibernate.id" class="external-link"><code>Configurable</code></a>,
  and declaring the custom implementation class using
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/annotations/GenericGenerator.html" title="class or interface in org.hibernate.annotations" class="external-link"><code>GenericGenerator</code></a>.</div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/annotations/GenericGenerator.html" title="class or interface in org.hibernate.annotations" class="external-link"><code>GenericGenerator</code></a>.</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/id/IdentifierGenerator.html" title="class or interface in org.hibernate.id" class="external-link"><code>IdentifierGenerator</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/id/IdentifierGenerator.html" title="class or interface in org.hibernate.id" class="external-link"><code>IdentifierGenerator</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -121,14 +121,14 @@ extends <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#generate(org.hibernate.reactive.session.ReactiveConnectionSupplier,java.lang.Object,java.lang.Object,org.hibernate.generator.EventType)" class="member-name-link">generate</a><wbr>(<a href="../session/ReactiveConnectionSupplier.html" title="interface in org.hibernate.reactive.session">ReactiveConnectionSupplier</a>&nbsp;session,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;owner,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;currentValue,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/generator/EventType.html" title="class or interface in org.hibernate.generator" class="external-link">EventType</a>&nbsp;eventType)</code></div>
+ org.hibernate.generator.EventType&nbsp;eventType)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-org.hibernate.generator.Generator">Methods inherited from interface&nbsp;org.hibernate.generator.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/generator/Generator.html" title="class or interface in org.hibernate.generator" class="external-link">Generator</a></h3>
-<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/generator/Generator.html#allowAssignedIdentifiers()" title="class or interface in org.hibernate.generator" class="external-link">allowAssignedIdentifiers</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/generator/Generator.html#allowMutation()" title="class or interface in org.hibernate.generator" class="external-link">allowMutation</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/generator/Generator.html#generatedBeforeExecution(java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)" title="class or interface in org.hibernate.generator" class="external-link">generatedBeforeExecution</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/generator/Generator.html#generatedOnExecution()" title="class or interface in org.hibernate.generator" class="external-link">generatedOnExecution</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/generator/Generator.html#generatedOnExecution(java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)" title="class or interface in org.hibernate.generator" class="external-link">generatedOnExecution</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/generator/Generator.html#generatesOnInsert()" title="class or interface in org.hibernate.generator" class="external-link">generatesOnInsert</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/generator/Generator.html#generatesOnUpdate()" title="class or interface in org.hibernate.generator" class="external-link">generatesOnUpdate</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/generator/Generator.html#generatesSometimes()" title="class or interface in org.hibernate.generator" class="external-link">generatesSometimes</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/generator/Generator.html#getEventTypes()" title="class or interface in org.hibernate.generator" class="external-link">getEventTypes</a></code></div>
+<h3 id="methods-inherited-from-class-org.hibernate.generator.Generator">Methods inherited from interface&nbsp;org.hibernate.generator.Generator</h3>
+<code>allowAssignedIdentifiers, allowMutation, generatedBeforeExecution, generatedOnExecution, generatedOnExecution, generatesOnInsert, generatesOnUpdate, generatesSometimes, getEventTypes</code></div>
 </section>
 </li>
 </ul>
@@ -158,7 +158,7 @@ extends <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="ReactiveIdentifierGenerator.html" title="type parameter in ReactiveIdentifierGenerator">Id</a>&gt;</span>&nbsp;<span class="element-name">generate</span><wbr><span class="parameters">(<a href="../session/ReactiveConnectionSupplier.html" title="interface in org.hibernate.reactive.session">ReactiveConnectionSupplier</a>&nbsp;session,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;owner,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;currentValue,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/generator/EventType.html" title="class or interface in org.hibernate.generator" class="external-link">EventType</a>&nbsp;eventType)</span></div>
+ org.hibernate.generator.EventType&nbsp;eventType)</span></div>
 </section>
 </li>
 </ul>

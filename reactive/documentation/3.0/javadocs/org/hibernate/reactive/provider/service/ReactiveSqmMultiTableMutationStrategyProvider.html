@@ -78,12 +78,12 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></code>, <code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/mutation/spi/SqmMultiTableMutationStrategyProvider.html" title="class or interface in org.hibernate.query.sqm.mutation.spi" class="external-link">SqmMultiTableMutationStrategyProvider</a></code>, <code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/service/Service.html" title="class or interface in org.hibernate.service" class="external-link">Service</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></code>, <code>org.hibernate.query.sqm.mutation.spi.SqmMultiTableMutationStrategyProvider</code>, <code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/service/Service.html" title="class or interface in org.hibernate.service" class="external-link">Service</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">ReactiveSqmMultiTableMutationStrategyProvider</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/mutation/spi/SqmMultiTableMutationStrategyProvider.html" title="class or interface in org.hibernate.query.sqm.mutation.spi" class="external-link">SqmMultiTableMutationStrategyProvider</a></span></div>
+implements org.hibernate.query.sqm.mutation.spi.SqmMultiTableMutationStrategyProvider</span></div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -119,13 +119,13 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/mutation/spi/SqmMultiTableInsertStrategy.html" title="class or interface in org.hibernate.query.sqm.mutation.spi" class="external-link">SqmMultiTableInsertStrategy</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createInsertStrategy(org.hibernate.metamodel.mapping.EntityMappingType,org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess)" class="member-name-link">createInsertStrategy</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/metamodel/mapping/EntityMappingType.html" title="class or interface in org.hibernate.metamodel.mapping" class="external-link">EntityMappingType</a>&nbsp;rootEntityDescriptor,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/metamodel/mapping/internal/MappingModelCreationProcess.html" title="class or interface in org.hibernate.metamodel.mapping.internal" class="external-link">MappingModelCreationProcess</a>&nbsp;creationProcess)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.hibernate.query.sqm.mutation.spi.SqmMultiTableInsertStrategy</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createInsertStrategy(org.hibernate.metamodel.mapping.EntityMappingType,org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess)" class="member-name-link">createInsertStrategy</a><wbr>(org.hibernate.metamodel.mapping.EntityMappingType&nbsp;rootEntityDescriptor,
+ org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess&nbsp;creationProcess)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/mutation/spi/SqmMultiTableMutationStrategy.html" title="class or interface in org.hibernate.query.sqm.mutation.spi" class="external-link">SqmMultiTableMutationStrategy</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createMutationStrategy(org.hibernate.metamodel.mapping.EntityMappingType,org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess)" class="member-name-link">createMutationStrategy</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/metamodel/mapping/EntityMappingType.html" title="class or interface in org.hibernate.metamodel.mapping" class="external-link">EntityMappingType</a>&nbsp;rootEntityDescriptor,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/metamodel/mapping/internal/MappingModelCreationProcess.html" title="class or interface in org.hibernate.metamodel.mapping.internal" class="external-link">MappingModelCreationProcess</a>&nbsp;creationProcess)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.hibernate.query.sqm.mutation.spi.SqmMultiTableMutationStrategy</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createMutationStrategy(org.hibernate.metamodel.mapping.EntityMappingType,org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess)" class="member-name-link">createMutationStrategy</a><wbr>(org.hibernate.metamodel.mapping.EntityMappingType&nbsp;rootEntityDescriptor,
+ org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess&nbsp;creationProcess)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
@@ -161,22 +161,22 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <li>
 <section class="detail" id="createMutationStrategy(org.hibernate.metamodel.mapping.EntityMappingType,org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess)">
 <h3>createMutationStrategy</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/mutation/spi/SqmMultiTableMutationStrategy.html" title="class or interface in org.hibernate.query.sqm.mutation.spi" class="external-link">SqmMultiTableMutationStrategy</a></span>&nbsp;<span class="element-name">createMutationStrategy</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/metamodel/mapping/EntityMappingType.html" title="class or interface in org.hibernate.metamodel.mapping" class="external-link">EntityMappingType</a>&nbsp;rootEntityDescriptor,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/metamodel/mapping/internal/MappingModelCreationProcess.html" title="class or interface in org.hibernate.metamodel.mapping.internal" class="external-link">MappingModelCreationProcess</a>&nbsp;creationProcess)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.hibernate.query.sqm.mutation.spi.SqmMultiTableMutationStrategy</span>&nbsp;<span class="element-name">createMutationStrategy</span><wbr><span class="parameters">(org.hibernate.metamodel.mapping.EntityMappingType&nbsp;rootEntityDescriptor,
+ org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess&nbsp;creationProcess)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/mutation/spi/SqmMultiTableMutationStrategyProvider.html#createMutationStrategy(org.hibernate.metamodel.mapping.EntityMappingType,org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess)" title="class or interface in org.hibernate.query.sqm.mutation.spi" class="external-link">createMutationStrategy</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/mutation/spi/SqmMultiTableMutationStrategyProvider.html" title="class or interface in org.hibernate.query.sqm.mutation.spi" class="external-link">SqmMultiTableMutationStrategyProvider</a></code></dd>
+<dd><code>createMutationStrategy</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.sqm.mutation.spi.SqmMultiTableMutationStrategyProvider</code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="createInsertStrategy(org.hibernate.metamodel.mapping.EntityMappingType,org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess)">
 <h3>createInsertStrategy</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/mutation/spi/SqmMultiTableInsertStrategy.html" title="class or interface in org.hibernate.query.sqm.mutation.spi" class="external-link">SqmMultiTableInsertStrategy</a></span>&nbsp;<span class="element-name">createInsertStrategy</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/metamodel/mapping/EntityMappingType.html" title="class or interface in org.hibernate.metamodel.mapping" class="external-link">EntityMappingType</a>&nbsp;rootEntityDescriptor,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/metamodel/mapping/internal/MappingModelCreationProcess.html" title="class or interface in org.hibernate.metamodel.mapping.internal" class="external-link">MappingModelCreationProcess</a>&nbsp;creationProcess)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.hibernate.query.sqm.mutation.spi.SqmMultiTableInsertStrategy</span>&nbsp;<span class="element-name">createInsertStrategy</span><wbr><span class="parameters">(org.hibernate.metamodel.mapping.EntityMappingType&nbsp;rootEntityDescriptor,
+ org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess&nbsp;creationProcess)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/mutation/spi/SqmMultiTableMutationStrategyProvider.html#createInsertStrategy(org.hibernate.metamodel.mapping.EntityMappingType,org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess)" title="class or interface in org.hibernate.query.sqm.mutation.spi" class="external-link">createInsertStrategy</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/mutation/spi/SqmMultiTableMutationStrategyProvider.html" title="class or interface in org.hibernate.query.sqm.mutation.spi" class="external-link">SqmMultiTableMutationStrategyProvider</a></code></dd>
+<dd><code>createInsertStrategy</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.sqm.mutation.spi.SqmMultiTableMutationStrategyProvider</code></dd>
 </dl>
 </section>
 </li>

@@ -70,17 +70,17 @@ loadScripts(document, 'script');</script>
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">org.hibernate.reactive.sql.results.graph</a></div>
-<h1 title="Interface ReactiveInitializer" class="title">Interface ReactiveInitializer&lt;Data extends <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/graph/InitializerData.html" title="class or interface in org.hibernate.sql.results.graph" class="external-link">InitializerData</a>&gt;</h1>
+<h1 title="Interface ReactiveInitializer" class="title">Interface ReactiveInitializer&lt;Data extends org.hibernate.sql.results.graph.InitializerData&gt;</h1>
 </div>
 <section class="class-description" id="class-description">
 <hr>
-<div class="type-signature"><span class="annotations"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/Incubating.html" title="class or interface in org.hibernate" class="external-link">@Incubating</a>
-</span><span class="modifiers">public interface </span><span class="element-name type-name-label">ReactiveInitializer&lt;Data extends <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/graph/InitializerData.html" title="class or interface in org.hibernate.sql.results.graph" class="external-link">InitializerData</a>&gt;</span></div>
+<div class="type-signature"><span class="annotations"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Incubating.html" title="class or interface in org.hibernate" class="external-link">@Incubating</a>
+</span><span class="modifiers">public interface </span><span class="element-name type-name-label">ReactiveInitializer&lt;Data extends org.hibernate.sql.results.graph.InitializerData&gt;</span></div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/graph/Initializer.html" title="class or interface in org.hibernate.sql.results.graph" class="external-link"><code>Initializer</code></a></li>
+<li><code>Initializer</code></li>
 </ul>
 </dd>
 </dl>
@@ -99,11 +99,11 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#forEachReactiveSubInitializer(java.util.function.BiFunction,org.hibernate.sql.results.graph.InitializerData)" class="member-name-link">forEachReactiveSubInitializer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link">BiFunction</a>&lt;<a href="ReactiveInitializer.html" title="interface in org.hibernate.reactive.sql.results.graph">ReactiveInitializer</a>&lt;?&gt;,<wbr><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">RowProcessingState</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;&gt;&nbsp;consumer,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/graph/InitializerData.html" title="class or interface in org.hibernate.sql.results.graph" class="external-link">InitializerData</a>&nbsp;data)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#forEachReactiveSubInitializer(java.util.function.BiFunction,org.hibernate.sql.results.graph.InitializerData)" class="member-name-link">forEachReactiveSubInitializer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link">BiFunction</a>&lt;<a href="ReactiveInitializer.html" title="interface in org.hibernate.reactive.sql.results.graph">ReactiveInitializer</a>&lt;?&gt;,<wbr>org.hibernate.sql.results.jdbc.spi.RowProcessingState,<wbr><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;&gt;&nbsp;consumer,
+ org.hibernate.sql.results.graph.InitializerData&nbsp;data)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="ReactiveInitializer.html" title="type parameter in ReactiveInitializer">Data</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getData(org.hibernate.sql.results.jdbc.spi.RowProcessingState)" class="member-name-link">getData</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">RowProcessingState</a>&nbsp;rowProcessingState)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getData(org.hibernate.sql.results.jdbc.spi.RowProcessingState)" class="member-name-link">getData</a><wbr>(org.hibernate.sql.results.jdbc.spi.RowProcessingState&nbsp;rowProcessingState)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">The current data of this initializer.</div>
 </div>
@@ -125,7 +125,7 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#reactiveResolveInstance(java.lang.Object,org.hibernate.sql.results.jdbc.spi.RowProcessingState)" class="member-name-link">reactiveResolveInstance</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;instance,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">RowProcessingState</a>&nbsp;rowProcessingState)</code></div>
+ org.hibernate.sql.results.jdbc.spi.RowProcessingState&nbsp;rowProcessingState)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#reactiveResolveInstance(org.hibernate.reactive.sql.exec.spi.ReactiveRowProcessingState)" class="member-name-link">reactiveResolveInstance</a><wbr>(<a href="../../exec/spi/ReactiveRowProcessingState.html" title="class in org.hibernate.reactive.sql.exec.spi">ReactiveRowProcessingState</a>&nbsp;rowProcessingState)</code></div>
@@ -134,7 +134,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#reactiveResolveKey(Data)" class="member-name-link">reactiveResolveKey</a><wbr>(<a href="ReactiveInitializer.html" title="type parameter in ReactiveInitializer">Data</a>&nbsp;data)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#reactiveResolveKey(org.hibernate.sql.results.jdbc.spi.RowProcessingState)" class="member-name-link">reactiveResolveKey</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">RowProcessingState</a>&nbsp;rowProcessingState)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#reactiveResolveKey(org.hibernate.sql.results.jdbc.spi.RowProcessingState)" class="member-name-link">reactiveResolveKey</a><wbr>(org.hibernate.sql.results.jdbc.spi.RowProcessingState&nbsp;rowProcessingState)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
 </div>
 </div>
@@ -153,7 +153,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getData(org.hibernate.sql.results.jdbc.spi.RowProcessingState)">
 <h3>getData</h3>
-<div class="member-signature"><span class="return-type"><a href="ReactiveInitializer.html" title="type parameter in ReactiveInitializer">Data</a></span>&nbsp;<span class="element-name">getData</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">RowProcessingState</a>&nbsp;rowProcessingState)</span></div>
+<div class="member-signature"><span class="return-type"><a href="ReactiveInitializer.html" title="type parameter in ReactiveInitializer">Data</a></span>&nbsp;<span class="element-name">getData</span><wbr><span class="parameters">(org.hibernate.sql.results.jdbc.spi.RowProcessingState&nbsp;rowProcessingState)</span></div>
 <div class="block">The current data of this initializer.</div>
 </section>
 </li>
@@ -171,7 +171,7 @@ loadScripts(document, 'script');</script>
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/graph/internal/AbstractInitializer.html#resolveKey(Data)" title="class or interface in org.hibernate.sql.results.graph.internal" class="external-link"><code>AbstractInitializer.resolveKey(InitializerData)</code></a></li>
+<li><code>AbstractInitializer.resolveKey(InitializerData)</code></li>
 </ul>
 </dd>
 </dl>
@@ -180,7 +180,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="reactiveResolveKey(org.hibernate.sql.results.jdbc.spi.RowProcessingState)">
 <h3>reactiveResolveKey</h3>
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">reactiveResolveKey</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">RowProcessingState</a>&nbsp;rowProcessingState)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">reactiveResolveKey</span><wbr><span class="parameters">(org.hibernate.sql.results.jdbc.spi.RowProcessingState&nbsp;rowProcessingState)</span></div>
 </section>
 </li>
 <li>
@@ -194,7 +194,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="reactiveResolveInstance(java.lang.Object,org.hibernate.sql.results.jdbc.spi.RowProcessingState)">
 <h3>reactiveResolveInstance</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">reactiveResolveInstance</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;instance,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">RowProcessingState</a>&nbsp;rowProcessingState)</span></div>
+ org.hibernate.sql.results.jdbc.spi.RowProcessingState&nbsp;rowProcessingState)</span></div>
 </section>
 </li>
 <li>
@@ -218,8 +218,8 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="forEachReactiveSubInitializer(java.util.function.BiFunction,org.hibernate.sql.results.graph.InitializerData)">
 <h3>forEachReactiveSubInitializer</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">forEachReactiveSubInitializer</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link">BiFunction</a>&lt;<a href="ReactiveInitializer.html" title="interface in org.hibernate.reactive.sql.results.graph">ReactiveInitializer</a>&lt;?&gt;,<wbr><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/RowProcessingState.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">RowProcessingState</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;&gt;&nbsp;consumer,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/graph/InitializerData.html" title="class or interface in org.hibernate.sql.results.graph" class="external-link">InitializerData</a>&nbsp;data)</span></div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">forEachReactiveSubInitializer</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link">BiFunction</a>&lt;<a href="ReactiveInitializer.html" title="interface in org.hibernate.reactive.sql.results.graph">ReactiveInitializer</a>&lt;?&gt;,<wbr>org.hibernate.sql.results.jdbc.spi.RowProcessingState,<wbr><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;&gt;&nbsp;consumer,
+ org.hibernate.sql.results.graph.InitializerData&nbsp;data)</span></div>
 </section>
 </li>
 <li>

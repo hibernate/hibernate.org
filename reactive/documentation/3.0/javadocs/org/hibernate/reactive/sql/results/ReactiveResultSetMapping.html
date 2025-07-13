@@ -78,12 +78,12 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/ResultSetMapping.html" title="class or interface in org.hibernate.query.results" class="external-link">ResultSetMapping</a></code>, <code><a href="spi/ReactiveValuesMappingProducer.html" title="interface in org.hibernate.reactive.sql.results.spi">ReactiveValuesMappingProducer</a></code>, <code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/JdbcValuesMappingProducer.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">JdbcValuesMappingProducer</a></code></dd>
+<dd><code>org.hibernate.query.results.ResultSetMapping</code>, <code><a href="spi/ReactiveValuesMappingProducer.html" title="interface in org.hibernate.reactive.sql.results.spi">ReactiveValuesMappingProducer</a></code>, <code>org.hibernate.sql.results.jdbc.spi.JdbcValuesMappingProducer</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">ReactiveResultSetMapping</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/ResultSetMapping.html" title="class or interface in org.hibernate.query.results" class="external-link">ResultSetMapping</a>, <a href="spi/ReactiveValuesMappingProducer.html" title="interface in org.hibernate.reactive.sql.results.spi">ReactiveValuesMappingProducer</a></span></div>
+implements org.hibernate.query.results.ResultSetMapping, <a href="spi/ReactiveValuesMappingProducer.html" title="interface in org.hibernate.reactive.sql.results.spi">ReactiveValuesMappingProducer</a></span></div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -103,7 +103,7 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(org.hibernate.query.results.ResultSetMapping)" class="member-name-link">ReactiveResultSetMapping</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/ResultSetMapping.html" title="class or interface in org.hibernate.query.results" class="external-link">ResultSetMapping</a>&nbsp;resultSetMapping)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(org.hibernate.query.results.ResultSetMapping)" class="member-name-link">ReactiveResultSetMapping</a><wbr>(org.hibernate.query.results.ResultSetMapping&nbsp;resultSetMapping)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -121,13 +121,13 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addAffectedTableNames(java.util.Set,org.hibernate.engine.spi.SessionFactoryImplementor)" class="member-name-link">addAffectedTableNames</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;affectedTableNames,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a>&nbsp;sessionFactory)</code></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a>&nbsp;sessionFactory)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addLegacyFetchBuilder(org.hibernate.query.results.LegacyFetchBuilder)" class="member-name-link">addLegacyFetchBuilder</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/LegacyFetchBuilder.html" title="class or interface in org.hibernate.query.results" class="external-link">LegacyFetchBuilder</a>&nbsp;fetchBuilder)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addLegacyFetchBuilder(org.hibernate.query.results.LegacyFetchBuilder)" class="member-name-link">addLegacyFetchBuilder</a><wbr>(org.hibernate.query.results.LegacyFetchBuilder&nbsp;fetchBuilder)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addResultBuilder(org.hibernate.query.results.ResultBuilder)" class="member-name-link">addResultBuilder</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/ResultBuilder.html" title="class or interface in org.hibernate.query.results" class="external-link">ResultBuilder</a>&nbsp;resultBuilder)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addResultBuilder(org.hibernate.query.results.ResultBuilder)" class="member-name-link">addResultBuilder</a><wbr>(org.hibernate.query.results.ResultBuilder&nbsp;resultBuilder)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMappingIdentifier()" class="member-name-link">getMappingIdentifier</a>()</code></div>
@@ -135,30 +135,30 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNumberOfResultBuilders()" class="member-name-link">getNumberOfResultBuilders</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/ResultBuilder.html" title="class or interface in org.hibernate.query.results" class="external-link">ResultBuilder</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;org.hibernate.query.results.ResultBuilder&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getResultBuilders()" class="member-name-link">getResultBuilders</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDynamic()" class="member-name-link">isDynamic</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/JdbcValuesMapping.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">JdbcValuesMapping</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reactiveResolve(org.hibernate.sql.results.jdbc.spi.JdbcValuesMetadata,org.hibernate.engine.spi.LoadQueryInfluencers,org.hibernate.engine.spi.SessionFactoryImplementor)" class="member-name-link">reactiveResolve</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/JdbcValuesMetadata.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">JdbcValuesMetadata</a>&nbsp;jdbcResultsMetadata,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/LoadQueryInfluencers.html" title="class or interface in org.hibernate.engine.spi" class="external-link">LoadQueryInfluencers</a>&nbsp;loadQueryInfluencers,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a>&nbsp;sessionFactory)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;org.hibernate.sql.results.jdbc.spi.JdbcValuesMapping&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reactiveResolve(org.hibernate.sql.results.jdbc.spi.JdbcValuesMetadata,org.hibernate.engine.spi.LoadQueryInfluencers,org.hibernate.engine.spi.SessionFactoryImplementor)" class="member-name-link">reactiveResolve</a><wbr>(org.hibernate.sql.results.jdbc.spi.JdbcValuesMetadata&nbsp;jdbcResultsMetadata,
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/LoadQueryInfluencers.html" title="class or interface in org.hibernate.engine.spi" class="external-link">LoadQueryInfluencers</a>&nbsp;loadQueryInfluencers,
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a>&nbsp;sessionFactory)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/JdbcValuesMapping.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">JdbcValuesMapping</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolve(org.hibernate.sql.results.jdbc.spi.JdbcValuesMetadata,org.hibernate.engine.spi.LoadQueryInfluencers,org.hibernate.engine.spi.SessionFactoryImplementor)" class="member-name-link">resolve</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/JdbcValuesMetadata.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">JdbcValuesMetadata</a>&nbsp;jdbcResultsMetadata,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/LoadQueryInfluencers.html" title="class or interface in org.hibernate.engine.spi" class="external-link">LoadQueryInfluencers</a>&nbsp;loadQueryInfluencers,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a>&nbsp;sessionFactory)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.hibernate.sql.results.jdbc.spi.JdbcValuesMapping</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolve(org.hibernate.sql.results.jdbc.spi.JdbcValuesMetadata,org.hibernate.engine.spi.LoadQueryInfluencers,org.hibernate.engine.spi.SessionFactoryImplementor)" class="member-name-link">resolve</a><wbr>(org.hibernate.sql.results.jdbc.spi.JdbcValuesMetadata&nbsp;jdbcResultsMetadata,
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/LoadQueryInfluencers.html" title="class or interface in org.hibernate.engine.spi" class="external-link">LoadQueryInfluencers</a>&nbsp;loadQueryInfluencers,
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a>&nbsp;sessionFactory)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedResultSetMappingMemento.html" title="class or interface in org.hibernate.query.named" class="external-link">NamedResultSetMappingMemento</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.hibernate.query.named.NamedResultSetMappingMemento</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toMemento(java.lang.String)" class="member-name-link">toMemento</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#visitLegacyFetchBuilders(java.util.function.Consumer)" class="member-name-link">visitLegacyFetchBuilders</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/LegacyFetchBuilder.html" title="class or interface in org.hibernate.query.results" class="external-link">LegacyFetchBuilder</a>&gt;&nbsp;resultBuilderConsumer)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#visitLegacyFetchBuilders(java.util.function.Consumer)" class="member-name-link">visitLegacyFetchBuilders</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;org.hibernate.query.results.LegacyFetchBuilder&gt;&nbsp;resultBuilderConsumer)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#visitResultBuilders(java.util.function.BiConsumer)" class="member-name-link">visitResultBuilders</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>,<wbr><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/ResultBuilder.html" title="class or interface in org.hibernate.query.results" class="external-link">ResultBuilder</a>&gt;&nbsp;resultBuilderConsumer)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#visitResultBuilders(java.util.function.BiConsumer)" class="member-name-link">visitResultBuilders</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>,<wbr>org.hibernate.query.results.ResultBuilder&gt;&nbsp;resultBuilderConsumer)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
@@ -167,8 +167,8 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-org.hibernate.sql.results.jdbc.spi.JdbcValuesMappingProducer">Methods inherited from interface&nbsp;org.hibernate.sql.results.jdbc.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/JdbcValuesMappingProducer.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">JdbcValuesMappingProducer</a></h3>
-<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/JdbcValuesMappingProducer.html#cacheKeyInstance()" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">cacheKeyInstance</a></code></div>
+<h3 id="methods-inherited-from-class-org.hibernate.sql.results.jdbc.spi.JdbcValuesMappingProducer">Methods inherited from interface&nbsp;org.hibernate.sql.results.jdbc.spi.JdbcValuesMappingProducer</h3>
+<code>cacheKeyInstance</code></div>
 </section>
 </li>
 </ul>
@@ -183,7 +183,7 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <li>
 <section class="detail" id="&lt;init&gt;(org.hibernate.query.results.ResultSetMapping)">
 <h3>ReactiveResultSetMapping</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ReactiveResultSetMapping</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/ResultSetMapping.html" title="class or interface in org.hibernate.query.results" class="external-link">ResultSetMapping</a>&nbsp;resultSetMapping)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ReactiveResultSetMapping</span><wbr><span class="parameters">(org.hibernate.query.results.ResultSetMapping&nbsp;resultSetMapping)</span></div>
 </section>
 </li>
 </ul>
@@ -197,12 +197,12 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <li>
 <section class="detail" id="resolve(org.hibernate.sql.results.jdbc.spi.JdbcValuesMetadata,org.hibernate.engine.spi.LoadQueryInfluencers,org.hibernate.engine.spi.SessionFactoryImplementor)">
 <h3>resolve</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/JdbcValuesMapping.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">JdbcValuesMapping</a></span>&nbsp;<span class="element-name">resolve</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/JdbcValuesMetadata.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">JdbcValuesMetadata</a>&nbsp;jdbcResultsMetadata,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/LoadQueryInfluencers.html" title="class or interface in org.hibernate.engine.spi" class="external-link">LoadQueryInfluencers</a>&nbsp;loadQueryInfluencers,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a>&nbsp;sessionFactory)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.hibernate.sql.results.jdbc.spi.JdbcValuesMapping</span>&nbsp;<span class="element-name">resolve</span><wbr><span class="parameters">(org.hibernate.sql.results.jdbc.spi.JdbcValuesMetadata&nbsp;jdbcResultsMetadata,
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/LoadQueryInfluencers.html" title="class or interface in org.hibernate.engine.spi" class="external-link">LoadQueryInfluencers</a>&nbsp;loadQueryInfluencers,
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a>&nbsp;sessionFactory)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/JdbcValuesMappingProducer.html#resolve(org.hibernate.sql.results.jdbc.spi.JdbcValuesMetadata,org.hibernate.engine.spi.LoadQueryInfluencers,org.hibernate.engine.spi.SessionFactoryImplementor)" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">resolve</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/JdbcValuesMappingProducer.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">JdbcValuesMappingProducer</a></code></dd>
+<dd><code>resolve</code>&nbsp;in interface&nbsp;<code>org.hibernate.sql.results.jdbc.spi.JdbcValuesMappingProducer</code></dd>
 </dl>
 </section>
 </li>
@@ -210,19 +210,19 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <section class="detail" id="addAffectedTableNames(java.util.Set,org.hibernate.engine.spi.SessionFactoryImplementor)">
 <h3>addAffectedTableNames</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addAffectedTableNames</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;affectedTableNames,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a>&nbsp;sessionFactory)</span></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a>&nbsp;sessionFactory)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/JdbcValuesMappingProducer.html#addAffectedTableNames(java.util.Set,org.hibernate.engine.spi.SessionFactoryImplementor)" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">addAffectedTableNames</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/JdbcValuesMappingProducer.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">JdbcValuesMappingProducer</a></code></dd>
+<dd><code>addAffectedTableNames</code>&nbsp;in interface&nbsp;<code>org.hibernate.sql.results.jdbc.spi.JdbcValuesMappingProducer</code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="reactiveResolve(org.hibernate.sql.results.jdbc.spi.JdbcValuesMetadata,org.hibernate.engine.spi.LoadQueryInfluencers,org.hibernate.engine.spi.SessionFactoryImplementor)">
 <h3>reactiveResolve</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/JdbcValuesMapping.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">JdbcValuesMapping</a>&gt;</span>&nbsp;<span class="element-name">reactiveResolve</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/JdbcValuesMetadata.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">JdbcValuesMetadata</a>&nbsp;jdbcResultsMetadata,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/LoadQueryInfluencers.html" title="class or interface in org.hibernate.engine.spi" class="external-link">LoadQueryInfluencers</a>&nbsp;loadQueryInfluencers,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a>&nbsp;sessionFactory)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;org.hibernate.sql.results.jdbc.spi.JdbcValuesMapping&gt;</span>&nbsp;<span class="element-name">reactiveResolve</span><wbr><span class="parameters">(org.hibernate.sql.results.jdbc.spi.JdbcValuesMetadata&nbsp;jdbcResultsMetadata,
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/LoadQueryInfluencers.html" title="class or interface in org.hibernate.engine.spi" class="external-link">LoadQueryInfluencers</a>&nbsp;loadQueryInfluencers,
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a>&nbsp;sessionFactory)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="spi/ReactiveValuesMappingProducer.html#reactiveResolve(org.hibernate.sql.results.jdbc.spi.JdbcValuesMetadata,org.hibernate.engine.spi.LoadQueryInfluencers,org.hibernate.engine.spi.SessionFactoryImplementor)">reactiveResolve</a></code>&nbsp;in interface&nbsp;<code><a href="spi/ReactiveValuesMappingProducer.html" title="interface in org.hibernate.reactive.sql.results.spi">ReactiveValuesMappingProducer</a></code></dd>
@@ -235,7 +235,7 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getMappingIdentifier</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/ResultSetMapping.html#getMappingIdentifier()" title="class or interface in org.hibernate.query.results" class="external-link">getMappingIdentifier</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/ResultSetMapping.html" title="class or interface in org.hibernate.query.results" class="external-link">ResultSetMapping</a></code></dd>
+<dd><code>getMappingIdentifier</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.results.ResultSetMapping</code></dd>
 </dl>
 </section>
 </li>
@@ -245,7 +245,7 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isDynamic</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/ResultSetMapping.html#isDynamic()" title="class or interface in org.hibernate.query.results" class="external-link">isDynamic</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/ResultSetMapping.html" title="class or interface in org.hibernate.query.results" class="external-link">ResultSetMapping</a></code></dd>
+<dd><code>isDynamic</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.results.ResultSetMapping</code></dd>
 </dl>
 </section>
 </li>
@@ -255,67 +255,67 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getNumberOfResultBuilders</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/ResultSetMapping.html#getNumberOfResultBuilders()" title="class or interface in org.hibernate.query.results" class="external-link">getNumberOfResultBuilders</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/ResultSetMapping.html" title="class or interface in org.hibernate.query.results" class="external-link">ResultSetMapping</a></code></dd>
+<dd><code>getNumberOfResultBuilders</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.results.ResultSetMapping</code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getResultBuilders()">
 <h3>getResultBuilders</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/ResultBuilder.html" title="class or interface in org.hibernate.query.results" class="external-link">ResultBuilder</a>&gt;</span>&nbsp;<span class="element-name">getResultBuilders</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;org.hibernate.query.results.ResultBuilder&gt;</span>&nbsp;<span class="element-name">getResultBuilders</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/ResultSetMapping.html#getResultBuilders()" title="class or interface in org.hibernate.query.results" class="external-link">getResultBuilders</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/ResultSetMapping.html" title="class or interface in org.hibernate.query.results" class="external-link">ResultSetMapping</a></code></dd>
+<dd><code>getResultBuilders</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.results.ResultSetMapping</code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="visitResultBuilders(java.util.function.BiConsumer)">
 <h3>visitResultBuilders</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">visitResultBuilders</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>,<wbr><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/ResultBuilder.html" title="class or interface in org.hibernate.query.results" class="external-link">ResultBuilder</a>&gt;&nbsp;resultBuilderConsumer)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">visitResultBuilders</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>,<wbr>org.hibernate.query.results.ResultBuilder&gt;&nbsp;resultBuilderConsumer)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/ResultSetMapping.html#visitResultBuilders(java.util.function.BiConsumer)" title="class or interface in org.hibernate.query.results" class="external-link">visitResultBuilders</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/ResultSetMapping.html" title="class or interface in org.hibernate.query.results" class="external-link">ResultSetMapping</a></code></dd>
+<dd><code>visitResultBuilders</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.results.ResultSetMapping</code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="visitLegacyFetchBuilders(java.util.function.Consumer)">
 <h3>visitLegacyFetchBuilders</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">visitLegacyFetchBuilders</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/LegacyFetchBuilder.html" title="class or interface in org.hibernate.query.results" class="external-link">LegacyFetchBuilder</a>&gt;&nbsp;resultBuilderConsumer)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">visitLegacyFetchBuilders</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;org.hibernate.query.results.LegacyFetchBuilder&gt;&nbsp;resultBuilderConsumer)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/ResultSetMapping.html#visitLegacyFetchBuilders(java.util.function.Consumer)" title="class or interface in org.hibernate.query.results" class="external-link">visitLegacyFetchBuilders</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/ResultSetMapping.html" title="class or interface in org.hibernate.query.results" class="external-link">ResultSetMapping</a></code></dd>
+<dd><code>visitLegacyFetchBuilders</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.results.ResultSetMapping</code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="addResultBuilder(org.hibernate.query.results.ResultBuilder)">
 <h3>addResultBuilder</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addResultBuilder</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/ResultBuilder.html" title="class or interface in org.hibernate.query.results" class="external-link">ResultBuilder</a>&nbsp;resultBuilder)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addResultBuilder</span><wbr><span class="parameters">(org.hibernate.query.results.ResultBuilder&nbsp;resultBuilder)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/ResultSetMapping.html#addResultBuilder(org.hibernate.query.results.ResultBuilder)" title="class or interface in org.hibernate.query.results" class="external-link">addResultBuilder</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/ResultSetMapping.html" title="class or interface in org.hibernate.query.results" class="external-link">ResultSetMapping</a></code></dd>
+<dd><code>addResultBuilder</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.results.ResultSetMapping</code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="addLegacyFetchBuilder(org.hibernate.query.results.LegacyFetchBuilder)">
 <h3>addLegacyFetchBuilder</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addLegacyFetchBuilder</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/LegacyFetchBuilder.html" title="class or interface in org.hibernate.query.results" class="external-link">LegacyFetchBuilder</a>&nbsp;fetchBuilder)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addLegacyFetchBuilder</span><wbr><span class="parameters">(org.hibernate.query.results.LegacyFetchBuilder&nbsp;fetchBuilder)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/ResultSetMapping.html#addLegacyFetchBuilder(org.hibernate.query.results.LegacyFetchBuilder)" title="class or interface in org.hibernate.query.results" class="external-link">addLegacyFetchBuilder</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/ResultSetMapping.html" title="class or interface in org.hibernate.query.results" class="external-link">ResultSetMapping</a></code></dd>
+<dd><code>addLegacyFetchBuilder</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.results.ResultSetMapping</code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="toMemento(java.lang.String)">
 <h3>toMemento</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedResultSetMappingMemento.html" title="class or interface in org.hibernate.query.named" class="external-link">NamedResultSetMappingMemento</a></span>&nbsp;<span class="element-name">toMemento</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.hibernate.query.named.NamedResultSetMappingMemento</span>&nbsp;<span class="element-name">toMemento</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/ResultSetMapping.html#toMemento(java.lang.String)" title="class or interface in org.hibernate.query.results" class="external-link">toMemento</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/results/ResultSetMapping.html" title="class or interface in org.hibernate.query.results" class="external-link">ResultSetMapping</a></code></dd>
+<dd><code>toMemento</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.results.ResultSetMapping</code></dd>
 </dl>
 </section>
 </li>
