@@ -1,0 +1,161 @@
+:awestruct-layout: project-releases-series
+:awestruct-project: search
+:awestruct-series_version: "8.1"
+:page-interpolate: true
+:latest-release-version: #{series(page, page.series_version).releases.first.version}
+:hsearch-doc-url-prefix: #{reference_doc(site.projects[page.project], series(page, page.series_version)).html_url}
+
+****
+[discrete]
+=== Dependency upgrades
+
+[[orm-version]]
+Hibernate ORM::
+Hibernate Search still targets the Hibernate ORM 7.0 series, with the plan, in the following beta releases to target 7.1 once it is out.
+[[lucene-version]]
+Lucene::
+The Lucene backend now uses Lucene 9.12.2, while the `lucene-next` backend relies on Lucene 10.2.2
+[[elasticsearch-version]]
+Elasticsearch::
+The Elasticsearch backend is still compatible with all already compatible versions.
+[[opensearch-version]]
+OpenSearch::
+The Elasticsearch backend works with OpenSearch 3.1, as well as other already compatible versions.
+
+[[aggregations-improvements]]
+[discrete]
+=== Aggregation improvements
+
+With this version of Hibernate Search it is now possible to request terms and range aggregations for more than counts,
+i.e. such that would return other aggregations provided by the DSL.
+
+====
+[source, Java, indent=0, subs="+attributes"]
+----
+AggregationKey<Map<Range<Double>, Double>> avgRatingByPriceKey = AggregationKey.of( "avgRatingByPrice" ); // <1>
+SearchResult<Book> result = searchSession.search( Book.class )
+    .where( f -> f.matchAll() )
+    .aggregation(
+        avgRatingByPriceKey, f -> f.range()
+            .field( "price", Double.class ) // <2>
+            .range( 0.0, 10.0 )
+            .range( 10.0, 20.0 )
+            .range( 20.0, null )
+            .value( f.avg().field( "ratings", Double.class, ValueModel.RAW ) ) // <3>
+    )
+    .fetch( 20 );
+Map<Range<Double>, Double> countsByPrice = result.aggregation( avgRatingByPriceKey ); // <4>
+----
+<1> Create an aggregation key for an average rating by book price aggregation.
+<2> Start building range aggregation as usual, by specifying the field and ranges.
+<3> Request an `.avg()` aggregation on the ratings field.
+Specifying `Double` and using `ValueModel.RAW` here defines the expected return type of the computed aggregation.
+<4> Extract the aggregated value from the results.
+====
+
+[TIP]
+====
+The value of the `range()`/`terms()` aggregation can be any of the aggregations provided by the Search DSL, e.g.
+one of the metric aggregations: `min()`/`max()`/`avg()`/`count()`/`sum()`,
+a `range()`/`terms()` aggregation or a composite aggregation combining a number of other aggregations.
+====
+
+See the corresponding section on link:{hsearch-doc-url-prefix}#search-dsl-aggregation-range-value[range aggregations]
+to learn more. This also is applicable to the link:{hsearch-doc-url-prefix}#search-dsl-aggregation-terms-value[terms aggregations].
+
+If multiple aggregations are of interest be it at the root level or per aggregation (terms/range) bucket,
+it is now possible to request a composite aggregation:
+
+====
+[source, Java, indent=0, subs="+attributes"]
+----
+record PriceAggregation(Double avg, Double min, Double max) { // <1>
+}
+AggregationKey<Map<Range<Double>, PriceAggregation>> priceAggregationsKey = AggregationKey.of( "priceAggregationsKey" ); // <2>
+SearchResult<Book> result = searchSession.search( Book.class )
+    .where( f -> f.matchAll() )
+    .aggregation(
+        countsByPriceKey, f -> f.range()
+            .field( "price", Double.class ) // <3>
+            .range( 0.0, 10.0 ) // <3>
+            .range( 10.0, 20.0 )
+            .range( 20.0, null )
+            .value( f.composite() // <4>
+                .from(
+                    f.avg().field( "price", Double.class ), // <5>
+                    f.min().field( "price", Double.class ),
+                    f.max().field( "price", Double.class )
+                ).as( PriceAggregation::new ) ) // <6>
+    )
+    .fetch( 20 );
+Map<Range<Double>, PriceAggregation> countsByPrice = result.aggregation( priceAggregationsKey ); // <7>
+----
+<1> Define a structure to hold composite aggregation results.
+<2> Create an aggregation key for the composite range aggregation.
+<3> Start building range aggregation as usual, by specifying the field and ranges.
+<4> Request a `.composite()` aggregation.
+<5> Add any required aggregations to build up a composite one.
+<6> Specify how to transform the composite aggregation. By default, you would need to request the composite aggregation
+as a `List` or an array of aggregated values, but then it is possible to transform it to something else.
+<7> Extract the aggregated value from the results.
+====
+
+See the corresponding section on link:{hsearch-doc-url-prefix}#search-dsl-aggregation-composite[composite aggregations]
+to learn more.
+
+[[platform-bom]]
+[discrete]
+=== Hibernate Search Platform BOM
+
+Besides the lean BOM file, Hibernate Search now also provides several platform POM files that manage
+the versions of Hibernate Search artifacts, _and_ their transitive dependencies, _and_ related artifacts that must be aligned.
+For example, it brings the management of all other `org.hibernate.orm` artifacts,
+beyond the ones required by the ORM mapper, or extra Lucene artifacts like
+`lucene-suggest` or `lucene-analysis-icu` and others, that can be helpful for more advanced applications.
+These platform files will help keep the versions of extra Hibernate ORM/Lucene/Elasticsearch client dependencies
+aligned with the versions of artifacts from the same groups that are used by Hibernate Search itself.
+
+Currently, there are two platform POM files for Hibernate Search:
+
+* `hibernate-search-platform-bom`: use this when in doubt.
+* `hibernate-search-platform-next-bom`: use this if you want to use the `lucene-next` backend.
+
+To leverage the dependency management provided by these platform files, use the same approach of importing as for
+the regular BOM file:
+
+[source, XML, subs="+attributes"]
+----
+<dependencyManagement>
+    <dependencies>
+        <!--
+            Import Hibernate Search platform
+            to get all of its artifact versions aligned:
+        -->
+        <dependency>
+            <groupId>org.hibernate.search</groupId>
+            <artifactId>hibernate-search-platform-bom</artifactId>
+            <version>{latest-release-version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+        <!-- Any other dependency management entries -->
+    </dependencies>
+</dependencyManagement>
+
+<dependencies>
+    <!-- Any other dependency management entries -->
+    <!--
+         For example, add an extra Lucene dependency without specifying the version
+         as it is managed by the platform POM:
+    -->
+    <dependency>
+        <groupId>org.apache.lucene</groupId>
+        <artifactId>lucene-suggest</artifactId>
+    </dependency>
+    <!-- Any other dependency management entries -->
+</dependencies>
+----
+
+See the corresponding section on link:{hsearch-doc-url-prefix}#compatibility-search-dependencies-platform[Hibernate Search Platform]
+to find out more.
+****
