@@ -4,6 +4,11 @@ title: Tooling for your Hibernate projects.
 project: tools
 ---
 
+- latest_stable_orm_version = site.projects['orm'].latest_stable_release.version
+- # This is an approximation, because we don't have Hibernate Tools metadata on the website.
+- latest_stable_tools_version = latest_stable_orm_version
+- sakila_h2_version = '2.3.232'
+
 -# Center body
 .feature-block
   :asciidoc
@@ -67,8 +72,8 @@ project: tools
         <version>1.0-SNAPSHOT</version>
 
         <properties>
-            <hibernate-core.version>${hibernate.version}</hibernate-core.version>
-            <h2.version>${h2.version}</h2.version>
+            <hibernate-core.version>#{latest_stable_orm_version}</hibernate-core.version>
+            <h2.version>#{sakila_h2_version}</h2.version>
         </properties>
 
         <dependencies>
@@ -92,7 +97,7 @@ project: tools
     Having this in place, simply issuing:
     [source]
     -----
-    mvn org.hibernate.tool:hibernate-tools-maven:${hibernate.version}:hbm2java
+    mvn org.hibernate.tool:hibernate-tools-maven:#{latest_stable_tools_version}:hbm2java
     -----
     from a command line prompt in the project folder will use all the default settings to generate Java classes for the
     tables in `target/generated-sources/`.
@@ -124,7 +129,7 @@ project: tools
     -----
     plugins {
         id('application')
-        id('org.hibernate.tool.hibernate-tools-gradle') version '${hibernate-tools.version}'
+        id('org.hibernate.tool.hibernate-tools-gradle') version '#{latest_stable_tools_version}'
     }
 
     repositories {
@@ -132,7 +137,7 @@ project: tools
     }
 
     dependencies {
-        implementation('com.h2database:h2:${h2.version}')
+        implementation('com.h2database:h2:#{sakila_h2_version}')
     }
     -----
 
@@ -162,9 +167,9 @@ project: tools
         <property name="hibernate.tools.version" value=the-hibernate-tools-version-to-use/>
         <property name="h2.version" value=the-h2-version-to-use/>
 
-        <ivy:cachepath organisation="org.hibernate.tool" module="hibernate-tools-ant" revision="${hibernate.tools.version}"
+        <ivy:cachepath organisation="org.hibernate.tool" module="hibernate-tools-ant" revision="#{latest_stable_tools_version}"
                        pathid="hibernate-tools" inline="true"/>
-        <ivy:cachepath organisation="com.h2database" module="h2" revision="${h2.version}"
+        <ivy:cachepath organisation="com.h2database" module="h2" revision="#{sakila_h2_version}"
                        pathid="h2" inline="true"/>
 
         <path id="classpath">
