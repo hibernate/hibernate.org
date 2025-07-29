@@ -20,8 +20,12 @@ maven:
       web_ui_url: 'https://central.sonatype.com'
       old_web_ui_url: 'https://search.maven.org'
       help_setup_url: 'https://central.sonatype.org/consume/'
+    central_snapshots:
+      name: Sonatype Maven Central snapshots
+      repo_url: 'https://central.sonatype.com/repository/maven-snapshots'
+      web_ui_url: 'https://central.sonatype.com/service/rest/repository/browse/maven-snapshots'
     ossrh_snapshots:
-      name: OSSRH snapshots
+      name: Sonatype OSS snapshots
       repo_url: 'https://oss.sonatype.org/content/repositories/snapshots'
       web_ui_url: 'https://oss.sonatype.org/'
     jboss:
@@ -92,7 +96,7 @@ projects:
         main_artifact_id: hibernate-core
       repo:
         releases: central
-        snapshots: ossrh_snapshots
+        snapshots: central_snapshots
     blog_tag: Hibernate ORM
     blog_tag_url: hibernate-orm
     license:
@@ -222,7 +226,7 @@ projects:
         main_artifact_id: hibernate-search-mapper-orm
       repo:
         releases: central
-        snapshots: ossrh_snapshots
+        snapshots: central_snapshots
     blog_tag: Hibernate Search
     blog_tag_url: hibernate-search
     license:
@@ -337,7 +341,7 @@ projects:
         main_artifact_id: hibernate-processor
       repo:
         releases: central
-        snapshots: ossrh_snapshots
+        snapshots: central_snapshots
     blog_tag: Hibernate Data Repositories
     blog_tag_url: hibernate-data-repositories
     license:
@@ -470,7 +474,7 @@ projects:
         main_artifact_id: hibernate-validator
       repo:
         releases: central
-        snapshots: ossrh_snapshots
+        snapshots: central_snapshots
     blog_tag: Hibernate Validator
     blog_tag_url: hibernate-validator
     license:
@@ -678,7 +682,7 @@ projects:
         main_artifact_id: hibernate-reactive-core
       repo:
         releases: central
-        snapshots: jboss
+        snapshots: central_snapshots
     blog_tag: Hibernate Reactive
     blog_tag_url: hibernate-reactive
     license:
