@@ -1,0 +1,20 @@
+= Documentation
+:awestruct-layout: project-standard
+:awestruct-project: tools
+:page-interpolate: true
+:docs_base_url: https://github.com/hibernate/hibernate-tools/blob/main/
+
+link:{docs_base_url}/README.md[Main README]::
+Global overview and list of tools.
+link:{docs_base_url}/maven/README.md[`hibernate-tools-maven` reference]::
+Reference documentation for the Maven plugin of Hibernate Tools.
+link:{docs_base_url}/maven/docs/5-minute-tutorial.md[`hibernate-tools-maven` tutorial]::
+Five-minute tutorial for the Maven plugin of Hibernate Tools.
+link:{docs_base_url}/gradle/README.md[`hibernate-tools-gradle` reference]::
+Reference documentation for the Gradle plugin of Hibernate Tools.
+link:{docs_base_url}/gradle/docs/5-minute-tutorial.md[`hibernate-tools-gradle` tutorial]::
+Five-minute tutorial for the Gradle plugin of Hibernate Tools.
+link:{docs_base_url}/ant/docs/reference-guide.md[`hibernate-tools-ant` reference]::
+Reference documentation for the Ant tasks of Hibernate Tools.
+link:{docs_base_url}/ant/docs/5-minute-tutorial.md[`hibernate-tools-ant` tutorial]::
+Five-minute tutorial for the Ant tasks of Hibernate Tools.

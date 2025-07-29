@@ -419,6 +419,10 @@ projects:
         - name: About
           href: '/tools/'
           css_class: 'home'
+        - name: Documentation
+          href: '/tools/documentation/'
+          css_class: 'folder open'
+          documentation_submenu: false
         - name: Contribute
           href: '/community/contribute/'
           css_class: 'users'
