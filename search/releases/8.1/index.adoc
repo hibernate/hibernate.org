@@ -11,13 +11,13 @@
 
 [[orm-version]]
 Hibernate ORM::
-Hibernate Search still targets the Hibernate ORM 7.0 series, with the plan, in the following beta releases to target 7.1 once it is out.
+Hibernate Search targets the Hibernate ORM 7.1 series.
 [[lucene-version]]
 Lucene::
 The Lucene backend now uses Lucene 9.12.2, while the `lucene-next` backend relies on Lucene 10.2.2
 [[elasticsearch-version]]
 Elasticsearch::
-The Elasticsearch backend is still compatible with all already compatible versions.
+The Elasticsearch backend works with Elasticsearch 9.1, 8.19, as well as other already compatible versions.
 [[opensearch-version]]
 OpenSearch::
 The Elasticsearch backend works with OpenSearch 3.1, as well as other already compatible versions.
