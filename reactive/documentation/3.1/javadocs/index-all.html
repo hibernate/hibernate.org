@@ -2198,8 +2198,6 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="org/hibernate/reactive/query/sql/spi/ReactiveNamedNativeQueryMemento.html#getSqlString()" class="member-name-link">getSqlString()</a> - Method in class org.hibernate.reactive.query.sql.spi.<a href="org/hibernate/reactive/query/sql/spi/ReactiveNamedNativeQueryMemento.html" title="class in org.hibernate.reactive.query.sql.spi">ReactiveNamedNativeQueryMemento</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="org/hibernate/reactive/query/sqm/mutation/spi/ReactiveAbstractMutationHandler.html#getSqmDeleteOrUpdateStatement()" class="member-name-link">getSqmDeleteOrUpdateStatement()</a> - Method in interface org.hibernate.reactive.query.sqm.mutation.spi.<a href="org/hibernate/reactive/query/sqm/mutation/spi/ReactiveAbstractMutationHandler.html" title="interface in org.hibernate.reactive.query.sqm.mutation.spi">ReactiveAbstractMutationHandler</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/query/spi/ReactiveAbstractSelectionQuery.html#getSqmStatement()" class="member-name-link">getSqmStatement()</a> - Method in class org.hibernate.reactive.query.spi.<a href="org/hibernate/reactive/query/spi/ReactiveAbstractSelectionQuery.html" title="class in org.hibernate.reactive.query.spi">ReactiveAbstractSelectionQuery</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/query/sql/spi/ReactiveNamedSqmQueryMemento.html#getSqmStatement()" class="member-name-link">getSqmStatement()</a> - Method in class org.hibernate.reactive.query.sql.spi.<a href="org/hibernate/reactive/query/sql/spi/ReactiveNamedSqmQueryMemento.html" title="class in org.hibernate.reactive.query.sql.spi">ReactiveNamedSqmQueryMemento</a></dt>
@@ -3411,15 +3409,27 @@ loadScripts(document, 'script');</script>
 <dt><a href="org/hibernate/reactive/id/insert/ReactiveInsertReturningDelegate.html#reactiveExecuteAndExtractReturning(java.lang.String,java.lang.Object%5B%5D,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">reactiveExecuteAndExtractReturning(String, Object[], SharedSessionContractImplementor)</a> - Method in class org.hibernate.reactive.id.insert.<a href="org/hibernate/reactive/id/insert/ReactiveInsertReturningDelegate.html" title="class in org.hibernate.reactive.id.insert">ReactiveInsertReturningDelegate</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/query/sqm/mutation/spi/ReactiveSqmMultiTableMutationStrategy.html#reactiveExecuteDelete(org.hibernate.query.sqm.tree.delete.SqmDeleteStatement,org.hibernate.query.sqm.internal.DomainParameterXref,org.hibernate.query.spi.DomainQueryExecutionContext)" class="member-name-link">reactiveExecuteDelete(SqmDeleteStatement&lt;?&gt;, DomainParameterXref, DomainQueryExecutionContext)</a> - Method in interface org.hibernate.reactive.query.sqm.mutation.spi.<a href="org/hibernate/reactive/query/sqm/mutation/spi/ReactiveSqmMultiTableMutationStrategy.html" title="interface in org.hibernate.reactive.query.sqm.mutation.spi">ReactiveSqmMultiTableMutationStrategy</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Use <code>SqmMultiTableMutationStrategy.buildHandler(SqmDeleteOrUpdateStatement, DomainParameterXref, DomainQueryExecutionContext)</code> instead</div>
+</div>
+</dd>
 <dt><a href="org/hibernate/reactive/query/sqm/mutation/spi/ReactiveSqmMultiTableInsertStrategy.html#reactiveExecuteInsert(org.hibernate.query.sqm.tree.insert.SqmInsertStatement,org.hibernate.query.sqm.internal.DomainParameterXref,org.hibernate.query.spi.DomainQueryExecutionContext)" class="member-name-link">reactiveExecuteInsert(SqmInsertStatement&lt;?&gt;, DomainParameterXref, DomainQueryExecutionContext)</a> - Method in interface org.hibernate.reactive.query.sqm.mutation.spi.<a href="org/hibernate/reactive/query/sqm/mutation/spi/ReactiveSqmMultiTableInsertStrategy.html" title="interface in org.hibernate.reactive.query.sqm.mutation.spi">ReactiveSqmMultiTableInsertStrategy</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Uses <code>SqmMultiTableInsertStrategy.buildHandler(SqmInsertStatement, DomainParameterXref, DomainQueryExecutionContext)</code> instead</div>
+</div>
+</dd>
 <dt><a href="org/hibernate/reactive/query/sqm/spi/ReactiveSelectQueryPlan.html#reactiveExecuteQuery(org.hibernate.query.spi.DomainQueryExecutionContext,org.hibernate.reactive.sql.results.spi.ReactiveResultsConsumer)" class="member-name-link">reactiveExecuteQuery(DomainQueryExecutionContext, ReactiveResultsConsumer&lt;T, R&gt;)</a> - Method in interface org.hibernate.reactive.query.sqm.spi.<a href="org/hibernate/reactive/query/sqm/spi/ReactiveSelectQueryPlan.html" title="interface in org.hibernate.reactive.query.sqm.spi">ReactiveSelectQueryPlan</a></dt>
 <dd>
 <div class="block">Execute the query</div>
 </dd>
 <dt><a href="org/hibernate/reactive/query/sqm/mutation/spi/ReactiveSqmMultiTableMutationStrategy.html#reactiveExecuteUpdate(org.hibernate.query.sqm.tree.update.SqmUpdateStatement,org.hibernate.query.sqm.internal.DomainParameterXref,org.hibernate.query.spi.DomainQueryExecutionContext)" class="member-name-link">reactiveExecuteUpdate(SqmUpdateStatement&lt;?&gt;, DomainParameterXref, DomainQueryExecutionContext)</a> - Method in interface org.hibernate.reactive.query.sqm.mutation.spi.<a href="org/hibernate/reactive/query/sqm/mutation/spi/ReactiveSqmMultiTableMutationStrategy.html" title="interface in org.hibernate.reactive.query.sqm.mutation.spi">ReactiveSqmMultiTableMutationStrategy</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Use <code>SqmMultiTableMutationStrategy.buildHandler(SqmDeleteOrUpdateStatement, DomainParameterXref, DomainQueryExecutionContext)</code> instead</div>
+</div>
+</dd>
 <dt><a href="org/hibernate/reactive/session/ReactiveSession.html#reactiveFetch(E,jakarta.persistence.metamodel.Attribute)" class="member-name-link">reactiveFetch(E, Attribute&lt;E, T&gt;)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveSession.html" title="interface in org.hibernate.reactive.session">ReactiveSession</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/hibernate/reactive/session/ReactiveQueryProducer.html#reactiveFetch(T,boolean)" class="member-name-link">reactiveFetch(T, boolean)</a> - Method in interface org.hibernate.reactive.session.<a href="org/hibernate/reactive/session/ReactiveQueryProducer.html" title="interface in org.hibernate.reactive.session">ReactiveQueryProducer</a></dt>

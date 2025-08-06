@@ -103,7 +103,7 @@ extends org.hibernate.query.sqm.mutation.spi.SqmMultiTableInsertStrategy</span><
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">Default Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">Default Methods</button><button id="method-summary-table-tab6" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab6', 3)" class="table-tab">Deprecated Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
@@ -114,17 +114,21 @@ extends org.hibernate.query.sqm.mutation.spi.SqmMultiTableInsertStrategy</span><
  org.hibernate.query.sqm.internal.DomainParameterXref&nbsp;domainParameterXref,
  <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/spi/DomainQueryExecutionContext.html" title="class or interface in org.hibernate.query.spi" class="external-link">DomainQueryExecutionContext</a>&nbsp;context)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reactiveExecuteInsert(org.hibernate.query.sqm.tree.insert.SqmInsertStatement,org.hibernate.query.sqm.internal.DomainParameterXref,org.hibernate.query.spi.DomainQueryExecutionContext)" class="member-name-link">reactiveExecuteInsert</a><wbr>(org.hibernate.query.sqm.tree.insert.SqmInsertStatement&lt;?&gt;&nbsp;sqmInsertStatement,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6"><code>default <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6"><code><a href="#reactiveExecuteInsert(org.hibernate.query.sqm.tree.insert.SqmInsertStatement,org.hibernate.query.sqm.internal.DomainParameterXref,org.hibernate.query.spi.DomainQueryExecutionContext)" class="member-name-link">reactiveExecuteInsert</a><wbr>(org.hibernate.query.sqm.tree.insert.SqmInsertStatement&lt;?&gt;&nbsp;sqmInsertStatement,
  org.hibernate.query.sqm.internal.DomainParameterXref&nbsp;domainParameterXref,
  <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/spi/DomainQueryExecutionContext.html" title="class or interface in org.hibernate.query.spi" class="external-link">DomainQueryExecutionContext</a>&nbsp;context)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Uses <code>SqmMultiTableInsertStrategy.buildHandler(SqmInsertStatement, DomainParameterXref, DomainQueryExecutionContext)</code> instead</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.hibernate.query.sqm.mutation.spi.SqmMultiTableInsertStrategy">Methods inherited from interface&nbsp;org.hibernate.query.sqm.mutation.spi.SqmMultiTableInsertStrategy</h3>
-<code>prepare, prepare, release</code></div>
+<code>buildHandler, prepare, prepare, release</code></div>
 </section>
 </li>
 </ul>
@@ -165,9 +169,19 @@ extends org.hibernate.query.sqm.mutation.spi.SqmMultiTableInsertStrategy</span><
 <li>
 <section class="detail" id="reactiveExecuteInsert(org.hibernate.query.sqm.tree.insert.SqmInsertStatement,org.hibernate.query.sqm.internal.DomainParameterXref,org.hibernate.query.spi.DomainQueryExecutionContext)">
 <h3>reactiveExecuteInsert</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</span>&nbsp;<span class="element-name">reactiveExecuteInsert</span><wbr><span class="parameters">(org.hibernate.query.sqm.tree.insert.SqmInsertStatement&lt;?&gt;&nbsp;sqmInsertStatement,
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html#forRemoval()" title="class or interface in java.lang" class="external-link">forRemoval</a>=true,
+            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html#since()" title="class or interface in java.lang" class="external-link">since</a>="3.1")
+</span><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</span>&nbsp;<span class="element-name">reactiveExecuteInsert</span><wbr><span class="parameters">(org.hibernate.query.sqm.tree.insert.SqmInsertStatement&lt;?&gt;&nbsp;sqmInsertStatement,
  org.hibernate.query.sqm.internal.DomainParameterXref&nbsp;domainParameterXref,
  <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/spi/DomainQueryExecutionContext.html" title="class or interface in org.hibernate.query.spi" class="external-link">DomainQueryExecutionContext</a>&nbsp;context)</span></div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Uses <code>SqmMultiTableInsertStrategy.buildHandler(SqmInsertStatement, DomainParameterXref, DomainQueryExecutionContext)</code> instead</div>
+</div>
+<div class="block">Execute the multi-table insert indicated by the passed SqmInsertStatement</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The number of rows affected</dd>
+</dl>
 </section>
 </li>
 </ul>
