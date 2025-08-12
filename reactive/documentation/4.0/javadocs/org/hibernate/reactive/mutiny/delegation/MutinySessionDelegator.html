@@ -153,7 +153,7 @@ implements <a href="../Mutiny.Session.html" title="interface in org.hibernate.re
  update or delete statement.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsert)" class="member-name-link">createMutationQuery</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/criteria/JpaCriteriaInsert.html" title="class or interface in org.hibernate.query.criteria" class="external-link">JpaCriteriaInsert</a>&lt;?&gt;&nbsp;insert)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsert)" class="member-name-link">createMutationQuery</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/criteria/JpaCriteriaInsert.html" title="class or interface in org.hibernate.query.criteria" class="external-link">JpaCriteriaInsert</a>&lt;?&gt;&nbsp;insert)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Create a <a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> from the given insert select criteria tree</div>
 </div>
@@ -232,7 +232,7 @@ implements <a href="../Mutiny.Session.html" title="interface in org.hibernate.re
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;R&gt;&nbsp;<a href="../Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createQuery(jakarta.persistence.TypedQueryReference)" class="member-name-link">createQuery</a><wbr>(jakarta.persistence.TypedQueryReference&lt;R&gt;&nbsp;typedQueryReference)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Create a typed <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/Query.html" title="class or interface in org.hibernate.query" class="external-link"><code>Query</code></a> instance for the given typed query reference.</div>
+<div class="block">Create a typed <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/Query.html" title="class or interface in org.hibernate.query" class="external-link"><code>Query</code></a> instance for the given typed query reference.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>&lt;R&gt;&nbsp;<a href="../Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#createQuery(java.lang.String)" class="member-name-link">createQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;queryString)</code></div>
@@ -284,7 +284,7 @@ implements <a href="../Mutiny.Session.html" title="interface in org.hibernate.re
 <div class="block">Enable a particular fetch profile on this session, or do nothing if
  requested fetch profile is already enabled.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/Filter.html" title="class or interface in org.hibernate" class="external-link">Filter</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Filter.html" title="class or interface in org.hibernate" class="external-link">Filter</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enableFilter(java.lang.String)" class="member-name-link">enableFilter</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filterName)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Enable the named filter for this session.</div>
@@ -337,10 +337,10 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#find(java.lang.Class,java.lang.Object,org.hibernate.LockMode)" class="member-name-link">find</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;entityClass,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</code></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Asynchronously return the persistent instance of the given entity
- class with the given identifier, requesting the given <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link"><code>LockMode</code></a>.</div>
+ class with the given identifier, requesting the given <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link"><code>LockMode</code></a>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#find(java.lang.Class,org.hibernate.reactive.common.Identifier)" class="member-name-link">find</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;entityClass,
@@ -361,7 +361,7 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <div class="block">The session-level batch size, or <code>null</code> if it has not been
  overridden.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/CacheMode.html" title="class or interface in org.hibernate" class="external-link">CacheMode</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/CacheMode.html" title="class or interface in org.hibernate" class="external-link">CacheMode</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCacheMode()" class="member-name-link">getCacheMode</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Get the current cache mode.</div>
@@ -371,7 +371,7 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Convenience method to obtain the <code>CriteriaBuilder</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/Filter.html" title="class or interface in org.hibernate" class="external-link">Filter</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Filter.html" title="class or interface in org.hibernate" class="external-link">Filter</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEnabledFilter(java.lang.String)" class="member-name-link">getEnabledFilter</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filterName)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Retrieve a currently enabled filter by name.</div>
@@ -393,12 +393,12 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <div class="block">Get the maximum batch size for batch fetching associations by
  id in this session.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/FlushMode.html" title="class or interface in org.hibernate" class="external-link">FlushMode</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/FlushMode.html" title="class or interface in org.hibernate" class="external-link">FlushMode</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFlushMode()" class="member-name-link">getFlushMode</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Get the current flush mode for this session.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLockMode(java.lang.Object)" class="member-name-link">getLockMode</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Determine the current lock mode of the given entity.</div>
@@ -454,7 +454,7 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#lock(java.lang.Object,org.hibernate.LockMode)" class="member-name-link">lock</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</code></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Obtain the specified lock level upon the given object.</div>
 </div>
@@ -501,10 +501,10 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#refresh(java.lang.Object,org.hibernate.LockMode)" class="member-name-link">refresh</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</code></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Re-read the state of the given instance from the underlying database,
- requesting the given <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link"><code>LockMode</code></a>.</div>
+ requesting the given <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link"><code>LockMode</code></a>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#refreshAll(java.lang.Object...)" class="member-name-link">refreshAll</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;entities)</code></div>
@@ -528,9 +528,9 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
  by the configuration property <code>hibernate.jdbc.batch_size</code>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCacheMode(org.hibernate.CacheMode)" class="member-name-link">setCacheMode</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/CacheMode.html" title="class or interface in org.hibernate" class="external-link">CacheMode</a>&nbsp;cacheMode)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCacheMode(org.hibernate.CacheMode)" class="member-name-link">setCacheMode</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/CacheMode.html" title="class or interface in org.hibernate" class="external-link">CacheMode</a>&nbsp;cacheMode)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Set the <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/CacheMode.html" title="class or interface in org.hibernate" class="external-link"><code>cache mode</code></a> for this session.</div>
+<div class="block">Set the <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/CacheMode.html" title="class or interface in org.hibernate" class="external-link"><code>cache mode</code></a> for this session.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCacheRetrieveMode(jakarta.persistence.CacheRetrieveMode)" class="member-name-link">setCacheRetrieveMode</a><wbr>(jakarta.persistence.CacheRetrieveMode&nbsp;cacheRetrieveMode)</code></div>
@@ -560,9 +560,9 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <div class="block">Set the <code>flush mode</code> for this session.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setFlushMode(org.hibernate.FlushMode)" class="member-name-link">setFlushMode</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/FlushMode.html" title="class or interface in org.hibernate" class="external-link">FlushMode</a>&nbsp;flushMode)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setFlushMode(org.hibernate.FlushMode)" class="member-name-link">setFlushMode</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/FlushMode.html" title="class or interface in org.hibernate" class="external-link">FlushMode</a>&nbsp;flushMode)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Set the <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/FlushMode.html" title="class or interface in org.hibernate" class="external-link"><code>flush mode</code></a> for this session.</div>
+<div class="block">Set the <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/FlushMode.html" title="class or interface in org.hibernate" class="external-link"><code>flush mode</code></a> for this session.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setReadOnly(java.lang.Object,boolean)" class="member-name-link">setReadOnly</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entityOrProxy,
@@ -690,17 +690,17 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <h3>find</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">io.smallrye.mutiny.Uni&lt;T&gt;</span>&nbsp;<span class="element-name">find</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;entityClass,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</span></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Mutiny.Session.html#find(java.lang.Class,java.lang.Object,org.hibernate.LockMode)">Mutiny.Session</a></code></span></div>
 <div class="block">Asynchronously return the persistent instance of the given entity
- class with the given identifier, requesting the given <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link"><code>LockMode</code></a>.</div>
+ class with the given identifier, requesting the given <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link"><code>LockMode</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Mutiny.Session.html#find(java.lang.Class,java.lang.Object,org.hibernate.LockMode)">find</a></code>&nbsp;in interface&nbsp;<code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>entityClass</code> - The entity type</dd>
 <dd><code>id</code> - an identifier</dd>
-<dd><code>lockMode</code> - the requested <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link"><code>LockMode</code></a></dd>
+<dd><code>lockMode</code> - the requested <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link"><code>LockMode</code></a></dd>
 <dt>Returns:</dt>
 <dd>a persistent instance or null via a <code>Uni</code></dd>
 <dt>See Also:</dt>
@@ -758,7 +758,7 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/Session.html#findMultiple(java.lang.Class,java.util.List,jakarta.persistence.FindOption...)" title="class or interface in org.hibernate" class="external-link"><code>Session.findMultiple(Class, List, FindOption...)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Session.html#findMultiple(java.lang.Class,java.util.List,jakarta.persistence.FindOption...)" title="class or interface in org.hibernate" class="external-link"><code>Session.findMultiple(Class, List, FindOption...)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -825,7 +825,7 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/Session.html#isReadOnly(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>Session.isReadOnly(Object)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Session.html#isReadOnly(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>Session.isReadOnly(Object)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -906,7 +906,7 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/Hibernate.html#unproxy(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>Hibernate.unproxy(Object)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Hibernate.html#unproxy(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>Hibernate.unproxy(Object)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -960,7 +960,7 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/profile/FetchProfile.html" title="class or interface in org.hibernate.engine.profile" class="external-link"><code>for discussion of this feature</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/profile/FetchProfile.html" title="class or interface in org.hibernate.engine.profile" class="external-link"><code>for discussion of this feature</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1046,7 +1046,7 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
  </ul>
  <p>
  This operation cascades to associated instances if the association is
- mapped with <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/annotations/CascadeType.html#LOCK" title="class or interface in org.hibernate.annotations" class="external-link"><code>CascadeType.LOCK</code></a>.</div>
+ mapped with <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/annotations/CascadeType.html#LOCK" title="class or interface in org.hibernate.annotations" class="external-link"><code>CascadeType.LOCK</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Mutiny.Session.html#lock(java.lang.Object,jakarta.persistence.LockModeType)">lock</a></code>&nbsp;in interface&nbsp;<code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></dd>
@@ -1061,18 +1061,18 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <h3>createQuery</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="../Mutiny.Query.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Query</a>&lt;R&gt;</span>&nbsp;<span class="element-name">createQuery</span><wbr><span class="parameters">(jakarta.persistence.TypedQueryReference&lt;R&gt;&nbsp;typedQueryReference)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Mutiny.QueryProducer.html#createQuery(jakarta.persistence.TypedQueryReference)">Mutiny.QueryProducer</a></code></span></div>
-<div class="block">Create a typed <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/Query.html" title="class or interface in org.hibernate.query" class="external-link"><code>Query</code></a> instance for the given typed query reference.</div>
+<div class="block">Create a typed <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/Query.html" title="class or interface in org.hibernate.query" class="external-link"><code>Query</code></a> instance for the given typed query reference.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Mutiny.QueryProducer.html#createQuery(jakarta.persistence.TypedQueryReference)">createQuery</a></code>&nbsp;in interface&nbsp;<code><a href="../Mutiny.QueryProducer.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.QueryProducer</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>typedQueryReference</code> - the type query reference</dd>
 <dt>Returns:</dt>
-<dd>The <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/Query.html" title="class or interface in org.hibernate.query" class="external-link"><code>Query</code></a> instance for execution</dd>
+<dd>The <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/Query.html" title="class or interface in org.hibernate.query" class="external-link"><code>Query</code></a> instance for execution</dd>
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryProducer.html#createQuery(jakarta.persistence.TypedQueryReference)" title="class or interface in org.hibernate.query" class="external-link"><code>QueryProducer.createQuery(TypedQueryReference)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/QueryProducer.html#createQuery(jakarta.persistence.TypedQueryReference)" title="class or interface in org.hibernate.query" class="external-link"><code>QueryProducer.createQuery(TypedQueryReference)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1114,23 +1114,23 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <section class="detail" id="lock(java.lang.Object,org.hibernate.LockMode)">
 <h3>lock</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">lock</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</span></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Mutiny.Session.html#lock(java.lang.Object,org.hibernate.LockMode)">Mutiny.Session</a></code></span></div>
 <div class="block">Obtain the specified lock level upon the given object. For example,
  this operation may be used to:
 
  <ul>
- <li>perform a version check with <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/LockMode.html#PESSIMISTIC_READ" title="class or interface in org.hibernate" class="external-link"><code>LockMode.PESSIMISTIC_READ</code></a>,
- <li>upgrade to a pessimistic lock with <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/LockMode.html#PESSIMISTIC_WRITE" title="class or interface in org.hibernate" class="external-link"><code>LockMode.PESSIMISTIC_WRITE</code></a>,
- <li>force a version increment with <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/LockMode.html#PESSIMISTIC_FORCE_INCREMENT" title="class or interface in org.hibernate" class="external-link"><code>LockMode.PESSIMISTIC_FORCE_INCREMENT</code></a>,
+ <li>perform a version check with <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html#PESSIMISTIC_READ" title="class or interface in org.hibernate" class="external-link"><code>LockMode.PESSIMISTIC_READ</code></a>,
+ <li>upgrade to a pessimistic lock with <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html#PESSIMISTIC_WRITE" title="class or interface in org.hibernate" class="external-link"><code>LockMode.PESSIMISTIC_WRITE</code></a>,
+ <li>force a version increment with <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html#PESSIMISTIC_FORCE_INCREMENT" title="class or interface in org.hibernate" class="external-link"><code>LockMode.PESSIMISTIC_FORCE_INCREMENT</code></a>,
  <li>schedule a version check just before the end of the transaction with
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/LockMode.html#OPTIMISTIC" title="class or interface in org.hibernate" class="external-link"><code>LockMode.OPTIMISTIC</code></a>, or
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html#OPTIMISTIC" title="class or interface in org.hibernate" class="external-link"><code>LockMode.OPTIMISTIC</code></a>, or
  <li>schedule a version increment just before the end of the transaction
- with <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/LockMode.html#OPTIMISTIC_FORCE_INCREMENT" title="class or interface in org.hibernate" class="external-link"><code>LockMode.OPTIMISTIC_FORCE_INCREMENT</code></a>.
+ with <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html#OPTIMISTIC_FORCE_INCREMENT" title="class or interface in org.hibernate" class="external-link"><code>LockMode.OPTIMISTIC_FORCE_INCREMENT</code></a>.
  </ul>
  <p>
  This operation cascades to associated instances if the association is
- mapped with <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/annotations/CascadeType.html#LOCK" title="class or interface in org.hibernate.annotations" class="external-link"><code>CascadeType.LOCK</code></a>.</div>
+ mapped with <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/annotations/CascadeType.html#LOCK" title="class or interface in org.hibernate.annotations" class="external-link"><code>CascadeType.LOCK</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Mutiny.Session.html#lock(java.lang.Object,org.hibernate.LockMode)">lock</a></code>&nbsp;in interface&nbsp;<code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></dd>
@@ -1143,7 +1143,7 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <li>
 <section class="detail" id="find(java.lang.Class,org.hibernate.reactive.common.Identifier)">
 <h3>find</h3>
-<div class="member-signature"><span class="annotations"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/Incubating.html" title="class or interface in org.hibernate" class="external-link">@Incubating</a>
+<div class="member-signature"><span class="annotations"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Incubating.html" title="class or interface in org.hibernate" class="external-link">@Incubating</a>
 </span><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">io.smallrye.mutiny.Uni&lt;T&gt;</span>&nbsp;<span class="element-name">find</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;entityClass,
  <a href="../../common/Identifier.html" title="class in org.hibernate.reactive.common">Identifier</a>&lt;T&gt;&nbsp;naturalId)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Mutiny.Session.html#find(java.lang.Class,org.hibernate.reactive.common.Identifier)">Mutiny.Session</a></code></span></div>
@@ -1301,7 +1301,7 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <li>
 <section class="detail" id="getFlushMode()">
 <h3>getFlushMode</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/FlushMode.html" title="class or interface in org.hibernate" class="external-link">FlushMode</a></span>&nbsp;<span class="element-name">getFlushMode</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/FlushMode.html" title="class or interface in org.hibernate" class="external-link">FlushMode</a></span>&nbsp;<span class="element-name">getFlushMode</span>()</div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Mutiny.Session.html#getFlushMode()">Mutiny.Session</a></code></span></div>
 <div class="block">Get the current flush mode for this session.</div>
 <dl class="notes">
@@ -1315,7 +1315,7 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <li>
 <section class="detail" id="getLockMode(java.lang.Object)">
 <h3>getLockMode</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a></span>&nbsp;<span class="element-name">getLockMode</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a></span>&nbsp;<span class="element-name">getLockMode</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Mutiny.Session.html#getLockMode(java.lang.Object)">Mutiny.Session</a></code></span></div>
 <div class="block">Determine the current lock mode of the given entity.</div>
 <dl class="notes">
@@ -1425,16 +1425,16 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <li>
 <section class="detail" id="setFlushMode(org.hibernate.FlushMode)">
 <h3>setFlushMode</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></span>&nbsp;<span class="element-name">setFlushMode</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/FlushMode.html" title="class or interface in org.hibernate" class="external-link">FlushMode</a>&nbsp;flushMode)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></span>&nbsp;<span class="element-name">setFlushMode</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/FlushMode.html" title="class or interface in org.hibernate" class="external-link">FlushMode</a>&nbsp;flushMode)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Mutiny.Session.html#setFlushMode(org.hibernate.FlushMode)">Mutiny.Session</a></code></span></div>
-<div class="block">Set the <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/FlushMode.html" title="class or interface in org.hibernate" class="external-link"><code>flush mode</code></a> for this session.
+<div class="block">Set the <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/FlushMode.html" title="class or interface in org.hibernate" class="external-link"><code>flush mode</code></a> for this session.
  <p>
  The flush mode determines the points at which the session is flushed.
  <i>Flushing</i> is the process of synchronizing the underlying persistent
  store with persistable state held in memory.
  <p>
  For a logically "read only" session, it is reasonable to set the session's
- flush mode to <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/FlushMode.html#MANUAL" title="class or interface in org.hibernate" class="external-link"><code>FlushMode.MANUAL</code></a> at the start of the session (in
+ flush mode to <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/FlushMode.html#MANUAL" title="class or interface in org.hibernate" class="external-link"><code>FlushMode.MANUAL</code></a> at the start of the session (in
  order to achieve some extra performance).</div>
 <dl class="notes">
 <dt>Specified by:</dt>
@@ -1477,9 +1477,9 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <li>
 <section class="detail" id="setCacheMode(org.hibernate.CacheMode)">
 <h3>setCacheMode</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></span>&nbsp;<span class="element-name">setCacheMode</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/CacheMode.html" title="class or interface in org.hibernate" class="external-link">CacheMode</a>&nbsp;cacheMode)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></span>&nbsp;<span class="element-name">setCacheMode</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/CacheMode.html" title="class or interface in org.hibernate" class="external-link">CacheMode</a>&nbsp;cacheMode)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Mutiny.Session.html#setCacheMode(org.hibernate.CacheMode)">Mutiny.Session</a></code></span></div>
-<div class="block">Set the <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/CacheMode.html" title="class or interface in org.hibernate" class="external-link"><code>cache mode</code></a> for this session.
+<div class="block">Set the <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/CacheMode.html" title="class or interface in org.hibernate" class="external-link"><code>cache mode</code></a> for this session.
  <p>
  The cache mode determines the manner in which this session interacts
  with the second level cache.</div>
@@ -1494,7 +1494,7 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <li>
 <section class="detail" id="enableFilter(java.lang.String)">
 <h3>enableFilter</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/Filter.html" title="class or interface in org.hibernate" class="external-link">Filter</a></span>&nbsp;<span class="element-name">enableFilter</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filterName)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Filter.html" title="class or interface in org.hibernate" class="external-link">Filter</a></span>&nbsp;<span class="element-name">enableFilter</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filterName)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Mutiny.Session.html#enableFilter(java.lang.String)">Mutiny.Session</a></code></span></div>
 <div class="block">Enable the named filter for this session.</div>
 <dl class="notes">
@@ -1510,7 +1510,7 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <li>
 <section class="detail" id="createMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsert)">
 <h3>createMutationQuery</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></span>&nbsp;<span class="element-name">createMutationQuery</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/criteria/JpaCriteriaInsert.html" title="class or interface in org.hibernate.query.criteria" class="external-link">JpaCriteriaInsert</a>&lt;?&gt;&nbsp;insert)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.MutationQuery</a></span>&nbsp;<span class="element-name">createMutationQuery</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/criteria/JpaCriteriaInsert.html" title="class or interface in org.hibernate.query.criteria" class="external-link">JpaCriteriaInsert</a>&lt;?&gt;&nbsp;insert)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Mutiny.QueryProducer.html#createMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsert)">Mutiny.QueryProducer</a></code></span></div>
 <div class="block">Create a <a href="../Mutiny.MutationQuery.html" title="interface in org.hibernate.reactive.mutiny"><code>Mutiny.MutationQuery</code></a> from the given insert select criteria tree</div>
 <dl class="notes">
@@ -1523,7 +1523,7 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryProducer.html#createMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsert)" title="class or interface in org.hibernate.query" class="external-link"><code>QueryProducer.createMutationQuery(JpaCriteriaInsert)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/QueryProducer.html#createMutationQuery(org.hibernate.query.criteria.JpaCriteriaInsert)" title="class or interface in org.hibernate.query" class="external-link"><code>QueryProducer.createMutationQuery(JpaCriteriaInsert)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1574,7 +1574,7 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/Session.html#setReadOnly(java.lang.Object,boolean)" title="class or interface in org.hibernate" class="external-link"><code>Session.setReadOnly(Object, boolean)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Session.html#setReadOnly(java.lang.Object,boolean)" title="class or interface in org.hibernate" class="external-link"><code>Session.setReadOnly(Object, boolean)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1626,7 +1626,7 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryProducer.html#createMutationQuery(jakarta.persistence.criteria.CriteriaDelete)" title="class or interface in org.hibernate.query" class="external-link"><code>QueryProducer.createMutationQuery(CriteriaDelete)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/QueryProducer.html#createMutationQuery(jakarta.persistence.criteria.CriteriaDelete)" title="class or interface in org.hibernate.query" class="external-link"><code>QueryProducer.createMutationQuery(CriteriaDelete)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1649,10 +1649,10 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <section class="detail" id="refresh(java.lang.Object,org.hibernate.LockMode)">
 <h3>refresh</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">io.smallrye.mutiny.Uni&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">refresh</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</span></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Mutiny.Session.html#refresh(java.lang.Object,org.hibernate.LockMode)">Mutiny.Session</a></code></span></div>
 <div class="block">Re-read the state of the given instance from the underlying database,
- requesting the given <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link"><code>LockMode</code></a>.</div>
+ requesting the given <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link"><code>LockMode</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Mutiny.Session.html#refresh(java.lang.Object,org.hibernate.LockMode)">refresh</a></code>&nbsp;in interface&nbsp;<code><a href="../Mutiny.Session.html" title="interface in org.hibernate.reactive.mutiny">Mutiny.Session</a></code></dd>
@@ -1766,7 +1766,7 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <li>
 <section class="detail" id="getCacheMode()">
 <h3>getCacheMode</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/CacheMode.html" title="class or interface in org.hibernate" class="external-link">CacheMode</a></span>&nbsp;<span class="element-name">getCacheMode</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/CacheMode.html" title="class or interface in org.hibernate" class="external-link">CacheMode</a></span>&nbsp;<span class="element-name">getCacheMode</span>()</div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Mutiny.Session.html#getCacheMode()">Mutiny.Session</a></code></span></div>
 <div class="block">Get the current cache mode.</div>
 <dl class="notes">
@@ -1852,7 +1852,7 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/QueryProducer.html#createMutationQuery(jakarta.persistence.criteria.CriteriaUpdate)" title="class or interface in org.hibernate.query" class="external-link"><code>QueryProducer.createMutationQuery(CriteriaUpdate)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/QueryProducer.html#createMutationQuery(jakarta.persistence.criteria.CriteriaUpdate)" title="class or interface in org.hibernate.query" class="external-link"><code>QueryProducer.createMutationQuery(CriteriaUpdate)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1888,7 +1888,7 @@ T&gt;&nbsp;io.smallrye.mutiny.Uni&lt;T&gt;</code></div>
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/Session.html#setDefaultReadOnly(boolean)" title="class or interface in org.hibernate" class="external-link"><code>Session.setDefaultReadOnly(boolean)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Session.html#setDefaultReadOnly(boolean)" title="class or interface in org.hibernate" class="external-link"><code>Session.setDefaultReadOnly(boolean)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1991,7 +1991,7 @@ T&gt;</span>&nbsp;<span class="return-type">io.smallrye.mutiny.Uni&lt;T&gt;</spa
 <li>
 <section class="detail" id="getEnabledFilter(java.lang.String)">
 <h3>getEnabledFilter</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/Filter.html" title="class or interface in org.hibernate" class="external-link">Filter</a></span>&nbsp;<span class="element-name">getEnabledFilter</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filterName)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Filter.html" title="class or interface in org.hibernate" class="external-link">Filter</a></span>&nbsp;<span class="element-name">getEnabledFilter</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filterName)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Mutiny.Session.html#getEnabledFilter(java.lang.String)">Mutiny.Session</a></code></span></div>
 <div class="block">Retrieve a currently enabled filter by name.</div>
 <dl class="notes">
@@ -2049,7 +2049,7 @@ T&gt;</span>&nbsp;<span class="return-type">io.smallrye.mutiny.Uni&lt;T&gt;</spa
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/profile/FetchProfile.html" title="class or interface in org.hibernate.engine.profile" class="external-link"><code>for discussion of this feature</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/profile/FetchProfile.html" title="class or interface in org.hibernate.engine.profile" class="external-link"><code>for discussion of this feature</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -2165,7 +2165,7 @@ T&gt;</span>&nbsp;<span class="return-type">io.smallrye.mutiny.Uni&lt;T&gt;</spa
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/profile/FetchProfile.html" title="class or interface in org.hibernate.engine.profile" class="external-link"><code>for discussion of this feature</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/profile/FetchProfile.html" title="class or interface in org.hibernate.engine.profile" class="external-link"><code>for discussion of this feature</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -2286,7 +2286,7 @@ T&gt;</span>&nbsp;<span class="return-type">io.smallrye.mutiny.Uni&lt;T&gt;</spa
 <ul class="see-list-long">
 <li><a href="../Mutiny.html#fetch(T)"><code>Mutiny.fetch(Object)</code></a></li>
 <li><a href="../Mutiny.Session.html#getReference(java.lang.Class,java.lang.Object)"><code>Mutiny.Session.getReference(Class, Object)</code></a></li>
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/Hibernate.html#initialize(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>Hibernate.initialize(Object)</code></a></li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Hibernate.html#initialize(java.lang.Object)" title="class or interface in org.hibernate" class="external-link"><code>Hibernate.initialize(Object)</code></a></li>
 </ul>
 </dd>
 </dl>

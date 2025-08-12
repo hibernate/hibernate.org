@@ -75,12 +75,12 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Superinterfaces:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/graph/DomainResultAssembler.html" title="class or interface in org.hibernate.sql.results.graph" class="external-link">DomainResultAssembler</a>&lt;J&gt;</code></dd>
+<dd><code>org.hibernate.sql.results.graph.DomainResultAssembler&lt;J&gt;</code></dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="annotations"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/Incubating.html" title="class or interface in org.hibernate" class="external-link">@Incubating</a>
+<div class="type-signature"><span class="annotations"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Incubating.html" title="class or interface in org.hibernate" class="external-link">@Incubating</a>
 </span><span class="modifiers">public interface </span><span class="element-name type-name-label">ReactiveDomainResultsAssembler&lt;J&gt;</span><span class="extends-implements">
-extends <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/graph/DomainResultAssembler.html" title="class or interface in org.hibernate.sql.results.graph" class="external-link">DomainResultAssembler</a>&lt;J&gt;</span></div>
+extends org.hibernate.sql.results.graph.DomainResultAssembler&lt;J&gt;</span></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -98,18 +98,18 @@ extends <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="ReactiveDomainResultsAssembler.html" title="type parameter in ReactiveDomainResultsAssembler">J</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#reactiveAssemble(org.hibernate.reactive.sql.exec.spi.ReactiveRowProcessingState)" class="member-name-link">reactiveAssemble</a><wbr>(<a href="../../exec/spi/ReactiveRowProcessingState.html" title="class in org.hibernate.reactive.sql.exec.spi">ReactiveRowProcessingState</a>&nbsp;rowProcessingState)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Convenience form of <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/graph/DomainResultAssembler.html#assemble(org.hibernate.sql.results.jdbc.spi.RowProcessingState)" title="class or interface in org.hibernate.sql.results.graph" class="external-link"><code>DomainResultAssembler.assemble(RowProcessingState)</code></a></div>
+<div class="block">Convenience form of <code>DomainResultAssembler.assemble(RowProcessingState)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="ReactiveDomainResultsAssembler.html" title="type parameter in ReactiveDomainResultsAssembler">J</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reactiveAssemble(org.hibernate.reactive.sql.exec.spi.ReactiveRowProcessingState,org.hibernate.sql.results.jdbc.spi.JdbcValuesSourceProcessingOptions)" class="member-name-link">reactiveAssemble</a><wbr>(<a href="../../exec/spi/ReactiveRowProcessingState.html" title="class in org.hibernate.reactive.sql.exec.spi">ReactiveRowProcessingState</a>&nbsp;rowProcessingState,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/JdbcValuesSourceProcessingOptions.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">JdbcValuesSourceProcessingOptions</a>&nbsp;options)</code></div>
+ org.hibernate.sql.results.jdbc.spi.JdbcValuesSourceProcessingOptions&nbsp;options)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-org.hibernate.sql.results.graph.DomainResultAssembler">Methods inherited from interface&nbsp;org.hibernate.sql.results.graph.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/graph/DomainResultAssembler.html" title="class or interface in org.hibernate.sql.results.graph" class="external-link">DomainResultAssembler</a></h3>
-<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/graph/DomainResultAssembler.html#assemble(org.hibernate.sql.results.jdbc.spi.RowProcessingState)" title="class or interface in org.hibernate.sql.results.graph" class="external-link">assemble</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/graph/DomainResultAssembler.html#forEachResultAssembler(java.util.function.BiConsumer,X)" title="class or interface in org.hibernate.sql.results.graph" class="external-link">forEachResultAssembler</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/graph/DomainResultAssembler.html#getAssembledJavaType()" title="class or interface in org.hibernate.sql.results.graph" class="external-link">getAssembledJavaType</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/graph/DomainResultAssembler.html#getInitializer()" title="class or interface in org.hibernate.sql.results.graph" class="external-link">getInitializer</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/graph/DomainResultAssembler.html#resolveState(org.hibernate.sql.results.jdbc.spi.RowProcessingState)" title="class or interface in org.hibernate.sql.results.graph" class="external-link">resolveState</a></code></div>
+<h3 id="methods-inherited-from-class-org.hibernate.sql.results.graph.DomainResultAssembler">Methods inherited from interface&nbsp;org.hibernate.sql.results.graph.DomainResultAssembler</h3>
+<code>assemble, forEachResultAssembler, getAssembledJavaType, getInitializer, resolveState</code></div>
 </section>
 </li>
 </ul>
@@ -125,14 +125,14 @@ extends <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate
 <section class="detail" id="reactiveAssemble(org.hibernate.reactive.sql.exec.spi.ReactiveRowProcessingState,org.hibernate.sql.results.jdbc.spi.JdbcValuesSourceProcessingOptions)">
 <h3>reactiveAssemble</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="ReactiveDomainResultsAssembler.html" title="type parameter in ReactiveDomainResultsAssembler">J</a>&gt;</span>&nbsp;<span class="element-name">reactiveAssemble</span><wbr><span class="parameters">(<a href="../../exec/spi/ReactiveRowProcessingState.html" title="class in org.hibernate.reactive.sql.exec.spi">ReactiveRowProcessingState</a>&nbsp;rowProcessingState,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/JdbcValuesSourceProcessingOptions.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">JdbcValuesSourceProcessingOptions</a>&nbsp;options)</span></div>
+ org.hibernate.sql.results.jdbc.spi.JdbcValuesSourceProcessingOptions&nbsp;options)</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="reactiveAssemble(org.hibernate.reactive.sql.exec.spi.ReactiveRowProcessingState)">
 <h3>reactiveAssemble</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="ReactiveDomainResultsAssembler.html" title="type parameter in ReactiveDomainResultsAssembler">J</a>&gt;</span>&nbsp;<span class="element-name">reactiveAssemble</span><wbr><span class="parameters">(<a href="../../exec/spi/ReactiveRowProcessingState.html" title="class in org.hibernate.reactive.sql.exec.spi">ReactiveRowProcessingState</a>&nbsp;rowProcessingState)</span></div>
-<div class="block">Convenience form of <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/graph/DomainResultAssembler.html#assemble(org.hibernate.sql.results.jdbc.spi.RowProcessingState)" title="class or interface in org.hibernate.sql.results.graph" class="external-link"><code>DomainResultAssembler.assemble(RowProcessingState)</code></a></div>
+<div class="block">Convenience form of <code>DomainResultAssembler.assemble(RowProcessingState)</code></div>
 </section>
 </li>
 </ul>

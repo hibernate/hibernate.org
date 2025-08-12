@@ -78,12 +78,12 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></code>, <code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/query/spi/NativeQueryInterpreter.html" title="class or interface in org.hibernate.engine.query.spi" class="external-link">NativeQueryInterpreter</a></code>, <code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/service/Service.html" title="class or interface in org.hibernate.service" class="external-link">Service</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></code>, <code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/query/spi/NativeQueryInterpreter.html" title="class or interface in org.hibernate.engine.query.spi" class="external-link">NativeQueryInterpreter</a></code>, <code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/service/Service.html" title="class or interface in org.hibernate.service" class="external-link">Service</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">ReactiveNativeQueryInterpreter</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/query/spi/NativeQueryInterpreter.html" title="class or interface in org.hibernate.engine.query.spi" class="external-link">NativeQueryInterpreter</a></span></div>
+implements <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/query/spi/NativeQueryInterpreter.html" title="class or interface in org.hibernate.engine.query.spi" class="external-link">NativeQueryInterpreter</a></span></div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -134,13 +134,13 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;R&gt;&nbsp;<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sql/spi/NativeSelectQueryPlan.html" title="class or interface in org.hibernate.query.sql.spi" class="external-link">NativeSelectQueryPlan</a>&lt;R&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createQueryPlan(org.hibernate.query.sql.spi.NativeSelectQueryDefinition,org.hibernate.engine.spi.SessionFactoryImplementor)" class="member-name-link">createQueryPlan</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sql/spi/NativeSelectQueryDefinition.html" title="class or interface in org.hibernate.query.sql.spi" class="external-link">NativeSelectQueryDefinition</a>&lt;R&gt;&nbsp;queryDefinition,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a>&nbsp;sessionFactory)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;R&gt;&nbsp;org.hibernate.query.sql.spi.NativeSelectQueryPlan&lt;R&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createQueryPlan(org.hibernate.query.sql.spi.NativeSelectQueryDefinition,org.hibernate.engine.spi.SessionFactoryImplementor)" class="member-name-link">createQueryPlan</a><wbr>(org.hibernate.query.sql.spi.NativeSelectQueryDefinition&lt;R&gt;&nbsp;queryDefinition,
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a>&nbsp;sessionFactory)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#recognizeParameters(java.lang.String,org.hibernate.query.sql.spi.ParameterRecognizer)" class="member-name-link">recognizeParameters</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;nativeQuery,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sql/spi/ParameterRecognizer.html" title="class or interface in org.hibernate.query.sql.spi" class="external-link">ParameterRecognizer</a>&nbsp;recognizer)</code></div>
+ org.hibernate.query.sql.spi.ParameterRecognizer&nbsp;recognizer)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
@@ -191,21 +191,22 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <section class="detail" id="recognizeParameters(java.lang.String,org.hibernate.query.sql.spi.ParameterRecognizer)">
 <h3>recognizeParameters</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">recognizeParameters</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;nativeQuery,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sql/spi/ParameterRecognizer.html" title="class or interface in org.hibernate.query.sql.spi" class="external-link">ParameterRecognizer</a>&nbsp;recognizer)</span></div>
+ org.hibernate.query.sql.spi.ParameterRecognizer&nbsp;recognizer)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/query/spi/NativeQueryInterpreter.html#recognizeParameters(java.lang.String,org.hibernate.query.sql.spi.ParameterRecognizer)" title="class or interface in org.hibernate.engine.query.spi" class="external-link">recognizeParameters</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/query/spi/NativeQueryInterpreter.html" title="class or interface in org.hibernate.engine.query.spi" class="external-link">NativeQueryInterpreter</a></code></dd>
+<dd><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/query/spi/NativeQueryInterpreter.html#recognizeParameters(java.lang.String,org.hibernate.query.sql.spi.ParameterRecognizer)" title="class or interface in org.hibernate.engine.query.spi" class="external-link">recognizeParameters</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/query/spi/NativeQueryInterpreter.html" title="class or interface in org.hibernate.engine.query.spi" class="external-link">NativeQueryInterpreter</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="createQueryPlan(org.hibernate.query.sql.spi.NativeSelectQueryDefinition,org.hibernate.engine.spi.SessionFactoryImplementor)">
 <h3>createQueryPlan</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sql/spi/NativeSelectQueryPlan.html" title="class or interface in org.hibernate.query.sql.spi" class="external-link">NativeSelectQueryPlan</a>&lt;R&gt;</span>&nbsp;<span class="element-name">createQueryPlan</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sql/spi/NativeSelectQueryDefinition.html" title="class or interface in org.hibernate.query.sql.spi" class="external-link">NativeSelectQueryDefinition</a>&lt;R&gt;&nbsp;queryDefinition,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a>&nbsp;sessionFactory)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;R&gt;</span>
+<span class="return-type">org.hibernate.query.sql.spi.NativeSelectQueryPlan&lt;R&gt;</span>&nbsp;<span class="element-name">createQueryPlan</span><wbr><span class="parameters">(org.hibernate.query.sql.spi.NativeSelectQueryDefinition&lt;R&gt;&nbsp;queryDefinition,
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a>&nbsp;sessionFactory)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/query/spi/NativeQueryInterpreter.html#createQueryPlan(org.hibernate.query.sql.spi.NativeSelectQueryDefinition,org.hibernate.engine.spi.SessionFactoryImplementor)" title="class or interface in org.hibernate.engine.query.spi" class="external-link">createQueryPlan</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/query/spi/NativeQueryInterpreter.html" title="class or interface in org.hibernate.engine.query.spi" class="external-link">NativeQueryInterpreter</a></code></dd>
+<dd><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/query/spi/NativeQueryInterpreter.html#createQueryPlan(org.hibernate.query.sql.spi.NativeSelectQueryDefinition,org.hibernate.engine.spi.SessionFactoryImplementor)" title="class or interface in org.hibernate.engine.query.spi" class="external-link">createQueryPlan</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/query/spi/NativeQueryInterpreter.html" title="class or interface in org.hibernate.engine.query.spi" class="external-link">NativeQueryInterpreter</a></code></dd>
 </dl>
 </section>
 </li>

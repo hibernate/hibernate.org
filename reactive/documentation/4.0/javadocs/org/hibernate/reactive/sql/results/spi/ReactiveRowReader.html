@@ -75,11 +75,11 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Superinterfaces:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/spi/RowReader.html" title="class or interface in org.hibernate.sql.results.spi" class="external-link">RowReader</a>&lt;R&gt;</code></dd>
+<dd><code>org.hibernate.sql.results.spi.RowReader&lt;R&gt;</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">ReactiveRowReader&lt;R&gt;</span><span class="extends-implements">
-extends <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/spi/RowReader.html" title="class or interface in org.hibernate.sql.results.spi" class="external-link">RowReader</a>&lt;R&gt;</span></div>
+extends org.hibernate.sql.results.spi.RowReader&lt;R&gt;</span></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -96,14 +96,14 @@ extends <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="ReactiveRowReader.html" title="type parameter in ReactiveRowReader">R</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reactiveReadRow(org.hibernate.reactive.sql.exec.spi.ReactiveRowProcessingState,org.hibernate.sql.results.jdbc.spi.JdbcValuesSourceProcessingOptions)" class="member-name-link">reactiveReadRow</a><wbr>(<a href="../../exec/spi/ReactiveRowProcessingState.html" title="class in org.hibernate.reactive.sql.exec.spi">ReactiveRowProcessingState</a>&nbsp;processingState,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/JdbcValuesSourceProcessingOptions.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">JdbcValuesSourceProcessingOptions</a>&nbsp;options)</code></div>
+ org.hibernate.sql.results.jdbc.spi.JdbcValuesSourceProcessingOptions&nbsp;options)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-org.hibernate.sql.results.spi.RowReader">Methods inherited from interface&nbsp;org.hibernate.sql.results.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/spi/RowReader.html" title="class or interface in org.hibernate.sql.results.spi" class="external-link">RowReader</a></h3>
-<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/spi/RowReader.html#finishUp(org.hibernate.sql.results.jdbc.spi.RowProcessingState)" title="class or interface in org.hibernate.sql.results.spi" class="external-link">finishUp</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/spi/RowReader.html#getDomainResultResultJavaType()" title="class or interface in org.hibernate.sql.results.spi" class="external-link">getDomainResultResultJavaType</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/spi/RowReader.html#getInitializerCount()" title="class or interface in org.hibernate.sql.results.spi" class="external-link">getInitializerCount</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/spi/RowReader.html#getResultJavaTypes()" title="class or interface in org.hibernate.sql.results.spi" class="external-link">getResultJavaTypes</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/spi/RowReader.html#hasCollectionInitializers()" title="class or interface in org.hibernate.sql.results.spi" class="external-link">hasCollectionInitializers</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/spi/RowReader.html#readRow(org.hibernate.sql.results.jdbc.spi.RowProcessingState)" title="class or interface in org.hibernate.sql.results.spi" class="external-link">readRow</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/spi/RowReader.html#resolveSingleResultEntityKey(org.hibernate.sql.results.jdbc.spi.RowProcessingState)" title="class or interface in org.hibernate.sql.results.spi" class="external-link">resolveSingleResultEntityKey</a>, <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/spi/RowReader.html#startLoading(org.hibernate.sql.results.jdbc.spi.RowProcessingState)" title="class or interface in org.hibernate.sql.results.spi" class="external-link">startLoading</a></code></div>
+<h3 id="methods-inherited-from-class-org.hibernate.sql.results.spi.RowReader">Methods inherited from interface&nbsp;org.hibernate.sql.results.spi.RowReader</h3>
+<code>finishUp, getDomainResultResultJavaType, getInitializerCount, getResultJavaTypes, hasCollectionInitializers, readRow, resolveSingleResultEntityKey, startLoading</code></div>
 </section>
 </li>
 </ul>
@@ -119,7 +119,7 @@ extends <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate
 <section class="detail" id="reactiveReadRow(org.hibernate.reactive.sql.exec.spi.ReactiveRowProcessingState,org.hibernate.sql.results.jdbc.spi.JdbcValuesSourceProcessingOptions)">
 <h3>reactiveReadRow</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="ReactiveRowReader.html" title="type parameter in ReactiveRowReader">R</a>&gt;</span>&nbsp;<span class="element-name">reactiveReadRow</span><wbr><span class="parameters">(<a href="../../exec/spi/ReactiveRowProcessingState.html" title="class in org.hibernate.reactive.sql.exec.spi">ReactiveRowProcessingState</a>&nbsp;processingState,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/sql/results/jdbc/spi/JdbcValuesSourceProcessingOptions.html" title="class or interface in org.hibernate.sql.results.jdbc.spi" class="external-link">JdbcValuesSourceProcessingOptions</a>&nbsp;options)</span></div>
+ org.hibernate.sql.results.jdbc.spi.JdbcValuesSourceProcessingOptions&nbsp;options)</span></div>
 </section>
 </li>
 </ul>

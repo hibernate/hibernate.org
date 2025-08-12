@@ -58,42 +58,42 @@ loadScripts(document, 'script');</script>
 <section class="hierarchy">
 <h2 title="Interface Hierarchy">Interface Hierarchy</h2>
 <ul>
-<li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/Loader.html" class="type-name-link external-link" title="class or interface in org.hibernate.loader.ast.spi">Loader</a>
+<li class="circle">org.hibernate.loader.ast.spi.Loader
 <ul>
-<li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/CollectionLoader.html" class="type-name-link external-link" title="class or interface in org.hibernate.loader.ast.spi">CollectionLoader</a>
+<li class="circle">org.hibernate.loader.ast.spi.CollectionLoader
 <ul>
-<li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/CollectionBatchLoader.html" class="type-name-link external-link" title="class or interface in org.hibernate.loader.ast.spi">CollectionBatchLoader</a> (also extends org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/BatchLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">BatchLoader</a>)
+<li class="circle">org.hibernate.loader.ast.spi.CollectionBatchLoader (also extends org.hibernate.loader.ast.spi.BatchLoader)
 <ul>
-<li class="circle">org.hibernate.reactive.loader.ast.spi.<a href="ReactiveCollectionBatchLoader.html" class="type-name-link" title="interface in org.hibernate.reactive.loader.ast.spi">ReactiveCollectionBatchLoader</a> (also extends org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/BatchLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">BatchLoader</a>, org.hibernate.reactive.loader.ast.internal.ReactiveCollectionLoader)</li>
+<li class="circle">org.hibernate.reactive.loader.ast.spi.<a href="ReactiveCollectionBatchLoader.html" class="type-name-link" title="interface in org.hibernate.reactive.loader.ast.spi">ReactiveCollectionBatchLoader</a> (also extends org.hibernate.loader.ast.spi.BatchLoader, org.hibernate.reactive.loader.ast.internal.ReactiveCollectionLoader)</li>
 </ul>
 </li>
 <li class="circle">org.hibernate.reactive.loader.ast.internal.ReactiveCollectionLoader
 <ul>
-<li class="circle">org.hibernate.reactive.loader.ast.spi.<a href="ReactiveCollectionBatchLoader.html" class="type-name-link" title="interface in org.hibernate.reactive.loader.ast.spi">ReactiveCollectionBatchLoader</a> (also extends org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/BatchLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">BatchLoader</a>, org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/CollectionBatchLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">CollectionBatchLoader</a>)</li>
+<li class="circle">org.hibernate.reactive.loader.ast.spi.<a href="ReactiveCollectionBatchLoader.html" class="type-name-link" title="interface in org.hibernate.reactive.loader.ast.spi">ReactiveCollectionBatchLoader</a> (also extends org.hibernate.loader.ast.spi.BatchLoader, org.hibernate.loader.ast.spi.CollectionBatchLoader)</li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/EntityLoader.html" class="type-name-link external-link" title="class or interface in org.hibernate.loader.ast.spi">EntityLoader</a>
+<li class="circle">org.hibernate.loader.ast.spi.EntityLoader
 <ul>
-<li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/EntityMultiLoader.html" class="type-name-link external-link" title="class or interface in org.hibernate.loader.ast.spi">EntityMultiLoader</a>&lt;T&gt; (also extends org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/MultiKeyLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">MultiKeyLoader</a>)
+<li class="circle">org.hibernate.loader.ast.spi.EntityMultiLoader&lt;T&gt; (also extends org.hibernate.loader.ast.spi.MultiKeyLoader)
 <ul>
-<li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/MultiIdEntityLoader.html" class="type-name-link external-link" title="class or interface in org.hibernate.loader.ast.spi">MultiIdEntityLoader</a>&lt;T&gt;
+<li class="circle">org.hibernate.loader.ast.spi.MultiIdEntityLoader&lt;T&gt;
 <ul>
 <li class="circle">org.hibernate.reactive.loader.ast.spi.<a href="ReactiveMultiIdEntityLoader.html" class="type-name-link" title="interface in org.hibernate.reactive.loader.ast.spi">ReactiveMultiIdEntityLoader</a>&lt;T&gt;</li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/NaturalIdLoader.html" class="type-name-link external-link" title="class or interface in org.hibernate.loader.ast.spi">NaturalIdLoader</a>&lt;T&gt; (also extends org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/MultiKeyLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">MultiKeyLoader</a>)
+<li class="circle">org.hibernate.loader.ast.spi.NaturalIdLoader&lt;T&gt; (also extends org.hibernate.loader.ast.spi.MultiKeyLoader)
 <ul>
 <li class="circle">org.hibernate.reactive.loader.ast.spi.<a href="ReactiveNaturalIdLoader.html" class="type-name-link" title="interface in org.hibernate.reactive.loader.ast.spi">ReactiveNaturalIdLoader</a>&lt;T&gt;</li>
 </ul>
 </li>
-<li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/SingleEntityLoader.html" class="type-name-link external-link" title="class or interface in org.hibernate.loader.ast.spi">SingleEntityLoader</a>&lt;T&gt;
+<li class="circle">org.hibernate.loader.ast.spi.SingleEntityLoader&lt;T&gt;
 <ul>
 <li class="circle">org.hibernate.reactive.loader.ast.spi.<a href="ReactiveSingleUniqueKeyEntityLoader.html" class="type-name-link" title="interface in org.hibernate.reactive.loader.ast.spi">ReactiveSingleUniqueKeyEntityLoader</a>&lt;T&gt;</li>
-<li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/SingleIdEntityLoader.html" class="type-name-link external-link" title="class or interface in org.hibernate.loader.ast.spi">SingleIdEntityLoader</a>&lt;T&gt;
+<li class="circle">org.hibernate.loader.ast.spi.SingleIdEntityLoader&lt;T&gt;
 <ul>
 <li class="circle">org.hibernate.reactive.loader.ast.spi.<a href="ReactiveSingleIdEntityLoader.html" class="type-name-link" title="interface in org.hibernate.reactive.loader.ast.spi">ReactiveSingleIdEntityLoader</a>&lt;T&gt;</li>
 </ul>
@@ -102,28 +102,28 @@ loadScripts(document, 'script');</script>
 </li>
 </ul>
 </li>
-<li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/MultiKeyLoader.html" class="type-name-link external-link" title="class or interface in org.hibernate.loader.ast.spi">MultiKeyLoader</a>
+<li class="circle">org.hibernate.loader.ast.spi.MultiKeyLoader
 <ul>
-<li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/BatchLoader.html" class="type-name-link external-link" title="class or interface in org.hibernate.loader.ast.spi">BatchLoader</a>
+<li class="circle">org.hibernate.loader.ast.spi.BatchLoader
 <ul>
-<li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/CollectionBatchLoader.html" class="type-name-link external-link" title="class or interface in org.hibernate.loader.ast.spi">CollectionBatchLoader</a> (also extends org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/CollectionLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">CollectionLoader</a>)
+<li class="circle">org.hibernate.loader.ast.spi.CollectionBatchLoader (also extends org.hibernate.loader.ast.spi.CollectionLoader)
 <ul>
-<li class="circle">org.hibernate.reactive.loader.ast.spi.<a href="ReactiveCollectionBatchLoader.html" class="type-name-link" title="interface in org.hibernate.reactive.loader.ast.spi">ReactiveCollectionBatchLoader</a> (also extends org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/BatchLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">BatchLoader</a>, org.hibernate.reactive.loader.ast.internal.ReactiveCollectionLoader)</li>
+<li class="circle">org.hibernate.reactive.loader.ast.spi.<a href="ReactiveCollectionBatchLoader.html" class="type-name-link" title="interface in org.hibernate.reactive.loader.ast.spi">ReactiveCollectionBatchLoader</a> (also extends org.hibernate.loader.ast.spi.BatchLoader, org.hibernate.reactive.loader.ast.internal.ReactiveCollectionLoader)</li>
 </ul>
 </li>
-<li class="circle">org.hibernate.reactive.loader.ast.spi.<a href="ReactiveCollectionBatchLoader.html" class="type-name-link" title="interface in org.hibernate.reactive.loader.ast.spi">ReactiveCollectionBatchLoader</a> (also extends org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/CollectionBatchLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">CollectionBatchLoader</a>, org.hibernate.reactive.loader.ast.internal.ReactiveCollectionLoader)</li>
+<li class="circle">org.hibernate.reactive.loader.ast.spi.<a href="ReactiveCollectionBatchLoader.html" class="type-name-link" title="interface in org.hibernate.reactive.loader.ast.spi">ReactiveCollectionBatchLoader</a> (also extends org.hibernate.loader.ast.spi.CollectionBatchLoader, org.hibernate.reactive.loader.ast.internal.ReactiveCollectionLoader)</li>
 </ul>
 </li>
-<li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/EntityMultiLoader.html" class="type-name-link external-link" title="class or interface in org.hibernate.loader.ast.spi">EntityMultiLoader</a>&lt;T&gt; (also extends org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/EntityLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">EntityLoader</a>)
+<li class="circle">org.hibernate.loader.ast.spi.EntityMultiLoader&lt;T&gt; (also extends org.hibernate.loader.ast.spi.EntityLoader)
 <ul>
-<li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/MultiIdEntityLoader.html" class="type-name-link external-link" title="class or interface in org.hibernate.loader.ast.spi">MultiIdEntityLoader</a>&lt;T&gt;
+<li class="circle">org.hibernate.loader.ast.spi.MultiIdEntityLoader&lt;T&gt;
 <ul>
 <li class="circle">org.hibernate.reactive.loader.ast.spi.<a href="ReactiveMultiIdEntityLoader.html" class="type-name-link" title="interface in org.hibernate.reactive.loader.ast.spi">ReactiveMultiIdEntityLoader</a>&lt;T&gt;</li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="circle">org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/NaturalIdLoader.html" class="type-name-link external-link" title="class or interface in org.hibernate.loader.ast.spi">NaturalIdLoader</a>&lt;T&gt; (also extends org.hibernate.loader.ast.spi.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/loader/ast/spi/EntityLoader.html" title="class or interface in org.hibernate.loader.ast.spi" class="external-link">EntityLoader</a>)
+<li class="circle">org.hibernate.loader.ast.spi.NaturalIdLoader&lt;T&gt; (also extends org.hibernate.loader.ast.spi.EntityLoader)
 <ul>
 <li class="circle">org.hibernate.reactive.loader.ast.spi.<a href="ReactiveNaturalIdLoader.html" class="type-name-link" title="interface in org.hibernate.reactive.loader.ast.spi">ReactiveNaturalIdLoader</a>&lt;T&gt;</li>
 </ul>

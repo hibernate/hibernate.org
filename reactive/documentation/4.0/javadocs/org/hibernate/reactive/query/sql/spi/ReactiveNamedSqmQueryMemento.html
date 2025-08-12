@@ -78,17 +78,17 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>jakarta.persistence.TypedQueryReference&lt;E&gt;</code>, <code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html" title="class or interface in org.hibernate.query.named" class="external-link">NamedQueryMemento</a>&lt;E&gt;</code>, <code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/spi/NamedSqmQueryMemento.html" title="class or interface in org.hibernate.query.sqm.spi" class="external-link">NamedSqmQueryMemento</a>&lt;E&gt;</code></dd>
+<dd><code>jakarta.persistence.TypedQueryReference&lt;E&gt;</code>, <code>org.hibernate.query.named.NamedQueryMemento&lt;E&gt;</code>, <code>org.hibernate.query.sqm.spi.NamedSqmQueryMemento&lt;E&gt;</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">ReactiveNamedSqmQueryMemento&lt;E&gt;</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/spi/NamedSqmQueryMemento.html" title="class or interface in org.hibernate.query.sqm.spi" class="external-link">NamedSqmQueryMemento</a>&lt;E&gt;</span></div>
+implements org.hibernate.query.sqm.spi.NamedSqmQueryMemento&lt;E&gt;</span></div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list">
-<li><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sql/spi/NamedNativeQueryMemento.html" title="class or interface in org.hibernate.query.sql.spi" class="external-link"><code>NamedNativeQueryMemento</code></a></li>
+<li><code>NamedNativeQueryMemento</code></li>
 </ul>
 </dd>
 </dl>
@@ -100,8 +100,8 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <section class="nested-class-summary" id="nested-class-summary">
 <h2>Nested Class Summary</h2>
 <div class="inherited-list">
-<h2 id="nested-classes-inherited-from-class-org.hibernate.query.named.NamedQueryMemento">Nested classes/interfaces inherited from interface&nbsp;org.hibernate.query.named.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html" title="class or interface in org.hibernate.query.named" class="external-link">NamedQueryMemento</a></h2>
-<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.ParameterMemento.html" title="class or interface in org.hibernate.query.named" class="external-link">NamedQueryMemento.ParameterMemento</a></code></div>
+<h2 id="nested-classes-inherited-from-class-org.hibernate.query.named.NamedQueryMemento">Nested classes/interfaces inherited from interface&nbsp;org.hibernate.query.named.NamedQueryMemento</h2>
+<code>org.hibernate.query.named.NamedQueryMemento.ParameterMemento</code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
@@ -112,7 +112,7 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(org.hibernate.query.sqm.spi.NamedSqmQueryMemento)" class="member-name-link">ReactiveNamedSqmQueryMemento</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/spi/NamedSqmQueryMemento.html" title="class or interface in org.hibernate.query.sqm.spi" class="external-link">NamedSqmQueryMemento</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;&nbsp;delegate)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(org.hibernate.query.sqm.spi.NamedSqmQueryMemento)" class="member-name-link">ReactiveNamedSqmQueryMemento</a><wbr>(org.hibernate.query.sqm.spi.NamedSqmQueryMemento&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;&nbsp;delegate)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -131,7 +131,7 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCacheable()" class="member-name-link">getCacheable</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/CacheMode.html" title="class or interface in org.hibernate" class="external-link">CacheMode</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/CacheMode.html" title="class or interface in org.hibernate" class="external-link">CacheMode</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCacheMode()" class="member-name-link">getCacheMode</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
@@ -146,7 +146,7 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFirstResult()" class="member-name-link">getFirstResult</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/FlushMode.html" title="class or interface in org.hibernate" class="external-link">FlushMode</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/FlushMode.html" title="class or interface in org.hibernate" class="external-link">FlushMode</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFlushMode()" class="member-name-link">getFlushMode</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</code></div>
@@ -155,7 +155,7 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHqlString()" class="member-name-link">getHqlString</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/LockOptions.html" title="class or interface in org.hibernate" class="external-link">LockOptions</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockOptions.html" title="class or interface in org.hibernate" class="external-link">LockOptions</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLockOptions()" class="member-name-link">getLockOptions</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a></code></div>
@@ -173,28 +173,28 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;? extends <a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getResultType()" class="member-name-link">getResultType</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/tree/SqmStatement.html" title="class or interface in org.hibernate.query.sqm.tree" class="external-link">SqmStatement</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.hibernate.query.sqm.tree.SqmStatement&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSqmStatement()" class="member-name-link">getSqmStatement</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTimeout()" class="member-name-link">getTimeout</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/spi/NamedSqmQueryMemento.html" title="class or interface in org.hibernate.query.sqm.spi" class="external-link">NamedSqmQueryMemento</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.hibernate.query.sqm.spi.NamedSqmQueryMemento&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#makeCopy(java.lang.String)" class="member-name-link">makeCopy</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/hql/spi/SqmQueryImplementor.html" title="class or interface in org.hibernate.query.hql.spi" class="external-link">SqmQueryImplementor</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toQuery(org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">toQuery</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.hibernate.query.hql.spi.SqmQueryImplementor&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toQuery(org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">toQuery</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/hql/spi/SqmQueryImplementor.html" title="class or interface in org.hibernate.query.hql.spi" class="external-link">SqmQueryImplementor</a>&lt;T&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toQuery(org.hibernate.engine.spi.SharedSessionContractImplementor,java.lang.Class)" class="member-name-link">toQuery</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;org.hibernate.query.hql.spi.SqmQueryImplementor&lt;T&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toQuery(org.hibernate.engine.spi.SharedSessionContractImplementor,java.lang.Class)" class="member-name-link">toQuery</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;resultType)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/SqmSelectionQuery.html" title="class or interface in org.hibernate.query.sqm" class="external-link">SqmSelectionQuery</a>&lt;T&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;org.hibernate.query.sqm.SqmSelectionQuery&lt;T&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toSelectionQuery(java.lang.Class,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">toSelectionQuery</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;resultType,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#validate(org.hibernate.query.spi.QueryEngine)" class="member-name-link">validate</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/spi/QueryEngine.html" title="class or interface in org.hibernate.query.spi" class="external-link">QueryEngine</a>&nbsp;queryEngine)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#validate(org.hibernate.query.spi.QueryEngine)" class="member-name-link">validate</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/spi/QueryEngine.html" title="class or interface in org.hibernate.query.spi" class="external-link">QueryEngine</a>&nbsp;queryEngine)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
@@ -203,8 +203,8 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-org.hibernate.query.named.NamedQueryMemento">Methods inherited from interface&nbsp;org.hibernate.query.named.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html" title="class or interface in org.hibernate.query.named" class="external-link">NamedQueryMemento</a></h3>
-<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html#getName()" title="class or interface in org.hibernate.query.named" class="external-link">getName</a></code></div>
+<h3 id="methods-inherited-from-class-org.hibernate.query.named.NamedQueryMemento">Methods inherited from interface&nbsp;org.hibernate.query.named.NamedQueryMemento</h3>
+<code>getName</code></div>
 </section>
 </li>
 </ul>
@@ -219,7 +219,7 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <li>
 <section class="detail" id="&lt;init&gt;(org.hibernate.query.sqm.spi.NamedSqmQueryMemento)">
 <h3>ReactiveNamedSqmQueryMemento</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ReactiveNamedSqmQueryMemento</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/spi/NamedSqmQueryMemento.html" title="class or interface in org.hibernate.query.sqm.spi" class="external-link">NamedSqmQueryMemento</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;&nbsp;delegate)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ReactiveNamedSqmQueryMemento</span><wbr><span class="parameters">(org.hibernate.query.sqm.spi.NamedSqmQueryMemento&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;&nbsp;delegate)</span></div>
 </section>
 </li>
 </ul>
@@ -243,36 +243,38 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <li>
 <section class="detail" id="toQuery(org.hibernate.engine.spi.SharedSessionContractImplementor)">
 <h3>toQuery</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/hql/spi/SqmQueryImplementor.html" title="class or interface in org.hibernate.query.hql.spi" class="external-link">SqmQueryImplementor</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</span>&nbsp;<span class="element-name">toQuery</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.hibernate.query.hql.spi.SqmQueryImplementor&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</span>&nbsp;<span class="element-name">toQuery</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html#toQuery(org.hibernate.engine.spi.SharedSessionContractImplementor)" title="class or interface in org.hibernate.query.named" class="external-link">toQuery</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html" title="class or interface in org.hibernate.query.named" class="external-link">NamedQueryMemento</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
+<dd><code>toQuery</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.named.NamedQueryMemento&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/spi/NamedSqmQueryMemento.html#toQuery(org.hibernate.engine.spi.SharedSessionContractImplementor)" title="class or interface in org.hibernate.query.sqm.spi" class="external-link">toQuery</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/spi/NamedSqmQueryMemento.html" title="class or interface in org.hibernate.query.sqm.spi" class="external-link">NamedSqmQueryMemento</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
+<dd><code>toQuery</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.sqm.spi.NamedSqmQueryMemento&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="toQuery(org.hibernate.engine.spi.SharedSessionContractImplementor,java.lang.Class)">
 <h3>toQuery</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/hql/spi/SqmQueryImplementor.html" title="class or interface in org.hibernate.query.hql.spi" class="external-link">SqmQueryImplementor</a>&lt;T&gt;</span>&nbsp;<span class="element-name">toQuery</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>
+<span class="return-type">org.hibernate.query.hql.spi.SqmQueryImplementor&lt;T&gt;</span>&nbsp;<span class="element-name">toQuery</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;resultType)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html#toQuery(org.hibernate.engine.spi.SharedSessionContractImplementor,java.lang.Class)" title="class or interface in org.hibernate.query.named" class="external-link">toQuery</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html" title="class or interface in org.hibernate.query.named" class="external-link">NamedQueryMemento</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
+<dd><code>toQuery</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.named.NamedQueryMemento&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/spi/NamedSqmQueryMemento.html#toQuery(org.hibernate.engine.spi.SharedSessionContractImplementor,java.lang.Class)" title="class or interface in org.hibernate.query.sqm.spi" class="external-link">toQuery</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/spi/NamedSqmQueryMemento.html" title="class or interface in org.hibernate.query.sqm.spi" class="external-link">NamedSqmQueryMemento</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
+<dd><code>toQuery</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.sqm.spi.NamedSqmQueryMemento&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="toSelectionQuery(java.lang.Class,org.hibernate.engine.spi.SharedSessionContractImplementor)">
 <h3>toSelectionQuery</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/SqmSelectionQuery.html" title="class or interface in org.hibernate.query.sqm" class="external-link">SqmSelectionQuery</a>&lt;T&gt;</span>&nbsp;<span class="element-name">toSelectionQuery</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;resultType,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>
+<span class="return-type">org.hibernate.query.sqm.SqmSelectionQuery&lt;T&gt;</span>&nbsp;<span class="element-name">toSelectionQuery</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;resultType,
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/spi/NamedSqmQueryMemento.html#toSelectionQuery(java.lang.Class,org.hibernate.engine.spi.SharedSessionContractImplementor)" title="class or interface in org.hibernate.query.sqm.spi" class="external-link">toSelectionQuery</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/spi/NamedSqmQueryMemento.html" title="class or interface in org.hibernate.query.sqm.spi" class="external-link">NamedSqmQueryMemento</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
+<dd><code>toSelectionQuery</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.sqm.spi.NamedSqmQueryMemento&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
@@ -282,17 +284,17 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getHqlString</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/spi/NamedSqmQueryMemento.html#getHqlString()" title="class or interface in org.hibernate.query.sqm.spi" class="external-link">getHqlString</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/spi/NamedSqmQueryMemento.html" title="class or interface in org.hibernate.query.sqm.spi" class="external-link">NamedSqmQueryMemento</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
+<dd><code>getHqlString</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.sqm.spi.NamedSqmQueryMemento&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getSqmStatement()">
 <h3>getSqmStatement</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/tree/SqmStatement.html" title="class or interface in org.hibernate.query.sqm.tree" class="external-link">SqmStatement</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</span>&nbsp;<span class="element-name">getSqmStatement</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.hibernate.query.sqm.tree.SqmStatement&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</span>&nbsp;<span class="element-name">getSqmStatement</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/spi/NamedSqmQueryMemento.html#getSqmStatement()" title="class or interface in org.hibernate.query.sqm.spi" class="external-link">getSqmStatement</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/spi/NamedSqmQueryMemento.html" title="class or interface in org.hibernate.query.sqm.spi" class="external-link">NamedSqmQueryMemento</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
+<dd><code>getSqmStatement</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.sqm.spi.NamedSqmQueryMemento&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
@@ -302,7 +304,7 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a></span>&nbsp;<span class="element-name">getFirstResult</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/spi/NamedSqmQueryMemento.html#getFirstResult()" title="class or interface in org.hibernate.query.sqm.spi" class="external-link">getFirstResult</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/spi/NamedSqmQueryMemento.html" title="class or interface in org.hibernate.query.sqm.spi" class="external-link">NamedSqmQueryMemento</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
+<dd><code>getFirstResult</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.sqm.spi.NamedSqmQueryMemento&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
@@ -312,17 +314,17 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a></span>&nbsp;<span class="element-name">getMaxResults</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/spi/NamedSqmQueryMemento.html#getMaxResults()" title="class or interface in org.hibernate.query.sqm.spi" class="external-link">getMaxResults</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/spi/NamedSqmQueryMemento.html" title="class or interface in org.hibernate.query.sqm.spi" class="external-link">NamedSqmQueryMemento</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
+<dd><code>getMaxResults</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.sqm.spi.NamedSqmQueryMemento&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getLockOptions()">
 <h3>getLockOptions</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/LockOptions.html" title="class or interface in org.hibernate" class="external-link">LockOptions</a></span>&nbsp;<span class="element-name">getLockOptions</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockOptions.html" title="class or interface in org.hibernate" class="external-link">LockOptions</a></span>&nbsp;<span class="element-name">getLockOptions</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/spi/NamedSqmQueryMemento.html#getLockOptions()" title="class or interface in org.hibernate.query.sqm.spi" class="external-link">getLockOptions</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/spi/NamedSqmQueryMemento.html" title="class or interface in org.hibernate.query.sqm.spi" class="external-link">NamedSqmQueryMemento</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
+<dd><code>getLockOptions</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.sqm.spi.NamedSqmQueryMemento&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
@@ -332,19 +334,19 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">getParameterTypes</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/spi/NamedSqmQueryMemento.html#getParameterTypes()" title="class or interface in org.hibernate.query.sqm.spi" class="external-link">getParameterTypes</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/spi/NamedSqmQueryMemento.html" title="class or interface in org.hibernate.query.sqm.spi" class="external-link">NamedSqmQueryMemento</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
+<dd><code>getParameterTypes</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.sqm.spi.NamedSqmQueryMemento&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="makeCopy(java.lang.String)">
 <h3>makeCopy</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/spi/NamedSqmQueryMemento.html" title="class or interface in org.hibernate.query.sqm.spi" class="external-link">NamedSqmQueryMemento</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</span>&nbsp;<span class="element-name">makeCopy</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.hibernate.query.sqm.spi.NamedSqmQueryMemento&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</span>&nbsp;<span class="element-name">makeCopy</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html#makeCopy(java.lang.String)" title="class or interface in org.hibernate.query.named" class="external-link">makeCopy</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html" title="class or interface in org.hibernate.query.named" class="external-link">NamedQueryMemento</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
+<dd><code>makeCopy</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.named.NamedQueryMemento&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/spi/NamedSqmQueryMemento.html#makeCopy(java.lang.String)" title="class or interface in org.hibernate.query.sqm.spi" class="external-link">makeCopy</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/sqm/spi/NamedSqmQueryMemento.html" title="class or interface in org.hibernate.query.sqm.spi" class="external-link">NamedSqmQueryMemento</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
+<dd><code>makeCopy</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.sqm.spi.NamedSqmQueryMemento&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
@@ -354,7 +356,7 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getRegistrationName</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html#getRegistrationName()" title="class or interface in org.hibernate.query.named" class="external-link">getRegistrationName</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html" title="class or interface in org.hibernate.query.named" class="external-link">NamedQueryMemento</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
+<dd><code>getRegistrationName</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.named.NamedQueryMemento&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
@@ -364,7 +366,7 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a></span>&nbsp;<span class="element-name">getCacheable</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html#getCacheable()" title="class or interface in org.hibernate.query.named" class="external-link">getCacheable</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html" title="class or interface in org.hibernate.query.named" class="external-link">NamedQueryMemento</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
+<dd><code>getCacheable</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.named.NamedQueryMemento&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
@@ -374,27 +376,27 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getCacheRegion</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html#getCacheRegion()" title="class or interface in org.hibernate.query.named" class="external-link">getCacheRegion</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html" title="class or interface in org.hibernate.query.named" class="external-link">NamedQueryMemento</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
+<dd><code>getCacheRegion</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.named.NamedQueryMemento&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getCacheMode()">
 <h3>getCacheMode</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/CacheMode.html" title="class or interface in org.hibernate" class="external-link">CacheMode</a></span>&nbsp;<span class="element-name">getCacheMode</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/CacheMode.html" title="class or interface in org.hibernate" class="external-link">CacheMode</a></span>&nbsp;<span class="element-name">getCacheMode</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html#getCacheMode()" title="class or interface in org.hibernate.query.named" class="external-link">getCacheMode</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html" title="class or interface in org.hibernate.query.named" class="external-link">NamedQueryMemento</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
+<dd><code>getCacheMode</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.named.NamedQueryMemento&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getFlushMode()">
 <h3>getFlushMode</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/FlushMode.html" title="class or interface in org.hibernate" class="external-link">FlushMode</a></span>&nbsp;<span class="element-name">getFlushMode</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/FlushMode.html" title="class or interface in org.hibernate" class="external-link">FlushMode</a></span>&nbsp;<span class="element-name">getFlushMode</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html#getFlushMode()" title="class or interface in org.hibernate.query.named" class="external-link">getFlushMode</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html" title="class or interface in org.hibernate.query.named" class="external-link">NamedQueryMemento</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
+<dd><code>getFlushMode</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.named.NamedQueryMemento&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
@@ -404,7 +406,7 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a></span>&nbsp;<span class="element-name">getReadOnly</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html#getReadOnly()" title="class or interface in org.hibernate.query.named" class="external-link">getReadOnly</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html" title="class or interface in org.hibernate.query.named" class="external-link">NamedQueryMemento</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
+<dd><code>getReadOnly</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.named.NamedQueryMemento&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
@@ -414,7 +416,7 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a></span>&nbsp;<span class="element-name">getTimeout</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html#getTimeout()" title="class or interface in org.hibernate.query.named" class="external-link">getTimeout</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html" title="class or interface in org.hibernate.query.named" class="external-link">NamedQueryMemento</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
+<dd><code>getTimeout</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.named.NamedQueryMemento&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
@@ -424,7 +426,7 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a></span>&nbsp;<span class="element-name">getFetchSize</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html#getFetchSize()" title="class or interface in org.hibernate.query.named" class="external-link">getFetchSize</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html" title="class or interface in org.hibernate.query.named" class="external-link">NamedQueryMemento</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
+<dd><code>getFetchSize</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.named.NamedQueryMemento&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
@@ -434,7 +436,7 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getComment</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html#getComment()" title="class or interface in org.hibernate.query.named" class="external-link">getComment</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html" title="class or interface in org.hibernate.query.named" class="external-link">NamedQueryMemento</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
+<dd><code>getComment</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.named.NamedQueryMemento&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
@@ -444,7 +446,7 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</span>&nbsp;<span class="element-name">getHints</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html#getHints()" title="class or interface in org.hibernate.query.named" class="external-link">getHints</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html" title="class or interface in org.hibernate.query.named" class="external-link">NamedQueryMemento</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
+<dd><code>getHints</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.named.NamedQueryMemento&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
 <dt>Specified by:</dt>
 <dd><code>getHints</code>&nbsp;in interface&nbsp;<code>jakarta.persistence.TypedQueryReference&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
 </dl>
@@ -453,10 +455,10 @@ implements <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibern
 <li>
 <section class="detail" id="validate(org.hibernate.query.spi.QueryEngine)">
 <h3>validate</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">validate</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/spi/QueryEngine.html" title="class or interface in org.hibernate.query.spi" class="external-link">QueryEngine</a>&nbsp;queryEngine)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">validate</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/query/spi/QueryEngine.html" title="class or interface in org.hibernate.query.spi" class="external-link">QueryEngine</a>&nbsp;queryEngine)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html#validate(org.hibernate.query.spi.QueryEngine)" title="class or interface in org.hibernate.query.named" class="external-link">validate</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/named/NamedQueryMemento.html" title="class or interface in org.hibernate.query.named" class="external-link">NamedQueryMemento</a>&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
+<dd><code>validate</code>&nbsp;in interface&nbsp;<code>org.hibernate.query.named.NamedQueryMemento&lt;<a href="ReactiveNamedSqmQueryMemento.html" title="type parameter in ReactiveNamedSqmQueryMemento">E</a>&gt;</code></dd>
 </dl>
 </section>
 </li>

@@ -75,7 +75,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Superinterfaces:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/persister/collection/mutation/CollectionOperationCoordinator.html" title="class or interface in org.hibernate.persister.collection.mutation" class="external-link">CollectionOperationCoordinator</a></code>, <code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/persister/collection/mutation/UpdateRowsCoordinator.html" title="class or interface in org.hibernate.persister.collection.mutation" class="external-link">UpdateRowsCoordinator</a></code></dd>
+<dd><code>org.hibernate.persister.collection.mutation.CollectionOperationCoordinator</code>, <code>org.hibernate.persister.collection.mutation.UpdateRowsCoordinator</code></dd>
 </dl>
 <dl class="notes">
 <dt>All Known Implementing Classes:</dt>
@@ -83,7 +83,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">ReactiveUpdateRowsCoordinator</span><span class="extends-implements">
-extends <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/persister/collection/mutation/UpdateRowsCoordinator.html" title="class or interface in org.hibernate.persister.collection.mutation" class="external-link">UpdateRowsCoordinator</a></span></div>
+extends org.hibernate.persister.collection.mutation.UpdateRowsCoordinator</span></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -100,18 +100,18 @@ extends <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reactiveUpdateRows(java.lang.Object,org.hibernate.collection.spi.PersistentCollection,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">reactiveUpdateRows</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;key,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/collection/spi/PersistentCollection.html" title="class or interface in org.hibernate.collection.spi" class="external-link">PersistentCollection</a>&lt;?&gt;&nbsp;collection,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/collection/spi/PersistentCollection.html" title="class or interface in org.hibernate.collection.spi" class="external-link">PersistentCollection</a>&lt;?&gt;&nbsp;collection,
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-org.hibernate.persister.collection.mutation.CollectionOperationCoordinator">Methods inherited from interface&nbsp;org.hibernate.persister.collection.mutation.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/persister/collection/mutation/CollectionOperationCoordinator.html" title="class or interface in org.hibernate.persister.collection.mutation" class="external-link">CollectionOperationCoordinator</a></h3>
-<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/persister/collection/mutation/CollectionOperationCoordinator.html#getMutationTarget()" title="class or interface in org.hibernate.persister.collection.mutation" class="external-link">getMutationTarget</a></code></div>
+<h3 id="methods-inherited-from-class-org.hibernate.persister.collection.mutation.CollectionOperationCoordinator">Methods inherited from interface&nbsp;org.hibernate.persister.collection.mutation.CollectionOperationCoordinator</h3>
+<code>getMutationTarget</code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-org.hibernate.persister.collection.mutation.UpdateRowsCoordinator">Methods inherited from interface&nbsp;org.hibernate.persister.collection.mutation.<a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/persister/collection/mutation/UpdateRowsCoordinator.html" title="class or interface in org.hibernate.persister.collection.mutation" class="external-link">UpdateRowsCoordinator</a></h3>
-<code><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/persister/collection/mutation/UpdateRowsCoordinator.html#updateRows(java.lang.Object,org.hibernate.collection.spi.PersistentCollection,org.hibernate.engine.spi.SharedSessionContractImplementor)" title="class or interface in org.hibernate.persister.collection.mutation" class="external-link">updateRows</a></code></div>
+<h3 id="methods-inherited-from-class-org.hibernate.persister.collection.mutation.UpdateRowsCoordinator">Methods inherited from interface&nbsp;org.hibernate.persister.collection.mutation.UpdateRowsCoordinator</h3>
+<code>updateRows</code></div>
 </section>
 </li>
 </ul>
@@ -127,8 +127,8 @@ extends <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate
 <section class="detail" id="reactiveUpdateRows(java.lang.Object,org.hibernate.collection.spi.PersistentCollection,org.hibernate.engine.spi.SharedSessionContractImplementor)">
 <h3>reactiveUpdateRows</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">reactiveUpdateRows</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;key,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/collection/spi/PersistentCollection.html" title="class or interface in org.hibernate.collection.spi" class="external-link">PersistentCollection</a>&lt;?&gt;&nbsp;collection,
- <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/collection/spi/PersistentCollection.html" title="class or interface in org.hibernate.collection.spi" class="external-link">PersistentCollection</a>&lt;?&gt;&nbsp;collection,
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
 </section>
 </li>
 </ul>
