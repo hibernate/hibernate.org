@@ -35,9 +35,30 @@ There are two essential problems with this line of thought:
 At one extreme, some people use Hibernate for object/relational mapping but write _all_ their queries in native SQL.
 That's not our recommendation, but it's certainly an allowed point in the solution space.
 
+== On the spectrum
+
+Some application programs use entity classes more than others.
+There are two extremes:
+
+- Some programs never return graphs of entities from queries.
+  Instead, query results are represented in a simpler, "flattened" form, possibly as Java ``record``s.
+  Here, each `record` models a query result, not an entity.
+  Associations between entities are not explicitly represented within the flattened form.
+  These programs might still use entity classes for simple CRUD.
+- Other programs use an entity domain model for _everything_.
+  That is, every query returns a graph of entity instances with some associations fetched via a SQL `join`, and some left unfetched.
+  These programs place great importance on having a typed representation of the problem _domain model_ reified in Java.
+
+Clearly, the second sort of program benefits quite a lot more from the use of an ORM solution like Hibernate.
+We can certainly still use Hibernate in the first sort of program, and it does still offer _some_ advantages, but we certainly wouldn't describe ORM as a _necessity_ there.
+
+We've described these scenarios as "extremes" for a reason: we think it's much more common to have some queries that return entity graphs, and some which return flat representations.
+Indeed, this is the way Hibernate is intended to be used, and it's the true sweet spot for ORM.
+
+
 == Is ORM necessary?
 
-I suppose you might think we've avoided the essential issue: do I really _need_ to use ORM?
+I suppose you might think we've avoided the essential issue: do I ever really _need_ to use ORM?
 
 Well, there are two senses in which the answer is "no".
 
