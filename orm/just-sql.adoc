@@ -33,12 +33,12 @@ There are two essential problems with this line of thought:
    Performance-related concerns such as association fetching and caching may be {tuning}[specified separately], in a way which reduces the impact of later performance optimization.
 
 At one extreme, some people use Hibernate for object/relational mapping but write _all_ their queries in native SQL.
-That's not our recommendation, but it's certainly an allowed point in the solution space.
+That's not very common, and it's not our recommendation, but it's certainly an allowed point in the solution space.
 
 == On the spectrum
 
 Some application programs use entity classes more than others.
-There are two extremes:
+Here there are two extremes:
 
 - Some programs never return graphs of entities from queries.
   Instead, query results are represented in a simpler, "flattened" form, possibly as Java ``record``s.
@@ -60,26 +60,29 @@ Indeed, this is the way Hibernate is intended to be used, and it's the true swee
 
 I suppose you might think we've avoided the essential issue: do I ever really _need_ to use ORM?
 
-Well, there are two senses in which the answer is "no".
+Well, there are two senses in which the answer might be "no".
 
-- First, strictly speaking, I never _absolutely need_ to use a higher-level abstraction when a lower-level API is available.
-But of course, the entire goal of software engineering is to develop meaningful and useful abstractions which help reduce engineering effort, and so this just isn't a useful answer.
-If the higher-level abstraction helps make the application program code more maintainable, then yes, I "need" it.
+- First, strictly speaking, I never _absolutely need_ to use any higher-level abstraction when a lower-level API is available.
+  But of course, the entire goal of software engineering is to develop meaningful and useful abstractions which help reduce engineering effort, and so this isn't really a particularly helpful observation.
+  On the contrary, if some higher-level abstraction helps make my application program code more maintainable, then yes, I "need" it.
 - Second, _whether this is indeed the case in this instance_ -- that is, whether ORM actually results in more maintainable code -- is at least somewhat contextual.
   There is a class of application program that doesn't benefit much from representing persistent data using graphs of entity objects, and can get by with `record` types representing rows of SQL result sets.
   On the other hand, if my program _does_ use entity classes, I _am_ going to need object/relational mapping, and then the choice is between a powerful, mature, full-featured solution like Hibernate and ... what inevitably leads me down the path towards my own homegrown ORM.
 
-Ultimately, the overwhelming majority of Java developers find ORM useful for the kinds of scenarios we typically encounter in enterprise software development.
-That doesn't necessarily mean that _you_ need it for the particular problem you're working on right now.
+Before Hibernate existed, it simply wasn't the case that Java enterprise developers "just used SQL", never bumped into the object/relational "mismatch", and never struggled with persistence.
+On the contrary, homegrown ORMs or proto-ORMs were quite ubiquitous and almost uniformly quite terrible.
+Hibernate didn't replace "just SQL"; it replaced a whole range much worse implementations of ORM.
 
+Ultimately, the overwhelming majority of Java developers still find ORM useful for the kinds of scenarios we typically encounter in enterprise software development.
+That doesn't necessarily mean that _you_ need it for the particular problem you're working on right now.
 If what you're doing is already working well, we're definitely not going to tell you to do anything different.
-But when maintaining your handwritten object/relational mappings starts slowing you down, Hibernate is right here.
+But when maintaining your handwritten object/relational mappings starts slowing you down, Hibernate is here to help.
 
 Conversely, if ORM or Hibernate is getting in your way, by all means use something else.
 It's great that you're using Hibernate -- but that doesn't mean you have to use it _everywhere_.
 
 == Conclusion
 
-Just use SQL. With Hibernate, if it's helpful.
+Just use SQL. With Hibernate, where and when it's helpful.
 
 
