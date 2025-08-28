@@ -4,6 +4,15 @@
 
 This page contains everything you need to know when upgrading from one Hibernate Validator version to another.
 
+[[migration-guide-9-1-x]]
+== 9.1.x
+
+=== 9.1.0.Alpha1
+
+While 9.1 is, in general, a drop-in replacement for 9.0, it may produce warnings at the metadata building stage
+if cascading is applied to the container instead of the container type arguments.
+It is a good time to finally move away from the Bean Validation 1.0/1.1 legacy approaches.
+
 [[migration-guide-9-0-x]]
 == 9.0.x
 
