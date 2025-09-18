@@ -71,7 +71,7 @@ Well, there are two senses in which the answer might be "no".
 
 Before Hibernate existed, it simply wasn't the case that Java enterprise developers "just used SQL", never bumped into the object/relational "mismatch", and never struggled with persistence.
 On the contrary, homegrown ORMs or proto-ORMs were quite ubiquitous and almost uniformly quite terrible.
-Hibernate didn't replace "just SQL"; it replaced a whole range much worse implementations of ORM.
+Hibernate didn't replace "just SQL"; it replaced a whole range of much worse implementations of ORM.
 
 Ultimately, the overwhelming majority of Java developers still find ORM useful for the kinds of scenarios we typically encounter in enterprise software development.
 That doesn't necessarily mean that _you_ need it for the particular problem you're working on right now.
