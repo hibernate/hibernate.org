@@ -16,7 +16,7 @@ maven:
       summary: Set of test utilities that can help testing custom constraints.
 integration_constraints:
   java:
-    version: 17, 21, 23 or 24
+    version: 17, 21 or 25
   jakarta_ee_bv:
     version: 3.1
   jakarta_ee:
