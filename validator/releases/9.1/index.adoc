@@ -64,4 +64,88 @@ This is currently tracked at the Jakarta Validation specification level through 
 We encourage users to review and update their validation mapping where necessary.
 Additionally, if you encounter a particular use case that you believe is not covered, please don't hesitate to contact us.
 ====
+
+[discrete]
+[[hibernate-path]]
+=== Extended validation path
+
+This version introduces another extension of the `jakarta.validation.Path`: `org.hibernate.validator.path.RandomAccessPath`.
+There are scenarios where the first couple of nodes have to be inspected to determine how to process the constraint violation.
+For cases when the path is represented by an array or some other collection that allows easy random access to the nodes,
+it would be simple enough to expose the access to the nodes by index:
+
+.Random access to the path nodes
+====
+[source, Java, indent=0, subs="+attributes"]
+----
+Path path = constraintViolation.getPropertyPath();
+if ( path instanceof org.hibernate.validator.path.RandomAccessPath hvPath ) {
+    Node rootNode = hvPath.getRootNode();
+    // ...
+    int index = ...
+    Node someNode = hvPath.getNode(index);
+    // ...
+    for(int i; i < hvPath.length(); i++) {
+        hvPath.getNode(i);
+    }
+}
+----
+====
+
+[discrete]
+[[initialization-data]]
+=== Constraint initialization shared data
+
+Constraint initialization shared data opens up a way for constraint validators to access a shared instance within the `initialize(..)`.
+This can be used to cache and reuse elements required to construct a constraint validator. For example,
+internally, this mechanism is used by the pattern constraint validator to reuse the `java.util.regex.Pattern` instances
+
+.Accessing the constraint validator's lazy initialization shared data in a constraint validator
+====
+[source, JAVA, indent=0]
+----
+public class ParsableDateTimeFormatValidator
+    implements HibernateConstraintValidator<ParsableDateTimeFormat, String> { // <1>
+
+    private DateTimeFormatter formatter;
+
+    @Override
+    public void initialize(ConstraintDescriptor<ParsableDateTimeFormat> constraintDescriptor,
+            HibernateConstraintValidatorInitializationContext initializationContext) {
+        formatter = initializationContext.getSharedData( DateTimeFormatterCache.class, DateTimeFormatterCache::new ) // <2>
+                .get( constraintDescriptor.getAnnotation().dateFormat() ); // <3>
+    }
+
+    @Override
+    public boolean isValid(String dateTime, ConstraintValidatorContext constraintContext) {
+        if ( dateTime == null ) {
+            return true;
+        }
+
+        try {
+            formatter.parse( dateTime );
+        }
+        catch (DateTimeParseException e) {
+            return false;
+        }
+        return true;
+    }
+
+    private static class DateTimeFormatterCache { // <4>
+        private final Map<String, DateTimeFormatter> cache = new ConcurrentHashMap<>();
+
+        DateTimeFormatter get(String format) {
+            return cache.computeIfAbsent( format, DateTimeFormatter::ofPattern );
+        }
+    }
+}
+----
+<1> Implement the Hibernate Validator `HibernateConstraintValidator` extension to have access to the initialization context.
+<2> Retrieve the shared data from the initialization context, providing the supplier that will be executed
+if the `DateTimeFormatterCache` is not yet available in the current initialization context.
+<3> Perform some actions with the shared data instance.
+<4> A simple wrapper around the map to cache the formatters.
+Compared to the use of a static field cache, using the shared data has the benefit that it is tied to the initialization context
+and will be garbage collected along with it.
+====
 ****
