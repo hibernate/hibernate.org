@@ -14,7 +14,7 @@
           %h2
             %span
               = real_page.title
-            = partial( 'project/series-status-label.html.haml', { "series" => series, "classes" => "tag" } )
+            = partial( 'project/series-status-label.html.haml', { "project_name" => project_name, "series" => series, "classes" => "tag" } )
         .column.four.wide.middle.aligned
           = partial( real_page.project_buttons_partial.nil? ? 'project/empty-buttons.html.haml' : real_page.project_buttons_partial, { "real_page" => real_page } )
 
