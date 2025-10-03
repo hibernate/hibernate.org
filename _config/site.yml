@@ -670,15 +670,15 @@ projects:
     icon: 'icon-flask'
     links:
       reference_doc:
-        html: /reactive/documentation/{series.version}/reference/html_single/
+        html: https://docs.hibernate.org/reactive/{series.version}/reference/html_single/
         latest_stable:
-          html: /reactive/documentation/{series.version}/reference/html_single/
+          html: https://docs.hibernate.org/stable/reactive/reference/html_single/
       javadoc:
-        html: /reactive/documentation/{series.version}/javadocs/
+        html: https://docs.hibernate.org/reactive/{series.version}/javadocs/
         latest_stable:
-          html: /reactive/documentation/{series.version}/javadocs/
+          html: https://docs.hibernate.org/stable/reactive/javadocs/
       getting_started_guide:
-        html: /reactive/documentation/{series.version}/reference/html_single/#getting-started
+        html: https://docs.hibernate.org/reactive/{series.version}/reference/html_single/#getting-started
       whats_new:
         html: "/reactive/releases/{series.version}/#whats-new"
       dist:
