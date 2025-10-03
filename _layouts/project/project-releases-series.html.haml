@@ -160,7 +160,7 @@ project_hero_partial: project/hero-series.html.haml
             Below are the Maven coordinates of the main artifacts.
           %div.ui.relaxed.divided.list
             - latest_release_maven.artifacts.each do |artifact|
-              - group_id = latest_release_maven.coord.group_id
+              - group_id = latest_release_maven.coord['group_id']
               - artifact_id = artifact.artifact_id
               - version = latest_release.version
               %div.item
@@ -174,9 +174,9 @@ project_hero_partial: project/hero-series.html.haml
                     :asciidoc
                       :doctype: inline
                       #{(artifact[:summary] || artifact.artifact_id).strip}
-        - if latest_release_maven&.signing&.since
+        - if latest_release_maven&.signing&.[]('since')
           %p
-            All Maven artifacts of this project released after #{latest_release_maven.signing.since} are signed.
+            All Maven artifacts of this project released after #{latest_release_maven.signing['since']} are signed.
           %p
             To verify signed Maven artifacts, head to
             %a{:href => "/community/keys/"}

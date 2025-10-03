@@ -8,6 +8,7 @@ require 'data_file_parser'
 require 'redirect_creator'
 require 'directory_listing'
 require 'links'
+require 'link_resolver'
 
 # dependencies for asciidoc support
 require 'tilt'
@@ -44,6 +45,7 @@ Awestruct::Extensions::Pipeline.new do
 
   # register extensions and transformers
   extension Awestruct::Extensions::ReleaseFileParser.new
+  extension Awestruct::Extensions::LinkResolver.new
   extension Awestruct::Extensions::DataFileParser.new
   transformer Awestruct::Extensions::JsMinifier.new
   transformer Awestruct::Extensions::CssMinifier.new
