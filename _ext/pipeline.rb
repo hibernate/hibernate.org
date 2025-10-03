@@ -9,6 +9,7 @@ require 'redirect_creator'
 require 'directory_listing'
 require 'links'
 require 'link_resolver'
+require 'metadata_publisher'
 
 # dependencies for asciidoc support
 require 'tilt'
@@ -47,6 +48,7 @@ Awestruct::Extensions::Pipeline.new do
   extension Awestruct::Extensions::ReleaseFileParser.new
   extension Awestruct::Extensions::LinkResolver.new
   extension Awestruct::Extensions::DataFileParser.new
+  extension Awestruct::Extensions::MetadataPublisher.new
   transformer Awestruct::Extensions::JsMinifier.new
   transformer Awestruct::Extensions::CssMinifier.new
   transformer Awestruct::Extensions::HtmlMinifier.new

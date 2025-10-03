@@ -117,6 +117,7 @@ module Awestruct
           series = series.merge(subproject_series)
         end
 
+        series[:project] = project
         if ( series[:version] == nil )
           series[:version] = File.basename( series_dir )
         end
@@ -141,6 +142,8 @@ module Awestruct
           release = release.merge(subproject_release)
         end
 
+        release[:project] = project
+        release[:series] = series
         if ( release[:version] == nil )
           File.basename( release_file ) =~ /^(.*)\.\w*$/
           release[:version] = $1
