@@ -1,0 +1,66 @@
+= Documentation - 7.2
+:awestruct-layout: project-documentation-orm
+:awestruct-project: orm
+:awestruct-ormversion: 7.2
+:doc-url-base: http://docs.jboss.org/hibernate/orm/{awestruct-ormversion}
+:doc-userguide: {doc-url-base}/userguide
+
+== Guides and specifications
+
+link:{doc-url-base}/whats-new/whats-new.html[What's New Guide]::
+    Guide covering new features in {awestruct-ormversion}
+
+link:{doc-url-base}/migration-guide/migration-guide.html[Migration Guide]::
+    Migration guide covering migration to {awestruct-ormversion} from the previous version
+
+link:{doc-url-base}/introduction/html_single/Hibernate_Introduction.html[A Short Guide to Hibernate ORM]::
+    A readable and opinionated introduction to Hibernate 7, full of useful advice and tips
+
+link:{doc-url-base}/querylanguage/html_single/Hibernate_Query_Language.html[A Guide to Hibernate Query Language]::
+    A complete guide to the Hibernate Query Language
+
+link:{doc-url-base}/repositories/html_single/Hibernate_Data_Repositories.html[Introducing Hibernate Data Repositories]::
+    A quick introduction to our implementation of Jakarta Data
+
+link:{doc-url-base}/userguide/html_single/Hibernate_User_Guide.html[User Guide]::
+    Detailed reference documentation covering most user-facing concepts, features, and APIs
+
+link:{doc-url-base}/quickstart/html_single/[Getting Started]::
+    A quickstart-style tutorial--the section _Obtaining Hibernate_ has information about artifacts and how to get them
+
+link:{doc-url-base}/integrationguide/html_single/Hibernate_Integration_Guide.html[Integrations Guide]::
+    Documentation covering topics of interest to framework, library, and container developers working on integration with Hibernate
+
+link:https://quarkus.io/guides/hibernate-orm[Using Hibernate ORM and Jakarta Persistence (in Quarkus)]::
+    How to use Hibernate in Quarkus
+
+link:https://jakarta.ee/specifications/persistence/3.2/jakarta-persistence-spec-3.2[Jakarta Persistence]::
+    The Jakarta Persistence Specification (version 3.2)
+
+link:https://jakarta.ee/specifications/persistence/3.2/jakarta-persistence-spec-3.2.pdf[Jakarta Persistence (PDF)]::
+The Jakarta Persistence Specification (version 3.2) in PDF format
+
+== API documentation
+
+link:{doc-url-base}/javadocs/[Hibernate Javadoc]::
+    The Hibernate API documentation
+
+link:https://jakarta.ee/specifications/persistence/3.2/apidocs/[Jakarta Persistence 3.2 Javadoc]::
+    The Jakarta Persistence API documentation (version 3.2)
+
+== More information
+
+link:https://github.com/hibernate/hibernate-orm/wiki/_pages[GitHub-hosted wiki]::
+    Wiki hosted at GitHub
+
+link:{doc-url-base}/incubating/incubating.txt[Incubating report]::
+    Report of code that is considered incubating, and therefore subject to change.
+
+link:{doc-url-base}/deprecated/deprecated.txt[Deprecation report]::
+    Report of code that is considered deprecated.  Defined as the union of `@Deprecated` and `@Remove`
+
+link:{doc-url-base}/internals/internal.txt[Internals report]::
+    Report of code that is considered internal and not supported for use by code other than Hibernate itself.
+
+link:{doc-url-base}/dialect/dialect.html[Dialect report]::
+    Report of supported databases and versions
