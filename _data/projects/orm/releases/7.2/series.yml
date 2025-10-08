@@ -1,4 +1,8 @@
-summary: Pessimistic Locking Improvements, @EmbeddedTable, FindMultipleOptions, Vector Support for SQL Server
+summary: >-
+  Pessimistic Locking Improvements,
+  @EmbeddedTable,
+  FindMultipleOptions, 
+  Vector Support for SQL Server
 maven:
   artifacts:
     - artifact_id: hibernate-core
