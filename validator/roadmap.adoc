@@ -1,5 +1,4 @@
 = Roadmap
-Hardy Ferentschik
 :awestruct-layout: project-roadmap
 :awestruct-project: validator
 :toc:
@@ -13,32 +12,28 @@ users needs and contributions.
 You can find a fine-grained roadmap in our https://hibernate.atlassian.net/browse/HV[issue tracker],
 but this page is a good starting point to see where we are going.
 
-== Hibernate Validator 9.0
-
-The main goals for the 9.0 series are:
-
-* Upgrade to JDK 17 as the baseline and drop JDK 11 compatibility (link:{hv-jira-url-prefix}/HV-1991[HV-1991]).
-* Upgrade to jakarta.validation-api 3.1.0 (link:{hv-jira-url-prefix}/HV-1979[HV-1979]).
-* Remove the Security Manager integration. With Security Manager being deprecated for some time and planned for removal,
-its integration in Hibernate Validator becomes obsolete (link:{hv-jira-url-prefix}/HV-1975[HV-1975]).
-* Remove the obsolete Wildfly patching module `hibernate-validator-modules` or consider replacing it with the feature pack (link:{hv-jira-url-prefix}/HV-1967[HV-1967]).
-* Make Hibernate Validator build reproducible.
-* Include more constraints.
-
-For a full list of issues currently planned for this series,
-see https://hibernate.atlassian.net/issues/?jql=fixVersion%20=%2032377%20ORDER%20BY%20created%20ASC[here].
-
 == Hibernate Validator 9.1
 
 * Warn users about misuse of the constraint annotation (including compile and runtime warnings) (link:{hv-jira-url-prefix}/HV-2100[HV-2100]).
-* Array validation, in particular enable "type-element" validation for arrays, i.e. `@NotBlank String[] @NotNull [] strings` (link:{hv-jira-url-prefix}/HV-1428[HV-1428]).
 * Evaluate possible performance improvements for cascading validation of large lists. (link:{hv-jira-url-prefix}/HV-1831[HV-1831]).
-* Explore support for constraint ordering (http://beanvalidation.org/proposals/BVAL-248/[BVAL-248]).
-* Include more constraints.
-* Maven 4 experiments.
+* Change the validation path implementation to improve overall performance.
+* Require JDK 25 for the builds. (link:{hv-jira-url-prefix}/HV-2145[HV-2145]).
+* Apply the unified Hibernate documentation theme. (link:{hv-jira-url-prefix}/HV-2143[HV-2143]).
 
 For a full list of issues currently planned for this series,
 see https://hibernate.atlassian.net/issues/?jql=fixVersion%20=%2033308%20ORDER%20BY%20created%20ASC[here].
+
+== Hibernate Validator 9.2
+
+* Array validation, in particular enable "type-element" validation for arrays, i.e. `@NotBlank String[] @NotNull [] strings` (link:{hv-jira-url-prefix}/HV-1428[HV-1428]).
+* Explore support for constraint ordering (http://beanvalidation.org/proposals/BVAL-248/[BVAL-248]).
+* Include more constraints. Consider creating an incubating constraints module, with constraints which may
+have fewer guarantees in terms of backward compatibility.
+* Maven 4 experiments.
+
+== Hibernate Validator 10.0
+
+* The main goal for this new major version is implementation of Jakarta Validation 4.0.
 
 == Future versions
 
