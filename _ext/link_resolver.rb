@@ -114,7 +114,7 @@ module Awestruct
 
       class DocumentRef
         @@logger = Logger.new(STDERR)
-        @@logger.level = Logger::DEBUG
+        @@logger.level = Logger::INFO
 
         def self.from_patterns(project, series, link_key)
           log_prefix = "#{project['name']}/#{series.version}/#{link_key}: "
