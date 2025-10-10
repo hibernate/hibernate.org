@@ -91,7 +91,7 @@ for more information, in particular about limitations.
 
 Hibernate Search can now index Hibernate ORM entities
 that take advantage of
-https://docs.hibernate.org/orm/6.3/userguide/html_single/Hibernate_User_Guide.html#multitenacy-hibernate-TenantId[discriminator-based multi-tenancy in the database (`@TenandId`)].
+https://docs.hibernate.org/orm/6.3/userguide/html_single/#multitenacy-hibernate-TenantId[discriminator-based multi-tenancy in the database (`@TenandId`)].
 
 [[renamings]]
 === Maven artifact renamings
