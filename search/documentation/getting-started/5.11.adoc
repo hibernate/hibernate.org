@@ -6,7 +6,7 @@
 :page-interpolate: true
 :latest_511_release_version: #{series(page, '5.11').releases.first.version}
 :latest_stable_series_version: #{latest_stable_series(page).version}
-:docs_base_url: http://docs.jboss.org/hibernate/search/5.11/reference/en-US/html_single/
+:docs_base_url: https://docs.hibernate.org/search/5.11/reference/en-US/html_single/
 
 WARNING: This document covers the latest stable release of Hibernate Search 5.
 If you're looking for a getting started guide for the latest stable series, Hibernate Search {latest_stable_series_version},

@@ -79,7 +79,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">ReactiveActionQueue</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">A reactive counterpart to <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/ActionQueue.html" title="class or interface in org.hibernate.engine.spi" class="external-link"><code>ActionQueue</code></a>, where DML
+<div class="block">A reactive counterpart to <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/ActionQueue.html" title="class or interface in org.hibernate.engine.spi" class="external-link"><code>ActionQueue</code></a>, where DML
  operations are queued before execution during a flush.</div>
 </section>
 <section class="summary">
@@ -173,12 +173,12 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#beforeTransactionCompletion()" class="member-name-link">beforeTransactionCompletion</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Execute any registered <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/action/spi/BeforeTransactionCompletionProcess.html" title="class or interface in org.hibernate.action.spi" class="external-link"><code>BeforeTransactionCompletionProcess</code></a></div>
+<div class="block">Execute any registered <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/action/spi/BeforeTransactionCompletionProcess.html" title="class or interface in org.hibernate.action.spi" class="external-link"><code>BeforeTransactionCompletionProcess</code></a></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#checkNoUnresolvedActionsAfterOperation()" class="member-name-link">checkNoUnresolvedActionsAfterOperation</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Throws <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/PropertyValueException.html" title="class or interface in org.hibernate" class="external-link"><code>PropertyValueException</code></a> if there are any unresolved entity insert actions that depend
+<div class="block">Throws <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/PropertyValueException.html" title="class or interface in org.hibernate" class="external-link"><code>PropertyValueException</code></a> if there are any unresolved entity insert actions that depend
  on non-nullable associations with a transient entity.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
@@ -238,10 +238,10 @@ loadScripts(document, 'script');</script>
 <div class="block">Prepares the internal action queues for execution.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerProcess(org.hibernate.action.spi.AfterTransactionCompletionProcess)" class="member-name-link">registerProcess</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/action/spi/AfterTransactionCompletionProcess.html" title="class or interface in org.hibernate.action.spi" class="external-link">AfterTransactionCompletionProcess</a>&nbsp;process)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerProcess(org.hibernate.action.spi.AfterTransactionCompletionProcess)" class="member-name-link">registerProcess</a><wbr>(<a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/action/spi/AfterTransactionCompletionProcess.html" title="class or interface in org.hibernate.action.spi" class="external-link">AfterTransactionCompletionProcess</a>&nbsp;process)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerProcess(org.hibernate.action.spi.BeforeTransactionCompletionProcess)" class="member-name-link">registerProcess</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/action/spi/BeforeTransactionCompletionProcess.html" title="class or interface in org.hibernate.action.spi" class="external-link">BeforeTransactionCompletionProcess</a>&nbsp;process)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerProcess(org.hibernate.action.spi.BeforeTransactionCompletionProcess)" class="member-name-link">registerProcess</a><wbr>(<a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/action/spi/BeforeTransactionCompletionProcess.html" title="class or interface in org.hibernate.action.spi" class="external-link">BeforeTransactionCompletionProcess</a>&nbsp;process)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerProcess(org.hibernate.reactive.engine.ReactiveAfterTransactionCompletionProcess)" class="member-name-link">registerProcess</a><wbr>(<a href="ReactiveAfterTransactionCompletionProcess.html" title="interface in org.hibernate.reactive.engine">ReactiveAfterTransactionCompletionProcess</a>&nbsp;process)</code></div>
@@ -261,7 +261,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns a string representation of the object.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unScheduleDeletion(org.hibernate.engine.spi.EntityEntry,java.lang.Object)" class="member-name-link">unScheduleDeletion</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/EntityEntry.html" title="class or interface in org.hibernate.engine.spi" class="external-link">EntityEntry</a>&nbsp;entry,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unScheduleDeletion(org.hibernate.engine.spi.EntityEntry,java.lang.Object)" class="member-name-link">unScheduleDeletion</a><wbr>(<a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/EntityEntry.html" title="class or interface in org.hibernate.engine.spi" class="external-link">EntityEntry</a>&nbsp;entry,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;rescuedEntity)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
@@ -421,15 +421,15 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="checkNoUnresolvedActionsAfterOperation()">
 <h3>checkNoUnresolvedActionsAfterOperation</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">checkNoUnresolvedActionsAfterOperation</span>()
-                                            throws <span class="exceptions"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/PropertyValueException.html" title="class or interface in org.hibernate" class="external-link">PropertyValueException</a></span></div>
-<div class="block">Throws <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/PropertyValueException.html" title="class or interface in org.hibernate" class="external-link"><code>PropertyValueException</code></a> if there are any unresolved entity insert actions that depend
+                                            throws <span class="exceptions"><a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/PropertyValueException.html" title="class or interface in org.hibernate" class="external-link">PropertyValueException</a></span></div>
+<div class="block">Throws <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/PropertyValueException.html" title="class or interface in org.hibernate" class="external-link"><code>PropertyValueException</code></a> if there are any unresolved entity insert actions that depend
  on non-nullable associations with a transient entity. This method should be called on completion of an operation
  (after all cascades are completed) that saves an entity.</div>
 <dl class="notes">
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/PropertyValueException.html" title="class or interface in org.hibernate" class="external-link">PropertyValueException</a></code> - if there are any unresolved entity insert actions;
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/PropertyValueException.html#getEntityName()" title="class or interface in org.hibernate" class="external-link"><code>PropertyValueException.getEntityName()</code></a> and
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/PropertyValueException.html#getPropertyName()" title="class or interface in org.hibernate" class="external-link"><code>PropertyValueException.getPropertyName()</code></a> will return the entity name and property value for
+<dd><code><a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/PropertyValueException.html" title="class or interface in org.hibernate" class="external-link">PropertyValueException</a></code> - if there are any unresolved entity insert actions;
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/PropertyValueException.html#getEntityName()" title="class or interface in org.hibernate" class="external-link"><code>PropertyValueException.getEntityName()</code></a> and
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/PropertyValueException.html#getPropertyName()" title="class or interface in org.hibernate" class="external-link"><code>PropertyValueException.getPropertyName()</code></a> will return the entity name and property value for
  the first unresolved entity insert action.</dd>
 </dl>
 </section>
@@ -437,13 +437,13 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="registerProcess(org.hibernate.action.spi.AfterTransactionCompletionProcess)">
 <h3>registerProcess</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">registerProcess</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/action/spi/AfterTransactionCompletionProcess.html" title="class or interface in org.hibernate.action.spi" class="external-link">AfterTransactionCompletionProcess</a>&nbsp;process)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">registerProcess</span><wbr><span class="parameters">(<a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/action/spi/AfterTransactionCompletionProcess.html" title="class or interface in org.hibernate.action.spi" class="external-link">AfterTransactionCompletionProcess</a>&nbsp;process)</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="registerProcess(org.hibernate.action.spi.BeforeTransactionCompletionProcess)">
 <h3>registerProcess</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">registerProcess</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/action/spi/BeforeTransactionCompletionProcess.html" title="class or interface in org.hibernate.action.spi" class="external-link">BeforeTransactionCompletionProcess</a>&nbsp;process)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">registerProcess</span><wbr><span class="parameters">(<a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/action/spi/BeforeTransactionCompletionProcess.html" title="class or interface in org.hibernate.action.spi" class="external-link">BeforeTransactionCompletionProcess</a>&nbsp;process)</span></div>
 </section>
 </li>
 <li>
@@ -465,7 +465,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Perform all currently queued entity-insertion actions.</div>
 <dl class="notes">
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/HibernateException.html" title="class or interface in org.hibernate" class="external-link">HibernateException</a></code> - error executing queued insertion actions.</dd>
+<dd><code><a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/HibernateException.html" title="class or interface in org.hibernate" class="external-link">HibernateException</a></code> - error executing queued insertion actions.</dd>
 </dl>
 </section>
 </li>
@@ -476,7 +476,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Perform all currently queued actions.</div>
 <dl class="notes">
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/HibernateException.html" title="class or interface in org.hibernate" class="external-link">HibernateException</a></code> - error executing queued actions.</dd>
+<dd><code><a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/HibernateException.html" title="class or interface in org.hibernate" class="external-link">HibernateException</a></code> - error executing queued actions.</dd>
 </dl>
 </section>
 </li>
@@ -484,11 +484,11 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="prepareActions()">
 <h3>prepareActions</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">prepareActions</span>()
-                    throws <span class="exceptions"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/HibernateException.html" title="class or interface in org.hibernate" class="external-link">HibernateException</a></span></div>
+                    throws <span class="exceptions"><a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/HibernateException.html" title="class or interface in org.hibernate" class="external-link">HibernateException</a></span></div>
 <div class="block">Prepares the internal action queues for execution.</div>
 <dl class="notes">
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/HibernateException.html" title="class or interface in org.hibernate" class="external-link">HibernateException</a></code> - error preparing actions.</dd>
+<dd><code><a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/HibernateException.html" title="class or interface in org.hibernate" class="external-link">HibernateException</a></code> - error preparing actions.</dd>
 </dl>
 </section>
 </li>
@@ -507,7 +507,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="beforeTransactionCompletion()">
 <h3>beforeTransactionCompletion</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">beforeTransactionCompletion</span>()</div>
-<div class="block">Execute any registered <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/action/spi/BeforeTransactionCompletionProcess.html" title="class or interface in org.hibernate.action.spi" class="external-link"><code>BeforeTransactionCompletionProcess</code></a></div>
+<div class="block">Execute any registered <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/action/spi/BeforeTransactionCompletionProcess.html" title="class or interface in org.hibernate.action.spi" class="external-link"><code>BeforeTransactionCompletionProcess</code></a></div>
 </section>
 </li>
 <li>
@@ -633,7 +633,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="unScheduleDeletion(org.hibernate.engine.spi.EntityEntry,java.lang.Object)">
 <h3>unScheduleDeletion</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">unScheduleDeletion</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/EntityEntry.html" title="class or interface in org.hibernate.engine.spi" class="external-link">EntityEntry</a>&nbsp;entry,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">unScheduleDeletion</span><wbr><span class="parameters">(<a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/EntityEntry.html" title="class or interface in org.hibernate.engine.spi" class="external-link">EntityEntry</a>&nbsp;entry,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;rescuedEntity)</span></div>
 </section>
 </li>

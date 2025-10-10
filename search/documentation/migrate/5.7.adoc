@@ -36,5 +36,5 @@ especially as now `org.hibernate.Session` implements `javax.persistence.EntityMa
 The version of Hibernate ORM in WildFly is now too old to run this version of Hibernate Search.
 Make sure you read the related chapters of both projects to update the WildFly modules:
 
- - https://docs.jboss.org/hibernate/search/5.7/reference/en-US/html_single/#_deploying_on_wildfly[Hibernate Search updated modules on WildFly 10]
- - http://docs.jboss.org/hibernate/orm/5.2/topical/html_single/wildfly/Wildfly.html[Hibernate ORM modules on WildFly 10]
+ - https://docs.hibernate.org/search/5.7/reference/en-US/html_single/#_deploying_on_wildfly[Hibernate Search updated modules on WildFly 10]
+ - https://docs.hibernate.org/orm/5.2/topical/html_single/wildfly/Wildfly.html[Hibernate ORM modules on WildFly 10]

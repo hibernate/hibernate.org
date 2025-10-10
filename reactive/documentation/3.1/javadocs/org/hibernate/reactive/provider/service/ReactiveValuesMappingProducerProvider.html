@@ -78,7 +78,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></code>, <code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/service/Service.html" title="class or interface in org.hibernate.service" class="external-link">Service</a></code>, <code>org.hibernate.sql.results.jdbc.spi.JdbcValuesMappingProducerProvider</code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></code>, <code><a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/service/Service.html" title="class or interface in org.hibernate.service" class="external-link">Service</a></code>, <code>org.hibernate.sql.results.jdbc.spi.JdbcValuesMappingProducerProvider</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">ReactiveValuesMappingProducerProvider</span>
@@ -138,12 +138,12 @@ implements org.hibernate.sql.results.jdbc.spi.JdbcValuesMappingProducerProvider<
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.hibernate.sql.results.jdbc.spi.JdbcValuesMappingProducer</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#buildMappingProducer(org.hibernate.sql.ast.tree.select.SelectStatement,org.hibernate.engine.spi.SessionFactoryImplementor)" class="member-name-link">buildMappingProducer</a><wbr>(org.hibernate.sql.ast.tree.select.SelectStatement&nbsp;sqlAst,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a>&nbsp;sessionFactory)</code></div>
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a>&nbsp;sessionFactory)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.hibernate.query.results.ResultSetMapping</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#buildResultSetMapping(java.lang.String,boolean,org.hibernate.engine.spi.SessionFactoryImplementor)" class="member-name-link">buildResultSetMapping</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  boolean&nbsp;isDynamic,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a>&nbsp;sessionFactory)</code></div>
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a>&nbsp;sessionFactory)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
@@ -195,7 +195,7 @@ implements org.hibernate.sql.results.jdbc.spi.JdbcValuesMappingProducerProvider<
 <section class="detail" id="buildMappingProducer(org.hibernate.sql.ast.tree.select.SelectStatement,org.hibernate.engine.spi.SessionFactoryImplementor)">
 <h3>buildMappingProducer</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.hibernate.sql.results.jdbc.spi.JdbcValuesMappingProducer</span>&nbsp;<span class="element-name">buildMappingProducer</span><wbr><span class="parameters">(org.hibernate.sql.ast.tree.select.SelectStatement&nbsp;sqlAst,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a>&nbsp;sessionFactory)</span></div>
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a>&nbsp;sessionFactory)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>buildMappingProducer</code>&nbsp;in interface&nbsp;<code>org.hibernate.sql.results.jdbc.spi.JdbcValuesMappingProducerProvider</code></dd>
@@ -207,7 +207,7 @@ implements org.hibernate.sql.results.jdbc.spi.JdbcValuesMappingProducerProvider<
 <h3>buildResultSetMapping</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.hibernate.query.results.ResultSetMapping</span>&nbsp;<span class="element-name">buildResultSetMapping</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  boolean&nbsp;isDynamic,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a>&nbsp;sessionFactory)</span></div>
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a>&nbsp;sessionFactory)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>buildResultSetMapping</code>&nbsp;in interface&nbsp;<code>org.hibernate.sql.results.jdbc.spi.JdbcValuesMappingProducerProvider</code></dd>

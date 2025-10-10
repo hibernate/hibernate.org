@@ -93,9 +93,9 @@ search/downloads:                          /search/releases/
 search/downloads.html:                     /search/releases/
 subprojects/search/docs:                   /search/documentation/
 subprojects/search/docs.html:              /search/documentation/
-search/documentation/migrate/6.0/:          https://docs.jboss.org/hibernate/search/6.0/migration/html_single/
-search/documentation/migrate/6.0/index.html: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/
-search/documentation/migrate/6.0:          https://docs.jboss.org/hibernate/search/6.0/migration/html_single/
+search/documentation/migrate/6.0/:          https://docs.hibernate.org/search/6.0/migration/html_single/
+search/documentation/migrate/6.0/index.html: https://docs.hibernate.org/search/6.0/migration/html_single/
+search/documentation/migrate/6.0:          https://docs.hibernate.org/search/6.0/migration/html_single/
 search/articles:                           /search/more-resources/
 search/articles.html:                      /search/more-resources/
 
@@ -140,13 +140,13 @@ subprojects/shards/download.html:          /others/
 362.html:                                  /nhibernate.html
 
 ## Annotations
-hib_docs/annotations/reference/en/html_single/:                        https://docs.jboss.org/hibernate/stable/annotations/reference/en/html_single/
-hib_docs/annotations/reference/en/html/:                               https://docs.jboss.org/hibernate/stable/annotations/reference/en/html/
-hib_docs/annotations/reference/en/html/preface.html:                   https://docs.jboss.org/hibernate/stable/annotations/reference/en/html/preface.html
-hib_docs/annotations/reference/en/html/ch01.html:                      https://docs.jboss.org/hibernate/stable/annotations/reference/en/html/ch01.html
-hib_docs/annotations/reference/en/html/entity.html:                    https://docs.jboss.org/hibernate/stable/annotations/reference/en/html/entity.html
-hib_docs/annotations/reference/en/html/xml-overriding.html:            https://docs.jboss.org/hibernate/stable/annotations/reference/en/html/xml-overriding.html
-hib_docs/annotations/reference/en/html/additionalmodules.html:         https://docs.jboss.org/hibernate/stable/annotations/reference/en/html/additionalmodules.html
+hib_docs/annotations/reference/en/html_single/:                        https://docs.hibernate.org/stable/annotations/reference/en/html_single/
+hib_docs/annotations/reference/en/html/:                               https://docs.hibernate.org/stable/annotations/reference/en/html/
+hib_docs/annotations/reference/en/html/preface.html:                   https://docs.hibernate.org/stable/annotations/reference/en/html/preface.html
+hib_docs/annotations/reference/en/html/ch01.html:                      https://docs.hibernate.org/stable/annotations/reference/en/html/ch01.html
+hib_docs/annotations/reference/en/html/entity.html:                    https://docs.hibernate.org/stable/annotations/reference/en/html/entity.html
+hib_docs/annotations/reference/en/html/xml-overriding.html:            https://docs.hibernate.org/stable/annotations/reference/en/html/xml-overriding.html
+hib_docs/annotations/reference/en/html/additionalmodules.html:         https://docs.hibernate.org/stable/annotations/reference/en/html/additionalmodules.html
 
 ## Old documentation links on the initial website
 hib_docs/reference/en/html/mapping-types.html:                         /orm/documentation/obsolete
@@ -164,19 +164,19 @@ hib_docs/reference/en/html/performance-cache.html :                    /orm/docu
 hib_docs/reference/en/html/manipulatingdata.html:                      /orm/documentation/obsolete
 hib_docs/reference/en/html/querysql-namedqueries.html:                 /orm/documentation/obsolete
 hib_docs/api/net/sf/hibernate/Session.html:                            /orm/documentation/obsolete
-hib_docs/entitymanager/reference/en/html_single/:                      https://docs.jboss.org/hibernate/entitymanager/3.6/reference/en/html_single/
-hib_docs/entitymanager/reference/en/html/architecture.html:            https://docs.jboss.org/hibernate/entitymanager/3.6/reference/en/html/architecture.html
-hib_docs/entitymanager/reference/en/html/configuration.html:           https://docs.jboss.org/hibernate/entitymanager/3.6/reference/en/html/configuration.html
-hib_docs/entitymanager/reference/en/html/objectstate.html:             https://docs.jboss.org/hibernate/entitymanager/3.6/reference/en/html/objectstate.html
-hib_docs/entitymanager/reference/en/html/metamodel.html:               https://docs.jboss.org/hibernate/entitymanager/3.6/reference/en/html/metamodel.html
-hib_docs/entitymanager/reference/en/html/transactions.html:            https://docs.jboss.org/hibernate/entitymanager/3.6/reference/en/html/transactions.html
-hib_docs/entitymanager/reference/en/html/listeners.html:               https://docs.jboss.org/hibernate/entitymanager/3.6/reference/en/html/listeners.html
-hib_docs/entitymanager/reference/en/html/batch.html:                   https://docs.jboss.org/hibernate/entitymanager/3.6/reference/en/html/batch.html
-hib_docs/entitymanager/reference/en/html/queryhql.html:                https://docs.jboss.org/hibernate/entitymanager/3.6/reference/en/html/queryhql.html
-hib_docs/entitymanager/reference/en/html/querycriteria.html:           https://docs.jboss.org/hibernate/entitymanager/3.6/reference/en/html/querycriteria.html
-hib_docs/entitymanager/reference/en/html/query_native.html:            https://docs.jboss.org/hibernate/entitymanager/3.6/reference/en/html/query_native.html
-hib_docs/search/reference/en/html_single/:                             https://docs.jboss.org/hibernate/search/3.4/reference/en-US/html_single/
-hib_docs/validator/reference/en/html/validator-defineconstraints.html: https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/
+hib_docs/entitymanager/reference/en/html_single/:                      https://docs.hibernate.org/entitymanager/3.6/reference/en/html_single/
+hib_docs/entitymanager/reference/en/html/architecture.html:            https://docs.hibernate.org/entitymanager/3.6/reference/en/html/architecture.html
+hib_docs/entitymanager/reference/en/html/configuration.html:           https://docs.hibernate.org/entitymanager/3.6/reference/en/html/configuration.html
+hib_docs/entitymanager/reference/en/html/objectstate.html:             https://docs.hibernate.org/entitymanager/3.6/reference/en/html/objectstate.html
+hib_docs/entitymanager/reference/en/html/metamodel.html:               https://docs.hibernate.org/entitymanager/3.6/reference/en/html/metamodel.html
+hib_docs/entitymanager/reference/en/html/transactions.html:            https://docs.hibernate.org/entitymanager/3.6/reference/en/html/transactions.html
+hib_docs/entitymanager/reference/en/html/listeners.html:               https://docs.hibernate.org/entitymanager/3.6/reference/en/html/listeners.html
+hib_docs/entitymanager/reference/en/html/batch.html:                   https://docs.hibernate.org/entitymanager/3.6/reference/en/html/batch.html
+hib_docs/entitymanager/reference/en/html/queryhql.html:                https://docs.hibernate.org/entitymanager/3.6/reference/en/html/queryhql.html
+hib_docs/entitymanager/reference/en/html/querycriteria.html:           https://docs.hibernate.org/entitymanager/3.6/reference/en/html/querycriteria.html
+hib_docs/entitymanager/reference/en/html/query_native.html:            https://docs.hibernate.org/entitymanager/3.6/reference/en/html/query_native.html
+hib_docs/search/reference/en/html_single/:                             https://docs.hibernate.org/search/3.4/reference/en-US/html_single/
+hib_docs/validator/reference/en/html/validator-defineconstraints.html: https://docs.hibernate.org/stable/validator/reference/en-US/html_single/
 hib_docs/nhibernate/1.2/reference/en/html/mapping.html:                https://nhibernate.info/doc/nhibernate-reference/mapping.html
 hib_docs/nhibernate/1.2/reference/en/html_single/:                     https://nhibernate.info/doc/nh/en/
 hib_docs/nhibernate/1.2/reference/en/html/:                            https://nhibernate.info/doc/nhibernate-reference/
@@ -199,7 +199,7 @@ hib_docs/tools/reference/en/html/plugins.html:                         https://d
 hib_docs/tools/reference/en/html/ant.html:                             https://docs.jboss.org/tools/4.1.0.Final/en/hibernatetools/html_single/index.html#ant
 hib_docs/tools/reference/en/html/reverseengineering.html:              https://docs.jboss.org/tools/4.1.0.Final/en/hibernatetools/html_single/index.html#reverseengineering
 hib_docs/tools/reference/en/html/codegen.html:                         https://docs.jboss.org/tools/4.1.0.Final/en/hibernatetools/html_single/index.html#codegen
-hib_docs/reference/en/html/queryhql-expressions.html:                  https://docs.jboss.org/hibernate/stable/core.old/reference/en/html/queryhql-expressions.html
+hib_docs/reference/en/html/queryhql-expressions.html:                  https://docs.hibernate.org/stable/core.old/reference/en/html/queryhql-expressions.html
 
 # Old cwiki redirects
 

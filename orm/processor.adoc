@@ -6,7 +6,7 @@
 :latest_stable: #{latest_stable_release(page).version}
 :version_family: #{latest_stable_release(page).version_family}
 
-link:https://docs.jboss.org/hibernate/orm/{version_family}/introduction/html_single/Hibernate_Introduction.html#generator[Hibernate Processor] is a standard Java annotation processor which produces the Jakarta Persistence static metamodel, validates queries at compilation time, and implements Jakarta Data repositories.
+link:https://docs.hibernate.org/orm/{version_family}/introduction/html_single/Hibernate_Introduction.html#generator[Hibernate Processor] is a standard Java annotation processor which produces the Jakarta Persistence static metamodel, validates queries at compilation time, and implements Jakarta Data repositories.
 
 == Jakarta Persistence static metamodel
 

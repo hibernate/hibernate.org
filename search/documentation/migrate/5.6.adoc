@@ -45,7 +45,7 @@ Please refer to the javadoc for the expected behavior of changed/added methods.
 
 Please also note those new features that may help when writing new code, but don't require any change to existing code:
 
- * the https://docs.jboss.org/hibernate/search/5.6/reference/en-US/html_single/#query-sorting[sort DSL]
+ * the https://docs.hibernate.org/search/5.6/reference/en-US/html_single/#query-sorting[sort DSL]
  * the experimental `org.hibernate.search.bridge.MetadataProvidingFieldBridge` interface,
    that allows custom bridges implementing it to define both the exact type of their custom (additional) fields
    (for proper querying support on numeric fields, in particular)

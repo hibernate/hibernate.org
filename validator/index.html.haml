@@ -63,20 +63,20 @@ project: validator
 
     The Bean Validation standard specifies a range of predefined constraint types, and Hibernate Validator adds even more, even including some country-specific constraint types such as `@TituloEleitoral`.
 
-    But the true power of Bean Validation lies in how easy it is to define https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#validator-customconstraints[custom constraints] precisely capturing the semantics of application-specific types.
+    But the true power of Bean Validation lies in how easy it is to define https://docs.hibernate.org/stable/validator/reference/en-US/html_single/#validator-customconstraints[custom constraints] precisely capturing the semantics of application-specific types.
 
 .feature-block
   :asciidoc
     == Rich metadata API
 
-    The Bean Validation https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#validator-metadata-api[metadata API] facilitates tooling integration and metaprogramming.
+    The Bean Validation https://docs.hibernate.org/stable/validator/reference/en-US/html_single/#validator-metadata-api[metadata API] facilitates tooling integration and metaprogramming.
     Naturally, Hibernate Validator goes beyond the spec.
-    The https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#section-programmatic-api[programmatic constraint configuration API] allows constraints to be created programmatically.
+    The https://docs.hibernate.org/stable/validator/reference/en-US/html_single/#section-programmatic-api[programmatic constraint configuration API] allows constraints to be created programmatically.
 .feature-block
   :asciidoc
     == Compile-time type safety
 
-    The annotation-based approach is by nature quite type safe, but there's even an https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#validator-annotation-processor[annotation processor] which raises compilation errors when constraint annotations are used incorrectly, for example, if the `@Past` annotation is applied to a field of type `String`.
+    The annotation-based approach is by nature quite type safe, but there's even an https://docs.hibernate.org/stable/validator/reference/en-US/html_single/#validator-annotation-processor[annotation processor] which raises compilation errors when constraint annotations are used incorrectly, for example, if the `@Past` annotation is applied to a field of type `String`.
 
 .feature-block
   :asciidoc

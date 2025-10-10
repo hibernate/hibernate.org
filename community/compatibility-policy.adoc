@@ -259,7 +259,7 @@ Upgrading from Hibernate Search 5.11.0.Final to 6.0.0.Final *may* introduce brea
 Hibernate Search 6 or later::
 Abstraction layers hide Lucene APIs, meaning applications generally do not need to rely on Lucene APIs at all.
 The only way to rely on Lucene APIs directly from user code is through extensions,
-for example https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl-predicate-extensions-lucene-from-lucene-query[to pass a Lucene Query directly to the Search DSL].
+for example https://docs.hibernate.org/search/6.0/reference/en-US/html_single/#search-dsl-predicate-extensions-lucene-from-lucene-query[to pass a Lucene Query directly to the Search DSL].
 +
 These extensions are not covered by the compatibility policy.
 +
@@ -312,7 +312,7 @@ which is out of the control of the Hibernate Search project.
 Abstraction layers hide Elasticsearch/OpenSearch APIs, meaning users generally
 do not need to provide JSON directly: Hibernate Search will generate it automatically.
 The only way to rely on these APIs directly from user code is through extensions,
-for example https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl-predicate-extensions-elasticsearch-from-json[when passing JSON to embed in a search request].
+for example https://docs.hibernate.org/search/6.0/reference/en-US/html_single/#search-dsl-predicate-extensions-elasticsearch-from-json[when passing JSON to embed in a search request].
 
 These extensions are not covered by the compatibility policy.
 

@@ -40,7 +40,7 @@ utilization.
 The useful capabilities from Lucene's `SimpleQueryParser` are now conveniently
 exposed by our higher level DSL.
 
-Details about this feature are available https://docs.jboss.org/hibernate/search/5.8/reference/en-US/html_single/#_simple_query_string_queries[in the documentation],
+Details about this feature are available https://docs.hibernate.org/search/5.8/reference/en-US/html_single/#_simple_query_string_queries[in the documentation],
 and also https://in.relation.to/2017/04/27/simple-query-string-what-about-it/[in this blog post].
 
 [[simplified-jndi-configuration]]
@@ -54,7 +54,7 @@ properties such as how to set the `InitialContext` for JNDI lookups:
 only configure Hibernate ORM, and Hibernate Search will inherit the same
 settings.
 
-See also the http://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#jndi[JNDI configuration in the Hibernate ORM documentation].
+See also the https://docs.hibernate.org/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#jndi[JNDI configuration in the Hibernate ORM documentation].
 
 [[analyzer-providers]]
 === Programmatic analyzer definitions
@@ -113,8 +113,8 @@ public static class CustomAnalyzerProvider implements ElasticsearchAnalysisDefin
 As you can see, this allows you to avoid needing to refer to Lucene classes to configure Elasticsearch analyzers. 
  
 More details can be found 
-https://docs.jboss.org/hibernate/search/5.8/reference/en-US/html_single/#section-programmatic-analyzer-definition[here for Lucene]
-and https://docs.jboss.org/hibernate/search/5.8/reference/en-US/html_single/#_custom_analyzers_using_a_definition_provider[here for Elasticsearch].
+https://docs.hibernate.org/search/5.8/reference/en-US/html_single/#section-programmatic-analyzer-definition[here for Lucene]
+and https://docs.hibernate.org/search/5.8/reference/en-US/html_single/#_custom_analyzers_using_a_definition_provider[here for Elasticsearch].
 
 [[normalizers]]
 === Normalizers for safer sorts
@@ -144,8 +144,8 @@ and a text field with a normalizer will take the `text` (5.x) or `string` (2.x) 
 
 You can find out more about normalizers in the reference documentation:
 
- * https://docs.jboss.org/hibernate/search/5.8/reference/en-US/html_single/#section-normalizers[main documentation]
- * https://docs.jboss.org/hibernate/search/5.8/reference/en-US/html_single/#_normalizers[Elasticsearch specifics]
+ * https://docs.hibernate.org/search/5.8/reference/en-US/html_single/#section-normalizers[main documentation]
+ * https://docs.hibernate.org/search/5.8/reference/en-US/html_single/#_normalizers[Elasticsearch specifics]
 
 [[aws-integration]]
 === AWS integration
@@ -154,7 +154,7 @@ We added a new module allowing you to very simply wire your Hibernate Search ins
 to an AWS-hosted Elasticsearch cluster using Amazon's proprietary IAM authentication mechanism. 
 
 You can find more information about how to use this integration in the
-https://docs.jboss.org/hibernate/search/5.8/reference/en-US/html_single/#elasticsearch-integration-configuration-aws[reference documentation].
+https://docs.hibernate.org/search/5.8/reference/en-US/html_single/#elasticsearch-integration-configuration-aws[reference documentation].
 
 [[bean-resolver]]
 === Dependency injection in FieldBridges

@@ -183,7 +183,7 @@ Hibernate Search 6.1 adds link:{hsearch-doc-url-prefix}#mapper-orm-bridge-named-
 a way to define the search logic as part of a custom binder/bridge.
 
 This is, in a way, the comeback of the
-https://docs.jboss.org/hibernate/search/5.11/reference/en-US/html_single/#query-filter-fulltext["full-text filters" of Hibernate Search 5].
+https://docs.hibernate.org/search/5.11/reference/en-US/html_single/#query-filter-fulltext["full-text filters" of Hibernate Search 5].
 
 [[elasticsearch-custom-index-settings]]
 === Custom ES index settings

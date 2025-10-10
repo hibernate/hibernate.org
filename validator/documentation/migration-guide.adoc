@@ -249,7 +249,7 @@ No migration concerns.
 
 === 6.0.9.Final
 
-* The constraint validator payload (incubating feature introduced in 6.0.8.Final) has been moved from the `HibernateConstraintValidatorInitializationContext` to the `HibernateConstraintValidatorContext`. See https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#constraint-validator-payload[the documentation for more information].
+* The constraint validator payload (incubating feature introduced in 6.0.8.Final) has been moved from the `HibernateConstraintValidatorInitializationContext` to the `HibernateConstraintValidatorContext`. See https://docs.hibernate.org/stable/validator/reference/en-US/html_single/#constraint-validator-payload[the documentation for more information].
 
 === 6.0.8.Final
 
@@ -451,7 +451,7 @@ This section describes changes made in different releases of version 4.3.0. It h
 
 === 4.3.0.Beta1
 
-https://hibernate.atlassian.net/browse/HV-561[HV-561] introduced several deprecations (see the Javadoc for https://docs.jboss.org/hibernate/validator/4.3/api/index.html?deprecated-list.html[a complete deprecation list]):
+https://hibernate.atlassian.net/browse/HV-561[HV-561] introduced several deprecations (see the Javadoc for https://docs.hibernate.org/validator/4.3/api/index.html?deprecated-list.html[a complete deprecation list]):
 
 * `org.hibernate.validator.group.DefaultGroupSequenceProvider` is deprecated and replaced by `org.hibernate.validator.group.spi.DefaultGroupSequenceProvider`
 * `org.hibernate.validator.resourceloading.ResourceBundleLocator` is deprecated and replaced by `org.hibernate.validator.spi.resourceloading.ResourceBundleLocator`

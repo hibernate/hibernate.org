@@ -131,12 +131,12 @@ for the numeric encoding.
 
 You can still keep the old (string based) index format by explicitly specifying a string encoding
 field bridge. In the case of integers for example
-`link:http://docs.jboss.org/hibernate/search/5.0/api/org/hibernate/search/bridge/builtin/IntegerBridge.html[org.hibernate.search.bridge.builtin.IntegerBridge]`.
-Check the package `link:http://docs.jboss.org/hibernate/search/5.0/api/org/hibernate/search/bridge/builtin/package-summary.html[org.hibernate.search.bridge.builtin]` for
+`link:https://docs.hibernate.org/search/5.0/api/org/hibernate/search/bridge/builtin/IntegerBridge.html[org.hibernate.search.bridge.builtin.IntegerBridge]`.
+Check the package `link:https://docs.hibernate.org/search/5.0/api/org/hibernate/search/bridge/builtin/package-summary.html[org.hibernate.search.bridge.builtin]` for
 other publicly available field bridges.
 
 For dates and calendars you can switch the indexing format via the new
-`link:http://docs.jboss.org/hibernate/search/5.0/api/org/hibernate/search/annotations/EncodingType.html[EncodingType]`
+`link:https://docs.hibernate.org/search/5.0/api/org/hibernate/search/annotations/EncodingType.html[EncodingType]`
 enum, for example `@DateBridge(encoding=EncodingType.STRING)` resp.
 `@CalendarBridge(encoding=EncodingType.STRING)`.
 
@@ -173,8 +173,8 @@ example instead of extending it.
 
 The `org.hibernate.search.engine.service.spi.Service` SPI got refactored. If you where integrating
 with the old service contract, refer to the javadoc of
-`link:http://docs.jboss.org/hibernate/search/5.0/api/org/hibernate/search/engine/service/spi/ServiceManager.html[ServiceManager]`,
-`link:http://docs.jboss.org/hibernate/search/5.0/api/org/hibernate/search/engine/service/spi/Service.html[Service]`,
-`link:http://docs.jboss.org/hibernate/search/5.0/api/org/hibernate/search/engine/service/spi/Startable.html[Startable]`
-and `link:http://docs.jboss.org/hibernate/search/5.0/api/org/hibernate/search/engine/service/spi/Stoppable.html[Stoppable]`
+`link:https://docs.hibernate.org/search/5.0/api/org/hibernate/search/engine/service/spi/ServiceManager.html[ServiceManager]`,
+`link:https://docs.hibernate.org/search/5.0/api/org/hibernate/search/engine/service/spi/Service.html[Service]`,
+`link:https://docs.hibernate.org/search/5.0/api/org/hibernate/search/engine/service/spi/Startable.html[Startable]`
+and `link:https://docs.hibernate.org/search/5.0/api/org/hibernate/search/engine/service/spi/Stoppable.html[Stoppable]`
 for details about the new contract.
