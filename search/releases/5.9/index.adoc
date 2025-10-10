@@ -8,7 +8,7 @@
 A JSR 352 mass indexing job was added, adding in particular the ability to restart
 from a checkpoint when indexing fails.
 
-See https://docs.jboss.org/hibernate/search/5.9/reference/en-US/html_single/#jsr352-integration[the documentation]
+See https://docs.hibernate.org/search/5.9/reference/en-US/html_single/#jsr352-integration[the documentation]
 for more information,
 and https://in.relation.to/2017/11/28/introducing-hibernate-search-jsr352-mass-indexing-job/[this blog post]
 for an introduction to JSR 352 in Hibernate Search.
@@ -26,5 +26,5 @@ which means that components are split in fine grained packages,
 allowing you to pick only the parts you will need.
 For example, you won't need to add the Elasticsearch clients to your server if you only use Lucene.
 
-See https://docs.jboss.org/hibernate/search/5.9/reference/en-US/html_single/#search-configuration-deploy-on-wildfly[the documentation]
+See https://docs.hibernate.org/search/5.9/reference/en-US/html_single/#search-configuration-deploy-on-wildfly[the documentation]
 for more information on the available feature packs and how to consume them.

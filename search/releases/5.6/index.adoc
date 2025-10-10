@@ -20,7 +20,7 @@ but on the other hand you benefit from _Microservices_ - style decoupling and al
 that Elasticsearch can provide in terms of running and managing an horizontally scalable cluster.
 
 To know more about this integration, check out the
-http://docs.jboss.org/hibernate/search/5.6/reference/en-US/html_single/#elasticsearch-integration[Elasticsearch chapter]
+https://docs.hibernate.org/search/5.6/reference/en-US/html_single/#elasticsearch-integration[Elasticsearch chapter]
 in the documentation.
 
 === Sort DSL
@@ -48,7 +48,7 @@ List results = query.list();
 You can find more information in
 https://in.relation.to/2016/10/10/introducing-hibernate-search-sort-dsl/[this blog post]
 and in
-http://docs.jboss.org/hibernate/search/5.6/reference/en-US/html_single/#query-sorting[the documentation]
+https://docs.hibernate.org/search/5.6/reference/en-US/html_single/#query-sorting[the documentation]
 
 === Lucene upgrade
 
@@ -64,5 +64,5 @@ A new `async` reader strategy has been added for the Lucene integration,
 bringing performance boosts when you are okay with your queries being run
 on an out-of-date index (how much out-of-date is configurable).
 
-Refer to http://docs.jboss.org/hibernate/search/5.6/reference/en-US/html_single/#search-architecture-readerstrategy[the documentation]
+Refer to https://docs.hibernate.org/search/5.6/reference/en-US/html_single/#search-architecture-readerstrategy[the documentation]
 for more information.

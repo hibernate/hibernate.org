@@ -22,7 +22,7 @@ Since 3.1 it detects indexes in existing directories automatically.
 
 The problems can be rather different but most likely a configuration issue.
 Make sure to review carefully the configuration chapter of the reference documentation,
-especially the chapter about http://docs.jboss.org/hibernate/search/5.2/reference/en-US/html_single/#search-architecture[Architecture].
+especially the chapter about https://docs.hibernate.org/search/5.2/reference/en-US/html_single/#search-architecture[Architecture].
 
 When running an application on multiple servers, you will need to setup both an appropriate backend
 (to delegate changes to the master node) and a DirectoryProvider (to store the index).

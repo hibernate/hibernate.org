@@ -14,9 +14,9 @@ We also have leveraged the new features of JDK 8 (built-in constraints are marke
 
 === Other new features
 
- * http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#constraint-validator-payload[Constraint validator payload]: ability to pass a payload to your constraint validators
+ * https://docs.hibernate.org/stable/validator/reference/en-US/html_single/#constraint-validator-payload[Constraint validator payload]: ability to pass a payload to your constraint validators
  * Additional constraints: `@ISBN`, `@UniqueElements` and `@CodePointLength`
- * http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#section-clock-provider[Temporal validation tolerance]
+ * https://docs.hibernate.org/stable/validator/reference/en-US/html_single/#section-clock-provider[Temporal validation tolerance]
  * `ScriptEvaluatorFactory` SPI: ability to support non JSR 223 scripting languages such as Spring EL
 
 === Performance improvements

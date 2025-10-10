@@ -6,10 +6,10 @@ Can we do without ORM? Can we "just use SQL" instead?
 
 == SQL and ORM
 
-:intro: https://docs.jboss.org/hibernate/orm/7.1/introduction/html_single/Hibernate_Introduction.html#introduction
-:hql: https://docs.jboss.org/hibernate/orm/7.1/querylanguage/html_single/Hibernate_Query_Language.html
-:tuning: https://docs.jboss.org/hibernate/orm/7.1/introduction/html_single/Hibernate_Introduction.html#tuning-and-performance
-:native-queries: https://docs.jboss.org/hibernate/orm/7.1/introduction/html_single/Hibernate_Introduction.html#native-queries
+:intro: https://docs.hibernate.org/orm/7.1/introduction/html_single/Hibernate_Introduction.html#introduction
+:hql: https://docs.hibernate.org/orm/7.1/querylanguage/html_single/Hibernate_Query_Language.html
+:tuning: https://docs.hibernate.org/orm/7.1/introduction/html_single/Hibernate_Introduction.html#tuning-and-performance
+:native-queries: https://docs.hibernate.org/orm/7.1/introduction/html_single/Hibernate_Introduction.html#native-queries
 :repositories: https://hibernate.org/repositories/
 
 Sometimes, we encounter the following statement:

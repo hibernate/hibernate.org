@@ -74,22 +74,22 @@ projects:
       Idiomatic persistence for Java and relational databases.
     links:
       reference_doc:
-        html: https://docs.jboss.org/hibernate/orm/{series.version}/userguide/html_single/Hibernate_User_Guide.html
+        html: https://docs.hibernate.org/orm/{series.version}/userguide/html_single/Hibernate_User_Guide.html
         latest_stable:
-          html: https://docs.jboss.org/hibernate/stable/orm/userguide/html_single/Hibernate_User_Guide.html
+          html: https://docs.hibernate.org/stable/orm/userguide/html_single/Hibernate_User_Guide.html
       javadoc:
-        html: https://docs.jboss.org/hibernate/orm/{series.version}/javadocs/
+        html: https://docs.hibernate.org/orm/{series.version}/javadocs/
         latest_stable:
-          html: https://docs.jboss.org/hibernate/stable/orm/javadocs/
+          html: https://docs.hibernate.org/stable/orm/javadocs/
       getting_started_guide:
-        html: https://docs.jboss.org/hibernate/orm/{series.version}/quickstart/html_single/
+        html: https://docs.hibernate.org/orm/{series.version}/quickstart/html_single/
       migration_guide:
-        html: https://docs.jboss.org/hibernate/orm/{series.version}/migration-guide/migration-guide.html
+        html: https://docs.hibernate.org/orm/{series.version}/migration-guide/migration-guide.html
       short_guide:
-        html: https://docs.jboss.org/hibernate/orm/{series.version}/introduction/html_single/Hibernate_Introduction.html
-        pdf: https://docs.jboss.org/hibernate/orm/{series.version}/introduction/pdf/Hibernate_Introduction.pdf
+        html: https://docs.hibernate.org/orm/{series.version}/introduction/html_single/Hibernate_Introduction.html
+        pdf: https://docs.hibernate.org/orm/{series.version}/introduction/pdf/Hibernate_Introduction.pdf
       whats_new:
-        html: https://docs.jboss.org/hibernate/orm/{series.version}/whats-new/whats-new.html
+        html: https://docs.hibernate.org/orm/{series.version}/whats-new/whats-new.html
       dist:
         # No longer distributing dists on sourceforge, starting with ORM 6.0.
     maven:
@@ -196,25 +196,25 @@ projects:
       Advanced search API: full-text, geospatial, aggregations and more.
     links:
       reference_doc:
-        html: https://docs.jboss.org/hibernate/search/{series.version}/reference/en-US/html_single/
-        pdf: https://docs.jboss.org/hibernate/search/{series.version}/reference/en-US/pdf/hibernate_search_reference.pdf
+        html: https://docs.hibernate.org/search/{series.version}/reference/en-US/html_single/
+        pdf: https://docs.hibernate.org/search/{series.version}/reference/en-US/pdf/hibernate_search_reference.pdf
         latest_stable:
-          html: https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/
-          pdf: https://docs.jboss.org/hibernate/stable/search/reference/en-US/pdf/hibernate_search_reference.pdf
+          html: https://docs.hibernate.org/stable/search/reference/en-US/html_single/
+          pdf: https://docs.hibernate.org/stable/search/reference/en-US/pdf/hibernate_search_reference.pdf
       javadoc:
-        html: https://docs.jboss.org/hibernate/search/{series.version}/api/
+        html: https://docs.hibernate.org/search/{series.version}/api/
         latest_stable:
-          html: https://docs.jboss.org/hibernate/stable/search/api/
+          html: https://docs.hibernate.org/stable/search/api/
       getting_started_guide:
         - name: ORM
-          html: https://docs.jboss.org/hibernate/search/{series.version}/getting-started/orm/en-US/html_single/
-          pdf: https://docs.jboss.org/hibernate/search/{series.version}/getting-started/orm/en-US/pdf/hibernate_search_getting_started_orm.pdf
+          html: https://docs.hibernate.org/search/{series.version}/getting-started/orm/en-US/html_single/
+          pdf: https://docs.hibernate.org/search/{series.version}/getting-started/orm/en-US/pdf/hibernate_search_getting_started_orm.pdf
         - name: Standalone
-          html: https://docs.jboss.org/hibernate/search/{series.version}/getting-started/standalone/en-US/html_single/
-          pdf: https://docs.jboss.org/hibernate/search/{series.version}/getting-started/standalone/en-US/pdf/hibernate_search_getting_started_standalone.pdf
+          html: https://docs.hibernate.org/search/{series.version}/getting-started/standalone/en-US/html_single/
+          pdf: https://docs.hibernate.org/search/{series.version}/getting-started/standalone/en-US/pdf/hibernate_search_getting_started_standalone.pdf
       migration_guide:
-        html: https://docs.jboss.org/hibernate/search/{series.version}/migration/html_single/
-        pdf: https://docs.jboss.org/hibernate/search/{series.version}/migration/pdf/hibernate_search_migration.pdf
+        html: https://docs.hibernate.org/search/{series.version}/migration/html_single/
+        pdf: https://docs.hibernate.org/search/{series.version}/migration/pdf/hibernate_search_migration.pdf
       whats_new:
         html: "/search/releases/{series.version}/#whats-new"
       dist:
@@ -326,17 +326,17 @@ projects:
       since_series: 6.6
     links:
       reference_doc:
-        html: https://docs.jboss.org/hibernate/orm/{series.version}/repositories/html_single/Hibernate_Data_Repositories.html
+        html: https://docs.hibernate.org/orm/{series.version}/repositories/html_single/Hibernate_Data_Repositories.html
         latest_stable:
-          html: https://docs.jboss.org/hibernate/stable/orm/repositories/html_single/Hibernate_Data_Repositories.html
+          html: https://docs.hibernate.org/stable/orm/repositories/html_single/Hibernate_Data_Repositories.html
       javadoc:
         html: https://jakarta.ee/specifications/data/1.0/apidocs/
         latest_stable:
           html: https://jakarta.ee/specifications/data/1.0/apidocs/
       getting_started_guide:
-        html: https://docs.jboss.org/hibernate/orm/{series.version}/repositories/html_single/Hibernate_Data_Repositories.html#configuration-integration
+        html: https://docs.hibernate.org/orm/{series.version}/repositories/html_single/Hibernate_Data_Repositories.html#configuration-integration
 #      migration_guide:
-#        html: https://docs.jboss.org/hibernate/orm/{series.version}/migration-guide/migration-guide.html
+#        html: https://docs.hibernate.org/orm/{series.version}/migration-guide/migration-guide.html
     maven:
       coord:
         group_id: org.hibernate.orm
@@ -453,18 +453,18 @@ projects:
       Express validation rules in a standardized way using annotation-based constraints and benefit from transparent integration with a wide variety of frameworks.
     links:
       reference_doc:
-        html: https://docs.jboss.org/hibernate/validator/{series.version}/reference/en-US/html_single/
-        pdf: https://docs.jboss.org/hibernate/validator/{series.version}/reference/en-US/pdf/hibernate_validator_reference.pdf
+        html: https://docs.hibernate.org/validator/{series.version}/reference/en-US/html_single/
+        pdf: https://docs.hibernate.org/validator/{series.version}/reference/en-US/pdf/hibernate_validator_reference.pdf
         latest_stable:
-          html: https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/
-          pdf: https://docs.jboss.org/hibernate/stable/validator/reference/en-US/pdf/hibernate_validator_reference.pdf
+          html: https://docs.hibernate.org/stable/validator/reference/en-US/html_single/
+          pdf: https://docs.hibernate.org/stable/validator/reference/en-US/pdf/hibernate_validator_reference.pdf
       javadoc:
-        html: https://docs.jboss.org/hibernate/validator/{series.version}/api/
+        html: https://docs.hibernate.org/validator/{series.version}/api/
         latest_stable:
-          html: https://docs.jboss.org/hibernate/stable/validator/api/
+          html: https://docs.hibernate.org/stable/validator/api/
       getting_started_guide:
-        html: https://docs.jboss.org/hibernate/validator/{series.version}/reference/en-US/html_single/#validator-gettingstarted
-        pdf: https://docs.jboss.org/hibernate/validator/{series.version}/reference/en-US/pdf/hibernate_validator_reference.pdf#validator-gettingstarted
+        html: https://docs.hibernate.org/validator/{series.version}/reference/en-US/html_single/#validator-gettingstarted
+        pdf: https://docs.hibernate.org/validator/{series.version}/reference/en-US/pdf/hibernate_validator_reference.pdf#validator-gettingstarted
       migration_guide:
         html: /validator/documentation/migration-guide/#{series.version.dashes}-x
       whats_new:
@@ -566,20 +566,20 @@ projects:
     icon: 'icon-sitemap'
     links:
       reference_doc:
-        html: https://docs.jboss.org/hibernate/ogm/{series.version}/reference/en-US/html_single/
-        pdf: https://docs.jboss.org/hibernate/ogm/{series.version}/reference/en-US/pdf/hibernate_ogm_reference.pdf
+        html: https://docs.hibernate.org/ogm/{series.version}/reference/en-US/html_single/
+        pdf: https://docs.hibernate.org/ogm/{series.version}/reference/en-US/pdf/hibernate_ogm_reference.pdf
         latest_stable:
-          html: https://docs.jboss.org/hibernate/stable/ogm/reference/en-US/html_single/
-          pdf: https://docs.jboss.org/hibernate/stable/ogm/reference/en-US/pdf/hibernate_ogm_reference.pdf
+          html: https://docs.hibernate.org/stable/ogm/reference/en-US/html_single/
+          pdf: https://docs.hibernate.org/stable/ogm/reference/en-US/pdf/hibernate_ogm_reference.pdf
       javadoc:
-        html: https://docs.jboss.org/hibernate/ogm/{series.version}/api/
+        html: https://docs.hibernate.org/ogm/{series.version}/api/
         latest_stable:
-          html: https://docs.jboss.org/hibernate/stable/ogm/api/
+          html: https://docs.hibernate.org/stable/ogm/api/
       getting_started_guide:
-        html: https://docs.jboss.org/hibernate/ogm/{series.version}/reference/en-US/html_single/#ogm-gettingstarted
-        pdf: https://docs.jboss.org/hibernate/ogm/{series.version}/reference/en-US/pdf/hibernate_ogm_reference.pdf#ogm-gettingstarted
+        html: https://docs.hibernate.org/ogm/{series.version}/reference/en-US/html_single/#ogm-gettingstarted
+        pdf: https://docs.hibernate.org/ogm/{series.version}/reference/en-US/pdf/hibernate_ogm_reference.pdf#ogm-gettingstarted
       migration_guide:
-        html: https://docs.jboss.org/hibernate/stable/ogm/reference/en-US/html_single/#ogm-migrating
+        html: https://docs.hibernate.org/stable/ogm/reference/en-US/html_single/#ogm-migrating
       whats_new:
         html: "/ogm/releases/{series.version}/#whats-new"
       dist:

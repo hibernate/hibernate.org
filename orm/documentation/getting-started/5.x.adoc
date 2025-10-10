@@ -8,9 +8,9 @@
 
 This page lists just the basic information needed to get up and running with Hibernate ORM 5.
 
-If you are approaching Hibernate for the first time, the http://docs.jboss.org/hibernate/orm/current/quickstart/html_single/[Getting Started Guide] is the best place to start.
+If you are approaching Hibernate for the first time, the https://docs.hibernate.org/orm/current/quickstart/html_single/[Getting Started Guide] is the best place to start.
 
-More thorough information is presented in the https://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html[User Guide].
+More thorough information is presented in the https://docs.hibernate.org/orm/current/userguide/html_single/Hibernate_User_Guide.html[User Guide].
 
 == System Requirements
 
@@ -40,7 +40,7 @@ The main Hibernate ORM artifact is named *hibernate-core*. If you want to use th
 [TIP]
 ====
 There are also a number of optional artifacts based on what specific features you wish to use.
-These are discussed in the http://docs.jboss.org/hibernate/orm/current/quickstart/html_single/[Getting Started Guide].
+These are discussed in the https://docs.hibernate.org/orm/current/quickstart/html_single/[Getting Started Guide].
 ====
 
 To use Hibernate ORM in your own project you just need to name a dependency on it in your project.

@@ -32,14 +32,14 @@ although all other features of Hibernate Search are still backwards compatible w
 Since Apache Lucene 5.0 (and including 5.3 as we currently require)
 we can provide a significant performance improvement if you let us know in advance which fields you intend to use for sorting.
 
-For this purpose a new annotation http://docs.jboss.org/hibernate/search/5.5/api/org/hibernate/search/annotations/SortableField.html[`org.hibernate.search.annotations.SortableField`] is available.
+For this purpose a new annotation https://docs.hibernate.org/search/5.5/api/org/hibernate/search/annotations/SortableField.html[`org.hibernate.search.annotations.SortableField`] is available.
 If you start using this annotation in your projects you'll benefit from improved performance, but for those who don't want to update their mapping yet we will fallback to the older strategy.
 
 This subject is discussed in detail in this {base_url}2015/09/14/sorting-in-hibernate-search-55/[follow-up post].
 
 === Encoding null tokens in your index
 
-When using http://docs.jboss.org/hibernate/search/5.5/api/org/hibernate/search/annotations/Field.html#indexNullAs--[`@Field(indexNullAs=)`]
+When using https://docs.hibernate.org/search/5.5/api/org/hibernate/search/annotations/Field.html#indexNullAs--[`@Field(indexNullAs=)`]
 to encode some marker value in the index,
 the type of the marker is now required to be of a compatible field type
 as all other values which are indexed in that same field.

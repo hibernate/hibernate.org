@@ -83,7 +83,7 @@ loadScripts(document, 'script');</script>
 <dd><code>org.hibernate.persister.entity.mutation.InsertCoordinator</code>, <code>org.hibernate.persister.entity.mutation.MutationCoordinator</code>, <code><a href="ReactiveInsertCoordinator.html" title="interface in org.hibernate.reactive.persister.entity.mutation">ReactiveInsertCoordinator</a></code></dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="annotations"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Internal.html" title="class or interface in org.hibernate" class="external-link">@Internal</a>
+<div class="type-signature"><span class="annotations"><a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/Internal.html" title="class or interface in org.hibernate" class="external-link">@Internal</a>
 </span><span class="modifiers">public class </span><span class="element-name type-name-label">ReactiveInsertCoordinatorStandard</span>
 <span class="extends-implements">extends org.hibernate.persister.entity.mutation.AbstractMutationCoordinator
 implements <a href="ReactiveInsertCoordinator.html" title="interface in org.hibernate.reactive.persister.entity.mutation">ReactiveInsertCoordinator</a>, org.hibernate.persister.entity.mutation.InsertCoordinator</span></div>
@@ -115,8 +115,8 @@ implements <a href="ReactiveInsertCoordinator.html" title="interface in org.hibe
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(org.hibernate.persister.entity.AbstractEntityPersister,org.hibernate.engine.spi.SessionFactoryImplementor)" class="member-name-link">ReactiveInsertCoordinatorStandard</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/persister/entity/AbstractEntityPersister.html" title="class or interface in org.hibernate.persister.entity" class="external-link">AbstractEntityPersister</a>&nbsp;entityPersister,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a>&nbsp;factory)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(org.hibernate.persister.entity.AbstractEntityPersister,org.hibernate.engine.spi.SessionFactoryImplementor)" class="member-name-link">ReactiveInsertCoordinatorStandard</a><wbr>(<a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/persister/entity/AbstractEntityPersister.html" title="class or interface in org.hibernate.persister.entity" class="external-link">AbstractEntityPersister</a>&nbsp;entityPersister,
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a>&nbsp;factory)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -134,7 +134,7 @@ implements <a href="ReactiveInsertCoordinator.html" title="interface in org.hibe
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#breakDownJdbcValue(java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor,org.hibernate.engine.jdbc.mutation.JdbcValueBindings,org.hibernate.persister.entity.mutation.EntityTableMapping)" class="member-name-link">breakDownJdbcValue</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session,
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session,
  org.hibernate.engine.jdbc.mutation.JdbcValueBindings&nbsp;jdbcValueBindings,
  org.hibernate.persister.entity.mutation.EntityTableMapping&nbsp;tableDetails)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -142,12 +142,12 @@ implements <a href="ReactiveInsertCoordinator.html" title="interface in org.hibe
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#coordinateReactiveInsert(java.lang.Object,java.lang.Object,java.lang.Object%5B%5D,org.hibernate.engine.spi.SharedSessionContractImplementor,boolean)" class="member-name-link">coordinateReactiveInsert</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;values,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session,
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session,
  boolean&nbsp;isIdentityInsert)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#decomposeAttribute(java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor,org.hibernate.engine.jdbc.mutation.JdbcValueBindings,org.hibernate.metamodel.mapping.AttributeMapping)" class="member-name-link">decomposeAttribute</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session,
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session,
  org.hibernate.engine.jdbc.mutation.JdbcValueBindings&nbsp;jdbcValueBindings,
  org.hibernate.metamodel.mapping.AttributeMapping&nbsp;mapping)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -158,13 +158,13 @@ implements <a href="ReactiveInsertCoordinator.html" title="interface in org.hibe
  org.hibernate.sql.model.MutationOperationGroup&nbsp;mutationGroup,
  boolean[]&nbsp;propertyInclusions,
  org.hibernate.engine.jdbc.mutation.TableInclusionChecker&nbsp;tableInclusionChecker,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;org.hibernate.generator.values.GeneratedValues&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doDynamicInserts(java.lang.Object,java.lang.Object%5B%5D,java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor,boolean,boolean)" class="member-name-link">doDynamicInserts</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;values,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session,
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session,
  boolean&nbsp;forceIdentifierBinding,
  boolean&nbsp;isIdentityInsert)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -172,13 +172,13 @@ implements <a href="ReactiveInsertCoordinator.html" title="interface in org.hibe
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doStaticInserts(java.lang.Object,java.lang.Object%5B%5D,java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor,boolean)" class="member-name-link">doStaticInserts</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;values,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session,
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session,
  boolean&nbsp;isIdentityInsert)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected org.hibernate.sql.model.MutationOperationGroup</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#generateDynamicInsertSqlGroup(boolean%5B%5D,java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor,boolean)" class="member-name-link">generateDynamicInsertSqlGroup</a><wbr>(boolean[]&nbsp;insertable,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session,
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session,
  boolean&nbsp;forceIdentifierBinding)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.hibernate.sql.model.MutationOperationGroup</code></div>
@@ -204,28 +204,28 @@ implements <a href="ReactiveInsertCoordinator.html" title="interface in org.hibe
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.hibernate.generator.values.GeneratedValues</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#insert(java.lang.Object,java.lang.Object%5B%5D,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">insert</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;values,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.hibernate.generator.values.GeneratedValues</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#insert(java.lang.Object,java.lang.Object,java.lang.Object%5B%5D,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">insert</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;values,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;org.hibernate.generator.values.GeneratedValues&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reactiveInsert(java.lang.Object,java.lang.Object%5B%5D,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">reactiveInsert</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;values,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;org.hibernate.generator.values.GeneratedValues&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reactiveInsert(java.lang.Object,java.lang.Object,java.lang.Object%5B%5D,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">reactiveInsert</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;values,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected org.hibernate.engine.jdbc.mutation.spi.BatchKeyAccess</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveBatchKeyAccess(boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">resolveBatchKeyAccess</a><wbr>(boolean&nbsp;dynamicUpdate,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
@@ -250,8 +250,8 @@ implements <a href="ReactiveInsertCoordinator.html" title="interface in org.hibe
 <li>
 <section class="detail" id="&lt;init&gt;(org.hibernate.persister.entity.AbstractEntityPersister,org.hibernate.engine.spi.SessionFactoryImplementor)">
 <h3>ReactiveInsertCoordinatorStandard</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ReactiveInsertCoordinatorStandard</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/persister/entity/AbstractEntityPersister.html" title="class or interface in org.hibernate.persister.entity" class="external-link">AbstractEntityPersister</a>&nbsp;entityPersister,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a>&nbsp;factory)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ReactiveInsertCoordinatorStandard</span><wbr><span class="parameters">(<a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/persister/entity/AbstractEntityPersister.html" title="class or interface in org.hibernate.persister.entity" class="external-link">AbstractEntityPersister</a>&nbsp;entityPersister,
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SessionFactoryImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionFactoryImplementor</a>&nbsp;factory)</span></div>
 </section>
 </li>
 </ul>
@@ -267,7 +267,7 @@ implements <a href="ReactiveInsertCoordinator.html" title="interface in org.hibe
 <h3>insert</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.hibernate.generator.values.GeneratedValues</span>&nbsp;<span class="element-name">insert</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;values,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>insert</code>&nbsp;in interface&nbsp;<code>org.hibernate.persister.entity.mutation.InsertCoordinator</code></dd>
@@ -280,7 +280,7 @@ implements <a href="ReactiveInsertCoordinator.html" title="interface in org.hibe
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.hibernate.generator.values.GeneratedValues</span>&nbsp;<span class="element-name">insert</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;values,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>insert</code>&nbsp;in interface&nbsp;<code>org.hibernate.persister.entity.mutation.InsertCoordinator</code></dd>
@@ -292,7 +292,7 @@ implements <a href="ReactiveInsertCoordinator.html" title="interface in org.hibe
 <h3>reactiveInsert</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;org.hibernate.generator.values.GeneratedValues&gt;</span>&nbsp;<span class="element-name">reactiveInsert</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;values,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="ReactiveInsertCoordinator.html#reactiveInsert(java.lang.Object,java.lang.Object%5B%5D,org.hibernate.engine.spi.SharedSessionContractImplementor)">reactiveInsert</a></code>&nbsp;in interface&nbsp;<code><a href="ReactiveInsertCoordinator.html" title="interface in org.hibernate.reactive.persister.entity.mutation">ReactiveInsertCoordinator</a></code></dd>
@@ -305,7 +305,7 @@ implements <a href="ReactiveInsertCoordinator.html" title="interface in org.hibe
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;org.hibernate.generator.values.GeneratedValues&gt;</span>&nbsp;<span class="element-name">reactiveInsert</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;values,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="ReactiveInsertCoordinator.html#reactiveInsert(java.lang.Object,java.lang.Object,java.lang.Object%5B%5D,org.hibernate.engine.spi.SharedSessionContractImplementor)">reactiveInsert</a></code>&nbsp;in interface&nbsp;<code><a href="ReactiveInsertCoordinator.html" title="interface in org.hibernate.reactive.persister.entity.mutation">ReactiveInsertCoordinator</a></code></dd>
@@ -318,7 +318,7 @@ implements <a href="ReactiveInsertCoordinator.html" title="interface in org.hibe
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;org.hibernate.generator.values.GeneratedValues&gt;</span>&nbsp;<span class="element-name">coordinateReactiveInsert</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;values,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session,
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session,
  boolean&nbsp;isIdentityInsert)</span></div>
 </section>
 </li>
@@ -331,7 +331,7 @@ implements <a href="ReactiveInsertCoordinator.html" title="interface in org.hibe
  org.hibernate.sql.model.MutationOperationGroup&nbsp;mutationGroup,
  boolean[]&nbsp;propertyInclusions,
  org.hibernate.engine.jdbc.mutation.TableInclusionChecker&nbsp;tableInclusionChecker,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
 </section>
 </li>
 <li>
@@ -340,7 +340,7 @@ implements <a href="ReactiveInsertCoordinator.html" title="interface in org.hibe
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;org.hibernate.generator.values.GeneratedValues&gt;</span>&nbsp;<span class="element-name">doDynamicInserts</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;values,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session,
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session,
  boolean&nbsp;forceIdentifierBinding,
  boolean&nbsp;isIdentityInsert)</span></div>
 </section>
@@ -351,7 +351,7 @@ implements <a href="ReactiveInsertCoordinator.html" title="interface in org.hibe
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;org.hibernate.generator.values.GeneratedValues&gt;</span>&nbsp;<span class="element-name">doStaticInserts</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;values,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session,
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session,
  boolean&nbsp;isIdentityInsert)</span></div>
 </section>
 </li>
@@ -365,7 +365,7 @@ implements <a href="ReactiveInsertCoordinator.html" title="interface in org.hibe
 <section class="detail" id="resolveBatchKeyAccess(boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)">
 <h3>resolveBatchKeyAccess</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">org.hibernate.engine.jdbc.mutation.spi.BatchKeyAccess</span>&nbsp;<span class="element-name">resolveBatchKeyAccess</span><wbr><span class="parameters">(boolean&nbsp;dynamicUpdate,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code>resolveBatchKeyAccess</code>&nbsp;in class&nbsp;<code>org.hibernate.persister.entity.mutation.AbstractMutationCoordinator</code></dd>
@@ -398,7 +398,7 @@ implements <a href="ReactiveInsertCoordinator.html" title="interface in org.hibe
 <section class="detail" id="decomposeAttribute(java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor,org.hibernate.engine.jdbc.mutation.JdbcValueBindings,org.hibernate.metamodel.mapping.AttributeMapping)">
 <h3>decomposeAttribute</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">decomposeAttribute</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session,
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session,
  org.hibernate.engine.jdbc.mutation.JdbcValueBindings&nbsp;jdbcValueBindings,
  org.hibernate.metamodel.mapping.AttributeMapping&nbsp;mapping)</span></div>
 </section>
@@ -416,7 +416,7 @@ implements <a href="ReactiveInsertCoordinator.html" title="interface in org.hibe
 <h3>generateDynamicInsertSqlGroup</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">org.hibernate.sql.model.MutationOperationGroup</span>&nbsp;<span class="element-name">generateDynamicInsertSqlGroup</span><wbr><span class="parameters">(boolean[]&nbsp;insertable,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session,
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session,
  boolean&nbsp;forceIdentifierBinding)</span></div>
 </section>
 </li>
@@ -430,7 +430,7 @@ implements <a href="ReactiveInsertCoordinator.html" title="interface in org.hibe
 <section class="detail" id="breakDownJdbcValue(java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor,org.hibernate.engine.jdbc.mutation.JdbcValueBindings,org.hibernate.persister.entity.mutation.EntityTableMapping)">
 <h3>breakDownJdbcValue</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">breakDownJdbcValue</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
- <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session,
+ <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SharedSessionContractImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SharedSessionContractImplementor</a>&nbsp;session,
  org.hibernate.engine.jdbc.mutation.JdbcValueBindings&nbsp;jdbcValueBindings,
  org.hibernate.persister.entity.mutation.EntityTableMapping&nbsp;tableDetails)</span></div>
 </section>

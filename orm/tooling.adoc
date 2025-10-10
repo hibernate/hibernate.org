@@ -18,29 +18,29 @@ But _if you're comfortable_ using an annotation processor, bytecode processor, o
 Tooling for Hibernate ORM includes:
 
 - link:/orm/processor/[Hibernate Processor], the annotation processor which produces the Jakarta Persistence static metamodel, validates queries at compilation time, and implements Jakarta Data link:/repositories/[repositories], and
-- the link:https://docs.jboss.org/hibernate/orm/{version_family}/userguide/html_single/Hibernate_User_Guide.html#tooling-gradle[Gradle plugin] and link:https://docs.jboss.org/hibernate/orm/{version_family}/userguide/html_single/Hibernate_User_Guide.html#tooling-maven[Maven plugin] which perform optional bytecode enhancement at build time.
+- the link:https://docs.hibernate.org/orm/{version_family}/userguide/html_single/Hibernate_User_Guide.html#tooling-gradle[Gradle plugin] and link:https://docs.hibernate.org/orm/{version_family}/userguide/html_single/Hibernate_User_Guide.html#tooling-maven[Maven plugin] which perform optional bytecode enhancement at build time.
 
 Note that containers like https://www.wildfly.org[WildFly] and https://quarkus.io[Quarkus] are able to perform bytecode enhancement automatically, _without_ the Gradle or Maven plugin.
 
 == Relational schema management
 
 Hibernate ORM comes with schema management built in.
-Hibernate is able to infer a schema from mapping annotations or XML mappings and link:https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#automatic-schema-export[automatically export the schema to the database], or verify that the inferred schema is consistent with the pre-existing schema.
+Hibernate is able to infer a schema from mapping annotations or XML mappings and link:https://docs.hibernate.org/orm/7.0/introduction/html_single/Hibernate_Introduction.html#automatic-schema-export[automatically export the schema to the database], or verify that the inferred schema is consistent with the pre-existing schema.
 This functionality is especially useful for testing.
-The schema management tool can even truncate tables to link:https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#testing[clean up between tests].
+The schema management tool can even truncate tables to link:https://docs.hibernate.org/orm/7.0/introduction/html_single/Hibernate_Introduction.html#testing[clean up between tests].
 
 For more advanced schema evolution needs, Hibernate can be used together with a tool like link:https://github.com/flyway/flyway[Flyway].
 
 == Tools for monitoring and profiling
 
 Hibernate collects statistics as it goes.
-Your program can access this information link:https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#statistics[via an API], but some environments report it automatically.
+Your program can access this information link:https://docs.hibernate.org/orm/7.0/introduction/html_single/Hibernate_Introduction.html#statistics[via an API], but some environments report it automatically.
 
 - Hibernate Micrometer reports statistics via link:https://github.com/micrometer-metrics/micrometer[Micrometer].
 WildFly, Quarkus, and other Java containers have built-in support for Micrometer.
 You can learn more about using link:https://quarkus.io/guides/telemetry-micrometer[Micrometer in Quarkus].
 
-- link:https://docs.jboss.org/hibernate/orm/{version_family}/userguide/html_single/Hibernate_User_Guide.html#appendix-monitoring-with-JFR[Hibernate JFR] reports persistence-related events to Java Flight Recorder.
+- link:https://docs.hibernate.org/orm/{version_family}/userguide/html_single/Hibernate_User_Guide.html#appendix-monitoring-with-JFR[Hibernate JFR] reports persistence-related events to Java Flight Recorder.
 No configuration is required: just include the module `org.hibernate.orm:hibernate-jfr` as a runtime dependency, and you're all set.
 
 image:/images/jfr.png[JFR integration]

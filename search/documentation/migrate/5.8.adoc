@@ -33,7 +33,7 @@ A new request timeout, set to 60s by default, has been added:
 `hibernate.search.default.elasticsearch.request_timeout`.
 If you execute requests taking more than 60s, you will have to raise this timeout,
 as well as the others (socket timeout, ...).
-See https://docs.jboss.org/hibernate/search/5.8/reference/en-US/html_single/#elasticsearch-integration-configuration[the documentation]
+See https://docs.hibernate.org/search/5.8/reference/en-US/html_single/#elasticsearch-integration-configuration[the documentation]
 for more information.
 
 Index schema management strategy options in the Elasticsearch integration
@@ -91,8 +91,8 @@ Sortable fields:
  * Sort fields are now expected to either be assigned a normalizer,
    or to not be analyzed at all.
    You can find out more about normalizers in the reference documentation:
- ** https://docs.jboss.org/hibernate/search/5.8/reference/en-US/html_single/#section-normalizers[main documentation]
- ** https://docs.jboss.org/hibernate/search/5.8/reference/en-US/html_single/#_normalizers[Elasticsearch specifics]
+ ** https://docs.hibernate.org/search/5.8/reference/en-US/html_single/#section-normalizers[main documentation]
+ ** https://docs.hibernate.org/search/5.8/reference/en-US/html_single/#_normalizers[Elasticsearch specifics]
 
 `@DynamicBoost`, `@Boost`:
 

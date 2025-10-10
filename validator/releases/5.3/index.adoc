@@ -16,11 +16,11 @@ The Bean Validation specification defines a set of rules which apply when defini
 
 As per specification a Bean Validation provider is allowed to relax these preconditions.
 
-Starting with 5.3, it is now possible to do so as explained in https://docs.jboss.org/hibernate/validator/5.3/reference/en-US/html_single/#section-method-validation-prerequisite-relaxation[our documentation].
+Starting with 5.3, it is now possible to do so as explained in https://docs.hibernate.org/validator/5.3/reference/en-US/html_single/#section-method-validation-prerequisite-relaxation[our documentation].
 
 === Programmatic API improvements
 
-Until now, it was only possible to alter the list of `ConstraintValidator` of a given constraint via the XML configuration. 5.3 brings the ability to do it https://docs.jboss.org/hibernate/validator/5.3/reference/en-US/html_single/#section-programmatic-constraint-definition[via the programmatic API].
+Until now, it was only possible to alter the list of `ConstraintValidator` of a given constraint via the XML configuration. 5.3 brings the ability to do it https://docs.hibernate.org/validator/5.3/reference/en-US/html_single/#section-programmatic-constraint-definition[via the programmatic API].
 
 === JDK 9 support
 

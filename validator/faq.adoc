@@ -29,7 +29,7 @@ and require database actions (see also https://hibernate.atlassian.net/browse/HH
 
 === My question is not answered. Where can I find help?
 
-Check out the http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/[reference guide] which covers in detail all the ins and outs of Hibernate Validator. If the guide doesn't answer your question, come to the https://discourse.hibernate.org/c/hibernate-validator[forum] and you will be helped there.
+Check out the https://docs.hibernate.org/stable/validator/reference/en-US/html_single/[reference guide] which covers in detail all the ins and outs of Hibernate Validator. If the guide doesn't answer your question, come to the https://discourse.hibernate.org/c/hibernate-validator[forum] and you will be helped there.
 
 == Compatibility
 
@@ -53,7 +53,7 @@ Note that it is not sufficient to add an EL 2.2 implementation to your WAR and k
 
 === How do I check that two fields of my bean have the same value?
 
-By implementing a http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#section-class-level-constraints[class-level constraint].
+By implementing a https://docs.hibernate.org/stable/validator/reference/en-US/html_single/#section-class-level-constraints[class-level constraint].
 
 === How can I access the Hibernate Session or EntityManager within a ConstraintValidator?
 
@@ -61,7 +61,7 @@ See https://developer.jboss.org/wiki/AccessingTheHibernateSessionWithinAConstrai
 
 === Can I declare constraints dynamically at runtime?
 
-Yes, using the https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#section-programmatic-api[API for programmatic constraint declaration].
+Yes, using the https://docs.hibernate.org/stable/validator/reference/en-US/html_single/#section-programmatic-api[API for programmatic constraint declaration].
 
 This Hibernate Validator specific API is useful, if for instance you need to adapt constraint parameters based on some runtime configuration or
 when dealing with multi-tenancy, where different constraints should be applied to given types based on a specific tenant.
@@ -91,7 +91,7 @@ Validator validator = configuration.addMapping( constraintMapping )
 
 === How can I find out which constraints are declared for a given class or property?
 
-You can do so using the https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#validator-metadata-api[constraint metadata API].
+You can do so using the https://docs.hibernate.org/stable/validator/reference/en-US/html_single/#validator-metadata-api[constraint metadata API].
 
 With help of the metadata API you could e.g. implement a solution which exports constraint information via REST, allowing for client-side validation using JavaScript.
 The next question shows an example for using that API.

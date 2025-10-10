@@ -109,7 +109,7 @@ For such cases, Hibernate OGM provides an error handling and compensation API.
 This allows you to decide what to do upon failures during a flush (abort, continue) and gives you
 all the operations applied so far if a "rollback" is triggered.
 
-Check out the http://docs.jboss.org/hibernate/ogm/4.2/reference/en-US/html_single/#ogm-api-error-handler[reference guide]
+Check out the https://docs.hibernate.org/ogm/4.2/reference/en-US/html_single/#ogm-api-error-handler[reference guide]
 for the details. Note that this API is currently under development;
 If you have any ideas or requirements around it, please let us know and get in touch!
 
@@ -173,7 +173,7 @@ Dependencies: org.hibernate.ogm services, org.hibernate.ogm.mongodb services
 ----
 
 Alternatively, you can configure this via the descriptor _jboss-deployment-structure.xml_.
-See the https://docs.jboss.org/hibernate/ogm/4.1/reference/en-US/html_single/#ogm-configuration-jbossmodule[reference guide] to learn more.
+See the https://docs.hibernate.org/ogm/4.1/reference/en-US/html_single/#ogm-configuration-jbossmodule[reference guide] to learn more.
 
 === Why do I get a `java.lang.NoClassDefFoundError: org/hibernate/search/batchindexing/spi/MassIndexerFactory`?
 
@@ -189,7 +189,7 @@ You can add it via maven using the following coordinates:
 ----
 
 You can include the right version using the BOM as describe in the
-https://docs.jboss.org/hibernate/stable/ogm/reference/en-US/html/ch02.html[getting started chapter of the documentation].
+https://docs.hibernate.org/stable/ogm/reference/en-US/html/ch02.html[getting started chapter of the documentation].
 
 Hibernate Search is an optional dependency in OGM, you need to include it if you want to:
 

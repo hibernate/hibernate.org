@@ -29,7 +29,7 @@ Hibernate Search's JBoss modules now target WildFly 17.
 This means in particular that the JGroups backend now uses JGroups 4 and is no longer compatible with JGroups 3.
 
 Also, we took this opportunity to move the JGroups backend's JBoss modules out of the engine feature pack to
-https://docs.jboss.org/hibernate/search/5.10/reference/en-US/html_single/#_jgroups_feature_pack[a dedicated feature pack].
+https://docs.hibernate.org/search/5.10/reference/en-US/html_single/#_jgroups_feature_pack[a dedicated feature pack].
 
 [[jpms-automatic-module-names]]
 === JPMS automatic module names
@@ -55,5 +55,5 @@ Here are the module names:
 === Direct access to the Elasticsearch client
 
 Hibernate Search now offers a way to access the Elasticsearch client directly.
-See the https://docs.jboss.org/hibernate/search/5.10/reference/en-US/html_single/#elasticsearch-client-access[documentation]
+See the https://docs.hibernate.org/search/5.10/reference/en-US/html_single/#elasticsearch-client-access[documentation]
 for more information.
