@@ -74,9 +74,9 @@ projects:
       Idiomatic persistence for Java and relational databases.
     links:
       reference_doc:
-        html: https://docs.hibernate.org/orm/{series.version}/userguide/html_single/Hibernate_User_Guide.html
+        html: https://docs.hibernate.org/orm/{series.version}/userguide/html_single/
         latest_stable:
-          html: https://docs.hibernate.org/stable/orm/userguide/html_single/Hibernate_User_Guide.html
+          html: https://docs.hibernate.org/stable/orm/userguide/html_single/
       javadoc:
         html: https://docs.hibernate.org/orm/{series.version}/javadocs/
         latest_stable:
@@ -84,12 +84,12 @@ projects:
       getting_started_guide:
         html: https://docs.hibernate.org/orm/{series.version}/quickstart/html_single/
       migration_guide:
-        html: https://docs.hibernate.org/orm/{series.version}/migration-guide/migration-guide.html
+        html: https://docs.hibernate.org/orm/{series.version}/migration-guide/
       short_guide:
-        html: https://docs.hibernate.org/orm/{series.version}/introduction/html_single/Hibernate_Introduction.html
+        html: https://docs.hibernate.org/orm/{series.version}/introduction/html_single/
         pdf: https://docs.hibernate.org/orm/{series.version}/introduction/pdf/Hibernate_Introduction.pdf
       whats_new:
-        html: https://docs.hibernate.org/orm/{series.version}/whats-new/whats-new.html
+        html: https://docs.hibernate.org/orm/{series.version}/whats-new/
       dist:
         # No longer distributing dists on sourceforge, starting with ORM 6.0.
     maven:
@@ -326,17 +326,17 @@ projects:
       since_series: 6.6
     links:
       reference_doc:
-        html: https://docs.hibernate.org/orm/{series.version}/repositories/html_single/Hibernate_Data_Repositories.html
+        html: https://docs.hibernate.org/orm/{series.version}/repositories/html_single/
         latest_stable:
-          html: https://docs.hibernate.org/stable/orm/repositories/html_single/Hibernate_Data_Repositories.html
+          html: https://docs.hibernate.org/stable/orm/repositories/html_single/
       javadoc:
         html: https://jakarta.ee/specifications/data/1.0/apidocs/
         latest_stable:
           html: https://jakarta.ee/specifications/data/1.0/apidocs/
       getting_started_guide:
-        html: https://docs.hibernate.org/orm/{series.version}/repositories/html_single/Hibernate_Data_Repositories.html#configuration-integration
+        html: https://docs.hibernate.org/orm/{series.version}/repositories/html_single/#configuration-integration
 #      migration_guide:
-#        html: https://docs.hibernate.org/orm/{series.version}/migration-guide/migration-guide.html
+#        html: https://docs.hibernate.org/orm/{series.version}/migration-guide/
     maven:
       coord:
         group_id: org.hibernate.orm

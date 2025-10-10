@@ -54,7 +54,7 @@ properties such as how to set the `InitialContext` for JNDI lookups:
 only configure Hibernate ORM, and Hibernate Search will inherit the same
 settings.
 
-See also the https://docs.hibernate.org/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#jndi[JNDI configuration in the Hibernate ORM documentation].
+See also the https://docs.hibernate.org/orm/5.2/userguide/html_single/#jndi[JNDI configuration in the Hibernate ORM documentation].
 
 [[analyzer-providers]]
 === Programmatic analyzer definitions
