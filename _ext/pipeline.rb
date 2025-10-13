@@ -5,7 +5,6 @@ require 'relative'
 require 'releases'
 require 'release_file_parser'
 require 'data_file_parser'
-require 'redirect_creator'
 require 'directory_listing'
 require 'links'
 require 'link_resolver'
@@ -53,10 +52,5 @@ Awestruct::Extensions::Pipeline.new do
   transformer Awestruct::Extensions::CssMinifier.new
   transformer Awestruct::Extensions::HtmlMinifier.new
   extension Awestruct::Extensions::Indexifier.new([/^.*\/reactive\/documentation\/\d+\.\d+\/\.*/])
-
-  development = Engine.instance.site.profile == 'development'
-  if not development
-    extension Awestruct::Extensions::RedirectCreator.new "redirects", "hib-docs-reference-redirects", "hib-docs-v3-api-redirects"
-  end
 end
 
