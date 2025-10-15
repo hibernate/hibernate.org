@@ -29,6 +29,8 @@ integration_constraints:
     version: 3.1
   jakarta_ee:
     version: 10
+  dialect_mongodb:
+    version: 1.0
 subprojects:
   repositories:
     summary: Jakarta Data 1.0, compatibility with Hibernate ORM 6
