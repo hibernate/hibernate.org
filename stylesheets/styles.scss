@@ -757,6 +757,7 @@ pre .comment .conum {
 	grid-template-columns: 1fr 1fr 1fr;
 	align-items: stretch;
 	column-gap: 28px;
+	grid-gap: 28px;
 	@media only screen and (max-width: 1200px) {
 		grid-template-columns: 1fr 1fr;
 	}
