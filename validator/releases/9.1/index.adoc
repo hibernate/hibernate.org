@@ -148,4 +148,26 @@ if the `DateTimeFormatterCache` is not yet available in the current initializati
 Compared to the use of a static field cache, using the shared data has the benefit that it is tied to the initialization context
 and will be garbage collected along with it.
 ====
+
+[discrete]
+[[ip-address-constraint]]
+=== `IpAddress` constraint
+
+The new `@IpAddress` constraint validates that the corresponding string is a well-formed IP address.
+This constraint provides a `IpAddress.Type` enum with the IP address types it can validate: `IPv4`, `IPv6` or `ANY`.
+By default, `IpAddress.ANY` is used, which allows validating all the other address types listed in the `IpAddress.Type` enum.
+
+====
+[source, Java, indent=0, subs="+attributes"]
+----
+@IpAddress <1>
+String address;
+// ...
+@IpAddress(type = Type.IPv6) <2>
+private String address;
+----
+<1> Using a default configuration of the `@IpAddress` constraint,
+where both `IPv4` and `IPv6` address types are considered valid.
+<2> Applying the `@IpAddress` constraint, where only the `IPv6` addresses are considered valid.
+====
 ****
