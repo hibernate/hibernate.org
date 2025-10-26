@@ -75,7 +75,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Superinterfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></code>, <code><a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/service/Service.html" title="class or interface in org.hibernate.service" class="external-link">Service</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></code>, <code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/service/Service.html" title="class or interface in org.hibernate.service" class="external-link">Service</a></code></dd>
 </dl>
 <dl class="notes">
 <dt>Functional Interface:</dt>
@@ -84,7 +84,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/FunctionalInterface.html" title="class or interface in java.lang" class="external-link">@FunctionalInterface</a>
 </span><span class="modifiers">public interface </span><span class="element-name type-name-label">VertxInstance</span><span class="extends-implements">
-extends <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/service/Service.html" title="class or interface in org.hibernate.service" class="external-link">Service</a></span></div>
+extends <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/service/Service.html" title="class or interface in org.hibernate.service" class="external-link">Service</a></span></div>
 <div class="block">Used by <code>DefaultSqlClientPool</code> and
  <code>VertxContext</code>
  to obtain an instance of <code>Vertx</code>. The default instance is
@@ -92,9 +92,9 @@ extends <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/servi
  <p>
  A program may integrate a custom <a href="VertxInstance.html" title="interface in org.hibernate.reactive.vertx"><code>VertxInstance</code></a>
  with Hibernate Reactive by contributing a new service using a
- <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html" title="class or interface in org.hibernate.boot.registry" class="external-link"><code>StandardServiceInitiator</code></a>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/boot/registry/StandardServiceInitiator.html" title="class or interface in org.hibernate.boot.registry" class="external-link"><code>StandardServiceInitiator</code></a>
  or from code-based Hibernate configuration by calling
- <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/boot/registry/StandardServiceRegistryBuilder.html#addService(java.lang.Class,T)" title="class or interface in org.hibernate.boot.registry" class="external-link"><code>StandardServiceRegistryBuilder.addService(java.lang.Class&lt;T&gt;, T)</code></a>.
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/boot/registry/StandardServiceRegistryBuilder.html#addService(java.lang.Class,T)" title="class or interface in org.hibernate.boot.registry" class="external-link"><code>StandardServiceRegistryBuilder.addService(java.lang.Class&lt;T&gt;, T)</code></a>.
 
  <pre><code>
  new ReactiveServiceRegistryBuilder()

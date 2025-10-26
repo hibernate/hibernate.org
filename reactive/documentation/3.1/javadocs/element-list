@@ -1,4 +1,6 @@
 org.hibernate.reactive.boot.spi
+org.hibernate.reactive.bythecode.enhance.spi.interceptor
+org.hibernate.reactive.bythecode.spi
 org.hibernate.reactive.common
 org.hibernate.reactive.common.spi
 org.hibernate.reactive.context
@@ -20,6 +22,7 @@ org.hibernate.reactive.it.techempower
 org.hibernate.reactive.it.techempower.utils
 org.hibernate.reactive.it.verticle
 org.hibernate.reactive.loader.ast.spi
+org.hibernate.reactive.metamodel.spi
 org.hibernate.reactive.mutiny
 org.hibernate.reactive.mutiny.delegation
 org.hibernate.reactive.persister.collection.mutation

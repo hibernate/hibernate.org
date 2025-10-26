@@ -78,7 +78,7 @@ loadScripts(document, 'script');</script>
 <dd><code><a href="ReactiveConnectionSupplier.html" title="interface in org.hibernate.reactive.session">ReactiveConnectionSupplier</a></code>, <code><a href="ReactiveQueryProducer.html" title="interface in org.hibernate.reactive.session">ReactiveQueryProducer</a></code>, <code><a href="../engine/spi/ReactiveSharedSessionContractImplementor.html" title="interface in org.hibernate.reactive.engine.spi">ReactiveSharedSessionContractImplementor</a></code></dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="annotations"><a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/Incubating.html" title="class or interface in org.hibernate" class="external-link">@Incubating</a>
+<div class="type-signature"><span class="annotations"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Incubating.html" title="class or interface in org.hibernate" class="external-link">@Incubating</a>
 </span><span class="modifiers">public interface </span><span class="element-name type-name-label">ReactiveSession</span><span class="extends-implements">
 extends <a href="ReactiveQueryProducer.html" title="interface in org.hibernate.reactive.session">ReactiveQueryProducer</a>, <a href="../engine/spi/ReactiveSharedSessionContractImplementor.html" title="interface in org.hibernate.reactive.engine.spi">ReactiveSharedSessionContractImplementor</a></span></div>
 <div class="block">A contract with the Hibernate session backing the user-visible
@@ -127,19 +127,19 @@ extends <a href="ReactiveQueryProducer.html" title="interface in org.hibernate.r
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#enableFetchProfile(java.lang.String)" class="member-name-link">enableFetchProfile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/Filter.html" title="class or interface in org.hibernate" class="external-link">Filter</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Filter.html" title="class or interface in org.hibernate" class="external-link">Filter</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#enableFilter(java.lang.String)" class="member-name-link">enableFilter</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filterName)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getBatchSize()" class="member-name-link">getBatchSize</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/CacheMode.html" title="class or interface in org.hibernate" class="external-link">CacheMode</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/CacheMode.html" title="class or interface in org.hibernate" class="external-link">CacheMode</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getCacheMode()" class="member-name-link">getCacheMode</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getCurrentLockMode(java.lang.Object)" class="member-name-link">getCurrentLockMode</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/Filter.html" title="class or interface in org.hibernate" class="external-link">Filter</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Filter.html" title="class or interface in org.hibernate" class="external-link">Filter</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getEnabledFilter(java.lang.String)" class="member-name-link">getEnabledFilter</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filterName)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;? extends T&gt;</code></div>
@@ -154,7 +154,7 @@ extends <a href="ReactiveQueryProducer.html" title="interface in org.hibernate.r
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getFetchBatchSize()" class="member-name-link">getFetchBatchSize</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/FlushMode.html" title="class or interface in org.hibernate" class="external-link">FlushMode</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/FlushMode.html" title="class or interface in org.hibernate" class="external-link">FlushMode</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getHibernateFlushMode()" class="member-name-link">getHibernateFlushMode</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
@@ -167,7 +167,7 @@ extends <a href="ReactiveQueryProducer.html" title="interface in org.hibernate.r
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getReference(java.lang.Class,java.lang.Object)" class="member-name-link">getReference</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;entityClass,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SessionImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionImplementor</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SessionImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionImplementor</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getSharedContract()" class="member-name-link">getSharedContract</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
@@ -210,13 +210,13 @@ T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default &lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;T&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#reactiveFind(java.lang.Class,java.lang.Object,org.hibernate.LockMode,jakarta.persistence.EntityGraph)" class="member-name-link">reactiveFind</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;entityClass,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
- <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode,
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode,
  jakarta.persistence.EntityGraph&lt;T&gt;&nbsp;fetchGraph)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;T&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reactiveFind(java.lang.Class,java.lang.Object,org.hibernate.LockOptions,jakarta.persistence.EntityGraph)" class="member-name-link">reactiveFind</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;entityClass,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
- <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/LockOptions.html" title="class or interface in org.hibernate" class="external-link">LockOptions</a>&nbsp;lockOptions,
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockOptions.html" title="class or interface in org.hibernate" class="external-link">LockOptions</a>&nbsp;lockOptions,
  jakarta.persistence.EntityGraph&lt;T&gt;&nbsp;fetchGraph)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;T&gt;</code></div>
@@ -227,35 +227,35 @@ T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reactiveFlush()" class="member-name-link">reactiveFlush</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reactiveForceFlush(org.hibernate.engine.spi.EntityEntry)" class="member-name-link">reactiveForceFlush</a><wbr>(<a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/EntityEntry.html" title="class or interface in org.hibernate.engine.spi" class="external-link">EntityEntry</a>&nbsp;entry)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reactiveForceFlush(org.hibernate.engine.spi.EntityEntry)" class="member-name-link">reactiveForceFlush</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/EntityEntry.html" title="class or interface in org.hibernate.engine.spi" class="external-link">EntityEntry</a>&nbsp;entry)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;T&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reactiveGet(java.lang.Class,java.lang.Object)" class="member-name-link">reactiveGet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;entityClass,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reactiveLoad(org.hibernate.event.spi.LoadEventListener.LoadType,java.lang.Object,java.lang.String,org.hibernate.LockOptions,java.lang.Boolean)" class="member-name-link">reactiveLoad</a><wbr>(<a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/event/spi/LoadEventListener.LoadType.html" title="class or interface in org.hibernate.event.spi" class="external-link">LoadEventListener.LoadType</a>&nbsp;loadType,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reactiveLoad(org.hibernate.event.spi.LoadEventListener.LoadType,java.lang.Object,java.lang.String,org.hibernate.LockOptions,java.lang.Boolean)" class="member-name-link">reactiveLoad</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/event/spi/LoadEventListener.LoadType.html" title="class or interface in org.hibernate.event.spi" class="external-link">LoadEventListener.LoadType</a>&nbsp;loadType,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
- <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/LockOptions.html" title="class or interface in org.hibernate" class="external-link">LockOptions</a>&nbsp;lockOptions,
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockOptions.html" title="class or interface in org.hibernate" class="external-link">LockOptions</a>&nbsp;lockOptions,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&nbsp;readOnly)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#reactiveLock(java.lang.Object,org.hibernate.LockMode)" class="member-name-link">reactiveLock</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
- <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</code></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reactiveLock(java.lang.Object,org.hibernate.LockOptions)" class="member-name-link">reactiveLock</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
- <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/LockOptions.html" title="class or interface in org.hibernate" class="external-link">LockOptions</a>&nbsp;lockMode)</code></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockOptions.html" title="class or interface in org.hibernate" class="external-link">LockOptions</a>&nbsp;lockMode)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reactiveLock(java.lang.String,java.lang.Object,org.hibernate.LockOptions)" class="member-name-link">reactiveLock</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
- <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/LockOptions.html" title="class or interface in org.hibernate" class="external-link">LockOptions</a>&nbsp;lockMode)</code></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockOptions.html" title="class or interface in org.hibernate" class="external-link">LockOptions</a>&nbsp;lockMode)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reactiveMerge(java.lang.Object,org.hibernate.event.spi.MergeContext)" class="member-name-link">reactiveMerge</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
- <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/event/spi/MergeContext.html" title="class or interface in org.hibernate.event.spi" class="external-link">MergeContext</a>&nbsp;copiedAlready)</code></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/event/spi/MergeContext.html" title="class or interface in org.hibernate.event.spi" class="external-link">MergeContext</a>&nbsp;copiedAlready)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;T&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reactiveMerge(T)" class="member-name-link">reactiveMerge</a><wbr>(T&nbsp;object)</code></div>
@@ -265,7 +265,7 @@ T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reactivePersist(java.lang.Object,org.hibernate.event.spi.PersistContext)" class="member-name-link">reactivePersist</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
- <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/event/spi/PersistContext.html" title="class or interface in org.hibernate.event.spi" class="external-link">PersistContext</a>&nbsp;copiedAlready)</code></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/event/spi/PersistContext.html" title="class or interface in org.hibernate.event.spi" class="external-link">PersistContext</a>&nbsp;copiedAlready)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reactivePersist(java.lang.String,java.lang.Object)" class="member-name-link">reactivePersist</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
@@ -273,19 +273,19 @@ T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reactivePersistOnFlush(java.lang.Object,org.hibernate.event.spi.PersistContext)" class="member-name-link">reactivePersistOnFlush</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
- <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/event/spi/PersistContext.html" title="class or interface in org.hibernate.event.spi" class="external-link">PersistContext</a>&nbsp;copiedAlready)</code></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/event/spi/PersistContext.html" title="class or interface in org.hibernate.event.spi" class="external-link">PersistContext</a>&nbsp;copiedAlready)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reactiveRefresh(java.lang.Object,org.hibernate.event.spi.RefreshContext)" class="member-name-link">reactiveRefresh</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;child,
- <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/event/spi/RefreshContext.html" title="class or interface in org.hibernate.event.spi" class="external-link">RefreshContext</a>&nbsp;refreshedAlready)</code></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/event/spi/RefreshContext.html" title="class or interface in org.hibernate.event.spi" class="external-link">RefreshContext</a>&nbsp;refreshedAlready)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#reactiveRefresh(java.lang.Object,org.hibernate.LockMode)" class="member-name-link">reactiveRefresh</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
- <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</code></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reactiveRefresh(java.lang.Object,org.hibernate.LockOptions)" class="member-name-link">reactiveRefresh</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
- <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/LockOptions.html" title="class or interface in org.hibernate" class="external-link">LockOptions</a>&nbsp;lockMode)</code></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockOptions.html" title="class or interface in org.hibernate" class="external-link">LockOptions</a>&nbsp;lockMode)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reactiveRemove(java.lang.Object)" class="member-name-link">reactiveRemove</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</code></div>
@@ -294,7 +294,7 @@ T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reactiveRemove(java.lang.String,java.lang.Object,boolean,org.hibernate.event.spi.DeleteContext)" class="member-name-link">reactiveRemove</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;child,
  boolean&nbsp;isCascadeDeleteEnabled,
- <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/event/spi/DeleteContext.html" title="class or interface in org.hibernate.event.spi" class="external-link">DeleteContext</a>&nbsp;transientEntities)</code></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/event/spi/DeleteContext.html" title="class or interface in org.hibernate.event.spi" class="external-link">DeleteContext</a>&nbsp;transientEntities)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reactiveRemoveOrphanBeforeUpdates(java.lang.String,java.lang.Object)" class="member-name-link">reactiveRemoveOrphanBeforeUpdates</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
@@ -304,7 +304,7 @@ T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setBatchSize(java.lang.Integer)" class="member-name-link">setBatchSize</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;batchSize)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setCacheMode(org.hibernate.CacheMode)" class="member-name-link">setCacheMode</a><wbr>(<a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/CacheMode.html" title="class or interface in org.hibernate" class="external-link">CacheMode</a>&nbsp;cacheMode)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setCacheMode(org.hibernate.CacheMode)" class="member-name-link">setCacheMode</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/CacheMode.html" title="class or interface in org.hibernate" class="external-link">CacheMode</a>&nbsp;cacheMode)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setDefaultReadOnly(boolean)" class="member-name-link">setDefaultReadOnly</a><wbr>(boolean&nbsp;readOnly)</code></div>
@@ -313,7 +313,7 @@ T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setFetchBatchSize(int)" class="member-name-link">setFetchBatchSize</a><wbr>(int&nbsp;batchSize)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setHibernateFlushMode(org.hibernate.FlushMode)" class="member-name-link">setHibernateFlushMode</a><wbr>(<a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/FlushMode.html" title="class or interface in org.hibernate" class="external-link">FlushMode</a>&nbsp;flushMode)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setHibernateFlushMode(org.hibernate.FlushMode)" class="member-name-link">setHibernateFlushMode</a><wbr>(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/FlushMode.html" title="class or interface in org.hibernate" class="external-link">FlushMode</a>&nbsp;flushMode)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setReadOnly(java.lang.Object,boolean)" class="member-name-link">setReadOnly</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entityOrProxy,
@@ -354,7 +354,7 @@ T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 <li>
 <section class="detail" id="getSharedContract()">
 <h3>getSharedContract</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/SessionImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionImplementor</a></span>&nbsp;<span class="element-name">getSharedContract</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/SessionImplementor.html" title="class or interface in org.hibernate.engine.spi" class="external-link">SessionImplementor</a></span>&nbsp;<span class="element-name">getSharedContract</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="ReactiveQueryProducer.html#getSharedContract()">getSharedContract</a></code>&nbsp;in interface&nbsp;<code><a href="ReactiveQueryProducer.html" title="interface in org.hibernate.reactive.session">ReactiveQueryProducer</a></code></dd>
@@ -386,14 +386,14 @@ T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/
 <section class="detail" id="reactivePersist(java.lang.Object,org.hibernate.event.spi.PersistContext)">
 <h3>reactivePersist</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">reactivePersist</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
- <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/event/spi/PersistContext.html" title="class or interface in org.hibernate.event.spi" class="external-link">PersistContext</a>&nbsp;copiedAlready)</span></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/event/spi/PersistContext.html" title="class or interface in org.hibernate.event.spi" class="external-link">PersistContext</a>&nbsp;copiedAlready)</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="reactivePersistOnFlush(java.lang.Object,org.hibernate.event.spi.PersistContext)">
 <h3>reactivePersistOnFlush</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">reactivePersistOnFlush</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
- <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/event/spi/PersistContext.html" title="class or interface in org.hibernate.event.spi" class="external-link">PersistContext</a>&nbsp;copiedAlready)</span></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/event/spi/PersistContext.html" title="class or interface in org.hibernate.event.spi" class="external-link">PersistContext</a>&nbsp;copiedAlready)</span></div>
 </section>
 </li>
 <li>
@@ -408,7 +408,7 @@ T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">reactiveRemove</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;child,
  boolean&nbsp;isCascadeDeleteEnabled,
- <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/event/spi/DeleteContext.html" title="class or interface in org.hibernate.event.spi" class="external-link">DeleteContext</a>&nbsp;transientEntities)</span></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/event/spi/DeleteContext.html" title="class or interface in org.hibernate.event.spi" class="external-link">DeleteContext</a>&nbsp;transientEntities)</span></div>
 </section>
 </li>
 <li>
@@ -421,16 +421,16 @@ T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/
 <section class="detail" id="reactiveMerge(java.lang.Object,org.hibernate.event.spi.MergeContext)">
 <h3>reactiveMerge</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">reactiveMerge</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
- <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/event/spi/MergeContext.html" title="class or interface in org.hibernate.event.spi" class="external-link">MergeContext</a>&nbsp;copiedAlready)</span></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/event/spi/MergeContext.html" title="class or interface in org.hibernate.event.spi" class="external-link">MergeContext</a>&nbsp;copiedAlready)</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="reactiveLoad(org.hibernate.event.spi.LoadEventListener.LoadType,java.lang.Object,java.lang.String,org.hibernate.LockOptions,java.lang.Boolean)">
 <h3>reactiveLoad</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</span>&nbsp;<span class="element-name">reactiveLoad</span><wbr><span class="parameters">(<a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/event/spi/LoadEventListener.LoadType.html" title="class or interface in org.hibernate.event.spi" class="external-link">LoadEventListener.LoadType</a>&nbsp;loadType,
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</span>&nbsp;<span class="element-name">reactiveLoad</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/event/spi/LoadEventListener.LoadType.html" title="class or interface in org.hibernate.event.spi" class="external-link">LoadEventListener.LoadType</a>&nbsp;loadType,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
- <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/LockOptions.html" title="class or interface in org.hibernate" class="external-link">LockOptions</a>&nbsp;lockOptions,
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockOptions.html" title="class or interface in org.hibernate" class="external-link">LockOptions</a>&nbsp;lockOptions,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&nbsp;readOnly)</span></div>
 </section>
 </li>
@@ -449,42 +449,42 @@ T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/
 <li>
 <section class="detail" id="reactiveForceFlush(org.hibernate.engine.spi.EntityEntry)">
 <h3>reactiveForceFlush</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">reactiveForceFlush</span><wbr><span class="parameters">(<a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/engine/spi/EntityEntry.html" title="class or interface in org.hibernate.engine.spi" class="external-link">EntityEntry</a>&nbsp;entry)</span></div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">reactiveForceFlush</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/engine/spi/EntityEntry.html" title="class or interface in org.hibernate.engine.spi" class="external-link">EntityEntry</a>&nbsp;entry)</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="reactiveRefresh(java.lang.Object,org.hibernate.LockOptions)">
 <h3>reactiveRefresh</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">reactiveRefresh</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
- <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/LockOptions.html" title="class or interface in org.hibernate" class="external-link">LockOptions</a>&nbsp;lockMode)</span></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockOptions.html" title="class or interface in org.hibernate" class="external-link">LockOptions</a>&nbsp;lockMode)</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="reactiveRefresh(java.lang.Object,org.hibernate.LockMode)">
 <h3>reactiveRefresh</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">reactiveRefresh</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
- <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</span></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="reactiveRefresh(java.lang.Object,org.hibernate.event.spi.RefreshContext)">
 <h3>reactiveRefresh</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">reactiveRefresh</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;child,
- <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/event/spi/RefreshContext.html" title="class or interface in org.hibernate.event.spi" class="external-link">RefreshContext</a>&nbsp;refreshedAlready)</span></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/event/spi/RefreshContext.html" title="class or interface in org.hibernate.event.spi" class="external-link">RefreshContext</a>&nbsp;refreshedAlready)</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="reactiveLock(java.lang.Object,org.hibernate.LockOptions)">
 <h3>reactiveLock</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">reactiveLock</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
- <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/LockOptions.html" title="class or interface in org.hibernate" class="external-link">LockOptions</a>&nbsp;lockMode)</span></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockOptions.html" title="class or interface in org.hibernate" class="external-link">LockOptions</a>&nbsp;lockMode)</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="reactiveLock(java.lang.Object,org.hibernate.LockMode)">
 <h3>reactiveLock</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">reactiveLock</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
- <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</span></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode)</span></div>
 </section>
 </li>
 <li>
@@ -492,7 +492,7 @@ T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/
 <h3>reactiveLock</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">reactiveLock</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
- <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/LockOptions.html" title="class or interface in org.hibernate" class="external-link">LockOptions</a>&nbsp;lockMode)</span></div>
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockOptions.html" title="class or interface in org.hibernate" class="external-link">LockOptions</a>&nbsp;lockMode)</span></div>
 </section>
 </li>
 <li>
@@ -507,7 +507,7 @@ T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/
 <h3>reactiveFind</h3>
 <div class="member-signature"><span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;T&gt;</span>&nbsp;<span class="element-name">reactiveFind</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;entityClass,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
- <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/LockOptions.html" title="class or interface in org.hibernate" class="external-link">LockOptions</a>&nbsp;lockOptions,
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockOptions.html" title="class or interface in org.hibernate" class="external-link">LockOptions</a>&nbsp;lockOptions,
  jakarta.persistence.EntityGraph&lt;T&gt;&nbsp;fetchGraph)</span></div>
 </section>
 </li>
@@ -523,7 +523,7 @@ T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/
 <h3>reactiveFind</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html" title="class or interface in java.util.concurrent" class="external-link">CompletionStage</a>&lt;T&gt;</span>&nbsp;<span class="element-name">reactiveFind</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;entityClass,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
- <a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode,
+ <a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a>&nbsp;lockMode,
  jakarta.persistence.EntityGraph&lt;T&gt;&nbsp;fetchGraph)</span></div>
 </section>
 </li>
@@ -551,25 +551,25 @@ T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/
 <li>
 <section class="detail" id="setHibernateFlushMode(org.hibernate.FlushMode)">
 <h3>setHibernateFlushMode</h3>
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setHibernateFlushMode</span><wbr><span class="parameters">(<a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/FlushMode.html" title="class or interface in org.hibernate" class="external-link">FlushMode</a>&nbsp;flushMode)</span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setHibernateFlushMode</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/FlushMode.html" title="class or interface in org.hibernate" class="external-link">FlushMode</a>&nbsp;flushMode)</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="getHibernateFlushMode()">
 <h3>getHibernateFlushMode</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/FlushMode.html" title="class or interface in org.hibernate" class="external-link">FlushMode</a></span>&nbsp;<span class="element-name">getHibernateFlushMode</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/FlushMode.html" title="class or interface in org.hibernate" class="external-link">FlushMode</a></span>&nbsp;<span class="element-name">getHibernateFlushMode</span>()</div>
 </section>
 </li>
 <li>
 <section class="detail" id="setCacheMode(org.hibernate.CacheMode)">
 <h3>setCacheMode</h3>
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setCacheMode</span><wbr><span class="parameters">(<a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/CacheMode.html" title="class or interface in org.hibernate" class="external-link">CacheMode</a>&nbsp;cacheMode)</span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setCacheMode</span><wbr><span class="parameters">(<a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/CacheMode.html" title="class or interface in org.hibernate" class="external-link">CacheMode</a>&nbsp;cacheMode)</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="getCacheMode()">
 <h3>getCacheMode</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/CacheMode.html" title="class or interface in org.hibernate" class="external-link">CacheMode</a></span>&nbsp;<span class="element-name">getCacheMode</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/CacheMode.html" title="class or interface in org.hibernate" class="external-link">CacheMode</a></span>&nbsp;<span class="element-name">getCacheMode</span>()</div>
 </section>
 </li>
 <li>
@@ -655,13 +655,13 @@ T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/
 <li>
 <section class="detail" id="getCurrentLockMode(java.lang.Object)">
 <h3>getCurrentLockMode</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a></span>&nbsp;<span class="element-name">getCurrentLockMode</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</span></div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/LockMode.html" title="class or interface in org.hibernate" class="external-link">LockMode</a></span>&nbsp;<span class="element-name">getCurrentLockMode</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="enableFilter(java.lang.String)">
 <h3>enableFilter</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/Filter.html" title="class or interface in org.hibernate" class="external-link">Filter</a></span>&nbsp;<span class="element-name">enableFilter</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filterName)</span></div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Filter.html" title="class or interface in org.hibernate" class="external-link">Filter</a></span>&nbsp;<span class="element-name">enableFilter</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filterName)</span></div>
 </section>
 </li>
 <li>
@@ -673,17 +673,17 @@ T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/
 <li>
 <section class="detail" id="getEnabledFilter(java.lang.String)">
 <h3>getEnabledFilter</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/Filter.html" title="class or interface in org.hibernate" class="external-link">Filter</a></span>&nbsp;<span class="element-name">getEnabledFilter</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filterName)</span></div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/Filter.html" title="class or interface in org.hibernate" class="external-link">Filter</a></span>&nbsp;<span class="element-name">getEnabledFilter</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filterName)</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="isFetchProfileEnabled(java.lang.String)">
 <h3>isFetchProfileEnabled</h3>
 <div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">isFetchProfileEnabled</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span>
-                       throws <span class="exceptions"><a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/UnknownProfileException.html" title="class or interface in org.hibernate" class="external-link">UnknownProfileException</a></span></div>
+                       throws <span class="exceptions"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/UnknownProfileException.html" title="class or interface in org.hibernate" class="external-link">UnknownProfileException</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/UnknownProfileException.html" title="class or interface in org.hibernate" class="external-link">UnknownProfileException</a></code></dd>
+<dd><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/UnknownProfileException.html" title="class or interface in org.hibernate" class="external-link">UnknownProfileException</a></code></dd>
 </dl>
 </section>
 </li>
@@ -691,10 +691,10 @@ T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/
 <section class="detail" id="enableFetchProfile(java.lang.String)">
 <h3>enableFetchProfile</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">enableFetchProfile</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span>
-                 throws <span class="exceptions"><a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/UnknownProfileException.html" title="class or interface in org.hibernate" class="external-link">UnknownProfileException</a></span></div>
+                 throws <span class="exceptions"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/UnknownProfileException.html" title="class or interface in org.hibernate" class="external-link">UnknownProfileException</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/UnknownProfileException.html" title="class or interface in org.hibernate" class="external-link">UnknownProfileException</a></code></dd>
+<dd><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/UnknownProfileException.html" title="class or interface in org.hibernate" class="external-link">UnknownProfileException</a></code></dd>
 </dl>
 </section>
 </li>
@@ -702,10 +702,10 @@ T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/
 <section class="detail" id="disableFetchProfile(java.lang.String)">
 <h3>disableFetchProfile</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">disableFetchProfile</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span>
-                  throws <span class="exceptions"><a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/UnknownProfileException.html" title="class or interface in org.hibernate" class="external-link">UnknownProfileException</a></span></div>
+                  throws <span class="exceptions"><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/UnknownProfileException.html" title="class or interface in org.hibernate" class="external-link">UnknownProfileException</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/UnknownProfileException.html" title="class or interface in org.hibernate" class="external-link">UnknownProfileException</a></code></dd>
+<dd><code><a href="https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/UnknownProfileException.html" title="class or interface in org.hibernate" class="external-link">UnknownProfileException</a></code></dd>
 </dl>
 </section>
 </li>
