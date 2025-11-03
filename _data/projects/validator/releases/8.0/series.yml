@@ -1,4 +1,9 @@
 summary: Jakarta EE 10, @UUID constraint
+links:
+  whats_new:
+    html: "/validator/releases/{series.version}/#whats-new"
+  migration_guide:
+    html: /validator/documentation/migration-guide/#{series.version.dashes}-x
 maven:
   artifacts:
     - artifact_id: hibernate-validator
