@@ -469,9 +469,11 @@ projects:
         html: https://docs.hibernate.org/validator/{series.version}/reference/en-US/html_single/#validator-gettingstarted
         pdf: https://docs.hibernate.org/validator/{series.version}/reference/en-US/pdf/hibernate_validator_reference.pdf#validator-gettingstarted
       migration_guide:
-        html: /validator/documentation/migration-guide/#{series.version.dashes}-x
+        html: https://docs.hibernate.org/validator/{series.version}/migration/en-US/html_single
+        pdf: https://docs.hibernate.org/validator/{series.version}/migration/en-US/pdf/hibernate_validator_migration_guide.pdf
       whats_new:
-        html: "/validator/releases/{series.version}/#whats-new"
+        html: https://docs.hibernate.org/validator/{series.version}/whats-new/en-US/html_single
+        pdf: https://docs.hibernate.org/validator/{series.version}/whats-new/en-US/pdf/hibernate_validator_whats_new.pdf
       dist:
         sourceforge:
           zip: https://sourceforge.net/projects/hibernate/files/hibernate-validator/{release.version}/hibernate-validator-{release.version}-dist.zip/download

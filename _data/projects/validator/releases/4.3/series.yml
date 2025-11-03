@@ -1,4 +1,9 @@
 summary: Last Bean Validation 1.0 compatible version
+links:
+  whats_new:
+    html: "/validator/releases/{series.version}/#whats-new"
+  migration_guide:
+    html: /validator/documentation/migration-guide/#{series.version.dashes}-x
 maven:
   coord:
     group_id: org.hibernate

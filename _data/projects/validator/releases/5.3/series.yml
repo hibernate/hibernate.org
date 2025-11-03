@@ -1,4 +1,9 @@
 summary: Dynamic constraint payload, parameter relaxation, new api for programmatic constraint definition, new translations.
+links:
+  whats_new:
+    html: "/validator/releases/{series.version}/#whats-new"
+  migration_guide:
+    html: /validator/documentation/migration-guide/#{series.version.dashes}-x
 maven:
   coord:
     group_id: org.hibernate
