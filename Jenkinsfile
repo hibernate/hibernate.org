@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'Worker&&Containers'
+        label 'Release'
     }
     options {
         disableConcurrentBuilds()
