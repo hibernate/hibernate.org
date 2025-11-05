@@ -47,6 +47,18 @@ title: Corporate contributors
       %a.ui.blue.label(href='/orm/') Hibernate ORM
   .ui.card.fluid.contributor
     .image
+      %a(href='https://www.mongodb.com/')
+        %img{:src => "#{relative("/images/contributors/mongodb.svg", page)}"}
+    .content
+      .header
+        %a(href='https://www.mongodb.com/') MongoDB
+      .description
+        %p MongoDB is the world’s most popular document database, giving developers a flexible, intuitive way to work with data. With MongoDB Atlas, teams get a fully managed cloud DBaaS platform that combines the flexible document model with a suite of data services, best-in-class security, and enterprise scalability, empowering developers to build any type of application.
+        %p MongoDB proudly contributes to the Hibernate ORM project through the MongoDB Extension for Hibernate ORM, bringing first-class support for MongoDB’s document model to the Hibernate ecosystem.
+    .extra.content
+      %a.ui.blue.label(href='https://github.com/mongodb/mongo-hibernate') MongoDB Extension for Hibernate ORM
+  .ui.card.fluid.contributor
+    .image
       %a(href='https://www.sap.com/')
         %img{:src => "#{relative("/images/contributors/sap.png", page)}"}
     .content
@@ -62,37 +74,12 @@ title: Corporate contributors
       %a.ui.blue.label(href='/orm/') Hibernate ORM
       %a.ui.blue.label(href='/search/') Hibernate Search
       %a.ui.blue.label(href='/ogm/') Hibernate OGM
-  .ui.card.fluid.contributor
-    .image
-      %a(href='https://www.mongodb.com/')
-        %img{:src => "#{relative("/images/contributors/mongodb.svg", page)}"}
-    .content
-      .header
-        %a(href='https://www.mongodb.com/') MongoDB
-      .description
-        %p MongoDB is the world’s most popular document database, giving developers a flexible, intuitive way to work with data. With MongoDB Atlas, teams get a fully managed cloud DBaaS platform that combines the flexible document model with a suite of data services, best-in-class security, and enterprise scalability, empowering developers to build any type of application.
-        %p MongoDB proudly contributes to the Hibernate ORM project through the MongoDB Extension for Hibernate ORM, bringing first-class support for MongoDB’s document model to the Hibernate ecosystem.
-    .extra.content
-      %a.ui.blue.label(href='https://github.com/mongodb/mongo-hibernate') MongoDB Extension for Hibernate ORM
 
 %p &nbsp;
 
 %h2{:id => "infrastructure"} Infrastructure providers
 
 .ui.relaxed.divided.items.infrastructure-providers
-  .item
-    .image.multiple
-      %a(href='https://www.ibm.com/')
-        %img.ibm{:src => "#{relative("/images/contributors/ibm-logo.png", page)}"}
-      %a(href='https://www.redhat.com/')
-        %img.redhat{:src => "#{relative("/images/contributors/redhat-logo.svg", page)}"}
-    .content
-      %p.header
-        %a(href='https://www.ibm.com/') IBM
-        and
-        %a(href='https://www.redhat.com/') Red Hat
-      .description
-        %p IBM and Red Hat provide funding for our official CI infrastructure based on Jenkins.
   .item
     .image
       %a(href='https://www.atlassian.com/')
@@ -134,6 +121,19 @@ title: Corporate contributors
       %a.header(href='https://github.com/') GitHub
       .description
         %p Our source code is hosted on GitHub and we use GitHub Actions for part of our CI.
+  .item
+    .image.multiple
+      %a(href='https://www.ibm.com/')
+        %img.ibm{:src => "#{relative("/images/contributors/ibm-logo.png", page)}"}
+      %a(href='https://www.redhat.com/')
+        %img.redhat{:src => "#{relative("/images/contributors/redhat-logo.svg", page)}"}
+    .content
+      %p.header
+        %a(href='https://www.ibm.com/') IBM
+        and
+        %a(href='https://www.redhat.com/') Red Hat
+      .description
+        %p IBM and Red Hat provide funding for our official CI infrastructure based on Jenkins.
   .item
     .image
       %a(href='https://testpilot.oracle.com/')
