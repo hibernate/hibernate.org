@@ -8,14 +8,19 @@ title: Corporate contributors
 .main-sponsor
   .ui.items.relaxed
     .item
-      .image
+      .image.multiple
+        %a(href='https://www.ibm.com/')
+          %img.ibm{:src => "#{relative("/images/contributors/ibm-logo.png", page)}"}
         %a(href='https://www.redhat.com/')
-          %img{:src => "#{relative("/images/contributors/redhat-logo.svg", page)}"}
+          %img.redhat{:src => "#{relative("/images/contributors/redhat-logo.svg", page)}"}
       .content
-        %a.header(href='https://www.redhat.com/') Red Hat, Inc.
+        .header
+          %a(href='https://www.ibm.com/') IBM
+          and
+          %a(href='https://www.redhat.com/') Red Hat
         .description
-          %p Red Hat, Inc. is the main sponsor of the Hibernate projects.
-          %p It funds the development of all the Hibernate portfolio.
+          %p IBM and Red Hat are the main sponsors of the Hibernate projects.
+          %p They fund the development of all the Hibernate portfolio.
           %p
             The Hibernate projects are productized to be part of the
             %a(href='https://www.redhat.com/en/products/runtimes') Red Hat Runtimes
@@ -86,15 +91,20 @@ title: Corporate contributors
 
 %h2{:id => "infrastructure"} Infrastructure providers
 
-.ui.relaxed.divided.items
+.ui.relaxed.divided.items.infrastructure-providers
   .item
-    .image
+    .image.multiple
+      %a(href='https://www.ibm.com/')
+        %img.ibm{:src => "#{relative("/images/contributors/ibm-logo.png", page)}"}
       %a(href='https://www.redhat.com/')
-        %img{:src => "#{relative("/images/contributors/redhat-logo.svg", page)}"}
+        %img.redhat{:src => "#{relative("/images/contributors/redhat-logo.svg", page)}"}
     .content
-      %a.header(href='https://www.redhat.com/') Red Hat
+      %p.header
+        %a(href='https://www.ibm.com/') IBM
+        and
+        %a(href='https://www.redhat.com/') Red Hat
       .description
-        %p Red Hat provides funding for our official CI infrastructure based on Jenkins.
+        %p IBM and Red Hat provide funding for our official CI infrastructure based on Jenkins.
   .item
     .image
       %a(href='https://www.atlassian.com/')
