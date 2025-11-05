@@ -752,6 +752,31 @@ pre .comment .conum {
 	}
 }
 
+.main-sponsor, .corporate-contributors {
+  .image.multiple {
+    img {
+      margin: 0 0 10px;
+    }
+  }
+  img.ibm {
+    // IBM logo is massive.
+    padding: 20px;
+  }
+}
+
+.infrastructure-providers {
+  .image.multiple {
+    img {
+      padding: 5px;
+      margin: 0 0 10px;
+    }
+  }
+  img.ibm {
+    // IBM logo is massive.
+    padding: 10px;
+  }
+}
+
 .corporate-contributors {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
