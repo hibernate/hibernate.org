@@ -8,6 +8,9 @@ status: limited-support
 license:
   name: LGPL v2.1
   url: https://raw.githubusercontent.com/hibernate/hibernate-search/6.2/lgpl.txt
+links:
+  whats_new:
+    html: "/search/releases/{series.version}/#whats-new"
 maven:
   artifacts:
     - artifact_id: hibernate-search-mapper-orm-orm6

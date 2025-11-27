@@ -7,6 +7,8 @@ links:
     displayed: false
   migration_guide:
     html: https://developer.jboss.org/docs/DOC-15249
+  whats_new:
+    html: "/search/releases/{series.version}/#whats-new"
 maven:
   coord:
     group_id: org.hibernate

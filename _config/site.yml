@@ -219,7 +219,8 @@ projects:
         html: https://docs.hibernate.org/search/{series.version}/migration/html_single/
         pdf: https://docs.hibernate.org/search/{series.version}/migration/pdf/hibernate_search_migration.pdf
       whats_new:
-        html: "/search/releases/{series.version}/#whats-new"
+        html: https://docs.hibernate.org/search/{series.version}/whats-new/en-US/html_single
+        pdf: https://docs.hibernate.org/search/{series.version}/whats-new/en-US/pdf/hibernate_search_whats_new.pdf
       dist:
         sourceforge:
           zip: https://sourceforge.net/projects/hibernate/files/hibernate-search/{release.version}/hibernate-search-{release.version}-dist.zip/download
