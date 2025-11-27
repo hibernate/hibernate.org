@@ -3,6 +3,9 @@ summary: >-
   query string predicates on numeric/date fields,
   analyzer API
 status: limited-support
+links:
+  whats_new:
+    html: "/search/releases/{series.version}/#whats-new"
 maven:
   artifacts:
     - artifact_id: hibernate-search-bom

@@ -9,6 +9,8 @@ links:
     displayed: false
   migration_guide:
     html: /search/documentation/migrate/{series.version}/
+  whats_new:
+    html: "/search/releases/{series.version}/#whats-new"
 maven:
   coord:
     group_id: org.hibernate

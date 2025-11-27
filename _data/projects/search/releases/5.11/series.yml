@@ -7,6 +7,8 @@ links:
     html: /search/documentation/getting-started/5.11
   migration_guide:
     html: /search/documentation/migrate/{series.version}/
+  whats_new:
+    html: "/search/releases/{series.version}/#whats-new"
 maven:
   coord:
     group_id: org.hibernate

@@ -4,6 +4,9 @@ summary: >-
   upgrade to Hibernate ORM 7.1
   compatibility with new versions of Elasticsearch/OpenSearch,
   other bugfixes, improvements and upgrades
+links:
+  whats_new:
+    html: "/search/releases/{series.version}/#whats-new"
 maven:
   artifacts:
     - artifact_id: hibernate-search-bom
