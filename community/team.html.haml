@@ -29,16 +29,19 @@ title: Hibernate Team
 .ui.icon.message
   %i.icon.id.badge
   .content
-    This is a list of all
+    This is a list of all active
     %a(href="/community/governance/#roles")
       Hibernate Members
-    extracted from public GitHub metadata.
+    extracted from public GitHub metadata and refreshed every week.
     %p
     %em
       Don't see your name?
     If you're already a member, check that
     %a(href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-your-membership-in-organizations/publicizing-or-hiding-organization-membership")
       your membership is public.
+    If you are no longer active on Hibernate projects, check out the list of
+    %a(href="#alumni") alumni.
+    %p
     If you want to join us, reach out to a member to start
     %a(href="/community/contribute")
       contributing
@@ -53,13 +56,43 @@ title: Hibernate Team
 
 #list.contributor-list(style="display:none")
 
+%h2{:id => "alumni"} Alumni
+
+.ui.icon.message
+  %i.icon.id.badge
+  .content
+    This is a list of all inactive
+    %a(href="/community/governance/#roles")
+      Hibernate Members
+    extracted from public GitHub metadata and refreshed every week.
+    %p
+    These members have done a lot for Hibernate, but have since moved on.
+    We're love to see them again, though!
+    %p
+    %em
+      Don't see your name?
+    If you're already a member, check that
+    %a(href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-your-membership-in-organizations/publicizing-or-hiding-organization-membership")
+      your membership is public.
+
+%p &nbsp;
+
+.text-center#alumni-list-loader
+  %i.notched.circle.loading.icon.massive
+
+#alumni-list.contributor-list(style="display:none")
+
 :javascript
   $(document).ready(function() {
     var contributorsNameMapping = #{site.data_json['contributors-name-mapping']}
     var governance = #{site.data_json['governance']}
-    // https://docs.github.com/en/rest/orgs/members?apiVersion=2022-11-28#list-public-organization-members
-    $.getJSON( "https://api.github.com/orgs/hibernate/public_members?per_page=100", function( data ) {
-      var items = [];
+    // See:
+    // https://github.com/hibernate/.github/blob/main/.github/workflows/update-metadata.yml
+    // https://github.com/hibernate/.github/blob/main/scripts/update-members.sh
+    // https://github.com/hibernate/.github/blob/main/members.json
+    $.getJSON( "https://raw.githubusercontent.com/hibernate/.github/refs/heads/main/members.json", function( data ) {
+      var activeMembers = [];
+      var alumni = [];
       data.forEach( function( member ) {
         var memberName = contributorsNameMapping[member.login] ? contributorsNameMapping[member.login] : member.login;
 
@@ -78,12 +111,21 @@ title: Hibernate Team
           leaderItem.replaceWith( item.clone() );
         }
 
-        items.push(item);
+        if (member.alumnus) {
+          alumni.push(item);
+        }
+        else {
+          activeMembers.push(item);
+        }
       });
 
-      $( '#list' ).append( items );
+      $( '#list' ).append( activeMembers );
       $( '#list-loader' ).hide();
       $( '#list' ).fadeIn();
+
+      $( '#alumni-list' ).append( alumni );
+      $( '#alumni-list-loader' ).hide();
+      $( '#alumni-list' ).fadeIn();
     });
   });
 
