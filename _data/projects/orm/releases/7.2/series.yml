@@ -40,7 +40,7 @@ integration_constraints:
     version: 11
 subprojects:
   repositories:
-    summary: Jakarta Data 1.0, compatibility with Hibernate ORM 7.2, reactive repositories
+    summary: Compatibility with Hibernate ORM 7.2
     maven:
       artifacts:
         - artifact_id: hibernate-processor
