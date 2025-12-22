@@ -12,17 +12,6 @@ users needs and contributions.
 You can find a fine-grained roadmap in our https://hibernate.atlassian.net/browse/HV[issue tracker],
 but this page is a good starting point to see where we are going.
 
-== Hibernate Validator 9.1
-
-* Warn users about misuse of the constraint annotation (including compile and runtime warnings) (link:{hv-jira-url-prefix}/HV-2100[HV-2100]).
-* Evaluate possible performance improvements for cascading validation of large lists. (link:{hv-jira-url-prefix}/HV-1831[HV-1831]).
-* Change the validation path implementation to improve overall performance.
-* Require JDK 25 for the builds. (link:{hv-jira-url-prefix}/HV-2145[HV-2145]).
-* Apply the unified Hibernate documentation theme. (link:{hv-jira-url-prefix}/HV-2143[HV-2143]).
-
-For a full list of issues currently planned for this series,
-see https://hibernate.atlassian.net/issues/?jql=fixVersion%20=%2033308%20ORDER%20BY%20created%20ASC[here].
-
 == Hibernate Validator 9.2
 
 * Array validation, in particular enable "type-element" validation for arrays, i.e. `@NotBlank String[] @NotNull [] strings` (link:{hv-jira-url-prefix}/HV-1428[HV-1428]).
