@@ -472,9 +472,6 @@ projects:
       whats_new:
         html: https://docs.hibernate.org/validator/{series.version}/whats-new/en-US/html_single
         pdf: https://docs.hibernate.org/validator/{series.version}/whats-new/en-US/pdf/hibernate_validator_whats_new.pdf
-      dist:
-        sourceforge:
-          zip: https://sourceforge.net/projects/hibernate/files/hibernate-validator/{release.version}/hibernate-validator-{release.version}-dist.zip/download
     maven:
       signing:
         since: '2022-02-08'

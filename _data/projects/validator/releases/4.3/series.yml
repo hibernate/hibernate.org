@@ -4,6 +4,9 @@ links:
     html: "/validator/releases/{series.version}/#whats-new"
   migration_guide:
     html: /validator/documentation/migration-guide/#{series.version.dashes}-x
+  dist:
+    sourceforge:
+      zip: https://sourceforge.net/projects/hibernate/files/hibernate-validator/{release.version}/hibernate-validator-{release.version}-dist.zip/download
 maven:
   coord:
     group_id: org.hibernate
