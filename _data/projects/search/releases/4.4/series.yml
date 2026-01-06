@@ -9,6 +9,9 @@ links:
     html: https://developer.jboss.org/docs/DOC-15249
   whats_new:
     html: "/search/releases/{series.version}/#whats-new"
+  dist:
+    sourceforge:
+      zip: https://sourceforge.net/projects/hibernate/files/hibernate-search/{release.version}/hibernate-search-{release.version}-dist.zip/download
 maven:
   coord:
     group_id: org.hibernate

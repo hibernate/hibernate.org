@@ -9,6 +9,9 @@ links:
     html: /search/documentation/migrate/{series.version}/
   whats_new:
     html: "/search/releases/{series.version}/#whats-new"
+  dist:
+    sourceforge:
+      zip: https://sourceforge.net/projects/hibernate/files/hibernate-search/{release.version}/hibernate-search-{release.version}-dist.zip/download
 maven:
   coord:
     group_id: org.hibernate
