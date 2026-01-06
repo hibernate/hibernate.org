@@ -12,6 +12,9 @@ links:
     pdf: https://docs.hibernate.org/search/{series.version}/reference/en-US/pdf/hibernate_search_reference.pdf#getting-started
   whats_new:
     html: "/search/releases/{series.version}/#whats-new"
+  dist:
+    sourceforge:
+      zip: https://sourceforge.net/projects/hibernate/files/hibernate-search/{release.version}/hibernate-search-{release.version}-dist.zip/download
 maven:
   artifacts:
     - artifact_id: hibernate-search-mapper-orm-orm6
