@@ -826,15 +826,21 @@ pre .comment .conum {
 		text-align: right;
 	}
 
-	.sponsor .logo {
-		display: block;
-		&:not(:last-child) {
-			margin-bottom: 20px;
-		}
-		&.redhat, &.redhatdevelopers, &.commonhaus {
-			img {
-				width: 186px;
+	.sponsor {
+		.logo {
+			display: block;
+			&:not(:last-child) {
+				margin-bottom: 20px;
 			}
+			&.redhat, &.commonhaus {
+				img {
+					width: 186px;
+				}
+			}
+		}
+		.legal {
+			opacity: 0.7;
+			font-size: 0.8em;
 		}
 	}
 }
