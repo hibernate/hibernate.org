@@ -1,0 +1,45 @@
+java:
+  name: Java
+  url: https://www.oracle.com/java/technologies/downloads/
+java_ee_jpa:
+  name: JPA
+  url: https://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html
+jakarta_ee_jpa:
+  name: Jakarta Persistence
+  url: https://jakarta.ee/specifications/persistence/
+java_ee:
+  name: Java EE
+  url: https://www.oracle.com/java/technologies/java-ee-glance.html
+jakarta_ee:
+  name: Jakarta EE
+  url: https://jakarta.ee
+dialect_mongodb:
+  name: MongoDB Extension
+  url: https://github.com/mongodb/mongo-hibernate/
+orm:
+  name: Hibernate ORM
+  url: /orm/
+lucene:
+  name: Apache Lucene
+  url: https://lucene.apache.org/core/
+elasticsearch:
+  name: Elasticsearch server
+  url: https://www.elastic.co/products/elasticsearch
+opensearch:
+  name: OpenSearch server
+  url: https://www.opensearch.org
+jakarta_ee_data:
+  name: Jakarta Data
+  url: https://jakarta.ee/specifications/data/
+java_ee_bv:
+  name: Bean Validation
+  url: https://beanvalidation.org/
+jakarta_ee_bv:
+  name: Jakarta Validation
+  url: https://beanvalidation.org/
+search:
+  name: Hibernate Search
+  url: /search/
+vertx:
+  name: Vert.x
+  url: https://vertx.io
