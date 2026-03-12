@@ -38,12 +38,21 @@ maven:
       summary: Hibernate Search annotation processor capable of generating the static metamodel
 integration_constraints:
   java:
-    version: 17, 21, or 23
+    version:
+      - 17
+      - 21
+      - 23
   orm:
     version: 7.0
   elasticsearch:
-    version: 7.10 - 9.0
+    version:
+      from: 7.10
+      to: 9.0
   opensearch:
-    version: 1.3 - 3.0
+    version:
+      from: 1.3
+      to: 3.0
   lucene:
-    version: 9.12 / 10.2
+    version:
+      - 9.12
+      - 10.2

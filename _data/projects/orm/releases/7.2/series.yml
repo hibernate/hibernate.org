@@ -34,7 +34,10 @@ maven:
       summary: Leverages Jandex to support managed-resource scanning (entity discovery, etc) in Hibernate ORM.
 integration_constraints:
   java:
-    version: 17, 21 or 25
+    version:
+      - 17
+      - 21
+      - 25
   jakarta_ee_jpa:
     version: 3.2
   jakarta_ee:
@@ -50,7 +53,10 @@ subprojects:
           summary: Runtime support
     integration_constraints:
       java:
-        version: 17, 21 or 25
+        version:
+          - 17
+          - 21
+          - 25
       jakarta_ee_data:
         version: 1.0
       jakarta_ee:

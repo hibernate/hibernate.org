@@ -46,8 +46,12 @@ integration_constraints:
   java:
     version: 8
   orm:
-    version: 5.2 (>= 5.2.3.Final)
+    version:
+      value: 5.2
+      comment: ">= 5.2.3.Final"
   elasticsearch:
-    version: 2.0 - 5.6
+    version:
+      from: 2.0
+      to: 5.6
   lucene:
     version: 5.5
