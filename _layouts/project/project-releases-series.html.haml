@@ -97,7 +97,7 @@ project_hero_partial: project/hero-series.html.haml
   %h2{:id => "compatibility"} Compatibility
   %table.ui.collapsing.definition.table.striped.celled.unstackable.center.aligned
     - series.integration_constraints.each_pair do |integration_id,constraint|
-      - integration = project_description.integrations[integration_id]
+      - integration = site.integrations[integration_id]
       %tr
         %td.left.aligned
           %a{:href => "#{integration&.url}"}

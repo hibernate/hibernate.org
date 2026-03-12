@@ -86,7 +86,7 @@ project_buttons_partial: project/releases-buttons.html.haml
                   %i.right.arrow.icon
                   More info
 
-- unless project_description.integrations.nil?
+- if project_description.active_release_series.any? { |series| !series.integration_constraints.nil? }
   %h2#compatibility-matrix Compatibility matrix
   %table.ui.definition.table.unstackable.celled.striped.center.aligned
     %thead
@@ -100,7 +100,7 @@ project_buttons_partial: project/releases-buttons.html.haml
           %th
             = series.version
     %tbody
-      - project_description.integrations.each_pair do |integration_id, integration|
+      - site.integrations.each do |integration_id, integration|
         - has_constraint = false
         - project_description.active_release_series.each do |series|
           - if series.integration_constraints[integration_id]
