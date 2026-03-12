@@ -5,7 +5,10 @@ maven:
       summary: Core implementation
 integration_constraints:
   java:
-    version: 11, 16 or 17
+    version:
+      - 11
+      - 16
+      - 17
   orm:
     version: 5.6
   vertx:
