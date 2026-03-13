@@ -49,3 +49,5 @@ integration_constraints:
       - 8
   java_ee_jpa:
     version: 2.1
+  spring_boot:
+    version: '1.5'

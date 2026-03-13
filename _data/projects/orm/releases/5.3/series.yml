@@ -46,4 +46,10 @@ integration_constraints:
     version: 2.2
   java_ee:
     version: 8
+  spring_boot:
+    version: '2.1'
+  wildfly:
+    version:
+      from: '13'
+      to: '16'
 

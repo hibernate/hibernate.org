@@ -14,3 +14,7 @@ integration_constraints:
     version: 6.5
   vertx:
     version: 4.5
+  quarkus:
+    version:
+      from: '3.11'
+      to: '3.13'

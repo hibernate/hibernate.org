@@ -34,3 +34,11 @@ integration_constraints:
     version: 3.1
   jakarta_ee:
     version: 11
+  quarkus:
+    version: '3.29'
+  spring_boot:
+    version: '4.0'
+  wildfly:
+    version:
+      from: '37'
+      to: '38'

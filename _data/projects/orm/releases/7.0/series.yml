@@ -37,6 +37,12 @@ integration_constraints:
     version: 3.2
   jakarta_ee:
     version: 11
+  quarkus:
+    version:
+      from: '3.24'
+      to: '3.25'
+  wildfly:
+    version: '37'
 subprojects:
   repositories:
     summary: Jakarta Data 1.0, compatibility with Hibernate ORM 7, reactive repositories

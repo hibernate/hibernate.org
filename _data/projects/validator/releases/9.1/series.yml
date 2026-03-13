@@ -26,3 +26,9 @@ integration_constraints:
     version: 3.1
   jakarta_ee:
     version: 11
+  quarkus:
+    version:
+      from: '3.30'
+      to: '3.31'
+  wildfly:
+    version: '39'

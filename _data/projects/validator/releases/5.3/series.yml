@@ -31,3 +31,7 @@ integration_constraints:
       - 8
   java_ee_bv:
     version: 1.1
+  spring_boot:
+    version: '1.5'
+  wildfly:
+    version: '11'

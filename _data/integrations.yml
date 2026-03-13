@@ -1,3 +1,8 @@
+# "Integrations" here is meant as either:
+# - downstream software that expose Hibernate projects to their users.
+# - external software that can be used through Hibernate projects.
+#
+# 'series.yml' files of each project reference the versions of integrators the corresponding series is included in.
 java:
   name: Java
   url: https://www.oracle.com/java/technologies/downloads/
@@ -43,3 +48,12 @@ search:
 vertx:
   name: Vert.x
   url: https://vertx.io
+quarkus:
+  name: Quarkus
+  url: https://quarkus.io/
+wildfly:
+  name: WildFly
+  url: https://www.wildfly.org/
+spring_boot:
+  name: Spring Boot
+  url: https://spring.io/projects/spring-boot

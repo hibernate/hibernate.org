@@ -58,3 +58,11 @@ integration_constraints:
     version:
       - 9.12
       - 10.2
+  quarkus:
+    version:
+      from: '3.26'
+      to: '3.30'
+  wildfly:
+    version:
+      from: '38'
+      to: '39'

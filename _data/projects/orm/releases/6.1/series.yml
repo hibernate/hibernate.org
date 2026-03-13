@@ -35,3 +35,7 @@ integration_constraints:
     version:
       - 10
       - 9
+  spring_boot:
+    version: '3.0'
+  wildfly:
+    version: '27'

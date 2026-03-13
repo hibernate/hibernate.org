@@ -51,4 +51,8 @@ integration_constraints:
     version: 8
   jakarta_ee:
     version: 9
+  quarkus:
+    version:
+      from: '2.0'
+      to: '2.3.0'
 

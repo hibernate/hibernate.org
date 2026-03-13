@@ -36,6 +36,18 @@ integration_constraints:
     version: 10
   dialect_mongodb:
     version: 1.0
+  quarkus:
+    version:
+      from: '3.14'
+      to: '3.23'
+  spring_boot:
+    version:
+      from: '3.4'
+      to: '3.5'
+  wildfly:
+    version:
+      from: '34'
+      to: '39'
 subprojects:
   repositories:
     summary: Jakarta Data 1.0, compatibility with Hibernate ORM 6

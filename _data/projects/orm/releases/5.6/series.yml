@@ -48,4 +48,12 @@ integration_constraints:
     version: 3.0
   jakarta_ee:
     version: 9
+  quarkus:
+    version:
+      value: '2.3'
+      comment: excluding 2.3.0
+  spring_boot:
+    version:
+      from: '2.6'
+      to: '2.7'
 
