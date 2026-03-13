@@ -42,7 +42,9 @@ integration_constraints:
       from: '3.24'
       to: '3.25'
   wildfly:
-    version: '37'
+    version:
+      value: '37'
+      comment: "Preview"
 subprojects:
   repositories:
     summary: Jakarta Data 1.0, compatibility with Hibernate ORM 7, reactive repositories

@@ -31,4 +31,6 @@ integration_constraints:
       from: '3.30'
       to: '3.31'
   wildfly:
-    version: '39'
+    version:
+      value: '39'
+      comment: "Preview"
