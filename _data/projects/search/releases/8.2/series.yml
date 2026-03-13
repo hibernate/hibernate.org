@@ -59,3 +59,5 @@ integration_constraints:
     version:
       - 9.12
       - 10.3
+  quarkus:
+    version: '3.31'

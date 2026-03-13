@@ -31,3 +31,9 @@ integration_constraints:
     version: 3.1
   jakarta_ee:
     version: 10
+  quarkus:
+    version:
+      from: '3.11'
+      to: '3.13'
+  spring_boot:
+    version: '3.3'

@@ -53,3 +53,11 @@ integration_constraints:
       to: 2.13
   lucene:
     version: 9.9
+  quarkus:
+    version:
+      from: '3.9'
+      to: '3.13'
+  wildfly:
+    version:
+      from: '32'
+      to: '33'

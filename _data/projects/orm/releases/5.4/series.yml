@@ -48,4 +48,12 @@ integration_constraints:
     version: 2.2
   java_ee:
     version: 8
+  quarkus:
+    version:
+      from: '1.0'
+      to: '1.13'
+  spring_boot:
+    version:
+      from: '2.2'
+      to: '2.5'
 

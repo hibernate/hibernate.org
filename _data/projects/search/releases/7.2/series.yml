@@ -48,3 +48,11 @@ integration_constraints:
       to: 2.16
   lucene:
     version: 9.11
+  quarkus:
+    version:
+      from: '3.14'
+      to: '3.23'
+  wildfly:
+    version:
+      from: '34'
+      to: '39'
