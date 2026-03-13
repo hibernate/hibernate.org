@@ -1,0 +1,26 @@
+-# Generate CSV of integration constraints for downstream frameworks
+- downstream_integrations = site.integrations.select { |id, integration| integration.downstream == true }
+- downstream_ids = downstream_integrations.keys.sort
+- projects = ['orm', 'search', 'validator', 'reactive']
+Project,Series,#{downstream_ids.map { |id| downstream_integrations[id].name }.join(',')}
+- projects.each do |project_id|
+  - project = site.projects[project_id]
+  - next if project.nil? || project.release_series.nil?
+  - project.release_series.to_a.reverse.each do |series_version, series|
+    - next if series.integration_constraints.nil?
+    - row = [project_id, "\"#{series_version}\""]
+    - downstream_ids.each do |integration_id|
+      - constraint = series.integration_constraints[integration_id]
+      - if constraint.nil?
+        - row << ''
+      - else
+        - version = constraint.version
+        - if version.nil?
+          - row << ''
+        - elsif version.is_a?(Array)
+          - row << "\"#{version.map { |v| integration_constraint_version(v, false) }.join('/')}\""
+        - elsif version.is_a?(Hash) && version.key?(:from)
+          - row << "\"#{integration_constraint_version(version.from, false)}-#{integration_constraint_version(version.to, false)}\""
+        - else
+          - row << "\"#{integration_constraint_version(version, false)}\""
+    = row.join(',')

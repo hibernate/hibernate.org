@@ -51,9 +51,12 @@ vertx:
 quarkus:
   name: Quarkus
   url: https://quarkus.io/
+  downstream: true
 wildfly:
   name: WildFly
   url: https://www.wildfly.org/
+  downstream: true
 spring_boot:
   name: Spring Boot
   url: https://spring.io/projects/spring-boot
+  downstream: true
