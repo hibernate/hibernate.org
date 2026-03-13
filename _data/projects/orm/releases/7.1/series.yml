@@ -46,6 +46,7 @@ integration_constraints:
     version:
       from: '38'
       to: '39'
+      comment: "Preview"
 subprojects:
   repositories:
     summary: Jakarta Data 1.0, compatibility with Hibernate ORM 7.1, reactive repositories
