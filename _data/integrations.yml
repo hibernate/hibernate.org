@@ -56,6 +56,10 @@ wildfly:
   name: WildFly
   url: https://www.wildfly.org/
   downstream: true
+rheap:
+  name: Red Hat EAP
+  url: https://www.redhat.com/en/technologies/jboss-middleware/application-platform
+  downstream: true
 spring_boot:
   name: Spring Boot
   url: https://spring.io/projects/spring-boot
