@@ -119,7 +119,7 @@ project_buttons_partial: project/releases-buttons.html.haml
                   %td
                     :asciidoc
                       :doctype: inline
-                      #{constraint.version}
+                      #{integration_constraint(constraint)}
   %p
     See also the
     %a{:href => "/community/compatibility-policy"}
