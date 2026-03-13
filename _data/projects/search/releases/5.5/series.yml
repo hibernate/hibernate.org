@@ -39,3 +39,7 @@ integration_constraints:
     version:
       from: 5.2
       to: 5.4
+  wildfly:
+    version:
+      from: 11
+      to: 13
