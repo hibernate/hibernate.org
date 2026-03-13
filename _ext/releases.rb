@@ -31,6 +31,38 @@ module Awestruct
         project = site.projects[p.project]
         return project.release_series[version]
       end
+
+      def integration_constraint(constraint)
+        version = constraint.version
+        if version.nil?
+          return nil
+        end
+        if version.is_a?(Array)
+          rendered = version.map { |v| integration_constraint_version(v) }
+          if rendered.length <= 1
+            rendered.join
+          elsif rendered.length == 2
+            rendered.join(" or ")
+          else
+            rendered[0..-2].join(", ") + " or " + rendered[-1]
+          end
+        else
+          integration_constraint_version(version)
+        end
+      end
+
+      def integration_constraint_version(version)
+        if version.is_a?(Hash)
+          if version.key?(:from)
+            "#{integration_constraint_version(version.from)} &rarr; #{integration_constraint_version(version.to)}" +
+              (version.key?(:comment) ? " (#{version.comment})" : "")
+          else
+            version.value.to_s + (version.key?(:comment) ? " (#{version.comment})" : "")
+          end
+        else
+          version.to_s
+        end
+      end
     end
   end
 end
