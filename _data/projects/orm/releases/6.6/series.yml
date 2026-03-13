@@ -48,6 +48,8 @@ integration_constraints:
     version:
       from: '34'
       to: '39'
+  rheap:
+    version: '8.1'
 subprojects:
   repositories:
     summary: Jakarta Data 1.0, compatibility with Hibernate ORM 6
