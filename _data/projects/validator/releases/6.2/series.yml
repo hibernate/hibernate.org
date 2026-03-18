@@ -1,4 +1,5 @@
 summary: Keep javax.* packages, Expression Language overhaul, @SafeHtml removal
+# Not actually included in any downstream integration we care about, but Marko wants to continue supporting it as the last version using javax. package names.
 status: limited-support
 links:
   whats_new:
