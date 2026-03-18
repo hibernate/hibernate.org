@@ -254,9 +254,9 @@ This includes some project-related data.
 See the file for more information about available attributes.
 
 [[data_directory]]
-=== `_data`
+=== `_data/projects`
 
-The `_data` directory contains YAML-formatted data for the releases of each project.
+The `_data/projects` directory contains YAML-formatted data for the releases of each project.
 
 The structure of this directory is as follows:
 
@@ -278,7 +278,7 @@ The `series.yml` file may contain the following attributes:
 *** `artifact_id`: the Maven artifact ID.
 *** `group_id`: the Maven group ID. Optional: defaults to the group ID defined on the series, or on the project.
 *** `summary`: a short text (6/7 words at most) summarizing the purpose of this artifact. You can use Asciidoc syntax here.
-** `integration_constraints`: a map, with keys being the integration IDs defined in `site.yml`,
+** `integration_constraints`: a map, with keys being the integration IDs defined in <<data_integrations,`_data/integrations.yml`>>,
    and values being objects with a `version` attribute describing the version constraints summarily
    (about a dozen characters, and you can use Asciidoc syntax here).
 
@@ -294,6 +294,13 @@ and may contain the following attributes:
 ** `summary`: a one-sentence summary of the content of the release.  You can use Asciidoc syntax here.
 ** `displayed`: `true` to display the release on hibernate.org, `false` to hide it.
    Defaults to `true`. Note that a release will only be displayed if its series is displayed.
+
+[[data_integrations]]
+=== `_data/integrations.yml`
+
+`_data/integrations.yml` contains a list of integrations to be referenced in the `integration_constraints` section of `series.yml` files.
+
+See <<data_directory>>.
 
 [[staging]]
 == Preview changes on staging.hibernate.org
