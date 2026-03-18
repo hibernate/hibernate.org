@@ -39,6 +39,8 @@ integration_constraints:
       - 25
   jakarta_ee_jpa:
     version: 3.2
+  jakarta_ee_data:
+    version: 1.0
   jakarta_ee:
     version: 11
 subprojects:
@@ -50,16 +52,4 @@ subprojects:
           summary: Annotation processor
         - artifact_id: hibernate-core
           summary: Runtime support
-    integration_constraints:
-      java:
-        version:
-          - 17
-          - 21
-          - 25
-      jakarta_ee_data:
-        version: 1.0
-      jakarta_ee:
-        version: 11
-      orm:
-        version: 7.3
 
