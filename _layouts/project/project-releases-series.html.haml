@@ -96,16 +96,19 @@ project_hero_partial: project/hero-series.html.haml
 - unless series.integration_constraints.nil? || series.integration_constraints.empty?
   %h2{:id => "compatibility"} Compatibility
   %table.ui.collapsing.definition.table.striped.celled.unstackable.center.aligned
-    - series.integration_constraints.each_pair do |integration_id,constraint|
-      - integration = site.integrations[integration_id]
-      %tr
-        %td.left.aligned
-          %a{:href => "#{integration&.url}"}
-            = integration&.name
-        %td
-          :asciidoc
-            :doctype: inline
-            #{integration_constraint(constraint)}
+    - # Integration constraints must be in the same order as in integrations.yml
+    - site.integrations.each do |integration_id, integration|
+      - constraint = series.integration_constraints[integration_id]
+      - if constraint
+        - integration = site.integrations[integration_id]
+        %tr
+          %td.left.aligned
+            %a{:href => "#{integration&.url}"}
+              = integration&.name
+          %td
+            :asciidoc
+              :doctype: inline
+              #{integration_constraint(constraint)}
   %p
     Not compatible with your requirements? Have a look at the
     %a{:href => "../"}
