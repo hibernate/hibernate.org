@@ -175,6 +175,17 @@ module Awestruct
         return release
       end
 
+      def hasActiveIntegration(series)
+        series[:integration_constraints]&.each do |integration_key,integration_constraint|
+          integration = @site.integrations[integration_key]
+          next unless integration[:downstream] && integration[:hibernate_involvement]
+          integration[:active_series]&.each do |active_version_string|
+            return true if Version.new(active_version_string).matches?(integration_constraint[:version])
+          end
+        end
+        false
+      end
+
       def sortReleaseHashes(project)
         releases = project[:releases]
         unless releases == nil
@@ -235,6 +246,11 @@ module Awestruct
                 if !series.stable
                   series[:status] = 'development'
                   project[:next_dev_series] = series
+                elsif hasActiveIntegration(series)
+                  # Series with an active integration are considered in "limited support":
+                  # some team members will continue updating them for the specific needs
+                  # of that integration.
+                  series[:status] = 'limited-support'
                 else
                   # By default, stable series that are not the latest are considered end-of-life'd.
                   # This can be overridden in yaml.
@@ -263,21 +279,48 @@ module Awestruct
     class Version
       include Comparable
 
-      attr_reader :major, :feature_group, :feature, :bugfix
+      attr_reader :major, :minor, :micro, :suffix
 
       def initialize(version="")
-        v = version.to_s.split(".")
+        version_str = version.is_a?(Hash) ? (version[:value] || version['value']) : version
+        v = version_str.to_s.split(".")
         @major = v[0].to_i
-        @feature_group = v[1].to_i
-        @feature = v[2].to_i
-        @bugfix = v[3] == nil ? nil : VersionBugfix.new(v[3])
+        @minor = v[1].to_i
+        @micro = v[2].to_i
+        @suffix = v[3] == nil ? nil : VersionSuffix.new(v[3])
       end
 
       def <=>(other)
         return @major <=> other.major if ((@major <=> other.major) != 0)
-        return @feature_group <=> other.feature_group if ((@feature_group <=> other.feature_group) != 0)
-        return @feature <=> other.feature if ((@feature <=> other.feature) != 0)
-        return @bugfix <=> other.bugfix
+        return @minor <=> other.minor if ((@minor <=> other.minor) != 0)
+        return @micro <=> other.micro if ((@micro <=> other.micro) != 0)
+        return @suffix <=> other.suffix
+      end
+
+      def matches?(constraint)
+        if constraint.is_a?(Array)
+          constraint.each do |c|
+            if self.matches?(c)
+              return true
+            end
+          end
+        elsif constraint.is_a?(Hash) && constraint.key?(:from)
+          from_version = Version.new(constraint[:from])
+          to_version = constraint[:to] ? Version.new(constraint[:to]) : nil
+          return self >= from_version && (to_version.nil? || self <= to_version)
+        else
+          constraint_version = Version.new(constraint)
+          # Constraint "7" matches "7.1", "7.2", etc.
+          # Constraint "7.0" matches "7.0.1", "7.0.2", etc.
+          return false if @major != constraint_version.major
+          return true if constraint_version.minor == 0 && constraint_version.micro == 0
+
+          return false if @minor != constraint_version.minor
+          return true if constraint_version.micro == 0
+
+          return @micro == constraint_version.micro
+        end
+        false
       end
 
       def self.sort
@@ -285,11 +328,11 @@ module Awestruct
       end
 
       def to_s
-        @major.to_s + "." + @feature_group.to_s + "." + @feature.to_s + "." + @bugfix.to_s
+        @major.to_s + "." + @minor.to_s + "." + @micro.to_s + "." + @suffix.to_s
       end
     end
 
-    class VersionBugfix
+    class VersionSuffix
       include Comparable
 
       attr_reader :prefix, :number
