@@ -3,6 +3,7 @@ summary: >-
   @EmbeddedTable,
   FindMultipleOptions, 
   Vector Support for SQL Server
+status: limited-support
 maven:
   artifacts:
     - artifact_id: hibernate-core
