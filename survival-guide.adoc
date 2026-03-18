@@ -209,21 +209,23 @@ By default, a series will have the following status (the small label appearing h
 
 * `development` if all it's releases are unstable (still in development);
 * `latest-stable` if it's the latest series with a stable release;
+* `limited-support` if it's a stable series (not the latest) that is used in downstream integrations (Quarkus, WildFly, etc.);
 * `end-of-life` otherwise.
 
-To override this status,
+Most of the time, the status <<limited-support-automatic,is correctly inferred to the correct value>>, and you do not need to set it manually.
+If you encounter some edge cases, you can override it:
 edit the `_data/<project ID>/releases/<series version>/series.yml` file
-to set the `status` attribute to `true` (just add the attribute if it is missing).
-
-This attribute can in particular be set to:
+to set the `status` attribute to one of the following:
 
 `limited-support`::
 to convey the intent of not automatically fixing all bugs,
-while downstream frameworks (Quarkus, WildFly) or commercial offerings (RHBQ, RHEAP)
-may still provide stronger guarantees.
+while still somewhat maintaining the series,
+even if no downstream integrations include it.
 `stable`::
 to convey the intent of still actively maintaining the series,
 even if it is not the latest stable.
+
+=== Series visibility ("older series")
 
 By default, an end-of-life'd series is considered "older" and not displayed with the other series:
 it is not displayed in the drop-down "Releases" submenu,
@@ -233,6 +235,24 @@ and it is not displayed in the project's compatibility matrix.
 You can override this behavior, to hide a non-EOL'd series or display an EOL'd series,
 by editing the `_data/<project ID>/releases/<series version>/series.yml` file
 and setting the `displayed` attribute to `true` or `false` (just add the attribute if it is missing).
+
+[[limited-support-automatic]]
+=== Automatic computation of `limited-support`
+
+Series that do not have a status, and are not the latest stable,
+can be considered `limited-support` if they are used in an active downstream integration (Quarkus, WildFly, etc.).
+
+To make that happen for a given series:
+
+1. Document the compatible downstream integrations in `integration_constraints` in `series.yml` (see existing files).
+2. Document the active series in `integrations.yml`.
+
+The build should automatically detect which series of a Hibernate project are compatible
+with an active series of a downstream integration.
+
+Note only integrations marked as "downstream: true" and "hibernate_involvement: true" are considered,
+because if nobody from the Hibernate team is involved in the downstream project,
+then nobody has both the expertise and interest to maintain for the relevant series.
 
 === Hide a specific release
 

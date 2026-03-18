@@ -44,9 +44,9 @@ Awestruct::Extensions::Pipeline.new do
   helper Awestruct::Extensions::Links
 
   # register extensions and transformers
+  extension Awestruct::Extensions::DataFileParser.new
   extension Awestruct::Extensions::ReleaseFileParser.new
   extension Awestruct::Extensions::LinkResolver.new
-  extension Awestruct::Extensions::DataFileParser.new
   extension Awestruct::Extensions::MetadataPublisher.new
   transformer Awestruct::Extensions::JsMinifier.new
   transformer Awestruct::Extensions::CssMinifier.new

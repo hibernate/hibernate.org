@@ -24,19 +24,19 @@ describe Awestruct::Extensions::Version do
 
 	describe "#feature_group" do
     	it "feature_group number is correct" do
-        	expect(@versions[8].feature_group).to eql 1
+        	expect(@versions[8].minor).to eql 1
     	end
 	end
 
 	describe "#feature" do
     	it "feature number is correct" do
-        	expect(@versions[8].feature).to eql 2
+        	expect(@versions[8].micro).to eql 2
     	end
 	end
 
 	describe "#bugfix" do
     	it "bugfix number is correct" do
-        	expect(@versions[8].bugfix).to eql "Beta4"
+        	expect(@versions[8].suffix).to eql "Beta4"
     	end
 	end
 

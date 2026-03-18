@@ -3,6 +3,10 @@
 # - external software that can be used through Hibernate projects.
 #
 # 'series.yml' files of each project reference the versions of integrators the corresponding series is included in.
+#
+# Active series are documented for downstream projects that any member of the Hibernate team is involved in,
+# because then this member provides at least "limited support" for the corresponding Hibernate project series,
+# even if this series is not the latest stable.
 java:
   name: Java
   url: https://www.oracle.com/java/technologies/downloads/
@@ -52,14 +56,26 @@ quarkus:
   name: Quarkus
   url: https://quarkus.io/
   downstream: true
+  hibernate_involvement: true
+  active_series:
+    - "3.20" # TODO should this be considered EOL? It should be according to https://access.redhat.com/support/policy/updates/red_hat_build_of_quarkus_notes but I see recent commits in https://github.com/quarkusio/quarkus/commits/3.20/
+    - "3.27"
+    - "3.32"
 wildfly:
   name: WildFly
   url: https://www.wildfly.org/
   downstream: true
+  hibernate_involvement: true
+  active_series:
+    - "39"
 rheap:
   name: Red Hat EAP
   url: https://www.redhat.com/en/technologies/jboss-middleware/application-platform
   downstream: true
+  hibernate_involvement: true
+  active_series:
+    - "8.0"
+    - "8.1"
 spring_boot:
   name: Spring Boot
   url: https://spring.io/projects/spring-boot
