@@ -48,6 +48,7 @@ module Awestruct
         if subproject_of
           project_id = subproject_of['project_id']
           subproject_id = project[:id]
+          project[:superproject_id] = project_id
           since_series = Version.new(subproject_of['since_series'])
         else
           project_id = project[:id]
@@ -127,6 +128,14 @@ module Awestruct
         end
 
         series[:releases] = Array.new
+
+        if subproject_id
+          # Automatically add the constraint "this subproject is compatible with the same version of the superproject"
+          superproject_constraint = Hash.new
+          superproject_constraint[:version] = series[:version]
+          series[:integration_constraints][project[:superproject_id]] = superproject_constraint
+        end
+
         return series
       end
 

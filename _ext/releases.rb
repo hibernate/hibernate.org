@@ -33,7 +33,7 @@ module Awestruct
       end
 
       def integration_constraint(constraint)
-        version = constraint.version
+        version = constraint[:version]
         if version.nil?
           return nil
         end
