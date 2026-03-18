@@ -23,7 +23,6 @@ maven:
       summary: Annotation processor
     - artifact_id: hibernate-validator-test-utils
       summary: Set of test utilities that can help testing custom constraints.
-status: limited-support
 integration_constraints:
   java:
     version: 17, 21, 23 or 24
