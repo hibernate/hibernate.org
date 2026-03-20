@@ -9,6 +9,7 @@ integration_constraints:
       - 17
       - 21
       - 25
+      - 26
   orm:
     version: 7.3
   vertx:
