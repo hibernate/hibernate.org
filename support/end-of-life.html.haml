@@ -17,8 +17,17 @@ title: End-of-Life Support
 
 %h2
   Commercial Offerings
-%p
-  Below are commercial offerings that the Hibernate team is familiar with,
-  and which provide end-of-life support for Hibernate projects (among others).
+
+.ui.padded.segment
+  .ui.relaxed.items
+    .item
+      .image
+        %a(href='https://www.commonhaus.org/')
+          %img.ibm{:src => "#{relative("/images/CF_logo_horizontal_default.svg", page)}"}
+      .content
+        .header
+          %a(href='https://www.commonhaus.org/about/ossi.html') Commonhaus Sustainability Initiative
+        .description
+          %p Hibernate end-of-life support offerings are part of the Commonhaus Sustainability Initiative.
 
 = partial( 'support/offering-list.html.haml', {'type' => 'eol'} )
