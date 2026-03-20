@@ -1,0 +1,36 @@
+---
+layout: base
+---
+-# layout for pages related to support
+-# display menu on the left
+-# handles title display
+
+.ui.container-fluid
+  .jumbotron.small
+    .ui.container
+      .ui.grid.stackable
+        .column.row
+          .column.twelve.wide
+            %h1
+              %span
+                %i.icon.doctor
+                Support
+            %h2
+              %span= page.title
+          .column.four.wide
+            .jumbotron-button
+              %a.ui.small.labeled.icon.button{:href => "/support/long-term/"}
+                %i.icon.check.circle
+                Long-Term Support
+            .jumbotron-button
+              %a.ui.small.labeled.icon.button{:href => "/support/end-of-life/"}
+                %i.icon.x
+                End-of-Life Support
+
+.ui.container.page-content
+  .ui.stackable.grid
+    .column.three.wide.computer.only
+      = partial( 'menu/desktop-left-support.html.haml', {'real_page' => page} )
+
+    .column.thirteen.wide.computer.sixteen.wide.mobile
+      ~ content

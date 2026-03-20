@@ -57,9 +57,7 @@ project_hero_partial: project/hero-series.html.haml
     * pull requests against this version will be rejected;
     * bug reproducers using this version will be given lower priority.
 
-    We recommend that you upgrade to a newer series if possible.
-
-    See also the link:/community/maintenance-policy[Maintenance policy].
+    We recommend that you upgrade to a newer series if possible or look for link:/support/end-of-life[end-of-life support].
     ====
 - elsif series.status == 'limited-support'
   :asciidoc
@@ -70,13 +68,11 @@ project_hero_partial: project/hero-series.html.haml
     {projectName} {version} is in limited support mode:
 
     * releases may be delayed until a significant need arises;
-    * bugs will only be fixed if they are considered significant enough or in the context of paid support;
+    * bugs will only be fixed if they are considered significant enough or in the context of link:/support/long-term[long-term support];
     * pull requests against this version might be rejected for bugs that are not considered critical enough;
     * bug reproducers using this version will be given lower priority.
 
-    We recommend that you upgrade to a newer series if possible or look for link:../../support[paid support].
-
-    See also the link:/community/maintenance-policy[Maintenance policy].
+    We recommend that you upgrade to a newer series if possible or look for link:/support/long-term[long-term support].
     ====
 - elsif series.status == 'development'
   :asciidoc
@@ -116,10 +112,10 @@ project_hero_partial: project/hero-series.html.haml
   %p
     See also the
     %a{:href => "/community/compatibility-policy"}
-      Compatibility policy
+      compatibility policy
     and
     %a{:href => "/community/maintenance-policy"}
-      Maintenance policy.
+      maintenance policy.
 
 %h2{:id => "documentation"} Documentation
 %p
@@ -287,9 +283,7 @@ project_hero_partial: project/hero-series.html.haml
     :version: #{series.version}
     [WARNING]
     ====
-    {projectName} {version} has reached its end-of-life: we recommend that you upgrade to a newer series if possible.
-
-    See also the link:/community/maintenance-policy[Maintenance policy].
+    {projectName} {version} has reached its end-of-life: we recommend that you upgrade to a newer series if possible or look for link:/support/end-of-life[end-of-life support].
     ====
 - elsif series.status == 'limited-support'
   :asciidoc
@@ -297,9 +291,7 @@ project_hero_partial: project/hero-series.html.haml
     :version: #{series.version}
     [WARNING]
     ====
-    {projectName} {version} is in limited maintenance mode: we recommend that you upgrade to a newer series if possible or look for link:../../support[paid support].
-
-    See also the link:/community/maintenance-policy[Maintenance policy].
+    {projectName} {version} is in limited maintenance mode: we recommend that you upgrade to a newer series if possible or look for link:/support/long-term[long-term support].
     ====
 - unless series.nil?
   .ui.stackable.grid.series-versions
@@ -312,15 +304,15 @@ project_hero_partial: project/hero-series.html.haml
           %p
             - if series.status == 'end-of-life'
               %span.ui.label.version.red
-                %span{:data => {:html => "#{project_description.name} #{series.version} has reached its end-of-life: we recommend that you upgrade to a newer series if possible, because we are unlikely to fix bugs or provide new releases for this series.", :position => "right center"}}
+                %span{:data => {:html => "#{project_description.name} #{series.version} has reached its end-of-life: we recommend that you upgrade to a newer series if possible or look for &lt;a href='/support/end-of-life'&gt;end-of-Life support&lt;/a&gt;, because we are unlikely to fix bugs or provide new releases for this series.", :position => "right center"}}
                   = version
             - elsif !release.stable
               %span.ui.label.version.orange
-                %span{:data => {:html => "This is a development release: be prepared for changes.", :position => "right center"}}
+                %span{:data => {:html => "This is a development release: we encourage you to try it, but be prepared for changes.", :position => "right center"}}
                   = version
             - elsif series.status == 'limited-support'
               %span.ui.label.version.yellow
-                %span{:data => {:html => "#{project_description.name} #{series.version} is in limited support mode: we recommend that you upgrade to a newer series if possible or look for paid support, because we will not always fix bugs or provide timely releases for this series.Downstream frameworks or commercial offerings (e.g. Red Hat's) may provide stronger guarantees.", :position => "right center"}}
+                %span{:data => {:html => "#{project_description.name} #{series.version} is in limited support mode: we recommend that you upgrade to a newer series if possible or look for &lt;a href='/support/long-term'&gt;long-term support&lt;/a&gt;, because we will not always fix bugs or provide timely releases for this series.", :position => "right center"}}
                   = version
             - else
               %span.ui.label.version.green
