@@ -36,9 +36,9 @@ maven:
 # Various resources
 jquery_js_url: https://code.jquery.com/jquery-3.1.1
 jquery_js_url_integrity: "sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7"
-semantic_ui_js_url: https://cdn.jsdelivr.net/npm/semantic-ui@2.2.14/dist/semantic
-semantic_ui_js_url_integrity: "sha384-KfrAxmzWxzKdfquWGNOhm/N9kEjIgoP2yBPMQmAjQ+Is0hp+3BlcWT6PcI7NuKEP"
-semantic_ui_css_url: https://cdn.jsdelivr.net/npm/semantic-ui@2.2.14/dist/semantic
+semantic_ui_js_url: https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic
+semantic_ui_js_url_integrity: "sha384-J90C/4H4FEvN97dzFx745RBJDfRe8Lt+DQaL3uLYunPE2dagUsllBeEn5aZa4w8M"
+semantic_ui_css_url: https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic
 slick_js_url: https://cdn.jsdelivr.net/npm/slick-carousel@1.7.1/slick/slick
 slick_js_url_integrity: "sha384-wBo76R9TGH6DxuCcambHkpxJKY96xJq59OwZONC0A2v0rlNK9Kb75uRdSgxK5j9+"
 slick_css_url: https://cdn.jsdelivr.net/npm/slick-carousel@1.7.1/slick/slick
@@ -650,7 +650,7 @@ profiles:
     css_minifier: disabled
     # Different checksums because we're not using the minified files
     jquery_js_url_integrity: "sha384-VC7EHu0lDzZyFfmjTPJq+DFyIn8TUGAJbEtpXquazFVr00Q/OOx//RjiZ9yU9+9m"
-    semantic_ui_js_url_integrity: "sha384-/OCHdyuUZjDPStDj7ti/VaVeGQ4U9HxuJhh0FNfMTf0eO1VeBLAam8EiKCIK+jso"
+    semantic_ui_js_url_integrity: "sha384-kIFKUWK+wdxfV8cJfSr4f3jPQNEOyf4LlPwR3ugvNq4nYKOrZnu1rTlVLzvo6eu9"
     slick_js_url_integrity: "sha384-vIgLoBvIiHAJ0ttXa/pf/vpP9JgaN/9dCH6zbhDPEF3H8fvQXE0wHjS/LauoTNF1"
     clipboard_js_url_integrity: "sha256-ul94Jn0MBOijGuvXhgx/1/wjaJHN3Ud6TH/cGaDrF24="
     base_url: http://0.0.0.0:4242
@@ -661,7 +661,7 @@ profiles:
     css_minifier: disabled
     # Different checksums because we're not using the minified files
     jquery_js_url_integrity: "sha384-VC7EHu0lDzZyFfmjTPJq+DFyIn8TUGAJbEtpXquazFVr00Q/OOx//RjiZ9yU9+9m"
-    semantic_ui_js_url_integrity: "sha384-/OCHdyuUZjDPStDj7ti/VaVeGQ4U9HxuJhh0FNfMTf0eO1VeBLAam8EiKCIK+jso"
+    semantic_ui_js_url_integrity: "sha384-kIFKUWK+wdxfV8cJfSr4f3jPQNEOyf4LlPwR3ugvNq4nYKOrZnu1rTlVLzvo6eu9"
     slick_js_url_integrity: "sha384-vIgLoBvIiHAJ0ttXa/pf/vpP9JgaN/9dCH6zbhDPEF3H8fvQXE0wHjS/LauoTNF1"
     clipboard_js_url_integrity: "sha256-ul94Jn0MBOijGuvXhgx/1/wjaJHN3Ud6TH/cGaDrF24="
     base_url: http://0.0.0.0:4242

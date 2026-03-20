@@ -655,8 +655,12 @@ code, kbd, samp {
 		background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
 	}
 
+	.fa.icon-note {
+		font-family: outline-icons;
+	}
+
 	.fa.icon-note::before {
-		content: "";
+		content: "\f249";
 	}
 
 	.fa.icon-tip::before {
