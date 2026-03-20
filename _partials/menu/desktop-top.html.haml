@@ -16,6 +16,7 @@
     %a.item(href="#{site.in_relation_to.base_url}") Blog
     %a.item(href="#{site.forum.base_url}") Forums
     %a.item{:href => "/community/", :class=>"#{'active' if current_path.start_with?('/community')}" } Community
+    %a.item{:href => "/support/", :class=>"#{'active' if current_path.start_with?('/support')}" } Support
     %a.item(href="#{site.twitter.base_url}")
       %i.twitter.icon
       Follow us

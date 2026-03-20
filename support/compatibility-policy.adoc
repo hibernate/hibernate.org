@@ -1,7 +1,7 @@
-= Compatibility policy
+= Compatibility Policy
 Emmanuel Bernard, Yoann Rodiere
 :toc:
-:awestruct-layout: community-standard
+:awestruct-layout: support-standard
 
 Your application interacts with Hibernate libraries,
 and those in turn interact with third-party software: JDBC drivers, other libraries,
@@ -11,18 +11,11 @@ This page explains how Hibernate projects try to limit incompatible changes.
 
 [TIP]
 ====
-Hibernate projects comply with this compatibility policy on a best effort basis.
+Hibernate projects comply with this compatibility policy on a best-effort basis.
 
-For contractually binding warranty, consider paid support:
-+++<br />
-<div class="ui labels blue">
-<a class="ui label" href="/orm/support/"><i class="icon doctor"></i>ORM</a>
-<a class="ui label" href="/search/support/"><i class="icon doctor"></i>Search</a>
-<a class="ui label" href="/validator/support/"><i class="icon doctor"></i>Validator</a>
-<a class="ui label" href="/reactive/support/"><i class="icon doctor"></i>Reactive</a>
-</div>
-+++
-
+Commercial offerings for link:/support/long-term[long-term support]
+or link:/support/end-of-life[end-of-life support]
+may provide stronger, contractually binding guarantees.
 ====
 
 == Concepts

@@ -1,0 +1,76 @@
+= Maintenance Policy
+:toc:
+:awestruct-layout: support-standard
+:development: pass:[<span class="ui small label orange">development</span>]
+:latest-stable: pass:[<span class="ui small label green">latest-stable</span>]
+:stable: pass:[<span class="ui small label green">stable</span>]
+:limited-support: pass:[<span class="ui small label yellow">limited-support</span>]
+:end-of-life: pass:[<span class="ui small label red">end-of-life</span>]
+
+Nothing is forever, and releases of Hibernate projects are no exception.
+This policy describes how the Hibernate team decides which versions of the code are maintained, and to which extent.
+
+[TIP]
+====
+Hibernate projects comply with this policy on a best-effort basis.
+
+Commercial offerings for link:/support/long-term[long-term support]
+or link:/support/end-of-life[end-of-life support]
+may provide stronger, contractually binding guarantees.
+====
+
+[[background]]
+== Background
+
+Discussions about maintenance invariably depend on link:/support/compatibility-policy/#versioning-scheme[versioning] and link:/support/compatibility-policy/#compatibility-api-spi[compatibility].
+
+Here is a summary of that information which should help understand the next sections:
+
+* A _series_ is the set of releases for a given `{major}.{minor}` combination, e.g. 6.0, 6.1, or 6.2.
+* Pre-Final releases (Alpha, Beta and CR) are actively in-development and subject to justifiable API and SPI changes within their series.
+* Final releases mark the end of active development of a series and the start of stable maintenance.
+* "Maintenance" of a series here means:
+** accepting bug reports (considering them valid) when they make sense;
+** applying bugfixes when they make sense;
+** actively producing releases.
+
+[[scope]]
+== Scope
+
+Hibernate is a series of large projects, and yet its core development team is amazingly small - which means that we need to pick our battles.
+
+For that reason, the Hibernate team only commits to maintenance of the latest stable series.
+
+There is no official concept of long-term community support for Hibernate projects,
+though older series may still receive some bugfixes contributed in the context
+of commercial link:/support/long-term[Long-Term Support].
+
+[[levels]]
+== Levels
+
+Series can be categorized according to their maintenance level,
+which we communicate on our website through the following labels:
+
+{latest-stable}/{stable}::
+Series which are considered stable and fully maintained: we will apply reasonable bugfixes, but will postpone new features and enhancements to later series.
+{development}::
+Series in pre-Final development, which are generally maintained at the same level as {latest-stable}/{stable} releases,
+except that we reserve the right to make changes in new API and SPI.
+{limited-support}::
+A level of maintenance between {latest-stable}/{stable} and {end-of-life}.
++
+Backports to these series are highly restricted and releases are not guaranteed.
++
+We recommend that you upgrade to a newer series if possible or look for link:/support/long-term[paid support] which may provide stronger guarantees.
+{end-of-life}::
+The version has reached the end of its maintenance and support lifecycle.
++
+We recommend that you upgrade to a newer series, if possible, because we are unlikely to fix bugs or provide new releases for this series.
+
+[[take-aways]]
+== Takeaways
+
+* Only bug-reports verified against the {latest-stable}/{stable} and {development} series are accepted.
+* Bug-fixes are only applied to {latest-stable}/{stable} and {development} (and sometimes to {limited-support}) series.
+* New features and improvements are only applied to {development} (and sometimes to {latest-stable}/{stable}) series.
+* Only {development} and {latest-stable}/{stable} series are actively released.  Occasional releases of {limited-support} series may happen, but should not be expected.

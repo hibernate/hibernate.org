@@ -1,0 +1,32 @@
+- current_path = page['real_page'].output_path.sub(/index\.html$/, "").sub(/\.html$/,"/")
+
+.ui.fluid.vertical.menu
+  - href = "/support/"
+  - active = (href == current_path)
+  %a.item{:href => href, :class => "#{(active ? "active" : "")}"}
+    %i.grid.icon.life.ring
+    Getting help
+
+  - href = "/support/compatibility-policy/"
+  - active = (href == current_path)
+  %a.item{:href => href, :class => "#{(active ? "active" : "")}"}
+    %i.grid.icon.history
+    Compatibility Policy
+
+  - href = "/support/maintenance-policy/"
+  - active = (href == current_path)
+  %a.item{:href => href, :class => "#{(active ? "active" : "")}"}
+    %i.grid.icon.wrench
+    Maintenance Policy
+
+  - href = "/support/long-term/"
+  - active = (href == current_path)
+  %a.item{:href => href, :class => "#{(active ? "active" : "")}"}
+    %i.grid.icon.check.circle
+    Long-Term Support
+
+  - href = "/support/end-of-life/"
+  - active = (href == current_path)
+  %a.item{:href => href, :class => "#{(active ? "active" : "")}"}
+    %i.grid.icon.x
+    End-of-Life Support
