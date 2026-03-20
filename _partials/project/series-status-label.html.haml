@@ -5,7 +5,7 @@
 
 - if series.status == 'end-of-life'
   %span.ui.label.red{:class => "#{classes}"}
-    %span{:data => tooltipPosition == "none" ? Hash.new : {:tooltip => "#{project_name} #{series.version} has reached its end-of-life: \nwe recommend that you upgrade to a newer series if possible, \nbecause we are unlikely to fix bugs or provide new releases for this series.", :position => tooltipPosition}}
+    %span{:data => tooltipPosition == "none" ? Hash.new : {:html => "#{project_name} #{series.version} has reached its end-of-life: we recommend that you upgrade to a newer series if possible, because we are unlikely to fix bugs or provide new releases for this series.", :position => tooltipPosition}}
       end-of-life
 - elsif series.status == 'stable'
   %span.ui.label.green{:class => "#{classes}"}
@@ -15,11 +15,11 @@
     latest stable
 - elsif series.status == 'development'
   %span.ui.label.orange{:class => "#{classes}"}
-    %span{:data => tooltipPosition == "none" ? Hash.new : {:tooltip => "#{project_name} #{series.version} is still in development: \nwe encourage you to try it, but be prepared for changes.", :position => tooltipPosition}}
+    %span{:data => tooltipPosition == "none" ? Hash.new : {:html => "#{project_name} #{series.version} is still in development: we encourage you to try it, but be prepared for changes.", :position => tooltipPosition}}
       development
 - elsif series.status == 'limited-support'
   %span.ui.label.yellow{:class => "#{classes}"}
-    %span{:data => tooltipPosition == "none" ? Hash.new : {:tooltip => "#{project_name} #{series.version} is in limited support mode: \nwe recommend that you upgrade to a newer series if possible \nor look for paid support, because we will not always fix bugs \nor provide timely releases for this series.\nDownstream frameworks or commercial offerings (e.g. Red Hat's) \nmay provide stronger guarantees.", :position => tooltipPosition}}
+    %span{:data => tooltipPosition == "none" ? Hash.new : {:html => "#{project_name} #{series.version} is in limited support mode: we recommend that you upgrade to a newer series if possible or look for paid support, because we will not always fix bugs or provide timely releases for this series. Downstream frameworks or commercial offerings (e.g. Red Hat's) may provide stronger guarantees.", :position => tooltipPosition}}
       limited-support
 - else
   - raise StandardError, "Unsupported series status: #{series.status}"

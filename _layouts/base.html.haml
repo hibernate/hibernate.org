@@ -54,10 +54,14 @@
           }
         });
 
-          $('.back-to-top').click(function(e) {
-            $('body, html').animate({scrollTop:0}, 800);
-          });
+        $('.back-to-top').click(function(e) {
+          $('body, html').animate({scrollTop:0}, 800);
         });
+
+        $('[data-html]').popup({
+          hoverable: true
+        });
+      });
 
     :javascript
        /*

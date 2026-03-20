@@ -312,15 +312,15 @@ project_hero_partial: project/hero-series.html.haml
           %p
             - if series.status == 'end-of-life'
               %span.ui.label.version.red
-                %span{:data => {:tooltip => "#{project_description.name} #{series.version} has reached its end-of-life: \nwe recommend that you upgrade to a newer series if possible, \nbecause we are unlikely to fix bugs or provide new releases for this series.", :position => "right center"}}
+                %span{:data => {:html => "#{project_description.name} #{series.version} has reached its end-of-life: we recommend that you upgrade to a newer series if possible, because we are unlikely to fix bugs or provide new releases for this series.", :position => "right center"}}
                   = version
             - elsif !release.stable
               %span.ui.label.version.orange
-                %span{:data => {:tooltip => "This is a development release: be prepared for changes.", :position => "right center"}}
+                %span{:data => {:html => "This is a development release: be prepared for changes.", :position => "right center"}}
                   = version
             - elsif series.status == 'limited-support'
               %span.ui.label.version.yellow
-                %span{:data => {:tooltip => "#{project_description.name} #{series.version} is in limited support mode: \nwe recommend that you upgrade to a newer series if possible \nor look for paid support, because we will not always fix bugs \nor provide timely releases for this series.\nDownstream frameworks or commercial offerings (e.g. Red Hat's) \nmay provide stronger guarantees.", :position => "right center"}}
+                %span{:data => {:html => "#{project_description.name} #{series.version} is in limited support mode: we recommend that you upgrade to a newer series if possible or look for paid support, because we will not always fix bugs or provide timely releases for this series.Downstream frameworks or commercial offerings (e.g. Red Hat's) may provide stronger guarantees.", :position => "right center"}}
                   = version
             - else
               %span.ui.label.version.green
