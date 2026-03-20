@@ -1,8 +1,14 @@
 -# Displays labels for relevant Hibernate projects
 -# Parameters:
 -#   projects: List of project IDs (e.g., [:orm, :search])
+-#   integrations: List of integration IDs (e.g., [:quarkus, :rheap])
+-#   required_integration_status: 'active' or 'els'
+-# For each integration, this partial finds all projects with active series
+-# that have active integration_constraints referencing that integration.
 
-- projects = page['projects']
+- projects = page['projects'] || []
+- integrations = page['integrations'] || []
+- required_integration_status = page['required_integration_status'] || 'active'
 
 -# Collect all project IDs to display
 - all_project_ids = Set.new
@@ -10,6 +16,17 @@
 -# Add explicitly listed projects
 - projects.each do |project_id|
   - all_project_ids.add(project_id.to_s)
+
+-# For each integration, find projects with active series that reference it
+- integrations.each do |integration_id|
+  - site.projects.each do |project_id, project_data|
+    - next unless project_data['release_series']
+    - project_data['release_series'].each do |series_id, series_data|
+      - next unless series_data['integration_constraints']
+      - constraint = series_data['integration_constraints'][integration_id.to_s]
+      - if constraint && constraint['status'] == required_integration_status
+        - all_project_ids.add(project_id.to_s)
+        - break
 
 -# Display labels for all collected projects, sorted alphabetically
 - all_project_ids.sort.each do |project_id|

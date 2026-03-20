@@ -1,0 +1,35 @@
+-# Displays a list of offerings filtered by type (lts or eol)
+-# Parameters:
+-#   type: Either 'lts' for long-term support or 'eol' for end-of-life support
+
+- type = page['type']
+
+.ui.relaxed.divided.items
+  - site.offerings.each do |vendor_id, vendor|
+    - filtered_offerings = vendor.offerings.select { |o| o[type] }
+    - next if filtered_offerings.empty?
+    .item
+      .image
+        %a{:href => vendor.url}
+          %img{:src => vendor.logo}
+      .content
+        .ui.relaxed.divided.items
+          - filtered_offerings.each do |offering|
+            .item
+              .content
+                %a.header{:href => offering[type].url}= offering.name
+                .description
+                  %p
+                    :asciidoc
+                      :doctype: inline
+                      #{offering.description}
+                  - type_specific_description = offering[type]['description']
+                  - if type_specific_description
+                    %p
+                      :asciidoc
+                        :doctype: inline
+                        #{type_specific_description}
+                .extra
+                  - projects = offering['projects'] ? offering['projects'].map(&:to_sym) : []
+                  - integrations = offering['integrations'] ? offering['integrations'].map(&:to_sym) : []
+                  = partial( 'project/project-labels.html.haml', {'projects' => projects, 'integrations' => integrations, 'required_integration_status' => type == 'lts' ? 'active' : 'els'} )

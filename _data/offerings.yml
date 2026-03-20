@@ -1,0 +1,47 @@
+# Commercial offerings from vendors distributing Hibernate and/or Hibernate integrators.
+# Organized by vendor, with each vendor having one or more offerings.
+
+ibm:
+  name: IBM
+  url: https://www.ibm.com/
+  logo: /images/contributors/ibm-logo.png
+  offerings:
+      - name: IBM Enterprise Build of Quarkus
+        description: |
+          IBM's Java stack based on https://quarkus.io/[Quarkus].
+        lts:
+          url: https://www.ibm.com/products/enterprise-build-of-quarkus
+        integrations:
+          - quarkus
+
+redhat:
+  name: Red Hat
+  url: https://www.redhat.com/
+  logo: /images/contributors/redhat-logo.svg
+  offerings:
+      - name: Red Hat Runtimes
+        description: |
+          Red Hat's application runtimes offering, spanning Quarkus, Red Hat JBoss EAP, and more.
+        lts:
+          url: https://www.redhat.com/en/products/runtimes
+        integrations:
+          - quarkus
+          - rheap
+      - name: Red Hat JBoss Enterprise Application Platform (JBoss EAP)
+        description: |
+          Red Hat's Jakarta EE application server based on https://www.wildfly.org/[WildFly].
+        lts:
+          url: https://www.redhat.com/en/technologies/jboss-middleware/application-platform
+        eol:
+          url: https://access.redhat.com/articles/7116565
+          description: |
+            The Extended Life Cycle Support subscription generally covers end-of-life'd versions of Hibernate projects.
+        integrations:
+          - rheap
+      - name: Red Hat build of Quarkus
+        description: |
+          Red Hat's Java stack based on https://quarkus.io/[Quarkus].
+        lts:
+          url: https://access.redhat.com/products/quarkus/
+        integrations:
+          - quarkus

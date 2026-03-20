@@ -184,13 +184,34 @@ module Awestruct
         return release
       end
 
-      def hasActiveIntegration(series)
+      def markIntegrationStatuses(series)
+        has_active = false
         series[:integration_constraints]&.each do |integration_key,integration_constraint|
           integration = @site.integrations[integration_key]
+          integration_constraint[:active] = false
           next unless integration[:downstream] && integration[:hibernate_involvement]
           integration[:active_series]&.each do |active_version_string|
-            return true if Version.new(active_version_string).matches?(integration_constraint[:version])
+            if Version.new(active_version_string).matches?(integration_constraint[:version])
+              integration_constraint[:status] = 'active'
+              has_active = true
+              break
+            end
           end
+          unless integration_constraint[:status]
+            integration[:els_series]&.each do |active_version_string|
+              if Version.new(active_version_string).matches?(integration_constraint[:version])
+                integration_constraint[:status] = 'els'
+                break
+              end
+            end
+          end
+        end
+        has_active
+      end
+
+      def hasActiveIntegration(series)
+        series[:integration_constraints]&.each do |integration_key,integration_constraint|
+          return true if integration_constraint[:status] == 'active'
         end
         false
       end
@@ -234,6 +255,9 @@ module Awestruct
             series.releases = releases
 
             series.stable = releases.first.stable
+
+            # Mark which integrations are active before determining status
+            markIntegrationStatuses(series)
 
             if !found_series
               found_series = true
