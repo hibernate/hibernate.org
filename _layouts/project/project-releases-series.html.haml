@@ -44,7 +44,7 @@ project_hero_partial: project/hero-series.html.haml
       %a.item{:href => "#releases"}
         Releases in this series
 
-- if series.status == 'endoflife'
+- if series.status == 'end-of-life'
   :asciidoc
     :projectName: #{project_description.name}
     :version: #{series.version}
