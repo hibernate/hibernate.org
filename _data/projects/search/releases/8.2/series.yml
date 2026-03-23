@@ -58,7 +58,9 @@ integration_constraints:
   lucene:
     version:
       - 9.12
-      - 10.3
+      - value: 10.3
+        comment: >-
+          https://docs.hibernate.org/search/8.2/reference/en-US/html_single/#other-integrations-lucene-next[through `*-backend-lucene-next`]
   quarkus:
     version:
       from: '3.31'
