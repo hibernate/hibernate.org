@@ -73,7 +73,11 @@ wildfly:
   downstream: true
   hibernate_involvement: true
   active_series:
-    - "39"
+    # For release dates, see https://www.wildfly.org/events/
+    # For included versions, see https://github.com/wildfly/wildfly/blob/main/pom.xml
+    # For included versions in preview (EE 11), see https://github.com/wildfly/wildfly/blob/main/boms/preview-ee/pom.xml
+    - "39" # TODO remove on April 23rd when 40 is officially out
+    - "40"
 rheap:
   name: Red Hat EAP
   url: https://www.redhat.com/en/technologies/jboss-middleware/application-platform
