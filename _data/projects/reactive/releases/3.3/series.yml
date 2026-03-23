@@ -1,4 +1,5 @@
 summary: Release compatible with Hibernate ORM 7.3 and Vert.x 4.5
+status: stable
 maven:
   artifacts:
     - artifact_id: hibernate-reactive-core
