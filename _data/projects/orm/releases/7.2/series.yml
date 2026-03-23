@@ -45,7 +45,9 @@ integration_constraints:
   jakarta_ee:
     version: 11
   quarkus:
-    version: '3.31'
+    version:
+      from: '3.31'
+      to: '3.34'
   spring_boot:
     version: '4.0'
 subprojects:
