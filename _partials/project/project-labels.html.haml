@@ -1,0 +1,18 @@
+-# Displays labels for relevant Hibernate projects
+-# Parameters:
+-#   projects: List of project IDs (e.g., [:orm, :search])
+
+- projects = page['projects']
+
+-# Collect all project IDs to display
+- all_project_ids = Set.new
+
+-# Add explicitly listed projects
+- projects.each do |project_id|
+  - all_project_ids.add(project_id.to_s)
+
+-# Display labels for all collected projects, sorted alphabetically
+- all_project_ids.sort.each do |project_id|
+  - project_data = site.projects[project_id]
+  - if project_data
+    %a.ui.label(href="/#{project_id}/")= project_data['name']
