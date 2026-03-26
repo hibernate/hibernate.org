@@ -26,11 +26,7 @@ title: Corporate contributors
             %a(href='https://www.redhat.com/en/products/runtimes') Red Hat Runtimes
             line of products.
         .extra.content
-          %a.ui.blue.label(href='/orm/') Hibernate ORM
-          %a.ui.blue.label(href='/search/') Hibernate Search
-          %a.ui.blue.label(href='/validator/') Hibernate Validator
-          %a.ui.blue.label(href='/reactive/') Hibernate Reactive
-          %a.ui.blue.label(href='/tools/') Hibernate Tools
+          = partial( 'project/project-labels.html.haml', {'projects' => [:orm, :search, :validator, :reactive, :tools]} )
 
 .ui.stackable.corporate-contributors#contributors
   .ui.card.fluid.contributor
@@ -44,7 +40,7 @@ title: Corporate contributors
         %p MongoDB is the world’s most popular document database, giving developers a flexible, intuitive way to work with data. With MongoDB Atlas, teams get a fully managed cloud DBaaS platform that combines the flexible document model with a suite of data services, best-in-class security, and enterprise scalability, empowering developers to build any type of application.
         %p MongoDB proudly contributes to the Hibernate ORM project through the MongoDB Extension for Hibernate ORM, bringing first-class support for MongoDB’s document model to the Hibernate ecosystem.
     .extra.content
-      %a.ui.blue.label(href='https://github.com/mongodb/mongo-hibernate') MongoDB Extension for Hibernate ORM
+      = partial( 'project/project-labels.html.haml', {'projects' => [:orm]} )
   .ui.card.fluid.contributor
     .image
       %a(href='https://www.oracle.com/')
@@ -56,7 +52,7 @@ title: Corporate contributors
         %p Oracle offers integrated suites of applications plus secure, autonomous infrastructure in the Oracle Cloud.
         %p Oracle contributes to the Hibernate ORM project to ensure the best support for the Oracle Database.
     .extra.content
-      %a.ui.blue.label(href='/orm/') Hibernate ORM
+      = partial( 'project/project-labels.html.haml', {'projects' => [:orm]} )
   .ui.card.fluid.contributor
     .image
       %a(href='https://www.sap.com/')
@@ -71,9 +67,7 @@ title: Corporate contributors
           a cloud-native in-memory database which provides advanced analytics on multi-modal data (e.g. vector, time-series, graph, or geo-spatial data).
         %p SAP contributes to the Hibernate ORM and Search projects to ensure the best support for SAP HANA Cloud in your application.
     .extra.content
-      %a.ui.blue.label(href='/orm/') Hibernate ORM
-      %a.ui.blue.label(href='/search/') Hibernate Search
-      %a.ui.blue.label(href='/ogm/') Hibernate OGM
+      = partial( 'project/project-labels.html.haml', {'projects' => [:orm, :search, :ogm]} )
 
 %p &nbsp;
 
@@ -176,4 +170,4 @@ title: Corporate contributors
         %p EPAM Systems, Inc. provides complex software engineering solutions and technology services with delivery capacity distributed across Central and Eastern Europe. It delivers services to clients located primarily in North America, Western Europe, and Central and Eastern Europe or CEE.
         %p EPAM Systems, Inc. contributed developers time to the Hibernate OGM project.
     .extra.content
-      %a.ui.blue.label(href='/ogm/') Hibernate OGM
+      = partial( 'project/project-labels.html.haml', {'projects' => [:ogm]} )
