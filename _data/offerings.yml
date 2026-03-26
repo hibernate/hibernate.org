@@ -6,6 +6,13 @@ ibm:
   url: https://www.ibm.com/
   logo: /images/contributors/ibm-logo.png
   offerings:
+      - name: IBM Library Support for Hibernate
+        description: |
+          IBM's offering dedicated to end-of-life'd versions of Hibernate ORM.
+        eol:
+          url: https://www.ibm.com/docs/en/ils-hibernate
+        projects:
+          - orm
       - name: IBM Enterprise Build of Quarkus
         description: |
           IBM's Java stack based on https://quarkus.io/[Quarkus].
