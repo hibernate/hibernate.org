@@ -5,7 +5,7 @@
 
 - if series.status == 'end-of-life'
   %span.ui.label.red{:class => "#{classes}"}
-    %span{:data => tooltipPosition == "none" ? Hash.new : {:html => "#{project_name} #{series.version} has reached its end-of-life: we recommend that you upgrade to a newer series if possible or look for &lt;a href='/support/end-of-life'&gt;end-of-Life support&lt;/a&gt;, because we are unlikely to fix bugs or provide new releases for this series.", :position => tooltipPosition}}
+    %span{:data => tooltipPosition == "none" ? Hash.new : {:html => "#{project_name} #{series.version} has reached its end-of-life: we recommend that you upgrade to a newer series if possible or look for &lt;a href='/support/end-of-life'&gt;commercial, end-of-Life support&lt;/a&gt;, because we are unlikely to fix bugs or provide new releases for this series.", :position => tooltipPosition}}
       end-of-life
 - elsif series.status == 'stable'
   %span.ui.label.green{:class => "#{classes}"}
@@ -19,7 +19,7 @@
       development
 - elsif series.status == 'limited-support'
   %span.ui.label.yellow{:class => "#{classes}"}
-    %span{:data => tooltipPosition == "none" ? Hash.new : {:html => "#{project_name} #{series.version} is in limited support mode: we recommend that you upgrade to a newer series if possible or look for &lt;a href='/support/long-term'&gt;long-term support&lt;/a&gt;, because we will not always fix bugs or provide timely releases for this series.", :position => tooltipPosition}}
+    %span{:data => tooltipPosition == "none" ? Hash.new : {:html => "#{project_name} #{series.version} is in limited support mode: we recommend that you upgrade to a newer series if possible or look for &lt;a href='/support/long-term'&gt;commercial, long-term support&lt;/a&gt;, because we will not always fix bugs or provide timely releases for this series.", :position => tooltipPosition}}
       limited-support
 - else
   - raise StandardError, "Unsupported series status: #{series.status}"

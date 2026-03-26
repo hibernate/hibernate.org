@@ -57,7 +57,7 @@ project_hero_partial: project/hero-series.html.haml
     * pull requests against this version will be rejected;
     * bug reproducers using this version will be given lower priority.
 
-    We recommend that you upgrade to a newer series if possible or look for link:/support/end-of-life[end-of-life support].
+    We recommend that you upgrade to a newer series if possible or look for link:/support/end-of-life[commercial, end-of-life support].
     ====
 - elsif series.status == 'limited-support'
   :asciidoc
@@ -72,7 +72,7 @@ project_hero_partial: project/hero-series.html.haml
     * pull requests against this version might be rejected for bugs that are not considered critical enough;
     * bug reproducers using this version will be given lower priority.
 
-    We recommend that you upgrade to a newer series if possible or look for link:/support/long-term[long-term support].
+    We recommend that you upgrade to a newer series if possible or look for link:/support/long-term[commercial, long-term support].
     ====
 - elsif series.status == 'development'
   :asciidoc
@@ -283,7 +283,7 @@ project_hero_partial: project/hero-series.html.haml
     :version: #{series.version}
     [WARNING]
     ====
-    {projectName} {version} has reached its end-of-life: we recommend that you upgrade to a newer series if possible or look for link:/support/end-of-life[end-of-life support].
+    {projectName} {version} has reached its end-of-life: we recommend that you upgrade to a newer series if possible or look for link:/support/end-of-life[commercial, end-of-life support].
     ====
 - elsif series.status == 'limited-support'
   :asciidoc
@@ -291,7 +291,7 @@ project_hero_partial: project/hero-series.html.haml
     :version: #{series.version}
     [WARNING]
     ====
-    {projectName} {version} is in limited maintenance mode: we recommend that you upgrade to a newer series if possible or look for link:/support/long-term[long-term support].
+    {projectName} {version} is in limited maintenance mode: we recommend that you upgrade to a newer series if possible or look for link:/support/long-term[commercial, long-term support].
     ====
 - unless series.nil?
   .ui.stackable.grid.series-versions
@@ -312,7 +312,7 @@ project_hero_partial: project/hero-series.html.haml
                   = version
             - elsif series.status == 'limited-support'
               %span.ui.label.version.yellow
-                %span{:data => {:html => "#{project_description.name} #{series.version} is in limited support mode: we recommend that you upgrade to a newer series if possible or look for &lt;a href='/support/long-term'&gt;long-term support&lt;/a&gt;, because we will not always fix bugs or provide timely releases for this series.", :position => "right center"}}
+                %span{:data => {:html => "#{project_description.name} #{series.version} is in limited support mode: we recommend that you upgrade to a newer series if possible or look for &lt;a href='/support/long-term'&gt;commercial, long-term support&lt;/a&gt;, because we will not always fix bugs or provide timely releases for this series.", :position => "right center"}}
                   = version
             - else
               %span.ui.label.version.green
