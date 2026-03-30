@@ -37,6 +37,9 @@ pipeline {
             }
             stages {
                 stage('Update members.json') {
+                    when {
+                        branch 'production'
+                    }
                     steps {
                         script {
                             // First, update members.json
