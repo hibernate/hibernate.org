@@ -87,7 +87,7 @@ title: Hibernate Team
     var contributorsNameMapping = #{site.data_json['contributors-name-mapping']}
     var governance = #{site.data_json['governance']}
     // Updated by _scripts/update-members.sh during each production/staging build
-    $.getJSON( "/members.json", function( data ) {
+    $.getJSON( "/metadata/members.json", function( data ) {
       var activeMembers = [];
       var alumni = [];
       data.forEach( function( member ) {
