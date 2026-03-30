@@ -18,6 +18,12 @@ module Awestruct
           end
           metadata_hash_for_json[project_id] = filterForJson(project).to_json
         end
+
+        # Publish members.json
+        members_file = File.join(site.dir, '_data', 'members.json')
+        if File.exist?(members_file)
+          site.data_json[:members] = File.read(members_file)
+        end
       end
 
       def filterForJson(project)
