@@ -40,7 +40,7 @@ pipeline {
                     steps {
                         script {
                             // First, update members.json
-                            withCredentials([string(credentialsId: 'gh-token-for-metadata-update', variable: 'GITHUB_TOKEN')]) {
+                            withCredentials([string(credentialsId: 'Hibernate-CI.github.com', variable: 'GITHUB_TOKEN')]) {
                                 sh "./_scripts/update-members.sh"
                             }
 
