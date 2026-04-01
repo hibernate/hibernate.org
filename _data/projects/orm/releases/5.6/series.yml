@@ -50,8 +50,9 @@ integration_constraints:
     version: 9
   quarkus:
     version:
-      value: '2.3'
-      comment: excluding 2.3.0
+      from: '2.3'
+      to: '2.16'
+      comment: 'excluding 2.3.0'
   spring_boot:
     version:
       from: '2.6'
