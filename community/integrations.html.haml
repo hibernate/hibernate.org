@@ -70,11 +70,7 @@ title: Integrations
                   - if index > 0
                     = ', '
                   - if result[:version].is_a?(Hash)
-                    %a{:href => "/#{project_id}/releases/#{result[:version][:from]}/"}
-                      = result[:version][:from]
-                    = ' &rarr; '
-                    %a{:href => "/#{project_id}/releases/#{result[:version][:to]}/"}
-                      = result[:version][:to]
+                    = "<a href=\"/#{project_id}/releases/#{result[:version][:from]}/\">#{result[:version][:from]}</a>&nbsp;&rarr;&nbsp;<a href=\"/#{project_id}/releases/#{result[:version][:to]}/\">#{result[:version][:to]}</a>"
                   - else
                     %a{:href => "/#{project_id}/releases/#{result[:version]}/"}
                       = result[:version]
