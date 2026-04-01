@@ -110,6 +110,8 @@ project_buttons_partial: project/releases-buttons.html.haml
             %td.left.aligned
               %a{:href => "#{integration['url']}"}
                 = integration["name"]
+              %a.ui.mini.icon.button{:href => "/community/integrations/##{integration_id}", :title => "See all compatible versions"}
+                %i.icon.list
               - project_description.active_release_series.each do |series|
                 - constraint = series.integration_constraints[integration_id]
                 - if constraint == nil

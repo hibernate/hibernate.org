@@ -74,3 +74,7 @@
       %a.item(href="/community/keys/"){:class => "#{(item_active ? "active" : "")}"}
         %i.grid.icon.key
         Keys
+      - href = "/community/integrations/"
+      %a.item{:href => href, :class => "#{(current_path == href ? "active" : "")}"}
+        %i.grid.icon.puzzle.piece
+        Integrations
