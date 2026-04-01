@@ -98,5 +98,35 @@ describe Awestruct::Extensions::Version do
 			# Should deduplicate and sort
 			expect(versions).to include('3.20', '3.14', '3.23', '21', '17', '11')
 		end
+
+		it "expands ranges across major versions" do
+			# Include explicit versions to provide bounds for each major version
+			constraint_versions = [
+				{ :from => '5.6', :to => '7.16' },
+				'5.50',  # Establishes max minor for major 5
+				'6.50',  # Establishes max minor for major 6
+				'7.50'   # Establishes max minor for major 7
+			]
+			versions = Awestruct::Extensions::Version.expand_from_constraints(constraint_versions, 'test_integration', nil)
+			# Should include endpoints
+			expect(versions).to include('5.6', '7.16')
+			# Should include intermediate minor versions in starting major
+			expect(versions).to include('5.7', '5.8', '5.9', '5.10')
+			# Should include versions in intermediate major
+			expect(versions).to include('6.0', '6.1', '6.2')
+			# Should include versions in ending major
+			expect(versions).to include('7.0', '7.1', '7.10', '7.15')
+			# Should be sorted with latest first
+			expect(versions.first).to eq('7.50')
+			expect(versions.last).to eq('5.6')
+		end
+
+		it "expands single-component version ranges" do
+			# WildFly-style single-component versions (just major, no minor)
+			constraint_versions = [{ :from => '13', :to => '16' }]
+			versions = Awestruct::Extensions::Version.expand_from_constraints(constraint_versions, 'test_integration', nil)
+			# Should include all major versions in range
+			expect(versions).to eq(['16', '15', '14', '13'])
+		end
 	end
 end

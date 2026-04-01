@@ -332,7 +332,7 @@ module Awestruct
           end
 
           # Expand all integration versions
-          integration_versions = Version.expand_from_constraints(constraint_versions)
+          integration_versions = Version.expand_from_constraints(constraint_versions, integration_id, integration)
 
           # For each integration version, find compatible project versions
           project_compatibility = Hash.new
