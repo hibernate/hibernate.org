@@ -537,6 +537,12 @@ code, kbd, samp {
 			display: none;
 		}
 	}
+	table.ui.definition.table.unstackable.celled.center.aligned.integration {
+		table-layout: fixed;
+		th:first-child {
+			width: 150px;
+		}
+	}
 }
 
 /**
