@@ -54,7 +54,7 @@ module Awestruct
       def integration_constraint_version(version, includeComment = true)
         if version.is_a?(Hash)
           if version.key?(:from)
-            "#{integration_constraint_version(version.from, includeComment)} &rarr; #{integration_constraint_version(version.to, includeComment)}" +
+            "#{integration_constraint_version(version.from, includeComment)}&nbsp;&rarr;&nbsp;#{integration_constraint_version(version.to, includeComment)}" +
               (includeComment && version.key?(:comment) ? " (#{version.comment})" : "")
           else
             version.value.to_s + (includeComment && version.key?(:comment) ? " (#{version.comment})" : "")
