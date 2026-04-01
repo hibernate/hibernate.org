@@ -518,12 +518,24 @@ code, kbd, samp {
 		}
 	}
 
-	#older-series {
+	#older-series, .older-series {
 		display: none;
 	}
 
 	.ui.grid.download-options {
 		margin-bottom: 25px;
+	}
+}
+
+/**
+ * Integrations
+ */
+
+#content {
+	.table.has-older-series {
+		.older-series {
+			display: none;
+		}
 	}
 }
 
