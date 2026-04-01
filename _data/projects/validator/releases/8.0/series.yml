@@ -15,15 +15,15 @@ maven:
 integration_constraints:
   java:
     version:
-      - 11
-      - 17
-      - 21
-      - 22
-      - 23
+      - '11'
+      - '17'
+      - '21'
+      - '22'
+      - '23'
   jakarta_ee_bv:
-    version: 3.0
+    version: '3.0'
   jakarta_ee:
-    version: 10
+    version: '10'
   quarkus:
     version:
       from: '3.0'

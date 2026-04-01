@@ -31,15 +31,15 @@ maven:
 integration_constraints:
   java:
     version:
-      - 17
-      - 21
-      - 25
+      - '17'
+      - '21'
+      - '25'
   jakarta_ee_jpa:
-    version: 4.0
+    version: '4.0'
   jakarta_ee_data:
-    version: 1.0
+    version: '1.0'
   jakarta_ee:
-    version: 12
+    version: '12'
 subprojects:
   repositories:
     summary: Compatibility with Hibernate ORM 8.0

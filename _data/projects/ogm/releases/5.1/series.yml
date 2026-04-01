@@ -23,11 +23,11 @@ links:
 integration_constraints:
   java:
     version:
-      - 7
-      - 8
+      - '7'
+      - '8'
   java_ee_jpa:
-    version: 2.1
+    version: '2.1'
   orm:
-    version: 5.1
+    version: '5.1'
   search:
-    version: 5.6
+    version: '5.6'

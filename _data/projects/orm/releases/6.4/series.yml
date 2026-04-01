@@ -24,13 +24,13 @@ maven:
 integration_constraints:
   java:
     version:
-      - 11
-      - 17
-      - 21
+      - '11'
+      - '17'
+      - '21'
   jakarta_ee_jpa:
-    version: 3.1
+    version: '3.1'
   jakarta_ee:
-    version: 10
+    version: '10'
   quarkus:
     version:
       from: '3.7'

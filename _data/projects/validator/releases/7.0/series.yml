@@ -18,10 +18,10 @@ maven:
 integration_constraints:
   java:
     version:
-      - 8
-      - 11
-      - 17
+      - '8'
+      - '11'
+      - '17'
   jakarta_ee_bv:
-    version: 3.0
+    version: '3.0'
   jakarta_ee:
-    version: 9
+    version: '9'

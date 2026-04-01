@@ -48,7 +48,7 @@ integration_constraints:
         comment: "up to 5.1.16"
       - value: 8
   java_ee_jpa:
-    version: 2.1
+    version: '2.1'
   wildfly:
     version:
       - '12'

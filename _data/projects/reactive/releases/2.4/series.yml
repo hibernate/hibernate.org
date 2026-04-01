@@ -6,14 +6,14 @@ maven:
 integration_constraints:
   java:
     version:
-      - 11
-      - 17
-      - 21
-      - 25
+      - '11'
+      - '17'
+      - '21'
+      - '25'
   orm:
-    version: 6.6
+    version: '6.6'
   vertx:
-    version: 4.5
+    version: '4.5'
   quarkus:
     version:
       from: '3.14'

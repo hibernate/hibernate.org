@@ -24,19 +24,19 @@ maven:
 integration_constraints:
   java:
     version:
-      - 11
-      - 17
-      - 21
+      - '11'
+      - '17'
+      - '21'
       - value: 25
         comment: "6.6.40+"
   jakarta_ee_jpa:
-    version: 3.1
+    version: '3.1'
   jakarta_ee_data:
-    version: 1.0
+    version: '1.0'
   jakarta_ee:
-    version: 10
+    version: '10'
   dialect_mongodb:
-    version: 1.0
+    version: '1.0'
   quarkus:
     version:
       from: '3.14'

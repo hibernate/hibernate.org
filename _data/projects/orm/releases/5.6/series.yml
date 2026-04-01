@@ -38,16 +38,16 @@ maven:
 integration_constraints:
   java:
     version:
-      - 8
-      - 11
-      - 17
-      - 18
+      - '8'
+      - '11'
+      - '17'
+      - '18'
   java_ee_jpa:
-    version: 2.2
+    version: '2.2'
   jakarta_ee_jpa:
-    version: 3.0
+    version: '3.0'
   jakarta_ee:
-    version: 9
+    version: '9'
   quarkus:
     version:
       from: '2.3'
