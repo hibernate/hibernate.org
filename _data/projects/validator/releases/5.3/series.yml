@@ -26,11 +26,11 @@ maven:
 integration_constraints:
   java:
     version:
-      - 6
-      - 7
-      - 8
+      - '6'
+      - '7'
+      - '8'
   java_ee_bv:
-    version: 1.1
+    version: '1.1'
   spring_boot:
     version: '1.5'
   wildfly:

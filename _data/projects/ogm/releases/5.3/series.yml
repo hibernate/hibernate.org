@@ -14,10 +14,10 @@ links:
     html: https://developer.jboss.org/docs/DOC-52281
 integration_constraints:
   java:
-    version: 8
+    version: '8'
   java_ee_jpa:
-    version: 2.1
+    version: '2.1'
   orm:
-    version: 5.2
+    version: '5.2'
   search:
-    version: 5.9
+    version: '5.9'

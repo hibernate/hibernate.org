@@ -44,10 +44,10 @@ maven:
 integration_constraints:
   java:
     version:
-      - 6
-      - 7
-      - 8
+      - '6'
+      - '7'
+      - '8'
   java_ee_jpa:
-    version: 2.1
+    version: '2.1'
   spring_boot:
     version: '1.5'

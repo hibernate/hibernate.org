@@ -35,15 +35,15 @@ maven:
 integration_constraints:
   java:
     version:
-      - 17
-      - 21
-      - 25
+      - '17'
+      - '21'
+      - '25'
   jakarta_ee_jpa:
-    version: 3.2
+    version: '3.2'
   jakarta_ee_data:
-    version: 1.0
+    version: '1.0'
   jakarta_ee:
-    version: 11
+    version: '11'
   quarkus:
     version:
       from: '3.31'

@@ -32,14 +32,14 @@ maven:
       summary: JMS backend
 integration_constraints:
   java:
-    version: 8
+    version: '8'
   orm:
     version:
-      value: 5.2
+      value: '5.2'
       comment: ">= 5.2.3.Final"
   elasticsearch:
     version:
-      from: 2.0
-      to: 5.6
+      from: '2.0'
+      to: '5.6'
   lucene:
-    version: 5.5
+    version: '5.5'

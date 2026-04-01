@@ -21,6 +21,6 @@ maven:
       summary: Annotation processor
 integration_constraints:
   java:
-    version: 6
+    version: '6'
   java_ee_bv:
-    version: 1.0
+    version: '1.0'
