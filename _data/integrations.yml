@@ -64,7 +64,6 @@ quarkus:
     # For included versions, see https://github.com/quarkusio/quarkus/blob/main/pom.xml
     - "3.20" # TODO should this be considered EOL/ELS? It should be according to https://access.redhat.com/support/policy/updates/red_hat_build_of_quarkus_notes but I see recent commits in https://github.com/quarkusio/quarkus/commits/3.20/
     - "3.27"
-    - "3.32" # TODO remove on March 25th when 3.33 / 3.34 are officially out
     - "3.33"
     - "3.34"
 wildfly:
