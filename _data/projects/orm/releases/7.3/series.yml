@@ -44,6 +44,8 @@ integration_constraints:
     version: '1.0'
   jakarta_ee:
     version: '11'
+  quarkus:
+    version: '3.35'
 subprojects:
   repositories:
     summary: Compatibility with Hibernate ORM 7.3
