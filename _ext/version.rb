@@ -8,7 +8,14 @@ module Awestruct
 
       def initialize(version="")
         version_str = version.is_a?(Hash) ? (version[:value] || version['value']) : version
-        v = version_str.to_s.split(".")
+        version_str = version_str.to_s
+
+        # Validate that version string has no leading or trailing whitespace
+        if version_str != version_str.strip
+          raise ArgumentError, "Version string '#{version_str}' must not have leading or trailing whitespace"
+        end
+
+        v = version_str.split(".")
         @major = v[0].to_i
         @minor = v[1].to_i
         @micro = v[2].to_i
