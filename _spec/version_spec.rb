@@ -50,6 +50,24 @@ describe Awestruct::Extensions::Version do
 		end
 	end
 
+	describe "#initialize" do
+		it "rejects version with leading whitespace" do
+			expect { Awestruct::Extensions::Version.new(" 1.0.0.Final") }.to raise_error(ArgumentError, /must not have leading or trailing whitespace/)
+		end
+
+		it "rejects version with trailing whitespace" do
+			expect { Awestruct::Extensions::Version.new("1.0.0.Final ") }.to raise_error(ArgumentError, /must not have leading or trailing whitespace/)
+		end
+
+		it "rejects version with both leading and trailing whitespace" do
+			expect { Awestruct::Extensions::Version.new(" 1.0.0.Final ") }.to raise_error(ArgumentError, /must not have leading or trailing whitespace/)
+		end
+
+		it "accepts version without extra whitespace" do
+			expect { Awestruct::Extensions::Version.new("1.0.0.Final") }.not_to raise_error
+		end
+	end
+
 	describe ".expand_from_constraints" do
 		it "expands simple versions" do
 			constraint_versions = ['3.20', '3.27']
