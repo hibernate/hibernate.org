@@ -1,4 +1,5 @@
 require 'fileutils'
+require 'logger'
 require_relative 'version'
 
 module Awestruct
