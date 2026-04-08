@@ -37,7 +37,9 @@ describe Awestruct::Extensions::Version do
 
 	describe "#bugfix" do
     	it "bugfix number is correct" do
-        	expect(@versions[8].suffix).to eql "Beta4"
+        	suffix = @versions[8].suffix
+        	expect(suffix.prefix).to eql "Beta"
+        	expect(suffix.number).to eql 4
     	end
 	end
 
