@@ -66,7 +66,7 @@ task :preview, [:profile, :options] => :init do |task, args|
 end
 
 desc 'Generate the site using the specified profile, default is \'development\'. Additional options can also be specified, eg \'gen[development, \'-w\']'
-task :gen, [:profile, :options] => :init do |task, args|
+task :gen, [:profile, :options] => [:init, :test] do |task, args|
   profile = get_profile args
   options = args[:options]
   run_awestruct "-P #{profile} -g --force #{options}"
