@@ -8,7 +8,7 @@ ibm:
   offerings:
       - name: IBM Library Support for Hibernate
         description: |
-          IBM's offering dedicated to end-of-life'd versions of Hibernate ORM.
+          IBM's offering dedicated to end-of-life versions of Hibernate ORM.
         eol:
           url: https://www.ibm.com/docs/en/ils-hibernate
         projects:
@@ -42,7 +42,7 @@ redhat:
         eol:
           url: https://access.redhat.com/articles/7116565
           description: |
-            The Extended Life Cycle Support subscription generally covers end-of-life'd versions of Hibernate projects.
+            The Extended Life Cycle Support subscription generally covers end-of-life versions of Hibernate projects.
         integrations:
           - rheap
       - name: Red Hat build of Quarkus
