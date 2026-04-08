@@ -28,13 +28,22 @@ podman run --rm -t --userns=keep-id -u $UID:$GID \
 
 ## Running the Build
 
-To build the site:
+To build the site (this will run tests automatically before generating):
 
 ```bash
 podman run --rm -t --userns=keep-id -u $UID:$GID \
   -v $PWD:/home/dev/website:rw,Z \
   quay.io/hibernate/awestruct-build-env:latest \
   rake clean gen
+```
+
+To run only the tests without building:
+
+```bash
+podman run --rm -t --userns=keep-id -u $UID:$GID \
+  -v $PWD:/home/dev/website:rw,Z \
+  quay.io/hibernate/awestruct-build-env:latest \
+  rake test
 ```
 
 ## Running Ruby Commands
