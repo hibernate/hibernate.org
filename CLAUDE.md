@@ -1,8 +1,4 @@
----
-description: Run tests and commands in the Awestruct container
----
-
-# Test Runner Skill
+# Development Guide
 
 This project requires running commands inside a containerized environment.
 
