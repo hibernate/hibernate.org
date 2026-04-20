@@ -29,6 +29,8 @@ integration_constraints:
       - '21'
       - value: 25
         comment: "6.6.40+"
+      - value: 26
+        comment: "6.6.49+"
   jakarta_ee_jpa:
     version: '3.1'
   jakarta_ee_data:
