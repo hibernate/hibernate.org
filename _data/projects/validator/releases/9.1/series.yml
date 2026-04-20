@@ -33,5 +33,6 @@ integration_constraints:
       to: '3.35'
   wildfly:
     version:
-      value: '39'
+      from: '39'
+      to: '40'
       comment: "link:https://docs.wildfly.org/39/WildFly_and_WildFly_Preview.html[Preview]"
