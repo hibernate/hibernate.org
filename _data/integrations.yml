@@ -62,10 +62,10 @@ quarkus:
   active_series:
     # For release dates, see https://github.com/quarkusio/quarkus/wiki/Release-Planning
     # For included versions, see https://github.com/quarkusio/quarkus/blob/main/pom.xml
-    - "3.27"
-    - "3.33"
+    - "3.27" # LTS
+    - "3.33" # LTS
     - "3.34"
-    - "3.35"
+    - "3.35" # April 29th
 wildfly:
   name: WildFly
   url: https://www.wildfly.org/
