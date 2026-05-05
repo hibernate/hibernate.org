@@ -5,4 +5,6 @@
   .ui.container
     %h4
       %i.icon.exclamation.triangle
-      = project_description.deprecation_notice
+      :asciidoc
+        :doctype: inline
+        #{project_description.deprecation_notice}

@@ -1,11 +1,15 @@
 = Other Hibernate projects
 Emmanuel Bernard
 :awestruct-layout: news-and-no-menu
+:page-interpolate: true
 
 We always have new ideas to solve data related problems.
 You will find some of these experiments here.
 
 == Hibernate Tools
+
+[role="ui message warning"]
+#{site.projects['tools'].deprecation_notice}
 
 ++++
 <a class="ui button right labeled icon a primary" href="/tools/">
@@ -17,8 +21,7 @@ You will find some of these experiments here.
 == Hibernate OGM
 
 [role="ui message warning"]
-Hibernate OGM has not been kept up to date with the latest Hibernate ORM versions
-and is not maintained anymore.
+#{site.projects['ogm'].deprecation_notice}
 
 ++++
 <a class="ui button right labeled icon a primary" href="/ogm/">
