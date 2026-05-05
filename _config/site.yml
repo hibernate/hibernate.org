@@ -358,6 +358,10 @@ projects:
     icon: 'icon-wrench'
     description: |
       Reverse engineer Java entities from an existing SQL database schema.
+    deprecation_notice: |
+      Hibernate Tools' Maven/Ant/Gradle plugins have been integrated into Hibernate ORM starting with version 7.4.
+      Hibernate Eclipse tooling has been retired. 
+      See <a href='https://in.relation.to/2026/05/04/hibernate-tools-moves-to-orm/'>the announcement</a> for details and migration.
     blog_tag: Hibernate Tools
     blog_tag_url: hibernate-tools
     license:
