@@ -5,8 +5,11 @@ layout: community-standard
 
 - if project_description.deprecation_notice
   .ui.warning.message.icon
-    %i.icon.inbox.exclamation.triangle
-    = project_description.deprecation_notice
+    %i.icon.exclamation.triangle
+    .content
+      :asciidoc
+        :doctype: inline
+        #{project_description.deprecation_notice}
 
 .ui.icon.message
   %i.icon.users

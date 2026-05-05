@@ -361,7 +361,7 @@ projects:
     deprecation_notice: |
       Hibernate Tools' Maven/Ant/Gradle plugins have been integrated into Hibernate ORM starting with version 7.4.
       Hibernate Eclipse tooling has been retired. 
-      See <a href='https://in.relation.to/2026/05/04/hibernate-tools-moves-to-orm/'>the announcement</a> for details and migration.
+      See link:https://in.relation.to/2026/05/04/hibernate-tools-moves-to-orm/[the announcement] for details and migration.
     blog_tag: Hibernate Tools
     blog_tag_url: hibernate-tools
     license:
@@ -502,7 +502,7 @@ projects:
   ogm:
     name: Hibernate OGM
     description: "The power and simplicity of JPA for NoSQL datastores. Including support for associations, sub-classes, queries and much more."
-    deprecation_notice: "Hibernate OGM is not maintained anymore."
+    deprecation_notice: "Hibernate OGM has not been kept up to date with the latest Hibernate ORM versions and is not maintained anymore."
     icon: 'icon-sitemap'
     links:
       reference_doc:
