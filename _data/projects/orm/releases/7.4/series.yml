@@ -1,7 +1,8 @@
 summary: >-
-  @Temporal
-  @Audited
-  Limits & fetch joins
+  @Temporal,
+  @Audited,
+  Limits & fetch joins,
+  hbm.xml transformation,
   CacheMode.REFRESH_SESSION
 maven:
   artifacts:
