@@ -1,0 +1,6 @@
+:awestruct-layout: project-releases-series
+:awestruct-project: search
+:awestruct-series_version: "8.4"
+:page-interpolate: true
+:latest-release-version: #{series(page, page.series_version).releases.first.version}
+:hsearch-doc-url-prefix: #{reference_doc(site.projects[page.project], series(page, page.series_version)).html_url}
