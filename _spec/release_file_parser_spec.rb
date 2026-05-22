@@ -76,4 +76,49 @@ describe Awestruct::Extensions::ReleaseFileParser do
         data_dir.execute( @site )
         expect(@site.projects[:foo].releases.length).to eql 1
     end
+
+    describe "#extractCommentFromConstraint" do
+        before :each do
+            @parser = Awestruct::Extensions::ReleaseFileParser.new
+        end
+
+        it "extracts comment from single range hash" do
+            constraint = { from: '38', to: '39', comment: 'Preview' }
+            expect(@parser.send(:extractCommentFromConstraint, constraint, '38')).to eql 'Preview'
+            expect(@parser.send(:extractCommentFromConstraint, constraint, '39')).to eql 'Preview'
+        end
+
+        it "extracts comment from array of discrete values" do
+            constraint = [
+                { value: '11', comment: 'Java 11' },
+                { value: '17', comment: 'Java 17' }
+            ]
+            expect(@parser.send(:extractCommentFromConstraint, constraint, '11')).to eql 'Java 11'
+            expect(@parser.send(:extractCommentFromConstraint, constraint, '17')).to eql 'Java 17'
+        end
+
+        it "extracts comment from array of range hashes" do
+            constraint = [
+                { from: '34', to: '39' },
+                { from: '40', to: '41', comment: 'EE 10 variant' }
+            ]
+            expect(@parser.send(:extractCommentFromConstraint, constraint, '34')).to be_nil
+            expect(@parser.send(:extractCommentFromConstraint, constraint, '39')).to be_nil
+            expect(@parser.send(:extractCommentFromConstraint, constraint, '40')).to eql 'EE 10 variant'
+            expect(@parser.send(:extractCommentFromConstraint, constraint, '41')).to eql 'EE 10 variant'
+        end
+
+        it "returns nil when version is outside commented range" do
+            constraint = [
+                { from: '40', to: '41', comment: 'EE 10 variant' }
+            ]
+            expect(@parser.send(:extractCommentFromConstraint, constraint, '39')).to be_nil
+            expect(@parser.send(:extractCommentFromConstraint, constraint, '42')).to be_nil
+        end
+
+        it "returns nil when no comment exists" do
+            constraint = { from: '34', to: '39' }
+            expect(@parser.send(:extractCommentFromConstraint, constraint, '34')).to be_nil
+        end
+    end
 end
