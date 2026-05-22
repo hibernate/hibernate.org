@@ -1,0 +1,34 @@
+license:
+  name: Apache License 2.0
+  # Note: 3.0 branch not available in current GitHub repository
+links:
+  doc:
+    displayed: false
+  reference_doc:
+    displayed: false
+  javadoc:
+    displayed: false
+  getting_started_guide:
+    displayed: false
+  whats_new:
+    displayed: false
+  migration_guide:
+    displayed: false
+  short_guide:
+  # Note: Very old series - no documentation links available
+    displayed: false
+maven:
+  coord:
+    group_id: org.hibernate
+    main_artifact_id: hibernate-validator
+    artifact_id_pattern: hibernate-validator-*
+  repo:
+    snapshots: jboss
+  artifacts:
+    - artifact_id: hibernate-validator
+      summary: Core implementation
+    - artifact_id: hibernate-validator-annotation-processor
+      summary: Annotation processor
+integration_constraints:
+  # Integration constraints sourced from Maven Central:
+  # - Java: https://repo1.maven.org/maven2/org/hibernate/hibernate-validator/

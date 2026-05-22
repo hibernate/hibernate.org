@@ -1,0 +1,41 @@
+license:
+  name: LGPL v2.1
+  url: https://raw.githubusercontent.com/hibernate/hibernate-orm/3.6/lgpl.txt
+links:
+  doc:
+    displayed: false
+  reference_doc:
+    displayed: false
+  javadoc:
+    displayed: false
+  getting_started_guide:
+    displayed: false
+  whats_new:
+    displayed: false
+  migration_guide:
+    displayed: false
+  short_guide:
+    displayed: false
+maven:
+  coord:
+    group_id: org.hibernate
+    main_artifact_id: hibernate-core
+  repo:
+    snapshots: jboss
+  artifacts:
+    - artifact_id: hibernate-core
+      summary: Core implementation
+    - artifact_id: hibernate-entitymanager
+      summary: JPA support
+    - artifact_id: hibernate-envers
+      summary: Envers audit support
+integration_constraints:
+  # Integration constraints sourced from Maven Central:
+  # - Java: https://repo1.maven.org/maven2/org/hibernate/hibernate-parent/3.6.10.Final/hibernate-parent-3.6.10.Final.pom
+  # - JPA: https://repo1.maven.org/maven2/org/hibernate/hibernate-entitymanager/3.6.10.Final/hibernate-entitymanager-3.6.10.Final.pom
+  java:
+    version: '1.5'
+  java_ee_jpa:
+    version: '2.0'
+  java_ee:
+    version: '6'

@@ -1,0 +1,38 @@
+license:
+  name: LGPL v2.1
+  # Note: 3.1 branch not available in current GitHub repository
+links:
+  doc:
+    displayed: false
+  reference_doc:
+    displayed: false
+  javadoc:
+    displayed: false
+  getting_started_guide:
+    displayed: false
+  whats_new:
+    displayed: false
+  migration_guide:
+    displayed: false
+  short_guide:
+  # Note: Very old series - no documentation links available
+    displayed: false
+maven:
+  coord:
+    group_id: org.hibernate
+    main_artifact_id: hibernate-search
+    artifact_id_pattern: hibernate-search-*
+  repo:
+    snapshots: jboss
+  artifacts:
+    - artifact_id: hibernate-search
+      summary: Full-text search for Hibernate
+integration_constraints:
+  # Integration constraints sourced from Maven Central:
+  # - ORM: https://repo1.maven.org/maven2/org/hibernate/hibernate-search/
+  # - Check dependencies on org.hibernate:hibernate-core
+  # Source: https://repo1.maven.org/maven2/org/hibernate/hibernate-search/3.1.1.GA/hibernate-search-3.1.1.GA.pom
+  orm:
+    version: '3.3'
+  lucene:
+    version: '2.4'
