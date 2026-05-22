@@ -66,8 +66,9 @@ quarkus:
     # bottom line: an LTS "usually" stays active for 6 months after the next LTS was released.
     - "3.27" # LTS, stays supported until Mar 25th 2026 + 6 months = Sep 25th 2026
     - "3.33" # LTS, released Mar 25th 2026
-    - "3.35"
-    - "3.36"
+    - "3.35" # Remove when 3.36 is out
+    - "3.36" # Currently CR, released by the end of May
+    - "3.37" # Planned in June
 wildfly:
   name: WildFly
   url: https://www.wildfly.org/
@@ -78,6 +79,7 @@ wildfly:
     # For included versions, see https://github.com/wildfly/wildfly/blob/main/pom.xml
     # For included versions in preview (EE 11), see https://github.com/wildfly/wildfly/blob/main/boms/preview-ee/pom.xml
     - "40"
+    - "41" # Planned
 rheap:
   name: Red Hat EAP
   url: https://www.redhat.com/en/technologies/jboss-middleware/application-platform
