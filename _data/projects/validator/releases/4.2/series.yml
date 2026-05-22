@@ -1,0 +1,40 @@
+license:
+  name: Apache License 2.0
+  url: https://raw.githubusercontent.com/hibernate/hibernate-validator/4.2/license.txt
+links:
+  doc:
+    displayed: false
+  reference_doc:
+    displayed: false
+  javadoc:
+    displayed: false
+  getting_started_guide:
+    displayed: false
+  whats_new:
+    displayed: false
+  migration_guide:
+    displayed: false
+  short_guide:
+  # Note: Very old series - no documentation links available
+    displayed: false
+maven:
+  coord:
+    group_id: org.hibernate
+    main_artifact_id: hibernate-validator
+    artifact_id_pattern: hibernate-validator-*
+  repo:
+    snapshots: jboss
+  artifacts:
+    - artifact_id: hibernate-validator
+      summary: Core implementation
+    - artifact_id: hibernate-validator-annotation-processor
+      summary: Annotation processor
+integration_constraints:
+  # Integration constraints sourced from Maven Central:
+  # - Bean Validation: dependency on javax.validation:validation-api:1.0.0.GA
+  # - Java EE: derived from Bean Validation version (BV 1.0 → Java EE 6)
+  # Source: https://repo1.maven.org/maven2/org/hibernate/hibernate-validator/4.2.0.Final/hibernate-validator-4.2.0.Final.pom
+  java_ee_bv:
+    version: '1.0'
+  java_ee:
+    version: '6'

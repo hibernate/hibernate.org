@@ -44,13 +44,23 @@ integration_constraints:
       - '11'
       - '17'
   java_ee_jpa:
-    version: '2.2'
+    version:
+      value: '2.2'
+      comment: main artifacts
   jakarta_ee_jpa:
-    version: '3.0'
+    version:
+      value: '3.0'
+      comment: >-
+        https://in.relation.to/2021/06/02/hibernate-orm-550-final-release/[through `*-jakarta` artifacts]
   java_ee:
-    version: '8'
+    version:
+      value: '8'
+      comment: main artifacts
   jakarta_ee:
-    version: '9'
+    version:
+      value: '9'
+      comment: >-
+        https://in.relation.to/2021/06/02/hibernate-orm-550-final-release/[through `*-jakarta` artifacts]
   quarkus:
     version:
       from: '2.0'

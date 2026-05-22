@@ -50,7 +50,7 @@ integration_constraints:
   orm:
     version:
       - value: 5.6
-        comment: in the main artifacts
+        comment: main artifacts
       - from: 6.2
         to: '6.3'
         comment: >-

@@ -1,0 +1,38 @@
+license:
+  name: LGPL v2.1
+  url: https://raw.githubusercontent.com/hibernate/hibernate-search/4.0/lgpl.txt
+links:
+  doc:
+    displayed: false
+  reference_doc:
+    displayed: false
+  javadoc:
+    displayed: false
+  getting_started_guide:
+    displayed: false
+  whats_new:
+    displayed: false
+  migration_guide:
+    displayed: false
+  short_guide:
+  # Note: Very old series - no documentation links available
+    displayed: false
+maven:
+  coord:
+    group_id: org.hibernate
+    main_artifact_id: hibernate-search-orm
+    artifact_id_pattern: hibernate-search-*
+  repo:
+    snapshots: jboss
+  artifacts:
+    - artifact_id: hibernate-search-orm
+      summary: Hibernate ORM integration
+integration_constraints:
+  # Integration constraints sourced from Maven Central:
+  # - ORM: https://repo1.maven.org/maven2/org/hibernate/hibernate-search-orm/
+  # - Check dependencies on org.hibernate:hibernate-core
+  # Source: https://repo1.maven.org/maven2/org/hibernate/hibernate-search-parent/4.0.0.Final/hibernate-search-parent-4.0.0.Final.pom
+  orm:
+    version: '4.0'
+  lucene:
+    version: '3.4'
