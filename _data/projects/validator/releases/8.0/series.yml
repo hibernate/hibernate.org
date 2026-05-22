@@ -34,8 +34,10 @@ integration_constraints:
       to: '3.5'
   wildfly:
     version:
-      from: '27'
-      to: '39'
+      - from: '27'
+        to: '39'
+      - value: '40'
+        comment: "link:http://docs.wildfly.org/40/Different_Flavors_of_WildFly.html#wildfly-ee-10[EE 10 variant]"
   rheap:
     version:
       from: '8.0'
