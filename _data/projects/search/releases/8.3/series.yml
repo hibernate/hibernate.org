@@ -64,6 +64,4 @@ integration_constraints:
   quarkus:
     version: '3.35'
   wildfly:
-    version:
-      value: '40'
-      comment: "link:https://docs.wildfly.org/40/WildFly_and_WildFly_Preview.html[Preview]"
+    version: '40'
