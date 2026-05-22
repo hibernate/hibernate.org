@@ -579,8 +579,20 @@ module Awestruct
           end
         elsif constraint_version.is_a?(Array)
           constraint_version.each do |v|
-            if v.is_a?(Hash) && v.key?(:value) && v[:value].to_s == target_version.to_s && v.key?(:comment)
-              return v[:comment]
+            if v.is_a?(Hash)
+              # Handle discrete values with comments
+              if v.key?(:value) && v[:value].to_s == target_version.to_s && v.key?(:comment)
+                return v[:comment]
+              end
+              # Handle ranges with comments
+              if v.key?(:from) && v.key?(:to) && v.key?(:comment)
+                target = Version.new(target_version)
+                from = Version.new(v[:from])
+                to = Version.new(v[:to])
+                if target >= from && target <= to
+                  return v[:comment]
+                end
+              end
             end
           end
         end
