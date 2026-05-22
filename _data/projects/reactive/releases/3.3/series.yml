@@ -16,4 +16,6 @@ integration_constraints:
   vertx:
     version: '4.5'
   quarkus:
-    version: '3.35'
+    version:
+      from: '3.35'
+      to: '3.36'

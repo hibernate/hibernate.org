@@ -30,7 +30,7 @@ integration_constraints:
   quarkus:
     version:
       from: '3.30'
-      to: '3.35'
+      to: '3.36'
   wildfly:
     version:
       - value: '39'
