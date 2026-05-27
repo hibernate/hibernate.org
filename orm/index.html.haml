@@ -14,6 +14,7 @@ project: orm
     - making it easy to write **complex queries** and work with their results,
     - letting the program easily **synchronize changes** made in memory with the database,
     - respecting the ACID properties of **transactions**,
+    - automatically handling *temporal data* and *audit logging*,
     - and allowing **performance optimizations** to be made after the basic persistence logic has already been written.
 
     Hibernate is the most successful ORM solution ever, in any programming language.
@@ -69,6 +70,17 @@ project: orm
     link:/orm/tooling/[Hibernate Tools] and IntelliJ IDEA even provide automatic code completion and validation for HQL queries as you type.
 
     If all else fails, Hibernate lets you write your own SQL queries in the native dialect of your database.
+
+.feature-block
+  :asciidoc
+    == Temporal data and audit logging
+
+    A link:https://docs.hibernate.org/orm/7.4/introduction/html_single/#temporal-data[temporal entity] lets us go back in time and query our data as it was at any given instant in the past.
+    It keeps a careful record of changes over time.
+    An link:https://docs.hibernate.org/orm/7.4/introduction/html_single/#audit-logs[audit log] is similar, but keeps additional metadata about the nature of each changeset involving multiple entities.
+
+    Since Hibernate 7.4, temporal and audited entities are made possible in an incredibly transparent way, even on databases with no native support for temporal tables.
+    Audit logging is a complete and much more efficient reimplementation of the ideas previously available in link:/orm/envers[Hibernate Envers].
 
 .feature-block
   :asciidoc
