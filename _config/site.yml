@@ -73,6 +73,8 @@ projects:
     description: |
       Idiomatic persistence for Java and relational databases.
     links:
+      doc:
+        html: /orm/documentation/{series.version}/
       reference_doc:
         html: https://docs.hibernate.org/orm/{series.version}/userguide/html_single/
         latest_stable:
@@ -288,6 +290,8 @@ projects:
       project_id: orm
       since_series: 6.6
     links:
+      doc:
+        html: /repositories/documentation/{series.version}/
       reference_doc:
         html: https://docs.hibernate.org/orm/{series.version}/repositories/html_single/
         latest_stable:

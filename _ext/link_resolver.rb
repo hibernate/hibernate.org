@@ -10,7 +10,7 @@ module Awestruct
             project[:release_series]&.each_value do |series|
               links = series['links'] || Hash.new
               series['links'] = links
-              ['reference_doc', 'javadoc', 'migration_guide', 'short_guide', 'whats_new'].each do |key|
+              ['doc', 'reference_doc', 'javadoc', 'migration_guide', 'short_guide', 'whats_new'].each do |key|
                 links[key] = DocumentRef.from_patterns(project, series, key)
               end
               ['getting_started_guide'].each do |key|

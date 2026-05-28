@@ -77,3 +77,9 @@
   %a.ui.right.labeled.icon.button.small(href="#{javadoc.html_url}")
     %i.icon.code.outline
     API (Javadoc)
+- doc = doc(project_description, series)
+- if not doc.nil?
+  %p
+    %a.ui.right.labeled.icon.button(href="#{doc.html_url}")
+      %i.icon.book
+      More documentation for #{series.version}

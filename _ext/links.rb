@@ -8,6 +8,10 @@ module Awestruct
         @site = site
       end
 
+      def doc(project, series)
+        return series&.[](:links)&.[](:doc)
+      end
+
       def reference_doc(project, series)
         return series&.[](:links)&.[](:reference_doc)
       end

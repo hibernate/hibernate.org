@@ -1,20 +1,15 @@
-= Hibernate ORM Downloads
-:awestruct-layout: project-stable-releases
+= Documentation
+:awestruct-layout: project-documentation
 :awestruct-project: orm
 :page-interpolate: true
 
-++++
-<script>
-    var versionTokens = stable_releases[0].split(".");
-    var latestVersionPath = versionTokens[0] + "." + versionTokens[1] + "/";
+== Other resources
 
-    var meta = document.createElement('meta');
-    meta.httpEquiv = "refresh";
-    meta.content = "5; url=" + latestVersionPath;
-    document.getElementsByTagName('head')[0].appendChild(meta);
-    
-    window.location = latestVersionPath;
-</script>
-++++
-
-
+link:/orm/tooling/[Tooling]::
+Tools to help with Hibernate development.
+link:/orm/envers/[Envers]::
+Auditing and versioning of entities.
+link:/orm/faq/[FAQ]::
+Frequently asked questions.
+link:/orm/books/[Books]::
+Books about Hibernate ORM.
