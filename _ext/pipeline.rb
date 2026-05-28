@@ -4,6 +4,7 @@ require 'html_minifier'
 require 'relative'
 require 'releases'
 require 'release_file_parser'
+require 'release_series_index_generator'
 require 'data_file_parser'
 require 'directory_listing'
 require 'links'
@@ -46,6 +47,7 @@ Awestruct::Extensions::Pipeline.new do
   # register extensions and transformers
   extension Awestruct::Extensions::DataFileParser.new
   extension Awestruct::Extensions::ReleaseFileParser.new
+  extension Awestruct::Extensions::ReleaseSeriesIndexGenerator.new
   extension Awestruct::Extensions::LinkResolver.new
   extension Awestruct::Extensions::MetadataPublisher.new
   transformer Awestruct::Extensions::JsMinifier.new
