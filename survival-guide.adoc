@@ -269,6 +269,35 @@ to set the `displayed` attribute to `false` (just add the attribute if it is mis
 To only hide download links and Maven coordinates,
 set the `available` attribute to `false` (just add the attribute if it is missing).
 
+== Verify Maven Central artifacts
+
+After building the site, you can verify that all Maven Central artifact links point to actual artifacts
+using the `_scripts/check-maven-artifacts.py` script.
+
+This is particularly useful when adding older series to ensure the artifacts are actually available on Maven Central.
+
+[source,bash]
+----
+# First build the site
+podman run --rm -t --userns=keep-id -u $UID:$GID \
+  -v $PWD:/home/dev/website:rw,Z \
+  quay.io/hibernate/awestruct-build-env:latest \
+  rake clean gen
+
+# Then run the artifact checker
+python3 _scripts/check-maven-artifacts.py
+----
+
+The script will:
+
+* Scan all HTML files in `_site/`
+* Extract Maven Central artifact links from the pages
+* Verify each artifact exists by checking Maven Central
+* Report which artifacts are missing with details about which pages reference them
+
+If artifacts are missing for an older series, you should update the `series.yml` file
+to note that the artifacts are not available on Maven Central.
+
 == Data
 
 === `_config/site.yml`
