@@ -20,12 +20,6 @@ links:
   # Note: Very old series - no documentation links available
 maven:
   coord:
-    group_id: org.hibernate
-    main_artifact_id: hibernate
-  repo:
-    snapshots: jboss
-  artifacts:
-    - artifact_id: hibernate
-      summary: Core Hibernate framework
-# Note: Pre-Maven Central era - not available on Maven Central
+# Note: Pre-Maven Central era - artifacts not available on Maven Central
+# Maven coordinates intentionally set to nil to hide download links
 # Source: https://github.com/hibernate/hibernate2-cvs

@@ -27,8 +27,7 @@ maven:
   artifacts:
     - artifact_id: hibernate-validator
       summary: Core implementation
-    - artifact_id: hibernate-validator-annotation-processor
-      summary: Annotation processor
+    # Note: annotation-processor did not exist in 4.0; it was first released in 4.1
 integration_constraints:
   # Integration constraints sourced from Maven Central:
   # - Bean Validation: dependency on javax.validation:validation-api:1.0.0.GA

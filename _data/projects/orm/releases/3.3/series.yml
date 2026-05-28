@@ -27,8 +27,7 @@ maven:
       summary: Core implementation
     - artifact_id: hibernate-entitymanager
       summary: JPA support
-    - artifact_id: hibernate-envers
-      summary: Envers audit support
+    # Note: hibernate-envers did not exist in 3.3; it was first released in 3.5
 integration_constraints:
   # Integration constraints sourced from Maven Central:
   # - Java: https://repo1.maven.org/maven2/org/hibernate/hibernate-parent/3.3.2.GA/hibernate-parent-3.3.2.GA.pom
