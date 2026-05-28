@@ -25,8 +25,8 @@
               &nbsp;&nbsp;
               = partial( 'project/series-status-label.html.haml', { "series" => series, "tooltipPosition" => "right center" } )
     - elsif menu.documentation_submenu
-      // Here we want to display all the known versions
-      - documentation_displayed_series = project_description.release_series.values
+      // Here we want to display only non-EOL versions
+      - documentation_displayed_series = project_description.active_release_series
       .ui.dropdown.link.item{:class => "#{(active ? "selected" : "")}"}
         #{menu.name}
         %i.icon.dropdown
