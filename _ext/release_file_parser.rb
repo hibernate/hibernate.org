@@ -536,13 +536,13 @@ module Awestruct
           return true if integration[:els_series]&.include?(integration_version)
           false
         else
-          # If there are no active or els series, check if compatible with at least one displayed project series
-          isCompatibleWithDisplayedSeries(compatibility, projects_hash)
+          # If there are no active or els series, check if compatible with at least one non-EOL project series
+          isCompatibleWithNonEolSeries(compatibility, projects_hash)
         end
       end
 
-      # Check if a version is compatible with at least one displayed project series
-      def isCompatibleWithDisplayedSeries(compatibility, projects_hash)
+      # Check if a version is compatible with at least one non-EOL project series
+      def isCompatibleWithNonEolSeries(compatibility, projects_hash)
         compatibility&.each do |project_id, matches|
           project = projects_hash[project_id]
           next if project.nil? || project[:release_series].nil?
@@ -561,9 +561,8 @@ module Awestruct
               series = project[:release_series][series_version]
               next if series.nil?
 
-              # A series is displayed if: displayed is nil/true, or status is not 'end-of-life'
-              is_displayed = series[:displayed].nil? ? series[:status] != 'end-of-life' : series[:displayed]
-              return true if is_displayed
+              # Check if the series is not end-of-life
+              return true if series[:status] != 'end-of-life'
             end
           end
         end
