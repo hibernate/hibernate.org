@@ -306,10 +306,57 @@ module Awestruct
             series.latest_scm_ref = series[:scm_branch] || series.releases&.first&.scm_tag
           end
         end
+        # Determine which series should be displayed
+        # A series is displayed by default if:
+        # 1. It's in development
+        # 2. OR it's stable/latest-stable
+        # 3. OR it's in limited support and there's no later limited-support series in the same major
         project[:active_release_series] = project[:release_series].nil? ? nil
-            : project[:release_series].values.select{|s| !s[:displayed].nil? ? s.displayed : s[:status] != 'end-of-life'}
+            : project[:release_series].values.select{|s|
+                if !s[:displayed].nil?
+                  s.displayed
+                else
+                  status = s[:status]
+                  if status == 'development' || status == 'stable' || status == 'latest-stable'
+                    true
+                  elsif status == 'limited-support'
+                    # Check if there's a later limited-support series in the same major
+                    series_version = Version.new(s[:version])
+                    has_later_limited_support = project[:release_series].values.any? { |other|
+                      other[:status] == 'limited-support' &&
+                      other != s &&
+                      Version.new(other[:version]) > series_version &&
+                      Version.new(other[:version]).major == series_version.major
+                    }
+                    !has_later_limited_support
+                  else
+                    false
+                  end
+                end
+              }
         project[:older_release_series] = project[:release_series].nil? ? nil
-            : project[:release_series].values.select{|s| !s[:displayed].nil? ? !s.displayed : s[:status] == 'end-of-life'}
+            : project[:release_series].values.select{|s|
+                if !s[:displayed].nil?
+                  !s.displayed
+                else
+                  status = s[:status]
+                  if status == 'development' || status == 'stable' || status == 'latest-stable'
+                    false
+                  elsif status == 'limited-support'
+                    # Check if there's a later limited-support series in the same major
+                    series_version = Version.new(s[:version])
+                    has_later_limited_support = project[:release_series].values.any? { |other|
+                      other[:status] == 'limited-support' &&
+                      other != s &&
+                      Version.new(other[:version]) > series_version &&
+                      Version.new(other[:version]).major == series_version.major
+                    }
+                    has_later_limited_support
+                  else
+                    true
+                  end
+                end
+              }
       end
 
       # Compute integration compatibility tables for all downstream integrations
