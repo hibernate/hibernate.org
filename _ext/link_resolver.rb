@@ -50,7 +50,14 @@ module Awestruct
           project_maven = project['maven'] || {}
           series_maven = series['maven'] || {}
           release_maven = release['maven'] || {}
-          maven_coord = release_maven&.[]('coord') || series_maven&.[]('coord') || project_maven['coord']
+          # Check for explicit nil to prevent fallback to project config
+          maven_coord = if release_maven&.has_key?('coord')
+                          release_maven['coord']
+                        elsif series_maven&.has_key?('coord')
+                          series_maven['coord']
+                        else
+                          project_maven['coord']
+                        end
           @@logger.debug("#{log_prefix}Coord: #{maven_coord}")
           maven_signing = project_maven&.[]('signing')
           maven_repo = {}

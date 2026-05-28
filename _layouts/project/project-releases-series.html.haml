@@ -135,90 +135,99 @@ project_hero_partial: project/hero-series.html.haml
   Current series status:
   = partial( 'project/series-status-label.html.haml', { "series" => series } )
 
-.ui.grid.equal.height.stackable.download-options
-  .row
-    - if latest_release_maven.coord
-      - releases_repo = latest_release_maven.repo[:releases]
-      .eleven.wide.column
-        %p
-          Maven artifacts of #{project_description.name} are published to
-          %a{:href => releases_repo.data.web_ui_url}
-            #{releases_repo.data.name}.
-          Most build tools fetch artifacts from Maven Central by default,
-          but if that's not the case for you,
-          see
-          %a{:href => releases_repo.data.help_setup_url}
-            this page
-          to configure your build tool.
-        %p
-          You can find the Maven coordinates of all artifacts through the link below:
-          %p
-            %a.ui.right.labeled.button.small.icon{:href => releases_repo.web_ui_all_artifacts_url(latest_release_maven.coord, latest_release.version)}
-              %i.icon.cloud.cubes
-              Maven artifacts
-        - if latest_release_maven.artifacts
-          %p
-            Below are the Maven coordinates of the main artifacts.
-          %div.ui.relaxed.divided.list
-            - latest_release_maven.artifacts.each do |artifact|
-              - group_id = latest_release_maven.coord['group_id']
-              - artifact_id = artifact.artifact_id
-              - version = latest_release.version
-              %div.item
-                %div.right.floated.content
-                  %a.ui.button.tiny.icon{:href => releases_repo.web_ui_artifact_url(group_id, artifact_id, latest_release.version)}
-                    %i.icon.cloud.cube
-                %div.header
-                  <span class="faded">#{group_id}:</span>#{artifact_id}</strong><span class="faded">:#{version}</span>
-                %div.content
-                  %div.description
-                    :asciidoc
-                      :doctype: inline
-                      #{(artifact[:summary] || artifact.artifact_id).strip}
-        - if latest_release_maven&.signing&.[]('since')
-          %p
-            All Maven artifacts of this project released after #{latest_release_maven.signing['since']} are signed.
-          %p
-            To verify signed Maven artifacts, head to
-            %a{:href => "/community/keys/"}
-              this page.
-    - if dist_sourceforge || latest_release_maven.coord
-      .five.wide.column.divided
-        %h3 Direct download
-        - if dist_sourceforge
-          %p
-            A ZIP archive containing all JAR files, documentation and source is available from SourceForge:
-            %p
-              %a.ui.right.labeled.button.small.icon{:href => dist_sourceforge.zip_url, :title => "Download"}
-                %i.icon.cloud.download
-                Download ZIP archive
-        - if latest_release_maven.coord
-          - releases_repo = latest_release_maven.repo[:releases]
-          %p
-            Individual Maven artifacts may be downloaded directly from the Maven repository:
-            %p
-              %a.ui.right.labeled.button.small.icon{:href => releases_repo.direct_download_url(latest_release_maven.coord)}
-                %i.icon.folder.open
-                #{releases_repo.data.name} subdirectory
-            %p
-              See
-              %a{:href => "https://maven.apache.org/plugins/maven-dependency-plugin/examples/copying-project-dependencies.html"}
-                here
-              for how to download all dependencies of your Maven project to a local directory on your filesystem.
-            %p
-              See
-              %a{:href => "https://maven.apache.org/plugins/maven-dependency-plugin/examples/copying-artifacts.html"}
-                here
-              for how to download an explicitly listed set of artifacts to a local directory on your filesystem.
+- maven_has_content = latest_release_maven.coord
+- dist_has_content = dist_sourceforge || latest_release_maven.coord
 
-%p
-  More information about specific releases (announcements, download links) can be found
-  %a{:href => "#releases"}
-    here.
+- if maven_has_content || dist_has_content
+  .ui.grid.equal.height.stackable.download-options
+    .row
+      - if maven_has_content
+        - releases_repo = latest_release_maven.repo[:releases]
+        .eleven.wide.column
+          %p
+            Maven artifacts of #{project_description.name} are published to
+            %a{:href => releases_repo.data.web_ui_url}
+              #{releases_repo.data.name}.
+            Most build tools fetch artifacts from Maven Central by default,
+            but if that's not the case for you,
+            see
+            %a{:href => releases_repo.data.help_setup_url}
+              this page
+            to configure your build tool.
+          %p
+            You can find the Maven coordinates of all artifacts through the link below:
+            %p
+              %a.ui.right.labeled.button.small.icon{:href => releases_repo.web_ui_all_artifacts_url(latest_release_maven.coord, latest_release.version)}
+                %i.icon.cloud.cubes
+                Maven artifacts
+          - if latest_release_maven.artifacts
+            %p
+              Below are the Maven coordinates of the main artifacts.
+            %div.ui.relaxed.divided.list
+              - latest_release_maven.artifacts.each do |artifact|
+                - group_id = latest_release_maven.coord['group_id']
+                - artifact_id = artifact.artifact_id
+                - version = latest_release.version
+                %div.item
+                  %div.right.floated.content
+                    %a.ui.button.tiny.icon{:href => releases_repo.web_ui_artifact_url(group_id, artifact_id, latest_release.version)}
+                      %i.icon.cloud.cube
+                  %div.header
+                    <span class="faded">#{group_id}:</span>#{artifact_id}</strong><span class="faded">:#{version}</span>
+                  %div.content
+                    %div.description
+                      :asciidoc
+                        :doctype: inline
+                        #{(artifact[:summary] || artifact.artifact_id).strip}
+          - if latest_release_maven&.signing&.[]('since')
+            %p
+              All Maven artifacts of this project released after #{latest_release_maven.signing['since']} are signed.
+            %p
+              To verify signed Maven artifacts, head to
+              %a{:href => "/community/keys/"}
+                this page.
+      - if dist_has_content
+        .column{:class=>"#{maven_has_content ? 'divided five wide' : 'eleven wide'}"}
+          - if maven_has_content
+            %h3 Direct download
+          - if dist_sourceforge
+            %p
+              A ZIP archive containing all JAR files, documentation and source is available from SourceForge:
+              %p
+                %a.ui.right.labeled.button.small.icon{:href => dist_sourceforge.zip_url, :title => "Download"}
+                  %i.icon.cloud.download
+                  Download ZIP archive
+          - if latest_release_maven.coord
+            - releases_repo = latest_release_maven.repo[:releases]
+            %p
+              Individual Maven artifacts may be downloaded directly from the Maven repository:
+              %p
+                %a.ui.right.labeled.button.small.icon{:href => releases_repo.direct_download_url(latest_release_maven.coord)}
+                  %i.icon.folder.open
+                  #{releases_repo.data.name} subdirectory
+              %p
+                See
+                %a{:href => "https://maven.apache.org/plugins/maven-dependency-plugin/examples/copying-project-dependencies.html"}
+                  here
+                for how to download all dependencies of your Maven project to a local directory on your filesystem.
+              %p
+                See
+                %a{:href => "https://maven.apache.org/plugins/maven-dependency-plugin/examples/copying-artifacts.html"}
+                  here
+                for how to download an explicitly listed set of artifacts to a local directory on your filesystem.
+  %p
+    More information about specific releases (announcements, download links) can be found
+    %a{:href => "#releases"}
+      here.
+- else
+  %p
+    Download information is not currently available for this series.
 
 %h2{:id => "whats-new"} What's new
+- whatsnew_has_content = false
 
 - if latest_release[:announcement_url]
+  - whatsnew_has_content = true
   %p
     Latest release announcement (#{latest_release.date}):
     %a{:href => "#{latest_release.announcement_url}"}
@@ -226,6 +235,7 @@ project_hero_partial: project/hero-series.html.haml
 
 - whats_new = whats_new(project_description, series)
 - if !whats_new.nil? && (!whats_new.html_url.nil? && !whats_new.html_url.start_with?(current_path) || !whats_new.pdf_url.nil?)
+  - whatsnew_has_content = true
   %p
     Highlights of new features and enhancements can be found here:
   %p
@@ -241,6 +251,7 @@ project_hero_partial: project/hero-series.html.haml
 - jira_issues_link = series.links[:jira_issues]
 - github_issues_link = series.links[:github_issues]
 - if jira_issues_link || github_issues_link
+  - whatsnew_has_content = true
   %p
     A detailed list of new features, improvements and fixes in this series can be found
     - if jira_issues_link
@@ -250,7 +261,11 @@ project_hero_partial: project/hero-series.html.haml
       %a{:href => github_issues_link.url}
         on our issue tracker.
 
-~ content
+- if !whatsnew_has_content
+  %p
+    This information is not currently available for this series.
+- else
+  ~ content
 
 - if latest_release_maven.repo[:snapshots] && !series.endoflife
   - snapshots_repo = latest_release_maven.repo[:snapshots]
@@ -304,6 +319,7 @@ project_hero_partial: project/hero-series.html.haml
       - dist_sourceforge = dist_sourceforge(project_description, series, release)
       - version = release.version
       - available = release[:available] == nil || release[:available]
+      - release_download_has_content = false
       .ui.row
         .three.wide.column
           %p
@@ -333,7 +349,8 @@ project_hero_partial: project/hero-series.html.haml
               :asciidoc
                 :doctype: inline
                 #{release.summary.strip}
-          - if available && latest_release.version == version
+          - if available && latest_release.version == version && maven_has_content && dist_has_content
+            - release_download_has_content = true
             %p
               %a.ui.small.right.labeled.icon.button{:href => '#get-it'}
                 %i.level.up.alternate.icon
@@ -346,12 +363,14 @@ project_hero_partial: project/hero-series.html.haml
             - if available
               - release_maven = maven(project_description, series, release)
               - if release_maven.coord
+                - release_download_has_content = true
                 - releases_repo = latest_release_maven.repo[:releases]
                 %a.ui.small.right.labeled.button.icon{:href => releases_repo.web_ui_all_artifacts_url(release_maven.coord, version)}
                   %i.icon.cloud.cubes
                   Maven artifacts
 
               - if dist_sourceforge
+                - release_download_has_content = true
                 %a.ui.small.right.labeled.button.icon{:href => dist_sourceforge.zip_url}
                   %i.icon.cloud.download
                   Download
@@ -366,5 +385,9 @@ project_hero_partial: project/hero-series.html.haml
                 %a.ui.small.right.labeled.button.icon{:href => "#{release.announcement_url}"}
                   %i.icon.announcement
                   Release announcement
+
+              - if !release_download_has_content
+                %p
+                  Download information is not currently available for this release.
 - else
   %p There are no releases configured for this series.
