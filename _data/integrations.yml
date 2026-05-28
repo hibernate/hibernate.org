@@ -8,6 +8,13 @@
 # because then this member provides at least "limited support" for the corresponding Hibernate project series,
 # even if this series is not the latest stable.
 #
+# You can control which integration series are displayed using one of two approaches:
+# - active_series: List the series to show; all others are hidden
+# - inactive_series: List the series to hide; all others are shown according to default rules
+#
+# Note: active_series and inactive_series are mutually exclusive approaches.
+# If you specify inactive_series, active_series is ignored.
+#
 # IMPORTANT: The order of entries in this file is the order they are displayed in compatibility matrices on the website.
 java:
   name: Java
