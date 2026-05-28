@@ -231,6 +231,7 @@ By default, an end-of-life series is considered "older" and not displayed with t
 it is not displayed in the drop-down "Releases" submenu,
 it is moved to its own "Older series" section in the page listing all series,
 and it is not displayed in the project's compatibility matrix.
+The same is true for limited-support series when a later limited-support series exists in the same major.
 
 You can override this behavior, to hide a non-EOL'd series or display an EOL'd series,
 by editing the `_data/<project ID>/releases/<series version>/series.yml` file
