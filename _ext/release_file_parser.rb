@@ -136,6 +136,7 @@ module Awestruct
 
         if subproject_id
           # Automatically add the constraint "this subproject is compatible with the same version of the superproject"
+          series[:integration_constraints] ||= Hash.new
           superproject_constraint = Hash.new
           superproject_constraint[:version] = series[:version]
           series[:integration_constraints][project[:superproject_id]] = superproject_constraint

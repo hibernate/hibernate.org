@@ -1,12 +1,14 @@
 - project_description = page.project
 - series = page.series
 - anchors = page.anchors
+- doc_content = false
 
 - getting_started_guides = getting_started_guides(project_description, series)
 - if anchors && ! getting_started_guides.empty?
   - # Legacy anchor, kept just so we don't break existing links
   %a{:id => "getting_started"}
 - getting_started_guides.each do |getting_started_guide|
+  - doc_content = true
   %p
     %span.ui.label.basic.horizontal
       Getting started guide
@@ -22,6 +24,7 @@
         PDF
 - whats_new = whats_new(project_description, series)
 - if not whats_new.nil?
+  - doc_content = true
   %p
     %span.ui.label.basic.horizontal
       What's new
@@ -35,6 +38,7 @@
         PDF
 - migration_guide = migration_guide(project_description, series)
 - if not migration_guide.nil?
+  - doc_content = true
   %p
     - if anchors
       - # Legacy anchor, kept just so we don't break existing links
@@ -51,6 +55,7 @@
         PDF
 - short_guide = short_guide(project_description, series)
 - if not short_guide.nil?
+  - doc_content = true
   %p
     %span.ui.label.basic.horizontal
       Short guide
@@ -63,23 +68,30 @@
         %i.icon.file.pdf.outline
         PDF
 - reference_doc = reference_doc(project_description, series)
-%p
-  %span.ui.label.basic.horizontal
-    Reference
-  %a.ui.right.labeled.icon.button.small(href="#{reference_doc.html_url}")
-    %i.icon.file.text.outline
-    HTML
-  - if not reference_doc.pdf_url.nil?
-    %a.ui.right.labeled.icon.button.small(href="#{reference_doc.pdf_url}")
-      %i.icon.file.pdf.outline
-      PDF
-  - javadoc = javadoc(project_description, series)
-  %a.ui.right.labeled.icon.button.small(href="#{javadoc.html_url}")
-    %i.icon.code.outline
-    API (Javadoc)
+- if not reference_doc.nil?
+  - doc_content = true
+  %p
+    %span.ui.label.basic.horizontal
+      Reference
+    %a.ui.right.labeled.icon.button.small(href="#{reference_doc.html_url}")
+      %i.icon.file.text.outline
+      HTML
+    - if not reference_doc.pdf_url.nil?
+      %a.ui.right.labeled.icon.button.small(href="#{reference_doc.pdf_url}")
+        %i.icon.file.pdf.outline
+        PDF
+    - javadoc = javadoc(project_description, series)
+    - if not javadoc.nil?
+      %a.ui.right.labeled.icon.button.small(href="#{javadoc.html_url}")
+        %i.icon.code.outline
+        API (Javadoc)
 - doc = doc(project_description, series)
 - if not doc.nil?
+  - doc_content = true
   %p
     %a.ui.right.labeled.icon.button(href="#{doc.html_url}")
       %i.icon.book
       More documentation for #{series.version}
+- if not doc_content
+  %p
+    Documentation is not currently available for this series.
