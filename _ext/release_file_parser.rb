@@ -166,13 +166,7 @@ module Awestruct
           release[:version_family] = series.version
         end
 
-        if release.version =~ /.*\.(Alpha[0-9]+|Beta[0-9]+|CR[0-9]+)$/
-          release.stable = false
-        elsif release.version =~ /.*\.(Final|SP[0-9]+)/
-          release.stable = true
-        else
-          raise StandardError, "Unsupported version scheme for #{release_file}: #{release.version}"
-        end
+        determineStability(release, release_file)
 
         if release[:scm_tag] == nil
           if project['github']['final_suffix_in_tags']
@@ -643,6 +637,17 @@ module Awestruct
           end
         end
         nil
+      end
+
+      # Determine whether a release is stable or unstable based on version suffix
+      # Uses the Version class to parse and determine stability
+      def determineStability(release, release_file)
+        begin
+          version_obj = Version.new(release.version)
+          release.stable = version_obj.stable?
+        rescue => e
+          raise StandardError, "Unsupported version scheme for #{release_file}: #{release.version} (#{e.message})"
+        end
       end
     end
   end

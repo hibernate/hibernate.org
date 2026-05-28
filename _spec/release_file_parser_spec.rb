@@ -77,6 +77,85 @@ describe Awestruct::Extensions::ReleaseFileParser do
         expect(@site.projects[:foo].releases.length).to eql 1
     end
 
+    describe "legacy version format support" do
+        before :each do
+            @parser = Awestruct::Extensions::ReleaseFileParser.new
+            @release = OpenStruct.new
+        end
+
+        it "accepts 2-component plain versions" do
+            @release.version = "3.0"
+            expect {
+                @parser.send(:determineStability, @release, "3.0.yml")
+            }.not_to raise_error
+            expect(@release.stable).to be true
+        end
+
+        it "accepts 3-component plain versions" do
+            @release.version = "3.0.1"
+            expect {
+                @parser.send(:determineStability, @release, "3.0.1.yml")
+            }.not_to raise_error
+            expect(@release.stable).to be true
+        end
+
+        it "accepts 2-component versions with lowercase beta suffix (no separator)" do
+            @release.version = "3.0beta1"
+            expect {
+                @parser.send(:determineStability, @release, "3.0beta1.yml")
+            }.not_to raise_error
+            expect(@release.stable).to be false
+        end
+
+        it "accepts 2-component versions with lowercase alpha suffix (no separator)" do
+            @release.version = "3.0alpha"
+            expect {
+                @parser.send(:determineStability, @release, "3.0alpha.yml")
+            }.not_to raise_error
+            expect(@release.stable).to be false
+        end
+
+        it "accepts versions with letter suffix after number" do
+            @release.version = "3.0beta4b"
+            expect {
+                @parser.send(:determineStability, @release, "3.0beta4b.yml")
+            }.not_to raise_error
+            expect(@release.stable).to be false
+        end
+
+        it "accepts lowercase cr versions" do
+            @release.version = "3.2.0.cr1"
+            expect {
+                @parser.send(:determineStability, @release, "3.2.0.cr1.yml")
+            }.not_to raise_error
+            expect(@release.stable).to be false
+        end
+
+        it "accepts uppercase CR versions" do
+            @release.version = "3.2.0.CR1"
+            expect {
+                @parser.send(:determineStability, @release, "3.2.0.CR1.yml")
+            }.not_to raise_error
+            expect(@release.stable).to be false
+        end
+
+        it "accepts lowercase ga versions" do
+            @release.version = "3.2.0.ga"
+            expect {
+                @parser.send(:determineStability, @release, "3.2.0.ga.yml")
+            }.not_to raise_error
+            expect(@release.stable).to be true
+        end
+
+        it "accepts uppercase GA versions" do
+            @release.version = "3.2.0.GA"
+            expect {
+                @parser.send(:determineStability, @release, "3.2.0.GA.yml")
+            }.not_to raise_error
+            expect(@release.stable).to be true
+        end
+    end
+
     describe "#extractCommentFromConstraint" do
         before :each do
             @parser = Awestruct::Extensions::ReleaseFileParser.new
