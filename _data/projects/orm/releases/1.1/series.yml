@@ -1,0 +1,31 @@
+status: end-of-life
+license:
+  name: LGPL v2.1
+  # Note: 1.1 branch not available in current GitHub repository
+links:
+  doc:
+    displayed: false
+  reference_doc:
+    displayed: false
+  javadoc:
+    displayed: false
+  getting_started_guide:
+    displayed: false
+  migration_guide:
+    displayed: false
+  short_guide:
+    displayed: false
+  whats_new:
+    displayed: false
+  # Note: Very old series - no documentation links available
+maven:
+  coord:
+    group_id: org.hibernate
+    main_artifact_id: hibernate
+  repo:
+    snapshots: jboss
+  artifacts:
+    - artifact_id: hibernate
+      summary: Core Hibernate framework
+# Note: Pre-Maven Central era - not available on Maven Central
+# Source: https://github.com/hibernate/hibernate1-cvs
