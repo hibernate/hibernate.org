@@ -190,6 +190,8 @@ module Awestruct
           integration = @site.integrations[integration_key]
           integration_constraint[:active] = false
           next unless integration[:downstream] && integration[:hibernate_involvement]
+
+          # Check if this series is in the active_series list
           integration[:active_series]&.each do |active_version_string|
             if Version.new(active_version_string).matches?(integration_constraint[:version])
               integration_constraint[:status] = 'active'
@@ -197,6 +199,18 @@ module Awestruct
               break
             end
           end
+
+          # Check if this series is in the inactive_series list (only if not already marked active)
+          unless integration_constraint[:status]
+            integration[:inactive_series]&.each do |inactive_version_string|
+              if Version.new(inactive_version_string).matches?(integration_constraint[:version])
+                integration_constraint[:status] = 'inactive'
+                break
+              end
+            end
+          end
+
+          # Check if this series is in the els_series list (only if not already marked)
           unless integration_constraint[:status]
             integration[:els_series]&.each do |active_version_string|
               if Version.new(active_version_string).matches?(integration_constraint[:version])
@@ -571,14 +585,18 @@ module Awestruct
       # Compute whether a version should be displayed based on integration settings and compatibility
       def computeVersionDisplayed(integration_version, compatibility, integration, projects_hash)
         has_active_or_els = integration[:active_series]&.any? || integration[:els_series]&.any?
+        has_inactive = integration[:inactive_series]&.any?
 
-        if has_active_or_els
-          # If there are active or els series, check if this integration version is in those lists
-          return true if integration[:active_series]&.include?(integration_version)
-          return true if integration[:els_series]&.include?(integration_version)
+        if has_inactive && integration[:inactive_series]&.include?(integration_version)
+          # If there are inactive series, hide those and display others by default
           false
+        elsif has_active_or_els
+          # If there are active or els series, check if this integration version is in those lists
+          integration[:active_series]&.include?(integration_version) ||
+            integration[:els_series]&.include?(integration_version)
         else
-          # If there are no active or els series, check if compatible with at least one non-EOL project series
+          # If the series is not explicitly inactive, and there is no explicitly active or els series,
+          # check if compatible with at least one non-EOL project series
           isCompatibleWithNonEolSeries(compatibility, projects_hash)
         end
       end
