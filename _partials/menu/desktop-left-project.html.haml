@@ -31,6 +31,9 @@
         #{menu.name}
         %i.icon.dropdown
         .menu
+          - overview_active = current_path == menu.href
+          %a.item{:href => menu.href, :class => "#{(overview_active ? "selected" : "")}"}
+            Overview
           - documentation_displayed_series.each do |series|
             - submenu_href = "#{menu.href}#{series.version}/"
             - submenu_active = current_path.start_with?(submenu_href)
