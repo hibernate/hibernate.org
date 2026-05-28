@@ -22,10 +22,7 @@ maven:
   artifacts:
     - artifact_id: hibernate-search-orm
       summary: Hibernate ORM integration
-    - artifact_id: hibernate-search-backend-jgroups
-      summary: JGroups backend
-    - artifact_id: hibernate-search-backend-jms
-      summary: JMS backend
+    # Note: backend artifacts (jgroups, jms) did not exist in 4.4; they were first released in 5.0
     - artifact_id: hibernate-search-analyzers
       summary: Analyzer dependencies from Lucene/Solr
 integration_constraints:
