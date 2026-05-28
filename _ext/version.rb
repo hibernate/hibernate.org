@@ -15,21 +15,68 @@ module Awestruct
           raise ArgumentError, "Version string '#{version_str}' must not have leading or trailing whitespace"
         end
 
-        v = version_str.split(".")
-        @major = v[0].to_i
-        @minor = v[1].to_i
-        @micro = v[2].to_i
-        @suffix = v[3] == nil ? nil : VersionSuffix.new(v[3])
-        # Track how many components were in the original version string
-        # This helps distinguish "8" (1 component) from "8.0" (2 components)
-        @component_count = v.length
+        # Parse version string, handling multiple formats:
+        # - 3-component: 1.0.0.Final, 3.5.0-Beta-2
+        # - 2-component: 3.0, 3.0beta1, 3.1.ga
+        # - 1-component: 8
+
+        # Try 3-component version first: major.minor.micro[separator][suffix]
+        match = version_str.match(/^(\d+)\.(\d+)\.(\d+)(?:[\.\-]?(.+))?$/)
+        if match
+          @major = match[1].to_i
+          @minor = match[2].to_i
+          @micro = match[3].to_i
+          @suffix = match[4] ? VersionSuffix.new(match[4]) : nil
+          @component_count = match[4] ? 4 : 3
+        else
+          # Try 2-component version: major.minor[separator][suffix]
+          match = version_str.match(/^(\d+)\.(\d+)(?:[\.\-]?(.+))?$/)
+          if match
+            @major = match[1].to_i
+            @minor = match[2].to_i
+            @micro = 0
+            @suffix = match[3] ? VersionSuffix.new(match[3]) : nil
+            @component_count = match[3] ? 3 : 2
+          else
+            # Fallback to old dot-splitting behavior for 1-component versions (e.g., "8")
+            v = version_str.split(".")
+            @major = v[0].to_i
+            @minor = v[1].to_i
+            @micro = v[2].to_i
+            @suffix = v[3] ? VersionSuffix.new(v[3]) : nil
+            @component_count = v.length
+          end
+        end
       end
 
       def <=>(other)
         return @major <=> other.major if ((@major <=> other.major) != 0)
         return @minor <=> other.minor if ((@minor <=> other.minor) != 0)
         return @micro <=> other.micro if ((@micro <=> other.micro) != 0)
+
+        # Handle suffix comparison with nil values
+        # nil suffix = plain version (e.g., "3.0.1")
+        # Ordering: Alpha/Beta/CR < nil (plain) < Final/GA/SP
+        return 0 if @suffix.nil? && other.suffix.nil?
+
+        # If one has nil suffix and other doesn't, compare based on stability
+        if @suffix.nil?
+          # nil < stable suffixes (Final, GA, SP), nil > pre-release suffixes (Alpha, Beta, CR)
+          return other.suffix.stable? ? -1 : 1
+        elsif other.suffix.nil?
+          # stable suffixes > nil, pre-release suffixes < nil
+          return @suffix.stable? ? 1 : -1
+        end
+
         return @suffix <=> other.suffix
+      end
+
+      # Determine if this version represents a stable release
+      # Versions with no suffix (e.g., 3.0, 3.0.1) or stable suffixes (Final, GA, SP) are stable
+      # Versions with unstable suffixes (Alpha, Beta, CR) are unstable
+      def stable?
+        return true if @suffix.nil?
+        @suffix.stable?
       end
 
       def matches?(constraint)
@@ -235,23 +282,65 @@ module Awestruct
 
       attr_reader :prefix, :number
 
-      def initialize(bugfix="")
-        split = bugfix.scan(/^([A-Za-z\-_]+)([0-9]+)?$/)
-        @prefix = split.first[0]
-        @number = split.first[1]&.to_i
+      def initialize(suffix_str="")
+        # Handle multiple formats:
+        # - "Final" -> prefix: "Final", number: nil
+        # - "Alpha1" -> prefix: "Alpha", number: 1
+        # - "Beta-2" -> prefix: "Beta", number: 2
+        # - "CR-1" -> prefix: "CR", number: 1
+        # - "ga" -> prefix: "ga", number: nil
+        # - "sp1" -> prefix: "sp", number: 1
+        # - "beta4b" -> prefix: "beta", number: 4 (letter suffix ignored)
+
+        # Match: prefix, optional hyphen, optional number, optional letter suffix
+        match = suffix_str.match(/^([A-Za-z]+)\-?([0-9]+)?[a-z]?$/)
+        if match
+          @prefix = match[1]
+          @number = match[2]&.to_i
+        else
+          # Fallback for edge cases
+          @prefix = suffix_str
+          @number = nil
+        end
       end
 
       def <=>(other)
-        return @prefix <=> other.prefix if ((@prefix <=> other.prefix) != 0)
-        return @number <=> other.number
+        # Case-insensitive comparison of prefix (so "cr" == "CR")
+        prefix_cmp = @prefix.downcase <=> other.prefix.downcase
+        return prefix_cmp if prefix_cmp != 0
+
+        # Compare numbers second (so cr1 < cr2, CR1 < CR2)
+        number_cmp = @number <=> other.number
+        return number_cmp if number_cmp != 0
+
+        # If prefixes and numbers are equal, compare case as final tiebreaker
+        # This ensures lowercase comes before uppercase (cr1 < CR1)
+        # Note: In ASCII, uppercase < lowercase, so we reverse the comparison
+        return other.prefix <=> @prefix
       end
 
       def self.sort
         self.sort!{|a,b| a <=> b}
       end
 
+      # Determine if this suffix represents a stable release
+      # Stable: Final, GA, SP (service packs)
+      # Unstable: Alpha, Beta, CR (candidate release)
+      def stable?
+        prefix_lower = @prefix.downcase
+        case prefix_lower
+        when 'final', 'ga', 'sp'
+          true
+        when 'alpha', 'beta', 'cr'
+          false
+        else
+          # Unknown suffix - conservative default is unstable
+          false
+        end
+      end
+
       def to_s
-        @bugfix + @number&.to_s
+        @number ? "#{@prefix}#{@number}" : @prefix
       end
     end
   end
