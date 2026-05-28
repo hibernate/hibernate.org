@@ -16,12 +16,16 @@ module Awestruct
               ['getting_started_guide'].each do |key|
                 links[key] = DocumentRef.from_patterns_multi(project, series, key)
               end
+              links[:jira_issues] = IssueTrackerRef.for_series(project, series)
+              links[:github_issues] = IssueTrackerRef.github_fallback(project, series)
               series[:releases]&.each do |release|
                 links = release['links'] || Hash.new
                 release['links'] = links
                 links[:maven] = MavenRef.from(@site, project, series, release)
                 links[:dist] ||= Hash.new
                 links[:dist][:sourceforge] = DistRef.from(project, series, release, :sourceforge)
+                links[:jira_issues] = IssueTrackerRef.for_release(project, series, release)
+                links[:github_issues] = IssueTrackerRef.github_fallback(project, series)
               end
             end
         end
@@ -225,6 +229,94 @@ module Awestruct
 
         def initialize(zip_url)
           @zip_url = zip_url
+        end
+      end
+
+      class IssueTrackerRef
+        @@logger = Logger.new(STDERR)
+        @@logger.level = Logger::INFO
+
+        def self.for_series(project, series)
+          log_prefix = "#{project['name']}/#{series.version}/jira_issues: "
+
+          # Check if explicitly disabled in series
+          series_jira = series&.[]('links')&.[]('jira_issues')
+          if series_jira == false || series_jira.nil? && series&.[]('links')&.has_key?('jira_issues')
+            @@logger.debug("#{log_prefix}Explicitly disabled")
+            return nil
+          end
+
+          # Check if project has Jira configured
+          if project[:jira].nil? || project[:jira][:key].nil?
+            @@logger.debug("#{log_prefix}No Jira key configured")
+            return nil
+          end
+
+          versions = series.releases.collect{|r| r.version}
+          url = jira_issues_url(project, versions)
+          @@logger.debug("#{log_prefix}URL: #{url}")
+          return IssueTrackerRef.new(url)
+        end
+
+        def self.for_release(project, series, release)
+          log_prefix = "#{project['name']}/#{series.version}/#{release.version}/jira_issues: "
+
+          # Check if explicitly disabled in series (applies to all releases)
+          series_jira = series&.[]('links')&.[]('jira_issues')
+          if series_jira == false || series_jira.nil? && series&.[]('links')&.has_key?('jira_issues')
+            @@logger.debug("#{log_prefix}Explicitly disabled in series")
+            return nil
+          end
+
+          # Check if project has Jira configured
+          if project[:jira].nil? || project[:jira][:key].nil?
+            @@logger.debug("#{log_prefix}No Jira key configured")
+            return nil
+          end
+
+          url = jira_issues_url(project, [release.version])
+          @@logger.debug("#{log_prefix}URL: #{url}")
+          return IssueTrackerRef.new(url)
+        end
+
+        def self.github_fallback(project, series)
+          log_prefix = "#{project['name']}/#{series.version}/github_issues: "
+
+          # Only use GitHub if no Jira
+          if project[:jira] && project[:jira][:key]
+            @@logger.debug("#{log_prefix}Jira available, skipping GitHub")
+            return nil
+          end
+
+          # Check if explicitly disabled in series
+          series_github = series&.[]('links')&.[]('github_issues')
+          if series_github == false || series_github.nil? && series&.[]('links')&.has_key?('github_issues')
+            @@logger.debug("#{log_prefix}Explicitly disabled")
+            return nil
+          end
+
+          if project.github.nil? || project.github['project'].nil?
+            @@logger.debug("#{log_prefix}No GitHub project configured")
+            return nil
+          end
+
+          url = "https://github.com/hibernate/#{project.github['project']}/issues?q=is%3Aissue+is%3Aclosed+"
+          @@logger.debug("#{log_prefix}URL: #{url}")
+          return IssueTrackerRef.new(url)
+        end
+
+        def self.jira_issues_url(project, versions)
+          fix_version_translator = project.jira['key'] == 'HHH' ?
+            lambda {|v| v != '4.2.0.Final' && v != '4.3.0.Final' && v != '5.0.0.Final' && v =~ /^(.*).Final$/ ? $1 : v } :
+            lambda {|v| v}
+          comma_separated_fix_versions = versions.collect{|v| fix_version_translator.call(v)}.join( "%2C%20" )
+          return "https://hibernate.atlassian.net/issues/?jql=project%20%3D%20#{project.jira['key']}%20AND%20fixVersion%20in%20(#{comma_separated_fix_versions})%20ORDER%20BY%20updated"
+        end
+
+        attr_reader :url
+
+        def initialize(url)
+          @url = url
         end
       end
     end

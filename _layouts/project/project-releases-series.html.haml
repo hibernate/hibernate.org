@@ -238,14 +238,17 @@ project_hero_partial: project/hero-series.html.haml
         %i.icon.file.pdf.outline
         PDF
 
-%p
-  A detailed list of new features, improvements and fixes in this series can be found
-  - if project_description[:jira][:key]
-    %a{:href => jira_issues_for_series_url(project_description, series)}
-      on our issue tracker.
-  - else
-    %a{:href => github_issues_url(project_description)}
-      on our issue tracker.
+- jira_issues_link = series.links[:jira_issues]
+- github_issues_link = series.links[:github_issues]
+- if jira_issues_link || github_issues_link
+  %p
+    A detailed list of new features, improvements and fixes in this series can be found
+    - if jira_issues_link
+      %a{:href => jira_issues_link.url}
+        on our issue tracker.
+    - elsif github_issues_link
+      %a{:href => github_issues_link.url}
+        on our issue tracker.
 
 ~ content
 
@@ -353,8 +356,9 @@ project_hero_partial: project/hero-series.html.haml
                   %i.icon.cloud.download
                   Download
 
-              - if project_description[:jira][:key]
-                %a.ui.small.right.labeled.button.icon{:href => jira_issues_for_release_url(project_description, release)}
+              - jira_issues_link = release.links[:jira_issues]
+              - if jira_issues_link
+                %a.ui.small.right.labeled.button.icon{:href => jira_issues_link.url}
                   %i.icon.bug
                   Resolved issues
 
