@@ -201,6 +201,11 @@ they are used to generate links to all JIRA tickets of a given series, for insta
 If your release is the first one of a new series, you will also have to create a new `series.yml` file
 in the `_data/<project ID>/releases/<series version>` directory.
 
+NOTE: The `index.adoc` file for each series page (e.g., `orm/releases/5.0/index.adoc`) is automatically
+generated as a virtual page during the build process. You do not need to create this file in the source
+tree. The `ReleaseSeriesIndexGenerator` extension will detect any series with a `series.yml` file and
+generate the corresponding page in `_site` if no source `index.adoc` exists.
+
 For information about the content of each file, see <<data_directory,here>>.
 
 === Series status
