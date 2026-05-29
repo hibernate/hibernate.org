@@ -537,10 +537,30 @@ code, kbd, samp {
 			display: none;
 		}
 	}
+
+	.ui.table-wrapper {
+		@media only screen and (max-width: 767px) {
+			overflow-x: auto;
+			-webkit-overflow-scrolling: touch;
+			border: 1px solid rgba(34, 36, 38, 0.15);
+			border-radius: 0.28571429rem;
+		}
+	}
+
 	table.ui.definition.table.unstackable.celled.center.aligned.integration {
+		width: 100%;
 		table-layout: fixed;
-		th:first-child {
-			width: 150px;
+
+		@media only screen and (max-width: 767px) {
+			margin: 0;
+			border-radius: 0;
+			border-left: 0;
+			border-right: 0;
+			font-size: 0.9em;
+
+			th, td {
+				padding: 0.1em 0.1em;
+			}
 		}
 	}
 }

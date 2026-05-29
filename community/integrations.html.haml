@@ -37,54 +37,59 @@ title: Integrations
   - table_id = "integration-table-#{integration_id}"
   - table_classes = has_older_series ? "has-older-series" : ""
 
-  %table.ui.definition.table.unstackable.celled.center.aligned.integration{:id => table_id, :classes => table_classes}
-    %thead
-      %tr
-        %th
-          = integration.name
-          Version
+  .ui.table-wrapper
+    %table.ui.definition.table.unstackable.celled.center.aligned.integration{:id => table_id, :classes => table_classes}
+      %colgroup
+        %col{:style => "width: 1fr;"}
         - integration_projects.each do |project_id|
-          - project = site.projects[project_id]
-          - next if project.nil?
-          - project_integration = site.integrations[project_id]
+          %col{:style => "width: 2fr;"}
+      %thead
+        %tr
           %th
-            %a{:href => project_integration&.url || "/#{project_id}/"}
-              = project.name
-    %tbody
-      - integration.version_ranges.each do |version_range|
-        - displayed = version_range[:displayed]
-        - row_class = has_older_series && !displayed ? 'older-series' : ''
-        %tr{:class => row_class}
-          %td.left.aligned
-            = integration_constraint_version(version_range[:version], false)
+            = integration.name
+            Version
           - integration_projects.each do |project_id|
             - project = site.projects[project_id]
             - next if project.nil?
-            - results = version_range[:compatibility][project_id]
-            - if results.nil? || results.empty?
-              %td.disabled
-                N/A
-            - else
-              %td
-                - results.each_with_index do |result, index|
-                  - if index > 0
-                    = ', '
-                  - if result[:version].is_a?(Hash)
-                    = "<a href=\"/#{project_id}/releases/#{result[:version][:from]}/\">#{result[:version][:from]}</a>&nbsp;&rarr;&nbsp;<a href=\"/#{project_id}/releases/#{result[:version][:to]}/\">#{result[:version][:to]}</a>"
-                  - else
-                    %a{:href => "/#{project_id}/releases/#{result[:version]}/"}
-                      = result[:version]
-                  - if result[:comment]
-                    :asciidoc
-                      :doctype: inline
-                      (#{result[:comment]})
-    - if has_older_series
-      %tfoot.full-width
-        %tr
-          %th{:colspan => integration_projects.length + 1}
-            %a.ui.right.floated.small.labeled.icon.button{:href => "javascript: void(0)", :id => "older-series-button-#{integration_id}"}
-              %i.icon.snowflake
-              %span See older series
+            - project_integration = site.integrations[project_id]
+            %th
+              %a{:href => project_integration&.url || "/#{project_id}/"}
+                = project.name
+      %tbody
+        - integration.version_ranges.each do |version_range|
+          - displayed = version_range[:displayed]
+          - row_class = has_older_series && !displayed ? 'older-series' : ''
+          %tr{:class => row_class}
+            %td.left.aligned
+              = integration_constraint_version(version_range[:version], false)
+            - integration_projects.each do |project_id|
+              - project = site.projects[project_id]
+              - next if project.nil?
+              - results = version_range[:compatibility][project_id]
+              - if results.nil? || results.empty?
+                %td.disabled
+                  N/A
+              - else
+                %td
+                  - results.each_with_index do |result, index|
+                    - if result[:version].is_a?(Hash)
+                      = "<a href=\"/#{project_id}/releases/#{result[:version][:from]}/\">#{result[:version][:from]}</a>&nbsp;&rarr;&nbsp;<a href=\"/#{project_id}/releases/#{result[:version][:to]}/\">#{result[:version][:to]}</a>#{index < results.length - 1 ? ',' : ''}"
+                    - else
+                      %a{:href => "/#{project_id}/releases/#{result[:version]}/"}>
+                        = result[:version]
+                      - if index < results.length - 1
+                        = ','
+                    - if result[:comment]
+                      :asciidoc
+                        :doctype: inline
+                        (#{result[:comment]})
+      - if has_older_series
+        %tfoot.full-width
+          %tr
+            %th{:colspan => integration_projects.length + 1}
+              %a.ui.right.floated.small.labeled.icon.button{:href => "javascript: void(0)", :id => "older-series-button-#{integration_id}"}
+                %i.icon.snowflake
+                %span See older series
   - if has_older_series
     :javascript
       $(document).ready(function() {
