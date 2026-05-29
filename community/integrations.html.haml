@@ -72,17 +72,21 @@ title: Integrations
               - else
                 %td
                   - results.each_with_index do |result, index|
+                    - separator = index < results.length - 1 ? ',' : ''
                     - if result[:version].is_a?(Hash)
-                      = "<a href=\"/#{project_id}/releases/#{result[:version][:from]}/\">#{result[:version][:from]}</a>&nbsp;&rarr;&nbsp;<a href=\"/#{project_id}/releases/#{result[:version][:to]}/\">#{result[:version][:to]}</a>#{index < results.length - 1 ? ',' : ''}"
+                      %a{:href => "/#{project_id}/releases/#{result[:version][:from]}/"}<>=result[:version][:from]
+                      &nbsp;&rarr;&nbsp;
+                      %a{:href => "/#{project_id}/releases/#{result[:version][:to]}/"}<>=result[:version][:to]
                     - else
-                      %a{:href => "/#{project_id}/releases/#{result[:version]}/"}>
-                        = result[:version]
-                      - if index < results.length - 1
-                        = ','
+                      %a{:href => "/#{project_id}/releases/#{result[:version]}/"}<>=result[:version]
                     - if result[:comment]
+                      = '&#32;' # Force space, despite the `<>` on %a above
                       :asciidoc
                         :doctype: inline
-                        (#{result[:comment]})
+                        &#32;(#{result[:comment]})#{separator}
+                    - else
+                      = separator
+                    = '&#32;' # Force space, despite the `<>` on %a in the next loop iteration
       - if has_older_series
         %tfoot.full-width
           %tr
