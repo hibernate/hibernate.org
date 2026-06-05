@@ -169,16 +169,15 @@ title: Corporate contributors
     These companies contributed in the past,
     though they are no longer active on Hibernate projects.
 
-.ui.stackable.corporate-contributors#alumni
-  .ui.card.fluid.contributor
+.ui.relaxed.divided.items.financial-contributors
+  .item
     .image
       %a(href='https://www.epam.com/')
         %img{:src => "#{relative("/images/contributors/epam.png", page)}"}
     .content
-      .header
-        %a(href='https://www.epam.com/') EPAM Systems, Inc.
+      %a.header(href='https://www.epam.com/') EPAM Systems, Inc.
       .description
         %p EPAM Systems, Inc. provides complex software engineering solutions and technology services with delivery capacity distributed across Central and Eastern Europe. It delivers services to clients located primarily in North America, Western Europe, and Central and Eastern Europe or CEE.
         %p EPAM Systems, Inc. contributed developers time to the Hibernate OGM project.
-    .extra.content
-      = partial( 'project/project-labels.html.haml', {'projects' => [:ogm]} )
+      .extra
+        = partial( 'project/project-labels.html.haml', {'projects' => [:ogm]} )
