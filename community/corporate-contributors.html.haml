@@ -38,6 +38,24 @@ title: Corporate contributors
 .ui.stackable.corporate-contributors#contributors
   .ui.card.fluid.contributor
     .image
+      %a(href='https://cloud.google.com/')
+        %img{:src => "#{relative("/images/contributors/google-cloud-light.png", page)}"}
+    .content
+      .header
+        %a(href='https://cloud.google.com/') Google Cloud
+      .description
+        %p Google contributes to the Hibernate ORM project to ensure best support for Google Spanner in Google Cloud.
+        %p
+          Google Cloud is the new way to the cloud, providing AI, infrastructure, developer, data,
+          security and collaboration tools built for today and tomorrow.
+          Google Cloud offers a powerful, optimized AI stack with its own planet-scale infrastructure,
+          custom-built chips, generative AI models and development platform, as well as agents and applications,
+          to help organizations transform.
+          Customers in more than 200 countries and territories turn to Google Cloud as their trusted technology partner.
+    .extra.content
+      = partial( 'project/project-labels.html.haml', {'projects' => [:orm]} )
+  .ui.card.fluid.contributor
+    .image
       %a(href='https://www.mongodb.com/')
         %img{:src => "#{relative("/images/contributors/mongodb.svg", page)}"}
     .content
@@ -178,6 +196,18 @@ title: Corporate contributors
         %p
           When open source libraries or frameworks reach an end-of-life, and enterprises aren’t able to update,
           HeroDevs provides a drop-in replacement with ongoing security patches, CVE remediation, and compliance coverage.
+  .item
+    .image
+      %a(href='https://cloud.google.com/')
+        %img{:src => "#{relative("/images/contributors/google-cloud-light.png", page)}"}
+    .content
+      %a.header(href='https://cloud.google.com/') Google Cloud
+      .description
+        %p
+          Google is a financial contributor to Hibernate through its
+          %a(href='https://www.commonhaus.org/about/sponsors/') sponsorship to the Commonhaus Foundation.
+        %p
+          Google Cloud accelerates every organizations’ ability to transform with Google’s leading, AI-powered Cloud technology.
 
 %h2{:id => "alumni"} Alumni
 
