@@ -832,8 +832,14 @@ pre .comment .conum {
 		.image {
 			min-height: 145px;
 			align-content: center;
+			text-align: center;
+			padding: 20px;
 			@media only screen and (max-width: 1200px) {
 				min-height: 180px;
+			}
+			img {
+				width: auto;
+				max-width: 100%;
 			}
 		}
 	}
