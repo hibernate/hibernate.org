@@ -74,7 +74,8 @@ title: Corporate contributors
           %a(href='https://www.sap.com/hanacloud') SAP HANA Cloud,
           a cloud-native in-memory database which provides advanced analytics on multi-modal data (e.g. vector, time-series, graph, or geo-spatial data).
     .extra.content
-      = partial( 'project/project-labels.html.haml', {'projects' => [:orm, :search, :ogm]} )
+      = # Previously also OGM (?)
+      = partial( 'project/project-labels.html.haml', {'projects' => [:orm, :search]} )
 
 %p &nbsp;
 
