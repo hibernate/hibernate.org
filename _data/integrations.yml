@@ -81,8 +81,7 @@ quarkus:
     # bottom line: an LTS "usually" stays active for 6 months after the next LTS was released.
     - "3.27" # LTS, stays supported until Mar 25th 2026 + 6 months = Sep 25th 2026
     - "3.33" # LTS, released Mar 25th 2026
-    - "3.36"
-    - "3.37" # Planned in June
+    - "3.37"
 wildfly:
   name: WildFly
   url: https://www.wildfly.org/
