@@ -16,18 +16,32 @@ maven:
       summary: HikariCP connection pooling
     - artifact_id: hibernate-c3p0
       summary: c3p0 connection pooling
+    - artifact_id: hibernate-ucp
+      summary: Oracle UCP connection pooling
     - artifact_id: hibernate-jcache
       summary: JCache second-level caching
     - artifact_id: hibernate-micrometer
       summary: Integration for Micrometer
     - artifact_id: hibernate-jfr
       summary: Integration for Java Flight Recorder
+    - artifact_id: hibernate-graalvm
+      summary: Experimental extension to make it easier to compile applications into a GraalVM native image
     - artifact_id: hibernate-community-dialects
       summary: Community-maintained SQL dialects
     - artifact_id: hibernate-processor
       summary: Hibernate Processor compile-time tooling
     - artifact_id: hibernate-scan-jandex
       summary: Leverages Jandex to support managed-resource scanning (entity discovery, etc) in Hibernate ORM.
+    - artifact_id: hibernate-assistant
+      summary: Tools to integrate Hibernate with LLMs and generative AI functionalities
+    - artifact_id: hibernate-ant
+      summary: Annotation Processor to generate JPA 2 static metamodel classes
+    - artifact_id: hibernate-maven-plugin
+      summary: Maven plugin to integrate aspects of Hibernate into your build
+    - artifact_id: hibernate-platform
+      summary: Platform (BOM) for Hibernate ORM dependencies
+    - artifact_id: hibernate-reveng
+      summary: Library providing functionality to perform reverse engineering Hibernate related artefacts from an existing database
 integration_constraints:
   java:
     version:
