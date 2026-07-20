@@ -38,8 +38,6 @@ module Awestruct
           return input
         end
 
-        output = ''
-
         # Test if it's a CSS file.
         ext = File.extname(page.output_path)
         if !ext.empty?
@@ -50,28 +48,14 @@ module Awestruct
           if ext_txt == "css" and !page.output_path.to_s.end_with?("min.css")
             print "Minifying css #{page.output_path} \n"
             output = CSSminify.compress(input)
+
+            # Write minified version directly to the output directory
+            minOutputPath = File.join(site.config.output_dir, page.output_path.to_s.sub(/\.css$/, '.min.css'))
+            FileUtils.mkdir_p(File.dirname(minOutputPath))
+            File.write(minOutputPath, output)
           else
             return input
           end
-
-        oldFileName = File.basename(page.output_path).to_s
-
-          # Create new file name with suffix added
-          newFileName = oldFileName.slice(0..oldFileName.length-4)+"min.css"
-          newOutputPath = File.join(File.dirname(page.output_path.to_s),newFileName)
-
-          # Create a temporary file with the merged content.
-          tmpOutputPath = File.join( "./_tmp/" , newFileName)
-          tmpOutputFile = File.new(tmpOutputPath,"w")
-          tmpOutputFile.write(output)
-          tmpOutputFile.close
-
-          # Add the temporary file to the list of pages for rendering phase.
-          newPage = site.engine.load_page(tmpOutputPath)
-          newPage.source_path = tmpOutputPath
-          newPage.output_path = newOutputPath
-          site.pages << newPage
-
         end
 
         # We return the input because we leave the original file untouched
