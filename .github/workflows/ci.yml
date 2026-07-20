@@ -18,7 +18,7 @@ jobs:
 
       - name: Build site
         run: |
-          docker run --rm -v "$WORKSPACE_DIR":/home/dev/website:rw quay.io/hibernate/awestruct-build-env:latest bash -c "rake setup && rake clean[all] gen[production]"
+          docker run --pull always --rm -t -u "$(id -u):$(id -g)" -v "$WORKSPACE_DIR":/home/dev/website:rw quay.io/hibernate/awestruct-build-env:latest "rake setup && rake clean[all] gen[production]"
         env:
           WORKSPACE_DIR: ${{ github.workspace }}
 
