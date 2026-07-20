@@ -1,0 +1,19 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright Red Hat Inc. and Hibernate Authors
+name: CI reporting
+
+on:
+  workflow_run:
+    workflows: [ "GH Actions CI" ]
+    types: [ completed ]
+
+permissions: { }
+
+jobs:
+  ci-reporting:
+    uses: hibernate/.github/.github/workflows/ci-reporting.yml@main
+    permissions:
+      actions: read
+      contents: read
+      pull-requests: write
+    secrets: inherit
