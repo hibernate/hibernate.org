@@ -25,10 +25,13 @@
 - if description
   %meta(name="description" content="#{description}")
 
+%link(rel="preconnect" href="https://static.jboss.org")
+%link(rel="preconnect" href="https://in.relation.to")
+%link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
 %link(href="#{site.semantic_ui_css_url}#{site.minified}.css" rel="stylesheet")
 %link(href="#{site.slick_css_url}.css" rel="stylesheet")
 %link(href="#{site.slick_css_url}-theme.css" rel="stylesheet")
-%link(href="/stylesheets/styles.css?t=#{Time.now.to_i}" rel="stylesheet")
+%link(href="/stylesheets/styles#{site.minified}.css?t=#{Time.now.to_i}" rel="stylesheet")
 
 / Defines the project favicon. Change these URLs to your specific project folder on static.jboss.org.
 
