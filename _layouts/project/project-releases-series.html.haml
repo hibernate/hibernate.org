@@ -122,10 +122,11 @@ project_hero_partial: project/hero-series.html.haml
 %h2{:id => "documentation"} Documentation
 %p
   Documentation for #{project_description.name} #{series.version} can be accessed through the links below:
-= partial( 'project/series-documentation.html.haml', { "project" => project_description, "series" => series, "anchors" => true } )
+.documentation-versions
+  = partial( 'project/series-documentation.html.haml', { "project" => project_description, "series" => series, "anchors" => true } )
 
 %p
-  You can find more documentation for all series on the
+  You can find documentation for all series on the
   %a{:href => '../../documentation'}
     documentation page.
 

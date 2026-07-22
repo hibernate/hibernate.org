@@ -9,6 +9,12 @@ links:
     html: https://github.com/hibernate/hibernate-orm/blob/5.2/migration-guide.adoc
   whats_new:
     html: "/orm/releases/{series.version}/#whats-new"
+  reference:
+    - name: Integrations Guide
+      html: https://docs.hibernate.org/orm/{series.version}/integrationguide/html_single/Hibernate_Integration_Guide.html
+  api:
+    - name: "JPA 2.1 Javadoc"
+      html: https://docs.hibernate.org/jpa/2.1/api/
 maven:
   coord:
     group_id: org.hibernate
@@ -43,4 +49,3 @@ integration_constraints:
     version: '7'  # Derived from JPA 2.1 → Java EE 7
   spring_boot:
     version: '2.0'
-

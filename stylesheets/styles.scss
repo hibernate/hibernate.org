@@ -460,13 +460,20 @@ code, kbd, samp {
 	padding-top: 10px !important;
 	margin-bottom: 10px !important;
 
-	.series {
-		font-size: 2em;
-		font-weight: bold;
-		line-height: 1em;
+	.series-info {
+		h3.header, p:last-child {
+			margin: 0 !important;
+		}
 	}
-	.button {
-		margin-top: 4px;
+
+	.categories {
+		padding: 5px;
+		.buttons {
+			margin-bottom: 4px;
+		}
+		.row {
+			padding: 0;
+		}
 	}
 }
 

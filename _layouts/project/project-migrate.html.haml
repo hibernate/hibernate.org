@@ -8,6 +8,19 @@ layout: project-standard
 - project_description = site.projects[page.project]
 - stable_series = project_description.latest_stable_series
 
+- more_resources_url = project_description['more_resources_url']
+- if more_resources_url
+  .ui.icon.message
+    %i.icon.bookmark
+    .content
+      .header
+        More resources
+      %p
+        Looking for books, third-party guides, or other resources?
+        Check out the
+        %a{:href => more_resources_url} more resources page
+        \.
+
 %h2 Migration Guides per Series
 
 %p
@@ -16,30 +29,11 @@ layout: project-standard
   to a more recent version.
   These guides are not automatically generated, but structured to give you the high level overview.
 
-.ui.grid.documentation-versions
+.documentation-versions
   - project_description.release_series.values.each do |series|
-    - release = series.releases[0]
-    - migration_guide = migration_guide(project_description, series)
-    - if not migration_guide.nil?
-      .ui.row
-        .three.wide.column
-          %span.ui.label.series= series.version
-        .thirteen.wide.column
-          %p
-            %span.ui.label.large
-              %strong= release.version
-              %span.detail= release.date
-            = partial( 'project/series-status-label.html.haml', { "series" => series, "classes" => "tag" } )
-            %p
-              %span.ui.label.basic.horizontal
-                Migration guide
-              - if not migration_guide.html_url.nil?
-                %a.ui.right.labeled.icon.button.small(href="#{migration_guide.html_url}")
-                  %i.icon.file.text.outline
-                  HTML
-              - if not migration_guide.pdf_url.nil?
-                %a.ui.right.labeled.icon.button.small(href="#{migration_guide.pdf_url}")
-                  %i.icon.file.pdf.outline
-                  PDF
+    - categories = doc_categories(project_description, series)
+    - migration = categories['migration']
+    - if migration && !migration.empty?
+      = partial( 'project/series-documentation-list-item.html.haml', { "project" => project_description, "series" => series, "categories_filter" => ["migration"] } )
 
 ~ content

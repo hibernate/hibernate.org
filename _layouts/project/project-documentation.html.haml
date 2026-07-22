@@ -12,28 +12,26 @@ project_buttons_partial: project/documentation-buttons.html.haml
 
 -# Documentation table built from the metadata
 
+- more_resources_url = project_description['more_resources_url']
+- if more_resources_url
+  .ui.icon.message
+    %i.icon.bookmark
+    .content
+      .header
+        More resources
+      %p
+        Looking for books, third-party guides, or other resources?
+        Check out the
+        %a{:href => more_resources_url} more resources page
+        \.
+
 %h2 Documentation by series
 
 - active_series = project_description.active_release_series
 - if not active_series.nil?
-  .ui.grid.documentation-versions
+  .documentation-versions
     - active_series.each do |series|
-      - release = series.releases[0]
-      .ui.row
-        .three.wide.column
-          %span.ui.label.series= series.version
-        .thirteen.wide.column
-          %p
-            %span.ui.label.large
-              %strong= release.version
-              %span.detail= release.date
-            = partial( 'project/series-status-label.html.haml', { "series" => series, "classes" => "tag" } )
-          - if series.summary && !series.summary.strip.empty?
-            %p
-              :asciidoc
-                :doctype: inline
-                #{series.summary.strip}
-          = partial( 'project/series-documentation.html.haml', { "project" => project_description, "series" => series } )
+      = partial( 'project/series-documentation-list-item.html.haml', { "project" => project_description, "series" => series } )
 - else
   %p There is no reference documentation configured for this project.
 
@@ -55,22 +53,8 @@ project_buttons_partial: project/documentation-buttons.html.haml
       });
     });
 
-  #older-series
-    .ui.grid.documentation-versions
-      - older_series.each do |series|
-        - release = series.releases[0]
-        .ui.row
-          .three.wide.column
-            %span.ui.label.series= series.version
-          .thirteen.wide.column
-            %p
-              %span.ui.label.large
-                %strong= release.version
-                %span.detail= release.date
-              = partial( 'project/series-status-label.html.haml', { "series" => series, "classes" => "tag" } )
-            - if series.summary && !series.summary.strip.empty?
-              %p
-                = series.summary
-            = partial( 'project/series-documentation.html.haml', { "project" => project_description, "series" => series } )
+  #older-series.documentation-versions
+    - older_series.each do |series|
+      = partial( 'project/series-documentation-list-item.html.haml', { "project" => project_description, "series" => series } )
 
 ~ content
