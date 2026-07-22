@@ -36,6 +36,10 @@ module Awestruct
         return series&.[](:links)&.[](:whats_new)
       end
 
+      def doc_categories(project, series)
+        return series&.[](:links)&.[](:categories) || {}
+      end
+
       def maven(project, series, release)
         return release&.[](:links)&.[](:maven)
       end

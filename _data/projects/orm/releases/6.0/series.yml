@@ -5,6 +5,14 @@ license:
 links:
   whats_new:
     html: "/orm/releases/{series.version}/#whats-new"
+  reference:
+    - name: Integrations Guide
+      html: https://docs.hibernate.org/orm/{series.version}/integrationguide/html_single/Hibernate_Integration_Guide.html
+  api:
+    - name: "Jakarta Persistence 3.1 Javadoc"
+      html: https://jakarta.ee/specifications/persistence/3.1/apidocs/
+    - name: "Jakarta Persistence 3.0 Javadoc"
+      html: https://jakarta.ee/specifications/persistence/3.0/apidocs/
 maven:
   repo:
     snapshots: jboss
@@ -37,4 +45,3 @@ integration_constraints:
     version:
       - '10'
       - '9'
-

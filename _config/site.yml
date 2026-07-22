@@ -72,10 +72,12 @@ projects:
     icon: 'icon-database'
     description: |
       Idiomatic persistence for Java and relational databases.
+    more_resources_url: '/orm/more-resources/'
     links:
       doc:
         html: /orm/documentation/{series.version}/
       reference_doc:
+        name: User Guide
         html: https://docs.hibernate.org/orm/{series.version}/userguide/html_single/
         latest_stable:
           html: https://docs.hibernate.org/stable/orm/userguide/html_single/
@@ -125,17 +127,16 @@ projects:
           releases_submenu: true
         - name: Documentation
           href: '/orm/documentation/'
-          css_class: 'folder open'
-          documentation_submenu: true
+          css_class: 'book'
         - name: Quickly
           href: '/orm/quickly/'
           css_class: 'rocket'
         - name: Migration guides
           href: '/orm/documentation/migrate/'
           css_class: 'share'
-        - name: Books
-          href: '/orm/books/'
-          css_class: 'book'
+        - name: More resources
+          href: '/orm/more-resources/'
+          css_class: 'bookmark'
         - name: Processor
           href: '/orm/processor/'
           css_class: 'cogs'
@@ -177,6 +178,7 @@ projects:
     description: |
       Automatic indexing of Hibernate ORM entities into Apache Lucene or Elasticsearch.
       Advanced search API: full-text, geospatial, aggregations and more.
+    more_resources_url: '/search/more-resources/'
     links:
       reference_doc:
         html: https://docs.hibernate.org/search/{series.version}/reference/en-US/html_single/
@@ -335,8 +337,7 @@ projects:
           releases_submenu: true
         - name: Documentation
           href: '/repositories/documentation/'
-          css_class: 'folder open'
-          documentation_submenu: true
+          css_class: 'book'
         - name: Quickly
           href: '/repositories/quickly/'
           css_class: 'rocket'
@@ -380,7 +381,6 @@ projects:
         - name: Documentation
           href: '/tools/documentation/'
           css_class: 'folder open'
-          documentation_submenu: false
         - name: Contribute
           href: '/community/contribute/'
           css_class: 'users'
@@ -409,6 +409,7 @@ projects:
     icon: 'icon-checkmark box'
     description: |
       Express validation rules in a standardized way using annotation-based constraints and benefit from transparent integration with a wide variety of frameworks.
+    more_resources_url: '/validator/more-resources/'
     links:
       reference_doc:
         html: https://docs.hibernate.org/validator/{series.version}/reference/en-US/html_single/
@@ -477,6 +478,9 @@ projects:
         - name: Paid support
           href: '/support/long-term/'
           css_class: 'doctor'
+        - name: More resources
+          href: '/validator/more-resources/'
+          css_class: 'bookmark'
         - name: FAQ
           href: '/validator/faq/'
           css_class: 'circle help'
@@ -596,6 +600,7 @@ projects:
     description: |
       Add a reactive API to Hibernate ORM, supporting non-blocking database drivers and a reactive style of interaction with the database.
     icon: 'icon-flask'
+    more_resources_url: '/reactive/more-resources/'
     links:
       reference_doc:
         html: https://docs.hibernate.org/reactive/{series.version}/reference/html_single/
@@ -640,6 +645,9 @@ projects:
         - name: Documentation
           href: '/reactive/documentation/'
           css_class: 'book'
+        - name: More resources
+          href: '/reactive/more-resources/'
+          css_class: 'bookmark'
 #        - name: Roadmap
 #          href: '/reactive/roadmap/'
 #          css_class: 'road'

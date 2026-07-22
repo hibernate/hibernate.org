@@ -1,0 +1,44 @@
+= More resources
+:awestruct-layout: project-standard
+:awestruct-project: orm
+
+Third-party documentation, books, and other resources about Hibernate ORM.
+
+If you want to add something to the list, link:/community/[contact us]!
+
+== Official documentation
+
+If you're looking for the official getting started guide or reference documentation,
+see link:/orm/documentation[here] instead.
+
+== Other official resources
+
+link:https://github.com/hibernate/hibernate-orm/wiki/_pages[GitHub-hosted wiki]::
+Wiki hosted at GitHub
+link:/orm/tooling/[Tooling]::
+Tools to help with Hibernate development.
+link:/orm/envers/[Envers]::
+Auditing and versioning of entities.
+link:/orm/faq/[FAQ]::
+Frequently asked questions.
+
+== Books
+
+https://www.manning.com/books/java-persistence-with-hibernate-second-edition[Java Persistence with Hibernate, Second Edition]::
+Java Persistence with Hibernate, Second Edition explores Hibernate by developing an application
+that ties together hundreds of individual examples.
+Authors Christian Bauer, Gavin King, and Gary Gregory cover Hibernate 5
+with the Java Persistence 2.1 standard (JSR 338).
+
+https://www.amazon.com/High-Performance-Java-Persistence-Vlad-Mihalcea/dp/973022823X/[High-Performance Java Persistence]::
+A journey into Java data access performance tuning.
+From connection management, to batch updates, fetch sizes and concurrency control mechanisms,
+it unravels the inner workings of the most common Java data access frameworks.
+
+http://shop.oreilly.com/product/9780596517724.do[Harnessing Hibernate]::
+An ideal introduction to the popular framework that lets Java developers work with information
+from a relational database easily and efficiently.
+
+http://www.hibernate-tips.com/?utm_source=Hibernate&utm_medium=books[Hibernate Tips]::
+More than 70 solutions to common Hibernate problems.
+Each Hibernate Tip consists of one or more code samples and an easy to follow step-by-step explanation.

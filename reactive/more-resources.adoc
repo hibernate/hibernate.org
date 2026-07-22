@@ -1,0 +1,27 @@
+= More resources
+:awestruct-layout: project-standard
+:awestruct-project: reactive
+
+Third-party documentation and other resources about Hibernate Reactive.
+
+If you want to add something to the list, link:/community/[contact us]!
+
+== Official documentation
+
+If you're looking for the official getting started guide or reference documentation,
+see link:/reactive/documentation[here] instead.
+
+== Getting started with reactive programming
+
+https://smallrye.io/smallrye-mutiny/latest/[Mutiny website]::
+Lots of guidance about how to use reactive streams.
+If you don't have prior experience with programming reactive streams, this is a good starting point.
+
+== Third-party guides
+
+https://quarkus.io/guides/hibernate-reactive[Using Hibernate Reactive (in Quarkus)]::
+Covers how to get started with Hibernate Reactive in Quarkus.
+
+https://guides.micronaut.io/latest/micronaut-hibernate-reactive-gradle-java.html[Access a database with JPA and Hibernate Reactive (in Micronaut)]::
+Shows how to use Hibernate Reactive in Micronaut.
+https://guides.micronaut.io/latest/micronaut-data-hibernate-reactive-gradle-java.html[More documentation here.]

@@ -1,4 +1,5 @@
 require 'logger'
+require 'set'
 
 module Awestruct
   module Extensions
@@ -18,6 +19,7 @@ module Awestruct
               end
               links[:jira_issues] = IssueTrackerRef.for_series(project, series)
               links[:github_issues] = IssueTrackerRef.github_fallback(project, series)
+              links[:categories] = DocumentRef.build_categories(project, series, links)
               series[:releases]&.each do |release|
                 links = release['links'] || Hash.new
                 release['links'] = links
@@ -166,6 +168,7 @@ module Awestruct
             return nil
           end
           name = link['name']
+          description = link['description']
           @@logger.debug("#{log_prefix}Link name: #{name}")
           latest_stable = link['latest_stable']
           if latest_stable and series.latest_stable
@@ -181,21 +184,74 @@ module Awestruct
           if html_url.nil? and pdf_url.nil?
             return nil
           end
-          return DocumentRef.new(name, html_url, pdf_url)
+          return DocumentRef.new(name, html_url, pdf_url, description)
         end
 
-        attr_reader :name, :html_url, :pdf_url
+        INDIVIDUAL_LINK_KEYS = Set.new(%w[
+          doc reference_doc javadoc getting_started_guide migration_guide
+          short_guide whats_new dist jira_issues github_issues
+        ]).freeze
+
+        AUTO_GEN_DEFAULTS = {
+          'getting_started_guide' => { category: 'introduction', name: 'Getting Started',
+              description: 'A quickstart-style tutorial' },
+          'short_guide' => { category: 'introduction', name: 'Short Guide',
+              description: 'A readable and opinionated introduction' },
+          'whats_new' => { category: 'migration', name: "What's New",
+              description: 'Highlights of new features and enhancements' },
+          'migration_guide' => { category: 'migration', name: 'Migration Guide',
+              description: 'Guide for migrating from the previous version' },
+          'reference_doc' => { category: 'reference', name: 'Reference Guide',
+              description: 'Detailed reference documentation' },
+          'javadoc' => { category: 'api', name: 'Javadoc',
+              description: 'API documentation' },
+        }.freeze
+
+        def self.build_categories(project, series, resolved_links)
+          categories = Hash.new { |h, k| h[k] = [] }
+
+          AUTO_GEN_DEFAULTS.each do |link_key, mapping|
+            refs = resolved_links[link_key]
+            next if refs.nil?
+            refs_array = refs.kind_of?(Array) ? refs : [refs]
+            refs_array.each do |ref|
+              next if ref.nil?
+              if ref.name
+                name = refs_array.length > 1 ? "#{mapping[:name]} (#{ref.name})" : ref.name
+              else
+                name = mapping[:name]
+              end
+              description = ref.description || mapping[:description]
+              categories[mapping[:category]] << DocumentRef.new(name, ref.html_url, ref.pdf_url, description)
+            end
+          end
+
+          series_links_raw = series&.[]('links') || {}
+          series_links_raw.each do |key, value|
+            next if INDIVIDUAL_LINK_KEYS.include?(key)
+            next unless value.kind_of?(Array)
+            value.each do |entry|
+              ref = from_patterns_single(project, series, key, entry)
+              categories[key] << ref unless ref.nil?
+            end
+          end
+
+          return categories
+        end
+
+        attr_reader :name, :html_url, :pdf_url, :description
 
         def to_json(*args)
-          {:name => @name, :html_url => @html_url, :pdf_url => @pdf_url}
+          {:name => @name, :html_url => @html_url, :pdf_url => @pdf_url, :description => @description}
               .compact
               .to_json(*args)
         end
 
-        def initialize(name, html_url, pdf_url)
+        def initialize(name, html_url, pdf_url, description = nil)
           @name = name
           @html_url = html_url
           @pdf_url = pdf_url
+          @description = description
         end
       end
 

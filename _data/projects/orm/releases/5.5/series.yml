@@ -37,6 +37,14 @@ links:
     html: https://github.com/hibernate/hibernate-orm/blob/5.5/migration-guide.adoc
   whats_new:
     html: "/orm/releases/{series.version}/#whats-new"
+  reference:
+    - name: Integrations Guide
+      html: https://docs.hibernate.org/orm/{series.version}/integrationguide/html_single/Hibernate_Integration_Guide.html
+  api:
+    - name: "JPA 2.2 Javadoc"
+      html: https://jakarta.ee/specifications/persistence/2.2/apidocs/
+    - name: "JPA 3.0 Javadoc"
+      html: https://jakarta.ee/specifications/persistence/3.0/apidocs/
 integration_constraints:
   java:
     version:
@@ -65,4 +73,3 @@ integration_constraints:
     version:
       from: '2.0'
       to: '2.2'
-

@@ -43,10 +43,43 @@ integration_constraints:
 subprojects:
   repositories:
     summary: Compatibility with Hibernate ORM 8.0
+    links:
+      reference:
+        - name: "Jakarta Data"
+          html: https://jakarta.ee/specifications/data/1.0/jakarta-data-1.0
+          pdf: https://jakarta.ee/specifications/data/1.0/jakarta-data-1.0.pdf
+          description: "The Jakarta Data Specification (version 1.0)"
     maven:
       artifacts:
         - artifact_id: hibernate-processor
           summary: Annotation processor
         - artifact_id: hibernate-core
           summary: Runtime support
-
+links:
+  reference:
+    - name: Integrations Guide
+      html: https://docs.hibernate.org/orm/{series.version}/integrationguide/html_single/Hibernate_Integration_Guide.html
+    - name: Query Language Guide
+      html: https://docs.hibernate.org/orm/{series.version}/querylanguage/html_single/Hibernate_Query_Language.html
+    - name: Data Repositories Guide
+      html: https://docs.hibernate.org/orm/{series.version}/repositories/html_single/Hibernate_Data_Repositories.html
+    - name: "Jakarta Persistence"
+      html: https://jakarta.ee/specifications/persistence/4.0/
+      description: "The Jakarta Persistence Specification Page (version 4.0)"
+  api:
+    - name: "Jakarta Persistence Javadoc"
+      html: https://jakarta.ee/specifications/persistence/4.0/apidocs
+      description: "The Jakarta Persistence API documentation (version 4.0)"
+  reports:
+    - name: "Incubating report"
+      html: https://docs.hibernate.org/orm/{series.version}/incubating/incubating.txt
+      description: "Report of code that is considered incubating, and therefore subject to change."
+    - name: "Deprecation report"
+      html: https://docs.hibernate.org/orm/{series.version}/deprecated/deprecated.txt
+      description: "Report of code that is considered deprecated.  Defined as the union of `@Deprecated` and `@Remove`"
+    - name: "Internals report"
+      html: https://docs.hibernate.org/orm/{series.version}/internals/internal.txt
+      description: "Report of code that is considered internal and not supported for use by code other than Hibernate itself."
+    - name: "Dialect report"
+      html: https://docs.hibernate.org/orm/{series.version}/dialect/dialect.html
+      description: "Report of supported databases and versions"

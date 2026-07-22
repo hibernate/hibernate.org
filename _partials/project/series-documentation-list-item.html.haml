@@ -1,0 +1,21 @@
+- series = page.series
+- release = series.releases[0]
+
+.ui.raised.segments.version
+  .ui.segment.series-info
+    .ui.grid
+      .three.wide.column
+        %h3.ui.header= series.version
+      .thirteen.wide.column
+        %p
+          %span.ui.basic.label.faded
+            %strong= release.version
+            %span.detail= release.date
+          = partial( 'project/series-status-label.html.haml', { "series" => series, "classes" => "tag" } )
+        - if series.summary && !series.summary.strip.empty?
+          %p
+            :asciidoc
+              :doctype: inline
+              #{series.summary.strip}
+  .ui.segment
+    = partial( 'project/series-documentation.html.haml', { "project" => page.project, "series" => page.series, "categories_filter" => page.categories_filter } )

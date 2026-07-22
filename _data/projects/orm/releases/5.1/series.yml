@@ -9,6 +9,9 @@ links:
     html: https://github.com/hibernate/hibernate-orm/blob/5.1/migration-guide.adoc
   whats_new:
     html: "/orm/releases/{series.version}/#whats-new"
+  api:
+    - name: "JPA 2.1 Javadoc"
+      html: https://docs.hibernate.org/jpa/2.1/api/
 maven:
   coord:
     group_id: org.hibernate
@@ -54,4 +57,3 @@ integration_constraints:
     version:
       - '12'
       - '13'
-

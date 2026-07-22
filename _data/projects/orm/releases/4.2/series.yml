@@ -13,6 +13,14 @@ links:
     html:
   whats_new:
     html: "/orm/releases/{series.version}/#whats-new"
+  reference:
+    - name: "Manual"
+      html: https://docs.hibernate.org/orm/{series.version}/manual/en-US/html_single/
+    - name: "Developer Guide"
+      html: https://docs.hibernate.org/orm/{series.version}/devguide/en-US/html_single/
+  api:
+    - name: "JPA 2.1 Javadoc"
+      html: https://docs.hibernate.org/jpa/2.1/api/
 maven:
   coord:
     group_id: org.hibernate
