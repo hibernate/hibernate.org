@@ -2,22 +2,13 @@ license:
   name: LGPL v2.1
   url: https://raw.githubusercontent.com/hibernate/hibernate-orm/5.0/lgpl.txt
 links:
-  getting_started_guide:
-    html: https://docs.hibernate.org/orm/{series.version}/quickstart/en-US/html_single/
   dist:
     sourceforge:
       zip: https://sourceforge.net/projects/hibernate/files/hibernate-orm/{release.version}/hibernate-release-{release.version}.zip/download
-  migration_guide:
-    html: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc
   whats_new:
     html: "/orm/releases/{series.version}/#whats-new"
   doc:
     html: /orm/documentation/{series.version}/
-  javadoc:
-    html: https://docs.hibernate.org/orm/{series.version}/javadocs/
-  short_guide:
-    html: https://docs.hibernate.org/orm/{series.version}/introduction/html_single/
-    pdf: https://docs.hibernate.org/orm/{series.version}/introduction/pdf/Hibernate_Introduction.pdf
   reference_doc:
     html: https://docs.hibernate.org/orm/{series.version}/userguide/html_single/
     name: User Guide
@@ -27,8 +18,23 @@ links:
     - name: "Integrations Guide"
       html: https://docs.hibernate.org/orm/{series.version}/integrationsGuide/en-US/html_single/
   api:
+    - name: Javadoc
+      description: API documentation
+      html: https://docs.hibernate.org/orm/{series.version}/javadocs/
     - name: "JPA 2.1 Javadoc"
       html: https://docs.hibernate.org/jpa/2.1/api/
+  introduction:
+    - name: Getting Started
+      description: A quickstart-style tutorial
+      html: https://docs.hibernate.org/orm/{series.version}/quickstart/en-US/html_single/
+    - name: Short Guide
+      description: A readable and opinionated introduction
+      html: https://docs.hibernate.org/orm/{series.version}/introduction/html_single/
+      pdf: https://docs.hibernate.org/orm/{series.version}/introduction/pdf/Hibernate_Introduction.pdf
+  migration:
+    - name: Migration Guide
+      description: Guide for migrating from the previous version
+      html: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc
 maven:
   coord:
     group_id: org.hibernate

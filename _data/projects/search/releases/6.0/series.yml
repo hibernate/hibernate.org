@@ -10,19 +10,25 @@ links:
   reference_doc:
     html: https://docs.hibernate.org/search/{series.version}/reference/en-US/html_single/
     pdf: https://docs.hibernate.org/search/{series.version}/reference/en-US/pdf/hibernate_search_reference.pdf
-  javadoc:
-    html: https://docs.hibernate.org/search/{series.version}/api/
-  getting_started_guide:
-    html: https://docs.hibernate.org/search/{series.version}/reference/en-US/html_single/#getting-started
-    pdf: https://docs.hibernate.org/search/{series.version}/reference/en-US/pdf/hibernate_search_reference.pdf#getting-started
-  migration_guide:
-    html: https://docs.hibernate.org/search/{series.version}/migration/html_single/
-    pdf: https://docs.hibernate.org/search/{series.version}/migration/pdf/hibernate_search_migration.pdf
   whats_new:
     html: "/search/releases/{series.version}/#whats-new"
   dist:
     sourceforge:
       zip: https://sourceforge.net/projects/hibernate/files/hibernate-search/{release.version}/hibernate-search-{release.version}-dist.zip/download
+  introduction:
+    - name: Getting Started
+      description: A quickstart-style tutorial
+      html: https://docs.hibernate.org/search/{series.version}/reference/en-US/html_single/#getting-started
+      pdf: https://docs.hibernate.org/search/{series.version}/reference/en-US/pdf/hibernate_search_reference.pdf#getting-started
+  api:
+    - name: Javadoc
+      description: API documentation
+      html: https://docs.hibernate.org/search/{series.version}/api/
+  migration:
+    - name: Migration Guide
+      description: Guide for migrating from the previous version
+      html: https://docs.hibernate.org/search/{series.version}/migration/html_single/
+      pdf: https://docs.hibernate.org/search/{series.version}/migration/pdf/hibernate_search_migration.pdf
 maven:
   artifacts:
     - artifact_id: hibernate-search-mapper-orm

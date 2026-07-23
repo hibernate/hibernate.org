@@ -16,22 +16,6 @@ module Awestruct
         return series&.[](:links)&.[](:reference_doc)
       end
 
-      def javadoc(project, series)
-        return series&.[](:links)&.[](:javadoc)
-      end
-
-      def getting_started_guides(project, series)
-        return series&.[](:links)&.[](:getting_started_guide)
-      end
-
-      def migration_guide(project, series)
-        return series&.[](:links)&.[](:migration_guide)
-      end
-
-      def short_guide(project, series)
-        return series&.[](:links)&.[](:short_guide)
-      end
-
       def whats_new(project, series)
         return series&.[](:links)&.[](:whats_new)
       end

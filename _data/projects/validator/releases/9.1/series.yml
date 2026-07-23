@@ -8,17 +8,23 @@ links:
   reference_doc:
     html: https://docs.hibernate.org/validator/{series.version}/reference/en-US/html_single/
     pdf: https://docs.hibernate.org/validator/{series.version}/reference/en-US/pdf/hibernate_validator_reference.pdf
-  javadoc:
-    html: https://docs.hibernate.org/validator/{series.version}/api/
-  getting_started_guide:
-    html: https://docs.hibernate.org/validator/{series.version}/reference/en-US/html_single/#validator-gettingstarted
-    pdf: https://docs.hibernate.org/validator/{series.version}/reference/en-US/pdf/hibernate_validator_reference.pdf#validator-gettingstarted
-  migration_guide:
-    html: https://docs.hibernate.org/validator/{series.version}/migration/en-US/html_single
-    pdf: https://docs.hibernate.org/validator/{series.version}/migration/en-US/pdf/hibernate_validator_migration_guide.pdf
   whats_new:
     html: https://docs.hibernate.org/validator/{series.version}/whats-new/en-US/html_single
     pdf: https://docs.hibernate.org/validator/{series.version}/whats-new/en-US/pdf/hibernate_validator_whats_new.pdf
+  introduction:
+    - name: Getting Started
+      description: A quickstart-style tutorial
+      html: https://docs.hibernate.org/validator/{series.version}/reference/en-US/html_single/#validator-gettingstarted
+      pdf: https://docs.hibernate.org/validator/{series.version}/reference/en-US/pdf/hibernate_validator_reference.pdf#validator-gettingstarted
+  api:
+    - name: Javadoc
+      description: API documentation
+      html: https://docs.hibernate.org/validator/{series.version}/api/
+  migration:
+    - name: Migration Guide
+      description: Guide for migrating from the previous version
+      html: https://docs.hibernate.org/validator/{series.version}/migration/en-US/html_single
+      pdf: https://docs.hibernate.org/validator/{series.version}/migration/en-US/pdf/hibernate_validator_migration_guide.pdf
 maven:
   artifacts:
     - artifact_id: hibernate-validator-bom

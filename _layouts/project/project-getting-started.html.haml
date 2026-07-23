@@ -18,8 +18,8 @@ layout: project-standard
 .ui.grid.documentation-versions
   - project_description.release_series.values.each do |series|
     - release = series.releases[0]
-    - getting_started_guides = getting_started_guides(project_description, series)
-    - if not getting_started_guides.empty?
+    - introduction = doc_categories(project_description, series)['introduction'] || []
+    - if not introduction.empty?
       .ui.row
         .three.wide.column
           %span.ui.label.series= series.version
@@ -29,18 +29,16 @@ layout: project-standard
               %strong= release.version
               %span.detail= release.date
             = partial( 'project/series-status-label.html.haml', { "series" => series, "classes" => "tag" } )
-            - getting_started_guides.each do |getting_started_guide|
+            - introduction.each do |guide|
               %p
                 %span.ui.label.basic.horizontal
-                  Getting started guide
-                  - if getting_started_guide.name
-                    = "(#{getting_started_guide.name})"
-                - if not getting_started_guide.html_url.nil?
-                  %a.ui.right.labeled.icon.button.small(href="#{getting_started_guide.html_url}")
+                  = guide.name
+                - if not guide.html_url.nil?
+                  %a.ui.right.labeled.icon.button.small(href="#{guide.html_url}")
                     %i.icon.file.text.outline
                     HTML
-                - if not getting_started_guide.pdf_url.nil?
-                  %a.ui.right.labeled.icon.button.small(href="#{getting_started_guide.pdf_url}")
+                - if not guide.pdf_url.nil?
+                  %a.ui.right.labeled.icon.button.small(href="#{guide.pdf_url}")
                     %i.icon.file.pdf.outline
                     PDF
 

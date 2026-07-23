@@ -2,12 +2,16 @@ summary: Release compatible with Hibernate ORM 7
 links:
   reference_doc:
     html: https://docs.hibernate.org/reactive/{series.version}/reference/html_single/
-  javadoc:
-    html: https://docs.hibernate.org/reactive/{series.version}/javadocs/
-  getting_started_guide:
-    html: https://docs.hibernate.org/reactive/{series.version}/reference/html_single/#getting-started
   whats_new:
     html: /reactive/releases/{series.version}/#whats-new
+  introduction:
+    - name: Getting Started
+      description: A quickstart-style tutorial
+      html: https://docs.hibernate.org/reactive/{series.version}/reference/html_single/#getting-started
+  api:
+    - name: Javadoc
+      description: API documentation
+      html: https://docs.hibernate.org/reactive/{series.version}/javadocs/
 maven:
   artifacts:
     - artifact_id: hibernate-reactive-core

@@ -7,13 +7,13 @@ project: reactive
 - project = site.projects[page.project] 
 -# Latest series available unless a stable release exists
 - series = project.latest_stable_series.nil? ? project.latest_series : project.latest_stable_series
-- getting_started_guides = getting_started_guides(project, series)
+- introduction = doc_categories(project, series)['introduction'] || []
 
 -# Center body
 .feature-block
   :asciidoc
     :version: #{series.version}
-    :getting_started_guide_link: #{getting_started_guides.first.html_url}
+    :getting_started_guide_link: #{introduction.first&.html_url}
     :introduction: https://hibernate.org/reactive/documentation/#{version}/reference/html_single/
 
     == Reactive Object/Relational Mapping
