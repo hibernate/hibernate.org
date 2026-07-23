@@ -33,8 +33,9 @@ project_buttons_partial: project/releases-buttons.html.haml
           %div.description
             %h3.ui.header
               = series.version
-              %small
-                = release.date
+              %span.ui.basic.label.faded
+                %strong= release.version
+                %span.detail= release.date
             - if series.summary && !series.summary.strip.empty?
               %p
                 :asciidoc
@@ -76,8 +77,9 @@ project_buttons_partial: project/releases-buttons.html.haml
             %div.description
               %h3.ui.header
                 = series.version
-                %small
-                  = release.date
+                .ui.basic.label.faded
+                  %strong= release.version
+                  %span.detail= release.date
               - if series.summary && !series.summary.strip.empty?
                 %p
                   :asciidoc
