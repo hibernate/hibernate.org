@@ -11,6 +11,16 @@ links:
     html: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc
   whats_new:
     html: "/orm/releases/{series.version}/#whats-new"
+  doc:
+    html: /orm/documentation/{series.version}/
+  javadoc:
+    html: https://docs.hibernate.org/orm/{series.version}/javadocs/
+  short_guide:
+    html: https://docs.hibernate.org/orm/{series.version}/introduction/html_single/
+    pdf: https://docs.hibernate.org/orm/{series.version}/introduction/pdf/Hibernate_Introduction.pdf
+  reference_doc:
+    html: https://docs.hibernate.org/orm/{series.version}/userguide/html_single/
+    name: User Guide
   reference:
     - name: "Domain Model Mapping Guide"
       html: https://docs.hibernate.org/orm/{series.version}/mappingGuide/en-US/html_single/

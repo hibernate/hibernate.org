@@ -1,5 +1,13 @@
 summary: Performances and memory footprint improvements
 links:
+  reference_doc:
+    html: https://docs.hibernate.org/validator/{series.version}/reference/en-US/html_single/
+    pdf: https://docs.hibernate.org/validator/{series.version}/reference/en-US/pdf/hibernate_validator_reference.pdf
+  javadoc:
+    html: https://docs.hibernate.org/validator/{series.version}/api/
+  getting_started_guide:
+    html: https://docs.hibernate.org/validator/{series.version}/reference/en-US/html_single/#validator-gettingstarted
+    pdf: https://docs.hibernate.org/validator/{series.version}/reference/en-US/pdf/hibernate_validator_reference.pdf#validator-gettingstarted
   whats_new:
     html: "/validator/releases/{series.version}/#whats-new"
   migration_guide:

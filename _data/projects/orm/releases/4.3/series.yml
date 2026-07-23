@@ -14,6 +14,17 @@ links:
     html:
   whats_new:
     html: "/orm/releases/{series.version}/#whats-new"
+  getting_started_guide:
+    html: https://docs.hibernate.org/orm/{series.version}/quickstart/en-US/html_single/
+  reference_doc:
+    html: https://docs.hibernate.org/orm/{series.version}/manual/en-US/html_single/
+  doc:
+    html: /orm/documentation/{series.version}/
+  javadoc:
+    html: https://docs.hibernate.org/orm/{series.version}/javadocs/
+  short_guide:
+    html: https://docs.hibernate.org/orm/{series.version}/introduction/html_single/
+    pdf: https://docs.hibernate.org/orm/{series.version}/introduction/pdf/Hibernate_Introduction.pdf
   reference:
     - name: "Manual"
       html: https://docs.hibernate.org/orm/{series.version}/manual/en-US/html_single/

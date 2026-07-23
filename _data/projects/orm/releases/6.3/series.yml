@@ -5,6 +5,20 @@ license:
 links:
   whats_new:
     html: "/orm/releases/{series.version}/#whats-new"
+  doc:
+    html: /orm/documentation/{series.version}/
+  reference_doc:
+    html: https://docs.hibernate.org/orm/{series.version}/userguide/html_single/
+    name: User Guide
+  javadoc:
+    html: https://docs.hibernate.org/orm/{series.version}/javadocs/
+  getting_started_guide:
+    html: https://docs.hibernate.org/orm/{series.version}/quickstart/html_single/
+  short_guide:
+    html: https://docs.hibernate.org/orm/{series.version}/introduction/html_single/
+    pdf: https://docs.hibernate.org/orm/{series.version}/introduction/pdf/Hibernate_Introduction.pdf
+  migration_guide:
+    html: https://docs.hibernate.org/orm/{series.version}/migration-guide/
   reference:
     - name: Integrations Guide
       html: https://docs.hibernate.org/orm/{series.version}/integrationguide/html_single/Hibernate_Integration_Guide.html

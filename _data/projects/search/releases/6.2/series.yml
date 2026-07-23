@@ -8,6 +8,21 @@ license:
   name: LGPL v2.1
   url: https://raw.githubusercontent.com/hibernate/hibernate-search/6.2/lgpl.txt
 links:
+  reference_doc:
+    html: https://docs.hibernate.org/search/{series.version}/reference/en-US/html_single/
+    pdf: https://docs.hibernate.org/search/{series.version}/reference/en-US/pdf/hibernate_search_reference.pdf
+  javadoc:
+    html: https://docs.hibernate.org/search/{series.version}/api/
+  getting_started_guide:
+    - name: ORM
+      html: https://docs.hibernate.org/search/{series.version}/getting-started/orm/en-US/html_single/
+      pdf: https://docs.hibernate.org/search/{series.version}/getting-started/orm/en-US/pdf/hibernate_search_getting_started_orm.pdf
+    - name: Standalone
+      html: https://docs.hibernate.org/search/{series.version}/getting-started/standalone/en-US/html_single/
+      pdf: https://docs.hibernate.org/search/{series.version}/getting-started/standalone/en-US/pdf/hibernate_search_getting_started_standalone.pdf
+  migration_guide:
+    html: https://docs.hibernate.org/search/{series.version}/migration/html_single/
+    pdf: https://docs.hibernate.org/search/{series.version}/migration/pdf/hibernate_search_migration.pdf
   whats_new:
     html: "/search/releases/{series.version}/#whats-new"
 maven:
