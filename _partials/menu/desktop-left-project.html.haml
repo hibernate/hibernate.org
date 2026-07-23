@@ -4,7 +4,7 @@
 - displayed_series = project_description.active_release_series
 - stable_series = project_description.latest_stable_series
 
-.ui.fluid.vertical.menu
+.ui.fluid.secondary.vertical.menu
   - # The active menu item is the menu item with the longest prefix of the current path.
   - active_menu_item = project_description.menu.intern.select {|element| current_path.start_with?(element.href)}.max {|a, b| a.href.size <=> b.href.size }
   - project_description.menu.intern.each do |menu|
@@ -28,7 +28,7 @@
       %a.item{:href => menu.href, :class => "#{(active ? "selected" : "")}"}
         %i.grid.icon{:class => "#{menu.css_class}"}
         #{menu.name}
-.ui.fluid.vertical.menu
+.ui.fluid.secondary.vertical.menu
   - project_description.menu.extern.each do |menu|
     %a.item{:href => "#{menu.href}", :class => "#{(active ? "selected" : "")}"}
       %i.grid.icon{:class => "#{menu.css_class}"}
