@@ -1,6 +1,6 @@
 - current_path = page['real_page'].output_path.sub(/index\.html$/, "").sub(/\.html$/,"/")
 
-.ui.fluid.vertical.menu
+.ui.fluid.secondary.vertical.menu
   - href = "/support/"
   - active = (href == current_path)
   %a.item{:href => href, :class => "#{(active ? "active" : "")}"}
