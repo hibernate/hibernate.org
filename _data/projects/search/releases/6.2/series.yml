@@ -11,20 +11,26 @@ links:
   reference_doc:
     html: https://docs.hibernate.org/search/{series.version}/reference/en-US/html_single/
     pdf: https://docs.hibernate.org/search/{series.version}/reference/en-US/pdf/hibernate_search_reference.pdf
-  javadoc:
-    html: https://docs.hibernate.org/search/{series.version}/api/
-  getting_started_guide:
-    - name: ORM
-      html: https://docs.hibernate.org/search/{series.version}/getting-started/orm/en-US/html_single/
-      pdf: https://docs.hibernate.org/search/{series.version}/getting-started/orm/en-US/pdf/hibernate_search_getting_started_orm.pdf
-    - name: Standalone
-      html: https://docs.hibernate.org/search/{series.version}/getting-started/standalone/en-US/html_single/
-      pdf: https://docs.hibernate.org/search/{series.version}/getting-started/standalone/en-US/pdf/hibernate_search_getting_started_standalone.pdf
-  migration_guide:
-    html: https://docs.hibernate.org/search/{series.version}/migration/html_single/
-    pdf: https://docs.hibernate.org/search/{series.version}/migration/pdf/hibernate_search_migration.pdf
   whats_new:
     html: "/search/releases/{series.version}/#whats-new"
+  introduction:
+    - name: Getting Started (ORM)
+      description: A quickstart-style tutorial
+      html: https://docs.hibernate.org/search/{series.version}/getting-started/orm/en-US/html_single/
+      pdf: https://docs.hibernate.org/search/{series.version}/getting-started/orm/en-US/pdf/hibernate_search_getting_started_orm.pdf
+    - name: Getting Started (Standalone)
+      description: A quickstart-style tutorial
+      html: https://docs.hibernate.org/search/{series.version}/getting-started/standalone/en-US/html_single/
+      pdf: https://docs.hibernate.org/search/{series.version}/getting-started/standalone/en-US/pdf/hibernate_search_getting_started_standalone.pdf
+  api:
+    - name: Javadoc
+      description: API documentation
+      html: https://docs.hibernate.org/search/{series.version}/api/
+  migration:
+    - name: Migration Guide
+      description: Guide for migrating from the previous version
+      html: https://docs.hibernate.org/search/{series.version}/migration/html_single/
+      pdf: https://docs.hibernate.org/search/{series.version}/migration/pdf/hibernate_search_migration.pdf
 maven:
   artifacts:
     - artifact_id: hibernate-search-mapper-orm-orm6

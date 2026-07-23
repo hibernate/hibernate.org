@@ -11,11 +11,8 @@ module Awestruct
             project[:release_series]&.each_value do |series|
               links = series['links'] || Hash.new
               series['links'] = links
-              ['doc', 'reference_doc', 'javadoc', 'migration_guide', 'short_guide', 'whats_new'].each do |key|
+              ['doc', 'reference_doc', 'whats_new'].each do |key|
                 links[key] = DocumentRef.from_patterns(project, series, key)
-              end
-              ['getting_started_guide'].each do |key|
-                links[key] = DocumentRef.from_patterns_multi(project, series, key)
               end
               links[:jira_issues] = IssueTrackerRef.for_series(project, series)
               links[:github_issues] = IssueTrackerRef.github_fallback(project, series)
@@ -186,23 +183,14 @@ module Awestruct
         end
 
         INDIVIDUAL_LINK_KEYS = Set.new(%w[
-          doc reference_doc javadoc getting_started_guide migration_guide
-          short_guide whats_new dist jira_issues github_issues
+          doc reference_doc whats_new dist jira_issues github_issues
         ]).freeze
 
         AUTO_GEN_DEFAULTS = {
-          'getting_started_guide' => { category: 'introduction', name: 'Getting Started',
-              description: 'A quickstart-style tutorial' },
-          'short_guide' => { category: 'introduction', name: 'Short Guide',
-              description: 'A readable and opinionated introduction' },
           'whats_new' => { category: 'migration', name: "What's New",
               description: 'Highlights of new features and enhancements' },
-          'migration_guide' => { category: 'migration', name: 'Migration Guide',
-              description: 'Guide for migrating from the previous version' },
           'reference_doc' => { category: 'reference', name: 'Reference Guide',
               description: 'Detailed reference documentation' },
-          'javadoc' => { category: 'api', name: 'Javadoc',
-              description: 'API documentation' },
         }.freeze
 
         def self.build_categories(project, series, resolved_links)
