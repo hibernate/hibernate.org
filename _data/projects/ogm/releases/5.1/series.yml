@@ -18,8 +18,21 @@ maven:
     - artifact_id: hibernate-ogm-redis
       summary: Redis integration
 links:
+  reference_doc:
+    html: https://docs.hibernate.org/ogm/{series.version}/reference/en-US/html_single/
+    pdf: https://docs.hibernate.org/ogm/{series.version}/reference/en-US/pdf/hibernate_ogm_reference.pdf
+  javadoc:
+    html: https://docs.hibernate.org/ogm/{series.version}/api/
+  getting_started_guide:
+    html: https://docs.hibernate.org/ogm/{series.version}/reference/en-US/html_single/#ogm-gettingstarted
+    pdf: https://docs.hibernate.org/ogm/{series.version}/reference/en-US/pdf/hibernate_ogm_reference.pdf#ogm-gettingstarted
   migration_guide:
     html: https://developer.jboss.org/docs/DOC-52281
+  whats_new:
+    html: /ogm/releases/{series.version}/#whats-new
+  dist:
+    sourceforge:
+      zip: https://sourceforge.net/projects/hibernate/files/hibernate-ogm/{release.version}/hibernate-ogm-{release.version}-dist.zip/download
 integration_constraints:
   java:
     version:

@@ -132,14 +132,12 @@ module Awestruct
         def self.from_patterns(project, series, link_key)
           log_prefix = "#{project['name']}/#{series.version}/#{link_key}: "
           link_root = series&.[]('links')&.[](link_key)
-          link_root ||= project&.[]('links')&.[](link_key)
           return from_patterns_single(project, series, link_key, link_root)
         end
 
         def self.from_patterns_multi(project, series, link_key)
           log_prefix = "#{project['name']}/#{series.version}/#{link_key}: "
           link_root = series&.[]('links')&.[](link_key)
-          link_root ||= project&.[]('links')&.[](link_key)
           links = []
           if link_root.kind_of?(Array)
             link_root.each do |link|
@@ -263,7 +261,6 @@ module Awestruct
           log_prefix = "#{project['name']}/#{series.version}/#{release&.version}/#{link_key}: "
           link = release&.[]('links')&.[]('dist')&.[](link_key)
           link ||= series&.[]('links')&.[]('dist')&.[](link_key)
-          link ||= project&.[]('links')&.[]('dist')&.[](link_key)
           if link.nil?
             @@logger.debug("#{log_prefix}Link is nil")
             return nil

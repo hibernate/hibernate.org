@@ -44,6 +44,14 @@ subprojects:
   repositories:
     summary: Compatibility with Hibernate ORM 8.0
     links:
+      doc:
+        html: /repositories/documentation/{series.version}/
+      reference_doc:
+        html: https://docs.hibernate.org/orm/{series.version}/repositories/html_single/
+      javadoc:
+        html: https://jakarta.ee/specifications/data/1.0/apidocs/
+      getting_started_guide:
+        html: https://docs.hibernate.org/orm/{series.version}/repositories/html_single/#configuration-integration
       reference:
         - name: "Jakarta Data"
           html: https://jakarta.ee/specifications/data/1.0/jakarta-data-1.0
@@ -56,6 +64,22 @@ subprojects:
         - artifact_id: hibernate-core
           summary: Runtime support
 links:
+  doc:
+    html: /orm/documentation/{series.version}/
+  reference_doc:
+    html: https://docs.hibernate.org/orm/{series.version}/userguide/html_single/
+    name: User Guide
+  javadoc:
+    html: https://docs.hibernate.org/orm/{series.version}/javadocs/
+  getting_started_guide:
+    html: https://docs.hibernate.org/orm/{series.version}/quickstart/html_single/
+  short_guide:
+    html: https://docs.hibernate.org/orm/{series.version}/introduction/html_single/
+    pdf: https://docs.hibernate.org/orm/{series.version}/introduction/pdf/Hibernate_Introduction.pdf
+  whats_new:
+    html: https://docs.hibernate.org/orm/{series.version}/whats-new/
+  migration_guide:
+    html: https://docs.hibernate.org/orm/{series.version}/migration-guide/
   reference:
     - name: Integrations Guide
       html: https://docs.hibernate.org/orm/{series.version}/integrationguide/html_single/Hibernate_Integration_Guide.html
