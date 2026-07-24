@@ -8,24 +8,19 @@ layout: base
 .ui.container-fluid
   .jumbotron.small
     .ui.container
-      .ui.grid.stackable
-        .column.row
-          .column.twelve.wide
-            %h1
-              %span
-                %i.icon.users
-                Community
-            %h2
-              %span= page.title
-          .column.four.wide
-            .jumbotron-button
-              %a.ui.small.labeled.icon.button{:href => "#{site.github.organization_url}"}
-                %i.github.icon
-                Our GitHub organization
-            .jumbotron-button
-              %a.ui.small.labeled.icon.button{:href => "#{site.jira.base_url}"}
-                %i.bug.icon
-                Our issue tracker
+      %h1
+        %span
+          %i.icon.users
+          Community
+        %span.jumbotron-buttons
+          %a.ui.small.labeled.icon.button{:href => "#{site.github.organization_url}"}
+            %i.github.icon
+            Our GitHub organization
+          %a.ui.small.labeled.icon.button{:href => "#{site.jira.base_url}"}
+            %i.bug.icon
+            Our issue tracker
+      %h2
+        %span= page.title
 
 .ui.container.page-content
   .ui.stackable.grid

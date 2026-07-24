@@ -1,19 +1,18 @@
 - real_page = page["real_page"]
+- row = page["row"] || 1
 - project_description = site.projects[real_page.project]
 - stable_series = latest_stable_series(real_page)
 - series = latest_series(real_page)
 - introduction = stable_series.nil? ? [] : (doc_categories(project_description, stable_series)['introduction'] || [])
 
-- if not introduction.empty?
+- if row == 1 && !introduction.empty?
   - introduction.each do |guide|
-    .jumbotron-button
-      %a.ui.small.right.labeled.icon.button{:href => "#{guide&.html_url}"}
-        %i.right.arrow.icon
-        = guide.name
-- unless stable_series.nil?
-  .jumbotron-button
-    - reference_doc = reference_doc(project_description, stable_series)
-    %a.ui.small.right.labeled.icon.button.green{:href => "#{reference_doc.html_url}"}
+    %a.ui.small.right.labeled.icon.button{:href => "#{guide&.html_url}"}
       %i.right.arrow.icon
-      Get documentation for #{stable_series.version}
+      = guide.name
+- if row == 2 && !stable_series.nil?
+  - reference_doc = reference_doc(project_description, stable_series)
+  %a.ui.small.right.labeled.icon.button.green{:href => "#{reference_doc.html_url}"}
+    %i.right.arrow.icon
+    Get documentation for #{stable_series.version}
 

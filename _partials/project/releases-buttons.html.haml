@@ -1,17 +1,16 @@
 - real_page = page["real_page"]
+- row = page["row"] || 1
 - stable_series = latest_stable_series(real_page)
 - series = latest_series(real_page)
 - dev_series = next_dev_series(real_page)
 
-- if not (stable_series.nil? && dev_series.nil?)
+- if row == 1 && !(stable_series.nil? && dev_series.nil?)
   - unless stable_series.nil?
-    .jumbotron-button
-      %a.ui.small.right.labeled.icon.button.green{:href => "./#{stable_series.version}/"}
-        %i.right.arrow.icon
-        Latest stable (#{stable_series.version})
+    %a.ui.small.right.labeled.icon.button.green{:href => "./#{stable_series.version}/"}
+      %i.right.arrow.icon
+      Latest stable (#{stable_series.version})
   - unless (dev_series.nil? || !dev_series.displayed)
-    .jumbotron-button
-      %a.ui.small.right.labeled.icon.button.orange{:href => "./#{dev_series.version}/"}
-        %i.right.arrow.icon
-        Development (#{dev_series.version})
+    %a.ui.small.right.labeled.icon.button.orange{:href => "./#{dev_series.version}/"}
+      %i.right.arrow.icon
+      Development (#{dev_series.version})
 
