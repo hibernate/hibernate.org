@@ -490,6 +490,11 @@ code, kbd, samp {
 		.row {
 			padding: 0;
 		}
+		@media only screen and (max-width: 767px) {
+			.right.aligned.column {
+				text-align: left !important;
+			}
+		}
 	}
 }
 
