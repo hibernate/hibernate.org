@@ -1,9 +1,9 @@
 summary: >-
-  @Temporal,
-  @Audited,
+  `@Temporal`,
+  `@Audited`,
   Limits & fetch joins,
-  hbm.xml transformation,
-  CacheMode.REFRESH_SESSION
+  `hbm.xml` transformation,
+  `CacheMode.REFRESH_SESSION`
 maven:
   artifacts:
     - artifact_id: hibernate-core

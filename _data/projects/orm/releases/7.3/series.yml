@@ -1,8 +1,8 @@
 summary: >-
-  @NaturalIdClass,
+  `@NaturalIdClass`,
   tenant-specific credentials,
   entities and embeddables with no default constructor,
-  check constraints on List order columns
+  check constraints on `List` order columns
 maven:
   artifacts:
     - artifact_id: hibernate-core
