@@ -1,7 +1,8 @@
 - real_page = page["real_page"]
+- row = page["row"] || 1
 - project_description = site.projects[real_page.project]
 - displayed_series = project_description.release_series.values.select { |series| !doc(project_description, series).nil? }
-.jumbotron-button
+- if row == 1
   .ui.segment.raised#documentation-version-selector-container
     %form.ui.form
       .field

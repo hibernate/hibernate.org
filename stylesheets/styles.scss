@@ -3,18 +3,33 @@
  */
 
 .banner {
-	.logo.hibernate {
-		margin-top: 12px;
-		float: left;
-		img {
-			height: 44px;
-			width: auto;
-		}
-	}
-
 	.ui.menu {
-		margin-top: 0px;
-		margin-bottom: 20px;
+		border: 0;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+
+		.header.logo.hibernate {
+			padding: 7px 10px 1px;
+			flex-shrink: 0;
+			img {
+				height: 32px;
+				width: auto;
+			}
+		}
+
+		.item.social-icon {
+			padding-left: 8px;
+			padding-right: 8px;
+			svg {
+				display: block;
+			}
+		}
+
+		@media only screen and (max-width: 1200px) {
+			.item {
+				padding: 4px 8px;
+			}
+		}
 	}
 
 	.dropup {
@@ -32,12 +47,13 @@
 	padding: 45px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 
-	h1 {
+	h1, h2 {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
 		color: white;
-		font-size: 4rem;
-		letter-spacing: 2px;
 
-		> span {
+		> span:first-child {
 			background-color: #7d8a90;
 			padding: 3px;
 			padding-left: 10px;
@@ -45,16 +61,19 @@
 		}
 	}
 
+	h1 {
+		font-size: 4rem;
+		letter-spacing: 2px;
+	}
+
 	h2 {
 		font-size: 2rem;
-		color: white;
+	}
 
-		> span {
-			background-color: #7d8a90;
-			padding: 3px;
-			padding-left: 10px;
-			padding-right: 10px;
-		}
+	.jumbotron-buttons {
+		margin-left: auto;
+		font-size: 1rem;
+		letter-spacing: normal;
 	}
 
 	&.small {
@@ -69,9 +88,6 @@
 		}
 	}
 
-	.jumbotron-button:not(:first-child) {
-		margin-top: 5px;
-	}
 
 	#project-news {
 		margin-top: -1em;
@@ -1104,6 +1120,12 @@ pre .comment .conum {
 		.internal-links {
 			border-bottom: 1px solid #444;
 		}
+	}
+
+	svg.social-icon {
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 6px;
 	}
 }
 

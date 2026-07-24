@@ -1,24 +1,22 @@
 - real_page = page["real_page"]
+- row = page["row"] || 1
 - project_description = site.projects[real_page.project]
 - stable_series = latest_stable_series(real_page)
 - series = latest_series(real_page)
 - dev_series = next_dev_series(real_page)
 - introduction = project_description.nil? || stable_series.nil? ? [] : (doc_categories(project_description, stable_series)['introduction'] || [])
 
-- if not introduction.empty?
+- if row == 1 && !introduction.empty?
   - introduction.each do |guide|
-    .jumbotron-button
-      %a.ui.small.right.labeled.icon.button{:href => "#{guide&.html_url}"}
-        %i.right.arrow.icon
-        = guide.name
-- if not (stable_series.nil? && dev_series.nil?)
+    %a.ui.small.right.labeled.icon.button{:href => "#{guide&.html_url}"}
+      %i.right.arrow.icon
+      = guide.name
+- if row == 2 && !(stable_series.nil? && dev_series.nil?)
   - unless stable_series.nil?
-    .jumbotron-button
-      %a.ui.small.right.labeled.icon.button.green{:href => "./releases/#{stable_series.version}/"}
-        %i.right.arrow.icon
-        Latest stable (#{stable_series.version})
+    %a.ui.small.right.labeled.icon.button.green{:href => "./releases/#{stable_series.version}/"}
+      %i.right.arrow.icon
+      Stable (#{stable_series.version})
   - unless (dev_series.nil? || !dev_series.displayed)
-    .jumbotron-button
-      %a.ui.small.right.labeled.icon.button.orange{:href => "./releases/#{dev_series.version}/"}
-        %i.right.arrow.icon
-        Development (#{dev_series.version})
+    %a.ui.small.right.labeled.icon.button.orange{:href => "./releases/#{dev_series.version}/"}
+      %i.right.arrow.icon
+      Development (#{dev_series.version})
