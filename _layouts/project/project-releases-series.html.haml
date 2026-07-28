@@ -164,14 +164,14 @@ project_hero_partial: project/hero-series.html.haml
           - if latest_release_maven.artifacts
             %p
               Below are the Maven coordinates of the main artifacts.
-            %div.ui.relaxed.divided.list
+            %div.ui.divided.large.list
               - latest_release_maven.artifacts.each do |artifact|
                 - group_id = latest_release_maven.coord['group_id']
                 - artifact_id = artifact.artifact_id
                 - version = latest_release.version
                 %div.item
                   %div.right.floated.content
-                    %a.ui.button.tiny.icon{:href => releases_repo.web_ui_artifact_url(group_id, artifact_id, latest_release.version)}
+                    %a.ui.button.icon{:href => releases_repo.web_ui_artifact_url(group_id, artifact_id, latest_release.version)}
                       %i.icon.cloud.cube
                   %div.header
                     <span class="faded">#{group_id}:</span>#{artifact_id}</strong><span class="faded">:#{version}</span>

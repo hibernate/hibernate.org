@@ -24,7 +24,7 @@
         %span.ui.sub.header.faded= category_labels[cat_key]
       .ui.thirteen.wide.column
         - entries.each do |entry|
-          %span.ui.basic.buttons.mini{:data => entry.description ? {:html => entry.description, :position => "top center"} : Hash.new}
+          %span.ui.basic.buttons.compact{:data => entry.description ? {:html => entry.description, :position => "top center"} : Hash.new}
             %a.ui.active.button{:href => entry.html_url ? entry.html_url : entry.pdf_url}
               = entry.name
             - if entry.html_url
