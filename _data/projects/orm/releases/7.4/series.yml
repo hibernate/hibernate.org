@@ -49,6 +49,8 @@ integration_constraints:
     version: '3.37'
   wildfly:
     version: '41'
+  spring_boot:
+    version: '4.1'
 subprojects:
   repositories:
     summary: Compatibility with Hibernate ORM 7.4
