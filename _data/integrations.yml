@@ -91,7 +91,6 @@ wildfly:
     # For release dates, see https://www.wildfly.org/events/
     # For included versions, see https://github.com/wildfly/wildfly/blob/main/pom.xml
     # For included versions in preview (EE 11), see https://github.com/wildfly/wildfly/blob/main/boms/preview-ee/pom.xml
-    - "40"
     - "41" # Planned
 rheap:
   name: Red Hat EAP
