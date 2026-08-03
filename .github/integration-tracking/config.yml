@@ -1,0 +1,50 @@
+# Configuration for automated integration version tracking.
+#
+# This file defines which downstream integrations to monitor for new releases
+# and which Hibernate dependencies to resolve from each integration's BOM.
+#
+# The check-updates.sh script uses this configuration to:
+# 1. Detect new minor/major series of each integration
+# 2. Resolve which Hibernate versions the new series includes
+# 3. Update a pinned GitHub issue with actionable info
+integrations:
+  quarkus:
+    display_name: Quarkus
+    bom_group_id: io.quarkus
+    bom_artifact_id: quarkus-bom
+    # How many leading version components form a "series"
+    # e.g., 3.38.0 with series_components=2 -> series "3.38"
+    series_components: 2
+    resolve:
+      - artifact: "org.hibernate.orm:hibernate-core"
+        project: orm
+      - artifact: "org.hibernate.validator:hibernate-validator"
+        project: validator
+      - artifact: "org.hibernate.search:hibernate-search-mapper-pojo-standalone"
+        project: search
+      - artifact: "org.hibernate.reactive:hibernate-reactive-core"
+        project: reactive
+
+  wildfly:
+    display_name: WildFly
+    bom_group_id: org.wildfly.bom
+    bom_artifact_id: wildfly-ee
+    series_components: 1
+    resolve:
+      - artifact: "org.hibernate.orm:hibernate-core"
+        project: orm
+      - artifact: "org.hibernate.validator:hibernate-validator"
+        project: validator
+      - artifact: "org.hibernate.search:hibernate-search-backend-elasticsearch"
+        project: search
+
+  spring_boot:
+    display_name: Spring Boot
+    bom_group_id: org.springframework.boot
+    bom_artifact_id: spring-boot-dependencies
+    series_components: 2
+    resolve:
+      - artifact: "org.hibernate.orm:hibernate-core"
+        project: orm
+      - artifact: "org.hibernate.validator:hibernate-validator"
+        project: validator
