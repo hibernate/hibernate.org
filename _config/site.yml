@@ -557,6 +557,70 @@ projects:
           href: 'https://github.com/hibernate/hibernate-reactive/actions'
           css_class: 'treatment'
 
+  ##################################################################################################
+  # NoSQL
+  ##################################################################################################
+  nosql:
+    name: Hibernate NoSQL
+    description: "The power and simplicity of JPA for NoSQL datastores. Including support for associations, sub-classes, queries and much more."
+    icon: 'icon-sitemap'
+    maven:
+      coord:
+        group_id: org.hibernate.nosql
+        main_artifact_id: hibernate-nosql-core
+      repo:
+        releases: central
+        snapshots: central_snapshots
+    javadoc_path: api
+    blog_tag: Hibernate NoSQL
+    blog_tag_url: hibernate-nosql
+    license:
+      name: ASL v2
+      url: https://raw.githubusercontent.com/hibernate/hibernate-nosql/main/LICENSE
+    copyright:
+      url: https://raw.githubusercontent.com/hibernate/hibernate-nosql/main/AUTHORS.txt
+    jira:
+      key: HNSQL
+    github:
+      project: hibernate-nosql
+    menu:
+      intern:
+        - name: About
+          href: '/nosql/'
+          css_class: 'home'
+        - name: Releases
+          href: '/nosql/releases/'
+          css_class: 'tags'
+          releases_submenu: true
+        - name: Documentation
+          href: '/nosql/documentation/'
+          css_class: 'book'
+#        - name: Roadmap
+#          href: '/nosql/roadmap/'
+#          css_class: 'road'
+        - name: Contribute
+          href: '/community/contribute/'
+          css_class: 'users'
+#        - name: Paid support
+#          href: '/support/long-term/'
+#          css_class: 'doctor'
+      extern:
+        - name: Source code
+          href: 'https://github.com/hibernate/hibernate-nosql'
+          css_class: 'code'
+        - name: Issue tracker
+          href: 'https://hibernate.atlassian.net/browse/HNSQL'
+          css_class: 'bug'
+        - name: Security issue
+          href: 'https://github.com/hibernate/.github/security/policy'
+          css_class: 'lock'
+        - name: Forum
+          href: 'https://discourse.hibernate.org/c/hibernate-nosql'
+          css_class: 'comments'
+        - name: CI
+          href: 'https://github.com/hibernate/hibernate-nosql/actions'
+          css_class: 'treatment'
+
  #other projects would come here
 
 ####################################################################################################
