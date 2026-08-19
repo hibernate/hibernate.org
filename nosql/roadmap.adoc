@@ -1,0 +1,20 @@
+= Roadmap
+Christian Beikov
+:awestruct-layout: project-roadmap
+:awestruct-project: nosql
+:toc:
+:toc-placement: preamble
+:toc-title: Releases
+
+Hibernate NoSQL is community driven.
+As such the roadmap constantly evolves to reflect the users needs.
+Dates are generally omitted, we release when we are ready.
+
+== Hibernate NoSQL 1.0
+
+The initial release adds:
+
+* A basic implementation of the Jakarta NoSQL 1.0 specification
+* Connector and Dialect for Milvus to do basic querying and vector search
+* Dialect for Neo4j, using the official Neo4j JDBC driver
+

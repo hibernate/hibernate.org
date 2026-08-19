@@ -1,0 +1,55 @@
+summary: Initial release using Hibernate ORM 7.4
+links:
+  reference_doc:
+    html: https://docs.hibernate.org/nosql/{series.version}/userguide/html_single/
+    name: User Guide
+  whats_new:
+    html: https://docs.hibernate.org/nosql/{series.version}/whats-new/
+  introduction:
+    - name: Getting Started
+      description: A quickstart-style tutorial
+      html: https://docs.hibernate.org/nosql/{series.version}/reference/html_single/#getting-started
+  reference:
+    - name: Short Guide to Hibernate ORM
+      description: A readable and opinionated introduction
+      html: https://docs.hibernate.org/orm/7.4/introduction/html_single/
+      pdf: https://docs.hibernate.org/orm/7.4/introduction/pdf/Hibernate_Introduction.pdf
+    - name: Query Language Guide
+      html: https://docs.hibernate.org/orm/7.4/querylanguage/html_single/Hibernate_Query_Language.html
+    - name: Data Repositories Guide
+      html: https://docs.hibernate.org/orm/7.4/repositories/html_single/Hibernate_Data_Repositories.html
+    - name: "Jakarta Persistence"
+      html: https://jakarta.ee/specifications/persistence/3.2/jakarta-persistence-spec-3.2
+      pdf: https://jakarta.ee/specifications/persistence/3.2/jakarta-persistence-spec-3.2.pdf
+      description: "The Jakarta Persistence Specification (version 3.2)"
+  api:
+    - name: Javadoc
+      description: API documentation
+      html: https://docs.hibernate.org/nosql/{series.version}/javadocs/
+  reports:
+    - name: "Incubating report"
+      html: https://docs.hibernate.org/nosql/{series.version}/incubating/incubating.txt
+      description: "Report of code that is considered incubating, and therefore subject to change."
+    - name: "Deprecation report"
+      html: https://docs.hibernate.org/nosql/{series.version}/deprecated/deprecated.txt
+      description: "Report of code that is considered deprecated.  Defined as the union of `@Deprecated` and `@Remove`"
+    - name: "Internals report"
+      html: https://docs.hibernate.org/nosql/{series.version}/internals/internal.txt
+      description: "Report of code that is considered internal and not supported for use by code other than Hibernate itself."
+    - name: "Dialect report"
+      html: https://docs.hibernate.org/nosql/{series.version}/dialect/dialect.html
+      description: "Report of supported databases and versions"
+  migration:
+    - name: Migration Guide
+      description: Guide for migrating from the previous version
+      html: https://docs.hibernate.org/nosql/{series.version}/migration-guide/
+maven:
+  artifacts:
+    - artifact_id: hibernate-nosql-core
+      summary: Hibernate NoSQL Core implementation
+integration_constraints:
+  java:
+    version:
+      - '17'
+  orm:
+    version: '7.4'

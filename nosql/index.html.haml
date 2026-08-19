@@ -1,0 +1,42 @@
+---
+layout: project-about
+title: Connectors and dialects for NoSQL databases on Hibernate ORM.
+project: nosql
+---
+
+- project = site.projects[page.project] 
+-# Latest series available unless a stable release exists
+- series = project.latest_stable_series.nil? ? project.latest_series : project.latest_stable_series
+- introduction = doc_categories(project, series)['introduction'] || []
+
+-# Center body
+.feature-block
+  :asciidoc
+    :version: #{series.version}
+    :getting_started_guide_link: #{introduction.first&.html_url}
+    :introduction: https://hibernate.org/nosql/documentation/#{version}/reference/html_single/
+
+    == Hibernate NoSQL
+
+    Hibernate NoSQL extends Hibernate ORM by providing connectors and dialects for NoSQL databases.
+
+    It can significantly reduce development time otherwise spent with manual data handling in the various proprietary
+    query languages and specialized drivers. Hibernate NoSQL’s design goal, similar to Hibernate ORM’s, is to relieve
+    the developer from 95% of common data persistence-related programming tasks by eliminating the need for manual,
+    hand-crafted data processing. However, unlike many other persistence solutions, Hibernate NoSQL does not hide the
+    power of the native query language and driver from you.
+
+    == Compatible with popular NoSQL databases
+
+    Hibernate NoSQL works with the following databases:
+
+    - https://www.mongodb.com/[MongoDB] via https://github.com/mongodb/mongo-hibernate/[mongodb-hibernate],
+    - https://milvus.io/[Milvus] and
+    - https://neo4j.com/[Neo4j].
+
+    == Build on top of Hibernate ORM
+
+    If you already know Hibernate ORM, most of what you know applies just as well to Hibernate NoSQL.
+    And if you have existing entities and O/R mappings, they'll mostly just work without any changes.
+
+    It's completely possible to use Hibernate NoSQL and Hibernate ORM side-by-side in the same program.
