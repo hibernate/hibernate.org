@@ -62,3 +62,5 @@ integration_constraints:
     version: '2.0'
   java_ee:
     version: '6'  # Derived from JPA 2.0 → Java EE 6
+  rheap:
+    version: '6.4'
