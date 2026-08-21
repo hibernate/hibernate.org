@@ -655,29 +655,16 @@ code, kbd, samp {
 		background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
 	}
 
-	.fa.icon-note {
-		font-family: outline-icons;
+	@mixin admonition-icon($codepoint, $font: 'Icons') {
+		font-family: $font;
+		&::before { content: $codepoint; }
 	}
-
-	.fa.icon-note::before {
-		content: "\f249";
-	}
-
-	.fa.icon-tip::before {
-		content: "";
-	}
-
-	.fa.icon-warning::before {
-		content: "";
-	}
-
-	.fa.icon-caution::before {
-		content: "";
-	}
-
-	.fa.icon-important::before {
-		content: "";
-	}
+	// Semantic UI 2.5 icon codepoints for Asciidoc admonition blocks
+	.fa.icon-note      { @include admonition-icon("\f249", 'outline-icons'); } // sticky note outline
+	.fa.icon-tip       { @include admonition-icon("\f0eb", 'outline-icons'); } // lightbulb outline
+	.fa.icon-warning   { @include admonition-icon("\f071"); }                  // exclamation triangle
+	.fa.icon-caution   { @include admonition-icon("\f06d"); }                  // fire
+	.fa.icon-important { @include admonition-icon("\f071"); }                  // exclamation circle
 }
 
 .quoteblock {
