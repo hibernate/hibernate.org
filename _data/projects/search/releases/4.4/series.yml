@@ -40,5 +40,7 @@ integration_constraints:
       - '8'
   orm:
     version: '4.2'
+  rheap:
+    version: '6.4'
   lucene:
     version: '3.6'
