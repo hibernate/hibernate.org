@@ -22,11 +22,12 @@ java:
   inactive_series:
     # Only EOL'd Java versions mentioned in still-supported project series need to be here.
     # They are generally the more recent non-LTS versions (except *the* most recent one, of course).
-    - "20"
-    - "21"
-    - "22"
-    - "23"
-    - "24"
+    # Do NOT add LTS versions (17, 21, 25, ...): they have years of support.
+    # For EOL dates, see https://endoflife.date/oracle-jdk
+    - "20" # non-LTS, EOL Sep 2023
+    - "22" # non-LTS, EOL Sep 2024
+    - "23" # non-LTS, EOL Mar 2025
+    - "24" # non-LTS, EOL Sep 2025
 orm:
   name: Hibernate ORM
   url: /orm/
@@ -91,23 +92,25 @@ wildfly:
     # For release dates, see https://www.wildfly.org/events/
     # For included versions, see https://github.com/wildfly/wildfly/blob/main/pom.xml
     # For included versions in preview (EE 11), see https://github.com/wildfly/wildfly/blob/main/boms/preview-ee/pom.xml
-    - "41" # Planned
+    - "41" # Released Jul 16th 2026
 rheap:
   name: Red Hat EAP
   url: https://www.redhat.com/en/technologies/jboss-middleware/application-platform
   downstream: true
   hibernate_involvement: true
   active_series:
-    - "8.1"
+    # For lifecycle dates, see https://endoflife.date/red-hat-jboss-eap
+    - "8.1" # Full Support until Feb 2028
   els_series:
-    - "6.4"
-    - "7.4"
+    - "6.4" # ELS-2 (guidance only, no fixes) until Dec 2028
+    - "7.4" # ELS-1 until Oct 2027
 spring_boot:
   name: Spring Boot
   url: https://spring.io/projects/spring-boot
   downstream: true
   inactive_series:
     # Maintained on a best-effort basis.
+    # For lifecycle dates, see https://endoflife.date/spring-boot
     - "1.5"
     - "2.0"
     - "2.2"
