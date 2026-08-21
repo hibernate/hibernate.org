@@ -59,6 +59,7 @@ podman run --rm -t --userns=keep-id -u $UID:$GID \
 - The workspace directory must be mounted to `/home/dev/website`
 - Use `--rm` to clean up the container after execution
 - The `Z` flag on the volume mount handles SELinux contexts
+- If rootless podman fails with `newuidmap: write to uid_map failed: Operation not permitted`, fall back to `sudo podman --storage-driver=vfs` (drop the `--userns=keep-id -u $UID:$GID` flags). Run `sudo podman system reset --force` once first to switch storage drivers.
 
 ## Updating Integration Versions
 
@@ -104,6 +105,15 @@ Check each integration against its upstream source:
    - Add versions when both OSS and commercial support end
    - The Hibernate team maintains Spring Boot compatibility on a best-effort basis
 
+### Checking for missing series.yml constraints
+
+When a new version of Quarkus or Spring Boot is released, the corresponding Hibernate project series should already reference it in their `integration_constraints`. To verify nothing is missing:
+
+1. Build the site with `rake clean gen` (see "Running the Build" above)
+2. Read `_site/community/integrations/index.html` and inspect the Quarkus and Spring Boot tables
+3. The latest upstream version should appear as a row — if it's missing, a `series.yml` file needs a constraint update
+4. Check for gaps: every version between the oldest and newest should have a row (versions are collapsed into ranges like "3.35 → 3.36" when consecutive versions map to the same Hibernate series)
+
 ### After updating
 
-Run `rake test` to verify (see "Running Tests" above). Check that no project series unexpectedly changed lifecycle status by reviewing which series reference the integration versions you changed (grep for the integration key in `_data/projects/*/releases/*/series.yml`).
+Run `rake test` to verify (see "Running Tests" above). Then build the site and inspect the integrations page as described above. Check that no project series unexpectedly changed lifecycle status by reviewing which series reference the integration versions you changed (grep for the integration key in `_data/projects/*/releases/*/series.yml`).
