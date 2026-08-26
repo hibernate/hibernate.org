@@ -1,3 +1,57 @@
+// Brand
+$color-brand: #59666c;
+$color-brand-light: #7d8a90;
+$color-accent: #bcae79;
+
+// Links
+$color-link: #4183c4;
+$color-link-alt: #1e70bf;
+
+// Dark
+$color-dark: #444;
+$color-dark-navy: #243446;
+
+// Text
+$color-text: #666;
+$color-text-light: #777;
+$color-text-muted: #999;
+$color-text-faded: #aaa;
+$color-text-quote: rgb(101, 101, 101);
+
+// Backgrounds
+$color-bg-light: #eee;
+$color-bg-subtle: #fafafa;
+$color-bg-code: #f8f8f8;
+$color-bg-admonition: #f8f8f9;
+$color-bg-muted: #f4f4f4;
+
+// Borders
+$color-border: #ccc;
+$color-border-light: #ddd;
+$color-border-code: #d5d5d5;
+$color-border-quote: #e6e7e8;
+
+// Admonition - info
+$color-info-bg: #f8ffff;
+$color-info-border: #a9d5de;
+$color-info-text: #276f86;
+
+// Admonition - warning
+$color-warning-bg: #fffaf3;
+$color-warning-border: #c9ba9b;
+$color-warning-text: #573a08;
+
+// Admonition - danger
+$color-danger-bg: #fff6f6;
+$color-danger-border: #e0b4b4;
+$color-danger-text: #9f3a38;
+
+body.pushable > .pusher {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
 /**
  * Banner
  */
@@ -43,7 +97,7 @@
  */
 
 .jumbotron {
-	background-color: #59666c;
+	background-color: $color-brand;
 	padding: 45px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 
@@ -54,7 +108,7 @@
 		color: white;
 
 		> span:first-child {
-			background-color: #7d8a90;
+			background-color: $color-brand-light;
 			padding: 3px;
 			padding-left: 10px;
 			padding-right: 10px;
@@ -93,12 +147,12 @@
 		margin-top: -1em;
 		margin-bottom: -1em;
 		h4 {
-			color: #59666c;
+			color: $color-brand;
 			line-height: 1em;
 		}
 		.icon.news-type {
 			width: 1.5em;
-			color: #59666c;
+			color: $color-brand;
 		}
 		.item.news.more {
 			text-align: right;
@@ -111,8 +165,8 @@
  */
 
 .page-title {
-	background-color: #EEE;
-	border-bottom: 2px solid #DDD;
+	background-color: $color-bg-light;
+	border-bottom: 2px solid $color-border-light;
 	padding-bottom: 20px;
 	padding-top: 20px;
 
@@ -121,20 +175,20 @@
 		padding-top: 15px;
 	}
 	&.warning {
-		background-color: #fffaf3;
+		background-color: $color-warning-bg;
 		h4 {
-			color: #573a08;
+			color: $color-warning-text;
 		}
 	}
 	&.negative {
-		background-color: #fff6f6;
+		background-color: $color-danger-bg;
 		h4 {
-			color: #9f3a38;
+			color: $color-danger-text;
 		}
 	}
 
 	h1 {
-		color: #59666c;
+		color: $color-brand;
 		letter-spacing: 2px;
 		text-transform: uppercase;
 		display: inline-block;
@@ -142,7 +196,7 @@
 	}
 
 	h4 {
-		color: #777;
+		color: $color-text-light;
 		line-height: 1.5em;
 		font-size: 1.2em;
 	}
@@ -172,7 +226,7 @@
 	margin-top: -8px;
 
 	.segment {
-		background-color: #EEE;
+		background-color: $color-bg-light;
 
 		h4 {
 			margin-top: 6px;
@@ -185,7 +239,7 @@
 	}
 
 	.slick-dots li button::before {
-		color: #FAFAFA;
+		color: $color-bg-subtle;
 	}
 }
 
@@ -193,7 +247,7 @@
 	margin-top: 30px;
 
 	.ui.segment {
-		background-color: #fafafa;
+		background-color: $color-bg-subtle;
 	}
 
 	.project {
@@ -268,8 +322,8 @@
 	h2 {
 		font-size: 1.7rem;
 		margin-top: 10px !important;
-		color: #59666c;
-		border-bottom: 2px solid #bcae79;
+		color: $color-brand;
+		border-bottom: 2px solid $color-accent;
 		display: inline-block;
 		letter-spacing: 1px;
 		padding-bottom: 3px;
@@ -285,20 +339,20 @@
 
 	h3 {
 		margin-top: 10px !important;
-		color: #666;
+		color: $color-text;
 		font-size: 1.5em;
 		margin-bottom: 15px;
 	}
 
 	h4 {
 		margin-top: 15px !important;
-		color: #777;
+		color: $color-text-light;
 		font-size: 1.3em;
 	}
 
 	.sectionbody {
 		h3 {
-			border-bottom: 2px dotted #bcae79;
+			border-bottom: 2px dotted $color-accent;
 			padding-bottom: 2px;
 			display: inline-block;
 		}
@@ -318,7 +372,7 @@
 
 	:not(pre) > code {
 		font-size: 0.9em;
-		background-color: #F4F4F4;
+		background-color: $color-bg-muted;
 		padding: .1em .5ex;
 		padding-right: 3px;
 		border-radius: 3px;
@@ -342,8 +396,8 @@
 }
 
 .news h3, #toc #toctitle {
-	color: #59666c;
-	border-bottom: 2px solid #bcae79;
+	color: $color-brand;
+	border-bottom: 2px solid $color-accent;
 	display: inline-block;
 	letter-spacing: 1px;
 	padding-bottom: 3px;
@@ -372,13 +426,13 @@ img {
 
 hr {
 	border: 0;
-	border-top: 1px dotted #bcae79;
+	border-top: 1px dotted $color-accent;
 	background-color: #fff;
 }
 
 pre {
-	background: #f8f8f8 none repeat scroll 0 0;
-	border: 1px solid #d5d5d5;
+	background: $color-bg-code none repeat scroll 0 0;
+	border: 1px solid $color-border-code;
 	margin: 1.5em 0;
 	overflow: auto;
 	padding: 1%;
@@ -395,7 +449,7 @@ code, kbd, samp {
 	.sectionbody {
 		font-size: 1.1em;
 		font-weight: bold;
-		color: #666;
+		color: $color-text;
 		margin-bottom: 10px;
 
 		.ui.message {
@@ -414,7 +468,7 @@ code, kbd, samp {
 	position: static;
 	top: 0;
 	width: 30%;
-	background-color: #fafafa;
+	background-color: $color-bg-subtle;
 	padding: 1em;
 	border: 1px solid rgba(34, 36, 38, 0.15);
 	border-radius: 0.3rem;
@@ -449,7 +503,7 @@ code, kbd, samp {
 		font-size: 1.6em;
 
 		a {
-			color: #59666c;
+			color: $color-brand;
 		}
 	}
 
@@ -463,7 +517,7 @@ code, kbd, samp {
 
 		p {
 			font-size: 1.2em;
-			color: #59666c;
+			color: $color-brand;
 		}
 	}
 }
@@ -598,7 +652,7 @@ code, kbd, samp {
  */
 .admonitionblock {
 	table {
-		background: #f8f8f9 none repeat scroll 0 0;
+		background: $color-bg-admonition none repeat scroll 0 0;
 		border-radius: 0.285714rem;
 		box-shadow: 0 0 0 1px rgba(34, 36, 38, 0.22) inset, 0 0 0 0 rgba(0, 0, 0, 0);
 		color: rgba(0, 0, 0, 0.87);
@@ -609,21 +663,21 @@ code, kbd, samp {
 	}
 
 	&.note table, &.tip table {
-		box-shadow: 0 0 0 1px #a9d5de inset, 0 0 0 0 transparent;
-			background-color: #f8ffff;
-			color: #276f86;
+		box-shadow: 0 0 0 1px $color-info-border inset, 0 0 0 0 transparent;
+			background-color: $color-info-bg;
+			color: $color-info-text;
 	}
 
 	&.warning table {
-		box-shadow: 0 0 0 1px #c9ba9b inset, 0 0 0 0 transparent;
-		background-color: #fffaf3;
-		color: #573a08;
+		box-shadow: 0 0 0 1px $color-warning-border inset, 0 0 0 0 transparent;
+		background-color: $color-warning-bg;
+		color: $color-warning-text;
 	}
 
 	&.important table, &.caution table {
-		box-shadow: 0 0 0 1px #e0b4b4 inset, 0 0 0 0 transparent;
-		background-color: #fff6f6;
-		color: #9f3a38;
+		box-shadow: 0 0 0 1px $color-danger-border inset, 0 0 0 0 transparent;
+		background-color: $color-danger-bg;
+		color: $color-danger-text;
 	}
 
 	.title {
@@ -670,10 +724,10 @@ code, kbd, samp {
 .quoteblock {
 	margin-top: 20px;
 	margin-bottom: 20px;
-	color: rgb(101, 101, 101);
+	color: $color-text-quote;
 
 	blockquote {
-		border-left: 5px solid #e6e7e8;
+		border-left: 5px solid $color-border-quote;
 		position: relative;
 		margin-left: 20px;
 		margin: 1.5em 10px;
@@ -681,7 +735,7 @@ code, kbd, samp {
 	}
 
 	blockquote:before {
-		color: #ccc;
+		color: $color-border;
 		font-size: 3em;
 		margin-top: 20px;
 		display: block;
@@ -706,7 +760,7 @@ code, kbd, samp {
 .conum {
 	display: inline-block;
 	color: white !important;
-	background-color: #666;
+	background-color: $color-text;
 	text-align: center;
 	width: 20px;
 	height: 20px;
@@ -739,7 +793,7 @@ pre .comment .conum {
  */
 
 .ui.segment.news {
-	background-color: #FAFAFA;
+	background-color: $color-bg-subtle;
 	
 	h4 {
 		margin-bottom: 5px;
@@ -750,7 +804,7 @@ pre .comment .conum {
 	}
 
 	small {
-		color: #999;
+		color: $color-text-muted;
 	}
 }
 
@@ -765,7 +819,7 @@ pre .comment .conum {
 
 		small {
 			font-size: 0.3em;
-			color: #AAA;
+			color: $color-text-faded;
 		}
 	}
 }
@@ -869,6 +923,7 @@ pre .comment .conum {
  */
 
 .footer {
+	flex-grow: 1;
 	margin-top: 70px !important;
 
 	&.segment {
@@ -904,7 +959,7 @@ pre .comment .conum {
  * Semantic UI adjustments
  */
 .ui.table thead th {
-	background-color: #f4f4f4;
+	background-color: $color-bg-muted;
 }
 
 .ui.buttons .disabled.button, .ui.disabled.button, .ui.button:disabled, .ui.disabled.button:hover, .ui.disabled.active.button {
@@ -912,11 +967,11 @@ pre .comment .conum {
 }
 
 .ui.grid .column.divided {
-	border-left: 1px solid #CCC;
+	border-left: 1px solid $color-border;
 }
 
 .ui.items > .item > .content > a.header {
-		color: #4183C4;
+		color: $color-link;
 }
 
 // Make sure newlines are properly rendered in tooltips (popups)
@@ -1030,7 +1085,7 @@ pre .comment .conum {
 
 .books {
 	.ui.items > .item > .image img {
-		border: 1px solid #CCC;
+		border: 1px solid $color-border;
 		border-radius: 0.125rem;
 		display: block;
 		height: auto;
@@ -1042,7 +1097,7 @@ pre .comment .conum {
 	}
 
 	.ui.items > .item > .content > a.header {
-		color: #1e70bf;
+		color: $color-link-alt;
 	}
 }
 
@@ -1058,7 +1113,7 @@ pre .comment .conum {
 	display: none;
 
 	a {
-		background: #243446 url("https://static.jboss.org/common/images/top.png") no-repeat scroll center center;
+		background: $color-dark-navy url("https://static.jboss.org/common/images/top.png") no-repeat scroll center center;
 		display: block;
 		height: 50px;
 		margin: 0;
@@ -1072,7 +1127,7 @@ pre .comment .conum {
  */
 
 .mobile-menu-button-bar {
-	background-color: #444;
+	background-color: $color-dark;
 
 	.logo.hibernate {
 		float: right;
@@ -1090,7 +1145,7 @@ pre .comment .conum {
 		float: left;
 
 		&:hover {
-			color: #DDD;
+			color: $color-border-light;
 		}
 	}
 }
@@ -1101,20 +1156,20 @@ pre .comment .conum {
 	.ui.vertical.menu {
 		> .item {
 			border-radius: 0 !important;
-			border-bottom: 1px solid #444;
+			border-bottom: 1px solid $color-dark;
 			padding: 15px;
 			margin: 0 !important;
 		}
 
 		&.inverted .menu .item {
 			font-size: 1em;
-			color: #CCC;
+			color: $color-border;
 			margin-left: 10px;
 			padding: 2px 0px 2px 0px;
 		}
 
 		.internal-links {
-			border-bottom: 1px solid #444;
+			border-bottom: 1px solid $color-dark;
 		}
 	}
 
@@ -1184,7 +1239,7 @@ pre.highlight {
 	position: absolute;
 	top: 1.5rem;
 	right: 4px;
-	background: #444;
+	background: $color-dark;
 	color: #fff;
 	padding: 6px 10px;
 	border-radius: 4px;
