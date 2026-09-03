@@ -64,3 +64,17 @@ herodevs:
         url: https://www.herodevs.com/support/nes-for-hibernate
       projects:
         - orm
+
+tuxcare:
+  name: TuxCare
+  url: https://tuxcare.com/
+  logo: /images/contributors/tuxcare-light.png
+  offerings:
+    - name: TuxCare Endless Lifecycle Support for Hibernate
+      description: TuxCare's offering dedicated to end-of-life'd versions of Hibernate ORM, Hibernate Validator and Hibernate Search.
+      eol:
+        url: https://docs.tuxcare.com/els-for-libraries/hibernate/
+      projects:
+        - orm
+        - validator
+        - search
