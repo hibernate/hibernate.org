@@ -76,13 +76,14 @@ quarkus:
   downstream: true
   hibernate_involvement: true
   active_series:
-    # For release dates, see https://github.com/quarkusio/quarkus/wiki/Release-Planning
+    # For past release dates and maintenance/LTS status, see https://quarkus.io/releases/
+    # For planned release dates, see https://github.com/quarkusio/quarkus/wiki/Release-Planning
     # For included versions, see https://github.com/quarkusio/quarkus/blob/main/pom.xml
-    # For LTS status, see Phase 1/2 in https://access.redhat.com/support/policy/updates/red_hat_build_of_quarkus_notes;
+    # For LTS rules, see Phase 1/2 in https://access.redhat.com/support/policy/updates/red_hat_build_of_quarkus_notes;
     # bottom line: an LTS "usually" stays active for 6 months after the next LTS was released.
     - "3.27" # LTS, stays supported until Mar 25th 2026 + 6 months = Sep 25th 2026
     - "3.33" # LTS, released Mar 25th 2026, stays supported until 3.40 + 6 months = March 30th 2027?
-    - "3.38" # Non-LTS, stays supported until the next one gets released
+    - "3.39" # Non-LTS, stays supported until the next one gets released
 wildfly:
   name: WildFly
   url: https://www.wildfly.org/
