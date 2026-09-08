@@ -28,12 +28,6 @@ java:
     - "22" # non-LTS, EOL Sep 2024
     - "23" # non-LTS, EOL Mar 2025
     - "24" # non-LTS, EOL Sep 2025
-orm:
-  name: Hibernate ORM
-  url: /orm/
-search:
-  name: Hibernate Search
-  url: /search/
 java_ee_jpa:
   name: JPA
   url: https://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html

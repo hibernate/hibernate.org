@@ -90,7 +90,8 @@ project_buttons_partial: project/releases-buttons.html.haml
                   %i.right.arrow.icon
                   More info
 
-- if project_description.active_release_series.any? { |series| !series.integration_constraints.nil? }
+- if project_description.active_release_series.any? { |series| !series[:integrations].nil? && !series[:integrations].empty? }
+  - all_integration_ids = site.integration_display_order.select { |id| project_description.active_release_series.any? { |s| s[:integrations]&.key?(id) } }
   %h2#compatibility-matrix Compatibility matrix
   %table.ui.definition.table.unstackable.celled.striped.center.aligned
     %thead
@@ -104,28 +105,30 @@ project_buttons_partial: project/releases-buttons.html.haml
           %th
             = series.version
     %tbody
-      - site.integrations.each do |integration_id, integration|
-        - has_constraint = false
-        - project_description.active_release_series.each do |series|
-          - if series.integration_constraints[integration_id]
-            - has_constraint = true
-        - if has_constraint
-          %tr
-            %td.left.aligned
-              %a{:href => "#{integration['url']}"}
-                = integration["name"]
+      - all_integration_ids.each do |integration_id|
+        - integration = site.integrations[integration_id]
+        - project = site.projects[integration_id]
+        - link_prefix = project ? "/#{integration_id}/releases/" : nil
+        %tr
+          %td.left.aligned
+            %a{:href => integration&.url || "/#{integration_id}/"}
+              = integration&.name || project&.name
+            - if project
+              %a.ui.mini.icon.button{:href => "/#{integration_id}/releases/#compatibility-matrix", :title => "See all compatible versions"}
+                %i.icon.list
+            - elsif integration
               %a.ui.mini.icon.button{:href => "/community/integrations/##{integration_id}", :title => "See all compatible versions"}
                 %i.icon.list
-              - project_description.active_release_series.each do |series|
-                - constraint = series.integration_constraints[integration_id]
-                - if constraint == nil
-                  %td.disabled
-                    N/A
-                - else
-                  %td
-                    :asciidoc
-                      :doctype: inline
-                      #{integration_constraint(constraint)}
+            - project_description.active_release_series.each do |series|
+              - constraint = series[:integrations]&.[](integration_id)
+              - if constraint == nil
+                %td.disabled
+                  N/A
+              - else
+                %td
+                  :asciidoc
+                    :doctype: inline
+                    #{integration_constraint(constraint, link_prefix)}
   %p
     See also
     %a{:href => "/support/"}

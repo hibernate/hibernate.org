@@ -45,6 +45,8 @@ module Awestruct
 
         # After parsing all projects, compute integration compatibility tables
         computeIntegrationCompatibility()
+        computeIntegrationDisplayOrder()
+        computeSeriesIntegrations()
       end
 
       def findReleaseFiles(project)
@@ -189,6 +191,7 @@ module Awestruct
         series[:integration_constraints]&.each do |integration_key,integration_constraint|
           integration = @site.integrations[integration_key]
           integration_constraint[:active] = false
+          next if integration.nil?
           next unless integration[:downstream] && integration[:hibernate_involvement]
 
           # Check if this series is in the active_series list
@@ -431,6 +434,91 @@ module Awestruct
           # Mark if there are any older series
           integration[:has_older_series] = integration[:version_ranges].any? { |vr| !vr[:displayed] }
         end
+      end
+
+      # Compute the canonical display order for integrations and projects:
+      # non-downstream integrations, then Hibernate projects, then downstream integrations.
+      # Stored as site.integration_display_order for use by templates and other methods.
+      def computeIntegrationDisplayOrder()
+        order = []
+        @site.integrations&.each do |id, integration|
+          order << id unless integration[:downstream]
+        end
+        @projects_hash.each do |id, _|
+          order << id
+        end
+        @site.integrations&.each do |id, integration|
+          order << id if integration[:downstream]
+        end
+        @site[:integration_display_order] = order
+      end
+
+      # Build series[:integrations] by merging forward constraints (from
+      # integration_constraints) with reverse constraints (other projects
+      # that reference this series), using site.integration_display_order.
+      def computeSeriesIntegrations()
+        @projects_hash.each do |project_id, project|
+          next if project[:release_series].nil?
+
+          project[:release_series].each do |series_version, series|
+            integrations = {}
+
+            @site[:integration_display_order].each do |id|
+              forward = series[:integration_constraints]&.[](id)
+              if forward
+                integrations[id] = forward
+              elsif @projects_hash.key?(id)
+                reverse = reverseProjectConstraint(project_id, series_version, id)
+                integrations[id] = reverse if reverse
+              end
+            end
+
+            series[:integrations] = integrations unless integrations.empty?
+          end
+        end
+      end
+
+      # For a given project series, find all series of another project that
+      # reference it in their integration_constraints. Returns a constraint
+      # hash ({:version => ...}) or nil.
+      def reverseProjectConstraint(project_id, series_version, other_project_id)
+        other_project = @projects_hash[other_project_id]
+        return nil if other_project[:release_series].nil?
+        return nil if other_project[:superproject_id] == project_id
+
+        matching_series = []
+        other_project[:release_series].each do |other_series_version, other_series|
+          next if other_series[:integration_constraints].nil?
+          constraint = other_series[:integration_constraints][project_id]
+          next if constraint.nil? || constraint[:version].nil?
+
+          if Version.new(series_version).matches?(constraint[:version])
+            comment = extractCommentFromConstraint(constraint[:version], series_version)
+            matching_series << { :version => other_series_version, :comment => comment, :status => nil }
+          end
+        end
+
+        return nil if matching_series.empty?
+
+        matching_series.sort_by! { |m| Version.new(m[:version]) }
+        packed = packProjectVersionsIntoRanges(matching_series)
+
+        constraint_versions = packed.map do |match|
+          version = match[:version]
+          comment = match[:comment]
+          if comment
+            if version.is_a?(Hash) && version.key?(:from)
+              { :from => version[:from], :to => version[:to], :comment => comment }
+            else
+              { :value => version, :comment => comment }
+            end
+          else
+            version
+          end
+        end
+
+        constraint_version = constraint_versions.length == 1 ? constraint_versions.first : constraint_versions
+        { :version => constraint_version }
       end
 
       # Pack consecutive integration versions with identical project compatibility into ranges
