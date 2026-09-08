@@ -23,7 +23,7 @@ project_hero_partial: project/hero-series.html.haml
   #toctitle
     Quick links
   %ul
-    - unless series.integration_constraints.nil? || series.integration_constraints.empty?
+    - unless series[:integrations].nil? || series[:integrations].empty?
       %li
         %a.item(href="#compatibility")
           Compatibility
@@ -89,24 +89,27 @@ project_hero_partial: project/hero-series.html.haml
     of any bugs or problems you encounter.
     ====
 
-- unless series.integration_constraints.nil? || series.integration_constraints.empty?
+- unless series[:integrations].nil? || series[:integrations].empty?
   %h2{:id => "compatibility"} Compatibility
   %table.ui.collapsing.definition.table.striped.celled.unstackable.center.aligned
-    - # Integration constraints must be in the same order as in integrations.yml
-    - site.integrations.each do |integration_id, integration|
-      - constraint = series.integration_constraints[integration_id]
-      - if constraint
-        - integration = site.integrations[integration_id]
-        %tr
-          %td.left.aligned
-            %a{:href => "#{integration&.url}"}
-              = integration&.name
+    - series[:integrations].each do |integration_id, constraint|
+      - integration = site.integrations[integration_id]
+      - project = site.projects[integration_id]
+      - link_prefix = project ? "/#{integration_id}/releases/" : nil
+      %tr
+        %td.left.aligned
+          %a{:href => integration&.url || "/#{integration_id}/"}
+            = integration&.name || project&.name
+          - if project
+            %a.ui.mini.icon.button{:href => "/#{integration_id}/releases/#compatibility-matrix", :title => "See all compatible versions"}
+              %i.icon.list
+          - elsif integration
             %a.ui.mini.icon.button{:href => "/community/integrations/##{integration_id}", :title => "See all compatible versions"}
               %i.icon.list
-          %td
-            :asciidoc
-              :doctype: inline
-              #{integration_constraint(constraint)}
+        %td
+          :asciidoc
+            :doctype: inline
+            #{integration_constraint(constraint, link_prefix)}
   %p
     Not compatible with your requirements? Have a look at the
     %a{:href => "../"}
