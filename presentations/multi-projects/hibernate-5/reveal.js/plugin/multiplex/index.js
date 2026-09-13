@@ -12,7 +12,8 @@ io = io(server);
 
 var opts = {
 	port: process.env.PORT || 1948,
-	baseDir : __dirname + '/../../'
+	baseDir : __dirname + '/../../',
+	adminSecret: process.env.MULTIPLEX_ADMIN_SECRET
 };
 
 io.on( 'connection', function( socket ) {
@@ -35,6 +36,10 @@ app.get("/", function(req, res) {
 });
 
 app.get("/token", function(req,res) {
+	if (!opts.adminSecret || req.query.adminSecret !== opts.adminSecret) {
+		res.status(403).send({error: 'Unauthorized'});
+		return;
+	}
 	var ts = new Date().getTime();
 	var rand = Math.floor(Math.random()*9999999);
 	var secret = ts.toString() + rand.toString();
@@ -42,8 +47,7 @@ app.get("/token", function(req,res) {
 });
 
 var createHash = function(secret) {
-	var cipher = crypto.createCipher('blowfish', secret);
-	return(cipher.final('hex'));
+	return crypto.createHash('sha256').update(secret).digest('hex');
 };
 
 // Actually listen
