@@ -142,11 +142,13 @@ EOF
 }
 
 # ---------------------------------------------------------------------------
-# Check for a newer version of a BOM using versions-maven-plugin
-# Returns the latest version or empty string if up to date
+# Check for a newer series of a BOM using versions-maven-plugin
+# Returns the latest version whose series is newer than $tracked_series,
+# or empty string if up to date (no newer release, or only patch releases
+# of an already-tracked series)
 # ---------------------------------------------------------------------------
 check_for_update() {
-    local group_id="$1" artifact_id="$2" current_version="$3"
+    local group_id="$1" artifact_id="$2" current_version="$3" tracked_series="$4" series_components="$5"
 
     local pom_file="${WORK_DIR}/check-pom.xml"
     generate_check_pom "$group_id" "$artifact_id" "$current_version" "$pom_file"
@@ -160,10 +162,24 @@ check_for_update() {
         return 1
     fi
 
-    echo "$mvn_output" \
+    local latest
+    latest=$(echo "$mvn_output" \
         | grep "${group_id}:${artifact_id}" \
         | grep -oP '\->\s*\K\S+' \
-        || true
+        || true)
+
+    if [[ -z "$latest" ]]; then
+        return 0
+    fi
+
+    local latest_series
+    latest_series=$(extract_series "$latest" "$series_components")
+    if ! version_gt "$latest_series" "$tracked_series"; then
+        echo "  Up to date (latest release ${latest} is in tracked series ${tracked_series})" >&2
+        return 0
+    fi
+
+    echo "$latest"
 }
 
 # ---------------------------------------------------------------------------
@@ -265,7 +281,8 @@ main() {
         done
 
         local latest
-        if ! latest=$(check_for_update "$group_id" "$artifact_id" "$check_version"); then
+        if ! latest=$(check_for_update "$group_id" "$artifact_id" "$check_version" \
+                "$max_tracked" "$series_components"); then
             issue_body+=$'\n'"## ${display_name}"$'\n'
             issue_body+="**Error**: failed to check for updates"$'\n'
             continue
@@ -274,7 +291,7 @@ main() {
         issue_body+=$'\n'"## ${display_name}"$'\n'
 
         if [[ -z "$latest" ]]; then
-            echo "  Up to date"
+            echo "  Up to date (series \`${max_tracked}\` is the latest)"
             issue_body+="Up to date (series \`${max_tracked}\` is the latest)"$'\n'
             continue
         fi
