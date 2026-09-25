@@ -43,65 +43,31 @@ See the Annotation processor section for more info.
 
 == Code style
 
-Download the settings from our GitHub repository:
+Each Hibernate project includes a set of build plugins to format and verify the code style of the sources.
+Please refer to the particular project contributing guide for more details.
 
-* For Hibernate ORM: https://raw.githubusercontent.com/hibernate/hibernate-ide-codestyles/master/intellij-14/hibernate_orm.xml[`hibernate_orm.xml`].
-* For Hibernate Search, Validator, OGM: https://raw.githubusercontent.com/hibernate/hibernate-ide-codestyles/master/intellij-14/hibernate_noorm.xml[`intellij-14/hibernate_noorm.xmlhibernate-code-templates-search.xml`].
-
-Here is http://musingsofaprogrammingaddict.blogspot.com/2010/03/import-code-style-settings-into.html[an article on how to set it up in IntelliJ IDEA].
-
-The authoritative code style is defined by the CheckStyle checks file associated with the project;
-be sure to check against those prior to pushing.
+[NOTE]
+====
+If the project build does not define a fully automated code formatter,
+please avoid reformatting large sections of code, especially when providing a patch:
+we would love to have the diffs highlight the changes that matter.
+====
 
 == Code templates
 
-The best approach to automatically apply the proper copyright/license headers to newly created files
-is to leverage the Copyright plugin (now a bundled plugin).
+All top-level Hibernate projects are Apache 2.0 licensed and use the following header format:
 
-Set up on profile per Hibernate project you want to deal with in the Copyright configuration ("Settings" -> "Copyright")
-and then select the one to use for your IntelliJ IDEA project.
+[source,java]
+----
+/*
+* SPDX-License-Identifier: Apache-2.0
+* Copyright Red Hat Inc. and Hibernate Authors
+*/
+----
 
-Note you can define the profiles once and for all if you go through
-"Other settings" -> "Settings for new projects" -> "Copyright":
-they will be made available automatically in every new IntelliJ IDEA project.
-
-Here are the standard license headers for each project:
-
-* Hibernate ORM:
-
-    /*
-     * Hibernate, Relational Persistence for Idiomatic Java
-     *
-     * License: GNU Lesser General Public License (LGPL), version 2.1 or later.
-     * See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
-     */
-
-* Hibernate Search:
-
-    /*
-     * Hibernate Search, full-text search for your domain model
-     *
-     * License: GNU Lesser General Public License (LGPL), version 2.1 or later
-     * See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
-     */
-
-* Hibernate Validator:
-
-    /*
-     * Hibernate Validator, declare and validate application constraints
-     *
-     * License: Apache License, Version 2.0
-     * See the license.txt file in the root directory or <http://www.apache.org/licenses/LICENSE-2.0>.
-     */
-
-* Hibernate OGM:
-
-    /*
-     * Hibernate OGM, Domain model persistence for NoSQL datastores
-     *
-     * License: GNU Lesser General Public License (LGPL), version 2.1 or later
-     * See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
-     */
+Note that each project has a license build plugin configured to check for the correct license header formatting.
+At the same time, such a plugin provides options to add the missing headers.
+Please refer to the particular project build for more details.
 
 == Debugging
 
