@@ -855,6 +855,18 @@ pre .comment .conum {
 	}
 }
 
+.infrastructure-providers.ui.items > .item > .image,
+.financial-contributors.ui.items > .item > .image {
+  > a {
+    display: flex;
+    justify-content: center;
+  }
+  img {
+    max-height: 80px;
+    object-fit: contain;
+  }
+}
+
 .main-sponsor, .corporate-contributors {
   .image.multiple {
     img {
@@ -868,7 +880,7 @@ pre .comment .conum {
 }
 
 .infrastructure-providers {
-  .image.multiple {
+  &.ui.items > .item > .image.multiple {
     img {
       padding: 5px;
       margin: 0 0 10px;
