@@ -99,7 +99,19 @@ title: Corporate contributors
 
 %h2{:id => "infrastructure"} Infrastructure providers
 
+-# Keep entries in alphabetical order.
 .ui.relaxed.divided.items.infrastructure-providers
+  .item
+    .image
+      %a(href='https://1password.com/')
+        %img{:src => "#{relative("/images/contributors/1password.svg", page)}"}
+    .content
+      %a.header(href='https://1password.com/') 1Password
+      .description
+        %p
+          1Password provides us with a free
+          %a(href='https://github.com/1Password/for-open-source') 1Password for Open Source
+          Teams account, helping our team securely manage credentials and secrets.
   .item
     .image
       %a(href='https://www.atlassian.com/')
@@ -108,6 +120,22 @@ title: Corporate contributors
       %a.header(href='https://www.atlassian.com/') Atlassian
       .description
         %p Atlassian provides us with a free instance of JIRA.
+  .item
+    .image
+      %a(href='https://www.discourse.org/')
+        %img{:src => "#{relative("/images/contributors/discourse.png", page)}"}
+    .content
+      %a.header(href='https://www.discourse.org/') Discourse
+      .description
+        %p Our community forums are hosted on a free instance provided by Discourse.
+  .item
+    .image
+      %a(href='https://github.com/')
+        %img{:src => "#{relative("/images/contributors/github.png", page)}"}
+    .content
+      %a.header(href='https://github.com/') GitHub
+      .description
+        %p Our source code is hosted on GitHub and we use GitHub Actions for part of our CI.
   .item
     .image
       %a(href='https://gradle.com/develocity/')
@@ -125,22 +153,6 @@ title: Corporate contributors
           ) and Hibernate Search builds (through the
           %a(href='https://docs.gradle.com/enterprise/maven-get-started/') Develocity Maven extension
           ).
-  .item
-    .image
-      %a(href='https://www.discourse.org/')
-        %img{:src => "#{relative("/images/contributors/discourse.png", page)}"}
-    .content
-      %a.header(href='https://www.discourse.org/') Discourse
-      .description
-        %p Our community forums are hosted on a free instance provided by Discourse.
-  .item
-    .image
-      %a(href='https://github.com/')
-        %img{:src => "#{relative("/images/contributors/github.png", page)}"}
-    .content
-      %a.header(href='https://github.com/') GitHub
-      .description
-        %p Our source code is hosted on GitHub and we use GitHub Actions for part of our CI.
   .item
     .image.multiple
       %a(href='https://www.ibm.com/')
@@ -166,6 +178,14 @@ title: Corporate contributors
       %a.header(href='https://testpilot.oracle.com/') Oracle
       .description
         %p Oracle Test Pilot provides us with GitHub Actions runners hosted on Oracle Cloud Infrastructure, with access to the latest major versions of the Oracle database.
+  .item
+    .image
+      %a(href='https://runs-on.com/')
+        %img{:src => "#{relative("/images/contributors/runs-on.png", page)}"}
+    .content
+      %a.header(href='https://runs-on.com/') RunsOn
+      .description
+        %p RunsOn provides us with a free open-source license for self-hosted GitHub Actions runners on AWS.
   .item
     .image
       %a(href='https://zulip.com/')
