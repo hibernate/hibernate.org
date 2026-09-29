@@ -1,0 +1,30 @@
+summary: Release compatible with Hibernate ORM 8.0 and Vert.x 5.1
+links:
+  reference_doc:
+    html: https://docs.hibernate.org/reactive/{series.version}/reference/html_single/
+  whats_new:
+    html: /reactive/releases/{series.version}/#whats-new
+  introduction:
+    - name: Getting Started
+      description: A quickstart-style tutorial
+      html: https://docs.hibernate.org/reactive/{series.version}/reference/html_single/#getting-started
+  api:
+    - name: Javadoc
+      description: API documentation
+      html: https://docs.hibernate.org/reactive/{series.version}/javadocs/
+maven:
+  artifacts:
+    - artifact_id: hibernate-reactive-core
+      summary: Core implementation
+integration_constraints:
+  java:
+    version:
+      - '17'
+      - '21'
+      - '25'
+      - '26'
+      - '27'
+  orm:
+    version: '8.0'
+  vertx:
+    version: '5.1'
