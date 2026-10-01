@@ -6,7 +6,7 @@
 # The check-updates.sh script uses this configuration to:
 # 1. Detect new minor/major series of each integration
 # 2. Resolve which Hibernate versions the new series includes
-# 3. Update a pinned GitHub issue with actionable info
+# 3. Fail the CI job if untracked series are found
 integrations:
   quarkus:
     display_name: Quarkus

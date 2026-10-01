@@ -8,7 +8,6 @@ on:
   workflow_dispatch: {}
 
 permissions:
-  issues: write
   contents: read
 
 jobs:
@@ -24,8 +23,3 @@ jobs:
 
       - name: Check integration updates
         run: bash .github/integration-tracking/check-updates.sh
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # Set the issue number to update with results.
-          # Leave empty to just log the results without updating any issue.
-          TRACKING_ISSUE_NUMBER: ""
