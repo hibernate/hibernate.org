@@ -4,7 +4,7 @@
 #
 # Detects new integration series (Quarkus, WildFly, Spring Boot, ...),
 # resolves the Hibernate dependency versions they include,
-# and updates a pinned GitHub issue with actionable info.
+# and fails if any integration has an untracked series.
 
 set -euo pipefail
 
@@ -244,8 +244,7 @@ find_series_file() {
 # Main
 # ---------------------------------------------------------------------------
 main() {
-    local issue_body="# Integration Version Tracking"$'\n\n'
-    issue_body+="> Last checked: $(date -u +%Y-%m-%d)"$'\n'
+    local updates_found=false
     local integration_ids
     integration_ids=$(yq -r '.integrations | keys | .[]' "$CONFIG_FILE")
 
@@ -262,8 +261,6 @@ main() {
         max_tracked=$(find_max_tracked_version "$integration_id")
         if [[ -z "$max_tracked" ]]; then
             echo "  No tracked version found for ${integration_id}, skipping"
-            issue_body+=$'\n'"## ${display_name}"$'\n'
-            issue_body+="No tracked versions found in series.yml files"$'\n'
             continue
         fi
 
@@ -283,83 +280,52 @@ main() {
         local latest
         if ! latest=$(check_for_update "$group_id" "$artifact_id" "$check_version" \
                 "$max_tracked" "$series_components"); then
-            issue_body+=$'\n'"## ${display_name}"$'\n'
-            issue_body+="**Error**: failed to check for updates"$'\n'
             continue
         fi
 
-        issue_body+=$'\n'"## ${display_name}"$'\n'
-
         if [[ -z "$latest" ]]; then
-            echo "  Up to date (series \`${max_tracked}\` is the latest)"
-            issue_body+="Up to date (series \`${max_tracked}\` is the latest)"$'\n'
+            echo "  Up to date (series ${max_tracked} is the latest)"
             continue
         fi
 
         local latest_series
         latest_series=$(extract_series "$latest" "$series_components")
-        echo "  New version available: ${latest} (series ${latest_series})"
-
-        issue_body+="**New series \`${latest_series}\` detected** (latest: \`${latest}\`)"$'\n\n'
+        echo "  New series available: ${latest_series} (latest release: ${latest})"
+        updates_found=true
 
         # Resolve Hibernate dependencies
         echo "  Resolving Hibernate dependencies..."
         local resolved_lines
         if ! resolved_lines=$(resolve_hibernate_versions "$integration_id" "$group_id" "$artifact_id" "$latest"); then
-            issue_body+="**Error**: failed to resolve Hibernate dependencies"$'\n'
             continue
         fi
 
         if [[ -n "$resolved_lines" ]]; then
-            issue_body+="| Hibernate Project | Version | Series |"$'\n'
-            issue_body+="|---|---|---|"$'\n'
-
-            local suggested_updates=""
             while IFS=' ' read -r project coord resolved_version; do
                 local hibernate_series
                 hibernate_series=$(extract_series "$resolved_version" 2)
-                local project_display="${project^}"
-                [[ "$project" == "orm" ]] && project_display="ORM"
-                issue_body+="| ${project_display} | ${resolved_version} | ${hibernate_series} |"$'\n'
+                echo "    ${coord} -> ${resolved_version} (series ${hibernate_series})"
 
                 local series_file
                 series_file=$(find_series_file "$project" "$resolved_version")
                 if [[ -n "$series_file" ]]; then
                     local rel_path="${series_file#"${REPO_ROOT}/"}"
-                    suggested_updates+="- \`${rel_path}\` — extend ${integration_id} \`to: '${latest_series}'\`"$'\n'
+                    echo "    Suggested update: ${rel_path} — extend ${integration_id} to: '${latest_series}'"
                 fi
             done <<< "$resolved_lines"
-
-            if [[ -n "$suggested_updates" ]]; then
-                issue_body+=$'\n'"**Suggested updates:**"$'\n'
-                issue_body+="$suggested_updates"
-            fi
         else
-            issue_body+="Could not resolve Hibernate dependencies from this BOM."$'\n'
+            echo "    Could not resolve Hibernate dependencies from this BOM."
         fi
     done <<< "$integration_ids"
 
-    echo ""
-    echo "=== Issue Body ==="
-    echo "$issue_body"
-    echo "=================="
-
-    update_github_issue "$issue_body"
-}
-
-# ---------------------------------------------------------------------------
-# Update the tracking issue if TRACKING_ISSUE_NUMBER is set
-# ---------------------------------------------------------------------------
-update_github_issue() {
-    local body="$1"
-
-    if [[ -z "${TRACKING_ISSUE_NUMBER:-}" ]]; then
-        echo "TRACKING_ISSUE_NUMBER not set, skipping issue update"
-        return
+    if [[ "$updates_found" == true ]]; then
+        echo ""
+        echo "FAILURE: One or more integrations have untracked series. See details above."
+        exit 1
     fi
 
-    echo "Updating issue #${TRACKING_ISSUE_NUMBER}"
-    gh issue edit "$TRACKING_ISSUE_NUMBER" --body "$body"
+    echo ""
+    echo "All integrations are up to date."
 }
 
 main "$@"
