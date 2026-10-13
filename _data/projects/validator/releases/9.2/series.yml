@@ -1,0 +1,53 @@
+summary: >-
+  This series introduces new constraints, including password validation,
+  adds a bean resolution system for integrating application services,
+  provides configurable property access through Hibernate Accessor,
+  improves validation performance,
+  updates dependencies,
+  and includes improvements and bug fixes.
+links:
+  reference_doc:
+    html: https://docs.hibernate.org/validator/{series.version}/reference/en-US/html_single/
+    pdf: https://docs.hibernate.org/validator/{series.version}/reference/en-US/pdf/hibernate_validator_reference.pdf
+  whats_new:
+    html: https://docs.hibernate.org/validator/{series.version}/whats-new/en-US/html_single
+    pdf: https://docs.hibernate.org/validator/{series.version}/whats-new/en-US/pdf/hibernate_validator_whats_new.pdf
+  introduction:
+    - name: Getting Started
+      description: A quickstart-style tutorial
+      html: https://docs.hibernate.org/validator/{series.version}/reference/en-US/html_single/#validator-gettingstarted
+      pdf: https://docs.hibernate.org/validator/{series.version}/reference/en-US/pdf/hibernate_validator_reference.pdf#validator-gettingstarted
+  api:
+    - name: Javadoc
+      description: API documentation
+      html: https://docs.hibernate.org/validator/{series.version}/api/
+  migration:
+    - name: Migration Guide
+      description: Guide for migrating from the previous version
+      html: https://docs.hibernate.org/validator/{series.version}/migration/en-US/html_single
+      pdf: https://docs.hibernate.org/validator/{series.version}/migration/en-US/pdf/hibernate_validator_migration_guide.pdf
+maven:
+  artifacts:
+    - artifact_id: hibernate-validator-bom
+      summary: BOM to help manage published Hibernate Validator artifacts
+    - artifact_id: hibernate-validator
+      summary: Core implementation
+    - artifact_id: hibernate-validator-cdi
+      summary: CDI integration
+    - artifact_id: hibernate-validator-annotation-processor
+      summary: Annotation processor
+    - artifact_id: hibernate-validator-test-utils
+      summary: Set of test utilities that can help testing custom constraints.
+integration_constraints:
+  java:
+    version:
+      - '17'
+      - '21'
+      - '25'
+      - '26'
+  jakarta_ee_bv:
+    version: '3.1'
+  jakarta_ee:
+    version: '11'
+  quarkus:
+    version: '4.0'
