@@ -38,6 +38,21 @@ integrations:
       - artifact: "org.hibernate.search:hibernate-search-backend-elasticsearch"
         project: search
 
+  liberty:
+    display_name: Liberty
+    type: github
+    github_repo: OpenLiberty/open-liberty
+    resolve:
+      - path: dev/com.ibm.ws.org.hibernate.validator/bnd.bnd
+        project: validator
+        feature: beanValidation-2.0
+      - path: dev/io.openliberty.org.hibernate.validator.7.0/bnd.bnd
+        project: validator
+        feature: beanValidation-3.0
+      - path: dev/io.openliberty.org.hibernate.validator.9.0/bnd.bnd
+        project: validator
+        feature: validation-3.1
+
   spring_boot:
     display_name: Spring Boot
     bom_group_id: org.springframework.boot

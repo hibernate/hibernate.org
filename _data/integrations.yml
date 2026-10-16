@@ -99,6 +99,15 @@ rheap:
   els_series:
     - "6.4" # ELS-2 (guidance only, no fixes) until Dec 2028
     - "7.4" # ELS-1 until Oct 2027
+liberty:
+  name: Liberty
+  url: https://openliberty.io/
+  downstream: true
+  hibernate_involvement: true
+  # Liberty uses Single Stream Continuous Delivery (SSCD) with monthly releases (YY.0.0.MM).
+  # All features coexist (zero-migration); there are no traditional version series.
+  # For lifecycle, see https://www.ibm.com/support/pages/single-stream-continuous-delivery-sscd-software-support-lifecycle-policy-websphere-liberty
+  # For per-release end-of-fix dates, see https://www.ibm.com/support/pages/recommended-updates-websphere-application-server
 spring_boot:
   name: Spring Boot
   url: https://spring.io/projects/spring-boot
