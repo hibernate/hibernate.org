@@ -70,6 +70,78 @@ describe Awestruct::Extensions::Version do
 		end
 	end
 
+	describe "4-component versions" do
+		it "parses 4-component versions" do
+			version = Awestruct::Extensions::Version.new("26.0.0.5")
+			expect(version.major).to eq(26)
+			expect(version.minor).to eq(0)
+			expect(version.micro).to eq(0)
+			expect(version.patch).to eq(5)
+			expect(version.suffix).to be_nil
+			expect(version.numeric_components).to eq(4)
+		end
+
+		it "parses 4-component versions with suffix" do
+			version = Awestruct::Extensions::Version.new("26.0.0.5.Final")
+			expect(version.major).to eq(26)
+			expect(version.minor).to eq(0)
+			expect(version.micro).to eq(0)
+			expect(version.patch).to eq(5)
+			expect(version.suffix.prefix).to eq("Final")
+			expect(version.numeric_components).to eq(4)
+		end
+
+		it "compares 4-component versions numerically" do
+			v5 = Awestruct::Extensions::Version.new("26.0.0.5")
+			v10 = Awestruct::Extensions::Version.new("26.0.0.10")
+			expect(v5 < v10).to be true
+			expect(v10 > v5).to be true
+		end
+
+		it "compares 4-component versions across majors" do
+			v18 = Awestruct::Extensions::Version.new("18.0.0.2")
+			v26 = Awestruct::Extensions::Version.new("26.0.0.5")
+			expect(v18 < v26).to be true
+		end
+
+		it "does not confuse 3-component+suffix with 4-component" do
+			final = Awestruct::Extensions::Version.new("9.0.0.Final")
+			expect(final.numeric_components).to eq(3)
+			expect(final.patch).to eq(0)
+			expect(final.suffix.prefix).to eq("Final")
+
+			four = Awestruct::Extensions::Version.new("26.0.0.5")
+			expect(four.numeric_components).to eq(4)
+			expect(four.patch).to eq(5)
+			expect(four.suffix).to be_nil
+		end
+
+		it "matches 4-component version in from/to range" do
+			v = Awestruct::Extensions::Version.new("21.0.0.12")
+			expect(v.matches?({:from => '18.0.0.2', :to => '26.0.0.5'})).to be true
+		end
+
+		it "does not match 4-component version outside range" do
+			v = Awestruct::Extensions::Version.new("18.0.0.1")
+			expect(v.matches?({:from => '18.0.0.2', :to => '26.0.0.5'})).to be false
+		end
+
+		it "matches exact 4-component constraint" do
+			v = Awestruct::Extensions::Version.new("26.0.0.5")
+			expect(v.matches?('26.0.0.5')).to be true
+		end
+
+		it "does not match different patch in 4-component constraint" do
+			v = Awestruct::Extensions::Version.new("26.0.0.4")
+			expect(v.matches?('26.0.0.5')).to be false
+		end
+
+		it "3-component constraint matches any patch" do
+			v = Awestruct::Extensions::Version.new("26.0.0.5")
+			expect(v.matches?('26.0.0')).to be true
+		end
+	end
+
 	describe ".expand_from_constraints" do
 		it "expands simple versions" do
 			constraint_versions = ['3.20', '3.27']
@@ -147,6 +219,36 @@ describe Awestruct::Extensions::Version do
 			versions = Awestruct::Extensions::Version.expand_from_constraints(constraint_versions, 'test_integration', nil)
 			# Should include all major versions in range
 			expect(versions).to eq(['16', '15', '14', '13'])
+		end
+
+		it "expands 4-component version ranges" do
+			constraint_versions = [
+				{ :from => '21.0.0.10', :to => '21.0.0.12' },
+				{ :from => '26.0.0.3', :to => '26.0.0.5' }
+			]
+			versions = Awestruct::Extensions::Version.expand_from_constraints(constraint_versions, 'test_integration', nil)
+			expect(versions).to include('21.0.0.10', '21.0.0.11', '21.0.0.12')
+			expect(versions).to include('26.0.0.3', '26.0.0.4', '26.0.0.5')
+			# Should be sorted with latest first
+			expect(versions.first).to eq('26.0.0.5')
+			expect(versions.last).to eq('21.0.0.10')
+		end
+
+		it "expands 4-component ranges across major versions" do
+			constraint_versions = [
+				{ :from => '18.0.0.2', :to => '26.0.0.5' },
+				'21.0.0.12'  # Establishes max patch for major 21
+			]
+			versions = Awestruct::Extensions::Version.expand_from_constraints(constraint_versions, 'test_integration', nil)
+			# Should include endpoints
+			expect(versions).to include('18.0.0.2', '26.0.0.5')
+			# Should include intermediates for major 21 (which has an explicit bound)
+			expect(versions).to include('21.0.0.1', '21.0.0.11', '21.0.0.12')
+			# Years without explicit bounds should be skipped
+			# (19, 20 have no patch bounds so are skipped)
+			expect(versions).not_to include('19.0.0.1')
+			# Should be sorted with latest first
+			expect(Awestruct::Extensions::Version.new(versions.first)).to be >= Awestruct::Extensions::Version.new(versions.last)
 		end
 	end
 
