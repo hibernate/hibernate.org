@@ -20,6 +20,13 @@ ibm:
           url: https://www.ibm.com/products/enterprise-build-of-quarkus
         integrations:
           - quarkus
+      - name: IBM WebSphere Liberty
+        description: |
+          IBM's Jakarta EE application server based on https://openliberty.io/[Open Liberty].
+        lts:
+          url: https://www.ibm.com/products/liberty
+        integrations:
+          - liberty
 
 redhat:
   name: Red Hat

@@ -59,3 +59,7 @@ integration_constraints:
       from: '37'
       to: '38'
       comment: "link:https://docs.wildfly.org/38/WildFly_and_WildFly_Preview.html[Preview]"
+  liberty:
+    version:
+      from: '26.0.0.5'
+      to: '26.0.0.9'

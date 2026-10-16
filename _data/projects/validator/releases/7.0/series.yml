@@ -39,3 +39,7 @@ integration_constraints:
     version: '3.0'
   jakarta_ee:
     version: '9'
+  liberty:
+    version:
+      from: '21.0.0.12'
+      to: '26.0.0.9'

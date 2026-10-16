@@ -222,6 +222,15 @@ module Awestruct
               end
             end
           end
+
+          # For integrations without explicit active/els series,
+          # constraints not matching inactive versions are implicitly active
+          unless integration_constraint[:status]
+            unless integration[:active_series]&.any? || integration[:els_series]&.any?
+              integration_constraint[:status] = 'active'
+              has_active = true
+            end
+          end
         end
         has_active
       end
@@ -604,6 +613,11 @@ module Awestruct
 
         # Check if micro versions are consecutive (same major and minor)
         if v1.minor == v2.minor && v1.micro + 1 == v2.micro
+          return true
+        end
+
+        # Check if patch versions are consecutive (same major, minor, and micro)
+        if v1.minor == v2.minor && v1.micro == v2.micro && v1.patch + 1 == v2.patch
           return true
         end
 

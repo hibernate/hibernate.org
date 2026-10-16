@@ -241,6 +241,145 @@ find_series_file() {
 }
 
 # ---------------------------------------------------------------------------
+# Discover Hibernate Validator bundles in the Open Liberty repo.
+# Uses GitHub code search to find bnd.bnd files referencing hibernate-validator,
+# then filters to core bundles (excludes CDI wrappers).
+# ---------------------------------------------------------------------------
+discover_liberty_hv_bundles() {
+    local github_repo="$1"
+    gh api "search/code?q=org.hibernate.validator+repo:${github_repo}+filename:bnd.bnd" \
+        --jq '.items[].path' 2>/dev/null \
+        | grep 'hibernate\.validator' \
+        | grep -v '\.cdi' \
+        || true
+}
+
+# ---------------------------------------------------------------------------
+# Check Liberty for Hibernate Validator version updates.
+# 1. Discovers all HV bundles in the repo (detects new beanValidation features)
+# 2. Checks each configured bundle for constraint coverage
+# 3. Checks if the latest Liberty release is newer than tracked 'to:' bounds
+# ---------------------------------------------------------------------------
+check_liberty_integration() {
+    local integration_id="$1"
+
+    local display_name github_repo
+    display_name=$(yq -r ".integrations.${integration_id}.display_name" "$CONFIG_FILE")
+    github_repo=$(yq -r ".integrations.${integration_id}.github_repo" "$CONFIG_FILE")
+
+    echo "Checking ${display_name} (GitHub: ${github_repo})..."
+
+    local has_updates=false
+    local resolve_count
+    resolve_count=$(yq -r ".integrations.${integration_id}.resolve | length" "$CONFIG_FILE")
+
+    # Step 1: Discover all Hibernate Validator bundles
+    echo "  Discovering Hibernate Validator bundles..."
+    local discovered_paths
+    discovered_paths=$(discover_liberty_hv_bundles "$github_repo")
+
+    if [[ -n "$discovered_paths" ]]; then
+        while IFS= read -r discovered_path; do
+            local is_configured=false
+            for (( i=0; i<resolve_count; i++ )); do
+                local config_path
+                config_path=$(yq -r ".integrations.${integration_id}.resolve[$i].path" "$CONFIG_FILE")
+                if [[ "$discovered_path" == "$config_path" ]]; then
+                    is_configured=true
+                    break
+                fi
+            done
+
+            if [[ "$is_configured" != true ]]; then
+                echo "    UNTRACKED: Found Hibernate Validator bundle at ${discovered_path}"
+                echo "    Suggested: add to ${CONFIG_FILE#"${REPO_ROOT}/"}"
+                has_updates=true
+            fi
+        done <<< "$discovered_paths"
+    else
+        echo "  WARNING: Could not discover bundles via code search; checking configured paths only" >&2
+    fi
+
+    # Step 2: For each configured bundle, check HV version and constraint
+    for (( i=0; i<resolve_count; i++ )); do
+        local path project feature
+        path=$(yq -r ".integrations.${integration_id}.resolve[$i].path" "$CONFIG_FILE")
+        project=$(yq -r ".integrations.${integration_id}.resolve[$i].project" "$CONFIG_FILE")
+        feature=$(yq -r ".integrations.${integration_id}.resolve[$i].feature" "$CONFIG_FILE")
+
+        local file_content
+        if ! file_content=$(gh api "repos/${github_repo}/contents/${path}" \
+            -H "Accept: application/vnd.github.raw+json" 2>/dev/null); then
+            echo "  WARNING: Failed to fetch ${path}" >&2
+            continue
+        fi
+
+        local resolved_version
+        resolved_version=$(echo "$file_content" \
+            | grep -oP 'org\.hibernate\.validator:hibernate-validator;version=\K[^\s;,]+' \
+            || true)
+
+        if [[ -z "$resolved_version" ]]; then
+            echo "  WARNING: Could not extract Hibernate Validator version from ${path}" >&2
+            continue
+        fi
+
+        local hibernate_series
+        hibernate_series=$(extract_series "$resolved_version" 2)
+        echo "  ${feature}: hibernate-validator ${resolved_version} (series ${hibernate_series})"
+
+        local series_file
+        series_file=$(find_series_file "$project" "$resolved_version")
+
+        if [[ -z "$series_file" ]]; then
+            echo "    UNTRACKED: No series.yml found for ${project} ${hibernate_series}"
+            has_updates=true
+            continue
+        fi
+
+        local has_constraint
+        has_constraint=$(yq ".integration_constraints.${integration_id} | select(. != null)" "$series_file" 2>/dev/null || true)
+
+        if [[ -z "$has_constraint" ]]; then
+            local rel_path="${series_file#"${REPO_ROOT}/"}"
+            echo "    UNTRACKED: ${rel_path} has no ${integration_id} constraint"
+            echo "    Suggested: add ${integration_id} integration_constraint for ${feature}"
+            has_updates=true
+        else
+            echo "    Already tracked in ${series_file#"${REPO_ROOT}/"}"
+        fi
+    done
+
+    # Step 3: Check if latest Liberty release is newer than max tracked version
+    echo "  Checking for newer Liberty releases..."
+    local latest_tag
+    latest_tag=$(gh api "repos/${github_repo}/releases" --jq \
+        '[.[] | select(.prerelease == false and .draft == false)][0].tag_name' 2>/dev/null || true)
+
+    if [[ -n "$latest_tag" ]]; then
+        local latest_version="${latest_tag#gm-}"
+
+        local max_tracked
+        max_tracked=$(find_max_tracked_version "$integration_id")
+
+        if [[ -n "$max_tracked" ]] && version_gt "$latest_version" "$max_tracked"; then
+            echo "    STALE: Latest Liberty release ${latest_version} is newer than max tracked ${max_tracked}"
+            echo "    Suggested: update 'to:' bounds in integration_constraints"
+            has_updates=true
+        else
+            echo "    Up to date (latest release: ${latest_version}, max tracked: ${max_tracked})"
+        fi
+    else
+        echo "  WARNING: Could not determine latest Liberty release" >&2
+    fi
+
+    if [[ "$has_updates" == true ]]; then
+        return 1
+    fi
+    return 0
+}
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 main() {
@@ -249,6 +388,16 @@ main() {
     integration_ids=$(yq -r '.integrations | keys | .[]' "$CONFIG_FILE")
 
     while IFS= read -r integration_id; do
+        local integration_type
+        integration_type=$(yq -r ".integrations.${integration_id}.type // \"maven\"" "$CONFIG_FILE")
+
+        if [[ "$integration_type" == "github" ]]; then
+            if ! check_liberty_integration "$integration_id"; then
+                updates_found=true
+            fi
+            continue
+        fi
+
         local display_name group_id artifact_id series_components
         display_name=$(yq -r ".integrations.${integration_id}.display_name" "$CONFIG_FILE")
         group_id=$(yq -r ".integrations.${integration_id}.bom_group_id" "$CONFIG_FILE")
