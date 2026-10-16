@@ -241,6 +241,84 @@ find_series_file() {
 }
 
 # ---------------------------------------------------------------------------
+# Check Liberty for Hibernate Validator version updates.
+# Fetches bnd.bnd files from the Open Liberty source repo and extracts
+# the bundled Hibernate Validator versions.
+# ---------------------------------------------------------------------------
+check_liberty_integration() {
+    local integration_id="$1"
+
+    local display_name github_repo
+    display_name=$(yq -r ".integrations.${integration_id}.display_name" "$CONFIG_FILE")
+    github_repo=$(yq -r ".integrations.${integration_id}.github_repo" "$CONFIG_FILE")
+
+    echo "Checking ${display_name} (GitHub: ${github_repo})..."
+
+    local resolve_count
+    resolve_count=$(yq -r ".integrations.${integration_id}.resolve | length" "$CONFIG_FILE")
+
+    local has_updates=false
+
+    for (( i=0; i<resolve_count; i++ )); do
+        local path project feature
+        path=$(yq -r ".integrations.${integration_id}.resolve[$i].path" "$CONFIG_FILE")
+        project=$(yq -r ".integrations.${integration_id}.resolve[$i].project" "$CONFIG_FILE")
+        feature=$(yq -r ".integrations.${integration_id}.resolve[$i].feature" "$CONFIG_FILE")
+
+        # Fetch file from GitHub API
+        local file_content
+        if ! file_content=$(gh api "repos/${github_repo}/contents/${path}" \
+            -H "Accept: application/vnd.github.raw+json" 2>/dev/null); then
+            echo "  WARNING: Failed to fetch ${path}" >&2
+            continue
+        fi
+
+        # Extract Hibernate artifact version from bnd.bnd -buildpath entry
+        local resolved_version
+        resolved_version=$(echo "$file_content" \
+            | grep -oP 'org\.hibernate\.validator:hibernate-validator;version=\K[^\s;,]+' \
+            || true)
+
+        if [[ -z "$resolved_version" ]]; then
+            echo "  WARNING: Could not extract Hibernate Validator version from ${path}" >&2
+            continue
+        fi
+
+        local hibernate_series
+        hibernate_series=$(extract_series "$resolved_version" 2)
+        echo "  ${feature}: hibernate-validator ${resolved_version} (series ${hibernate_series})"
+
+        # Find the corresponding series.yml
+        local series_file
+        series_file=$(find_series_file "$project" "$resolved_version")
+
+        if [[ -z "$series_file" ]]; then
+            echo "    UNTRACKED: No series.yml found for ${project} ${hibernate_series}"
+            has_updates=true
+            continue
+        fi
+
+        # Check if series.yml has a constraint for this integration
+        local has_constraint
+        has_constraint=$(yq ".integration_constraints.${integration_id} | select(. != null)" "$series_file" 2>/dev/null || true)
+
+        if [[ -z "$has_constraint" ]]; then
+            local rel_path="${series_file#"${REPO_ROOT}/"}"
+            echo "    UNTRACKED: ${rel_path} has no ${integration_id} constraint"
+            echo "    Suggested: add ${integration_id} integration_constraint for ${feature}"
+            has_updates=true
+        else
+            echo "    Already tracked in ${series_file#"${REPO_ROOT}/"}"
+        fi
+    done
+
+    if [[ "$has_updates" == true ]]; then
+        return 1
+    fi
+    return 0
+}
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 main() {
@@ -249,6 +327,16 @@ main() {
     integration_ids=$(yq -r '.integrations | keys | .[]' "$CONFIG_FILE")
 
     while IFS= read -r integration_id; do
+        local integration_type
+        integration_type=$(yq -r ".integrations.${integration_id}.type // \"maven\"" "$CONFIG_FILE")
+
+        if [[ "$integration_type" == "github" ]]; then
+            if ! check_liberty_integration "$integration_id"; then
+                updates_found=true
+            fi
+            continue
+        fi
+
         local display_name group_id artifact_id series_components
         display_name=$(yq -r ".integrations.${integration_id}.display_name" "$CONFIG_FILE")
         group_id=$(yq -r ".integrations.${integration_id}.bom_group_id" "$CONFIG_FILE")
