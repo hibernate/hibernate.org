@@ -58,6 +58,13 @@ module Awestruct
             filtered[key] = filter(object[key], prototype[key])
           }
           return filtered
+        elsif object.respond_to?(:each_pair)
+          filtered = Hash.new
+          object.each_pair { |key, value|
+            str_key = key.to_s
+            filtered[str_key] = filter(value, nil) unless filtered.has_key?(str_key)
+          }
+          return filtered
         else
           return object
         end
