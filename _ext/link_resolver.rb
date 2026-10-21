@@ -363,6 +363,10 @@ module Awestruct
 
         attr_reader :url
 
+        def to_json(*args)
+          {:html_url => @url}.to_json(*args)
+        end
+
         def initialize(url)
           @url = url
         end
