@@ -247,8 +247,14 @@ find_series_file() {
 # ---------------------------------------------------------------------------
 discover_liberty_hv_bundles() {
     local github_repo="$1"
-    gh api "search/code?q=org.hibernate.validator+repo:${github_repo}+filename:bnd.bnd" \
-        --jq '.items[].path' 2>/dev/null \
+    local api_output
+    if ! api_output=$(gh api "search/code?q=org.hibernate.validator+repo:${github_repo}+filename:bnd.bnd" \
+        --jq '.items[].path' 2>&1); then
+        echo "  WARNING: Could not discover bundles via code search: ${api_output}" >&2
+        echo "  Checking configured paths only" >&2
+        return 1
+    fi
+    echo "$api_output" \
         | grep 'hibernate\.validator' \
         | grep -v '\.cdi' \
         || true
@@ -276,7 +282,7 @@ check_liberty_integration() {
     # Step 1: Discover all Hibernate Validator bundles
     echo "  Discovering Hibernate Validator bundles..."
     local discovered_paths
-    discovered_paths=$(discover_liberty_hv_bundles "$github_repo")
+    discovered_paths=$(discover_liberty_hv_bundles "$github_repo") || true
 
     if [[ -n "$discovered_paths" ]]; then
         while IFS= read -r discovered_path; do
@@ -296,8 +302,6 @@ check_liberty_integration() {
                 has_updates=true
             fi
         done <<< "$discovered_paths"
-    else
-        echo "  WARNING: Could not discover bundles via code search; checking configured paths only" >&2
     fi
 
     # Step 2: For each configured bundle, check HV version and constraint
@@ -309,8 +313,8 @@ check_liberty_integration() {
 
         local file_content
         if ! file_content=$(gh api "repos/${github_repo}/contents/${path}" \
-            -H "Accept: application/vnd.github.raw+json" 2>/dev/null); then
-            echo "  WARNING: Failed to fetch ${path}" >&2
+            -H "Accept: application/vnd.github.raw+json" 2>&1); then
+            echo "  WARNING: Failed to fetch ${path}: ${file_content}" >&2
             continue
         fi
 
@@ -352,12 +356,12 @@ check_liberty_integration() {
 
     # Step 3: Check if latest Liberty release is newer than max tracked version
     echo "  Checking for newer Liberty releases..."
-    local latest_tag
-    latest_tag=$(gh api "repos/${github_repo}/releases" --jq \
-        '[.[] | select(.prerelease == false and .draft == false)][0].tag_name' 2>/dev/null || true)
-
-    if [[ -n "$latest_tag" ]]; then
-        local latest_version="${latest_tag#gm-}"
+    local releases_output
+    if ! releases_output=$(gh api "repos/${github_repo}/releases" --jq \
+        '[.[] | select(.prerelease == false and .draft == false)][0].tag_name' 2>&1); then
+        echo "  WARNING: Could not determine latest Liberty release: ${releases_output}" >&2
+    elif [[ -n "$releases_output" ]]; then
+        local latest_version="${releases_output#gm-}"
 
         local max_tracked
         max_tracked=$(find_max_tracked_version "$integration_id")
