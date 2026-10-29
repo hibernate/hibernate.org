@@ -45,6 +45,8 @@ integration_constraints:
     version: '1.0'
   jakarta_ee:
     version: '11'
+  dialect_mongodb:
+    version: '1.0'
   quarkus:
     version:
       from: '3.37'
