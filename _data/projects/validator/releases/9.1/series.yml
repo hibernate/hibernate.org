@@ -57,6 +57,6 @@ integration_constraints:
       - value: '39'
         comment: "link:https://docs.wildfly.org/39/WildFly_and_WildFly_Preview.html[Preview]"
       - from: '40'
-        to: '41'
+        to: '42'
   spring_boot:
     version: '4.1'
