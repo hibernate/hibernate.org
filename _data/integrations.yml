@@ -87,7 +87,8 @@ wildfly:
     # For release dates, see https://www.wildfly.org/events/
     # For included versions, see https://github.com/wildfly/wildfly/blob/main/pom.xml
     # For included versions in preview (EE 11), see https://github.com/wildfly/wildfly/blob/main/boms/preview-ee/pom.xml
-    - "41" # Released Jul 16th 2026
+    # Which version is actually maintained is unclear; but so far we're rolling with "only the latest"
+    - "42" # Released Oct 22nd 2026
 rheap:
   name: Red Hat EAP
   url: https://www.redhat.com/en/technologies/jboss-middleware/application-platform

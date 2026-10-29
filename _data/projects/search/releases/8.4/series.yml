@@ -91,4 +91,6 @@ integration_constraints:
       from: '3.37'
       to: '3.40'
   wildfly:
-    version: '41'
+    version:
+      from: '41'
+      to: '42'

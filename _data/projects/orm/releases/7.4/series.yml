@@ -50,7 +50,9 @@ integration_constraints:
       from: '3.37'
       to: '3.40'
   wildfly:
-    version: '41'
+    version:
+      from: '41'
+      to: '42'
   spring_boot:
     version: '4.1'
 subprojects:
