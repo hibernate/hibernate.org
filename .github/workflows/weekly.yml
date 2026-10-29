@@ -22,4 +22,6 @@ jobs:
           java-version: 25
 
       - name: Check integration updates
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: bash .github/integration-tracking/check-updates.sh
