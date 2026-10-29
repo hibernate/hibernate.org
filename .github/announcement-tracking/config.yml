@@ -1,0 +1,26 @@
+# Configuration for release announcement link tracking.
+#
+# Maps each project directory under _data/projects/ to the blog category tag
+# used on in.relation.to release announcements.
+#
+# The check-announcement-links.sh script uses this configuration to:
+# 1. Fetch recent release announcements from the blog's Atom feed
+# 2. Match each announcement to a project via the blog_category tag
+# 3. Fail the CI job if any announcement URL is missing from release metadata
+#
+# Mapping was derived by cross-referencing existing announcement_url values
+# in release YAML files against the <category term="..."> tags on those
+# same blog posts in the Atom feed.
+projects:
+  orm:
+    blog_category: "Hibernate ORM"
+  search:
+    blog_category: "Hibernate Search"
+  validator:
+    blog_category: "Hibernate Validator"
+  reactive:
+    blog_category: "Hibernate Reactive"
+  ogm:
+    blog_category: "Hibernate OGM"
+  nosql:
+    blog_category: "Hibernate NoSQL"
