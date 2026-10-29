@@ -28,6 +28,7 @@ java:
     - "22" # non-LTS, EOL Sep 2024
     - "23" # non-LTS, EOL Mar 2025
     - "24" # non-LTS, EOL Sep 2025
+    - "26" # non-LTS, EOL Sep 2026
 java_ee_jpa:
   name: JPA
   url: https://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html
