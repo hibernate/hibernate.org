@@ -4,6 +4,10 @@ links:
     html: https://docs.hibernate.org/reactive/{series.version}/reference/html_single/
   whats_new:
     html: /reactive/releases/{series.version}/#whats-new
+  migration:
+    - name: Migration Guide
+      description: Guide for migrating from the previous version
+      html: https://docs.hibernate.org/reactive/{series.version}/migration-guide/
   introduction:
     - name: Getting Started
       description: A quickstart-style tutorial
