@@ -16,6 +16,8 @@ maven:
   artifacts:
     - artifact_id: hibernate-reactive-core
       summary: Core implementation
+    - artifact_id: hibernate-reactive-platform
+      summary: Platform (BOM) for Hibernate Reactive dependencies
 integration_constraints:
   java:
     version:
