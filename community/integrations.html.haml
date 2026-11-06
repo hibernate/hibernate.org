@@ -16,7 +16,7 @@ title: Integrations
   - site.integrations.each do |integration_id, integration|
     - next if site.projects.key?(integration_id)
     - next if integration.version_ranges.nil? || integration.version_ranges.empty?
-    - integration_projects = integration.version_ranges.flat_map { |vr| vr[:compatibility]&.select { |_, matches| !matches.nil? && !matches.empty? }&.keys || [] }.uniq.sort.reject { |project_id| site.projects[project_id]&.deprecation_notice }
+    - integration_projects = integration.version_ranges.flat_map { |vr| vr[:compatibility]&.select { |_, matches| !matches.nil? && !matches.empty? }&.keys || [] }.uniq.sort_by { |id| site.integration_display_order&.index(id) || Float::INFINITY }.reject { |project_id| site.projects[project_id]&.deprecation_notice }
     - next if integration_projects.empty?
     .item
       %a.ui.primary.label{:href => "##{integration_id}"}
@@ -26,7 +26,7 @@ title: Integrations
   - next if site.projects.key?(integration_id)
   - next if integration.version_ranges.nil? || integration.version_ranges.empty?
 
-  - integration_projects = integration.version_ranges.flat_map { |vr| vr[:compatibility]&.select { |_, matches| !matches.nil? && !matches.empty? }&.keys || [] }.uniq.sort.reject { |project_id| site.projects[project_id]&.deprecation_notice }
+  - integration_projects = integration.version_ranges.flat_map { |vr| vr[:compatibility]&.select { |_, matches| !matches.nil? && !matches.empty? }&.keys || [] }.uniq.sort_by { |id| site.integration_display_order&.index(id) || Float::INFINITY }.reject { |project_id| site.projects[project_id]&.deprecation_notice }
   - next if integration_projects.empty?
 
   %h2{:id => integration_id}
