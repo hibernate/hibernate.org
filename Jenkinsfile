@@ -35,7 +35,7 @@ pipeline {
 
                             if (membersChanged) {
                                 print "INFO: members.json changed, committing and pushing, then skipping build (will trigger a new build)"
-                                withCredentials([gitUsernamePassword(credentialsId: 'Hibernate-CI.github.com', gitToolName: 'Default')]) {
+                                withCredentials([gitUsernamePassword(credentialsId: 'username-and-token.Hibernate-CI.github.com', gitToolName: 'Default')]) {
                                     sh '''
                                         git config --global user.name 'Hibernate-CI'
                                         git config --global user.email 'ci@hibernate.org'
