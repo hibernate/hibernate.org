@@ -59,4 +59,6 @@ integration_constraints:
       - from: '40'
         to: '42'
   spring_boot:
-    version: '4.1'
+    version:
+      from: '4.1'
+      to: '4.2'
