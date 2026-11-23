@@ -57,40 +57,33 @@ Use "Build Path" -> "Use as Source Folder" on each of these.
 
 Finally, you will have to manually add the ANT and JBoss Logger dependencies.
 
-== Code formatting
+== Code style
 
-From the Eclipse menu: "Window" -> "Preferences", select "Java" -> "Code Style" -> "Formatter".
-Download https://raw.githubusercontent.com/hibernate/hibernate-ide-codestyles/master/eclipse/hibernate-java-formatting.xml[hibernate-java-formatting.xml]
-from GitHub
-and import it into Eclipse to apply the style the Hibernate team uses consistently across the codebase.
+Each Hibernate project includes a set of build plugins to format and verify the code style of the sources.
+Please refer to the particular project contributing guide for more details.
 
 [NOTE]
 ====
-Please avoid re-formatting large sections of code, especially when providing a patch:
-we would love to have the diffs highlight the changes which matter.
-
-If you feel the need to fix formatting on an existing source file,
-make sure to isolate your formatting fixes in a separate commit
-that contains exclusively formatting changes (avoid any functional change in that commit)
-and make sure the commit message mentions this.
+If the project build does not define a fully automated code formatter,
+please avoid reformatting large sections of code, especially when providing a patch:
+we would love to have the diffs highlight the changes that matter.
 ====
 
 == Code templates
 
-In the same "Window" -> "Preferences" menu, select "Java" -> "Code Style" -> "Code Templates"
-and import the appropriate file downloaded from our GitHub repository:
+All top-level Hibernate projects are Apache 2.0 licensed and use the following header format:
 
-* For Hibernate ORM: https://raw.githubusercontent.com/hibernate/hibernate-ide-codestyles/master/eclipse/hibernate-code-template-orm.xml[`hibernate-code-templates-orm.xml`].
-* For Hibernate Search: https://raw.githubusercontent.com/hibernate/hibernate-ide-codestyles/master/eclipse/hibernate-code-template-search.xml[`hibernate-code-templates-search.xml`].
-* For Hibernate OGM: https://raw.githubusercontent.com/hibernate/hibernate-ide-codestyles/master/eclipse/hibernate-code-template-ogm.xml[`hibernate-code-templates-ogm.xml`].
-* For Hibernate Validator: https://raw.githubusercontent.com/hibernate/hibernate-ide-codestyles/master/eclipse/hibernate-code-template-validator.xml[`hibernate-code-templates-validator.xml`].
+[source,java]
+----
+/*
+* SPDX-License-Identifier: Apache-2.0
+* Copyright Red Hat Inc. and Hibernate Authors
+*/
+----
 
-With these templates, newly created files will automatically have the proper copyright/license headers.
-Feel free to add your nick or full name as author of new files, and optionally provide an email.
-The copyright/license header is a requirement.
-
-You can also use the https://raw.githubusercontent.com/hibernate/hibernate-ide-codestyles/master/eclipse/hibernate-auto-cleanup.xml[`hibernate-auto-cleanup.xml`],
-to be imported into "Java" -> "Code Style" -> "Clean Up".
+Note that each project has a license build plugin configured to check for the correct license header formatting.
+At the same time, such a plugin provides options to add the missing headers.
+Please refer to the particular project build for more details.
 
 == Running tests in Eclipse
 
