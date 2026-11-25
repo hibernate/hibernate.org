@@ -1,2 +1,4 @@
 date: 2026-10-29
 announcement_url: https://in.relation.to/2026/10/30/hibernate-reactive-5_1_0_Beta1/
+summary: >-
+  First release of the series, compatible with Hibernate ORM 8.0 and Vert.x 5.2: publishes a platform (BOM) (https://github.com/hibernate/hibernate-reactive/issues/2475[#2475]), and checks the versions of Hibernate ORM and Vert.x at startup (https://github.com/hibernate/hibernate-reactive/issues/1796[#1796]).

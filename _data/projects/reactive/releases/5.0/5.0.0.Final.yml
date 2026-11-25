@@ -1,2 +1,4 @@
 date: 2026-11-24
 announcement_url: https://in.relation.to/2026/11/25/hibernate-reactive-5_1_0_CR3/
+summary: >-
+  Last release of the series: `hibernate.jdbc.time_zone` applies to time columns (https://github.com/hibernate/hibernate-reactive/issues/4610[#4610]), and fixes `merge()` with an inverse `@OneToOne` without cascade (https://github.com/hibernate/hibernate-reactive/issues/4588[#4588]).

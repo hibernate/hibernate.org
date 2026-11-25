@@ -1,1 +1,3 @@
 date: 2026-11-13
+summary: >-
+  Transactions marked for rollback only are rolled back (https://github.com/hibernate/hibernate-reactive/issues/4448[#4448]), `PessimisticLockScope.EXTENDED` locks the collection tables (https://github.com/hibernate/hibernate-reactive/issues/4515[#4515]), and `hibernate.vertx.factory` creates Vert.x with your own options (https://github.com/hibernate/hibernate-reactive/issues/4491[#4491]), and the JSON mappings work on Oracle and SQL Server (https://github.com/hibernate/hibernate-reactive/issues/4450[#4450]).
