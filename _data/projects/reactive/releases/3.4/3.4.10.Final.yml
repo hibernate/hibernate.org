@@ -1,1 +1,3 @@
 date: 2026-11-15
+summary: >-
+  `hibernate.vertx.factory` to create Vert.x with your own options (https://github.com/hibernate/hibernate-reactive/issues/4491[#4491]), associations referencing a unique key can be proxies (https://github.com/hibernate/hibernate-reactive/issues/1958[#1958]), and less contention in the id generators (https://github.com/hibernate/hibernate-reactive/issues/1611[#1611]).

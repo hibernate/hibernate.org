@@ -1,1 +1,3 @@
 date: 2026-06-16
+summary: >-
+  `currentTransaction()` detects the transactions opened outside of Hibernate Reactive (https://github.com/hibernate/hibernate-reactive/issues/2852[#2852]).

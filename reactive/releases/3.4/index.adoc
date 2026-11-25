@@ -2,3 +2,15 @@
 :awestruct-project: reactive
 :awestruct-series_version: "3.4"
 
+
+Hibernate Reactive 3.4 is compatible with Hibernate ORM 7.4 and Vert.x 4.5.
+It's the series included in Quarkus 3.37 to 3.40.
+
+Some important changes of this series:
+
+* `currentTransaction()` detects the transactions opened outside of Hibernate Reactive, for example by a framework
+(https://github.com/hibernate/hibernate-reactive/issues/2852[#2852]).
+* A platform (BOM), `org.hibernate.reactive:hibernate-reactive-platform`, aligns the versions of Hibernate Reactive,
+Hibernate ORM and the Vert.x SQL client (https://github.com/hibernate/hibernate-reactive/issues/2475[#2475]).
+* With `hibernate.vertx.factory`, you can create the Vert.x instance with your own options, for example to enable metrics
+(https://github.com/hibernate/hibernate-reactive/issues/4491[#4491]).
