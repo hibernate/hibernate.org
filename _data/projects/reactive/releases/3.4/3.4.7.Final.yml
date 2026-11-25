@@ -1,1 +1,3 @@
 date: 2026-10-25
+summary: >-
+  Upserts of entities mapped to several tables (https://github.com/hibernate/hibernate-reactive/issues/1766[#1766]), and fixes a race condition in the detection of the dialect (https://github.com/hibernate/hibernate-reactive/issues/4385[#4385]).
