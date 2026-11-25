@@ -1,2 +1,4 @@
 date: 2026-11-16
 announcement_url: https://in.relation.to/2026/11/17/hibernate-reactive-5_1_0_CR2/
+summary: >-
+  Fixes a deadlock of the table id generators in 5.0.0.CR1 (https://github.com/hibernate/hibernate-reactive/issues/4538[#4538]).
