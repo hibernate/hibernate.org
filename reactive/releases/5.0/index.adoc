@@ -2,3 +2,20 @@
 :awestruct-project: reactive
 :awestruct-series_version: "5.0"
 
+
+Hibernate Reactive 5.0 is compatible with Hibernate ORM 8.0 and Vert.x 5.1.
+5.0.0.Final is the last release of this series: we recommend that you upgrade to
+link:/reactive/releases/5.1/[Hibernate Reactive 5.1].
+
+Some important changes of this series:
+
+* A platform (BOM), `org.hibernate.reactive:hibernate-reactive-platform`, aligns the versions of Hibernate Reactive,
+Hibernate ORM and the Vert.x SQL clients, and Hibernate Reactive checks at startup that the versions on the classpath
+are supported (https://github.com/hibernate/hibernate-reactive/pull/4326[#4326],
+https://github.com/hibernate/hibernate-reactive/pull/4242[#4242]).
+* `PessimisticLockScope.EXTENDED` also locks the element collections and join tables of the locked entities,
+like in Hibernate ORM (https://github.com/hibernate/hibernate-reactive/pull/4532[#4532]).
+* With `hibernate.vertx.factory`, you can create the Vert.x instance with your own options, for example to enable metrics
+(https://github.com/hibernate/hibernate-reactive/pull/4495[#4495]).
+
+See the https://docs.hibernate.org/reactive/5.0/migration-guide/[migration guide] for the changes that can affect your application.

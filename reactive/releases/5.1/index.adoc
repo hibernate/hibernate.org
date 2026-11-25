@@ -2,3 +2,12 @@
 :awestruct-project: reactive
 :awestruct-series_version: "5.1"
 
+
+Hibernate Reactive 5.1 is compatible with Hibernate ORM 8.0 and Vert.x 5.2.
+It contains all the changes of link:/reactive/releases/5.0/#whats-new[Hibernate Reactive 5.0], and in particular:
+
+* It uses the Vert.x SQL client 5.2 (https://github.com/hibernate/hibernate-reactive/pull/4222[#4222]).
+* The JSON mappings now also work on Oracle and SQL Server (https://github.com/hibernate/hibernate-reactive/pull/4452[#4452]).
+
+If you are upgrading from Hibernate Reactive 4.x, see the
+https://docs.hibernate.org/reactive/5.1/migration-guide/[migration guide].
