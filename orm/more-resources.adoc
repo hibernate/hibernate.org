@@ -2,7 +2,7 @@
 :awestruct-layout: project-standard
 :awestruct-project: orm
 
-Third-party documentation, books, and other resources about Hibernate ORM.
+Third-party documentation, blog posts, talks, books, and other resources about Hibernate ORM.
 
 If you want to add something to the list, link:/community/[contact us]!
 
@@ -42,3 +42,21 @@ from a relational database easily and efficiently.
 http://www.hibernate-tips.com/?utm_source=Hibernate&utm_medium=books[Hibernate Tips]::
 More than 70 solutions to common Hibernate problems.
 Each Hibernate Tip consists of one or more code samples and an easy to follow step-by-step explanation.
+
+== Blog posts
+
+https://javapro.io/2026/04/03/talk-to-your-data-natural-language-data-access-in-java/[Talk to Your Data: Natural Language Data Access in Java]::
+A JAVAPRO article presenting the Hibernate Assistant module of Hibernate ORM,
+and how to use it to build natural language data access features
+with https://quarkus.io/[Quarkus] and https://github.com/langchain4j/langchain4j[LangChain4j]:
+a chatbot, a RAG pipeline and an MCP server.
+
+== Talks and videos
+
+https://www.youtube.com/watch?v=tMW5jxX6DoA[Natural Language Data Access in Java with Hibernate, Quarkus, & LangChain4j]::
+A presentation of the Hibernate Assistant module of Hibernate ORM at JCON Europe 2026,
+with live demos using https://quarkus.io/[Quarkus] and https://github.com/langchain4j/langchain4j[LangChain4j].
++
+Slides: https://speakerdeck.com/mbellade/talk-to-your-data-hibernate-powered-natural-language-data-access-in-java
++
+Demo code: https://github.com/mbellade/demos/tree/main/quarkus/hibernate-assistant
